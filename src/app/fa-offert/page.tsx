@@ -77,6 +77,12 @@ interface FormErrors {
   parkingDistance?: string;
 }
 
+interface AddressComponent {
+  types: string[];
+  long_name: string;
+  short_name: string;
+}
+
 export default function FaOffert() {
   const [step, setStep] = useState(1);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
@@ -135,16 +141,35 @@ export default function FaOffert() {
       if (currentAddressInput) {
         const autocomplete1 = new window.google.maps.places.Autocomplete(currentAddressInput, {
           componentRestrictions: { country: 'se' },
-          fields: ['address_components', 'formatted_address'],
+          fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
           types: ['address']
         });
 
         autocomplete1.addListener('place_changed', () => {
           const place = autocomplete1.getPlace();
           if (place.formatted_address) {
+            // Extract street name, number, and city from address components
+            let streetName = '';
+            let streetNumber = '';
+            let city = '';
+            
+            place.address_components.forEach((component: AddressComponent) => {
+              if (component.types.includes('route')) {
+                streetName = component.long_name;
+              }
+              if (component.types.includes('street_number')) {
+                streetNumber = component.long_name;
+              }
+              if (component.types.includes('locality') || component.types.includes('postal_town')) {
+                city = component.long_name;
+              }
+            });
+
+            // Format address as "Street, City, Sweden"
+            const formattedAddress = `${streetName}${streetNumber ? ' ' + streetNumber : ''}, ${city}, Sweden`;
             setFormData(prev => ({
               ...prev,
-              currentAddress: place.formatted_address
+              currentAddress: formattedAddress
             }));
           }
         });
@@ -153,16 +178,35 @@ export default function FaOffert() {
       if (newAddressInput) {
         const autocomplete2 = new window.google.maps.places.Autocomplete(newAddressInput, {
           componentRestrictions: { country: 'se' },
-          fields: ['address_components', 'formatted_address'],
+          fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
           types: ['address']
         });
 
         autocomplete2.addListener('place_changed', () => {
           const place = autocomplete2.getPlace();
           if (place.formatted_address) {
+            // Extract street name, number, and city from address components
+            let streetName = '';
+            let streetNumber = '';
+            let city = '';
+            
+            place.address_components.forEach((component: AddressComponent) => {
+              if (component.types.includes('route')) {
+                streetName = component.long_name;
+              }
+              if (component.types.includes('street_number')) {
+                streetNumber = component.long_name;
+              }
+              if (component.types.includes('locality') || component.types.includes('postal_town')) {
+                city = component.long_name;
+              }
+            });
+
+            // Format address as "Street, City, Sweden"
+            const formattedAddress = `${streetName}${streetNumber ? ' ' + streetNumber : ''}, ${city}, Sweden`;
             setFormData(prev => ({
               ...prev,
-              newAddress: place.formatted_address
+              newAddress: formattedAddress
             }));
           }
         });
