@@ -78,7 +78,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center bg-gradient-to-br from-[#1e3a8a] to-[#059669]">
+      <section className="relative h-screen flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981]">
         <div className="absolute inset-0 z-0 bg-black/30"></div>
         <div className="container mx-auto px-4 z-10 text-white">
           <div className="max-w-4xl mx-auto">
@@ -86,7 +86,7 @@ export default function Home() {
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Flyttella - Din pålitliga flyttpartner
               </h1>
-              <p className="text-xl md:text-2xl mb-8">
+              <p className="text-xl md:text-2xl text-white/90 mb-8">
                 Upplev skillnaden mellan en vanlig flytt och en professionell flyttjänst!
               </p>
             </div>
@@ -112,14 +112,14 @@ export default function Home() {
                   <p className="font-semibold text-lg">Professionell service</p>
                 </div>
               </div>
-              <p className="text-xl font-semibold mb-8">
+              <p className="text-xl font-semibold mb-8 text-white/90">
                 Vi ser fram emot att överträffa dina förväntningar!
               </p>
               <div className="flex gap-4 justify-center">
-                <button className="btn-secondary rounded-full">
+                <button className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#0F172A] transition-all font-medium">
                   Boka flytt
                 </button>
-                <button className="bg-white text-[#1e3a8a] px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
+                <button className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
                   Kontakta oss
                 </button>
               </div>
