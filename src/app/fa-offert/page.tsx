@@ -53,10 +53,18 @@ interface FormData {
   needsStorage: boolean;
   needsCleaning: boolean;
   additionalInfo: string;
+  wantsFlexibleDate: boolean;
+  elevatorSize?: string;
+  toElevatorSize?: string;
 }
 
 interface FormErrors {
   currentAddress?: string;
+  apartmentNumber?: string;
+  postalCode?: string;
+  apartmentSize?: string;
+  numberOfRooms?: string;
+  typeOfHome?: string;
   newAddress?: string;
   toApartmentNumber?: string;
   toPostalCode?: string;
@@ -75,6 +83,17 @@ interface FormErrors {
   delicateItemsDescription?: string;
   floor?: string;
   parkingDistance?: string;
+  hasElevator?: string;
+  name?: string;
+  email?: string;
+  phone?: string;
+  movingDate?: string;
+  flexibleMovingDate?: string;
+  needsPacking?: string;
+  needsStorage?: string;
+  needsCleaning?: string;
+  elevatorSize?: string;
+  toElevatorSize?: string;
 }
 
 interface AddressComponent {
@@ -89,6 +108,8 @@ export default function FaOffert() {
   const [customItem, setCustomItem] = useState({ type: "", weight: "" });
   const [customItemError, setCustomItemError] = useState("");
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
+  const [lastValidCurrentAddress, setLastValidCurrentAddress] = useState("");
+  const [lastValidNewAddress, setLastValidNewAddress] = useState("");
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -124,7 +145,8 @@ export default function FaOffert() {
     needsPacking: false,
     needsStorage: false,
     needsCleaning: false,
-    additionalInfo: ""
+    additionalInfo: "",
+    wantsFlexibleDate: false
   });
   const [errors, setErrors] = useState<FormErrors>({});
 
@@ -166,10 +188,21 @@ export default function FaOffert() {
             });
 
             // Format address as "Street, City, Sweden"
-            const formattedAddress = `${streetName}${streetNumber ? ' ' + streetNumber : ''}, ${city}, Sweden`;
+            const formattedAddress = `${streetName}, ${city}, Sweden`;
             setFormData(prev => ({
               ...prev,
               currentAddress: formattedAddress
+            }));
+            setLastValidCurrentAddress(formattedAddress);
+          }
+        });
+
+        // Add blur event listener to restore last valid address
+        currentAddressInput.addEventListener('blur', () => {
+          if (lastValidCurrentAddress && formData.currentAddress !== lastValidCurrentAddress) {
+            setFormData(prev => ({
+              ...prev,
+              currentAddress: lastValidCurrentAddress
             }));
           }
         });
@@ -203,10 +236,21 @@ export default function FaOffert() {
             });
 
             // Format address as "Street, City, Sweden"
-            const formattedAddress = `${streetName}${streetNumber ? ' ' + streetNumber : ''}, ${city}, Sweden`;
+            const formattedAddress = `${streetName}, ${city}, Sweden`;
             setFormData(prev => ({
               ...prev,
               newAddress: formattedAddress
+            }));
+            setLastValidNewAddress(formattedAddress);
+          }
+        });
+
+        // Add blur event listener to restore last valid address
+        newAddressInput.addEventListener('blur', () => {
+          if (lastValidNewAddress && formData.newAddress !== lastValidNewAddress) {
+            setFormData(prev => ({
+              ...prev,
+              newAddress: lastValidNewAddress
             }));
           }
         });
@@ -214,22 +258,32 @@ export default function FaOffert() {
     } catch (error) {
       console.error('Error initializing Google Places:', error);
     }
-  }, [step, isGoogleMapsLoaded]);
+  }, [step, isGoogleMapsLoaded, formData.currentAddress, formData.newAddress, lastValidCurrentAddress, lastValidNewAddress]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    // Clear specific error when user makes a valid selection
-    if (step === 5) {
+    // Clear specific error when user types or makes a selection
+    if (step === 7) {
       const newErrors = { ...errors };
       
-      if (name === 'toFloor' && value) {
-        delete newErrors.toFloor;
-      } else if (name === 'toHasElevator' && value) {
-        delete newErrors.toHasElevator;
-      } else if (name === 'toParkingDistance' && value) {
-        delete newErrors.toParkingDistance;
+      if (name === 'name') {
+        if (value.trim()) {
+          delete newErrors.name;
+        }
+      } else if (name === 'email') {
+        if (value.trim()) {
+          if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            delete newErrors.email;
+          }
+        }
+      } else if (name === 'phone') {
+        if (value.trim()) {
+          if (/^[0-9\s-+()]*$/.test(value)) {
+            delete newErrors.phone;
+          }
+        }
       }
       
       setErrors(newErrors);
@@ -237,131 +291,37 @@ export default function FaOffert() {
   };
 
   const nextStep = () => {
-    if (step === 2) {
-      if (!formData.currentAddress || !formData.currentAddress.trim()) {
-        setErrors({ ...errors, currentAddress: "Vänligen ange en giltig adress" });
-        return;
-      }
-      // Check if the address is in a valid format (contains at least street name and city)
-      if (!formData.currentAddress.includes(',')) {
-        setErrors({ ...errors, currentAddress: "Vänligen välj en adress från listan" });
-        return;
-      }
+    let isValid = true;
+    
+    switch (step) {
+      case 1:
+        isValid = validateStep1();
+        break;
+      case 2:
+        isValid = validateStep2();
+        break;
+      case 3:
+        isValid = validateStep3();
+        break;
+      case 4:
+        isValid = validateStep4();
+        break;
+      case 5:
+        isValid = validateStep5();
+        break;
+      case 6:
+        isValid = validateStep6();
+        break;
+      case 7:
+        isValid = validateStep7();
+        break;
+      default:
+        break;
     }
-    if (step === 3) {
-      const newErrors: FormErrors = {};
-      let isValid = true;
 
-      // Validate floor selection
-      if (!formData.floor || !formData.floor.trim()) {
-        newErrors.floor = "Vänligen välj våning";
-        isValid = false;
-      }
-
-      // Validate parking distance
-      if (!formData.parkingDistance || !formData.parkingDistance.trim()) {
-        newErrors.parkingDistance = "Vänligen ange avstånd till parkering";
-        isValid = false;
-      } else if (isNaN(Number(formData.parkingDistance)) || Number(formData.parkingDistance) <= 0) {
-        newErrors.parkingDistance = "Avståndet måste vara ett positivt tal i meter";
-        isValid = false;
-      }
-
-      setErrors(newErrors);
-      if (!isValid) return;
+    if (isValid) {
+      setStep((prevStep) => prevStep + 1);
     }
-    if (step === 4) {
-      const newErrors: FormErrors = {};
-      let isValid = true;
-
-      // Validate new address
-      if (!formData.newAddress || !formData.newAddress.trim()) {
-        newErrors.newAddress = "Vänligen ange en giltig adress";
-        isValid = false;
-      } else if (!formData.newAddress.includes(',')) {
-        newErrors.newAddress = "Vänligen välj en adress från listan";
-        isValid = false;
-      }
-
-      // Validate apartment number
-      if (!formData.toApartmentNumber || !formData.toApartmentNumber.trim()) {
-        newErrors.toApartmentNumber = "Vänligen ange gatunummer";
-        isValid = false;
-      }
-
-      // Validate postal code
-      if (!formData.toPostalCode || !formData.toPostalCode.trim()) {
-        newErrors.toPostalCode = "Vänligen ange postnummer";
-        isValid = false;
-      } else if (!/^\d{5}$/.test(formData.toPostalCode)) {
-        newErrors.toPostalCode = "Postnummer måste vara exakt 5 siffror";
-        isValid = false;
-      }
-
-      // Validate apartment size
-      if (!formData.toApartmentSize || !formData.toApartmentSize.trim()) {
-        newErrors.toApartmentSize = "Vänligen ange bostadens storlek";
-        isValid = false;
-      } else if (isNaN(Number(formData.toApartmentSize)) || Number(formData.toApartmentSize) <= 0) {
-        newErrors.toApartmentSize = "Bostadens storlek måste vara ett positivt tal";
-        isValid = false;
-      }
-
-      // Validate number of rooms
-      if (!formData.toNumberOfRooms || !formData.toNumberOfRooms.trim()) {
-        newErrors.toNumberOfRooms = "Vänligen ange antal rum";
-        isValid = false;
-      }
-
-      // Validate property type
-      if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
-        newErrors.toTypeOfHome = "Vänligen välj typ av bostad";
-        isValid = false;
-      }
-
-      setErrors(newErrors);
-      if (!isValid) return;
-    }
-    if (step === 5) {
-      const newErrors: FormErrors = {};
-      let isValid = true;
-
-      if (!formData.toFloor) {
-        newErrors.toFloor = "Vänligen ange antal våningar";
-        isValid = false;
-      }
-
-      if (!formData.toHasElevator) {
-        newErrors.toHasElevator = "Vänligen ange om det finns hiss";
-        isValid = false;
-      }
-
-      if (!formData.toParkingDistance) {
-        newErrors.toParkingDistance = "Vänligen ange avstånd till lossningsplats";
-        isValid = false;
-      }
-
-      setErrors(newErrors);
-      if (!isValid) return;
-    }
-    if (step === 6) {
-      const newErrors: FormErrors = {};
-      let isValid = true;
-
-      if (formData.hasHeavyItems === "yes" && (!formData.heavyItems || formData.heavyItems.length === 0)) {
-        newErrors.heavyItems = "Vänligen ange vilka tunga föremål som ska flyttas";
-        isValid = false;
-      }
-
-      if (formData.hasDelicateItems === "yes" && !formData.delicateItemsDescription.trim()) {
-        newErrors.delicateItemsDescription = "Vänligen beskriv de känsliga föremålen";
-        isValid = false;
-      }
-
-      setErrors(newErrors);
-      if (!isValid) return;
-    }
-    setStep(step + 1);
   };
 
   const prevStep = () => {
@@ -372,13 +332,357 @@ export default function FaOffert() {
     const newErrors: FormErrors = {};
     let isValid = true;
 
+    // Only validate heavy items if user selected "yes"
     if (formData.hasHeavyItems === "yes" && (!formData.heavyItems || formData.heavyItems.length === 0)) {
       newErrors.heavyItems = "Vänligen ange vilka tunga föremål som ska flyttas";
       isValid = false;
     }
 
+    // Only validate delicate items if user selected "yes"
     if (formData.hasDelicateItems === "yes" && !formData.delicateItemsDescription.trim()) {
       newErrors.delicateItemsDescription = "Vänligen beskriv de känsliga föremålen";
+      isValid = false;
+    }
+
+    // Make sure user has selected yes/no for both questions
+    if (!formData.hasHeavyItems) {
+      newErrors.hasHeavyItems = "Vänligen välj ett alternativ";
+      isValid = false;
+    }
+
+    if (!formData.hasDelicateItems) {
+      newErrors.hasDelicateItems = "Vänligen välj ett alternativ";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const validateStep3 = (): boolean => {
+    const newErrors: FormErrors = {};
+    let isValid = true;
+
+    // Validate floor selection
+    if (!formData.floor || !formData.floor.trim()) {
+      newErrors.floor = "Vänligen välj våning";
+      isValid = false;
+    }
+
+    // Validate elevator selection for apartments
+    if (formData.typeOfHome === "lagenhet" && !formData.hasElevator) {
+      newErrors.hasElevator = "Vänligen ange om det finns hiss";
+      isValid = false;
+    }
+
+    // Validate elevator size if elevator exists
+    if (formData.hasElevator === "yes" && !formData.elevatorSize) {
+      newErrors.elevatorSize = "Vänligen välj hisstorlek";
+      isValid = false;
+    }
+
+    // Validate parking distance
+    if (!formData.parkingDistance || !formData.parkingDistance.trim()) {
+      newErrors.parkingDistance = "Vänligen ange avstånd till parkering";
+      isValid = false;
+    } else if (isNaN(Number(formData.parkingDistance)) || Number(formData.parkingDistance) < 0) {
+      newErrors.parkingDistance = "Avståndet måste vara ett positivt tal i meter";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const validateStep7 = (): boolean => {
+    const newErrors: FormErrors = {};
+    let isValid = true;
+
+    // Validate name
+    if (!formData.name || !formData.name.trim()) {
+      newErrors.name = "Vänligen ange ditt namn";
+      isValid = false;
+    }
+
+    // Validate email
+    if (!formData.email || !formData.email.trim()) {
+      newErrors.email = "Vänligen ange din e-postadress";
+      isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Vänligen ange en giltig e-postadress";
+      isValid = false;
+    }
+
+    // Validate phone
+    if (!formData.phone || !formData.phone.trim()) {
+      newErrors.phone = "Vänligen ange ditt telefonnummer";
+      isValid = false;
+    } else if (!/^[0-9\s-+()]*$/.test(formData.phone)) {
+      newErrors.phone = "Vänligen ange ett giltigt telefonnummer";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (step === 7) {
+      const isValid = validateStep7();
+      
+      if (isValid) {
+        // Format the data to match the email template
+        const emailData = {
+          title: "Nytt lead från Flytta.se",
+          behov: "move_out",
+          datum: formData.movingDate,
+          flyttaFran: {
+            address: formData.currentAddress,
+            gatunummer: formData.apartmentNumber,
+            postnummer: formData.postalCode,
+            bostadstyp: formData.typeOfHome,
+            kvadrat: formData.apartmentSize,
+            antalRum: formData.numberOfRooms,
+            vaningNr: formData.floor,
+            hasElevator: formData.hasElevator === "yes" ? "Ja" : "Nej",
+            elevatorSize: formData.hasElevator === "yes" ? formData.elevatorSize : undefined,
+            parkeringsAvstand: formData.parkingDistance
+          },
+          flyttaTill: {
+            address: formData.newAddress,
+            gatunummer: formData.toApartmentNumber,
+            postnummer: formData.toPostalCode,
+            bostadstyp: formData.toTypeOfHome,
+            kvadrat: formData.toApartmentSize,
+            antalRum: formData.toNumberOfRooms,
+            vaningNr: formData.toFloor,
+            hasElevator: formData.toHasElevator === "yes" ? "Ja" : "Nej",
+            elevatorSize: formData.toHasElevator === "yes" ? formData.toElevatorSize : undefined,
+            parkeringsAvstand: formData.toParkingDistance
+          },
+          flexibeltDatum: formData.wantsFlexibleDate ? formData.flexibleMovingDate : "Nej",
+          villDuHaPackhjalp: formData.needsPacking ? "Ja" : "Nej",
+          villDuHaLagring: formData.needsStorage ? "Ja" : "Nej",
+          villDuHaStadning: formData.needsCleaning ? "Ja" : "Nej",
+          tungaForemal: formData.hasHeavyItems === "yes" ? 
+            formData.heavyItems.map(item => `${item.type}${item.description ? ` (${item.description})` : ''}`).join(", ") : 
+            "Nej",
+          omtaligaForemal: formData.hasDelicateItems === "yes" ? formData.delicateItemsDescription : "Nej",
+          kontaktInfo: {
+            namn: formData.name,
+            email: formData.email,
+            telefon: formData.phone
+          },
+          additionalInfo: formData.additionalInfo || "Inga övriga önskemål"
+        };
+
+        try {
+          // Send the email data to your API endpoint
+          const response = await fetch('/api/send-moving-request', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(emailData),
+          });
+
+          if (response.ok) {
+            alert("Tack för din förfrågan! Vi återkommer inom kort.");
+            // Reset form or redirect
+            window.location.href = '/tack';
+          } else {
+            throw new Error('Failed to send request');
+          }
+        } catch (error) {
+          console.error('Error sending form:', error);
+          alert("Ett fel uppstod när förfrågan skulle skickas. Vänligen försök igen.");
+        }
+      } else {
+        // If validation fails, scroll to the first error
+        const firstErrorElement = document.querySelector('.border-red-500');
+        if (firstErrorElement) {
+          firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    }
+  };
+
+  const addHeavyItem = (item: { type: string; description?: string }) => {
+    setFormData(prev => ({
+      ...prev,
+      heavyItems: [...prev.heavyItems, item]
+    }));
+    
+    // Clear any heavy items error when an item is added
+    if (errors.heavyItems) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors.heavyItems;
+        return newErrors;
+      });
+    }
+  };
+
+  const removeHeavyItem = (index: number) => {
+    setFormData(prev => ({
+      ...prev,
+      heavyItems: prev.heavyItems.filter((_, i) => i !== index)
+    }));
+  };
+
+  const validateStep1 = (): boolean => {
+    const newErrors: FormErrors = {};
+    let isValid = true;
+
+    // Validate moving date
+    if (!formData.movingDate || !formData.movingDate.trim()) {
+      newErrors.movingDate = "Vänligen välj önskat flyttdatum";
+      isValid = false;
+    } else {
+      // Check if the date is at least tomorrow
+      const selectedDate = new Date(formData.movingDate);
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      tomorrow.setHours(0, 0, 0, 0); // Reset time to start of day for fair comparison
+      
+      if (selectedDate < tomorrow) {
+        newErrors.movingDate = "Flyttdatum måste vara minst imorgon";
+        isValid = false;
+      }
+    }
+
+    // Validate flexible moving date only if checkbox is checked
+    if (formData.wantsFlexibleDate && (!formData.flexibleMovingDate || !formData.flexibleMovingDate.trim())) {
+      newErrors.flexibleMovingDate = "Vänligen välj flexibilitet för flyttdatum";
+      isValid = false;
+    }
+
+    // Validate packing service selection
+    if (formData.needsPacking === undefined) {
+      newErrors.needsPacking = "Vänligen välj om du vill ha packhjälp";
+      isValid = false;
+    }
+
+    // Validate storage service selection
+    if (formData.needsStorage === undefined) {
+      newErrors.needsStorage = "Vänligen välj om du behöver lagerförvaring";
+      isValid = false;
+    }
+
+    // Validate cleaning service selection
+    if (formData.needsCleaning === undefined) {
+      newErrors.needsCleaning = "Vänligen välj om du vill ha flyttstädning";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const validateStep2 = (): boolean => {
+    const newErrors: FormErrors = {};
+    let isValid = true;
+
+    // Validate current address
+    if (!formData.currentAddress || !formData.currentAddress.trim()) {
+      newErrors.currentAddress = "Vänligen ange en giltig adress";
+      isValid = false;
+    } else if (!formData.currentAddress.includes(',')) {
+      newErrors.currentAddress = "Vänligen välj en adress från listan";
+      isValid = false;
+    }
+
+    // Validate apartment number
+    if (!formData.apartmentNumber || !formData.apartmentNumber.trim()) {
+      newErrors.apartmentNumber = "Vänligen ange gatunummer";
+      isValid = false;
+    } else if (!/^[0-9]+[A-Za-z]?$/.test(formData.apartmentNumber)) {
+      newErrors.apartmentNumber = "Gatunummer måste börja med siffror och kan avslutas med en bokstav";
+      isValid = false;
+    }
+
+    // Validate postal code
+    if (!formData.postalCode || !formData.postalCode.trim()) {
+      newErrors.postalCode = "Vänligen ange postnummer";
+      isValid = false;
+    } else if (!/^\d{5}$/.test(formData.postalCode)) {
+      newErrors.postalCode = "Postnummer måste vara exakt 5 siffror";
+      isValid = false;
+    }
+
+    // Validate apartment size
+    if (!formData.apartmentSize || !formData.apartmentSize.trim()) {
+      newErrors.apartmentSize = "Vänligen ange bostadens storlek";
+      isValid = false;
+    } else if (isNaN(Number(formData.apartmentSize)) || Number(formData.apartmentSize) <= 0) {
+      newErrors.apartmentSize = "Bostadens storlek måste vara ett positivt tal";
+      isValid = false;
+    }
+
+    // Validate number of rooms
+    if (!formData.numberOfRooms || !formData.numberOfRooms.trim()) {
+      newErrors.numberOfRooms = "Vänligen ange antal rum";
+      isValid = false;
+    }
+
+    // Validate property type
+    if (!formData.typeOfHome || !formData.typeOfHome.trim()) {
+      newErrors.typeOfHome = "Vänligen välj typ av bostad";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const validateStep4 = (): boolean => {
+    const newErrors: FormErrors = {};
+    let isValid = true;
+
+    // Validate new address
+    if (!formData.newAddress || !formData.newAddress.trim()) {
+      newErrors.newAddress = "Vänligen ange en giltig adress";
+      isValid = false;
+    } else if (!formData.newAddress.includes(',')) {
+      newErrors.newAddress = "Vänligen välj en adress från listan";
+      isValid = false;
+    }
+
+    // Validate apartment number
+    if (!formData.toApartmentNumber || !formData.toApartmentNumber.trim()) {
+      newErrors.toApartmentNumber = "Vänligen ange gatunummer";
+      isValid = false;
+    }
+
+    // Validate postal code
+    if (!formData.toPostalCode || !formData.toPostalCode.trim()) {
+      newErrors.toPostalCode = "Vänligen ange postnummer";
+      isValid = false;
+    } else if (!/^\d{5}$/.test(formData.toPostalCode)) {
+      newErrors.toPostalCode = "Postnummer måste vara exakt 5 siffror";
+      isValid = false;
+    }
+
+    // Validate apartment size
+    if (!formData.toApartmentSize || !formData.toApartmentSize.trim()) {
+      newErrors.toApartmentSize = "Vänligen ange bostadens storlek";
+      isValid = false;
+    } else if (isNaN(Number(formData.toApartmentSize)) || Number(formData.toApartmentSize) <= 0) {
+      newErrors.toApartmentSize = "Bostadens storlek måste vara ett positivt tal";
+      isValid = false;
+    }
+
+    // Validate number of rooms
+    if (!formData.toNumberOfRooms || !formData.toNumberOfRooms.trim()) {
+      newErrors.toNumberOfRooms = "Vänligen ange antal rum";
+      isValid = false;
+    }
+
+    // Validate property type
+    if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
+      newErrors.toTypeOfHome = "Vänligen välj typ av bostad";
       isValid = false;
     }
 
@@ -390,55 +694,42 @@ export default function FaOffert() {
     const newErrors: FormErrors = {};
     let isValid = true;
 
-    if (!formData.toFloor) {
-      newErrors.toFloor = "Vänligen ange antal våningar";
-      isValid = false;
+    if (formData.toTypeOfHome === "lagenhet") {
+      // For apartments
+      if (!formData.toFloor) {
+        newErrors.toFloor = "Vänligen välj våning";
+        isValid = false;
+      }
+
+      if (!formData.toHasElevator) {
+        newErrors.toHasElevator = "Vänligen ange om det finns hiss";
+        isValid = false;
+      }
+
+      // Validate elevator size if elevator exists
+      if (formData.toHasElevator === "yes" && !formData.toElevatorSize) {
+        newErrors.toElevatorSize = "Vänligen välj hisstorlek";
+        isValid = false;
+      }
+    } else if (formData.toTypeOfHome !== "annat") {
+      // For houses and other types (except "annat")
+      if (!formData.toFloor) {
+        newErrors.toFloor = "Vänligen ange antal våningar";
+        isValid = false;
+      }
     }
 
-    if (!formData.toHasElevator) {
-      newErrors.toHasElevator = "Vänligen ange om det finns hiss";
-      isValid = false;
-    }
-
-    if (!formData.toParkingDistance) {
+    // For all types
+    if (!formData.toParkingDistance || !formData.toParkingDistance.trim()) {
       newErrors.toParkingDistance = "Vänligen ange avstånd till lossningsplats";
+      isValid = false;
+    } else if (isNaN(Number(formData.toParkingDistance)) || Number(formData.toParkingDistance) < 0) {
+      newErrors.toParkingDistance = "Avståndet måste vara ett positivt tal i meter";
       isValid = false;
     }
 
     setErrors(newErrors);
     return isValid;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (step === 5) {
-      if (!validateStep5()) {
-        return;
-      }
-    } else if (step === 6) {
-      if (!validateStep6()) {
-        return;
-      }
-    }
-
-    // If all validations pass, proceed with form submission
-    console.log(formData);
-    alert("Tack för din förfrågan! Vi återkommer inom kort.");
-  };
-
-  const addHeavyItem = (item: { type: string; description?: string }) => {
-    setFormData(prev => ({
-      ...prev,
-      heavyItems: [...prev.heavyItems, item]
-    }));
-  };
-
-  const removeHeavyItem = (index: number) => {
-    setFormData(prev => ({
-      ...prev,
-      heavyItems: prev.heavyItems.filter((_, i) => i !== index)
-    }));
   };
 
   return (
@@ -528,55 +819,26 @@ export default function FaOffert() {
               {/* Progress Bar */}
               <div className="mb-8">
                 <div className="flex justify-between mb-2">
-                  <span className="text-sm font-medium text-gray-700">Steg {step} av 6</span>
-                  <span className="text-sm font-medium text-gray-700">{Math.round((step / 6) * 100)}%</span>
+                  <span className="text-sm font-medium text-gray-700">Steg {step} av 7</span>
+                  <span className="text-sm font-medium text-gray-700">{Math.round((step / 7) * 100)}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div 
                     className="bg-gradient-to-r from-[#0F172A] to-[#10B981] h-2 rounded-full transition-all duration-300"
-                    style={{ width: `${(step / 6) * 100}%` }}
+                    style={{ width: `${(step / 7) * 100}%` }}
                   ></div>
                 </div>
               </div>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm p-8">
+              <form 
+                onSubmit={handleSubmit} 
+                noValidate 
+                className="bg-white rounded-lg shadow-sm p-8"
+              >
                 {step === 1 && (
                   <div className="space-y-6">
-                    <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktinformation</h2>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Namn</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">E-post</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
-                      />
-                    </div>
+                    <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Flyttinformation</h2>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Önskat flyttdatum</label>
                       <input
@@ -584,35 +846,78 @@ export default function FaOffert() {
                         name="movingDate"
                         value={formData.movingDate}
                         onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                        min={(() => {
+                          const tomorrow = new Date();
+                          tomorrow.setDate(tomorrow.getDate() + 1);
+                          return tomorrow.toISOString().split('T')[0];
+                        })()}
+                        onKeyDown={(e) => e.preventDefault()}
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                          errors.movingDate ? "border-red-500" : "border-gray-300"
+                        }`}
                       />
+                      {errors.movingDate && (
+                        <p className="mt-1 text-sm text-red-600">{errors.movingDate}</p>
+                      )}
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Flexibelt flyttdatum</label>
-                      <select
-                        name="flexibleMovingDate"
-                        value={formData.flexibleMovingDate}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
-                      >
-                        <option value="">-- Välj --</option>
-                        <option value="no">Önskar ej flexibelt flyttdatum</option>
-                        <option value="1">+ 1 dag</option>
-                        <option value="2">+ 2 dagar</option>
-                        <option value="3">+ 3 dagar</option>
-                        <option value="4">+ 4 dagar</option>
-                        <option value="5">+ 5 dagar</option>
-                        <option value="6">+ 6 dagar</option>
-                        <option value="7">+ 1 vecka</option>
-                        <option value="14">+ 2 veckor</option>
-                        <option value="21">+ 3 veckor</option>
-                        <option value="30">+ 1 månad</option>
-                        <option value="31+">+ mer än 1 månad</option>
-                      </select>
-                      <p className="mt-2 text-sm text-gray-600">
-                        Om du väljer ett flexibelt flyttdatum sker flytten inom vald tidsperiod från det datum du har valt.
-                      </p>
+                    <div className="space-y-4">
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          name="wantsFlexibleDate"
+                          checked={formData.wantsFlexibleDate}
+                          onChange={(e) => {
+                            setFormData(prev => ({
+                              ...prev,
+                              wantsFlexibleDate: e.target.checked,
+                              flexibleMovingDate: e.target.checked ? prev.flexibleMovingDate : ""
+                            }));
+                            setErrors(prev => {
+                              const newErrors = { ...prev };
+                              if (!e.target.checked) {
+                                delete newErrors.flexibleMovingDate;
+                              }
+                              return newErrors;
+                            });
+                          }}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
+                        />
+                        <label className="ml-2 text-sm text-gray-700">
+                          Jag är flexibel med flyttdatum
+                        </label>
+                      </div>
+                      {formData.wantsFlexibleDate && (
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Flexibelt flyttdatum</label>
+                          <select
+                            name="flexibleMovingDate"
+                            value={formData.flexibleMovingDate}
+                            onChange={handleInputChange}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                              errors.flexibleMovingDate ? "border-red-500" : "border-gray-300"
+                            }`}
+                          >
+                            <option value="">-- Välj --</option>
+                            <option value="1">+ 1 dag</option>
+                            <option value="2">+ 2 dagar</option>
+                            <option value="3">+ 3 dagar</option>
+                            <option value="4">+ 4 dagar</option>
+                            <option value="5">+ 5 dagar</option>
+                            <option value="6">+ 6 dagar</option>
+                            <option value="7">+ 1 vecka</option>
+                            <option value="14">+ 2 veckor</option>
+                            <option value="21">+ 3 veckor</option>
+                            <option value="30">+ 1 månad</option>
+                            <option value="31+">+ mer än 1 månad</option>
+                          </select>
+                          {errors.flexibleMovingDate && (
+                            <p className="mt-1 text-sm text-red-600">{errors.flexibleMovingDate}</p>
+                          )}
+                          <p className="mt-2 text-sm text-gray-600">
+                            Om du väljer ett flexibelt flyttdatum sker flytten inom vald tidsperiod från det datum du har valt.
+                          </p>
+                        </div>
+                      )}
                     </div>
                     <div className="space-y-6">
                       <div>
@@ -626,10 +931,17 @@ export default function FaOffert() {
                               name="needsPacking"
                               value="yes"
                               checked={formData.needsPacking === true}
-                              onChange={(e) => setFormData(prev => ({
-                                ...prev,
-                                needsPacking: e.target.value === "yes"
-                              }))}
+                              onChange={(e) => {
+                                setFormData(prev => ({
+                                  ...prev,
+                                  needsPacking: e.target.value === "yes"
+                                }));
+                                setErrors(prev => {
+                                  const newErrors = { ...prev };
+                                  delete newErrors.needsPacking;
+                                  return newErrors;
+                                });
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Ja</span>
@@ -640,15 +952,25 @@ export default function FaOffert() {
                               name="needsPacking"
                               value="no"
                               checked={formData.needsPacking === false}
-                              onChange={(e) => setFormData(prev => ({
-                                ...prev,
-                                needsPacking: e.target.value === "yes"
-                              }))}
+                              onChange={(e) => {
+                                setFormData(prev => ({
+                                  ...prev,
+                                  needsPacking: e.target.value === "yes"
+                                }));
+                                setErrors(prev => {
+                                  const newErrors = { ...prev };
+                                  delete newErrors.needsPacking;
+                                  return newErrors;
+                                });
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Nej</span>
                           </label>
                         </div>
+                        {errors.needsPacking && (
+                          <p className="mt-1 text-sm text-red-600">{errors.needsPacking}</p>
+                        )}
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-3">
@@ -661,10 +983,17 @@ export default function FaOffert() {
                               name="needsStorage"
                               value="yes"
                               checked={formData.needsStorage === true}
-                              onChange={(e) => setFormData(prev => ({
-                                ...prev,
-                                needsStorage: e.target.value === "yes"
-                              }))}
+                              onChange={(e) => {
+                                setFormData(prev => ({
+                                  ...prev,
+                                  needsStorage: e.target.value === "yes"
+                                }));
+                                setErrors(prev => {
+                                  const newErrors = { ...prev };
+                                  delete newErrors.needsStorage;
+                                  return newErrors;
+                                });
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Ja</span>
@@ -675,15 +1004,25 @@ export default function FaOffert() {
                               name="needsStorage"
                               value="no"
                               checked={formData.needsStorage === false}
-                              onChange={(e) => setFormData(prev => ({
-                                ...prev,
-                                needsStorage: e.target.value === "yes"
-                              }))}
+                              onChange={(e) => {
+                                setFormData(prev => ({
+                                  ...prev,
+                                  needsStorage: e.target.value === "yes"
+                                }));
+                                setErrors(prev => {
+                                  const newErrors = { ...prev };
+                                  delete newErrors.needsStorage;
+                                  return newErrors;
+                                });
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Nej</span>
                           </label>
                         </div>
+                        {errors.needsStorage && (
+                          <p className="mt-1 text-sm text-red-600">{errors.needsStorage}</p>
+                        )}
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-3">
@@ -696,10 +1035,17 @@ export default function FaOffert() {
                               name="needsCleaning"
                               value="yes"
                               checked={formData.needsCleaning === true}
-                              onChange={(e) => setFormData(prev => ({
-                                ...prev,
-                                needsCleaning: e.target.value === "yes"
-                              }))}
+                              onChange={(e) => {
+                                setFormData(prev => ({
+                                  ...prev,
+                                  needsCleaning: e.target.value === "yes"
+                                }));
+                                setErrors(prev => {
+                                  const newErrors = { ...prev };
+                                  delete newErrors.needsCleaning;
+                                  return newErrors;
+                                });
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Ja</span>
@@ -710,15 +1056,25 @@ export default function FaOffert() {
                               name="needsCleaning"
                               value="no"
                               checked={formData.needsCleaning === false}
-                              onChange={(e) => setFormData(prev => ({
-                                ...prev,
-                                needsCleaning: e.target.value === "yes"
-                              }))}
+                              onChange={(e) => {
+                                setFormData(prev => ({
+                                  ...prev,
+                                  needsCleaning: e.target.value === "yes"
+                                }));
+                                setErrors(prev => {
+                                  const newErrors = { ...prev };
+                                  delete newErrors.needsCleaning;
+                                  return newErrors;
+                                });
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Nej</span>
                           </label>
                         </div>
+                        {errors.needsCleaning && (
+                          <p className="mt-1 text-sm text-red-600">{errors.needsCleaning}</p>
+                        )}
                       </div>
                     </div>
                     <button
@@ -764,11 +1120,40 @@ export default function FaOffert() {
                             type="text"
                             name="apartmentNumber"
                             value={formData.apartmentNumber}
-                            onChange={handleInputChange}
+                            onChange={(e) => {
+                              // Must start with number, followed by optional single letter
+                              const value = e.target.value.replace(/[^0-9A-Za-z]/g, '').replace(/^([0-9]+)?([A-Za-z]?).*/g, '$1$2');
+                              if (/^[0-9]+[A-Za-z]?$/.test(value) || value === '') {
+                                setFormData({ ...formData, apartmentNumber: value });
+                                setErrors({ ...errors, apartmentNumber: "" });
+                              }
+                            }}
+                            onKeyDown={(e) => {
+                              // Allow only numbers, letters, backspace, delete, and arrow keys
+                              if (
+                                !/^[0-9A-Za-z]$/.test(e.key) && // not a number or letter
+                                e.key !== 'Backspace' &&
+                                e.key !== 'Delete' &&
+                                e.key !== 'ArrowLeft' &&
+                                e.key !== 'ArrowRight' &&
+                                e.key !== 'Tab'
+                              ) {
+                                e.preventDefault();
+                              }
+                              // If no numbers yet, prevent letters
+                              if (!/^[0-9]+/.test(formData.apartmentNumber) && /^[A-Za-z]$/.test(e.key)) {
+                                e.preventDefault();
+                              }
+                            }}
                             placeholder="1A"
                             required
-                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                            className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                              errors.apartmentNumber ? "border-red-500" : ""
+                            }`}
                           />
+                          {errors.apartmentNumber && (
+                            <p className="mt-1 text-sm text-red-600">{errors.apartmentNumber}</p>
+                          )}
                         </div>
                       </div>
                       <div>
@@ -781,40 +1166,70 @@ export default function FaOffert() {
                             // Only allow numbers and limit to 5 digits
                             const value = e.target.value.replace(/\D/g, '').slice(0, 5);
                             setFormData({ ...formData, postalCode: value });
-                            setErrors({ ...errors, toPostalCode: "" });
+                            setErrors({ ...errors, postalCode: "" });
                           }}
                           placeholder="12345"
                           required
                           maxLength={5}
                           pattern="\d{5}"
                           className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                            errors.toPostalCode ? "border-red-500" : ""
+                            errors.postalCode ? "border-red-500" : ""
                           }`}
                         />
-                        {errors.toPostalCode && (
-                          <p className="mt-1 text-sm text-red-600">{errors.toPostalCode}</p>
+                        {errors.postalCode && (
+                          <p className="mt-1 text-sm text-red-600">{errors.postalCode}</p>
                         )}
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Bostadens storlek (kvm)</label>
                         <input
-                          type="number"
+                          type="text"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
                           name="apartmentSize"
                           value={formData.apartmentSize}
-                          onChange={handleInputChange}
+                          onChange={(e) => {
+                            // Only allow whole numbers
+                            const value = e.target.value.replace(/[^\d]/g, '');
+                            setFormData({ ...formData, apartmentSize: value });
+                            setErrors({ ...errors, apartmentSize: "" });
+                          }}
+                          onKeyDown={(e) => {
+                            // Prevent all non-numeric input except backspace, delete, and arrow keys
+                            if (
+                              !/^\d$/.test(e.key) && // not a number
+                              e.key !== 'Backspace' &&
+                              e.key !== 'Delete' &&
+                              e.key !== 'ArrowLeft' &&
+                              e.key !== 'ArrowRight' &&
+                              e.key !== 'Tab'
+                            ) {
+                              e.preventDefault();
+                            }
+                          }}
                           placeholder="120"
                           required
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                          className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.apartmentSize ? "border-red-500" : ""
+                          }`}
                         />
+                        {errors.apartmentSize && (
+                          <p className="mt-1 text-sm text-red-600">{errors.apartmentSize}</p>
+                        )}
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Antal rum</label>
                         <select
                           name="numberOfRooms"
                           value={formData.numberOfRooms}
-                          onChange={handleInputChange}
+                          onChange={(e) => {
+                            handleInputChange(e);
+                            setErrors({ ...errors, numberOfRooms: "" });
+                          }}
                           required
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                          className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.numberOfRooms ? "border-red-500" : ""
+                          }`}
                         >
                           <option value="">-- Välj --</option>
                           <option value="1">1 rum</option>
@@ -828,15 +1243,23 @@ export default function FaOffert() {
                           <option value="9">9 rum</option>
                           <option value="10+">10 eller fler rum</option>
                         </select>
+                        {errors.numberOfRooms && (
+                          <p className="mt-1 text-sm text-red-600">{errors.numberOfRooms}</p>
+                        )}
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Typ av bostad</label>
                         <select
                           name="typeOfHome"
                           value={formData.typeOfHome}
-                          onChange={handleInputChange}
+                          onChange={(e) => {
+                            handleInputChange(e);
+                            setErrors({ ...errors, typeOfHome: "" });
+                          }}
                           required
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                          className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.typeOfHome ? "border-red-500" : ""
+                          }`}
                         >
                           <option value="">-- Välj --</option>
                           <option value="villa">Villa</option>
@@ -847,6 +1270,9 @@ export default function FaOffert() {
                           <option value="magasin">Magasin</option>
                           <option value="annat">Annat</option>
                         </select>
+                        {errors.typeOfHome && (
+                          <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
+                        )}
                       </div>
                     </div>
                     <div className="flex justify-between">
@@ -878,8 +1304,8 @@ export default function FaOffert() {
                           name="floor"
                           value={formData.floor}
                           onChange={(e) => {
-                            setFormData({ ...formData, floor: e.target.value });
-                            setErrors({ ...errors, floor: "" });
+                            handleInputChange(e);
+                            setErrors(prev => ({ ...prev, floor: "" }));
                           }}
                           required
                           className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
@@ -912,7 +1338,10 @@ export default function FaOffert() {
                               name="hasElevator"
                               value="yes"
                               checked={formData.hasElevator === "yes"}
-                              onChange={handleInputChange}
+                              onChange={(e) => {
+                                handleInputChange(e);
+                                setErrors(prev => ({ ...prev, hasElevator: "" }));
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Ja</span>
@@ -923,32 +1352,81 @@ export default function FaOffert() {
                               name="hasElevator"
                               value="no"
                               checked={formData.hasElevator === "no"}
-                              onChange={handleInputChange}
+                              onChange={(e) => {
+                                handleInputChange(e);
+                                setErrors(prev => ({ ...prev, hasElevator: "" }));
+                                // Clear elevator size when selecting no
+                                setFormData(prev => ({
+                                  ...prev,
+                                  elevatorSize: ""
+                                }));
+                                setErrors(prev => ({ ...prev, hasElevator: "", elevatorSize: "" }));
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Nej</span>
                           </label>
                         </div>
+                        {errors.hasElevator && (
+                          <p className="mt-1 text-sm text-red-600">{errors.hasElevator}</p>
+                        )}
+                        {formData.hasElevator === "yes" && (
+                          <div className="mt-4">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                              Hur stor är hissen?
+                            </label>
+                            <select
+                              name="elevatorSize"
+                              value={formData.elevatorSize}
+                              onChange={handleInputChange}
+                              required
+                              className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                                errors.elevatorSize ? "border-red-500" : ""
+                              }`}
+                            >
+                              <option value="">-- Välj --</option>
+                              <option value="Liten hiss (2 personer)">Liten hiss (2 personer)</option>
+                              <option value="Mellanstor hiss (4 personer)">Mellanstor hiss (4 personer)</option>
+                              <option value="Stor hiss (6+ personer)">Stor hiss (6+ personer)</option>
+                            </select>
+                            {errors.elevatorSize && (
+                              <p className="mt-1 text-sm text-red-600">{errors.elevatorSize}</p>
+                            )}
+                          </div>
+                        )}
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Avstånd till lastningsplats (meter)</label>
                         <p className="text-sm text-gray-600 mb-2">Den närmaste punkt en flyttbil kan stå under lastning och lossning</p>
                         <input
-                          type="number"
+                          type="text"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
                           name="parkingDistance"
                           value={formData.parkingDistance}
                           onChange={(e) => {
-                            // Only allow positive numbers
-                            const value = e.target.value;
-                            if (value === '' || (Number(value) >= 0)) {
-                              setFormData({ ...formData, parkingDistance: value });
-                              setErrors({ ...errors, parkingDistance: "" });
+                            // Only allow whole numbers
+                            const value = e.target.value.replace(/[^\d]/g, '');
+                            if (value === '' || Number(value) >= 0) {
+                              setFormData(prev => ({ ...prev, parkingDistance: value }));
+                              setErrors(prev => ({ ...prev, parkingDistance: "" }));
+                            }
+                          }}
+                          onKeyDown={(e) => {
+                            // Prevent all non-numeric input except backspace, delete, and arrow keys
+                            if (
+                              !/^\d$/.test(e.key) && // not a number
+                              e.key !== 'Backspace' &&
+                              e.key !== 'Delete' &&
+                              e.key !== 'ArrowLeft' &&
+                              e.key !== 'ArrowRight' &&
+                              e.key !== 'Tab'
+                            ) {
+                              e.preventDefault();
                             }
                           }}
                           placeholder="20"
                           required
-                          min="0"
-                          step="1"
                           className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
                             errors.parkingDistance ? "border-red-500" : ""
                           }`}
@@ -987,8 +1465,8 @@ export default function FaOffert() {
                           name="floor"
                           value={formData.floor}
                           onChange={(e) => {
-                            setFormData({ ...formData, floor: e.target.value });
-                            setErrors({ ...errors, floor: "" });
+                            handleInputChange(e);
+                            setErrors(prev => ({ ...prev, floor: "" }));
                           }}
                           required
                           className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
@@ -1010,21 +1488,34 @@ export default function FaOffert() {
                       <label className="block text-sm font-medium text-gray-700 mb-2">Avstånd till lastningsplats (meter)</label>
                       <p className="text-sm text-gray-600 mb-2">Den närmaste punkt en flyttbil kan stå under lastning och lossning</p>
                       <input
-                        type="number"
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
                         name="parkingDistance"
                         value={formData.parkingDistance}
                         onChange={(e) => {
-                          // Only allow positive numbers
-                          const value = e.target.value;
-                          if (value === '' || (Number(value) >= 0)) {
-                            setFormData({ ...formData, parkingDistance: value });
-                            setErrors({ ...errors, parkingDistance: "" });
+                          // Only allow whole numbers
+                          const value = e.target.value.replace(/[^\d]/g, '');
+                          if (value === '' || Number(value) >= 0) {
+                            setFormData(prev => ({ ...prev, parkingDistance: value }));
+                            setErrors(prev => ({ ...prev, parkingDistance: "" }));
+                          }
+                        }}
+                        onKeyDown={(e) => {
+                          // Prevent all non-numeric input except backspace, delete, and arrow keys
+                          if (
+                            !/^\d$/.test(e.key) && // not a number
+                            e.key !== 'Backspace' &&
+                            e.key !== 'Delete' &&
+                            e.key !== 'ArrowLeft' &&
+                            e.key !== 'ArrowRight' &&
+                            e.key !== 'Tab'
+                          ) {
+                            e.preventDefault();
                           }
                         }}
                         placeholder="20"
                         required
-                        min="0"
-                        step="1"
                         className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
                           errors.parkingDistance ? "border-red-500" : ""
                         }`}
@@ -1086,8 +1577,29 @@ export default function FaOffert() {
                             name="toApartmentNumber"
                             value={formData.toApartmentNumber}
                             onChange={(e) => {
-                              setFormData({ ...formData, toApartmentNumber: e.target.value });
-                              setErrors({ ...errors, toApartmentNumber: "" });
+                              // Must start with number, followed by optional single letter
+                              const value = e.target.value.replace(/[^0-9A-Za-z]/g, '').replace(/^([0-9]+)?([A-Za-z]?).*/g, '$1$2');
+                              if (/^[0-9]+[A-Za-z]?$/.test(value) || value === '') {
+                                setFormData({ ...formData, toApartmentNumber: value });
+                                setErrors({ ...errors, toApartmentNumber: "" });
+                              }
+                            }}
+                            onKeyDown={(e) => {
+                              // Allow only numbers, letters, backspace, delete, and arrow keys
+                              if (
+                                !/^[0-9A-Za-z]$/.test(e.key) && // not a number or letter
+                                e.key !== 'Backspace' &&
+                                e.key !== 'Delete' &&
+                                e.key !== 'ArrowLeft' &&
+                                e.key !== 'ArrowRight' &&
+                                e.key !== 'Tab'
+                              ) {
+                                e.preventDefault();
+                              }
+                              // If no numbers yet, prevent letters
+                              if (!/^[0-9]+/.test(formData.toApartmentNumber) && /^[A-Za-z]$/.test(e.key)) {
+                                e.preventDefault();
+                              }
                             }}
                             placeholder="1A"
                             required
@@ -1127,21 +1639,34 @@ export default function FaOffert() {
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Bostadens storlek (kvm)</label>
                         <input
-                          type="number"
+                          type="text"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
                           name="toApartmentSize"
                           value={formData.toApartmentSize}
                           onChange={(e) => {
-                            // Only allow positive numbers
-                            const value = e.target.value;
-                            if (value === '' || (Number(value) >= 0)) {
+                            // Only allow whole numbers
+                            const value = e.target.value.replace(/[^\d]/g, '');
+                            if (value === '' || Number(value) >= 0) {
                               setFormData({ ...formData, toApartmentSize: value });
                               setErrors({ ...errors, toApartmentSize: "" });
                             }
                           }}
+                          onKeyDown={(e) => {
+                            // Prevent all non-numeric input except backspace, delete, and arrow keys
+                            if (
+                              !/^\d$/.test(e.key) && // not a number
+                              e.key !== 'Backspace' &&
+                              e.key !== 'Delete' &&
+                              e.key !== 'ArrowLeft' &&
+                              e.key !== 'ArrowRight' &&
+                              e.key !== 'Tab'
+                            ) {
+                              e.preventDefault();
+                            }
+                          }}
                           placeholder="120"
                           required
-                          min="0"
-                          step="1"
                           className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
                             errors.toApartmentSize ? "border-red-500" : ""
                           }`}
@@ -1236,9 +1761,14 @@ export default function FaOffert() {
                         <select
                           name="toFloor"
                           value={formData.toFloor}
-                          onChange={handleInputChange}
+                          onChange={(e) => {
+                            handleInputChange(e);
+                            setErrors(prev => ({ ...prev, toFloor: "" }));
+                          }}
                           required
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                          className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.toFloor ? "border-red-500" : ""
+                          }`}
                         >
                           <option value="">-- Välj --</option>
                           <option value="-2">Våning -2</option>
@@ -1266,7 +1796,10 @@ export default function FaOffert() {
                               name="toHasElevator"
                               value="yes"
                               checked={formData.toHasElevator === "yes"}
-                              onChange={handleInputChange}
+                              onChange={(e) => {
+                                handleInputChange(e);
+                                setErrors(prev => ({ ...prev, toHasElevator: "" }));
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Ja</span>
@@ -1277,7 +1810,15 @@ export default function FaOffert() {
                               name="toHasElevator"
                               value="no"
                               checked={formData.toHasElevator === "no"}
-                              onChange={handleInputChange}
+                              onChange={(e) => {
+                                handleInputChange(e);
+                                // Clear elevator size when selecting no
+                                setFormData(prev => ({
+                                  ...prev,
+                                  toElevatorSize: ""
+                                }));
+                                setErrors(prev => ({ ...prev, toHasElevator: "", toElevatorSize: "" }));
+                              }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <span className="ml-2 text-sm text-gray-700">Nej</span>
@@ -1286,22 +1827,72 @@ export default function FaOffert() {
                         {errors.toHasElevator && (
                           <p className="text-sm text-red-600 mt-1">{errors.toHasElevator}</p>
                         )}
+                        {formData.toHasElevator === "yes" && (
+                          <div className="mt-4">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                              Hur stor är hissen?
+                            </label>
+                            <select
+                              name="toElevatorSize"
+                              value={formData.toElevatorSize}
+                              onChange={(e) => {
+                                handleInputChange(e);
+                                setErrors(prev => ({ ...prev, toElevatorSize: "" }));
+                              }}
+                              required
+                              className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                                errors.toElevatorSize ? "border-red-500" : ""
+                              }`}
+                            >
+                              <option value="">-- Välj --</option>
+                              <option value="Liten hiss (2 personer)">Liten hiss (2 personer)</option>
+                              <option value="Mellanstor hiss (4 personer)">Mellanstor hiss (4 personer)</option>
+                              <option value="Stor hiss (6+ personer)">Stor hiss (6+ personer)</option>
+                            </select>
+                            {errors.toElevatorSize && (
+                              <p className="mt-1 text-sm text-red-600">{errors.toElevatorSize}</p>
+                            )}
+                          </div>
+                        )}
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Avstånd till lossningsplats (meter)</label>
                         <p className="text-sm text-gray-600 mb-2">Den närmaste punkt en flyttbil kan stå under lastning och lossning</p>
                         <input
-                          type="number"
+                          type="text"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
                           name="toParkingDistance"
                           value={formData.toParkingDistance}
-                          onChange={handleInputChange}
+                          onChange={(e) => {
+                            // Only allow whole numbers
+                            const value = e.target.value.replace(/[^\d]/g, '');
+                            if (value === '' || Number(value) >= 0) {
+                              setFormData(prev => ({ ...prev, toParkingDistance: value }));
+                              setErrors(prev => ({ ...prev, toParkingDistance: "" }));
+                            }
+                          }}
+                          onKeyDown={(e) => {
+                            // Prevent all non-numeric input except backspace, delete, and arrow keys
+                            if (
+                              !/^\d$/.test(e.key) && // not a number
+                              e.key !== 'Backspace' &&
+                              e.key !== 'Delete' &&
+                              e.key !== 'ArrowLeft' &&
+                              e.key !== 'ArrowRight' &&
+                              e.key !== 'Tab'
+                            ) {
+                              e.preventDefault();
+                            }
+                          }}
                           placeholder="20"
-                          min="0"
                           required
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                          className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.toParkingDistance ? "border-red-500" : ""
+                          }`}
                         />
                         {errors.toParkingDistance && (
-                          <p className="text-sm text-red-600 mt-1">{errors.toParkingDistance}</p>
+                          <p className="mt-1 text-sm text-red-600">{errors.toParkingDistance}</p>
                         )}
                       </div>
                     </div>
@@ -1315,11 +1906,7 @@ export default function FaOffert() {
                       </button>
                       <button
                         type="button"
-                        onClick={() => {
-                          if (validateStep5()) {
-                            nextStep();
-                          }
-                        }}
+                        onClick={nextStep}
                         className="px-6 py-3 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-lg hover:opacity-90 transition-opacity"
                       >
                         Nästa
@@ -1337,9 +1924,14 @@ export default function FaOffert() {
                         <select
                           name="toFloor"
                           value={formData.toFloor}
-                          onChange={handleInputChange}
+                          onChange={(e) => {
+                            handleInputChange(e);
+                            setErrors(prev => ({ ...prev, toFloor: "" }));
+                          }}
                           required
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                          className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.toFloor ? "border-red-500" : ""
+                          }`}
                         >
                           <option value="">-- Välj --</option>
                           <option value="1">1 våning</option>
@@ -1356,17 +1948,40 @@ export default function FaOffert() {
                       <label className="block text-sm font-medium text-gray-700 mb-2">Avstånd till lossningsplats (meter)</label>
                       <p className="text-sm text-gray-600 mb-2">Den närmaste punkt en flyttbil kan stå under lastning och lossning</p>
                       <input
-                        type="number"
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
                         name="toParkingDistance"
                         value={formData.toParkingDistance}
-                        onChange={handleInputChange}
+                        onChange={(e) => {
+                          // Only allow whole numbers
+                          const value = e.target.value.replace(/[^\d]/g, '');
+                          if (value === '' || Number(value) >= 0) {
+                            setFormData(prev => ({ ...prev, toParkingDistance: value }));
+                            setErrors(prev => ({ ...prev, toParkingDistance: "" }));
+                          }
+                        }}
+                        onKeyDown={(e) => {
+                          // Prevent all non-numeric input except backspace, delete, and arrow keys
+                          if (
+                            !/^\d$/.test(e.key) && // not a number
+                            e.key !== 'Backspace' &&
+                            e.key !== 'Delete' &&
+                            e.key !== 'ArrowLeft' &&
+                            e.key !== 'ArrowRight' &&
+                            e.key !== 'Tab'
+                          ) {
+                            e.preventDefault();
+                          }
+                        }}
                         placeholder="20"
-                        min="0"
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                          errors.toParkingDistance ? "border-red-500" : ""
+                        }`}
                       />
                       {errors.toParkingDistance && (
-                        <p className="text-sm text-red-600 mt-1">{errors.toParkingDistance}</p>
+                        <p className="mt-1 text-sm text-red-600">{errors.toParkingDistance}</p>
                       )}
                     </div>
                     <div className="flex justify-between mt-8">
@@ -1379,11 +1994,7 @@ export default function FaOffert() {
                       </button>
                       <button
                         type="button"
-                        onClick={() => {
-                          if (validateStep5()) {
-                            nextStep();
-                          }
-                        }}
+                        onClick={nextStep}
                         className="px-6 py-3 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-lg hover:opacity-90 transition-opacity"
                       >
                         Nästa
@@ -1394,7 +2005,7 @@ export default function FaOffert() {
 
                 {step === 6 && (
                   <div className="space-y-6">
-                    <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Få erbjudanden om flytthjälp från flera flyttfirmor.</h2>
+                    <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Tunga och ömtåliga föremål</h2>
                     <p className="text-sm text-gray-700 mb-6">Tjänsten är gratis och du är inte bunden till någonting.</p>
                     
                     <div className="space-y-6">
@@ -1534,6 +2145,89 @@ export default function FaOffert() {
                             )}
                           </div>
                         )}
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between mt-8">
+                      <button
+                        type="button"
+                        onClick={prevStep}
+                        className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                      >
+                        Tillbaka
+                      </button>
+                      <button
+                        type="button"
+                        onClick={nextStep}
+                        className="px-6 py-3 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-lg hover:opacity-90 transition-opacity"
+                      >
+                        Nästa
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {step === 7 && (
+                  <div className="space-y-6">
+                    <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktinformation</h2>
+                    <p className="text-sm text-gray-700 mb-6">Tjänsten är gratis och du är inte bunden till någonting.</p>
+                    
+                    <div className="space-y-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Ditt namn</label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.name ? "border-red-500" : "border-gray-300"
+                          }`}
+                        />
+                        {errors.name && (
+                          <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                        )}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">E-post</label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.email ? "border-red-500" : "border-gray-300"
+                          }`}
+                        />
+                        {errors.email && (
+                          <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                        )}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.phone ? "border-red-500" : "border-gray-300"
+                          }`}
+                        />
+                        {errors.phone && (
+                          <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+                        )}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Övriga önskemål (frivilligt)</label>
+                        <textarea
+                          name="additionalInfo"
+                          value={formData.additionalInfo}
+                          onChange={handleInputChange}
+                          placeholder="Ställ frågor till flyttfirman eller meddela om eventuella önskemål och behov."
+                          rows={4}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                        ></textarea>
                       </div>
                     </div>
 
