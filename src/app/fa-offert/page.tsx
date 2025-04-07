@@ -740,82 +740,11 @@ export default function FaOffert() {
         async
         onLoad={() => setIsGoogleMapsLoaded(true)}
       />
-      <div className="min-h-screen bg-gray-50">
-        {/* Header - Same as other pages */}
-        <header className="sticky top-0 z-50">
-          {/* Contact Bar */}
-          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white">
-            <div className="container mx-auto px-4">
-              <div className="flex justify-between items-center h-8">
-                <div className="flex items-center divide-x divide-white/20">
-                  <div className="flex items-center pr-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-white/80 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-sm text-white/90">Mån-Fre: 08:00-18:00</span>
-                  </div>
-                  <div className="flex items-center px-6">
-                    <span className="text-sm text-white/90">Lör-Sön: Stängt</span>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <a href="tel:08-630-07-25" className="flex items-center group">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white/80 group-hover:text-white transition-colors mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <span className="text-sm font-medium text-white/90 group-hover:text-white transition-colors">08-630 07 25</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Main Header */}
-          <div className="bg-white/95 backdrop-blur-sm shadow-sm">
-            <div className="container mx-auto px-4">
-              <div className="flex justify-between items-center h-20">
-                {/* Logo */}
-                <div className="flex items-center">
-                  <Link href="/">
-                    <div className="relative h-14 w-48">
-                      <Image
-                        src="/flyttella-logo.png"
-                        alt="Flyttella Logo"
-                        fill
-                        className="object-contain"
-                        priority={false}
-                        loading="lazy"
-                      />
-                    </div>
-                  </Link>
-                </div>
-
-                {/* Navigation */}
-                <div className="hidden md:flex items-center space-x-8">
-                  <nav className="flex items-center space-x-8">
-                    <Link href="/" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Hem</Link>
-                    <Link href="/bohagsflytt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Bohagsflytt</Link>
-                    <Link href="/flyttstadning" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Flyttstädning</Link>
-                    <Link href="/om-oss" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Om oss</Link>
-                    <Link href="/kontakt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Kontakt</Link>
-                  </nav>
-                </div>
-
-                {/* Mobile Menu Button */}
-                <button className="md:hidden text-[#0F172A] hover:text-[#10B981] transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* Form Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto">
+      <main className="min-h-screen bg-gray-50">
+        {/* Remove the duplicate header section */}
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-xl shadow-lg p-8">
               {/* Progress Bar */}
               <div className="mb-8">
                 <div className="flex justify-between mb-2">
@@ -2251,7 +2180,7 @@ export default function FaOffert() {
               </form>
             </div>
           </div>
-        </section>
+        </div>
 
         {/* Custom Heavy Item Modal */}
         {showCustomItemModal && (
@@ -2336,7 +2265,7 @@ export default function FaOffert() {
             </div>
           </div>
         )}
-      </div>
+      </main>
     </>
   );
 } 
