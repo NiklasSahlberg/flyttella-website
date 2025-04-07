@@ -11,19 +11,26 @@
   "dependencies": {
     "@google-cloud/storage": "^7.16.0",
     "googleapis": "^148.0.0",
-    "next": "^15.1.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "^14.2.26",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "typescript": "^5.3.0",
     "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0",
-    "tailwindcss": "^3.4.0",
     "eslint": "^8.56.0",
-    "eslint-config-next": "15.1.7"
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.4.0",
+    "prettier": "^3.2.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0"
+  },
+  "resolutions": {
+    "glob": "^9.0.0",
+    "rimraf": "^4.0.0",
+    "inflight": "^2.0.0"
   }
 }
