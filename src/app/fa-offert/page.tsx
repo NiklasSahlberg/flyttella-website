@@ -8,7 +8,13 @@ import { useRouter } from "next/navigation";
 
 declare global {
   interface Window {
-    google: typeof google;
+    google: {
+      maps: {
+        places: {
+          Autocomplete: any;
+        };
+      };
+    };
     initAutocomplete: () => void;
   }
 }
