@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
@@ -21,6 +22,10 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    domains: ['localhost'],
+  },
+  experimental: {
+    optimizeCss: true,
   },
 }
 
