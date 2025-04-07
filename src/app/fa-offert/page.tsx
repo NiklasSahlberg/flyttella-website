@@ -4,10 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Script from "next/script";
+import { useRouter } from "next/navigation";
 
 declare global {
   interface Window {
-    google: any;
+    google: typeof google;
     initAutocomplete: () => void;
   }
 }

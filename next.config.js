@@ -23,10 +23,7 @@ const nextConfig = {
       },
     ],
     domains: ['localhost'],
-  },
-  experimental: {
-    optimizeCss: true,
-  },
+  }
 }
 
 module.exports = nextConfig 

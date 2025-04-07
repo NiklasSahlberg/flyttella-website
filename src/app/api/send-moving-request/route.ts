@@ -26,6 +26,14 @@ const BUCKET_NAME = "flyttella-logs";
 const bucket = storage.bucket(BUCKET_NAME);
 const FAILED_EMAILS_FILE = "failed_emails.txt";
 
+// Replace any with proper type
+interface EmailData {
+  name: string;
+  email: string;
+  phone: string;
+  // ... other email fields
+}
+
 async function getGmailClient() {
   const oauth2Client = new google.auth.OAuth2(
     CLIENT_SECRETS.installed.client_id,
