@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function BohagsflyttpPage() {
+export default function KontorsflyttPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -9,9 +9,9 @@ export default function BohagsflyttpPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] to-[#10B981]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Professionell bohagsflytt</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Kontorsflytt</h1>
             <p className="text-lg md:text-xl text-white/90 mb-8">
-              Vi hjälper dig med en trygg och smidig flytt från start till mål
+              Professionell flytt av företag både internt och externt
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/fa-offert" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
@@ -33,26 +33,28 @@ export default function BohagsflyttpPage() {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="flex-1">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-                  Din pålitliga flyttpartner i Stockholm
+                  Professionell kontorsflytt
                 </h2>
                 <div className="space-y-4 text-gray-600">
                   <p className="text-lg">
-                    Med vår erfarna personal och moderna utrustning ser vi till att din flytt blir så smidig som möjligt. 
-                    Vi hanterar dina ägodelar med största omsorg och respekt.
+                    Vi erbjuder kompletta lösningar för företagsflytt, oavsett om det gäller intern omflyttning 
+                    eller flytt till ny adress. Med vår erfarenhet och kompetens säkerställer vi en smidig 
+                    och kostnadseffektiv flyttprocess.
                   </p>
                   <p className="text-lg">
-                    Oavsett om du flyttar till en lägenhet eller villa, inom Stockholm eller längre bort, 
-                    har vi kunskapen och resurserna för att göra din flytt bekymmersfri.
+                    Vi följer alla relevanta regler, lagar och villkor, och håller oss till det vi kommit 
+                    överens om. Vår erfarenhet och rätt utrustning gör att vi kan erbjuda högkvalitativa 
+                    tjänster till konkurrenskraftiga priser.
                   </p>
                 </div>
               </div>
               <div className="flex-1">
-                <div className="relative h-[350px] w-full">
+                <div className="relative h-[400px] w-full">
                   <Image
-                    src="/coupleMoving.png"
-                    alt="Bohagsflytt"
+                    src="/office-moving.png"
+                    alt="Kontorsflytt"
                     fill
-                    className="object-contain"
+                    className="object-cover rounded-lg"
                     priority
                   />
                 </div>
@@ -61,70 +63,23 @@ export default function BohagsflyttpPage() {
           </div>
         </div>
 
-        {/* Process Steps */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-16">
-            Så går flytten till
-          </h2>
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* Step 1 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#0F172A] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
-                1
-              </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">
-                Kostnadsfri offert
-              </h3>
-              <p className="text-gray-600">
-                Kontakta oss för en kostnadsfri offert. Vi går igenom dina behov och ger dig ett fast pris.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#0F172A] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
-                2
-              </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">
-                Planering
-              </h3>
-              <p className="text-gray-600">
-                Vi planerar flytten i detalj och säkerställer att allt är förberett för flyttdagen.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#0F172A] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
-                3
-              </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">
-                Flyttdagen
-              </h3>
-              <p className="text-gray-600">
-                Vi utför flytten professionellt och effektivt enligt överenskommen plan.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Services Included */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {/* Moving Services */}
+          {/* Planning */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-              Våra flyttjänster
+              Planering & Rådgivning
             </h2>
             <ul className="space-y-3">
               {[
-                "Packning av bohag",
-                "Nedmontering av möbler",
-                "Flyttkartonger och emballage",
-                "Transport av bohag",
-                "Uppackning på ny adress",
-                "Montering av möbler",
-                "Piano- och kassaskåpsflytt",
-                "Magasinering"
+                "Strategisk flyttplanering",
+                "Kostnadsoptimering",
+                "Tidsplanering",
+                "Resurshantering",
+                "Riskbedömning",
+                "Kommunikation",
+                "Dokumentation",
+                "Uppföljning"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <svg className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -136,21 +91,21 @@ export default function BohagsflyttpPage() {
             </ul>
           </div>
 
-          {/* Equipment */}
+          {/* Services */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-              Vår utrustning
+              Våra tjänster
             </h2>
             <ul className="space-y-3">
               {[
-                "Moderna flyttbilar",
-                "Flyttfiltar och skyddsmaterial",
-                "Flyttkartonger i olika storlekar",
-                "Specialemballage för ömtåliga föremål",
-                "Flyttvagnar och lyfthjälpmedel",
-                "Verktyg för montering/demontering",
-                "Spännband och lastsäkring",
-                "Flyttlift vid behov"
+                "Intern omflyttning",
+                "Extern flytt",
+                "Möbelflytt",
+                "IT-utrustning",
+                "Arkivhantering",
+                "Specialemballage",
+                "Transport",
+                "Montering"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <svg className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -162,20 +117,20 @@ export default function BohagsflyttpPage() {
             </ul>
           </div>
 
-          {/* Guarantees */}
+          {/* Certifications */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-              Våra garantier
+              Våra certifikat
             </h2>
             <ul className="space-y-3">
               {[
+                "F-skattesedel",
+                "Yrkestrafiktillstånd",
                 "Ansvarsförsäkring",
-                "Punktlighet och tillförlitlighet",
-                "Erfaren och utbildad personal",
-                "Säker hantering av bohag",
-                "Fast pris utan överraskningar",
-                "Moderna och välskötta fordon",
-                "Fullständig flyttservice",
+                "Erfaren personal",
+                "Specialutrustning",
+                "Professionell service",
+                "Kvalitetskontroll",
                 "Nöjd-kund-garanti"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
@@ -192,19 +147,19 @@ export default function BohagsflyttpPage() {
         {/* Preparation Section */}
         <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg shadow-lg p-8 text-white mb-16">
           <h2 className="text-2xl font-bold mb-6">
-            Inför flyttdagen
+            Inför flytten
           </h2>
           <p className="text-white/90 mb-6">
-            För att göra din flytt så smidig som möjligt, tänk på följande:
+            För att göra flytten så smidig som möjligt, tänk på följande:
           </p>
           <ul className="grid md:grid-cols-2 gap-4">
             {[
-              "Märk upp kartonger tydligt",
-              "Packa inte kartongerna för tunga",
-              "Töm garderober och skåp",
-              "Samla småsaker i lådor",
-              "Förbered värdesaker separat",
-              "Ha viktiga dokument lättillgängliga"
+              "Planera flytten i god tid",
+              "Inventera utrustning och möbler",
+              "Backa upp viktig data",
+              "Markera känslig utrustning",
+              "Informera personalen",
+              "Planera för driftstopp"
             ].map((item, index) => (
               <li key={index} className="flex items-start">
                 <svg className="w-5 h-5 text-white mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -217,16 +172,17 @@ export default function BohagsflyttpPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#0F172A] mb-4">
-            Redo att planera din flytt?
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-[#0F172A] mb-6">
+            Låt oss hjälpa dig med din kontorsflytt
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Kontakta oss för en kostnadsfri offert och låt oss hjälpa dig med en smidig flytt!
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Vi anpassar vår service efter dina behov och säkerställer att allt går smidigt och säkert.
+            Kontakta oss för en kostnadsfri offert och planering av din flytt.
           </p>
           <Link 
             href="/fa-offert" 
-            className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity inline-block font-medium"
+            className="inline-block bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity font-medium"
           >
             Få offert
           </Link>

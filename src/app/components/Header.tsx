@@ -1,7 +1,35 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
 
 export default function Header() {
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout>();
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 200); // 200ms delay before closing
+  };
+
   return (
     <header className="sticky top-0 z-50">
       {/* Contact Bar */}
@@ -54,9 +82,37 @@ export default function Header() {
             <div className="hidden md:flex items-center space-x-8">
               <nav className="flex items-center space-x-8">
                 <Link href="/" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Hem</Link>
-                <Link href="/bohagsflytt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Bohagsflytt</Link>
-                <Link href="/flyttstadning" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Flyttstädning</Link>
-                <Link href="/barhjalp" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Bärhjälp</Link>
+                
+                {/* Services Dropdown */}
+                <div 
+                  ref={dropdownRef}
+                  className="relative"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <button className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide flex items-center">
+                    Tjänster
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  
+                  {isServicesOpen && (
+                    <div 
+                      className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2"
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <Link href="/bohagsflytt" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Bohagsflytt</Link>
+                      <Link href="/flyttstadning" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Flyttstädning</Link>
+                      <Link href="/barhjalp" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Bärhjälp</Link>
+                      <Link href="/piano-tunglyft" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Piano/Tunglyft</Link>
+                      <Link href="/kontorsflytt" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Kontorsflytt</Link>
+                      <Link href="/montering" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Montering</Link>
+                    </div>
+                  )}
+                </div>
+
                 <Link href="/om-oss" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Om oss</Link>
                 <Link href="/kontakt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Kontakt</Link>
               </nav>

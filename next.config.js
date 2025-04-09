@@ -18,11 +18,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'api.dicebear.com',
-        port: '',
-        pathname: '/**',
+        pathname: '/7.x/**',
       },
     ],
     domains: ['localhost'],
+    dangerouslyAllowSVG: true,
   }
 }
 

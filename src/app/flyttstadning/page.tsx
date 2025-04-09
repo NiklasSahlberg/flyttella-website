@@ -17,9 +17,9 @@ export default function FlyttstadningPage() {
               <Link href="/fa-offert" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
                 Få offert
               </Link>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#0F172A] transition-all font-medium">
+              <Link href="/kontakt" className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#0F172A] transition-all font-medium">
                 Kontakta oss
-              </button>
+              </Link>
             </div>
           </div>
         </div>

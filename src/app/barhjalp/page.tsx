@@ -47,12 +47,12 @@ export default function BarhjalpPage() {
                   </p>
                 </div>
                 <div className="flex-1">
-                  <div className="relative h-[300px] w-full">
+                  <div className="relative h-[400px] w-full">
                     <Image
                       src="/barhjalp.png"
                       alt="Bärhjälp"
                       fill
-                      className="object-contain"
+                      className="object-cover rounded-lg"
                       priority
                     />
                   </div>
