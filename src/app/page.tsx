@@ -267,17 +267,17 @@ export default function Home() {
                   Erfarenhet med alla typer av bostäder. Vi erbjuder skräddarsydda lösningar för flytt i Täby.
                 </p>
               </Link>
-              <Link href="/flyttfirma-i-jarfalla" className="group">
-                <h3 className="text-xl font-semibold text-[#0F172A] group-hover:text-[#10B981] transition-colors">Järfälla</h3>
-                <p className="text-gray-600">Erfarenhet med både höghus och villor i hela kommunen</p>
+              <Link href="/flyttfirma-i-jarfalla" className="block p-8 rounded-xl bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity">
+                <h2 className="text-2xl font-bold mb-4">Järfälla</h2>
+                <p>Erfarenhet med både höghus och villor i hela kommunen</p>
               </Link>
-              <Link href="/flyttfirma-i-bromma" className="group">
-                <h3 className="text-xl font-semibold text-[#0F172A] group-hover:text-[#10B981] transition-colors">Bromma</h3>
-                <p className="text-gray-600">Erfarenhet med alla typer av bostäder - från lägenheter till villor</p>
+              <Link href="/flyttfirma-i-bromma" className="block p-8 rounded-xl bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity">
+                <h2 className="text-2xl font-bold mb-4">Bromma</h2>
+                <p>Erfarenhet med alla typer av bostäder - från lägenheter till villor</p>
               </Link>
-              <Link href="/flyttfirma-i-sundbyberg" className="group">
-                <h3 className="text-xl font-semibold text-[#0F172A] group-hover:text-[#10B981] transition-colors">Sundbyberg</h3>
-                <p className="text-gray-600">Erfarenhet med både lägenheter och villor i hela kommunen</p>
+              <Link href="/flyttfirma-i-sundbyberg" className="block p-8 rounded-xl bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity">
+                <h2 className="text-2xl font-bold mb-4">Sundbyberg</h2>
+                <p>Erfarenhet med både lägenheter och villor i hela kommunen</p>
               </Link>
               {/* Add more locations here as needed */}
             </div>
