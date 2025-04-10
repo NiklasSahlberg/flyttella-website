@@ -244,40 +244,31 @@ export default function Home() {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Link href="/flyttfirma-i-norrmalm" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold mb-4">Norrmalm</h3>
-                <p className="text-white/90">
-                  Professionell flyttservice i Norrmalm. Vi erbjuder flyttstädning, packning och bohagsflytt i Norrmalm.
-                </p>
+                <h3 className="text-2xl font-bold">Norrmalm</h3>
+              </Link>
+              <Link href="/flyttfirma-i-kungsholmen" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
+                <h3 className="text-2xl font-bold">Kungsholmen</h3>
+              </Link>
+              <Link href="/flyttfirma-i-ostermalm" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
+                <h3 className="text-2xl font-bold">Östermalm</h3>
               </Link>
               <Link href="/flyttfirma-i-vasastan" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold mb-4">Vasastan</h3>
-                <p className="text-white/90">
-                  Specialiserade på flytt i historiska fastigheter. Vi erbjuder skräddarsydda lösningar för flytt i Vasastan.
-                </p>
+                <h3 className="text-2xl font-bold">Vasastan</h3>
               </Link>
               <Link href="/flyttfirma-i-bro" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold mb-4">Bro</h3>
-                <p className="text-white/90">
-                  Specialiserade på flytt i villor och större bostäder. Vi erbjuder skräddarsydda lösningar för flytt i Bro.
-                </p>
+                <h3 className="text-2xl font-bold">Bro</h3>
               </Link>
               <Link href="/flyttfirma-i-taby" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold mb-4">Täby</h3>
-                <p className="text-white/90">
-                  Erfarenhet med alla typer av bostäder. Vi erbjuder skräddarsydda lösningar för flytt i Täby.
-                </p>
+                <h3 className="text-2xl font-bold">Täby</h3>
               </Link>
-              <Link href="/flyttfirma-i-jarfalla" className="block p-8 rounded-xl bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity">
-                <h2 className="text-2xl font-bold mb-4">Järfälla</h2>
-                <p>Erfarenhet med både höghus och villor i hela kommunen</p>
+              <Link href="/flyttfirma-i-jarfalla" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
+                <h3 className="text-2xl font-bold">Järfälla</h3>
               </Link>
-              <Link href="/flyttfirma-i-bromma" className="block p-8 rounded-xl bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity">
-                <h2 className="text-2xl font-bold mb-4">Bromma</h2>
-                <p>Erfarenhet med alla typer av bostäder - från lägenheter till villor</p>
+              <Link href="/flyttfirma-i-bromma" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
+                <h3 className="text-2xl font-bold">Bromma</h3>
               </Link>
-              <Link href="/flyttfirma-i-sundbyberg" className="block p-8 rounded-xl bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity">
-                <h2 className="text-2xl font-bold mb-4">Sundbyberg</h2>
-                <p>Erfarenhet med både lägenheter och villor i hela kommunen</p>
+              <Link href="/flyttfirma-i-sundbyberg" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
+                <h3 className="text-2xl font-bold">Sundbyberg</h3>
               </Link>
               {/* Add more locations here as needed */}
             </div>
