@@ -236,6 +236,54 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Här finns vi Section */}
+        <section className="section-padding bg-white">
+          <div className="container mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-16">
+              HÄR FINNS VI
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Link href="/flyttfirma-i-norrmalm" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
+                <h3 className="text-2xl font-bold mb-4">Norrmalm</h3>
+                <p className="text-white/90">
+                  Professionell flyttservice i Norrmalm. Vi erbjuder flyttstädning, packning och bohagsflytt i Norrmalm.
+                </p>
+              </Link>
+              <Link href="/flyttfirma-i-vasastan" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
+                <h3 className="text-2xl font-bold mb-4">Vasastan</h3>
+                <p className="text-white/90">
+                  Specialiserade på flytt i historiska fastigheter. Vi erbjuder skräddarsydda lösningar för flytt i Vasastan.
+                </p>
+              </Link>
+              <Link href="/flyttfirma-i-bro" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
+                <h3 className="text-2xl font-bold mb-4">Bro</h3>
+                <p className="text-white/90">
+                  Specialiserade på flytt i villor och större bostäder. Vi erbjuder skräddarsydda lösningar för flytt i Bro.
+                </p>
+              </Link>
+              <Link href="/flyttfirma-i-taby" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
+                <h3 className="text-2xl font-bold mb-4">Täby</h3>
+                <p className="text-white/90">
+                  Erfarenhet med alla typer av bostäder. Vi erbjuder skräddarsydda lösningar för flytt i Täby.
+                </p>
+              </Link>
+              <Link href="/flyttfirma-i-jarfalla" className="group">
+                <h3 className="text-xl font-semibold text-[#0F172A] group-hover:text-[#10B981] transition-colors">Järfälla</h3>
+                <p className="text-gray-600">Erfarenhet med både höghus och villor i hela kommunen</p>
+              </Link>
+              <Link href="/flyttfirma-i-bromma" className="group">
+                <h3 className="text-xl font-semibold text-[#0F172A] group-hover:text-[#10B981] transition-colors">Bromma</h3>
+                <p className="text-gray-600">Erfarenhet med alla typer av bostäder - från lägenheter till villor</p>
+              </Link>
+              <Link href="/flyttfirma-i-sundbyberg" className="group">
+                <h3 className="text-xl font-semibold text-[#0F172A] group-hover:text-[#10B981] transition-colors">Sundbyberg</h3>
+                <p className="text-gray-600">Erfarenhet med både lägenheter och villor i hela kommunen</p>
+              </Link>
+              {/* Add more locations here as needed */}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="section-padding bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div>
