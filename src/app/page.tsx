@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import ReviewsWidget from "./components/ReviewsWidget";
@@ -202,6 +201,30 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Se alla våra tjänster Section */}
+        <section className="py-16 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Upptäck Alla Våra Tjänster
+              </h2>
+              <p className="text-lg md:text-xl mb-8 text-white/90">
+                Vi erbjuder ett komplett utbud av flyttjänster för att göra din flytt så smidig som möjligt. 
+                Från bohagsflytt och flyttstädning till specialtjänster som piano- och kontorsflytt.
+              </p>
+              <Link 
+                href="/tjanster" 
+                className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
+              >
+                Se alla våra tjänster
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>

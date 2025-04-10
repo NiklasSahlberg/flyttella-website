@@ -6,6 +6,8 @@ import { useState, useRef, useEffect } from "react";
 
 export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout>();
 
@@ -30,29 +32,38 @@ export default function Header() {
     }, 200); // 200ms delay before closing
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileServicesOpen(false);
+  };
+
+  const toggleMobileServices = () => {
+    setIsMobileServicesOpen(!isMobileServicesOpen);
+  };
+
   return (
     <header className="sticky top-0 z-50">
       {/* Contact Bar */}
       <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-8">
-            <div className="flex items-center divide-x divide-white/20">
-              <div className="flex items-center pr-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-white/80 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="flex flex-col md:flex-row md:justify-between items-center py-2 md:py-0 md:h-8">
+            <div className="flex flex-col md:flex-row md:items-center md:divide-x divide-white/20 space-y-1 md:space-y-0">
+              <div className="flex items-center justify-center md:pr-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white/80 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-sm text-white/90">Mån-Fre: 08:00-18:00</span>
+                <span className="text-sm font-medium text-white/90">Mån-Fre: 08:00-18:00</span>
               </div>
-              <div className="flex items-center px-6">
-                <span className="text-sm text-white/90">Lör-Sön: Stängt</span>
+              <div className="flex items-center justify-center md:px-6">
+                <span className="text-sm font-medium text-white/90">Lör-Sön: Stängt</span>
               </div>
             </div>
-            <div className="flex items-center">
-              <a href="tel:08-630-07-25" className="flex items-center group">
+            <div className="flex items-center mt-1 md:mt-0">
+              <a href="tel:08-630-07-25" className="flex items-center group bg-white/10 rounded-full px-4 py-1 md:py-0.5">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white/80 group-hover:text-white transition-colors mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-sm font-medium text-white/90 group-hover:text-white transition-colors">08-630 07 25</span>
+                <span className="text-sm font-medium text-white group-hover:text-white transition-colors">08-630 07 25</span>
               </a>
             </div>
           </div>
@@ -126,11 +137,83 @@ export default function Header() {
             </div>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-[#0F172A] hover:text-[#10B981] transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button 
+              onClick={toggleMobileMenu}
+              className="md:hidden text-[#0F172A] hover:text-[#10B981] transition-colors"
+            >
+              {isMobileMenuOpen ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+          <div className="px-4 pt-2 pb-3 space-y-1 bg-white border-t">
+            <Link 
+              href="/" 
+              className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Hem
+            </Link>
+            
+            {/* Mobile Services Menu */}
+            <div>
+              <button 
+                onClick={toggleMobileServices}
+                className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]"
+              >
+                <span>Tjänster</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className={`h-4 w-4 transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <div className={`${isMobileServicesOpen ? 'block' : 'hidden'} pl-4`}>
+                <Link href="/bohagsflytt" className="block px-3 py-2 text-sm text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Bohagsflytt</Link>
+                <Link href="/flyttstadning" className="block px-3 py-2 text-sm text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Flyttstädning</Link>
+                <Link href="/barhjalp" className="block px-3 py-2 text-sm text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Bärhjälp</Link>
+                <Link href="/piano-tunglyft" className="block px-3 py-2 text-sm text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Piano/Tunglyft</Link>
+                <Link href="/kontorsflytt" className="block px-3 py-2 text-sm text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Kontorsflytt</Link>
+                <Link href="/montering" className="block px-3 py-2 text-sm text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Montering</Link>
+              </div>
+            </div>
+
+            <Link 
+              href="/om-oss" 
+              className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Om oss
+            </Link>
+            <Link 
+              href="/kontakt" 
+              className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Kontakt
+            </Link>
+            <Link 
+              href="/fa-offert" 
+              className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Få offert
+            </Link>
           </div>
         </div>
       </div>
