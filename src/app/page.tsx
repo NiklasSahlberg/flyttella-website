@@ -136,7 +136,7 @@ export default function Home() {
                   </li>
                 </ul>
                 <div className="mt-8">
-                  <Link href="/fa-offert" className="bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-gray-100 transition-colors font-medium inline-block">
+                  <Link href="/fa-stadning-offert" className="bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-gray-100 transition-colors font-medium inline-block">
                     Boka städning
                   </Link>
                 </div>

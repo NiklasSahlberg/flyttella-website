@@ -8,6 +8,7 @@ export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout>();
 
@@ -128,12 +129,31 @@ export default function Header() {
                 <Link href="/kontakt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Kontakt</Link>
               </nav>
 
-              <Link 
-                href="/fa-offert" 
-                className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity"
+              {/* Quote Button Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsQuoteOpen(true)}
+                onMouseLeave={() => setIsQuoteOpen(false)}
               >
-                FÅ OFFERT
-              </Link>
+                <button 
+                  className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity flex items-center"
+                >
+                  FÅ OFFERT
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {isQuoteOpen && (
+                  <div 
+                    className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2"
+                  >
+                    <Link href="/fa-offert" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Flyttoffert</Link>
+                    <Link href="/fa-stadning-offert" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Städoffert</Link>
+                  </div>
+                )}
+              </div>
+
             </div>
 
             {/* Mobile Menu Button */}
@@ -207,13 +227,22 @@ export default function Header() {
             >
               Kontakt
             </Link>
-            <Link 
-              href="/fa-offert" 
-              className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Få offert
-            </Link>
+            <div className="space-y-1">
+              <Link 
+                href="/fa-offert" 
+                className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Flyttoffert
+              </Link>
+              <Link 
+                href="/fa-stadning-offert" 
+                className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Städoffert
+              </Link>
+            </div>
           </div>
         </div>
       </div>
