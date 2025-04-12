@@ -104,6 +104,9 @@ export default function FaStadningOffert() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   useEffect(() => {
     if (!isGoogleMapsLoaded) return;
@@ -370,77 +373,29 @@ export default function FaStadningOffert() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Mark all fields as touched when submitting
-    setTouchedFields({
-      name: true,
-      email: true,
-      phone: true,
-      address: true,
-      streetNumber: true,
-      postalCode: true,
-      movingDate: true,
-      typeOfHome: true,
-      numberOfFloors: true,
-      entireHome: true,
-      squareMeters: true,
-      flexibleMovingDate: formData.wantsFlexibleDate
-    });
-    
-    // Validate all steps before submission
-    const step1Valid = validateStep1();
-    const step2Valid = validateStep2();
-    const step3Valid = validateStep3();
-    const step4Valid = validateStep4();
-
-    if (!step1Valid || !step2Valid || !step3Valid || !step4Valid) {
-      // If any step is invalid, show the first invalid step
-      if (!step1Valid) setStep(1);
-      else if (!step2Valid) setStep(2);
-      else if (!step3Valid) setStep(3);
-      else if (!step4Valid) setStep(4);
-      return;
-    }
+    setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
-      // Here you would typically send the form data to your backend
-      console.log("Form submitted:", formData);
-      
-      // Redirect to thank you page or show success message
-      alert("Tack för din förfrågan! Vi återkommer så snart som möjligt.");
-      
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        typeOfHome: "",
-        numberOfFloors: "",
-        entireHome: "",
-        bedrooms: 0,
-        bathrooms: 0,
-        kitchen: 0,
-        livingRoom: 0,
-        otherRooms: 0,
-        hasGarage: false,
-        hasBalcony: false,
-        hasStorage: false,
-        squareMeters: "",
-        comments: "",
-        movingDate: "",
-        flexibleMovingDate: "",
-        wantsFlexibleDate: false,
-        additionalInfo: "",
-        address: "",
-        streetNumber: "",
-        postalCode: ""
+      const response = await fetch('/api/send-cleaning-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setStep(1);
-      setErrors({});
-      setTouchedFields({});
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send request');
+      }
+
+      setSubmitSuccess(true);
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Ett fel uppstod när formuläret skulle skickas. Vänligen försök igen.");
+      console.error('Error submitting form:', error);
+      setSubmitError('Ett fel uppstod när förfrågan skulle skickas. Vänligen försök igen senare.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -521,793 +476,812 @@ export default function FaStadningOffert() {
               Få offert på flyttstädning
             </h1>
             
-            <div className="mb-8">
-              <div className="flex justify-between mb-2">
-                {[1, 2, 3, 4, 5].map((stepNumber) => (
-                  <div
-                    key={stepNumber}
-                    className={`flex items-center ${
-                      stepNumber === step ? "text-[#10B981]" : "text-gray-400"
-                    }`}
-                  >
-                    <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${
-                        stepNumber === step
-                          ? "bg-[#10B981] text-white"
-                          : "bg-gray-200"
-                      }`}
-                    >
-                      {stepNumber}
-                    </div>
-                    <span className="text-sm">
-                      {stepNumber === 1 ? "Datum" : 
-                       stepNumber === 2 ? "Bostad" : 
-                       stepNumber === 3 ? "Rum" :
-                       stepNumber === 4 ? "Kontakt" :
-                       "Bekräfta"}
-                    </span>
-                  </div>
-                ))}
+            {submitSuccess ? (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
+                <strong className="font-bold">Tack för din förfrågan!</strong>
+                <span className="block sm:inline"> Vi återkommer så snart som möjligt.</span>
               </div>
-              <div className="h-2 bg-gray-200 rounded-full">
-                <div 
-                  className="h-full bg-[#10B981] rounded-full transition-all duration-300"
-                  style={{ width: `${((step - 1) / 4) * 100}%` }}
-                ></div>
-              </div>
-            </div>
-
-            <form onSubmit={handleSubmit} noValidate>
-              {step === 1 && (
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Önskat städdatum</label>
-                    <input
-                      type="date"
-                      name="movingDate"
-                      value={formData.movingDate}
-                      onChange={handleInputChange}
-                      min={(() => {
-                        const tomorrow = new Date();
-                        tomorrow.setDate(tomorrow.getDate() + 1);
-                        return tomorrow.toISOString().split('T')[0];
-                      })()}
-                      onKeyDown={(e) => e.preventDefault()}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                        errors.movingDate ? "border-red-500" : "border-gray-300"
-                      }`}
-                    />
-                    {errors.movingDate && (
-                      <p className="mt-1 text-sm text-red-600">{errors.movingDate}</p>
-                    )}
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center">
-                      <input
-                        type="checkbox"
-                        name="wantsFlexibleDate"
-                        checked={formData.wantsFlexibleDate}
-                        onChange={(e) => {
-                          setFormData(prev => ({
-                            ...prev,
-                            wantsFlexibleDate: e.target.checked,
-                            flexibleMovingDate: e.target.checked ? prev.flexibleMovingDate : ""
-                          }));
-                          setErrors(prev => {
-                            const newErrors = { ...prev };
-                            if (!e.target.checked) {
-                              delete newErrors.flexibleMovingDate;
-                            }
-                            return newErrors;
-                          });
-                        }}
-                        className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
-                      />
-                      <label className="ml-2 text-sm text-gray-700">
-                        Jag är flexibel med städdatum
-                      </label>
-                    </div>
-                    {formData.wantsFlexibleDate && (
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Flexibelt städdatum</label>
-                        <select
-                          name="flexibleMovingDate"
-                          value={formData.flexibleMovingDate}
-                          onChange={handleInputChange}
-                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                            errors.flexibleMovingDate ? "border-red-500" : "border-gray-300"
+            ) : (
+              <>
+                <div className="mb-8">
+                  <div className="flex justify-between mb-2">
+                    {[1, 2, 3, 4, 5].map((stepNumber) => (
+                      <div
+                        key={stepNumber}
+                        className={`flex items-center ${
+                          stepNumber === step ? "text-[#10B981]" : "text-gray-400"
+                        }`}
+                      >
+                        <div
+                          className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${
+                            stepNumber === step
+                              ? "bg-[#10B981] text-white"
+                              : "bg-gray-200"
                           }`}
                         >
-                          <option value="">-- Välj --</option>
-                          <option value="1">+ 1 dag</option>
-                          <option value="2">+ 2 dagar</option>
-                          <option value="3">+ 3 dagar</option>
-                          <option value="4">+ 4 dagar</option>
-                          <option value="5">+ 5 dagar</option>
-                          <option value="6">+ 6 dagar</option>
-                          <option value="7">+ 1 vecka</option>
-                          <option value="14">+ 2 veckor</option>
-                          <option value="21">+ 3 veckor</option>
-                          <option value="30">+ 1 månad</option>
-                          <option value="31+">+ mer än 1 månad</option>
-                        </select>
-                        {errors.flexibleMovingDate && (
-                          <p className="mt-1 text-sm text-red-600">{errors.flexibleMovingDate}</p>
+                          {stepNumber}
+                        </div>
+                        <span className="text-sm">
+                          {stepNumber === 1 ? "Datum" : 
+                           stepNumber === 2 ? "Bostad" : 
+                           stepNumber === 3 ? "Rum" :
+                           stepNumber === 4 ? "Kontakt" :
+                           "Bekräfta"}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="h-2 bg-gray-200 rounded-full">
+                    <div 
+                      className="h-full bg-[#10B981] rounded-full transition-all duration-300"
+                      style={{ width: `${((step - 1) / 4) * 100}%` }}
+                    ></div>
+                  </div>
+                </div>
+
+                {submitError && (
+                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+                    <strong className="font-bold">Ett fel uppstod!</strong>
+                    <span className="block sm:inline"> {submitError}</span>
+                  </div>
+                )}
+
+                <form onSubmit={handleSubmit} noValidate>
+                  {step === 1 && (
+                    <div className="space-y-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Önskat städdatum</label>
+                        <input
+                          type="date"
+                          name="movingDate"
+                          value={formData.movingDate}
+                          onChange={handleInputChange}
+                          min={(() => {
+                            const tomorrow = new Date();
+                            tomorrow.setDate(tomorrow.getDate() + 1);
+                            return tomorrow.toISOString().split('T')[0];
+                          })()}
+                          onKeyDown={(e) => e.preventDefault()}
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.movingDate ? "border-red-500" : "border-gray-300"
+                          }`}
+                        />
+                        {errors.movingDate && (
+                          <p className="mt-1 text-sm text-red-600">{errors.movingDate}</p>
                         )}
-                        <p className="mt-2 text-sm text-gray-600">
-                          Om du väljer ett flexibelt städdatum sker städningen inom vald tidsperiod från det datum du har valt.
-                        </p>
                       </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {step === 2 && (
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Vilken sorts bostad ska städas?
-                    </label>
-                    <select
-                      name="typeOfHome"
-                      value={formData.typeOfHome}
-                      onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                        errors.typeOfHome ? "border-red-500" : "border-gray-300"
-                      }`}
-                    >
-                      <option value="">Välj bostadstyp</option>
-                      <option value="villa">Villa</option>
-                      <option value="lagenhet">Lägenhet</option>
-                      <option value="parhus">Parhus</option>
-                      <option value="radhus">Radhus</option>
-                      <option value="fritidshus">Fritidshus</option>
-                      <option value="annat">Annat</option>
-                    </select>
-                    {errors.typeOfHome && (
-                      <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Hur många våningar ska städas?
-                    </label>
-                    <select
-                      name="numberOfFloors"
-                      value={formData.numberOfFloors}
-                      onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                        errors.numberOfFloors ? "border-red-500" : "border-gray-300"
-                      }`}
-                    >
-                      <option value="">Välj antal våningar</option>
-                      <option value="1">1 våning</option>
-                      <option value="2">2 våningar</option>
-                      <option value="3">3 våningar</option>
-                      <option value="4">4 våningar eller fler</option>
-                    </select>
-                    {errors.numberOfFloors && (
-                      <p className="mt-1 text-sm text-red-600">{errors.numberOfFloors}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Ska hela bostaden städas?
-                    </label>
-                    <select
-                      name="entireHome"
-                      value={formData.entireHome}
-                      onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                        errors.entireHome ? "border-red-500" : "border-gray-300"
-                      }`}
-                    >
-                      <option value="">Välj alternativ</option>
-                      <option value="yes">Ja, hela bostaden</option>
-                      <option value="no">Nej, endast delar av bostaden</option>
-                    </select>
-                    {errors.entireHome && (
-                      <p className="mt-1 text-sm text-red-600">{errors.entireHome}</p>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {step === 3 && (
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="block text-sm font-medium text-gray-700 mb-3">
-                      Ange antalet rum som ska städas
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between border-b pb-2">
-                        <span>Sovrum</span>
-                        <div className="flex items-center gap-4">
-                          <button
-                            type="button"
-                            onClick={() => setFormData(prev => ({
-                              ...prev,
-                              bedrooms: Math.max(0, prev.bedrooms - 1)
-                            }))}
-                            className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                          >
-                            -
-                          </button>
-                          <span className="w-4 text-center">{formData.bedrooms}</span>
-                          <button
-                            type="button"
-                            onClick={() => {
+                      <div className="space-y-4">
+                        <div className="flex items-center">
+                          <input
+                            type="checkbox"
+                            name="wantsFlexibleDate"
+                            checked={formData.wantsFlexibleDate}
+                            onChange={(e) => {
                               setFormData(prev => ({
                                 ...prev,
-                                bedrooms: prev.bedrooms + 1
+                                wantsFlexibleDate: e.target.checked,
+                                flexibleMovingDate: e.target.checked ? prev.flexibleMovingDate : ""
                               }));
                               setErrors(prev => {
                                 const newErrors = { ...prev };
-                                delete newErrors.rooms;
+                                if (!e.target.checked) {
+                                  delete newErrors.flexibleMovingDate;
+                                }
                                 return newErrors;
                               });
                             }}
-                            className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                          >
-                            +
-                          </button>
+                            className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
+                          />
+                          <label className="ml-2 text-sm text-gray-700">
+                            Jag är flexibel med städdatum
+                          </label>
                         </div>
-                      </div>
-
-                      <div className="flex items-center justify-between border-b pb-2">
-                        <span>Badrum</span>
-                        <div className="flex items-center gap-4">
-                          <button
-                            type="button"
-                            onClick={() => setFormData(prev => ({
-                              ...prev,
-                              bathrooms: Math.max(0, prev.bathrooms - 1)
-                            }))}
-                            className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                          >
-                            -
-                          </button>
-                          <span className="w-4 text-center">{formData.bathrooms}</span>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setFormData(prev => ({
-                                ...prev,
-                                bathrooms: prev.bathrooms + 1
-                              }));
-                              setErrors(prev => {
-                                const newErrors = { ...prev };
-                                delete newErrors.rooms;
-                                return newErrors;
-                              });
-                            }}
-                            className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between border-b pb-2">
-                        <span>Kök</span>
-                        <div className="flex items-center gap-4">
-                          <button
-                            type="button"
-                            onClick={() => setFormData(prev => ({
-                              ...prev,
-                              kitchen: Math.max(0, prev.kitchen - 1)
-                            }))}
-                            className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                          >
-                            -
-                          </button>
-                          <span className="w-4 text-center">{formData.kitchen}</span>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setFormData(prev => ({
-                                ...prev,
-                                kitchen: prev.kitchen + 1
-                              }));
-                              setErrors(prev => {
-                                const newErrors = { ...prev };
-                                delete newErrors.rooms;
-                                return newErrors;
-                              });
-                            }}
-                            className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between border-b pb-2">
-                        <span>Vardagsrum</span>
-                        <div className="flex items-center gap-4">
-                          <button
-                            type="button"
-                            onClick={() => setFormData(prev => ({
-                              ...prev,
-                              livingRoom: Math.max(0, prev.livingRoom - 1)
-                            }))}
-                            className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                          >
-                            -
-                          </button>
-                          <span className="w-4 text-center">{formData.livingRoom}</span>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setFormData(prev => ({
-                                ...prev,
-                                livingRoom: prev.livingRoom + 1
-                              }));
-                              setErrors(prev => {
-                                const newErrors = { ...prev };
-                                delete newErrors.rooms;
-                                return newErrors;
-                              });
-                            }}
-                            className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between border-b pb-2">
-                        <span>Övriga rum</span>
-                        <div className="flex items-center gap-4">
-                          <button
-                            type="button"
-                            onClick={() => setFormData(prev => ({
-                              ...prev,
-                              otherRooms: Math.max(0, prev.otherRooms - 1)
-                            }))}
-                            className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                          >
-                            -
-                          </button>
-                          <span className="w-4 text-center">{formData.otherRooms}</span>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setFormData(prev => ({
-                                ...prev,
-                                otherRooms: prev.otherRooms + 1
-                              }));
-                              setErrors(prev => {
-                                const newErrors = { ...prev };
-                                delete newErrors.rooms;
-                                return newErrors;
-                              });
-                            }}
-                            className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                          >
-                            +
-                          </button>
-                        </div>
+                        {formData.wantsFlexibleDate && (
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Flexibelt städdatum</label>
+                            <select
+                              name="flexibleMovingDate"
+                              value={formData.flexibleMovingDate}
+                              onChange={handleInputChange}
+                              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                                errors.flexibleMovingDate ? "border-red-500" : "border-gray-300"
+                              }`}
+                            >
+                              <option value="">-- Välj --</option>
+                              <option value="1">+ 1 dag</option>
+                              <option value="2">+ 2 dagar</option>
+                              <option value="3">+ 3 dagar</option>
+                              <option value="4">+ 4 dagar</option>
+                              <option value="5">+ 5 dagar</option>
+                              <option value="6">+ 6 dagar</option>
+                              <option value="7">+ 1 vecka</option>
+                              <option value="14">+ 2 veckor</option>
+                              <option value="21">+ 3 veckor</option>
+                              <option value="30">+ 1 månad</option>
+                              <option value="31+">+ mer än 1 månad</option>
+                            </select>
+                            {errors.flexibleMovingDate && (
+                              <p className="mt-1 text-sm text-red-600">{errors.flexibleMovingDate}</p>
+                            )}
+                            <p className="mt-2 text-sm text-gray-600">
+                              Om du väljer ett flexibelt städdatum sker städningen inom vald tidsperiod från det datum du har valt.
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </div>
-                  </div>
-
-                  {errors.rooms && (
-                    <p className="mt-1 text-sm text-red-600">{errors.rooms}</p>
                   )}
 
-                  <div>
-                    <h3 className="block text-sm font-medium text-gray-700 mb-3">
-                      Välj om du vill ha städning av följande
-                    </h3>
-                    <div className="space-y-3">
-                      <div className="flex items-center">
-                        <input
-                          type="checkbox"
-                          name="hasGarage"
-                          checked={formData.hasGarage}
-                          onChange={handleInputChange}
-                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
-                        />
-                        <label className="ml-2 text-sm text-gray-700">
-                          Garage
+                  {step === 2 && (
+                    <div className="space-y-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Vilken sorts bostad ska städas?
                         </label>
-                      </div>
-                      <div className="flex items-center">
-                        <input
-                          type="checkbox"
-                          name="hasBalcony"
-                          checked={formData.hasBalcony}
+                        <select
+                          name="typeOfHome"
+                          value={formData.typeOfHome}
                           onChange={handleInputChange}
-                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
-                        />
-                        <label className="ml-2 text-sm text-gray-700">
-                          Balkong/veranda/terrass
-                        </label>
-                      </div>
-                      <div className="flex items-center">
-                        <input
-                          type="checkbox"
-                          name="hasStorage"
-                          checked={formData.hasStorage}
-                          onChange={handleInputChange}
-                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
-                        />
-                        <label className="ml-2 text-sm text-gray-700">
-                          Förråd/uthus
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Ungefär hur stor yta ska städas?
-                    </label>
-                    <div className="relative">
-                      <input
-                        type="text"
-                        name="squareMeters"
-                        value={formData.squareMeters}
-                        onChange={handleInputChange}
-                        inputMode="numeric"
-                        pattern="[0-9]*"
-                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                          errors.squareMeters ? "border-red-500" : "border-gray-300"
-                        }`}
-                      />
-                      <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">kvm</span>
-                    </div>
-                    {errors.squareMeters && (
-                      <p className="mt-1 text-sm text-red-600">{errors.squareMeters}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Kommentarer (frivilligt)
-                    </label>
-                    <textarea
-                      name="comments"
-                      value={formData.comments}
-                      onChange={handleInputChange}
-                      placeholder="Här kan du nämna särskilda detaljer, t.ex. om du har stuckaturer som behöver rengöras varsamt."
-                      rows={4}
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
-                    ></textarea>
-                  </div>
-                </div>
-              )}
-
-              {step === 4 && (
-                <div className="space-y-6">
-                  <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktinformation</h2>
-                  <p className="text-sm text-gray-700 mb-6">Tjänsten är gratis och du är inte bunden till någonting.</p>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Ditt namn</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                          errors.name ? "border-red-500" : "border-gray-300"
-                        }`}
-                      />
-                      {errors.name && (
-                        <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">E-post</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                          errors.email ? "border-red-500" : "border-gray-300"
-                        }`}
-                      />
-                      {errors.email && (
-                        <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                          errors.phone ? "border-red-500" : "border-gray-300"
-                        }`}
-                      />
-                      {errors.phone && (
-                        <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
-                      )}
-                    </div>
-
-                    <div className="flex flex-col md:flex-row gap-4">
-                      <div className="flex-1">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Adress</label>
-                        <input
-                          type="text"
-                          id="address"
-                          name="address"
-                          value={formData.address}
-                          onChange={(e) => {
-                            setFormData({ ...formData, address: e.target.value });
-                            setErrors({ ...errors, address: "" });
-                          }}
-                          placeholder="Börja skriva din adress"
-                          required
-                          className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                            errors.address ? "border-red-500" : ""
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.typeOfHome ? "border-red-500" : "border-gray-300"
                           }`}
-                        />
-                        {errors.address && (
-                          <p className="mt-1 text-sm text-red-600">{errors.address}</p>
+                        >
+                          <option value="">Välj bostadstyp</option>
+                          <option value="villa">Villa</option>
+                          <option value="lagenhet">Lägenhet</option>
+                          <option value="parhus">Parhus</option>
+                          <option value="radhus">Radhus</option>
+                          <option value="fritidshus">Fritidshus</option>
+                          <option value="annat">Annat</option>
+                        </select>
+                        {errors.typeOfHome && (
+                          <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
                         )}
                       </div>
-                      <div className="md:w-1/4">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Gatunr.</label>
-                        <input
-                          type="text"
-                          name="streetNumber"
-                          value={formData.streetNumber}
-                          onChange={(e) => {
-                            // Must start with number, followed by optional single letter
-                            const value = e.target.value.replace(/[^0-9A-Za-z]/g, '').replace(/^([0-9]+)?([A-Za-z]?).*/g, '$1$2');
-                            if (/^[0-9]+[A-Za-z]?$/.test(value) || value === '') {
-                              setFormData({ ...formData, streetNumber: value });
-                              setErrors({ ...errors, streetNumber: "" });
-                            }
-                          }}
-                          onKeyDown={(e) => {
-                            // Allow only numbers, letters, backspace, delete, and arrow keys
-                            if (
-                              !/^[0-9A-Za-z]$/.test(e.key) && // not a number or letter
-                              e.key !== 'Backspace' &&
-                              e.key !== 'Delete' &&
-                              e.key !== 'ArrowLeft' &&
-                              e.key !== 'ArrowRight' &&
-                              e.key !== 'Tab'
-                            ) {
-                              e.preventDefault();
-                            }
-                            // If no numbers yet, prevent letters
-                            if (!/^[0-9]+/.test(formData.streetNumber) && /^[A-Za-z]$/.test(e.key)) {
-                              e.preventDefault();
-                            }
-                          }}
-                          placeholder="1A"
-                          required
-                          className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                            errors.streetNumber ? "border-red-500" : ""
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Hur många våningar ska städas?
+                        </label>
+                        <select
+                          name="numberOfFloors"
+                          value={formData.numberOfFloors}
+                          onChange={handleInputChange}
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.numberOfFloors ? "border-red-500" : "border-gray-300"
                           }`}
-                        />
-                        {errors.streetNumber && (
-                          <p className="mt-1 text-sm text-red-600">{errors.streetNumber}</p>
+                        >
+                          <option value="">Välj antal våningar</option>
+                          <option value="1">1 våning</option>
+                          <option value="2">2 våningar</option>
+                          <option value="3">3 våningar</option>
+                          <option value="4">4 våningar eller fler</option>
+                        </select>
+                        {errors.numberOfFloors && (
+                          <p className="mt-1 text-sm text-red-600">{errors.numberOfFloors}</p>
+                        )}
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Ska hela bostaden städas?
+                        </label>
+                        <select
+                          name="entireHome"
+                          value={formData.entireHome}
+                          onChange={handleInputChange}
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.entireHome ? "border-red-500" : "border-gray-300"
+                          }`}
+                        >
+                          <option value="">Välj alternativ</option>
+                          <option value="yes">Ja, hela bostaden</option>
+                          <option value="no">Nej, endast delar av bostaden</option>
+                        </select>
+                        {errors.entireHome && (
+                          <p className="mt-1 text-sm text-red-600">{errors.entireHome}</p>
                         )}
                       </div>
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Postnummer</label>
-                      <input
-                        type="text"
-                        name="postalCode"
-                        value={formData.postalCode}
-                        onChange={(e) => {
-                          // Only allow numbers and limit to 5 digits
-                          const value = e.target.value.replace(/\D/g, '').slice(0, 5);
-                          setFormData({ ...formData, postalCode: value });
-                          setErrors({ ...errors, postalCode: "" });
-                        }}
-                        placeholder="12345"
-                        required
-                        maxLength={5}
-                        pattern="\d{5}"
-                        className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                          errors.postalCode ? "border-red-500" : ""
-                        }`}
-                      />
-                      {errors.postalCode && (
-                        <p className="mt-1 text-sm text-red-600">{errors.postalCode}</p>
+                  )}
+
+                  {step === 3 && (
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="block text-sm font-medium text-gray-700 mb-3">
+                          Ange antalet rum som ska städas
+                        </h3>
+                        <div className="space-y-4">
+                          <div className="flex items-center justify-between border-b pb-2">
+                            <span>Sovrum</span>
+                            <div className="flex items-center gap-4">
+                              <button
+                                type="button"
+                                onClick={() => setFormData(prev => ({
+                                  ...prev,
+                                  bedrooms: Math.max(0, prev.bedrooms - 1)
+                                }))}
+                                className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
+                              >
+                                -
+                              </button>
+                              <span className="w-4 text-center">{formData.bedrooms}</span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setFormData(prev => ({
+                                    ...prev,
+                                    bedrooms: prev.bedrooms + 1
+                                  }));
+                                  setErrors(prev => {
+                                    const newErrors = { ...prev };
+                                    delete newErrors.rooms;
+                                    return newErrors;
+                                  });
+                                }}
+                                className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center justify-between border-b pb-2">
+                            <span>Badrum</span>
+                            <div className="flex items-center gap-4">
+                              <button
+                                type="button"
+                                onClick={() => setFormData(prev => ({
+                                  ...prev,
+                                  bathrooms: Math.max(0, prev.bathrooms - 1)
+                                }))}
+                                className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
+                              >
+                                -
+                              </button>
+                              <span className="w-4 text-center">{formData.bathrooms}</span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setFormData(prev => ({
+                                    ...prev,
+                                    bathrooms: prev.bathrooms + 1
+                                  }));
+                                  setErrors(prev => {
+                                    const newErrors = { ...prev };
+                                    delete newErrors.rooms;
+                                    return newErrors;
+                                  });
+                                }}
+                                className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center justify-between border-b pb-2">
+                            <span>Kök</span>
+                            <div className="flex items-center gap-4">
+                              <button
+                                type="button"
+                                onClick={() => setFormData(prev => ({
+                                  ...prev,
+                                  kitchen: Math.max(0, prev.kitchen - 1)
+                                }))}
+                                className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
+                              >
+                                -
+                              </button>
+                              <span className="w-4 text-center">{formData.kitchen}</span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setFormData(prev => ({
+                                    ...prev,
+                                    kitchen: prev.kitchen + 1
+                                  }));
+                                  setErrors(prev => {
+                                    const newErrors = { ...prev };
+                                    delete newErrors.rooms;
+                                    return newErrors;
+                                  });
+                                }}
+                                className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center justify-between border-b pb-2">
+                            <span>Vardagsrum</span>
+                            <div className="flex items-center gap-4">
+                              <button
+                                type="button"
+                                onClick={() => setFormData(prev => ({
+                                  ...prev,
+                                  livingRoom: Math.max(0, prev.livingRoom - 1)
+                                }))}
+                                className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
+                              >
+                                -
+                              </button>
+                              <span className="w-4 text-center">{formData.livingRoom}</span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setFormData(prev => ({
+                                    ...prev,
+                                    livingRoom: prev.livingRoom + 1
+                                  }));
+                                  setErrors(prev => {
+                                    const newErrors = { ...prev };
+                                    delete newErrors.rooms;
+                                    return newErrors;
+                                  });
+                                }}
+                                className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center justify-between border-b pb-2">
+                            <span>Övriga rum</span>
+                            <div className="flex items-center gap-4">
+                              <button
+                                type="button"
+                                onClick={() => setFormData(prev => ({
+                                  ...prev,
+                                  otherRooms: Math.max(0, prev.otherRooms - 1)
+                                }))}
+                                className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
+                              >
+                                -
+                              </button>
+                              <span className="w-4 text-center">{formData.otherRooms}</span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setFormData(prev => ({
+                                    ...prev,
+                                    otherRooms: prev.otherRooms + 1
+                                  }));
+                                  setErrors(prev => {
+                                    const newErrors = { ...prev };
+                                    delete newErrors.rooms;
+                                    return newErrors;
+                                  });
+                                }}
+                                className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {errors.rooms && (
+                        <p className="mt-1 text-sm text-red-600">{errors.rooms}</p>
                       )}
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Kommentarer (frivilligt)</label>
-                      <textarea
-                        name="comments"
-                        value={formData.comments}
-                        onChange={handleInputChange}
-                        placeholder="Här kan du nämna särskilda detaljer, t.ex. om du har stuckaturer som behöver rengöras varsamt."
-                        rows={4}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
-                      ></textarea>
-                    </div>
-                  </div>
-                </div>
-              )}
 
-              {step === 5 && (
-                <div className="space-y-6">
-                  <div className="text-center mb-8">
-                    <h2 className="text-2xl font-bold text-[#0F172A] mb-2">Bekräfta din förfrågan</h2>
-                    <p className="text-gray-600">Vänligen kontrollera att all information är korrekt innan du skickar in din förfrågan.</p>
-                  </div>
-                  
-                  <div className="space-y-6 bg-white rounded-xl border border-gray-200 shadow-sm">
-                    <div className="p-6 border-b border-gray-200">
-                      <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
-                        <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        Städdatum
-                      </h3>
-                      <div className="space-y-2">
-                        <p className="text-gray-700">
-                          <span className="font-medium">Datum:</span> {formData.movingDate}
-                        </p>
-                        {formData.wantsFlexibleDate && (
-                          <p className="text-gray-700">
-                            <span className="font-medium">Flexibilitet:</span> {formData.flexibleMovingDate} dagar
-                          </p>
+                      <div>
+                        <h3 className="block text-sm font-medium text-gray-700 mb-3">
+                          Välj om du vill ha städning av följande
+                        </h3>
+                        <div className="space-y-3">
+                          <div className="flex items-center">
+                            <input
+                              type="checkbox"
+                              name="hasGarage"
+                              checked={formData.hasGarage}
+                              onChange={handleInputChange}
+                              className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
+                            />
+                            <label className="ml-2 text-sm text-gray-700">
+                              Garage
+                            </label>
+                          </div>
+                          <div className="flex items-center">
+                            <input
+                              type="checkbox"
+                              name="hasBalcony"
+                              checked={formData.hasBalcony}
+                              onChange={handleInputChange}
+                              className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
+                            />
+                            <label className="ml-2 text-sm text-gray-700">
+                              Balkong/veranda/terrass
+                            </label>
+                          </div>
+                          <div className="flex items-center">
+                            <input
+                              type="checkbox"
+                              name="hasStorage"
+                              checked={formData.hasStorage}
+                              onChange={handleInputChange}
+                              className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
+                            />
+                            <label className="ml-2 text-sm text-gray-700">
+                              Förråd/uthus
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Ungefär hur stor yta ska städas?
+                        </label>
+                        <div className="relative">
+                          <input
+                            type="text"
+                            name="squareMeters"
+                            value={formData.squareMeters}
+                            onChange={handleInputChange}
+                            inputMode="numeric"
+                            pattern="[0-9]*"
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                              errors.squareMeters ? "border-red-500" : "border-gray-300"
+                            }`}
+                          />
+                          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">kvm</span>
+                        </div>
+                        {errors.squareMeters && (
+                          <p className="mt-1 text-sm text-red-600">{errors.squareMeters}</p>
                         )}
                       </div>
-                    </div>
 
-                    <div className="p-6 border-b border-gray-200">
-                      <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
-                        <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                        </svg>
-                        Bostadsinformation
-                      </h3>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Typ:</span> {formData.typeOfHome}
-                          </p>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Antal våningar:</span> {formData.numberOfFloors}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Hela bostaden:</span> {formData.entireHome === "yes" ? "Ja" : "Nej"}
-                          </p>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Yta:</span> {formData.squareMeters} kvm
-                          </p>
-                        </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Kommentarer (frivilligt)
+                        </label>
+                        <textarea
+                          name="comments"
+                          value={formData.comments}
+                          onChange={handleInputChange}
+                          placeholder="Här kan du nämna särskilda detaljer, t.ex. om du har stuckaturer som behöver rengöras varsamt."
+                          rows={4}
+                          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                        ></textarea>
                       </div>
                     </div>
+                  )}
 
-                    <div className="p-6 border-b border-gray-200">
-                      <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
-                        <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                        Rum
-                      </h3>
-                      <div className="grid grid-cols-2 gap-4">
+                  {step === 4 && (
+                    <div className="space-y-6">
+                      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktinformation</h2>
+                      <p className="text-sm text-gray-700 mb-6">Tjänsten är gratis och du är inte bunden till någonting.</p>
+                      
+                      <div className="space-y-6">
                         <div>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Sovrum:</span> {formData.bedrooms}
-                          </p>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Badrum:</span> {formData.bathrooms}
-                          </p>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Kök:</span> {formData.kitchen}
-                          </p>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Ditt namn</label>
+                          <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                              errors.name ? "border-red-500" : "border-gray-300"
+                            }`}
+                          />
+                          {errors.name && (
+                            <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                          )}
                         </div>
+
                         <div>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Vardagsrum:</span> {formData.livingRoom}
-                          </p>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Övriga rum:</span> {formData.otherRooms}
-                          </p>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">E-post</label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                              errors.email ? "border-red-500" : "border-gray-300"
+                            }`}
+                          />
+                          {errors.email && (
+                            <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                          )}
                         </div>
-                      </div>
-                      {(formData.hasGarage || formData.hasBalcony || formData.hasStorage) && (
-                        <div className="mt-4">
-                          <p className="text-gray-700 font-medium mb-2">Ytterligare utrymmen:</p>
-                          <div className="flex flex-wrap gap-2">
-                            {formData.hasGarage && (
-                              <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Garage</span>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                              errors.phone ? "border-red-500" : "border-gray-300"
+                            }`}
+                          />
+                          {errors.phone && (
+                            <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+                          )}
+                        </div>
+
+                        <div className="flex flex-col md:flex-row gap-4">
+                          <div className="flex-1">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Adress</label>
+                            <input
+                              type="text"
+                              id="address"
+                              name="address"
+                              value={formData.address}
+                              onChange={(e) => {
+                                setFormData({ ...formData, address: e.target.value });
+                                setErrors({ ...errors, address: "" });
+                              }}
+                              placeholder="Börja skriva din adress"
+                              required
+                              className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                                errors.address ? "border-red-500" : ""
+                              }`}
+                            />
+                            {errors.address && (
+                              <p className="mt-1 text-sm text-red-600">{errors.address}</p>
                             )}
-                            {formData.hasBalcony && (
-                              <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Balkong/veranda/terrass</span>
-                            )}
-                            {formData.hasStorage && (
-                              <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Förråd/uthus</span>
+                          </div>
+                          <div className="md:w-1/4">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Gatunr.</label>
+                            <input
+                              type="text"
+                              name="streetNumber"
+                              value={formData.streetNumber}
+                              onChange={(e) => {
+                                // Must start with number, followed by optional single letter
+                                const value = e.target.value.replace(/[^0-9A-Za-z]/g, '').replace(/^([0-9]+)?([A-Za-z]?).*/g, '$1$2');
+                                if (/^[0-9]+[A-Za-z]?$/.test(value) || value === '') {
+                                  setFormData({ ...formData, streetNumber: value });
+                                  setErrors({ ...errors, streetNumber: "" });
+                                }
+                              }}
+                              onKeyDown={(e) => {
+                                // Allow only numbers, letters, backspace, delete, and arrow keys
+                                if (
+                                  !/^[0-9A-Za-z]$/.test(e.key) && // not a number or letter
+                                  e.key !== 'Backspace' &&
+                                  e.key !== 'Delete' &&
+                                  e.key !== 'ArrowLeft' &&
+                                  e.key !== 'ArrowRight' &&
+                                  e.key !== 'Tab'
+                                ) {
+                                  e.preventDefault();
+                                }
+                                // If no numbers yet, prevent letters
+                                if (!/^[0-9]+/.test(formData.streetNumber) && /^[A-Za-z]$/.test(e.key)) {
+                                  e.preventDefault();
+                                }
+                              }}
+                              placeholder="1A"
+                              required
+                              className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                                errors.streetNumber ? "border-red-500" : ""
+                              }`}
+                            />
+                            {errors.streetNumber && (
+                              <p className="mt-1 text-sm text-red-600">{errors.streetNumber}</p>
                             )}
                           </div>
                         </div>
-                      )}
-                    </div>
-
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
-                        <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                        Kontaktinformation
-                      </h3>
-                      <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Namn:</span> {formData.name}
-                          </p>
-                          <p className="text-gray-700">
-                            <span className="font-medium">E-post:</span> {formData.email}
-                          </p>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Telefon:</span> {formData.phone}
-                          </p>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Postnummer</label>
+                          <input
+                            type="text"
+                            name="postalCode"
+                            value={formData.postalCode}
+                            onChange={(e) => {
+                              // Only allow numbers and limit to 5 digits
+                              const value = e.target.value.replace(/\D/g, '').slice(0, 5);
+                              setFormData({ ...formData, postalCode: value });
+                              setErrors({ ...errors, postalCode: "" });
+                            }}
+                            placeholder="12345"
+                            required
+                            maxLength={5}
+                            pattern="\d{5}"
+                            className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                              errors.postalCode ? "border-red-500" : ""
+                            }`}
+                          />
+                          {errors.postalCode && (
+                            <p className="mt-1 text-sm text-red-600">{errors.postalCode}</p>
+                          )}
                         </div>
                         <div>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Adress:</span> {formData.address} {formData.streetNumber}
-                          </p>
-                          <p className="text-gray-700">
-                            <span className="font-medium">Postnummer:</span> {formData.postalCode}
-                          </p>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Kommentarer (frivilligt)</label>
+                          <textarea
+                            name="comments"
+                            value={formData.comments}
+                            onChange={handleInputChange}
+                            placeholder="Här kan du nämna särskilda detaljer, t.ex. om du har stuckaturer som behöver rengöras varsamt."
+                            rows={4}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                          ></textarea>
                         </div>
                       </div>
                     </div>
+                  )}
 
-                    {formData.comments && (
-                      <div className="p-6 border-t border-gray-200">
-                        <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
-                          <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                          </svg>
-                          Kommentarer
-                        </h3>
-                        <p className="text-gray-700 bg-gray-50 p-4 rounded-lg">{formData.comments}</p>
+                  {step === 5 && (
+                    <div className="space-y-6">
+                      <div className="text-center mb-8">
+                        <h2 className="text-2xl font-bold text-[#0F172A] mb-2">Bekräfta din förfrågan</h2>
+                        <p className="text-gray-600">Vänligen kontrollera att all information är korrekt innan du skickar in din förfrågan.</p>
                       </div>
+                      
+                      <div className="space-y-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+                        <div className="p-6 border-b border-gray-200">
+                          <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
+                            <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Städdatum
+                          </h3>
+                          <div className="space-y-2">
+                            <p className="text-gray-700">
+                              <span className="font-medium">Datum:</span> {formData.movingDate}
+                            </p>
+                            {formData.wantsFlexibleDate && (
+                              <p className="text-gray-700">
+                                <span className="font-medium">Flexibilitet:</span> {formData.flexibleMovingDate} dagar
+                              </p>
+                            )}
+                          </div>
+                        </div>
+
+                        <div className="p-6 border-b border-gray-200">
+                          <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
+                            <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                            Bostadsinformation
+                          </h3>
+                          <div className="grid grid-cols-2 gap-4">
+                            <div>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Typ:</span> {formData.typeOfHome}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Antal våningar:</span> {formData.numberOfFloors}
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Hela bostaden:</span> {formData.entireHome === "yes" ? "Ja" : "Nej"}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Yta:</span> {formData.squareMeters} kvm
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="p-6 border-b border-gray-200">
+                          <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
+                            <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            Rum
+                          </h3>
+                          <div className="grid grid-cols-2 gap-4">
+                            <div>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Sovrum:</span> {formData.bedrooms}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Badrum:</span> {formData.bathrooms}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Kök:</span> {formData.kitchen}
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Vardagsrum:</span> {formData.livingRoom}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Övriga rum:</span> {formData.otherRooms}
+                              </p>
+                            </div>
+                          </div>
+                          {(formData.hasGarage || formData.hasBalcony || formData.hasStorage) && (
+                            <div className="mt-4">
+                              <p className="text-gray-700 font-medium mb-2">Ytterligare utrymmen:</p>
+                              <div className="flex flex-wrap gap-2">
+                                {formData.hasGarage && (
+                                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Garage</span>
+                                )}
+                                {formData.hasBalcony && (
+                                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Balkong/veranda/terrass</span>
+                                )}
+                                {formData.hasStorage && (
+                                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Förråd/uthus</span>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="p-6">
+                          <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
+                            <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                            Kontaktinformation
+                          </h3>
+                          <div className="grid grid-cols-2 gap-4">
+                            <div>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Namn:</span> {formData.name}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-medium">E-post:</span> {formData.email}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Telefon:</span> {formData.phone}
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Adress:</span> {formData.address} {formData.streetNumber}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-medium">Postnummer:</span> {formData.postalCode}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {formData.comments && (
+                          <div className="p-6 border-t border-gray-200">
+                            <h3 className="text-lg font-semibold text-[#0F172A] mb-4 flex items-center">
+                              <svg className="w-5 h-5 mr-2 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                              </svg>
+                              Kommentarer
+                            </h3>
+                            <p className="text-gray-700 bg-gray-50 p-4 rounded-lg">{formData.comments}</p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="mt-8 flex justify-between">
+                    {step > 1 && (
+                      <button
+                        type="button"
+                        onClick={prevStep}
+                        className="px-6 py-2 border border-[#0F172A] text-[#0F172A] rounded-full hover:bg-[#0F172A] hover:text-white transition-colors"
+                      >
+                        Tillbaka
+                      </button>
                     )}
+                    <button
+                      type={step === 5 ? "submit" : "button"}
+                      onClick={(e) => {
+                        if (step !== 5) {
+                          e.preventDefault();
+                          nextStep();
+                        }
+                      }}
+                      disabled={isSubmitting}
+                      className={`ml-auto px-6 py-2 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-full hover:opacity-90 transition-opacity ${
+                        isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                      }`}
+                    >
+                      {isSubmitting ? "Skickar..." : step === 5 ? "Skicka" : "Nästa"}
+                    </button>
                   </div>
-                </div>
-              )}
-
-              <div className="mt-8 flex justify-between">
-                {step > 1 && (
-                  <button
-                    type="button"
-                    onClick={prevStep}
-                    className="px-6 py-2 border border-[#0F172A] text-[#0F172A] rounded-full hover:bg-[#0F172A] hover:text-white transition-colors"
-                  >
-                    Tillbaka
-                  </button>
-                )}
-                <button
-                  type={step === 5 ? "submit" : "button"}
-                  onClick={(e) => {
-                    if (step !== 5) {
-                      e.preventDefault();
-                      nextStep();
-                    }
-                  }}
-                  className="ml-auto px-6 py-2 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-full hover:opacity-90 transition-opacity"
-                >
-                  {step === 5 ? "Skicka" : "Nästa"}
-                </button>
-              </div>
-            </form>
+                </form>
+              </>
+            )}
           </div>
         </div>
       </main>
