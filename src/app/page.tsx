@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ReviewsWidget from "./components/ReviewsWidget";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -12,7 +13,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] to-[#10B981]"></div>
         <div className="container mx-auto px-4 relative z-10 text-white">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <motion.div 
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Professionell flyttfirma i Stockholm
               </h1>
@@ -20,41 +26,52 @@ export default function Home() {
                 Vi erbjuder komplett flyttservice med bohagsflytt, flyttstädning och packning. 
                 Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="mt-12 text-center">
+            <motion.div 
+              className="mt-12 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                  <p className="font-semibold text-lg">Fast-pris</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                  <p className="font-semibold text-lg">Nöjd kund garanti</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                  <p className="font-semibold text-lg">Pack garanti</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                  <p className="font-semibold text-lg">50% RUT-avdrag</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                  <p className="font-semibold text-lg">Försäkring & Trafiktillstånd</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                  <p className="font-semibold text-lg">Professionell service</p>
-                </div>
+                {[
+                  "Fast-pris",
+                  "Nöjd kund garanti",
+                  "Pack garanti",
+                  "50% RUT-avdrag",
+                  "Försäkring & Trafiktillstånd",
+                  "Professionell service"
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white/10 backdrop-blur-sm p-6 rounded-lg"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <p className="font-semibold text-lg">{item}</p>
+                  </motion.div>
+                ))}
               </div>
               <p className="text-xl font-semibold mb-8 text-white/90">
                 Låt oss ta hand om hela din flytt medan du fokuserar på ditt nya hem!
               </p>
-              <div className="flex gap-4 justify-center">
+              <motion.div 
+                className="flex gap-4 justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
                 <Link href="/fa-offert" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
                   Få offert
                 </Link>
                 <Link href="/kontakt" className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#0F172A] transition-all font-medium">
                   Kontakta oss
                 </Link>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -67,163 +84,62 @@ export default function Home() {
         {/* Services Sections */}
         <section className="section-padding bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-16">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               VÅRA TJÄNSTER
-            </h2>
+            </motion.h2>
             
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-              {/* Bohagsflytt */}
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white flex flex-col">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-4xl">🏠</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
-                    Bohagsflytt
-                  </h3>
-                </div>
-                <p className="text-gray-100 mb-6">
-                  Vi erbjuder professionell flytthjälp för både privatpersoner och företag. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg.
-                </p>
-                <ul className="space-y-4 flex-grow">
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Erfarna och försiktiga flyttare</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Moderna och välutrustade flyttbilar</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Fullständig flyttförsäkring ingår</span>
-                  </li>
-                </ul>
-                <div className="mt-8">
-                  <Link href="/fa-offert" className="bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-gray-100 transition-colors font-medium inline-block">
-                    Boka din flytt
-                  </Link>
-                </div>
-              </div>
-
-              {/* Flyttstädning */}
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white flex flex-col">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-4xl">✨</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
-                    Flyttstädning
-                  </h3>
-                </div>
-                <p className="text-gray-100 mb-6">
-                  Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.
-                </p>
-                <ul className="space-y-4 flex-grow">
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Städgaranti ingår</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Miljövänliga rengöringsmedel</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Professionell utrustning</span>
-                  </li>
-                </ul>
-                <div className="mt-8">
-                  <Link href="/fa-stadning-offert" className="bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-gray-100 transition-colors font-medium inline-block">
-                    Boka städning
-                  </Link>
-                </div>
-              </div>
-
-              {/* Packning */}
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-4xl">📦</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
-                    Packning
-                  </h3>
-                </div>
-                <p className="text-gray-100 mb-6">
-                  Står du inför en flytt och har ont om tid eller vill vara säker på att dina saker hamnar tryggt i lådorna? Vi ser till att packa er bohag på ett korrekt och tryggt sätt.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Gratis lån av kartonger inom Stockholm</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Packgaranti på alla lösöre vi packar</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Professionell och säker packning</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Montering */}
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white flex flex-col">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-4xl">🔧</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
-                    Montering
-                  </h3>
-                </div>
-                <p className="text-gray-100 mb-6">
-                  Professionell montering och demontering av möbler och inredning. Vi säkerställer att allt monteras korrekt och säkert.
-                </p>
-                <ul className="space-y-4 flex-grow">
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Erfaren personal</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Rätt verktyg</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-100">Säker hantering</span>
-                  </li>
-                </ul>
-                <div className="mt-8">
-                  <Link href="/fa-offert" className="bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-gray-100 transition-colors font-medium inline-block">
-                    Boka montering
-                  </Link>
-                </div>
-              </div>
+              {[
+                { icon: "🏠", title: "Bohagsflytt", description: "Vi erbjuder professionell flytthjälp för både privatpersoner och företag. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg." },
+                { icon: "✨", title: "Flyttstädning", description: "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick." },
+                { icon: "💪", title: "Bärhjälp", description: "Professionell bärhjälp för alla typer av flytt. Vi tar hand om tunga lyft och säkerställer att allt transporteras säkert." },
+                { icon: "🎹", title: "Piano/Tunglyft", description: "Specialiserad service för flytt av piano och andra tunga föremål. Vi har erfarenhet och rätt utrustning för säker hantering." },
+                { icon: "🏢", title: "Kontorsflytt", description: "Effektiv flytt av kontor och företag. Vi minimerar avbrott i verksamheten och säkerställer en smidig övergång." },
+                { icon: "🔧", title: "Montering", description: "Professionell montering och demontering av möbler och inredning. Vi säkerställer att allt monteras korrekt och säkert." }
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white flex flex-col"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-4xl">{service.icon}</span>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-100 mb-6">
+                    {service.description}
+                  </p>
+                  <div className="mt-auto">
+                    <Link href="/fa-offert" className="bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-gray-100 transition-colors font-medium inline-block">
+                      Boka {service.title.toLowerCase()}
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Se alla våra tjänster Section */}
-        <section className="py-16 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white">
+        <motion.section 
+          className="py-16 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -233,18 +149,23 @@ export default function Home() {
                 Vi erbjuder ett komplett utbud av flyttjänster för att göra din flytt så smidig som möjligt. 
                 Från bohagsflytt och flyttstädning till specialtjänster som piano- och kontorsflytt.
               </p>
-              <Link 
-                href="/tjanster" 
-                className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Se alla våra tjänster
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
+                <Link 
+                  href="/tjanster" 
+                  className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
+                >
+                  Se alla våra tjänster
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </motion.div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Opening Hours Section */}
         <section className="section-padding bg-gradient-to-r from-[#0F172A]/5 to-[#10B981]/5">
@@ -279,38 +200,36 @@ export default function Home() {
         {/* Här finns vi Section */}
         <section className="section-padding bg-white">
           <div className="container mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-16">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               HÄR FINNS VI
-            </h2>
+            </motion.h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Link href="/flyttfirma-i-norrmalm" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold">Norrmalm</h3>
-              </Link>
-              <Link href="/flyttfirma-i-kungsholmen" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold">Kungsholmen</h3>
-              </Link>
-              <Link href="/flyttfirma-i-ostermalm" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold">Östermalm</h3>
-              </Link>
-              <Link href="/flyttfirma-i-vasastan" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold">Vasastan</h3>
-              </Link>
-              <Link href="/flyttfirma-i-bro" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold">Bro</h3>
-              </Link>
-              <Link href="/flyttfirma-i-taby" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold">Täby</h3>
-              </Link>
-              <Link href="/flyttfirma-i-jarfalla" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold">Järfälla</h3>
-              </Link>
-              <Link href="/flyttfirma-i-bromma" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold">Bromma</h3>
-              </Link>
-              <Link href="/flyttfirma-i-sundbyberg" className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity">
-                <h3 className="text-2xl font-bold">Sundbyberg</h3>
-              </Link>
-              {/* Add more locations here as needed */}
+              {[
+                "Norrmalm", "Kungsholmen", "Östermalm",
+                "Vasastan", "Bro", "Täby"
+              ].map((location, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <Link 
+                    href={`/flyttfirma-i-${location.toLowerCase().replace('ö', 'o').replace('å', 'a').replace('ä', 'a')}`} 
+                    className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white hover:opacity-90 transition-opacity block"
+                  >
+                    <h3 className="text-2xl font-bold">{location}</h3>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -337,9 +256,15 @@ export default function Home() {
         {/* Locations Section - SEO Optimized */}
         <section className="section-padding bg-gradient-to-r from-[#0F172A]/5 to-[#10B981]/5">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               HÄR FINNS VI
-            </h2>
+            </motion.h2>
             <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-8">
               {[
                 "Norrmalm", "Kungsholmen", "Östermalm", "Nacka",
@@ -349,11 +274,20 @@ export default function Home() {
                 "Västerås", "Järfälla", "Södertälje", "Linköping",
                 "Norrköping", "Enköping"
               ].map((location, index) => (
-                <a key={index} href={`/flyttfirma-${location.toLowerCase().replace('ö', 'o').replace('å', 'a').replace('ä', 'a')}`} className="group">
+                <motion.a
+                  key={index}
+                  href={`/flyttfirma-${location.toLowerCase().replace('ö', 'o').replace('å', 'a').replace('ä', 'a')}`}
+                  className="group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                >
                   <h3 className="text-[#0F172A] group-hover:text-[#10B981] transition-colors font-medium">
                     Flyttfirma i {location}
                   </h3>
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
