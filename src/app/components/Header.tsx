@@ -33,6 +33,19 @@ export default function Header() {
     }, 200); // 200ms delay before closing
   };
 
+  const handleQuoteMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsQuoteOpen(true);
+  };
+
+  const handleQuoteMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsQuoteOpen(false);
+    }, 200); // 200ms delay before closing
+  };
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
     setIsMobileServicesOpen(false);
@@ -102,12 +115,15 @@ export default function Header() {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <button className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide flex items-center">
+                  <Link 
+                    href="/tjanster"
+                    className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide flex items-center"
+                  >
                     Tjänster
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
-                  </button>
+                  </Link>
                   
                   {isServicesOpen && (
                     <div 
@@ -132,8 +148,8 @@ export default function Header() {
               {/* Quote Button Dropdown */}
               <div 
                 className="relative"
-                onMouseEnter={() => setIsQuoteOpen(true)}
-                onMouseLeave={() => setIsQuoteOpen(false)}
+                onMouseEnter={handleQuoteMouseEnter}
+                onMouseLeave={handleQuoteMouseLeave}
               >
                 <button 
                   className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity flex items-center"
@@ -146,7 +162,9 @@ export default function Header() {
                 
                 {isQuoteOpen && (
                   <div 
-                    className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2"
+                    className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50"
+                    onMouseEnter={handleQuoteMouseEnter}
+                    onMouseLeave={handleQuoteMouseLeave}
                   >
                     <Link href="/fa-offert" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Flyttoffert</Link>
                     <Link href="/fa-stadning-offert" className="block px-4 py-2 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981]">Städoffert</Link>
