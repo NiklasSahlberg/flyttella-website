@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import sv from 'date-fns/locale/sv';
+import { sv } from 'date-fns/locale/sv';
+import type { Locale } from 'date-fns';
 
 interface StepOneProps {
   onNext: (data: StepOneData) => void;
@@ -55,7 +56,7 @@ export default function StepOne({ onNext, initialData }: StepOneProps) {
           <DatePicker
             selected={formData.preferredDate}
             onChange={(date) => setFormData({ ...formData, preferredDate: date })}
-            locale={sv}
+            locale={sv as Locale}
             dateFormat="yyyy-MM-dd"
             minDate={new Date()}
             placeholderText="Välj datum"
