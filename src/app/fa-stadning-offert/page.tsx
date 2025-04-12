@@ -6,7 +6,13 @@ import Script from "next/script";
 
 declare global {
   interface Window {
-    google: any;
+    google: {
+      maps: {
+        places: {
+          Autocomplete: any;
+        };
+      };
+    };
   }
 }
 
