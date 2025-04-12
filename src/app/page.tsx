@@ -74,9 +74,12 @@ export default function Home() {
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
               {/* Bohagsflytt */}
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white flex flex-col">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                  Bohagsflytt
-                </h3>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-4xl">🏠</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    Bohagsflytt
+                  </h3>
+                </div>
                 <p className="text-gray-100 mb-6">
                   Vi erbjuder professionell flytthjälp för både privatpersoner och företag. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg.
                 </p>
@@ -109,9 +112,12 @@ export default function Home() {
 
               {/* Flyttstädning */}
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white flex flex-col">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                  Flyttstädning
-                </h3>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-4xl">✨</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    Flyttstädning
+                  </h3>
+                </div>
                 <p className="text-gray-100 mb-6">
                   Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.
                 </p>
@@ -144,9 +150,12 @@ export default function Home() {
 
               {/* Packning */}
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                  Packning
-                </h3>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-4xl">📦</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    Packning
+                  </h3>
+                </div>
                 <p className="text-gray-100 mb-6">
                   Står du inför en flytt och har ont om tid eller vill vara säker på att dina saker hamnar tryggt i lådorna? Vi ser till att packa er bohag på ett korrekt och tryggt sätt.
                 </p>
@@ -173,33 +182,41 @@ export default function Home() {
               </div>
 
               {/* Montering */}
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                  Montering
-                </h3>
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-8 shadow-lg text-white flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-4xl">🔧</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    Montering
+                  </h3>
+                </div>
                 <p className="text-gray-100 mb-6">
-                  Om du har ont om tid och saknar rätt redskap då ser vi till att alla taklampor, gardiner, tv och tavlor hamnar trygg i flyttkartonger. Vi ser till även att montera upp allting på din nya bostad.
+                  Professionell montering och demontering av möbler och inredning. Vi säkerställer att allt monteras korrekt och säkert.
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-4 flex-grow">
                   <li className="flex items-start">
                     <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-100">Vi tar med alla verktyg och material</span>
+                    <span className="text-gray-100">Erfaren personal</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-100">Professionell nedmontering och uppsättning</span>
+                    <span className="text-gray-100">Rätt verktyg</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-6 h-6 text-white mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-100">Säker hantering av dina föremål</span>
+                    <span className="text-gray-100">Säker hantering</span>
                   </li>
                 </ul>
+                <div className="mt-8">
+                  <Link href="/fa-offert" className="bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-gray-100 transition-colors font-medium inline-block">
+                    Boka montering
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -242,15 +259,15 @@ export default function Home() {
               <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                 <div className="space-y-6">
                   <div className="flex justify-between items-center border-b border-gray-200 pb-4">
-                    <span className="text-lg font-semibold text-[#0F172A]">Måndag - Fredag</span>
+                    <span className="text-lg font-semibold text-[#0F172A]">⏰ Måndag - Fredag</span>
                     <span className="text-lg text-[#10B981] font-medium">08:00 - 18:00</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-gray-200 pb-4">
-                    <span className="text-lg font-semibold text-[#0F172A]">Lördag</span>
+                    <span className="text-lg font-semibold text-[#0F172A]">🚫 Lördag</span>
                     <span className="text-lg text-gray-500">Stängt</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold text-[#0F172A]">Söndag</span>
+                    <span className="text-lg font-semibold text-[#0F172A]">🚫 Söndag</span>
                     <span className="text-lg text-gray-500">Stängt</span>
                   </div>
                 </div>

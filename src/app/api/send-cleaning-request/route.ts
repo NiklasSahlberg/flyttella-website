@@ -249,12 +249,12 @@ export async function POST(req: Request) {
 
     console.log('Email sent successfully:', res.data.id);
     return NextResponse.json({ success: true, messageId: res.data.id });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Error sending email:', error);
     
     // Log failed email to Cloud Storage
     try {
-      const failedEmail = `${new Date().toISOString()}: ${error.message}\n`;
+      const failedEmail = `${new Date().toISOString()}: ${error instanceof Error ? error.message : String(error)}\n`;
       const file = bucket.file(FAILED_EMAILS_FILE);
       await file.save(failedEmail, { resumable: false });
     } catch (storageError) {
@@ -262,7 +262,7 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json(
-      { error: 'Failed to send email', details: error.message },
+      { error: 'Failed to send email', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }
