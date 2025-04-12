@@ -10,27 +10,30 @@
   },
   "dependencies": {
     "@google-cloud/storage": "^7.16.0",
+    "@types/react-datepicker": "^6.2.0",
+    "date-fns": "^4.1.0",
     "geist": "^1.1.0",
     "googleapis": "^148.0.0",
     "next": "^14.2.26",
     "open": "^9.1.0",
     "react": "18.2.0",
+    "react-datepicker": "^8.3.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "typescript": "^5.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
     "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0",
-    "tailwindcss": "^3.4.0",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.4.0",
     "prettier": "^3.2.0",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0"
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0"
   },
   "resolutions": {
     "glob": "^9.0.0",
