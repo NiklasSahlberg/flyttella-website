@@ -205,7 +205,7 @@ export default function FlyttfirmaBrommaPage() {
               "longitude": "17.9403"
             },
             "url": "https://flyttella.se/flyttfirma-i-bromma",
-            "telephone": "+4681234567",
+            "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",

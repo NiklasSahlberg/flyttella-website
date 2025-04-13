@@ -205,7 +205,7 @@ export default function FlyttfirmaJarfallaPage() {
               "longitude": "17.8333"
             },
             "url": "https://flyttella.se/flyttfirma-i-jarfalla",
-            "telephone": "+4681234567",
+            "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",

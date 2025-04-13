@@ -204,7 +204,7 @@ export default function FlyttfirmaNorrmalmPage() {
               "longitude": "18.0649"
             },
             "url": "https://flyttella.se/flyttfirma-i-norrmalm",
-            "telephone": "+4681234567",
+            "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",

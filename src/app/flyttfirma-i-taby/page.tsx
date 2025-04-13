@@ -204,7 +204,7 @@ export default function FlyttfirmaTabyPage() {
               "longitude": "18.0687"
             },
             "url": "https://flyttella.se/flyttfirma-i-taby",
-            "telephone": "+4681234567",
+            "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",

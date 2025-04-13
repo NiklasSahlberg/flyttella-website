@@ -264,28 +264,45 @@ export default function Home() {
       </section>
 
       {/* Completed Assignments Counter */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <motion.section 
+        className="py-16"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-3xl p-12 shadow-2xl">
-              <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                  Vår erfarenhet
-                </h2>
-                
-                <div className="flex flex-col items-center justify-center">
-                  <div className="text-6xl md:text-7xl font-bold text-white mb-2">
-                    <CountUp end={3000} duration={3} formattingFn={(value) => value.toString()} />+
-                  </div>
-                  <p className="text-xl text-white/80">
-                    uppdrag utförda
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <motion.div 
+            className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-3xl p-12 text-center text-white shadow-xl"
+            variants={fadeInUp}
+          >
+            <motion.h2 
+              className="text-2xl font-bold mb-2"
+              variants={fadeInUp}
+            >
+              Vår erfarenhet
+            </motion.h2>
+            <motion.div 
+              className="text-5xl md:text-6xl font-bold mb-2"
+              variants={fadeInUp}
+            >
+              <CountUp 
+                end={3000} 
+                duration={2.5}
+                suffix="+"
+                useEasing={true}
+                enableScrollSpy={true}
+                scrollSpyOnce={true}
+              />
+            </motion.div>
+            <motion.p 
+              className="text-white/90"
+              variants={fadeInUp}
+            >
+              uppdrag utförda
+            </motion.p>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Sections */}
       <section className="section-padding bg-white py-24">
@@ -314,16 +331,52 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
           >
             {[
-              { icon: "🏠", title: "Bohagsflytt", description: "Vi erbjuder professionell flytthjälp för både privatpersoner och företag. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg." },
-              { icon: "✨", title: "Flyttstädning", description: "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick." },
-              { icon: "💪", title: "Bärhjälp", description: "Professionell bärhjälp för alla typer av flytt. Vi tar hand om tunga lyft och säkerställer att allt transporteras säkert." },
-              { icon: "🎹", title: "Piano/Tunglyft", description: "Specialiserad service för flytt av piano och andra tunga föremål. Vi har erfarenhet och rätt utrustning för säker hantering." },
-              { icon: "🏢", title: "Kontorsflytt", description: "Effektiv flytt av kontor och företag. Vi minimerar avbrott i verksamheten och säkerställer en smidig övergång." },
-              { icon: "🔧", title: "Montering", description: "Professionell montering och demontering av möbler och inredning. Vi säkerställer att allt monteras korrekt och säkert." }
+              { 
+                icon: "🏠", 
+                title: "Bohagsflytt", 
+                description: "Vi erbjuder professionell flytthjälp för både privatpersoner och företag. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg.",
+                buttonText: "Boka bohagsflytt",
+                href: "/fa-offert"
+              },
+              { 
+                icon: "✨", 
+                title: "Flyttstädning", 
+                description: "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+                buttonText: "Boka flyttstädning",
+                href: "/fa-offert"
+              },
+              { 
+                icon: "💪", 
+                title: "Bärhjälp", 
+                description: "Professionell bärhjälp för alla typer av flytt. Vi tar hand om tunga lyft och säkerställer att allt transporteras säkert.",
+                buttonText: "Läs mer",
+                href: "/barhjalp"
+              },
+              { 
+                icon: "🎹", 
+                title: "Piano/Tunglyft", 
+                description: "Specialiserad service för flytt av piano och andra tunga föremål. Vi har erfarenhet och rätt utrustning för säker hantering.",
+                buttonText: "Läs mer",
+                href: "/piano-tunglyft"
+              },
+              { 
+                icon: "🏢", 
+                title: "Kontorsflytt", 
+                description: "Effektiv flytt av kontor och företag. Vi minimerar avbrott i verksamheten och säkerställer en smidig övergång.",
+                buttonText: "Läs mer",
+                href: "/kontorsflytt"
+              },
+              { 
+                icon: "🔧", 
+                title: "Montering", 
+                description: "Professionell montering och demontering av möbler och inredning. Vi säkerställer att allt monteras korrekt och säkert.",
+                buttonText: "Läs mer",
+                href: "/montering"
+              }
             ].map((service, index) => (
               <motion.div
                 key={index}
-                className="group relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col transform-gpu overflow-hidden"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col transform-gpu overflow-hidden h-full"
                 variants={serviceCardVariants}
                 whileHover={{ 
                   scale: 1.02,
@@ -343,75 +396,35 @@ export default function Home() {
                   }}
                 />
 
-                <motion.div 
-                  className="flex items-center gap-4 mb-6"
-                  whileHover={{ x: 5 }}
-                >
-                  <motion.div
-                    className="relative"
-                    variants={iconVariants}
-                    whileHover="hover"
-                  >
-                    <motion.span 
-                      className="text-4xl relative z-10"
-                      animate={{ 
-                        scale: [1, 1.1, 1],
-                        rotate: [0, 5, -5, 0]
-                      }}
-                      transition={{ 
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      {service.icon}
-                    </motion.span>
-                    <motion.div
-                      className="absolute inset-0 bg-white/10 rounded-full -z-0"
-                      initial={{ scale: 0 }}
-                      whileHover={{ scale: 1.5, opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  </motion.div>
-                  <motion.h3 
-                    className="text-2xl md:text-3xl font-bold text-white"
-                    whileHover={{ x: 5 }}
-                  >
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-4xl">{service.icon}</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">
                     {service.title}
-                  </motion.h3>
-                </motion.div>
+                  </h3>
+                </div>
 
-                <motion.p 
-                  className="text-gray-100 mb-6"
-                  initial={{ opacity: 0.8 }}
-                  whileHover={{ opacity: 1 }}
-                >
+                <p className="text-gray-100 mb-6">
                   {service.description}
-                </motion.p>
+                </p>
 
                 <div className="mt-auto">
-                  <motion.div
-                    variants={buttonVariants}
-                    whileHover="hover"
-                    whileTap="tap"
-                    className="inline-block"
+                  <Link 
+                    href={service.href}
+                    className="inline-flex items-center justify-center w-auto gap-2 bg-white/20 hover:bg-white/30 px-6 py-3 rounded-full transition-all cursor-pointer text-white font-medium no-underline"
                   >
-                    <Link 
-                      href="/fa-offert" 
-                      className="bg-white text-[#0F172A] px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 group"
-                    >
-                      Boka {service.title.toLowerCase()}
-                      <motion.svg 
+                    <div className="flex items-center gap-2">
+                      {service.buttonText}
+                      <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-5 w-5 group-hover:translate-x-1 transition-transform" 
+                        className="h-5 w-5 transform transition-transform" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </motion.svg>
-                    </Link>
-                  </motion.div>
+                      </svg>
+                    </div>
+                  </Link>
                 </div>
               </motion.div>
             ))}

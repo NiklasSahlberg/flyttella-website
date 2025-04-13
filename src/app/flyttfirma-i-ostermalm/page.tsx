@@ -205,7 +205,7 @@ export default function FlyttfirmaOstermalmPage() {
               "longitude": "18.0854"
             },
             "url": "https://flyttella.se/flyttfirma-i-ostermalm",
-            "telephone": "+4681234567",
+            "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",

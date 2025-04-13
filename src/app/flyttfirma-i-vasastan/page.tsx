@@ -204,7 +204,7 @@ export default function FlyttfirmaVasastanPage() {
               "longitude": "18.0500"
             },
             "url": "https://flyttella.se/flyttfirma-i-vasastan",
-            "telephone": "+4681234567",
+            "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
