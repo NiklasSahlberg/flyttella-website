@@ -1,0 +1,25 @@
+8a16509272bc3ac58dd7ec5938b91aebb095e5c5<|ENT|><|RY|>Pushing some changes<|COM|><|MIT|>
+e63609cfa665e92e9897700dab2402483a40eec9<|ENT|><|RY|>Fixed mobile version<|COM|><|MIT|>
+c5ba1702935a29342c729394f5783a69418f1307<|ENT|><|RY|>Made some cool updates with animations and info<|COM|><|MIT|>
+69dd1eba9b9baa5d279fa1934951e584d64ce553<|ENT|><|RY|>Added some animations<|COM|><|MIT|>
+af5236ecd143b84bc5ccca45f6f6ff17bb4e4c4b<|ENT|><|RY|>Vercel fix part 4<|COM|><|MIT|>
+58e3602ab7d71c0762d67cc6d4ac523dba8ce5e7<|ENT|><|RY|>Vercel fix part 3<|COM|><|MIT|>
+683cf4c2e4169f35d9cc078fe8c16d53e8933671<|ENT|><|RY|>Vercel fix part 2<|COM|><|MIT|>
+c74d6bb5ff4687cfe3bb842dfb5cb914636d7623<|ENT|><|RY|>Fix for vercel<|COM|><|MIT|>
+a3477fcf977ed08ff05b72cb61f640d2e72a104c<|ENT|><|RY|>Good header changes<|COM|><|MIT|>
+a71f191a27aa2c1034a75d89ada20c35f4fe758d<|ENT|><|RY|>Can now send emails with cleaning<|COM|><|MIT|>
+bd94e34ebba55332109b8daf852bf2b67c8740fb<|ENT|><|RY|>Now städ component is fixed<|COM|><|MIT|>
+a94da27214bb3e8955665a901d1022d4c321c038<|ENT|><|RY|>More info about our services<|COM|><|MIT|>
+251b916e81b08933c35a19f84e0e5df9ca1c81ee<|ENT|><|RY|>The rest of the pages<|COM|><|MIT|>
+5e104f7634b309c4b2ec194bb3b7d5a7e3ec848d<|ENT|><|RY|>Fixed the hittar oss boxes<|COM|><|MIT|>
+fb4df77f460066ecea21826e37ff54b65723e8bb<|ENT|><|RY|>Added some SEO pages<|COM|><|MIT|>
+a4f12d9d3f7d2f7a7b4109933b7e4638a2fab0bf<|ENT|><|RY|>Commit for deploy<|COM|><|MIT|>
+716de5d870f9fb569d805ff296693eb2d92ca0c6<|ENT|><|RY|>Add open package and update ESLint<|COM|><|MIT|>
+b9fb5b404ca7159d7dbb07a13ec559e24a07693b<|ENT|><|RY|>Add typescript ESLint dependencies<|COM|><|MIT|>
+b910fad78db6d7e0d245918e75dda4eb817b12cd<|ENT|><|RY|>Fix Geist font configuration<|COM|><|MIT|>
+b7ec0d9d5d682e579273624f6cfa2d627a6f828a<|ENT|><|RY|>Commit for build<|COM|><|MIT|>
+e427a97298350fe4b3384bfc3fa95d5d4cedefa7<|ENT|><|RY|>Add ESLint and fix Google Maps type<|COM|><|MIT|>
+dfafa16d0df4a28c6b783c72fbb71426cac53456<|ENT|><|RY|>Add Google Cloud dependencies<|COM|><|MIT|>
+818469e1aa2c9fe055d9af3f1fa28233f12a137b<|ENT|><|RY|>Fix all ESLint errors and warnings<|COM|><|MIT|>
+a750ff9139873860e6c886b12c55f759d3f6f83c<|ENT|><|RY|>Remove deprecated swcMinify option<|COM|><|MIT|>
+e74139db26fccfec966339d47aa35a18dca4ece6<|ENT|><|RY|>Commit before deploy<|COM|><|MIT|>

@@ -67,10 +67,10 @@ export default function PianoTunglyftPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {/* Piano Moving */}
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+            <h2 className="text-2xl font-bold text-[#0F172A] mb-4">
               Pianoflytt
             </h2>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {[
                 "Flygelpianon",
                 "Upright-pianon",
@@ -78,10 +78,11 @@ export default function PianoTunglyftPage() {
                 "Specialemballage för pianon",
                 "Pianotrappor",
                 "Pianovagnar",
-                "Skydd för golv och väggar"
+                "Skydd för golv och väggar",
+                "Säker transport"
               ].map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <svg className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li key={index} className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-600">{item}</span>
@@ -92,22 +93,24 @@ export default function PianoTunglyftPage() {
 
           {/* Heavy Items */}
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+            <h2 className="text-2xl font-bold text-[#0F172A] mb-4">
               Tunglyft
             </h2>
-            <ul className="space-y-3">
+            <div className="text-gray-600 mb-3">
+              <p>Vi hanterar föremål över 100kg</p>
+              <p>som tillexempel:</p>
+            </div>
+            <ul className="space-y-2">
               {[
                 "Kassaskåp",
+                "Vapenskåp",
                 "Tunga möbler",
                 "Skulpturer",
                 "Antikviteter",
-                "Specialutrustning",
-                "Lyftvagnar",
-                "Spännband",
                 "Skyddsmaterial"
               ].map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <svg className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li key={index} className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-600">{item}</span>
@@ -118,10 +121,10 @@ export default function PianoTunglyftPage() {
 
           {/* Guarantees */}
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+            <h2 className="text-2xl font-bold text-[#0F172A] mb-4">
               Våra garantier
             </h2>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {[
                 "Ansvarsförsäkring",
                 "Erfaren personal",
@@ -132,8 +135,8 @@ export default function PianoTunglyftPage() {
                 "Skydd för föremål",
                 "Nöjd-kund-garanti"
               ].map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <svg className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <li key={index} className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-600">{item}</span>

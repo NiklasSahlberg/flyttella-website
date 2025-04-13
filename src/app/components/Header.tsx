@@ -91,7 +91,7 @@ export default function Header() {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/">
-                <div className="relative h-14 w-48">
+                <div className="relative h-20 w-96">
                   <Image
                     src="/flyttella-logo.png"
                     alt="Flyttella Logo"

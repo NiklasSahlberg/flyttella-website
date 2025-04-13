@@ -319,16 +319,10 @@ export default function Home() {
           
           <motion.div 
             className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12"
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.15
-                }
-              }
-            }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
             {[
               { 
@@ -376,17 +370,15 @@ export default function Home() {
             ].map((service, index) => (
               <motion.div
                 key={index}
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col transform-gpu overflow-hidden h-full"
-                variants={serviceCardVariants}
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
-                }}
-                transition={{ duration: 0.2 }}
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Background pattern */}
                 <motion.div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity"
+                  className="absolute inset-0 opacity-10 pointer-events-none"
                   initial={{ backgroundPosition: '0% 0%' }}
                   animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
                   transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
@@ -396,35 +388,39 @@ export default function Home() {
                   }}
                 />
 
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-4 mb-6 relative">
                   <span className="text-4xl">{service.icon}</span>
                   <h3 className="text-2xl md:text-3xl font-bold text-white">
                     {service.title}
                   </h3>
                 </div>
 
-                <p className="text-gray-100 mb-6">
+                <p className="text-gray-100 mb-6 relative">
                   {service.description}
                 </p>
 
-                <div className="mt-auto">
-                  <Link 
-                    href={service.href}
-                    className="inline-flex items-center justify-center w-auto gap-2 bg-white/20 hover:bg-white/30 px-6 py-3 rounded-full transition-all cursor-pointer text-white font-medium no-underline"
+                <div className="mt-auto relative">
+                  <motion.div 
+                    whileHover={{ scale: 1.05 }} 
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-block"
                   >
-                    <div className="flex items-center gap-2">
+                    <Link 
+                      href={service.href} 
+                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
+                    >
                       {service.buttonText}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-5 w-5 transform transition-transform" 
+                        className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </div>
-                  </Link>
+                    </Link>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
