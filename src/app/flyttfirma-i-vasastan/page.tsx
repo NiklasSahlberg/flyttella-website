@@ -52,12 +52,25 @@ export default function FlyttfirmaVasastanPage() {
             </h2>
             <div className="space-y-4 text-gray-600">
               <p className="text-lg">
-                Som ledande flyttfirma i Vasastan har vi specialiserat oss på att hantera flyttar i historiska fastigheter. 
-                Med vår erfarenhet sedan 2010 har vi hjälpt tusentals kunder med deras flyttar i Vasastans unika miljö.
+                Som ledande flyttfirma i Vasastan erbjuder vi en komplett flyttservice som täcker alla dina behov. 
+                Med vår erfarenhet sedan 2010 har vi hjälpt tusentals kunder med deras flyttar i Vasastan och övriga Stockholm.
               </p>
               <p className="text-lg">
-                Vi förstår de särskilda utmaningarna med att flytta i Vasastan - från trånga hissar i historiska fastigheter 
-                till parkeringsutmaningar på smala gator. Vår expertis och lokalkännedom säkerställer en smidig flyttprocess.
+                Vi förstår de unika utmaningarna med att flytta i Vasastan - från trånga gator till historiska byggnader. 
+                Vår expertis och lokalkännedom säkerställer en smidig och effektiv flyttprocess.
+              </p>
+            </div>
+            <div className="mt-8 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-white">
+                  RUT-avdrag
+                </h3>
+                <div className="bg-white/10 rounded-full px-4 py-1">
+                  <span className="text-sm font-medium text-white">50% avdrag</span>
+                </div>
+              </div>
+              <p className="text-base text-white/90">
+                Vi erbjuder RUT-avdrag på alla våra tjänster, vilket gör det ännu mer kostnadseffektivt för dig.
               </p>
             </div>
           </div>

@@ -56,8 +56,21 @@ export default function FlyttfirmaOstermalmPage() {
                 Från de pampiga sekelskifteshusen längs Strandvägen och Narvavägen till de moderna lägenheterna vid Gärdet - vi förstår de särskilda krav som ställs vid flytt i Östermalms exklusiva fastigheter.
               </p>
               <p className="text-lg">
-                Vi har omfattande erfarenhet av att arbeta i hela Östermalm - från Stureplan och Östermalmstorg till Karlaplan och Gärdet. 
-                Vår expertis omfattar hantering av antika möbler, konst och andra värdefulla föremål, och vi är väl förtrogna med områdets historiska trapphus och hissar.
+                Vi har omfattande erfarenhet av att arbeta i hela Östermalm - från de exklusiva fastigheterna längs Strandvägen till de historiska kvarteren kring Karlaplan. 
+                Vår expertis omfattar hantering av både moderna och äldre fastigheter, och vi är väl förtrogna med områdets olika byggnadstyper och tillgänglighetsutmaningar.
+              </p>
+            </div>
+            <div className="mt-8 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-white">
+                  RUT-avdrag
+                </h3>
+                <div className="bg-white/10 rounded-full px-4 py-1">
+                  <span className="text-sm font-medium text-white">50% avdrag</span>
+                </div>
+              </div>
+              <p className="text-base text-white/90">
+                Vi erbjuder RUT-avdrag på alla våra tjänster, vilket gör det ännu mer kostnadseffektivt för dig.
               </p>
             </div>
           </div>

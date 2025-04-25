@@ -104,8 +104,8 @@ export default function Bohagsflytt() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Låt oss ta hand om hela din flytt. Med vår professionella bohagsflytt får du en 
-              bekymmersfri flyttupplevelse från start till mål.
+            Låt oss ta hand om hela din flytt. Med vår professionella bohagsflytt får du en 
+            bekymmersfri flyttupplevelse från start till mål.
             </motion.p>
           </motion.div>
         </div>
@@ -197,8 +197,8 @@ export default function Bohagsflytt() {
                   <p className="text-lg text-gray-700">
                     Berätta för oss vad du behöver hjälp med, så hittar vi en smart lösning anpassad 
                     efter just dina önskemål.
-                  </p>
-                </div>
+          </p>
+        </div>
               </motion.div>
 
               {/* Call to action */}
@@ -322,7 +322,7 @@ export default function Bohagsflytt() {
                 </motion.div>
               ))}
             </motion.div>
-          </div>
+        </div>
         </motion.div>
 
         {/* Process Section */}
@@ -382,7 +382,7 @@ export default function Bohagsflytt() {
                 <div className="ml-6">
                   <h3 className="text-xl font-semibold text-[#0F172A] mb-2">{process.title}</h3>
                   <p className="text-gray-600">{process.description}</p>
-                </div>
+              </div>
               </motion.div>
             ))}
           </motion.div>
@@ -425,7 +425,7 @@ export default function Bohagsflytt() {
                 className="text-xl mb-8"
                 variants={fadeInUp}
               >
-                Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flytt.
+            Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flytt.
               </motion.p>
               <motion.div 
                 className="flex flex-wrap gap-4 justify-center items-center"
@@ -435,8 +435,8 @@ export default function Bohagsflytt() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link 
-                    href="/fa-offert" 
+          <Link 
+            href="/fa-offert"
                     className="h-[56px] bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium inline-flex items-center gap-2"
                   >
                     Få offert
@@ -462,11 +462,11 @@ export default function Bohagsflytt() {
                     className="h-[56px] border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-[#0F172A] transition-all font-medium inline-flex items-center"
                   >
                     Kontakta oss
-                  </Link>
+          </Link>
                 </motion.div>
               </motion.div>
             </motion.div>
-          </div>
+        </div>
         </motion.section>
       </div>
     </main>

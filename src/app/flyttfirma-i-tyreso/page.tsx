@@ -4,16 +4,16 @@ import Link from 'next/link';
 import { CheckIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Flyttfirma i Järfälla | Lokal Flyttservice | Flyttella',
-  description: 'Erfaren flyttfirma med gedigen lokalkännedom i Järfälla. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet. Kontakta oss för en smidig flytt!',
-  keywords: 'flyttfirma järfälla, flytthjälp järfälla, flyttstädning järfälla, packning järfälla, bohagsflytt järfälla',
+  title: 'Flyttfirma i Tyresö | Lokal Flyttservice | Flyttella',
+  description: 'Erfaren flyttfirma med gedigen lokalkännedom i Tyresö. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet. Kontakta oss för en smidig flytt!',
+  keywords: 'flyttfirma tyresö, flytthjälp tyresö, flyttstädning tyresö, packning tyresö, bohagsflytt tyresö',
   openGraph: {
-    title: 'Flyttfirma i Järfälla | Lokal Flyttservice | Flyttella',
-    description: 'Erfaren flyttfirma med gedigen lokalkännedom i Järfälla. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet.',
+    title: 'Flyttfirma i Tyresö | Lokal Flyttservice | Flyttella',
+    description: 'Erfaren flyttfirma med gedigen lokalkännedom i Tyresö. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet.',
   },
 };
 
-export default function FlyttfirmaJarfallaPage() {
+export default function FlyttfirmaTyresoPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -22,10 +22,10 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4 relative z-10 text-white">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Din pålitliga flyttfirma i Järfälla
+              Din pålitliga flyttfirma i Tyresö
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8">
-              Vi erbjuder professionell flyttservice anpassad för Järfällas unika behov - från moderna lägenheter i Barkarby till villor i Jakobsberg.
+              Vi erbjuder professionell flyttservice anpassad för Tyresös unika behov - från strandnära villor till moderna lägenheter i centrum.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/fa-offert" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
@@ -44,14 +44,14 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-              Lokal flyttexpertis i Järfälla
+              Lokal flyttexpertis i Tyresö
             </h2>
             <div className="space-y-4">
               <p className="text-lg text-gray-600">
-                Som etablerad flyttfirma i Järfälla erbjuder vi en komplett flyttservice som täcker alla dina behov. Vi har särskild erfarenhet av att hantera både privata flyttar och företagsflyttar i området, med fokus på effektivitet och säkerhet.
+                Som etablerad flyttfirma i Tyresö erbjuder vi en komplett flyttservice som täcker alla dina behov. Vi har särskild erfarenhet av att hantera både privata flyttar och företagsflyttar i området, med fokus på att bevara Tyresös unika karaktär.
               </p>
               <p className="text-lg text-gray-600">
-                Vi känner väl till Järfällas olika områden och de särskilda krav som ställs vid flytt här. Vår expertis omfattar allt från moderna lägenheter i Barkarby till villor i Jakobsberg och Kallhäll.
+                Vi känner väl till Tyresös olika områden och de särskilda krav som ställs vid flytt här. Vår expertis omfattar allt från strandnära villor och radhus till moderna lägenheter i Tyresö centrum.
               </p>
             </div>
             <div className="mt-8 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-6">
@@ -74,14 +74,14 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-12 text-center">
-              Våra flyttjänster i Järfälla
+              Våra flyttjänster i Tyresö
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h3 className="text-2xl font-bold text-[#0F172A] mb-6">Bohagsflytt</h3>
                 <ul className="space-y-3">
                   {[
-                    "Erfarna flyttare i Järfälla",
+                    "Erfarna flyttare i Tyresö",
                     "Anpassad för alla bostadstyper",
                     "Fullständig flyttförsäkring",
                     "Flexibla flyttider",
@@ -143,13 +143,13 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-8 text-center">
-              Varför välja oss som din flyttfirma i Järfälla?
+              Varför välja oss som din flyttfirma i Tyresö?
             </h2>
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg shadow-lg p-8 text-white mb-16">
               <ul className="grid md:grid-cols-2 gap-4">
                 {[
                   "Stor erfarenhet av lokala flyttar",
-                  "God kännedom om Järfälla",
+                  "God kännedom om Tyresö",
                   "Professionell flyttservice",
                   "Heltäckande försäkring",
                   "Fast pris utan överraskningar",
@@ -173,10 +173,10 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-              Vi hjälper dig med flytt i hela Järfälla
+              Vi hjälper dig med flytt i hela Tyresö
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Vi utför flyttjänster i hela Järfälla och närliggande områden som Barkarby, Jakobsberg, Kallhäll och Viksjö. Kontakta oss för en kostnadsfri offert oavsett var i området du bor.
+              Vi utför flyttjänster i hela Tyresö och närliggande områden som Bollmora, Tyresö centrum, Brevik och Österåker. Kontakta oss för en kostnadsfri offert oavsett var i området du bor.
             </p>
             <Link 
               href="/fa-offert" 
@@ -195,21 +195,21 @@ export default function FlyttfirmaJarfallaPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Flyttella - Flyttfirma i Järfälla",
+            "name": "Flyttella - Flyttfirma i Tyresö",
             "image": "https://flyttella.se/flyttella-logo.png",
-            "description": "Professionell flyttfirma i Järfälla. Vi erbjuder flyttstädning, packning och bohagsflytt i Järfälla. Snabb service och konkurrenskraftiga priser.",
+            "description": "Professionell flyttfirma i Tyresö. Vi erbjuder flyttstädning, packning och bohagsflytt i Tyresö. Snabb service och konkurrenskraftiga priser.",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Järfälla",
+              "addressLocality": "Tyresö",
               "addressRegion": "Stockholm",
               "addressCountry": "SE"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "59.4167",
-              "longitude": "17.8333"
+              "latitude": "59.2355",
+              "longitude": "18.2237"
             },
-            "url": "https://flyttella.se/flyttfirma-i-jarfalla",
+            "url": "https://flyttella.se/flyttfirma-i-tyreso",
             "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {

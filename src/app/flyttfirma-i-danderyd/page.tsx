@@ -3,18 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Flyttfirma i Norrmalm | Professionell Flyttservice | Flyttella',
-  description: 'Professionell flyttfirma i Norrmalm. Vi erbjuder flyttstädning, packning och bohagsflytt i Norrmalm. Snabb service och konkurrenskraftiga priser. Boka din flytt idag!',
-  keywords: 'flyttfirma norrmalm, flyttstädning norrmalm, flyttfirma stockholm, flyttstädning stockholm, bohagsflytt norrmalm',
+  title: 'Flyttfirma i Danderyd | Professionell Flyttservice | Flyttella',
+  description: 'Professionell flyttfirma i Danderyd. Vi erbjuder flyttstädning, packning och bohagsflytt i Danderyd. Snabb service och konkurrenskraftiga priser. Boka din flytt idag!',
+  keywords: 'flyttfirma danderyd, flyttstädning danderyd, flyttfirma stockholm, flyttstädning stockholm, bohagsflytt danderyd',
   openGraph: {
-    title: 'Flyttfirma i Norrmalm | Professionell Flyttservice | Flyttella',
-    description: 'Professionell flyttfirma i Norrmalm. Vi erbjuder flyttstädning, packning och bohagsflytt i Norrmalm. Snabb service och konkurrenskraftiga priser.',
+    title: 'Flyttfirma i Danderyd | Professionell Flyttservice | Flyttella',
+    description: 'Professionell flyttfirma i Danderyd. Vi erbjuder flyttstädning, packning och bohagsflytt i Danderyd. Snabb service och konkurrenskraftiga priser.',
     type: 'website',
     locale: 'sv_SE',
   },
 };
 
-export default function FlyttfirmaNorrmalmPage() {
+export default function FlyttfirmaDanderydPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -24,10 +24,10 @@ export default function FlyttfirmaNorrmalmPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Flyttfirma i Norrmalm
+                Flyttfirma i Danderyd
               </h1>
               <p className="text-xl md:text-2xl text-white/90 mb-8">
-                Professionell flyttservice i Norrmalm med erfarenhet sedan 2010. Vi erbjuder komplett flyttservice med bohagsflytt, flyttstädning och packning.
+                Professionell flyttservice i Danderyd - från villor i Djursholm till lägenheter i Stocksund. Vi förstår de unika utmaningarna med att flytta i Danderyds exklusiva områden.
               </p>
             </div>
             <div className="flex gap-4 justify-center">
@@ -48,16 +48,16 @@ export default function FlyttfirmaNorrmalmPage() {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-              Professionell flyttservice i Norrmalm
+              Professionell flyttservice i Danderyd
             </h2>
             <div className="space-y-4 text-gray-600">
               <p className="text-lg">
-                Som etablerad flyttfirma i Norrmalm erbjuder vi en komplett flyttservice som täcker alla dina behov. 
-                Vi har särskild erfarenhet av att hantera både privata flyttar och företagsflyttar i området, med fokus på effektivitet och säkerhet.
+                Som etablerad flyttfirma i Danderyd erbjuder vi en komplett flyttservice som täcker alla dina behov. 
+                Vi har särskild erfarenhet av att hantera flyttar i områdets exklusiva villor och lägenheter, med fokus på säkerhet och precision.
               </p>
               <p className="text-lg">
-                Vi känner väl till Norrmalms olika områden och de särskilda krav som ställs vid flytt här. 
-                Vår expertis omfattar allt från flyttar i villor till lägenheter i de olika delarna av området.
+                Vi känner väl till Danderyds olika områden och de utmaningar som kan uppstå vid flytt här. 
+                Vår lokalkännedom och expertis säkerställer en smidig och effektiv flyttprocess för dig.
               </p>
             </div>
             <div className="mt-8 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-6">
@@ -85,12 +85,12 @@ export default function FlyttfirmaNorrmalmPage() {
             </h3>
             <ul className="space-y-3">
               {[
-                "Erfarenhet med kontorsflyttar",
-                "Hantering av höghus och hissar",
-                "Fullständig försäkring",
-                "Flexibla tider",
-                "Lokal expertis i Norrmalm",
-                "Säker hantering av alla föremål"
+                "Erfarna flyttare i Danderyd",
+                "Specialister på exklusiva hem",
+                "Fullständig flyttförsäkring",
+                "Flexibla flyttider",
+                "Lokal expertis i området",
+                "Varsam hantering av möbler"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <svg className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -110,11 +110,11 @@ export default function FlyttfirmaNorrmalmPage() {
             <ul className="space-y-3">
               {[
                 "Grundlig städning av alla ytor",
-                "Anpassad städning för kontorslokaler",
+                "Fönsterputsning ingår",
                 "Städgaranti",
                 "Flexibla tider",
-                "Erfaren personal i Norrmalm",
-                "Snabb service"
+                "Erfaren städpersonal",
+                "RUT-avdrag möjligt"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <svg className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -133,12 +133,12 @@ export default function FlyttfirmaNorrmalmPage() {
             </h3>
             <ul className="space-y-3">
               {[
-                "Effektiv packning för alla bostadstyper",
-                "Professionell packning",
+                "Professionell packtjänst",
+                "Premium flyttmaterial",
                 "Packgaranti",
-                "Säker hantering",
+                "Specialhantering av värdesaker",
                 "Effektiv process",
-                "Erfaren personal i Norrmalm"
+                "Uppackning vid behov"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <svg className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -154,18 +154,18 @@ export default function FlyttfirmaNorrmalmPage() {
         {/* Why Choose Us */}
         <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg shadow-lg p-8 text-white mb-16">
           <h2 className="text-2xl font-bold mb-6">
-            Varför välja oss som din flyttfirma i Norrmalm?
+            Varför välja oss som din flyttfirma i Danderyd?
           </h2>
           <ul className="grid md:grid-cols-2 gap-4">
             {[
-              "Erfarenhet med alla bostadstyper",
-              "Lokalkännedom i hela Norrmalm",
-              "Erfarenhet sedan 2010",
-              "Fullständig försäkring",
-              "Fast pris-garanti",
+              "Stor erfarenhet av exklusiva flyttar",
+              "God kännedom om Danderyd",
+              "Premium flyttservice",
+              "Heltäckande försäkring",
+              "Fast pris utan överraskningar",
               "Konkurrenskraftiga priser",
-              "Kvalitetsgaranti",
-              "Snabb service"
+              "Nöjd-kund-garanti",
+              "Diskret och pålitlig service"
             ].map((item, index) => (
               <li key={index} className="flex items-start">
                 <svg className="w-5 h-5 text-white mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -177,14 +177,26 @@ export default function FlyttfirmaNorrmalmPage() {
           </ul>
         </div>
 
+        {/* Areas Section */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
+            Vi flyttar i hela Danderyd med omnejd
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Vi utför flyttuppdrag i hela Danderyd och närliggande områden som Djursholm, 
+            Stocksund, Enebyberg och Mörby. Med vår lokalkännedom och erfarenhet 
+            kan vi effektivt planera och genomföra din flytt oavsett område.
+          </p>
+        </div>
+
         {/* CTA Section */}
         <div className="text-center">
           <h2 className="text-3xl font-bold text-[#0F172A] mb-6">
-            Boka din flytt i Norrmalm idag
+            Boka din flytt i Danderyd idag
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Vi erbjuder skräddarsydda lösningar för just dina behov. Kontakta oss för en 
-            kostnadsfri offert och låt oss ta hand om hela processen.
+            kostnadsfri offert och låt oss ta hand om hela flyttprocessen.
           </p>
           <Link 
             href="/fa-offert" 
@@ -202,33 +214,35 @@ export default function FlyttfirmaNorrmalmPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Flyttella - Flyttfirma i Norrmalm",
+            "name": "Flyttella - Flyttfirma i Danderyd",
             "image": "https://flyttella.se/flyttella-logo.png",
-            "description": "Professionell flyttfirma i Norrmalm. Vi erbjuder flyttstädning, packning och bohagsflytt i Norrmalm. Snabb service och konkurrenskraftiga priser.",
+            "description": "Professionell flyttfirma i Danderyd. Vi erbjuder flyttstädning, packning och bohagsflytt i Danderyd. Snabb service och konkurrenskraftiga priser.",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Norrmalm",
+              "addressLocality": "Danderyd",
               "addressRegion": "Stockholm",
               "addressCountry": "SE"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "59.3326",
-              "longitude": "18.0649"
+              "latitude": "59.4027",
+              "longitude": "18.0225"
             },
-            "url": "https://flyttella.se/flyttfirma-i-norrmalm",
+            "url": "https://flyttella.se/flyttfirma-i-danderyd",
             "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
               "opens": "08:00",
               "closes": "18:00"
-            },
-            "sameAs": [
-              "https://www.facebook.com/flyttella",
-              "https://www.instagram.com/flyttella"
-            ]
+            }
           })
         }}
       />

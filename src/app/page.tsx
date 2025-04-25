@@ -197,8 +197,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reviews Widget Section */}
-      <ReviewsWidget />
+        {/* Reviews Widget Section */}
+        <ReviewsWidget />
 
       {/* RUT-avdrag Section */}
       <section className="section-padding bg-gradient-to-r from-[#0F172A] to-[#10B981] relative overflow-hidden">
@@ -239,8 +239,8 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-3">
                   <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                   <span className="text-lg">50% av arbetskostnaden</span>
                 </div>
               </div>
@@ -260,7 +260,7 @@ export default function Home() {
               </a>
             </motion.div>
           </motion.div>
-        </div>
+                </div>
       </section>
 
       {/* Completed Assignments Counter */}
@@ -301,7 +301,7 @@ export default function Home() {
               uppdrag utförda
             </motion.p>
           </motion.div>
-        </div>
+              </div>
       </motion.section>
 
       {/* Services Sections */}
@@ -392,8 +392,8 @@ export default function Home() {
                   <span className="text-4xl">{service.icon}</span>
                   <h3 className="text-2xl md:text-3xl font-bold text-white">
                     {service.title}
-                  </h3>
-                </div>
+                </h3>
+              </div>
 
                 <p className="text-gray-100 mb-6 relative">
                   {service.description}
@@ -418,17 +418,17 @@ export default function Home() {
                         stroke="currentColor"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                    </svg>
                     </Link>
                   </motion.div>
-                </div>
+              </div>
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Se alla våra tjänster Section */}
+        {/* Se alla våra tjänster Section */}
       <motion.section 
         className="py-24 bg-white text-[#0F172A] relative overflow-hidden"
         initial={{ opacity: 0 }}
@@ -437,19 +437,19 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+            <div className="max-w-3xl mx-auto text-center">
             <motion.h2 
               className="text-3xl md:text-4xl font-bold mb-6"
               variants={fadeInUp}
             >
-              Upptäck Alla Våra Tjänster
+                Upptäck Alla Våra Tjänster
             </motion.h2>
             <motion.p 
               className="text-lg md:text-xl mb-8 text-[#0F172A]/90"
               variants={fadeInUp}
             >
-              Vi erbjuder ett komplett utbud av flyttjänster för att göra din flytt så smidig som möjligt. 
-              Från bohagsflytt och flyttstädning till specialtjänster som piano- och kontorsflytt.
+                Vi erbjuder ett komplett utbud av flyttjänster för att göra din flytt så smidig som möjligt. 
+                Från bohagsflytt och flyttstädning till specialtjänster som piano- och kontorsflytt.
             </motion.p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -474,12 +474,12 @@ export default function Home() {
               </Link>
             </motion.div>
           </div>
-        </div>
+              </div>
       </motion.section>
 
       {/* Locations Section */}
-      <section className="section-padding bg-gradient-to-r from-[#0F172A]/5 to-[#10B981]/5">
-        <div className="container mx-auto px-4">
+        <section className="section-padding bg-gradient-to-r from-[#0F172A]/5 to-[#10B981]/5">
+          <div className="container mx-auto px-4">
           <motion.h2 
             className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12"
             variants={fadeInUp}
@@ -487,7 +487,7 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            HÄR FINNS VI
+              HÄR FINNS VI
           </motion.h2>
           <motion.div 
             className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8"
@@ -502,7 +502,17 @@ export default function Home() {
               { name: "Östermalm", slug: "ostermalm" },
               { name: "Vasastan", slug: "vasastan" },
               { name: "Bro", slug: "bro" },
-              { name: "Täby", slug: "taby" }
+              { name: "Täby", slug: "taby" },
+              { name: "Kungsängen", slug: "kungsangen" },
+              { name: "Haninge", slug: "haninge" },
+              { name: "Danderyd", slug: "danderyd" },
+              { name: "Kista", slug: "kista" },
+              { name: "Sollentuna", slug: "sollentuna" },
+              { name: "Upplands Väsby", slug: "upplands-vasby" },
+              { name: "Vallentuna", slug: "vallentuna" },
+              { name: "Åkersberga", slug: "akersberga" },
+              { name: "Tyresö", slug: "tyreso" },
+              { name: "Järfälla", slug: "jarfalla" }
             ].map((location, index) => (
               <motion.a
                 key={index}
@@ -511,14 +521,14 @@ export default function Home() {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05, x: 5 }}
               >
-                <h3 className="text-[#0F172A] group-hover:text-[#10B981] transition-colors font-medium">
+                  <h3 className="text-[#0F172A] group-hover:text-[#10B981] transition-colors font-medium">
                   Flyttfirma i {location.name}
-                </h3>
+                  </h3>
               </motion.a>
-            ))}
+              ))}
           </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
     </main>
   );
 }

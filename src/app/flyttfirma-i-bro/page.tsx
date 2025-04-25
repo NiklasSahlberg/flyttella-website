@@ -60,6 +60,19 @@ export default function FlyttfirmaBroPage() {
                 Vår expertis och lokalkännedom säkerställer en smidig flyttprocess för alla typer av bostäder.
               </p>
             </div>
+            <div className="mt-8 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-white">
+                  RUT-avdrag
+                </h3>
+                <div className="bg-white/10 rounded-full px-4 py-1">
+                  <span className="text-sm font-medium text-white">50% avdrag</span>
+                </div>
+              </div>
+              <p className="text-base text-white/90">
+                Vi erbjuder RUT-avdrag på alla våra tjänster, vilket gör det ännu mer kostnadseffektivt för dig.
+              </p>
+            </div>
           </div>
         </div>
 
