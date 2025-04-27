@@ -171,13 +171,12 @@ export default function Header() {
                   </div>
                 )}
               </div>
-
             </div>
 
             {/* Mobile Menu Button */}
             <button 
               onClick={toggleMobileMenu}
-              className="md:hidden text-[#0F172A] hover:text-[#10B981] transition-colors"
+              className="md:hidden text-[#0F172A] hover:text-[#10B981] transition-colors p-2"
             >
               {isMobileMenuOpen ? (
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -197,6 +196,7 @@ export default function Header() {
           className={`fixed inset-0 z-50 bg-white transform transition-transform duration-300 ease-in-out ${
             isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
+          style={{ top: '0', left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}
         >
           <div className="flex flex-col h-full">
             {/* Header with logo and close button */}
