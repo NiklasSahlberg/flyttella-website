@@ -159,7 +159,7 @@ export default function Home() {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white/10 backdrop-blur-sm p-6 rounded-lg cursor-pointer"
+                    className="bg-white/10 backdrop-blur-sm p-6 rounded-lg cursor-pointer flex items-center justify-center text-center"
                     variants={fadeInUp}
                     whileHover={{ 
                       scale: 1.05,
@@ -512,7 +512,8 @@ export default function Home() {
               { name: "Vallentuna", slug: "vallentuna" },
               { name: "Åkersberga", slug: "akersberga" },
               { name: "Tyresö", slug: "tyreso" },
-              { name: "Järfälla", slug: "jarfalla" }
+              { name: "Järfälla", slug: "jarfalla" },
+              { name: "Huddinge", slug: "huddinge" }
             ].map((location, index) => (
               <motion.a
                 key={index}

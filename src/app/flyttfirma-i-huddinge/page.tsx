@@ -4,16 +4,16 @@ import Link from 'next/link';
 import { CheckIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Flyttfirma i Järfälla | Lokal Flyttservice | Flyttella',
-  description: 'Erfaren flyttfirma med gedigen lokalkännedom i Järfälla. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet. Kontakta oss för en smidig flytt!',
-  keywords: 'flyttfirma järfälla, flytthjälp järfälla, flyttstädning järfälla, packning järfälla, bohagsflytt järfälla',
+  title: 'Flyttfirma i Huddinge | Lokal Flyttservice | Flyttella',
+  description: 'Erfaren flyttfirma med gedigen lokalkännedom i Huddinge. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet. Kontakta oss för en smidig flytt!',
+  keywords: 'flyttfirma huddinge, flytthjälp huddinge, flyttstädning huddinge, packning huddinge, bohagsflytt huddinge',
   openGraph: {
-    title: 'Flyttfirma i Järfälla | Lokal Flyttservice | Flyttella',
-    description: 'Erfaren flyttfirma med gedigen lokalkännedom i Järfälla. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet.',
+    title: 'Flyttfirma i Huddinge | Lokal Flyttservice | Flyttella',
+    description: 'Erfaren flyttfirma med gedigen lokalkännedom i Huddinge. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet.',
   },
 };
 
-export default function FlyttfirmaJarfallaPage() {
+export default function FlyttfirmaHuddingePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -22,10 +22,10 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4 relative z-10 text-white">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Din lokala flyttfirma i expansiva Järfälla
+              Din lokala flyttfirma i Huddinge
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8">
-              Vi är specialiserade på flyttar i Järfällas snabbväxande områden - från nybyggda bostäder i Barkarbystaden till etablerade villor i Jakobsberg och charmiga hem i Kallhäll.
+              Vi erbjuder professionell flyttservice anpassad för Huddinges unika behov - från moderna lägenheter i centrum till villor i Flemingsberg och Skogås.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/fa-offert" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
@@ -44,14 +44,14 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-              Flyttexperter i det växande Järfälla
+              Flyttexperter i Huddinge
             </h2>
             <div className="space-y-4">
               <p className="text-lg text-gray-600">
-                Som etablerad flyttfirma i Järfälla har vi specialanpassat våra tjänster för kommunens unika karaktär. Vi har gedigen erfarenhet av att hantera flyttar i Barkarbystaden, ett av Sveriges största stadsutvecklingsprojekt, där vi hjälper både privatpersoner och företag med sina flyttbehov.
+                Som etablerad flyttfirma i Huddinge har vi specialanpassat våra tjänster för kommunens unika karaktär. Vi har gedigen erfarenhet av att hantera flyttar i både Huddinge centrum och de omkringliggande områdena, där vi hjälper både privatpersoner och företag med sina flyttbehov.
               </p>
               <p className="text-lg text-gray-600">
-                Vår djupa förståelse för Järfällas olika områden gör att vi kan erbjuda skräddarsydda flyttlösningar. Vi hanterar allt från flyttar i nyproducerade lägenheter i Barkarbystaden till villor i etablerade områden som Jakobsberg och Kallhäll, samt företagsflyttar i kommunens växande företagsområden.
+                Vår djupa förståelse för Huddinges olika områden gör att vi kan erbjuda skräddarsydda flyttlösningar. Vi hanterar allt från flyttar i moderna lägenheter i centrum till villor i Flemingsberg och Skogås, samt företagsflyttar i kommunens växande företagsområden.
               </p>
             </div>
             <div className="mt-8 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-6">
@@ -62,7 +62,7 @@ export default function FlyttfirmaJarfallaPage() {
                 </div>
               </div>
               <p className="text-white/90">
-                Vi erbjuder RUT-avdrag på våra tjänster vilket gör det mer prisvärt för dig som privatperson. Perfekt för dig som flyttar inom eller till Järfälla.
+                Vi erbjuder RUT-avdrag på våra tjänster vilket gör det mer prisvärt för dig som privatperson. Perfekt för dig som flyttar inom eller till Huddinge.
               </p>
             </div>
           </div>
@@ -74,14 +74,14 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-12 text-center">
-              Anpassade flyttjänster för Järfällas behov
+              Anpassade flyttjänster för Huddinges behov
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h3 className="text-2xl font-bold text-[#0F172A] mb-6">Bohagsflytt</h3>
                 <ul className="space-y-3">
                   {[
-                    "Specialister på Barkarbystadens nya bostäder",
+                    "Specialister på Huddinges bostäder",
                     "Anpassad för alla bostadstyper",
                     "Fullständig flyttförsäkring",
                     "Flexibla flyttider",
@@ -105,7 +105,7 @@ export default function FlyttfirmaJarfallaPage() {
                     "Städgaranti med besiktning",
                     "Flexibla tider",
                     "Erfaren städpersonal",
-                    "RUT-avdrag för privatpersoner"
+                    "Grundlig städning av alla ytor"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
                       <CheckIcon className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" />
@@ -124,7 +124,7 @@ export default function FlyttfirmaJarfallaPage() {
                     "Särskild hantering av ömtåliga föremål",
                     "Effektiv packprocess",
                     "Tydlig märkning för enkel uppackning",
-                    "Hjälp med uppackning"
+                    "Hjälp med upppackning"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
                       <CheckIcon className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" />
@@ -143,12 +143,12 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-8 text-center">
-              Varför välja oss som din flyttfirma i Järfälla?
+              Varför välja oss som din flyttfirma i Huddinge?
             </h2>
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg shadow-lg p-8 text-white mb-16">
               <ul className="grid md:grid-cols-2 gap-4">
                 {[
-                  "Specialister på Barkarbystaden",
+                  "Specialister på Huddinges områden",
                   "Omfattande lokalkännedom",
                   "Anpassade flyttlösningar",
                   "Heltäckande försäkring",
@@ -173,10 +173,10 @@ export default function FlyttfirmaJarfallaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-              Vi täcker hela Järfälla kommun
+              Vi täcker hela Huddinge kommun
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Vi har specialiserat oss på flyttar i hela Järfälla - från den nya, moderna Barkarbystaden till etablerade områden som Jakobsberg, Kallhäll och Viksjö. Med vår omfattande lokalkännedom kan vi erbjuda effektiv flyttservice oavsett var i kommunen du bor eller ska flytta till.
+              Vi har specialiserat oss på flyttar i hela Huddinge - från centrum till Flemingsberg, Skogås, Segeltorp och andra områden. Med vår omfattande lokalkännedom kan vi erbjuda effektiv flyttservice oavsett var i kommunen du bor eller ska flytta till.
             </p>
             <Link 
               href="/fa-offert" 
@@ -195,21 +195,21 @@ export default function FlyttfirmaJarfallaPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Flyttella - Flyttfirma i Järfälla",
+            "name": "Flyttella - Flyttfirma i Huddinge",
             "image": "https://flyttella.se/flyttella-logo.png",
-            "description": "Professionell flyttfirma i Järfälla. Vi erbjuder flyttstädning, packning och bohagsflytt i Järfälla. Snabb service och konkurrenskraftiga priser.",
+            "description": "Professionell flyttfirma i Huddinge. Vi erbjuder flyttstädning, packning och bohagsflytt i Huddinge. Snabb service och konkurrenskraftiga priser.",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Järfälla",
+              "addressLocality": "Huddinge",
               "addressRegion": "Stockholm",
               "addressCountry": "SE"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "59.4167",
-              "longitude": "17.8333"
+              "latitude": "59.2370",
+              "longitude": "17.9819"
             },
-            "url": "https://flyttella.se/flyttfirma-i-jarfalla",
+            "url": "https://flyttella.se/flyttfirma-i-huddinge",
             "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {
