@@ -513,7 +513,8 @@ export default function Home() {
               { name: "Åkersberga", slug: "akersberga" },
               { name: "Tyresö", slug: "tyreso" },
               { name: "Järfälla", slug: "jarfalla" },
-              { name: "Huddinge", slug: "huddinge" }
+              { name: "Huddinge", slug: "huddinge" },
+              { name: "Västerhaninge", slug: "vasterhaninge" }
             ].map((location, index) => (
               <motion.a
                 key={index}

@@ -193,8 +193,13 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`fixed inset-0 z-50 bg-white transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div 
+          className={`fixed inset-0 z-50 bg-white transform transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+        >
           <div className="flex flex-col h-full">
+            {/* Header with logo and close button */}
             <div className="flex items-center justify-between p-4 border-b">
               <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
                 <Image
@@ -215,21 +220,53 @@ export default function Header() {
                 </svg>
               </button>
             </div>
+
+            {/* Navigation links */}
             <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
-              <Link href="/bohagsflytt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Bohagsflytt</Link>
-              <Link href="/flyttstadning" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Flyttstädning</Link>
-              <Link href="/barhjalp" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Bärhjälp</Link>
-              <Link href="/piano-tunglyft" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Piano/Tunglyft</Link>
-              <Link href="/kontorsflytt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Kontorsflytt</Link>
-              <Link href="/montering" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>Montering</Link>
+              <Link href="/" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                Hem
+              </Link>
+              <Link href="/bohagsflytt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                Bohagsflytt
+              </Link>
+              <Link href="/flyttstadning" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                Flyttstädning
+              </Link>
+              <Link href="/barhjalp" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                Bärhjälp
+              </Link>
+              <Link href="/piano-tunglyft" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                Piano/Tunglyft
+              </Link>
+              <Link href="/kontorsflytt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                Kontorsflytt
+              </Link>
+              <Link href="/montering" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                Montering
+              </Link>
+              <Link href="/om-oss" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                Om oss
+              </Link>
+              <Link href="/kontakt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                Kontakt
+              </Link>
             </nav>
-            <div className="p-4 border-t">
+
+            {/* CTA buttons */}
+            <div className="p-4 border-t space-y-3">
               <Link
                 href="/fa-offert"
-                className="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#10B981] hover:bg-[#059669]"
+                className="w-full flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#10B981] hover:bg-[#059669]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Få offert
+              </Link>
+              <Link
+                href="/fa-stadning-offert"
+                className="w-full flex items-center justify-center px-4 py-3 border border-[#10B981] text-base font-medium rounded-md text-[#10B981] hover:bg-[#10B981] hover:text-white"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Städoffert
               </Link>
             </div>
           </div>
