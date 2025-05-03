@@ -70,6 +70,57 @@ const buttonVariants = {
 };
 
 export default function Home() {
+  const locations = [
+    { name: "Norrmalm", slug: "norrmalm" },
+    { name: "Kungsholmen", slug: "kungsholmen" },
+    { name: "Östermalm", slug: "ostermalm" },
+    { name: "Vasastan", slug: "vasastan" },
+    { name: "Bro", slug: "bro" },
+    { name: "Täby", slug: "taby" },
+    { name: "Kungsängen", slug: "kungsangen" },
+    { name: "Haninge", slug: "haninge" },
+    { name: "Danderyd", slug: "danderyd" },
+    { name: "Kista", slug: "kista" },
+    { name: "Sollentuna", slug: "sollentuna" },
+    { name: "Upplands Väsby", slug: "upplands-vasby" },
+    { name: "Vallentuna", slug: "vallentuna" },
+    { name: "Åkersberga", slug: "akersberga" },
+    { name: "Tyresö", slug: "tyreso" },
+    { name: "Järfälla", slug: "jarfalla" },
+    { name: "Huddinge", slug: "huddinge" },
+    { name: "Västerhaninge", slug: "vasterhaninge" },
+    { name: "Farsta", slug: "farsta" },
+    { name: "Skärholmen", slug: "skarholmen" },
+    { name: "Enskede", slug: "enskede" },
+    { name: "Hägersten", slug: "hagersten" },
+    { name: "Bromma", slug: "bromma" },
+    { name: "Spånga", slug: "spanga" },
+    { name: "Sundbyberg", slug: "sundbyberg" },
+    { name: "Solna", slug: "solna" },
+    { name: "Lidingö", slug: "lidingo" },
+    { name: "Nacka", slug: "nacka" },
+    { name: "Värmdö", slug: "varmdo" },
+    { name: "Ekerö", slug: "ekero" },
+    { name: "Botkyrka", slug: "botkyrka" },
+    { name: "Salem", slug: "salem" },
+    { name: "Tumba", slug: "tumba" },
+    { name: "Märsta", slug: "marsta" },
+    { name: "Södertälje", slug: "sodertalje" },
+    { name: "Nynäshamn", slug: "nynashamn" }
+  ].map((location, index) => (
+    <motion.a
+      key={index}
+      href={`/flyttfirma-i-${location.slug}`}
+      className="group"
+      variants={fadeInUp}
+      whileHover={{ scale: 1.05, x: 5 }}
+    >
+      <h3 className="text-[#0F172A] group-hover:text-[#10B981] transition-colors font-medium">
+        Flyttfirma i {location.name}
+      </h3>
+    </motion.a>
+  ));
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -496,38 +547,7 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            {[
-              { name: "Norrmalm", slug: "norrmalm" },
-              { name: "Kungsholmen", slug: "kungsholmen" },
-              { name: "Östermalm", slug: "ostermalm" },
-              { name: "Vasastan", slug: "vasastan" },
-              { name: "Bro", slug: "bro" },
-              { name: "Täby", slug: "taby" },
-              { name: "Kungsängen", slug: "kungsangen" },
-              { name: "Haninge", slug: "haninge" },
-              { name: "Danderyd", slug: "danderyd" },
-              { name: "Kista", slug: "kista" },
-              { name: "Sollentuna", slug: "sollentuna" },
-              { name: "Upplands Väsby", slug: "upplands-vasby" },
-              { name: "Vallentuna", slug: "vallentuna" },
-              { name: "Åkersberga", slug: "akersberga" },
-              { name: "Tyresö", slug: "tyreso" },
-              { name: "Järfälla", slug: "jarfalla" },
-              { name: "Huddinge", slug: "huddinge" },
-              { name: "Västerhaninge", slug: "vasterhaninge" }
-            ].map((location, index) => (
-              <motion.a
-                key={index}
-                href={`/flyttfirma-i-${location.slug}`}
-                className="group"
-                variants={fadeInUp}
-                whileHover={{ scale: 1.05, x: 5 }}
-              >
-                  <h3 className="text-[#0F172A] group-hover:text-[#10B981] transition-colors font-medium">
-                  Flyttfirma i {location.name}
-                  </h3>
-              </motion.a>
-              ))}
+            {locations}
           </motion.div>
           </div>
         </section>

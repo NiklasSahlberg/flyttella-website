@@ -4,16 +4,16 @@ import Link from 'next/link';
 import { CheckIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Flyttfirma i Sundbyberg | Lokal Flyttservice | Flyttella',
-  description: 'Erfaren flyttfirma med gedigen lokalkännedom i Sundbyberg. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet. Kontakta oss för en smidig flytt!',
-  keywords: 'flyttfirma sundbyberg, flytthjälp sundbyberg, flyttstädning sundbyberg, packning sundbyberg, bohagsflytt sundbyberg',
+  title: 'Flyttfirma i Märsta | Lokal Flyttservice | Flyttella',
+  description: 'Erfaren flyttfirma med gedigen lokalkännedom i Märsta. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet. Kontakta oss för en smidig flytt!',
+  keywords: 'flyttfirma märsta, flytthjälp märsta, flyttstädning märsta, packning märsta, bohagsflytt märsta',
   openGraph: {
-    title: 'Flyttfirma i Sundbyberg | Lokal Flyttservice | Flyttella',
-    description: 'Erfaren flyttfirma med gedigen lokalkännedom i Sundbyberg. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet.',
+    title: 'Flyttfirma i Märsta | Lokal Flyttservice | Flyttella',
+    description: 'Erfaren flyttfirma med gedigen lokalkännedom i Märsta. Vi erbjuder professionell flytthjälp, flyttstädning och packning med fokus på kvalitet och kundnöjdhet.',
   },
 };
 
-export default function FlyttfirmaSundbybergPage() {
+export default function FlyttfirmaMarstaPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -22,10 +22,10 @@ export default function FlyttfirmaSundbybergPage() {
         <div className="container mx-auto px-4 relative z-10 text-white">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Din lokala flyttfirma i Sundbyberg
+              Din lokala flyttfirma i Märsta
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8">
-              Vi är specialiserade på flyttar i hela Sundbyberg - från lägenheter i Centrum till villor i Rissne, Hallonbergen och Duvbo. Med vår lokalkännedom säkerställer vi en smidig flyttprocess i Sundbybergs alla områden.
+              Vi är specialiserade på flyttar i hela Märsta - från lägenheter i centrala Märsta till villor i Rosersberg och alla områden däremellan. Med vår lokalkännedom säkerställer vi en smidig flyttprocess.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/fa-offert" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
@@ -44,14 +44,14 @@ export default function FlyttfirmaSundbybergPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-              Flyttexperter i Sundbybergs alla områden
+              Flyttexperter i Märsta
             </h2>
             <div className="space-y-4">
               <p className="text-lg text-gray-600">
-                Som etablerad flyttfirma i Sundbyberg har vi specialanpassat våra tjänster för områdets unika karaktär. Vi har omfattande erfarenhet av att hantera flyttar i både lägenhetskomplex och villor, från Centrum till Rissne, Hallonbergen, Duvbo, Lilla Alby och Stora Ursvik.
+                Som etablerad flyttfirma i Märsta har vi specialanpassat våra tjänster för områdets unika karaktär. Vi har omfattande erfarenhet av att hantera flyttar i både lägenhetskomplex i centrala Märsta och villor i Rosersberg. Vår expertis sträcker sig över hela Märsta, från bostadsområden till industriområden som Arlandastad.
               </p>
               <p className="text-lg text-gray-600">
-                Vår djupa förståelse för Sundbybergs olika områden gör att vi kan erbjuda skräddarsydda flyttlösningar. Vi hanterar allt från flyttar i lägenhetskomplex med hissar till villor i etablerade områden, samt företagsflyttar i kommunens växande företagsområden som Sundbybergs Centrum och Rissne Business Park.
+                Vår djupa förståelse för Märstas olika områden gör att vi kan erbjuda skräddarsydda flyttlösningar. Vi hanterar allt från flyttar i moderna lägenhetskomplex till villor med trädgård, samt företagsflyttar i kommunens växande industriområden.
               </p>
             </div>
             <div className="mt-8 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg p-6">
@@ -62,7 +62,7 @@ export default function FlyttfirmaSundbybergPage() {
                 </div>
               </div>
               <p className="text-white/90">
-                Vi erbjuder RUT-avdrag på våra tjänster vilket gör det mer prisvärt för dig som privatperson. Perfekt för dig som flyttar inom eller till Sundbyberg.
+                Vi erbjuder RUT-avdrag på våra tjänster vilket gör det mer prisvärt för dig som privatperson. Perfekt för dig som flyttar inom eller till Märsta.
               </p>
             </div>
           </div>
@@ -74,15 +74,15 @@ export default function FlyttfirmaSundbybergPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-12 text-center">
-              Anpassade flyttjänster för Sundbybergs alla områden
+              Anpassade flyttjänster för Märsta
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h3 className="text-2xl font-bold text-[#0F172A] mb-6">Bohagsflytt</h3>
                 <ul className="space-y-3">
                   {[
-                    "Specialister på lägenhetsflyttar i Centrum",
-                    "Erfarenhet med villor i Rissne och Duvbo",
+                    "Specialister på lägenhetsflyttar",
+                    "Erfarenhet med villaflyttar",
                     "Fullständig flyttförsäkring",
                     "Flexibla flyttider",
                     "Gedigen lokalkännedom",
@@ -100,7 +100,7 @@ export default function FlyttfirmaSundbybergPage() {
                 <h3 className="text-2xl font-bold text-[#0F172A] mb-6">Flyttstädning</h3>
                 <ul className="space-y-3">
                   {[
-                    "Anpassad för moderna bostäder i Sundbyberg",
+                    "Anpassad för alla bostadstyper",
                     "Fönsterputsning ingår",
                     "Städgaranti med besiktning",
                     "Flexibla tider",
@@ -143,12 +143,12 @@ export default function FlyttfirmaSundbybergPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-8 text-center">
-              Varför välja oss som din flyttfirma i Sundbyberg?
+              Varför välja oss som din flyttfirma i Märsta?
             </h2>
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg shadow-lg p-8 text-white mb-16">
               <ul className="grid md:grid-cols-2 gap-4">
                 {[
-                  "Specialister på flyttar i hela Sundbyberg",
+                  "Specialister på flyttar i hela Märsta",
                   "Omfattande lokalkännedom i alla områden",
                   "Anpassade flyttlösningar för varje område",
                   "Heltäckande försäkring",
@@ -173,10 +173,10 @@ export default function FlyttfirmaSundbybergPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-              Vi täcker hela Sundbyberg
+              Vi täcker hela Märsta
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Vi har specialiserat oss på flyttar i hela Sundbyberg - från Centrum till Rissne, Hallonbergen, Duvbo, Lilla Alby och Stora Ursvik. Med vår omfattande lokalkännedom kan vi erbjuda effektiv flyttservice oavsett var i Sundbyberg du bor eller ska flytta till.
+              Vi har specialiserat oss på flyttar i hela Märsta - från centrala Märsta till Rosersberg, Arlandastad och alla andra områden i kommunen. Med vår omfattande lokalkännedom kan vi erbjuda effektiv flyttservice oavsett var i Märsta du bor eller ska flytta till.
             </p>
             <Link 
               href="/fa-offert" 
@@ -195,23 +195,23 @@ export default function FlyttfirmaSundbybergPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Flyttella - Flyttfirma i Sundbyberg",
+            "name": "Flyttella - Flyttfirma i Märsta",
             "image": "https://flyttella.se/flyttella-logo.png",
-            "description": "Professionell flyttfirma i Sundbyberg. Vi erbjuder flyttstädning, packning och bohagsflytt i Sundbyberg. Snabb service och konkurrenskraftiga priser.",
+            "description": "Professionell flyttfirma i Märsta. Vi erbjuder flyttstädning, packning och bohagsflytt i Märsta. Snabb service och konkurrenskraftiga priser.",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Sundbyberg Centrum",
-              "addressLocality": "Sundbyberg",
+              "streetAddress": "Märsta Centrum",
+              "addressLocality": "Märsta",
               "addressRegion": "Stockholm",
-              "postalCode": "172 83",
+              "postalCode": "195 00",
               "addressCountry": "SE"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "59.3667",
-              "longitude": "17.9667"
+              "latitude": "59.6167",
+              "longitude": "17.8500"
             },
-            "url": "https://flyttella.se/flyttfirma-i-sundbyberg",
+            "url": "https://flyttella.se/flyttfirma-i-marsta",
             "telephone": "08-898-301",
             "priceRange": "$$",
             "openingHoursSpecification": {
