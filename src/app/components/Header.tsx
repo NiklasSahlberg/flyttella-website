@@ -87,11 +87,11 @@ export default function Header() {
       {/* Main Header */}
       <div className="bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex items-center">
+          <div className="flex justify-between items-center h-20 relative">
+            {/* Logo - centered on mobile */}
+            <div className="flex-1 flex justify-center md:justify-start items-center relative">
               <Link href="/">
-                <div className="relative h-20 w-96">
+                <div className="relative h-16 w-32 md:h-20 md:w-96 mx-auto">
                   <Image
                     src="/flyttella-logo.png"
                     alt="Flyttella Logo"
@@ -102,6 +102,21 @@ export default function Header() {
                 </div>
               </Link>
             </div>
+            {/* Hamburger menu in top right on mobile - only show when menu is closed */}
+            {(!isMobileMenuOpen) && (
+              <div className="md:hidden">
+                <button 
+                  onClick={toggleMobileMenu}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 text-[#0F172A] hover:text-[#10B981] transition-colors p-2"
+                  style={{right: '1rem'}}
+                  aria-label="Öppna meny"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            )}
 
             {/* Navigation and CTA */}
             <div className="hidden md:flex items-center space-x-8">
@@ -172,107 +187,109 @@ export default function Header() {
                 )}
               </div>
             </div>
-
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
-              <button 
-                onClick={toggleMobileMenu}
-                className="text-[#0F172A] hover:text-[#10B981] transition-colors p-2"
-              >
-                {isMobileMenuOpen ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                )}
-              </button>
-            </div>
           </div>
         </div>
 
         {/* Mobile Menu */}
+        {isMobileMenuOpen && (
         <div 
-          className={`fixed inset-0 z-50 bg-white transform transition-transform duration-300 ease-in-out ${
-            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
-          style={{ top: '0', left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}
+          className="fixed inset-0 z-50 bg-white flex flex-col h-full"
         >
-          <div className="flex flex-col h-full">
-            {/* Header with logo and close button */}
-            <div className="flex items-center justify-between p-4 border-b">
-              <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-                <Image
-                  src="/flyttella-logo.png"
-                  alt="Flyttella Logo"
-                  width={200}
-                  height={50}
-                  className="h-12 w-auto"
-                />
-              </Link>
+          {/* Header with logo and close button */}
+          <div className="flex items-center justify-between p-4 border-b">
+            <Link href="/" className="flex items-center mx-auto" onClick={() => setIsMobileMenuOpen(false)}>
+              <Image
+                src="/flyttella-logo.png"
+                alt="Flyttella Logo"
+                width={200}
+                height={50}
+                className="h-12 w-auto"
+              />
+            </Link>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#10B981] absolute right-4"
+              style={{top: '1.25rem'}}
+              aria-label="Stäng meny"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Navigation links */}
+          <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
+            <Link href="/" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+              Hem
+            </Link>
+            {/* Services Section */}
+            <div>
               <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#10B981]"
+                onClick={toggleMobileServices}
+                className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]"
               >
-                <span className="sr-only">Stäng meny</span>
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <span>Tjänster</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`h-5 w-5 transform transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
+              {isMobileServicesOpen && (
+                <div className="pl-4 space-y-1">
+                  <Link href="/bohagsflytt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                    Bohagsflytt
+                  </Link>
+                  <Link href="/flyttstadning" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                    Flyttstädning
+                  </Link>
+                  <Link href="/barhjalp" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                    Bärhjälp
+                  </Link>
+                  <Link href="/piano-tunglyft" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                    Piano/Tunglyft
+                  </Link>
+                  <Link href="/kontorsflytt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                    Kontorsflytt
+                  </Link>
+                  <Link href="/montering" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+                    Montering
+                  </Link>
+                </div>
+              )}
             </div>
+            <Link href="/om-oss" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+              Om oss
+            </Link>
+            <Link href="/kontakt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
+              Kontakt
+            </Link>
+          </nav>
 
-            {/* Navigation links */}
-            <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
-              <Link href="/" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
-                Hem
-              </Link>
-              <Link href="/bohagsflytt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
-                Bohagsflytt
-              </Link>
-              <Link href="/flyttstadning" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
-                Flyttstädning
-              </Link>
-              <Link href="/barhjalp" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
-                Bärhjälp
-              </Link>
-              <Link href="/piano-tunglyft" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
-                Piano/Tunglyft
-              </Link>
-              <Link href="/kontorsflytt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
-                Kontorsflytt
-              </Link>
-              <Link href="/montering" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
-                Montering
-              </Link>
-              <Link href="/om-oss" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
-                Om oss
-              </Link>
-              <Link href="/kontakt" className="block px-3 py-2 text-base font-medium text-[#0F172A] hover:text-[#10B981]" onClick={() => setIsMobileMenuOpen(false)}>
-                Kontakt
-              </Link>
-            </nav>
-
-            {/* CTA buttons */}
-            <div className="p-4 border-t space-y-3">
-              <Link
-                href="/fa-offert"
-                className="w-full flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#10B981] hover:bg-[#059669]"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Få offert
-              </Link>
-              <Link
-                href="/fa-stadning-offert"
-                className="w-full flex items-center justify-center px-4 py-3 border border-[#10B981] text-base font-medium rounded-md text-[#10B981] hover:bg-[#10B981] hover:text-white"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Städoffert
-              </Link>
-            </div>
+          {/* CTA buttons */}
+          <div className="p-4 border-t space-y-3">
+            <Link
+              href="/fa-offert"
+              className="w-full flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#10B981] hover:bg-[#059669]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Få offert
+            </Link>
+            <Link
+              href="/fa-stadning-offert"
+              className="w-full flex items-center justify-center px-4 py-3 border border-[#10B981] text-base font-medium rounded-md text-[#10B981] hover:bg-[#10B981] hover:text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Städoffert
+            </Link>
           </div>
         </div>
+        )}
       </div>
     </header>
   );
