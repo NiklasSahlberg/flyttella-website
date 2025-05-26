@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
 import { useRouter } from "next/navigation";
 
@@ -156,6 +156,7 @@ export default function FaOffert() {
     wantsFlexibleDate: false
   });
   const [errors, setErrors] = useState<FormErrors>({});
+  const currentAddressRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!isGoogleMapsLoaded) return;
@@ -266,6 +267,13 @@ export default function FaOffert() {
       console.error('Error initializing Google Places:', error);
     }
   }, [step, isGoogleMapsLoaded, formData.currentAddress, formData.newAddress, lastValidCurrentAddress, lastValidNewAddress]);
+
+  useEffect(() => {
+    if (currentAddressRef.current) {
+      const input = currentAddressRef.current;
+      input.scrollLeft = input.scrollWidth;
+    }
+  }, [formData.currentAddress]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -748,10 +756,9 @@ export default function FaOffert() {
         onLoad={() => setIsGoogleMapsLoaded(true)}
       />
       <main className="min-h-screen bg-gray-50">
-        {/* Remove the duplicate header section */}
-        <div className="container mx-auto px-4 py-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="container mx-auto px-4 py-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white rounded-xl shadow-xl p-6 border border-gray-300">
               {/* Progress Bar */}
               <div className="mb-8">
                 <div className="flex justify-between mb-2">
@@ -1035,6 +1042,7 @@ export default function FaOffert() {
                             type="text"
                             id="currentAddress"
                             name="currentAddress"
+                            ref={currentAddressRef}
                             value={formData.currentAddress}
                             onChange={(e) => {
                               setFormData({ ...formData, currentAddress: e.target.value });
@@ -1042,9 +1050,10 @@ export default function FaOffert() {
                             }}
                             placeholder="Börja skriva din adress"
                             required
-                            className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent overflow-x-auto whitespace-nowrap pr-8 text-sm md:text-base ${
                               errors.currentAddress ? "border-red-500" : ""
                             }`}
+                            style={{ WebkitOverflowScrolling: 'touch' }}
                           />
                           {errors.currentAddress && (
                             <p className="mt-1 text-sm text-red-600">{errors.currentAddress}</p>
@@ -1498,9 +1507,10 @@ export default function FaOffert() {
                             }}
                             placeholder="Börja skriva din adress"
                             required
-                            className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent overflow-x-auto whitespace-nowrap pr-8 text-sm md:text-base ${
                               errors.newAddress ? "border-red-500" : ""
                             }`}
+                            style={{ WebkitOverflowScrolling: 'touch' }}
                           />
                           {errors.newAddress && (
                             <p className="mt-1 text-sm text-red-600">{errors.newAddress}</p>

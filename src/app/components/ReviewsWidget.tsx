@@ -80,54 +80,32 @@ export default function ReviewsWidget() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative w-72 h-72 drop-shadow-xl">
-              <Image
-                src="/BadgeFiveYearsNew.png"
-                alt="5 Years Badge"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </motion.div>
-
-          {/* Reviews Stats */}
-          <motion.div 
-            className="flex justify-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 flex items-center justify-center gap-12 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/5 to-[#10B981]/5 pointer-events-none" />
-              
-              {/* Total Reviews */}
-              <div className="flex flex-col items-center relative">
-                <div className="flex items-center gap-3 mb-2">
-                  <ReviewIcon />
-                  <h3 className="text-lg font-medium text-gray-600">Totala omdömen</h3>
-                </div>
-                <div className="text-4xl font-bold text-[#0F172A]">
-                  <Counter end={983} duration={2} />
-                </div>
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="relative w-72 h-72 drop-shadow-xl">
+                <Image
+                  src="/BadgeFiveYearsNew.png"
+                  alt="5 Years Badge"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
-
-              <div className="h-12 w-px bg-gray-200" />
-
-              {/* Rating */}
-              <div className="flex flex-col items-center relative">
-                <div className="flex items-center gap-3 mb-2">
-                  <StarIcon />
-                  <h3 className="text-lg font-medium text-gray-600">Betyg</h3>
-                </div>
-                <div className="text-4xl font-bold text-[#0F172A] flex items-center gap-2">
-                  4.4
-                  <span className="text-[#10B981] text-2xl">/5</span>
-                </div>
+              <div className="max-w-xl text-center md:text-left">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  En trygg och professionell flyttupplevelse
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Som en av Sveriges mest rekommenderade flyttfirmor sätter vi kunden i fokus. 
+                  Vi förstår att flyttar kan vara stressande, därför strävar vi efter att göra 
+                  processen så smidig och trygg som möjligt. Med vår erfarenhet och 
+                  dedikerade team ser vi till att din flytt blir en positiv upplevelse 
+                  från början till slut.
+                </p>
               </div>
             </div>
           </motion.div>
+
+         
 
           {/* Reviews Widget */}
           <motion.div 

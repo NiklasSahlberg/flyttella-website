@@ -920,39 +920,22 @@ export default function FaStadningOffert() {
 
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          Ungefär hur stor yta ska städas?
+                          Bostadens storlek (kvm)
                         </label>
-                        <div className="relative">
-                          <input
-                            type="text"
-                            name="squareMeters"
-                            value={formData.squareMeters}
-                            onChange={handleInputChange}
-                            inputMode="numeric"
-                            pattern="[0-9]*"
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                              errors.squareMeters ? "border-red-500" : "border-gray-300"
-                            }`}
-                          />
-                          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">kvm</span>
-                        </div>
+                        <input
+                          type="text"
+                          name="squareMeters"
+                          value={formData.squareMeters}
+                          onChange={handleInputChange}
+                          placeholder="T.ex. 120"
+                          required
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                            errors.squareMeters ? "border-red-500" : "border-gray-300"
+                          }`}
+                        />
                         {errors.squareMeters && (
                           <p className="mt-1 text-sm text-red-600">{errors.squareMeters}</p>
                         )}
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
-                          Kommentarer (frivilligt)
-                        </label>
-                        <textarea
-                          name="comments"
-                          value={formData.comments}
-                          onChange={handleInputChange}
-                          placeholder="Här kan du nämna särskilda detaljer, t.ex. om du har stuckaturer som behöver rengöras varsamt."
-                          rows={4}
-                          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
-                        ></textarea>
                       </div>
                     </div>
                   )}

@@ -3,6 +3,9 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import Header from "./components/Header";
+import Script from "next/script";
+import Footer from "./components/Footer";
+import CookieConsentBanner from "./components/CookieConsent";
 
 const geistSans = GeistSans;
 const geistMono = GeistMono;
@@ -21,7 +24,13 @@ export default function RootLayout({
     <html lang="sv" className={`${geistSans.className} ${geistMono.className}`}>
       <body className="antialiased">
         <Header />
+        <Script
+          src={`https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places`}
+          strategy="beforeInteractive"
+        />
         {children}
+        <Footer />
+        <CookieConsentBanner />
       </body>
     </html>
   );
