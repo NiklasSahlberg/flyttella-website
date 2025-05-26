@@ -166,7 +166,7 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section with integrated FlyttoffertForm */}
       <div className="relative py-20 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white overflow-hidden">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl w-full">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Trygghet utan överraskningar
