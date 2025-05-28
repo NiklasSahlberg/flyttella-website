@@ -41,10 +41,16 @@ const services = [
     icon: '🎹'
   },
   {
-    title: 'Kontorsflytt',
-    description: 'Effektiv och välplanerad kontorsflytt med minimal störning av er verksamhet. Vi hjälper er från planering till genomförande.',
-    href: '/kontorsflytt',
-    icon: '🏢'
+    title: 'Återvinning',
+    description: 'Vi hjälper dig med miljövänlig återvinning och bortforsling av möbler, inredning och annat du inte längre behöver.',
+    href: '/atervinning',
+    icon: '♻️'
+  },
+  {
+    title: 'Magasinering',
+    description: 'Säker och flexibel magasinering av dina möbler och tillhörigheter under kortare eller längre perioder.',
+    href: '/magasinering',
+    icon: '📦'
   },
   {
     title: 'Montering',

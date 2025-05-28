@@ -165,31 +165,17 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section with integrated FlyttoffertForm */}
-      <div className="relative py-20 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white overflow-hidden">
-        <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+      <div className="relative py-32 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white overflow-hidden">
+        <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-16">
           <div className="max-w-xl w-full">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-8">
               Trygghet utan överraskningar
             </h1>
-            <p className="text-lg md:text-xl mb-8">
+            <p className="text-xl md:text-2xl mb-12">
               Vi förstår att din flytt är viktig. Därför erbjuder vi trygg flyttservice med fast pris – inga dolda kostnader. Med oss kan du vara lugn, både för dina ägodelar och din plånbok.
             </p>
-            <div className="flex gap-4">
-              <Link
-                href="/services"
-                className="bg-white text-[#0F172A] px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition"
-              >
-                Få offert
-              </Link>
-              <a
-                href="/kontakt"
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-[#0F172A] transition"
-              >
-                Kontakta oss
-              </a>
-            </div>
           </div>
-          <div className="w-full sm:max-w-xs md:max-w-sm lg:max-w-md">
+          <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
             <FlyttoffertForm mode="widget" />
           </div>
         </div>
@@ -205,23 +191,23 @@ export default function Home() {
       <section className="section-padding bg-gradient-to-r from-[#0F172A] to-[#10B981] relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
               Vår Process & Fördelar
             </h2>
 
             {/* Pricing Info */}
             <div className="text-center mb-12">
-              <p className="text-white text-lg md:text-xl max-w-3xl mx-auto mb-6">
+              <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-8">
                 Vi arbetar med fasta priser för att ge dig trygghet och transparens. 
                 Det går även att komma överens om löpande priser.
               </p>
-              <p className="text-white text-base md:text-lg max-w-3xl mx-auto mb-6">
+              <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-8">
                 Våra offerter är alltid baserade på dina specifika behov och omständigheter. 
                 Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation. 
                 Alla priser är fasta utan dolda avgifter - det du ser är det du betalar. 
                 Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
               </p>
-              <p className="text-white text-base md:text-lg max-w-3xl mx-auto">
+              <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto">
                 Som en seriös flyttfirma har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats. 
                 Du kan vara trygg med att vi följer alla gällande regler och bestämmelser.
               </p>
@@ -229,7 +215,7 @@ export default function Home() {
 
             {/* Process Flow Section */}
             <div className="mb-16">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Så fungerar det</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Så fungerar det</h3>
               <div className="relative">
                 {/* Timeline connector line */}
                 <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
@@ -285,9 +271,113 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Completed Assignments Counter */}
+            <motion.div 
+              className="mb-16"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Vår erfarenhet</h3>
+              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <motion.div 
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center text-white"
+                  variants={fadeInUp}
+                >
+                  <motion.h2 
+                    className="text-2xl font-bold mb-2"
+                    variants={fadeInUp}
+                  >
+                    Flyttar
+                  </motion.h2>
+                  <motion.div 
+                    className="text-5xl md:text-6xl font-bold mb-2"
+                    variants={fadeInUp}
+                  >
+                    <CountUp 
+                      end={5000} 
+                      duration={2.5}
+                      suffix="+"
+                      useEasing={true}
+                      enableScrollSpy={true}
+                      scrollSpyOnce={true}
+                    />
+                  </motion.div>
+                  <motion.p 
+                    className="text-white/90"
+                    variants={fadeInUp}
+                  >
+                    uppdrag utförda
+                  </motion.p>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center text-white"
+                  variants={fadeInUp}
+                >
+                  <motion.h2 
+                    className="text-2xl font-bold mb-2"
+                    variants={fadeInUp}
+                  >
+                    Städningar
+                  </motion.h2>
+                  <motion.div 
+                    className="text-5xl md:text-6xl font-bold mb-2"
+                    variants={fadeInUp}
+                  >
+                    <CountUp 
+                      end={4500} 
+                      duration={2.5}
+                      suffix="+"
+                      useEasing={true}
+                      enableScrollSpy={true}
+                      scrollSpyOnce={true}
+                    />
+                  </motion.div>
+                  <motion.p 
+                    className="text-white/90"
+                    variants={fadeInUp}
+                  >
+                    uppdrag utförda
+                  </motion.p>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center text-white"
+                  variants={fadeInUp}
+                >
+                  <motion.h2 
+                    className="text-2xl font-bold mb-2"
+                    variants={fadeInUp}
+                  >
+                    Månadsvis
+                  </motion.h2>
+                  <motion.div 
+                    className="text-5xl md:text-6xl font-bold mb-2"
+                    variants={fadeInUp}
+                  >
+                    <CountUp 
+                      end={300} 
+                      duration={2.5}
+                      suffix="+"
+                      useEasing={true}
+                      enableScrollSpy={true}
+                      scrollSpyOnce={true}
+                    />
+                  </motion.div>
+                  <motion.p 
+                    className="text-white/90"
+                    variants={fadeInUp}
+                  >
+                    uppdrag per månad
+                  </motion.p>
+                </motion.div>
+              </div>
+            </motion.div>
+
             {/* Features Section */}
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Våra fördelar</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Våra fördelar</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
                   {
@@ -310,26 +400,50 @@ export default function Home() {
                   },
                   {
                     icon: "⏰",
-                    title: "Kostnadsfri avbokning",
-                    description: "Avboka kostnadsfritt upp till 24 timmar innan flytten",
+                    title: "Omboka eller avboka kostnadsfritt",
+                    description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
                     link: "/avbokning"
                   },
                   {
                     icon: "✅",
                     title: "Nöjd kund garanti",
-                    description: "14 dagars garanti på allt vi gör",
+                    description: "14 dagars garanti på flyttstädning",
                     link: "/garanti"
                   },
                   {
                     icon: "🔒",
-                    title: "Full tillstånd",
-                    description: "Alla nödvändiga tillstånd och skattesedel",
+                    title: "Trafiktillstånd och försäkring",
+                    description: "Alla nödvändiga tillstånd och försäkringar på plats",
                     link: "/tillstand"
+                  },
+                  {
+                    icon: "🎓",
+                    title: "Utbildad personal",
+                    description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                    link: "/om-oss"
+                  },
+                  {
+                    icon: "📈",
+                    title: "Ledningssystem",
+                    description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                    link: "/om-oss"
+                  },
+                  {
+                    icon: "🦺",
+                    title: "Arbetsmiljö",
+                    description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                    link: "/om-oss"
                   }
-                ].map((feature, index) => (
-                  <div
-                    key={index}
+                ].map((feature, i) => (
+                  <motion.div
+                    key={feature.icon}
                     className="flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-4"
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true, amount: 0.4 }}
+                    variants={variants}
+                    custom={i}
+                    transition={{ duration: 0.5, delay: i * 0.12 }}
                   >
                     <span className="text-2xl">{feature.icon}</span>
                     <div className="flex-1">
@@ -347,119 +461,13 @@ export default function Home() {
                         </svg>
                       </a>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Completed Assignments Counter */}
-      <motion.section 
-        className="py-16"
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-      >
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">Vår erfarenhet</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <motion.div 
-              className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-3xl p-12 text-center text-white shadow-xl"
-              variants={fadeInUp}
-            >
-              <motion.h2 
-                className="text-2xl font-bold mb-2"
-                variants={fadeInUp}
-              >
-                Flyttar
-              </motion.h2>
-              <motion.div 
-                className="text-5xl md:text-6xl font-bold mb-2"
-                variants={fadeInUp}
-              >
-                <CountUp 
-                  end={5000} 
-                  duration={2.5}
-                  suffix="+"
-                  useEasing={true}
-                  enableScrollSpy={true}
-                  scrollSpyOnce={true}
-                />
-              </motion.div>
-              <motion.p 
-                className="text-white/90"
-                variants={fadeInUp}
-              >
-                uppdrag utförda
-              </motion.p>
-            </motion.div>
-
-            <motion.div 
-              className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-3xl p-12 text-center text-white shadow-xl"
-              variants={fadeInUp}
-            >
-              <motion.h2 
-                className="text-2xl font-bold mb-2"
-                variants={fadeInUp}
-              >
-                Städningar
-              </motion.h2>
-              <motion.div 
-                className="text-5xl md:text-6xl font-bold mb-2"
-                variants={fadeInUp}
-              >
-                <CountUp 
-                  end={4500} 
-                  duration={2.5}
-                  suffix="+"
-                  useEasing={true}
-                  enableScrollSpy={true}
-                  scrollSpyOnce={true}
-                />
-              </motion.div>
-              <motion.p 
-                className="text-white/90"
-                variants={fadeInUp}
-              >
-                uppdrag utförda
-              </motion.p>
-            </motion.div>
-
-            <motion.div 
-              className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-3xl p-12 text-center text-white shadow-xl"
-              variants={fadeInUp}
-            >
-              <motion.h2 
-                className="text-2xl font-bold mb-2"
-                variants={fadeInUp}
-              >
-                Månadsvis
-              </motion.h2>
-              <motion.div 
-                className="text-5xl md:text-6xl font-bold mb-2"
-                variants={fadeInUp}
-              >
-                <CountUp 
-                  end={300} 
-                  duration={2.5}
-                  suffix="+"
-                  useEasing={true}
-                  enableScrollSpy={true}
-                  scrollSpyOnce={true}
-                />
-              </motion.div>
-              <motion.p 
-                className="text-white/90"
-                variants={fadeInUp}
-              >
-                uppdrag per månad
-              </motion.p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
 
       {/* Awards Section */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
@@ -512,15 +520,15 @@ export default function Home() {
                 icon: "🏠", 
                 title: "Bohagsflytt", 
                 description: "Vi erbjuder professionell flytthjälp för både privatpersoner och företag. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg.",
-                buttonText: "Boka bohagsflytt",
-                href: "/fa-offert"
+                buttonText: "Läs mer",
+                href: "/bohagsflytt"
               },
               { 
                 icon: "✨", 
                 title: "Flyttstädning", 
                 description: "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
-                buttonText: "Boka flyttstädning",
-                href: "/fa-offert"
+                buttonText: "Läs mer",
+                href: "/flyttstadning"
               },
               { 
                 icon: "💪", 
@@ -743,101 +751,76 @@ function FeatureBoxesSection() {
       key: "pack-garanti",
       label: "Pack-garanti",
       icon: (
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
+        <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
+        </motion.div>
       ),
     },
     {
       key: "kundgaranti",
       label: "14 dagars nöjd kund garanti",
       icon: (
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        </motion.div>
       ),
     },
     {
-      key: "insurance",
-      label: "",
-      animated: true,
+      key: "kartonger",
+      label: "Fritt lån av kartonger i 4 veckor",
+      icon: (
+        <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
+        </motion.div>
+      ),
     },
     {
       key: "rut-avdrag",
       label: "50% RUT-avdrag",
       icon: (
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <motion.div variants={variants} animate="wiggle" className="h-8 w-8 flex items-center justify-center">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="8.5" cy="15.5" r="1.5"/><circle cx="15.5" cy="8.5" r="1.5"/><line x1="7" y1="17" x2="17" y2="7"/></svg>
+        </motion.div>
       ),
     },
     {
-      key: "fri-avbokning",
-      label: "24h fri kostnadsfri avbokning",
+      key: "ombokning-avbokning",
+      label: "24h kostnadsfri ombokning och avbokning",
       icon: (
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </motion.div>
       ),
     },
     {
-      key: "kartonger",
-      label: "Fri lån av kartonger i 4 veckor",
+      key: "tillstand",
+      label: "Trafiktillstånd och försäkring",
       icon: (
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
+        <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
+        </motion.div>
       ),
     },
-  ];
-
-  // Animated icons for each feature
-  const animatedIcons = [
-    // Pack-garanti: Box icon with bounce
-    (i: number) => (
-      <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center">
-        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
-      </motion.div>
-    ),
-    // 14 dagars nöjd kund garanti: Checkmark with pulse
-    (i: number) => (
-      <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center">
-        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-      </motion.div>
-    ),
-    // Försäkring: Static insurance logos
-    (i: number) => (
-      <motion.div
-        className="h-10 w-full flex items-center justify-center"
-      >
-        {insuranceLogos}
-      </motion.div>
-    ),
-    // 50% RUT-avdrag: Percent icon with wiggle
-    (i: number) => (
-      <motion.div variants={variants} animate="wiggle" className="h-8 w-8 flex items-center justify-center">
-        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="8.5" cy="15.5" r="1.5"/><circle cx="15.5" cy="8.5" r="1.5"/><line x1="7" y1="17" x2="17" y2="7"/></svg>
-      </motion.div>
-    ),
-    // 24h fri kostnadsfri avbokning: Clock icon with pulse
-    (i: number) => (
-      <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center">
-        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      </motion.div>
-    ),
-    // Fri lån av kartonger: Box-stack icon with bounce
-    (i: number) => (
-      <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center">
-        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
-      </motion.div>
-    ),
   ];
 
   return (
-    <div className="w-full flex justify-center my-12">
-      <div className="flex flex-col md:flex-row items-center md:items-stretch max-w-4xl w-full gap-0 md:gap-8">
+    <div className="w-full my-12">
+      <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-10 text-center w-full">Vilka förmåner får du med Flyttella?</h2>
+      <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center max-w-4xl mx-auto w-full gap-0 md:gap-8">
         {/* Left: Animated boxes with icons and labels */}
         <div className="w-full md:w-1/2 flex flex-col justify-between items-center md:items-start py-4 md:h-[600px] gap-4">
-          {features.map((feature, i: number) => (
+          {features.map((feature, i) => (
             <motion.div
               key={feature.key}
               className="flex items-center gap-4 bg-white border border-[#10B981] rounded-xl shadow px-5 py-4 w-full max-w-xs min-h-[56px] transition-transform duration-200"
               initial="initial"
-              animate="animate"
-              custom={i}
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.4 }}
               variants={variants}
+              custom={i}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
             >
-              {animatedIcons[i](i)}
+              {feature.icon}
               <span className="font-medium text-[#0F172A] text-left text-base leading-tight">
                 {feature.label}
               </span>

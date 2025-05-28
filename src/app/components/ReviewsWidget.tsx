@@ -72,6 +72,10 @@ export default function ReviewsWidget() {
 
       <div className="container mx-auto px-4 relative">
         <div className="max-w-[1400px] mx-auto">
+          {/* Centered Title */}
+          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
+            Vad tycker våra kunder om oss?
+          </h3>
           {/* Badge */}
           <motion.div 
             className="flex justify-center mb-16"
@@ -101,6 +105,30 @@ export default function ReviewsWidget() {
                   dedikerade team ser vi till att din flytt blir en positiv upplevelse 
                   från början till slut.
                 </p>
+                {/* New: Customer opinions title and arrow */}
+                <div className="flex flex-col items-center mt-8 mb-4">
+                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A] mb-2 text-center">Läs gärna vad våra kunder säger om oss</span>
+                  <motion.svg
+                    className="w-12 h-16 text-[#10B981]"
+                    fill="none"
+                    viewBox="0 0 48 64"
+                    stroke="currentColor"
+                    initial={{ y: 0 }}
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <path
+                      d="M24 4 C24 24, 24 40, 24 56"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M18 48 L24 56 L30 48"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                    />
+                  </motion.svg>
+                </div>
               </div>
             </div>
           </motion.div>

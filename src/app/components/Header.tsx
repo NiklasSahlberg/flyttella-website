@@ -3,35 +3,57 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [showQuoteButton, setShowQuoteButton] = useState(pathname !== "/");
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout>();
+  const [isBusinessOpen, setIsBusinessOpen] = useState(false);
+  const businessDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    return () => {
+    if (pathname === "/") {
+      setShowQuoteButton(false);
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        setShowQuoteButton(scrollPosition > 600);
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+      };
+    } else {
+      setShowQuoteButton(true);
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
-    };
-  }, []);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
     setIsServicesOpen(true);
+    setIsBusinessOpen(false);
   };
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setIsServicesOpen(false);
-    }, 200); // 200ms delay before closing
+      setIsBusinessOpen(false);
+    }, 200);
   };
 
   const handleQuoteMouseEnter = () => {
@@ -45,6 +67,21 @@ export default function Header() {
     timeoutRef.current = setTimeout(() => {
       setIsQuoteOpen(false);
     }, 200); // 200ms delay before closing
+  };
+
+  const handleBusinessMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsBusinessOpen(true);
+    setIsServicesOpen(false);
+  };
+
+  const handleBusinessMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsBusinessOpen(false);
+      setIsServicesOpen(false);
+    }, 200);
   };
 
   const toggleMobileMenu = () => {
@@ -128,7 +165,7 @@ export default function Header() {
                     href="/tjanster"
                     className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide flex items-center"
                   >
-                    Tjänster
+                    Privat
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -141,7 +178,7 @@ export default function Header() {
                       onMouseLeave={handleMouseLeave}
                     >
                       <div className="px-4 py-2 border-b border-gray-100">
-                        <h3 className="text-sm font-semibold text-[#0F172A]">Våra tjänster</h3>
+                        <h3 className="text-sm font-semibold text-[#0F172A]">Våra privattjänster</h3>
                       </div>
                       <div className="py-2">
                         <Link href="/bohagsflytt" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
@@ -160,18 +197,18 @@ export default function Header() {
                           <span className="text-lg mr-3">🎹</span>
                           <span>Piano/Tunglyft</span>
                         </Link>
-                        <Link href="/kontorsflytt" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
-                          <span className="text-lg mr-3">🏢</span>
-                          <span>Kontorsflytt</span>
+                        <Link href="/atervinning" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                          <span className="text-lg mr-3">♻️</span>
+                          <span>Återvinning</span>
                         </Link>
-                        <Link href="/montering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
-                          <span className="text-lg mr-3">🔧</span>
-                          <span>Montering</span>
+                        <Link href="/magasinering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                          <span className="text-lg mr-3">📦</span>
+                          <span>Magasinering</span>
                         </Link>
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
                         <Link href="/tjanster" onClick={() => setIsServicesOpen(false)} className="flex items-center justify-between text-sm font-medium text-[#10B981] hover:text-[#0F172A] transition-colors">
-                          <span>Se alla tjänster</span>
+                          <span>Se alla privattjänster</span>
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
@@ -180,22 +217,69 @@ export default function Header() {
                     </div>
                   )}
                 </div>
-
+                {/* Företag Dropdown */}
+                <div
+                  ref={businessDropdownRef}
+                  className="relative"
+                  onMouseEnter={handleBusinessMouseEnter}
+                  onMouseLeave={handleBusinessMouseLeave}
+                >
+                  <Link
+                    href="/foretag"
+                    className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide flex items-center"
+                  >
+                    Företag
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Link>
+                  {isBusinessOpen && (
+                    <div
+                      className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-3 border border-gray-100"
+                      onMouseEnter={handleBusinessMouseEnter}
+                      onMouseLeave={handleBusinessMouseLeave}
+                    >
+                      <div className="px-4 py-2 border-b border-gray-100">
+                        <h3 className="text-sm font-semibold text-[#0F172A]">Våra företagstjänster</h3>
+                      </div>
+                      <div className="py-2">
+                        <Link href="/kontorsflytt" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                          <span className="text-lg mr-3">🏢</span>
+                          <span>Kontorsflytt</span>
+                        </Link>
+                        <Link href="/bemanning" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                          <span className="text-lg mr-3">👷‍♂️</span>
+                          <span>Bemanning och underentreprenad</span>
+                        </Link>
+                      </div>
+                      <div className="px-4 py-2 border-t border-gray-100">
+                        <Link href="/foretag" onClick={() => setIsBusinessOpen(false)} className="flex items-center justify-between text-sm font-medium text-[#10B981] hover:text-[#0F172A] transition-colors">
+                          <span>Se alla företagstjänster</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <Link href="/om-oss" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Om oss</Link>
                 <Link href="/kontakt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Kontakt</Link>
               </nav>
 
               {/* Quote Button Dropdown */}
               <div className="relative">
-                <Link 
-                  href="/services"
-                  className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity flex items-center"
-                >
-                  FÅ OFFERT
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                {showQuoteButton && (
+                  <Link 
+                    href="/services"
+                    className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity flex items-center"
+                  >
+                    FÅ OFFERT
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -269,7 +353,7 @@ export default function Header() {
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                     className="flex items-center justify-between w-full text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4 py-3"
                   >
-                    <span>Tjänster</span>
+                    <span>Privat</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`h-5 w-5 transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`}
@@ -311,19 +395,62 @@ export default function Header() {
                         Piano/Tunglyft
                       </Link>
                       <Link
-                        href="/kontorsflytt"
+                        href="/atervinning"
                         className="block py-2 px-4 text-base text-[#0F172A] hover:text-[#10B981] hover:bg-gray-100 rounded-lg"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        Kontorsflytt
+                        Återvinning
                       </Link>
                       <Link
-                        href="/montering"
+                        href="/magasinering"
                         className="block py-2 px-4 text-base text-[#0F172A] hover:text-[#10B981] hover:bg-gray-100 rounded-lg"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        Montering
+                        Magasinering
                       </Link>
+                  </div>
+                )}
+                </div>
+                {/* Företag Mobile Dropdown */}
+                <div className="py-3">
+                  <button
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className="flex items-center justify-between w-full text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4 py-3"
+                  >
+                    <span>Företag</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`h-5 w-5 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                {isDropdownOpen && (
+                  <div className="mt-2 space-y-1 pl-4 bg-gray-50 rounded-lg py-2">
+                    <Link
+                      href="/kontorsflytt"
+                      className="block py-2 px-4 text-base text-[#0F172A] hover:text-[#10B981] hover:bg-gray-100 rounded-lg"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Kontorsflytt
+                    </Link>
+                    <Link
+                      href="/bemanning"
+                      className="block py-2 px-4 text-base text-[#0F172A] hover:text-[#10B981] hover:bg-gray-100 rounded-lg"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Bemanning och underentreprenad
+                    </Link>
+                    <Link
+                      href="/foretag"
+                      className="block py-2 px-4 text-base text-[#10B981] hover:text-[#0F172A] hover:bg-gray-100 rounded-lg font-medium"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Se alla företagstjänster
+                    </Link>
                   </div>
                 )}
                 </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
+import { motion } from "framer-motion";
 
 // Interfaces
 interface HeavyItem {
@@ -526,7 +527,15 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
         async
         onLoad={() => setIsGoogleMapsLoaded(true)}
       />
-      <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-md w-full mx-auto">
+      <div className="bg-white rounded-2xl shadow-xl p-10 md:p-12 max-w-xl w-full mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Fyll i formuläret nedan
+          </h2>
+          <p className="text-lg text-gray-900 font-bold">
+            för en snabb och kostnadsfri offert
+          </p>
+        </div>
         <form onSubmit={async (e) => {
           e.preventDefault();
 
