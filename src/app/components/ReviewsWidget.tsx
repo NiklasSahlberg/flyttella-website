@@ -106,28 +106,16 @@ export default function ReviewsWidget() {
                   från början till slut.
                 </p>
                 {/* New: Customer opinions title and arrow */}
-                <div className="flex flex-col items-center mt-8 mb-4">
-                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A] mb-2 text-center">Läs gärna vad våra kunder säger om oss</span>
-                  <motion.svg
-                    className="w-12 h-16 text-[#10B981]"
-                    fill="none"
-                    viewBox="0 0 48 64"
-                    stroke="currentColor"
-                    initial={{ y: 0 }}
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <path
-                      d="M24 4 C24 24, 24 40, 24 56"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M18 48 L24 56 L30 48"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                    />
-                  </motion.svg>
+                <div className="flex flex-row items-center justify-center gap-6 mt-8 mb-4">
+                  <Image
+                    src="/Curved-Arrow-PNG-Free-Download.png"
+                    alt="Curved Arrow"
+                    width={100}
+                    height={120}
+                    className="mx-auto mt-10"
+                    priority={false}
+                  />
+                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A] text-left">Läs gärna vad våra kunder säger om oss</span>
                 </div>
               </div>
             </div>

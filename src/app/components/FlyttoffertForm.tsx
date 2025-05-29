@@ -359,10 +359,6 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
       newErrors.apartmentSize = "Bostadens storlek måste vara ett positivt tal";
       isValid = false;
     }
-    if (!formData.numberOfRooms || !formData.numberOfRooms.trim()) {
-      newErrors.numberOfRooms = "Vänligen ange antal rum";
-      isValid = false;
-    }
     if (!formData.typeOfHome || !formData.typeOfHome.trim()) {
       newErrors.typeOfHome = "Vänligen välj typ av bostad";
       isValid = false;
@@ -423,10 +419,6 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
       isValid = false;
     } else if (isNaN(Number(formData.toApartmentSize)) || Number(formData.toApartmentSize) <= 0) {
       newErrors.toApartmentSize = "Bostadens storlek måste vara ett positivt tal";
-      isValid = false;
-    }
-    if (!formData.toNumberOfRooms || !formData.toNumberOfRooms.trim()) {
-      newErrors.toNumberOfRooms = "Vänligen ange antal rum";
       isValid = false;
     }
     if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
@@ -634,7 +626,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Flyttinformation</h2>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Önskat flyttdatum</label>
+                <label className="block text-lg font-medium text-gray-700 mb-2">Önskat flyttdatum</label>
                 <input
                   type="date"
                   name="movingDate"
@@ -651,10 +643,10 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     tomorrow.setDate(tomorrow.getDate() + 1);
                     return tomorrow.toISOString().split('T')[0];
                   })()}
-                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.movingDate ? " border-red-500" : " border-gray-300"}`}
+                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.movingDate ? " border-red-500" : " border-gray-300"}`}
                 />
                 {errors.movingDate && (
-                  <p className="mt-1 text-sm text-red-600">{errors.movingDate}</p>
+                  <p className="mt-1 text-base text-red-600">{errors.movingDate}</p>
                 )}
               </div>
               <div className="space-y-4">
@@ -679,18 +671,18 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     }}
                     className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
                   />
-                  <label className="ml-2 text-sm text-gray-700">
+                  <label className="ml-2 text-lg text-gray-700">
                     Jag är flexibel med flyttdatum
                   </label>
                 </div>
                 {formData.wantsFlexibleDate && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Flexibelt flyttdatum</label>
+                    <label className="block text-lg font-medium text-gray-700 mb-2">Flexibelt flyttdatum</label>
                     <select
                       name="flexibleMovingDate"
                       value={formData.flexibleMovingDate}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.flexibleMovingDate ? " border-red-500" : " border-gray-300"}`}
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.flexibleMovingDate ? " border-red-500" : " border-gray-300"}`}
                     >
                       <option value="">-- Välj --</option>
                       <option value="1">+ 1 dag</option>
@@ -706,7 +698,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       <option value="31+">+ mer än 1 månad</option>
                     </select>
                     {errors.flexibleMovingDate && (
-                      <p className="mt-1 text-sm text-red-600">{errors.flexibleMovingDate}</p>
+                      <p className="mt-1 text-base text-red-600">{errors.flexibleMovingDate}</p>
                     )}
                     <p className="mt-2 text-sm text-gray-600">
                       Om du väljer ett flexibelt flyttdatum sker flytten inom vald tidsperiod från det datum du har valt.
@@ -716,7 +708,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </div>
               {/* Packing help question */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Vill du ha hjälp med packning?</label>
+                <label className="block text-lg font-medium text-gray-700 mb-2">Vill du ha hjälp med packning?</label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
                     <input
@@ -730,7 +722,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-sm text-gray-700">Ja</span>
+                    <span className="ml-2 text-lg text-gray-700">Ja</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -744,17 +736,17 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-sm text-gray-700">Nej</span>
+                    <span className="ml-2 text-lg text-gray-700">Nej</span>
                   </label>
                 </div>
                 {errors.needsPacking && (
-                  <p className="mt-1 text-sm text-red-600">{errors.needsPacking}</p>
+                  <p className="mt-1 text-base text-red-600">{errors.needsPacking}</p>
                 )}
               </div>
 
               {/* Storage question */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Behöver du magasinering?</label>
+                <label className="block text-lg font-medium text-gray-700 mb-2">Behöver du magasinering?</label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
                     <input
@@ -768,7 +760,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-sm text-gray-700">Ja</span>
+                    <span className="ml-2 text-lg text-gray-700">Ja</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -782,17 +774,17 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-sm text-gray-700">Nej</span>
+                    <span className="ml-2 text-lg text-gray-700">Nej</span>
                   </label>
                 </div>
                 {errors.needsStorage && (
-                  <p className="mt-1 text-sm text-red-600">{errors.needsStorage}</p>
+                  <p className="mt-1 text-base text-red-600">{errors.needsStorage}</p>
                 )}
               </div>
 
               {/* Cleaning question */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Vill du ha flyttstädning?</label>
+                <label className="block text-lg font-medium text-gray-700 mb-2">Vill du ha flyttstädning?</label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
                     <input
@@ -806,7 +798,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-sm text-gray-700">Ja</span>
+                    <span className="ml-2 text-lg text-gray-700">Ja</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -820,11 +812,11 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-sm text-gray-700">Nej</span>
+                    <span className="ml-2 text-lg text-gray-700">Nej</span>
                   </label>
                 </div>
                 {errors.needsCleaning && (
-                  <p className="mt-1 text-sm text-red-600">{errors.needsCleaning}</p>
+                  <p className="mt-1 text-base text-red-600">{errors.needsCleaning}</p>
                 )}
               </div>
               <div className="flex justify-end mt-8">
@@ -845,7 +837,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Nuvarande adress</label>
+                    <label className="block text-lg font-medium text-gray-700 mb-2">Nuvarande adress</label>
                     <input
                       type="text"
                       id="currentAddress"
@@ -858,15 +850,15 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }}
                       placeholder="Börja skriva din adress"
                       required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.currentAddress ? " border-red-500" : ""}`}
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.currentAddress ? " border-red-500" : ""}`}
                       style={{ WebkitOverflowScrolling: 'touch' }}
                     />
                     {errors.currentAddress && (
-                      <p className="mt-1 text-sm text-red-600">{errors.currentAddress}</p>
+                      <p className="mt-1 text-base text-red-600">{errors.currentAddress}</p>
                     )}
                   </div>
                   <div className="md:w-1/4">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Gatunr.</label>
+                    <label className="block text-lg font-medium text-gray-700 mb-2">Gatunr.</label>
                     <input
                       type="text"
                       name="apartmentNumber"
@@ -898,15 +890,15 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }}
                       placeholder="1A"
                       required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.apartmentNumber ? " border-red-500" : ""}`}
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.apartmentNumber ? " border-red-500" : ""}`}
                     />
                     {errors.apartmentNumber && (
-                      <p className="mt-1 text-sm text-red-600">{errors.apartmentNumber}</p>
+                      <p className="mt-1 text-base text-red-600">{errors.apartmentNumber}</p>
                     )}
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Postnummer</label>
+                  <label className="block text-lg font-medium text-gray-700 mb-2">Postnummer</label>
                   <input
                     type="text"
                     name="postalCode"
@@ -960,32 +952,6 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                   />
                   {errors.apartmentSize && (
                     <p className="mt-1 text-sm text-red-600">{errors.apartmentSize}</p>
-                  )}
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Antal rum</label>
-                  <select
-                    name="numberOfRooms"
-                    value={formData.numberOfRooms}
-                    onChange={handleInputChange}
-                    required
-                    className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.numberOfRooms ? " border-red-500" : ""}`}
-                  >
-                    <option value="">-- Välj --</option>
-                    <option value="1">1 rum</option>
-                    <option value="2">2 rum</option>
-                    <option value="3">3 rum</option>
-                    <option value="4">4 rum</option>
-                    <option value="5">5 rum</option>
-                    <option value="6">6 rum</option>
-                    <option value="7">7 rum</option>
-                    <option value="8">8 rum</option>
-                    <option value="9">9 rum</option>
-                    <option value="10">10 rum</option>
-                    <option value="10+">10+ rum</option>
-                  </select>
-                  {errors.numberOfRooms && (
-                    <p className="mt-1 text-sm text-red-600">{errors.numberOfRooms}</p>
                   )}
                 </div>
                 <div>
@@ -1103,7 +1069,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
 
                 {formData.hasElevator === "yes" && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Histsorlek</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Hisstorlek</label>
                     <select
                       name="elevatorSize"
                       value={formData.elevatorSize}
@@ -1112,14 +1078,13 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                         setErrors(prev => ({ ...prev, elevatorSize: "" }));
                       }}
                       required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] text-[#0F172A] ${
                         errors.elevatorSize ? "border-red-500" : ""
                       }`}
                     >
                       <option value="">-- Välj --</option>
-                      <option value="small">Liten (mindre än 1.5m bred)</option>
-                      <option value="medium">Medium (1.5m - 2m bred)</option>
-                      <option value="large">Stor (över 2m bred)</option>
+                      <option value="small">Liten (2-4 personer)</option>
+                      <option value="large">Stor (6+ personer)</option>
                     </select>
                     {errors.elevatorSize && (
                       <p className="mt-1 text-sm text-red-600">{errors.elevatorSize}</p>
@@ -1307,32 +1272,6 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Antal rum</label>
-                  <select
-                    name="toNumberOfRooms"
-                    value={formData.toNumberOfRooms}
-                    onChange={handleInputChange}
-                    required
-                    className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.toNumberOfRooms ? " border-red-500" : ""}`}
-                  >
-                    <option value="">-- Välj --</option>
-                    <option value="1">1 rum</option>
-                    <option value="2">2 rum</option>
-                    <option value="3">3 rum</option>
-                    <option value="4">4 rum</option>
-                    <option value="5">5 rum</option>
-                    <option value="6">6 rum</option>
-                    <option value="7">7 rum</option>
-                    <option value="8">8 rum</option>
-                    <option value="9">9 rum</option>
-                    <option value="10">10 rum</option>
-                    <option value="10+">10+ rum</option>
-                  </select>
-                  {errors.toNumberOfRooms && (
-                    <p className="mt-1 text-sm text-red-600">{errors.toNumberOfRooms}</p>
-                  )}
-                </div>
-                <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Typ av bostad</label>
                   <select
                     name="toTypeOfHome"
@@ -1447,7 +1386,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
 
                 {formData.toHasElevator === "yes" && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Histsorlek</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Hisstorlek</label>
                     <select
                       name="toElevatorSize"
                       value={formData.toElevatorSize}
@@ -1456,14 +1395,13 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                         setErrors(prev => ({ ...prev, toElevatorSize: "" }));
                       }}
                       required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] text-[#0F172A] ${
                         errors.toElevatorSize ? "border-red-500" : ""
                       }`}
                     >
                       <option value="">-- Välj --</option>
-                      <option value="small">Liten (mindre än 1.5m bred)</option>
-                      <option value="medium">Medium (1.5m - 2m bred)</option>
-                      <option value="large">Stor (över 2m bred)</option>
+                      <option value="small">Liten (2-4 personer)</option>
+                      <option value="large">Stor (6+ personer)</option>
                     </select>
                     {errors.toElevatorSize && (
                       <p className="mt-1 text-sm text-red-600">{errors.toElevatorSize}</p>
