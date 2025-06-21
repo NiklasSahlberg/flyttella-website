@@ -906,11 +906,18 @@ export default function Home() {
                 href: "/flyttstadning"
               },
               { 
-                icon: "💪", 
-                title: "Bärhjälp", 
-                description: "Professionell bärhjälp för alla typer av flytt. Vi tar hand om tunga lyft och säkerställer att allt transporteras säkert.",
+                icon: "🏢", 
+                title: "Kontorsflytt", 
+                description: "Effektiv flytt av kontor och företag. Vi minimerar avbrott i verksamheten och säkerställer en smidig övergång.",
                 buttonText: "Läs mer",
-                href: "/barhjalp"
+                href: "/kontorsflytt"
+              },
+              { 
+                icon: "🧹", 
+                title: "Kontorsstädning", 
+                description: "Professionell kontorsstädning för företag och kontor. Vi erbjuder regelbunden städning som håller ditt kontor rent och professionellt.",
+                buttonText: "Läs mer",
+                href: "/kontorsstadning"
               },
               { 
                 icon: "🎹", 
@@ -918,13 +925,6 @@ export default function Home() {
                 description: "Specialiserad service för flytt av piano och andra tunga föremål. Vi har erfarenhet och rätt utrustning för säker hantering.",
                 buttonText: "Läs mer",
                 href: "/piano-tunglyft"
-              },
-              { 
-                icon: "🏢", 
-                title: "Kontorsflytt", 
-                description: "Effektiv flytt av kontor och företag. Vi minimerar avbrott i verksamheten och säkerställer en smidig övergång.",
-                buttonText: "Läs mer",
-                href: "/kontorsflytt"
               },
               { 
                 icon: "🗑️", 
