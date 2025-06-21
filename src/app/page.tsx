@@ -274,10 +274,6 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.2 }}
                   variants={fadeInUp}
                   custom={index}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: index * 0.25
-                  }}
                 >
                   {/* Timeline dot */}
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#10B981] rounded-full hidden md:block"></div>
@@ -628,10 +624,6 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.2 }}
                   variants={variants}
                   custom={i}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: i * 0.1
-                  }}
                 >
                   <motion.span
                     className="text-3xl md:text-4xl"
@@ -1132,11 +1124,8 @@ function FeatureBoxesSection() {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, amount: 0.2 }}
-              variants={fadeInUp}
-              transition={{ 
-                duration: 0.8,
-                delay: i * 0.25
-              }}
+              variants={variants}
+              custom={i}
             >
               {feature.icon}
               <span className="font-medium text-[#0F172A] text-left text-base leading-tight">
