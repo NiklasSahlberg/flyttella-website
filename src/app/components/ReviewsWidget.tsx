@@ -99,7 +99,7 @@ export default function ReviewsWidget() {
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                     En trygg och professionell flyttupplevelse
                   </h2>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-xl text-gray-600 leading-relaxed">
                     Som en av Sveriges mest rekommenderade flyttfirmor sätter vi kunden i fokus. 
                     Vi förstår att flyttar kan vara stressande, därför strävar vi efter att göra 
                     processen så smidig och trygg som möjligt. Med vår erfarenhet och 
