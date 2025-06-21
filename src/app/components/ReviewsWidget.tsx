@@ -78,14 +78,14 @@ export default function ReviewsWidget() {
           </h3>
           {/* Badge */}
           <motion.div 
-            className="flex justify-center mb-16"
+            className="flex justify-start mb-16"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="relative w-72 h-72 drop-shadow-xl">
+              <div className="relative w-96 h-96 drop-shadow-xl">
                 <Image
                   src="/BadgeFiveYearsNew.png"
                   alt="5 Years Badge"
@@ -94,17 +94,19 @@ export default function ReviewsWidget() {
                   priority
                 />
               </div>
-              <div className="max-w-xl text-center md:text-left">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                  En trygg och professionell flyttupplevelse
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Som en av Sveriges mest rekommenderade flyttfirmor sätter vi kunden i fokus. 
-                  Vi förstår att flyttar kan vara stressande, därför strävar vi efter att göra 
-                  processen så smidig och trygg som möjligt. Med vår erfarenhet och 
-                  dedikerade team ser vi till att din flytt blir en positiv upplevelse 
-                  från början till slut.
-                </p>
+              <div className="max-w-xl">
+                <div className="text-center md:text-left">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                    En trygg och professionell flyttupplevelse
+                  </h2>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Som en av Sveriges mest rekommenderade flyttfirmor sätter vi kunden i fokus. 
+                    Vi förstår att flyttar kan vara stressande, därför strävar vi efter att göra 
+                    processen så smidig och trygg som möjligt. Med vår erfarenhet och 
+                    dedikerade team ser vi till att din flytt blir en positiv upplevelse 
+                    från början till slut.
+                  </p>
+                </div>
                 {/* New: Customer opinions title and arrow */}
                 <div className="flex flex-row items-center justify-center gap-6 mt-8 mb-4">
                   <Image
@@ -112,10 +114,10 @@ export default function ReviewsWidget() {
                     alt="Curved Arrow"
                     width={100}
                     height={120}
-                    className="mx-auto mt-10"
+                    className="mt-10"
                     priority={false}
                   />
-                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A] text-left">Läs gärna vad våra kunder säger om oss</span>
+                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A]">Läs gärna vad våra kunder säger om oss</span>
                 </div>
               </div>
             </div>

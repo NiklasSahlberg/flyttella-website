@@ -1122,13 +1122,13 @@ function FeatureBoxesSection() {
           Vilka förmåner får du med Flyttella?
         </h2>
       </div>
-      <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center max-w-4xl mx-auto w-full gap-0 md:gap-8">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch justify-center w-full gap-0 md:gap-8">
         {/* Left: Animated boxes with icons and labels */}
-        <div className="w-full md:w-1/2 flex flex-col justify-between items-center md:items-start py-4 md:h-[600px] gap-4">
+        <div className="w-full md:w-2/5 flex flex-col justify-between items-center md:items-start py-4 gap-4">
           {features.map((feature, i) => (
             <motion.div
               key={feature.key}
-              className="flex items-center gap-4 bg-white border border-[#10B981] rounded-xl shadow px-8 py-6 w-full max-w-md min-h-[72px] transition-transform duration-200"
+              className="flex items-center gap-4 bg-white border border-[#10B981] rounded-xl shadow px-8 py-8 w-full max-w-md transition-transform duration-200"
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, amount: 0.2 }}
@@ -1146,13 +1146,13 @@ function FeatureBoxesSection() {
           ))}
         </div>
         {/* Right: Image */}
-        <div className="w-full md:w-1/2 flex justify-center items-center">
+        <div className="w-full md:w-3/5 flex justify-center items-center">
           <Image
             src="/movingpicture1.png"
             alt="Flyttfirma i arbete"
             width={420}
             height={600}
-            className="rounded-2xl shadow object-cover max-h-[600px] w-auto"
+            className="rounded-2xl shadow object-cover max-h-[600px] w-full"
             priority
           />
         </div>
