@@ -56,30 +56,45 @@ const features = [
   },
 ];
 
+// Shimmer loader component
+function ShimmerBox() {
+  return (
+    <div className="w-full h-8 mb-2 rounded bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-shimmer" style={{backgroundSize: '200% 100%'}} />
+  );
+}
+
 export default function FeatureBoxes() {
   const [logoIndex, setLogoIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
       setLogoIndex((prev) => (prev + 1) % insuranceLogos.length);
     }, 1800);
-    return () => clearInterval(interval);
+    // Loading animation for 1.2s
+    const timer = setTimeout(() => setLoading(false), 1200);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
     <div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 my-8">
-      {features.map((feature) => (
+      {features.map((feature, idx) => (
         <div
           key={feature.key}
           className="flex flex-col items-center justify-center bg-white rounded-xl shadow border border-gray-100 px-2 py-4 min-h-[80px] transition-transform hover:scale-105 duration-200"
         >
-          {feature.animated ? (
-            <div className="mb-2 h-8 flex items-center justify-center transition-all duration-500">
+          {loading ? (
+            <ShimmerBox />
+          ) : feature.animated ? (
+            <div className="mb-2 h-8 flex items-center justify-center transition-all duration-500 animate-fade-in">
               {insuranceLogos[logoIndex]}
             </div>
           ) : (
-            <div className="mb-2 h-8 flex items-center justify-center">{feature.icon}</div>
+            <div className="mb-2 h-8 flex items-center justify-center transition-all duration-500 animate-fade-in">{feature.icon}</div>
           )}
-          <span className="font-semibold text-[#0F172A] text-center text-xs leading-tight">
+          <span className={`font-semibold text-[#0F172A] text-center text-xs leading-tight transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100 animate-fade-in'}`}>
             {feature.label}
           </span>
         </div>

@@ -82,9 +82,17 @@ function createEmail(to: string, from: string, subject: string, messageText: str
   return base64Email;
 }
 
+function formatFlexibleDate(value: string | undefined): string {
+  if (!value || value === 'Nej') {
+    return 'Nej';
+  }
+  return value;
+}
+
 export async function POST(req: Request) {
   try {
     const data = await req.json();
+    const isFlexible = data.flexibleMovingDate && data.flexibleMovingDate !== 'Nej';
 
     // Format the email content with HTML table
     const emailContent = `
@@ -123,25 +131,37 @@ export async function POST(req: Request) {
   <div class="section-header">Städdatum</div>
   <table>
     <tr>
-      <th>Önskat städdatum</th>
+      <th>När ska flyttstädningen ske?</th>
       <td>${data.movingDate || ''}</td>
     </tr>
     <tr>
-      <th>Flexibelt städdatum</th>
-      <td>${data.flexibleMovingDate || 'Nej'}</td>
+      <th>Är städdatumet flexibelt?</th>
+      <td>${isFlexible ? 'Ja' : 'Nej'}</td>
     </tr>
+    ${isFlexible ? `
+    <tr>
+      <th>Flexibilitet</th>
+      <td>${formatFlexibleDate(data.flexibleMovingDate)}</td>
+    </tr>
+    ` : ''}
   </table>
 
   <div class="section-header">Bostadsinformation</div>
   <table>
     <tr>
-      <th>Bostadstyp</th>
+      <th>${data.customerType === 'foretag' ? 'Bostadstyp' : 'Vilken typ av bostad ska städas?'}</th>
       <td>${data.typeOfHome || ''}</td>
     </tr>
     <tr>
-      <th>Antal våningar</th>
+      <th>${data.customerType === 'privat' && data.typeOfHome?.toLowerCase() === 'lagenhet' ? 'Vilken våning ligger lägenheten på?' : 'Antal våningar'}</th>
       <td>${data.numberOfFloors || ''}</td>
     </tr>
+    ${(data.customerType === 'foretag' || (data.customerType === 'privat' && data.typeOfHome?.toLowerCase() === 'lagenhet')) ? `
+    <tr>
+      <th>Finns hiss i byggnaden?</th>
+      <td>${data.hasElevator === "yes" ? "Ja" : "Nej"}</td>
+    </tr>
+    ` : ''}
     <tr>
       <th>Hela bostaden</th>
       <td>${data.entireHome === "yes" ? "Ja" : "Nej"}</td>
@@ -178,6 +198,7 @@ export async function POST(req: Request) {
 
   <div class="section-header">Ytterligare utrymmen</div>
   <table>
+    ${data.customerType !== 'foretag' ? `
     <tr>
       <th>Garage</th>
       <td>${data.hasGarage ? "Ja" : "Nej"}</td>
@@ -189,6 +210,15 @@ export async function POST(req: Request) {
     <tr>
       <th>Förråd/uthus</th>
       <td>${data.hasStorage ? "Ja" : "Nej"}</td>
+    </tr>
+    ` : ''}
+  </table>
+
+  <div class="section-header">Kontakttyp</div>
+  <table>
+    <tr>
+      <th>Kontakttyp</th>
+      <td>${data.customerType === 'foretag' ? 'Företag' : 'Privat'}</td>
     </tr>
   </table>
 

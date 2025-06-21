@@ -73,7 +73,7 @@ export default function ReviewsWidget() {
       <div className="container mx-auto px-4 relative">
         <div className="max-w-[1400px] mx-auto">
           {/* Centered Title */}
-          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-left mb-12 mt-2">
             Vad tycker våra kunder om oss?
           </h3>
           {/* Badge */}
@@ -108,7 +108,7 @@ export default function ReviewsWidget() {
                 {/* New: Customer opinions title and arrow */}
                 <div className="flex flex-row items-center justify-center gap-6 mt-8 mb-4">
                   <Image
-                    src="/Curved-Arrow-PNG-Free-Download.png"
+                    src="/Curved-Arrow-10b981.png"
                     alt="Curved Arrow"
                     width={100}
                     height={120}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
 import { motion } from "framer-motion";
+import StadningOffertForm from './StadningOffertForm';
 
 // Interfaces
 interface HeavyItem {
@@ -13,6 +14,7 @@ interface HeavyItem {
 }
 
 interface FormData {
+  serviceType: string; // 'flytt' or 'flyttstad'
   name: string;
   email: string;
   phone: string;
@@ -51,9 +53,16 @@ interface FormData {
   wantsFlexibleDate: boolean;
   elevatorSize?: string;
   toElevatorSize?: string;
+  customerType?: 'privat' | 'foretag'; // NEW FIELD
+  hasLoadingDock?: string; // NEW FIELD
+  toHasLoadingDock?: string; // NEW FIELD
+  contactFirstName?: string; // For företag, step 7
+  contactLastName?: string; // For företag, step 7
+  contactPersonName?: string; // For företag, step 7
 }
 
 interface FormErrors {
+  serviceType?: string;
   currentAddress?: string;
   apartmentNumber?: string;
   postalCode?: string;
@@ -89,6 +98,7 @@ interface FormErrors {
   needsCleaning?: string;
   elevatorSize?: string;
   toElevatorSize?: string;
+  hasLoadingDock?: string;
 }
 
 interface AddressComponent {
@@ -102,7 +112,8 @@ interface FlyttoffertFormProps {
 }
 
 export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps) {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
+  const [showSteps, setShowSteps] = useState(false);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
   const [customItem, setCustomItem] = useState({ type: "", weight: "" });
   const [customItemError, setCustomItemError] = useState("");
@@ -110,6 +121,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
   const [lastValidCurrentAddress, setLastValidCurrentAddress] = useState("");
   const [lastValidNewAddress, setLastValidNewAddress] = useState("");
   const [formData, setFormData] = useState<FormData>({
+    serviceType: '',
     name: "",
     email: "",
     phone: "",
@@ -147,7 +159,13 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
     additionalInfo: "",
     wantsFlexibleDate: false,
     elevatorSize: "",
-    toElevatorSize: ""
+    toElevatorSize: "",
+    customerType: 'privat', // default
+    hasLoadingDock: "no", // default for step 3
+    toHasLoadingDock: "no", // default for step 5
+    contactFirstName: '',
+    contactLastName: '',
+    contactPersonName: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
@@ -295,6 +313,10 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
   const validateStep1 = (): boolean => {
     const newErrors: FormErrors = {};
     let isValid = true;
+    if (!formData.serviceType) {
+      newErrors.serviceType = "Vänligen välj vilken tjänst du vill ha";
+      isValid = false;
+    }
     if (!formData.movingDate || !formData.movingDate.trim()) {
       newErrors.movingDate = "Vänligen välj önskat flyttdatum";
       isValid = false;
@@ -353,15 +375,17 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
       isValid = false;
     }
     if (!formData.apartmentSize || !formData.apartmentSize.trim()) {
-      newErrors.apartmentSize = "Vänligen ange bostadens storlek";
+      newErrors.apartmentSize = formData.customerType === 'foretag' ? "Vänligen ange lokalens storlek" : "Vänligen ange bostadens storlek";
       isValid = false;
     } else if (isNaN(Number(formData.apartmentSize)) || Number(formData.apartmentSize) <= 0) {
-      newErrors.apartmentSize = "Bostadens storlek måste vara ett positivt tal";
+      newErrors.apartmentSize = formData.customerType === 'foretag' ? "Lokalens storlek måste vara ett positivt tal" : "Bostadens storlek måste vara ett positivt tal";
       isValid = false;
     }
-    if (!formData.typeOfHome || !formData.typeOfHome.trim()) {
-      newErrors.typeOfHome = "Vänligen välj typ av bostad";
-      isValid = false;
+    if (formData.customerType !== 'foretag') {
+      if (!formData.typeOfHome || !formData.typeOfHome.trim()) {
+        newErrors.typeOfHome = "Vänligen välj typ av bostad";
+        isValid = false;
+      }
     }
     setErrors(newErrors);
     return isValid;
@@ -415,15 +439,17 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
       isValid = false;
     }
     if (!formData.toApartmentSize || !formData.toApartmentSize.trim()) {
-      newErrors.toApartmentSize = "Vänligen ange bostadens storlek";
+      newErrors.toApartmentSize = formData.customerType === 'foretag' ? "Vänligen ange lokalens storlek" : "Vänligen ange bostadens storlek";
       isValid = false;
     } else if (isNaN(Number(formData.toApartmentSize)) || Number(formData.toApartmentSize) <= 0) {
-      newErrors.toApartmentSize = "Bostadens storlek måste vara ett positivt tal";
+      newErrors.toApartmentSize = formData.customerType === 'foretag' ? "Lokalens storlek måste vara ett positivt tal" : "Bostadens storlek måste vara ett positivt tal";
       isValid = false;
     }
-    if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
-      newErrors.toTypeOfHome = "Vänligen välj typ av bostad";
-      isValid = false;
+    if (formData.customerType !== 'foretag') {
+      if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
+        newErrors.toTypeOfHome = "Vänligen välj typ av bostad";
+        isValid = false;
+      }
     }
     setErrors(newErrors);
     return isValid;
@@ -510,24 +536,49 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
     return isValid;
   };
 
-  // TODO: Add validateStep1, validateStep2, validateStep4, validateStep5, and any other handlers needed
+  const handleBackToServiceSelection = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setShowSteps(false);
+    setStep(0);
+  };
+
   return (
-    <main>
+    <div>
       <Script
         src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBZSNfM36ny9L-S04VbU0xzhkGdaPAm_gU&libraries=places`}
         strategy="lazyOnload"
         async
         onLoad={() => setIsGoogleMapsLoaded(true)}
       />
-      <div className="bg-white rounded-2xl shadow-xl p-10 md:p-12 max-w-xl w-full mx-auto">
+      <div className="relative rounded-2xl shadow-2xl border-2 border-[#10B981] p-10 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-gradient-to-br from-white to-blue-50">
+        <div className="flex flex-col items-center">
+          <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4" />
+          <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
+            Fyll i formuläret för en snabb och kostnadsfri offert
+          </h1>
+          <h2 className="text-lg md:text-xl font-medium text-center text-gray-700 mb-8">
+            Vi återkommer inom en minut!
+          </h2>
+        </div>
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Fyll i formuläret nedan
+            {!showSteps ? 'Välj tjänst' : (formData.serviceType === 'flyttstad' ? 'Fyll i formuläret för Flyttstäd' : '')}
           </h2>
           <p className="text-lg text-gray-900 font-bold">
-            för en snabb och kostnadsfri offert
+            {!showSteps ? 'för att komma igång' : ''}
           </p>
         </div>
+        {/* Only swap the form fields and logic for Flyttstäd, keep the rest of the UI the same */}
+        {showSteps && formData.serviceType === 'flyttstad' ? (
+          <StadningOffertForm
+            customerType={formData.customerType}
+            onSubmit={(data) => {
+              alert('Flyttstäd offert skickad!');
+              handleBackToServiceSelection({preventDefault: () => {}} as React.MouseEvent<HTMLButtonElement>);
+            }}
+            onCancel={() => handleBackToServiceSelection({preventDefault: () => {}} as React.MouseEvent<HTMLButtonElement>)}
+          />
+        ) : (
         <form onSubmit={async (e) => {
           e.preventDefault();
 
@@ -610,6 +661,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
             }
           }
         }}>
+            {showSteps && (
           <div className="mb-8">
             <div className="flex justify-between mb-2">
               <span className="text-sm font-medium text-gray-700">Steg {step} av 7</span>
@@ -622,8 +674,75 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               ></div>
             </div>
           </div>
-          {step === 1 && (
+            )}
+
+            {!showSteps && (
+              <div className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <motion.div
+                    className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                    onClick={() => {
+                      setFormData(prev => ({ ...prev, serviceType: 'flytt' }));
+                      setErrors(prev => ({ ...prev, serviceType: '' }));
+                      setShowSteps(true);
+                      setStep(1);
+                    }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      <span className="text-4xl mb-4">🏠</span>
+                      <h3 className="text-xl font-bold mb-2">Flytt</h3>
+                      <p className="text-sm opacity-90">
+                        Komplett flyttservice med professionell packning, transport och uppackning
+                      </p>
+                    </div>
+                  </motion.div>
+                  <motion.div
+                    className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                    onClick={() => {
+                      setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
+                      setErrors(prev => ({ ...prev, serviceType: '' }));
+                      setShowSteps(true);
+                      setStep(1);
+                    }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      <span className="text-4xl mb-4">✨</span>
+                      <h3 className="text-xl font-bold mb-2">Flyttstäd</h3>
+                      <p className="text-sm opacity-90">
+                        Professionell flyttstädning för att lämna din gamla bostad i perfekt skick
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+                {errors.serviceType && (
+                  <p className="text-base text-red-600 text-center mt-4">{errors.serviceType}</p>
+                )}
+              </div>
+            )}
+
+            {showSteps && step === 1 && (
             <div className="space-y-6">
+              {/* Privat/Företag Toggle */}
+              <div className="flex justify-center mb-6">
+                <button
+                  type="button"
+                  className={`px-6 py-2 rounded-l-lg border border-[#10B981] text-lg font-semibold focus:outline-none transition-colors duration-200 ${formData.customerType === 'privat' ? 'bg-[#10B981] text-white' : 'bg-white text-[#10B981]'}`}
+                  onClick={() => setFormData(prev => ({ ...prev, customerType: 'privat' }))}
+                >
+                  Privat
+                </button>
+                <button
+                  type="button"
+                  className={`px-6 py-2 rounded-r-lg border border-[#10B981] text-lg font-semibold focus:outline-none transition-colors duration-200 -ml-px ${formData.customerType === 'foretag' ? 'bg-[#10B981] text-white' : 'bg-white text-[#10B981]'}`}
+                  onClick={() => setFormData(prev => ({ ...prev, customerType: 'foretag' }))}
+                >
+                  Företag
+                </button>
+              </div>
               <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Flyttinformation</h2>
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">Önskat flyttdatum</label>
@@ -708,7 +827,9 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </div>
               {/* Packing help question */}
               <div>
-                <label className="block text-lg font-medium text-gray-700 mb-2">Vill du ha hjälp med packning?</label>
+                <label className="block text-lg font-medium text-gray-700 mb-2">
+                  {formData.customerType === 'foretag' ? 'Vill ni ha hjälp med packning?' : 'Vill du ha hjälp med packning?'}
+                </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
                     <input
@@ -746,7 +867,9 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
 
               {/* Storage question */}
               <div>
-                <label className="block text-lg font-medium text-gray-700 mb-2">Behöver du magasinering?</label>
+                <label className="block text-lg font-medium text-gray-700 mb-2">
+                  {formData.customerType === 'foretag' ? 'Behöver ni magasinering?' : 'Behöver du magasinering?'}
+                </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
                     <input
@@ -784,7 +907,9 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
 
               {/* Cleaning question */}
               <div>
-                <label className="block text-lg font-medium text-gray-700 mb-2">Vill du ha flyttstädning?</label>
+                <label className="block text-lg font-medium text-gray-700 mb-2">
+                  {formData.customerType === 'foretag' ? 'Vill ni ha flyttstädning?' : 'Vill du ha flyttstädning?'}
+                </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
                     <input
@@ -819,7 +944,14 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                   <p className="mt-1 text-base text-red-600">{errors.needsCleaning}</p>
                 )}
               </div>
-              <div className="flex justify-end mt-8">
+                <div className="flex justify-between mt-8">
+                  <button
+                    type="button"
+                    onClick={handleBackToServiceSelection}
+                    className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
+                  >
+                    Tillbaka
+                  </button>
                 <button
                   type="button"
                   onClick={nextStep}
@@ -830,10 +962,14 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </div>
             </div>
           )}
-          {step === 2 && (
+            {showSteps && step === 2 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Nuvarande adress</h2>
-              <p className="text-sm text-gray-700 mb-6">Information om din nuvarande bostad</p>
+              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+                {formData.customerType === 'foretag' ? 'Nuvarande företagsadress' : 'Nuvarande adress'}
+              </h2>
+              <p className="text-sm text-gray-700 mb-6">
+                {formData.customerType === 'foretag' ? 'Information om er nuvarande lokal' : 'Information om din nuvarande bostad'}
+              </p>
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
@@ -920,7 +1056,9 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Bostadens storlek (kvm)</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {formData.customerType === 'foretag' ? 'Lokalens storlek (kvm)' : 'Bostadens storlek (kvm)'}
+                  </label>
                   <input
                     type="text"
                     inputMode="numeric"
@@ -954,27 +1092,31 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     <p className="mt-1 text-sm text-red-600">{errors.apartmentSize}</p>
                   )}
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Typ av bostad</label>
-                  <select
-                    name="typeOfHome"
-                    value={formData.typeOfHome}
-                    onChange={handleInputChange}
-                    required
-                    className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.typeOfHome ? " border-red-500" : ""}`}
-                  >
-                    <option value="">-- Välj --</option>
-                    <option value="lagenhet">Lägenhet</option>
-                    <option value="villa">Villa</option>
-                    <option value="parhus">Parhus</option>
-                    <option value="radhus">Radhus</option>
-                    <option value="fritidshus">Fritidshus</option>
-                    <option value="magasin">Magasin</option>
-                  </select>
-                  {errors.typeOfHome && (
-                    <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
-                  )}
-                </div>
+                {((formData.customerType as string) !== 'foretag') && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Typ av bostad
+                    </label>
+                    <select
+                      name="typeOfHome"
+                      value={formData.typeOfHome}
+                      onChange={handleInputChange}
+                      required
+                      className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.typeOfHome ? " border-red-500" : ""}`}
+                    >
+                      <option value="">-- Välj --</option>
+                      <option value="lagenhet">Lägenhet</option>
+                      <option value="villa">Villa</option>
+                      <option value="parhus">Parhus</option>
+                      <option value="radhus">Radhus</option>
+                      <option value="fritidshus">Fritidshus</option>
+                      <option value="magasin">Magasin</option>
+                    </select>
+                    {errors.typeOfHome && (
+                      <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
+                    )}
+                  </div>
+                )}
               </div>
               <div className="flex justify-between mt-8">
                 <button
@@ -994,43 +1136,73 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </div>
             </div>
           )}
-          {step === 3 && (
+            {showSteps && step === 3 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Nuvarande adress</h2>
+              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+                {formData.customerType === 'foretag' ? 'Nuvarande företagsadress' : 'Nuvarande adress'}
+              </h2>
               <div className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">På vilken våning ligger lägenheten?</label>
-                  <select
-                    name="floor"
-                    value={formData.floor}
-                    onChange={(e) => {
-                      handleInputChange(e);
-                      setErrors(prev => ({ ...prev, floor: "" }));
-                    }}
-                    required
-                    className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
-                      errors.floor ? "border-red-500" : ""
-                    }`}
-                  >
-                    <option value="">-- Välj --</option>
-                    <option value="-2">Våning -2</option>
-                    <option value="-1">Våning -1</option>
-                    <option value="entreplan">Entréplan</option>
-                    <option value="1">Våning 1</option>
-                    <option value="2">Våning 2</option>
-                    <option value="3">Våning 3</option>
-                    <option value="4">Våning 4</option>
-                    <option value="5">Våning 5</option>
-                    <option value="6+">Våning 6 eller högre</option>
-                  </select>
-                  {errors.floor && (
-                    <p className="mt-1 text-sm text-red-600">{errors.floor}</p>
-                  )}
-                </div>
-
-                {formData.typeOfHome === "lagenhet" && (
+                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.typeOfHome === 'lagenhet')) ? (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns det hiss?</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}
+                    </label>
+                    <select
+                      name="floor"
+                      value={formData.floor}
+                      onChange={(e) => {
+                        handleInputChange(e);
+                        setErrors(prev => ({ ...prev, floor: "" }));
+                      }}
+                      required
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                        errors.floor ? "border-red-500" : ""
+                      }`}
+                    >
+                      <option value="">-- Välj --</option>
+                      <option value="-2">Våning -2</option>
+                      <option value="-1">Våning -1</option>
+                      <option value="entreplan">Entréplan</option>
+                      <option value="1">Våning 1</option>
+                      <option value="2">Våning 2</option>
+                      <option value="3">Våning 3</option>
+                      <option value="4">Våning 4</option>
+                      <option value="5">Våning 5</option>
+                      <option value="6+">Våning 6 eller högre</option>
+                    </select>
+                    {errors.floor && (
+                      <p className="mt-1 text-sm text-red-600">{errors.floor}</p>
+                    )}
+                  </div>
+                ) : (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Antal våningar</label>
+                    <select
+                      name="floor"
+                      value={formData.floor}
+                      onChange={(e) => {
+                        handleInputChange(e);
+                        setErrors(prev => ({ ...prev, floor: "" }));
+                      }}
+                      required
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                        errors.floor ? "border-red-500" : ""
+                      }`}
+                    >
+                      <option value="">-- Välj --</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                    {errors.floor && (
+                      <p className="mt-1 text-sm text-red-600">{errors.floor}</p>
+                    )}
+                  </div>
+                )}
+                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.typeOfHome === 'lagenhet')) && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns hiss i byggnaden?</label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -1066,7 +1238,6 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     )}
                   </div>
                 )}
-
                 {formData.hasElevator === "yes" && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Hisstorlek</label>
@@ -1093,8 +1264,12 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                 )}
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Avstånd till lastningsplats (meter)</label>
-                  <p className="text-sm text-gray-600 mb-2">Den närmaste punkt en flyttbil kan stå under lastning och lossning</p>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {formData.customerType === 'foretag' ? 'Avstånd till lastningsplats (meter)' : 'Avstånd till lastningsplats (meter)'}
+                  </label>
+                  <p className="text-sm text-gray-600 mb-2">
+                    {formData.customerType === 'foretag' ? 'Den närmaste punkt en flyttbil kan stå vid er lokal under lastning och lossning' : 'Den närmaste punkt en flyttbil kan stå under lastning och lossning'}
+                  </p>
                   <input
                     type="text"
                     inputMode="numeric"
@@ -1132,6 +1307,35 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     <p className="mt-1 text-sm text-red-600">{errors.parkingDistance}</p>
                   )}
                 </div>
+                {((formData.customerType as string) === 'foretag') && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns lastkaj i byggnaden?</label>
+                    <div className="flex gap-6">
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="hasLoadingDock"
+                          value="yes"
+                          checked={formData.hasLoadingDock === "yes"}
+                          onChange={() => setFormData(prev => ({ ...prev, hasLoadingDock: "yes" }))}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-sm text-gray-700">Ja</span>
+                      </label>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="hasLoadingDock"
+                          value="no"
+                          checked={formData.hasLoadingDock === "no"}
+                          onChange={() => setFormData(prev => ({ ...prev, hasLoadingDock: "no" }))}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-sm text-gray-700">Nej</span>
+                      </label>
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="flex justify-between mt-8">
                 <button
@@ -1151,10 +1355,14 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </div>
             </div>
           )}
-          {step === 4 && (
+            {showSteps && step === 4 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Ny adress</h2>
-              <p className="text-sm text-gray-700 mb-6">Information om din nya bostad</p>
+              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+                {formData.customerType === 'foretag' ? 'Ny företagsadress' : 'Ny adress'}
+              </h2>
+              <p className="text-sm text-gray-700 mb-6">
+                {formData.customerType === 'foretag' ? 'Information om er nya lokal' : 'Information om din nya bostad'}
+              </p>
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
@@ -1237,7 +1445,9 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Bostadens storlek (kvm)</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {formData.customerType === 'foretag' ? 'Lokalens storlek (kvm)' : 'Bostadens storlek (kvm)'}
+                  </label>
                   <input
                     type="text"
                     inputMode="numeric"
@@ -1271,27 +1481,31 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     <p className="mt-1 text-sm text-red-600">{errors.toApartmentSize}</p>
                   )}
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Typ av bostad</label>
-                  <select
-                    name="toTypeOfHome"
-                    value={formData.toTypeOfHome}
-                    onChange={handleInputChange}
-                    required
-                    className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.toTypeOfHome ? " border-red-500" : ""}`}
-                  >
-                    <option value="">-- Välj --</option>
-                    <option value="lagenhet">Lägenhet</option>
-                    <option value="villa">Villa</option>
-                    <option value="parhus">Parhus</option>
-                    <option value="radhus">Radhus</option>
-                    <option value="fritidshus">Fritidshus</option>
-                    <option value="magasin">Magasin</option>
-                  </select>
-                  {errors.toTypeOfHome && (
-                    <p className="mt-1 text-sm text-red-600">{errors.toTypeOfHome}</p>
-                  )}
-                </div>
+                {((formData.customerType as string) !== 'foretag') && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Typ av bostad
+                    </label>
+                    <select
+                      name="toTypeOfHome"
+                      value={formData.toTypeOfHome}
+                      onChange={handleInputChange}
+                      required
+                      className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.toTypeOfHome ? " border-red-500" : ""}`}
+                    >
+                      <option value="">-- Välj --</option>
+                      <option value="lagenhet">Lägenhet</option>
+                      <option value="villa">Villa</option>
+                      <option value="parhus">Parhus</option>
+                      <option value="radhus">Radhus</option>
+                      <option value="fritidshus">Fritidshus</option>
+                      <option value="magasin">Magasin</option>
+                    </select>
+                    {errors.toTypeOfHome && (
+                      <p className="mt-1 text-sm text-red-600">{errors.toTypeOfHome}</p>
+                    )}
+                  </div>
+                )}
               </div>
               <div className="flex justify-between mt-8">
                 <button
@@ -1311,43 +1525,73 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </div>
             </div>
           )}
-          {step === 5 && (
+            {showSteps && step === 5 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Ny adress</h2>
+              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+                {formData.customerType === 'foretag' ? 'Ny företagsadress' : 'Ny adress'}
+              </h2>
               <div className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">På vilken våning ligger lägenheten?</label>
-                  <select
-                    name="toFloor"
-                    value={formData.toFloor}
-                    onChange={(e) => {
-                      handleInputChange(e);
-                      setErrors(prev => ({ ...prev, toFloor: "" }));
-                    }}
-                    required
-                    className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
-                      errors.toFloor ? "border-red-500" : ""
-                    }`}
-                  >
-                    <option value="">-- Välj --</option>
-                    <option value="-2">Våning -2</option>
-                    <option value="-1">Våning -1</option>
-                    <option value="entreplan">Entréplan</option>
-                    <option value="1">Våning 1</option>
-                    <option value="2">Våning 2</option>
-                    <option value="3">Våning 3</option>
-                    <option value="4">Våning 4</option>
-                    <option value="5">Våning 5</option>
-                    <option value="6+">Våning 6 eller högre</option>
-                  </select>
-                  {errors.toFloor && (
-                    <p className="mt-1 text-sm text-red-600">{errors.toFloor}</p>
-                  )}
-                </div>
-
-                {formData.toTypeOfHome === "lagenhet" && (
+                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'lagenhet')) ? (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns det hiss?</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}
+                    </label>
+                    <select
+                      name="toFloor"
+                      value={formData.toFloor}
+                      onChange={(e) => {
+                        handleInputChange(e);
+                        setErrors(prev => ({ ...prev, toFloor: "" }));
+                      }}
+                      required
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                        errors.toFloor ? "border-red-500" : ""
+                      }`}
+                    >
+                      <option value="">-- Välj --</option>
+                      <option value="-2">Våning -2</option>
+                      <option value="-1">Våning -1</option>
+                      <option value="entreplan">Entréplan</option>
+                      <option value="1">Våning 1</option>
+                      <option value="2">Våning 2</option>
+                      <option value="3">Våning 3</option>
+                      <option value="4">Våning 4</option>
+                      <option value="5">Våning 5</option>
+                      <option value="6+">Våning 6 eller högre</option>
+                    </select>
+                    {errors.toFloor && (
+                      <p className="mt-1 text-sm text-red-600">{errors.toFloor}</p>
+                    )}
+                  </div>
+                ) : (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Antal våningar</label>
+                    <select
+                      name="toFloor"
+                      value={formData.toFloor}
+                      onChange={(e) => {
+                        handleInputChange(e);
+                        setErrors(prev => ({ ...prev, toFloor: "" }));
+                      }}
+                      required
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                        errors.toFloor ? "border-red-500" : ""
+                      }`}
+                    >
+                      <option value="">-- Välj --</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                    {errors.toFloor && (
+                      <p className="mt-1 text-sm text-red-600">{errors.toFloor}</p>
+                    )}
+                  </div>
+                )}
+                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'lagenhet')) && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns hiss i byggnaden?</label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -1383,7 +1627,6 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     )}
                   </div>
                 )}
-
                 {formData.toHasElevator === "yes" && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Hisstorlek</label>
@@ -1408,10 +1651,13 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     )}
                   </div>
                 )}
-
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Avstånd till lossningsplats (meter)</label>
-                  <p className="text-sm text-gray-600 mb-2">Den närmaste punkt en flyttbil kan stå under lastning och lossning</p>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {formData.customerType === 'foretag' ? 'Avstånd till lossningsplats (meter)' : 'Avstånd till lossningsplats (meter)'}
+                  </label>
+                  <p className="text-sm text-gray-600 mb-2">
+                    {formData.customerType === 'foretag' ? 'Den närmaste punkt en flyttbil kan stå vid er lokal under lastning och lossning' : 'Den närmaste punkt en flyttbil kan stå under lastning och lossning'}
+                  </p>
                   <input
                     type="text"
                     inputMode="numeric"
@@ -1449,6 +1695,35 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     <p className="mt-1 text-sm text-red-600">{errors.toParkingDistance}</p>
                   )}
                 </div>
+                {((formData.customerType as string) === 'foretag') && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns lastkaj i byggnaden?</label>
+                    <div className="flex gap-6">
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="toHasLoadingDock"
+                          value="yes"
+                          checked={formData.toHasLoadingDock === "yes"}
+                          onChange={() => setFormData(prev => ({ ...prev, toHasLoadingDock: "yes" }))}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-sm text-gray-700">Ja</span>
+                      </label>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="toHasLoadingDock"
+                          value="no"
+                          checked={formData.toHasLoadingDock === "no"}
+                          onChange={() => setFormData(prev => ({ ...prev, toHasLoadingDock: "no" }))}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-sm text-gray-700">Nej</span>
+                      </label>
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="flex justify-between mt-8">
                 <button
@@ -1468,18 +1743,25 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </div>
             </div>
           )}
-          {step === 6 && (
+            {showSteps && step === 6 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Tunga och ömtåliga föremål</h2>
-              <p className="text-sm text-gray-700 mb-6">Tjänsten är gratis och du är inte bunden till någonting.</p>
+              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+                {formData.customerType === 'foretag' ? 'Tunga och ömtåliga föremål (företagsflytt)' : 'Tunga och ömtåliga föremål'}
+              </h2>
+              <p className="text-sm text-gray-700 mb-6">
+                {formData.customerType === 'foretag' ? '' : 'Tjänsten är gratis och du är inte bunden till någonting.'}
+              </p>
               
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Har du enskilda föremål som väger över 100 kg?
+                    {formData.customerType === 'foretag' ? 'Har ni enskilda föremål som väger över 100 kg?' : 'Har du enskilda föremål som väger över 100 kg?'}
                   </label>
                   <p className="text-sm text-gray-600 mb-3">
-                    <span className="font-bold">OBS! Markera endast "Ja" om du har enskilda föremål som väger mer än 100 kg</span> (t.ex. ett piano eller kassaskåp). Vanliga möbler som soffor, sängar eller garderober väger normalt under 100 kg.
+                    {formData.customerType === 'foretag'
+                      ? <span className="font-bold">OBS! Markera endast "Ja" om ni har enskilda föremål som väger mer än 100 kg</span>
+                      : <span className="font-bold">OBS! Markera endast "Ja" om du har enskilda föremål som väger mer än 100 kg</span>
+                    } (t.ex. ett piano eller kassaskåp). Vanliga möbler som soffor, sängar eller garderober väger normalt under 100 kg.
                   </p>
                   <div className="flex gap-6 mb-4">
                     <label className="flex items-center">
@@ -1563,10 +1845,12 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Ska några särskilt ömtåliga föremål flyttas?
+                    {formData.customerType === 'foretag' ? 'Ska några särskilt ömtåliga föremål flyttas för ert företag?' : 'Ska några särskilt ömtåliga föremål flyttas?'}
                   </label>
                   <p className="text-sm text-gray-600 mb-3">
-                    Flyttfirman behöver få veta om särskilt ömtåliga eller värdefulla föremål, som antikviteter, i förväg för att planera flytten.
+                    {formData.customerType === 'foretag'
+                      ? 'Flyttfirman behöver få veta om särskilt ömtåliga eller värdefulla föremål, som antikviteter, i förväg för att planera företagsflytten.'
+                      : 'Flyttfirman behöver få veta om särskilt ömtåliga eller värdefulla föremål, som antikviteter, i förväg för att planera flytten.'}
                   </p>
                   <div className="flex gap-6 mb-4">
                     <label className="flex items-center">
@@ -1631,11 +1915,30 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </div>
             </div>
           )}
-          {step === 7 && (
+            {showSteps && step === 7 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktuppgifter</h2>
+              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+                {formData.customerType === 'foretag' ? 'Kontaktuppgifter till företaget' : 'Kontaktuppgifter'}
+              </h2>
+              {formData.customerType === 'foretag' && (
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Kontaktperson för och efternamn</label>
+                    <input
+                      type="text"
+                      name="contactPersonName"
+                      value={formData.contactPersonName}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]"
+                    />
+                  </div>
+                </>
+              )}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Namn</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {formData.customerType === 'foretag' ? 'Företagsnamn' : 'Namn'}
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -1694,6 +1997,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
             </div>
           )}
         </form>
+        )}
       </div>
       {showCustomItemModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -1777,6 +2081,6 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
           </div>
         </div>
       )}
-    </main>
+    </div>
   );
 } 

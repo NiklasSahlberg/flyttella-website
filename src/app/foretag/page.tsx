@@ -23,6 +23,12 @@ const businessServices = [
     icon: '🏢',
   },
   {
+    title: 'Kontorsstädning',
+    description: 'Professionell kontorsstädning för en ren och trivsam arbetsmiljö. Vi anpassar städningen efter ert företags behov och schema.',
+    href: '/kontorsstadning',
+    icon: '🧹',
+  },
+  {
     title: 'Bemanning och underentreprenad',
     description: 'Behöver ni extra personal eller underentreprenad för flytt? Vi erbjuder flexibel bemanning och pålitliga samarbeten för företagets behov.',
     href: '/bemanning',

@@ -247,6 +247,10 @@ export default function Header() {
                           <span className="text-lg mr-3">🏢</span>
                           <span>Kontorsflytt</span>
                         </Link>
+                        <Link href="/kontorsstadning" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                          <span className="text-lg mr-3">🧹</span>
+                          <span>Kontorsstädning</span>
+                        </Link>
                         <Link href="/bemanning" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
                           <span className="text-lg mr-3">👷‍♂️</span>
                           <span>Bemanning och underentreprenad</span>
@@ -436,6 +440,13 @@ export default function Header() {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Kontorsflytt
+                    </Link>
+                    <Link
+                      href="/kontorsstadning"
+                      className="block py-2 px-4 text-base text-[#0F172A] hover:text-[#10B981] hover:bg-gray-100 rounded-lg"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Kontorsstädning
                     </Link>
                     <Link
                       href="/bemanning"
