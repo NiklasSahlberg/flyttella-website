@@ -352,17 +352,17 @@ export default function Home() {
 
             {/* Pricing Info */}
             <div className="text-center mb-12">
-              <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+              <p className="text-white text-2xl md:text-3xl max-w-3xl mx-auto mb-8">
                 Vi arbetar med fasta priser för att ge dig trygghet och transparens. 
                 Det går även att komma överens om löpande priser.
               </p>
-              <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+              <p className="text-white text-2xl md:text-3xl max-w-3xl mx-auto mb-8">
                 Våra offerter är alltid baserade på dina specifika behov och omständigheter. 
                 Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation. 
                 Alla priser är fasta utan dolda avgifter - det du ser är det du betalar. 
                 Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
               </p>
-              <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto">
+              <p className="text-white text-2xl md:text-3xl max-w-3xl mx-auto">
                 Som en seriös flyttfirma har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats. 
                 Du kan vara trygg med att vi följer alla gällande regler och bestämmelser.
               </p>
@@ -371,7 +371,7 @@ export default function Home() {
         </div>
 
         {/* Process Flow Section - full width, outside container */}
-        <div className="mb-16 w-full">
+        <div className="mb-24 w-full">
           <h3 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">Så fungerar det</h3>
           <div className="relative w-full px-4 md:px-12">
             {/* Timeline connector line */}
@@ -448,7 +448,7 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-8 text-center">Vår erfarenhet</h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-8 text-center">Vår erfarenhet</h3>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* Flyttar */}
               <motion.div 
@@ -669,38 +669,77 @@ export default function Home() {
                 </div>
               </motion.div>
             </div>
-            {/* Top 10 image below experience boxes */}
-            <div className="flex justify-center items-center gap-14 mt-12 flex-wrap min-h-[320px]">
-              <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                <Image
-                  src="/top10.png"
-                  alt="Top 10"
-                  width={350}
-                  height={320}
-                  className="object-contain max-h-80 max-w-[350px]"
-                  priority={false}
-                />
+
+            {/* Experience description text and badges side by side */}
+            <div className="mt-12 flex flex-col lg:flex-row items-center lg:items-start gap-6">
+              {/* Experience description text - left side */}
+              <motion.div 
+                className="flex-1 max-w-4xl text-left"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+              >
+                <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">
+                  Erfarenhet som ger resultat
+                </h4>
+                <p className="text-xl md:text-2xl text-[#0F172A]/80 leading-relaxed mb-6">
+                  Med över 5000 flyttar och 4500 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. 
+                  Vår erfarenhet sträcker sig över hela landet och vi har hjälpt tusentals familjer och företag med deras flyttar.
+                </p>
+                <p className="text-xl md:text-2xl text-[#0F172A]/80 leading-relaxed mb-8">
+                  Våra prestationer har gett oss erkännande som en av Sveriges bästa flyttfirmor, med över 1000 positiva recensioner och 
+                  rekommendationer från nöjda kunder. Vi är stolta över att kunna erbjuda professionell service baserad på år av praktisk erfarenhet.
+                </p>
+                
+                {/* Recommended Company and 1000 Reviews badges under text */}
+                <div className="flex items-center gap-8 flex-wrap">
+                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                    <Image
+                      src="/recommendedcompany2.png"
+                      alt="Recommended Company"
+                      width={350}
+                      height={320}
+                      className="object-contain max-h-80 max-w-[350px]"
+                      priority={false}
+                    />
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                    <Image
+                      src="/1000reviewspicture.png"
+                      alt="1000 Reviews"
+                      width={450}
+                      height={450}
+                      className="object-contain max-h-[450px] max-w-[450px]"
+                      priority={false}
+                    />
+                  </motion.div>
+                </div>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                <Image
-                  src="/1000reviewspicture.png"
-                  alt="1000 Reviews"
-                  width={450}
-                  height={450}
-                  className="object-contain max-h-[450px] max-w-[450px] mt-8"
-                  priority={false}
-                />
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                <Image
-                  src="/recommendedcompany2.png"
-                  alt="Recommended Company"
-                  width={350}
-                  height={320}
-                  className="object-contain max-h-80 max-w-[350px]"
-                  priority={false}
-                />
-              </motion.div>
+
+              {/* Top 10 badge - right side */}
+              <div className="flex flex-col items-center gap-8">
+                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                  <Image
+                    src="/top10.png"
+                    alt="Top 10"
+                    width={350}
+                    height={320}
+                    className="object-contain max-h-80 max-w-[350px]"
+                    priority={false}
+                  />
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                  <Image
+                    src="/top10.png"
+                    alt="Top 10"
+                    width={350}
+                    height={320}
+                    className="object-contain max-h-80 max-w-[350px]"
+                    priority={false}
+                  />
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </section>
