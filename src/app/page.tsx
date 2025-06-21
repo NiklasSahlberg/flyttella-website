@@ -167,6 +167,156 @@ export default function Home() {
     </motion.a>
   ));
 
+  function FillFormLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/fillform.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-14 h-14 mx-auto mb-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+
+  function FastLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/fast.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-14 h-14 mx-auto mb-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+
+  function PhoneCallLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/phonecall.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-20 h-20 mx-auto mb-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+
+  function SignFormLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/signform.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-20 h-20 mx-auto mb-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+
+  function MovingTruckLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/movingtruck.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-36 h-36 mx-auto mb-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+  
+  function HappyCustomerLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/happycustomer.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-24 h-24 flex items-center justify-center -m-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+  
+  function CashLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/cash.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-32 h-32 flex items-center justify-center -m-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+  
+  function BoxesLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/boxes.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-24 h-24 flex items-center justify-center -m-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+
+  function InsuranceLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/insurance.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-24 h-24 flex items-center justify-center -m-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+
+  function ScheduleLottie() {
+    const [animationData, setAnimationData] = useState(null);
+    useEffect(() => {
+      fetch("/schedule2.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }, []);
+    if (!animationData) return null;
+    return (
+      <div className="w-24 h-24 flex items-center justify-center -m-2">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
+    );
+  }
+
   return (
     <main className="min-h-screen">
       {/* Hero Section with integrated FlyttoffertForm */}
@@ -1064,8 +1214,8 @@ function FeatureBoxesSection() {
       key: "kundgaranti",
       label: "14 dagars nöjd kund garanti",
       icon: (
-        <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center overflow-visible">
+          <HappyCustomerLottie />
         </motion.div>
       ),
     },
@@ -1073,8 +1223,8 @@ function FeatureBoxesSection() {
       key: "kartonger",
       label: "Fritt lån av kartonger i 4 veckor",
       icon: (
-        <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
+        <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center overflow-visible">
+          <BoxesLottie />
         </motion.div>
       ),
     },
@@ -1082,8 +1232,8 @@ function FeatureBoxesSection() {
       key: "rut-avdrag",
       label: "50% RUT-avdrag",
       icon: (
-        <motion.div variants={variants} animate="wiggle" className="h-8 w-8 flex items-center justify-center">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="8.5" cy="15.5" r="1.5"/><circle cx="15.5" cy="8.5" r="1.5"/><line x1="7" y1="17" x2="17" y2="7"/></svg>
+        <motion.div variants={variants} animate="wiggle" className="h-8 w-8 flex items-center justify-center overflow-visible">
+          <CashLottie />
         </motion.div>
       ),
     },
@@ -1091,8 +1241,8 @@ function FeatureBoxesSection() {
       key: "ombokning-avbokning",
       label: "24h kostnadsfri ombokning och avbokning",
       icon: (
-        <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center overflow-visible">
+          <ScheduleLottie />
         </motion.div>
       ),
     },
@@ -1100,9 +1250,18 @@ function FeatureBoxesSection() {
       key: "tillstand",
       label: "Trafiktillstånd och försäkring",
       icon: (
-        <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
-        </motion.div>
+        <div className="flex items-center justify-start w-full">
+          <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center mr-4 overflow-visible">
+            <InsuranceLottie />
+          </motion.div>
+          <span className="font-medium text-[#0F172A] text-left text-base leading-tight flex-grow">
+            Trafiktillstånd och försäkring
+          </span>
+          <div className="flex items-center ml-4">
+            <Image src="/trygg-hansa-logo.png" alt="Trygg Hansa Logo" width={120} height={120} className="object-contain" />
+            <Image src="/fora-logo.png" alt="Fora Logo" width={60} height={60} className="object-contain ml-2" />
+          </div>
+        </div>
       ),
     },
   ];
@@ -1128,9 +1287,11 @@ function FeatureBoxesSection() {
               custom={i}
             >
               {feature.icon}
-              <span className="font-medium text-[#0F172A] text-left text-base leading-tight">
-                {feature.label}
-              </span>
+              {feature.key !== "tillstand" && (
+                <span className="font-medium text-[#0F172A] text-left text-base leading-tight">
+                  {feature.label}
+                </span>
+              )}
             </motion.div>
           ))}
         </div>
@@ -1234,7 +1395,67 @@ function HappyCustomerLottie() {
   }, []);
   if (!animationData) return null;
   return (
-    <div className="w-20 h-20 mx-auto mb-2">
+    <div className="w-24 h-24 flex items-center justify-center -m-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function CashLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/cash.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-32 h-32 flex items-center justify-center -m-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function BoxesLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/boxes.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-24 h-24 flex items-center justify-center -m-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function InsuranceLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/insurance.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-24 h-24 flex items-center justify-center -m-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function ScheduleLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/schedule2.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-24 h-24 flex items-center justify-center -m-2">
       <Lottie animationData={animationData} loop autoplay />
     </div>
   );
