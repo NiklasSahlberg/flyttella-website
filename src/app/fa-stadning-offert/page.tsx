@@ -943,7 +943,6 @@ export default function FaStadningOffert() {
                   {step === 4 && (
                     <div className="space-y-6">
                       <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktinformation</h2>
-                      <p className="text-sm text-gray-700 mb-6">Tjänsten är gratis och du är inte bunden till någonting.</p>
                       
                       <div className="space-y-6">
                         <div>

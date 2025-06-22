@@ -124,7 +124,13 @@ export default function Header() {
           <div className="flex justify-between items-center h-20 relative">
             {/* Logo - centered on mobile, left on desktop */}
             <div className="flex-1 flex justify-center md:justify-start items-center relative">
-              <Link href="/">
+              <div 
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  window.location.reload();
+                }}
+                className="cursor-pointer"
+              >
                 <div className="relative h-16 w-32 md:h-20 md:w-96 mx-auto">
                   <Image
                     src="/flyttella-logo.png"
@@ -134,7 +140,7 @@ export default function Header() {
                     priority
                   />
                 </div>
-              </Link>
+              </div>
             </div>
             {/* Hamburger menu in top right on mobile - only show on mobile */}
             <div className="md:hidden">

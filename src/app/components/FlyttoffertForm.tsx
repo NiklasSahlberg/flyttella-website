@@ -588,7 +588,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
             if (isValid) {
               // Format the data to match the email template
               const emailData = {
-                title: "Nytt lead från Flytta.se",
+                title: "Ny lead flyttella",
                 behov: "move_out",
                 datum: formData.movingDate,
                 flyttaFran: {
@@ -1748,9 +1748,6 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
                 {formData.customerType === 'foretag' ? 'Tunga och ömtåliga föremål (företagsflytt)' : 'Tunga och ömtåliga föremål'}
               </h2>
-              <p className="text-sm text-gray-700 mb-6">
-                {formData.customerType === 'foretag' ? '' : 'Tjänsten är gratis och du är inte bunden till någonting.'}
-              </p>
               
               <div className="space-y-6">
                 <div>

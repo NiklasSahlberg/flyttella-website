@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
+"use client";
+
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import Script from "next/script";
 
 interface AddressComponent {
   long_name: string;
@@ -13,7 +16,6 @@ interface StadningFormData {
   phone: string;
   typeOfHome: string;
   numberOfFloors: string;
-  entireHome: string;
   bedrooms: number;
   bathrooms: number;
   kitchen: number;
@@ -47,7 +49,6 @@ interface FormErrors {
   phone?: string;
   typeOfHome?: string;
   numberOfFloors?: string;
-  entireHome?: string;
   squareMeters?: string;
   movingDate?: string;
   flexibleMovingDate?: string;
@@ -66,15 +67,20 @@ interface StadningOffertFormProps {
 
 const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCancel, customerType = 'privat' }) => {
   const [step, setStep] = useState(1);
+  const [localCustomerType, setLocalCustomerType] = useState<'privat' | 'foretag'>(customerType);
+  const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
-  const [lastValidAddress, setLastValidAddress] = useState('');
+  const [lastValidAddress, setLastValidAddress] = useState("");
+  const addressRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState<StadningFormData>({
     name: '',
     email: '',
     phone: '',
     typeOfHome: '',
     numberOfFloors: '',
-    entireHome: '',
     bedrooms: 0,
     bathrooms: 0,
     kitchen: 0,
@@ -99,13 +105,9 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     address: '',
     streetNumber: '',
     postalCode: '',
+    contactPersonName: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
-  const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [localCustomerType, setLocalCustomerType] = useState<'privat' | 'foretag'>(customerType || 'privat');
 
   // Debug log for current step
   console.log('Current step:', step);
@@ -133,7 +135,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
               if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
             });
             const formattedAddress = `${streetName}, ${city}, Sweden`;
-            setFormData(prev => ({ ...prev, address: formattedAddress, streetNumber }));
+            setFormData(prev => ({ ...prev, address: formattedAddress }));
             setLastValidAddress(formattedAddress);
           }
         });
@@ -144,9 +146,16 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         });
       }
     } catch (error) {
-      // ignore
+      console.error('Error initializing Google Places:', error);
     }
   }, [step, isGoogleMapsLoaded, formData.address, lastValidAddress]);
+
+  useEffect(() => {
+    if (addressRef.current) {
+      const input = addressRef.current;
+      input.scrollLeft = input.scrollWidth;
+    }
+  }, [formData.address]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -171,10 +180,21 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   const validateStep1 = (): boolean => {
     const newErrors: FormErrors = {};
     if (!formData.movingDate.trim()) {
-      newErrors.movingDate = 'Vänligen välj önskat städdatum';
+      newErrors.movingDate = 'Vänligen välj städdatum';
     }
     if (formData.wantsFlexibleDate && !formData.flexibleMovingDate.trim()) {
-      newErrors.flexibleMovingDate = 'Vänligen välj flexibilitet för städdatum';
+      newErrors.flexibleMovingDate = 'Vänligen välj flexibelt städdatum';
+    }
+    if (!formData.address.trim()) {
+      newErrors.address = 'Vänligen ange din adress';
+    }
+    if (!formData.streetNumber.trim()) {
+      newErrors.streetNumber = 'Vänligen ange gatunummer';
+    }
+    if (!formData.postalCode.trim()) {
+      newErrors.postalCode = 'Vänligen ange postnummer';
+    } else if (!/^\d{5}$/.test(formData.postalCode)) {
+      newErrors.postalCode = 'Postnummer måste vara exakt 5 siffror';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -188,8 +208,10 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     if (!formData.numberOfFloors.trim()) {
       newErrors.numberOfFloors = 'Vänligen ange antal våningar';
     }
-    if (!formData.entireHome.trim()) {
-      newErrors.entireHome = 'Vänligen välj om hela bostaden ska städas';
+    if (!formData.squareMeters.trim()) {
+      newErrors.squareMeters = 'Vänligen ange ytstorlek';
+    } else if (!/^\d+$/.test(formData.squareMeters)) {
+      newErrors.squareMeters = 'Vänligen ange endast siffror';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -197,27 +219,19 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
   const validateStep3 = (): boolean => {
     const newErrors: FormErrors = {};
-    if (localCustomerType === 'foretag') {
-      const totalRooms = (formData.officeRooms || 0) + 
-                        (formData.kitchenArea || 0) + 
-                        (formData.diningRooms || 0) + 
-                        (formData.meetingRooms || 0) + 
-                        (formData.changingRooms || 0) + 
-                        (formData.toilets || 0) + 
-                        (formData.otherBusinessRooms || 0);
-      if (totalRooms === 0) {
-        newErrors.rooms = 'Vänligen ange minst ett rum som ska städas';
-      }
-    } else {
-      const totalRooms = formData.bedrooms + formData.bathrooms + formData.kitchen + formData.livingRoom + formData.otherRooms;
-      if (totalRooms === 0) {
-        newErrors.rooms = 'Vänligen ange minst ett rum som ska städas';
-      }
-      if (!formData.squareMeters.trim()) {
-        newErrors.squareMeters = 'Vänligen ange ytstorlek';
-      } else if (!/^\d+$/.test(formData.squareMeters)) {
-        newErrors.squareMeters = 'Vänligen ange endast siffror';
-      }
+    if (!formData.name.trim()) {
+      newErrors.name = 'Vänligen ange ditt namn';
+    }
+    if (localCustomerType === 'foretag' && !formData.contactPersonName?.trim()) {
+      newErrors.contactPersonName = 'Vänligen ange kontaktpersonens namn';
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Vänligen ange din e-postadress';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Vänligen ange en giltig e-postadress';
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Vänligen ange ditt telefonnummer';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -258,25 +272,34 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     let isValid = false;
     switch (step) {
       case 1:
-        setTouchedFields(prev => ({ ...prev, movingDate: true, flexibleMovingDate: formData.wantsFlexibleDate }));
+        setTouchedFields(prev => ({ 
+          ...prev, 
+          movingDate: true, 
+          flexibleMovingDate: formData.wantsFlexibleDate,
+          address: true,
+          streetNumber: true,
+          postalCode: true
+        }));
         isValid = validateStep1();
         break;
       case 2:
-        setTouchedFields(prev => ({ ...prev, typeOfHome: true, numberOfFloors: true, entireHome: true }));
+        setTouchedFields(prev => ({ ...prev, typeOfHome: true, numberOfFloors: true, squareMeters: true }));
         isValid = validateStep2();
         break;
       case 3:
-        setTouchedFields(prev => ({ ...prev, squareMeters: true }));
+        setTouchedFields({ 
+          name: true, 
+          email: true, 
+          phone: true, 
+          contactPersonName: localCustomerType === 'foretag' ? true : false
+        });
         isValid = validateStep3();
-        break;
-      case 4:
-        setTouchedFields({ name: true, email: true, phone: true, address: true, streetNumber: true, postalCode: true });
-        isValid = validateStep4();
         break;
       default:
         isValid = true;
     }
-    if (isValid) {
+    // Only increment step if not on step 3
+    if (isValid && step < 3) {
       setStep((prev) => prev + 1);
       setErrors({});
       setTouchedFields({});
@@ -300,7 +323,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         flexibleMovingDate: formData.wantsFlexibleDate ? formData.flexibleMovingDate : 'Nej',
         typeOfHome: formData.typeOfHome,
         numberOfFloors: formData.numberOfFloors,
-        entireHome: formData.entireHome,
         squareMeters: formData.squareMeters,
         bedrooms: formData.bedrooms,
         bathrooms: formData.bathrooms,
@@ -353,6 +375,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
   return (
     <>
+      <Script
+        src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBZSNfM36ny9L-S04VbU0xzhkGdaPAm_gU&libraries=places`}
+        strategy="lazyOnload"
+        async
+        onLoad={() => setIsGoogleMapsLoaded(true)}
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -364,7 +392,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         </h1>
         <div className="mb-8">
           <div className="flex justify-between mb-2">
-            {[1, 2, 3, 4, 5].map((stepNumber) => (
+            {[1, 2, 3].map((stepNumber) => (
               <div
                 key={stepNumber}
                 className={`flex items-center ${stepNumber === step ? 'text-[#10B981]' : 'text-gray-400'}`}
@@ -379,9 +407,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                 <span className="text-sm">
                   {stepNumber === 1 ? 'Datum' :
                     stepNumber === 2 ? 'Bostad' :
-                    stepNumber === 3 ? 'Rum' :
-                    stepNumber === 4 ? 'Kontakt' :
-                    'Bekräfta'}
+                    'Kontakt'}
                 </span>
               </div>
             ))}
@@ -389,7 +415,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
           <div className="h-2 bg-gray-200 rounded-full">
             <div
               className="h-full bg-[#10B981] rounded-full transition-all duration-300"
-              style={{ width: `${((step - 1) / 4) * 100}%` }}
+              style={{ width: `${((step - 1) / 2) * 100}%` }}
             ></div>
           </div>
         </div>
@@ -402,8 +428,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
           <form 
             onSubmit={(e) => {
               e.preventDefault();
-              // Only allow form submission on step 5
-              if (step === 5) {
+              // Only allow form submission on step 3
+              if (step === 3) {
                 handleFinalSubmit(e);
               }
             }} 
@@ -496,6 +522,98 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     </div>
                   )}
                 </div>
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="flex-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Adress</label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      value={formData.address}
+                      onChange={(e) => {
+                        setFormData({ ...formData, address: e.target.value });
+                        setErrors({ ...errors, address: "" });
+                      }}
+                      placeholder="Börja skriva din adress"
+                      required
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                        errors.address ? "border-red-500" : ""
+                      }`}
+                      style={{ backgroundColor: 'white', color: 'black' }}
+                      ref={addressRef}
+                    />
+                    {errors.address && (
+                      <p className="mt-1 text-sm text-red-600">{errors.address}</p>
+                    )}
+                  </div>
+                  <div className="md:w-1/4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Gatunr.</label>
+                    <input
+                      type="text"
+                      name="streetNumber"
+                      value={formData.streetNumber}
+                      onChange={(e) => {
+                        // Must start with number, followed by optional single letter
+                        const value = e.target.value.replace(/[^0-9A-Za-z]/g, '').replace(/^([0-9]+)?([A-Za-z]?).*/g, '$1$2');
+                        if (/^[0-9]+[A-Za-z]?$/.test(value) || value === '') {
+                          setFormData({ ...formData, streetNumber: value });
+                          setErrors({ ...errors, streetNumber: "" });
+                        }
+                      }}
+                      onKeyDown={(e) => {
+                        // Allow only numbers, letters, backspace, delete, and arrow keys
+                        if (
+                          !/^[0-9A-Za-z]$/.test(e.key) && // not a number or letter
+                          e.key !== 'Backspace' &&
+                          e.key !== 'Delete' &&
+                          e.key !== 'ArrowLeft' &&
+                          e.key !== 'ArrowRight' &&
+                          e.key !== 'Tab'
+                        ) {
+                          e.preventDefault();
+                        }
+                        // If no numbers yet, prevent letters
+                        if (!/^[0-9]+/.test(formData.streetNumber) && /^[A-Za-z]$/.test(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
+                      placeholder="1A"
+                      required
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                        errors.streetNumber ? "border-red-500" : ""
+                      }`}
+                      style={{ backgroundColor: 'white', color: 'black' }}
+                    />
+                    {errors.streetNumber && (
+                      <p className="mt-1 text-sm text-red-600">{errors.streetNumber}</p>
+                    )}
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Postnummer</label>
+                  <input
+                    type="text"
+                    name="postalCode"
+                    value={formData.postalCode}
+                    onChange={(e) => {
+                      // Only allow numbers and limit to 5 digits
+                      const value = e.target.value.replace(/\D/g, '').slice(0, 5);
+                      setFormData({ ...formData, postalCode: value });
+                      setErrors({ ...errors, postalCode: "" });
+                    }}
+                    placeholder="12345"
+                    required
+                    maxLength={5}
+                    pattern="\d{5}"
+                    className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                      errors.postalCode ? "border-red-500" : ""
+                    }`}
+                    style={{ backgroundColor: 'white', color: 'black' }}
+                  />
+                  {errors.postalCode && (
+                    <p className="mt-1 text-sm text-red-600">{errors.postalCode}</p>
+                  )}
+                </div>
               </div>
             )}
             {step === 2 && (
@@ -515,7 +633,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     }`}
                     style={{ backgroundColor: 'white', color: 'black' }}
                   >
-                    <option value="">{localCustomerType === 'foretag' ? 'Välj lokaltyp' : 'Välj bostadstyp'}</option>
+                    <option value="">Välj bostadstyp</option>
                     {localCustomerType === 'foretag' ? (
                       <>
                         <option value="kontor">Kontor</option>
@@ -555,78 +673,35 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     }`}
                     style={{ backgroundColor: 'white', color: 'black' }}
                   >
-                    <option value="">Välj antal våningar</option>
-                    <option value="1">1 våning</option>
-                    <option value="2">2 våningar</option>
-                    <option value="3">3 våningar</option>
-                    <option value="4">4 våningar eller fler</option>
+                    <option value="">{formData.typeOfHome.toLowerCase() === 'lagenhet' ? 'Välj våning' : 'Välj antal våningar'}</option>
+                    {formData.typeOfHome.toLowerCase() === 'lagenhet' ? (
+                      <>
+                        <option value="entréplan">Entréplan</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10+">10+</option>
+                      </>
+                    ) : (
+                      <>
+                        <option value="1">1 våning</option>
+                        <option value="2">2 våningar</option>
+                        <option value="3">3 våningar</option>
+                        <option value="4">4 våningar eller fler</option>
+                      </>
+                    )}
                   </select>
                   {errors.numberOfFloors && (
                     <p className="mt-1 text-sm text-red-600">{errors.numberOfFloors}</p>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {localCustomerType === 'foretag'
-                      ? 'Ska hela lokalen städas?'
-                      : 'Ska hela bostaden städas?'}
-                  </label>
-                  {localCustomerType === 'foretag' ? (
-                    <div className="flex gap-6 mt-2">
-                      <label className="inline-flex items-center">
-                        <input
-                          type="radio"
-                          name="entireHome"
-                          value="yes"
-                          checked={formData.entireHome === 'yes'}
-                          onChange={handleInputChange}
-                          className="form-radio text-[#10B981]"
-                        />
-                        <span className="ml-2 text-gray-700">Ja, hela lokalen</span>
-                      </label>
-                      <label className="inline-flex items-center">
-                        <input
-                          type="radio"
-                          name="entireHome"
-                          value="no"
-                          checked={formData.entireHome === 'no'}
-                          onChange={handleInputChange}
-                          className="form-radio text-[#10B981]"
-                        />
-                        <span className="ml-2 text-gray-700">Nej, endast delar av lokalen</span>
-                      </label>
-                    </div>
-                  ) : (
-                    <div className="flex gap-6 mt-2">
-                      <label className="inline-flex items-center">
-                        <input
-                          type="radio"
-                          name="entireHome"
-                          value="yes"
-                          checked={formData.entireHome === 'yes'}
-                          onChange={handleInputChange}
-                          className="form-radio text-[#10B981]"
-                        />
-                        <span className="ml-2 text-gray-700">Ja, hela bostaden</span>
-                      </label>
-                      <label className="inline-flex items-center">
-                        <input
-                          type="radio"
-                          name="entireHome"
-                          value="no"
-                          checked={formData.entireHome === 'no'}
-                          onChange={handleInputChange}
-                          className="form-radio text-[#10B981]"
-                        />
-                        <span className="ml-2 text-gray-700">Nej, endast delar av bostaden</span>
-                      </label>
-                    </div>
-                  )}
-                  {errors.entireHome && (
-                    <p className="mt-1 text-sm text-red-600">{errors.entireHome}</p>
-                  )}
-                </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">Ungefär hur stor yta ska städas?</label>
                   <input
@@ -653,437 +728,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
             )}
             {step === 3 && (
               <div className="space-y-6">
-                <div>
-                  <h3 className="block text-sm font-medium text-gray-700 mb-3">
-                    {localCustomerType === 'foretag' 
-                      ? 'Ange antalet rum som ska städas'
-                      : 'Ange antalet rum som ska städas'}
-                  </h3>
-                  <div className="space-y-4">
-                    {localCustomerType === 'foretag' ? (
-                      <>
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Kontorsrum</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                officeRooms: Math.max(0, prev.officeRooms || 0 - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.officeRooms || 0}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  officeRooms: (prev.officeRooms || 0) + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Köksutrymme</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                kitchenArea: Math.max(0, prev.kitchenArea || 0 - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.kitchenArea || 0}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  kitchenArea: (prev.kitchenArea || 0) + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Matrum</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                diningRooms: Math.max(0, prev.diningRooms || 0 - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.diningRooms || 0}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  diningRooms: (prev.diningRooms || 0) + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Mötesrum</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                meetingRooms: Math.max(0, prev.meetingRooms || 0 - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.meetingRooms || 0}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  meetingRooms: (prev.meetingRooms || 0) + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Omklädningsrum</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                changingRooms: Math.max(0, prev.changingRooms || 0 - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.changingRooms || 0}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  changingRooms: (prev.changingRooms || 0) + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Toalett</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                toilets: Math.max(0, prev.toilets || 0 - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.toilets || 0}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  toilets: (prev.toilets || 0) + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Övriga rum</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                otherBusinessRooms: Math.max(0, prev.otherBusinessRooms || 0 - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.otherBusinessRooms || 0}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  otherBusinessRooms: (prev.otherBusinessRooms || 0) + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Sovrum</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                bedrooms: Math.max(0, prev.bedrooms - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.bedrooms}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  bedrooms: prev.bedrooms + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Badrum</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                bathrooms: Math.max(0, prev.bathrooms - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.bathrooms}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  bathrooms: prev.bathrooms + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Kök</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                kitchen: Math.max(0, prev.kitchen - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.kitchen}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  kitchen: prev.kitchen + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Vardagsrum</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                livingRoom: Math.max(0, prev.livingRoom - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.livingRoom}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  livingRoom: prev.livingRoom + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <span className="text-gray-700">Övriga rum</span>
-                          <div className="flex items-center gap-4">
-                            <button
-                              type="button"
-                              onClick={() => setFormData(prev => ({
-                                ...prev,
-                                otherRooms: Math.max(0, prev.otherRooms - 1)
-                              }))}
-                              className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center"
-                            >
-                              -
-                            </button>
-                            <span className="min-w-[2rem] text-center text-gray-900">{formData.otherRooms}</span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({
-                                  ...prev,
-                                  otherRooms: prev.otherRooms + 1
-                                }));
-                                setErrors(prev => {
-                                  const newErrors = { ...prev };
-                                  delete newErrors.rooms;
-                                  return newErrors;
-                                });
-                              }}
-                              className="w-8 h-8 rounded-full bg-[#10B981] text-white flex items-center justify-center"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-                      </>
-                    )}
-                    {errors.rooms && (
-                      <p className="mt-1 text-sm text-red-600">{errors.rooms}</p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
-            {step === 4 && (
-              <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktinformation</h2>
-                <p className="text-sm text-gray-700 mb-6">Tjänsten är gratis och {localCustomerType === 'foretag' ? 'ni' : 'du'} är inte bunden till någonting.</p>
                 
                 <div className="space-y-6">
                   <div>
@@ -1154,97 +799,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
                     )}
                   </div>
-                  <div className="flex flex-col md:flex-row gap-4">
-                    <div className="flex-1">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Adress</label>
-                      <input
-                        type="text"
-                        id="address"
-                        name="address"
-                        value={formData.address}
-                        onChange={(e) => {
-                          setFormData({ ...formData, address: e.target.value });
-                          setErrors({ ...errors, address: "" });
-                        }}
-                        placeholder="Börja skriva din adress"
-                        required
-                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
-                          errors.address ? "border-red-500" : ""
-                        }`}
-                        style={{ backgroundColor: 'white', color: 'black' }}
-                      />
-                      {errors.address && (
-                        <p className="mt-1 text-sm text-red-600">{errors.address}</p>
-                      )}
-                    </div>
-                    <div className="md:w-1/4">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Gatunr.</label>
-                      <input
-                        type="text"
-                        name="streetNumber"
-                        value={formData.streetNumber}
-                        onChange={(e) => {
-                          // Must start with number, followed by optional single letter
-                          const value = e.target.value.replace(/[^0-9A-Za-z]/g, '').replace(/^([0-9]+)?([A-Za-z]?).*/g, '$1$2');
-                          if (/^[0-9]+[A-Za-z]?$/.test(value) || value === '') {
-                            setFormData({ ...formData, streetNumber: value });
-                            setErrors({ ...errors, streetNumber: "" });
-                          }
-                        }}
-                        onKeyDown={(e) => {
-                          // Allow only numbers, letters, backspace, delete, and arrow keys
-                          if (
-                            !/^[0-9A-Za-z]$/.test(e.key) && // not a number or letter
-                            e.key !== 'Backspace' &&
-                            e.key !== 'Delete' &&
-                            e.key !== 'ArrowLeft' &&
-                            e.key !== 'ArrowRight' &&
-                            e.key !== 'Tab'
-                          ) {
-                            e.preventDefault();
-                          }
-                          // If no numbers yet, prevent letters
-                          if (!/^[0-9]+/.test(formData.streetNumber) && /^[A-Za-z]$/.test(e.key)) {
-                            e.preventDefault();
-                          }
-                        }}
-                        placeholder="1A"
-                        required
-                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
-                          errors.streetNumber ? "border-red-500" : ""
-                        }`}
-                        style={{ backgroundColor: 'white', color: 'black' }}
-                      />
-                      {errors.streetNumber && (
-                        <p className="mt-1 text-sm text-red-600">{errors.streetNumber}</p>
-                      )}
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Postnummer</label>
-                    <input
-                      type="text"
-                      name="postalCode"
-                      value={formData.postalCode}
-                      onChange={(e) => {
-                        // Only allow numbers and limit to 5 digits
-                        const value = e.target.value.replace(/\D/g, '').slice(0, 5);
-                        setFormData({ ...formData, postalCode: value });
-                        setErrors({ ...errors, postalCode: "" });
-                      }}
-                      placeholder="12345"
-                      required
-                      maxLength={5}
-                      pattern="\d{5}"
-                      className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
-                        errors.postalCode ? "border-red-500" : ""
-                      }`}
-                      style={{ backgroundColor: 'white', color: 'black' }}
-                    />
-                    {errors.postalCode && (
-                      <p className="mt-1 text-sm text-red-600">{errors.postalCode}</p>
-                    )}
-                  </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Kommentarer (frivilligt)</label>
                     <textarea
@@ -1260,56 +814,19 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                 </div>
               </div>
             )}
-            {step === 5 && (
-              <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Bekräfta din förfrågan</h2>
-                <p className="text-sm text-gray-700 mb-6">Dubbelkolla att alla uppgifter stämmer innan du skickar in din förfrågan.</p>
-                <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-900">
-                  <div className="mb-2"><span className="font-semibold">{localCustomerType === 'foretag' ? 'Företagsnamn' : 'Namn'}:</span> {formData.name}</div>
-                  {localCustomerType === 'foretag' && (
-                    <div className="mb-2"><span className="font-semibold">Kontaktperson för och efternamn:</span> {formData.contactPersonName || ''}</div>
-                  )}
-                  <div className="mb-2"><span className="font-semibold">E-post:</span> {formData.email}</div>
-                  <div className="mb-2"><span className="font-semibold">Telefon:</span> {formData.phone}</div>
-                  <div className="mb-2"><span className="font-semibold">Adress:</span> {formData.address} {formData.streetNumber}, {formData.postalCode}</div>
-                  <div className="mb-2"><span className="font-semibold">Städdatum:</span> {formData.movingDate}</div>
-                  {formData.wantsFlexibleDate ? (
-                    <div className="mb-2"><span className="font-semibold">Flexibelt datum:</span> {formData.flexibleMovingDate}</div>
-                  ) : null}
-                  <div className="mb-2"><span className="font-semibold">{localCustomerType === 'foretag' ? 'Lokaltyp' : 'Bostadstyp'}:</span> {formData.typeOfHome}</div>
-                  <div className="mb-2"><span className="font-semibold">Antal våningar:</span> {formData.numberOfFloors}</div>
-                  <div className="mb-2"><span className="font-semibold">{localCustomerType === 'foretag' ? 'Hela lokalen' : 'Hela bostaden'}:</span> {formData.entireHome === 'yes' ? 'Ja' : 'Nej'}</div>
-                  {localCustomerType === 'foretag' ? (
-                    <>
-                      {formData.officeRooms > 0 && <div className="mb-2"><span className="font-semibold">Kontorsrum:</span> {formData.officeRooms}</div>}
-                      {formData.kitchenArea > 0 && <div className="mb-2"><span className="font-semibold">Köksutrymme:</span> {formData.kitchenArea}</div>}
-                      {formData.diningRooms > 0 && <div className="mb-2"><span className="font-semibold">Matrum:</span> {formData.diningRooms}</div>}
-                      {formData.meetingRooms > 0 && <div className="mb-2"><span className="font-semibold">Mötesrum:</span> {formData.meetingRooms}</div>}
-                      {formData.changingRooms > 0 && <div className="mb-2"><span className="font-semibold">Omklädningsrum:</span> {formData.changingRooms}</div>}
-                      {formData.toilets > 0 && <div className="mb-2"><span className="font-semibold">Toalett:</span> {formData.toilets}</div>}
-                      {formData.otherBusinessRooms > 0 && <div className="mb-2"><span className="font-semibold">Övriga rum:</span> {formData.otherBusinessRooms}</div>}
-                    </>
-                  ) : (
-                    <>
-                      <div className="mb-2"><span className="font-semibold">Sovrum:</span> {formData.bedrooms}</div>
-                      <div className="mb-2"><span className="font-semibold">Badrum:</span> {formData.bathrooms}</div>
-                      <div className="mb-2"><span className="font-semibold">Kök:</span> {formData.kitchen}</div>
-                      <div className="mb-2"><span className="font-semibold">Vardagsrum:</span> {formData.livingRoom}</div>
-                      <div className="mb-2"><span className="font-semibold">Övriga rum:</span> {formData.otherRooms}</div>
-                      <div className="mb-2"><span className="font-semibold">Bostadens storlek (kvm):</span> {formData.squareMeters}</div>
-                      <div className="mb-2"><span className="font-semibold">Garage:</span> {formData.hasGarage ? 'Ja' : 'Nej'}</div>
-                      <div className="mb-2"><span className="font-semibold">Balkong:</span> {formData.hasBalcony ? 'Ja' : 'Nej'}</div>
-                      <div className="mb-2"><span className="font-semibold">Förråd:</span> {formData.hasStorage ? 'Ja' : 'Nej'}</div>
-                    </>
-                  )}
-                  {formData.comments ? (
-                    <div className="mb-2"><span className="font-semibold">Kommentarer:</span> {formData.comments}</div>
-                  ) : null}
-                </div>
-              </div>
-            )}
             <div className="flex justify-between mt-8">
-              {step > 1 && (
+              {step === 1 ? (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onCancel();
+                  }}
+                  className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
+                >
+                  Tillbaka
+                </button>
+              ) : step > 1 && (
                 <button
                   type="button"
                   onClick={(e) => {
@@ -1321,7 +838,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                   Tillbaka
                 </button>
               )}
-              {step < 5 ? (
+              {step < 3 ? (
                 <button
                   type="button"
                   onClick={(e) => {

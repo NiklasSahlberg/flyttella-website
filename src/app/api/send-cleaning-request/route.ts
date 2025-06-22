@@ -126,7 +126,7 @@ export async function POST(req: Request) {
 </style>
 </head>
 <body>
-  <h2>Nytt lead från Flytta.se - Städning</h2>
+  <h2>Ny lead Flyttella - Städning</h2>
 
   <div class="section-header">Städdatum</div>
   <table>
@@ -265,7 +265,7 @@ export async function POST(req: Request) {
     const raw = createEmail(
       'niklassahlbergdeveloper@gmail.com',
       'niklassahlbergdeveloper@gmail.com',
-      'Nytt lead från Flytta.se - Städning',
+      'Ny lead Flyttella',
       emailContent
     );
 
