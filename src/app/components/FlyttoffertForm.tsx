@@ -248,6 +248,39 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     setErrors(prev => ({ ...prev, [name]: "" }));
+    
+    // Clear elevator-related fields when property type changes
+    if (name === 'typeOfHome') {
+      const shouldShowElevator = value === 'lagenhet' || value === 'magasin';
+      if (!shouldShowElevator) {
+        setFormData(prev => ({ 
+          ...prev, 
+          hasElevator: '', 
+          elevatorSize: '' 
+        }));
+        setErrors(prev => ({ 
+          ...prev, 
+          hasElevator: '', 
+          elevatorSize: '' 
+        }));
+      }
+    }
+    
+    if (name === 'toTypeOfHome') {
+      const shouldShowElevator = value === 'lagenhet' || value === 'magasin';
+      if (!shouldShowElevator) {
+        setFormData(prev => ({ 
+          ...prev, 
+          toHasElevator: '', 
+          toElevatorSize: '' 
+        }));
+        setErrors(prev => ({ 
+          ...prev, 
+          toHasElevator: '', 
+          toElevatorSize: '' 
+        }));
+      }
+    }
   };
 
   const addHeavyItem = (item: { type: string; description?: string }) => {
@@ -553,16 +586,20 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
       <div className="relative rounded-2xl shadow-2xl border-2 border-[#10B981] p-10 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-gradient-to-br from-white to-blue-50">
         <div className="flex flex-col items-center">
           <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4" />
-          <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
-            Fyll i formuläret för en snabb och kostnadsfri offert
-          </h1>
-          <h2 className="text-lg md:text-xl font-medium text-center text-gray-700 mb-8">
-            Vi återkommer inom en minut!
-          </h2>
+          {!showSteps && (
+            <>
+              <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
+                Fyll i formuläret för en snabb och kostnadsfri offert
+              </h1>
+              <h2 className="text-lg md:text-xl font-medium text-center text-gray-700 mb-8">
+                Vi återkommer inom en minut!
+              </h2>
+            </>
+          )}
         </div>
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            {!showSteps ? 'Välj tjänst' : (formData.serviceType === 'flyttstad' ? 'Fyll i formuläret för Flyttstäd' : '')}
+            {!showSteps ? 'Välj tjänst' : ''}
           </h2>
           <p className="text-lg text-gray-900 font-bold">
             {!showSteps ? 'för att komma igång' : ''}
@@ -1176,7 +1213,9 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                   </div>
                 ) : (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Antal våningar</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {formData.typeOfHome === 'magasin' ? 'Vilken våning ligger magasinet på?' : 'Antal våningar'}
+                    </label>
                     <select
                       name="floor"
                       value={formData.floor}
@@ -1190,17 +1229,33 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }`}
                     >
                       <option value="">-- Välj --</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
+                      {formData.typeOfHome === 'magasin' ? (
+                        <>
+                          <option value="-2">Våning -2</option>
+                          <option value="-1">Våning -1</option>
+                          <option value="entreplan">Entréplan</option>
+                          <option value="1">Våning 1</option>
+                          <option value="2">Våning 2</option>
+                          <option value="3">Våning 3</option>
+                          <option value="4">Våning 4</option>
+                          <option value="5">Våning 5</option>
+                          <option value="6+">Våning 6 eller högre</option>
+                        </>
+                      ) : (
+                        <>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                        </>
+                      )}
                     </select>
                     {errors.floor && (
                       <p className="mt-1 text-sm text-red-600">{errors.floor}</p>
                     )}
                   </div>
                 )}
-                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.typeOfHome === 'lagenhet')) && (
+                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && (formData.typeOfHome === 'lagenhet' || formData.typeOfHome === 'magasin'))) && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Finns hiss i byggnaden?</label>
                     <div className="flex gap-6">
@@ -1254,8 +1309,18 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }`}
                     >
                       <option value="">-- Välj --</option>
-                      <option value="small">Liten (2-4 personer)</option>
-                      <option value="large">Stor (6+ personer)</option>
+                      {formData.customerType === 'foretag' ? (
+                        <>
+                          <option value="small">Liten (2-4 personer)</option>
+                          <option value="medium">Mellanstor (6-8 personer)</option>
+                          <option value="large">Stor (10+ personer)</option>
+                        </>
+                      ) : (
+                        <>
+                          <option value="small">Liten (2-4 personer)</option>
+                          <option value="large">Stor (6+ personer)</option>
+                        </>
+                      )}
                     </select>
                     {errors.elevatorSize && (
                       <p className="mt-1 text-sm text-red-600">{errors.elevatorSize}</p>
@@ -1565,7 +1630,9 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                   </div>
                 ) : (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Antal våningar</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {formData.toTypeOfHome === 'magasin' ? 'Vilken våning ligger magasinet på?' : 'Antal våningar'}
+                    </label>
                     <select
                       name="toFloor"
                       value={formData.toFloor}
@@ -1579,17 +1646,33 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }`}
                     >
                       <option value="">-- Välj --</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
+                      {formData.toTypeOfHome === 'magasin' ? (
+                        <>
+                          <option value="-2">Våning -2</option>
+                          <option value="-1">Våning -1</option>
+                          <option value="entreplan">Entréplan</option>
+                          <option value="1">Våning 1</option>
+                          <option value="2">Våning 2</option>
+                          <option value="3">Våning 3</option>
+                          <option value="4">Våning 4</option>
+                          <option value="5">Våning 5</option>
+                          <option value="6+">Våning 6 eller högre</option>
+                        </>
+                      ) : (
+                        <>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                        </>
+                      )}
                     </select>
                     {errors.toFloor && (
                       <p className="mt-1 text-sm text-red-600">{errors.toFloor}</p>
                     )}
                   </div>
                 )}
-                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'lagenhet')) && (
+                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && (formData.toTypeOfHome === 'lagenhet' || formData.toTypeOfHome === 'magasin'))) && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Finns hiss i byggnaden?</label>
                     <div className="flex gap-6">
@@ -1643,8 +1726,18 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }`}
                     >
                       <option value="">-- Välj --</option>
-                      <option value="small">Liten (2-4 personer)</option>
-                      <option value="large">Stor (6+ personer)</option>
+                      {formData.customerType === 'foretag' ? (
+                        <>
+                          <option value="small">Liten (2-4 personer)</option>
+                          <option value="medium">Mellanstor (6-8 personer)</option>
+                          <option value="large">Stor (10+ personer)</option>
+                        </>
+                      ) : (
+                        <>
+                          <option value="small">Liten (2-4 personer)</option>
+                          <option value="large">Stor (6+ personer)</option>
+                        </>
+                      )}
                     </select>
                     {errors.toElevatorSize && (
                       <p className="mt-1 text-sm text-red-600">{errors.toElevatorSize}</p>
@@ -1751,7 +1844,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                  <label className="block text-xl font-bold text-gray-700 mb-3">
                     {formData.customerType === 'foretag' ? 'Har ni enskilda föremål som väger över 100 kg?' : 'Har du enskilda föremål som väger över 100 kg?'}
                   </label>
                   <p className="text-sm text-gray-600 mb-3">
@@ -1841,7 +1934,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                  <label className="block text-xl font-bold text-gray-700 mb-3">
                     {formData.customerType === 'foretag' ? 'Ska några särskilt ömtåliga föremål flyttas för ert företag?' : 'Ska några särskilt ömtåliga föremål flyttas?'}
                   </label>
                   <p className="text-sm text-gray-600 mb-3">
@@ -1946,8 +2039,8 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                 />
                 {errors.name && (
                   <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-                )}
-              </div>
+          )}
+        </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">E-post</label>
                 <input
@@ -2012,7 +2105,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     setCustomItem(prev => ({ ...prev, type: e.target.value }));
                     setCustomItemError("");
                   }}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]"
                   placeholder="T.ex. Marmorbord"
                 />
               </div>
@@ -2027,7 +2120,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     setCustomItem(prev => ({ ...prev, weight: e.target.value }));
                     setCustomItemError("");
                   }}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]"
                   placeholder="T.ex. 150"
                   min="100"
                 />

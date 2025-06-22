@@ -478,9 +478,6 @@ export default function FaStadningOffert() {
       <main className="min-h-screen py-16 bg-gradient-to-r from-[#0F172A]/5 to-[#10B981]/5">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
-            <h1 className="text-3xl font-bold text-center text-[#0F172A] mb-8">
-              Få offert på flyttstädning
-            </h1>
             
             {submitSuccess ? (
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">

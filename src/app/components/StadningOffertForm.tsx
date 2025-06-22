@@ -4,6 +4,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Script from "next/script";
 
+declare global {
+  interface Window {
+    google: {
+      maps: {
+        places: {
+          Autocomplete: any;
+        };
+      };
+    };
+  }
+}
+
 interface AddressComponent {
   long_name: string;
   short_name: string;
@@ -115,40 +127,108 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   useEffect(() => {
     if (!isGoogleMapsLoaded) return;
     if (!window.google?.maps?.places) return;
-    try {
-      const addressInput = document.getElementById('address') as HTMLInputElement;
-      if (addressInput) {
-        const autocomplete = new window.google.maps.places.Autocomplete(addressInput, {
-          componentRestrictions: { country: 'se' },
-          fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
-          types: ['address']
-        });
-        autocomplete.addListener('place_changed', () => {
-          const place = autocomplete.getPlace();
-          if (place.formatted_address) {
-            let streetName = '';
-            let streetNumber = '';
-            let city = '';
-            place.address_components.forEach((component: AddressComponent) => {
-              if (component.types.includes('route')) streetName = component.long_name;
-              if (component.types.includes('street_number')) streetNumber = component.long_name;
-              if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
-            });
-            const formattedAddress = `${streetName}, ${city}, Sweden`;
-            setFormData(prev => ({ ...prev, address: formattedAddress }));
-            setLastValidAddress(formattedAddress);
-          }
-        });
-        addressInput.addEventListener('blur', () => {
-          if (lastValidAddress && formData.address !== lastValidAddress) {
-            setFormData(prev => ({ ...prev, address: lastValidAddress }));
-          }
-        });
+    
+    const initializeAutocomplete = () => {
+      try {
+        const addressInput = document.getElementById('address') as HTMLInputElement;
+        if (addressInput && !addressInput.dataset.autocompleteInitialized) {
+          const autocomplete = new window.google.maps.places.Autocomplete(addressInput, {
+            componentRestrictions: { country: 'se' },
+            fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
+            types: ['address']
+          });
+          
+          autocomplete.addListener('place_changed', () => {
+            const place = autocomplete.getPlace();
+            if (place.formatted_address) {
+              let streetName = '';
+              let streetNumber = '';
+              let city = '';
+              place.address_components.forEach((component: AddressComponent) => {
+                if (component.types.includes('route')) streetName = component.long_name;
+                if (component.types.includes('street_number')) streetNumber = component.long_name;
+                if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
+              });
+              const formattedAddress = `${streetName}, ${city}, Sweden`;
+              setFormData(prev => ({ ...prev, address: formattedAddress }));
+              setLastValidAddress(formattedAddress);
+            }
+          });
+          
+          addressInput.addEventListener('blur', () => {
+            if (lastValidAddress && formData.address !== lastValidAddress) {
+              setFormData(prev => ({ ...prev, address: lastValidAddress }));
+            }
+          });
+          
+          // Mark as initialized to prevent duplicate initialization
+          addressInput.dataset.autocompleteInitialized = 'true';
+        }
+      } catch (error) {
+        console.error('Error initializing Google Places:', error);
       }
-    } catch (error) {
-      console.error('Error initializing Google Places:', error);
+    };
+
+    // Initialize immediately if step is 1, otherwise wait for step change
+    if (step === 1) {
+      // Small delay to ensure DOM is ready
+      setTimeout(initializeAutocomplete, 100);
     }
-  }, [step, isGoogleMapsLoaded, formData.address, lastValidAddress]);
+  }, [isGoogleMapsLoaded, step, lastValidAddress, formData.address]);
+
+  // Additional useEffect to handle initialization when component mounts
+  useEffect(() => {
+    if (!isGoogleMapsLoaded) return;
+    if (!window.google?.maps?.places) return;
+    if (step !== 1) return;
+    
+    const initializeAutocomplete = () => {
+      try {
+        const addressInput = document.getElementById('address') as HTMLInputElement;
+        
+        if (addressInput && !addressInput.dataset.autocompleteInitialized) {
+          const autocomplete = new window.google.maps.places.Autocomplete(addressInput, {
+            componentRestrictions: { country: 'se' },
+            fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
+            types: ['address']
+          });
+          
+          autocomplete.addListener('place_changed', () => {
+            const place = autocomplete.getPlace();
+            if (place.formatted_address) {
+              let streetName = '';
+              let streetNumber = '';
+              let city = '';
+              place.address_components.forEach((component: AddressComponent) => {
+                if (component.types.includes('route')) streetName = component.long_name;
+                if (component.types.includes('street_number')) streetNumber = component.long_name;
+                if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
+              });
+              const formattedAddress = `${streetName}, ${city}, Sweden`;
+              setFormData(prev => ({ ...prev, address: formattedAddress }));
+              setLastValidAddress(formattedAddress);
+            }
+          });
+          
+          addressInput.addEventListener('blur', () => {
+            if (lastValidAddress && formData.address !== lastValidAddress) {
+              setFormData(prev => ({ ...prev, address: lastValidAddress }));
+            }
+          });
+          
+          // Mark as initialized to prevent duplicate initialization
+          addressInput.dataset.autocompleteInitialized = 'true';
+        }
+      } catch (error) {
+        console.error('Error initializing Google Places:', error);
+      }
+    };
+
+    // Try to initialize immediately, then retry with a delay
+    initializeAutocomplete();
+    setTimeout(initializeAutocomplete, 100);
+    setTimeout(initializeAutocomplete, 500);
+  }, [isGoogleMapsLoaded, step]);
 
   useEffect(() => {
     if (addressRef.current) {
@@ -387,9 +467,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         exit={{ opacity: 0, y: -20 }}
         className=""
       >
-        <h1 className="text-3xl font-bold text-center text-[#0F172A] mb-8">
-          Få offert på flyttstädning
-        </h1>
         <div className="mb-8">
           <div className="flex justify-between mb-2">
             {[1, 2, 3].map((stepNumber) => (
@@ -530,10 +607,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       id="address"
                       name="address"
                       value={formData.address}
-                      onChange={(e) => {
-                        setFormData({ ...formData, address: e.target.value });
-                        setErrors({ ...errors, address: "" });
-                      }}
+                      onChange={handleInputChange}
                       placeholder="Börja skriva din adress"
                       required
                       className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
@@ -633,7 +707,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     }`}
                     style={{ backgroundColor: 'white', color: 'black' }}
                   >
-                    <option value="">Välj bostadstyp</option>
+                    <option value="">{localCustomerType === 'foretag' ? 'Välj lokaltyp' : 'Välj bostadstyp'}</option>
                     {localCustomerType === 'foretag' ? (
                       <>
                         <option value="kontor">Kontor</option>
