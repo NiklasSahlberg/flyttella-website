@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import TermsModal from './TermsModal';
+import ReportModal from './ReportModal';
 
 export default function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,6 +25,8 @@ export default function Footer() {
   const [isFlyttPartnerModalOpen, setIsFlyttPartnerModalOpen] = useState(false);
   const [flyttPartnerHtml, setFlyttPartnerHtml] = useState('');
   const [loadingFlyttPartner, setLoadingFlyttPartner] = useState(false);
+
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -262,6 +265,15 @@ export default function Footer() {
       <TermsModal isOpen={isStadModalOpen} onClose={() => setIsStadModalOpen(false)} htmlContent={loadingStad ? '<p>Laddar villkor...</p>' : stadHtml} />
       <TermsModal isOpen={isStadPartnerModalOpen} onClose={() => setIsStadPartnerModalOpen(false)} htmlContent={loadingStadPartner ? '<p>Laddar villkor...</p>' : stadPartnerHtml} />
       <TermsModal isOpen={isFlyttPartnerModalOpen} onClose={() => setIsFlyttPartnerModalOpen(false)} htmlContent={loadingFlyttPartner ? '<p>Laddar villkor...</p>' : flyttPartnerHtml} />
+      <button
+        type="button"
+        className="fixed bottom-6 right-6 z-50 bg-white text-[#0F172A] border border-gray-200 shadow px-4 py-2 rounded-full text-xs opacity-70 hover:opacity-100 transition-all"
+        onClick={() => setIsReportModalOpen(true)}
+        aria-label="Anmälan"
+      >
+        Anmälan
+      </button>
+      <ReportModal isOpen={isReportModalOpen} onClose={() => setIsReportModalOpen(false)} />
     </footer>
   );
 } 
