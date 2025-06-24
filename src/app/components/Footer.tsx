@@ -2,8 +2,94 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import TermsModal from './TermsModal';
 
 export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [termsHtml, setTermsHtml] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  // For städ modal
+  const [isStadModalOpen, setIsStadModalOpen] = useState(false);
+  const [stadHtml, setStadHtml] = useState('');
+  const [loadingStad, setLoadingStad] = useState(false);
+
+  // For städpartner modal
+  const [isStadPartnerModalOpen, setIsStadPartnerModalOpen] = useState(false);
+  const [stadPartnerHtml, setStadPartnerHtml] = useState('');
+  const [loadingStadPartner, setLoadingStadPartner] = useState(false);
+
+  // For flyttpartner modal
+  const [isFlyttPartnerModalOpen, setIsFlyttPartnerModalOpen] = useState(false);
+  const [flyttPartnerHtml, setFlyttPartnerHtml] = useState('');
+  const [loadingFlyttPartner, setLoadingFlyttPartner] = useState(false);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      setLoading(true);
+      fetch('/allmanna-villkor.txt')
+        .then(res => res.text())
+        .then(text => {
+          // Basic formatting: convert double newlines to <br><br>, section titles to <h2>, and single newlines to <br>
+          let html = text
+            .replace(/\n\n/g, '<br><br>')
+            .replace(/^(\d+\.|[A-ZÅÄÖa-zåäö ]+:)$/gm, '<h2>$1</h2>')
+            .replace(/\n/g, '<br>');
+          setTermsHtml(html);
+          setLoading(false);
+        });
+    }
+  }, [isModalOpen]);
+
+  useEffect(() => {
+    if (isStadModalOpen) {
+      setLoadingStad(true);
+      fetch('/allmanna-villkor-stad.txt')
+        .then(res => res.text())
+        .then(text => {
+          let html = text
+            .replace(/\n\n/g, '<br><br>')
+            .replace(/^(\d+\.|[A-ZÅÄÖa-zåäö ]+:)$/gm, '<h2>$1</h2>')
+            .replace(/\n/g, '<br>');
+          setStadHtml(html);
+          setLoadingStad(false);
+        });
+    }
+  }, [isStadModalOpen]);
+
+  useEffect(() => {
+    if (isStadPartnerModalOpen) {
+      setLoadingStadPartner(true);
+      fetch('/allmanna-villkor-stadpartner.txt')
+        .then(res => res.text())
+        .then(text => {
+          let html = text
+            .replace(/\n\n/g, '<br><br>')
+            .replace(/^(\d+\.|[A-ZÅÄÖa-zåäö ]+:)$/gm, '<h2>$1</h2>')
+            .replace(/\n/g, '<br>');
+          setStadPartnerHtml(html);
+          setLoadingStadPartner(false);
+        });
+    }
+  }, [isStadPartnerModalOpen]);
+
+  useEffect(() => {
+    if (isFlyttPartnerModalOpen) {
+      setLoadingFlyttPartner(true);
+      fetch('/allmanna-villkor-flyttpartner.txt')
+        .then(res => res.text())
+        .then(text => {
+          let html = text
+            .replace(/\n\n/g, '<br><br>')
+            .replace(/^(\d+\.|[A-ZÅÄÖa-zåäö ]+:)$/gm, '<h2>$1</h2>')
+            .replace(/\n/g, '<br>');
+          setFlyttPartnerHtml(html);
+          setLoadingFlyttPartner(false);
+        });
+    }
+  }, [isFlyttPartnerModalOpen]);
+
   return (
     <footer className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-gray-100 border-t-4 border-[#10B981]">
       <div className="max-w-7xl mx-auto px-4 py-14">
@@ -83,9 +169,40 @@ export default function Footer() {
             <h3 className="font-semibold mb-4 text-white">Juridisk information</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/allmanna-villkor" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Allmänna villkor
-                </Link>
+                <button
+                  type="button"
+                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer"
+                  onClick={() => setIsModalOpen(true)}
+                >
+                  Allmänna villkor - Flytt
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer"
+                  onClick={() => setIsStadModalOpen(true)}
+                >
+                  Allmänna villkor - Flyttstäd
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer"
+                  onClick={() => setIsStadPartnerModalOpen(true)}
+                >
+                  Villkor Samarbetspartner - Flyttstäd
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer"
+                  onClick={() => setIsFlyttPartnerModalOpen(true)}
+                >
+                  Villkor Samarbetspartner - Flytt
+                </button>
               </li>
               <li>
                 <Link href="/integritetspolicy" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
@@ -141,6 +258,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <TermsModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} htmlContent={loading ? '<p>Laddar villkor...</p>' : termsHtml} />
+      <TermsModal isOpen={isStadModalOpen} onClose={() => setIsStadModalOpen(false)} htmlContent={loadingStad ? '<p>Laddar villkor...</p>' : stadHtml} />
+      <TermsModal isOpen={isStadPartnerModalOpen} onClose={() => setIsStadPartnerModalOpen(false)} htmlContent={loadingStadPartner ? '<p>Laddar villkor...</p>' : stadPartnerHtml} />
+      <TermsModal isOpen={isFlyttPartnerModalOpen} onClose={() => setIsFlyttPartnerModalOpen(false)} htmlContent={loadingFlyttPartner ? '<p>Laddar villkor...</p>' : flyttPartnerHtml} />
     </footer>
   );
 } 

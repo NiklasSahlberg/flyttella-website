@@ -1146,7 +1146,7 @@ export default function Home() {
                   <div className="max-w-lg mx-auto">
                     <TipCard
                         title="Start i nya hemmet"
-                        imageSrc="/happycustomeraftermoving.png"
+                        imageSrc="/efter_flytt.jpg"
                         imageAlt="Nytt hem"
                         objectPosition="object-[10%_center]"
                         content={
