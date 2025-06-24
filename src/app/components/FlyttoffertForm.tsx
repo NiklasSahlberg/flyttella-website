@@ -59,6 +59,7 @@ interface FormData {
   contactFirstName?: string; // For företag, step 7
   contactLastName?: string; // For företag, step 7
   contactPersonName?: string; // For företag, step 7
+  workplaceCount?: string; // NEW FIELD for företag
 }
 
 interface FormErrors {
@@ -99,6 +100,7 @@ interface FormErrors {
   elevatorSize?: string;
   toElevatorSize?: string;
   hasLoadingDock?: string;
+  workplaceCount?: string; // NEW FIELD for företag
 }
 
 interface AddressComponent {
@@ -166,6 +168,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
     contactFirstName: '',
     contactLastName: '',
     contactPersonName: '',
+    workplaceCount: '', // NEW FIELD for företag
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
@@ -415,8 +418,14 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
       isValid = false;
     }
     if (formData.customerType !== 'foretag') {
-      if (!formData.typeOfHome || !formData.typeOfHome.trim()) {
-        newErrors.typeOfHome = "Vänligen välj typ av bostad";
+    if (!formData.typeOfHome || !formData.typeOfHome.trim()) {
+      newErrors.typeOfHome = "Vänligen välj typ av bostad";
+      isValid = false;
+      }
+    }
+    if (formData.customerType === 'foretag') {
+      if (!formData.workplaceCount || !formData.workplaceCount.trim()) {
+        newErrors.workplaceCount = "Vänligen välj antal arbetsplatser";
         isValid = false;
       }
     }
@@ -479,9 +488,9 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
       isValid = false;
     }
     if (formData.customerType !== 'foretag') {
-      if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
-        newErrors.toTypeOfHome = "Vänligen välj typ av bostad";
-        isValid = false;
+    if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
+      newErrors.toTypeOfHome = "Vänligen välj typ av bostad";
+      isValid = false;
       }
     }
     setErrors(newErrors);
@@ -588,12 +597,12 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
           <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4" />
           {!showSteps && (
             <>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
-                Fyll i formuläret för en snabb och kostnadsfri offert
-              </h1>
-              <h2 className="text-lg md:text-xl font-medium text-center text-gray-700 mb-8">
-                Vi återkommer inom en minut!
-              </h2>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
+            Fyll i formuläret för en snabb och kostnadsfri offert
+          </h1>
+          <h2 className="text-lg md:text-xl font-medium text-center text-gray-700 mb-8">
+            Vi återkommer inom en minut!
+          </h2>
             </>
           )}
         </div>
@@ -638,7 +647,8 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                   vaningNr: formData.floor,
                   hasElevator: formData.hasElevator === "yes" ? "Ja" : "Nej",
                   elevatorSize: formData.hasElevator === "yes" ? formData.elevatorSize : undefined,
-                  parkeringsAvstand: formData.parkingDistance
+                  parkeringsAvstand: formData.parkingDistance,
+                  workplaceCount: formData.customerType === 'foretag' ? formData.workplaceCount : undefined
                 },
                 flyttaTill: {
                   address: formData.newAddress,
@@ -1129,30 +1139,54 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     <p className="mt-1 text-sm text-red-600">{errors.apartmentSize}</p>
                   )}
                 </div>
+                {((formData.customerType as string) === 'foretag') && (
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Hur många arbetsplatser finns det?
+                    </label>
+                    <select
+                      name="workplaceCount"
+                      value={formData.workplaceCount}
+                      onChange={handleInputChange}
+                      required
+                      className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.workplaceCount ? " border-red-500" : ""}`}
+                    >
+                      <option value="">-- Välj --</option>
+                      <option value="1-5">1-5</option>
+                      <option value="6-20">6-20</option>
+                      <option value="21-50">21-50</option>
+                      <option value="51-100">51-100</option>
+                      <option value="100+">100+</option>
+                    </select>
+                    {errors.workplaceCount && (
+                      <p className="mt-1 text-sm text-red-600">{errors.workplaceCount}</p>
+                    )}
+                  </div>
+                )}
                 {((formData.customerType as string) !== 'foretag') && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Typ av bostad
                     </label>
-                    <select
-                      name="typeOfHome"
-                      value={formData.typeOfHome}
-                      onChange={handleInputChange}
-                      required
-                      className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.typeOfHome ? " border-red-500" : ""}`}
-                    >
-                      <option value="">-- Välj --</option>
-                      <option value="lagenhet">Lägenhet</option>
-                      <option value="villa">Villa</option>
-                      <option value="parhus">Parhus</option>
-                      <option value="radhus">Radhus</option>
-                      <option value="fritidshus">Fritidshus</option>
-                      <option value="magasin">Magasin</option>
-                    </select>
-                    {errors.typeOfHome && (
-                      <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
-                    )}
-                  </div>
+                  <select
+                    name="typeOfHome"
+                    value={formData.typeOfHome}
+                    onChange={handleInputChange}
+                    required
+                    className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.typeOfHome ? " border-red-500" : ""}`}
+                  >
+                    <option value="">-- Välj --</option>
+                    <option value="lagenhet">Lägenhet</option>
+                    <option value="villa">Villa</option>
+                    <option value="parhus">Parhus</option>
+                    <option value="radhus">Radhus</option>
+                    <option value="fritidshus">Fritidshus</option>
+                    <option value="magasin">Magasin</option>
+                  </select>
+                  {errors.typeOfHome && (
+                    <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
+                  )}
+                </div>
                 )}
               </div>
               <div className="flex justify-between mt-8">
@@ -1180,37 +1214,37 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </h2>
               <div className="space-y-6">
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.typeOfHome === 'lagenhet')) ? (
-                  <div>
+                <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       {formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}
                     </label>
-                    <select
-                      name="floor"
-                      value={formData.floor}
-                      onChange={(e) => {
-                        handleInputChange(e);
-                        setErrors(prev => ({ ...prev, floor: "" }));
-                      }}
-                      required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
-                        errors.floor ? "border-red-500" : ""
-                      }`}
-                    >
-                      <option value="">-- Välj --</option>
-                      <option value="-2">Våning -2</option>
-                      <option value="-1">Våning -1</option>
-                      <option value="entreplan">Entréplan</option>
-                      <option value="1">Våning 1</option>
-                      <option value="2">Våning 2</option>
-                      <option value="3">Våning 3</option>
-                      <option value="4">Våning 4</option>
-                      <option value="5">Våning 5</option>
-                      <option value="6+">Våning 6 eller högre</option>
-                    </select>
-                    {errors.floor && (
-                      <p className="mt-1 text-sm text-red-600">{errors.floor}</p>
-                    )}
-                  </div>
+                  <select
+                    name="floor"
+                    value={formData.floor}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                      setErrors(prev => ({ ...prev, floor: "" }));
+                    }}
+                    required
+                    className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                      errors.floor ? "border-red-500" : ""
+                    }`}
+                  >
+                    <option value="">-- Välj --</option>
+                    <option value="-2">Våning -2</option>
+                    <option value="-1">Våning -1</option>
+                    <option value="entreplan">Entréplan</option>
+                    <option value="1">Våning 1</option>
+                    <option value="2">Våning 2</option>
+                    <option value="3">Våning 3</option>
+                    <option value="4">Våning 4</option>
+                    <option value="5">Våning 5</option>
+                    <option value="6+">Våning 6 eller högre</option>
+                  </select>
+                  {errors.floor && (
+                    <p className="mt-1 text-sm text-red-600">{errors.floor}</p>
+                  )}
+                </div>
                 ) : (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1317,8 +1351,8 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                         </>
                       ) : (
                         <>
-                          <option value="small">Liten (2-4 personer)</option>
-                          <option value="large">Stor (6+ personer)</option>
+                      <option value="small">Liten (2-4 personer)</option>
+                      <option value="large">Stor (6+ personer)</option>
                         </>
                       )}
                     </select>
@@ -1547,29 +1581,29 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                   )}
                 </div>
                 {((formData.customerType as string) !== 'foretag') && (
-                  <div>
+                <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Typ av bostad
                     </label>
-                    <select
-                      name="toTypeOfHome"
-                      value={formData.toTypeOfHome}
-                      onChange={handleInputChange}
-                      required
-                      className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.toTypeOfHome ? " border-red-500" : ""}`}
-                    >
-                      <option value="">-- Välj --</option>
-                      <option value="lagenhet">Lägenhet</option>
-                      <option value="villa">Villa</option>
-                      <option value="parhus">Parhus</option>
-                      <option value="radhus">Radhus</option>
-                      <option value="fritidshus">Fritidshus</option>
-                      <option value="magasin">Magasin</option>
-                    </select>
-                    {errors.toTypeOfHome && (
-                      <p className="mt-1 text-sm text-red-600">{errors.toTypeOfHome}</p>
-                    )}
-                  </div>
+                  <select
+                    name="toTypeOfHome"
+                    value={formData.toTypeOfHome}
+                    onChange={handleInputChange}
+                    required
+                    className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.toTypeOfHome ? " border-red-500" : ""}`}
+                  >
+                    <option value="">-- Välj --</option>
+                    <option value="lagenhet">Lägenhet</option>
+                    <option value="villa">Villa</option>
+                    <option value="parhus">Parhus</option>
+                    <option value="radhus">Radhus</option>
+                    <option value="fritidshus">Fritidshus</option>
+                    <option value="magasin">Magasin</option>
+                  </select>
+                  {errors.toTypeOfHome && (
+                    <p className="mt-1 text-sm text-red-600">{errors.toTypeOfHome}</p>
+                  )}
+                </div>
                 )}
               </div>
               <div className="flex justify-between mt-8">
@@ -1597,37 +1631,37 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </h2>
               <div className="space-y-6">
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'lagenhet')) ? (
-                  <div>
+                <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       {formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}
                     </label>
-                    <select
-                      name="toFloor"
-                      value={formData.toFloor}
-                      onChange={(e) => {
-                        handleInputChange(e);
-                        setErrors(prev => ({ ...prev, toFloor: "" }));
-                      }}
-                      required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
-                        errors.toFloor ? "border-red-500" : ""
-                      }`}
-                    >
-                      <option value="">-- Välj --</option>
-                      <option value="-2">Våning -2</option>
-                      <option value="-1">Våning -1</option>
-                      <option value="entreplan">Entréplan</option>
-                      <option value="1">Våning 1</option>
-                      <option value="2">Våning 2</option>
-                      <option value="3">Våning 3</option>
-                      <option value="4">Våning 4</option>
-                      <option value="5">Våning 5</option>
-                      <option value="6+">Våning 6 eller högre</option>
-                    </select>
-                    {errors.toFloor && (
-                      <p className="mt-1 text-sm text-red-600">{errors.toFloor}</p>
-                    )}
-                  </div>
+                  <select
+                    name="toFloor"
+                    value={formData.toFloor}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                      setErrors(prev => ({ ...prev, toFloor: "" }));
+                    }}
+                    required
+                    className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                      errors.toFloor ? "border-red-500" : ""
+                    }`}
+                  >
+                    <option value="">-- Välj --</option>
+                    <option value="-2">Våning -2</option>
+                    <option value="-1">Våning -1</option>
+                    <option value="entreplan">Entréplan</option>
+                    <option value="1">Våning 1</option>
+                    <option value="2">Våning 2</option>
+                    <option value="3">Våning 3</option>
+                    <option value="4">Våning 4</option>
+                    <option value="5">Våning 5</option>
+                    <option value="6+">Våning 6 eller högre</option>
+                  </select>
+                  {errors.toFloor && (
+                    <p className="mt-1 text-sm text-red-600">{errors.toFloor}</p>
+                  )}
+                </div>
                 ) : (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1734,8 +1768,8 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                         </>
                       ) : (
                         <>
-                          <option value="small">Liten (2-4 personer)</option>
-                          <option value="large">Stor (6+ personer)</option>
+                      <option value="small">Liten (2-4 personer)</option>
+                      <option value="large">Stor (6+ personer)</option>
                         </>
                       )}
                     </select>
@@ -2012,7 +2046,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
               </h2>
               {formData.customerType === 'foretag' && (
                 <>
-                  <div>
+              <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Kontaktperson för och efternamn</label>
                     <input
                       type="text"
@@ -2039,8 +2073,8 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                 />
                 {errors.name && (
                   <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-          )}
-        </div>
+                )}
+              </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">E-post</label>
                 <input

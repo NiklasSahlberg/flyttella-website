@@ -212,6 +212,12 @@ export async function POST(req: Request) {
       <th>Nuvarande parkeringsavstånd</th>
       <td>${data.flyttaFran?.parkeringsAvstand || ''}</td>
     </tr>
+    ${data.flyttaFran?.workplaceCount ? `
+    <tr>
+      <th>Antal arbetsplatser</th>
+      <td>${data.flyttaFran.workplaceCount}</td>
+    </tr>
+    ` : ''}
   </table>
 
   <div class="section-header">Flytta till (ny)</div>

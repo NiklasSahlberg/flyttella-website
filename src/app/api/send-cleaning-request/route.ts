@@ -214,6 +214,42 @@ export async function POST(req: Request) {
     ` : ''}
   </table>
 
+  <div class="section-header">Tilläggstjänster</div>
+  <table>
+    <tr>
+      <th>Balkong, max 5 kvm</th>
+      <td>${data.hasBalconyCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Källare/Vindsförråd, max 5 kvm</th>
+      <td>${data.hasStorageCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Garage, max 15 kvm</th>
+      <td>${data.hasGarageCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Inglasad balkong, max 10 kvm</th>
+      <td>${data.hasGlazedBalconyCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Inglasad altan, max 10 kvm</th>
+      <td>${data.hasGlazedPatioCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Avfrostning av frys</th>
+      <td>${data.hasFreezerDefrosting ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Demontering/rengöring av vattenlås</th>
+      <td>${data.waterTrapCleaningCount > 0 ? data.waterTrapCleaningCount : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Rengöring av persienner</th>
+      <td>${data.blindsCleaningCount > 0 ? data.blindsCleaningCount : "Nej"}</td>
+    </tr>
+  </table>
+
   <div class="section-header">Kontakttyp</div>
   <table>
     <tr>

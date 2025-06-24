@@ -73,19 +73,19 @@ export default function ReviewsWidget() {
       <div className="container mx-auto px-4 relative">
         <div className="max-w-[1400px] mx-auto">
           {/* Centered Title */}
-          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-left mb-12 mt-2">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
             Vad tycker våra kunder om oss?
           </h3>
           {/* Badge */}
           <motion.div 
-            className="flex justify-start mb-16"
+            className="flex justify-center mb-16"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="relative w-96 h-96 drop-shadow-xl">
+              <div className="relative w-80 h-80 drop-shadow-xl">
                 <Image
                   src="/BadgeFiveYearsNew.png"
                   alt="5 Years Badge"
@@ -94,8 +94,8 @@ export default function ReviewsWidget() {
                   priority
                 />
               </div>
-              <div className="max-w-xl">
-                <div className="text-center md:text-left">
+              <div className="max-w-xl text-center">
+                <div className="text-center">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                     En trygg och professionell flyttupplevelse
                   </h2>

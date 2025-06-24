@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-gray-100 border-t-4 border-[#10B981]">
       <div className="max-w-7xl mx-auto px-4 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <Link href="/" className="block">
@@ -78,6 +78,33 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Legal */}
+          <div>
+            <h3 className="font-semibold mb-4 text-white">Juridisk information</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/allmanna-villkor" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Allmänna villkor
+                </Link>
+              </li>
+              <li>
+                <Link href="/integritetspolicy" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Integritetspolicy
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookies" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Cookies
+                </Link>
+              </li>
+              <li>
+                <Link href="/villkor" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Villkor
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact */}
           <div>
             <h3 className="font-semibold mb-4 text-white">Kontakta oss</h3>
@@ -111,17 +138,6 @@ export default function Footer() {
             <p className="text-sm text-gray-300">
               © {new Date().getFullYear()} Flyttella. Alla rättigheter förbehållna.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/integritetspolicy" className="text-sm text-gray-300 hover:text-[#10B981] transition-colors">
-                Integritetspolicy
-              </Link>
-              <Link href="/cookies" className="text-sm text-gray-300 hover:text-[#10B981] transition-colors">
-                Cookies
-              </Link>
-              <Link href="/villkor" className="text-sm text-gray-300 hover:text-[#10B981] transition-colors">
-                Villkor
-              </Link>
-            </div>
           </div>
         </div>
       </div>

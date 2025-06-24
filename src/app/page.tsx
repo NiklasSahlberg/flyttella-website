@@ -9,7 +9,6 @@ import FlyttoffertForm from './components/FlyttoffertForm';
 import React, { useEffect, useState } from "react";
 import { Variants } from "framer-motion";
 import Lottie from "lottie-react";
-import Accordion from "./components/Accordion";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -320,18 +319,22 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section with integrated FlyttoffertForm */}
-      <div className="relative py-20 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white overflow-hidden">
-        <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-16">
-          <div className="max-w-xl w-full">
-            <h1 className="text-5xl md:text-6xl font-bold mb-8">
-              Trygghet utan överraskningar
-            </h1>
-            <p className="text-xl md:text-2xl mb-12">
-              Vi förstår att din flytt är viktig. Därför erbjuder vi trygg flyttservice med fast pris – inga dolda kostnader. Med oss kan du vara lugn, både för dina ägodelar och din plånbok.
-            </p>
-          </div>
-          <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
-            <FlyttoffertForm mode="widget" />
+      <div className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12">
+            <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16">
+              <div className="max-w-xl w-full">
+                <h1 className="text-5xl md:text-6xl font-bold mb-8">
+                  Trygghet utan överraskningar
+                </h1>
+                <p className="text-xl md:text-2xl mb-12">
+                  Vi förstår att din flytt är viktig. Därför erbjuder vi trygg flyttservice med fast pris – inga dolda kostnader. Med oss kan du vara lugn, både för dina ägodelar och din plånbok.
+                </p>
+              </div>
+              <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
+                <FlyttoffertForm mode="widget" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -343,107 +346,124 @@ export default function Home() {
       <ReviewsWidget />
 
       {/* Process and Features Section */}
-      <section className="section-padding bg-gradient-to-r from-[#0F172A] to-[#10B981] relative overflow-hidden">
+      <section className="section-padding bg-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-              Vår Process & Fördelar
-            </h2>
+          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 mb-12 max-w-screen-2xl mx-auto w-full">
+            <div className="max-w-screen-xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                Vår Process & Fördelar
+              </h2>
 
-            {/* Pricing Info */}
-            <div className="text-center mb-12">
-              <p className="text-white text-2xl md:text-3xl max-w-3xl mx-auto mb-8">
-                Vi arbetar med fasta priser för att ge dig trygghet och transparens. 
-                Det går även att komma överens om löpande priser.
-              </p>
-              <p className="text-white text-2xl md:text-3xl max-w-3xl mx-auto mb-8">
-                Våra offerter är alltid baserade på dina specifika behov och omständigheter. 
-                Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation. 
-                Alla priser är fasta utan dolda avgifter - det du ser är det du betalar. 
-                Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
-              </p>
-              <p className="text-white text-2xl md:text-3xl max-w-3xl mx-auto">
-                Som en seriös flyttfirma har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats. 
-                Du kan vara trygg med att vi följer alla gällande regler och bestämmelser.
-              </p>
-            </div>
-          </div>
-        </div>
+              {/* Pricing Info */}
+              <div className="text-center mb-12">
+                <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+                  Vi arbetar med fasta priser för att ge dig trygghet och transparens. 
+                  Det går även att komma överens om löpande priser.
+                </p>
+                <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+                  Våra offerter är alltid baserade på dina specifika behov och omständigheter. 
+                  Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation. 
+                  Alla priser är fasta utan dolda avgifter - det du ser är det du betalar. 
+                  Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+                </p>
+                <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-12">
+                  Som en seriös flyttfirma har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats. 
+                  Du kan vara trygg med att vi följer alla gällande regler och bestämmelser.
+                </p>
+              </div>
 
-        {/* Process Flow Section - full width, outside container */}
-        <div className="mb-24 w-full">
-          <h3 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">Så fungerar det</h3>
-          <div className="relative w-full px-4 md:px-12">
-            {/* Timeline connector line */}
-            <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-4 w-full">
-              {[
-                {
-                  icon: <FillFormLottie />,
-                  title: "Fyll i formuläret",
-                  description: "Berätta om din flytt",
-                  textClass: ""
-                },
-                {
-                  icon: <FastLottie />,
-                  title: "Snabb offert",
-                  description: "Få pris på 1 minut",
-                  textClass: ""
-                },
-                {
-                  icon: <PhoneCallLottie />,
-                  title: "Personlig kontakt",
-                  description: "Vi ringer samma dag eller dagen efter",
-                  textClass: ""
-                },
-                {
-                  icon: <SignFormLottie />,
-                  title: "Signera & bekräfta",
-                  description: "Få bokningsbekräftelse direkt",
-                  textClass: ""
-                },
-                {
-                  icon: <MovingTruckLottie />,
-                  title: "Flytt genomförd",
-                  description: "Vi tar hand om allt",
-                  containerClass: "-mt-14",
-                  textClass: "-mt-8",
-                },
-                {
-                  icon: <HappyCustomerLottie />,
-                  title: "Nöjd kund",
-                  description: "14 dagars nöjd kund garanti",
-                  textClass: ""
-                }
-              ].map((step, index) => (
-                <motion.div
-                  key={index}
-                  className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 h-full"
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={fadeInUp}
-                  custom={index}
-                >
-                  {/* Timeline dot */}
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#10B981] rounded-full hidden md:block"></div>
-                  <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
-                    <div className="mb-4">{step.icon}</div>
-                    <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
-                      <h4 className="text-white font-semibold text-lg md:text-2xl mb-1 text-center w-full">{step.title}</h4>
-                      <p className="text-white/80 text-base md:text-lg text-center w-full">{step.description}</p>
-                    </div>
+              {/* Process Flow Section */}
+              <div className="mb-12">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Så fungerar det</h3>
+                <div className="relative w-full">
+                  {/* Timeline connector line */}
+                  <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
+                  <div className="grid grid-cols-1 md:grid-cols-6 gap-4 w-full">
+                    {[
+                      {
+                        icon: <FillFormLottie />,
+                        title: "Fyll i formuläret",
+                        description: "Berätta om din flytt",
+                        textClass: ""
+                      },
+                      {
+                        icon: <FastLottie />,
+                        title: "Snabb offert",
+                        description: "Få pris på 1 minut",
+                        textClass: ""
+                      },
+                      {
+                        icon: <div className="ml-3 mt-7"><PhoneCallLottie /></div>,
+                        title: "Personlig kontakt",
+                        description: "Vi ringer samma dag eller dagen efter",
+                        containerClass: "-mt-7",
+                        textClass: ""
+                      },
+                      {
+                        icon: <div className="ml-6 mt-6"><SignFormLottie /></div>,
+                        title: "Signera & bekräfta",
+                        description: "Få bokningsbekräftelse direkt",
+                        containerClass: "-mt-6",
+                        textClass: ""
+                      },
+                      {
+                        icon: <div className="mr-3"><MovingTruckLottie /></div>,
+                        title: "Flytt genomförd",
+                        description: "Vi tar hand om allt",
+                        containerClass: "-mt-14",
+                        textClass: "-mt-8",
+                      },
+                      {
+                        icon: <div className="-mt-10"><HappyCustomerLottie /></div>,
+                        title: "Nöjd kund",
+                        description: "14 dagars nöjd kund garanti",
+                        containerClass: "-mt-6",
+                        textClass: ""
+                      }
+                    ].map((step, index) => (
+                      <motion.div
+                        key={index}
+                        className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 h-full"
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true, amount: 0.2 }}
+                        variants={fadeInUp}
+                        custom={index}
+                      >
+                        {/* Timeline dot */}
+                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#10B981] rounded-full hidden md:block"></div>
+                        <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
+                          <div className="mb-4">{step.icon}</div>
+                          <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
+                            <h4 className="text-white font-semibold text-lg md:text-2xl mb-1 text-center w-full">{step.title}</h4>
+                            <p className="text-white/80 text-base md:text-lg text-center w-full">{step.description}</p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
                   </div>
-                </motion.div>
-              ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Blank Section for spacing or future content (full width) */}
-        <section className="py-40 bg-white" style={{width: '100vw', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw'}}>
+        <section className="py-40 relative overflow-hidden" style={{width: '100vw', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw'}}>
+          {/* Background image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/backgroundpicture.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          {/* Semi-transparent overlay for content readability */}
+          <div className="absolute inset-0 bg-white/75 backdrop-blur-sm"></div>
+          
           <motion.div 
-            className="max-w-7xl mx-auto"
+            className="max-w-7xl mx-auto relative z-10"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -671,10 +691,10 @@ export default function Home() {
             </div>
 
             {/* Experience description text and badges side by side */}
-            <div className="mt-12 flex flex-col lg:flex-row items-center lg:items-start gap-6">
+            <div className="mt-12 flex flex-col items-center justify-center gap-6">
               {/* Experience description text - left side */}
               <motion.div 
-                className="flex-1 max-w-4xl text-left"
+                className="flex-1 max-w-4xl text-center"
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
@@ -691,41 +711,27 @@ export default function Home() {
                   Våra prestationer har gett oss erkännande som en av Sveriges bästa flyttfirmor, med över 1000 positiva recensioner och 
                   rekommendationer från nöjda kunder. Vi är stolta över att kunna erbjuda professionell service baserad på år av praktisk erfarenhet.
                 </p>
-                
-                {/* Recommended Company and 1000 Reviews badges under text */}
-                <div className="flex items-center gap-8 flex-wrap">
-                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                    <Image
-                      src="/recommendedcompany2.png"
-                      alt="Recommended Company"
-                      width={350}
-                      height={320}
-                      className="object-contain max-h-80 max-w-[350px]"
-                      priority={false}
-                    />
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                    <Image
-                      src="/1000reviewspicture.png"
-                      alt="1000 Reviews"
-                      width={450}
-                      height={450}
-                      className="object-contain max-h-[450px] max-w-[450px]"
-                      priority={false}
-                    />
-                  </motion.div>
-                </div>
               </motion.div>
 
-              {/* Top 10 badge - right side */}
-              <div className="flex flex-col items-center gap-8">
+              {/* Recommended Company and 1000 Reviews badges under text */}
+              <div className="flex items-center justify-center gap-8">
                 <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                   <Image
-                    src="/top10.png"
-                    alt="Top 10"
-                    width={350}
+                    src="/recommendedcompany2.png"
+                    alt="Recommended Company"
+                    width={300}
+                    height={300}
+                    className="object-contain h-72 w-72"
+                    priority={false}
+                  />
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 mt-8">
+                  <Image
+                    src="/1000reviewspicture.png"
+                    alt="1000 Reviews"
+                    width={320}
                     height={320}
-                    className="object-contain max-h-80 max-w-[350px]"
+                    className="object-contain h-80 w-80"
                     priority={false}
                   />
                 </motion.div>
@@ -733,9 +739,9 @@ export default function Home() {
                   <Image
                     src="/top10.png"
                     alt="Top 10"
-                    width={350}
-                    height={320}
-                    className="object-contain max-h-80 max-w-[350px]"
+                    width={260}
+                    height={260}
+                    className="object-contain h-64 w-64"
                     priority={false}
                   />
                 </motion.div>
@@ -747,98 +753,100 @@ export default function Home() {
         {/* Features Section */}
         <div className="pt-28">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Våra fördelar</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: "💰",
-                  title: "Fast pris",
-                  description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
-                  link: "/priser"
-                },
-                {
-                  icon: "📋",
-                  title: "RUT-avdrag",
-                  description: "Vi hanterar allt pappersarbete för RUT-avdrag",
-                  link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
-                },
-                {
-                  icon: "📦",
-                  title: "Fritt lån av kartonger i 4 veckor",
-                  description: "Specialgjorda flyttkartonger med vår logga",
-                  link: "/kartonger"
-                },
-                {
-                  icon: "⏰",
-                  title: "Omboka eller avboka kostnadsfritt",
-                  description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
-                  link: "/avbokning"
-                },
-                {
-                  icon: "✅",
-                  title: "Nöjd kund garanti",
-                  description: "14 dagars garanti på flyttstädning",
-                  link: "/garanti"
-                },
-                {
-                  icon: "🔒",
-                  title: "Trafiktillstånd och försäkring",
-                  description: "Alla nödvändiga tillstånd och försäkringar på plats",
-                  link: "/tillstand"
-                },
-                {
-                  icon: "🎓",
-                  title: "Utbildad personal",
-                  description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
-                  link: "/om-oss"
-                },
-                {
-                  icon: "📈",
-                  title: "Ledningssystem",
-                  description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
-                  link: "/om-oss"
-                },
-                {
-                  icon: "🦺",
-                  title: "Arbetsmiljö",
-                  description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
-                  link: "/om-oss"
-                }
-              ].map((feature, i) => (
-                <motion.div
-                  key={feature.icon}
-                  className="flex items-start gap-5 bg-white/10 backdrop-blur-sm rounded-xl p-7 min-h-[170px] w-full max-w-none h-full min-w-0"
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={variants}
-                  custom={i}
-                >
-                  <motion.span
-                    className="text-3xl md:text-4xl"
-                    initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
-                    animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
-                    transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Våra fördelar</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  {
+                    icon: "💰",
+                    title: "Fast pris",
+                    description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                    link: "/priser"
+                  },
+                  {
+                    icon: "📋",
+                    title: "RUT-avdrag",
+                    description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                    link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                  },
+                  {
+                    icon: "📦",
+                    title: "Fritt lån av kartonger i 4 veckor",
+                    description: "Specialgjorda flyttkartonger med vår logga",
+                    link: "/kartonger"
+                  },
+                  {
+                    icon: "⏰",
+                    title: "Omboka eller avboka kostnadsfritt",
+                    description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                    link: "/avbokning"
+                  },
+                  {
+                    icon: "✅",
+                    title: "Nöjd kund garanti",
+                    description: "14 dagars garanti på flyttstädning",
+                    link: "/garanti"
+                  },
+                  {
+                    icon: "🔒",
+                    title: "Trafiktillstånd och försäkring",
+                    description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                    link: "/tillstand"
+                  },
+                  {
+                    icon: "🎓",
+                    title: "Utbildad personal",
+                    description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                    link: "/om-oss"
+                  },
+                  {
+                    icon: "📈",
+                    title: "Ledningssystem",
+                    description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                    link: "/om-oss"
+                  },
+                  {
+                    icon: "🦺",
+                    title: "Arbetsmiljö",
+                    description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                    link: "/om-oss"
+                  }
+                ].map((feature, i) => (
+                  <motion.div
+                    key={feature.icon}
+                    className="flex items-start gap-5 bg-white/10 backdrop-blur-sm rounded-xl p-7 min-h-[170px] w-full max-w-none h-full min-w-0"
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={variants}
+                    custom={i}
                   >
-                    {feature.icon}
-                  </motion.span>
-                  <div className="flex-1">
-                    <h4 className="text-white font-semibold text-lg md:text-xl mb-2">{feature.title}</h4>
-                    <p className="text-white/80 text-base md:text-lg mb-3">{feature.description}</p>
-                    <a 
-                      href={feature.link}
-                      target={feature.link.startsWith('http') ? '_blank' : undefined}
-                      rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-white/90 hover:text-white transition-colors text-base md:text-lg inline-flex items-center"
+                    <motion.span
+                      className="text-3xl md:text-4xl"
+                      initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                      animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                      transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
                     >
-                      Läs mer
-                      <svg className="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
-                </motion.div>
-              ))}
+                      {feature.icon}
+                    </motion.span>
+                    <div className="flex-1">
+                      <h4 className="text-white font-semibold text-lg md:text-xl mb-2">{feature.title}</h4>
+                      <p className="text-white/80 text-base md:text-lg mb-3">{feature.description}</p>
+                      <a 
+                        href={feature.link}
+                        target={feature.link.startsWith('http') ? '_blank' : undefined}
+                        rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="text-white/90 hover:text-white transition-colors text-base md:text-lg inline-flex items-center"
+                      >
+                        Läs mer
+                        <svg className="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -1062,103 +1070,104 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Tips för din flytt</h2>
-              <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 mt-8">Innan flytten</h3>
-              <Accordion
-                defaultOpenIndex={undefined}
-                items={[
-                  {
-                    title: "Planera och förbered din flytt i tid",
-                    imageSrc: "/tipsforflytt.jpg",
-                    imageAlt: "Tips för din flytt",
-                    content: (
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>Planera flytten i god tid och gör en checklista.</li>
-                        <li>Rensa ut saker du inte längre behöver.</li>
-                        <li>Boka flyttfirma och eventuellt flyttstädning i förväg.</li>
-                        <li>Beställ flyttkartonger och packmaterial.</li>
-                        <li>Meddela hyresvärd eller bostadsrättsförening om flytten.</li>
-                      </ul>
-                    ),
-                  },
-                  {
-                    title: "Viktiga avtal och anmälningar inför flytten",
-                    imageSrc: "/viktigaavtalcustomer.png",
-                    imageAlt: "Kund tecknar viktiga avtal",
-                    content: (
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>Adressändra och meddela Skatteverket.</li>
-                        <li>Säg upp eller flytta el, bredband och andra abonnemang.</li>
-                        <li>Teckna nya avtal för el, bredband och försäkring på nya adressen.</li>
-                        <li>Meddela viktiga kontakter om din nya adress.</li>
-                      </ul>
-                    ),
-                  },
-                  {
-                    title: "Smarta packtips och sista förberedelserna",
-                    imageSrc: "/tipsforflytt.jpg",
-                    imageAlt: "Packningstips",
-                    content: (
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>Börja packa i god tid och märk alla kartonger tydligt.</li>
-                        <li>Packa ömtåliga saker noggrant och använd skyddsmaterial.</li>
-                        <li>Packa en "första natten-låda" med det viktigaste.</li>
-                        <li>Se till att ha nycklar och viktiga dokument lättillgängliga.</li>
-                        <li>Glöm inte att boka hiss eller parkering om det behövs.</li>
-                      </ul>
-                    ),
-                  },
-                ]}
-              />
-              <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 mt-10">Under flytten</h3>
-              <Accordion
-                defaultOpenIndex={undefined}
-                items={[
-                  {
-                    title: "Så får du en smidig flyttdag",
-                    imageSrc: "/tipsforflytt.jpg",
-                    imageAlt: "Flyttdagstips",
-                    content: (
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>Dubbelkolla att allt är packat och märkt innan flyttfirman anländer.</li>
-                        <li>Ha viktiga dokument, nycklar och värdesaker lättillgängliga.</li>
-                        <li>Se till att det finns fri väg för bärhjälp och transport.</li>
-                        <li>Var på plats för att svara på frågor och visa vad som ska flyttas.</li>
-                        <li>Ta med snacks, vatten och eventuellt kaffe för att hålla energin uppe.</li>
-                        <li>Gör en sista kontroll av bostaden innan du lämnar – glöm inte förråd, vind och garage.</li>
-                      </ul>
-                    ),
-                  },
-                ]}
-              />
-              <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 mt-10">Efter flytten</h3>
-              <Accordion
-                defaultOpenIndex={undefined}
-                items={[
-                  {
-                    title: "Checklista för en bra start i ditt nya hem",
-                    imageSrc: "/happycustomeraftermoving.png",
-                    imageAlt: "Glad kund efter flytt",
-                    content: (
-                      <div>
-                        <p className="mb-4">När allt är på plats i ditt nya hem återstår några viktiga steg för att komma i ordning och trivas. Tänk på att:</p>
+              
+              <div className="space-y-16">
+                
+                {/* Innan flytten */}
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8">Innan flytten</h3>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <TipCard
+                      title="Planera och förbered"
+                      imageSrc="/tipsforflytt.jpg"
+                      imageAlt="Planering"
+                      content={
                         <ul className="list-disc pl-5 space-y-2">
-                          <li>Se till att flyttstädningen i din gamla bostad är ordentligt utförd, antingen själv eller via städfirma.</li>
-                          <li>Dubbelkolla att allt är godkänt av hyresvärd eller köpare.</li>
-                          <li>Börja packa upp det viktigaste först och skapa ordning i ditt nya hem.</li>
-                          <li>Gör en första städning i nya bostaden – flytt kan ofta innebära damm och smuts.</li>
-                          <li>Ta dig tid att anmäla eventuella skador eller saknade saker till flyttfirman om det behövs.</li>
+                          <li>Gör en checklista.</li>
+                          <li>Rensa ut onödiga saker.</li>
+                          <li>Boka flyttfirma och städning.</li>
+                          <li>Beställ flyttkartonger.</li>
                         </ul>
-                      </div>
-                    ),
-                  },
-                ]}
-              />
+                      }
+                    />
+                    <TipCard
+                      title="Avtal och anmälningar"
+                      imageSrc="/viktigaavtalcustomer.png"
+                      imageAlt="Avtal"
+                      content={
+                        <ul className="list-disc pl-5 space-y-2">
+                          <li>Adressändra hos Skatteverket.</li>
+                          <li>Flytta el, bredband, etc.</li>
+                          <li>Teckna nya avtal.</li>
+                          <li>Meddela viktiga kontakter.</li>
+                        </ul>
+                      }
+                    />
+                    <TipCard
+                      title="Packtips"
+                      imageSrc="/packing_tips.jpg"
+                      imageAlt="Packning"
+                      content={
+                        <ul className="list-disc pl-5 space-y-2">
+                          <li>Märk alla kartonger tydligt.</li>
+                          <li>Packa ömtåliga saker varsamt.</li>
+                          <li>Packa en "första natten"-låda.</li>
+                          <li>Håll nycklar tillgängliga.</li>
+                        </ul>
+                      }
+                    />
+                  </div>
+                </div>
+
+                {/* Under flytten */}
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Under flytten</h3>
+                  <div className="max-w-lg mx-auto">
+                    <TipCard
+                        title="En smidig flyttdag"
+                        imageSrc="/under_flytt.jpg"
+                        imageAlt="Flyttdag"
+                        content={
+                          <ul className="list-disc pl-5 space-y-2">
+                            <li>Dubbelkolla packning och märkning.</li>
+                            <li>Håll värdesaker tillgängliga.</li>
+                            <li>Säkerställ fri väg för flytthjälp.</li>
+                            <li>Var tillgänglig för frågor.</li>
+                            <li>Gör en slutkontroll av bostaden.</li>
+                          </ul>
+                        }
+                      />
+                  </div>
+                </div>
+
+                {/* Efter flytten */}
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Efter flytten</h3>
+                  <div className="max-w-lg mx-auto">
+                    <TipCard
+                        title="Start i nya hemmet"
+                        imageSrc="/happycustomeraftermoving.png"
+                        imageAlt="Nytt hem"
+                        objectPosition="object-[10%_center]"
+                        content={
+                          <ul className="list-disc pl-5 space-y-2">
+                            <li>Kontrollera flyttstädningen.</li>
+                            <li>Packa upp det viktigaste först.</li>
+                            <li>Gör en första städning.</li>
+                            <li>Anmäl eventuella skador.</li>
+                          </ul>
+                        }
+                      />
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </section>
 
         {/* Locations Section */}
-        <section className="section-padding bg-gradient-to-r from-[#0F172A]/5 to-[#10B981]/5">
+        <section className="section-padding bg-white">
           <div className="container mx-auto px-4">
           <motion.h2 
             className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12"
@@ -1187,6 +1196,32 @@ export default function Home() {
     </main>
   );
 }
+
+interface TipCardProps {
+  title: string;
+  content: React.ReactNode;
+  imageSrc: string;
+  imageAlt: string;
+  objectPosition?: string;
+}
+
+const TipCard: React.FC<TipCardProps> = ({ title, content, imageSrc, imageAlt, objectPosition = 'object-center' }) => (
+  <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+    {imageSrc && (
+      <Image
+        src={imageSrc}
+        alt={imageAlt || ''}
+        width={400}
+        height={200}
+        className={`w-full h-48 object-cover ${objectPosition}`}
+      />
+    )}
+    <div className="p-6">
+      <h4 className="text-xl font-bold text-[#0F172A] mb-3">{title}</h4>
+      <div className="text-gray-600 text-base leading-relaxed">{content}</div>
+    </div>
+  </div>
+);
 
 // Inline FeatureBoxesSection component
 function FeatureBoxesSection() {
@@ -1308,13 +1343,13 @@ function FeatureBoxesSection() {
   return (
     <div className="w-full my-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-left mb-12 mt-2">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
           Vilka förmåner får du med Flyttella?
         </h2>
       </div>
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch justify-center w-full gap-0 md:gap-8">
         {/* Left: Animated boxes with icons and labels */}
-        <div className="w-full md:w-2/5 flex flex-col justify-between items-center md:items-start py-4 gap-4">
+        <div className="w-full md:w-2/5 flex flex-col justify-between items-center py-4 gap-4">
           {features.map((feature, i) => (
             <motion.div
               key={feature.key}
@@ -1335,13 +1370,12 @@ function FeatureBoxesSection() {
           ))}
         </div>
         {/* Right: Image */}
-        <div className="w-full md:w-3/5 flex justify-center items-center">
+        <div className="w-full md:w-2/5 relative">
           <Image
-            src="/movingpicture1.png"
+            src="/intro_picture.jpg"
             alt="Flyttfirma i arbete"
-            width={420}
-            height={600}
-            className="rounded-2xl shadow object-cover max-h-[600px] w-full"
+            fill
+            className="rounded-2xl shadow object-cover object-right"
             priority
           />
         </div>

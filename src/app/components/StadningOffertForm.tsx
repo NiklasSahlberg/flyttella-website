@@ -43,6 +43,14 @@ interface StadningFormData {
   hasGarage: boolean;
   hasBalcony: boolean;
   hasStorage: boolean;
+  hasBalconyCleaning: boolean;
+  hasStorageCleaning: boolean;
+  hasGarageCleaning: boolean;
+  hasGlazedBalconyCleaning: boolean;
+  hasGlazedPatioCleaning: boolean;
+  waterTrapCleaningCount: number;
+  blindsCleaningCount: number;
+  hasFreezerDefrosting: boolean;
   squareMeters: string;
   comments: string;
   movingDate: string;
@@ -108,6 +116,14 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     hasGarage: false,
     hasBalcony: false,
     hasStorage: false,
+    hasBalconyCleaning: false,
+    hasStorageCleaning: false,
+    hasGarageCleaning: false,
+    hasGlazedBalconyCleaning: false,
+    hasGlazedPatioCleaning: false,
+    waterTrapCleaningCount: 0,
+    blindsCleaningCount: 0,
+    hasFreezerDefrosting: false,
     squareMeters: '',
     comments: '',
     movingDate: '',
@@ -129,42 +145,42 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     if (!window.google?.maps?.places) return;
     
     const initializeAutocomplete = () => {
-      try {
-        const addressInput = document.getElementById('address') as HTMLInputElement;
+    try {
+      const addressInput = document.getElementById('address') as HTMLInputElement;
         if (addressInput && !addressInput.dataset.autocompleteInitialized) {
-          const autocomplete = new window.google.maps.places.Autocomplete(addressInput, {
-            componentRestrictions: { country: 'se' },
-            fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
-            types: ['address']
-          });
+        const autocomplete = new window.google.maps.places.Autocomplete(addressInput, {
+          componentRestrictions: { country: 'se' },
+          fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
+          types: ['address']
+        });
           
-          autocomplete.addListener('place_changed', () => {
-            const place = autocomplete.getPlace();
-            if (place.formatted_address) {
-              let streetName = '';
-              let streetNumber = '';
-              let city = '';
-              place.address_components.forEach((component: AddressComponent) => {
-                if (component.types.includes('route')) streetName = component.long_name;
-                if (component.types.includes('street_number')) streetNumber = component.long_name;
-                if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
-              });
-              const formattedAddress = `${streetName}, ${city}, Sweden`;
+        autocomplete.addListener('place_changed', () => {
+          const place = autocomplete.getPlace();
+          if (place.formatted_address) {
+            let streetName = '';
+            let streetNumber = '';
+            let city = '';
+            place.address_components.forEach((component: AddressComponent) => {
+              if (component.types.includes('route')) streetName = component.long_name;
+              if (component.types.includes('street_number')) streetNumber = component.long_name;
+              if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
+            });
+            const formattedAddress = `${streetName}, ${city}, Sweden`;
               setFormData(prev => ({ ...prev, address: formattedAddress }));
-              setLastValidAddress(formattedAddress);
-            }
-          });
+            setLastValidAddress(formattedAddress);
+          }
+        });
           
-          addressInput.addEventListener('blur', () => {
-            if (lastValidAddress && formData.address !== lastValidAddress) {
-              setFormData(prev => ({ ...prev, address: lastValidAddress }));
-            }
-          });
+        addressInput.addEventListener('blur', () => {
+          if (lastValidAddress && formData.address !== lastValidAddress) {
+            setFormData(prev => ({ ...prev, address: lastValidAddress }));
+          }
+        });
           
           // Mark as initialized to prevent duplicate initialization
           addressInput.dataset.autocompleteInitialized = 'true';
-        }
-      } catch (error) {
+      }
+    } catch (error) {
         console.error('Error initializing Google Places:', error);
       }
     };
@@ -255,6 +271,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         return newErrors;
       });
     }
+  };
+
+  const handleServiceCountChange = (service: 'waterTrapCleaningCount' | 'blindsCleaningCount', change: 1 | -1) => {
+    setFormData(prev => ({
+      ...prev,
+      [service]: Math.max(0, prev[service] + change)
+    }));
   };
 
   const validateStep1 = (): boolean => {
@@ -419,6 +442,14 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         hasGarage: formData.hasGarage,
         hasBalcony: formData.hasBalcony,
         hasStorage: formData.hasStorage,
+        hasBalconyCleaning: formData.hasBalconyCleaning,
+        hasStorageCleaning: formData.hasStorageCleaning,
+        hasGarageCleaning: formData.hasGarageCleaning,
+        hasGlazedBalconyCleaning: formData.hasGlazedBalconyCleaning,
+        hasGlazedPatioCleaning: formData.hasGlazedPatioCleaning,
+        waterTrapCleaningCount: formData.waterTrapCleaningCount,
+        blindsCleaningCount: formData.blindsCleaningCount,
+        hasFreezerDefrosting: formData.hasFreezerDefrosting,
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -469,30 +500,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
       >
         <div className="mb-8">
           <div className="flex justify-between mb-2">
-            {[1, 2, 3].map((stepNumber) => (
-              <div
-                key={stepNumber}
-                className={`flex items-center ${stepNumber === step ? 'text-[#10B981]' : 'text-gray-400'}`}
-              >
-                <div
-                  className={`w-8 h-8 flex items-center justify-center mr-2 ${
-                    stepNumber === step ? 'bg-[#10B981] text-white rounded-full' : 'bg-gray-200 rounded-full'
-                  }`}
-                >
-                  {stepNumber}
-                </div>
-                <span className="text-sm">
-                  {stepNumber === 1 ? 'Datum' :
-                    stepNumber === 2 ? 'Bostad' :
-                    'Kontakt'}
-                </span>
-              </div>
-            ))}
+            <span className="text-sm font-medium text-gray-700">Steg {step} av 3</span>
+            <span className="text-sm font-medium text-gray-700">{Math.round((step / 3) * 100)}%</span>
           </div>
-          <div className="h-2 bg-gray-200 rounded-full">
-            <div
-              className="h-full bg-[#10B981] rounded-full transition-all duration-300"
-              style={{ width: `${((step - 1) / 2) * 100}%` }}
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <div 
+              className="bg-gradient-to-r from-[#0F172A] to-[#10B981] h-2 rounded-full transition-all duration-300"
+              style={{ width: `${(step / 3) * 100}%` }}
             ></div>
           </div>
         </div>
@@ -504,10 +518,10 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         ) : (
           <form 
             onSubmit={(e) => {
-              e.preventDefault();
+            e.preventDefault();
               // Only allow form submission on step 3
               if (step === 3) {
-                handleFinalSubmit(e);
+            handleFinalSubmit(e);
               }
             }} 
             noValidate
@@ -720,12 +734,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </>
                     ) : (
                       <>
-                        <option value="villa">Villa</option>
-                        <option value="lagenhet">Lägenhet</option>
-                        <option value="parhus">Parhus</option>
-                        <option value="radhus">Radhus</option>
-                        <option value="fritidshus">Fritidshus</option>
-                        <option value="annat">Annat</option>
+                    <option value="villa">Villa</option>
+                    <option value="lagenhet">Lägenhet</option>
+                    <option value="parhus">Parhus</option>
+                    <option value="radhus">Radhus</option>
+                    <option value="fritidshus">Fritidshus</option>
+                    <option value="annat">Annat</option>
                       </>
                     )}
                   </select>
@@ -764,10 +778,10 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </>
                     ) : (
                       <>
-                        <option value="1">1 våning</option>
-                        <option value="2">2 våningar</option>
-                        <option value="3">3 våningar</option>
-                        <option value="4">4 våningar eller fler</option>
+                    <option value="1">1 våning</option>
+                    <option value="2">2 våningar</option>
+                    <option value="3">3 våningar</option>
+                    <option value="4">4 våningar eller fler</option>
                       </>
                     )}
                   </select>
@@ -798,6 +812,89 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     <p className="mt-1 text-sm text-red-600">{errors.squareMeters}</p>
                   )}
                 </div>
+
+                <div className="mt-6">
+                  <h3 className="text-lg font-medium text-gray-900">Tilläggstjänster</h3>
+                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex items-start">
+                      <div className="flex items-center h-5">
+                        <input id="balcony-cleaning" name="hasBalconyCleaning" type="checkbox" checked={formData.hasBalconyCleaning} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
+                      </div>
+                      <div className="ml-3 text-sm">
+                        <label htmlFor="balcony-cleaning" className="font-medium text-gray-700">Balkong, max 5 kvm</label>
+                        <p className="text-gray-500">150 kr</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex items-center h-5">
+                        <input id="storage-cleaning" name="hasStorageCleaning" type="checkbox" checked={formData.hasStorageCleaning} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
+                      </div>
+                      <div className="ml-3 text-sm">
+                        <label htmlFor="storage-cleaning" className="font-medium text-gray-700">Källare/Vindsförråd, max 5 kvm</label>
+                        <p className="text-gray-500">150 kr</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex items-center h-5">
+                        <input id="garage-cleaning" name="hasGarageCleaning" type="checkbox" checked={formData.hasGarageCleaning} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
+                      </div>
+                      <div className="ml-3 text-sm">
+                        <label htmlFor="garage-cleaning" className="font-medium text-gray-700">Garage, max 15 kvm</label>
+                        <p className="text-gray-500">450 kr</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex items-center h-5">
+                        <input id="glazed-balcony-cleaning" name="hasGlazedBalconyCleaning" type="checkbox" checked={formData.hasGlazedBalconyCleaning} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
+                      </div>
+                      <div className="ml-3 text-sm">
+                        <label htmlFor="glazed-balcony-cleaning" className="font-medium text-gray-700">Inglasad balkong, max 10 kvm</label>
+                        <p className="text-gray-500">300 kr</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex items-center h-5">
+                        <input id="glazed-patio-cleaning" name="hasGlazedPatioCleaning" type="checkbox" checked={formData.hasGlazedPatioCleaning} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
+                      </div>
+                      <div className="ml-3 text-sm">
+                        <label htmlFor="glazed-patio-cleaning" className="font-medium text-gray-700">Inglasad altan, max 10 kvm</label>
+                        <p className="text-gray-500">450 kr</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex items-center h-5">
+                        <input id="freezer-defrosting" name="hasFreezerDefrosting" type="checkbox" checked={formData.hasFreezerDefrosting} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
+                      </div>
+                      <div className="ml-3 text-sm">
+                        <label htmlFor="freezer-defrosting" className="font-medium text-gray-700">Avfrostning av frys</label>
+                        <p className="text-gray-500">250 kr</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="ml-3 text-sm">
+                        <label htmlFor="water-trap-cleaning" className="font-medium text-gray-700">Demontering/rengöring av vattenlås</label>
+                        <p className="text-gray-500">150 kr/st</p>
+                        <div className="flex items-center mt-1">
+                          <button type="button" onClick={() => handleServiceCountChange('waterTrapCleaningCount', -1)} className="px-2 py-1 border rounded-l-md bg-gray-200 hover:bg-gray-300 text-black">-</button>
+                          <span className="px-4 py-1 border-t border-b text-black">{formData.waterTrapCleaningCount}</span>
+                          <button type="button" onClick={() => handleServiceCountChange('waterTrapCleaningCount', 1)} className="px-2 py-1 border rounded-r-md bg-gray-200 hover:bg-gray-300 text-black">+</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="ml-3 text-sm">
+                        <label htmlFor="blinds-cleaning" className="font-medium text-gray-700">Rengöring av persienner</label>
+                        <p className="text-gray-500">30 kr/st</p>
+                        <div className="flex items-center mt-1">
+                          <button type="button" onClick={() => handleServiceCountChange('blindsCleaningCount', -1)} className="px-2 py-1 border rounded-l-md bg-gray-200 hover:bg-gray-300 text-black">-</button>
+                          <span className="px-4 py-1 border-t border-b text-black">{formData.blindsCleaningCount}</span>
+                          <button type="button" onClick={() => handleServiceCountChange('blindsCleaningCount', 1)} className="px-2 py-1 border rounded-r-md bg-gray-200 hover:bg-gray-300 text-black">+</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             )}
             {step === 3 && (
@@ -890,16 +987,16 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
             )}
             <div className="flex justify-between mt-8">
               {step === 1 ? (
-                <button
-                  type="button"
+              <button
+                type="button"
                   onClick={(e) => {
                     e.preventDefault();
                     onCancel();
                   }}
-                  className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
-                >
+                className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
+              >
                   Tillbaka
-                </button>
+              </button>
               ) : step > 1 && (
                 <button
                   type="button"
