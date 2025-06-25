@@ -142,7 +142,8 @@ export default function KontaktPage() {
 
           {/* Contact Form */}
           <motion.div 
-            className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100"
+            id="contact-form"
+            className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 scroll-mt-40"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

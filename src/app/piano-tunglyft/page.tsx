@@ -14,11 +14,8 @@ export default function PianoTunglyftPage() {
               Professionell hantering av tunga och känsliga föremål med specialutrustning och erfaren personal
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/fa-offert" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
+              <Link href="/kontakt#contact-form" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
                 Få offert
-              </Link>
-              <Link href="/kontakt" className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#0F172A] transition-all font-medium">
-                Kontakta oss
               </Link>
             </div>
           </div>
@@ -183,7 +180,7 @@ export default function PianoTunglyftPage() {
             Kontakta oss för en kostnadsfri offert och planering av din flytt.
           </p>
           <Link 
-            href="/fa-offert" 
+            href="/kontakt#contact-form" 
             className="inline-block bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity font-medium"
           >
             Få offert

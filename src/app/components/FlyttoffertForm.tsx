@@ -60,6 +60,10 @@ interface FormData {
   contactLastName?: string; // For företag, step 7
   contactPersonName?: string; // For företag, step 7
   workplaceCount?: string; // NEW FIELD for företag
+  hasStorageRoom?: string; // NEW FIELD for vind/källarförråd
+  storageRoomArea?: string; // NEW FIELD for vind/källarförråd area
+  hasGarage?: string; // NEW FIELD for garage
+  garageArea?: string; // NEW FIELD for garage area
 }
 
 interface FormErrors {
@@ -101,6 +105,10 @@ interface FormErrors {
   toElevatorSize?: string;
   hasLoadingDock?: string;
   workplaceCount?: string; // NEW FIELD for företag
+  hasStorageRoom?: string; // NEW FIELD for vind/källarförråd
+  storageRoomArea?: string; // NEW FIELD for vind/källarförråd area
+  hasGarage?: string; // NEW FIELD for garage
+  garageArea?: string; // NEW FIELD for garage area
 }
 
 interface AddressComponent {
@@ -169,6 +177,10 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
     contactLastName: '',
     contactPersonName: '',
     workplaceCount: '', // NEW FIELD for företag
+    hasStorageRoom: "no", // NEW FIELD for vind/källarförråd
+    storageRoomArea: "", // NEW FIELD for vind/källarförråd area
+    hasGarage: "no", // NEW FIELD for garage
+    garageArea: "", // NEW FIELD for garage area
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
@@ -453,6 +465,28 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
       isValid = false;
     } else if (isNaN(Number(formData.parkingDistance)) || Number(formData.parkingDistance) < 0) {
       newErrors.parkingDistance = "Avståndet måste vara ett positivt tal i meter";
+      isValid = false;
+    }
+    if (!formData.hasStorageRoom) {
+      newErrors.hasStorageRoom = "Vänligen välj om du har vind/källarförråd";
+      isValid = false;
+    }
+    if (formData.hasStorageRoom === "yes" && (!formData.storageRoomArea || !formData.storageRoomArea.trim())) {
+      newErrors.storageRoomArea = "Vänligen ange vind/källarförrådets yta";
+      isValid = false;
+    } else if (formData.hasStorageRoom === "yes" && (isNaN(Number(formData.storageRoomArea)) || Number(formData.storageRoomArea) <= 0)) {
+      newErrors.storageRoomArea = "Ytan måste vara ett positivt tal";
+      isValid = false;
+    }
+    if (!formData.hasGarage) {
+      newErrors.hasGarage = "Vänligen välj om du har garage";
+      isValid = false;
+    }
+    if (formData.hasGarage === "yes" && (!formData.garageArea || !formData.garageArea.trim())) {
+      newErrors.garageArea = "Vänligen ange garagets yta";
+      isValid = false;
+    } else if (formData.hasGarage === "yes" && (isNaN(Number(formData.garageArea)) || Number(formData.garageArea) <= 0)) {
+      newErrors.garageArea = "Ytan måste vara ett positivt tal";
       isValid = false;
     }
     setErrors(newErrors);
@@ -1343,7 +1377,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }`}
                     >
                       <option value="">-- Välj --</option>
-                      {formData.customerType === 'foretag' ? (
+                      {(formData.customerType === 'foretag' || (formData.customerType === 'privat' && formData.typeOfHome === 'magasin')) ? (
                         <>
                           <option value="small">Liten (2-4 personer)</option>
                           <option value="medium">Mellanstor (6-8 personer)</option>
@@ -1406,6 +1440,173 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     <p className="mt-1 text-sm text-red-600">{errors.parkingDistance}</p>
                   )}
                 </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {formData.customerType === 'foretag' ? 'Har ni vind/källarförråd?' : 'Har du vind/källarförråd?'}
+                  </label>
+                  <div className="flex gap-6">
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="hasStorageRoom"
+                        value="yes"
+                        checked={formData.hasStorageRoom === "yes"}
+                        onChange={(e) => {
+                          setFormData(prev => ({ ...prev, hasStorageRoom: e.target.value }));
+                          setErrors(prev => ({ ...prev, hasStorageRoom: "" }));
+                        }}
+                        className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">Ja</span>
+                    </label>
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="hasStorageRoom"
+                        value="no"
+                        checked={formData.hasStorageRoom === "no"}
+                        onChange={(e) => {
+                          setFormData(prev => ({ ...prev, hasStorageRoom: e.target.value }));
+                          setErrors(prev => ({ ...prev, hasStorageRoom: "" }));
+                        }}
+                        className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">Nej</span>
+                    </label>
+                  </div>
+                  {errors.hasStorageRoom && (
+                    <p className="mt-1 text-sm text-red-600">{errors.hasStorageRoom}</p>
+                  )}
+                </div>
+
+                {formData.hasStorageRoom === "yes" && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {formData.customerType === 'foretag' ? 'Vind/källarförrådets yta (kvm)' : 'Vind/källarförrådets yta (kvm)'}
+                    </label>
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
+                      name="storageRoomArea"
+                      value={formData.storageRoomArea}
+                      onChange={(e) => {
+                        // Only allow whole numbers
+                        const value = e.target.value.replace(/[^\d]/g, '');
+                        if (value === '' || Number(value) >= 0) {
+                          setFormData(prev => ({ ...prev, storageRoomArea: value }));
+                          setErrors(prev => ({ ...prev, storageRoomArea: "" }));
+                        }
+                      }}
+                      onKeyDown={(e) => {
+                        // Prevent all non-numeric input except backspace, delete, and arrow keys
+                        if (
+                          !/^\d$/.test(e.key) && // not a number
+                          e.key !== 'Backspace' &&
+                          e.key !== 'Delete' &&
+                          e.key !== 'ArrowLeft' &&
+                          e.key !== 'ArrowRight' &&
+                          e.key !== 'Tab'
+                        ) {
+                          e.preventDefault();
+                        }
+                      }}
+                      placeholder="10"
+                      required
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                        errors.storageRoomArea ? "border-red-500" : ""
+                      }`}
+                    />
+                    {errors.storageRoomArea && (
+                      <p className="mt-1 text-sm text-red-600">{errors.storageRoomArea}</p>
+                    )}
+                  </div>
+                )}
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {formData.customerType === 'foretag' ? 'Har ni garage?' : 'Har du garage?'}
+                  </label>
+                  <div className="flex gap-6">
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="hasGarage"
+                        value="yes"
+                        checked={formData.hasGarage === "yes"}
+                        onChange={(e) => {
+                          setFormData(prev => ({ ...prev, hasGarage: e.target.value }));
+                          setErrors(prev => ({ ...prev, hasGarage: "" }));
+                        }}
+                        className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">Ja</span>
+                    </label>
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="hasGarage"
+                        value="no"
+                        checked={formData.hasGarage === "no"}
+                        onChange={(e) => {
+                          setFormData(prev => ({ ...prev, hasGarage: e.target.value }));
+                          setErrors(prev => ({ ...prev, hasGarage: "" }));
+                        }}
+                        className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">Nej</span>
+                    </label>
+                  </div>
+                  {errors.hasGarage && (
+                    <p className="mt-1 text-sm text-red-600">{errors.hasGarage}</p>
+                  )}
+                </div>
+
+                {formData.hasGarage === "yes" && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {formData.customerType === 'foretag' ? 'Garagets yta (kvm)' : 'Garagets yta (kvm)'}
+                    </label>
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
+                      name="garageArea"
+                      value={formData.garageArea}
+                      onChange={(e) => {
+                        // Only allow whole numbers
+                        const value = e.target.value.replace(/[^\d]/g, '');
+                        if (value === '' || Number(value) >= 0) {
+                          setFormData(prev => ({ ...prev, garageArea: value }));
+                          setErrors(prev => ({ ...prev, garageArea: "" }));
+                        }
+                      }}
+                      onKeyDown={(e) => {
+                        // Prevent all non-numeric input except backspace, delete, and arrow keys
+                        if (
+                          !/^\d$/.test(e.key) && // not a number
+                          e.key !== 'Backspace' &&
+                          e.key !== 'Delete' &&
+                          e.key !== 'ArrowLeft' &&
+                          e.key !== 'ArrowRight' &&
+                          e.key !== 'Tab'
+                        ) {
+                          e.preventDefault();
+                        }
+                      }}
+                      placeholder="20"
+                      required
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                        errors.garageArea ? "border-red-500" : ""
+                      }`}
+                    />
+                    {errors.garageArea && (
+                      <p className="mt-1 text-sm text-red-600">{errors.garageArea}</p>
+                    )}
+                  </div>
+                )}
+
                 {((formData.customerType as string) === 'foretag') && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Finns lastkaj i byggnaden?</label>
@@ -1760,7 +1961,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       }`}
                     >
                       <option value="">-- Välj --</option>
-                      {formData.customerType === 'foretag' ? (
+                      {(formData.customerType === 'foretag' || (formData.customerType === 'privat' && formData.typeOfHome === 'magasin')) ? (
                         <>
                           <option value="small">Liten (2-4 personer)</option>
                           <option value="medium">Mellanstor (6-8 personer)</option>

@@ -27,6 +27,7 @@ export default function Footer() {
   const [loadingFlyttPartner, setLoadingFlyttPartner] = useState(false);
 
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [showReportButton, setShowReportButton] = useState(false);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -92,6 +93,23 @@ export default function Footer() {
         });
     }
   }, [isFlyttPartnerModalOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetElement = document.getElementById('upptack-tjanster');
+      if (targetElement) {
+        const rect = targetElement.getBoundingClientRect();
+        // Show button when the section is about to enter the viewport (200px before it reaches the top)
+        const hasScrolledPast = rect.top <= 300;
+        setShowReportButton(hasScrolledPast);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <footer className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-gray-100 border-t-4 border-[#10B981]">
@@ -265,14 +283,16 @@ export default function Footer() {
       <TermsModal isOpen={isStadModalOpen} onClose={() => setIsStadModalOpen(false)} htmlContent={loadingStad ? '<p>Laddar villkor...</p>' : stadHtml} />
       <TermsModal isOpen={isStadPartnerModalOpen} onClose={() => setIsStadPartnerModalOpen(false)} htmlContent={loadingStadPartner ? '<p>Laddar villkor...</p>' : stadPartnerHtml} />
       <TermsModal isOpen={isFlyttPartnerModalOpen} onClose={() => setIsFlyttPartnerModalOpen(false)} htmlContent={loadingFlyttPartner ? '<p>Laddar villkor...</p>' : flyttPartnerHtml} />
-      <button
-        type="button"
-        className="fixed bottom-6 right-6 z-50 bg-white text-[#0F172A] border border-gray-200 shadow px-4 py-2 rounded-full text-xs opacity-70 hover:opacity-100 transition-all"
-        onClick={() => setIsReportModalOpen(true)}
-        aria-label="Anmälan"
-      >
-        Anmälan
-      </button>
+      {showReportButton && (
+        <button
+          type="button"
+          className="fixed bottom-6 right-6 z-50 bg-white text-[#0F172A] border border-gray-200 shadow px-4 py-2 rounded-full text-xs opacity-70 hover:opacity-100 transition-all"
+          onClick={() => setIsReportModalOpen(true)}
+          aria-label="Anmälan"
+        >
+          Anmälan
+        </button>
+      )}
       <ReportModal isOpen={isReportModalOpen} onClose={() => setIsReportModalOpen(false)} />
     </footer>
   );

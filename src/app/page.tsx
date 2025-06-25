@@ -327,8 +327,8 @@ export default function Home() {
                 <h1 className="text-5xl md:text-6xl font-bold mb-8">
                   Trygghet utan överraskningar
                 </h1>
-                <p className="text-xl md:text-2xl mb-12">
-                  Vi förstår att din flytt är viktig. Därför erbjuder vi trygg flyttservice med fast pris – inga dolda kostnader. Med oss kan du vara lugn, både för dina ägodelar och din plånbok.
+                <p className="text-2xl md:text-3xl mb-12">
+                  Vi förstår att din flytt är viktig. Därför erbjuder vi trygg flyttservice med fast pris - inga dolda kostnader. Med oss kan du vara lugn, både för dina ägodelar och din plånbok.
                 </p>
               </div>
               <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
@@ -368,7 +368,7 @@ export default function Home() {
                 </p>
                 <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-12">
                   Som en seriös flyttfirma har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats. 
-                  Du kan vara trygg med att vi följer alla gällande regler och bestämmelser.
+                  Du kan vara trygg med att vi följer alla gällande regler och bestämmelser. Vi kan även besikta din bostad vid behov.
                 </p>
               </div>
 
@@ -468,7 +468,7 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-8 text-center">Vår erfarenhet</h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-16 -mt-8 text-center">Vår erfarenhet</h3>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* Flyttar */}
               <motion.div 
@@ -519,7 +519,7 @@ export default function Home() {
                     }}
                   >
                     <CountUp 
-                      end={5000} 
+                      end={8000} 
                       duration={2.5}
                       suffix="+"
                       useEasing={true}
@@ -592,7 +592,7 @@ export default function Home() {
                     }}
                   >
                     <CountUp 
-                      end={4500} 
+                      end={7000} 
                       duration={2.5}
                       suffix="+"
                       useEasing={true}
@@ -665,7 +665,7 @@ export default function Home() {
                     }}
                   >
                     <CountUp 
-                      end={300} 
+                      end={500} 
                       duration={2.5}
                       suffix="+"
                       useEasing={true}
@@ -703,11 +703,11 @@ export default function Home() {
                 <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">
                   Erfarenhet som ger resultat
                 </h4>
-                <p className="text-xl md:text-2xl text-[#0F172A]/80 leading-relaxed mb-6">
-                  Med över 5000 flyttar och 4500 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. 
+                <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6">
+                  Med över 8000 flyttar och 7000 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. 
                   Vår erfarenhet sträcker sig över hela landet och vi har hjälpt tusentals familjer och företag med deras flyttar.
                 </p>
-                <p className="text-xl md:text-2xl text-[#0F172A]/80 leading-relaxed mb-8">
+                <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-8">
                   Våra prestationer har gett oss erkännande som en av Sveriges bästa flyttfirmor, med över 1000 positiva recensioner och 
                   rekommendationer från nöjda kunder. Vi är stolta över att kunna erbjuda professionell service baserad på år av praktisk erfarenhet.
                 </p>
@@ -902,7 +902,7 @@ export default function Home() {
               { 
                 icon: "🏠", 
                 title: "Bohagsflytt", 
-                description: "Vi erbjuder professionell flytthjälp för både privatpersoner och företag. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg.",
+                description: "Vi erbjuder professionell flytthjälp för privatpersoner. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg.",
                 buttonText: "Läs mer",
                 href: "/bohagsflytt"
               },
@@ -1022,6 +1022,7 @@ export default function Home() {
                   duration: 0.8,
                   delay: 0 * 0.25
                 }}
+                id="upptack-tjanster"
               >
                   Upptäck Alla Våra Tjänster
               </motion.h2>
@@ -1110,9 +1111,10 @@ export default function Home() {
                       content={
                         <ul className="list-disc pl-5 space-y-2">
                           <li>Märk alla kartonger tydligt.</li>
-                          <li>Packa ömtåliga saker varsamt.</li>
-                          <li>Packa en "första natten"-låda.</li>
+
                           <li>Håll nycklar tillgängliga.</li>
+                          <li>Överbelasta inte flyttlådorna.</li>
+                          <li>Använd silkespapper för ömtåliga föremål och porslin.</li>
                         </ul>
                       }
                     />
@@ -1122,14 +1124,28 @@ export default function Home() {
                 {/* Under flytten */}
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Under flytten</h3>
-                  <div className="max-w-lg mx-auto">
+                  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+                    <TipCard
+                        title="Innan flyttfirman kommer"
+                        imageSrc="/innanflyttfirmankommer.jpg"
+                        imageAlt="Förberedelse för flytt"
+                        objectPosition="object-[center_45%]"
+                        content={
+                          <ul className="list-disc pl-5 space-y-2">
+                            <li>Packa ner allt lösöre i kartonger</li>
+                            <li>Montera ner alla gardiner</li>
+                            <li>Montera ner alla lampor</li>
+                            <li>Dubbelkolla packning och märkning.</li>
+                          </ul>
+                        }
+                      />
                     <TipCard
                         title="En smidig flyttdag"
                         imageSrc="/under_flytt.jpg"
                         imageAlt="Flyttdag"
                         content={
                           <ul className="list-disc pl-5 space-y-2">
-                            <li>Dubbelkolla packning och märkning.</li>
+  
                             <li>Håll värdesaker tillgängliga.</li>
                             <li>Säkerställ fri väg för flytthjälp.</li>
                             <li>Var tillgänglig för frågor.</li>
@@ -1143,7 +1159,7 @@ export default function Home() {
                 {/* Efter flytten */}
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Efter flytten</h3>
-                  <div className="max-w-lg mx-auto">
+                  <div className="max-w-2xl mx-auto">
                     <TipCard
                         title="Start i nya hemmet"
                         imageSrc="/efter_flytt.jpg"
@@ -1153,8 +1169,11 @@ export default function Home() {
                           <ul className="list-disc pl-5 space-y-2">
                             <li>Kontrollera flyttstädningen.</li>
                             <li>Packa upp det viktigaste först.</li>
-                            <li>Gör en första städning.</li>
-                            <li>Anmäl eventuella skador.</li>
+                            <li>Kontrollera att alla föremål anlänt.</li>
+                            <li>Montera upp gardiner och lampor.</li>
+                            <li>Uppdatera adress hos myndigheter.</li>
+                            <li>Testa alla vitvaror och eluttag.</li>
+                            <li>Ta bort tomma kartonger och emballage.</li>
                           </ul>
                         }
                       />
@@ -1372,7 +1391,7 @@ function FeatureBoxesSection() {
         {/* Right: Image */}
         <div className="w-full md:w-2/5 relative">
           <Image
-            src="/intro_picture.jpg"
+            src="/personalpicture.jpg"
             alt="Flyttfirma i arbete"
             fill
             className="rounded-2xl shadow object-cover object-right"

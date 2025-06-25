@@ -274,6 +274,7 @@ export default function Header() {
                   )}
                 </div>
                 <Link href="/om-oss" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Om oss</Link>
+                <Link href="/faq" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">FAQ</Link>
                 <Link href="/kontakt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Kontakt</Link>
               </nav>
 
@@ -349,6 +350,13 @@ export default function Header() {
                   >
                   Om oss
                   </Link>
+                <Link
+                  href="/faq"
+                  className="block py-3 text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
                 <Link
                   href="/kontakt"
                   className="block py-3 text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4"

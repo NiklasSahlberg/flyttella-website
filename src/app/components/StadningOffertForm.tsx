@@ -822,7 +822,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </div>
                       <div className="ml-3 text-sm">
                         <label htmlFor="balcony-cleaning" className="font-medium text-gray-700">Balkong, max 5 kvm</label>
-                        <p className="text-gray-500">150 kr</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -831,7 +830,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </div>
                       <div className="ml-3 text-sm">
                         <label htmlFor="storage-cleaning" className="font-medium text-gray-700">Källare/Vindsförråd, max 5 kvm</label>
-                        <p className="text-gray-500">150 kr</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -840,7 +838,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </div>
                       <div className="ml-3 text-sm">
                         <label htmlFor="garage-cleaning" className="font-medium text-gray-700">Garage, max 15 kvm</label>
-                        <p className="text-gray-500">450 kr</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -849,7 +846,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </div>
                       <div className="ml-3 text-sm">
                         <label htmlFor="glazed-balcony-cleaning" className="font-medium text-gray-700">Inglasad balkong, max 10 kvm</label>
-                        <p className="text-gray-500">300 kr</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -858,7 +854,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </div>
                       <div className="ml-3 text-sm">
                         <label htmlFor="glazed-patio-cleaning" className="font-medium text-gray-700">Inglasad altan, max 10 kvm</label>
-                        <p className="text-gray-500">450 kr</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -867,13 +862,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </div>
                       <div className="ml-3 text-sm">
                         <label htmlFor="freezer-defrosting" className="font-medium text-gray-700">Avfrostning av frys</label>
-                        <p className="text-gray-500">250 kr</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <div className="ml-3 text-sm">
                         <label htmlFor="water-trap-cleaning" className="font-medium text-gray-700">Demontering/rengöring av vattenlås</label>
-                        <p className="text-gray-500">150 kr/st</p>
                         <div className="flex items-center mt-1">
                           <button type="button" onClick={() => handleServiceCountChange('waterTrapCleaningCount', -1)} className="px-2 py-1 border rounded-l-md bg-gray-200 hover:bg-gray-300 text-black">-</button>
                           <span className="px-4 py-1 border-t border-b text-black">{formData.waterTrapCleaningCount}</span>
@@ -884,7 +877,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     <div className="flex items-start">
                       <div className="ml-3 text-sm">
                         <label htmlFor="blinds-cleaning" className="font-medium text-gray-700">Rengöring av persienner</label>
-                        <p className="text-gray-500">30 kr/st</p>
                         <div className="flex items-center mt-1">
                           <button type="button" onClick={() => handleServiceCountChange('blindsCleaningCount', -1)} className="px-2 py-1 border rounded-l-md bg-gray-200 hover:bg-gray-300 text-black">-</button>
                           <span className="px-4 py-1 border-t border-b text-black">{formData.blindsCleaningCount}</span>
