@@ -112,49 +112,29 @@ const buttonVariants = {
 
 export default function Home() {
   const locations = [
-    { name: "Stockholm och Göteborg", slug: "stockholm-och-goteborg" },
-    { name: "Stockholm och Malmö", slug: "stockholm-och-malmo" },
-    { name: "Stockholm och Oslo", slug: "stockholm-och-oslo" },
-    { name: "Stockholm och Köpenhamn", slug: "stockholm-och-kopenhamn" },
     { name: "Norrmalm", slug: "norrmalm" },
     { name: "Kungsholmen", slug: "kungsholmen" },
     { name: "Östermalm", slug: "ostermalm" },
+    { name: "Södermalm", slug: "sodermalm" },
     { name: "Vasastan", slug: "vasastan" },
-    { name: "Bro", slug: "bro" },
     { name: "Täby", slug: "taby" },
-    { name: "Kungsängen", slug: "kungsangen" },
-    { name: "Haninge", slug: "haninge" },
     { name: "Danderyd", slug: "danderyd" },
-    { name: "Kista", slug: "kista" },
     { name: "Sollentuna", slug: "sollentuna" },
-    { name: "Upplands Väsby", slug: "upplands-vasby" },
-    { name: "Vallentuna", slug: "vallentuna" },
-    { name: "Åkersberga", slug: "akersberga" },
-    { name: "Tyresö", slug: "tyreso" },
-    { name: "Järfälla", slug: "jarfalla" },
-    { name: "Huddinge", slug: "huddinge" },
-    { name: "Västerhaninge", slug: "vasterhaninge" },
+    { name: "Bromma", slug: "bromma" },
+    { name: "Solna", slug: "solna" },
+    { name: "Nacka", slug: "nacka" },
+    { name: "Lidingö", slug: "lidingo" },
     { name: "Farsta", slug: "farsta" },
     { name: "Skärholmen", slug: "skarholmen" },
-    { name: "Enskede", slug: "enskede" },
     { name: "Hägersten", slug: "hagersten" },
-    { name: "Bromma", slug: "bromma" },
+    { name: "Enskede", slug: "enskede" },
     { name: "Spånga", slug: "spanga" },
-    { name: "Sundbyberg", slug: "sundbyberg" },
-    { name: "Solna", slug: "solna" },
-    { name: "Lidingö", slug: "lidingo" },
-    { name: "Nacka", slug: "nacka" },
-    { name: "Värmdö", slug: "varmdo" },
-    { name: "Ekerö", slug: "ekero" },
-    { name: "Botkyrka", slug: "botkyrka" },
-    { name: "Salem", slug: "salem" },
-    { name: "Tumba", slug: "tumba" },
-    { name: "Märsta", slug: "marsta" },
-    { name: "Södertälje", slug: "sodertalje" },
-    { name: "Nynäshamn", slug: "nynashamn" }
-  ].map((location, index) => (
+    { name: "Sundbyberg", slug: "sundbyberg" }
+  ];
+
+  const flyttfirmaLinks = locations.map((location, index) => (
     <motion.a
-      key={index}
+      key={`flytt-${index}`}
       href={`/flyttfirma-i-${location.slug}`}
       className="group"
       variants={fadeInUp}
@@ -162,6 +142,20 @@ export default function Home() {
     >
       <h3 className="text-[#0F172A] group-hover:text-[#10B981] transition-colors font-medium">
         Flyttfirma i {location.name}
+      </h3>
+    </motion.a>
+  ));
+
+  const flyttstadLinks = locations.map((location, index) => (
+    <motion.a
+      key={`stad-${index}`}
+      href={`/flyttstad-i-${location.slug}`}
+      className="group"
+      variants={fadeInUp}
+      whileHover={{ scale: 1.05, x: 5 }}
+    >
+      <h3 className="text-[#0F172A] group-hover:text-[#10B981] transition-colors font-medium">
+        Flyttstäd i {location.name}
       </h3>
     </motion.a>
   ));
@@ -320,9 +314,18 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section with integrated FlyttoffertForm */}
       <div className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12">
-            <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16">
+        <div className="mx-auto px-24">
+          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
+            {/* Background image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+              style={{
+                backgroundImage: 'url(/intro_picture.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center top'
+              }}
+            />
+            <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
               <div className="max-w-xl w-full">
                 <h1 className="text-5xl md:text-6xl font-bold mb-8">
                   Trygghet utan överraskningar
@@ -347,38 +350,38 @@ export default function Home() {
 
       {/* Process and Features Section */}
       <section className="section-padding bg-white relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 mb-12 max-w-screen-2xl mx-auto w-full">
-            <div className="max-w-screen-xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+        <div className="mx-auto px-24 relative z-10">
+          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-10 mb-24 w-full">
+            <div className="w-full">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
                 Vår Process & Fördelar
               </h2>
 
               {/* Pricing Info */}
-              <div className="text-center mb-12">
-                <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+              <div className="text-center mb-8">
+                <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-4">
                   Vi arbetar med fasta priser för att ge dig trygghet och transparens. 
                   Det går även att komma överens om löpande priser.
                 </p>
-                <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+                <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-4">
                   Våra offerter är alltid baserade på dina specifika behov och omständigheter. 
                   Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation. 
-                  Alla priser är fasta utan dolda avgifter - det du ser är det du betalar. 
+                  Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund. 
                   Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
                 </p>
-                <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto mb-12">
+                <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-8">
                   Som en seriös flyttfirma har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats. 
                   Du kan vara trygg med att vi följer alla gällande regler och bestämmelser. Vi kan även besikta din bostad vid behov.
                 </p>
               </div>
 
               {/* Process Flow Section */}
-              <div className="mb-12">
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Så fungerar det</h3>
+              <div className="mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Så fungerar det</h3>
                 <div className="relative w-full">
                   {/* Timeline connector line */}
                   <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
-                  <div className="grid grid-cols-1 md:grid-cols-6 gap-4 w-full">
+                  <div className="grid grid-cols-1 md:grid-cols-6 gap-3 w-full">
                     {[
                       {
                         icon: <FillFormLottie />,
@@ -423,7 +426,7 @@ export default function Home() {
                     ].map((step, index) => (
                       <motion.div
                         key={index}
-                        className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 h-full"
+                        className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 h-full"
                         initial="initial"
                         whileInView="animate"
                         viewport={{ once: true, amount: 0.2 }}
@@ -431,12 +434,12 @@ export default function Home() {
                         custom={index}
                       >
                         {/* Timeline dot */}
-                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#10B981] rounded-full hidden md:block"></div>
+                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
                         <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
-                          <div className="mb-4">{step.icon}</div>
+                          <div className="mb-2">{step.icon}</div>
                           <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
-                            <h4 className="text-white font-semibold text-lg md:text-2xl mb-1 text-center w-full">{step.title}</h4>
-                            <p className="text-white/80 text-base md:text-lg text-center w-full">{step.description}</p>
+                            <h4 className="text-white font-semibold text-base md:text-lg mb-1 text-center w-full">{step.title}</h4>
+                            <p className="text-white/80 text-sm md:text-base text-center w-full">{step.description}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -449,14 +452,14 @@ export default function Home() {
         </div>
 
         {/* Blank Section for spacing or future content (full width) */}
-        <section className="py-40 relative overflow-hidden" style={{width: '100vw', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw'}}>
+        <section className="py-12 relative overflow-hidden" style={{width: '100vw', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw'}}>
           {/* Background image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: 'url(/backgroundpicture.jpg)',
               backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundPosition: 'center 100%'
             }}
           />
           {/* Semi-transparent overlay for content readability */}
@@ -468,11 +471,11 @@ export default function Home() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-16 -mt-8 text-center">Vår erfarenhet</h3>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {/* Flyttar */}
               <motion.div 
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true, amount: 0.2 }}
@@ -495,7 +498,7 @@ export default function Home() {
                 />
                 <div className="relative z-10 flex flex-col items-center justify-center h-full">
                   <motion.h2 
-                    className="text-2xl font-bold mb-2 text-white"
+                    className="text-xl font-bold mb-2 text-white"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true, amount: 0.2 }}
@@ -508,7 +511,7 @@ export default function Home() {
                     Flyttar
                   </motion.h2>
                   <motion.div 
-                    className="text-5xl md:text-6xl font-bold mb-2 text-white"
+                    className="text-4xl md:text-5xl font-bold mb-2 text-white"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true, amount: 0.2 }}
@@ -545,7 +548,7 @@ export default function Home() {
 
               {/* Städningar */}
               <motion.div 
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true, amount: 0.2 }}
@@ -568,7 +571,7 @@ export default function Home() {
                 />
                 <div className="relative z-10 flex flex-col items-center justify-center h-full">
                   <motion.h2 
-                    className="text-2xl font-bold mb-2 text-white"
+                    className="text-xl font-bold mb-2 text-white"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true, amount: 0.2 }}
@@ -581,7 +584,7 @@ export default function Home() {
                     Städningar
                   </motion.h2>
                   <motion.div 
-                    className="text-5xl md:text-6xl font-bold mb-2 text-white"
+                    className="text-4xl md:text-5xl font-bold mb-2 text-white"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true, amount: 0.2 }}
@@ -618,7 +621,7 @@ export default function Home() {
 
               {/* Månadsvis */}
               <motion.div 
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true, amount: 0.2 }}
@@ -641,7 +644,7 @@ export default function Home() {
                 />
                 <div className="relative z-10 flex flex-col items-center justify-center h-full">
                   <motion.h2 
-                    className="text-2xl font-bold mb-2 text-white"
+                    className="text-xl font-bold mb-2 text-white"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true, amount: 0.2 }}
@@ -654,7 +657,7 @@ export default function Home() {
                     Månadsvis
                   </motion.h2>
                   <motion.div 
-                    className="text-5xl md:text-6xl font-bold mb-2 text-white"
+                    className="text-4xl md:text-5xl font-bold mb-2 text-white"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true, amount: 0.2 }}
@@ -691,7 +694,7 @@ export default function Home() {
             </div>
 
             {/* Experience description text and badges side by side */}
-            <div className="mt-12 flex flex-col items-center justify-center gap-6">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4">
               {/* Experience description text - left side */}
               <motion.div 
                 className="flex-1 max-w-4xl text-center"
@@ -700,38 +703,38 @@ export default function Home() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
               >
-                <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">
+                <h4 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">
                   Erfarenhet som ger resultat
                 </h4>
-                <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6">
+                <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed mb-4">
                   Med över 8000 flyttar och 7000 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. 
                   Vår erfarenhet sträcker sig över hela landet och vi har hjälpt tusentals familjer och företag med deras flyttar.
                 </p>
-                <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-8">
+                <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed mb-6">
                   Våra prestationer har gett oss erkännande som en av Sveriges bästa flyttfirmor, med över 1000 positiva recensioner och 
                   rekommendationer från nöjda kunder. Vi är stolta över att kunna erbjuda professionell service baserad på år av praktisk erfarenhet.
                 </p>
               </motion.div>
 
               {/* Recommended Company and 1000 Reviews badges under text */}
-              <div className="flex items-center justify-center gap-8">
+              <div className="flex items-center justify-center gap-6">
                 <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                   <Image
                     src="/recommendedcompany2.png"
                     alt="Recommended Company"
-                    width={300}
-                    height={300}
-                    className="object-contain h-72 w-72"
+                    width={240}
+                    height={240}
+                    className="object-contain h-56 w-56"
                     priority={false}
                   />
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 mt-8">
+                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                   <Image
                     src="/1000reviewspicture.png"
                     alt="1000 Reviews"
-                    width={320}
-                    height={320}
-                    className="object-contain h-80 w-80"
+                    width={260}
+                    height={260}
+                    className="object-contain h-64 w-64"
                     priority={false}
                   />
                 </motion.div>
@@ -739,9 +742,9 @@ export default function Home() {
                   <Image
                     src="/top10.png"
                     alt="Top 10"
-                    width={260}
-                    height={260}
-                    className="object-contain h-64 w-64"
+                    width={200}
+                    height={200}
+                    className="object-contain h-48 w-48"
                     priority={false}
                   />
                 </motion.div>
@@ -752,100 +755,120 @@ export default function Home() {
 
         {/* Features Section */}
         <div className="pt-28">
-          <div className="container mx-auto px-4">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Våra fördelar</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {[
-                  {
-                    icon: "💰",
-                    title: "Fast pris",
-                    description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
-                    link: "/priser"
-                  },
-                  {
-                    icon: "📋",
-                    title: "RUT-avdrag",
-                    description: "Vi hanterar allt pappersarbete för RUT-avdrag",
-                    link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
-                  },
-                  {
-                    icon: "📦",
-                    title: "Fritt lån av kartonger i 4 veckor",
-                    description: "Specialgjorda flyttkartonger med vår logga",
-                    link: "/kartonger"
-                  },
-                  {
-                    icon: "⏰",
-                    title: "Omboka eller avboka kostnadsfritt",
-                    description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
-                    link: "/avbokning"
-                  },
-                  {
-                    icon: "✅",
-                    title: "Nöjd kund garanti",
-                    description: "14 dagars garanti på flyttstädning",
-                    link: "/garanti"
-                  },
-                  {
-                    icon: "🔒",
-                    title: "Trafiktillstånd och försäkring",
-                    description: "Alla nödvändiga tillstånd och försäkringar på plats",
-                    link: "/tillstand"
-                  },
-                  {
-                    icon: "🎓",
-                    title: "Utbildad personal",
-                    description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
-                    link: "/om-oss"
-                  },
-                  {
-                    icon: "📈",
-                    title: "Ledningssystem",
-                    description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
-                    link: "/om-oss"
-                  },
-                  {
-                    icon: "🦺",
-                    title: "Arbetsmiljö",
-                    description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
-                    link: "/om-oss"
-                  }
-                ].map((feature, i) => (
-                  <motion.div
-                    key={feature.icon}
-                    className="flex items-start gap-5 bg-white/10 backdrop-blur-sm rounded-xl p-7 min-h-[170px] w-full max-w-none h-full min-w-0"
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={variants}
-                    custom={i}
-                  >
-                    <motion.span
-                      className="text-3xl md:text-4xl"
-                      initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
-                      animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
-                      transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
-                    >
-                      {feature.icon}
-                    </motion.span>
-                    <div className="flex-1">
-                      <h4 className="text-white font-semibold text-lg md:text-xl mb-2">{feature.title}</h4>
-                      <p className="text-white/80 text-base md:text-lg mb-3">{feature.description}</p>
-                      <a 
-                        href={feature.link}
-                        target={feature.link.startsWith('http') ? '_blank' : undefined}
-                        rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-white/90 hover:text-white transition-colors text-base md:text-lg inline-flex items-center"
+          <div className="mx-auto px-24">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
+              <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
+                {/* Left side - Features content */}
+                <div className="flex-[2] w-full">
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra fördelar</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
+                    {[
+                      {
+                        icon: "💰",
+                        title: "Fast pris",
+                        description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                        link: "/priser"
+                      },
+                      {
+                        icon: "📋",
+                        title: "RUT-avdrag",
+                        description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                        link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                      },
+                      {
+                        icon: "📦",
+                        title: "Fritt lån av kartonger i 4 veckor",
+                        description: "Specialgjorda flyttkartonger med vår logga",
+                        link: "/kartonger"
+                      },
+                      {
+                        icon: "⏰",
+                        title: "Omboka eller avboka kostnadsfritt",
+                        description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                        link: "/avbokning"
+                      },
+                      {
+                        icon: "✅",
+                        title: "Nöjd kund garanti",
+                        description: "14 dagars garanti på flyttstädning",
+                        link: "/garanti"
+                      },
+                      {
+                        icon: "🔒",
+                        title: "Trafiktillstånd och försäkring",
+                        description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                        link: "/tillstand"
+                      },
+                      {
+                        icon: "🎓",
+                        title: "Utbildad personal",
+                        description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                        link: "/om-oss"
+                      },
+                      {
+                        icon: "📈",
+                        title: "Ledningssystem",
+                        description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                        link: "/om-oss"
+                      },
+                      {
+                        icon: "🦺",
+                        title: "Arbetsmiljö",
+                        description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                        link: "/om-oss"
+                      }
+                    ].map((feature, i) => (
+                      <motion.div
+                        key={feature.icon}
+                        className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full"
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true, amount: 0.2 }}
+                        variants={variants}
+                        custom={i}
                       >
-                        Läs mer
-                        <svg className="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </a>
-                    </div>
-                  </motion.div>
-                ))}
+                        <motion.span
+                          className="text-2xl md:text-3xl"
+                          initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                          animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                          transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
+                        >
+                          {feature.icon}
+                        </motion.span>
+                        <div className="flex-1">
+                          <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
+                          <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
+                          <a 
+                            href={feature.link}
+                            target={feature.link.startsWith('http') ? '_blank' : undefined}
+                            rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
+                          >
+                            Läs mer
+                            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </a>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right side - Image */}
+                <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
+                  <div className="w-full h-full flex items-stretch">
+                    <Image
+                      src="/smiling_worker_new.png"
+                      alt="Glad flyttarbetare"
+                      width={600}
+                      height={200}
+                      className="rounded-xl shadow-lg object-cover w-full h-full"
+                      style={{ objectPosition: '30% 80%' }}
+                      priority={false}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1141,8 +1164,9 @@ export default function Home() {
                       />
                     <TipCard
                         title="En smidig flyttdag"
-                        imageSrc="/under_flytt.jpg"
-                        imageAlt="Flyttdag"
+                        imageSrc="/smidigflyttdag.jpg"
+                        imageAlt="Glad flyttarbetare"
+                        objectPosition="object-[center_35%]"
                         content={
                           <ul className="list-disc pl-5 space-y-2">
   
@@ -1201,15 +1225,20 @@ export default function Home() {
           >
               HÄR FINNS VI
           </motion.h2>
-          <motion.div 
-            className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {locations}
-          </motion.div>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+            <div>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-6 text-center md:text-left">Flyttfirma</h3>
+              <div className="space-y-3">
+                {flyttfirmaLinks}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-6 text-center md:text-left">Flyttstäd</h3>
+              <div className="space-y-3">
+                {flyttstadLinks}
+              </div>
+            </div>
+          </div>
           </div>
         </section>
     </main>

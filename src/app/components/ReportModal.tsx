@@ -54,7 +54,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               <input type="email" name="email" required className="w-full border rounded-lg px-3 py-2" value={form.email} onChange={handleChange} />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Ordernummer</label>
+              <label className="block text-sm font-medium mb-1">Offertnummer</label>
               <input type="text" name="order" required className="w-full border rounded-lg px-3 py-2" value={form.order} onChange={handleChange} />
             </div>
             <div>
