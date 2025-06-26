@@ -112,24 +112,45 @@ const buttonVariants = {
 
 export default function Home() {
   const locations = [
-    { name: "Norrmalm", slug: "norrmalm" },
-    { name: "Kungsholmen", slug: "kungsholmen" },
-    { name: "Östermalm", slug: "ostermalm" },
-    { name: "Södermalm", slug: "sodermalm" },
-    { name: "Vasastan", slug: "vasastan" },
-    { name: "Täby", slug: "taby" },
-    { name: "Danderyd", slug: "danderyd" },
-    { name: "Sollentuna", slug: "sollentuna" },
+    { name: "Åkersberga", slug: "akersberga" },
+    { name: "Älvsjö", slug: "alvsjo" },
+    { name: "Årsta", slug: "arsta" },
+    { name: "Botkyrka", slug: "botkyrka" },
     { name: "Bromma", slug: "bromma" },
-    { name: "Solna", slug: "solna" },
-    { name: "Nacka", slug: "nacka" },
-    { name: "Lidingö", slug: "lidingo" },
-    { name: "Farsta", slug: "farsta" },
-    { name: "Skärholmen", slug: "skarholmen" },
-    { name: "Hägersten", slug: "hagersten" },
+    { name: "Bro", slug: "bro" },
+    { name: "Danderyd", slug: "danderyd" },
+    { name: "Ekerö", slug: "ekero" },
     { name: "Enskede", slug: "enskede" },
+    { name: "Farsta", slug: "farsta" },
+    { name: "Hägersten", slug: "hagersten" },
+    { name: "Haninge", slug: "haninge" },
+    { name: "Huddinge", slug: "huddinge" },
+    { name: "Järfälla", slug: "jarfalla" },
+    { name: "Kista", slug: "kista" },
+    { name: "Kungsholmen", slug: "kungsholmen" },
+    { name: "Kungsängen", slug: "kungsangen" },
+    { name: "Lidingö", slug: "lidingo" },
+    { name: "Märsta", slug: "marsta" },
+    { name: "Nacka", slug: "nacka" },
+    { name: "Norrmalm", slug: "norrmalm" },
+    { name: "Nynäshamn", slug: "nynashamn" },
+    { name: "Östermalm", slug: "ostermalm" },
+    { name: "Salem", slug: "salem" },
+    { name: "Skärholmen", slug: "skarholmen" },
+    { name: "Södermalm", slug: "sodermalm" },
+    { name: "Södertälje", slug: "sodertalje" },
+    { name: "Solna", slug: "solna" },
+    { name: "Sollentuna", slug: "sollentuna" },
     { name: "Spånga", slug: "spanga" },
-    { name: "Sundbyberg", slug: "sundbyberg" }
+    { name: "Sundbyberg", slug: "sundbyberg" },
+    { name: "Täby", slug: "taby" },
+    { name: "Tumba", slug: "tumba" },
+    { name: "Tyresö", slug: "tyreso" },
+    { name: "Upplands Väsby", slug: "upplands-vasby" },
+    { name: "Vallentuna", slug: "vallentuna" },
+    { name: "Varmdö", slug: "varmdo" },
+    { name: "Vasastan", slug: "vasastan" },
+    { name: "Västerhaninge", slug: "vasterhaninge" }
   ];
 
   const flyttfirmaLinks = locations.map((location, index) => (
@@ -141,7 +162,7 @@ export default function Home() {
       whileHover={{ scale: 1.05, x: 5 }}
     >
       <h3 className="text-[#0F172A] group-hover:text-[#10B981] transition-colors font-medium">
-        Flyttfirma i {location.name}
+        {location.name}
       </h3>
     </motion.a>
   ));
@@ -155,7 +176,7 @@ export default function Home() {
       whileHover={{ scale: 1.05, x: 5 }}
     >
       <h3 className="text-[#0F172A] group-hover:text-[#10B981] transition-colors font-medium">
-        Flyttstäd i {location.name}
+        {location.name}
       </h3>
     </motion.a>
   ));
@@ -453,6 +474,12 @@ export default function Home() {
 
         {/* Blank Section for spacing or future content (full width) */}
         <section className="py-12 relative overflow-hidden" style={{width: '100vw', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw'}}>
+          {/* Gradient transition from white to transparent */}
+          <div className="absolute top-0 left-0 w-full h-20 z-20 pointer-events-none"
+               style={{
+                 background: 'linear-gradient(to bottom, white 0%, rgba(255,255,255,0) 100%)'
+               }}
+          />
           {/* Background image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -751,6 +778,13 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+
+          {/* Bottom gradient transition from picture to white, matching the top fade style */}
+          <div className="absolute bottom-0 left-0 w-full h-20 z-20 pointer-events-none"
+               style={{
+                 background: 'linear-gradient(to top, white 0%, rgba(255,255,255,0) 100%)'
+               }}
+          />
         </section>
 
         {/* Features Section */}
@@ -1210,35 +1244,52 @@ export default function Home() {
         </section>
 
         {/* Locations Section */}
-        <section className="section-padding bg-white">
-          <div className="container mx-auto px-4">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInUp}
-            transition={{ 
-              duration: 0.8,
-              delay: 0 * 0.25
-            }}
-          >
-              HÄR FINNS VI
-          </motion.h2>
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-            <div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-6 text-center md:text-left">Flyttfirma</h3>
-              <div className="space-y-3">
-                {flyttfirmaLinks}
+        <section className="py-10 bg-white">
+          <div className="container mx-auto px-2">
+            <div className="max-w-5xl mx-auto">
+              <motion.h2 
+                className="text-2xl md:text-3xl font-bold text-center text-[#0F172A] mb-6"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.8, delay: 0 * 0.25 }}
+              >
+                  HÄR FINNS VI
+              </motion.h2>
+              <h3 className="text-xl font-bold text-black mb-4 text-center">Flyttfirma</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 mb-8">
+                {locations.map((location, idx) => (
+                  <motion.a
+                    key={`flyttfirma-${location.slug}`}
+                    href={`/flyttfirma-i-${location.slug}`}
+                    className="group transition-all"
+                    variants={fadeInUp}
+                    whileHover={{ scale: 1.05, x: 2 }}
+                  >
+                    <span className="text-[#10B981] group-hover:underline group-hover:text-[#059669] text-sm font-medium transition-colors">
+                      {location.name}
+                    </span>
+                  </motion.a>
+                ))}
+              </div>
+              <h3 className="text-xl font-bold text-black mb-4 text-center">Flyttstäd</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                {locations.map((location, idx) => (
+                  <motion.a
+                    key={`flyttstad-${location.slug}`}
+                    href={`/flyttstad-i-${location.slug}`}
+                    className="group transition-all"
+                    variants={fadeInUp}
+                    whileHover={{ scale: 1.05, x: 2 }}
+                  >
+                    <span className="text-[#10B981] group-hover:underline group-hover:text-[#059669] text-sm font-medium transition-colors">
+                      {location.name}
+                    </span>
+                  </motion.a>
+                ))}
               </div>
             </div>
-            <div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-6 text-center md:text-left">Flyttstäd</h3>
-              <div className="space-y-3">
-                {flyttstadLinks}
-              </div>
-            </div>
-          </div>
           </div>
         </section>
     </main>
