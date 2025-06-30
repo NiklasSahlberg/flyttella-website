@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
 import { motion } from "framer-motion";
@@ -129,7 +128,7 @@ interface FlyttoffertFormProps {
   mode?: 'full' | 'widget';
 }
 
-export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps) {
+export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFormProps) {
   const [step, setStep] = useState(0);
   const [showSteps, setShowSteps] = useState(false);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
@@ -213,11 +212,11 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
           const place = autocomplete1.getPlace();
           if (place.formatted_address) {
             let streetName = '';
-            let streetNumber = '';
+            let _streetNumber = '';
             let city = '';
             place.address_components.forEach((component: AddressComponent) => {
               if (component.types.includes('route')) streetName = component.long_name;
-              if (component.types.includes('street_number')) streetNumber = component.long_name;
+              if (component.types.includes('street_number')) _streetNumber = component.long_name;
               if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
             });
             const formattedAddress = `${streetName}, ${city}, Sweden`;
@@ -241,11 +240,11 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
           const place = autocomplete2.getPlace();
           if (place.formatted_address) {
             let streetName = '';
-            let streetNumber = '';
+            let _streetNumber = '';
             let city = '';
             place.address_components.forEach((component: AddressComponent) => {
               if (component.types.includes('route')) streetName = component.long_name;
-              if (component.types.includes('street_number')) streetNumber = component.long_name;
+              if (component.types.includes('street_number')) _streetNumber = component.long_name;
               if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
             });
             const formattedAddress = `${streetName}, ${city}, Sweden`;
@@ -675,7 +674,7 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
         {showSteps && formData.serviceType === 'flyttstad' ? (
           <StadningOffertForm
             customerType={formData.customerType}
-            onSubmit={(data) => {
+            onSubmit={(_data) => {
               alert('Flyttstäd offert skickad!');
               handleBackToServiceSelection({preventDefault: () => {}} as React.MouseEvent<HTMLButtonElement>);
             }}

@@ -36,7 +36,7 @@ export default function Footer() {
         .then(res => res.text())
         .then(text => {
           // Basic formatting: convert double newlines to <br><br>, section titles to <h2>, and single newlines to <br>
-          let html = text
+          const html = text
             .replace(/\n\n/g, '<br><br>')
             .replace(/^(\d+\.|[A-ZÅÄÖa-zåäö ]+:)$/gm, '<h2>$1</h2>')
             .replace(/\n/g, '<br>');
@@ -52,7 +52,7 @@ export default function Footer() {
       fetch('/allmanna-villkor-stad.txt')
         .then(res => res.text())
         .then(text => {
-          let html = text
+          const html = text
             .replace(/\n\n/g, '<br><br>')
             .replace(/^(\d+\.|[A-ZÅÄÖa-zåäö ]+:)$/gm, '<h2>$1</h2>')
             .replace(/\n/g, '<br>');
@@ -68,7 +68,7 @@ export default function Footer() {
       fetch('/allmanna-villkor-stadpartner.txt')
         .then(res => res.text())
         .then(text => {
-          let html = text
+          const html = text
             .replace(/\n\n/g, '<br><br>')
             .replace(/^(\d+\.|[A-ZÅÄÖa-zåäö ]+:)$/gm, '<h2>$1</h2>')
             .replace(/\n/g, '<br>');
@@ -84,7 +84,7 @@ export default function Footer() {
       fetch('/allmanna-villkor-flyttpartner.txt')
         .then(res => res.text())
         .then(text => {
-          let html = text
+          const html = text
             .replace(/\n\n/g, '<br><br>')
             .replace(/^(\d+\.|[A-ZÅÄÖa-zåäö ]+:)$/gm, '<h2>$1</h2>')
             .replace(/\n/g, '<br>');

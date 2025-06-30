@@ -205,7 +205,7 @@ export default function BlogPage() {
               variants={fadeInUp}
               className="flex flex-wrap gap-3 justify-center"
             >
-              {categories.map((category, index) => (
+              {categories.map((category, _index) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}

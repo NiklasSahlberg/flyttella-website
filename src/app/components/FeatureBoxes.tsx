@@ -80,7 +80,7 @@ export default function FeatureBoxes() {
 
   return (
     <div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 my-8">
-      {features.map((feature, idx) => (
+      {features.map((feature, _idx) => (
         <div
           key={feature.key}
           className="flex flex-col items-center justify-center bg-white rounded-xl shadow border border-gray-100 px-2 py-4 min-h-[80px] transition-transform hover:scale-105 duration-200"
