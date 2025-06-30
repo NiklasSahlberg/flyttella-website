@@ -123,7 +123,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
         {type === 'skada' && damageType && !submitted && (
           <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-sm font-medium mb-1">Namn *</label>
+              <label className="block text-sm font-medium mb-1">Fullständigt Namn och Efternamn *</label>
               <input type="text" name="name" required className="w-full border rounded-lg px-3 py-2" value={form.name} onChange={handleChange} />
             </div>
             <div>
@@ -374,7 +374,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">Namn *</label>
+                    <label className="block text-sm font-medium mb-1">Fullständigt Namn och Efternamn *</label>
                     <input type="text" name="name" required className="w-full border rounded-lg px-3 py-2" value={form.name} onChange={handleChange} />
                   </div>
 
@@ -506,7 +506,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">Namn *</label>
+                    <label className="block text-sm font-medium mb-1">Fullständigt Namn och Efternamn *</label>
                     <input type="text" name="name" required className="w-full border rounded-lg px-3 py-2" value={form.name} onChange={handleChange} />
                   </div>
 
@@ -545,7 +545,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
         {type === 'reklamation' && !submitted && (
           <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-sm font-medium mb-1">Namn *</label>
+              <label className="block text-sm font-medium mb-1">Fullständigt Namn och Efternamn *</label>
               <input type="text" name="name" required className="w-full border rounded-lg px-3 py-2" value={form.name} onChange={handleChange} />
             </div>
             <div>
