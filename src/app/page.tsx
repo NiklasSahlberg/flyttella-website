@@ -333,8 +333,8 @@ export default function Home() {
   ));
 
   return (
-    <main className="min-h-screen">
-      <div style={{ transform: 'scale(0.75)', transformOrigin: 'top left', width: '133.33%', height: '133.33%' }}>
+    <main className="overflow-hidden">
+      <div style={{ zoom: '0.75' }}>
         {/* 1. Hero Section */}
         <div className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
           <div className="mx-auto px-16">
@@ -811,7 +811,7 @@ export default function Home() {
         </motion.section>
 
         {/* 6. Våra fördelar */}
-        <div className="pt-28">
+        <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
           <div className="mx-auto px-24">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
               <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
@@ -1266,7 +1266,7 @@ export default function Home() {
           </section>
 
           {/* Locations Section */}
-          <section className="py-10 bg-white">
+          <section className="py-6 bg-white">
             <div className="container mx-auto px-2">
               <div className="max-w-5xl mx-auto">
                 <motion.h2 
