@@ -9,6 +9,7 @@ import FlyttoffertForm from './components/FlyttoffertForm';
 import React, { useEffect, useState } from "react";
 import { Variants } from "framer-motion";
 import Lottie from "lottie-react";
+import LocationsCard from './components/LocationsCard';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -1266,54 +1267,7 @@ export default function Home() {
           </section>
 
           {/* Locations Section */}
-          <section className="py-6 bg-white">
-            <div className="container mx-auto px-2">
-              <div className="max-w-5xl mx-auto">
-                <motion.h2 
-                  className="text-2xl md:text-3xl font-bold text-center text-[#0F172A] mb-6"
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={fadeInUp}
-                  transition={{ duration: 0.8, delay: 0 * 0.25 }}
-                >
-                    HÄR FINNS VI
-                </motion.h2>
-                <h3 className="text-xl font-bold text-black mb-4 text-center">Flyttfirma</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 mb-8">
-                  {locations.map((location, idx) => (
-                    <motion.a
-                      key={`flyttfirma-${location.slug}`}
-                      href={`/flyttfirma-i-${location.slug}`}
-                      className="group transition-all"
-                      variants={fadeInUp}
-                      whileHover={{ scale: 1.05, x: 2 }}
-                    >
-                      <span className="text-[#10B981] group-hover:underline group-hover:text-[#059669] text-sm font-medium transition-colors">
-                        {location.name}
-                      </span>
-                    </motion.a>
-                  ))}
-                </div>
-                <h3 className="text-xl font-bold text-black mb-4 text-center">Flyttstäd</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-                  {locations.map((location, idx) => (
-                    <motion.a
-                      key={`flyttstad-${location.slug}`}
-                      href={`/flyttstad-i-${location.slug}`}
-                      className="group transition-all"
-                      variants={fadeInUp}
-                      whileHover={{ scale: 1.05, x: 2 }}
-                    >
-                      <span className="text-[#10B981] group-hover:underline group-hover:text-[#059669] text-sm font-medium transition-colors">
-                        {location.name}
-                      </span>
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
+          <LocationsCard locations={locations} />
 
       </div>
     </main>
