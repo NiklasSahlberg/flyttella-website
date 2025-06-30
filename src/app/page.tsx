@@ -334,7 +334,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      <div style={{ transform: 'scale(0.8)', transformOrigin: 'top left', width: '125%', height: '125%' }}>
+      <div style={{ transform: 'scale(0.75)', transformOrigin: 'top left', width: '125%', height: '135%' }}>
         {/* 1. Hero Section */}
         <div className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
           <div className="mx-auto px-16">
