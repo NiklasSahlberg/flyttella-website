@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 
 // If modifying these scopes, delete the token.json file
-const SCOPES = ['https://www.googleapis.com/auth/gmail.send'];
+const _SCOPES = ['https://www.googleapis.com/auth/gmail.send'];
 
 // OAuth 2.0 credentials
 const CLIENT_SECRETS = {

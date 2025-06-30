@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -257,11 +256,11 @@ export default function BlogPage() {
               animate="animate"
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {filteredPosts.map((post, index) => (
+              {filteredPosts.map((post, _index) => (
                 <motion.article
                   key={post.id}
                   variants={variants}
-                  custom={index}
+                  custom={_index}
                   whileHover="hover"
                   className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
                 >
