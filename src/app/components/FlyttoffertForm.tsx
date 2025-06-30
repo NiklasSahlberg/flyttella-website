@@ -64,6 +64,10 @@ interface FormData {
   storageRoomArea?: string; // NEW FIELD for vind/källarförråd area
   hasGarage?: string; // NEW FIELD for garage
   garageArea?: string; // NEW FIELD for garage area
+  hasAttic?: string; // NEW FIELD for vind (attic)
+  atticArea?: string; // NEW FIELD for vind area
+  hasBasementStorage?: string; // NEW FIELD for källarförråd (basement storage)
+  basementStorageArea?: string; // NEW FIELD for källarförråd area
 }
 
 interface FormErrors {
@@ -109,6 +113,10 @@ interface FormErrors {
   storageRoomArea?: string; // NEW FIELD for vind/källarförråd area
   hasGarage?: string; // NEW FIELD for garage
   garageArea?: string; // NEW FIELD for garage area
+  hasAttic?: string; // NEW FIELD for vind (attic)
+  atticArea?: string; // NEW FIELD for vind area
+  hasBasementStorage?: string; // NEW FIELD for källarförråd (basement storage)
+  basementStorageArea?: string; // NEW FIELD for källarförråd area
 }
 
 interface AddressComponent {
@@ -181,6 +189,10 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
     storageRoomArea: "", // NEW FIELD for vind/källarförråd area
     hasGarage: "no", // NEW FIELD for garage
     garageArea: "", // NEW FIELD for garage area
+    hasAttic: "no", // NEW FIELD for vind (attic)
+    atticArea: "", // NEW FIELD for vind area
+    hasBasementStorage: "no", // NEW FIELD for källarförråd (basement storage)
+    basementStorageArea: "", // NEW FIELD for källarförråd area
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
@@ -467,15 +479,26 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
       newErrors.parkingDistance = "Avståndet måste vara ett positivt tal i meter";
       isValid = false;
     }
-    if (!formData.hasStorageRoom) {
-      newErrors.hasStorageRoom = "Vänligen välj om du har vind/källarförråd";
+    if (!formData.hasAttic) {
+      newErrors.hasAttic = "Vänligen välj om du har vind";
       isValid = false;
     }
-    if (formData.hasStorageRoom === "yes" && (!formData.storageRoomArea || !formData.storageRoomArea.trim())) {
-      newErrors.storageRoomArea = "Vänligen ange vind/källarförrådets yta";
+    if (formData.hasAttic === "yes" && (!formData.atticArea || !formData.atticArea.trim())) {
+      newErrors.atticArea = "Vänligen ange vindens yta";
       isValid = false;
-    } else if (formData.hasStorageRoom === "yes" && (isNaN(Number(formData.storageRoomArea)) || Number(formData.storageRoomArea) <= 0)) {
-      newErrors.storageRoomArea = "Ytan måste vara ett positivt tal";
+    } else if (formData.hasAttic === "yes" && (isNaN(Number(formData.atticArea)) || Number(formData.atticArea) <= 0)) {
+      newErrors.atticArea = "Ytan måste vara ett positivt tal";
+      isValid = false;
+    }
+    if (!formData.hasBasementStorage) {
+      newErrors.hasBasementStorage = "Vänligen välj om du har källarförråd";
+      isValid = false;
+    }
+    if (formData.hasBasementStorage === "yes" && (!formData.basementStorageArea || !formData.basementStorageArea.trim())) {
+      newErrors.basementStorageArea = "Vänligen ange källarförrådets yta";
+      isValid = false;
+    } else if (formData.hasBasementStorage === "yes" && (isNaN(Number(formData.basementStorageArea)) || Number(formData.basementStorageArea) <= 0)) {
+      newErrors.basementStorageArea = "Ytan måste vara ett positivt tal";
       isValid = false;
     }
     if (!formData.hasGarage) {
@@ -1443,18 +1466,18 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {formData.customerType === 'foretag' ? 'Har ni vind/källarförråd?' : 'Har du vind/källarförråd?'}
+                    {formData.customerType === 'foretag' ? 'Har ni vind?' : 'Har du vind?'}
                   </label>
                   <div className="flex gap-6">
                     <label className="flex items-center">
                       <input
                         type="radio"
-                        name="hasStorageRoom"
+                        name="hasAttic"
                         value="yes"
-                        checked={formData.hasStorageRoom === "yes"}
+                        checked={formData.hasAttic === "yes"}
                         onChange={(e) => {
-                          setFormData(prev => ({ ...prev, hasStorageRoom: e.target.value }));
-                          setErrors(prev => ({ ...prev, hasStorageRoom: "" }));
+                          setFormData(prev => ({ ...prev, hasAttic: e.target.value }));
+                          setErrors(prev => ({ ...prev, hasAttic: "" }));
                         }}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
@@ -1463,40 +1486,38 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                     <label className="flex items-center">
                       <input
                         type="radio"
-                        name="hasStorageRoom"
+                        name="hasAttic"
                         value="no"
-                        checked={formData.hasStorageRoom === "no"}
+                        checked={formData.hasAttic === "no"}
                         onChange={(e) => {
-                          setFormData(prev => ({ ...prev, hasStorageRoom: e.target.value }));
-                          setErrors(prev => ({ ...prev, hasStorageRoom: "" }));
+                          setFormData(prev => ({ ...prev, hasAttic: e.target.value }));
+                          setErrors(prev => ({ ...prev, hasAttic: "" }));
                         }}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
                       <span className="ml-2 text-sm text-gray-700">Nej</span>
                     </label>
                   </div>
-                  {errors.hasStorageRoom && (
-                    <p className="mt-1 text-sm text-red-600">{errors.hasStorageRoom}</p>
+                  {errors.hasAttic && (
+                    <p className="mt-1 text-sm text-red-600">{errors.hasAttic}</p>
                   )}
                 </div>
 
-                {formData.hasStorageRoom === "yes" && (
+                {formData.hasAttic === "yes" && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {formData.customerType === 'foretag' ? 'Vind/källarförrådets yta (kvm)' : 'Vind/källarförrådets yta (kvm)'}
-                    </label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Vindens yta (kvm)</label>
                     <input
                       type="text"
                       inputMode="numeric"
                       pattern="[0-9]*"
-                      name="storageRoomArea"
-                      value={formData.storageRoomArea}
+                      name="atticArea"
+                      value={formData.atticArea}
                       onChange={(e) => {
                         // Only allow whole numbers
                         const value = e.target.value.replace(/[^\d]/g, '');
                         if (value === '' || Number(value) >= 0) {
-                          setFormData(prev => ({ ...prev, storageRoomArea: value }));
-                          setErrors(prev => ({ ...prev, storageRoomArea: "" }));
+                          setFormData(prev => ({ ...prev, atticArea: value }));
+                          setErrors(prev => ({ ...prev, atticArea: "" }));
                         }
                       }}
                       onKeyDown={(e) => {
@@ -1515,11 +1536,94 @@ export default function FlyttoffertForm({ mode = 'full' }: FlyttoffertFormProps)
                       placeholder="10"
                       required
                       className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
-                        errors.storageRoomArea ? "border-red-500" : ""
+                        errors.atticArea ? "border-red-500" : ""
                       }`}
                     />
-                    {errors.storageRoomArea && (
-                      <p className="mt-1 text-sm text-red-600">{errors.storageRoomArea}</p>
+                    {errors.atticArea && (
+                      <p className="mt-1 text-sm text-red-600">{errors.atticArea}</p>
+                    )}
+                  </div>
+                )}
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {formData.customerType === 'foretag' ? 'Har ni källarförråd?' : 'Har du källarförråd?'}
+                  </label>
+                  <div className="flex gap-6">
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="hasBasementStorage"
+                        value="yes"
+                        checked={formData.hasBasementStorage === "yes"}
+                        onChange={(e) => {
+                          setFormData(prev => ({ ...prev, hasBasementStorage: e.target.value }));
+                          setErrors(prev => ({ ...prev, hasBasementStorage: "" }));
+                        }}
+                        className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">Ja</span>
+                    </label>
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="hasBasementStorage"
+                        value="no"
+                        checked={formData.hasBasementStorage === "no"}
+                        onChange={(e) => {
+                          setFormData(prev => ({ ...prev, hasBasementStorage: e.target.value }));
+                          setErrors(prev => ({ ...prev, hasBasementStorage: "" }));
+                        }}
+                        className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">Nej</span>
+                    </label>
+                  </div>
+                  {errors.hasBasementStorage && (
+                    <p className="mt-1 text-sm text-red-600">{errors.hasBasementStorage}</p>
+                  )}
+                </div>
+
+                {formData.hasBasementStorage === "yes" && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {formData.customerType === 'foretag' ? 'Källarförrådets yta (kvm)' : 'Källarförrådets yta (kvm)'}
+                    </label>
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
+                      name="basementStorageArea"
+                      value={formData.basementStorageArea}
+                      onChange={(e) => {
+                        // Only allow whole numbers
+                        const value = e.target.value.replace(/[^\d]/g, '');
+                        if (value === '' || Number(value) >= 0) {
+                          setFormData(prev => ({ ...prev, basementStorageArea: value }));
+                          setErrors(prev => ({ ...prev, basementStorageArea: "" }));
+                        }
+                      }}
+                      onKeyDown={(e) => {
+                        // Prevent all non-numeric input except backspace, delete, and arrow keys
+                        if (
+                          !/^\d$/.test(e.key) && // not a number
+                          e.key !== 'Backspace' &&
+                          e.key !== 'Delete' &&
+                          e.key !== 'ArrowLeft' &&
+                          e.key !== 'ArrowRight' &&
+                          e.key !== 'Tab'
+                        ) {
+                          e.preventDefault();
+                        }
+                      }}
+                      placeholder="10"
+                      required
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                        errors.basementStorageArea ? "border-red-500" : ""
+                      }`}
+                    />
+                    {errors.basementStorageArea && (
+                      <p className="mt-1 text-sm text-red-600">{errors.basementStorageArea}</p>
                     )}
                   </div>
                 )}

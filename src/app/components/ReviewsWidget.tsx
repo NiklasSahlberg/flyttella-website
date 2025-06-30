@@ -8,6 +8,15 @@ interface CounterProps {
   duration?: number;
 }
 
+interface ReviewsWidgetProps {
+  location?: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  badgeAlt?: string;
+  arrowText?: string;
+}
+
 const Counter = ({ end, duration = 2 }: CounterProps) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
@@ -56,7 +65,14 @@ const ReviewIcon = () => (
   </svg>
 );
 
-export default function ReviewsWidget() {
+export default function ReviewsWidget({ 
+  location = "",
+  title = "Vad tycker våra kunder om oss?",
+  subtitle = "En trygg och professionell flyttupplevelse",
+  description = "Som en av Sveriges mest rekommenderade flyttfirmor sätter vi kunden i fokus. Vi förstår att flyttar kan vara stressande, därför strävar vi efter att göra processen så smidig och trygg som möjligt. Med vår erfarenhet och dedikerade team ser vi till att din flytt blir en positiv upplevelse från början till slut.",
+  badgeAlt = "5 Years Badge",
+  arrowText = "Läs gärna vad våra kunder säger om oss"
+}: ReviewsWidgetProps) {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background Pattern */}
@@ -74,7 +90,7 @@ export default function ReviewsWidget() {
         <div className="max-w-[1400px] mx-auto">
           {/* Centered Title */}
           <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
-            Vad tycker våra kunder om oss?
+            {title}
           </h3>
           {/* Badge */}
           <motion.div 
@@ -88,7 +104,7 @@ export default function ReviewsWidget() {
               <div className="relative w-80 h-80 drop-shadow-xl">
                 <Image
                   src="/BadgeFiveYearsNew.png"
-                  alt="5 Years Badge"
+                  alt={badgeAlt}
                   fill
                   className="object-contain"
                   priority
@@ -97,14 +113,10 @@ export default function ReviewsWidget() {
               <div className="max-w-xl text-center">
                 <div className="text-center">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                    En trygg och professionell flyttupplevelse
+                    {subtitle}
                   </h2>
                   <p className="text-xl text-gray-600 leading-relaxed">
-                    Som en av Sveriges mest rekommenderade flyttfirmor sätter vi kunden i fokus. 
-                    Vi förstår att flyttar kan vara stressande, därför strävar vi efter att göra 
-                    processen så smidig och trygg som möjligt. Med vår erfarenhet och 
-                    dedikerade team ser vi till att din flytt blir en positiv upplevelse 
-                    från början till slut.
+                    {description}
                   </p>
                 </div>
                 {/* New: Customer opinions title and arrow */}
@@ -117,7 +129,7 @@ export default function ReviewsWidget() {
                     className="mt-10"
                     priority={false}
                   />
-                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A]">Läs gärna vad våra kunder säger om oss</span>
+                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A]">{arrowText}</span>
                 </div>
               </div>
             </div>
