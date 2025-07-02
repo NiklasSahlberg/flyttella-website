@@ -4,9 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "../contexts/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Header() {
   const pathname = usePathname();
+  const { locale, setLocale, t } = useLanguage();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -100,10 +103,10 @@ export default function Header() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white/80 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-sm font-medium text-white/90">Mån-Fre: 08:00-18:00</span>
+                <span className="text-sm font-medium text-white/90">{t('header.openHours')}</span>
               </div>
               <div className="flex items-center justify-center md:px-6">
-                <span className="text-sm font-medium text-white/90">Lör-Sön: Stängt</span>
+                <span className="text-sm font-medium text-white/90">{t('header.closedWeekend')}</span>
               </div>
             </div>
             <div className="flex items-center mt-1 md:mt-0">
@@ -111,7 +114,7 @@ export default function Header() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white/80 group-hover:text-white transition-colors mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-sm font-medium text-white group-hover:text-white transition-colors">08-898-301</span>
+                <span className="text-sm font-medium text-white group-hover:text-white transition-colors">{t('header.phone')}</span>
               </a>
             </div>
           </div>
@@ -122,32 +125,40 @@ export default function Header() {
       <div className="bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20 relative">
-            {/* Logo - centered on mobile, left on desktop */}
+            {/* Logo and Language Toggle - centered on mobile, left on desktop */}
             <div className="flex-1 flex justify-center md:justify-start items-center relative">
-              <div 
-                onClick={() => {
-                  window.scrollTo(0, 0);
-                  window.location.reload();
-                }}
-                className="cursor-pointer"
-              >
-                <div className="relative h-16 w-32 md:h-20 md:w-96 mx-auto">
-                  <Image
-                    src="/flyttella-logo.png"
-                    alt="Flyttella Logo"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
+              <div className="flex items-center gap-4">
+                <div 
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    window.location.reload();
+                  }}
+                  className="cursor-pointer"
+                >
+                  <div className="relative h-16 w-32 md:h-20 md:w-96 mx-auto">
+                    <Image
+                      src="/flyttella-logo.png"
+                      alt="Flyttella Logo"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                </div>
+                {/* Language Toggle beside logo */}
+                <div className="hidden md:block">
+                  <LanguageToggle currentLocale={locale} onLocaleChange={setLocale} />
                 </div>
               </div>
             </div>
-            {/* Hamburger menu in top right on mobile - only show on mobile */}
-            <div className="md:hidden">
+            {/* Mobile controls - hamburger menu and language toggle */}
+            <div className="md:hidden flex items-center gap-2">
+              {/* Language Toggle for mobile */}
+              <LanguageToggle currentLocale={locale} onLocaleChange={setLocale} />
+              {/* Hamburger menu */}
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="absolute right-0 top-1/2 -translate-y-1/2 text-[#0F172A] hover:text-[#10B981] transition-colors p-2"
-                style={{ right: '1rem' }}
+                className="text-[#0F172A] hover:text-[#10B981] transition-colors p-2"
                 aria-label="Öppna meny"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -158,7 +169,7 @@ export default function Header() {
             {/* Desktop navigation and CTA (unchanged) */}
             <div className="hidden md:flex items-center space-x-8">
               <nav className="flex items-center space-x-8">
-                <Link href="/" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Hem</Link>
+                <Link href="/" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">{t('header.home')}</Link>
                 
                 {/* Services Dropdown */}
                 <div 
@@ -171,7 +182,7 @@ export default function Header() {
                     href="/tjanster"
                     className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide flex items-center"
                   >
-                    Privat
+                    {t('header.private')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -184,7 +195,7 @@ export default function Header() {
                       onMouseLeave={handleMouseLeave}
                     >
                       <div className="px-4 py-2 border-b border-gray-100">
-                        <h3 className="text-sm font-semibold text-[#0F172A]">Våra privattjänster</h3>
+                        <h3 className="text-sm font-semibold text-[#0F172A]">{t('header.seeAllPrivate')}</h3>
                       </div>
                       <div className="py-2">
                         <Link href="/bohagsflytt" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
@@ -214,7 +225,7 @@ export default function Header() {
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
                         <Link href="/tjanster" onClick={() => setIsServicesOpen(false)} className="flex items-center justify-between text-sm font-medium text-[#10B981] hover:text-[#0F172A] transition-colors">
-                          <span>Se alla privattjänster</span>
+                          <span>{t('header.seeAllPrivate')}</span>
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
@@ -234,7 +245,7 @@ export default function Header() {
                     href="/foretag"
                     className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide flex items-center"
                   >
-                    Företag
+                    {t('header.business')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -246,7 +257,7 @@ export default function Header() {
                       onMouseLeave={handleBusinessMouseLeave}
                     >
                       <div className="px-4 py-2 border-b border-gray-100">
-                        <h3 className="text-sm font-semibold text-[#0F172A]">Våra företagstjänster</h3>
+                        <h3 className="text-sm font-semibold text-[#0F172A]">{t('header.seeAllBusiness')}</h3>
                       </div>
                       <div className="py-2">
                         <Link href="/kontorsflytt" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
@@ -264,7 +275,7 @@ export default function Header() {
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
                         <Link href="/foretag" onClick={() => setIsBusinessOpen(false)} className="flex items-center justify-between text-sm font-medium text-[#10B981] hover:text-[#0F172A] transition-colors">
-                          <span>Se alla företagstjänster</span>
+                          <span>{t('header.seeAllBusiness')}</span>
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
@@ -273,10 +284,10 @@ export default function Header() {
                     </div>
                   )}
                 </div>
-                <Link href="/om-oss" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Om oss</Link>
-                <Link href="/faq" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">FAQ</Link>
-                <Link href="/blogg" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Blogg</Link>
-                <Link href="/kontakt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">Kontakt</Link>
+                <Link href="/om-oss" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">{t('header.about')}</Link>
+                <Link href="/faq" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">{t('header.faq')}</Link>
+                <Link href="/blogg" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">{t('header.blog')}</Link>
+                <Link href="/kontakt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-sm font-medium tracking-wide">{t('header.contact')}</Link>
               </nav>
 
               {/* Quote Button Dropdown */}
@@ -342,35 +353,35 @@ export default function Header() {
                   className="block py-3 text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Hem
+                  {t('header.home')}
                 </Link>
                   <Link
                   href="/om-oss"
                   className="block py-3 text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                  Om oss
+                  {t('header.about')}
                   </Link>
                 <Link
                   href="/faq"
                   className="block py-3 text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  FAQ
+                  {t('header.faq')}
                 </Link>
                 <Link
                   href="/blogg"
                   className="block py-3 text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Blogg
+                  {t('header.blog')}
                 </Link>
                 <Link
                   href="/kontakt"
                   className="block py-3 text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Kontakt
+                  {t('header.contact')}
                 </Link>
 
                 {/* Services Section */}
@@ -379,7 +390,7 @@ export default function Header() {
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                     className="flex items-center justify-between w-full text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4 py-3"
                   >
-                    <span>Privat</span>
+                    <span>{t('header.private')}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`h-5 w-5 transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`}
@@ -443,7 +454,7 @@ export default function Header() {
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     className="flex items-center justify-between w-full text-lg font-medium text-[#0F172A] hover:text-[#10B981] hover:bg-gray-50 rounded-lg px-4 py-3"
                   >
-                    <span>Företag</span>
+                    <span>{t('header.business')}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`h-5 w-5 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
@@ -482,12 +493,20 @@ export default function Header() {
                       className="block py-2 px-4 text-base text-[#10B981] hover:text-[#0F172A] hover:bg-gray-100 rounded-lg font-medium"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Se alla företagstjänster
+                      {t('header.seeAllBusiness')}
                     </Link>
                   </div>
                 )}
                 </div>
               </nav>
+
+              {/* Language Toggle for Mobile */}
+              <div className="py-4 border-t border-gray-200">
+                <div className="flex items-center justify-between">
+                  <span className="text-lg font-medium text-[#0F172A]">{t('common.language')}</span>
+                  <LanguageToggle currentLocale={locale} onLocaleChange={setLocale} />
+                </div>
+              </div>
 
               {/* Divider */}
               <div className="my-6 border-t border-gray-200"></div>

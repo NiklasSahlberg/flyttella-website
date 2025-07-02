@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface CounterProps {
   end: number;
@@ -67,12 +68,13 @@ const ReviewIcon = () => (
 
 export default function ReviewsWidget({ 
   location = "",
-  title = "Vad tycker våra kunder om oss?",
-  subtitle = "En trygg och professionell flyttupplevelse",
-  description = "Som en av Sveriges mest rekommenderade flyttfirmor sätter vi kunden i fokus. Vi förstår att flyttar kan vara stressande, därför strävar vi efter att göra processen så smidig och trygg som möjligt. Med vår erfarenhet och dedikerade team ser vi till att din flytt blir en positiv upplevelse från början till slut.",
-  badgeAlt = "5 Years Badge",
-  arrowText = "Läs gärna vad våra kunder säger om oss"
+  title,
+  subtitle,
+  description,
+  badgeAlt,
+  arrowText
 }: ReviewsWidgetProps) {
+  const { t } = useLanguage();
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background Pattern */}
@@ -89,8 +91,8 @@ export default function ReviewsWidget({
       <div className="container mx-auto px-4 relative">
         <div className="max-w-[1400px] mx-auto">
           {/* Centered Title */}
-          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
-            {title}
+          <h3 className="text-4xl md:text-5xl font-bold text-[#0F172A] text-center mb-12 mt-2">
+            {title || t('reviews.title')}
           </h3>
           {/* Badge */}
           <motion.div 
@@ -104,7 +106,7 @@ export default function ReviewsWidget({
               <div className="relative w-80 h-80 drop-shadow-xl">
                 <Image
                   src="/BadgeFiveYearsNew.png"
-                  alt={badgeAlt}
+                  alt={badgeAlt || t('reviews.badgeAlt')}
                   fill
                   className="object-contain"
                   priority
@@ -112,11 +114,11 @@ export default function ReviewsWidget({
               </div>
               <div className="max-w-xl text-center">
                 <div className="text-center">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                    {subtitle}
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    {subtitle || t('reviews.subtitle')}
                   </h2>
-                  <p className="text-xl text-gray-600 leading-relaxed">
-                    {description}
+                  <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+                    {description || t('reviews.description')}
                   </p>
                 </div>
                 {/* New: Customer opinions title and arrow */}
@@ -129,7 +131,7 @@ export default function ReviewsWidget({
                     className="mt-10"
                     priority={false}
                   />
-                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A]">{arrowText}</span>
+                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A]">{arrowText || t('reviews.arrowText')}</span>
                 </div>
               </div>
             </div>

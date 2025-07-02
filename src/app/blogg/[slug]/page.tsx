@@ -13,43 +13,132 @@ const fadeInUp = {
 // Sample blog post data - you can replace this with real content from a CMS or database
 const blogPosts = [
   {
-    slug: "10-tips-för-en-smidig-flytt-i-stockholm",
+    slug: "10-tips-for-en-smidig-flytt-i-stockholm",
     title: "10 Tips för en Smidig Flytt i Stockholm",
-    excerpt: "Planera din flytt i Stockholm med våra beprövade tips. Från packning till flyttdag - vi hjälper dig genom hela processen.",
+    excerpt: "En flytt i Stockholm kan kännas överväldigande, men med rätt planering och förberedelser kan den bli en smidig och stressfri upplevelse. Här delar vi med oss av våra bästa tips baserade på över 8000 flyttar i Stockholmsområdet.",
     category: "Flytttips",
     date: "2024-01-15",
-    readTime: "5 min",
+    readTime: "8 min",
     author: "Flyttella Team",
     content: `
-      <h2>1. Börja planera tidigt</h2>
-      <p>En välplanerad flytt är nyckeln till framgång. Börja minst 8 veckor innan flyttdatumet med att organisera och planera. Skapa en checklista med alla viktiga uppgifter som behöver göras.</p>
+      <p class="lead">En flytt i Stockholm kan kännas överväldigande, men med rätt planering och förberedelser kan den bli en smidig och stressfri upplevelse. Här delar vi med oss av våra bästa tips baserade på över 8000 flyttar i Stockholmsområdet.</p>
       
-      <h2>2. Rensa och organisera</h2>
-      <p>Innan du börjar packa, gå igenom alla dina ägodelar. Sälj, ge bort eller släng saker du inte längre behöver. Detta kommer att minska packningsarbetet och flyttkostnaderna.</p>
+      <h2>1. Börja planera tidigt - 8 veckor innan flytten</h2>
+      <p>En välplanerad flytt är nyckeln till framgång. Börja minst 8 veckor innan flyttdatumet med att organisera och planera. Skapa en detaljerad checklista med alla viktiga uppgifter som behöver göras. Inkludera deadlines för varje uppgift och dela upp arbetet i hanterbara delar.</p>
+      <p><strong>Viktiga uppgifter att planera:</strong></p>
+      <ul>
+        <li>Boka flyttfirma (minst 4 veckor i förväg)</li>
+        <li>Beställ flyttkartonger och förpackningsmaterial</li>
+        <li>Boka flyttstädning</li>
+        <li>Planera adressändringar</li>
+        <li>Kontrollera parkeringsmöjligheter vid båda adresserna</li>
+      </ul>
       
-      <h2>3. Beställ flyttkartonger i tid</h2>
-      <p>Vi erbjuder gratis lån av flyttkartonger i 4 veckor. Beställ dem i god tid så att du har tillräckligt med material för allt som behöver packas.</p>
+      <h2>2. Rensa och organisera - Minska dina ägodelar</h2>
+      <p>Innan du börjar packa, gå igenom alla dina ägodelar systematiskt. Sälj, ge bort eller släng saker du inte längre behöver. Detta kommer att minska packningsarbetet, flyttkostnaderna och göra det enklare att organisera ditt nya hem.</p>
+      <p><strong>Rensa rum för rum:</strong></p>
+      <ul>
+        <li>Börja med förråd och gästrum</li>
+        <li>Gå igenom kläder - ge bort det du inte använt på ett år</li>
+        <li>Rensa kök och badrum från utgångna produkter</li>
+        <li>Kontrollera böcker, DVD:er och andra media</li>
+      </ul>
       
-      <h2>4. Märk alla kartonger tydligt</h2>
-      <p>Använd tydliga etiketter på alla kartonger. Skriv rum och innehåll på varje låda. Detta gör det mycket enklare att hitta saker när du ska packa upp.</p>
+      <h2>3. Beställ flyttkartonger och material i god tid</h2>
+      <p>Vi erbjuder gratis lån av flyttkartonger i 4 veckor. Beställ dem i god tid så att du har tillräckligt med material för allt som behöver packas. Olika storlekar av kartonger är viktiga för olika typer av föremål.</p>
+      <p><strong>Material du behöver:</strong></p>
+      <ul>
+        <li>Olika storlekar av flyttkartonger</li>
+        <li>Silkespapper för känsliga föremål</li>
+        <li>Bubbligaplast för sköra saker</li>
+        <li>Maskeringstejp för att säkra kartonger</li>
+        <li>Markörer för märkning</li>
+        <li>Flyttfiltar för möbler</li>
+      </ul>
       
-      <h2>5. Packa rum för rum</h2>
-      <p>Börja med rum du använder minst, som gästrum eller förråd. Låt kök och sovrum vara sist så du kan fortsätta leva normalt under packningsprocessen.</p>
+      <h2>4. Märk alla kartonger tydligt och systematiskt</h2>
+      <p>Använd tydliga etiketter på alla kartonger. Skriv rum och innehåll på varje låda. Detta gör det mycket enklare att hitta saker när du ska packa upp och hjälper flyttarbetarna att placera kartongerna i rätt rum.</p>
+      <p><strong>Märkningssystem:</strong></p>
+      <ul>
+        <li>Använd färgkodning för olika rum</li>
+        <li>Skriv både rum och innehåll på varje kartong</li>
+        <li>Markera "FRAGILE" på känsliga föremål</li>
+        <li>Skapa en inventeringslista över vad som finns i varje kartong</li>
+      </ul>
       
-      <h2>6. Förbered för flyttfirman</h2>
-      <p>Innan flyttfirman kommer, se till att alla vägar är fria och att du har packat ner allt lösöre. Montera ner gardiner och lampor om det behövs.</p>
+      <h2>5. Packa rum för rum - Systematiskt tillvägagångssätt</h2>
+      <p>Börja med rum du använder minst, som gästrum eller förråd. Låt kök och sovrum vara sist så du kan fortsätta leva normalt under packningsprocessen. Detta minskar stressen och gör att du alltid har tillgång till det du behöver.</p>
+      <p><strong>Packningsordning:</strong></p>
+      <ol>
+        <li>Förråd och gästrum</li>
+        <li>Vardagsrum och kontor</li>
+        <li>Badrum</li>
+        <li>Sovrum</li>
+        <li>Kök (sist)</li>
+      </ol>
       
-      <h2>7. Håll värdesaker tillgängliga</h2>
-      <p>Packa värdesaker, viktiga dokument och nycklar separat och håll dem med dig under flytten. Lita inte på att de kommer med flyttbilen.</p>
+      <h2>6. Förbered för flyttfirman - Effektiv flyttdag</h2>
+      <p>Innan flyttfirman kommer, se till att alla vägar är fria och att du har packat ner allt lösöre. Montera ner gardiner och lampor om det behövs. Detta säkerställer en effektiv flyttdag utan förseningar.</p>
+      <p><strong>Checklista för flyttdagen:</strong></p>
+      <ul>
+        <li>Packa ner allt lösöre i kartonger</li>
+        <li>Montera ner gardiner och lampor</li>
+        <li>Säkerställ fri väg för flyttarbetarna</li>
+        <li>Ha nycklar tillgängliga</li>
+        <li>Kontrollera att alla dörrar kan öppnas helt</li>
+      </ul>
       
-      <h2>8. Boka flyttstädning</h2>
-      <p>Boka flyttstädning i god tid. Vi erbjuder professionell flyttstädning som säkerställer att din gamla bostad lämnas i perfekt skick.</p>
+      <h2>7. Håll värdesaker och viktiga dokument tillgängliga</h2>
+      <p>Packa värdesaker, viktiga dokument och nycklar separat och håll dem med dig under flytten. Lita inte på att de kommer med flyttbilen. Skapa en "viktiga saker"-påse som du alltid har med dig.</p>
+      <p><strong>Vad som ska vara med dig:</strong></p>
+      <ul>
+        <li>Värdesaker och smycken</li>
+        <li>Viktiga dokument (pass, ID-kort, försäkringar)</li>
+        <li>Nycklar till båda bostäderna</li>
+        <li>Kontaktinformation för flyttfirman</li>
+        <li>Kontanter och kort</li>
+        <li>Mediciner</li>
+      </ul>
       
-      <h2>9. Uppdatera adresser</h2>
-      <p>Glöm inte att adressändra hos Skatteverket och meddela viktiga kontakter som bank, försäkringsbolag och leverantörer.</p>
+      <h2>8. Boka flyttstädning i god tid</h2>
+      <p>Boka flyttstädning i god tid. Vi erbjuder professionell flyttstädning som säkerställer att din gamla bostad lämnas i perfekt skick. Detta är särskilt viktigt om du hyr eller säljer bostaden.</p>
+      <p><strong>Vad som ingår i flyttstädning:</strong></p>
+      <ul>
+        <li>Grundlig städning av alla ytor</li>
+        <li>Fönsterputsning</li>
+        <li>Sanering av kök och badrum</li>
+        <li>Städgaranti</li>
+        <li>Flexibla tider</li>
+      </ul>
       
-      <h2>10. Var förberedd på flyttdagen</h2>
-      <p>Ha kaffe och fika redo för flyttarbetarna. Var tillgänglig för frågor och gör en slutkontroll av bostaden innan du lämnar den.</p>
+      <h2>9. Uppdatera adresser och meddela viktiga kontakter</h2>
+      <p>Glöm inte att adressändra hos Skatteverket och meddela viktiga kontakter som bank, försäkringsbolag och leverantörer. Gör detta i god tid för att undvika problem med post och fakturor.</p>
+      <p><strong>Viktiga adressändringar:</strong></p>
+      <ul>
+        <li>Skatteverket (obligatoriskt)</li>
+        <li>Bank och försäkringsbolag</li>
+        <li>El- och internetleverantörer</li>
+        <li>Arbetsgivare</li>
+        <li>Läkare och tandläkare</li>
+        <li>Föreningar och klubbar</li>
+      </ul>
+      
+      <h2>10. Var förberedd och tillgänglig på flyttdagen</h2>
+      <p>Ha kaffe och fika redo för flyttarbetarna. Var tillgänglig för frågor och gör en slutkontroll av bostaden innan du lämnar den. En bra relation med flyttarbetarna säkerställer en smidig process.</p>
+      <p><strong>Flyttdagens checklista:</strong></p>
+      <ul>
+        <li>Ha kaffe, vatten och fika redo</li>
+        <li>Var tillgänglig för frågor</li>
+        <li>Gör en slutkontroll av alla rum</li>
+        <li>Kontrollera att alla nycklar fungerar</li>
+        <li>Ta bilder av bostadens skick</li>
+        <li>Håll kontakt med flyttfirman under dagen</li>
+      </ul>
+      
+      <h2>Sammanfattning</h2>
+      <p>En smidig flytt i Stockholm handlar om noggrann planering, tidig förberedelse och rätt hjälp. Genom att följa dessa 10 tips kan du minska stressen och säkerställa att din flytt blir en positiv upplevelse. Kom ihåg att Flyttella finns här för att hjälpa dig genom hela processen - från första planeringen till den sista kartongen i ditt nya hem.</p>
+      
+      <p><strong>Behöver du hjälp med din flytt i Stockholm?</strong> Kontakta oss för en kostnadsfri offert och låt oss hjälpa dig att göra din flytt så smidig som möjligt.</p>
     `,
     relatedPosts: [
       {
@@ -97,7 +186,7 @@ const blogPosts = [
     relatedPosts: [
       {
         title: "10 Tips för en Smidig Flytt i Stockholm",
-        slug: "10-tips-för-en-smidig-flytt-i-stockholm",
+        slug: "10-tips-for-en-smidig-flytt-i-stockholm",
         excerpt: "Planera din flytt i Stockholm med våra beprövade tips."
       },
       {
@@ -215,27 +304,109 @@ export default function BlogPostPage() {
       </section>
 
       {/* Content Section */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="mx-auto px-24">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <motion.div
               initial="initial"
               animate="animate"
               variants={fadeInUp}
-              className="prose prose-lg max-w-none"
+              className="space-y-8"
             >
               {/* Excerpt */}
-              <div className="bg-gray-50 rounded-2xl p-8 mb-12">
-                <p className="text-xl text-gray-700 leading-relaxed">
-                  {post.excerpt}
-                </p>
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 mb-12 text-white relative overflow-hidden">
+                {/* Background pattern */}
+                <div 
+                  className="absolute inset-0 opacity-10 pointer-events-none"
+                  style={{
+                    backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                    backgroundSize: '20px 20px'
+                  }}
+                />
+                <div className="relative z-10">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-2xl">📋</span>
+                    </div>
+                    <div>
+                      <span className="inline-block bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium">
+                    {post.excerpt}
+                  </p>
+                </div>
+              </div>
+
+              {/* Key Points Summary */}
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 text-white mb-8">
+                <h3 className="text-2xl font-bold mb-6 text-center">Viktiga punkter att komma ihåg</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <span className="text-white font-bold">1</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Planera tidigt</h4>
+                      <p className="text-white/80 text-sm">Börja minst 8 veckor innan flytten</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <span className="text-white font-bold">2</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Rensa och organisera</h4>
+                      <p className="text-white/80 text-sm">Minska dina ägodelar innan packning</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <span className="text-white font-bold">3</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Märk kartonger</h4>
+                      <p className="text-white/80 text-sm">Använd tydliga etiketter på alla lådor</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <span className="text-white font-bold">4</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Boka flyttstädning</h4>
+                      <p className="text-white/80 text-sm">Säkra professionell städning i tid</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Main Content */}
-              <div 
-                className="text-lg leading-relaxed text-gray-800"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+              <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-gray-100">
+                <div 
+                  className="text-lg leading-relaxed text-[#0F172A] space-y-8"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                  style={{
+                    '--tw-prose-headings': '#0F172A',
+                    '--tw-prose-body': '#0F172A',
+                    '--tw-prose-links': '#10B981',
+                    '--tw-prose-bold': '#0F172A',
+                    '--tw-prose-counters': '#10B981',
+                    '--tw-prose-bullets': '#10B981',
+                    '--tw-prose-hr': '#E5E7EB',
+                    '--tw-prose-quotes': '#0F172A',
+                    '--tw-prose-quote-borders': '#10B981',
+                    '--tw-prose-captions': '#6B7280',
+                    '--tw-prose-code': '#0F172A',
+                    '--tw-prose-pre-code': '#E5E7EB',
+                    '--tw-prose-pre-bg': '#1F2937',
+                    '--tw-prose-th-borders': '#D1D5DB',
+                    '--tw-prose-td-borders': '#E5E7EB'
+                  } as React.CSSProperties}
+                />
+              </div>
             </motion.div>
 
             {/* Call to Action */}
@@ -244,23 +415,44 @@ export default function BlogPostPage() {
               whileInView="animate"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="mt-16 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 text-white text-center"
+              className="mt-16 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 text-white text-center relative overflow-hidden"
             >
-              <h3 className="text-2xl font-bold mb-4">
-                Behöver du hjälp med din flytt?
-              </h3>
-              <p className="text-white/90 mb-6">
-                Låt oss hjälpa dig med din flytt. Vi erbjuder professionell flyttservice med fast pris och kvalitetsgaranti.
-              </p>
-              <Link
-                href="/services"
-                className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors"
-              >
-                Få offert
-                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
+              {/* Background pattern */}
+              <div 
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              <div className="relative z-10">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                  Behöver du hjälp med din flytt i Stockholm?
+                </h3>
+                <p className="text-white/90 mb-8 text-lg max-w-2xl mx-auto">
+                  Låt oss hjälpa dig med din flytt. Vi erbjuder professionell flyttservice med fast pris och kvalitetsgaranti. Kontakta oss för en kostnadsfri offert.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/fa-offert"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors group"
+                  >
+                    Få offert på 1 minut
+                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="/kontakt"
+                    className="inline-flex items-center bg-white/10 text-white px-8 py-4 rounded-full font-medium hover:bg-white/20 transition-colors border border-white/20"
+                  >
+                    Kontakta oss
+                    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>

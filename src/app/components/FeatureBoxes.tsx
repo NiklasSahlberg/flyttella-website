@@ -1,6 +1,7 @@
 // FeatureBoxes: Compact, modern row of benefit boxes for under the form
 // Includes animation for insurance (Trygg Hansa & FORA)
 import { useEffect, useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const insuranceLogos = [
   <svg key="trygghansa" width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,40 +17,40 @@ const insuranceLogos = [
 const features = [
   {
     key: "insurance",
-    label: "Försäkring",
+    labelKey: "features.insurance",
     animated: true,
   },
   {
     key: "pack-garanti",
-    label: "Pack-garanti",
+    labelKey: "features.packGuarantee",
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
     ),
   },
   {
     key: "kundgaranti",
-    label: "14 dagars nöjd kund garanti",
+    labelKey: "features.customerGuarantee",
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
     ),
   },
   {
     key: "rut-avdrag",
-    label: "50% RUT-avdrag",
+    labelKey: "features.rutDeduction",
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     ),
   },
   {
     key: "fri-avbokning",
-    label: "24h fri kostnadsfri avbokning",
+    labelKey: "features.freeCancellation",
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
     ),
   },
   {
     key: "kartonger",
-    label: "Fri lån av kartonger i 4 veckor",
+    labelKey: "features.freeBoxes",
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
     ),
@@ -66,6 +67,7 @@ function ShimmerBox() {
 export default function FeatureBoxes() {
   const [logoIndex, setLogoIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+  const { t } = useLanguage();
   useEffect(() => {
     const interval = setInterval(() => {
       setLogoIndex((prev) => (prev + 1) % insuranceLogos.length);
@@ -95,7 +97,7 @@ export default function FeatureBoxes() {
             <div className="mb-2 h-8 flex items-center justify-center transition-all duration-500 animate-fade-in">{feature.icon}</div>
           )}
           <span className={`font-semibold text-[#0F172A] text-center text-xs leading-tight transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100 animate-fade-in'}`}>
-            {feature.label}
+            {t(feature.labelKey)}
           </span>
         </div>
       ))}

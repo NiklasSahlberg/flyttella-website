@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import { Variants } from "framer-motion";
 import Lottie from "lottie-react";
 import LocationsCard from './components/LocationsCard';
+import { useLanguage } from "./contexts/LanguageContext";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -263,6 +264,7 @@ function ScheduleLottie() {
 }
 
 export default function Home() {
+  const { t } = useLanguage();
   const locations = [
     { name: "Åkersberga", slug: "akersberga" },
     { name: "Älvsjö", slug: "alvsjo" },
@@ -352,10 +354,10 @@ export default function Home() {
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
                   <h1 className="text-5xl md:text-6xl font-bold mb-8">
-                    Trygghet utan överraskningar
+                    {t('hero.title')}
                   </h1>
                   <p className="text-2xl md:text-3xl mb-12">
-                    Vi förstår att din flytt är viktig. Därför erbjuder vi trygg flyttservice med fast pris - inga dolda kostnader. Med oss kan du vara lugn, både för dina ägodelar och din plånbok.
+                    {t('hero.subtitle')}
                   </p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
@@ -414,7 +416,7 @@ export default function Home() {
               whileInView="animate"
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('about.title')}</h3>
               <div className="space-y-8 max-w-6xl mx-auto">
                 {/* Full text content */}
                 <motion.div
@@ -428,15 +430,11 @@ export default function Home() {
                   }}
                 >
                   <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
-                    Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder. Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning.
+                    {t('about.description1')}
                   </p>
                   <br />
                   <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
-                    Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar. Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.
-                  </p>
-                  <br />
-                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
-                    Vi vet att tid ofta är en bristvara vid flytt, därför har vi utvecklat en smidig offertlösning där du får svar inom 1 minut – helt utan förpliktelser. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut. Självklart erbjuder vi fri rådgivning i samband med både flytt och städning – allt för att din upplevelse med oss ska kännas enkel och trygg från början till slut.
+                    {t('about.description2')}
                   </p>
                   
                   {/* Läs mer om oss link */}
@@ -455,7 +453,7 @@ export default function Home() {
                       href="/om-oss" 
                       className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                     >
-                      Läs mer om oss
+                      {t('common.learnMore')} {t('navigation.about').toLowerCase()}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -474,6 +472,7 @@ export default function Home() {
         </motion.section>
 
         {/* 3. Vilka förmåner får du med Flyttella? */}
+       
         <FeatureBoxesSection />
 
         {/* 4. Vad tycker våra kunder om oss */}
@@ -486,7 +485,7 @@ export default function Home() {
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-10 mb-8 w-full">
               <div className="w-full">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
-                  Vår Process & Fördelar
+                  {t('process.title')}
                 </h2>
 
                 {/* Pricing Info */}
@@ -628,7 +627,7 @@ export default function Home() {
               whileInView="animate"
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('about.title')}</h3>
               <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {/* Flyttar */}
                 <motion.div 
@@ -637,10 +636,7 @@ export default function Home() {
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.2 }}
                   variants={fadeInUp}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: 0 * 0.25
-                  }}
+                  transition={{ duration: 0.8, delay: 0 * 0.25 }}
                 >
                   {/* Background pattern */}
                   <motion.div 
@@ -648,57 +644,17 @@ export default function Home() {
                     initial={{ backgroundPosition: '0% 0%' }}
                     animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
                     transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
+                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
                   />
                   <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 
-                      className="text-xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={fadeInUp}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 0 * 0.25
-                      }}
-                    >
-                      Flyttar
+                    <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 * 0.25 }}>
+                      {t('aboutSection.moves')}
                     </motion.h2>
-                    <motion.div 
-                      className="text-4xl md:text-5xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={fadeInUp}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 0 * 0.25
-                      }}
-                    >
-                      <CountUp 
-                        end={8000} 
-                        duration={2.5}
-                        suffix="+"
-                        useEasing={true}
-                        enableScrollSpy={true}
-                        scrollSpyOnce={true}
-                      />
+                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 * 0.25 }}>
+                      {t('aboutSection.movesCount')}
                     </motion.div>
-                    <motion.p 
-                      className="text-white/90"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={fadeInUp}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 0 * 0.25
-                      }}
-                    >
-                      uppdrag utförda
+                    <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 * 0.25 }}>
+                      {t('aboutSection.movesDesc')}
                     </motion.p>
                   </div>
                 </motion.div>
@@ -710,10 +666,7 @@ export default function Home() {
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.2 }}
                   variants={fadeInUp}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: 1 * 0.25
-                  }}
+                  transition={{ duration: 0.8, delay: 1 * 0.25 }}
                 >
                   {/* Background pattern */}
                   <motion.div 
@@ -721,57 +674,17 @@ export default function Home() {
                     initial={{ backgroundPosition: '0% 0%' }}
                     animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
                     transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
+                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
                   />
                   <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 
-                      className="text-xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={fadeInUp}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 1 * 0.25
-                      }}
-                    >
-                      Städningar
+                    <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 1 * 0.25 }}>
+                      {t('aboutSection.cleanings')}
                     </motion.h2>
-                    <motion.div 
-                      className="text-4xl md:text-5xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={fadeInUp}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 1 * 0.25
-                      }}
-                    >
-                      <CountUp 
-                        end={7000} 
-                        duration={2.5}
-                        suffix="+"
-                        useEasing={true}
-                        enableScrollSpy={true}
-                        scrollSpyOnce={true}
-                      />
+                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 1 * 0.25 }}>
+                      {t('aboutSection.cleaningsCount')}
                     </motion.div>
-                    <motion.p 
-                      className="text-white/90"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={fadeInUp}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 1 * 0.25
-                      }}
-                    >
-                      uppdrag utförda
+                    <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 1 * 0.25 }}>
+                      {t('aboutSection.cleaningsDesc')}
                     </motion.p>
                   </div>
                 </motion.div>
@@ -783,10 +696,7 @@ export default function Home() {
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.2 }}
                   variants={fadeInUp}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: 2 * 0.25
-                  }}
+                  transition={{ duration: 0.8, delay: 2 * 0.25 }}
                 >
                   {/* Background pattern */}
                   <motion.div 
@@ -794,57 +704,17 @@ export default function Home() {
                     initial={{ backgroundPosition: '0% 0%' }}
                     animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
                     transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
+                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
                   />
                   <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 
-                      className="text-xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={fadeInUp}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 2 * 0.25
-                      }}
-                    >
-                      Månadsvis
+                    <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
+                      {t('aboutSection.monthly')}
                     </motion.h2>
-                    <motion.div 
-                      className="text-4xl md:text-5xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={fadeInUp}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 2 * 0.25
-                      }}
-                    >
-                      <CountUp 
-                        end={500} 
-                        duration={2.5}
-                        suffix="+"
-                        useEasing={true}
-                        enableScrollSpy={true}
-                        scrollSpyOnce={true}
-                      />
+                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
+                      {t('aboutSection.monthlyCount')}
                     </motion.div>
-                    <motion.p 
-                      className="text-white/90"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={fadeInUp}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 2 * 0.25
-                      }}
-                    >
-                      uppdrag per månad
+                    <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
+                      {t('aboutSection.monthlyDesc')}
                     </motion.p>
                   </div>
                 </motion.div>
@@ -860,16 +730,14 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h4 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">
-                    Lokal erfarenhet som ger resultat
+                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+                    {t('aboutSection.localExperienceTitle')}
                   </h4>
-                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed mb-4">
-                    Med över 8000 flyttar och 7000 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. 
-                    Vår erfarenhet sträcker sig över hela landet och vi har hjälpt tusentals familjer och företag med deras flyttar.
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
+                    {t('aboutSection.localExperienceDesc1')}
                   </p>
-                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed mb-6">
-                    Våra prestationer har gett oss erkännande som en av Sveriges mest pålitliga flyttfirmor, med över 1000 positiva recensioner och 
-                    rekommendationer från nöjda kunder. Vi är stolta över att kunna erbjuda professionell flyttservice baserad på år av praktisk erfarenhet.
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6">
+                    {t('aboutSection.localExperienceDesc2')}
                   </p>
                 </motion.div>
 
@@ -1057,7 +925,7 @@ export default function Home() {
                 />
               </div>
               <div className="w-full md:w-2/5 text-left flex flex-col items-start justify-center">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">Flyttellas Utmärkelser</h2>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('awards.title')}</h2>
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
                   Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet.<br />
                   Genom åren har vi blivit erkända av både branschorganisationer och våra kunder för vårt pålitliga arbete och höga standard.<br />
@@ -1078,7 +946,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              VÅRA TJÄNSTER
+              {t('services.title')}
             </motion.h2>
             
             <motion.div 
@@ -1214,7 +1082,7 @@ export default function Home() {
                   }}
                   id="upptack-tjanster"
                 >
-                    Upptäck Alla Våra Tjänster
+                    {t('services.title')}
                 </motion.h2>
                 <motion.p 
                   className="text-lg md:text-xl mb-8 text-[#0F172A]/90"
@@ -1295,13 +1163,13 @@ export default function Home() {
           <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Tips för din flytt</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('tips.title')}</h2>
                 
                 <div className="space-y-16">
                   
                   {/* Innan flytten */}
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8">Innan flytten</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Innan flytten</h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                       <TipCard
                         title="Planera och förbered"
@@ -1439,14 +1307,15 @@ const TipCard: React.FC<TipCardProps> = ({ title, content, imageSrc, imageAlt, o
       />
     )}
     <div className="p-6">
-      <h4 className="text-xl font-bold text-[#0F172A] mb-3">{title}</h4>
-      <div className="text-gray-600 text-base leading-relaxed">{content}</div>
+      <h4 className="text-2xl font-bold text-[#0F172A] mb-3">{title}</h4>
+      <div className="text-gray-600 text-lg leading-relaxed">{content}</div>
     </div>
   </div>
 );
 
 // Inline FeatureBoxesSection component
 function FeatureBoxesSection() {
+  const { t } = useLanguage();
   // Animation for insurance logos
   const [logoIndex, setLogoIndex] = React.useState(0);
   React.useEffect(() => {
@@ -1566,7 +1435,7 @@ function FeatureBoxesSection() {
     <div className="w-full my-12">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
-          Vilka förmåner får du med Flyttella?
+          {t('advantages.title')}
         </h2>
       </div>
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch justify-center w-full gap-0 md:gap-8">
@@ -1584,7 +1453,7 @@ function FeatureBoxesSection() {
             >
               {feature.icon}
               {feature.key !== "tillstand" && (
-                <span className="font-medium text-[#0F172A] text-left text-base leading-tight">
+                <span className="font-medium text-[#0F172A] text-left text-lg leading-tight">
                   {feature.label}
                 </span>
               )}

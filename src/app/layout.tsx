@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Script from "next/script";
 import Footer from "./components/Footer";
 import CookieConsentBanner from "./components/CookieConsent";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const geistSans = GeistSans;
 const geistMono = GeistMono;
@@ -23,14 +24,16 @@ export default function RootLayout({
   return (
     <html lang="sv" className={`${geistSans.className} ${geistMono.className}`}>
       <body className="antialiased">
-        <Header />
-        <Script
-          src={`https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places`}
-          strategy="beforeInteractive"
-        />
-        {children}
-        <Footer />
-        <CookieConsentBanner />
+        <LanguageProvider>
+          <Header />
+          <Script
+            src={`https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places`}
+            strategy="beforeInteractive"
+          />
+          {children}
+          <Footer />
+          <CookieConsentBanner />
+        </LanguageProvider>
       </body>
     </html>
   );

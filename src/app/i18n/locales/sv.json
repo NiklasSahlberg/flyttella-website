@@ -1,0 +1,143 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "services": "Tjänster",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "blog": "Blogg"
+  },
+  "hero": {
+    "title": "Trygghet utan överraskningar",
+    "subtitle": "Vi förstår att din flytt är viktig. Därför erbjuder vi trygg flyttservice med fast pris - inga dolda kostnader. Med oss kan du vara lugn, både för dina ägodelar och din plånbok.",
+    "cta": "Få gratis offert",
+    "description": "Vi hjälper dig med allt från packning till flyttstädning. Snabb, säker och pålitlig flyttservice i hela Stockholm."
+  },
+  "about": {
+    "title": "Om Flyttella",
+    "description1": "Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder. Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning.",
+    "description2": "Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar. Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar. Vi vet att tid ofta är en bristvara vid flytt, därför har vi utvecklat en smidig offertlösning där du får svar inom 1 minut – helt utan förpliktelser. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut. Självklart erbjuder vi fri rådgivning i samband med både flytt och städning – allt för att din upplevelse med oss ska kännas enkel och trygg från början till slut."
+  },
+  "services": {
+    "title": "Våra tjänster",
+    "moving": "Flyttservice",
+    "cleaning": "Flyttstädning",
+    "packing": "Packning",
+    "storage": "Magasinering",
+    "office": "Kontorsflytt",
+    "piano": "Piano flytt"
+  },
+  "features": {
+    "title": "Våra fördelar",
+    "fixedPrice": "Fast pris",
+    "fixedPriceDesc": "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+    "rutDeduction": "RUT-avdrag",
+    "rutDeductionDesc": "Vi hanterar allt pappersarbete för RUT-avdrag",
+    "freeBoxes": "Fritt lån av kartonger i 4 veckor",
+    "freeBoxesDesc": "Specialgjorda flyttkartonger med vår logga",
+    "reschedule": "Omboka eller avboka kostnadsfritt",
+    "rescheduleDesc": "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+    "guarantee": "Nöjd kund garanti",
+    "guaranteeDesc": "14 dagars garanti på flyttstädning",
+    "insurance": "Trafiktillstånd och försäkring",
+    "insuranceDesc": "Alla nödvändiga tillstånd och försäkringar på plats",
+    "trainedStaff": "Utbildad personal",
+    "trainedStaffDesc": "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+    "management": "Ledningssystem",
+    "managementDesc": "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+    "workplace": "Arbetsmiljö",
+    "workplaceDesc": "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+    "readMore": "Läs mer",
+    "insurance": "Försäkring",
+    "packGuarantee": "Pack-garanti",
+    "customerGuarantee": "14 dagars nöjd kund garanti",
+    "rutDeduction": "50% RUT-avdrag",
+    "freeCancellation": "24h fri kostnadsfri avbokning",
+    "freeBoxes": "Fri lån av kartonger i 4 veckor"
+  },
+  "reviews": {
+    "title": "Vad tycker våra kunder om oss?",
+    "subtitle": "En trygg och professionell flyttupplevelse",
+    "description": "Som en av Sveriges mest rekommenderade flyttfirmor sätter vi kunden i fokus. Vi förstår att flyttar kan vara stressande, därför strävar vi efter att göra processen så smidig och trygg som möjligt. Med vår erfarenhet och dedikerade team ser vi till att din flytt blir en positiv upplevelse från början till slut.",
+    "badgeAlt": "5 års erfarenhet som flyttfirma",
+    "arrowText": "Läs gärna vad våra kunder säger om oss"
+  },
+  "cta": {
+    "title": "Redo att börja din flytt?",
+    "subtitle": "Få en snabb och gratis offert på din flytt",
+    "button": "Få gratis offert"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "services": "Tjänster",
+    "about": "Om oss",
+    "terms": "Allmänna villkor",
+    "privacy": "Integritetspolicy"
+  },
+  "common": {
+    "getQuote": "Få offert",
+    "contactUs": "Kontakta oss",
+    "learnMore": "Läs mer",
+    "readMore": "Läs mer",
+    "language": "Språk"
+  },
+  "header": {
+    "home": "Hem",
+    "private": "Privat",
+    "business": "Företag",
+    "about": "Om oss",
+    "faq": "FAQ",
+    "blog": "Blogg",
+    "contact": "Kontakt",
+    "seeAllPrivate": "Se alla privattjänster",
+    "seeAllBusiness": "Se alla företagstjänster",
+    "phone": "08-898-301",
+    "openHours": "Mån-Fre: 08:00-18:00",
+    "closedWeekend": "Lör-Sön: Stängt"
+  },
+  "form": {
+    "title": "Få gratis offert",
+    "movingService": "Komplett flyttservice med professionell packning, transport och flyttstädning",
+    "cleaningService": "Professionell flyttstädning med garanti",
+    "cta": "Skicka förfrågan"
+  },
+  "process": {
+    "title": "Vår Process & Fördelar",
+    "fixedPrice": "Vi arbetar med fasta priser för att ge dig trygghet och transparens.",
+    "customQuote": "Våra offerter är alltid baserade på dina specifika behov och omständigheter.",
+    "permits": "Som en seriös flyttfirma har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats.",
+    "steps": [
+      { "title": "Fyll i formuläret", "desc": "Berätta om din flytt" },
+      { "title": "Snabb offert", "desc": "Få pris på 1 minut" },
+      { "title": "Personlig kontakt", "desc": "Vi ringer samma dag eller dagen efter" },
+      { "title": "Signera & bekräfta", "desc": "Få bokningsbekräftelse direkt" },
+      { "title": "Flytt genomförd", "desc": "Vi tar hand om allt" },
+      { "title": "Nöjd kund", "desc": "14 dagars nöjd kund garanti" }
+    ]
+  },
+  "advantages": {
+    "title": "Våra fördelar"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser och priser"
+  },
+  "tips": {
+    "title": "Tips för din flytt"
+  },
+  "locations": {
+    "title": "Här finns vi"
+  },
+  "aboutSection": {
+    "moves": "Flyttar",
+    "movesCount": "8,000+",
+    "movesDesc": "uppdrag utförda",
+    "cleanings": "Städningar",
+    "cleaningsCount": "7,000+",
+    "cleaningsDesc": "uppdrag utförda",
+    "monthly": "Månadsvis",
+    "monthlyCount": "500+",
+    "monthlyDesc": "uppdrag per månad",
+    "localExperienceTitle": "Lokal erfarenhet som ger resultat",
+    "localExperienceDesc1": "Med över 8000 flyttar och 7000 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. Vår erfarenhet sträcker sig över hela landet och vi har hjälpt tusentals familjer och företag med deras flyttar.",
+    "localExperienceDesc2": "Våra prestationer har gett oss erkännande som en av Sveriges mest pålitliga flyttfirmor, med över 1000 positiva recensioner och rekommendationer från nöjda kunder. Vi är stolta över att kunna erbjuda professionell flyttservice baserad på år av praktisk erfarenhet."
+  }
+} 

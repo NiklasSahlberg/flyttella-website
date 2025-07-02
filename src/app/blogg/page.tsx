@@ -47,12 +47,12 @@ const blogPosts = [
   {
     id: 1,
     title: "10 Tips för en Smidig Flytt i Stockholm",
-    excerpt: "Planera din flytt i Stockholm med våra beprövade tips. Från packning till flyttdag - vi hjälper dig genom hela processen.",
+    excerpt: "En flytt i Stockholm kan kännas överväldigande, men med rätt planering och förberedelser kan den bli en smidig och stressfri upplevelse. Här delar vi med oss av våra bästa tips baserade på över 8000 flyttar i Stockholmsområdet.",
     category: "Flytttips",
     date: "2024-01-15",
-    readTime: "5 min",
-    image: "/blog-flytt-tips.jpg",
-    slug: "10-tips-för-en-smidig-flytt-i-stockholm"
+    readTime: "8 min",
+    image: "/innanflyttfirmankommer.jpg",
+    slug: "10-tips-for-en-smidig-flytt-i-stockholm"
   },
   {
     id: 2,
@@ -266,7 +266,18 @@ export default function BlogPage() {
                 >
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-[#0F172A] to-[#10B981] flex items-center justify-center">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-full h-full bg-gradient-to-br from-[#0F172A] to-[#10B981] flex items-center justify-center absolute inset-0" style={{display: 'none'}}>
                       <span className="text-white text-4xl">📦</span>
                     </div>
                   </div>

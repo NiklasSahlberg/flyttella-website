@@ -40,12 +40,25 @@ export default function BusinessServices() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Våra Företagstjänster</h1>
-          <p className="text-lg md:text-xl max-w-2xl">
-            Vi erbjuder professionella tjänster för företag som vill ha en smidig och trygg flytt eller bemanningslösning. Upptäck våra företagstjänster nedan.
-          </p>
+      <div className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
+        <div className="mx-auto px-16">
+          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
+            {/* Background image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+              style={{
+                backgroundImage: 'url(/intro_picture.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
+            <div className="relative z-10">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">Våra Företagstjänster</h1>
+              <p className="text-lg md:text-xl max-w-2xl">
+                Vi erbjuder professionella tjänster för företag som vill ha en smidig och trygg flytt eller bemanningslösning. Upptäck våra företagstjänster nedan.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

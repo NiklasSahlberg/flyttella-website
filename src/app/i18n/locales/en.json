@@ -1,0 +1,140 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Security without surprises",
+    "subtitle": "We understand that your move is important. That's why we offer secure moving services with fixed prices - no hidden costs. With us, you can be calm, both for your belongings and your wallet.",
+    "cta": "Get free quote",
+    "description": "We help you with everything from packing to moving cleaning. Fast, safe and reliable moving service throughout Stockholm."
+  },
+  "about": {
+    "title": "About Flyttella",
+    "description1": "Flyttella is a moving and cleaning company based in Stockholm that was founded with the goal of making moves and cleaning services easier, safer and more transparent. We have been in business for 5 years, but have over 8 years of experience in the industry - something that is reflected in our way of working, our quality and our satisfied customers. So far, we have had the pleasure of helping over 8000 customers, both individuals and companies, with everything from small moves to complete solutions with cleaning, packing and advice.",
+    "description2": "What makes us unique is our focus on clear terms and fixed prices - with us you always know what's included and what it costs. We offer free loan of moving boxes, free rescheduling and cancellation up to 24 hours before, as well as a generous 14-day guarantee on all moving cleanings. For those who also book packing help, we offer packing guarantee, which means we take full responsibility for what we pack. We know that time is often a scarce commodity when moving, which is why we have developed a smooth quote solution where you get an answer within 1 minute - completely without obligations. Behind all this stands our competent and personal customer service, which is always available to answer questions, give tips and help you make the right decision. Of course, we offer free advice in connection with both moving and cleaning - all to make your experience with us feel easy and secure from start to finish."
+  },
+  "services": {
+    "title": "Our Services",
+    "moving": "Moving Service",
+    "cleaning": "Moving Cleaning",
+    "packing": "Packing",
+    "storage": "Storage",
+    "office": "Office Moving",
+    "piano": "Piano Moving"
+  },
+  "features": {
+    "title": "Our Advantages",
+    "fixedPrice": "Fixed Price",
+    "fixedPriceDesc": "No surprises - we offer both fixed prices and the possibility of ongoing prices",
+    "rutDeduction": "RUT Deduction",
+    "rutDeductionDesc": "We handle all paperwork for RUT deduction",
+    "freeBoxes": "Free loan of boxes for 4 weeks",
+    "freeBoxesDesc": "Custom-made moving boxes with our logo",
+    "reschedule": "Reschedule or cancel free of charge",
+    "rescheduleDesc": "Reschedule or cancel free of charge up to 24 hours before the move",
+    "guarantee": "Satisfied Customer Guarantee",
+    "guaranteeDesc": "14-day guarantee on moving cleaning",
+    "insurance": "Traffic permit and insurance",
+    "insuranceDesc": "All necessary permits and insurance in place",
+    "trainedStaff": "Trained Staff",
+    "trainedStaffDesc": "Our staff is trained to ensure the highest quality and service.",
+    "management": "Management System",
+    "managementDesc": "We work with efficient management systems to guarantee structure and quality.",
+    "workplace": "Work Environment",
+    "workplaceDesc": "We prioritize a safe and secure work environment for both customers and staff.",
+    "readMore": "Read more",
+    "packGuarantee": "Packing guarantee",
+    "customerGuarantee": "14-day satisfaction guarantee",
+    "freeCancellation": "24h free cancellation"
+  },
+  "reviews": {
+    "title": "What do our customers think of us?",
+    "subtitle": "A safe and professional moving experience",
+    "description": "As one of Sweden's most recommended moving companies, we put the customer first. We understand that moving can be stressful, so we strive to make the process as smooth and safe as possible. With our experience and dedicated team, we ensure your move is a positive experience from start to finish.",
+    "badgeAlt": "5 years of experience as a moving company",
+    "arrowText": "See what our customers say about us"
+  },
+  "cta": {
+    "title": "Ready to start your move?",
+    "subtitle": "Get a quick and free quote on your move",
+    "button": "Get free quote"
+  },
+  "footer": {
+    "contact": "Contact",
+    "services": "Services",
+    "about": "About",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy"
+  },
+  "common": {
+    "getQuote": "Get Quote",
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "language": "Language"
+  },
+  "header": {
+    "home": "Home",
+    "private": "Private",
+    "business": "Business",
+    "about": "About",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "contact": "Contact",
+    "seeAllPrivate": "See all private services",
+    "seeAllBusiness": "See all business services",
+    "phone": "08-898-301",
+    "openHours": "Mon-Fri: 08:00-18:00",
+    "closedWeekend": "Sat-Sun: Closed"
+  },
+  "form": {
+    "title": "Get a free quote",
+    "movingService": "Complete moving service with professional packing, transport and cleaning",
+    "cleaningService": "Professional move-out cleaning with guarantee",
+    "cta": "Send request"
+  },
+  "process": {
+    "title": "Our Process & Advantages",
+    "fixedPrice": "We work with fixed prices to give you security and transparency.",
+    "customQuote": "Our quotes are always based on your specific needs and circumstances.",
+    "permits": "As a serious moving company, we have all necessary permits, tax certificates, and insurance in place.",
+    "steps": [
+      { "title": "Fill in the form", "desc": "Tell us about your move" },
+      { "title": "Quick quote", "desc": "Get a price in 1 minute" },
+      { "title": "Personal contact", "desc": "We call the same day or the next" },
+      { "title": "Sign & confirm", "desc": "Get booking confirmation immediately" },
+      { "title": "Move completed", "desc": "We take care of everything" },
+      { "title": "Satisfied customer", "desc": "14-day satisfaction guarantee" }
+    ]
+  },
+  "advantages": {
+    "title": "Our Advantages"
+  },
+  "awards": {
+    "title": "Flyttella's awards and prizes"
+  },
+  "tips": {
+    "title": "Moving Tips"
+  },
+  "locations": {
+    "title": "Where to find us"
+  },
+  "aboutSection": {
+    "moves": "Moves",
+    "movesCount": "8,000+",
+    "movesDesc": "assignments completed",
+    "cleanings": "Cleanings",
+    "cleaningsCount": "7,000+",
+    "cleaningsDesc": "assignments completed",
+    "monthly": "Monthly",
+    "monthlyCount": "500+",
+    "monthlyDesc": "assignments per month",
+    "localExperienceTitle": "Local experience that delivers results",
+    "localExperienceDesc1": "With over 8,000 moves and 7,000 cleanings behind us, we have built up unique expertise in the moving and cleaning industry. Our experience extends across the country and we have helped thousands of families and companies with their moves.",
+    "localExperienceDesc2": "Our achievements have earned us recognition as one of Sweden's most reliable moving companies, with over 1,000 positive reviews and recommendations from satisfied customers. We are proud to offer professional moving services based on years of practical experience."
+  }
+} 
