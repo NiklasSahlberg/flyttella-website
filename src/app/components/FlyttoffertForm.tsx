@@ -656,7 +656,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
           <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
             Fyll i formuläret för en snabb och kostnadsfri offert
           </h1>
-          <h2 className="text-lg md:text-xl font-medium text-center text-gray-700 mb-8">
+          <h2 className="text-lg md:text-xl font-bold text-center text-gray-700 mb-8">
             Vi återkommer inom en minut!
           </h2>
             </>
@@ -796,7 +796,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                     <div className="flex flex-col items-center text-center">
                       <span className="text-4xl mb-4">🏠</span>
                       <h3 className="text-xl font-bold mb-2">Flytt</h3>
-                      <p className="text-sm opacity-90">
+                      <p className="text-base opacity-90">
                         Komplett flyttservice med professionell packning, transport och uppackning
                       </p>
                     </div>
@@ -815,7 +815,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                     <div className="flex flex-col items-center text-center">
                       <span className="text-4xl mb-4">✨</span>
                       <h3 className="text-xl font-bold mb-2">Flyttstäd</h3>
-                      <p className="text-sm opacity-90">
+                      <p className="text-base opacity-90">
                         Professionell flyttstädning för att lämna din gamla bostad i perfekt skick
                       </p>
                     </div>

@@ -208,18 +208,178 @@ export default function FlyttfirmaAkersbergaPage() {
     );
   }
 
+  function FeatureBoxesSection() {
+    // Animation for insurance logos
+    const [logoIndex, setLogoIndex] = React.useState(0);
+    React.useEffect(() => {
+      const interval = setInterval(() => {
+        setLogoIndex((prev) => (prev + 1) % 2);
+      }, 1800);
+      return () => clearInterval(interval);
+    }, []);
+  
+    const insuranceLogos = (
+      <div className="flex items-center justify-between w-full">
+        <motion.div
+          animate={{
+            scale: [1, 1.05, 1],
+            opacity: [1, 0.9, 1]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="flex items-center gap-3"
+        >
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2">
+            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          <span className="font-medium text-[#0F172A] text-base leading-tight">
+            Försäkring
+          </span>
+        </motion.div>
+        <div className="flex items-center gap-4">
+          <Image
+            src="/fora-logo.png"
+            alt="FORA"
+            width={36}
+            height={36}
+            className="object-contain"
+          />
+          <Image
+            src="/trygg-hansa-logo.png"
+            alt="Trygg Hansa"
+            width={80}
+            height={80}
+            className="object-contain"
+          />
+        </div>
+      </div>
+    );
+  
+    const features = [
+      {
+        key: "pack-garanti",
+        label: "Pack-garanti",
+        icon: (
+          <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
+          </motion.div>
+        ),
+      },
+      {
+        key: "kundgaranti",
+        label: "14 dagars nöjd kund garanti",
+        icon: (
+          <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center overflow-visible">
+            <HappyCustomerLottie />
+          </motion.div>
+        ),
+      },
+      {
+        key: "kartonger",
+        label: "Fritt lån av kartonger i 4 veckor",
+        icon: (
+          <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center overflow-visible">
+            <BoxesLottie />
+          </motion.div>
+        ),
+      },
+      {
+        key: "rut-avdrag",
+        label: "50% RUT-avdrag",
+        icon: (
+          <motion.div variants={variants} animate="wiggle" className="h-8 w-8 flex items-center justify-center overflow-visible">
+            <CashLottie />
+          </motion.div>
+        ),
+      },
+      {
+        key: "ombokning-avbokning",
+        label: "24h kostnadsfri ombokning och avbokning",
+        icon: (
+          <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center overflow-visible">
+            <ScheduleLottie />
+          </motion.div>
+        ),
+      },
+      {
+        key: "tillstand",
+        label: "Trafiktillstånd och försäkring",
+        icon: (
+          <div className="flex items-center justify-start w-full">
+            <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center mr-4 overflow-visible">
+              <InsuranceLottie />
+            </motion.div>
+            <span className="font-medium text-[#0F172A] text-left text-base leading-tight flex-grow">
+              Trafiktillstånd och försäkring
+            </span>
+            <div className="flex items-center ml-4">
+              <Image src="/trygg-hansa-logo.png" alt="Trygg Hansa Logo" width={120} height={120} className="object-contain" />
+              <Image src="/fora-logo.png" alt="Fora Logo" width={60} height={60} className="object-contain ml-2" />
+            </div>
+          </div>
+        ),
+      },
+    ];
+  
+    return (
+      <div className="w-full my-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
+            Vilka förmåner får du med Flyttella i Åkersberga?
+          </h2>
+        </div>
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch justify-center w-full gap-0 md:gap-8">
+          {/* Left: Animated boxes with icons and labels */}
+          <div className="w-full md:w-2/5 flex flex-col justify-between items-center py-4 gap-4">
+            {features.map((feature, i) => (
+              <motion.div
+                key={feature.key}
+                className="flex items-center gap-4 bg-white border border-[#10B981] rounded-xl shadow px-8 py-8 w-full max-w-md transition-transform duration-200"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={variants}
+                custom={i}
+              >
+                {feature.icon}
+                {feature.key !== "tillstand" && (
+                  <span className="font-medium text-[#0F172A] text-left text-base leading-tight">
+                    {feature.label}
+                  </span>
+                )}
+              </motion.div>
+            ))}
+          </div>
+          {/* Right: Image */}
+          <div className="w-full md:w-2/5 relative">
+            <Image
+              src="/personalpicture.jpg"
+              alt="Flyttfirma i arbete"
+              fill
+              className="rounded-2xl shadow object-cover object-right"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <main className="overflow-hidden">
-      <div style={{ zoom: '0.75' }}>
+      <div className="main-zoom">
         {/* Hero Section */}
-        <section className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
+        <section className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
           <div className="mx-auto px-24">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                  backgroundImage: 'url(/intro_picture.jpg)',
+                  backgroundImage: 'url(/ostermalm.avif)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -280,110 +440,7 @@ export default function FlyttfirmaAkersbergaPage() {
         </section>
 
         {/* Vilka förmåner får du med Flyttella? Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
-              Vilka förmåner får du med Flyttella i Åkersberga?
-            </h2>
-            <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center w-full gap-0 md:gap-8">
-              {/* Left: Animated boxes with icons and labels */}
-              <div className="w-full md:w-2/5 flex flex-col justify-between items-center py-4 gap-4">
-                {[
-                  {
-                    key: "pack-garanti",
-                    label: "Pack-garanti",
-                    icon: (
-                      <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center">
-                        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
-                      </motion.div>
-                    ),
-                  },
-                  {
-                    key: "kundgaranti",
-                    label: "14 dagars nöjd kund garanti",
-                    icon: (
-                      <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center overflow-visible">
-                        <HappyCustomerLottie />
-                      </motion.div>
-                    ),
-                  },
-                  {
-                    key: "kartonger",
-                    label: "Fritt lån av kartonger i 4 veckor",
-                    icon: (
-                      <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center overflow-visible">
-                        <BoxesLottie />
-                      </motion.div>
-                    ),
-                  },
-                  {
-                    key: "rut-avdrag",
-                    label: "50% RUT-avdrag",
-                    icon: (
-                      <motion.div variants={variants} animate="wiggle" className="h-8 w-8 flex items-center justify-center overflow-visible">
-                        <CashLottie />
-                      </motion.div>
-                    ),
-                  },
-                  {
-                    key: "ombokning-avbokning",
-                    label: "24h kostnadsfri ombokning och avbokning",
-                    icon: (
-                      <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center overflow-visible">
-                        <ScheduleLottie />
-                      </motion.div>
-                    ),
-                  },
-                  {
-                    key: "tillstand",
-                    label: "Trafiktillstånd och försäkring",
-                    icon: (
-                      <div className="flex items-center justify-start w-full">
-                        <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center mr-4 overflow-visible">
-                          <InsuranceLottie />
-                        </motion.div>
-                        <span className="font-medium text-[#0F172A] text-left text-base leading-tight flex-grow">
-                          Trafiktillstånd och försäkring
-                        </span>
-                        <div className="flex items-center ml-4">
-                          <Image src="/trygg-hansa-logo.png" alt="Trygg Hansa Logo" width={120} height={120} className="object-contain" />
-                          <Image src="/fora-logo.png" alt="Fora Logo" width={60} height={60} className="object-contain ml-2" />
-                        </div>
-                      </div>
-                    ),
-                  },
-                ].map((feature, i) => (
-                  <motion.div
-                    key={feature.key}
-                    className="flex items-center gap-4 bg-white border border-[#10B981] rounded-xl shadow px-8 py-8 w-full max-w-md transition-transform duration-200"
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={variants}
-                    custom={i}
-                  >
-                    {feature.icon}
-                    {feature.key !== "tillstand" && (
-                      <span className="font-medium text-[#0F172A] text-left text-base leading-tight">
-                        {feature.label}
-                      </span>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-              {/* Right: Image */}
-              <div className="w-full md:w-2/5 relative">
-                <Image
-                  src="/personalpicture.jpg"
-                  alt="Professionell flyttfirma i Åkersberga - Flyttella"
-                  fill
-                  className="rounded-2xl shadow object-cover object-right"
-                  priority={false}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+          <FeatureBoxesSection />
 
         {/* Reviews Section */}
         <ReviewsWidget 
@@ -1265,7 +1322,7 @@ export default function FlyttfirmaAkersbergaPage() {
                 
                 {/* Innan flytten */}
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8">Innan flytten</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Innan flytten</h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <TipCard
                       title="Planera och förbered"

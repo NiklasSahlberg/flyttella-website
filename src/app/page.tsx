@@ -335,11 +335,11 @@ export default function Home() {
 
   return (
     <main className="overflow-hidden">
-      <div style={{ zoom: '0.75' }}>
+      <div className="main-zoom">
         {/* 1. Hero Section */}
-        <div className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
+        <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
           <div className="mx-auto px-16">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
+                          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -366,13 +366,120 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 2. Vilka förmåner får du med Flyttella? */}
+        {/* 2. Om oss */}
+        <motion.section
+          className="relative overflow-hidden"
+          style={{
+            paddingTop: '8rem',
+            paddingBottom: '8rem',
+            borderTop: 'none',
+            boxShadow: 'none',
+          }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {/* Background image absolutely positioned */}
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/efter_flytt.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center 100%',
+              zIndex: 0,
+            }}
+          />
+          {/* Overlay absolutely positioned, full width */}
+          <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
+          
+          {/* Top gradient fade */}
+          <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none"
+               style={{
+                 background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+               }}
+          />
+          
+          {/* Bottom gradient fade */}
+          <div className="absolute bottom-0 left-0 w-full h-32 z-30 pointer-events-none"
+               style={{
+                 background: 'linear-gradient(to top, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+               }}
+          />
+          
+          {/* Centered content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
+              <div className="space-y-8 max-w-6xl mx-auto">
+                {/* Full text content */}
+                <motion.div
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.2 }}
+                  variants={fadeInUp}
+                  transition={{ 
+                    duration: 0.8,
+                    delay: 0 * 0.25
+                  }}
+                >
+                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
+                    Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder. Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning.
+                  </p>
+                  <br />
+                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
+                    Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar. Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.
+                  </p>
+                  <br />
+                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
+                    Vi vet att tid ofta är en bristvara vid flytt, därför har vi utvecklat en smidig offertlösning där du får svar inom 1 minut – helt utan förpliktelser. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut. Självklart erbjuder vi fri rådgivning i samband med både flytt och städning – allt för att din upplevelse med oss ska kännas enkel och trygg från början till slut.
+                  </p>
+                  
+                  {/* Läs mer om oss link */}
+                  <motion.div
+                    className="mt-12 text-center"
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={fadeInUp}
+                    transition={{ 
+                      duration: 0.8,
+                      delay: 0.5
+                    }}
+                  >
+                    <Link 
+                      href="/om-oss" 
+                      className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+                    >
+                      Läs mer om oss
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* 3. Vilka förmåner får du med Flyttella? */}
         <FeatureBoxesSection />
 
-        {/* 3. Vad tycker våra kunder om oss */}
+        {/* 4. Vad tycker våra kunder om oss */}
         <ReviewsWidget />
 
-        {/* 4. Vår process och fördelar */}
+        {/* 5. Vår process och fördelar */}
         <section className="section-padding bg-white relative overflow-hidden"
           style={{ borderBottom: 'none', boxShadow: 'none' }}>
           <div className="mx-auto px-24 relative z-10">
@@ -479,7 +586,7 @@ export default function Home() {
           <div className="absolute left-0 bottom-0 w-full h-10 pointer-events-none" style={{background: 'linear-gradient(to bottom, white 60%, rgba(255,255,255,0) 100%)', zIndex: 20}} />
         </section>
 
-        {/* 5. Vår erfarenhet */}
+        {/* 6. Vår erfarenhet */}
         <motion.section
           className="relative overflow-hidden"
           style={{
@@ -812,119 +919,122 @@ export default function Home() {
         </motion.section>
 
         {/* 6. Våra fördelar */}
-        <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
-          <div className="mx-auto px-24">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
-              <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
-                {/* Left side - Features content */}
-                <div className="flex-[2] w-full">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra fördelar</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
-                    {[
-                      {
-                        icon: "💰",
-                        title: "Fast pris",
-                        description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
-                        link: "/priser"
-                      },
-                      {
-                        icon: "📋",
-                        title: "RUT-avdrag",
-                        description: "Vi hanterar allt pappersarbete för RUT-avdrag",
-                        link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
-                      },
-                      {
-                        icon: "📦",
-                        title: "Fritt lån av kartonger i 4 veckor",
-                        description: "Specialgjorda flyttkartonger med vår logga",
-                        link: "/kartonger"
-                      },
-                      {
-                        icon: "⏰",
-                        title: "Omboka eller avboka kostnadsfritt",
-                        description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
-                        link: "/avbokning"
-                      },
-                      {
-                        icon: "✅",
-                        title: "Nöjd kund garanti",
-                        description: "14 dagars garanti på flyttstädning",
-                        link: "/garanti"
-                      },
-                      {
-                        icon: "🔒",
-                        title: "Trafiktillstånd och försäkring",
-                        description: "Alla nödvändiga tillstånd och försäkringar på plats",
-                        link: "/tillstand"
-                      },
-                      {
-                        icon: "🎓",
-                        title: "Utbildad personal",
-                        description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
-                        link: "/om-oss"
-                      },
-                      {
-                        icon: "📈",
-                        title: "Ledningssystem",
-                        description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
-                        link: "/om-oss"
-                      },
-                      {
-                        icon: "🦺",
-                        title: "Arbetsmiljö",
-                        description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
-                        link: "/om-oss"
-                      }
-                    ].map((feature, i) => (
-                      <motion.div
-                        key={feature.icon}
-                        className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full"
-                        initial="initial"
-                        whileInView="animate"
-                        viewport={{ once: true, amount: 0.2 }}
-                        variants={variants}
-                        custom={i}
-                      >
-                        <motion.span
-                          className="text-2xl md:text-3xl"
-                          initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
-                          animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
-                          transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
+        {/* Responsive zoom wrapper for wide screens */}
+        <div className="responsive-zoom">
+          <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
+            <div className="mx-auto px-24">
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
+                <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
+                  {/* Left side - Features content */}
+                  <div className="flex-[2] w-full">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra fördelar</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
+                      {[
+                        {
+                          icon: "💰",
+                          title: "Fast pris",
+                          description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                          link: "/priser"
+                        },
+                        {
+                          icon: "📋",
+                          title: "RUT-avdrag",
+                          description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                          link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                        },
+                        {
+                          icon: "📦",
+                          title: "Fritt lån av kartonger i 4 veckor",
+                          description: "Specialgjorda flyttkartonger med vår logga",
+                          link: "/kartonger"
+                        },
+                        {
+                          icon: "⏰",
+                          title: "Omboka eller avboka kostnadsfritt",
+                          description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                          link: "/avbokning"
+                        },
+                        {
+                          icon: "✅",
+                          title: "Nöjd kund garanti",
+                          description: "14 dagars garanti på flyttstädning",
+                          link: "/garanti"
+                        },
+                        {
+                          icon: "🔒",
+                          title: "Trafiktillstånd och försäkring",
+                          description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                          link: "/tillstand"
+                        },
+                        {
+                          icon: "🎓",
+                          title: "Utbildad personal",
+                          description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "📈",
+                          title: "Ledningssystem",
+                          description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "🦺",
+                          title: "Arbetsmiljö",
+                          description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                          link: "/om-oss"
+                        }
+                      ].map((feature, i) => (
+                        <motion.div
+                          key={feature.icon}
+                          className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full"
+                          initial="initial"
+                          whileInView="animate"
+                          viewport={{ once: true, amount: 0.2 }}
+                          variants={variants}
+                          custom={i}
                         >
-                          {feature.icon}
-                        </motion.span>
-                        <div className="flex-1">
-                          <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
-                          <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
-                          <a 
-                            href={feature.link}
-                            target={feature.link.startsWith('http') ? '_blank' : undefined}
-                            rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                            className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
+                          <motion.span
+                            className="text-2xl md:text-3xl"
+                            initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                            animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                            transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
                           >
-                            Läs mer
-                            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </a>
-                        </div>
-                      </motion.div>
-                    ))}
+                            {feature.icon}
+                          </motion.span>
+                          <div className="flex-1">
+                            <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
+                            <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
+                            <a 
+                              href={feature.link}
+                              target={feature.link.startsWith('http') ? '_blank' : undefined}
+                              rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                              className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
+                            >
+                              Läs mer
+                              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Right side - Image */}
-                <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
-                  <div className="w-full h-full flex items-stretch">
-                    <Image
-                      src="/smiling_worker_new.png"
-                      alt="Glad flyttarbetare"
-                      width={600}
-                      height={200}
-                      className="rounded-xl shadow-lg object-cover w-full h-full"
-                      style={{ objectPosition: '30% 80%' }}
-                      priority={false}
-                    />
+                  {/* Right side - Image */}
+                  <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
+                    <div className="w-full h-full flex items-stretch">
+                      <Image
+                        src="/smiling_worker_new.png"
+                        alt="Glad flyttarbetare"
+                        width={600}
+                        height={200}
+                        className="rounded-xl shadow-lg object-cover w-full h-full"
+                        style={{ objectPosition: '30% 80%' }}
+                        priority={false}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1121,26 +1231,61 @@ export default function Home() {
                     Från bohagsflytt och flyttstädning till specialtjänster som piano- och magasinering.
                 </motion.p>
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.2 }}
+                  variants={fadeInUp}
+                  transition={{ 
+                    duration: 0.8,
+                    delay: 0.2
+                  }}
                 >
-                  <Link 
-                    href="/tjanster" 
-                    className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    Se alla våra tjänster
-                    <motion.svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      stroke="currentColor"
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
+                    <Link 
+                      href="/tjanster" 
+                      className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </motion.svg>
-                  </Link>
+                      Se alla våra privattjänster
+                      <motion.svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </motion.svg>
+                    </Link>
+                  </motion.div>
+                  
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link 
+                      href="/foretag" 
+                      className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                    >
+                      Se alla våra företagstjänster
+                      <motion.svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </motion.svg>
+                    </Link>
+                  </motion.div>
                 </motion.div>
               </div>
             </div>

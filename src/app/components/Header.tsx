@@ -203,9 +203,9 @@ export default function Header() {
                           <span className="text-lg mr-3">🎹</span>
                           <span>Piano/Tunglyft</span>
                         </Link>
-                        <Link href="/atervinning" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/bortforsling" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
                           <span className="text-lg mr-3">♻️</span>
-                          <span>Återvinning</span>
+                          <span>Bortforsling</span>
                         </Link>
                         <Link href="/magasinering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-sm text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
                           <span className="text-lg mr-3">📦</span>
@@ -421,11 +421,11 @@ export default function Header() {
                         Piano/Tunglyft
                       </Link>
                       <Link
-                        href="/atervinning"
+                        href="/bortforsling"
                         className="block py-2 px-4 text-base text-[#0F172A] hover:text-[#10B981] hover:bg-gray-100 rounded-lg"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        Återvinning
+                        Bortforsling
                       </Link>
                       <Link
                         href="/magasinering"

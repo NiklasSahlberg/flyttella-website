@@ -115,3 +115,12 @@ body {
 .category-button:hover {
   @apply transform scale-105;
 }
+
+.main-zoom {
+  zoom: 0.75;
+}
+@media (min-width: 1536px) {
+  .main-zoom {
+    zoom: 1;
+  }
+}
