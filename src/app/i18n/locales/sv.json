@@ -101,7 +101,8 @@
     "cta": "Skicka förfrågan"
   },
   "process": {
-    "title": "Vår Process & Fördelar",
+    "title": "Vår process",
+    "description": "Vår flyttprocess är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär på startsidan där du anger dina uppgifter och flyttbehov. Inom en minut får du en offert skickad till din angivna e-postadress. Samma dag eller dagen efter tar vi personlig kontakt med dig för att diskutera detaljerna och svara på eventuella frågor. När du är nöjd med offerten kan du enkelt signera den digitalt. Sedan genomför vi flytten enligt dina önskemål och avtal. Resultatet? En nöjd kund som kan fokusera på att komma hem till sitt nya hem.",
     "fixedPrice": "Vi arbetar med fasta priser för att ge dig trygghet och transparens.",
     "customQuote": "Våra offerter är alltid baserade på dina specifika behov och omständigheter.",
     "permits": "Som en seriös flyttfirma har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats.",
@@ -111,14 +112,14 @@
       { "title": "Personlig kontakt", "desc": "Vi ringer samma dag eller dagen efter" },
       { "title": "Signera & bekräfta", "desc": "Få bokningsbekräftelse direkt" },
       { "title": "Flytt genomförd", "desc": "Vi tar hand om allt" },
-      { "title": "Nöjd kund", "desc": "14 dagars nöjd kund garanti" }
+      { "title": "Nöjd kund", "desc": "Återkommande kund" }
     ]
   },
   "advantages": {
     "title": "Våra fördelar"
   },
   "awards": {
-    "title": "Flyttellas utmärkelser och priser"
+    "title": "Flyttellas utmärkelser"
   },
   "tips": {
     "title": "Tips för din flytt"
@@ -127,6 +128,7 @@
     "title": "Här finns vi"
   },
   "aboutSection": {
+    "title": "Vår erfarenhet",
     "moves": "Flyttar",
     "movesCount": "8,000+",
     "movesDesc": "uppdrag utförda",

@@ -122,15 +122,6 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
 
         {type === 'skada' && damageType && !submitted && (
           <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
-            <div>
-              <label className="block text-sm font-medium mb-1">Fullständigt Namn och Efternamn *</label>
-              <input type="text" name="name" required className="w-full border rounded-lg px-3 py-2" value={form.name} onChange={handleChange} />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">E-post *</label>
-              <input type="email" name="email" required className="w-full border rounded-lg px-3 py-2" value={form.email} onChange={handleChange} />
-            </div>
-
             {damageType === 'skada' && (
               <>
                 <div>
@@ -159,7 +150,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
 
                 <div>
                   <label className="block text-sm font-medium mb-1">Bild på framsidan</label>
-                  <label htmlFor="front-image-upload" className="inline-block px-4 py-2 bg-gray-200 text-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 text-xs font-medium">
+                  <label htmlFor="front-image-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
                     Välj bild
                   </label>
                   <input
@@ -177,7 +168,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
 
                 <div>
                   <label className="block text-sm font-medium mb-1">Bild från vänster sida</label>
-                  <label htmlFor="left-image-upload" className="inline-block px-4 py-2 bg-gray-200 text-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 text-xs font-medium">
+                  <label htmlFor="left-image-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
                     Välj bild
                   </label>
                   <input
@@ -194,7 +185,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Bild från höger sida *</label>
+                  <label className="block text-sm font-medium mb-1">Bild från höger sida</label>
                   <label htmlFor="right-image-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
                     Välj bild
                   </label>
@@ -204,7 +195,6 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                     name="rightImage"
                     accept="image/*"
                     className="hidden"
-                    required
                     onChange={handleChange}
                   />
                   {form.rightImage && (
@@ -213,7 +203,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Beskriv skador på föremålet *</label>
+                  <label className="block text-sm font-medium mb-1">Beskriv skador på föremålet och hur skadan har gått till *</label>
                   <textarea name="description" required className="w-full border rounded-lg px-3 py-2 min-h-[80px]" value={form.description} onChange={handleChange} />
                 </div>
 
@@ -404,8 +394,8 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Vem packade föremålet?</label>
-                  <input type="text" name="packedBy" className="w-full border rounded-lg px-3 py-2" value={form.packedBy} onChange={handleChange} />
+                  <label className="block text-sm font-medium mb-1">Beskriv hur föremålet har försvunnit *</label>
+                  <textarea name="description" required className="w-full border rounded-lg px-3 py-2 min-h-[80px]" value={form.description} onChange={handleChange} />
                 </div>
 
                 <div>
@@ -557,12 +547,12 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               <input type="text" name="order" required className="w-full border rounded-lg px-3 py-2" value={form.order} onChange={handleChange} />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Beskrivning *</label>
+              <label className="block text-sm font-medium mb-1">Beskriv tydligt vad som har varit bristande i städningen *</label>
               <textarea name="description" required className="w-full border rounded-lg px-3 py-2 min-h-[80px]" value={form.description} onChange={handleChange} />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Bifoga bilder (valfritt)</label>
-              <label htmlFor="file-upload" className="inline-block px-4 py-2 bg-gray-200 text-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 text-xs font-medium">
+              <label className="block text-sm font-medium mb-1">Bifoga bilder på alla bristmoment i städningen *</label>
+              <label htmlFor="file-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
                 Välj filer
               </label>
               <input
@@ -572,6 +562,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 accept="image/*"
                 className="hidden"
                 multiple
+                required
                 onChange={handleChange}
               />
               {form.files.length > 0 && (

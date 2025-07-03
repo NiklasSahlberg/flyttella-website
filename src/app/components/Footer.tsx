@@ -3,10 +3,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import TermsModal from './TermsModal';
 import ReportModal from './ReportModal';
 
 export default function Footer() {
+  const pathname = usePathname();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [termsHtml, setTermsHtml] = useState('');
   const [loading, setLoading] = useState(false);
@@ -95,6 +97,12 @@ export default function Footer() {
   }, [isFlyttPartnerModalOpen]);
 
   useEffect(() => {
+    // Only show the report button on the main page
+    if (pathname !== '/') {
+      setShowReportButton(false);
+      return;
+    }
+
     const handleScroll = () => {
       const targetElement = document.getElementById('upptack-tjanster');
       if (targetElement) {
@@ -109,7 +117,7 @@ export default function Footer() {
     handleScroll(); // Check initial position
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <footer className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-gray-100 border-t-4 border-[#10B981]">

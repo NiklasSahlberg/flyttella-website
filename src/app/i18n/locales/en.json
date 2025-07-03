@@ -98,7 +98,8 @@
     "cta": "Send request"
   },
   "process": {
-    "title": "Our Process & Advantages",
+    "title": "Our Process",
+    "description": "Our moving process is designed to be simple, transparent, and secure. It starts with you filling out our form on the homepage where you provide your details and moving needs. Within one minute, you'll receive a quote sent to your specified email address. The same day or the next day, we'll personally contact you to discuss the details and answer any questions. When you're satisfied with the quote, you can easily sign it digitally. Then we carry out the move according to your wishes and agreement. The result? A satisfied customer who can focus on coming home to their new home.",
     "fixedPrice": "We work with fixed prices to give you security and transparency.",
     "customQuote": "Our quotes are always based on your specific needs and circumstances.",
     "permits": "As a serious moving company, we have all necessary permits, tax certificates, and insurance in place.",
@@ -124,6 +125,7 @@
     "title": "Where to find us"
   },
   "aboutSection": {
+    "title": "Our Experience",
     "moves": "Moves",
     "movesCount": "8,000+",
     "movesDesc": "assignments completed",

@@ -392,14 +392,7 @@ export default function FlyttfirmaAkersbergaPage() {
                   <p className="text-xl md:text-2xl text-white/90 mb-8">
                     Vi erbjuder professionell flyttservice anpassad för Åkersbergas unika behov - från moderna lägenheter i centrum till villor i lugna villaområden.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href="/fa-offert" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
-                      Få offert
-                    </Link>
-                    <Link href="/kontakt" className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#0F172A] transition-all font-medium">
-                      Kontakta oss
-                    </Link>
-                  </div>
+
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
                   <FlyttoffertForm mode="widget" />
@@ -520,24 +513,7 @@ export default function FlyttfirmaAkersbergaPage() {
           </div>
         </motion.section>
 
-        {/* Main Content */}
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-                Lokal flyttexpertis i Åkersberga
-              </h2>
-              <div className="space-y-4">
-                <p className="text-lg text-gray-600">
-                  Som etablerad flyttfirma i Åkersberga erbjuder vi en komplett flyttservice som täcker alla dina behov. Vi har särskild erfarenhet av att hantera både privata flyttar och företagsflyttar i området.
-                </p>
-                <p className="text-lg text-gray-600">
-                  Vi känner väl till Åkersbergas olika områden och de särskilda krav som ställs vid flytt här. Vår expertis omfattar allt från villor och radhus till lägenheter och kontorslokaler.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Vilka förmåner får du med Flyttella? Section */}
           <FeatureBoxesSection />
@@ -1107,7 +1083,7 @@ export default function FlyttfirmaAkersbergaPage() {
               <div className="w-full md:w-3/5 flex justify-center">
                 <Image
                   src="/awards_no_bg.png"
-                  alt="Flyttellas utmärkelser och priser - Flyttfirma i Åkersberga"
+                  alt="Flyttellas utmärkelser - Flyttfirma i Åkersberga"
                   width={1200}
                   height={600}
                   className="object-contain w-full h-auto max-w-3xl"
