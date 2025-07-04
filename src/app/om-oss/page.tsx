@@ -52,6 +52,7 @@ export default function OmOssPage() {
             <p>
               Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar. Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.
             </p>
+            <br />
             <p>
               Vi vet att tid ofta är en bristvara vid flytt, därför har vi utvecklat en smidig offertlösning där du får svar inom 1 minut – helt utan förpliktelser. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut. Självklart erbjuder vi fri rådgivning i samband med både flytt och städning – allt för att din upplevelse med oss ska kännas enkel och trygg från början till slut.
             </p>

@@ -13,6 +13,256 @@ const fadeInUp = {
 // Sample blog post data - you can replace this with real content from a CMS or database
 const blogPosts = [
   {
+    slug: "vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma",
+    title: "Vad bör du tänka på när du väljer en seriös flyttfirma",
+    excerpt: "Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips för att identifiera en seriös och pålitlig flyttfirma som tar hand om dina ägodelar med omsorg.",
+    category: "Flytttips",
+    date: "2024-01-20",
+    readTime: "10 min",
+    author: "Flyttella Team",
+    content: `
+      <h2 class="font-bold">1. Kontrollera företagets registrering och licenser</h2>
+      <p>En seriös flyttfirma ska vara registrerad hos Bolagsverket och ha alla nödvändiga tillstånd. Kontrollera att företaget har rätt registreringsnummer och att det inte finns några varningar eller sanktioner mot företaget.</p>
+      <p><strong>Vad du ska kontrollera:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Företagsregistrering hos Bolagsverket</li>
+            <li>F-skatt (Företagsskatt) registrering</li>
+            <li>Transportörlicens för godsfordon</li>
+            <li>Försäkringar och säkerhetsställningar</li>
+            <li>Medlemskap i branschorganisationer</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/innanflyttfirmankommer.jpg" alt="Förberedelser innan flyttfirman kommer" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-8" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Förberedelser innan flyttfirman kommer - en viktig del av att välja rätt flyttfirma</p>
+        </div>
+      </div>
+      
+      <h2 class="font-bold">2. Undersök företagets rykte och erfarenhet</h2>
+      <p>Läs recensioner och omdömen från tidigare kunder. En seriös flyttfirma har vanligtvis många positiva recensioner och är transparent med både positiva och negativa omdömen. Undersök också hur länge företaget har varit verksamt.</p>
+      
+      <p><strong>Var du kan hitta recensioner:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Google Reviews</li>
+            <li>Trustpilot</li>
+            <li>Företagets hemsida</li>
+            <li>Bekanta och familj</li>
+            <li>Reco</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/1000reviewspicture.png" alt="Kundrecensioner och omdömen" class="w-full -mt-8" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">3. Kräv skriftlig offert och kontrakt</h2>
+      <p>En seriös flyttfirma ger alltid en skriftlig offert som är detaljerad och transparent. Offerten ska innehålla alla kostnader, inga dolda avgifter, och tydliga villkor. Läs igenom kontraktet noggrant innan du skriver under.</p>
+      
+      <p><strong>Vad som ska finnas i offerten:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Detaljerad kostnadsuppdelning</li>
+            <li>Vad som ingår och inte ingår</li>
+            <li>Flyttdatum och tidsram</li>
+            <li>Antal flyttarbetare och fordon</li>
+            <li>Försäkring och ansvarsförhållanden</li>
+            <li>Betalningsvillkor</li>
+            <li>Avbokningsvillkor</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/viktigaavtalcustomer.png" alt="Skriftlig offert och kontrakt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <p class="text-sm text-gray-600 mt-2 text-center">En seriös flyttfirma ger alltid en skriftlig och detaljerad offert</p>
+        </div>
+      </div>
+      
+      <h2 class="font-bold">4. Kontrollera försäkringar och säkerhetsställningar</h2>
+      <p>En seriös flyttfirma har omfattande försäkringar som skyddar både företaget och dig som kund. Kontrollera att företaget har rätt försäkringar och att de täcker eventuella skador på dina ägodelar under transporten.</p>
+      <p><strong>Viktiga försäkringar att kontrollera:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Ansvarsförsäkring för godsfordon</li>
+            <li>Försäkring för kundens ägodelar</li>
+            <li>Arbetsmiljöförsäkring för personal</li>
+            <li>Företagsansvarsförsäkring</li>
+            <li>Säkerhetsställningar enligt lag</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/insurance.json" alt="Försäkringar och säkerhet" class="w-full -mt-8" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">5. Undersök företagets personal och fordon</h2>
+      <p>Kontrollera att flyttfirman använder egen personal och inte underentreprenörer. Fråga om personalens erfarenhet och utbildning. Undersök också fordonens skick och storlek för att säkerställa att de räcker för din flytt.</p>
+      
+      <p><strong>Vad du ska fråga om:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Använder företaget egen personal?</li>
+            <li>Vilken erfarenhet har flyttarbetarna?</li>
+            <li>Finns det utbildad personal för specialflyttar?</li>
+            <li>Vilken typ och storlek på fordon används?</li>
+            <li>Är fordonen väl underhållna?</li>
+            <li>Finns det tillräckligt med utrustning?</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-8 object-cover" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Erfaren och professionell personal är avgörande för en smidig flytt</p>
+        </div>
+      </div>
+      
+      <h2 class="font-bold">6. Kontrollera företagets lokala närvaro</h2>
+      <p>En flyttfirma som är etablerad i ditt område känner till lokala förhållanden, parkeringsregler och trafikflöden. Detta kan göra flytten mycket smidigare och mer effektiv.</p>
+      <p><strong>Fördelar med lokal flyttfirma:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Känner till lokala förhållanden</li>
+            <li>Snabbare responstid vid problem</li>
+            <li>Bättre kundservice</li>
+            <li>Lättare att få referenser</li>
+            <li>Känner till parkeringsregler</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/stockholm.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg -mt-8" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">7. Undersök företagets kundservice och kommunikation</h2>
+      <p>En seriös flyttfirma har bra kundservice och kommunicerar tydligt och professionellt. De svarar snabbt på frågor, är transparenta med information och gör det enkelt att komma i kontakt med dem.</p>
+      <p><strong>Tecken på bra kundservice:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Snabba svar på förfrågningar</li>
+            <li>Tydlig och professionell kommunikation</li>
+            <li>Transparent information</li>
+            <li>Lätt att komma i kontakt</li>
+            <li>Proaktiv kommunikation</li>
+            <li>Dedikerad kontaktperson</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/phonecall.json" alt="Kundservice och kommunikation" class="w-full -mt-8" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">8. Kontrollera företagets specialiseringar</h2>
+      <p>Olika flyttar kräver olika kompetenser. Kontrollera att flyttfirman har erfarenhet av din typ av flytt - oavsett om det är en lägenhetsflytt, villaflytt, kontorsflytt eller specialflytt med känsliga föremål.</p>
+      
+      <p><strong>Specialiseringar att tänka på:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Lägenhetsflyttar</li>
+            <li>Villaflyttar</li>
+            <li>Kontorsflyttar</li>
+            <li>Pianoflyttar</li>
+            <li>Konst och antikviteter</li>
+            <li>Internationella flyttar</li>
+            <li>Långdistansflyttar</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/piano.png" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Vissa flyttar kräver specialkompetens, som pianoflytt eller flytt av konst</p>
+        </div>
+      </div>
+      
+      <h2 class="font-bold">9. Undersök företagets miljöarbete och hållbarhet</h2>
+      <p>Allt fler kunder värdesätter företag som tar miljöansvar. En seriös flyttfirma arbetar aktivt med hållbarhet och miljöfrågor, från miljövänliga fordon till återvinning av förpackningsmaterial.</p>
+      <p><strong>Miljöaspekter att kontrollera:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Miljövänliga fordon</li>
+            <li>Återvinning av förpackningsmaterial</li>
+            <li>Energisnåla lösningar</li>
+            <li>Miljöcertifieringar</li>
+            <li>Hållbar verksamhet</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/barhjalp.png" alt="Miljövänlig flytt och hållbarhet" class="w-full rounded-lg shadow-lg -mt-8" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">10. Lita på din magkänsla</h2>
+      <p>Trots alla checklistor och kriterier är det viktigt att lita på din magkänsla. Om något känns fel eller om flyttfirman inte ger dig en trygg känsla, fortsätt leta. En seriös flyttfirma ska ge dig trygghet och förtroende.</p>
+      <p><strong>Varningstecken att vara uppmärksam på:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul>
+            <li>Otydliga eller undvikande svar</li>
+            <li>Orealistiskt låga priser</li>
+            <li>Krav på kontantbetalning</li>
+            <li>Otydliga kontrakt</li>
+            <li>Dålig kommunikation</li>
+            <li>Tryck på att besluta snabbt</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/thumbsup.json" alt="Lita på din magkänsla" class="w-full -mt-8" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">Sammanfattning</h2>
+      <p>Att välja en seriös flyttfirma kräver tid och noggrannhet, men det är en investering som löner sig. Genom att följa dessa riktlinjer kan du minimera risken för problem och säkerställa en smidig flyttupplevelse. Kom ihåg att det bästa priset inte alltid är det billigaste - kvalitet, säkerhet och pålitlighet är ofta värt den extra kostnaden.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Viktiga punkter att komma ihåg:</strong></p>
+          <ul>
+            <li>Kontrollera alltid företagets registrering och licenser</li>
+            <li>Läs recensioner och omdömen från tidigare kunder</li>
+            <li>Kräv skriftlig offert och kontrakt</li>
+            <li>Verifiera försäkringar och säkerhetsställningar</li>
+            <li>Undersök personal och fordon</li>
+            <li>Lita på din magkänsla</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/happycustomeraftermoving.png" alt="Nöjd kund efter flytt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <p class="text-sm text-gray-600 mt-2 text-center">En seriös flyttfirma säkerställer en smidig flytt och nöjda kunder</p>
+        </div>
+      </div>
+      
+      <p><strong>Behöver du hjälp med att välja flyttfirma?</strong> Flyttella är en etablerad och seriös flyttfirma i Stockholmsområdet med över 8000 genomförda flyttar. Vi erbjuder transparenta priser, omfattande försäkringar och professionell service. Kontakta oss för en kostnadsfri offert och låt oss hjälpa dig med din flytt.</p>
+    `,
+    relatedPosts: [
+      {
+        title: "10 Tips för en Smidig Flytt i Stockholm",
+        slug: "10-tips-for-en-smidig-flytt-i-stockholm",
+        excerpt: "Planera din flytt i Stockholm med våra beprövade tips."
+      },
+      {
+        title: "Flyttstädning - Vad Du Behöver Veta",
+        slug: "flyttstädning-vad-du-behöver-veta",
+        excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick."
+      }
+    ]
+  },
+  {
     slug: "10-tips-for-en-smidig-flytt-i-stockholm",
     title: "10 Tips för en Smidig Flytt i Stockholm",
     excerpt: "En flytt i Stockholm kan kännas överväldigande, men med rätt planering och förberedelser kan den bli en smidig och stressfri upplevelse. Här delar vi med oss av våra bästa tips baserade på över 8000 flyttar i Stockholmsområdet.",
@@ -142,9 +392,9 @@ const blogPosts = [
     `,
     relatedPosts: [
       {
-        title: "Så Packar Du Känsliga Föremål Korrekt",
-        slug: "så-packar-du-känsliga-föremål-korrekt",
-        excerpt: "Lär dig hur du packar porslin, konst och andra känsliga föremål för att säkerställa att de kommer fram oskadda."
+        title: "Vad bör du tänka på när du väljer en seriös flyttfirma",
+        slug: "vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma",
+        excerpt: "Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips."
       },
       {
         title: "Flyttstädning - Vad Du Behöver Veta",
@@ -246,7 +496,7 @@ export default function BlogPostPage() {
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
               style={{
-                backgroundImage: 'url(/blog-hero-bg.jpg)',
+                backgroundImage: 'url(/intro_picture.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -277,7 +527,7 @@ export default function BlogPostPage() {
                 </h1>
 
                 {/* Meta */}
-                <div className="flex flex-wrap items-center gap-6 text-white/80">
+                <div className="flex flex-wrap items-center gap-6 text-white/80 mb-6">
                   <div className="flex items-center">
                     <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -297,6 +547,11 @@ export default function BlogPostPage() {
                     {post.readTime}
                   </div>
                 </div>
+
+                {/* Lead paragraph */}
+                <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium">
+                  Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips för att identifiera en seriös och pålitlig flyttfirma som tar hand om dina ägodelar med omsorg.
+                </p>
               </div>
             </div>
           </div>
@@ -313,32 +568,7 @@ export default function BlogPostPage() {
               variants={fadeInUp}
               className="space-y-8"
             >
-              {/* Excerpt */}
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 mb-12 text-white relative overflow-hidden">
-                {/* Background pattern */}
-                <div 
-                  className="absolute inset-0 opacity-10 pointer-events-none"
-                  style={{
-                    backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                    backgroundSize: '20px 20px'
-                  }}
-                />
-                <div className="relative z-10">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-2xl">📋</span>
-                    </div>
-                    <div>
-                      <span className="inline-block bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
-                        {post.category}
-                      </span>
-                    </div>
-                  </div>
-                  <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium">
-                    {post.excerpt}
-                  </p>
-                </div>
-              </div>
+
 
               {/* Key Points Summary */}
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 text-white mb-8">

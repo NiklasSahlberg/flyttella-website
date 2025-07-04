@@ -1369,7 +1369,7 @@ export default function FlyttfirmaAkersbergaPage() {
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                       En flytt i Åkersberga kräver noggrann planering. I denna guide går vi igenom allt du behöver veta - från första kontakten med flyttfirman till den sista kartongen i ditt nya hem. Lär dig hur du väljer rätt flyttfirma, förbereder din bostad och säkerställer en stressfri flyttupplevelse.
                     </p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
                           <span className="text-white font-bold text-sm">FE</span>
@@ -1380,7 +1380,7 @@ export default function FlyttfirmaAkersbergaPage() {
                         </div>
                       </div>
                       <Link 
-                        href="/blogg" 
+                        href="/blogg/10-tips-for-en-smidig-flytt-i-stockholm" 
                         className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
                       >
                         Läs hela artikeln
@@ -1395,27 +1395,26 @@ export default function FlyttfirmaAkersbergaPage() {
                         </svg>
                       </Link>
                     </div>
+                    <div className="text-center">
+                      <Link 
+                        href="/blogg" 
+                        className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-6 py-3 rounded-full font-medium group shadow-lg hover:shadow-xl"
+                      >
+                        Se alla artiklar om flytt i Åkersberga
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </motion.div>
-              
-              <div className="text-center mt-8">
-                <Link 
-                  href="/blogg" 
-                  className="inline-flex items-center text-[#10B981] hover:text-[#0F172A] transition-colors font-medium group"
-                >
-                  Se alla artiklar om flytt i Åkersberga
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
             </div>
           </div>
         </section>

@@ -422,7 +422,7 @@ export default function Home() {
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 {/* Left: Image - positioned outside container */}
                 <motion.div
-                  className="w-full lg:w-1/3 relative lg:-ml-20 lg:pr-20"
+                  className="w-full lg:w-1/5 relative lg:-ml-16 lg:pr-16"
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.2 }}
@@ -432,56 +432,21 @@ export default function Home() {
                     delay: 0.2
                   }}
                 >
-                  <div className="relative h-96 lg:h-full w-[250%] lg:-ml-[125%] overflow-hidden">
+                  <div className="relative h-96 lg:h-full w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
                     <Image
                       src="/omoss.jpg"
                       alt="Om Flyttella"
                       fill
-                      className="object-cover"
+                      className="object-cover rounded-2xl"
+                      style={{ objectPosition: 'center 25%', transform: 'scale(1.20)' }}
                       priority
                     />
-                    {/* Natural background blend with ultra-clear center */}
-                    <div 
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: `
-                          radial-gradient(ellipse 95% 95% at center, transparent 0%, transparent 80%, rgba(255,255,255,0.02) 85%, rgba(255,255,255,0.05) 90%, rgba(255,255,255,0.12) 94%, rgba(255,255,255,0.25) 97%, rgba(255,255,255,0.5) 100%),
-                          radial-gradient(ellipse 85% 85% at center, transparent 0%, transparent 85%, rgba(255,255,255,0.01) 90%, rgba(255,255,255,0.03) 94%, rgba(255,255,255,0.08) 97%, rgba(255,255,255,0.2) 99%, rgba(255,255,255,0.4) 100%)
-                        `
-                      }}
-                    ></div>
-                    
-                    {/* Natural edge blending */}
-                    <div 
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: `
-                          linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 35%, transparent 65%, rgba(255,255,255,0.4) 100%),
-                          linear-gradient(-135deg, rgba(255,255,255,0.4) 0%, transparent 35%, transparent 65%, rgba(255,255,255,0.4) 100%),
-                          linear-gradient(45deg, rgba(255,255,255,0.3) 0%, transparent 35%, transparent 65%, rgba(255,255,255,0.3) 100%),
-                          linear-gradient(-45deg, rgba(255,255,255,0.3) 0%, transparent 35%, transparent 65%, rgba(255,255,255,0.3) 100%)
-                        `
-                      }}
-                    ></div>
-                    
-                    {/* Natural corner blending */}
-                    <div 
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: `
-                          radial-gradient(circle at 0% 0%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.35) 15%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.05) 50%, transparent 75%),
-                          radial-gradient(circle at 100% 0%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.35) 15%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.05) 50%, transparent 75%),
-                          radial-gradient(circle at 0% 100%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.35) 15%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.05) 50%, transparent 75%),
-                          radial-gradient(circle at 100% 100%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.35) 15%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.05) 50%, transparent 75%)
-                        `
-                      }}
-                    ></div>
                   </div>
                 </motion.div>
                 
                 {/* Right: Text content */}
                 <motion.div
-                  className="w-full lg:w-2/3 space-y-8 flex flex-col justify-center"
+                  className="w-full lg:w-4/5 space-y-8 flex flex-col justify-center"
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.2 }}
@@ -496,6 +461,9 @@ export default function Home() {
                   </p>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
                     {t('about.description2')}
+                  </p>
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                    {t('about.description3')}
                   </p>
                   
                   {/* Läs mer om oss link */}
@@ -560,9 +528,9 @@ export default function Home() {
                 <div className="text-center mb-8">
                   <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-4">
                     Våra offerter är alltid baserade på dina specifika behov och omständigheter. 
-                    Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation. 
+                    Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation, vi kan även besikta bostaden vid behov. 
                     Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund. 
-                    Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+                    Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov. 
                   </p>
                 </div>
 

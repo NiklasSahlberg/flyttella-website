@@ -46,6 +46,16 @@ const variants = {
 const blogPosts = [
   {
     id: 1,
+    title: "Vad bör du tänka på när du väljer en seriös flyttfirma",
+    excerpt: "Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips för att identifiera en seriös och pålitlig flyttfirma som tar hand om dina ägodelar med omsorg.",
+    category: "Flytttips",
+    date: "2024-01-20",
+    readTime: "10 min",
+    image: "/movingpicture1.png",
+    slug: "vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma"
+  },
+  {
+    id: 2,
     title: "10 Tips för en Smidig Flytt i Stockholm",
     excerpt: "En flytt i Stockholm kan kännas överväldigande, men med rätt planering och förberedelser kan den bli en smidig och stressfri upplevelse. Här delar vi med oss av våra bästa tips baserade på över 8000 flyttar i Stockholmsområdet.",
     category: "Flytttips",
@@ -55,7 +65,7 @@ const blogPosts = [
     slug: "10-tips-for-en-smidig-flytt-i-stockholm"
   },
   {
-    id: 2,
+    id: 3,
     title: "Så Packar Du Känsliga Föremål Korrekt",
     excerpt: "Lär dig hur du packar porslin, konst och andra känsliga föremål för att säkerställa att de kommer fram oskadda.",
     category: "Packning",
@@ -65,7 +75,7 @@ const blogPosts = [
     slug: "så-packar-du-känsliga-föremål-korrekt"
   },
   {
-    id: 3,
+    id: 4,
     title: "Flyttstädning - Vad Du Behöver Veta",
     excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick.",
     category: "Flyttstädning",
@@ -75,7 +85,7 @@ const blogPosts = [
     slug: "flyttstädning-vad-du-behöver-veta"
   },
   {
-    id: 4,
+    id: 5,
     title: "RUT-avdrag på Flyttstädning - Så Fungerar Det",
     excerpt: "Förstå hur RUT-avdraget fungerar för flyttstädning och hur du kan spara pengar på din flytt.",
     category: "Ekonomi",
@@ -85,7 +95,7 @@ const blogPosts = [
     slug: "rut-avdrag-på-flyttstädning-så-fungerar-det"
   },
   {
-    id: 5,
+    id: 6,
     title: "Kontorsflytt - Planera för Minimal Störning",
     excerpt: "Strategier för att genomföra en kontorsflytt med minimal påverkan på verksamheten.",
     category: "Företag",
@@ -95,7 +105,7 @@ const blogPosts = [
     slug: "kontorsflytt-planera-för-minimal-störning"
   },
   {
-    id: 6,
+    id: 7,
     title: "Vinterns Flyttar - Särskilda Överväganden",
     excerpt: "Tips och råd för att hantera flyttar under vintermånaderna när väderförhållandena kan vara utmanande.",
     category: "Säsong",
