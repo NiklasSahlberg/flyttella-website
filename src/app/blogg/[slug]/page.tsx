@@ -573,39 +573,39 @@ export default function BlogPostPage() {
               {/* Key Points Summary */}
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 text-white mb-8">
                 <h3 className="text-2xl font-bold mb-6 text-center">Viktiga punkter att komma ihåg</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex items-start">
+                <div className="grid md:grid-cols-2 gap-6 justify-items-center">
+                  <div className="flex items-start w-full max-w-xs">
                     <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                       <span className="text-white font-bold">1</span>
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h4 className="font-semibold mb-2">Planera tidigt</h4>
-                      <p className="text-white/80 text-sm">Börja minst 8 veckor innan flytten</p>
+                      <p className="text-white/80 text-sm">Börja planeringen tidigt</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
+                  <div className="flex items-start w-full max-w-xs">
                     <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                       <span className="text-white font-bold">2</span>
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">Rensa och organisera</h4>
-                      <p className="text-white/80 text-sm">Minska dina ägodelar innan packning</p>
+                    <div className="flex-1">
+                      <h4 className="font-semibold mb-2">Jämför flyttfirmor</h4>
+                      <p className="text-white/80 text-sm">Kontrollera fasta eller rörliga priser</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
+                  <div className="flex items-start w-full max-w-xs">
                     <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                       <span className="text-white font-bold">3</span>
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">Märk kartonger</h4>
-                      <p className="text-white/80 text-sm">Använd tydliga etiketter på alla lådor</p>
+                    <div className="flex-1">
+                      <h4 className="font-semibold mb-2">Boka flytthjälp</h4>
+                      <p className="text-white/80 text-sm">Kontrollera försäkring och garantier</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
+                  <div className="flex items-start w-full max-w-xs">
                     <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                       <span className="text-white font-bold">4</span>
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h4 className="font-semibold mb-2">Boka flyttstädning</h4>
                       <p className="text-white/80 text-sm">Säkra professionell städning i tid</p>
                     </div>

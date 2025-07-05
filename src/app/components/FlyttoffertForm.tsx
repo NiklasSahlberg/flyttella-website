@@ -654,7 +654,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
           {!showSteps && (
             <>
           <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
-            Fyll i formuläret för en snabb och kostnadsfri offert
+            Fyll i formuläret för en kostnadsfri offert med ett fast pris
           </h1>
           <h2 className="text-lg md:text-xl font-bold text-center text-gray-700 mb-8">
             Vi återkommer inom en minut!

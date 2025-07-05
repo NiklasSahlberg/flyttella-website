@@ -32,7 +32,10 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
     eventDate: '',
     phone: '',
     receiptFile: null as File | null,
+    cleaningDate: '',
   });
+  const [validationErrors, setValidationErrors] = useState<Set<string>>(new Set());
+  const [showValidationPopup, setShowValidationPopup] = useState(false);
 
   if (!isOpen) return null;
 
@@ -45,10 +48,54 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
     } else {
       setForm(f => ({ ...f, [name]: value }));
     }
+    
+    // Clear validation error when user starts typing
+    if (validationErrors.has(name)) {
+      setValidationErrors(prev => {
+        const newErrors = new Set(prev);
+        newErrors.delete(name);
+        return newErrors;
+      });
+    }
   };
+
+  const hasError = (fieldName: string) => validationErrors.has(fieldName);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check for required fields and scroll to first missing one
+    const form = e.target as HTMLFormElement;
+    const requiredFields = form.querySelectorAll('[required]');
+    let firstMissingField: Element | null = null;
+    const errors = new Set<string>();
+    
+    requiredFields.forEach((field) => {
+      const input = field as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+      if (!input.value || (input.type === 'file' && !(input as HTMLInputElement).files?.length)) {
+        if (!firstMissingField) {
+          firstMissingField = field;
+        }
+        errors.add(input.name);
+      }
+    });
+    
+    setValidationErrors(errors);
+    
+    if (errors.size > 0) {
+      setShowValidationPopup(true);
+    } else {
+      setShowValidationPopup(false);
+    }
+    
+    if (firstMissingField) {
+      (firstMissingField as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      (firstMissingField as HTMLElement).focus();
+      return;
+    }
+    
+    setValidationErrors(new Set());
+    setShowValidationPopup(false);
     setSubmitted(true);
   };
 
@@ -79,14 +126,21 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
       eventDate: '',
       phone: '',
       receiptFile: null,
+      cleaningDate: '',
     });
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative text-black" onClick={e => e.stopPropagation()}>
-        <button className="absolute top-4 right-4 text-gray-500 hover:text-[#10B981] text-2xl font-bold focus:outline-none" onClick={onClose} aria-label="Stäng anmälan">&times;</button>
-        <h2 className="text-xl font-bold mb-4 text-[#0F172A]">Anmälan</h2>
+        <button className="sticky top-4 right-4 text-gray-500 hover:text-[#10B981] text-2xl font-bold focus:outline-none z-20 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm ml-auto" onClick={onClose} aria-label="Stäng anmälan">&times;</button>
+        {showValidationPopup && (
+          <div className="fixed left-1/2 top-8 z-50 -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-4 animate-fade-in">
+            <span className="font-semibold">Vänligen svara på alla frågor</span>
+            <button onClick={() => setShowValidationPopup(false)} className="ml-2 text-white text-lg font-bold focus:outline-none">&times;</button>
+          </div>
+        )}
+        <h2 className="text-xl font-bold mb-4 text-[#0F172A] text-center">Anmälan</h2>
         
         {!type && !submitted && (
           <div className="space-y-4">
@@ -126,12 +180,20 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               <>
                 <div>
                   <label className="block text-sm font-medium mb-1">Offertnummer *</label>
-                  <input type="text" name="order" required className="w-full border rounded-lg px-3 py-2" value={form.order} onChange={handleChange} />
+                  <input 
+                    type="text" 
+                    name="order" 
+                    required 
+                    className={`w-full border rounded-lg px-3 py-2 ${hasError('order') ? 'border-red-500 bg-red-50' : ''}`} 
+                    value={form.order} 
+                    onChange={handleChange} 
+                  />
+                  {hasError('order') && <p className="text-red-500 text-xs mt-1">Offertnummer krävs</p>}
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium mb-1">Bilder på skadat föremål *</label>
-                  <label htmlFor="damaged-item-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
+                  <label htmlFor="damaged-item-upload" className={`inline-block px-4 py-2 rounded-lg cursor-pointer text-xs font-medium bg-[#10B981] text-white hover:bg-[#059669] ${hasError('damagedItemImage') ? 'border border-red-500 bg-red-50 text-red-700' : ''}`}>
                     Välj bild
                   </label>
                   <input
@@ -146,11 +208,12 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   {form.damagedItemImage && (
                     <p className="mt-2 text-xs text-gray-600">{form.damagedItemImage.name}</p>
                   )}
+                  {hasError('damagedItemImage') && <p className="text-red-500 text-xs mt-1">Bild krävs</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Bild på framsidan</label>
-                  <label htmlFor="front-image-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
+                  <label className="block text-sm font-medium mb-1">Bild på framsidan *</label>
+                  <label htmlFor="front-image-upload" className={`inline-block px-4 py-2 rounded-lg cursor-pointer text-xs font-medium bg-[#10B981] text-white hover:bg-[#059669] ${hasError('frontImage') ? 'border border-red-500 bg-red-50 text-red-700' : ''}`}>
                     Välj bild
                   </label>
                   <input
@@ -159,16 +222,18 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                     name="frontImage"
                     accept="image/*"
                     className="hidden"
+                    required
                     onChange={handleChange}
                   />
                   {form.frontImage && (
                     <p className="mt-2 text-xs text-gray-600">{form.frontImage.name}</p>
                   )}
+                  {hasError('frontImage') && <p className="text-red-500 text-xs mt-1">Bild krävs</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Bild från vänster sida</label>
-                  <label htmlFor="left-image-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
+                  <label className="block text-sm font-medium mb-1">Bild från vänster sida *</label>
+                  <label htmlFor="left-image-upload" className={`inline-block px-4 py-2 rounded-lg cursor-pointer text-xs font-medium bg-[#10B981] text-white hover:bg-[#059669] ${hasError('leftImage') ? 'border border-red-500 bg-red-50 text-red-700' : ''}`}>
                     Välj bild
                   </label>
                   <input
@@ -177,16 +242,18 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                     name="leftImage"
                     accept="image/*"
                     className="hidden"
+                    required
                     onChange={handleChange}
                   />
                   {form.leftImage && (
                     <p className="mt-2 text-xs text-gray-600">{form.leftImage.name}</p>
                   )}
+                  {hasError('leftImage') && <p className="text-red-500 text-xs mt-1">Bild krävs</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Bild från höger sida</label>
-                  <label htmlFor="right-image-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
+                  <label className="block text-sm font-medium mb-1">Bild från höger sida *</label>
+                  <label htmlFor="right-image-upload" className={`inline-block px-4 py-2 rounded-lg cursor-pointer text-xs font-medium bg-[#10B981] text-white hover:bg-[#059669] ${hasError('rightImage') ? 'border border-red-500 bg-red-50 text-red-700' : ''}`}>
                     Välj bild
                   </label>
                   <input
@@ -195,11 +262,13 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                     name="rightImage"
                     accept="image/*"
                     className="hidden"
+                    required
                     onChange={handleChange}
                   />
                   {form.rightImage && (
                     <p className="mt-2 text-xs text-gray-600">{form.rightImage.name}</p>
                   )}
+                  {hasError('rightImage') && <p className="text-red-500 text-xs mt-1">Bild krävs</p>}
                 </div>
 
                 <div>
@@ -222,13 +291,13 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Vad är märket och modellen på föremålet?</label>
-                  <input type="text" name="brandModel" className="w-full border rounded-lg px-3 py-2" value={form.brandModel} onChange={handleChange} />
+                  <label className="block text-sm font-medium mb-1">Vad är märket och modellen på föremålet? *</label>
+                  <input type="text" name="brandModel" required className="w-full border rounded-lg px-3 py-2" value={form.brandModel} onChange={handleChange} />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Vem packade föremålet?</label>
-                  <input type="text" name="packedBy" className="w-full border rounded-lg px-3 py-2" value={form.packedBy} onChange={handleChange} />
+                  <label className="block text-sm font-medium mb-1">Vem packade föremålet? *</label>
+                  <input type="text" name="packedBy" required className="w-full border rounded-lg px-3 py-2" value={form.packedBy} onChange={handleChange} />
                 </div>
 
                 <div>
@@ -292,22 +361,25 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   <p className="text-sm text-gray-600 mt-2">
                     Tänk på att om du inte kan uppvisa kvitto för föremålet kommer det att värderas med en högre grad av värdeminskning.
                   </p>
-                  <div className="mt-3">
-                    <label htmlFor="receipt-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
-                      Ladda upp kvittot
-                    </label>
-                    <input
-                      id="receipt-upload"
-                      type="file"
-                      name="receiptFile"
-                      accept="image/*,.pdf"
-                      className="hidden"
-                      onChange={handleChange}
-                    />
-                    {form.receiptFile && (
-                      <p className="mt-2 text-xs text-gray-600">{form.receiptFile.name}</p>
-                    )}
-                  </div>
+                  {form.hasReceipt === 'ja' && (
+                    <div className="mt-3">
+                      <label htmlFor="receipt-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
+                        Ladda upp kvittot *
+                      </label>
+                      <input
+                        id="receipt-upload"
+                        type="file"
+                        name="receiptFile"
+                        accept="image/*,.pdf"
+                        className="hidden"
+                        required
+                        onChange={handleChange}
+                      />
+                      {form.receiptFile && (
+                        <p className="mt-2 text-xs text-gray-600">{form.receiptFile.name}</p>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div>
@@ -350,17 +422,27 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-1">Reparationspris</label>
-                  <input type="number" name="repairPrice" className="w-full border rounded-lg px-3 py-2" value={form.repairPrice} onChange={handleChange} placeholder="SEK" />
-                </div>
+                {form.contactedRepair === 'ja' && (
+                  <div>
+                    <label className="block text-sm font-medium mb-1">Reparationspris *</label>
+                    <input type="number" name="repairPrice" required className="w-full border rounded-lg px-3 py-2" value={form.repairPrice} onChange={handleChange} placeholder="SEK" />
+                  </div>
+                )}
 
                 <div className="border-t pt-6 mt-6">
                   <h4 className="text-lg font-semibold text-[#0F172A] mb-4">Kontaktinformation</h4>
                   
                   <div>
-                    <label className="block text-sm font-medium mb-1">Händelsedatum</label>
-                    <input type="date" name="eventDate" className="w-full border rounded-lg px-3 py-2" value={form.eventDate} onChange={handleChange} />
+                    <label className="block text-sm font-medium mb-1">Händelsedatum *</label>
+                    <input 
+                      type="date" 
+                      name="eventDate" 
+                      required 
+                      className={`w-full border rounded-lg px-3 py-2 ${hasError('eventDate') ? 'border-red-500 bg-red-50' : ''}`} 
+                      value={form.eventDate} 
+                      onChange={handleChange} 
+                    />
+                    {hasError('eventDate') && <p className="text-red-500 text-xs mt-1">Händelsedatum krävs</p>}
                   </div>
 
                   <div>
@@ -389,8 +471,8 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Vad är märket och modellen på föremålet?</label>
-                  <input type="text" name="brandModel" className="w-full border rounded-lg px-3 py-2" value={form.brandModel} onChange={handleChange} />
+                  <label className="block text-sm font-medium mb-1">Vad är märket och modellen på föremålet? *</label>
+                  <input type="text" name="brandModel" required className="w-full border rounded-lg px-3 py-2" value={form.brandModel} onChange={handleChange} />
                 </div>
 
                 <div>
@@ -459,22 +541,25 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   <p className="text-sm text-gray-600 mt-2">
                     Tänk på att om du inte kan uppvisa kvitto för föremålet kommer det att värderas med en högre grad av värdeminskning.
                   </p>
-                  <div className="mt-3">
-                    <label htmlFor="receipt-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
-                      Ladda upp kvittot
-                    </label>
-                    <input
-                      id="receipt-upload"
-                      type="file"
-                      name="receiptFile"
-                      accept="image/*,.pdf"
-                      className="hidden"
-                      onChange={handleChange}
-                    />
-                    {form.receiptFile && (
-                      <p className="mt-2 text-xs text-gray-600">{form.receiptFile.name}</p>
-                    )}
-                  </div>
+                  {form.hasReceipt === 'ja' && (
+                    <div className="mt-3">
+                      <label htmlFor="receipt-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
+                        Ladda upp kvittot *
+                      </label>
+                      <input
+                        id="receipt-upload"
+                        type="file"
+                        name="receiptFile"
+                        accept="image/*,.pdf"
+                        className="hidden"
+                        required
+                        onChange={handleChange}
+                      />
+                      {form.receiptFile && (
+                        <p className="mt-2 text-xs text-gray-600">{form.receiptFile.name}</p>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div>
@@ -491,8 +576,16 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   <h4 className="text-lg font-semibold text-[#0F172A] mb-4">Kontaktinformation</h4>
                   
                   <div>
-                    <label className="block text-sm font-medium mb-1">Händelsedatum</label>
-                    <input type="date" name="eventDate" className="w-full border rounded-lg px-3 py-2" value={form.eventDate} onChange={handleChange} />
+                    <label className="block text-sm font-medium mb-1">Händelsedatum *</label>
+                    <input 
+                      type="date" 
+                      name="eventDate" 
+                      required 
+                      className={`w-full border rounded-lg px-3 py-2 ${hasError('eventDate') ? 'border-red-500 bg-red-50' : ''}`} 
+                      value={form.eventDate} 
+                      onChange={handleChange} 
+                    />
+                    {hasError('eventDate') && <p className="text-red-500 text-xs mt-1">Händelsedatum krävs</p>}
                   </div>
 
                   <div>
@@ -547,6 +640,17 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               <input type="text" name="order" required className="w-full border rounded-lg px-3 py-2" value={form.order} onChange={handleChange} />
             </div>
             <div>
+              <label className="block text-sm font-medium mb-1">Ange datum för flyttstädningen *</label>
+              <input 
+                type="date" 
+                name="cleaningDate" 
+                required 
+                className="w-full border rounded-lg px-3 py-2" 
+                value={form.cleaningDate} 
+                onChange={handleChange} 
+              />
+            </div>
+            <div>
               <label className="block text-sm font-medium mb-1">Beskriv tydligt vad som har varit bristande i städningen *</label>
               <textarea name="description" required className="w-full border rounded-lg px-3 py-2 min-h-[80px]" value={form.description} onChange={handleChange} />
             </div>
@@ -582,12 +686,38 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
 
         {submitted && (
           <div className="text-center py-8">
-            <h3 className="text-lg font-semibold text-[#10B981] mb-2">Tack för din anmälan!</h3>
-            <p className="text-gray-700">
-              Vi har tagit emot din {type === 'skada' ? 'skadeanmälan' : 'reklamation'} och återkommer så snart som möjligt.
-            </p>
+            <h3 className="text-lg font-semibold text-[#10B981] mb-4">Tack för din skaderapport!</h3>
+            
+            <div className="text-left bg-gray-50 rounded-lg p-4 mb-6">
+              <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                Enligt våra villkor hanterar vi skador under två månader efter att fakturan har blivit slutbetald (se punkt 14 nedan). Enligt Skatteverkets regler är det inte tillåtet att göra avdrag på RUT-fakturan. Mer information om RUT-reglerna finns på Skatteverkets webbplats.
+              </p>
+              
+              <div className="border-t pt-4">
+                <h4 className="font-semibold text-[#0F172A] mb-3">Se villkor kring ersättning och betalning nedan:</h4>
+                
+                <div className="text-xs text-gray-600 space-y-3">
+                  <div>
+                    <h5 className="font-medium text-[#0F172A]">14. Ersättnings- och betalningsvillkor</h5>
+                    
+                    <p className="mt-2">
+                      <strong>14.1</strong> Hos Flyttella AB kan betalning ske genom följande betalsätt: Swish överföring på nummer: 123-44-62-248. Betalning kan ske mot faktura med en betalningsfrist om 10 dagar, förutsatt att fakturabetalning har godkänts av Flyttella AB:s kundtjänst vid bokningstillfället. Kunden är skyldig att erlägga full betalning senast vid ankomst till lossningsadressen, om inte annat skriftligen avtalats mellan parterna. Flyttella AB åtar sig att hantera skadeanmälningar som separata ärenden och behandla dessa inom en tidsram om högst två månader från det att en fullständig anmälan mottagits. Fakturan ska vara fullständigt betald innan Flyttella AB påbörjar utredning av förlust- eller skadeärenden.
+                    </p>
+                    
+                    <p className="mt-2">
+                      <strong>14.2</strong> Vid dröjsmål med betalning har Flyttella AB rätt till dröjsmålsräntan som framgår på fakturan fram till dess att full betalning sker, och har rätt att debitera lagstadgade påminnelse- och inkassoavgifter samt rätt att överlämna ärendet till Kronofogdemyndigheten.
+                    </p>
+                    
+                    <p className="mt-2">
+                      <strong>14.3</strong> Betalning för de tjänster som Företaget tillhandahåller ska ske i enlighet med de betalningsvillkor som specificeras i offerten eller på fakturan. Företaget förbehåller sig rätten att kräva betalning under pågående arbete eller innan arbetet påbörjas, om det finns anledning att ifrågasätta Kundens betalningsförmåga. Detta kan innefatta situationer där Företaget bedömer att kunden inte kan uppvisa tillräcklig säkerhet för betalning, eller om kunden har tidigare betalningsanmärkningar eller övriga ekonomiska förhållanden som ger anledning till tvekan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <button 
-              className="mt-6 px-6 py-2 rounded-lg bg-[#10B981] text-white font-semibold hover:bg-[#059669]" 
+              className="mt-4 px-6 py-2 rounded-lg bg-[#10B981] text-white font-semibold hover:bg-[#059669]" 
               onClick={() => {
                 resetForm();
                 onClose();

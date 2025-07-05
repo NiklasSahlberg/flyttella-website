@@ -142,5 +142,92 @@
     "localExperienceTitle": "Lokal erfarenhet som ger resultat",
     "localExperienceDesc1": "Med över 8000 flyttar och 7000 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. Vår erfarenhet sträcker sig över hela landet och vi har hjälpt tusentals familjer och företag med deras flyttar.",
     "localExperienceDesc2": "Våra prestationer har gett oss erkännande som en av Sveriges mest pålitliga flyttfirmor, med över 1000 positiva recensioner och rekommendationer från nöjda kunder. Vi är stolta över att kunna erbjuda professionell flyttservice baserad på år av praktisk erfarenhet."
+  },
+  "bohagsflytt": {
+    "hero": {
+      "title": "Bohagsflytt",
+      "subtitle": "Låt oss ta hand om hela din flytt. Med vår professionella bohagsflytt får du en bekymmersfri flyttupplevelse från start till mål.",
+      "description": "Vi utför stora och små bohagsflyttar varje dag! Det är vårt stolta yrke att säkert och effektivt flytta saker från ett ställe till ett annat till ett konkurrenskraftigt fast pris."
+    },
+    "features": {
+      "packing": {
+        "title": "Packning & Uppackning",
+        "description": "Vi packar dina ägodelar säkert och professionellt med rätt material och teknik."
+      },
+      "transport": {
+        "title": "Säker Transport",
+        "description": "Moderna flyttbilar och erfarna flyttare säkerställer en trygg transport av dina tillhörigheter."
+      },
+      "materials": {
+        "title": "Flyttmaterial",
+        "description": "Vi tillhandahåller allt flyttmaterial som behövs för en säker flytt."
+      },
+      "assembly": {
+        "title": "Demontering & Montering",
+        "description": "Vi hjälper dig att demontera och montera möbler vid behov."
+      }
+    },
+    "content": {
+      "intro": "Ska ni flytta från ett boende till ett annat? Låt oss på Flyttella ta hand om din flytt, vi utför stora och små bohagsflyttar varje dag! Det är vårt stolta yrke att säkert och effektivt flytta saker från ett ställe till ett annat till ett konkurrenskraftigt fast pris.",
+      "expertise": "Vi vet att en bohagsflytt kan kännas krångligt och jobbigt men att hjälpa dig att flytta är vår kompetens område.",
+      "quality": "Om du är ute efter en kvalitets flytthjälp till rimliga priser då har du kommit rätt! Efter många år i branschen kan vi lova dig pålitlig service till ett lågt pris. Att flytta ska nämligen vara enkelt, och vi ser till att det blir det.",
+      "comprehensive": "Spelar ingen roll om det handlar om en lägenhet, sommarstuga eller en hel villa! Vi hjälper dig med hela processen! Från ner montering, ner packning, emballering, transportering, upp packning till möbel placering.",
+      "customized": "Berätta för oss vad du behöver hjälp med, så hittar vi en smart lösning anpassad efter just dina önskemål."
+    },
+    "process": {
+      "title": "Vår process",
+      "description": "Vår flyttprocess är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär på startsidan där du anger dina uppgifter och flyttbehov. Inom en minut får du en offert skickad till din angivna e-postadress. Samma dag eller dagen efter tar vi personlig kontakt med dig för att diskutera detaljerna och svara på eventuella frågor. När du är nöjd med offerten kan du enkelt signera den digitalt. Sedan genomför vi flytten enligt dina önskemål och avtal. Resultatet? En nöjd kund som kan fokusera på att komma hem till sitt nya hem.",
+      "pricing": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation, vi kan även besikta bostaden vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
+      "subtitle": "Så fungerar det",
+      "steps": [
+        {
+          "title": "Fyll i formuläret",
+          "description": "Berätta om din flytt"
+        },
+        {
+          "title": "Snabb offert",
+          "description": "Få pris på 1 minut"
+        },
+        {
+          "title": "Personlig kontakt",
+          "description": "Vi ringer samma dag eller dagen efter"
+        },
+        {
+          "title": "Signera & bekräfta",
+          "description": "Få bokningsbekräftelse direkt"
+        },
+        {
+          "title": "Flytt genomförd",
+          "description": "Vi tar hand om allt"
+        },
+        {
+          "title": "Nöjd kund",
+          "description": "Återkommande kund"
+        }
+      ]
+    },
+    "whatIs": {
+      "title": "Vad är en bohagsflytt?",
+      "subtitle": "En komplett guide till bohagsflytt",
+      "description": "En bohagsflytt är en flytt av hela ditt bohag från en bostad till en annan. Det inkluderar allt från små ägodelar till stora möbler och elektronik. Vi tar hand om hela processen från början till slut.",
+      "sections": [
+        {
+          "title": "Vad ingår i en bohagsflytt?",
+          "content": "En komplett bohagsflytt inkluderar packning av alla dina ägodelar, säker transport med moderna flyttbilar, och uppackning på den nya platsen. Vi hanterar allt från små detaljer till stora möbler med professionell omsorg."
+        },
+        {
+          "title": "För vilka typer av bostäder?",
+          "content": "Vi utför bohagsflytt för alla typer av bostäder - lägenheter, villor, sommarstugor och kontor. Oavsett storlek eller typ av bostad kan vi anpassa vår service efter dina specifika behov."
+        },
+        {
+          "title": "Vår professionella approach",
+          "content": "Med över 8 års erfarenhet i branschen vet vi exakt vad som krävs för en smidig bohagsflytt. Vi använder rätt material, teknik och personal för att säkerställa att dina ägodelar kommer fram säkert och oskadda."
+        },
+        {
+          "title": "Fördelar med vår bohagsflytt",
+          "content": "Vi erbjuder fasta priser, försäkring av alla ägodelar, och professionell service från start till mål. Du får också gratis lån av flyttkartonger och kostnadsfri ombokning upp till 24 timmar innan flytten."
+        }
+      ]
+    }
   }
 } 

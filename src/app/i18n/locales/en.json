@@ -138,5 +138,92 @@
     "localExperienceTitle": "Local experience that delivers results",
     "localExperienceDesc1": "With over 8,000 moves and 7,000 cleanings behind us, we have built up unique expertise in the moving and cleaning industry. Our experience extends across the country and we have helped thousands of families and companies with their moves.",
     "localExperienceDesc2": "Our achievements have earned us recognition as one of Sweden's most reliable moving companies, with over 1,000 positive reviews and recommendations from satisfied customers. We are proud to offer professional moving services based on years of practical experience."
+  },
+  "bohagsflytt": {
+    "hero": {
+      "title": "Household Moving",
+      "subtitle": "Let us take care of your entire move. With our professional household moving service, you get a worry-free moving experience from start to finish.",
+      "description": "We perform large and small household moves every day! It's our proud profession to safely and efficiently move things from one place to another at a competitive fixed price."
+    },
+    "features": {
+      "packing": {
+        "title": "Packing & Unpacking",
+        "description": "We pack your belongings safely and professionally with the right materials and techniques."
+      },
+      "transport": {
+        "title": "Safe Transport",
+        "description": "Modern moving trucks and experienced movers ensure safe transport of your belongings."
+      },
+      "materials": {
+        "title": "Moving Materials",
+        "description": "We provide all the moving materials needed for a safe move."
+      },
+      "assembly": {
+        "title": "Disassembly & Assembly",
+        "description": "We help you disassemble and assemble furniture when needed."
+      }
+    },
+    "content": {
+      "intro": "Are you moving from one home to another? Let us at Flyttella take care of your move, we perform large and small household moves every day! It's our proud profession to safely and efficiently move things from one place to another at a competitive fixed price.",
+      "expertise": "We know that a household move can feel complicated and difficult, but helping you move is our area of expertise.",
+      "quality": "If you're looking for quality moving help at reasonable prices, then you've come to the right place! After many years in the industry, we can promise you reliable service at a low price. Moving should be simple, and we make sure it is.",
+      "comprehensive": "It doesn't matter if it's an apartment, summer house, or an entire villa! We help you with the entire process! From disassembly, packing, packaging, transportation, unpacking to furniture placement.",
+      "customized": "Tell us what you need help with, and we'll find a smart solution tailored to your specific wishes."
+    },
+    "process": {
+      "title": "Our Process",
+      "description": "Our moving process is designed to be simple, transparent, and secure. It starts with you filling out our form on the homepage where you provide your details and moving needs. Within one minute, you'll receive a quote sent to your specified email address. The same day or the next day, we'll personally contact you to discuss the details and answer any questions. When you're satisfied with the quote, you can easily sign it digitally. Then we carry out the move according to your wishes and agreement. The result? A satisfied customer who can focus on coming home to their new home.",
+      "pricing": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as living area, floor, elevator, and parking distance to give you a quote that fits your specific situation. We can also inspect the property if needed. All prices are fixed without hidden fees - we always base our work on your wishes and information we receive from you as a customer. Do you have special wishes or questions? Contact us and we'll adapt the quote to your needs.",
+      "subtitle": "How it works",
+      "steps": [
+        {
+          "title": "Fill in the form",
+          "description": "Tell us about your move"
+        },
+        {
+          "title": "Quick quote",
+          "description": "Get a price in 1 minute"
+        },
+        {
+          "title": "Personal contact",
+          "description": "We call the same day or the next"
+        },
+        {
+          "title": "Sign & confirm",
+          "description": "Get booking confirmation immediately"
+        },
+        {
+          "title": "Move completed",
+          "description": "We take care of everything"
+        },
+        {
+          "title": "Satisfied customer",
+          "description": "Returning customer"
+        }
+      ]
+    },
+    "whatIs": {
+      "title": "What is household moving?",
+      "subtitle": "A complete guide to household moving",
+      "description": "Household moving is the relocation of all your belongings from one home to another. It includes everything from small items to large furniture and electronics. We take care of the entire process from start to finish.",
+      "sections": [
+        {
+          "title": "What's included in household moving?",
+          "content": "A complete household move includes packing all your belongings, safe transport with modern moving trucks, and unpacking at the new location. We handle everything from small details to large furniture with professional care."
+        },
+        {
+          "title": "For which types of properties?",
+          "content": "We perform household moves for all types of properties - apartments, houses, summer houses, and offices. Regardless of size or type of property, we can adapt our service to your specific needs."
+        },
+        {
+          "title": "Our professional approach",
+          "content": "With over 8 years of experience in the industry, we know exactly what's required for a smooth household move. We use the right materials, techniques, and personnel to ensure your belongings arrive safely and undamaged."
+        },
+        {
+          "title": "Benefits of our household moving service",
+          "content": "We offer fixed prices, insurance of all belongings, and professional service from start to finish. You also get free loan of moving boxes and free rescheduling up to 24 hours before the move."
+        }
+      ]
+    }
   }
 } 
