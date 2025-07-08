@@ -1265,7 +1265,7 @@ export default function Home() {
                   {/* Under flytten */}
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Under flytten</h3>
-                    <div className="max-w-2xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title="En smidig flyttdag"
                           imageSrc="/smidigflyttdag.jpg"
@@ -1276,8 +1276,25 @@ export default function Home() {
           
                               <li>Håll värdesaker tillgängliga.</li>
                               <li>Säkerställ fri väg för flytthjälp.</li>
+                              
+                              <li>Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.</li>
+                              <li>Se till att montera ner eller packa ner bortglömda föremål.</li>
+                            </ul>
+                          }
+                        />
+                      <TipCard
+                          title="Kommunikation och koordinering"
+                          imageSrc="/under_flytt.jpg"
+                          imageAlt="Flytt under pågående"
+                          objectPosition="object-center"
+                          content={
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>Håll kontakt med flyttledaren.</li>
+                              <li>Fotografera eventuella skador.</li>
+                              <li>Kontrollera att allt laddas korrekt.</li>
+                              <li>Följ med till den nya adressen.</li>
+                              <li>Var tydlig med särskilda önskemål.</li>
                               <li>Var tillgänglig för frågor.</li>
-                              <li>Gör en slutkontroll av bostaden.</li>
                             </ul>
                           }
                         />
@@ -1287,7 +1304,7 @@ export default function Home() {
                   {/* Efter flytten */}
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Efter flytten</h3>
-                    <div className="max-w-2xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title="Start i nya hemmet"
                           imageSrc="/efter_flytt.jpg"
@@ -1302,6 +1319,22 @@ export default function Home() {
                               <li>Uppdatera adress hos myndigheter.</li>
                               <li>Testa alla vitvaror och eluttag.</li>
                               <li>Ta bort tomma kartonger och emballage.</li>
+                            </ul>
+                          }
+                        />
+                      <TipCard
+                          title="Dokumentation och uppföljning"
+                          imageSrc="/godtid.jpg"
+                          imageAlt="Dokumentation efter flytt"
+                          objectPosition="object-center"
+                          content={
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>Fotografera ditt nya hem.</li>
+                              <li>Kontakta flyttfirman för feedback.</li>
+                              <li>Skriv en recension av tjänsten.</li>
+                              <li>Organisera flyttkvitton och dokument.</li>
+                              <li>Fira din nya bostad med familj och vänner.</li>
+                              <li>Uppdatera försäkringar för nya bostaden.</li>
                             </ul>
                           }
                         />

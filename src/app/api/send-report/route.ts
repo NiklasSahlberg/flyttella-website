@@ -5,24 +5,39 @@ import fs from 'fs';
 import path from 'path';
 import { writeFile } from 'fs/promises';
 
-// Function to calculate estimated value based on purchase price, year, receipt, and condition
+// Function to calculate estimated value based on purchase price, year, receipt, condition, and damage level
 function calculateEstimatedValue(
   purchasePrice: number,
   purchaseYear: number,
   wasNew: string,
-  hasReceipt: string
+  hasReceipt: string,
+  damageLevel?: string
 ): { estimatedValue: number; breakdown: string[] } {
   let estimatedValue = purchasePrice;
   const breakdown: string[] = [];
   
   // Start with original purchase price
   breakdown.push(`Ursprungligt inköpspris: ${purchasePrice} SEK`);
-  
+
+  // Apply damage level reduction FIRST
+  if (damageLevel) {
+    if (damageLevel === 'lindrigt_skadad') {
+      const reduction = estimatedValue * 0.75;
+      estimatedValue -= reduction;
+      breakdown.push(`Minskning för lindrigt skadad (75%): -${reduction.toFixed(0)} SEK`);
+    } else if (damageLevel === 'delvis_skadad') {
+      const reduction = estimatedValue * 0.65;
+      estimatedValue -= reduction;
+      breakdown.push(`Minskning för delvis skadad (65%): -${reduction.toFixed(0)} SEK`);
+    }
+    // For 'helt_forstord', no additional reduction is applied
+  }
+
   // If item was not new, reduce by 20%
   if (wasNew.toLowerCase() === 'nej') {
-    const reduction = estimatedValue * 0.2;
+    const reduction = estimatedValue * 0.3;
     estimatedValue -= reduction;
-    breakdown.push(`Minskning för begagnat föremål (20%): -${reduction.toFixed(0)} SEK`);
+    breakdown.push(`Minskning för begagnat föremål (30%): -${reduction.toFixed(0)} SEK`);
   }
   
   // If no receipt, reduce by 20%
@@ -37,10 +52,10 @@ function calculateEstimatedValue(
   const yearsPassed = currentYear - purchaseYear;
   
   if (yearsPassed > 0) {
-    const yearlyReduction = estimatedValue * 0.1;
+    const yearlyReduction = estimatedValue * 0.15;
     const totalYearlyReduction = yearlyReduction * yearsPassed;
     estimatedValue -= totalYearlyReduction;
-    breakdown.push(`Värdeminskning för ${yearsPassed} år (10% per år): -${totalYearlyReduction.toFixed(0)} SEK`);
+    breakdown.push(`Värdeminskning för ${yearsPassed} år (15% per år): -${totalYearlyReduction.toFixed(0)} SEK`);
   }
   
   breakdown.push(`**Beräknat värde: ${Math.max(0, estimatedValue).toFixed(0)} SEK**`);
@@ -205,7 +220,8 @@ export async function POST(req: Request) {
         purchasePrice,
         purchaseYear,
         data.wasNew || 'ja',
-        data.hasReceipt || 'ja'
+        data.hasReceipt || 'ja',
+        data.damageLevel
       );
       
       emailContent = `
@@ -398,7 +414,8 @@ export async function POST(req: Request) {
         purchasePrice,
         purchaseYear,
         data.wasNew || 'ja',
-        data.hasReceipt || 'ja'
+        data.hasReceipt || 'ja',
+        data.damageLevel
       );
       
       emailContent = `

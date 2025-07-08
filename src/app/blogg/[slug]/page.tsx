@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import CountUp from "react-countup";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -638,53 +639,183 @@ export default function BlogPostPage() {
                 />
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
 
-            {/* Call to Action */}
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="mt-16 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 text-white text-center relative overflow-hidden"
-            >
-              {/* Background pattern */}
-              <div 
-                className="absolute inset-0 opacity-10 pointer-events-none"
-                style={{
-                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                  backgroundSize: '20px 20px'
-                }}
-              />
-              <div className="relative z-10">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                  Behöver du hjälp med din flytt i Stockholm?
-                </h3>
-                <p className="text-white/90 mb-8 text-lg max-w-2xl mx-auto">
-                  Låt oss hjälpa dig med din flytt. Vi erbjuder professionell flyttservice med fast pris och kvalitetsgaranti. Kontakta oss för en kostnadsfri offert.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/fa-offert"
-                    className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors group"
-                  >
-                    Få offert på 1 minut
-                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                  <Link
-                    href="/kontakt"
-                    className="inline-flex items-center bg-white/10 text-white px-8 py-4 rounded-full font-medium hover:bg-white/20 transition-colors border border-white/20"
-                  >
-                    Kontakta oss
-                    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
+      {/* Call to Action - Moved outside max-width constraint */}
+      <section className="py-16">
+        <div className="mx-auto px-24">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 text-white text-center relative overflow-hidden max-w-full mx-auto"
+          >
+            {/* Background pattern */}
+            <div 
+              className="absolute inset-0 opacity-10 pointer-events-none"
+              style={{
+                backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                backgroundSize: '20px 20px'
+              }}
+            />
+            <div className="relative z-10">
+              {/* Statistics Section */}
+              <div className="mb-8">
+                <h4 className="text-2xl md:text-3xl font-bold mb-6 text-center">Behöver du hjälp med din flytt i Stockholm?</h4>
+                    <div className="flex flex-col lg:flex-row gap-8 items-start">
+    {/* Statistics boxes on the left */}
+    <div className="grid grid-cols-1 md:grid-cols-1 gap-6 justify-start w-auto lg:w-80 flex-shrink-0">
+      <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center justify-center w-full">
+        <div className="text-3xl md:text-4xl font-bold mb-2">
+          <CountUp 
+            end={8000} 
+            duration={2.5}
+            suffix="+"
+            useEasing={true}
+            enableScrollSpy={true}
+            scrollSpyOnce={true}
+          />
+        </div>
+        <div className="text-base font-medium mb-1">Flyttar</div>
+        <div className="text-sm text-white/80">uppdrag utförda</div>
+      </div>
+      <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center justify-center w-full">
+        <div className="text-3xl md:text-4xl font-bold mb-2">
+          <CountUp 
+            end={7000} 
+            duration={2.5}
+            suffix="+"
+            useEasing={true}
+            enableScrollSpy={true}
+            scrollSpyOnce={true}
+          />
+        </div>
+        <div className="text-base font-medium mb-1">Städningar</div>
+        <div className="text-sm text-white/80">uppdrag utförda</div>
+      </div>
+      <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center justify-center w-full">
+        <div className="text-3xl md:text-4xl font-bold mb-2">
+          <CountUp 
+            end={500} 
+            duration={2.5}
+            suffix="+"
+            useEasing={true}
+            enableScrollSpy={true}
+            scrollSpyOnce={true}
+          />
+        </div>
+        <div className="text-base font-medium mb-1">Månadsvis</div>
+        <div className="text-sm text-white/80">uppdrag per månad</div>
+      </div>
+    </div>
+
+    {/* About text in the center */}
+    <div className="flex-1 text-white/90 min-w-0 text-center lg:text-left">
+      <p className="text-xl md:text-2xl leading-relaxed mb-6">
+        Vi är en etablerad flyttfirma i Stockholmsområdet med över 10 års erfarenhet av att hjälpa privatpersoner och företag med deras flyttar. Vårt team av erfarna flyttarbetare är dedikerade till att säkerställa att din flytt blir så smidig och stressfri som möjligt.
+      </p>
+      <p className="text-xl md:text-2xl leading-relaxed mb-6">
+        Vi erbjuder allt från små lägenhetsflyttar till stora villaflyttar och kontorsflyttar. Med vår omfattande erfarenhet och professionella service kan du lita på att dina ägodelar tas hand om med största omsorg.
+      </p>
+      <p className="text-xl md:text-2xl leading-relaxed">
+        Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flytt i Stockholm!
+      </p>
+    </div>
+
+    {/* Space for picture on the right */}
+    <div className="hidden lg:block w-auto lg:w-[500px] flex-shrink-0 flex items-center justify-center">
+      <div className="rounded-2xl overflow-hidden">
+        <img 
+          src="/smiling_worker_new.png" 
+          alt="Flyttella team" 
+          className="w-full h-auto max-h-[540px] object-contain"
+        />
+      </div>
+    </div>
+  </div>
+              </div>
+
+              {/* Våra fördelar Section */}
+              <div className="border-t border-white/20 pt-8">
+                <h4 className="text-xl font-bold mb-6 text-center">Våra fördelar</h4>
+                <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+                  {[
+                    {
+                      icon: "💰",
+                      title: "Fast pris",
+                      description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                      link: "/priser"
+                    },
+                    {
+                      icon: "📋",
+                      title: "RUT-avdrag",
+                      description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                      link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                    },
+                    {
+                      icon: "📦",
+                      title: "Fritt lån av kartonger i 4 veckor",
+                      description: "Specialgjorda flyttkartonger med vår logga",
+                      link: "/kartonger"
+                    },
+                    {
+                      icon: "⏰",
+                      title: "Omboka eller avboka kostnadsfritt",
+                      description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                      link: "/avbokning"
+                    },
+                    {
+                      icon: "✅",
+                      title: "Nöjd kund garanti",
+                      description: "14 dagars garanti på flyttstädning",
+                      link: "/garanti"
+                    },
+                    {
+                      icon: "🔒",
+                      title: "Trafiktillstånd och försäkring",
+                      description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                      link: "/tillstand"
+                    }
+                  ].map((feature, i) => (
+                    <motion.div
+                      key={feature.icon}
+                      className="flex flex-col items-center justify-center text-center gap-2 bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg min-h-[120px] h-full w-full"
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true, amount: 0.2 }}
+                      variants={fadeInUp}
+                      transition={{ delay: i * 0.1 }}
+                    >
+                      <motion.span
+                        className="text-2xl md:text-3xl"
+                        initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                        animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                        transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
+                      >
+                        {feature.icon}
+                      </motion.span>
+                      <h5 className="text-white font-semibold text-base md:text-lg mb-1 text-center">{feature.title}</h5>
+                      <p className="text-white/80 text-sm md:text-base mb-2 line-clamp-3 text-center">{feature.description}</p>
+                      <a 
+                        href={feature.link}
+                        target={feature.link.startsWith('http') ? '_blank' : undefined}
+                        rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center justify-center"
+                      >
+                        Läs mer
+                        <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

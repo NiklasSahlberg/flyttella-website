@@ -1292,7 +1292,7 @@ export default function FlyttfirmaAkersbergaPage() {
                             <li>Håll värdesaker tillgängliga.</li>
                             <li>Säkerställ fri väg för flytthjälp.</li>
                             <li>Var tillgänglig för frågor.</li>
-                            <li>Gör en slutkontroll av bostaden.</li>
+                            <li> Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.</li>
                           </ul>
                         }
                       />

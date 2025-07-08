@@ -34,6 +34,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
     phone: '',
     receiptFile: null as File | null,
     cleaningDate: '',
+    damageLevel: '',
   });
   const [validationErrors, setValidationErrors] = useState<Set<string>>(new Set());
   const [showValidationPopup, setShowValidationPopup] = useState(false);
@@ -69,6 +70,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
         phone: '',
         receiptFile: null,
         cleaningDate: '',
+        damageLevel: '',
       });
       setValidationErrors(new Set());
       setShowValidationPopup(false);
@@ -175,6 +177,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
       eventDate: form.eventDate,
       phone: form.phone,
       cleaningDate: form.cleaningDate,
+      damageLevel: form.damageLevel,
       // File information (not the actual files)
       hasDamagedItemImage: !!form.damagedItemImage,
       hasFrontImage: !!form.frontImage,
@@ -384,6 +387,48 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 <div>
                   <label className="block text-sm font-medium mb-1">Beskriv skador på föremålet och hur skadan har gått till *</label>
                   <textarea name="description" required className="w-full border rounded-lg px-3 py-2 min-h-[80px]" value={form.description} onChange={handleChange} />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-1">Hur skadat är föremålet? *</label>
+                  <div className="space-y-2">
+                    <label className="flex items-center">
+                      <input 
+                        type="radio" 
+                        name="damageLevel" 
+                        value="lindrigt_skadad" 
+                        required 
+                        className="mr-2" 
+                        checked={form.damageLevel === 'lindrigt_skadad'} 
+                        onChange={handleChange} 
+                      />
+                      Lindrigt skadad
+                    </label>
+                    <label className="flex items-center">
+                      <input 
+                        type="radio" 
+                        name="damageLevel" 
+                        value="delvis_skadad" 
+                        required 
+                        className="mr-2" 
+                        checked={form.damageLevel === 'delvis_skadad'} 
+                        onChange={handleChange} 
+                      />
+                      Delvis skadad
+                    </label>
+                    <label className="flex items-center">
+                      <input 
+                        type="radio" 
+                        name="damageLevel" 
+                        value="helt_forstord" 
+                        required 
+                        className="mr-2" 
+                        checked={form.damageLevel === 'helt_forstord'} 
+                        onChange={handleChange} 
+                      />
+                      Helt förstörd
+                    </label>
+                  </div>
                 </div>
 
                 <div>
