@@ -27,7 +27,7 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Företagsregistrering hos Bolagsverket</li>
             <li>F-skatt (Företagsskatt) registrering</li>
             <li>Transportörlicens för godsfordon</li>
@@ -48,7 +48,7 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Google Reviews</li>
             <li>Trustpilot</li>
             <li>Företagets hemsida</li>
@@ -57,7 +57,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/1000reviewspicture.png" alt="Kundrecensioner och omdömen" class="w-full -mt-8" />
+          <img src="/top10.png" alt="Kundrecensioner och omdömen" class="w-full h-64 -mt-20 object-contain" />
         </div>
       </div>
       
@@ -68,7 +68,7 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Detaljerad kostnadsuppdelning</li>
             <li>Vad som ingår och inte ingår</li>
             <li>Flyttdatum och tidsram</li>
@@ -90,16 +90,16 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Ansvarsförsäkring för godsfordon</li>
             <li>Försäkring för kundens ägodelar</li>
             <li>Arbetsmiljöförsäkring för personal</li>
             <li>Företagsansvarsförsäkring</li>
-            <li>Säkerhetsställningar enligt lag</li>
+           
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/insurance.json" alt="Försäkringar och säkerhet" class="w-full -mt-8" />
+          <img src="/trygg-hansa-logo.png" alt="Försäkringar och säkerhet" class="w-full -mt-8" />
         </div>
       </div>
       
@@ -110,7 +110,7 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Använder företaget egen personal?</li>
             <li>Vilken erfarenhet har flyttarbetarna?</li>
             <li>Finns det utbildad personal för specialflyttar?</li>
@@ -131,7 +131,7 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Känner till lokala förhållanden</li>
             <li>Snabbare responstid vid problem</li>
             <li>Bättre kundservice</li>
@@ -140,7 +140,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/stockholm.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/stockholm.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg -mt-20" />
         </div>
       </div>
       
@@ -150,7 +150,7 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Snabba svar på förfrågningar</li>
             <li>Tydlig och professionell kommunikation</li>
             <li>Transparent information</li>
@@ -160,7 +160,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/phonecall.json" alt="Kundservice och kommunikation" class="w-full -mt-8" />
+          <img src="/kundservice.jpg" alt="Kundservice och kommunikation" class="w-full h-60 rounded-lg shadow-lg -mt-12 object-cover" />
         </div>
       </div>
       
@@ -171,7 +171,7 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Lägenhetsflyttar</li>
             <li>Villaflyttar</li>
             <li>Kontorsflyttar</li>
@@ -182,7 +182,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/piano.png" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/specialicering.jpg" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Vissa flyttar kräver specialkompetens, som pianoflytt eller flytt av konst</p>
         </div>
       </div>
@@ -193,7 +193,7 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Miljövänliga fordon</li>
             <li>Återvinning av förpackningsmaterial</li>
             <li>Energisnåla lösningar</li>
@@ -202,7 +202,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/barhjalp.png" alt="Miljövänlig flytt och hållbarhet" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/intro_picture.jpg" alt="Miljövänlig flytt och hållbarhet" class="w-full h-64 rounded-lg shadow-lg -mt-16 object-cover" />
         </div>
       </div>
       
@@ -212,7 +212,7 @@ const blogPosts = [
       
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Otydliga eller undvikande svar</li>
             <li>Orealistiskt låga priser</li>
             <li>Krav på kontantbetalning</li>
@@ -222,7 +222,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/thumbsup.json" alt="Lita på din magkänsla" class="w-full -mt-8" />
+          <img src="/magkansla.jpg" alt="Lita på din magkänsla" class="w-full rounded-lg shadow-lg -mt-8" />
         </div>
       </div>
       
@@ -232,7 +232,7 @@ const blogPosts = [
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
           <p><strong>Viktiga punkter att komma ihåg:</strong></p>
-          <ul>
+          <ul class="list-disc pl-5 space-y-2">
             <li>Kontrollera alltid företagets registrering och licenser</li>
             <li>Läs recensioner och omdömen från tidigare kunder</li>
             <li>Kräv skriftlig offert och kontrakt</li>

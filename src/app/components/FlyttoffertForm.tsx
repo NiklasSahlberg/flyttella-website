@@ -67,6 +67,16 @@ interface FormData {
   atticArea?: string; // NEW FIELD for vind area
   hasBasementStorage?: string; // NEW FIELD for källarförråd (basement storage)
   basementStorageArea?: string; // NEW FIELD for källarförråd area
+  // NEW FIELDS for packing questions
+  packEntireArea?: boolean; // Hela boytan ska packas
+  packingArea?: string; // Hur stor yta i kvm
+  // NEW FIELDS for storage questions
+  storeEntireArea?: boolean; // Hela boytan ska magasineras
+  storageArea?: string; // Hur stor yta i kvm ska magasineras
+  // NEW FIELDS for disposal questions
+  needsDisposal?: boolean; // Vill du ha bortforsling
+  disposalMoreThan3?: boolean; // Är det mer än 3 kbm som ska bortforslas
+  disposalVolume?: string; // Uppskattning på antal kbm som ska bortforslas
 }
 
 interface FormErrors {
@@ -116,6 +126,16 @@ interface FormErrors {
   atticArea?: string; // NEW FIELD for vind area
   hasBasementStorage?: string; // NEW FIELD for källarförråd (basement storage)
   basementStorageArea?: string; // NEW FIELD for källarförråd area
+  // NEW FIELDS for packing questions
+  packEntireArea?: string;
+  packingArea?: string;
+  // NEW FIELDS for storage questions
+  storeEntireArea?: string;
+  storageArea?: string;
+  // NEW FIELDS for disposal questions
+  needsDisposal?: string;
+  disposalMoreThan3?: string;
+  disposalVolume?: string;
 }
 
 interface AddressComponent {
@@ -192,6 +212,16 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
     atticArea: "", // NEW FIELD for vind area
     hasBasementStorage: "no", // NEW FIELD for källarförråd (basement storage)
     basementStorageArea: "", // NEW FIELD for källarförråd area
+    // NEW FIELDS for packing questions
+    packEntireArea: undefined,
+    packingArea: "",
+    // NEW FIELDS for storage questions
+    storeEntireArea: undefined,
+    storageArea: "",
+    // NEW FIELDS for disposal questions
+    needsDisposal: false,
+    disposalMoreThan3: undefined,
+    disposalVolume: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
@@ -405,6 +435,58 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
       newErrors.needsCleaning = "Vänligen välj om du vill ha flyttstädning";
       isValid = false;
     }
+    if (formData.needsDisposal === undefined) {
+      newErrors.needsDisposal = "Vänligen välj om du vill ha bortforsling";
+      isValid = false;
+    }
+    // Validate disposal questions if needsDisposal is true
+    if (formData.needsDisposal === true) {
+      if (formData.disposalMoreThan3 === undefined) {
+        newErrors.disposalMoreThan3 = "Vänligen välj om det är mer än 3 kbm";
+        isValid = false;
+      }
+      if (formData.disposalMoreThan3 === true) {
+        if (!formData.disposalVolume || !formData.disposalVolume.trim()) {
+          newErrors.disposalVolume = "Vänligen ange uppskattning på antal kbm";
+          isValid = false;
+        } else if (isNaN(Number(formData.disposalVolume)) || Number(formData.disposalVolume) <= 0) {
+          newErrors.disposalVolume = "Volymen måste vara ett positivt tal";
+          isValid = false;
+        }
+      }
+    }
+    // Validate packing area questions if needsPacking is true
+    if (formData.needsPacking === true) {
+      if (formData.packEntireArea === undefined) {
+        newErrors.packEntireArea = "Vänligen välj om hela boytan ska packas";
+        isValid = false;
+      }
+      if (formData.packEntireArea === false) {
+        if (!formData.packingArea || !formData.packingArea.trim()) {
+          newErrors.packingArea = "Vänligen ange ytan som ska packas";
+          isValid = false;
+        } else if (isNaN(Number(formData.packingArea)) || Number(formData.packingArea) <= 0) {
+          newErrors.packingArea = "Ytan måste vara ett positivt tal";
+          isValid = false;
+        }
+      }
+    }
+    // Validate storage area questions if needsStorage is true
+    if (formData.needsStorage === true) {
+      if (formData.storeEntireArea === undefined) {
+        newErrors.storeEntireArea = "Vänligen välj om hela boytan ska magasineras";
+        isValid = false;
+      }
+      if (formData.storeEntireArea === false) {
+        if (!formData.storageArea || !formData.storageArea.trim()) {
+          newErrors.storageArea = "Vänligen ange ytan som ska magasineras";
+          isValid = false;
+        } else if (isNaN(Number(formData.storageArea)) || Number(formData.storageArea) <= 0) {
+          newErrors.storageArea = "Ytan måste vara ett positivt tal";
+          isValid = false;
+        }
+      }
+    }
     setErrors(newErrors);
     return isValid;
   };
@@ -448,7 +530,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
     }
     if (formData.customerType === 'foretag') {
       if (!formData.workplaceCount || !formData.workplaceCount.trim()) {
-        newErrors.workplaceCount = "Vänligen välj antal arbetsplatser";
+        newErrors.workplaceCount = "Vänligen ange antal arbetsplatser";
+        isValid = false;
+      } else if (isNaN(Number(formData.workplaceCount)) || Number(formData.workplaceCount) <= 0) {
+        newErrors.workplaceCount = "Antal arbetsplatser måste vara ett positivt tal";
         isValid = false;
       }
     }
@@ -848,7 +933,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
               </div>
               <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Flyttinformation</h2>
               <div>
-                <label className="block text-lg font-medium text-gray-700 mb-2">Önskat flyttdatum</label>
+                                  <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Önskat flyttdatum</strong></label>
                 <input
                   type="date"
                   name="movingDate"
@@ -899,7 +984,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 </div>
                 {formData.wantsFlexibleDate && (
                   <div>
-                    <label className="block text-lg font-medium text-gray-700 mb-2">Flexibelt flyttdatum</label>
+                    <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Flexibelt flyttdatum</strong></label>
                     <select
                       name="flexibleMovingDate"
                       value={formData.flexibleMovingDate}
@@ -931,7 +1016,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
               {/* Packing help question */}
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">
-                  {formData.customerType === 'foretag' ? 'Vill ni ha hjälp med packning?' : 'Vill du ha hjälp med packning?'}
+                  <strong>{formData.customerType === 'foretag' ? 'Vill ni ha hjälp med packning?' : 'Vill du ha hjälp med packning?'}</strong>
                 </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
@@ -941,8 +1026,18 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                       value="yes"
                       checked={formData.needsPacking === true}
                       onChange={() => {
-                        setFormData(prev => ({ ...prev, needsPacking: true }));
-                        setErrors(prev => ({ ...prev, needsPacking: "" }));
+                        setFormData(prev => ({ 
+                          ...prev, 
+                          needsPacking: true,
+                          packEntireArea: undefined,
+                          packingArea: ""
+                        }));
+                        setErrors(prev => ({ 
+                          ...prev, 
+                          needsPacking: "",
+                          packEntireArea: "",
+                          packingArea: ""
+                        }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
@@ -955,8 +1050,18 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                       value="no"
                       checked={formData.needsPacking === false}
                       onChange={() => {
-                        setFormData(prev => ({ ...prev, needsPacking: false }));
-                        setErrors(prev => ({ ...prev, needsPacking: "" }));
+                        setFormData(prev => ({ 
+                          ...prev, 
+                          needsPacking: false,
+                          packEntireArea: undefined,
+                          packingArea: ""
+                        }));
+                        setErrors(prev => ({ 
+                          ...prev, 
+                          needsPacking: "",
+                          packEntireArea: "",
+                          packingArea: ""
+                        }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
@@ -968,10 +1073,96 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
               </div>
 
+              {/* Conditional packing area questions - only show if needsPacking is true */}
+              {formData.needsPacking === true && (
+                <>
+                  {/* Pack entire area question */}
+                  <div>
+                    <label className="block text-lg font-medium text-gray-700 mb-2">
+                      <strong>{formData.customerType === 'foretag' ? 'Ska hela boytan packas?' : 'Ska hela boytan packas?'}</strong>
+                    </label>
+                    <div className="flex gap-6">
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="packEntireArea"
+                          value="yes"
+                          checked={formData.packEntireArea === true}
+                          onChange={() => {
+                            setFormData(prev => ({ 
+                              ...prev, 
+                              packEntireArea: true,
+                              packingArea: ""
+                            }));
+                            setErrors(prev => ({ 
+                              ...prev, 
+                              packEntireArea: "",
+                              packingArea: ""
+                            }));
+                          }}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-lg text-gray-700">Ja</span>
+                      </label>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="packEntireArea"
+                          value="no"
+                          checked={formData.packEntireArea === false}
+                          onChange={() => {
+                            setFormData(prev => ({ 
+                              ...prev, 
+                              packEntireArea: false,
+                              packingArea: ""
+                            }));
+                            setErrors(prev => ({ 
+                              ...prev, 
+                              packEntireArea: "",
+                              packingArea: ""
+                            }));
+                          }}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-lg text-gray-700">Nej</span>
+                      </label>
+                    </div>
+                    {errors.packEntireArea && (
+                      <p className="mt-1 text-base text-red-600">{errors.packEntireArea}</p>
+                    )}
+                  </div>
+
+                  {/* Packing area size question - only show if packEntireArea is false */}
+                  {formData.packEntireArea === false && (
+                    <div>
+                      <label className="block text-lg font-medium text-gray-700 mb-2">
+                        <strong>{formData.customerType === 'foretag' ? 'Hur stor yta i kvm ska packas?' : 'Hur stor yta i kvm ska packas?'}</strong>
+                      </label>
+                      <input
+                        type="text"
+                        name="packingArea"
+                        value={formData.packingArea}
+                        onChange={(e) => {
+                          // Only allow numbers and decimal point
+                          const value = e.target.value.replace(/[^0-9.]/g, '');
+                          setFormData(prev => ({ ...prev, packingArea: value }));
+                          setErrors(prev => ({ ...prev, packingArea: "" }));
+                        }}
+                        placeholder="Ange yta i kvadratmeter"
+                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.packingArea ? " border-red-500" : ""}`}
+                      />
+                      {errors.packingArea && (
+                        <p className="mt-1 text-base text-red-600">{errors.packingArea}</p>
+                      )}
+                    </div>
+                  )}
+                </>
+              )}
+
               {/* Storage question */}
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">
-                  {formData.customerType === 'foretag' ? 'Behöver ni magasinering?' : 'Behöver du magasinering?'}
+                  <strong>{formData.customerType === 'foretag' ? 'Behöver ni magasinering?' : 'Behöver du magasinering?'}</strong>
                 </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
@@ -981,8 +1172,18 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                       value="yes"
                       checked={formData.needsStorage === true}
                       onChange={() => {
-                        setFormData(prev => ({ ...prev, needsStorage: true }));
-                        setErrors(prev => ({ ...prev, needsStorage: "" }));
+                        setFormData(prev => ({ 
+                          ...prev, 
+                          needsStorage: true,
+                          storeEntireArea: undefined,
+                          storageArea: ""
+                        }));
+                        setErrors(prev => ({ 
+                          ...prev, 
+                          needsStorage: "",
+                          storeEntireArea: "",
+                          storageArea: ""
+                        }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
@@ -995,8 +1196,18 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                       value="no"
                       checked={formData.needsStorage === false}
                       onChange={() => {
-                        setFormData(prev => ({ ...prev, needsStorage: false }));
-                        setErrors(prev => ({ ...prev, needsStorage: "" }));
+                        setFormData(prev => ({ 
+                          ...prev, 
+                          needsStorage: false,
+                          storeEntireArea: undefined,
+                          storageArea: ""
+                        }));
+                        setErrors(prev => ({ 
+                          ...prev, 
+                          needsStorage: "",
+                          storeEntireArea: "",
+                          storageArea: ""
+                        }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
@@ -1008,10 +1219,96 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
               </div>
 
+              {/* Conditional storage area questions - only show if needsStorage is true */}
+              {formData.needsStorage === true && (
+                <>
+                  {/* Store entire area question */}
+                  <div>
+                    <label className="block text-lg font-medium text-gray-700 mb-2">
+                      <strong>{formData.customerType === 'foretag' ? 'Ska hela boytan magasineras?' : 'Ska hela boytan magasineras?'}</strong>
+                    </label>
+                    <div className="flex gap-6">
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="storeEntireArea"
+                          value="yes"
+                          checked={formData.storeEntireArea === true}
+                          onChange={() => {
+                            setFormData(prev => ({ 
+                              ...prev, 
+                              storeEntireArea: true,
+                              storageArea: ""
+                            }));
+                            setErrors(prev => ({ 
+                              ...prev, 
+                              storeEntireArea: "",
+                              storageArea: ""
+                            }));
+                          }}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-lg text-gray-700">Ja</span>
+                      </label>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="storeEntireArea"
+                          value="no"
+                          checked={formData.storeEntireArea === false}
+                          onChange={() => {
+                            setFormData(prev => ({ 
+                              ...prev, 
+                              storeEntireArea: false,
+                              storageArea: ""
+                            }));
+                            setErrors(prev => ({ 
+                              ...prev, 
+                              storeEntireArea: "",
+                              storageArea: ""
+                            }));
+                          }}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-lg text-gray-700">Nej</span>
+                      </label>
+                    </div>
+                    {errors.storeEntireArea && (
+                      <p className="mt-1 text-base text-red-600">{errors.storeEntireArea}</p>
+                    )}
+                  </div>
+
+                  {/* Storage area size question - only show if storeEntireArea is false */}
+                  {formData.storeEntireArea === false && (
+                    <div>
+                      <label className="block text-lg font-medium text-gray-700 mb-2">
+                        <strong>{formData.customerType === 'foretag' ? 'Hur stor yta i kvm ska magasineras?' : 'Hur stor yta i kvm ska magasineras?'}</strong>
+                      </label>
+                      <input
+                        type="text"
+                        name="storageArea"
+                        value={formData.storageArea}
+                        onChange={(e) => {
+                          // Only allow numbers and decimal point
+                          const value = e.target.value.replace(/[^0-9.]/g, '');
+                          setFormData(prev => ({ ...prev, storageArea: value }));
+                          setErrors(prev => ({ ...prev, storageArea: "" }));
+                        }}
+                        placeholder="Ange yta i kvadratmeter"
+                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.storageArea ? " border-red-500" : ""}`}
+                      />
+                      {errors.storageArea && (
+                        <p className="mt-1 text-base text-red-600">{errors.storageArea}</p>
+                      )}
+                    </div>
+                  )}
+                </>
+              )}
+
               {/* Cleaning question */}
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">
-                  {formData.customerType === 'foretag' ? 'Vill ni ha flyttstädning?' : 'Vill du ha flyttstädning?'}
+                  <strong>{formData.customerType === 'foretag' ? 'Vill ni ha flyttstädning?' : 'Vill du ha flyttstädning?'}</strong>
                 </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
@@ -1047,6 +1344,152 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                   <p className="mt-1 text-base text-red-600">{errors.needsCleaning}</p>
                 )}
               </div>
+
+              {/* Disposal question */}
+              <div>
+                <label className="block text-lg font-medium text-gray-700 mb-2">
+                  <strong>{formData.customerType === 'foretag' ? 'Vill ni ha bortforsling?' : 'Vill du ha bortforsling?'}</strong>
+                </label>
+                <div className="flex gap-6">
+                  <label className="flex items-center">
+                    <input
+                      type="radio"
+                      name="needsDisposal"
+                      value="yes"
+                      checked={formData.needsDisposal === true}
+                      onChange={() => {
+                        setFormData(prev => ({ 
+                          ...prev, 
+                          needsDisposal: true,
+                          disposalMoreThan3: undefined,
+                          disposalVolume: ""
+                        }));
+                        setErrors(prev => ({ 
+                          ...prev, 
+                          needsDisposal: "",
+                          disposalMoreThan3: "",
+                          disposalVolume: ""
+                        }));
+                      }}
+                      className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                    />
+                    <span className="ml-2 text-lg text-gray-700">Ja</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      type="radio"
+                      name="needsDisposal"
+                      value="no"
+                      checked={formData.needsDisposal === false}
+                      onChange={() => {
+                        setFormData(prev => ({ 
+                          ...prev, 
+                          needsDisposal: false,
+                          disposalMoreThan3: undefined,
+                          disposalVolume: ""
+                        }));
+                        setErrors(prev => ({ 
+                          ...prev, 
+                          needsDisposal: "",
+                          disposalMoreThan3: "",
+                          disposalVolume: ""
+                        }));
+                      }}
+                      className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                    />
+                    <span className="ml-2 text-lg text-gray-700">Nej</span>
+                  </label>
+                </div>
+                {errors.needsDisposal && (
+                  <p className="mt-1 text-base text-red-600">{errors.needsDisposal}</p>
+                )}
+              </div>
+
+              {/* Conditional disposal questions - only show if needsDisposal is true */}
+              {formData.needsDisposal === true && (
+                <>
+                  {/* Disposal more than 3 kbm question */}
+                  <div>
+                    <label className="block text-lg font-medium text-gray-700 mb-2">
+                      <strong>{formData.customerType === 'foretag' ? 'Är det mer än 3 kbm som ska bortforslas?' : 'Är det mer än 3 kbm som ska bortforslas?'}</strong>
+                    </label>
+                    <div className="flex gap-6">
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="disposalMoreThan3"
+                          value="yes"
+                          checked={formData.disposalMoreThan3 === true}
+                          onChange={() => {
+                            setFormData(prev => ({ 
+                              ...prev, 
+                              disposalMoreThan3: true,
+                              disposalVolume: ""
+                            }));
+                            setErrors(prev => ({ 
+                              ...prev, 
+                              disposalMoreThan3: "",
+                              disposalVolume: ""
+                            }));
+                          }}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-lg text-gray-700">Ja</span>
+                      </label>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="disposalMoreThan3"
+                          value="no"
+                          checked={formData.disposalMoreThan3 === false}
+                          onChange={() => {
+                            setFormData(prev => ({ 
+                              ...prev, 
+                              disposalMoreThan3: false,
+                              disposalVolume: ""
+                            }));
+                            setErrors(prev => ({ 
+                              ...prev, 
+                              disposalMoreThan3: "",
+                              disposalVolume: ""
+                            }));
+                          }}
+                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                        />
+                        <span className="ml-2 text-lg text-gray-700">Nej</span>
+                      </label>
+                    </div>
+                    {errors.disposalMoreThan3 && (
+                      <p className="mt-1 text-base text-red-600">{errors.disposalMoreThan3}</p>
+                    )}
+                  </div>
+
+                  {/* Disposal volume question - only show if disposalMoreThan3 is true */}
+                  {formData.disposalMoreThan3 === true && (
+                    <div>
+                      <label className="block text-lg font-medium text-gray-700 mb-2">
+                        {formData.customerType === 'foretag' ? 'Uppskattning på antal kbm som ska bortforslas' : 'Uppskattning på antal kbm som ska bortforslas'}
+                      </label>
+                      <input
+                        type="text"
+                        name="disposalVolume"
+                        value={formData.disposalVolume}
+                        onChange={(e) => {
+                          // Only allow numbers and decimal point
+                          const value = e.target.value.replace(/[^0-9.]/g, '');
+                          setFormData(prev => ({ ...prev, disposalVolume: value }));
+                          setErrors(prev => ({ ...prev, disposalVolume: "" }));
+                        }}
+                        placeholder="Ange volym i kubikmeter"
+                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.disposalVolume ? " border-red-500" : ""}`}
+                      />
+                      {errors.disposalVolume && (
+                        <p className="mt-1 text-base text-red-600">{errors.disposalVolume}</p>
+                      )}
+                    </div>
+                  )}
+                </>
+              )}
                 <div className="flex justify-between mt-8">
                   <button
                     type="button"
@@ -1076,7 +1519,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
-                    <label className="block text-lg font-medium text-gray-700 mb-2">Nuvarande adress</label>
+                    <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Nuvarande adress</strong></label>
                     <input
                       type="text"
                       id="currentAddress"
@@ -1097,7 +1540,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                     )}
                   </div>
                   <div className="md:w-1/4">
-                    <label className="block text-lg font-medium text-gray-700 mb-2">Gatunr.</label>
+                    <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Gatunr.</strong></label>
                     <input
                       type="text"
                       name="apartmentNumber"
@@ -1137,7 +1580,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                   </div>
                 </div>
                 <div>
-                  <label className="block text-lg font-medium text-gray-700 mb-2">Postnummer</label>
+                  <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Postnummer</strong></label>
                   <input
                     type="text"
                     name="postalCode"
@@ -1159,9 +1602,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {formData.customerType === 'foretag' ? 'Lokalens storlek (kvm)' : 'Bostadens storlek (kvm)'}
-                  </label>
+                                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <strong>{formData.customerType === 'foretag' ? 'Lokalens storlek (kvm)' : 'Bostadens storlek (kvm)'}</strong>
+                    </label>
                   <input
                     type="text"
                     inputMode="numeric"
@@ -1198,22 +1641,22 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 {((formData.customerType as string) === 'foretag') && (
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Hur många arbetsplatser finns det?
+                      <strong>Hur många arbetsplatser finns det?</strong>
                     </label>
-                    <select
+                    <input
+                      type="text"
                       name="workplaceCount"
                       value={formData.workplaceCount}
-                      onChange={handleInputChange}
+                      onChange={(e) => {
+                        // Only allow numbers
+                        const value = e.target.value.replace(/[^0-9]/g, '');
+                        setFormData(prev => ({ ...prev, workplaceCount: value }));
+                        setErrors(prev => ({ ...prev, workplaceCount: "" }));
+                      }}
+                      placeholder="Ange antal"
                       required
                       className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.workplaceCount ? " border-red-500" : ""}`}
-                    >
-                      <option value="">-- Välj --</option>
-                      <option value="1-5">1-5</option>
-                      <option value="6-20">6-20</option>
-                      <option value="21-50">21-50</option>
-                      <option value="51-100">51-100</option>
-                      <option value="100+">100+</option>
-                    </select>
+                    />
                     {errors.workplaceCount && (
                       <p className="mt-1 text-sm text-red-600">{errors.workplaceCount}</p>
                     )}
@@ -1222,7 +1665,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 {((formData.customerType as string) !== 'foretag') && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Typ av bostad
+                      <strong>Typ av bostad</strong>
                     </label>
                   <select
                     name="typeOfHome"
@@ -1272,7 +1715,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.typeOfHome === 'lagenhet')) ? (
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}
+                      <strong>{formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}</strong>
                     </label>
                   <select
                     name="floor"
@@ -1304,7 +1747,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 ) : (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {formData.typeOfHome === 'magasin' ? 'Vilken våning ligger magasinet på?' : 'Antal våningar'}
+                      <strong>{formData.typeOfHome === 'magasin' ? 'Vilken våning ligger magasinet på?' : 'Antal våningar'}</strong>
                     </label>
                     <select
                       name="floor"
@@ -1347,7 +1790,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && (formData.typeOfHome === 'lagenhet' || formData.typeOfHome === 'magasin'))) && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns hiss i byggnaden?</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Finns hiss i byggnaden?</strong></label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -1385,7 +1828,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
                 {formData.hasElevator === "yes" && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Hisstorlek</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Hisstorlek</strong></label>
                     <select
                       name="elevatorSize"
                       value={formData.elevatorSize}
@@ -1419,9 +1862,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {formData.customerType === 'foretag' ? 'Avstånd till lastningsplats (meter)' : 'Avstånd till lastningsplats (meter)'}
-                  </label>
+                                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <strong>{formData.customerType === 'foretag' ? 'Avstånd till lastningsplats (meter)' : 'Avstånd till lastningsplats (meter)'}</strong>
+                    </label>
                   <p className="text-sm text-gray-600 mb-2">
                     {formData.customerType === 'foretag' ? 'Den närmaste punkt en flyttbil kan stå vid er lokal under lastning och lossning' : 'Den närmaste punkt en flyttbil kan stå under lastning och lossning'}
                   </p>
@@ -1464,9 +1907,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {formData.customerType === 'foretag' ? 'Har ni vind?' : 'Har du vind?'}
-                  </label>
+                                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <strong>{formData.customerType === 'foretag' ? 'Har ni vind?' : 'Har du vind?'}</strong>
+                    </label>
                   <div className="flex gap-6">
                     <label className="flex items-center">
                       <input
@@ -1504,7 +1947,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
 
                 {formData.hasAttic === "yes" && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Vindens yta (kvm)</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Vindens yta (kvm)</strong></label>
                     <input
                       type="text"
                       inputMode="numeric"
@@ -1545,9 +1988,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {formData.customerType === 'foretag' ? 'Har ni källarförråd?' : 'Har du källarförråd?'}
-                  </label>
+                                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <strong>{formData.customerType === 'foretag' ? 'Har ni källarförråd?' : 'Har du källarförråd?'}</strong>
+                    </label>
                   <div className="flex gap-6">
                     <label className="flex items-center">
                       <input
@@ -1586,7 +2029,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 {formData.hasBasementStorage === "yes" && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {formData.customerType === 'foretag' ? 'Källarförrådets yta (kvm)' : 'Källarförrådets yta (kvm)'}
+                      <strong>{formData.customerType === 'foretag' ? 'Källarförrådets yta (kvm)' : 'Källarförrådets yta (kvm)'}</strong>
                     </label>
                     <input
                       type="text"
@@ -1628,9 +2071,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {formData.customerType === 'foretag' ? 'Har ni garage?' : 'Har du garage?'}
-                  </label>
+                                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <strong>{formData.customerType === 'foretag' ? 'Har ni garage?' : 'Har du garage?'}</strong>
+                    </label>
                   <div className="flex gap-6">
                     <label className="flex items-center">
                       <input
@@ -1669,7 +2112,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 {formData.hasGarage === "yes" && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {formData.customerType === 'foretag' ? 'Garagets yta (kvm)' : 'Garagets yta (kvm)'}
+                      <strong>{formData.customerType === 'foretag' ? 'Garagets yta (kvm)' : 'Garagets yta (kvm)'}</strong>
                     </label>
                     <input
                       type="text"
@@ -1712,7 +2155,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
 
                 {((formData.customerType as string) === 'foretag') && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns lastkaj i byggnaden?</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Finns lastkaj i byggnaden?</strong></label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -1769,7 +2212,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Ny adress</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Ny adress</strong></label>
                     <input
                       type="text"
                       id="newAddress"
@@ -1786,7 +2229,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                     )}
                   </div>
                   <div className="md:w-1/4">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Gatunr.</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Gatunr.</strong></label>
                     <input
                       type="text"
                       name="toApartmentNumber"
@@ -1826,7 +2269,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Postnummer</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Postnummer</strong></label>
                   <input
                     type="text"
                     name="toPostalCode"
@@ -1849,7 +2292,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {formData.customerType === 'foretag' ? 'Lokalens storlek (kvm)' : 'Bostadens storlek (kvm)'}
+                    <strong>{formData.customerType === 'foretag' ? 'Lokalens storlek (kvm)' : 'Bostadens storlek (kvm)'}</strong>
                   </label>
                   <input
                     type="text"
@@ -1887,7 +2330,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 {((formData.customerType as string) !== 'foretag') && (
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Typ av bostad
+                      <strong>Typ av bostad</strong>
                     </label>
                   <select
                     name="toTypeOfHome"
@@ -1937,7 +2380,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'lagenhet')) ? (
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}
+                      <strong>{formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}</strong>
                     </label>
                   <select
                     name="toFloor"
@@ -1969,7 +2412,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 ) : (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {formData.toTypeOfHome === 'magasin' ? 'Vilken våning ligger magasinet på?' : 'Antal våningar'}
+                      <strong>{formData.toTypeOfHome === 'magasin' ? 'Vilken våning ligger magasinet på?' : 'Antal våningar'}</strong>
                     </label>
                     <select
                       name="toFloor"
@@ -2012,7 +2455,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && (formData.toTypeOfHome === 'lagenhet' || formData.toTypeOfHome === 'magasin'))) && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns hiss i byggnaden?</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Finns hiss i byggnaden?</strong></label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -2050,7 +2493,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
                 {formData.toHasElevator === "yes" && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Hisstorlek</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Hisstorlek</strong></label>
                     <select
                       name="toElevatorSize"
                       value={formData.toElevatorSize}
@@ -2084,7 +2527,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {formData.customerType === 'foretag' ? 'Avstånd till lossningsplats (meter)' : 'Avstånd till lossningsplats (meter)'}
+                    <strong>{formData.customerType === 'foretag' ? 'Avstånd till lossningsplats (meter)' : 'Avstånd till lossningsplats (meter)'}</strong>
                   </label>
                   <p className="text-sm text-gray-600 mb-2">
                     {formData.customerType === 'foretag' ? 'Den närmaste punkt en flyttbil kan stå vid er lokal under lastning och lossning' : 'Den närmaste punkt en flyttbil kan stå under lastning och lossning'}
@@ -2128,7 +2571,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 </div>
                 {((formData.customerType as string) === 'foretag') && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Finns lastkaj i byggnaden?</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Finns lastkaj i byggnaden?</strong></label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -2351,7 +2794,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
               {formData.customerType === 'foretag' && (
                 <>
               <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Kontaktperson för och efternamn</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Kontaktperson för och efternamn</strong></label>
                     <input
                       type="text"
                       name="contactPersonName"
@@ -2365,7 +2808,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
               )}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {formData.customerType === 'foretag' ? 'Företagsnamn' : 'Namn'}
+                  <strong>{formData.customerType === 'foretag' ? 'Företagsnamn' : 'Namn'}</strong>
                 </label>
                 <input
                   type="text"
@@ -2380,7 +2823,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">E-post</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2"><strong>E-post</strong></label>
                 <input
                   type="email"
                   name="email"
@@ -2394,7 +2837,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
                 )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Telefon</strong></label>
                 <input
                   type="tel"
                   name="phone"

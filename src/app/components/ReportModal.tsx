@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 interface ReportModalProps {
   isOpen: boolean;
@@ -9,6 +9,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
   const [type, setType] = useState<'skada' | 'reklamation' | null>(null);
   const [damageType, setDamageType] = useState<'skada' | 'forlust' | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [formType, setFormType] = useState<'skada' | 'reklamation' | null>(null);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -37,6 +38,63 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
   const [validationErrors, setValidationErrors] = useState<Set<string>>(new Set());
   const [showValidationPopup, setShowValidationPopup] = useState(false);
 
+  // Reset form when modal opens/closes
+  useEffect(() => {
+    if (!isOpen) {
+      setType(null);
+      setDamageType(null);
+      setSubmitted(false);
+      setFormType(null);
+      setForm({
+        name: '',
+        email: '',
+        order: '',
+        description: '',
+        files: [],
+        damageType: '',
+        itemType: '',
+        brandModel: '',
+        packedBy: '',
+        frontImage: null,
+        leftImage: null,
+        rightImage: null,
+        damagedItemImage: null,
+        wasNew: '',
+        hasReceipt: '',
+        purchasePrice: '',
+        purchaseYear: '',
+        contactedRepair: '',
+        repairPrice: '',
+        eventDate: '',
+        phone: '',
+        receiptFile: null,
+        cleaningDate: '',
+      });
+      setValidationErrors(new Set());
+      setShowValidationPopup(false);
+    }
+  }, [isOpen]);
+
+  const handleTypeSelection = useCallback((selectedType: 'skada' | 'reklamation') => {
+    setType(selectedType);
+    setFormType(selectedType);
+    setDamageType(null);
+    setSubmitted(false);
+  }, []);
+
+  const handleBack = useCallback(() => {
+    if (damageType) {
+      setDamageType(null);
+    } else {
+      setType(null);
+      setFormType(null);
+    }
+  }, [damageType]);
+
+  const handleClose = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
   if (!isOpen) return null;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -61,12 +119,12 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
 
   const hasError = (fieldName: string) => validationErrors.has(fieldName);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Check for required fields and scroll to first missing one
-    const form = e.target as HTMLFormElement;
-    const requiredFields = form.querySelectorAll('[required]');
+    const formElement = e.target as HTMLFormElement;
+    const requiredFields = formElement.querySelectorAll('[required]');
     let firstMissingField: Element | null = null;
     const errors = new Set<string>();
     
@@ -96,44 +154,96 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
     
     setValidationErrors(new Set());
     setShowValidationPopup(false);
-    setSubmitted(true);
-  };
 
-  const resetForm = () => {
-    setType(null);
-    setDamageType(null);
-    setSubmitted(false);
-    setForm({
-      name: '',
-      email: '',
-      order: '',
-      description: '',
-      files: [],
-      damageType: '',
-      itemType: '',
-      brandModel: '',
-      packedBy: '',
-      frontImage: null,
-      leftImage: null,
-      rightImage: null,
-      damagedItemImage: null,
-      wasNew: '',
-      hasReceipt: '',
-      purchasePrice: '',
-      purchaseYear: '',
-      contactedRepair: '',
-      repairPrice: '',
-      eventDate: '',
-      phone: '',
-      receiptFile: null,
-      cleaningDate: '',
-    });
+    // Prepare the data to send - remove File objects as they can't be serialized
+    const reportData = {
+      type,
+      damageType,
+      name: form.name,
+      email: form.email,
+      order: form.order,
+      description: form.description,
+      itemType: form.itemType,
+      brandModel: form.brandModel,
+      packedBy: form.packedBy,
+      wasNew: form.wasNew,
+      hasReceipt: form.hasReceipt,
+      purchasePrice: form.purchasePrice,
+      purchaseYear: form.purchaseYear,
+      contactedRepair: form.contactedRepair,
+      repairPrice: form.repairPrice,
+      eventDate: form.eventDate,
+      phone: form.phone,
+      cleaningDate: form.cleaningDate,
+      // File information (not the actual files)
+      hasDamagedItemImage: !!form.damagedItemImage,
+      hasFrontImage: !!form.frontImage,
+      hasLeftImage: !!form.leftImage,
+      hasRightImage: !!form.rightImage,
+      hasReceiptFile: !!form.receiptFile,
+      filesCount: form.files?.length || 0
+    };
+
+    console.log('Sending report data:', reportData);
+
+    try {
+      // Create FormData to send files along with the form data
+      const formData = new FormData();
+      
+      // Add all the form data
+      Object.entries(reportData).forEach(([key, value]) => {
+        formData.append(key, String(value));
+      });
+      
+      // Add the actual files
+      if (form.damagedItemImage) {
+        formData.append('damagedItemImage', form.damagedItemImage);
+      }
+      if (form.frontImage) {
+        formData.append('frontImage', form.frontImage);
+      }
+      if (form.leftImage) {
+        formData.append('leftImage', form.leftImage);
+      }
+      if (form.rightImage) {
+        formData.append('rightImage', form.rightImage);
+      }
+      if (form.receiptFile) {
+        formData.append('receiptFile', form.receiptFile);
+      }
+      
+      // Add multiple files for cleaning complaints
+      if (form.files && form.files.length > 0) {
+        form.files.forEach((file, index) => {
+          formData.append(`files`, file);
+        });
+      }
+
+      // Send the form data to the API endpoint
+      const response = await fetch('/api/send-report', {
+        method: 'POST',
+        body: formData, // Don't set Content-Type header, let the browser set it with boundary
+      });
+
+      console.log('Response status:', response.status);
+      const responseData = await response.json();
+      console.log('Response data:', responseData);
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        throw new Error('Failed to send report');
+      }
+    } catch (error) {
+      console.error('Error sending report:', error);
+      alert("Ett fel uppstod när anmälan skulle skickas. Vänligen försök igen.");
+    }
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative text-black" onClick={e => e.stopPropagation()}>
-        <button className="sticky top-4 right-4 text-gray-500 hover:text-[#10B981] text-2xl font-bold focus:outline-none z-20 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm ml-auto" onClick={onClose} aria-label="Stäng anmälan">&times;</button>
+        <button className="sticky top-4 right-4 text-gray-500 hover:text-[#10B981] text-2xl font-bold focus:outline-none z-20 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm ml-auto" onClick={handleClose} aria-label="Stäng anmälan">&times;</button>
         {showValidationPopup && (
           <div className="fixed left-1/2 top-8 z-50 -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-4 animate-fade-in">
             <span className="font-semibold">Vänligen svara på alla frågor</span>
@@ -144,8 +254,8 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
         
         {!type && !submitted && (
           <div className="space-y-4">
-            <button className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" onClick={() => setType('skada')}>Skadeanmälan</button>
-            <button className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" onClick={() => setType('reklamation')}>Reklamationsstäd</button>
+            <button className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" onClick={() => handleTypeSelection('skada')}>Skadeanmälan</button>
+            <button className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" onClick={() => handleTypeSelection('reklamation')}>Reklamationsstäd</button>
           </div>
         )}
 
@@ -167,7 +277,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
             <button 
               type="button" 
               className="w-full py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50" 
-              onClick={() => setType(null)}
+              onClick={handleBack}
             >
               Tillbaka
             </button>
@@ -610,13 +720,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               <button 
                 type="button" 
                 className="flex-1 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50" 
-                onClick={() => {
-                  if (damageType) {
-                    setDamageType(null);
-                  } else {
-                    setType(null);
-                  }
-                }}
+                onClick={handleBack}
               >
                 Tillbaka
               </button>
@@ -678,7 +782,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               )}
             </div>
             <div className="flex gap-2 mt-4">
-              <button type="button" className="flex-1 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50" onClick={() => setType(null)}>Tillbaka</button>
+              <button type="button" className="flex-1 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50" onClick={handleBack}>Tillbaka</button>
               <button type="submit" className="flex-1 py-2 rounded-lg bg-[#10B981] text-white font-semibold hover:bg-[#059669]">Skicka</button>
             </div>
           </form>
@@ -686,42 +790,52 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
 
         {submitted && (
           <div className="text-center py-8">
-            <h3 className="text-lg font-semibold text-[#10B981] mb-4">Tack för din skaderapport!</h3>
-            
-            <div className="text-left bg-gray-50 rounded-lg p-4 mb-6">
-              <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                Enligt våra villkor hanterar vi skador under två månader efter att fakturan har blivit slutbetald (se punkt 14 nedan). Enligt Skatteverkets regler är det inte tillåtet att göra avdrag på RUT-fakturan. Mer information om RUT-reglerna finns på Skatteverkets webbplats.
-              </p>
-              
-              <div className="border-t pt-4">
-                <h4 className="font-semibold text-[#0F172A] mb-3">Se villkor kring ersättning och betalning nedan:</h4>
+            {formType === 'reklamation' ? (
+              <>
+                <h3 className="text-lg font-semibold text-[#10B981] mb-4">Tack för din reklamation!</h3>
+                <div className="text-left bg-gray-50 rounded-lg p-4 mb-6">
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Vi försöker alltid att prioritera reklamationsärenden och kommer att hjälpa dig så fort vi kan. Vi återkommer så fort vi har tittat på ditt ärende.
+                  </p>
+                </div>
+              </>
+            ) : (
+              <>
+                <h3 className="text-lg font-semibold text-[#10B981] mb-4">Tack för din skaderapport!</h3>
                 
-                <div className="text-xs text-gray-600 space-y-3">
-                  <div>
-                    <h5 className="font-medium text-[#0F172A]">14. Ersättnings- och betalningsvillkor</h5>
+                <div className="text-left bg-gray-50 rounded-lg p-4 mb-6">
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                    Enligt våra villkor hanterar vi skador under två månader efter att fakturan har blivit slutbetald (se punkt 14 nedan). Enligt Skatteverkets regler är det inte tillåtet att göra avdrag på RUT-fakturan. Mer information om RUT-reglerna finns på Skatteverkets webbplats.
+                  </p>
+                  
+                  <div className="border-t pt-4">
+                    <h4 className="font-semibold text-[#0F172A] mb-3">Se villkor kring ersättning och betalning nedan:</h4>
                     
-                    <p className="mt-2">
-                      <strong>14.1</strong> Hos Flyttella AB kan betalning ske genom följande betalsätt: Swish överföring på nummer: 123-44-62-248. Betalning kan ske mot faktura med en betalningsfrist om 10 dagar, förutsatt att fakturabetalning har godkänts av Flyttella AB:s kundtjänst vid bokningstillfället. Kunden är skyldig att erlägga full betalning senast vid ankomst till lossningsadressen, om inte annat skriftligen avtalats mellan parterna. Flyttella AB åtar sig att hantera skadeanmälningar som separata ärenden och behandla dessa inom en tidsram om högst två månader från det att en fullständig anmälan mottagits. Fakturan ska vara fullständigt betald innan Flyttella AB påbörjar utredning av förlust- eller skadeärenden.
-                    </p>
-                    
-                    <p className="mt-2">
-                      <strong>14.2</strong> Vid dröjsmål med betalning har Flyttella AB rätt till dröjsmålsräntan som framgår på fakturan fram till dess att full betalning sker, och har rätt att debitera lagstadgade påminnelse- och inkassoavgifter samt rätt att överlämna ärendet till Kronofogdemyndigheten.
-                    </p>
-                    
-                    <p className="mt-2">
-                      <strong>14.3</strong> Betalning för de tjänster som Företaget tillhandahåller ska ske i enlighet med de betalningsvillkor som specificeras i offerten eller på fakturan. Företaget förbehåller sig rätten att kräva betalning under pågående arbete eller innan arbetet påbörjas, om det finns anledning att ifrågasätta Kundens betalningsförmåga. Detta kan innefatta situationer där Företaget bedömer att kunden inte kan uppvisa tillräcklig säkerhet för betalning, eller om kunden har tidigare betalningsanmärkningar eller övriga ekonomiska förhållanden som ger anledning till tvekan.
-                    </p>
+                    <div className="text-xs text-gray-600 space-y-3">
+                      <div>
+                        <h5 className="font-medium text-[#0F172A]">14. Ersättnings- och betalningsvillkor</h5>
+                        
+                        <p className="mt-2">
+                          <strong>14.1</strong> Hos Flyttella AB kan betalning ske genom följande betalsätt: Swish överföring på nummer: 123-44-62-248. Betalning kan ske mot faktura med en betalningsfrist om 10 dagar, förutsatt att fakturabetalning har godkänts av Flyttella AB:s kundtjänst vid bokningstillfället. Kunden är skyldig att erlägga full betalning senast vid ankomst till lossningsadressen, om inte annat skriftligen avtalats mellan parterna. Flyttella AB åtar sig att hantera skadeanmälningar som separata ärenden och behandla dessa inom en tidsram om högst två månader från det att en fullständig anmälan mottagits. Fakturan ska vara fullständigt betald innan Flyttella AB påbörjar utredning av förlust- eller skadeärenden.
+                        </p>
+                        
+                        <p className="mt-2">
+                          <strong>14.2</strong> Vid dröjsmål med betalning har Flyttella AB rätt till dröjsmålsräntan som framgår på fakturan fram till dess att full betalning sker, och har rätt att debitera lagstadgade påminnelse- och inkassoavgifter samt rätt att överlämna ärendet till Kronofogdemyndigheten.
+                        </p>
+                        
+                        <p className="mt-2">
+                          <strong>14.3</strong> Betalning för de tjänster som Företaget tillhandahåller ska ske i enlighet med de betalningsvillkor som specificeras i offerten eller på fakturan. Företaget förbehåller sig rätten att kräva betalning under pågående arbete eller innan arbetet påbörjas, om det finns anledning att ifrågasätta Kundens betalningsförmåga. Detta kan innefatta situationer där Företaget bedömer att kunden inte kan uppvisa tillräcklig säkerhet för betalning, eller om kunden har tidigare betalningsanmärkningar eller övriga ekonomiska förhållanden som ger anledning till tvekan.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </>
+            )}
             
             <button 
               className="mt-4 px-6 py-2 rounded-lg bg-[#10B981] text-white font-semibold hover:bg-[#059669]" 
-              onClick={() => {
-                resetForm();
-                onClose();
-              }}
+              onClick={handleClose}
             >
               Stäng
             </button>

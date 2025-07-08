@@ -265,6 +265,11 @@ function ScheduleLottie() {
 
 export default function Home() {
   const { t } = useLanguage();
+  const [openFAQ, setOpenFAQ] = useState<string | null>(null);
+
+  const toggleFAQ = (id: string) => {
+    setOpenFAQ(openFAQ === id ? null : id);
+  };
   const locations = [
     { name: "Åkersberga", slug: "akersberga" },
     { name: "Älvsjö", slug: "alvsjo" },
@@ -554,18 +559,19 @@ export default function Home() {
                           description: "Få pris på 1 minut",
                           textClass: ""
                         },
-                        {
-                          icon: <div className="ml-3 mt-8"><PhoneCallLottie /></div>,
-                          title: "Personlig kontakt",
-                          description: "Vi ringer samma dag eller dagen efter",
-                          containerClass: "-mt-7",
-                          textClass: ""
-                        },
+                        
                         {
                           icon: <div className="ml-6 -mt-0"><SignFormLottie /></div>,
                           title: "Signera & bekräfta",
                           description: "Få bokningsbekräftelse direkt",
                           containerClass: "-mt-6",
+                          textClass: ""
+                        },
+                        {
+                          icon: <div className="ml-3 mt-8"><PhoneCallLottie /></div>,
+                          title: "Personlig kontakt",
+                          description: "Vi ringer samma dag eller dagen efter",
+                          containerClass: "-mt-7",
                           textClass: ""
                         },
                         {
@@ -823,7 +829,7 @@ export default function Home() {
                 <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
                   {/* Left side - Features content */}
                   <div className="flex-[2] w-full">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra fördelar</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
                       {[
                         {
@@ -1190,7 +1196,7 @@ export default function Home() {
           {/* Tips för din flytt Section */}
           <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
-              <div className="max-w-5xl mx-auto">
+              <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('tips.title')}</h2>
                 
                 <div className="space-y-16">
@@ -1198,7 +1204,7 @@ export default function Home() {
                   {/* Innan flytten */}
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Innan flytten</h3>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                       <TipCard
                         title="Planera och förbered"
                         imageSrc="/tipsforflytt.jpg"
@@ -1226,6 +1232,20 @@ export default function Home() {
                         }
                       />
                       <TipCard
+                          title="Innan flyttfirman kommer"
+                          imageSrc="/innanflyttfirmankommer.jpg"
+                          imageAlt="Förberedelse för flytt"
+                          objectPosition="object-[center_45%]"
+                          content={
+                            <ul className="list-disc pl-5 space-y-2">
+                              <li>Packa ner allt lösöre i kartonger</li>
+                              <li>Montera ner alla gardiner</li>
+                              <li>Montera ner alla lampor</li>
+                              <li>Dubbelkolla packning och märkning.</li>
+                            </ul>
+                          }
+                        />
+                      <TipCard
                         title="Packtips"
                         imageSrc="/packing_tips.jpg"
                         imageAlt="Packning"
@@ -1245,21 +1265,7 @@ export default function Home() {
                   {/* Under flytten */}
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Under flytten</h3>
-                    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-                      <TipCard
-                          title="Innan flyttfirman kommer"
-                          imageSrc="/innanflyttfirmankommer.jpg"
-                          imageAlt="Förberedelse för flytt"
-                          objectPosition="object-[center_45%]"
-                          content={
-                            <ul className="list-disc pl-5 space-y-2">
-                              <li>Packa ner allt lösöre i kartonger</li>
-                              <li>Montera ner alla gardiner</li>
-                              <li>Montera ner alla lampor</li>
-                              <li>Dubbelkolla packning och märkning.</li>
-                            </ul>
-                          }
-                        />
+                    <div className="max-w-2xl mx-auto">
                       <TipCard
                           title="En smidig flyttdag"
                           imageSrc="/smidigflyttdag.jpg"
@@ -1302,6 +1308,215 @@ export default function Home() {
                     </div>
                   </div>
 
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Blog Post Section */}
+          <section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+                    Läs gärna vår blogg
+                  </h2>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Få värdefulla tips och råd för en smidig flytt
+                  </p>
+                </div>
+                
+                <motion.div 
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="md:flex">
+                    <div className="md:w-1/3">
+                      <img 
+                        src="/tipsforflytt.jpg" 
+                        alt="Flytttips Stockholm" 
+                        className="w-full h-64 md:h-full object-cover"
+                      />
+                    </div>
+                    <div className="md:w-2/3 p-8">
+                      <div className="flex items-center mb-4">
+                        <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">
+                          Flytttips
+                        </span>
+                        <span className="text-gray-500 text-sm ml-4">5 min läsning</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">
+                        Vad bör du tänka på när du väljer en seriös flyttfirma
+                      </h3>
+                      <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                        Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös flyttfirma som levererar kvalitet och trygghet.
+                      </p>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center">
+                          <div className="w-10 h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">FE</span>
+                          </div>
+                          <div className="ml-3">
+                            <p className="text-sm font-medium text-[#0F172A]">Flyttella Expert</p>
+                            <p className="text-sm text-gray-500">Flyttspecialist i Stockholm</p>
+                          </div>
+                        </div>
+                        <Link 
+                          href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
+                          className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                        >
+                          Läs hela artikeln
+                          <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      </div>
+                      <div className="text-center">
+                        <Link 
+                          href="/blogg" 
+                          className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-6 py-3 rounded-full font-medium group shadow-lg hover:shadow-xl"
+                        >
+                          Se alla artiklar om flytt
+                          <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="py-20 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
+                  Vanliga frågor
+                </h2>
+                
+                <div className="space-y-4">
+                  {[
+                    {
+                      id: "home-1",
+                      question: "Hur mycket kostar en flytt?",
+                      answer: "Våra priser baseras på faktorer som boyta, våning, hiss och parkeringsavstånd. Vi erbjuder både fasta priser och löpande priser. Fyll i vårt formulär för en snabb offert på 1 minut."
+                    },
+                    {
+                      id: "home-2",
+                      question: "Vad ingår i en vanlig bohagsflytt?",
+                      answer: "Transport, bärhjälp, lastning och lossning. Vi kan även erbjuda packning, montering och flyttstäd som tillval."
+                    },
+                    {
+                      id: "home-3",
+                      question: "Erbjuder ni flyttstädning?",
+                      answer: "Ja, vi erbjuder professionell flyttstädning som uppfyller alla krav. Vi har utfört över 7000 städningar och ger 14 dagars nöjd kund garanti på vår städservice."
+                    },
+                    {
+                      id: "home-4",
+                      question: "Kan ni hjälpa med packning?",
+                      answer: "Ja, vi erbjuder komplett packservice där vi packar allt åt dig. Vi har erfarenhet av att packa känsliga föremål och säkerställer att allt packas säkert för transport."
+                    },
+                    {
+                      id: "home-5",
+                      question: "Hur snabbt kan ni boka in en flytt?",
+                      answer: "Vi är flexibla och kan ofta erbjuda snabba tider. Kontakta oss eller fyll i vårt offertformulär så återkommer vi inom 1 minut med lediga tider och prisförslag."
+                    },
+                  ].map((faq, index) => (
+                    <motion.div
+                      key={faq.id}
+                      className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <button
+                        onClick={() => toggleFAQ(faq.id)}
+                        className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                      >
+                        <h3 className="text-lg md:text-xl font-semibold text-[#0F172A] pr-4">
+                          {faq.question}
+                        </h3>
+                        <motion.div
+                          animate={{ rotate: openFAQ === faq.id ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex-shrink-0"
+                        >
+                          <svg
+                            className="w-6 h-6 text-[#10B981]"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </motion.div>
+                      </button>
+                      
+                      <motion.div
+                        initial={false}
+                        animate={{
+                          height: openFAQ === faq.id ? "auto" : 0,
+                          opacity: openFAQ === faq.id ? 1 : 0
+                        }}
+                        transition={{
+                          height: { duration: 0.3, ease: "easeInOut" },
+                          opacity: { duration: 0.2, ease: "easeInOut" }
+                        }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6">
+                          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </motion.div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="text-center mt-12">
+                  <p className="text-lg text-gray-600 mb-6">
+                    Har du fler frågor?
+                  </p>
+                  <Link 
+                    href="/faq" 
+                    className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                  >
+                    Se alla vanliga frågor
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>

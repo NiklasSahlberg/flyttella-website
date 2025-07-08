@@ -49,13 +49,13 @@ export default function LanguageToggle({ currentLocale, onLocaleChange }: Langua
           console.log('Language toggle clicked!');
           setIsOpen(!isOpen);
         }}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-[#0F172A] hover:bg-white/20 transition-all duration-200 cursor-pointer"
+        className="flex items-center gap-2 px-2 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-200 cursor-pointer"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         type="button"
       >
-        <Image src={currentLanguage?.flag || ''} alt={currentLanguage?.short || ''} width={24} height={18} className="rounded-sm border border-gray-300" />
-        <span className="text-base font-semibold ml-1">{currentLanguage?.short}</span>
+        <Image src={currentLanguage?.flag || ''} alt={currentLanguage?.short || ''} width={20} height={15} className="rounded-sm border border-gray-300" />
+        <span className="text-sm font-medium ml-1">{currentLanguage?.short}</span>
         <motion.svg
           className="w-4 h-4 ml-1"
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -88,7 +88,7 @@ export default function LanguageToggle({ currentLocale, onLocaleChange }: Langua
               currentLocale === language.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
             }`}
           >
-            <Image src={language.flag} alt={language.short} width={24} height={18} className="rounded-sm border border-gray-300" />
+            <Image src={language.flag} alt={language.short} width={20} height={15} className="rounded-sm border border-gray-300" />
             <span className="text-base font-semibold ml-1">{language.short}</span>
             <span className="font-medium ml-2">{language.name}</span>
             {currentLocale === language.code && (

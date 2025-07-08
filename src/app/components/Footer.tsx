@@ -122,7 +122,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-gray-100 border-t-4 border-[#10B981]">
       <div className="max-w-7xl mx-auto px-4 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <Link href="/" className="block">
@@ -166,9 +166,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Private Services */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Våra tjänster</h3>
+            <h3 className="font-semibold mb-4 text-white">Våra Privattjänster</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/bohagsflytt" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
@@ -186,8 +186,40 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/piano-tunglyft" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Piano/Tunglyft
+                </Link>
+              </li>
+              <li>
+                <Link href="/bortforsling" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Bortforsling
+                </Link>
+              </li>
+              <li>
+                <Link href="/magasinering" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Magasinering
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Business Services */}
+          <div>
+            <h3 className="font-semibold mb-4 text-white">Våra Företagstjänster</h3>
+            <ul className="space-y-2">
+              <li>
                 <Link href="/kontorsflytt" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Kontorsflytt
+                </Link>
+              </li>
+              <li>
+                <Link href="/kontorsstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Kontorsstädning
+                </Link>
+              </li>
+              <li>
+                <Link href="/bemanning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Bemanning och underentreprenad
                 </Link>
               </li>
             </ul>
@@ -200,7 +232,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer"
+                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                   onClick={() => setIsModalOpen(true)}
                 >
                   Allmänna villkor - Flytt
@@ -209,7 +241,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer"
+                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                   onClick={() => setIsStadModalOpen(true)}
                 >
                   Allmänna villkor - Flyttstäd
@@ -218,7 +250,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer"
+                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                   onClick={() => setIsStadPartnerModalOpen(true)}
                 >
                   Villkor Samarbetspartner - Flyttstäd
@@ -227,7 +259,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer"
+                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                   onClick={() => setIsFlyttPartnerModalOpen(true)}
                 >
                   Villkor Samarbetspartner - Flytt
@@ -241,11 +273,6 @@ export default function Footer() {
               <li>
                 <Link href="/cookies" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Cookies
-                </Link>
-              </li>
-              <li>
-                <Link href="/villkor" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Villkor
                 </Link>
               </li>
             </ul>
@@ -267,12 +294,12 @@ export default function Footer() {
                 </svg>
                 info@flyttella.se
               </li>
-              <li className="flex items-center text-sm text-gray-200">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li className="flex items-start text-sm text-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[#10B981] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                Stockholm, Sverige
+                <span>Lännavägen 64F, Huddinge</span>
               </li>
             </ul>
           </div>

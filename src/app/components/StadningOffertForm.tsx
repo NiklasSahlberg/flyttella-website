@@ -545,7 +545,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                   </button>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Önskat städdatum</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Önskat städdatum</strong></label>
                   <input
                     type="date"
                     name="movingDate"
@@ -581,7 +581,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                   </div>
                   {formData.wantsFlexibleDate && (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Flexibelt städdatum</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Flexibelt städdatum</strong></label>
                       <select
                         name="flexibleMovingDate"
                         value={formData.flexibleMovingDate}
@@ -615,7 +615,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                 </div>
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Adress</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Adress</strong></label>
                     <input
                       type="text"
                       id="address"
@@ -635,7 +635,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     )}
                   </div>
                   <div className="md:w-1/4">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Gatunr.</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Gatunr.</strong></label>
                     <input
                       type="text"
                       name="streetNumber"
@@ -678,7 +678,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Postnummer</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Postnummer</strong></label>
                   <input
                     type="text"
                     name="postalCode"
@@ -707,11 +707,9 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
             {step === 2 && (
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {localCustomerType === 'foretag'
+                  <label className="block text-sm font-medium text-gray-700 mb-1"><strong>{localCustomerType === 'foretag'
                       ? 'Vilken typ av lokal ska städas?'
-                      : 'Vilken sorts bostad ska städas?'}
-                  </label>
+                      : 'Vilken sorts bostad ska städas?'}</strong></label>
                   <select
                     name="typeOfHome"
                     value={formData.typeOfHome}
@@ -749,9 +747,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {formData.typeOfHome.toLowerCase() === 'lagenhet' ? 'Vilken våning ligger lägenheten på?' : 'Hur många våningar ska städas?'}
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1"><strong>{formData.typeOfHome.toLowerCase() === 'lagenhet' ? 'Vilken våning ligger lägenheten på?' : 'Hur många våningar ska städas?'}</strong></label>
                   <select
                     name="numberOfFloors"
                     value={formData.numberOfFloors}
@@ -791,7 +787,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">Ungefär hur stor yta ska städas?</label>
+                                      <label className="block text-sm font-medium text-gray-700 mb-1 mt-6"><strong>Ungefär hur stor yta ska städas?</strong></label>
                   <input
                     type="text"
                     name="squareMeters"
@@ -814,7 +810,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                 </div>
 
                 <div className="mt-6">
-                  <h3 className="text-lg font-medium text-gray-900">Tilläggstjänster</h3>
+                                      <h3 className="text-lg font-medium text-gray-900"><strong>Tilläggstjänster</strong></h3>
                   <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex items-start">
                       <div className="flex items-center h-5">
@@ -895,9 +891,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                 
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {localCustomerType === 'foretag' ? 'Företagsnamn' : 'Ditt namn'}
-                    </label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{localCustomerType === 'foretag' ? 'Företagsnamn' : 'Ditt namn'}</strong></label>
                     <input
                       type="text"
                       name="name"
@@ -914,7 +908,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                   </div>
                   {localCustomerType === 'foretag' && (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Kontaktperson för och efternamn</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Kontaktperson för och efternamn</strong></label>
                       <input
                         type="text"
                         name="contactPersonName"
@@ -931,7 +925,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     </div>
                   )}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">E-post</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>E-post</strong></label>
                     <input
                       type="email"
                       name="email"
@@ -947,7 +941,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     )}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Telefon</strong></label>
                     <input
                       type="tel"
                       name="phone"
@@ -963,7 +957,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     )}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Kommentarer (frivilligt)</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Kommentarer (frivilligt)</strong></label>
                     <textarea
                       name="comments"
                       value={formData.comments}
