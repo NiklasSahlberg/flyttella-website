@@ -3,7 +3,6 @@ import { google } from 'googleapis';
 import { Storage } from '@google-cloud/storage';
 import fs from 'fs';
 import path from 'path';
-import { writeFile } from 'fs/promises';
 
 // Function to calculate estimated value based on purchase price, year, receipt, condition, and damage level
 function calculateEstimatedValue(
@@ -130,7 +129,7 @@ async function getGmailClient() {
 async function createEmailWithAttachments(to: string, from: string, subject: string, messageText: string, files: { [key: string]: File }) {
   const boundary = `boundary_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   
-  let emailContent = [
+  const emailContent = [
     `From: ${from}`,
     `To: ${to}`,
     `Subject: ${subject}`,
