@@ -7,6 +7,7 @@ import FlyttoffertForm from '../components/FlyttoffertForm'
 import ReviewsWidget from '../components/ReviewsWidget'
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
+import LocationsCard from '../components/LocationsCard';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -140,6 +141,48 @@ export default function Bohagsflytt() {
     setOpenFAQBohag(openFAQBohag === id ? null : id);
   };
 
+  const locations = [
+    { name: "Åkersberga", slug: "akersberga" },
+    { name: "Älvsjö", slug: "alvsjo" },
+    { name: "Årsta", slug: "arsta" },
+    { name: "Botkyrka", slug: "botkyrka" },
+    { name: "Bromma", slug: "bromma" },
+    { name: "Bro", slug: "bro" },
+    { name: "Danderyd", slug: "danderyd" },
+    { name: "Ekerö", slug: "ekero" },
+    { name: "Enskede", slug: "enskede" },
+    { name: "Farsta", slug: "farsta" },
+    { name: "Hägersten", slug: "hagersten" },
+    { name: "Haninge", slug: "haninge" },
+    { name: "Huddinge", slug: "huddinge" },
+    { name: "Järfälla", slug: "jarfalla" },
+    { name: "Kista", slug: "kista" },
+    { name: "Kungsholmen", slug: "kungsholmen" },
+    { name: "Kungsängen", slug: "kungsangen" },
+    { name: "Lidingö", slug: "lidingo" },
+    { name: "Märsta", slug: "marsta" },
+    { name: "Nacka", slug: "nacka" },
+    { name: "Norrmalm", slug: "norrmalm" },
+    { name: "Nynäshamn", slug: "nynashamn" },
+    { name: "Östermalm", slug: "ostermalm" },
+    { name: "Salem", slug: "salem" },
+    { name: "Skärholmen", slug: "skarholmen" },
+    { name: "Södermalm", slug: "sodermalm" },
+    { name: "Södertälje", slug: "sodertalje" },
+    { name: "Solna", slug: "solna" },
+    { name: "Sollentuna", slug: "sollentuna" },
+    { name: "Spånga", slug: "spanga" },
+    { name: "Sundbyberg", slug: "sundbyberg" },
+    { name: "Täby", slug: "taby" },
+    { name: "Tumba", slug: "tumba" },
+    { name: "Tyresö", slug: "tyreso" },
+    { name: "Upplands Väsby", slug: "upplands-vasby" },
+    { name: "Vallentuna", slug: "vallentuna" },
+    { name: "Varmdö", slug: "varmdo" },
+    { name: "Vasastan", slug: "vasastan" },
+    { name: "Västerhaninge", slug: "vasterhaninge" }
+  ];
+
   return (
     <main className="overflow-hidden">
       <div className="main-zoom">
@@ -179,254 +222,308 @@ export default function Bohagsflytt() {
         {/* What is Bohagsflytt Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
-              {/* Main Content */}
-              <div className="flex-1 min-w-0">
-                <motion.div 
-                  className="space-y-16"
-                  variants={staggerContainer}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                >
-                  {/* Main content sections */}
-                  {([
-                    {
-                      title: "Vad är en bohagsflytt?",
-                      content: "En bohagsflytt innebär att flytta hela eller delar av ett hushålls tillhörigheter från en bostad till en annan. Det omfattar allt från planering, packning och transport till uppackning och eventuell magasinering. En professionell bohagsflytt gör processen trygg, smidig och säker – oavsett om du flyttar inom samma stad eller till en ny ort.",
-                      icon: '🏠',
-                    },
-                    {
-                      title: '',
-                      content: (
-                        <div className="w-full max-w-4xl mx-auto flex justify-center my-12">
-                          <img src="/magkansla.jpg" alt="Magkänsla" className="w-full h-64 md:h-80 rounded-lg shadow-lg object-cover" />
-                        </div>
-                      ),
-                      icon: '',
-                    },
-                    {
-                      title: "Vad kostar en bohagsflytt?",
-                      content: (
-                        <>
-                          <p className="text-gray-700 leading-relaxed text-lg md:text-xl mb-8">
-                            Priset på en bohagsflytt varierar beroende på faktorer som mängden bohag, avståndet mellan adresserna, våningsplan, tillgång till hiss och eventuella tilläggstjänster som packning eller magasinering. En normal flytt inom samma stad kan kosta från cirka 1 700 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina behov.
-                          </p>
-                          <div className="my-16 text-center">
-                            <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-                              "Allt gick smidigt och tryggt från första kontakt tills allt var på plats. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri flytt!"
-                            </p>
-                            <p className="italic text-gray-700 mt-2">- Erika</p>
-                          </div>
-                        </>
-                      ),
-                      icon: '💸',
-                    },
-                    {
-                      title: "Vad är bohagsflytt 2010?",
-                      content: 'Bohagsflytt 2010 syftar på de regler och riktlinjer som fastställts i "Bohag 2010" – ett avtal framtaget av Sveriges Åkeriföretag och Svenska Möbeltransportörers Förbund. Avtalet reglerar ansvaret mellan flyttföretag och kund vid bohagsflytt, och säkerställer att flytten sker på ett tryggt och professionellt sätt. Det omfattar bland annat försäkringar, hantering av bohag, reklamationer och betalningsvillkor. När du anlitar en flyttfirma som följer Bohag 2010 kan du känna dig extra trygg under hela flyttprocessen.',
-                      icon: '📜',
-                    },
-                    {
-                      title: "Flyttkartonger",
-                      content: 'Flyttkartonger är en viktig del av en smidig och säker bohagsflytt. Med rätt kartonger blir packningen enklare och dina saker skyddas bättre under transporten. Vi erbjuder stabila och rymliga flyttkartonger som är anpassade för olika typer av föremål – från böcker och porslin till kläder och elektronik. Hos oss kan du låna flyttkartonger kostnadsfritt i upp till 4 veckor när du bokar din flytt, vilket gör hela processen både enklare och mer kostnadseffektiv.',
-                      icon: '📦',
-                    },
-                    {
-                      title: "Boka flytthjälp i god tid",
-                      content: "För en smidig och stressfri flytt är det viktigt att boka flytthjälp i god tid. Vi rekommenderar att du bokar minst 2-3 veckor i förväg för att säkerställa tillgänglighet och få den flyttdag som passar dig bäst. Vi erbjuder flexibla bokningsmöjligheter och kan anpassa oss efter dina behov. Boka redan idag för att säkerställa en professionell och pålitlig flyttservice.",
-                      icon: '📅',
-                    },
-                    {
-                      title: "Checklista vid flytt",
-                      content: (
-                        <div>
-                          <ul className="list-disc pl-5 space-y-2">
-                            <li><strong>Boka flyttfirma i god tid:</strong> Säkerställ att du får det datum som passar dig bäst.</li>
-                            <li><strong>Rensa och sortera:</strong> Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li>
-                            <li><strong>Beställ flyttkartonger:</strong> Låna eller köp tillräckligt med kartonger och packmaterial.</li>
-                            <li><strong>Packa smart:</strong> Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.</li>
-                            <li><strong>Adressändra och meddela viktiga kontakter:</strong> Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.</li>
-                            <li><strong>Boka flyttstädning:</strong> Se till att bostaden är ordentligt städad inför överlämning.</li>
-                            <li><strong>Töm och frosta av frysen:</strong> Gör detta minst en dag innan flytten.</li>
-                            <li><strong>Plocka ner gardiner, lampor och hyllor:</strong> Förbered så mycket som möjligt innan flyttdagen.</li>
-                            <li><strong>Packa en "första natten-låda":</strong> Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.</li>
-                            <li><strong>Dubbelkolla allt på flyttdagen:</strong> Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.</li>
-                          </ul>
-                        </div>
-                      ),
-                      icon: '✅',
-                    },
-                  ] as { title: string; content: any; icon: string; image?: string }[]).map((section, index) => (
-                    <motion.div
-                      key={index}
-                      className="group"
-                      variants={fadeInUp}
-                      whileHover={{ y: -4 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {(index === 0 || index === 1) ? (
-                        <div>
-                          <div className="max-w-4xl mx-auto">
-                            <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 group-hover:text-[#10B981] transition-colors duration-300">
-                              {section.title}
-                            </h3>
-                            {typeof section.content === 'string' ? (
-                              <p className="text-gray-700 leading-relaxed text-lg md:text-xl">
-                                {section.content}
-                              </p>
-                            ) : (
-                              <div className="text-gray-700 leading-relaxed text-lg md:text-xl">
-                                {section.content}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      ) : section.image ? (
-                        // Special layout for sections with image
-                        <div className="flex flex-col lg:flex-row items-start gap-12">
-                          {/* Content on the left */}
-                          <div className="w-full lg:w-1/2 flex flex-col justify-end min-h-[600px]">
-                            <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 group-hover:text-[#10B981] transition-colors duration-300">
-                              {section.title}
-                            </h3>
-                            {typeof section.content === 'string' ? (
-                              <p className="text-gray-700 leading-relaxed text-lg md:text-xl">
-                                {section.content}
-                              </p>
-                            ) : (
-                              <div className="text-gray-700 leading-relaxed text-lg md:text-xl">
-                                {section.content}
-                              </div>
-                            )}
-                          </div>
-                          {/* Image on the right */}
-                          {section.image && (
-                            <div className="w-full lg:w-1/2">
-                              <div className="relative h-96 lg:h-[600px] rounded-2xl overflow-hidden shadow-xl">
-                                <img
-                                  src={section.image}
-                                  alt={section.title}
-                                  className="w-full h-full object-cover"
+            <div className="max-w-6xl mx-auto relative">
+              {/* Reco Widget - Positioned absolutely to the right */}
+              <div className="hidden lg:block absolute -right-72 top-[22rem] w-72">
+                <div className="sticky top-8">
+                  <iframe 
+                    src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
+                    className="w-full h-[1000px] border-0"
+                    title="Flyttella recensioner"
                                 />
                               </div>
                             </div>
-                          )}
-                        </div>
-                      ) : section.title === "Boka flytthjälp i god tid" ? (
-                        // Special layout for Boka flytthjälp i god tid with image above title
-                        <div>
-                          <div className="max-w-4xl mx-auto">
-                            <img 
-                              src="/godtid.jpg" 
-                              alt="Boka flytthjälp i god tid" 
-                              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-md mb-6"
-                            />
-                            <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 group-hover:text-[#10B981] transition-colors duration-300">
-                              {section.title}
-                            </h3>
-                            {typeof section.content === 'string' ? (
-                              <p className="text-gray-700 leading-relaxed text-lg md:text-xl">
-                                {section.content}
-                              </p>
-                            ) : (
-                              <div className="text-gray-700 leading-relaxed text-lg md:text-xl">
-                                {section.content}
+              
+              {/* Mobile Reco Widget */}
+              <div className="block lg:hidden mb-8">
+                <iframe 
+                  src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=true&reviews=5"
+                  className="w-full h-[900px] border-0"
+                  title="Flyttella recensioner"
+                />
                               </div>
-                            )}
-                          </div>
-                        </div>
-                      ) : (
-                        // Regular centered layout for other sections
-                        <div>
-                          <div className="max-w-4xl mx-auto">
-                            <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 group-hover:text-[#10B981] transition-colors duration-300">
-                              {section.title}
-                            </h3>
-                            {typeof section.content === 'string' ? (
-                              <p className="text-gray-700 leading-relaxed text-lg md:text-xl">
-                                {section.content}
-                              </p>
-                            ) : (
-                              <div className="text-gray-700 leading-relaxed text-lg md:text-xl">
-                                {section.content}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
-
-
-
-                 
-                </motion.div>
+              
+              {/* Montering Card - Positioned absolutely to the right */}
+              <div className="hidden lg:block absolute -right-72 top-[1835px] w-64">
+                <div className="sticky top-8">
+                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                  {/* Background pattern */}
+                    <div className="absolute inset-0 opacity-10 pointer-events-none"
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+                    <div className="flex items-center gap-3 mb-4 relative">
+                      <span className="text-4xl">🔧</span>
+                      <h3 className="text-xl font-bold text-white">
+                      Montering
+                    </h3>
+                  </div>
+                    <p className="text-sm text-gray-100 mb-4 relative">
+                    Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.
+                  </p>
+                  <div className="mt-auto relative">
+                      <Link 
+                        href="/montering" 
+                        className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                  </div>
+                  </div>
+                </div>
               </div>
               
-              {/* Sidebar (desktop only) */}
-              <aside className="hidden lg:flex flex-col gap-20 w-full max-w-xs shrink-0 ml-12">
-                {/* Montering Card */}
-                <div className="bg-gray-50 rounded-2xl shadow p-6 flex flex-col items-center text-center">
-                  <div className="text-4xl mb-4">🔧</div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-2">Montering</h3>
-                  <p className="text-gray-600 mb-4">Säker montering och demontering av möbler och vitvaror.</p>
-                  <Link href="/montering" className="inline-block bg-[#10B981] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0F172A] transition-colors">Läs mer om montering</Link>
-                </div>
-                {/* Piano Flytt Card */}
-                <div className="bg-gray-50 rounded-2xl shadow p-6 flex flex-col items-center text-center">
-                  <div className="text-4xl mb-4">🎹</div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-2">Tunglyft</h3>
-                  <p className="text-gray-600 mb-4">Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.</p>
-                  <Link href="/piano-tunglyft" className="inline-block bg-[#10B981] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0F172A] transition-colors">Läs mer om tunglyft</Link>
-                </div>
-                {/* Bärhjälp Card */}
-                <div className="bg-gray-50 rounded-2xl shadow p-6 flex flex-col items-center text-center">
-                  <div className="text-4xl mb-4">💪</div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-2">Bärhjälp</h3>
-                  <p className="text-gray-600 mb-4">Extra hjälp vid flytt för tunga och stora föremål.</p>
-                  <Link href="/barhjalp" className="inline-block bg-[#10B981] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0F172A] transition-colors">Läs mer om bärhjälp</Link>
-                </div>
-                {/* Bortforsling Card */}
-                <div className="bg-gray-50 rounded-2xl shadow p-6 flex flex-col items-center text-center">
-                  <div className="text-4xl mb-4">🗑️</div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-2">Bortforsling</h3>
-                  <p className="text-gray-600 mb-4">Professionell bortforsling av möbler och bohag som inte längre behövs.</p>
-                  <Link href="/bortforsling" className="inline-block bg-[#10B981] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0F172A] transition-colors">Läs mer om bortforsling</Link>
-                </div>
-              </aside>
-            </div>
-            {/* Sidebar for mobile, shown just above 'Våra tjänster' */}
-            <div className="block lg:hidden mt-12">
-              <div className="flex flex-col gap-8">
-                <div className="bg-gray-50 rounded-2xl shadow p-6 flex flex-col items-center text-center">
-                  <div className="text-4xl mb-4">🔧</div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-2">Montering</h3>
-                  <p className="text-gray-600 mb-4">Säker montering och demontering av möbler och vitvaror.</p>
-                  <Link href="/montering" className="inline-block bg-[#10B981] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0F172A] transition-colors">Läs mer om montering</Link>
-                </div>
-                <div className="bg-gray-50 rounded-2xl shadow p-6 flex flex-col items-center text-center">
-                  <div className="text-4xl mb-4">🎹</div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-2">Tunglyft</h3>
-                  <p className="text-gray-600 mb-4">Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.</p>
-                  <Link href="/piano-tunglyft" className="inline-block bg-[#10B981] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0F172A] transition-colors">Läs mer om tunglyft</Link>
-                </div>
-                <div className="bg-gray-50 rounded-2xl shadow p-6 flex flex-col items-center text-center">
-                  <div className="text-4xl mb-4">💪</div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-2">Bärhjälp</h3>
-                  <p className="text-gray-600 mb-4">Extra hjälp vid flytt för tunga och stora föremål.</p>
-                  <Link href="/barhjalp" className="inline-block bg-[#10B981] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0F172A] transition-colors">Läs mer om bärhjälp</Link>
-                </div>
-                <div className="bg-gray-50 rounded-2xl shadow p-6 flex flex-col items-center text-center">
-                  <div className="text-4xl mb-4">🗑️</div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-2">Bortforsling</h3>
-                  <p className="text-gray-600 mb-4">Professionell bortforsling av möbler och bohag som inte längre behövs.</p>
-                  <Link href="/bortforsling" className="inline-block bg-[#10B981] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0F172A] transition-colors">Läs mer om bortforsling</Link>
+              {/* Tunglyft Card - Positioned absolutely to the right */}
+              <div className="hidden lg:block absolute -right-72 top-[2115px] w-64">
+                <div className="sticky top-8">
+                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                  {/* Background pattern */}
+                    <div className="absolute inset-0 opacity-10 pointer-events-none"
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+                    <div className="flex items-center gap-3 mb-4 relative">
+                      <span className="text-4xl">🎹</span>
+                      <h3 className="text-xl font-bold text-white">
+                      Tunglyft
+                    </h3>
+                  </div>
+                    <p className="text-sm text-gray-100 mb-4 relative">
+                    Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.
+                  </p>
+                  <div className="mt-auto relative">
+                      <Link 
+                        href="/piano-tunglyft" 
+                        className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                  </div>
+                  </div>
                 </div>
               </div>
+              
+              {/* Bärhjälp Card - Positioned absolutely to the right */}
+              <div className="hidden lg:block absolute -right-72 top-[2380px] w-64">
+                <div className="sticky top-8">
+                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                  {/* Background pattern */}
+                    <div className="absolute inset-0 opacity-10 pointer-events-none"
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+                    <div className="flex items-center gap-3 mb-4 relative">
+                      <span className="text-4xl">💪</span>
+                      <h3 className="text-xl font-bold text-white">
+                      Bärhjälp
+                    </h3>
+                  </div>
+                    <p className="text-sm text-gray-100 mb-4 relative">
+                    Extra hjälp vid flytt för tunga och stora föremål. Vi hjälper dig med det tunga lyftet.
+                  </p>
+                  <div className="mt-auto relative">
+                      <Link 
+                        href="/barhjalp" 
+                        className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Bortforsling Card - Positioned absolutely to the right */}
+              <div className="hidden lg:block absolute -right-72 top-[2640px] w-64">
+                <div className="sticky top-8">
+                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                  {/* Background pattern */}
+                    <div className="absolute inset-0 opacity-10 pointer-events-none"
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+                    <div className="flex items-center gap-3 mb-4 relative">
+                      <span className="text-4xl">🗑️</span>
+                      <h3 className="text-xl font-bold text-white">
+                      Bortforsling
+                    </h3>
+                  </div>
+                    <p className="text-sm text-gray-100 mb-4 relative">
+                    Professionell bortforsling av möbler och bohag som inte längre behövs. Miljövänlig hantering.
+                  </p>
+                  <div className="mt-auto relative">
+                      <Link 
+                        href="/bortforsling" 
+                        className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                  </div>
+            </div>
+                  </div>
+                  </div>
+
+              {/* Main content - Centered */}
+                <motion.div
+                className="space-y-16"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                  viewport={{ once: true }}
+              >
+                    {/* Main content sections */}
+                    {([
+                                        {
+                    title: "Vad är en bohagsflytt?",
+                    content: "En bohagsflytt innebär att flytta hela eller delar av ett hushålls tillhörigheter från en bostad till en annan. Det omfattar allt från planering, packning och transport till uppackning och eventuell magasinering. En professionell bohagsflytt gör processen trygg, smidig och säker – oavsett om du flyttar inom samma stad eller till en ny ort. Bohagsflyttar kan variera i omfattning från små flyttar med endast några få möbler till omfattande flyttar som inkluderar hela hushållets tillhörigheter. Processen omfattar vanligtvis inventering av bohag, säker packning med lämpligt material, säker transport med skyddad lastning, och noggrann uppackning på den nya adressen. För att säkerställa en framgångsrik bohagsflytt är det viktigt att välja en erfaren flyttfirma som följer branschstandarder och har rätt försäkringar på plats.",
+                    icon: '🏠',
+                  },
+                  {
+                    title: '',
+                    content: (
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
+                        <img src="/magkansla.jpg" alt="Magkänsla" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                  </div>
+                    ),
+                    icon: '',
+                  },
+                  {
+                    title: "Vad kostar en bohagsflytt?",
+                    content: (
+                      <>
+                        <p className="text-gray-700 leading-relaxed text-xl md:text-2xl mb-8 text-center">
+                          Priset på en bohagsflytt varierar beroende på faktorer som mängden bohag, avståndet mellan adresserna, våningsplan, tillgång till hiss och eventuella tilläggstjänster som packning eller magasinering. En normal flytt inom samma stad kan kosta från cirka 1 700 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina behov.
+                        </p>
+                        <div className="my-16 text-center">
+                          <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
+                            "Allt gick smidigt och tryggt från första kontakt tills allt var på plats. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri flytt!"
+                          </p>
+                          <p className="italic text-gray-700 mt-2">- Erika</p>
+                  </div>
+                      </>
+                    ),
+                    icon: '💸',
+                  },
+                  {
+                    title: "Vad är bohagsflytt 2010?",
+                    content: 'Bohagsflytt 2010 syftar på de regler och riktlinjer som fastställts i "Bohag 2010" – ett avtal framtaget av Sveriges Åkeriföretag och Svenska Möbeltransportörers Förbund. Avtalet reglerar ansvaret mellan flyttföretag och kund vid bohagsflytt, och säkerställer att flytten sker på ett tryggt och professionellt sätt. Det omfattar bland annat försäkringar, hantering av bohag, reklamationer och betalningsvillkor. När du anlitar en flyttfirma som följer Bohag 2010 kan du känna dig extra trygg under hela flyttprocessen.',
+                    icon: '📜',
+                  },
+                  {
+                    title: "Flyttkartonger",
+                    content: 'Flyttkartonger är en viktig del av en smidig och säker bohagsflytt. Med rätt kartonger blir packningen enklare och dina saker skyddas bättre under transporten. Vi erbjuder stabila och rymliga flyttkartonger som är anpassade för olika typer av föremål – från böcker och porslin till kläder och elektronik. Hos oss kan du låna flyttkartonger kostnadsfritt i upp till 4 veckor när du bokar din flytt, vilket gör hela processen både enklare och mer kostnadseffektiv.',
+                    icon: '📦',
+                  },
+                  {
+                    title: '',
+                    content: (
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
+                        <img src="/packing_tips.jpg" alt="Packningstips" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                  </div>
+                    ),
+                    icon: '',
+                  },
+                  {
+                    title: "Boka flytthjälp i god tid",
+                    content: "För en smidig och stressfri flytt är det viktigt att boka flytthjälp i god tid. Vi rekommenderar att du bokar minst 2-3 veckor i förväg för att säkerställa tillgänglighet och få den flyttdag som passar dig bäst. Vi erbjuder flexibla bokningsmöjligheter och kan anpassa oss efter dina behov. Boka redan idag för att säkerställa en professionell och pålitlig flyttservice.",
+                    icon: '📅',
+                  },
+                  {
+                    title: "Checklista vid flytt",
+                    content: (
+                      <div>
+                        <ul className="list-disc pl-5 space-y-2">
+                          <li><strong>Boka flyttfirma i god tid:</strong> Säkerställ att du får det datum som passar dig bäst.</li>
+                          <li><strong>Rensa och sortera:</strong> Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li>
+                          <li><strong>Beställ flyttkartonger:</strong> Låna eller köp tillräckligt med kartonger och packmaterial.</li>
+                          <li><strong>Packa smart:</strong> Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.</li>
+                          <li><strong>Adressändra och meddela viktiga kontakter:</strong> Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.</li>
+                          <li><strong>Boka flyttstädning:</strong> Se till att bostaden är ordentligt städad inför överlämning.</li>
+                          <li><strong>Töm och frosta av frysen:</strong> Gör detta minst en dag innan flytten.</li>
+                          <li><strong>Plocka ner gardiner, lampor och hyllor:</strong> Förbered så mycket som möjligt innan flyttdagen.</li>
+                          <li><strong>Packa en "första natten-låda":</strong> Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.</li>
+                          <li><strong>Dubbelkolla allt på flyttdagen:</strong> Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.</li>
+                        </ul>
+                  </div>
+                    ),
+                    icon: '✅',
+                  },
+                ] as { title: string; content: any; icon: string; image?: string }[]).map((section, index) => (
+                <motion.div
+                    key={index}
+                    className="group"
+                    variants={fadeInUp}
+                    whileHover={{ y: -4 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div>
+                      <div className="max-w-6xl mx-auto">
+                        <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 group-hover:text-[#10B981] transition-colors duration-300 text-center">
+                          {section.title}
+                    </h3>
+                        {typeof section.content === 'string' ? (
+                          <p className={`text-gray-700 leading-relaxed ${section.title === 'Vad är en bohagsflytt?' || section.title === 'Vad är bohagsflytt 2010?' || section.title === 'Flyttkartonger' || section.title === 'Boka flytthjälp i god tid' ? 'text-xl md:text-2xl text-center' : 'text-lg md:text-xl'}`}>
+                            {section.content}
+                          </p>
+                        ) : (
+                          <div className="text-gray-700 leading-relaxed text-lg md:text-xl">
+                            {section.content}
+                  </div>
+                        )}
+              </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>
+
+
 
         {/* Om Flyttella Section */}
         <motion.section
@@ -557,6 +654,11 @@ export default function Bohagsflytt() {
             </motion.div>
           </div>
         </motion.section>
+
+        {/* Vad tycker våra kunder om oss */}
+        <ReviewsWidget />
+
+
 
         {/* Service Cards Section */}
         <section className="py-16 bg-white">
@@ -738,8 +840,28 @@ export default function Bohagsflytt() {
           </div>
         </section>
 
-        {/* Vad tycker våra kunder om oss */}
-        <ReviewsWidget />
+        {/* Features Section */}
+        
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Våra tjänster</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Vi erbjuder ett komplett utbud av flyttjänster för att göra din flytt så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som piano- och magasinering.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/tjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
+                  Se alla våra privattjänster
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </Link>
+                <Link href="/foretag" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
+                  Se alla våra företagstjänster
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Våra förmåner */}
         {/* Responsive zoom wrapper for wide screens */}
@@ -861,6 +983,65 @@ export default function Bohagsflytt() {
             </div>
           </div>
         </div>
+
+        {/* Redo att börja din flytt? */}
+        <section className="py-16 bg-white mt-12 -mb-16">
+          <div className="mx-auto px-4">
+            <motion.div
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Background pattern */}
+              <motion.div 
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                initial={{ backgroundPosition: '0% 0%' }}
+                animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              <div className="flex items-center gap-4 relative z-10 mb-4">
+                <span className="text-4xl">🚚</span>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    Redo att börja din flytt?
+                  </h3>
+                  <p className="text-lg text-gray-100">
+                    Få en snabb och gratis offert på din bohagsflytt
+                  </p>
+                </div>
+              </div>
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block"
+                >
+                  <Link 
+                    href="#flytt-offert"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                  >
+                    Få gratis offert
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Vår erfarenhet */}
         <motion.section
@@ -1024,19 +1205,19 @@ export default function Bohagsflytt() {
                     <img
                       src="/recommendedcompany2.png"
                       alt="Rekommenderad flyttfirma - Flyttella"
-                      className="object-contain h-56 w-56"
+                      className="object-contain h-60 w-60"
                     />
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <img
                       src="/1000reviewspicture.png"
                       alt="1000+ positiva recensioner från kunder"
-                      className="object-contain h-64 w-64"
+                      className="object-contain h-64 w-64 mt-3"
                     />
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <img
-                      src="/top10.png"
+                      src="/bestinswedenbadge-modified.png"
                       alt="Top 10 flyttfirma - Flyttella"
                       className="object-contain h-48 w-48"
                     />
@@ -1053,29 +1234,6 @@ export default function Bohagsflytt() {
                }}
           />
         </motion.section>
-
-        {/* Features Section */}
-        
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Våra tjänster</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Vi erbjuder ett komplett utbud av flyttjänster för att göra din flytt så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som piano- och magasinering.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/tjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                  Se alla våra privattjänster
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </Link>
-                <Link href="/foretag" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                  Se alla våra företagstjänster
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Process Section */}
         <section className="py-16 bg-white relative overflow-hidden">
@@ -1181,30 +1339,7 @@ export default function Bohagsflytt() {
 
 
 
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white">
-          <div className="container mx-auto px-4 text-center">
-          <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Redo att börja din flytt?
-              </h2>
-              <p className="text-xl mb-8 max-w-2xl mx-auto">
-                Få en snabb och gratis offert på din bohagsflytt
-              </p>
-                  <Link 
-                    href="/kontakt" 
-                className="inline-block bg-white text-[#0F172A] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
-                  >
-                Få gratis offert
-          </Link>
-            </motion.div>
-        </div>
-        </section>
+
 
         {/* Blog Post Section (copied from start page) */}
         <section className="py-16 bg-gray-50">
@@ -1436,7 +1571,28 @@ export default function Bohagsflytt() {
             </div>
           </div>
         </section>
+        <div className="text-center mt-12">
+          <p className="text-lg text-gray-600 mb-6">
+            Har du fler frågor?
+          </p>
+          <Link 
+            href="/faq" 
+            className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
+          >
+            Se alla vanliga frågor
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
       </div>
+      <LocationsCard locations={locations} />
     </main>
   )
 } 

@@ -416,6 +416,7 @@ export default function Home() {
           
           {/* Centered content */}
           <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60">
+
             <motion.div
               initial="initial"
               whileInView="animate"
@@ -516,7 +517,9 @@ export default function Home() {
         <section className="section-padding bg-white relative overflow-hidden"
           style={{ borderBottom: 'none', boxShadow: 'none' }}>
           <div className="mx-auto px-24 relative z-10">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-10 mb-8 w-full">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-10 mb-8 w-full relative">
+              
+             
               <div className="w-full">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
                   {t('process.title')}
@@ -783,7 +786,7 @@ export default function Home() {
                       alt="Rekommenderad flyttfirma - Flyttella"
                       width={240}
                       height={240}
-                      className="object-contain h-56 w-56"
+                      className="object-contain h-60 w-60"
                       priority={false}
                     />
                   </motion.div>
@@ -793,16 +796,16 @@ export default function Home() {
                       alt="1000+ positiva recensioner från kunder"
                       width={260}
                       height={260}
-                      className="object-contain h-64 w-64"
+                      className="object-contain h-64 w-64 mt-3"
                       priority={false}
                     />
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
-                      src="/top10.png"
+                      src="/bestinswedenbadge-modified.png"
                       alt="Top 10 flyttfirma - Flyttella"
-                      width={200}
-                      height={200}
+                      width={300}
+                      height={300}
                       className="object-contain h-48 w-48"
                       priority={false}
                     />
@@ -1348,8 +1351,8 @@ export default function Home() {
 
           {/* Blog Post Section */}
           <section className="py-16 bg-gray-50">
-            <div className="container mx-auto px-4">
-              <div className="max-w-6xl mx-auto">
+            <div className="w-full px-6">
+              <div className="w-full">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
                     Läs gärna vår blogg
@@ -1358,81 +1361,85 @@ export default function Home() {
                     Få värdefulla tips och råd för en smidig flytt
                   </p>
                 </div>
-                
-                <motion.div 
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="md:flex">
-                    <div className="md:w-1/3">
-                      <img 
-                        src="/tipsforflytt.jpg" 
-                        alt="Flytttips Stockholm" 
-                        className="w-full h-64 md:h-full object-cover"
-                      />
-                    </div>
-                    <div className="md:w-2/3 p-8">
-                      <div className="flex items-center mb-4">
-                        <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">
-                          Flytttips
-                        </span>
-                        <span className="text-gray-500 text-sm ml-4">5 min läsning</span>
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">
-                        Vad bör du tänka på när du väljer en seriös flyttfirma
-                      </h3>
-                      <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                        Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös flyttfirma som levererar kvalitet och trygghet.
-                      </p>
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center">
-                          <div className="w-10 h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">FE</span>
+                <div className="max-w-6xl mx-auto">
+                  <div className="grid md:grid-cols-1 gap-2">
+                    {/* Single Blog Article Card */}
+                    <motion.div 
+                      className="bg-white rounded-2xl shadow-lg overflow-hidden"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="md:flex h-full items-stretch">
+                        <div className="md:w-1/3 h-full">
+                          <img 
+                            src="/tipsforflytt.jpg" 
+                            alt="Flytttips Stockholm" 
+                            className="w-full h-full object-cover object-[60%_center]"
+                          />
+                        </div>
+                        <div className="md:w-2/3 p-6">
+                          <div className="flex items-center mb-4">
+                            <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 rounded-full text-base font-medium">
+                              Flytttips
+                            </span>
+                            <span className="text-gray-500 text-base ml-4">5 min läsning</span>
                           </div>
-                          <div className="ml-3">
-                            <p className="text-sm font-medium text-[#0F172A]">Flyttella Expert</p>
-                            <p className="text-sm text-gray-500">Flyttspecialist i Stockholm</p>
+                          <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
+                            Vad bör du tänka på när du väljer en seriös flyttfirma
+                          </h3>
+                          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                            Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center">
+                              <div className="w-10 h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
+                                <span className="text-white font-bold text-sm">FE</span>
+                              </div>
+                              <div className="ml-3">
+                                <p className="text-base font-medium text-[#0F172A]">Flyttella Expert</p>
+                                <p className="text-sm text-gray-500">Flyttspecialist i Stockholm</p>
+                              </div>
+                            </div>
+                            <Link 
+                              href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
+                              className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-base group"
+                            >
+                              Läs mer
+                              <svg 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke="currentColor"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </Link>
                           </div>
                         </div>
-                        <Link 
-                          href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
-                          className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
-                        >
-                          Läs hela artikeln
-                          <svg 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                            fill="none" 
-                            viewBox="0 0 24 24" 
-                            stroke="currentColor"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </Link>
                       </div>
-                      <div className="text-center">
-                        <Link 
-                          href="/blogg" 
-                          className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-6 py-3 rounded-full font-medium group shadow-lg hover:shadow-xl"
-                        >
-                          Se alla artiklar om flytt
-                          <svg 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                            fill="none" 
-                            viewBox="0 0 24 24" 
-                            stroke="currentColor"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </Link>
-                      </div>
-                    </div>
+                    </motion.div>
                   </div>
-                </motion.div>
+                </div>
+                <div className="text-center mt-12">
+                  <Link 
+                    href="/blogg" 
+                    className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-6 py-3 rounded-full font-medium group shadow-lg hover:shadow-xl"
+                  >
+                    Se alla artiklar om flytt
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>

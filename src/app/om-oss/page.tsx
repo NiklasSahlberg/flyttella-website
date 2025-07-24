@@ -1,10 +1,29 @@
 'use client';
 
-import { useState } from 'react';
-import Image from "next/image";
 import Link from "next/link";
+import PictureSlider from "../components/PictureSlider";
 
 export default function OmOssPage() {
+
+  // Company images for the slider
+  const companyImages = [
+    {
+      src: "/omoss.jpg",
+      alt: "Flyttella team at work",
+      title: "Vårt team i arbete"
+    },
+    {
+      src: "/personalpicture.jpg",
+      alt: "Professional moving team",
+      title: "Professionellt flyttteam"
+    },
+    {
+      src: "/smiling_worker_new.png",
+      alt: "Happy worker providing service",
+      title: "Glad medarbetare i tjänst"
+    }
+  ];
+
   return (
         <main className="min-h-screen">
       <div style={{ zoom: '0.80' }}>
@@ -66,6 +85,27 @@ export default function OmOssPage() {
         </div>
       </section>
       </div>
+
+      {/* Picture Slider Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+              Se vårt team i arbete
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Ta en titt på våra professionella medarbetare och se hur vi arbetar för att göra din flytt så smidig som möjligt.
+            </p>
+          </div>
+          <PictureSlider 
+            images={companyImages}
+            autoPlay={true}
+            interval={6000}
+            showNavigation={true}
+            showDots={true}
+          />
+        </div>
+      </section>
 
       {/* Rest of Content */}
       <div className="container mx-auto px-4 py-16">
