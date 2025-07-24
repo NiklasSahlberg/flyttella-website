@@ -665,7 +665,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('aboutSection.title')}</h3>
-              <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="mt-12 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {/* Flyttar */}
                 <motion.div 
                   className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"

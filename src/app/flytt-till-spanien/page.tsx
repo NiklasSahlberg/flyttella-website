@@ -492,7 +492,7 @@ export default function FlyttTillSpanienPage() {
                         { icon: <div className="ml-3 mt-8">{PhoneCallLottie()}</div>, title: "Personlig kontakt", description: "Vi ringer dig för att gå igenom detaljerna", containerClass: "-mt-7", textClass: "" },
                         { icon: <div className="ml-6 mt-0">{SignFormLottie()}</div>, title: "Signera & bekräfta", description: "Få bokningsbekräftelse och all dokumentation", containerClass: "-mt-6", textClass: "" },
                         { icon: <div className="mr-3">{MovingTruckLottie()}</div>, title: "Flytt genomförd", description: "Vi hämtar, transporterar och levererar till Spanien", containerClass: "-mt-14", textClass: "-mt-8" },
-                        { icon: <div className="mt-0">{HappyCustomerLottie()}</div>, title: "Nöjd kund", description: "14 dagars nöjd kund garanti även för utlandsflytt", containerClass: "-mt-6", textClass: "" }
+                        { icon: <div className="mt-0">{HappyCustomerLottie()}</div>, title: "Nöjd kund", description: "Återkommande kund", containerClass: "-mt-6", textClass: "" }
                       ].map((step, index) => (
                         <motion.div
                           key={index}

@@ -674,7 +674,7 @@ export default function FlyttfirmaAkersbergaPage() {
               viewport={{ once: true }}
             >
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
-              <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="mt-12 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {/* Flyttar */}
                 <motion.div 
                   className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
@@ -923,29 +923,29 @@ export default function FlyttfirmaAkersbergaPage() {
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
                       src="/recommendedcompany2.png"
-                      alt="Rekommenderad flyttfirma i Åkersberga - Flyttella"
+                      alt="Rekommenderad flyttfirma - Flyttella"
                       width={240}
                       height={240}
-                      className="object-contain h-56 w-56"
+                      className="object-contain h-60 w-60"
                       priority={false}
                     />
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
                       src="/1000reviewspicture.png"
-                      alt="1000+ positiva recensioner från kunder i Åkersberga"
+                      alt="1000+ positiva recensioner från kunder"
                       width={260}
                       height={260}
-                      className="object-contain h-64 w-64"
+                      className="object-contain h-64 w-64 mt-3"
                       priority={false}
                     />
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
-                      src="/top10.png"
-                      alt="Top 10 flyttfirma i Åkersberga - Flyttella"
-                      width={200}
-                      height={200}
+                      src="/bestinswedenbadge-modified.png"
+                      alt="Top 10 flyttfirma - Flyttella"
+                      width={300}
+                      height={300}
                       className="object-contain h-48 w-48"
                       priority={false}
                     />

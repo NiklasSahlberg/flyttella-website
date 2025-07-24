@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import PictureSlider from "../components/PictureSlider";
+import ReviewsWidget from "../components/ReviewsWidget";
 
 export default function OmOssPage() {
 
@@ -84,7 +85,15 @@ export default function OmOssPage() {
           </div>
         </div>
       </section>
-      </div>
+
+      {/* Proud of our reviews section */}
+      <section className="py-8">
+        <div className="max-w-4xl mx-auto px-4 text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Vi är stolta över våra kundomdömen</h2>
+          <p className="text-lg text-gray-700 mb-8">Vi arbetar hårt för att varje kund ska bli nöjd – och det syns i våra recensioner. Läs vad våra kunder tycker om oss!</p>
+        </div>
+        <ReviewsWidget />
+      </section>
 
       {/* Picture Slider Section */}
       <section className="py-16 bg-gray-50">
@@ -236,7 +245,7 @@ export default function OmOssPage() {
           </Link>
         </div>
       </div>
-      
+    </div>
     </main>
   );
 } 
