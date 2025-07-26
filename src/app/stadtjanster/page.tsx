@@ -3,25 +3,19 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Våra Tjänster | Flyttella - Professionell Flyttfirma i Stockholm',
-  description: 'Upptäck våra omfattande flyttjänster: bohagsflytt, flyttstädning, bärhjälp, piano/tunglyft, kontorsflytt och montering. Professionell service i Stockholm.',
+  title: 'Våra Städtjänster | Flyttella - Professionell Städservice i Stockholm',
+  description: 'Upptäck våra omfattande städtjänster: flyttstädning och kontorsstädning. Professionell städservice i Stockholm.',
   openGraph: {
-    title: 'Våra Tjänster | Flyttella - Professionell Flyttfirma i Stockholm',
-    description: 'Upptäck våra omfattande flyttjänster: bohagsflytt, flyttstädning, bärhjälp, piano/tunglyft, kontorsflytt och montering. Professionell service i Stockholm.',
-    url: 'https://flyttella.se/tjanster',
+    title: 'Våra Städtjänster | Flyttella - Professionell Städservice i Stockholm',
+    description: 'Upptäck våra omfattande städtjänster: flyttstädning och kontorsstädning. Professionell städservice i Stockholm.',
+    url: 'https://flyttella.se/stadtjanster',
     siteName: 'Flyttella',
     locale: 'sv_SE',
     type: 'website',
   },
 }
 
-const services = [
-  {
-    title: 'Bohagsflytt',
-    description: 'Professionell flytthjälp för ditt hem. Vi tar hand om hela flyttprocessen från packning till uppackning, med fokus på säkerhet och effektivitet.',
-    href: '/bohagsflytt',
-    icon: '🏠'
-  },
+const cleaningServices = [
   {
     title: 'Flyttstädning',
     description: 'Grundlig flyttstädning som uppfyller alla krav. Vi garanterar en skinande ren bostad som klarar besiktning.',
@@ -29,44 +23,44 @@ const services = [
     icon: '✨'
   },
   {
-    title: 'Bärhjälp',
-    description: 'Erfaren bärhjälp för tunga möbler och föremål. Låt oss ta hand om det tunga lyftet medan du fokuserar på annat.',
-    href: '/barhjalp',
-    icon: '💪'
+    title: 'Kontorsstädning',
+    description: 'Professionell städning av kontor och arbetsplatser. Vi anpassar städningen efter era behov för en trivsam arbetsmiljö.',
+    href: '/kontorsstadning',
+    icon: '🧹'
   },
   {
-    title: 'Piano/Tunglyft',
-    description: 'Specialiserad transport av piano och andra tunga föremål. Vi har rätt utrustning och expertis för säker hantering.',
-    href: '/piano-tunglyft',
-    icon: '🎹'
+    title: 'Hemstädning',
+    description: 'Regelbunden eller enstaka hemstädning för ett fräscht och trivsamt hem.',
+    href: '/hemstadning',
+    icon: '🏡'
   },
   {
-    title: 'Bortforsling',
-    description: 'Vi hjälper dig med miljövänlig bortforsling av möbler, inredning och annat du inte längre behöver.',
-    href: '/bortforsling',
-    icon: '♻️'
+    title: 'Bygg- och grovstädning',
+    description: 'Noggrann städning efter byggprojekt eller vid extra smutsiga miljöer.',
+    href: '/bygg-grovstadning',
+    icon: '🚧'
   },
   {
-    title: 'Magasinering',
-    description: 'Säker och flexibel magasinering av dina möbler och tillhörigheter under kortare eller längre perioder.',
-    href: '/magasinering',
-    icon: '📦'
+    title: 'Storstädning',
+    description: 'En extra grundlig städning av hela hemmet – perfekt för säsongsbyte eller vid behov.',
+    href: '/storstädning',
+    icon: '🧽'
   },
   {
-    title: 'Montering',
-    description: 'Professionell montering av möbler och inredning. Vi säkerställer att allt monteras korrekt och säkert.',
-    href: '/montering',
-    icon: '🔧'
+    title: 'Visningsstädning',
+    description: 'Städning inför visning eller försäljning av bostad för bästa intryck.',
+    href: '/visningsstadning',
+    icon: '🏠'
   },
   {
-    title: 'Utlandsflytt',
-    description: 'Vi hjälper dig med hela processen när du ska flytta utomlands – från planering och packning till transport och inflyttning. Låt oss ta hand om din utlandsflytt!',
-    href: '/utlandsflytt',
-    icon: '🌍'
-  },
+    title: 'Dödsbostädning',
+    description: 'Omsorgsfull städning av dödsbo med respekt och noggrannhet.',
+    href: '/dodsbo-stadning',
+    icon: '🕊️'
+  }
 ]
 
-export default function Services() {
+export default function CleaningServices() {
   return (
     <main>
       {/* Hero Section */}
@@ -77,16 +71,15 @@ export default function Services() {
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
               style={{
-                backgroundImage: 'url(/intro_picture.jpg)',
+                backgroundImage: 'url(/cleaning_background.png)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
             />
             <div className="relative z-10">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Våra Tjänster</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">Våra Städtjänster</h1>
               <p className="text-lg md:text-xl max-w-2xl">
-                Vi erbjuder ett komplett utbud av flyttjänster för att göra din flytt så smidig som möjligt. 
-                Upptäck våra specialiserade tjänster nedan.
+                Vi erbjuder ett komplett utbud av städtjänster för både privatpersoner och företag. Upptäck våra specialiserade tjänster nedan.
               </p>
             </div>
           </div>
@@ -96,7 +89,7 @@ export default function Services() {
       {/* Services Grid */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
+          {cleaningServices.map((service) => (
             <Link 
               key={service.title} 
               href={service.href}
@@ -121,15 +114,15 @@ export default function Services() {
 
         {/* CTA Section */}
         <div className="mt-16 text-center">
-          <h2 className="text-3xl font-bold text-[#0F172A] mb-6">Redo att börja?</h2>
+          <h2 className="text-3xl font-bold text-[#0F172A] mb-6">Redo att boka städning?</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flytt.
+            Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din städning.
           </p>
           <Link 
-            href="/fa-offert"
+            href="/fa-stadning-offert"
             className="inline-block bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity font-medium"
           >
-            Få en offert
+            Få städoffert
           </Link>
         </div>
       </div>

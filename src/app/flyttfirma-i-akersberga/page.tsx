@@ -528,13 +528,72 @@ export default function FlyttfirmaAkersbergaPage() {
           arrowText="Läs vad våra kunder i Åkersberga säger om oss"
         />
 
+        {/* Redo att börja din flytt? */}
+        <section className="py-16 bg-white -mt-20 -mb-16">
+          <div className="mx-auto px-4">
+            <motion.div
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Background pattern */}
+              <motion.div 
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                initial={{ backgroundPosition: '0% 0%' }}
+                animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              <div className="flex items-center gap-4 relative z-10 mb-4">
+                <span className="text-4xl">🚚</span>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    Redo att börja din flytt?
+                  </h3>
+                  <p className="text-lg text-gray-100">
+                    Få en snabb och gratis offert på din bohagsflytt
+                  </p>
+                </div>
+              </div>
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block"
+                >
+                  <Link 
+                    href="#flytt-offert"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                  >
+                    Få gratis offert
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Process and Features Section */}
         <section className="section-padding bg-white relative overflow-hidden">
           <div className="mx-auto px-24 relative z-10">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-10 mb-24 w-full">
               <div className="w-full">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
-                  Vår Process & Fördelar
+                  Vår Process
                 </h2>
 
                 {/* Pricing Info */}
@@ -1097,6 +1156,245 @@ export default function FlyttfirmaAkersbergaPage() {
                   Genom åren har vi blivit erkända av både branschorganisationer och våra kunder i Åkersberga för vårt pålitliga arbete och höga standard.<br />
                   Dessa utmärkelser inspirerar oss att fortsätta leverera flyttjänster i toppklass i Åkersberga – varje dag, till varje kund.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Redo att börja din flytt? - Second Card */}
+        <section className="pt-0 pb-8 bg-white">
+          <div className="mx-auto px-4">
+            <motion.div
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Background pattern */}
+              <motion.div 
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                initial={{ backgroundPosition: '0% 0%' }}
+                animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              <div className="flex items-center gap-4 relative z-10 mb-4">
+                <span className="text-4xl">🚚</span>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    Redo att börja din flytt?
+                  </h3>
+                  <p className="text-lg text-gray-100">
+                    Få en snabb och gratis offert på din bohagsflytt
+                  </p>
+                </div>
+              </div>
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block"
+                >
+                  <Link 
+                    href="#flytt-offert"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                  >
+                    Få gratis offert
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Våra andra huvudtjänster Section */}
+        <section className="pt-8 pb-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
+                Våra andra huvudtjänster
+              </h2>
+              <div className="grid grid-cols-1 gap-12">
+                {/* Flyttstädning Card */}
+                <motion.div
+                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-12 shadow-lg text-white flex flex-col min-h-[340px] h-full"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {/* Background pattern */}
+                  <motion.div 
+                    className="absolute inset-0 opacity-10 pointer-events-none"
+                    initial={{ backgroundPosition: '0% 0%' }}
+                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+                  <div className="flex items-center gap-4 mb-8 relative">
+                    <span className="text-6xl">✨</span>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white">
+                      Flyttstädning
+                    </h3>
+                  </div>
+                  <p className="text-xl text-gray-100 mb-8 relative">
+                    Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.
+                  </p>
+                  <p className="text-lg text-gray-100 mb-8 relative">
+                    Flyttella erbjuder professionell flyttstädning med 14 dagars nöjd kund-garanti. Vi rengör alla boytor, putsar fönster på alla sidor och använder kvalitativa rengöringsmedel. Städutrustning ingår, inklusive leverans och upphämtning. Vi dammtorkar väggar och tak, rengör golvbrunnar och bakom vitvaror (om du drar fram dem). Frysen rengörs om den är avfrostad dagen innan. Med oss får du en komplett flyttstädning för en trygg och smidig överlämning.
+                  </p>
+                  <div className="mt-auto relative">
+                    <motion.div 
+                      whileHover={{ scale: 1.05 }} 
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-block"
+                    >
+                      <Link 
+                        href="/flyttstadning" 
+                        className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-6 w-6 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Magasinering Card */}
+                <motion.div
+                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-12 shadow-lg text-white flex flex-col min-h-[340px] h-full"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  {/* Background pattern */}
+                  <motion.div 
+                    className="absolute inset-0 opacity-10 pointer-events-none"
+                    initial={{ backgroundPosition: '0% 0%' }}
+                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+                  <div className="flex items-center gap-4 mb-8 relative">
+                    <span className="text-6xl">🏢</span>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white">
+                      Magasinering
+                    </h3>
+                  </div>
+                  <p className="text-xl text-gray-100 mb-8 relative">
+                    Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.
+                  </p>
+                  <p className="text-lg text-gray-100 mb-8 relative">
+                    Behöver du magasinera bohag under flyttprocessen? Flyttella tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan. Som extra service erbjuder vi den första månaden gratis för att göra din flyttprocess ännu smidigare.
+                  </p>
+                  <div className="mt-auto relative">
+                    <motion.div 
+                      whileHover={{ scale: 1.05 }} 
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-block"
+                    >
+                      <Link 
+                        href="/magasinering" 
+                        className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-6 w-6 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Packhjälp Card */}
+                <motion.div
+                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-12 shadow-lg text-white flex flex-col min-h-[340px] h-full"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  {/* Background pattern */}
+                  <motion.div 
+                    className="absolute inset-0 opacity-10 pointer-events-none"
+                    initial={{ backgroundPosition: '0% 0%' }}
+                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+                  <div className="flex items-center gap-4 mb-8 relative">
+                    <span className="text-6xl">📦</span>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white">
+                      Packhjälp
+                    </h3>
+                  </div>
+                  <p className="text-xl text-gray-100 mb-8 relative">
+                    Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.
+                  </p>
+                  <p className="text-lg text-gray-100 mb-8 relative">
+                    Packning är ofta den mest tidskrävande delen av en flytt. Flyttella erbjuder professionell packhjälp där våra erfarna flyttare hjälper dig packa dina tillhörigheter på ett säkert och organiserat sätt. Vi använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vår packhjälp inkluderar även märkning av kartonger och skapande av en inventarielista för enkel uppackning på den nya adressen.
+                  </p>
+                  <div className="mt-auto relative">
+                    <motion.div 
+                      whileHover={{ scale: 1.05 }} 
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-block"
+                    >
+                      <Link 
+                        href="/barhjalp" 
+                        className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-6 w-6 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </motion.div>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </div>

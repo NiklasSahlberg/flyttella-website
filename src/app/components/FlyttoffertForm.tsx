@@ -146,9 +146,11 @@ interface AddressComponent {
 
 interface FlyttoffertFormProps {
   mode?: 'full' | 'widget';
+  swapServiceOrder?: boolean;
+  onServiceTypeSelect?: (serviceType: string) => void;
 }
 
-export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFormProps) {
+export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect }: FlyttoffertFormProps) {
   const [step, setStep] = useState(0);
   const [showSteps, setShowSteps] = useState(false);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
@@ -867,44 +869,93 @@ export default function FlyttoffertForm({ mode: _mode = 'full' }: FlyttoffertFor
             {!showSteps && (
               <div className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <motion.div
-                    className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
-                    onClick={() => {
-                      setFormData(prev => ({ ...prev, serviceType: 'flytt' }));
-                      setErrors(prev => ({ ...prev, serviceType: '' }));
-                      setShowSteps(true);
-                      setStep(1);
-                    }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <div className="flex flex-col items-center text-center">
-                      <span className="text-4xl mb-4">🏠</span>
-                      <h3 className="text-xl font-bold mb-2">Flytt</h3>
-                      <p className="text-base opacity-90">
-                        Komplett flyttservice med professionell packning, transport och uppackning
-                      </p>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
-                    onClick={() => {
-                      setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
-                      setErrors(prev => ({ ...prev, serviceType: '' }));
-                      setShowSteps(true);
-                      setStep(1);
-                    }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <div className="flex flex-col items-center text-center">
-                      <span className="text-4xl mb-4">✨</span>
-                      <h3 className="text-xl font-bold mb-2">Flyttstäd</h3>
-                      <p className="text-base opacity-90">
-                        Professionell flyttstädning för att lämna din gamla bostad i perfekt skick
-                      </p>
-                    </div>
-                  </motion.div>
+                  {swapServiceOrder ? (
+                    <>
+                      <motion.div
+                        className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        onClick={() => {
+                          setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
+                          setErrors(prev => ({ ...prev, serviceType: '' }));
+                          setShowSteps(true);
+                          setStep(1);
+                          if (onServiceTypeSelect) onServiceTypeSelect('flyttstad');
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <div className="flex flex-col items-center text-center">
+                          <span className="text-4xl mb-4">✨</span>
+                          <h3 className="text-xl font-bold mb-2">{swapServiceOrder ? 'Städtjänster' : 'Flyttstäd'}</h3>
+                          <p className="text-base opacity-90">
+                            Professionell flyttstädning för att lämna din gamla bostad i perfekt skick
+                          </p>
+                        </div>
+                      </motion.div>
+                      <motion.div
+                        className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        onClick={() => {
+                          setFormData(prev => ({ ...prev, serviceType: 'flytt' }));
+                          setErrors(prev => ({ ...prev, serviceType: '' }));
+                          setShowSteps(true);
+                          setStep(1);
+                          if (onServiceTypeSelect) onServiceTypeSelect('flytt');
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <div className="flex flex-col items-center text-center">
+                          <span className="text-4xl mb-4">🏠</span>
+                          <h3 className="text-xl font-bold mb-2">Flytt</h3>
+                          <p className="text-base opacity-90">
+                            Komplett flyttservice med professionell packning, transport och uppackning
+                          </p>
+                        </div>
+                      </motion.div>
+                    </>
+                  ) : (
+                    <>
+                      <motion.div
+                        className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        onClick={() => {
+                          setFormData(prev => ({ ...prev, serviceType: 'flytt' }));
+                          setErrors(prev => ({ ...prev, serviceType: '' }));
+                          setShowSteps(true);
+                          setStep(1);
+                          if (onServiceTypeSelect) onServiceTypeSelect('flytt');
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <div className="flex flex-col items-center text-center">
+                          <span className="text-4xl mb-4">🏠</span>
+                          <h3 className="text-xl font-bold mb-2">Flytt</h3>
+                          <p className="text-base opacity-90">
+                            Komplett flyttservice med professionell packning, transport och uppackning
+                          </p>
+                        </div>
+                      </motion.div>
+                      <motion.div
+                        className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        onClick={() => {
+                          setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
+                          setErrors(prev => ({ ...prev, serviceType: '' }));
+                          setShowSteps(true);
+                          setStep(1);
+                          if (onServiceTypeSelect) onServiceTypeSelect('flyttstad');
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <div className="flex flex-col items-center text-center">
+                          <span className="text-4xl mb-4">✨</span>
+                          <h3 className="text-xl font-bold mb-2">{swapServiceOrder ? 'Städtjänster' : 'Flyttstäd'}</h3>
+                          <p className="text-base opacity-90">
+                            Professionell flyttstädning för att lämna din gamla bostad i perfekt skick
+                          </p>
+                        </div>
+                      </motion.div>
+                    </>
+                  )}
                 </div>
                 {errors.serviceType && (
                   <p className="text-base text-red-600 text-center mt-4">{errors.serviceType}</p>

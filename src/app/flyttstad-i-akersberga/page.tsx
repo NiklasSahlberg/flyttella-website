@@ -6,8 +6,9 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import StadningOffertForm from "../components/StadningOffertForm";
+import StadningOffertFormCustomAkersberga from "../components/StadningOffertFormCustomAkersberga";
 import FlyttoffertForm from "../components/FlyttoffertForm";
+import ReviewsWidget from "../components/ReviewsWidget";
 
 interface TipCardProps {
   title: string;
@@ -38,6 +39,7 @@ const TipCard: React.FC<TipCardProps> = ({ title, content, imageSrc, imageAlt, o
 export default function FlyttstadAkersbergaPage() {
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
   const toggleFAQ = (id: string) => setOpenFAQ(openFAQ === id ? null : id);
+  const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
 
   // Animation variants
   const variants = {
@@ -173,6 +175,16 @@ export default function FlyttstadAkersbergaPage() {
         label: "Ansvarsförsäkring",
         icon: <motion.div variants={variants} animate="bounce" className="h-8 w-8 flex items-center justify-center overflow-visible"><InsuranceLottie /></motion.div>,
       },
+      {
+        key: "erfaren-personal",
+        label: "Erfaren Personal",
+        icon: <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center overflow-visible"><span className="text-3xl">🧹</span></motion.div>,
+      },
+      {
+        key: "miljovanliga-rengoringsmedel",
+        label: "Miljövänliga Rengöringsmedel",
+        icon: <motion.div variants={variants} animate="pulse" className="h-8 w-8 flex items-center justify-center overflow-visible"><span className="text-3xl">🌱</span></motion.div>,
+      },
     ];
     return (
       <div className="w-full my-12 mb-4">
@@ -226,7 +238,11 @@ export default function FlyttstadAkersbergaPage() {
                   <p className="text-xl md:text-2xl text-white/90 mb-8">Vi erbjuder grundlig flyttstädning, hemstädning och kontorsstädning i Åkersberga – alltid med garanti och RUT-avdrag.</p>
             </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
-                  <FlyttoffertForm mode="widget" />
+                  {selectedServiceType === 'flyttstad' ? (
+                    <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
+                  ) : (
+                    <FlyttoffertForm mode="widget" swapServiceOrder onServiceTypeSelect={setSelectedServiceType} />
+                  )}
                 </div>
             </div>
           </div>
@@ -276,7 +292,73 @@ export default function FlyttstadAkersbergaPage() {
         </section>
 
         {/* Reviews Section */}
-        {/* You can add a cleaning-specific ReviewsWidget here if available */}
+        <ReviewsWidget 
+          location="Åkersberga"
+          title="Vad tycker våra kunder om oss?"
+          subtitle="Pålitlig städservice i Åkersberga med lokalkännedom"
+          description="Som Åkersbergas föredragna städfirma prioriterar vi din tillfredsställelse över allt annat. Vi vet att flyttstädning och hemstädning kan vara överväldigande, vilket är varför vi arbetar hårt för att skapa en känsla av trygghet och kontroll. Med vår djupa lokalkännedom och engagerade personal säkerställer vi att varje städning i Åkersberga blir en smidig och minnesvärd upplevelse."
+          badgeAlt="5 års erfarenhet som städfirma i Åkersberga"
+          arrowText="Läs vad våra kunder i Åkersberga säger om oss"
+        />
+
+        {/* Redo att börja din städning? */}
+        <section className="py-16 bg-white -mt-20 -mb-16">
+          <div className="mx-auto px-4">
+            <motion.div
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Background pattern */}
+              <motion.div 
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                initial={{ backgroundPosition: '0% 0%' }}
+                animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              <div className="flex items-center gap-4 relative z-10 mb-4">
+                <span className="text-4xl">🧹</span>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    Redo att börja din städning?
+                  </h3>
+                  <p className="text-lg text-gray-100">
+                    Få en snabb och gratis offert på din städning
+                  </p>
+                </div>
+              </div>
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block"
+                >
+                  <Link 
+                    href="#stad-offert"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                  >
+                    Få gratis offert
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Vår process & Fördelar Section */}
         <section className="section-padding bg-white relative overflow-hidden">
@@ -284,7 +366,7 @@ export default function FlyttstadAkersbergaPage() {
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-10 mb-24 w-full">
               <div className="w-full">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
-                  Vår process & Fördelar
+                  Vår process
                 </h2>
                 {/* Pricing Info */}
                 <div className="text-center mb-8">
@@ -507,6 +589,65 @@ export default function FlyttstadAkersbergaPage() {
           </div>
         </section>
 
+        {/* Redo att börja din städning? - Second Card */}
+        <section className="pt-0 pb-8 bg-white">
+          <div className="mx-auto px-4">
+            <motion.div
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Background pattern */}
+              <motion.div 
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                initial={{ backgroundPosition: '0% 0%' }}
+                animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              <div className="flex items-center gap-4 relative z-10 mb-4">
+                <span className="text-4xl">🧹</span>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    Redo att börja din städning?
+                  </h3>
+                  <p className="text-lg text-gray-100">
+                    Få en snabb och gratis offert på din städning
+                  </p>
+                </div>
+              </div>
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block"
+                >
+                  <Link 
+                    href="#stad-offert"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                  >
+                    Få gratis offert
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Se alla våra tjänster Section */}
         <motion.section className="py-24 bg-white text-[#0F172A] relative overflow-hidden" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
           <div className="container mx-auto px-4 relative z-10">
@@ -560,7 +701,7 @@ export default function FlyttstadAkersbergaPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-white">
+        <section className="pt-20 pb-8 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Vanliga frågor om flyttstädning i Åkersberga</h2>
@@ -594,19 +735,31 @@ export default function FlyttstadAkersbergaPage() {
         </section>
 
         {/* Link to Flyttfirma i Åkersberga Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Behöver du flytthjälp i Åkersberga?</h2>
-            <div className="flex flex-col items-center max-w-3xl mx-auto">
-              {/* Centered Text and Button */}
-              <div className="w-full flex flex-col items-center justify-center text-center mb-10">
-                <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6">
-                  Vi erbjuder även professionell flytthjälp i Åkersberga! Oavsett om du ska flytta inom staden eller till/från Åkersberga kan vårt erfarna team hjälpa dig med allt från packning till transport och magasinering. Läs mer om våra flyttjänster och boka en kostnadsfri offert.
-                </p>
-                <a href="/flyttfirma-i-akersberga" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium text-lg group">
-                  Till flyttfirma i Åkersberga
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </a>
+        <section className="pt-8 pb-20 bg-white relative overflow-hidden">
+          <div className="w-full">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-10 md:p-16 relative overflow-hidden min-h-[380px] md:min-h-[440px] max-w-[90rem] mx-auto px-4"> {/* in-between wide card */}
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 pointer-events-none"
+                style={{
+                  backgroundImage: 'url(/intro_picture.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  zIndex: 0,
+                }}
+              />
+              <div className="relative z-10 flex flex-col items-center w-full"> {/* keep content full width inside card */}
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Behöver du flytthjälp i Åkersberga?</h2>
+                {/* Centered Text and Button */}
+                <div className="w-full flex flex-col items-center justify-center text-center mb-10">
+                  <p className="text-xl md:text-2xl text-white leading-relaxed mb-6">
+                    Vi erbjuder även professionell flytthjälp i Åkersberga! Oavsett om du ska flytta inom staden eller till/från Åkersberga kan vårt erfarna team hjälpa dig med allt från packning till transport och magasinering. Läs mer om våra flyttjänster och boka en kostnadsfri offert.
+                  </p>
+                  <a href="/flyttfirma-i-akersberga" className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium text-lg group">
+                    Till flyttfirma i Åkersberga
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
