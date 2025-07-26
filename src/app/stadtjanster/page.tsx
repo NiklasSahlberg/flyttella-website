@@ -35,7 +35,7 @@ const cleaningServices = [
     icon: '🏡'
   },
   {
-    title: 'Bygg- och grovstädning',
+    title: 'Byggstädning',
     description: 'Noggrann städning efter byggprojekt eller vid extra smutsiga miljöer.',
     href: '/bygg-grovstadning',
     icon: '🚧'

@@ -183,13 +183,15 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
   // 1. Add the cleaning alternatives array
   const cleaningAlternatives = [
-    "Hemstädning",
     "Flyttstädning",
-    "Bygg- och grovstädning",
+    "Hemstädning",
     "Storstädning",
     "Visningsstädning",
+    "Byggstädning",
     "Dödsbostädning",
-    "Annan städning"
+    "Fönsterputs",
+    "Annan städning",
+    
   ];
 
   // Adjust step count for progress bar (now 4 steps)
@@ -368,8 +370,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   const validateStep2 = (): boolean => {
     const newErrors: FormErrors = {};
     
-    // Bygg- och grovstädning: require at least one work type and one cleaning service
-    if (selectedCleaningType === 'Bygg- och grovstädning') {
+    // Byggstädning: require at least one work type and one cleaning service
+    if (selectedCleaningType === 'Byggstädning') {
       if (!formData.constructionWorkType || formData.constructionWorkType.length === 0) {
         newErrors.constructionWorkType = 'Vänligen välj minst en sorts arbete.';
       }
@@ -621,7 +623,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'
   ];
   const timeSlots = [
-    '06:00-09:00', '09:00-12:00', '12:00-15:00', '15:00-18:00'
+    '06:00-09:00', '09:00-12:00', '12:00-15:00', '15:00-18:00', '18:00-21:00'
   ];
 
   // Calculate step indicator for Annan städning
@@ -756,12 +758,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                         {/* Move städdag and städtid dropdowns here */}
                         {selectedCleaningType === 'Hemstädning' && (
                           <div className="mt-4">
-                            <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Lägg till minst en passande städdag och tid</strong></label>
+                            <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Lägg till en passande städdag och tid</strong></label>
                             <div className="flex gap-2 items-center bg-white p-2 rounded shadow mb-2" style={{ backgroundColor: '#fff' }}>
                               <select
                                 value={formData.cleaningDayTimePair.day}
                                 onChange={e => setFormData(prev => ({ ...prev, cleaningDayTimePair: { ...prev.cleaningDayTimePair, day: e.target.value } }))}
-                                className="px-2 py-1 border rounded w-32 bg-white"
+                                className="px-2 py-1 border rounded w-32 bg-white text-black"
+                                style={{ backgroundColor: 'white', color: 'black' }}
                               >
                                 <option value="">Välj dag</option>
                                 {daysOfWeek.map(day => (
@@ -771,7 +774,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               <select
                                 value={formData.cleaningDayTimePair.time}
                                 onChange={e => setFormData(prev => ({ ...prev, cleaningDayTimePair: { ...prev.cleaningDayTimePair, time: e.target.value } }))}
-                                className="px-2 py-1 border rounded w-32 bg-white"
+                                className="px-2 py-1 border rounded w-32 bg-white text-black"
+                                style={{ backgroundColor: 'white', color: 'black' }}
                               >
                                 <option value="">Välj tid</option>
                                 {timeSlots.map(slot => (
@@ -1089,7 +1093,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                         </div>
                       </div>
                     </div>
-                  ) : selectedCleaningType === 'Bygg- och grovstädning' ? (
+                  ) : selectedCleaningType === 'Byggstädning' ? (
                     <div className="mt-6 space-y-6">
                       <div>
                         <h3 className="text-lg font-medium text-gray-900 mb-4"><strong>Vilken sorts arbete har du gjort?</strong></h3>

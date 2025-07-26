@@ -319,7 +319,7 @@ export default function Header() {
                         </Link>
                         <Link href="/bygg-grovstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
                           <span className="text-lg mr-3">🚧</span>
-                          <span>Bygg- och grovstädning</span>
+                          <span>Byggstädning</span>
                         </Link>
                         <Link href="/storstädning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
                           <span className="text-lg mr-3">🧽</span>
