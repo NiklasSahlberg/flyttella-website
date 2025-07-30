@@ -28,8 +28,14 @@ export default function Footer() {
   const [flyttPartnerHtml, setFlyttPartnerHtml] = useState('');
   const [loadingFlyttPartner, setLoadingFlyttPartner] = useState(false);
 
+  // For utlandsflytt modal
+  const [isUtlandsflyttModalOpen, setIsUtlandsflyttModalOpen] = useState(false);
+  const [utlandsflyttHtml, setUtlandsflyttHtml] = useState('');
+  const [loadingUtlandsflytt, setLoadingUtlandsflytt] = useState(false);
+
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [showReportButton, setShowReportButton] = useState(false);
+  const [showMoreLegal, setShowMoreLegal] = useState(false);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -97,6 +103,22 @@ export default function Footer() {
   }, [isFlyttPartnerModalOpen]);
 
   useEffect(() => {
+    if (isUtlandsflyttModalOpen) {
+      setLoadingUtlandsflytt(true);
+      fetch('/allmanna-villkor-utlandsflytt.txt')
+        .then(res => res.text())
+        .then(text => {
+          const html = text
+            .replace(/\n\n/g, '<br><br>')
+            .replace(/^(\d+\.|[A-ZÅÄÖa-zåäö ]+:)$/gm, '<h2>$1</h2>')
+            .replace(/\n/g, '<br>');
+          setUtlandsflyttHtml(html);
+          setLoadingUtlandsflytt(false);
+        });
+    }
+  }, [isUtlandsflyttModalOpen]);
+
+  useEffect(() => {
     // Only show the report button on the main page
     if (pathname !== '/') {
       setShowReportButton(false);
@@ -122,7 +144,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-gray-100 border-t-4 border-[#10B981]">
       <div className="max-w-7xl mx-auto px-4 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-7 gap-6">
           {/* Company Info */}
           <div className="space-y-4">
             <Link href="/" className="block">
@@ -166,18 +188,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Private Services */}
+          {/* Flyttjänster */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Våra Privattjänster</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-3 text-white">Våra Flyttjänster</h3>
+            <ul className="space-y-1">
               <li>
                 <Link href="/bohagsflytt" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Bohagsflytt
-                </Link>
-              </li>
-              <li>
-                <Link href="/flyttstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Flyttstädning
                 </Link>
               </li>
               <li>
@@ -203,10 +220,47 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Städtjänster */}
+          <div>
+            <h3 className="font-semibold mb-3 text-white">Städtjänster</h3>
+            <ul className="space-y-1">
+              <li>
+                <Link href="/flyttstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Flyttstädning
+                </Link>
+              </li>
+              <li>
+                <Link href="/hemstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Hemstädning
+                </Link>
+              </li>
+              <li>
+                <Link href="/storstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Storstädning
+                </Link>
+              </li>
+              <li>
+                <Link href="/byggstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Byggstädning
+                </Link>
+              </li>
+              <li>
+                <Link href="/visningsstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Visningsstädning
+                </Link>
+              </li>
+              <li>
+                <Link href="/dodsbostadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Dödsbostädning
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Business Services */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Våra Företagstjänster</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-3 text-white">Företagstjänster</h3>
+            <ul className="space-y-1">
               <li>
                 <Link href="/kontorsflytt" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Kontorsflytt
@@ -227,8 +281,8 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Juridisk information</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-3 text-white">Juridisk information</h3>
+            <ul className="space-y-1">
               <li>
                 <button
                   type="button"
@@ -247,41 +301,67 @@ export default function Footer() {
                   Allmänna villkor - Flyttstäd
                 </button>
               </li>
+              
+              {/* Show more/less toggle */}
               <li>
                 <button
                   type="button"
                   className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
-                  onClick={() => setIsStadPartnerModalOpen(true)}
+                  onClick={() => setShowMoreLegal(!showMoreLegal)}
                 >
-                  Villkor Samarbetspartner - Flyttstäd
+                  {showMoreLegal ? 'Visa mindre' : 'Se mer'}
                 </button>
               </li>
-              <li>
-                <button
-                  type="button"
-                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
-                  onClick={() => setIsFlyttPartnerModalOpen(true)}
-                >
-                  Villkor Samarbetspartner - Flytt
-                </button>
-              </li>
-              <li>
-                <Link href="/integritetspolicy" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Integritetspolicy
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookies" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Cookies
-                </Link>
-              </li>
+              
+              {/* Additional legal links - shown when expanded */}
+              {showMoreLegal && (
+                <>
+                  <li>
+                    <button
+                      type="button"
+                      className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                      onClick={() => setIsStadPartnerModalOpen(true)}
+                    >
+                      Villkor Samarbetspartner - Flyttstäd
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                      onClick={() => setIsFlyttPartnerModalOpen(true)}
+                    >
+                      Villkor Samarbetspartner - Flytt
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                      onClick={() => setIsUtlandsflyttModalOpen(true)}
+                    >
+                      Allmänna villkor - Utlandsflytt
+                    </button>
+                  </li>
+                  <li>
+                    <Link href="/integritetspolicy" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                      Integritetspolicy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/cookies" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                      Cookies
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Kontakta oss</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-3 text-white">Kontakta oss</h3>
+            <ul className="space-y-1">
               <li className="flex items-center text-sm text-gray-200">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -318,6 +398,7 @@ export default function Footer() {
       <TermsModal isOpen={isStadModalOpen} onClose={() => setIsStadModalOpen(false)} htmlContent={loadingStad ? '<p>Laddar villkor...</p>' : stadHtml} />
       <TermsModal isOpen={isStadPartnerModalOpen} onClose={() => setIsStadPartnerModalOpen(false)} htmlContent={loadingStadPartner ? '<p>Laddar villkor...</p>' : stadPartnerHtml} />
       <TermsModal isOpen={isFlyttPartnerModalOpen} onClose={() => setIsFlyttPartnerModalOpen(false)} htmlContent={loadingFlyttPartner ? '<p>Laddar villkor...</p>' : flyttPartnerHtml} />
+      <TermsModal isOpen={isUtlandsflyttModalOpen} onClose={() => setIsUtlandsflyttModalOpen(false)} htmlContent={loadingUtlandsflytt ? '<p>Laddar villkor...</p>' : utlandsflyttHtml} />
       {showReportButton && (
         <button
           type="button"

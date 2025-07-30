@@ -590,6 +590,22 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
       if (!formData.phone.trim()) {
         newErrors.phone = 'Vänligen ange ditt telefonnummer';
       }
+    } else if (selectedCleaningType === 'Flyttstädning' && formData.wantsMovingHelp === 'Nej') {
+      // For "Flyttstädning" with "Nej", only validate contact fields
+      if (!formData.name.trim()) {
+        newErrors.name = 'Vänligen ange ditt namn';
+      }
+      if (localCustomerType === 'foretag' && !formData.contactPersonName?.trim()) {
+        newErrors.contactPersonName = 'Vänligen ange kontaktpersonens namn';
+      }
+      if (!formData.email.trim()) {
+        newErrors.email = 'Vänligen ange din e-postadress';
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        newErrors.email = 'Vänligen ange en giltig e-postadress';
+      }
+      if (!formData.phone.trim()) {
+        newErrors.phone = 'Vänligen ange ditt telefonnummer';
+      }
     } else {
       // For other cleaning types, validate all fields
       if (!formData.name.trim()) {
@@ -849,9 +865,18 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         // For "Flyttstädning": step 0 -> 1 -> 2 -> 3 -> 4
         if (step < 4) {
           console.log('Proceeding to next step for Flyttstädning');
-          setStep((prev) => prev + 1);
-          setErrors({});
-          setTouchedFields({});
+          // If we're on step 3 and user selected "Ja" for moving help, start moving form
+          if (step === 3 && formData.wantsMovingHelp === 'Ja') {
+            console.log('Starting moving form');
+            setIsMovingForm(true);
+            setMovingStep(1);
+            setErrors({});
+            setTouchedFields({});
+          } else {
+            setStep((prev) => prev + 1);
+            setErrors({});
+            setTouchedFields({});
+          }
         }
       } else {
         // For other cleaning types: step 0 -> 1 -> 2 -> 3
@@ -1894,13 +1919,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                                 name="wantsMovingHelp"
                                 value="Ja"
                                 checked={formData.wantsMovingHelp === 'Ja'}
-                                onChange={(e) => {
-                                  handleInputChange(e);
-                                  if (e.target.value === 'Ja') {
-                                    setIsMovingForm(true);
-                                    setMovingStep(1);
-                                  }
-                                }}
+                                onChange={handleInputChange}
                                 className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                               />
                               <label htmlFor="moving-help-yes" className="ml-2 text-sm text-gray-700">
@@ -2920,6 +2939,93 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                    )}
                  </div>
                )}
+              {step === 4 && selectedCleaningType === 'Flyttstädning' && formData.wantsMovingHelp === 'Nej' && (
+                <div className="space-y-6">
+                  <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktinformation</h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{localCustomerType === 'foretag' ? 'Företagsnamn' : 'Ditt namn'}</strong></label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                          errors.name ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                        style={{ backgroundColor: 'white', color: 'black' }}
+                      />
+                      {errors.name && (
+                        <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                      )}
+                    </div>
+                    {localCustomerType === 'foretag' && (
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Kontaktperson för och efternamn</strong></label>
+                        <input
+                          type="text"
+                          name="contactPersonName"
+                          value={formData.contactPersonName || ''}
+                          onChange={handleInputChange}
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                            errors.contactPersonName ? 'border-red-500' : 'border-gray-300'
+                          }`}
+                          style={{ backgroundColor: 'white', color: 'black' }}
+                        />
+                        {errors.contactPersonName && (
+                          <p className="mt-1 text-sm text-red-600">{errors.contactPersonName}</p>
+                        )}
+                      </div>
+                    )}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>E-post</strong></label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                          errors.email ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                        style={{ backgroundColor: 'white', color: 'black' }}
+                      />
+                      {errors.email && (
+                        <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Telefon</strong></label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                          errors.phone ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                        style={{ backgroundColor: 'white', color: 'black' }}
+                      />
+                      {errors.phone && (
+                        <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Övriga önskemål (frivilligt)</strong></label>
+                      <textarea
+                        name="additionalInfo"
+                        value={formData.additionalInfo}
+                        onChange={handleInputChange}
+                        placeholder="Här kan du nämna särskilda önskemål eller information"
+                        rows={4}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black"
+                        style={{ backgroundColor: 'white', color: 'black' }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {step === 4 && selectedCleaningType === 'Annan städning' && (
                 <div className="space-y-6">
                   <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktinformation</h2>

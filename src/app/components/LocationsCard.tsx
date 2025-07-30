@@ -17,6 +17,12 @@ const fadeInUp = {
 };
 
 export default function LocationsCard({ locations }: LocationsCardProps) {
+  // Create separate arrays for flyttfirma and flyttstad
+  const flyttfirmaLocations = [
+    ...locations,
+    { name: "Spanien", slug: "flytta-till-spanien" }
+  ];
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="mx-auto px-24">
@@ -69,7 +75,7 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                   Flyttfirma
                 </h3>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  {locations.map((location, idx) => (
+                  {flyttfirmaLocations.map((location, idx) => (
                     <motion.div
                       key={`flyttfirma-${location.slug}`}
                       variants={fadeInUp}
@@ -77,7 +83,7 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                       transition={{ duration: 0.3, delay: idx * 0.02 }}
                     >
                       <Link
-                        href={`/flyttfirma-i-${location.slug}`}
+                        href={location.slug === "flytta-till-spanien" ? "/flytt-till-spanien" : `/flyttfirma-i-${location.slug}`}
                         className="group transition-all block"
                       >
                         <span className="text-white/90 group-hover:text-white group-hover:underline text-sm font-medium transition-colors block text-center py-2 px-3 rounded-lg hover:bg-white/10 whitespace-nowrap">

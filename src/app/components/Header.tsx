@@ -124,7 +124,7 @@ export default function Header() {
       <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:justify-between items-center py-2 md:py-0 md:h-8">
-            <div className="flex flex-col md:flex-row md:items-center md:divide-x divide-white/20 space-y-1 md:space-y-0">
+            <div className="hidden md:flex flex-col md:flex-row md:items-center md:divide-x divide-white/20 space-y-1 md:space-y-0">
               <div className="flex items-center justify-center md:pr-6">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white/80 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
