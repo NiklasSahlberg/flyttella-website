@@ -12,6 +12,230 @@ import Lottie from "lottie-react";
 import LocationsCard from './components/LocationsCard';
 import { useLanguage } from "./contexts/LanguageContext";
 
+// AutoSlidingCards component
+const AutoSlidingCards = () => {
+  const { t } = useLanguage();
+  const [currentCard, setCurrentCard] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCard((prev) => (prev + 1) % 3);
+    }, 3000); // Change card every 3 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  const cards = [
+    {
+      title: t('aboutSection.moves'),
+      count: t('aboutSection.movesCount'),
+      description: t('aboutSection.movesDesc'),
+      delay: 0
+    },
+    {
+      title: t('aboutSection.cleanings'),
+      count: t('aboutSection.cleaningsCount'),
+      description: t('aboutSection.cleaningsDesc'),
+      delay: 1
+    },
+    {
+      title: t('aboutSection.monthly'),
+      count: t('aboutSection.monthlyCount'),
+      description: t('aboutSection.monthlyDesc'),
+      delay: 2
+    }
+  ];
+
+  return (
+    <>
+      {/* Background image absolutely positioned */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
+        style={{
+          backgroundImage: 'url(/backgroundpicture.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          zIndex: 0,
+        }}
+      />
+      {/* Overlay absolutely positioned, full width */}
+      <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
+      
+      {/* Top gradient fade */}
+      <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none"
+           style={{
+             background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+           }}
+      />
+      
+      {/* Centered content only */}
+      <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('aboutSection.title')}</h3>
+          
+          {/* Mobile: Auto-sliding cards */}
+          <div className="md:hidden mt-12">
+            <div className="relative overflow-hidden rounded-xl">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentCard * 100}%)` }}
+              >
+                {cards.map((card, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <motion.div 
+                      className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full mx-4"
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true, amount: 0.2 }}
+                      variants={fadeInUp}
+                      transition={{ duration: 0.8, delay: card.delay * 0.25 }}
+                    >
+                      {/* Background pattern */}
+                      <motion.div 
+                        className="absolute inset-0 opacity-10 pointer-events-none"
+                        initial={{ backgroundPosition: '0% 0%' }}
+                        animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                        transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                        style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                      />
+                      <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                        <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                          {card.title}
+                        </motion.h2>
+                        <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                          {card.count}
+                        </motion.div>
+                        <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                          {card.description}
+                        </motion.p>
+                      </div>
+                    </motion.div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Dots indicator */}
+              <div className="flex justify-center mt-4 space-x-2">
+                {cards.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentCard(index)}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      index === currentCard ? 'bg-[#10B981]' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Desktop: Original grid layout */}
+          <div className="hidden md:grid mt-12 grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {cards.map((card, index) => (
+              <motion.div 
+                key={index}
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.8, delay: card.delay * 0.25 }}
+              >
+                {/* Background pattern */}
+                <motion.div 
+                  className="absolute inset-0 opacity-10 pointer-events-none"
+                  initial={{ backgroundPosition: '0% 0%' }}
+                  animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                  transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                  style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                />
+                <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                  <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                    {card.title}
+                  </motion.h2>
+                  <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                    {card.count}
+                  </motion.div>
+                  <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                    {card.description}
+                  </motion.p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Experience description text and badges side by side */}
+          <div className="mt-8 flex flex-col items-center justify-center gap-4">
+            {/* Experience description text - left side */}
+            <motion.div 
+              className="flex-1 max-w-4xl text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+                {t('aboutSection.localExperienceTitle')}
+              </h4>
+              <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
+                {t('aboutSection.localExperienceDesc1')}
+              </p>
+              <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6">
+                {t('aboutSection.localExperienceDesc2')}
+              </p>
+            </motion.div>
+
+            {/* Recommended Company and 1000 Reviews badges under text */}
+            <div className="flex items-center justify-center gap-6">
+              <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                <Image
+                  src="/recommendedcompany2.png"
+                  alt="Rekommenderad flyttfirma - Flyttella"
+                  width={240}
+                  height={240}
+                  className="object-contain h-60 w-60"
+                  priority={false}
+                />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                <Image
+                  src="/1000reviewspicture.png"
+                  alt="1000+ positiva recensioner från kunder"
+                  width={260}
+                  height={260}
+                  className="object-contain h-64 w-64 mt-3"
+                  priority={false}
+                />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                <Image
+                  src="/bestinswedenbadge-modified.png"
+                  alt="Top 10 flyttfirma - Flyttella"
+                  width={300}
+                  height={300}
+                  className="object-contain h-48 w-48"
+                  priority={false}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+      
+      {/* Bottom gradient fade - enhanced to completely hide container lines */}
+      <div className="absolute bottom-0 left-0 w-full h-48 z-30 pointer-events-none"
+           style={{
+             background: 'linear-gradient(to top, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0) 100%)'
+           }}
+      />
+    </>
+  );
+};
+
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -350,6 +574,29 @@ export default function Home() {
             <FlyttoffertForm mode="widget" />
           </div>
           
+          {/* Mobile: Hero content after form */}
+          <div className="md:hidden mx-auto px-4 py-12">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 relative overflow-hidden">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{
+                  backgroundImage: 'url(/intro_picture.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              />
+              <div className="relative z-10 text-center space-y-8">
+                <h1 className="text-4xl font-bold">
+                  {t('hero.title')}
+                </h1>
+                <p className="text-xl">
+                  {t('hero.subtitle')}
+                </p>
+              </div>
+            </div>
+          </div>
+          
           {/* Desktop: Full hero section */}
           <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
@@ -395,11 +642,11 @@ export default function Home() {
         >
           {/* Background image absolutely positioned */}
           <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
             style={{
               backgroundImage: 'url(/efter_flytt.jpg)',
               backgroundSize: 'cover',
-              backgroundPosition: 'center 100%',
+              backgroundPosition: 'center center',
               zIndex: 0,
             }}
           />
@@ -444,13 +691,16 @@ export default function Home() {
                     delay: 0.2
                   }}
                 >
-                  <div className="relative h-96 lg:h-full w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
+                  <div className="relative h-96 lg:h-full w-full md:w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
                     <Image
                       src="/omoss.jpg"
                       alt="Om Flyttella"
                       fill
                       className="object-cover rounded-2xl"
-                      style={{ objectPosition: 'center 25%', transform: 'scale(1.20)' }}
+                      style={{ 
+                        objectPosition: 'center center',
+                        transform: 'scale(1.0)'
+                      }}
                       priority
                     />
                   </div>
@@ -643,190 +893,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Background image absolutely positioned */}
-          <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: 'url(/backgroundpicture.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center 100%',
-              zIndex: 0,
-            }}
-          />
-          {/* Overlay absolutely positioned, full width */}
-          <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
-          
-          {/* Top gradient fade */}
-          <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none"
-               style={{
-                 background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
-               }}
-          />
-          
-          {/* Centered content only */}
-          <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('aboutSection.title')}</h3>
-              <div className="mt-12 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {/* Flyttar */}
-                <motion.div 
-                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={fadeInUp}
-                  transition={{ duration: 0.8, delay: 0 * 0.25 }}
-                >
-                  {/* Background pattern */}
-                  <motion.div 
-                    className="absolute inset-0 opacity-10 pointer-events-none"
-                    initial={{ backgroundPosition: '0% 0%' }}
-                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
-                  />
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 * 0.25 }}>
-                      {t('aboutSection.moves')}
-                    </motion.h2>
-                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 * 0.25 }}>
-                      {t('aboutSection.movesCount')}
-                    </motion.div>
-                    <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 * 0.25 }}>
-                      {t('aboutSection.movesDesc')}
-                    </motion.p>
-                  </div>
-                </motion.div>
-
-                {/* Städningar */}
-                <motion.div 
-                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={fadeInUp}
-                  transition={{ duration: 0.8, delay: 1 * 0.25 }}
-                >
-                  {/* Background pattern */}
-                  <motion.div 
-                    className="absolute inset-0 opacity-10 pointer-events-none"
-                    initial={{ backgroundPosition: '0% 0%' }}
-                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
-                  />
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 1 * 0.25 }}>
-                      {t('aboutSection.cleanings')}
-                    </motion.h2>
-                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 1 * 0.25 }}>
-                      {t('aboutSection.cleaningsCount')}
-                    </motion.div>
-                    <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 1 * 0.25 }}>
-                      {t('aboutSection.cleaningsDesc')}
-                    </motion.p>
-                  </div>
-                </motion.div>
-
-                {/* Månadsvis */}
-                <motion.div 
-                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={fadeInUp}
-                  transition={{ duration: 0.8, delay: 2 * 0.25 }}
-                >
-                  {/* Background pattern */}
-                  <motion.div 
-                    className="absolute inset-0 opacity-10 pointer-events-none"
-                    initial={{ backgroundPosition: '0% 0%' }}
-                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
-                  />
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
-                      {t('aboutSection.monthly')}
-                    </motion.h2>
-                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
-                      {t('aboutSection.monthlyCount')}
-                    </motion.div>
-                    <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
-                      {t('aboutSection.monthlyDesc')}
-                    </motion.p>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Experience description text and badges side by side */}
-              <div className="mt-8 flex flex-col items-center justify-center gap-4">
-                {/* Experience description text - left side */}
-                <motion.div 
-                  className="flex-1 max-w-4xl text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-                    {t('aboutSection.localExperienceTitle')}
-                  </h4>
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
-                    {t('aboutSection.localExperienceDesc1')}
-                  </p>
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6">
-                    {t('aboutSection.localExperienceDesc2')}
-                  </p>
-                </motion.div>
-
-                {/* Recommended Company and 1000 Reviews badges under text */}
-                <div className="flex items-center justify-center gap-6">
-                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                    <Image
-                      src="/recommendedcompany2.png"
-                      alt="Rekommenderad flyttfirma - Flyttella"
-                      width={240}
-                      height={240}
-                      className="object-contain h-60 w-60"
-                      priority={false}
-                    />
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                    <Image
-                      src="/1000reviewspicture.png"
-                      alt="1000+ positiva recensioner från kunder"
-                      width={260}
-                      height={260}
-                      className="object-contain h-64 w-64 mt-3"
-                      priority={false}
-                    />
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                    <Image
-                      src="/bestinswedenbadge-modified.png"
-                      alt="Top 10 flyttfirma - Flyttella"
-                      width={300}
-                      height={300}
-                      className="object-contain h-48 w-48"
-                      priority={false}
-                    />
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-          
-          {/* Bottom gradient fade - enhanced to completely hide container lines */}
-          <div className="absolute bottom-0 left-0 w-full h-48 z-30 pointer-events-none"
-               style={{
-                 background: 'linear-gradient(to top, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0) 100%)'
-               }}
-          />
+          <AutoSlidingCards />
         </motion.section>
 
         {/* 6. Våra fördelar */}

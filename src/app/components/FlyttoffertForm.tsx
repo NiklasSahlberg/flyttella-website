@@ -393,6 +393,14 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     }
     if (isValid) {
       setStep((prevStep) => prevStep + 1);
+      
+      // Scroll to top of form on mobile when moving to next step
+      if (typeof window !== 'undefined' && window.innerWidth < 768) {
+        const formElement = document.querySelector('.relative.rounded-2xl.shadow-2xl.border-2.border-\\[\\#10B981\\]');
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     }
   };
 

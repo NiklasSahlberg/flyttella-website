@@ -122,16 +122,16 @@ export default function ReviewsWidget({
                   </p>
                 </div>
                 {/* New: Customer opinions title and arrow */}
-                <div className="flex flex-row items-center justify-center gap-6 mt-8 mb-4">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-8 mb-4">
+                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A] text-center">{arrowText || t('reviews.arrowText')}</span>
                   <Image
                     src="/Curved-Arrow-10b981.png"
                     alt="Curved Arrow"
                     width={100}
                     height={120}
-                    className="mt-10"
+                    className="mt-4 md:mt-10"
                     priority={false}
                   />
-                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A]">{arrowText || t('reviews.arrowText')}</span>
                 </div>
               </div>
             </div>
