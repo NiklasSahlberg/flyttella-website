@@ -394,13 +394,8 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     if (isValid) {
       setStep((prevStep) => prevStep + 1);
       
-      // Scroll to top of form on mobile when moving to next step
-      if (typeof window !== 'undefined' && window.innerWidth < 768) {
-        const formElement = document.querySelector('.relative.rounded-2xl.shadow-2xl.border-2.border-\\[\\#10B981\\]');
-        if (formElement) {
-          formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
+      // Scroll to step bar when moving to next step (all devices)
+      scrollToStepBar();
     }
   };
 
@@ -735,6 +730,36 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     setStep(0);
   };
 
+  const scrollToStepBar = () => {
+    // Scroll to step bar after a longer delay to ensure DOM is updated after state change
+    setTimeout(() => {
+      if (typeof window !== 'undefined') {
+        // Try to find the step bar by looking for elements with step text
+        const allSpans = document.querySelectorAll('span');
+        const stepTextElement = Array.from(allSpans).find(span => 
+          span.textContent && span.textContent.includes('Steg')
+        );
+        
+        if (stepTextElement) {
+          // Scroll to step bar with extra offset to account for header
+          const elementRect = stepTextElement.getBoundingClientRect();
+          const headerHeight = 100; // Approximate header height
+          const scrollTop = window.pageYOffset + elementRect.top - headerHeight - 50; // Extra 50px padding for more space
+          window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+        } else {
+                      // Fallback: scroll to the form container with header offset
+            const formElement = document.querySelector('.relative.rounded-2xl.shadow-2xl.border-2.border-\\[\\#10B981\\]');
+            if (formElement) {
+              const elementRect = formElement.getBoundingClientRect();
+              const headerHeight = 100; // Approximate header height
+              const scrollTop = window.pageYOffset + elementRect.top - headerHeight - 50; // Extra 50px padding for more space
+              window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+            }
+        }
+      }
+    }, 300);
+  };
+
   return (
     <div>
       <Script
@@ -887,6 +912,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           setShowSteps(true);
                           setStep(1);
                           if (onServiceTypeSelect) onServiceTypeSelect('flyttstad');
+                          scrollToStepBar();
                         }}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
@@ -907,6 +933,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           setShowSteps(true);
                           setStep(1);
                           if (onServiceTypeSelect) onServiceTypeSelect('flytt');
+                          scrollToStepBar();
                         }}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
@@ -930,6 +957,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           setShowSteps(true);
                           setStep(1);
                           if (onServiceTypeSelect) onServiceTypeSelect('flytt');
+                          scrollToStepBar();
                         }}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
@@ -950,6 +978,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           setShowSteps(true);
                           setStep(1);
                           if (onServiceTypeSelect) onServiceTypeSelect('flyttstad');
+                          scrollToStepBar();
                         }}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
