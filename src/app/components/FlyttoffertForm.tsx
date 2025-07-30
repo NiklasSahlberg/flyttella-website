@@ -773,22 +773,24 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
           <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4 hidden md:block" />
           {!showSteps && (
             <>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
-            Fyll i formuläret för en kostnadsfri offert med ett fast pris
+          <h1 className="text-lg md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
+            Fyll i formuläret för en kostnadsfri offert med ett fast pris<span className="md:hidden"> inom en minut!</span>
           </h1>
-          <h2 className="text-lg md:text-xl font-bold text-center text-gray-700 mb-8">
+          <h2 className="text-lg md:text-xl font-extrabold text-center text-gray-700 mb-8 hidden md:block">
             Vi återkommer inom en minut!
           </h2>
             </>
           )}
         </div>
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            {!showSteps ? 'Välj tjänst' : ''}
-          </h2>
-          <p className="text-lg text-gray-900 font-bold">
-            {!showSteps ? 'för att komma igång' : ''}
-          </p>
+        <div className="text-center mb-12 mt-8 md:mt-0">
+          <div className="flex flex-row md:flex-col items-center justify-center gap-2 md:gap-0">
+            <h2 className="text-lg md:text-3xl font-bold text-gray-900 mb-0 md:mb-4">
+              {!showSteps ? 'Välj tjänst' : ''}
+            </h2>
+            <p className="text-lg md:text-lg text-gray-900 font-bold">
+              {!showSteps ? 'för att komma igång' : ''}
+            </p>
+          </div>
         </div>
         {/* Only swap the form fields and logic for Flyttstäd, keep the rest of the UI the same */}
         {showSteps && formData.serviceType === 'flyttstad' ? (
