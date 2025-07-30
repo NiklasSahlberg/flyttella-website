@@ -772,25 +772,25 @@ export default function Home() {
         {/* 5. Vår process och fördelar */}
         <section className="section-padding bg-white relative overflow-hidden"
           style={{ borderBottom: 'none', boxShadow: 'none' }}>
-          <div className="mx-auto px-24 relative z-10">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-10 mb-8 w-full relative">
+          <div className="mx-auto px-4 md:px-24 relative z-10">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 lg:p-10 mb-8 w-full relative">
               
              
               <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8 text-center">
                   {t('process.title')}
                 </h2>
 
                 {/* Process Description */}
-                <div className="text-center mb-8">
-                  <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-6 leading-relaxed">
+                <div className="text-center mb-6 md:mb-8">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
                     {t('process.description')}
                   </p>
                 </div>
 
                 {/* Pricing Info */}
-                <div className="text-center mb-8">
-                  <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-4">
+                <div className="text-center mb-6 md:mb-8">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4">
                     Våra offerter är alltid baserade på dina specifika behov och omständigheter. 
                     Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation, vi kan även besikta bostaden vid behov. 
                     Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund. 
@@ -799,12 +799,12 @@ export default function Home() {
                 </div>
 
                 {/* Process Flow Section */}
-                <div className="mb-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Så fungerar det</h3>
+                <div className="mb-6 md:mb-8">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6 md:mb-8 text-center">Så fungerar det</h3>
                   <div className="relative w-full">
                     {/* Timeline connector line */}
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
-                    <div className="grid grid-cols-1 md:grid-cols-6 gap-3 w-full">
+                    <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-3 w-full">
                       {[
                         {
                           icon: <FillFormLottie />,
@@ -850,7 +850,7 @@ export default function Home() {
                       ].map((step, index) => (
                         <motion.div
                           key={index}
-                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 h-full"
+                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 h-full"
                           initial="initial"
                           whileInView="animate"
                           viewport={{ once: true, amount: 0.2 }}
@@ -860,10 +860,10 @@ export default function Home() {
                           {/* Timeline dot */}
                           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
                           <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
-                            <div className="mb-2">{step.icon}</div>
+                            <div className="mb-1 md:mb-2">{step.icon}</div>
                             <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
-                              <h4 className="text-white font-semibold text-base md:text-lg mb-1 text-center w-full">{step.title}</h4>
-                              <p className="text-white/80 text-sm md:text-base text-center w-full">{step.description}</p>
+                              <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
+                              <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -1024,7 +1024,18 @@ export default function Home() {
         <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="w-full md:w-3/5 flex justify-center">
+              {/* Mobile: Text first, then image */}
+              <div className="w-full md:hidden text-center mb-8">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('awards.title')}</h2>
+                <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+                  Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet.<br />
+                  Genom åren har vi blivit erkända av både branschorganisationer och våra kunder för vårt pålitliga arbete och höga standard.<br />
+                  Dessa utmärkelser inspirerar oss att fortsätta leverera flyttjänster i toppklass – varje dag, till varje kund.
+                </p>
+              </div>
+              
+              {/* Mobile: Image below text */}
+              <div className="w-full md:w-3/5 flex justify-center order-2 md:order-1">
                 <Image
                   src="/awards_no_bg.png"
                   alt="Flyttella's utmärkelser och priser"
@@ -1034,7 +1045,9 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="w-full md:w-2/5 text-left flex flex-col items-start justify-center">
+              
+              {/* Desktop: Text on the right */}
+              <div className="hidden md:flex w-full md:w-2/5 text-left flex-col items-start justify-center">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('awards.title')}</h2>
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
                   Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet.<br />
