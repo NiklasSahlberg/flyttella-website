@@ -345,8 +345,14 @@ export default function Home() {
       <div className="main-zoom">
         {/* 1. Hero Section */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          <div className="mx-auto px-16">
-                          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
+          {/* Mobile: Form only */}
+          <div className="md:hidden mx-auto px-4 py-8">
+            <FlyttoffertForm mode="widget" />
+          </div>
+          
+          {/* Desktop: Full hero section */}
+          <div className="hidden md:block mx-auto px-16">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"

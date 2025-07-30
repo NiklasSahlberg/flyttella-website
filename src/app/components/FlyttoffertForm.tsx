@@ -735,7 +735,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
         async
         onLoad={() => setIsGoogleMapsLoaded(true)}
       />
-      <div className="relative md:rounded-2xl md:shadow-2xl md:border-2 md:border-[#10B981] p-10 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-white md:bg-gradient-to-br md:from-white md:to-blue-50">
+      <div className="relative rounded-2xl shadow-2xl border-2 border-[#10B981] p-10 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-gradient-to-br from-white to-blue-50">
         <div className="flex flex-col items-center">
           <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4" />
           {!showSteps && (
