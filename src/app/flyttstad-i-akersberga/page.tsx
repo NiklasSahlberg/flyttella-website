@@ -42,6 +42,12 @@ export default function FlyttstadAkersbergaPage() {
   const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
 
   // Animation variants
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 }
+  };
+
   const variants = {
     initial: { opacity: 0, y: 20 },
     animate: (i: number) => ({
@@ -534,31 +540,101 @@ export default function FlyttstadAkersbergaPage() {
           <div className="absolute bottom-0 left-0 w-full h-48 z-30 pointer-events-none" style={{ background: 'linear-gradient(to top, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0) 100%)' }} />
         </motion.section>
 
-        {/* Features Section */}
+        {/* Våra förmåner */}
         <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
           <div className="mx-auto px-24">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
               <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
                 <div className="flex-[2] w-full">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra städtjänster</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
                     {[
-                      { icon: "🧹", title: "Flyttstädning", description: "Grundlig städning inför flytt – vi lämnar alltid städgaranti.", link: "/flyttstadning" },
-                      { icon: "🏠", title: "Hemstädning", description: "Regelbunden eller engångsstädning av ditt hem.", link: "/hemstadning" },
-                      { icon: "🏢", title: "Kontorsstädning", description: "Städning av kontor och arbetsplatser – flexibla tider.", link: "/kontorsstadning" },
-                      { icon: "🪟", title: "Fönsterputs", description: "Professionell fönsterputsning för hem och företag.", link: "/fonsterputs" },
-                      { icon: "🧽", title: "Storstädning", description: "Extra noggrann städning av hela bostaden.", link: "/storstädning" },
-                      { icon: "🧴", title: "Sanering", description: "Sanering och specialstädning vid behov.", link: "/sanering" },
-                      { icon: "🏡", title: "Visningsstädning", description: "Städning inför visning av bostad för bästa intryck.", link: "/visningsstadning" },
-                      { icon: "⚰️", title: "Dödsbostädning", description: "Omsorgsfull städning av dödsbo med respekt och noggrannhet.", link: "/dodsbo-stadning" },
-                      { icon: "🚧", title: "Bygg & grovstädning", description: "Städning efter renovering, byggnation eller grovarbete.", link: "/bygg-grovstadning" },
+                      {
+                        icon: "💰",
+                        title: "Fast pris",
+                        description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                        link: "/priser"
+                      },
+                      {
+                        icon: "📋",
+                        title: "RUT-avdrag",
+                        description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                        link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                      },
+                      {
+                        icon: "✅",
+                        title: "14 dagars städgaranti",
+                        description: "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti",
+                        link: "/garanti"
+                      },
+                      {
+                        icon: "⏰",
+                        title: "Omboka eller avboka kostnadsfritt",
+                        description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan städningen",
+                        link: "/avbokning"
+                      },
+                      {
+                        icon: "🔒",
+                        title: "Tillstånd och försäkring",
+                        description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                        link: "/tillstand"
+                      },
+                      {
+                        icon: "🎓",
+                        title: "Utbildad personal",
+                        description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                        link: "/om-oss"
+                      },
+                      {
+                        icon: "🧴",
+                        title: "Miljövänliga produkter",
+                        description: "Vi använder miljövänliga och säkra rengöringsmedel",
+                        link: "/om-oss"
+                      },
+                      {
+                        icon: "📈",
+                        title: "Ledningssystem",
+                        description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                        link: "/om-oss"
+                      },
+                      {
+                        icon: "🦺",
+                        title: "Arbetsmiljö",
+                        description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                        link: "/om-oss"
+                      }
                     ].map((feature, i) => (
-                      <motion.div key={feature.icon} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5, delay: i * 0.1 }}>
-                        <span className="text-2xl md:text-3xl">{feature.icon}</span>
+                      <motion.div
+                        key={feature.icon}
+                        className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full"
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true, amount: 0.2 }}
+                        variants={fadeInUp}
+                        custom={i}
+                      >
+                        <motion.span
+                          className="text-2xl md:text-3xl"
+                          initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                          animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                          transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
+                        >
+                          {feature.icon}
+                        </motion.span>
                         <div className="flex-1">
                           <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
                           <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
-                          <a href={feature.link} className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center">Läs mer<svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></a>
+                          <a 
+                            href={feature.link}
+                            target={feature.link.startsWith('http') ? '_blank' : undefined}
+                            rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
+                          >
+                            Läs mer
+                            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </a>
                         </div>
                       </motion.div>
                     ))}

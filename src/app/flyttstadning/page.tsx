@@ -628,6 +628,65 @@ export default function FlyttstadningPage() {
           arrowText="Läs vad våra kunder säger om vår flyttstädning"
         />
 
+        {/* Redo att börja din flyttstädning? */}
+        <section className="pt-0 pb-4 bg-white">
+          <div className="mx-auto px-4">
+            <motion.div
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Background pattern */}
+              <motion.div 
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                initial={{ backgroundPosition: '0% 0%' }}
+                animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              <div className="flex items-center gap-4 relative z-10 mb-4">
+                <span className="text-4xl">🧹</span>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    Redo att börja din flyttstädning?
+                  </h3>
+                  <p className="text-lg text-gray-100">
+                    Få en snabb och gratis offert på din flyttstädning
+                  </p>
+                </div>
+              </div>
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block"
+                >
+                  <Link 
+                    href="#flytt-offert"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                  >
+                    Få gratis offert
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Service Cards Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
@@ -831,7 +890,7 @@ export default function FlyttstadningPage() {
           </div>
         </section>
 
-        {/* Våra städtjänster */}
+        {/* Våra förmåner */}
         {/* Responsive zoom wrapper for wide screens */}
         <div className="responsive-zoom">
           <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
@@ -840,32 +899,90 @@ export default function FlyttstadningPage() {
                 <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
                   {/* Left side - Features content */}
                   <div className="flex-[2] w-full">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra städtjänster</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
                       {[
-                        { icon: "🧹", title: "Flyttstädning", description: "Grundlig städning inför flytt – vi lämnar alltid städgaranti.", link: "/flyttstadning" },
-                        { icon: "🏠", title: "Hemstädning", description: "Regelbunden eller engångsstädning av ditt hem.", link: "/hemstadning" },
-                        { icon: "🏢", title: "Kontorsstädning", description: "Städning av kontor och arbetsplatser – flexibla tider.", link: "/kontorsstadning" },
-                        { icon: "🪟", title: "Fönsterputs", description: "Professionell fönsterputsning för hem och företag.", link: "/fonsterputs" },
-                        { icon: "🧽", title: "Storstädning", description: "Extra noggrann städning av hela bostaden.", link: "/storstädning" },
-                        { icon: "🧴", title: "Sanering", description: "Sanering och specialstädning vid behov.", link: "/sanering" },
-                        { icon: "🏡", title: "Visningsstädning", description: "Städning inför visning av bostad för bästa intryck.", link: "/visningsstadning" },
-                        { icon: "⚰️", title: "Dödsbostädning", description: "Omsorgsfull städning av dödsbo med respekt och noggrannhet.", link: "/dodsbo-stadning" },
-                        { icon: "🚧", title: "Bygg & grovstädning", description: "Städning efter renovering, byggnation eller grovarbete.", link: "/bygg-grovstadning" },
+                        {
+                          icon: "💰",
+                          title: "Fast pris",
+                          description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                          link: "/priser"
+                        },
+                        {
+                          icon: "📋",
+                          title: "RUT-avdrag",
+                          description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                          link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                        },
+                        {
+                          icon: "✅",
+                          title: "14 dagars städgaranti",
+                          description: "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti",
+                          link: "/garanti"
+                        },
+                        {
+                          icon: "⏰",
+                          title: "Omboka eller avboka kostnadsfritt",
+                          description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan städningen",
+                          link: "/avbokning"
+                        },
+                        {
+                          icon: "🔒",
+                          title: "Tillstånd och försäkring",
+                          description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                          link: "/tillstand"
+                        },
+                        {
+                          icon: "🎓",
+                          title: "Utbildad personal",
+                          description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "🧴",
+                          title: "Miljövänliga produkter",
+                          description: "Vi använder miljövänliga och säkra rengöringsmedel",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "📈",
+                          title: "Ledningssystem",
+                          description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "🦺",
+                          title: "Arbetsmiljö",
+                          description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                          link: "/om-oss"
+                        }
                       ].map((feature, i) => (
-                        <motion.div 
-                          key={feature.icon} 
-                          className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full" 
-                          initial={{ opacity: 0, y: 20 }} 
-                          whileInView={{ opacity: 1, y: 0 }} 
-                          viewport={{ once: true, amount: 0.2 }} 
-                          transition={{ duration: 0.5, delay: i * 0.1 }}
+                        <motion.div
+                          key={feature.icon}
+                          className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full"
+                          initial="initial"
+                          whileInView="animate"
+                          viewport={{ once: true, amount: 0.2 }}
+                          variants={fadeInUp}
+                          custom={i}
                         >
-                          <span className="text-2xl md:text-3xl">{feature.icon}</span>
+                          <motion.span
+                            className="text-2xl md:text-3xl"
+                            initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                            animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                            transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
+                          >
+                            {feature.icon}
+                          </motion.span>
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
-                            <a href={feature.link} className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center">
+                            <a 
+                              href={feature.link}
+                              target={feature.link.startsWith('http') ? '_blank' : undefined}
+                              rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                              className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
+                            >
                               Läs mer
                               <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

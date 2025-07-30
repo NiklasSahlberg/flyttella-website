@@ -770,7 +770,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
       />
       <div className="relative rounded-2xl shadow-2xl border-2 border-[#10B981] p-10 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-gradient-to-br from-white to-blue-50">
         <div className="flex flex-col items-center">
-          <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4" />
+          <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4 hidden md:block" />
           {!showSteps && (
             <>
           <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">

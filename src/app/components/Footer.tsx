@@ -217,6 +217,11 @@ export default function Footer() {
                   Magasinering
                 </Link>
               </li>
+              <li>
+                <Link href="/utlandsflytt" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  Utlandsflytt
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -302,16 +307,18 @@ export default function Footer() {
                 </button>
               </li>
               
-              {/* Show more/less toggle */}
-              <li>
-                <button
-                  type="button"
-                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
-                  onClick={() => setShowMoreLegal(!showMoreLegal)}
-                >
-                  {showMoreLegal ? 'Visa mindre' : 'Se mer'}
-                </button>
-              </li>
+              {/* Show more button - only shows when not expanded */}
+              {!showMoreLegal && (
+                <li>
+                  <button
+                    type="button"
+                    className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                    onClick={() => setShowMoreLegal(true)}
+                  >
+                    Se mer
+                  </button>
+                </li>
+              )}
               
               {/* Additional legal links - shown when expanded */}
               {showMoreLegal && (
