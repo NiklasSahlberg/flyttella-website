@@ -851,7 +851,7 @@ export default function Home() {
         {/* 5. Vår process och fördelar */}
         <section className="section-padding bg-white relative overflow-hidden"
           style={{ borderBottom: 'none', boxShadow: 'none' }}>
-          <div className="mx-auto px-4 md:px-24 relative z-10">
+          <div className="mx-auto px-0 md:px-24 relative z-10">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 lg:p-10 mb-8 w-full relative">
               
              
@@ -861,7 +861,7 @@ export default function Home() {
                 </h2>
 
                 {/* Process Description */}
-                <div className="text-center mb-6 md:mb-8">
+                <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
                     {t('process.description')}
                   </p>
