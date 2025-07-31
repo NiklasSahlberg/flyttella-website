@@ -17,6 +17,7 @@ import { useLanguage } from "./contexts/LanguageContext";
 const AutoSlidingCards = () => {
   const { t } = useLanguage();
   const [currentCard, setCurrentCard] = useState(0);
+  const [showFullExperienceText, setShowFullExperienceText] = useState(false);
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -185,13 +186,86 @@ const AutoSlidingCards = () => {
               <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
                 {t('aboutSection.localExperienceDesc1')}
               </p>
-              <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6">
+              {/* Mobile: Läs mer button */}
+              {!showFullExperienceText && (
+                <div className="md:hidden mb-4">
+                  <motion.button
+                    onClick={() => setShowFullExperienceText(true)}
+                    className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+                  >
+                    Läs mer
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </motion.button>
+                </div>
+              )}
+              {/* Mobile: Expanded text when Läs mer is clicked */}
+              {showFullExperienceText && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  transition={{ duration: 0.5 }}
+                  className="space-y-4 mt-4 md:hidden"
+                >
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                    {t('aboutSection.localExperienceDesc2')}
+                  </p>
+                </motion.div>
+              )}
+              <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
                 {t('aboutSection.localExperienceDesc2')}
               </p>
             </motion.div>
 
             {/* Recommended Company and 1000 Reviews badges under text */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+              {/* Mobile: Pyramid layout */}
+              <div className="md:hidden flex flex-col items-center">
+                {/* Top badge - centered */}
+                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-10">
+                  <Image
+                    src="/1000reviewspicture.png"
+                    alt="1000+ positiva recensioner från kunder"
+                    width={280}
+                    height={280}
+                    className="object-contain h-72 w-72"
+                    priority={false}
+                  />
+                </motion.div>
+                {/* Bottom row - two badges */}
             <div className="flex items-center justify-center gap-6">
+                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                    <Image
+                      src="/recommendedcompany2.png"
+                      alt="Rekommenderad flyttfirma - Flyttella"
+                      width={260}
+                      height={260}
+                      className="object-contain h-64 w-64"
+                      priority={false}
+                    />
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                    <Image
+                      src="/bestinswedenbadge-modified.png"
+                      alt="Top 10 flyttfirma - Flyttella"
+                      width={210}
+                      height={210}
+                      className="object-contain h-52 w-52"
+                      priority={false}
+                    />
+                  </motion.div>
+                </div>
+              </div>
+              
+              {/* Desktop: Original horizontal layout */}
+              <div className="hidden md:flex items-center justify-center gap-6">
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                 <Image
                   src="/recommendedcompany2.png"
@@ -222,6 +296,7 @@ const AutoSlidingCards = () => {
                   priority={false}
                 />
               </motion.div>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -493,6 +568,16 @@ export default function Home() {
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
   const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const [showFullAboutText, setShowFullAboutText] = useState(false);
+  const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
+
+  // Auto-sliding for feature cards
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFeatureCard((prev) => (prev + 1) % 9);
+    }, 4000); // Change card every 4 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
 
   const toggleFAQ = (id: string) => {
     setOpenFAQ(openFAQ === id ? null : id);
@@ -731,15 +816,15 @@ export default function Home() {
                 >
                   {/* Desktop: Always show full text in 3 sections */}
                   <div className="hidden lg:block space-y-8">
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      {t('about.description1')}
-                    </p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      {t('about.description2')}
-                    </p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      {t('about.description3')}
-                    </p>
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                    {t('about.description1')}
+                  </p>
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                    {t('about.description2')}
+                  </p>
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                    {t('about.description3')}
+                  </p>
                   </div>
                   
                   {/* Mobile: Show shortened text with expand option */}
@@ -781,8 +866,8 @@ export default function Home() {
                         </p>
                         
                         {/* Läs mer om oss link - Mobile only when expanded */}
-                        <motion.div
-                          className="pt-6"
+                  <motion.div
+                    className="pt-6"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.5, delay: 0.3 }}
@@ -852,11 +937,11 @@ export default function Home() {
         <section className="section-padding bg-white relative overflow-hidden"
           style={{ borderBottom: 'none', boxShadow: 'none' }}>
           <div className="mx-auto px-0 md:px-24 relative z-10">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 lg:p-10 mb-8 w-full relative">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full relative">
               
              
               <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
                   {t('process.title')}
                 </h2>
 
@@ -868,8 +953,8 @@ export default function Home() {
                 </div>
 
                 {/* Pricing Info */}
-                <div className="text-center mb-6 md:mb-8">
-                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4">
+                <div className="text-center mb-4 md:mb-8">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
                     Våra offerter är alltid baserade på dina specifika behov och omständigheter. 
                     Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation, vi kan även besikta bostaden vid behov. 
                     Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund. 
@@ -878,12 +963,12 @@ export default function Home() {
                 </div>
 
                 {/* Process Flow Section */}
-                <div className="mb-6 md:mb-8">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6 md:mb-8 text-center">Så fungerar det</h3>
+                <div className="mb-4 md:mb-8">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3>
                   <div className="relative w-full">
                     {/* Timeline connector line */}
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
-                    <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-3 w-full">
+                    <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full">
                       {[
                         {
                           icon: <FillFormLottie />,
@@ -929,7 +1014,7 @@ export default function Home() {
                       ].map((step, index) => (
                         <motion.div
                           key={index}
-                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 h-full"
+                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full"
                           initial="initial"
                           whileInView="animate"
                           viewport={{ once: true, amount: 0.2 }}
@@ -979,13 +1064,142 @@ export default function Home() {
         {/* Responsive zoom wrapper for wide screens */}
         <div className="responsive-zoom">
           <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
-            <div className="mx-auto px-24">
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
+            <div className="mx-auto px-0 md:px-24">
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-6 md:p-8">
                 <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
                   {/* Left side - Features content */}
                   <div className="flex-[2] w-full">
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
+                    
+                    {/* Mobile: Sliding carousel */}
+                    <div className="md:hidden">
+                      <div className="relative overflow-hidden rounded-xl">
+                        <div 
+                          className="flex transition-transform duration-500 ease-in-out"
+                          style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}
+                        >
+                          {[
+                            {
+                              icon: "💰",
+                              title: "Fast pris",
+                              description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                              link: "/priser"
+                            },
+                            {
+                              icon: "📋",
+                              title: "RUT-avdrag",
+                              description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                              link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                            },
+                            {
+                              icon: "📦",
+                              title: "Fritt lån av kartonger i 4 veckor",
+                              description: "Specialgjorda flyttkartonger med vår logga",
+                              link: "/kartonger"
+                            },
+                            {
+                              icon: "⏰",
+                              title: "Omboka eller avboka kostnadsfritt",
+                              description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                              link: "/avbokning"
+                            },
+                            {
+                              icon: "✅",
+                              title: "Nöjd kund garanti",
+                              description: "14 dagars garanti på flyttstädning",
+                              link: "/garanti"
+                            },
+                            {
+                              icon: "🔒",
+                              title: "Trafiktillstånd och försäkring",
+                              description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                              link: "/tillstand"
+                            },
+                            {
+                              icon: "🎓",
+                              title: "Utbildad personal",
+                              description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                              link: "/om-oss"
+                            },
+                            {
+                              icon: "📈",
+                              title: "Ledningssystem",
+                              description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                              link: "/om-oss"
+                            },
+                            {
+                              icon: "🦺",
+                              title: "Arbetsmiljö",
+                              description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                              link: "/om-oss"
+                            }
+                          ].map((feature, index) => (
+                            <div key={feature.icon} className="w-full flex-shrink-0">
+                              <motion.div 
+                                className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg text-white flex flex-col h-full mx-4"
+                                initial="initial"
+                                whileInView="animate"
+                                viewport={{ once: true, amount: 0.2 }}
+                                variants={fadeInUp}
+                                transition={{ duration: 0.8, delay: index * 0.1 }}
+                              >
+                                <div className="flex items-start gap-3 h-full">
+                                  <motion.span
+                                    className="text-2xl md:text-3xl"
+                                    initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                                    animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                                    transition={{ duration: 1, delay: index * 0.1 + 0.2, type: 'tween', ease: 'easeInOut' }}
+                                  >
+                                    {feature.icon}
+                                  </motion.span>
+                                  <div className="flex-1">
+                                    <h4 className="text-white font-semibold text-base md:text-lg mb-2">{feature.title}</h4>
+                                    <p className="text-white/80 text-sm md:text-base mb-3">{feature.description}</p>
+                                    <a 
+                                      href={feature.link}
+                                      target={feature.link.startsWith('http') ? '_blank' : undefined}
+                                      rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                      className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
+                                    >
+                                      Läs mer
+                                      <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                      </svg>
+                                    </a>
+                                  </div>
+                                </div>
+                              </motion.div>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Dots indicator */}
+                        <div className="flex justify-center mt-4 space-x-2">
+                          {[
+                            { icon: "💰", title: "Fast pris" },
+                            { icon: "📋", title: "RUT-avdrag" },
+                            { icon: "📦", title: "Fritt lån av kartonger" },
+                            { icon: "⏰", title: "Omboka kostnadsfritt" },
+                            { icon: "✅", title: "Nöjd kund garanti" },
+                            { icon: "🔒", title: "Trafiktillstånd" },
+                            { icon: "🎓", title: "Utbildad personal" },
+                            { icon: "📈", title: "Ledningssystem" },
+                            { icon: "🦺", title: "Arbetsmiljö" }
+                          ].map((_, index) => (
+                            <button
+                              key={index}
+                              onClick={() => setCurrentFeatureCard(index)}
+                              className={`w-2 h-2 rounded-full transition-colors ${
+                                index === currentFeatureCard ? 'bg-[#10B981]' : 'bg-white/30'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Desktop: Original grid layout */}
+                    <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
                       {[
                         {
                           icon: "💰",
@@ -1081,13 +1295,13 @@ export default function Home() {
 
                   {/* Right side - Image */}
                   <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
-                    <div className="w-full h-full flex items-stretch">
+                    <div className="w-full h-full flex items-stretch justify-center md:justify-start">
                       <Image
                         src="/smiling_worker_new.png"
                         alt="Glad flyttarbetare"
                         width={600}
                         height={200}
-                        className="rounded-xl shadow-lg object-cover w-full h-full"
+                        className="rounded-xl shadow-lg object-cover w-full h-full max-w-xs md:max-w-none"
                         style={{ objectPosition: '30% 80%' }}
                         priority={false}
                       />
