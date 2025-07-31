@@ -6,6 +6,7 @@ import ReviewsWidget from "./components/ReviewsWidget";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import FlyttoffertForm from './components/FlyttoffertForm';
+import StadningOffertFormCustomAkersberga from './components/StadningOffertFormCustomAkersberga';
 import React, { useEffect, useState } from "react";
 import { Variants } from "framer-motion";
 import Lottie from "lottie-react";
@@ -490,6 +491,8 @@ function ScheduleLottie() {
 export default function Home() {
   const { t } = useLanguage();
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
+  const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
+  const [showFullAboutText, setShowFullAboutText] = useState(false);
 
   const toggleFAQ = (id: string) => {
     setOpenFAQ(openFAQ === id ? null : id);
@@ -571,7 +574,11 @@ export default function Home() {
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
           {/* Mobile: Form only */}
           <div className="md:hidden mx-auto px-4 py-8">
-            <FlyttoffertForm mode="widget" />
+            {selectedServiceType === 'flyttstad' ? (
+              <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
+            ) : (
+              <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
+            )}
           </div>
           
           {/* Mobile: Hero content after form */}
@@ -619,7 +626,11 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
-                  <FlyttoffertForm mode="widget" />
+                  {selectedServiceType === 'flyttstad' ? (
+                    <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
+                  ) : (
+                    <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
+                  )}
                 </div>
               </div>
             </div>
@@ -678,7 +689,7 @@ export default function Home() {
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center lg:mr-60">{t('about.title')}</h3>
               
               {/* Image and text layout */}
-              <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
+              <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
                 {/* Left: Image - positioned outside container */}
                 <motion.div
                   className="w-full lg:w-1/5 relative lg:-ml-16 lg:pr-16"
@@ -708,7 +719,7 @@ export default function Home() {
                 
                 {/* Right: Text content */}
                 <motion.div
-                  className="w-full lg:w-4/5 space-y-8 flex flex-col justify-center"
+                  className="w-full lg:w-4/5 space-y-4 lg:space-y-8 flex flex-col justify-center"
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.2 }}
@@ -718,19 +729,87 @@ export default function Home() {
                     delay: 0.4
                   }}
                 >
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('about.description1')}
-                  </p>
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('about.description2')}
-                  </p>
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('about.description3')}
-                  </p>
+                  {/* Desktop: Always show full text in 3 sections */}
+                  <div className="hidden lg:block space-y-8">
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      {t('about.description1')}
+                    </p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      {t('about.description2')}
+                    </p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      {t('about.description3')}
+                    </p>
+                  </div>
                   
-                  {/* Läs mer om oss link */}
+                  {/* Mobile: Show shortened text with expand option */}
+                  <div className="lg:hidden space-y-4">
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder.
+                    </p>
+                    
+                    {!showFullAboutText && (
+                      <button
+                        onClick={() => setShowFullAboutText(true)}
+                        className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    )}
+                    
+                    {showFullAboutText && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        transition={{ duration: 0.5 }}
+                        className="space-y-4 mt-4"
+                      >
+                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                          {t('about.description2')}
+                        </p>
+                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                          {t('about.description3')}
+                        </p>
+                        
+                        {/* Läs mer om oss link - Mobile only when expanded */}
+                        <motion.div
+                          className="pt-6"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                          <Link 
+                            href="/om-oss" 
+                            className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+                          >
+                            {t('common.learnMore')} {t('navigation.about').toLowerCase()}
+                            <svg 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                              fill="none" 
+                              viewBox="0 0 24 24" 
+                              stroke="currentColor"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </motion.div>
+                      </motion.div>
+                    )}
+                  </div>
+                  
+                  {/* Läs mer om oss link - Desktop only */}
                   <motion.div
-                    className="pt-6"
+                    className="pt-6 hidden lg:block"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true, amount: 0.2 }}

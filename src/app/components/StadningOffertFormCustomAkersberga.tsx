@@ -87,12 +87,9 @@ interface StadningFormData {
   needsPacking: boolean;
   needsStorage: boolean;
   needsDisposal: boolean;
-  packEntireArea?: boolean;
-  packingArea: string;
-  storeEntireArea?: boolean;
-  storageArea: string;
-  disposalMoreThan3?: boolean;
-  disposalVolume: string;
+
+
+
   hasHeavyItems: string;
   heavyItems: { type: string; description?: string }[];
   hasDelicateItems: string;
@@ -160,9 +157,6 @@ interface FormErrors {
   windowTypes?: string;
   windowCount?: string;
   // Moving-related error fields
-  packingArea?: string;
-  storageArea?: string;
-  disposalVolume?: string;
   needsPacking?: string;
   needsStorage?: string;
   needsDisposal?: string;
@@ -272,12 +266,9 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     needsPacking: false,
     needsStorage: false,
     needsDisposal: false,
-    packEntireArea: undefined,
-    packingArea: '',
-    storeEntireArea: undefined,
-    storageArea: '',
-    disposalMoreThan3: undefined,
-    disposalVolume: '',
+
+
+
     hasHeavyItems: '',
     heavyItems: [],
     hasDelicateItems: '',
@@ -2122,15 +2113,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               onChange={() => {
                                 setFormData(prev => ({ 
                                   ...prev, 
-                                  needsPacking: true,
-                                  packEntireArea: undefined,
-                                  packingArea: ""
+                                  needsPacking: true
                                 }));
                                 setErrors(prev => ({ 
                                   ...prev, 
-                                  needsPacking: "",
-                                  packEntireArea: "",
-                                  packingArea: ""
+                                  needsPacking: ""
                                 }));
                               }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -2146,15 +2133,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               onChange={() => {
                                 setFormData(prev => ({ 
                                   ...prev, 
-                                  needsPacking: false,
-                                  packEntireArea: undefined,
-                                  packingArea: ""
+                                  needsPacking: false
                                 }));
                                 setErrors(prev => ({ 
                                   ...prev, 
-                                  needsPacking: "",
-                                  packEntireArea: "",
-                                  packingArea: ""
+                                  needsPacking: ""
                                 }));
                               }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -2182,15 +2165,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               onChange={() => {
                                 setFormData(prev => ({ 
                                   ...prev, 
-                                  needsStorage: true,
-                                  storeEntireArea: undefined,
-                                  storageArea: ""
+                                  needsStorage: true
                                 }));
                                 setErrors(prev => ({ 
                                   ...prev, 
-                                  needsStorage: "",
-                                  storeEntireArea: "",
-                                  storageArea: ""
+                                  needsStorage: ""
                                 }));
                               }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -2206,15 +2185,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               onChange={() => {
                                 setFormData(prev => ({ 
                                   ...prev, 
-                                  needsStorage: false,
-                                  storeEntireArea: undefined,
-                                  storageArea: ""
+                                  needsStorage: false
                                 }));
                                 setErrors(prev => ({ 
                                   ...prev, 
-                                  needsStorage: "",
-                                  storeEntireArea: "",
-                                  storageArea: ""
+                                  needsStorage: ""
                                 }));
                               }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -2242,15 +2217,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               onChange={() => {
                                 setFormData(prev => ({ 
                                   ...prev, 
-                                  needsDisposal: true,
-                                  disposalMoreThan3: undefined,
-                                  disposalVolume: ""
+                                  needsDisposal: true
                                 }));
                                 setErrors(prev => ({ 
                                   ...prev, 
-                                  needsDisposal: "",
-                                  disposalMoreThan3: "",
-                                  disposalVolume: ""
+                                  needsDisposal: ""
                                 }));
                               }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -2266,15 +2237,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               onChange={() => {
                                 setFormData(prev => ({ 
                                   ...prev, 
-                                  needsDisposal: false,
-                                  disposalMoreThan3: undefined,
-                                  disposalVolume: ""
+                                  needsDisposal: false
                                 }));
                                 setErrors(prev => ({ 
                                   ...prev, 
-                                  needsDisposal: "",
-                                  disposalMoreThan3: "",
-                                  disposalVolume: ""
+                                  needsDisposal: ""
                                 }));
                               }}
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"

@@ -48,6 +48,7 @@ interface FormData {
   needsPacking: boolean;
   needsStorage: boolean;
   needsCleaning: boolean;
+  needsDisposal: boolean;
   additionalInfo: string;
   wantsFlexibleDate: boolean;
   elevatorSize?: string;
@@ -67,16 +68,9 @@ interface FormData {
   atticArea?: string; // NEW FIELD for vind area
   hasBasementStorage?: string; // NEW FIELD for källarförråd (basement storage)
   basementStorageArea?: string; // NEW FIELD for källarförråd area
-  // NEW FIELDS for packing questions
-  packEntireArea?: boolean; // Hela boytan ska packas
-  packingArea?: string; // Hur stor yta i kvm
-  // NEW FIELDS for storage questions
-  storeEntireArea?: boolean; // Hela boytan ska magasineras
-  storageArea?: string; // Hur stor yta i kvm ska magasineras
-  // NEW FIELDS for disposal questions
-  needsDisposal?: boolean; // Vill du ha bortforsling
-  disposalMoreThan3?: boolean; // Är det mer än 3 kbm som ska bortforslas
-  disposalVolume?: string; // Uppskattning på antal kbm som ska bortforslas
+  
+  
+  
 }
 
 interface FormErrors {
@@ -126,16 +120,10 @@ interface FormErrors {
   atticArea?: string; // NEW FIELD for vind area
   hasBasementStorage?: string; // NEW FIELD for källarförråd (basement storage)
   basementStorageArea?: string; // NEW FIELD for källarförråd area
-  // NEW FIELDS for packing questions
-  packEntireArea?: string;
-  packingArea?: string;
-  // NEW FIELDS for storage questions
-  storeEntireArea?: string;
-  storageArea?: string;
+  
+  
   // NEW FIELDS for disposal questions
   needsDisposal?: string;
-  disposalMoreThan3?: string;
-  disposalVolume?: string;
 }
 
 interface AddressComponent {
@@ -214,16 +202,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     atticArea: "", // NEW FIELD for vind area
     hasBasementStorage: "no", // NEW FIELD for källarförråd (basement storage)
     basementStorageArea: "", // NEW FIELD for källarförråd area
-    // NEW FIELDS for packing questions
-    packEntireArea: undefined,
-    packingArea: "",
-    // NEW FIELDS for storage questions
-    storeEntireArea: undefined,
-    storageArea: "",
+
+
     // NEW FIELDS for disposal questions
     needsDisposal: false,
-    disposalMoreThan3: undefined,
-    disposalVolume: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
@@ -444,54 +426,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
       newErrors.needsDisposal = "Vänligen välj om du vill ha bortforsling";
       isValid = false;
     }
-    // Validate disposal questions if needsDisposal is true
-    if (formData.needsDisposal === true) {
-      if (formData.disposalMoreThan3 === undefined) {
-        newErrors.disposalMoreThan3 = "Vänligen välj om det är mer än 3 kbm";
-        isValid = false;
-      }
-      if (formData.disposalMoreThan3 === true) {
-        if (!formData.disposalVolume || !formData.disposalVolume.trim()) {
-          newErrors.disposalVolume = "Vänligen ange uppskattning på antal kbm";
-          isValid = false;
-        } else if (isNaN(Number(formData.disposalVolume)) || Number(formData.disposalVolume) <= 0) {
-          newErrors.disposalVolume = "Volymen måste vara ett positivt tal";
-          isValid = false;
-        }
-      }
-    }
-    // Validate packing area questions if needsPacking is true
-    if (formData.needsPacking === true) {
-      if (formData.packEntireArea === undefined) {
-        newErrors.packEntireArea = "Vänligen välj om hela boytan ska packas";
-        isValid = false;
-      }
-      if (formData.packEntireArea === false) {
-        if (!formData.packingArea || !formData.packingArea.trim()) {
-          newErrors.packingArea = "Vänligen ange ytan som ska packas";
-          isValid = false;
-        } else if (isNaN(Number(formData.packingArea)) || Number(formData.packingArea) <= 0) {
-          newErrors.packingArea = "Ytan måste vara ett positivt tal";
-          isValid = false;
-        }
-      }
-    }
-    // Validate storage area questions if needsStorage is true
-    if (formData.needsStorage === true) {
-      if (formData.storeEntireArea === undefined) {
-        newErrors.storeEntireArea = "Vänligen välj om hela boytan ska magasineras";
-        isValid = false;
-      }
-      if (formData.storeEntireArea === false) {
-        if (!formData.storageArea || !formData.storageArea.trim()) {
-          newErrors.storageArea = "Vänligen ange ytan som ska magasineras";
-          isValid = false;
-        } else if (isNaN(Number(formData.storageArea)) || Number(formData.storageArea) <= 0) {
-          newErrors.storageArea = "Ytan måste vara ett positivt tal";
-          isValid = false;
-        }
-      }
-    }
+
+
+
     setErrors(newErrors);
     return isValid;
   };
@@ -987,9 +924,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       >
                         <div className="flex flex-col items-center text-center">
                           <span className="text-4xl mb-4">✨</span>
-                          <h3 className="text-xl font-bold mb-2">{swapServiceOrder ? 'Städtjänster' : 'Flyttstäd'}</h3>
+                          <h3 className="text-xl font-bold mb-2">{swapServiceOrder ? 'Städtjänster' : 'Städ'}</h3>
                           <p className="text-base opacity-90">
-                            Professionell flyttstädning för att lämna din gamla bostad i perfekt skick
+                            Komplett städservice med professionell städning för alla behov
                           </p>
                         </div>
                       </motion.div>
@@ -1118,15 +1055,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       onChange={() => {
                         setFormData(prev => ({ 
                           ...prev, 
-                          needsPacking: true,
-                          packEntireArea: undefined,
-                          packingArea: ""
+                          needsPacking: true
                         }));
                         setErrors(prev => ({ 
                           ...prev, 
-                          needsPacking: "",
-                          packEntireArea: "",
-                          packingArea: ""
+                          needsPacking: ""
                         }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -1142,15 +1075,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       onChange={() => {
                         setFormData(prev => ({ 
                           ...prev, 
-                          needsPacking: false,
-                          packEntireArea: undefined,
-                          packingArea: ""
+                          needsPacking: false
                         }));
                         setErrors(prev => ({ 
                           ...prev, 
-                          needsPacking: "",
-                          packEntireArea: "",
-                          packingArea: ""
+                          needsPacking: ""
                         }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -1163,91 +1092,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
               </div>
 
-              {/* Conditional packing area questions - only show if needsPacking is true */}
-              {formData.needsPacking === true && (
-                <>
-                  {/* Pack entire area question */}
-                  <div>
-                    <label className="block text-lg font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Ska hela boytan packas?' : 'Ska hela boytan packas?'}</strong>
-                    </label>
-                    <div className="flex gap-6">
-                      <label className="flex items-center">
-                        <input
-                          type="radio"
-                          name="packEntireArea"
-                          value="yes"
-                          checked={formData.packEntireArea === true}
-                          onChange={() => {
-                            setFormData(prev => ({ 
-                              ...prev, 
-                              packEntireArea: true,
-                              packingArea: ""
-                            }));
-                            setErrors(prev => ({ 
-                              ...prev, 
-                              packEntireArea: "",
-                              packingArea: ""
-                            }));
-                          }}
-                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
-                        />
-                        <span className="ml-2 text-lg text-gray-700">Ja</span>
-                      </label>
-                      <label className="flex items-center">
-                        <input
-                          type="radio"
-                          name="packEntireArea"
-                          value="no"
-                          checked={formData.packEntireArea === false}
-                          onChange={() => {
-                            setFormData(prev => ({ 
-                              ...prev, 
-                              packEntireArea: false,
-                              packingArea: ""
-                            }));
-                            setErrors(prev => ({ 
-                              ...prev, 
-                              packEntireArea: "",
-                              packingArea: ""
-                            }));
-                          }}
-                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
-                        />
-                        <span className="ml-2 text-lg text-gray-700">Nej</span>
-                      </label>
-                    </div>
-                    {errors.packEntireArea && (
-                      <p className="mt-1 text-base text-red-600">{errors.packEntireArea}</p>
-                    )}
-                  </div>
 
-                  {/* Packing area size question - only show if packEntireArea is false */}
-                  {formData.packEntireArea === false && (
-                    <div>
-                      <label className="block text-lg font-medium text-gray-700 mb-2">
-                        <strong>{formData.customerType === 'foretag' ? 'Hur stor yta i kvm ska packas?' : 'Hur stor yta i kvm ska packas?'}</strong>
-                      </label>
-                      <input
-                        type="text"
-                        name="packingArea"
-                        value={formData.packingArea}
-                        onChange={(e) => {
-                          // Only allow numbers and decimal point
-                          const value = e.target.value.replace(/[^0-9.]/g, '');
-                          setFormData(prev => ({ ...prev, packingArea: value }));
-                          setErrors(prev => ({ ...prev, packingArea: "" }));
-                        }}
-                        placeholder="Ange yta i kvadratmeter"
-                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.packingArea ? " border-red-500" : ""}`}
-                      />
-                      {errors.packingArea && (
-                        <p className="mt-1 text-base text-red-600">{errors.packingArea}</p>
-                      )}
-                    </div>
-                  )}
-                </>
-              )}
 
               {/* Storage question */}
               <div>
@@ -1264,15 +1109,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       onChange={() => {
                         setFormData(prev => ({ 
                           ...prev, 
-                          needsStorage: true,
-                          storeEntireArea: undefined,
-                          storageArea: ""
+                          needsStorage: true
                         }));
                         setErrors(prev => ({ 
                           ...prev, 
-                          needsStorage: "",
-                          storeEntireArea: "",
-                          storageArea: ""
+                          needsStorage: ""
                         }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -1288,15 +1129,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       onChange={() => {
                         setFormData(prev => ({ 
                           ...prev, 
-                          needsStorage: false,
-                          storeEntireArea: undefined,
-                          storageArea: ""
+                          needsStorage: false
                         }));
                         setErrors(prev => ({ 
                           ...prev, 
-                          needsStorage: "",
-                          storeEntireArea: "",
-                          storageArea: ""
+                          needsStorage: ""
                         }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -1309,91 +1146,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
               </div>
 
-              {/* Conditional storage area questions - only show if needsStorage is true */}
-              {formData.needsStorage === true && (
-                <>
-                  {/* Store entire area question */}
-                  <div>
-                    <label className="block text-lg font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Ska hela boytan magasineras?' : 'Ska hela boytan magasineras?'}</strong>
-                    </label>
-                    <div className="flex gap-6">
-                      <label className="flex items-center">
-                        <input
-                          type="radio"
-                          name="storeEntireArea"
-                          value="yes"
-                          checked={formData.storeEntireArea === true}
-                          onChange={() => {
-                            setFormData(prev => ({ 
-                              ...prev, 
-                              storeEntireArea: true,
-                              storageArea: ""
-                            }));
-                            setErrors(prev => ({ 
-                              ...prev, 
-                              storeEntireArea: "",
-                              storageArea: ""
-                            }));
-                          }}
-                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
-                        />
-                        <span className="ml-2 text-lg text-gray-700">Ja</span>
-                      </label>
-                      <label className="flex items-center">
-                        <input
-                          type="radio"
-                          name="storeEntireArea"
-                          value="no"
-                          checked={formData.storeEntireArea === false}
-                          onChange={() => {
-                            setFormData(prev => ({ 
-                              ...prev, 
-                              storeEntireArea: false,
-                              storageArea: ""
-                            }));
-                            setErrors(prev => ({ 
-                              ...prev, 
-                              storeEntireArea: "",
-                              storageArea: ""
-                            }));
-                          }}
-                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
-                        />
-                        <span className="ml-2 text-lg text-gray-700">Nej</span>
-                      </label>
-                    </div>
-                    {errors.storeEntireArea && (
-                      <p className="mt-1 text-base text-red-600">{errors.storeEntireArea}</p>
-                    )}
-                  </div>
 
-                  {/* Storage area size question - only show if storeEntireArea is false */}
-                  {formData.storeEntireArea === false && (
-                    <div>
-                      <label className="block text-lg font-medium text-gray-700 mb-2">
-                        <strong>{formData.customerType === 'foretag' ? 'Hur stor yta i kvm ska magasineras?' : 'Hur stor yta i kvm ska magasineras?'}</strong>
-                      </label>
-                      <input
-                        type="text"
-                        name="storageArea"
-                        value={formData.storageArea}
-                        onChange={(e) => {
-                          // Only allow numbers and decimal point
-                          const value = e.target.value.replace(/[^0-9.]/g, '');
-                          setFormData(prev => ({ ...prev, storageArea: value }));
-                          setErrors(prev => ({ ...prev, storageArea: "" }));
-                        }}
-                        placeholder="Ange yta i kvadratmeter"
-                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.storageArea ? " border-red-500" : ""}`}
-                      />
-                      {errors.storageArea && (
-                        <p className="mt-1 text-base text-red-600">{errors.storageArea}</p>
-                      )}
-                    </div>
-                  )}
-                </>
-              )}
 
               {/* Cleaning question */}
               <div>
@@ -1450,15 +1203,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       onChange={() => {
                         setFormData(prev => ({ 
                           ...prev, 
-                          needsDisposal: true,
-                          disposalMoreThan3: undefined,
-                          disposalVolume: ""
+                          needsDisposal: true
                         }));
                         setErrors(prev => ({ 
                           ...prev, 
-                          needsDisposal: "",
-                          disposalMoreThan3: "",
-                          disposalVolume: ""
+                          needsDisposal: ""
                         }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -1474,15 +1223,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       onChange={() => {
                         setFormData(prev => ({ 
                           ...prev, 
-                          needsDisposal: false,
-                          disposalMoreThan3: undefined,
-                          disposalVolume: ""
+                          needsDisposal: false
                         }));
                         setErrors(prev => ({ 
                           ...prev, 
-                          needsDisposal: "",
-                          disposalMoreThan3: "",
-                          disposalVolume: ""
+                          needsDisposal: ""
                         }));
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
@@ -1495,91 +1240,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
               </div>
 
-              {/* Conditional disposal questions - only show if needsDisposal is true */}
-              {formData.needsDisposal === true && (
-                <>
-                  {/* Disposal more than 3 kbm question */}
-                  <div>
-                    <label className="block text-lg font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Är det mer än 3 kbm som ska bortforslas?' : 'Är det mer än 3 kbm som ska bortforslas?'}</strong>
-                    </label>
-                    <div className="flex gap-6">
-                      <label className="flex items-center">
-                        <input
-                          type="radio"
-                          name="disposalMoreThan3"
-                          value="yes"
-                          checked={formData.disposalMoreThan3 === true}
-                          onChange={() => {
-                            setFormData(prev => ({ 
-                              ...prev, 
-                              disposalMoreThan3: true,
-                              disposalVolume: ""
-                            }));
-                            setErrors(prev => ({ 
-                              ...prev, 
-                              disposalMoreThan3: "",
-                              disposalVolume: ""
-                            }));
-                          }}
-                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
-                        />
-                        <span className="ml-2 text-lg text-gray-700">Ja</span>
-                      </label>
-                      <label className="flex items-center">
-                        <input
-                          type="radio"
-                          name="disposalMoreThan3"
-                          value="no"
-                          checked={formData.disposalMoreThan3 === false}
-                          onChange={() => {
-                            setFormData(prev => ({ 
-                              ...prev, 
-                              disposalMoreThan3: false,
-                              disposalVolume: ""
-                            }));
-                            setErrors(prev => ({ 
-                              ...prev, 
-                              disposalMoreThan3: "",
-                              disposalVolume: ""
-                            }));
-                          }}
-                          className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
-                        />
-                        <span className="ml-2 text-lg text-gray-700">Nej</span>
-                      </label>
-                    </div>
-                    {errors.disposalMoreThan3 && (
-                      <p className="mt-1 text-base text-red-600">{errors.disposalMoreThan3}</p>
-                    )}
-                  </div>
 
-                  {/* Disposal volume question - only show if disposalMoreThan3 is true */}
-                  {formData.disposalMoreThan3 === true && (
-                    <div>
-                      <label className="block text-lg font-medium text-gray-700 mb-2">
-                        {formData.customerType === 'foretag' ? 'Uppskattning på antal kbm som ska bortforslas' : 'Uppskattning på antal kbm som ska bortforslas'}
-                      </label>
-                      <input
-                        type="text"
-                        name="disposalVolume"
-                        value={formData.disposalVolume}
-                        onChange={(e) => {
-                          // Only allow numbers and decimal point
-                          const value = e.target.value.replace(/[^0-9.]/g, '');
-                          setFormData(prev => ({ ...prev, disposalVolume: value }));
-                          setErrors(prev => ({ ...prev, disposalVolume: "" }));
-                        }}
-                        placeholder="Ange volym i kubikmeter"
-                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.disposalVolume ? " border-red-500" : ""}`}
-                      />
-                      {errors.disposalVolume && (
-                        <p className="mt-1 text-base text-red-600">{errors.disposalVolume}</p>
-                      )}
-                    </div>
-                  )}
-                </>
-              )}
                 <div className="flex justify-between mt-8">
                   <button
                     type="button"

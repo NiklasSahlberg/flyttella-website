@@ -81,22 +81,22 @@ export default function FeatureBoxes() {
   }, []);
 
   return (
-    <div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 my-8">
+    <div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 my-8">
       {features.map((feature, _idx) => (
         <div
           key={feature.key}
-          className="flex flex-col items-center justify-center bg-white rounded-xl shadow border border-gray-100 px-2 py-4 min-h-[80px] transition-transform hover:scale-105 duration-200"
+          className="flex flex-col items-center justify-center bg-white rounded-xl shadow border border-gray-100 px-1 md:px-2 py-2 md:py-4 min-h-[60px] md:min-h-[80px] transition-transform hover:scale-105 duration-200"
         >
           {loading ? (
             <ShimmerBox />
           ) : feature.animated ? (
-            <div className="mb-2 h-8 flex items-center justify-center transition-all duration-500 animate-fade-in">
+            <div className="mb-1 md:mb-2 h-6 md:h-8 flex items-center justify-center transition-all duration-500 animate-fade-in">
               {insuranceLogos[logoIndex]}
             </div>
           ) : (
-            <div className="mb-2 h-8 flex items-center justify-center transition-all duration-500 animate-fade-in">{feature.icon}</div>
+            <div className="mb-1 md:mb-2 h-6 md:h-8 flex items-center justify-center transition-all duration-500 animate-fade-in">{feature.icon}</div>
           )}
-          <span className={`font-semibold text-[#0F172A] text-center text-xs leading-tight transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100 animate-fade-in'}`}>
+          <span className={`font-semibold text-[#0F172A] text-center text-[10px] md:text-xs leading-tight transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100 animate-fade-in'}`}>
             {t(feature.labelKey)}
           </span>
         </div>
