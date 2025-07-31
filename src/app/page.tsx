@@ -1065,11 +1065,11 @@ export default function Home() {
         <div className="responsive-zoom">
           <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
             <div className="mx-auto px-0 md:px-24">
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-6 md:p-8">
-                <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-4 md:p-8">
+                <div className="flex flex-col lg:flex-row items-stretch gap-4 md:gap-8 h-full">
                   {/* Left side - Features content */}
                   <div className="flex-[2] w-full">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 text-center lg:text-left">Våra förmåner</h2>
                     
                     {/* Mobile: Sliding carousel */}
                     <div className="md:hidden">
@@ -1136,7 +1136,7 @@ export default function Home() {
                           ].map((feature, index) => (
                             <div key={feature.icon} className="w-full flex-shrink-0">
                               <motion.div 
-                                className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg text-white flex flex-col h-full mx-4"
+                                className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-lg text-white flex flex-col h-full mx-2 md:mx-4"
                                 initial="initial"
                                 whileInView="animate"
                                 viewport={{ once: true, amount: 0.2 }}
@@ -1153,8 +1153,8 @@ export default function Home() {
                                     {feature.icon}
                                   </motion.span>
                                   <div className="flex-1">
-                                    <h4 className="text-white font-semibold text-base md:text-lg mb-2">{feature.title}</h4>
-                                    <p className="text-white/80 text-sm md:text-base mb-3">{feature.description}</p>
+                                    <h4 className="text-white font-semibold text-base md:text-lg mb-1 md:mb-2">{feature.title}</h4>
+                                    <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">{feature.description}</p>
                                     <a 
                                       href={feature.link}
                                       target={feature.link.startsWith('http') ? '_blank' : undefined}
@@ -1174,7 +1174,7 @@ export default function Home() {
                         </div>
                         
                         {/* Dots indicator */}
-                        <div className="flex justify-center mt-4 space-x-2">
+                        <div className="flex justify-center mt-2 md:mt-4 space-x-2">
                           {[
                             { icon: "💰", title: "Fast pris" },
                             { icon: "📋", title: "RUT-avdrag" },
@@ -1314,13 +1314,13 @@ export default function Home() {
         </div>
 
         {/* Awards Section */}
-        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-12 md:py-24 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
               {/* Mobile: Text first, then image */}
-              <div className="w-full md:hidden text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('awards.title')}</h2>
-                <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+              <div className="w-full md:hidden text-center mb-4">
+                <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A] mb-3 md:mb-6">{t('awards.title')}</h2>
+                <p className="text-lg md:text-2xl text-gray-700 leading-relaxed">
                   Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet.<br />
                   Genom åren har vi blivit erkända av både branschorganisationer och våra kunder för vårt pålitliga arbete och höga standard.<br />
                   Dessa utmärkelser inspirerar oss att fortsätta leverera flyttjänster i toppklass – varje dag, till varje kund.
@@ -1334,7 +1334,7 @@ export default function Home() {
                   alt="Flyttella's utmärkelser och priser"
                   width={1200}
                   height={600}
-                  className="object-contain w-full h-auto max-w-3xl"
+                  className="object-contain w-full h-auto max-w-2xl md:max-w-3xl"
                   priority
                 />
               </div>
