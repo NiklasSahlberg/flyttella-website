@@ -569,6 +569,7 @@ export default function Home() {
   const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const [showFullAboutText, setShowFullAboutText] = useState(false);
   const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
+  const [expandedTipSection, setExpandedTipSection] = useState<string | null>(null);
 
   // Auto-sliding for feature cards
   useEffect(() => {
@@ -1353,10 +1354,10 @@ export default function Home() {
         </section>
 
         {/* Services Sections */}
-        <section className="section-padding bg-white py-24">
+        <section className="section-padding bg-white py-6 md:py-24">
           <div className="container mx-auto px-4">
             <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-16"
+              className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-8 md:mb-16"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -1478,7 +1479,7 @@ export default function Home() {
 
           {/* Se alla våra tjänster Section */}
           <motion.section 
-            className="py-24 bg-white text-[#0F172A] relative overflow-hidden"
+            className="py-12 md:py-24 bg-white text-[#0F172A] relative overflow-hidden"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -1487,7 +1488,7 @@ export default function Home() {
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-3xl mx-auto text-center">
                 <motion.h2 
-                  className="text-3xl md:text-4xl font-bold mb-6"
+                  className="text-3xl md:text-4xl font-bold mb-6 hidden md:block"
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.2 }}
@@ -1533,7 +1534,7 @@ export default function Home() {
                       href="/tjanster" 
                       className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                     >
-                      Se alla våra privattjänster
+                      Se alla våra flyttjänster
                       <motion.svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1553,10 +1554,10 @@ export default function Home() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Link 
-                      href="/foretag" 
+                      href="/stadtjanster" 
                       className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                     >
-                      Se alla våra företagstjänster
+                      Se alla våra städtjänster
                       <motion.svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1585,8 +1586,30 @@ export default function Home() {
                   
                   {/* Innan flytten */}
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Innan flytten</h3>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {/* Mobile: Expandable section header */}
+                    <div className="md:hidden mb-6">
+                      <button
+                        onClick={() => setExpandedTipSection(expandedTipSection === 'innan' ? null : 'innan')}
+                        className="w-full flex items-center justify-between bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow"
+                      >
+                        <h3 className="text-xl font-bold text-black">Innan flytten</h3>
+                        <svg 
+                          className={`w-6 h-6 transition-transform ${expandedTipSection === 'innan' ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    {/* Desktop: Always visible title */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Innan flytten</h3>
+                    
+                    {/* Mobile: Expandable content */}
+                    <div className={`md:block ${expandedTipSection === 'innan' ? 'block' : 'hidden'}`}>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                       <TipCard
                         title="Planera och förbered"
                         imageSrc="/tipsforflytt.jpg"
@@ -1642,12 +1665,35 @@ export default function Home() {
                         }
                       />
                     </div>
+                    </div>
                   </div>
 
                   {/* Under flytten */}
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Under flytten</h3>
-                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    {/* Mobile: Expandable section header */}
+                    <div className="md:hidden mb-6">
+                      <button
+                        onClick={() => setExpandedTipSection(expandedTipSection === 'under' ? null : 'under')}
+                        className="w-full flex items-center justify-between bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow"
+                      >
+                        <h3 className="text-xl font-bold text-black">Under flytten</h3>
+                        <svg 
+                          className={`w-6 h-6 transition-transform ${expandedTipSection === 'under' ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    {/* Desktop: Always visible title */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Under flytten</h3>
+                    
+                    {/* Mobile: Expandable content */}
+                    <div className={`md:block ${expandedTipSection === 'under' ? 'block' : 'hidden'}`}>
+                      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title="En smidig flyttdag"
                           imageSrc="/smidigflyttdag.jpg"
@@ -1681,12 +1727,35 @@ export default function Home() {
                           }
                         />
                     </div>
+                    </div>
                   </div>
 
                   {/* Efter flytten */}
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Efter flytten</h3>
-                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    {/* Mobile: Expandable section header */}
+                    <div className="md:hidden mb-6">
+                      <button
+                        onClick={() => setExpandedTipSection(expandedTipSection === 'efter' ? null : 'efter')}
+                        className="w-full flex items-center justify-between bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow"
+                      >
+                        <h3 className="text-xl font-bold text-black">Efter flytten</h3>
+                        <svg 
+                          className={`w-6 h-6 transition-transform ${expandedTipSection === 'efter' ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    {/* Desktop: Always visible title */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Efter flytten</h3>
+                    
+                    {/* Mobile: Expandable content */}
+                    <div className={`md:block ${expandedTipSection === 'efter' ? 'block' : 'hidden'}`}>
+                      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title="Start i nya hemmet"
                           imageSrc="/efter_flytt.jpg"
@@ -1720,6 +1789,7 @@ export default function Home() {
                             </ul>
                           }
                         />
+                    </div>
                     </div>
                   </div>
 
