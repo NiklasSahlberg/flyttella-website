@@ -1818,7 +1818,7 @@ function FeatureBoxesSection() {
       key: "pack-garanti",
       label: "Pack-garanti",
       icon: (
-        <motion.div variants={variants} animate="bounce" className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center">
+        <motion.div variants={variants} animate="bounce" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center">
           <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
         </motion.div>
       ),
@@ -1827,7 +1827,7 @@ function FeatureBoxesSection() {
       key: "kundgaranti",
       label: "14 dagars nöjd kund garanti",
       icon: (
-        <motion.div variants={variants} animate="pulse" className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
+        <motion.div variants={variants} animate="pulse" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
           <HappyCustomerLottie />
         </motion.div>
       ),
@@ -1836,7 +1836,7 @@ function FeatureBoxesSection() {
       key: "kartonger",
       label: "Fritt lån av kartonger i 4 veckor",
       icon: (
-        <motion.div variants={variants} animate="bounce" className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
+        <motion.div variants={variants} animate="bounce" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
           <BoxesLottie />
         </motion.div>
       ),
@@ -1845,7 +1845,7 @@ function FeatureBoxesSection() {
       key: "rut-avdrag",
       label: "50% RUT-avdrag",
       icon: (
-        <motion.div variants={variants} animate="wiggle" className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
+        <motion.div variants={variants} animate="wiggle" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
           <CashLottie />
         </motion.div>
       ),
@@ -1854,7 +1854,7 @@ function FeatureBoxesSection() {
       key: "ombokning-avbokning",
       label: "24h kostnadsfri ombokning och avbokning",
       icon: (
-        <motion.div variants={variants} animate="pulse" className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
+        <motion.div variants={variants} animate="pulse" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
           <ScheduleLottie />
         </motion.div>
       ),
@@ -1864,10 +1864,10 @@ function FeatureBoxesSection() {
       label: "Trafiktillstånd och försäkring",
       icon: (
         <div className="flex items-center justify-start w-full">
-          <motion.div variants={variants} animate="bounce" className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center mr-4 overflow-visible">
+          <motion.div variants={variants} animate="bounce" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center mr-4 overflow-visible">
             <InsuranceLottie />
           </motion.div>
-          <span className="font-medium text-[#0F172A] text-left text-sm md:text-base leading-tight flex-grow">
+          <span className="font-medium text-[#0F172A] text-left text-lg md:text-base leading-tight flex-grow">
             Trafiktillstånd och försäkring
           </span>
           <div className="flex items-center ml-4">
@@ -1880,19 +1880,19 @@ function FeatureBoxesSection() {
   ];
 
   return (
-    <div className="w-full my-6 md:my-12">
+    <div className="w-full my-10 md:my-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] text-center mb-4 md:mb-12 mt-2">
+        <h2 className="text-4xl md:text-4xl font-bold text-[#0F172A] text-center mb-8 md:mb-12 mt-2">
           {t('advantages.title')}
         </h2>
       </div>
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch justify-center w-full gap-0 md:gap-8">
         {/* Left: Animated boxes with icons and labels */}
-        <div className="w-full md:w-2/5 flex flex-col justify-between items-center py-2 md:py-4 gap-2 md:gap-4">
+        <div className="w-full md:w-2/5 flex flex-col justify-between items-center py-4 md:py-4 gap-4 md:gap-4">
           {features.map((feature, i) => (
             <motion.div
               key={feature.key}
-              className="flex items-center gap-3 md:gap-4 bg-white border border-[#10B981] rounded-xl shadow px-4 md:px-8 py-4 md:py-8 w-full max-w-md transition-transform duration-200"
+              className="flex items-center gap-4 md:gap-4 bg-white border border-[#10B981] rounded-xl shadow px-6 md:px-8 py-6 md:py-8 w-full max-w-md transition-transform duration-200"
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, amount: 0.2 }}
@@ -1901,7 +1901,7 @@ function FeatureBoxesSection() {
             >
               {feature.icon}
               {feature.key !== "tillstand" && (
-                <span className="font-medium text-[#0F172A] text-left text-sm md:text-lg leading-tight">
+                <span className="font-medium text-[#0F172A] text-left text-lg md:text-lg leading-tight">
                   {feature.label}
                 </span>
               )}
