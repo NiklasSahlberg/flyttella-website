@@ -76,7 +76,7 @@ export default function ReviewsWidget({
 }: ReviewsWidgetProps) {
   const { t } = useLanguage();
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-6 md:py-24 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[#F8FAFC]">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
@@ -91,19 +91,19 @@ export default function ReviewsWidget({
       <div className="container mx-auto px-4 relative">
         <div className="max-w-[1400px] mx-auto">
           {/* Centered Title */}
-          <h3 className="text-4xl md:text-5xl font-bold text-[#0F172A] text-center mb-12 mt-2">
+          <h3 className="text-3xl md:text-5xl font-bold text-[#0F172A] text-center mb-6 md:mb-12 mt-2">
             {title || t('reviews.title')}
           </h3>
           {/* Badge */}
           <motion.div 
-            className="flex justify-center mb-16"
+            className="flex justify-center mb-8 md:mb-16"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="relative w-80 h-80 drop-shadow-xl">
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+              <div className="relative w-60 h-60 md:w-80 md:h-80 drop-shadow-xl">
                 <Image
                   src="/BadgeFiveYearsNew.png"
                   alt={badgeAlt || t('reviews.badgeAlt')}
@@ -114,22 +114,22 @@ export default function ReviewsWidget({
               </div>
               <div className="max-w-xl text-center">
                 <div className="text-center">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4">
                     {subtitle || t('reviews.subtitle')}
                   </h2>
-                  <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+                  <p className="text-lg md:text-2xl text-gray-600 leading-relaxed">
                     {description || t('reviews.description')}
                   </p>
                 </div>
                 {/* New: Customer opinions title and arrow */}
-                <div className="flex flex-col items-center justify-center gap-6 mt-8 mb-4">
-                  <span className="text-xl md:text-2xl font-semibold text-[#0F172A] text-center">{arrowText || t('reviews.arrowText')}</span>
+                <div className="flex flex-col items-center justify-center gap-4 md:gap-6 mt-6 md:mt-8 mb-4">
+                  <span className="text-lg md:text-2xl font-semibold text-[#0F172A] text-center">{arrowText || t('reviews.arrowText')}</span>
                   <Image
                     src="/Curved-Arrow-10b981.png"
                     alt="Curved Arrow"
-                    width={100}
-                    height={120}
-                    className="mt-4 md:mt-4 md:-ml-64"
+                    width={80}
+                    height={96}
+                    className="mt-2 md:mt-4 md:-ml-64"
                     priority={false}
                   />
                 </div>
@@ -151,10 +151,11 @@ export default function ReviewsWidget({
               src="https://widget.reco.se/v2/widget/4038580?mode=HORIZONTAL_QUOTE&inverted=false&border=true"
               style={{ 
                 width: '100%', 
-                height: '260px', 
+                height: '220px', 
                 border: 'none',
                 borderRadius: '16px',
               }}
+              className="md:h-[260px]"
             />
           </motion.div>
         </div>
