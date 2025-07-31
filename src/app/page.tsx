@@ -1301,7 +1301,7 @@ export default function Home() {
                         alt="Glad flyttarbetare"
                         width={600}
                         height={200}
-                        className="rounded-xl shadow-lg object-cover w-full h-full max-w-xs md:max-w-none"
+                        className="rounded-xl shadow-lg object-cover w-full h-full max-w-56 md:max-w-none"
                         style={{ objectPosition: '30% 80%' }}
                         priority={false}
                       />
