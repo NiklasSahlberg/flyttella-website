@@ -179,7 +179,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="bg-white/95 backdrop-blur-sm shadow-sm">
+      <div className="bg-white/95 backdrop-blur-sm shadow-sm hidden md:block">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20 relative">
             {/* Logo and Language Toggle - centered on mobile, left on desktop */}

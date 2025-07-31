@@ -573,7 +573,7 @@ export default function Home() {
         {/* 1. Hero Section */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
           {/* Mobile: Form only */}
-          <div className="md:hidden mx-auto px-4 pt-20 pb-8">
+          <div className="md:hidden mx-auto px-4 py-8">
             {selectedServiceType === 'flyttstad' ? (
               <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
             ) : (
