@@ -245,8 +245,8 @@ const AutoSlidingCards = () => {
                     <Image
                       src="/recommendedcompany2.png"
                       alt="Rekommenderad flyttfirma - Flyttella"
-                      width={260}
-                      height={260}
+                      width={100}
+                      height={100}
                       className="object-contain h-64 w-64"
                       priority={false}
                     />
@@ -667,6 +667,11 @@ export default function Home() {
             )}
           </div>
           
+          {/* Mobile: Våra Fördelar after form */}
+          <div className="md:hidden">
+            <FeatureBoxesSection />
+          </div>
+          
           {/* Mobile: Hero content after form */}
           <div className="md:hidden mx-auto px-4 py-12">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 relative overflow-hidden">
@@ -929,7 +934,9 @@ export default function Home() {
 
         {/* 3. Vilka förmåner får du med Flyttella? */}
        
+        <div className="hidden md:block">
         <FeatureBoxesSection />
+        </div>
 
         {/* 4. Vad tycker våra kunder om oss */}
         <ReviewsWidget />
@@ -1069,7 +1076,7 @@ export default function Home() {
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-4 md:p-8">
                 <div className="flex flex-col lg:flex-row items-stretch gap-4 md:gap-8 h-full">
                   {/* Left side - Features content */}
-                  <div className="flex-[2] w-full">
+                  <div className="flex-[2] w-full md:flex-[2]">
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 text-center lg:text-left">Våra förmåner</h2>
                     
                     {/* Mobile: Sliding carousel */}
@@ -1294,9 +1301,10 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Right side - Image */}
-                  <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
+                  {/* Right side - Image (Desktop only) */}
+                  <div className="hidden md:flex flex-1 justify-center lg:justify-end lg:self-stretch">
                     <div className="w-full h-full flex items-stretch justify-center md:justify-start">
+                      {/* Desktop: smiling_worker_new.png */}
                       <Image
                         src="/smiling_worker_new.png"
                         alt="Glad flyttarbetare"
@@ -1312,6 +1320,19 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Mobile Image below container */}
+        <div className="md:hidden">
+          <Image
+            src="/intro_picture.jpg"
+            alt="Flyttella introduktion"
+            width={600}
+            height={400}
+            className="rounded-none shadow-lg object-cover w-full h-80 max-w-none"
+            style={{ objectPosition: '80% 80%' }}
+            priority={false}
+          />
         </div>
 
         {/* Awards Section */}
@@ -1512,7 +1533,7 @@ export default function Home() {
                     delay: 0 * 0.25
                   }}
                 >
-                    Vi erbjuder ett komplett utbud av flyttjänster för att göra din flytt så smidig som möjligt. 
+                    Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. 
                     Från bohagsflytt och flyttstädning till specialtjänster som piano- och magasinering.
                 </motion.p>
                 <motion.div
@@ -1582,7 +1603,7 @@ export default function Home() {
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('tips.title')}</h2>
                 
-                <div className="space-y-16">
+                <div className="space-y-8 md:space-y-16">
                   
                   {/* Innan flytten */}
                   <div>
@@ -1609,7 +1630,7 @@ export default function Home() {
                     
                     {/* Mobile: Expandable content */}
                     <div className={`md:block ${expandedTipSection === 'innan' ? 'block' : 'hidden'}`}>
-                      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                       <TipCard
                         title="Planera och förbered"
                         imageSrc="/tipsforflytt.jpg"
@@ -1693,7 +1714,7 @@ export default function Home() {
                     
                     {/* Mobile: Expandable content */}
                     <div className={`md:block ${expandedTipSection === 'under' ? 'block' : 'hidden'}`}>
-                      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title="En smidig flyttdag"
                           imageSrc="/smidigflyttdag.jpg"
@@ -1755,7 +1776,7 @@ export default function Home() {
                     
                     {/* Mobile: Expandable content */}
                     <div className={`md:block ${expandedTipSection === 'efter' ? 'block' : 'hidden'}`}>
-                      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title="Start i nya hemmet"
                           imageSrc="/efter_flytt.jpg"
@@ -2164,7 +2185,7 @@ function FeatureBoxesSection() {
   ];
 
   return (
-    <div className="w-full my-10 md:my-12">
+    <div className="w-full my-4 md:my-12">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-4xl font-bold text-[#0F172A] text-center mb-2 md:mb-12 mt-2">
           {t('advantages.title')}
