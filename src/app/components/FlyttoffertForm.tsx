@@ -851,11 +851,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
             {!showSteps && (
               <div className="space-y-8">
-                <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-6">
                   {swapServiceOrder ? (
                     <>
                       <motion.div
-                        className="relative rounded-xl p-3 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl p-2 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -900,7 +900,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   ) : (
                     <>
                       <motion.div
-                        className="relative rounded-xl p-3 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl p-2 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flytt' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -921,7 +921,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         </div>
                       </motion.div>
                       <motion.div
-                        className="relative rounded-xl p-3 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl p-2 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
