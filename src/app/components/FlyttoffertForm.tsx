@@ -706,15 +706,17 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
         onLoad={() => setIsGoogleMapsLoaded(true)}
       />
       <div className="relative rounded-2xl shadow-2xl border-2 border-[#10B981] p-10 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-gradient-to-br from-white to-blue-50">
-        {/* Background image for mobile only */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 md:hidden"
-          style={{
-            backgroundImage: 'url(/ostermalm.avif)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
+        {/* Background image for mobile only - first step only */}
+        {!showSteps && (
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 md:hidden"
+            style={{
+              backgroundImage: 'url(/ostermalm.avif)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+        )}
         <div className="flex flex-col items-center relative z-10">
           <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4 hidden md:block" />
           {!showSteps && (
@@ -943,43 +945,56 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   )}
                 </div>
                 
-                {/* Recommended company badges for mobile */}
+                {/* Five Years Badge for mobile */}
                 <div className="md:hidden mt-6">
-                  <div className="flex flex-row justify-center -space-x-12">
+                  <div className="flex justify-center">
+                    <Image 
+                      src="/BadgeFiveYearsNew.png" 
+                      alt="Five Years Badge" 
+                      width={200} 
+                      height={100} 
+                      className="w-48 h-24 object-contain"
+                    />
+                  </div>
+                </div>
+                
+                {/* Recommended company badges for mobile */}
+                <div className="md:hidden mt-4">
+                  <div className="flex flex-row justify-center -space-x-14">
                     <Image 
                       src="/recommendedcompany2021-no-bg.png" 
                       alt="Rekommenderat företag 2021" 
-                      width={120} 
-                      height={120} 
-                      className="w-24 h-24 object-contain relative z-10"
+                      width={140} 
+                      height={140} 
+                      className="w-28 h-28 object-contain relative z-10"
                     />
                     <Image 
                       src="/recommendedcompany2022-no-bg.png" 
                       alt="Rekommenderat företag 2022" 
-                      width={120} 
-                      height={120} 
-                      className="w-24 h-24 object-contain relative z-20"
+                      width={140} 
+                      height={140} 
+                      className="w-28 h-28 object-contain relative z-20"
                     />
                     <Image 
                       src="/recommendedcompany2023-no-bg.png" 
                       alt="Rekommenderat företag 2023" 
-                      width={120} 
-                      height={120} 
-                      className="w-24 h-24 object-contain relative z-30"
+                      width={140} 
+                      height={140} 
+                      className="w-28 h-28 object-contain relative z-30"
                     />
                     <Image 
                       src="/recommendedcompany2024-no-bg.png" 
                       alt="Rekommenderat företag 2024" 
-                      width={120} 
-                      height={120} 
-                      className="w-24 h-24 object-contain relative z-40"
+                      width={140} 
+                      height={140} 
+                      className="w-28 h-28 object-contain relative z-40"
                     />
                     <Image 
                       src="/recommendedcompany2.png" 
                       alt="Rekommenderat företag" 
-                      width={100} 
-                      height={100} 
-                      className="w-20 h-20 object-contain relative z-50 mt-2 translate-x-2"
+                      width={120} 
+                      height={120} 
+                      className="w-24 h-24 object-contain relative z-50 mt-2 translate-x-2"
                     />
                   </div>
                 </div>
