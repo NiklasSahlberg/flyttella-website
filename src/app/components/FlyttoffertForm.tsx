@@ -705,7 +705,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
         async
         onLoad={() => setIsGoogleMapsLoaded(true)}
       />
-      <div className="relative rounded-2xl shadow-2xl border-2 border-[#10B981] p-10 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-gradient-to-br from-white to-blue-50">
+      <div className="relative rounded-2xl shadow-2xl border-2 border-[#10B981] p-6 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-gradient-to-br from-white to-blue-50">
         {/* Background image for mobile only - first step only */}
         {!showSteps && (
           <div 
@@ -730,7 +730,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             </>
           )}
         </div>
-        <div className="text-center mb-12 mt-8 md:mt-0 relative z-10">
+        <div className="text-center mb-6 md:mb-12 mt-4 md:mt-8 relative z-10">
           <div className="flex flex-row md:flex-col items-center justify-center gap-2 md:gap-0">
             <h2 className="text-lg md:text-3xl font-bold text-gray-900 mb-0 md:mb-4">
               {!showSteps ? 'Välj tjänst' : ''}
@@ -850,7 +850,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             )}
 
             {!showSteps && (
-              <div className="space-y-8">
+              <div className="space-y-4 md:space-y-8">
                 <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-6">
                   {swapServiceOrder ? (
                     <>
@@ -946,7 +946,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 
                 {/* Five Years Badge for mobile */}
-                <div className="md:hidden mt-6">
+                <div className="md:hidden mt-4">
                   <div className="flex justify-center">
                     <Image 
                       src="/BadgeFiveYearsNew.png" 
@@ -959,7 +959,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 
                 {/* Recommended company badges for mobile */}
-                <div className="md:hidden mt-4">
+                <div className="md:hidden mt-3">
                   <div className="flex flex-row justify-center -space-x-14">
                     <Image 
                       src="/recommendedcompany2021-no-bg.png" 
@@ -1000,7 +1000,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 
                 {errors.serviceType && (
-                  <p className="text-base text-red-600 text-center mt-4">{errors.serviceType}</p>
+                  <p className="text-base text-red-600 text-center mt-2 md:mt-4">{errors.serviceType}</p>
                 )}
               </div>
             )}
