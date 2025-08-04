@@ -126,12 +126,15 @@ export default function Footer() {
     }
 
     const handleScroll = () => {
-      const targetElement = document.getElementById('upptack-tjanster');
-      if (targetElement) {
-        const rect = targetElement.getBoundingClientRect();
-        // Show button when the section is about to enter the viewport (200px before it reaches the top)
-        const hasScrolledPast = rect.top <= 300;
-        setShowReportButton(hasScrolledPast);
+      const footerElement = document.querySelector('footer');
+      if (footerElement) {
+        const rect = footerElement.getBoundingClientRect();
+        const isMobile = window.innerWidth < 768; // md breakpoint
+        
+        // Show button when footer is about to enter the viewport
+        const threshold = isMobile ? 200 : 400; // Different thresholds for mobile vs desktop
+        const hasScrolledToFooter = rect.top <= threshold;
+        setShowReportButton(hasScrolledToFooter);
       }
     };
 
