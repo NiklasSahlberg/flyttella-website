@@ -517,6 +517,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
           </div>
         ) : (
           <form 
+            className="relative z-10"
             onSubmit={(e) => {
             e.preventDefault();
               // Only allow form submission on step 3

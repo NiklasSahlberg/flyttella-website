@@ -706,7 +706,16 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
         onLoad={() => setIsGoogleMapsLoaded(true)}
       />
       <div className="relative rounded-2xl shadow-2xl border-2 border-[#10B981] p-10 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-gradient-to-br from-white to-blue-50">
-        <div className="flex flex-col items-center">
+        {/* Background image for mobile only */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 md:hidden"
+          style={{
+            backgroundImage: 'url(/ostermalm.avif)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        />
+        <div className="flex flex-col items-center relative z-10">
           <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4 hidden md:block" />
           {!showSteps && (
             <>
@@ -719,7 +728,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             </>
           )}
         </div>
-        <div className="text-center mb-12 mt-8 md:mt-0">
+        <div className="text-center mb-12 mt-8 md:mt-0 relative z-10">
           <div className="flex flex-row md:flex-col items-center justify-center gap-2 md:gap-0">
             <h2 className="text-lg md:text-3xl font-bold text-gray-900 mb-0 md:mb-4">
               {!showSteps ? 'Välj tjänst' : ''}
@@ -740,7 +749,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             onCancel={() => handleBackToServiceSelection({preventDefault: () => {}} as React.MouseEvent<HTMLButtonElement>)}
           />
         ) : (
-        <form onSubmit={async (e) => {
+        <form className="relative z-10" onSubmit={async (e) => {
           e.preventDefault();
 
           if (step === 7) {
@@ -840,11 +849,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
             {!showSteps && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6">
                   {swapServiceOrder ? (
                     <>
                       <motion.div
-                        className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl p-3 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -857,15 +866,15 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex flex-col items-center text-center">
-                          <span className="text-4xl mb-4">✨</span>
-                          <h3 className="text-xl font-bold mb-2">{swapServiceOrder ? 'Städtjänster' : 'Flyttstäd'}</h3>
-                          <p className="text-base opacity-90">
+                          <span className="text-2xl md:text-4xl mb-2 md:mb-4">✨</span>
+                          <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">{swapServiceOrder ? 'Städtjänster' : 'Flyttstäd'}</h3>
+                          <p className="text-sm md:text-base opacity-90">
                             Professionell flyttstädning för att lämna din gamla bostad i perfekt skick
                           </p>
                         </div>
                       </motion.div>
                       <motion.div
-                        className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl p-3 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flytt' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -878,9 +887,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex flex-col items-center text-center">
-                          <span className="text-4xl mb-4">🏠</span>
-                          <h3 className="text-xl font-bold mb-2">Flytt</h3>
-                          <p className="text-base opacity-90">
+                          <span className="text-2xl md:text-4xl mb-2 md:mb-4">🏠</span>
+                          <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">Flytt</h3>
+                          <p className="text-sm md:text-base opacity-90">
                             Komplett flyttservice med professionell packning, transport och uppackning
                           </p>
                         </div>
@@ -889,7 +898,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   ) : (
                     <>
                       <motion.div
-                        className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl p-3 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flytt' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -902,15 +911,15 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex flex-col items-center text-center">
-                          <span className="text-4xl mb-4">🏠</span>
-                          <h3 className="text-xl font-bold mb-2">Flytt</h3>
-                          <p className="text-base opacity-90">
+                          <span className="text-2xl md:text-4xl mb-2 md:mb-4">🏠</span>
+                          <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">Flytt</h3>
+                          <p className="text-sm md:text-base opacity-90">
                             Komplett flyttservice med professionell packning, transport och uppackning
                           </p>
                         </div>
                       </motion.div>
                       <motion.div
-                        className="relative rounded-xl p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl p-3 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -923,9 +932,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex flex-col items-center text-center">
-                          <span className="text-4xl mb-4">✨</span>
-                          <h3 className="text-xl font-bold mb-2">{swapServiceOrder ? 'Städtjänster' : 'Städ'}</h3>
-                          <p className="text-base opacity-90">
+                          <span className="text-2xl md:text-4xl mb-2 md:mb-4">✨</span>
+                          <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">{swapServiceOrder ? 'Städtjänster' : 'Städ'}</h3>
+                          <p className="text-sm md:text-base opacity-90">
                             Komplett städservice med professionell städning för alla behov
                           </p>
                         </div>
@@ -933,6 +942,48 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     </>
                   )}
                 </div>
+                
+                {/* Recommended company badges for mobile */}
+                <div className="md:hidden mt-6">
+                  <div className="flex flex-row justify-center -space-x-12">
+                    <Image 
+                      src="/recommendedcompany2021-no-bg.png" 
+                      alt="Rekommenderat företag 2021" 
+                      width={120} 
+                      height={120} 
+                      className="w-24 h-24 object-contain relative z-10"
+                    />
+                    <Image 
+                      src="/recommendedcompany2022-no-bg.png" 
+                      alt="Rekommenderat företag 2022" 
+                      width={120} 
+                      height={120} 
+                      className="w-24 h-24 object-contain relative z-20"
+                    />
+                    <Image 
+                      src="/recommendedcompany2023-no-bg.png" 
+                      alt="Rekommenderat företag 2023" 
+                      width={120} 
+                      height={120} 
+                      className="w-24 h-24 object-contain relative z-30"
+                    />
+                    <Image 
+                      src="/recommendedcompany2024-no-bg.png" 
+                      alt="Rekommenderat företag 2024" 
+                      width={120} 
+                      height={120} 
+                      className="w-24 h-24 object-contain relative z-40"
+                    />
+                    <Image 
+                      src="/recommendedcompany2.png" 
+                      alt="Rekommenderat företag" 
+                      width={100} 
+                      height={100} 
+                      className="w-20 h-20 object-contain relative z-50 mt-2 translate-x-2"
+                    />
+                  </div>
+                </div>
+                
                 {errors.serviceType && (
                   <p className="text-base text-red-600 text-center mt-4">{errors.serviceType}</p>
                 )}
