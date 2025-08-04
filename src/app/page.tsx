@@ -229,25 +229,25 @@ const AutoSlidingCards = () => {
               {/* Mobile: Pyramid layout */}
               <div className="md:hidden flex flex-col items-center">
                 {/* Top badge - centered */}
-                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-10">
+                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8 ml-4">
                   <Image
                     src="/1000reviewspicture.png"
                     alt="1000+ positiva recensioner från kunder"
-                    width={280}
-                    height={280}
-                    className="object-contain h-72 w-72"
+                    width={160}
+                    height={160}
+                    className="object-contain h-32 w-32"
                     priority={false}
                   />
                 </motion.div>
                 {/* Bottom row - two badges */}
-            <div className="flex items-center justify-center gap-6">
+            <div className="flex items-center justify-center gap-5">
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
                       src="/recommendedcompany2.png"
                       alt="Rekommenderad flyttfirma - Flyttella"
-                      width={100}
-                      height={100}
-                      className="object-contain h-64 w-64"
+                      width={120}
+                      height={120}
+                      className="object-contain h-28 w-28"
                       priority={false}
                     />
                   </motion.div>
@@ -255,9 +255,9 @@ const AutoSlidingCards = () => {
                     <Image
                       src="/bestinswedenbadge-modified.png"
                       alt="Top 10 flyttfirma - Flyttella"
-                      width={210}
-                      height={210}
-                      className="object-contain h-52 w-52"
+                      width={140}
+                      height={140}
+                      className="object-contain h-24 w-24"
                       priority={false}
                     />
                   </motion.div>
