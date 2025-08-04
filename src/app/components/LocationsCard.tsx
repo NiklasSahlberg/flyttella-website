@@ -23,10 +23,10 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="mx-auto px-24">
+    <section className="py-8 md:py-16 bg-gray-50">
+      <div className="mx-auto px-4 md:px-24">
         <motion.div
-          className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden"
+          className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-12 shadow-2xl relative overflow-hidden"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.2 }}

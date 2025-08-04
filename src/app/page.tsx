@@ -673,8 +673,8 @@ export default function Home() {
           </div>
           
           {/* Mobile: Hero content after form */}
-          <div className="md:hidden mx-auto px-4 py-12">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 relative overflow-hidden">
+          <div className="md:hidden mx-auto px-4 py-6">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 relative overflow-hidden">
               {/* Background image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -684,7 +684,7 @@ export default function Home() {
                   backgroundPosition: 'center'
                 }}
               />
-              <div className="relative z-10 text-center space-y-8">
+              <div className="relative z-10 text-center space-y-4">
                 <h1 className="text-4xl font-bold">
                   {t('hero.title')}
                 </h1>
@@ -732,8 +732,8 @@ export default function Home() {
         <motion.section
           className="relative overflow-hidden"
           style={{
-            paddingTop: '8rem',
-            paddingBottom: '8rem',
+            paddingTop: '4rem',
+            paddingBottom: '4rem',
             borderTop: 'none',
             boxShadow: 'none',
           }}
@@ -770,7 +770,7 @@ export default function Home() {
           />
           
           {/* Centered content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60">
+          <div className="relative z-40 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60">
 
             <motion.div
               initial="initial"
