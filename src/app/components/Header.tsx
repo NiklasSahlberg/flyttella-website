@@ -689,9 +689,9 @@ export default function Header() {
                       <Image 
                         src="/flags/se.svg" 
                         alt="Svenska" 
-                        width={32} 
-                        height={24} 
-                        className={`rounded-sm border-2 ${locale === 'sv' ? 'border-[#10B981]' : 'border-gray-300'}`}
+                        width={40} 
+                        height={30} 
+                        className={`rounded-sm border-2 shadow-sm ${locale === 'sv' ? 'border-[#10B981]' : 'border-gray-300'}`}
                       />
                     </button>
                     <button
@@ -701,9 +701,9 @@ export default function Header() {
                       <Image 
                         src="/flags/gb.svg" 
                         alt="English" 
-                        width={32} 
-                        height={24} 
-                        className={`rounded-sm border-2 ${locale === 'en' ? 'border-[#10B981]' : 'border-gray-300'}`}
+                        width={40} 
+                        height={30} 
+                        className={`rounded-sm border-2 shadow-sm ${locale === 'en' ? 'border-[#10B981]' : 'border-gray-300'}`}
                       />
                     </button>
                   </div>
