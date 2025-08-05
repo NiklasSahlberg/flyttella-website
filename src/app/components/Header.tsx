@@ -466,9 +466,9 @@ export default function Header() {
               </button>
 
             {/* Menu Content */}
-            <div className="h-full overflow-y-auto pt-20 pb-8 px-6 flex flex-col items-center text-center">
+            <div className="h-full overflow-y-auto pt-16 pb-6 px-6 flex flex-col items-center text-center">
               {/* Logo */}
-              <div className="mb-8">
+              <div className="mb-6">
                 <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
                 <Image
                   src="/flyttella-logo.png"
@@ -481,41 +481,41 @@ export default function Header() {
               </div>
 
               {/* Navigation */}
-              <nav className="space-y-3 w-full max-w-sm">
+              <nav className="space-y-2 w-full max-w-sm">
                   <Link
                   href="/om-oss"
-                  className="block py-2 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-1 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                   {t('header.about')}
                   </Link>
                 <Link
                   href="/faq"
-                  className="block py-2 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-1 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.faq')}
                 </Link>
                 <Link
                   href="/blogg"
-                  className="block py-2 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-1 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.blog')}
                 </Link>
                 <Link
                   href="/kontakt"
-                  className="block py-2 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-1 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.contact')}
                 </Link>
 
                 {/* Services Section (Mobile) */}
-                <div className="py-2 w-full max-w-sm">
+                <div className="py-1 w-full max-w-sm">
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                    className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-1 relative"
                   >
                     <span>{t('header.movingServices')}</span>
                     <svg
@@ -529,52 +529,52 @@ export default function Header() {
                     </svg>
                 </button>
                 {isMobileServicesOpen && (
-                    <div className="mt-2 space-y-2 text-center">
+                    <div className="mt-1 space-y-1 text-center">
                       <Link
                         href="/bohagsflytt"
-                        className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Bohagsflytt
                       </Link>
                       <Link
                         href="/barhjalp"
-                        className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Bärhjälp
                       </Link>
                       <Link
                         href="/piano-tunglyft"
-                        className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Piano/Tunglyft
                       </Link>
                       <Link
                         href="/bortforsling"
-                        className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Bortforsling
                       </Link>
                       <Link
                         href="/magasinering"
-                        className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Magasinering
                       </Link>
                       <Link
                         href="/utlandsflytt"
-                        className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Utlandsflytt
                       </Link>
                       <Link
                         href="/tjanster"
-                        className="block py-2 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
+                        className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Se alla våra flyttjänster
@@ -583,10 +583,10 @@ export default function Header() {
                 )}
                 </div>
                 {/* Cleaning Services Section (Mobile) */}
-                <div className="py-2 w-full max-w-sm">
+                <div className="py-1 w-full max-w-sm">
                   <button
                     onClick={() => setIsMobileCleaningOpen(!isMobileCleaningOpen)}
-                    className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                    className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-1 relative"
                   >
                     <span>{t('header.cleaningServices')}</span>
                     <svg
@@ -600,24 +600,24 @@ export default function Header() {
                     </svg>
                 </button>
                 {isMobileCleaningOpen && (
-                  <div className="mt-2 space-y-2 text-center">
+                  <div className="mt-1 space-y-1 text-center">
                     <Link
                       href="/flyttstadning"
-                      className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Flyttstädning
                     </Link>
                     <Link
                       href="/kontorsstadning"
-                      className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Kontorsstädning
                     </Link>
                     <Link
                       href="/stadtjanster"
-                      className="block py-2 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
+                      className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Se alla våra städtjänster
@@ -626,10 +626,10 @@ export default function Header() {
                 )}
                 </div>
                 {/* Företag Mobile Dropdown */}
-                <div className="py-2 w-full max-w-sm">
+                <div className="py-1 w-full max-w-sm">
                   <button
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                    className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-1 relative"
                   >
                     <span>{t('header.business')}</span>
                     <svg
@@ -643,31 +643,31 @@ export default function Header() {
                     </svg>
                 </button>
                 {isDropdownOpen && (
-                  <div className="mt-2 space-y-2 text-center">
+                  <div className="mt-1 space-y-1 text-center">
                     <Link
                       href="/kontorsflytt"
-                      className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Kontorsflytt
                     </Link>
                     <Link
                       href="/kontorsstadning"
-                      className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Kontorsstädning
                     </Link>
                     <Link
                       href="/bemanning"
-                      className="block py-2 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Bemanning och underentreprenad
                     </Link>
                     <Link
                       href="/foretag"
-                      className="block py-2 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
+                      className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {t('header.seeAllBusiness')}
@@ -678,9 +678,9 @@ export default function Header() {
               </nav>
 
               {/* Language Toggle for Mobile */}
-              <div className="py-4 border-t border-gray-200">
+              <div className="py-1 border-t border-gray-200">
                 <div className="text-center">
-                  <span className="text-xl font-medium text-[#0F172A] block mb-3">{t('common.language')}</span>
+                  <span className="text-xl font-medium text-[#0F172A] block mb-1">{t('common.language')}</span>
                   <div className="flex justify-center items-center space-x-6">
                     <button
                       onClick={() => setLocale('sv')}
@@ -711,10 +711,10 @@ export default function Header() {
               </div>
 
               {/* Divider */}
-              <div className="my-6 border-t border-gray-200"></div>
+              <div className="my-1 border-t border-gray-200"></div>
 
               {/* Social Media Buttons */}
-              <div className="flex items-center justify-center space-x-4 py-4">
+              <div className="flex items-center justify-center space-x-4 py-2">
                 <a 
                   href="https://www.facebook.com/flyttella" 
                   target="_blank" 
@@ -740,20 +740,13 @@ export default function Header() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <Link
                   href="/fa-offert"
-                  className="block w-full py-3 text-center text-lg font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
+                  className="block w-full py-4 px-6 text-center text-xl font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Få offert
-                </Link>
-                <Link
-                  href="/fa-stadning-offert"
-                  className="block w-full py-3 text-center text-lg font-bold text-[#10B981] bg-[#E6FCF4] rounded-full border border-[#10B981] hover:bg-[#CFF6EA] transition shadow-md"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Städoffert
                 </Link>
               </div>
               </div>
