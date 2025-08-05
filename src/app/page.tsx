@@ -229,25 +229,25 @@ const AutoSlidingCards = () => {
               {/* Mobile: Pyramid layout */}
               <div className="md:hidden flex flex-col items-center">
                 {/* Top badge - centered */}
-                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8 ml-4">
+                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-10 ml-4">
                   <Image
                     src="/1000reviewspicture.png"
                     alt="1000+ positiva recensioner från kunder"
-                    width={160}
-                    height={160}
-                    className="object-contain h-32 w-32"
+                    width={220}
+                    height={220}
+                    className="object-contain h-44 w-44"
                     priority={false}
                   />
                 </motion.div>
                 {/* Bottom row - two badges */}
-            <div className="flex items-center justify-center gap-5">
+            <div className="flex items-center justify-center gap-6">
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
                       src="/recommendedcompany2.png"
                       alt="Rekommenderad flyttfirma - Flyttella"
-                      width={120}
-                      height={120}
-                      className="object-contain h-28 w-28"
+                      width={180}
+                      height={180}
+                      className="object-contain h-40 w-40"
                       priority={false}
                     />
                   </motion.div>
@@ -255,9 +255,9 @@ const AutoSlidingCards = () => {
                     <Image
                       src="/bestinswedenbadge-modified.png"
                       alt="Top 10 flyttfirma - Flyttella"
-                      width={140}
-                      height={140}
-                      className="object-contain h-24 w-24"
+                      width={200}
+                      height={200}
+                      className="object-contain h-32 w-32"
                       priority={false}
                     />
                   </motion.div>
@@ -302,8 +302,8 @@ const AutoSlidingCards = () => {
         </motion.div>
       </div>
       
-      {/* Bottom gradient fade - enhanced to completely hide container lines */}
-      <div className="absolute bottom-0 left-0 w-full h-48 z-30 pointer-events-none"
+      {/* Bottom gradient fade - mobile only, shorter */}
+      <div className="absolute bottom-0 left-0 w-full h-24 md:h-48 z-30 pointer-events-none"
            style={{
              background: 'linear-gradient(to top, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0) 100%)'
            }}
@@ -1071,7 +1071,7 @@ export default function Home() {
         {/* 6. Våra fördelar */}
         {/* Responsive zoom wrapper for wide screens */}
         <div className="responsive-zoom">
-          <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
+          <div className="pt-8 md:pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
             <div className="mx-auto px-0 md:px-24">
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-4 md:p-8">
                 <div className="flex flex-col lg:flex-row items-stretch gap-4 md:gap-8 h-full">

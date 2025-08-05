@@ -121,7 +121,7 @@ export default function Header() {
     <>
     <header className="sticky top-0 z-50">
       {/* Contact Bar */}
-      <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white">
+      <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hidden md:block">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:justify-between items-center py-2 md:py-0 md:h-8">
             <div className="hidden md:flex flex-col md:flex-row md:items-center md:divide-x divide-white/20 space-y-1 md:space-y-0">
@@ -179,36 +179,32 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="bg-white/95 backdrop-blur-sm shadow-sm hidden md:block">
+      <div className="bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-20 relative">
-            {/* Logo and Language Toggle - centered on mobile, left on desktop */}
+          <div className="flex justify-between items-center h-12 md:h-20 relative">
+            {/* Logo - centered on mobile, left on desktop */}
             <div className="flex-1 flex justify-center md:justify-start items-center relative">
-                              <div className="flex items-center gap-4">
-                  <Link href="/" className="cursor-pointer">
-                    <div className="relative h-16 w-32 md:h-20 md:w-96 mx-auto">
-                      <Image
-                        src="/flyttella-logo.png"
-                        alt="Flyttella Logo"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
-                    </div>
-                  </Link>
+              <Link href="/" className="cursor-pointer">
+                <div className="relative h-12 w-24 md:h-20 md:w-96 mx-auto">
+                  <Image
+                    src="/flyttella-logo.png"
+                    alt="Flyttella Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
+              </Link>
             </div>
-            {/* Mobile controls - hamburger menu and language toggle */}
-            <div className="md:hidden flex items-center gap-2">
-              {/* Language Toggle for mobile */}
-              <LanguageToggle currentLocale={locale} onLocaleChange={setLocale} />
+            {/* Mobile controls - hamburger menu only */}
+            <div className="md:hidden flex items-center">
               {/* Hamburger menu */}
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="text-[#0F172A] hover:text-[#10B981] transition-colors p-2"
+                className="text-[#0F172A] hover:text-[#10B981] transition-colors p-1"
                 aria-label="Öppna meny"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
