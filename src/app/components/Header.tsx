@@ -22,6 +22,7 @@ export default function Header() {
   const businessDropdownRef = useRef<HTMLDivElement>(null);
   const [isCleaningOpen, setIsCleaningOpen] = useState(false);
   const [isMobileCleaningOpen, setIsMobileCleaningOpen] = useState(false);
+  const [isMobileFlyttOpen, setIsMobileFlyttOpen] = useState(false);
   const [isMobileScrolled, setIsMobileScrolled] = useState(false);
   // Add cleaning dropdown timeout logic
   const cleaningTimeoutRef = useRef<NodeJS.Timeout>();
@@ -473,51 +474,51 @@ export default function Header() {
                 <Image
                   src="/flyttella-logo.png"
                   alt="Flyttella Logo"
-                  width={140}
-                  height={36}
-                  className="h-10 w-auto"
+                  width={220}
+                  height={56}
+                  className="h-16 w-auto"
                 />
               </Link>
               </div>
 
               {/* Navigation */}
-              <nav className="space-y-2 w-full max-w-sm">
+              <nav className="space-y-3 w-full max-w-sm">
                   <Link
                   href="/om-oss"
-                  className="block py-1 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-2 text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                   {t('header.about')}
                   </Link>
                 <Link
                   href="/faq"
-                  className="block py-1 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-2 text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.faq')}
                 </Link>
                 <Link
                   href="/blogg"
-                  className="block py-1 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-2 text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.blog')}
                 </Link>
                 <Link
                   href="/kontakt"
-                  className="block py-1 text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-2 text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.contact')}
                 </Link>
 
-                {/* Services Section (Mobile) */}
-                <div className="py-1 w-full max-w-sm">
+                {/* Våra Tjänster Section (Mobile) */}
+                <div className="py-2 w-full max-w-sm">
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-1 relative"
+                    className="flex items-center justify-center w-full text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
                   >
-                    <span>{t('header.movingServices')}</span>
+                    <span>Våra tjänster</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`h-5 w-5 transition-transform absolute right-0 ${isMobileServicesOpen ? 'rotate-180' : ''}`}
@@ -529,149 +530,175 @@ export default function Header() {
                     </svg>
                 </button>
                 {isMobileServicesOpen && (
-                    <div className="mt-1 space-y-1 text-center">
-                      <Link
-                        href="/bohagsflytt"
-                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Bohagsflytt
-                      </Link>
-                      <Link
-                        href="/barhjalp"
-                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Bärhjälp
-                      </Link>
-                      <Link
-                        href="/piano-tunglyft"
-                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Piano/Tunglyft
-                      </Link>
-                      <Link
-                        href="/bortforsling"
-                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Bortforsling
-                      </Link>
-                      <Link
-                        href="/magasinering"
-                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Magasinering
-                      </Link>
-                      <Link
-                        href="/utlandsflytt"
-                        className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Utlandsflytt
-                      </Link>
-                      <Link
-                        href="/tjanster"
-                        className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Se alla våra flyttjänster
-                      </Link>
-                  </div>
-                )}
-                </div>
-                {/* Cleaning Services Section (Mobile) */}
-                <div className="py-1 w-full max-w-sm">
-                  <button
-                    onClick={() => setIsMobileCleaningOpen(!isMobileCleaningOpen)}
-                    className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-1 relative"
-                  >
-                    <span>{t('header.cleaningServices')}</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`h-5 w-5 transition-transform absolute right-0 ${isMobileCleaningOpen ? 'rotate-180' : ''}`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                {isMobileCleaningOpen && (
-                  <div className="mt-1 space-y-1 text-center">
-                    <Link
-                      href="/flyttstadning"
-                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Flyttstädning
-                    </Link>
-                    <Link
-                      href="/kontorsstadning"
-                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Kontorsstädning
-                    </Link>
-                    <Link
-                      href="/stadtjanster"
-                      className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Se alla våra städtjänster
-                    </Link>
-                  </div>
-                )}
-                </div>
-                {/* Företag Mobile Dropdown */}
-                <div className="py-1 w-full max-w-sm">
-                  <button
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-1 relative"
-                  >
-                    <span>{t('header.business')}</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`h-5 w-5 transition-transform absolute right-0 ${isDropdownOpen ? 'rotate-180' : ''}`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                {isDropdownOpen && (
-                  <div className="mt-1 space-y-1 text-center">
-                    <Link
-                      href="/kontorsflytt"
-                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Kontorsflytt
-                    </Link>
-                    <Link
-                      href="/kontorsstadning"
-                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Kontorsstädning
-                    </Link>
-                    <Link
-                      href="/bemanning"
-                      className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Bemanning och underentreprenad
-                    </Link>
-                    <Link
-                      href="/foretag"
-                      className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {t('header.seeAllBusiness')}
-                    </Link>
+                    <div className="mt-2 space-y-2 text-center">
+                      {/* Flyttjänster Subsection */}
+                      <div className="py-1">
+                        <button
+                          onClick={() => setIsMobileFlyttOpen(!isMobileFlyttOpen)}
+                          className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                        >
+                          <span>Flyttjänster</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={`h-4 w-4 transition-transform absolute right-0 ${isMobileFlyttOpen ? 'rotate-180' : ''}`}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        {isMobileFlyttOpen && (
+                          <div className="mt-1 space-y-1 text-center">
+                            <Link
+                              href="/bohagsflytt"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Bohagsflytt
+                            </Link>
+                            <Link
+                              href="/barhjalp"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Bärhjälp
+                            </Link>
+                            <Link
+                              href="/piano-tunglyft"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Piano/Tunglyft
+                            </Link>
+                            <Link
+                              href="/bortforsling"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Bortforsling
+                            </Link>
+                            <Link
+                              href="/magasinering"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Magasinering
+                            </Link>
+                            <Link
+                              href="/utlandsflytt"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Utlandsflytt
+                            </Link>
+                            <Link
+                              href="/tjanster"
+                              className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Se alla våra flyttjänster
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Städtjänster Subsection */}
+                      <div className="py-1">
+                        <button
+                          onClick={() => setIsMobileCleaningOpen(!isMobileCleaningOpen)}
+                          className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                        >
+                          <span>Städtjänster</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={`h-4 w-4 transition-transform absolute right-0 ${isMobileCleaningOpen ? 'rotate-180' : ''}`}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        {isMobileCleaningOpen && (
+                          <div className="mt-1 space-y-1 text-center">
+                            <Link
+                              href="/flyttstadning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Flyttstädning
+                            </Link>
+                            <Link
+                              href="/kontorsstadning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Kontorsstädning
+                            </Link>
+                            <Link
+                              href="/stadtjanster"
+                              className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Se alla våra städtjänster
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Företagstjänster Subsection */}
+                      <div className="py-1">
+                        <button
+                          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                          className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                        >
+                          <span>Företagstjänster</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={`h-4 w-4 transition-transform absolute right-0 ${isDropdownOpen ? 'rotate-180' : ''}`}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        {isDropdownOpen && (
+                          <div className="mt-1 space-y-1 text-center">
+                            <Link
+                              href="/kontorsflytt"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Kontorsflytt
+                            </Link>
+                            <Link
+                              href="/kontorsstadning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Kontorsstädning
+                            </Link>
+                            <Link
+                              href="/bemanning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Bemanning och underentreprenad
+                            </Link>
+                            <Link
+                              href="/foretag"
+                              className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Se alla våra företagstjänster
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+
+
                   </div>
                 )}
                 </div>
@@ -689,8 +716,8 @@ export default function Header() {
                       <Image 
                         src="/flags/se.svg" 
                         alt="Svenska" 
-                        width={40} 
-                        height={30} 
+                        width={36} 
+                        height={27} 
                         className={`rounded-sm border-2 shadow-sm ${locale === 'sv' ? 'border-[#10B981]' : 'border-gray-300'}`}
                       />
                     </button>
@@ -701,8 +728,8 @@ export default function Header() {
                       <Image 
                         src="/flags/gb.svg" 
                         alt="English" 
-                        width={40} 
-                        height={30} 
+                        width={36} 
+                        height={27} 
                         className={`rounded-sm border-2 shadow-sm ${locale === 'en' ? 'border-[#10B981]' : 'border-gray-300'}`}
                       />
                     </button>
