@@ -1350,7 +1350,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }}
                       placeholder="Börja skriva din adress"
                       required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg relative z-10${errors.currentAddress ? " border-red-500" : ""}`}
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.currentAddress ? " border-red-500" : ""}`}
                       style={{ WebkitOverflowScrolling: 'touch' }}
                     />
                     {errors.currentAddress && (
@@ -2039,7 +2039,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       onChange={handleInputChange}
                       placeholder="Börja skriva din adress"
                       required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] relative z-10${errors.newAddress ? " border-red-500" : ""}`}
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.newAddress ? " border-red-500" : ""}`}
                       style={{ WebkitOverflowScrolling: 'touch' }}
                     />
                     {errors.newAddress && (
