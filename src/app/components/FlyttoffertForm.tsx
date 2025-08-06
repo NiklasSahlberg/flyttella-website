@@ -2505,7 +2505,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           <select
                             name="heavyItemType"
                             id="heavyItemType"
-                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none"
                             onChange={(e) => {
                               if (e.target.value === "other") {
                                 setShowCustomItemModal(true);
