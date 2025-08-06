@@ -777,7 +777,7 @@ export default function Home() {
               whileInView="animate"
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center lg:mr-60">{t('about.title')}</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60">{t('about.title')}</h3>
               
               {/* Text content only - image moved outside section on mobile */}
               <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
@@ -1620,19 +1620,19 @@ export default function Home() {
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('tips.title')}</h2>
                 
-                <div className="space-y-8 md:space-y-16">
+                <div className="space-y-4 md:space-y-16">
                   
                   {/* Innan flytten */}
                   <div>
                     {/* Mobile: Expandable section header */}
-                    <div className="md:hidden mb-6">
+                    <div className="md:hidden mb-4">
                       <button
                         onClick={() => setExpandedTipSection(expandedTipSection === 'innan' ? null : 'innan')}
-                        className="w-full flex items-center justify-between bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow"
+                        className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
-                        <h3 className="text-xl font-bold text-black">Innan flytten</h3>
+                        <h3 className="text-xl font-bold text-white">Innan flytten</h3>
                         <svg 
-                          className={`w-6 h-6 transition-transform ${expandedTipSection === 'innan' ? 'rotate-180' : ''}`}
+                          className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'innan' ? 'rotate-180' : ''}`}
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"
@@ -1709,14 +1709,14 @@ export default function Home() {
                   {/* Under flytten */}
                   <div>
                     {/* Mobile: Expandable section header */}
-                    <div className="md:hidden mb-6">
+                    <div className="md:hidden mb-4">
                       <button
                         onClick={() => setExpandedTipSection(expandedTipSection === 'under' ? null : 'under')}
-                        className="w-full flex items-center justify-between bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow"
+                        className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
-                        <h3 className="text-xl font-bold text-black">Under flytten</h3>
+                        <h3 className="text-xl font-bold text-white">Under flytten</h3>
                         <svg 
-                          className={`w-6 h-6 transition-transform ${expandedTipSection === 'under' ? 'rotate-180' : ''}`}
+                          className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'under' ? 'rotate-180' : ''}`}
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"
@@ -1771,14 +1771,14 @@ export default function Home() {
                   {/* Efter flytten */}
                   <div>
                     {/* Mobile: Expandable section header */}
-                    <div className="md:hidden mb-6">
+                    <div className="md:hidden mb-4">
                       <button
                         onClick={() => setExpandedTipSection(expandedTipSection === 'efter' ? null : 'efter')}
-                        className="w-full flex items-center justify-between bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow"
+                        className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
-                        <h3 className="text-xl font-bold text-black">Efter flytten</h3>
+                        <h3 className="text-xl font-bold text-white">Efter flytten</h3>
                         <svg 
-                          className={`w-6 h-6 transition-transform ${expandedTipSection === 'efter' ? 'rotate-180' : ''}`}
+                          className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'efter' ? 'rotate-180' : ''}`}
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"
@@ -1837,19 +1837,19 @@ export default function Home() {
           </section>
 
           {/* Blog Post Section */}
-          <section className="py-16 bg-gray-50">
-            <div className="w-full px-6">
+          <section className="py-8 md:py-16 bg-gray-50">
+            <div className="w-full px-4 md:px-6">
               <div className="w-full">
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+                <div className="text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
                     Läs gärna vår blogg
                   </h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
                     Få värdefulla tips och råd för en smidig flytt
                   </p>
                 </div>
                 <div className="max-w-6xl mx-auto">
-                  <div className="grid md:grid-cols-1 gap-2">
+                  <div className="grid md:grid-cols-1 gap-4 md:gap-2">
                     {/* Single Blog Article Card */}
                     <motion.div 
                       className="bg-white rounded-2xl shadow-lg overflow-hidden"
@@ -1858,45 +1858,45 @@ export default function Home() {
                       transition={{ duration: 0.6 }}
                       viewport={{ once: true }}
                     >
-                      <div className="md:flex h-full items-stretch">
-                        <div className="md:w-1/3 h-full">
+                      <div className="flex flex-col md:flex-row h-full items-stretch">
+                        <div className="w-full md:w-1/3 h-48 md:h-full">
                           <img 
                             src="/tipsforflytt.jpg" 
                             alt="Flytttips Stockholm" 
                             className="w-full h-full object-cover object-[60%_center]"
                           />
                         </div>
-                        <div className="md:w-2/3 p-6">
-                          <div className="flex items-center mb-4">
-                            <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 rounded-full text-base font-medium">
+                        <div className="w-full md:w-2/3 p-4 md:p-6">
+                          <div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
+                            <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
                               Flytttips
                             </span>
-                            <span className="text-gray-500 text-base ml-4">5 min läsning</span>
+                            <span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
                           </div>
-                          <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
+                          <h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
                             Vad bör du tänka på när du väljer en seriös flyttfirma
                           </h3>
-                          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                          <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
                             Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.
                           </p>
-                          <div className="flex items-center justify-between">
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
                             <div className="flex items-center">
-                              <div className="w-10 h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
-                                <span className="text-white font-bold text-sm">FE</span>
+                              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
+                                <span className="text-white font-bold text-xs md:text-sm">FE</span>
                               </div>
                               <div className="ml-3">
-                                <p className="text-base font-medium text-[#0F172A]">Flyttella Expert</p>
-                                <p className="text-sm text-gray-500">Flyttspecialist i Stockholm</p>
+                                <p className="text-sm md:text-base font-medium text-[#0F172A]">Flyttella Expert</p>
+                                <p className="text-xs md:text-sm text-gray-500">Flyttspecialist i Stockholm</p>
                               </div>
                             </div>
                             <Link 
                               href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
-                              className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-base group"
+                              className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
                             >
                               Läs mer
                               <svg 
                                 xmlns="http://www.w3.org/2000/svg" 
-                                className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                                className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
                                 fill="none" 
                                 viewBox="0 0 24 24" 
                                 stroke="currentColor"
@@ -1910,15 +1910,15 @@ export default function Home() {
                     </motion.div>
                   </div>
                 </div>
-                <div className="text-center mt-12">
+                <div className="text-center mt-8 md:mt-12">
                   <Link 
                     href="/blogg" 
-                    className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-6 py-3 rounded-full font-medium group shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base"
                   >
                     Se alla artiklar om flytt
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"

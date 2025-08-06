@@ -216,11 +216,14 @@ export default function Header() {
                     </div>
                   </Link>
                 ) : (
-                  <Link href="/#form" className="cursor-pointer">
+                  <button 
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    className="cursor-pointer"
+                  >
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-lg">
                       Få offert
                     </div>
-                  </Link>
+                  </button>
                 )}
                 </div>
             </div>
@@ -430,15 +433,15 @@ export default function Header() {
               {/* Quote Button Dropdown */}
               <div className="relative">
                 {showQuoteButton && (
-                  <Link 
-                    href="/services"
+                  <button 
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity flex items-center"
                   >
                     FÅ OFFERT
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </Link>
+                  </button>
                 )}
               </div>
             </div>
@@ -768,13 +771,15 @@ export default function Header() {
 
               {/* CTA Buttons */}
               <div className="space-y-2">
-                <Link
-                  href="/fa-offert"
+                <button
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setIsMobileMenuOpen(false);
+                  }}
                   className="block w-full py-4 px-6 text-center text-xl font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Få offert
-                </Link>
+                </button>
               </div>
               </div>
             </div>

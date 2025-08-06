@@ -146,45 +146,45 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-gray-100 border-t-4 border-[#10B981]">
-      <div className="max-w-7xl mx-auto px-4 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-7 gap-6">
+      <div className="max-w-7xl mx-auto px-4 py-8 md:py-14">
+        <div className="grid grid-cols-2 md:grid-cols-7 gap-6 md:gap-6">
           {/* Company Info */}
-          <div className="space-y-4">
-            <Link href="/" className="block">
+          <div className="space-y-3 md:space-y-4 col-span-2 md:col-span-1">
+            <Link href="/" className="block flex justify-center">
               <Image
                 src="/flyttella-logo.png"
                 alt="Flyttella logotyp"
                 width={120}
                 height={40}
-                className="mb-4 drop-shadow-lg"
+                className="mb-3 md:mb-4 drop-shadow-lg"
               />
             </Link>
-            <p className="text-sm text-gray-200">
+            <p className="text-xs md:text-sm text-gray-200 leading-relaxed">
               Din pålitliga flyttpartner i Stockholm. Vi erbjuder professionella flyttjänster med fokus på kvalitet och kundnöjdhet.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Snabblänkar</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-3 md:mb-4 text-white text-sm md:text-base">Snabblänkar</h3>
+            <ul className="space-y-1 md:space-y-2">
               <li>
-                <Link href="/" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Hem
                 </Link>
               </li>
               <li>
-                <Link href="/tjanster" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/tjanster" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Tjänster
                 </Link>
               </li>
               <li>
-                <Link href="/om-oss" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/om-oss" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Om oss
                 </Link>
               </li>
               <li>
-                <Link href="/kontakt" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/kontakt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Kontakt
                 </Link>
               </li>
@@ -193,35 +193,35 @@ export default function Footer() {
 
           {/* Flyttjänster */}
           <div>
-            <h3 className="font-semibold mb-3 text-white">Våra Flyttjänster</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Våra Flyttjänster</h3>
             <ul className="space-y-1">
               <li>
-                <Link href="/bohagsflytt" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/bohagsflytt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Bohagsflytt
                 </Link>
               </li>
               <li>
-                <Link href="/barhjalp" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/barhjalp" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Bärhjälp
                 </Link>
               </li>
               <li>
-                <Link href="/piano-tunglyft" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/piano-tunglyft" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Piano/Tunglyft
                 </Link>
               </li>
               <li>
-                <Link href="/bortforsling" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/bortforsling" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Bortforsling
                 </Link>
               </li>
               <li>
-                <Link href="/magasinering" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/magasinering" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Magasinering
                 </Link>
               </li>
               <li>
-                <Link href="/utlandsflytt" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/utlandsflytt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Utlandsflytt
                 </Link>
               </li>
@@ -230,35 +230,35 @@ export default function Footer() {
 
           {/* Städtjänster */}
           <div>
-            <h3 className="font-semibold mb-3 text-white">Städtjänster</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Städtjänster</h3>
             <ul className="space-y-1">
               <li>
-                <Link href="/flyttstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/flyttstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Flyttstädning
                 </Link>
               </li>
               <li>
-                <Link href="/hemstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/hemstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Hemstädning
                 </Link>
               </li>
               <li>
-                <Link href="/storstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/storstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Storstädning
                 </Link>
               </li>
               <li>
-                <Link href="/byggstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/byggstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Byggstädning
                 </Link>
               </li>
               <li>
-                <Link href="/visningsstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/visningsstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Visningsstädning
                 </Link>
               </li>
               <li>
-                <Link href="/dodsbostadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/dodsbostadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Dödsbostädning
                 </Link>
               </li>
@@ -267,20 +267,20 @@ export default function Footer() {
 
           {/* Business Services */}
           <div>
-            <h3 className="font-semibold mb-3 text-white">Företagstjänster</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Företagstjänster</h3>
             <ul className="space-y-1">
               <li>
-                <Link href="/kontorsflytt" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/kontorsflytt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Kontorsflytt
                 </Link>
               </li>
               <li>
-                <Link href="/kontorsstadning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/kontorsstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Kontorsstädning
                 </Link>
               </li>
               <li>
-                <Link href="/bemanning" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                <Link href="/bemanning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   Bemanning och underentreprenad
                 </Link>
               </li>
@@ -289,12 +289,12 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold mb-3 text-white">Juridisk information</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Juridisk information</h3>
             <ul className="space-y-1">
               <li>
                 <button
                   type="button"
-                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                  className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                   onClick={() => setIsModalOpen(true)}
                 >
                   Allmänna villkor - Flytt
@@ -303,7 +303,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                  className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                   onClick={() => setIsStadModalOpen(true)}
                 >
                   Allmänna villkor - Flyttstäd
@@ -315,7 +315,7 @@ export default function Footer() {
                 <li>
                   <button
                     type="button"
-                    className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                    className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                     onClick={() => setShowMoreLegal(true)}
                   >
                     Se mer
@@ -329,7 +329,7 @@ export default function Footer() {
                   <li>
                     <button
                       type="button"
-                      className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                      className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                       onClick={() => setIsStadPartnerModalOpen(true)}
                     >
                       Villkor Samarbetspartner - Flyttstäd
@@ -338,7 +338,7 @@ export default function Footer() {
                   <li>
                     <button
                       type="button"
-                      className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                      className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                       onClick={() => setIsFlyttPartnerModalOpen(true)}
                     >
                       Villkor Samarbetspartner - Flytt
@@ -347,19 +347,19 @@ export default function Footer() {
                   <li>
                     <button
                       type="button"
-                      className="text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                      className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                       onClick={() => setIsUtlandsflyttModalOpen(true)}
                     >
                       Allmänna villkor - Utlandsflytt
                     </button>
                   </li>
                   <li>
-                    <Link href="/integritetspolicy" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                    <Link href="/integritetspolicy" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                       Integritetspolicy
                     </Link>
                   </li>
                   <li>
-                    <Link href="/cookies" className="text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                    <Link href="/cookies" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                       Cookies
                     </Link>
                   </li>
@@ -370,22 +370,22 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-3 text-white">Kontakta oss</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Kontakta oss</h3>
             <ul className="space-y-1">
-              <li className="flex items-center text-sm text-gray-200">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li className="flex items-center text-xs md:text-sm text-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 md:h-4 md:w-4 mr-2 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 08-898-301
               </li>
-              <li className="flex items-center text-sm text-gray-200">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li className="flex items-center text-xs md:text-sm text-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 md:h-4 md:w-4 mr-2 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 info@flyttella.se
               </li>
-              <li className="flex items-start text-sm text-gray-200">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[#10B981] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li className="flex items-start text-xs md:text-sm text-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 md:h-4 md:w-4 mr-2 text-[#10B981] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -396,9 +396,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-[#10B981]">
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#10B981]">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-300">
+            <p className="text-xs md:text-sm text-gray-300 text-center">
               © {new Date().getFullYear()} Flyttella. Alla rättigheter förbehållna.
             </p>
           </div>
@@ -412,7 +412,7 @@ export default function Footer() {
       {showReportButton && (
         <button
           type="button"
-          className="fixed bottom-6 right-6 z-50 bg-white text-[#0F172A] border border-gray-200 shadow px-4 py-2 rounded-full text-xs opacity-70 hover:opacity-100 transition-all"
+          className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 bg-white text-[#0F172A] border border-gray-200 shadow-lg px-3 py-2 md:px-4 md:py-2 rounded-full text-xs opacity-90 hover:opacity-100 transition-all"
           onClick={() => setIsReportModalOpen(true)}
           aria-label="Anmälan"
         >
