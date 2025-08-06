@@ -558,7 +558,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       return tomorrow.toISOString().split('T')[0];
                     })()}
                     onKeyDown={(e) => e.preventDefault()}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black text-base sm:text-lg ${
                       errors.movingDate ? 'border-red-500' : 'border-gray-300'
                     }`}
                     style={{ backgroundColor: 'white', color: 'black' }}
