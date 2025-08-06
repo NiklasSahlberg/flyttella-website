@@ -779,11 +779,11 @@ export default function Home() {
             >
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center lg:mr-60">{t('about.title')}</h3>
               
-              {/* Image and text layout */}
+              {/* Text content only - image moved outside section on mobile */}
               <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
-                {/* Left: Image - positioned outside container */}
+                {/* Left: Image - desktop only */}
                 <motion.div
-                  className="w-full lg:w-1/5 relative lg:-ml-16 lg:pr-16"
+                  className="hidden lg:block w-full lg:w-1/5 relative lg:-ml-16 lg:pr-16"
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.2 }}
@@ -793,7 +793,7 @@ export default function Home() {
                     delay: 0.2
                   }}
                 >
-                  <div className="relative h-96 lg:h-full w-full md:w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
+                  <div className="relative h-96 lg:h-full w-full lg:w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
                     <Image
                       src="/omoss.jpg"
                       alt="Om Flyttella"
@@ -931,6 +931,23 @@ export default function Home() {
             </motion.div>
           </div>
         </motion.section>
+
+        {/* Mobile: Personal picture card below the section */}
+        <div className="lg:hidden px-4 py-6">
+          <div className="relative h-96 overflow-hidden rounded-3xl shadow-xl">
+            <Image
+              src="/personalpicture.jpg"
+              alt="Flyttella personal"
+              fill
+              className="object-cover rounded-3xl"
+              style={{ 
+                objectPosition: 'center 70%',
+                transform: 'scale(1.0)'
+              }}
+              priority
+            />
+          </div>
+        </div>
 
         {/* 3. Vilka förmåner får du med Flyttella? */}
        
