@@ -2154,7 +2154,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     value={formData.toTypeOfHome}
                     onChange={handleInputChange}
                     required
-                    className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.toTypeOfHome ? " border-red-500" : ""}`}
+                    className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none${errors.toTypeOfHome ? " border-red-500" : ""}`}
                   >
                     <option value="">-- Välj --</option>
                     <option value="lagenhet">Lägenhet</option>
@@ -2207,7 +2207,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       setErrors(prev => ({ ...prev, toFloor: "" }));
                     }}
                     required
-                    className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                    className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none ${
                       errors.toFloor ? "border-red-500" : ""
                     }`}
                   >
@@ -2239,7 +2239,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         setErrors(prev => ({ ...prev, toFloor: "" }));
                       }}
                       required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none ${
                         errors.toFloor ? "border-red-500" : ""
                       }`}
                     >
