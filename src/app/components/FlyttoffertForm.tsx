@@ -1043,7 +1043,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     tomorrow.setDate(tomorrow.getDate() + 1);
                     return tomorrow.toISOString().split('T')[0];
                   })()}
-                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-base sm:text-lg bg-white appearance-none${errors.movingDate ? " border-red-500" : " border-gray-300"}`}
+                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg bg-white appearance-none min-h-[44px] h-[44px]${errors.movingDate ? " border-red-500" : " border-gray-300"}`}
                 />
                 {errors.movingDate && (
                   <p className="mt-1 text-base text-red-600">{errors.movingDate}</p>
