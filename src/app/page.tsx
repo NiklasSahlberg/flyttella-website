@@ -80,7 +80,7 @@ const AutoSlidingCards = () => {
           <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('aboutSection.title')}</h3>
           
           {/* Mobile: Auto-sliding cards */}
-          <div className="md:hidden mt-12">
+          <div className="md:hidden mt-8">
             <div className="relative overflow-hidden rounded-xl">
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
@@ -89,7 +89,7 @@ const AutoSlidingCards = () => {
                 {cards.map((card, index) => (
                   <div key={index} className="w-full flex-shrink-0">
                     <motion.div 
-                      className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full mx-4"
+                      className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2"
                       initial="initial"
                       whileInView="animate"
                       viewport={{ once: true, amount: 0.2 }}
@@ -105,13 +105,13 @@ const AutoSlidingCards = () => {
                         style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
                       />
                       <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                        <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                        <motion.h2 className="text-lg font-bold mb-2 text-white text-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
                           {card.title}
                         </motion.h2>
-                        <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                        <motion.div className="text-3xl font-bold mb-2 text-white text-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
                           {card.count}
                         </motion.div>
-                        <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                        <motion.p className="text-white/90 text-sm text-center leading-relaxed" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
                           {card.description}
                         </motion.p>
                       </div>
@@ -121,12 +121,12 @@ const AutoSlidingCards = () => {
               </div>
               
               {/* Dots indicator */}
-              <div className="flex justify-center mt-4 space-x-2">
+              <div className="flex justify-center mt-3 space-x-2">
                 {cards.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentCard(index)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
+                    className={`w-2.5 h-2.5 rounded-full transition-colors ${
                       index === currentCard ? 'bg-[#10B981]' : 'bg-gray-300'
                     }`}
                   />
@@ -180,23 +180,23 @@ const AutoSlidingCards = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+              <h4 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
                 {t('aboutSection.localExperienceTitle')}
               </h4>
-              <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
+              <p className="text-lg md:text-2xl text-[#0F172A] leading-relaxed mb-3 md:mb-4">
                 {t('aboutSection.localExperienceDesc1')}
               </p>
               {/* Mobile: Läs mer button */}
               {!showFullExperienceText && (
-                <div className="md:hidden mb-4">
+                <div className="md:hidden mb-3">
                   <motion.button
                     onClick={() => setShowFullExperienceText(true)}
-                    className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+                    className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-lg underline decoration-2 underline-offset-4"
                   >
                     Läs mer
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -212,9 +212,9 @@ const AutoSlidingCards = () => {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   transition={{ duration: 0.5 }}
-                  className="space-y-4 mt-4 md:hidden"
+                  className="space-y-3 mt-3 md:hidden"
                 >
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                  <p className="text-lg text-[#0F172A] leading-relaxed">
                     {t('aboutSection.localExperienceDesc2')}
                   </p>
                 </motion.div>
@@ -225,29 +225,29 @@ const AutoSlidingCards = () => {
             </motion.div>
 
             {/* Recommended Company and 1000 Reviews badges under text */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
               {/* Mobile: Pyramid layout */}
               <div className="md:hidden flex flex-col items-center">
                 {/* Top badge - centered */}
-                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-10 ml-4">
+                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
                   <Image
                     src="/1000reviewspicture.png"
                     alt="1000+ positiva recensioner från kunder"
-                    width={220}
-                    height={220}
-                    className="object-contain h-44 w-44"
+                    width={200}
+                    height={200}
+                    className="object-contain h-36 w-36"
                     priority={false}
                   />
                 </motion.div>
                 {/* Bottom row - two badges */}
-            <div className="flex items-center justify-center gap-6">
+                <div className="flex items-center justify-center gap-4">
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
                       src="/recommendedcompany2.png"
                       alt="Rekommenderad flyttfirma - Flyttella"
-                      width={180}
-                      height={180}
-                      className="object-contain h-40 w-40"
+                      width={160}
+                      height={160}
+                      className="object-contain h-32 w-32"
                       priority={false}
                     />
                   </motion.div>
@@ -255,9 +255,9 @@ const AutoSlidingCards = () => {
                     <Image
                       src="/bestinswedenbadge-modified.png"
                       alt="Top 10 flyttfirma - Flyttella"
-                      width={200}
-                      height={200}
-                      className="object-contain h-32 w-32"
+                      width={180}
+                      height={180}
+                      className="object-contain h-28 w-28"
                       priority={false}
                     />
                   </motion.div>

@@ -36,6 +36,8 @@ export default function Footer() {
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [showReportButton, setShowReportButton] = useState(false);
   const [showMoreLegal, setShowMoreLegal] = useState(false);
+  const [showMoreFlytt, setShowMoreFlytt] = useState(false);
+  const [showMoreStad, setShowMoreStad] = useState(false);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -210,21 +212,40 @@ export default function Footer() {
                   Piano/Tunglyft
                 </Link>
               </li>
-              <li>
-                <Link href="/bortforsling" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Bortforsling
-                </Link>
-              </li>
-              <li>
-                <Link href="/magasinering" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Magasinering
-                </Link>
-              </li>
-              <li>
-                <Link href="/utlandsflytt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Utlandsflytt
-                </Link>
-              </li>
+              
+              {/* Show more button - only shows when not expanded */}
+              {!showMoreFlytt && (
+                <li>
+                  <button
+                    type="button"
+                    className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                    onClick={() => setShowMoreFlytt(true)}
+                  >
+                    Se mer
+                  </button>
+                </li>
+              )}
+              
+              {/* Additional flyttjänster links - shown when expanded */}
+              {showMoreFlytt && (
+                <>
+                  <li>
+                    <Link href="/bortforsling" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                      Bortforsling
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/magasinering" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                      Magasinering
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/utlandsflytt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                      Utlandsflytt
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
@@ -247,21 +268,40 @@ export default function Footer() {
                   Storstädning
                 </Link>
               </li>
-              <li>
-                <Link href="/byggstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Byggstädning
-                </Link>
-              </li>
-              <li>
-                <Link href="/visningsstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Visningsstädning
-                </Link>
-              </li>
-              <li>
-                <Link href="/dodsbostadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Dödsbostädning
-                </Link>
-              </li>
+              
+              {/* Show more button - only shows when not expanded */}
+              {!showMoreStad && (
+                <li>
+                  <button
+                    type="button"
+                    className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
+                    onClick={() => setShowMoreStad(true)}
+                  >
+                    Se mer
+                  </button>
+                </li>
+              )}
+              
+              {/* Additional städtjänster links - shown when expanded */}
+              {showMoreStad && (
+                <>
+                  <li>
+                    <Link href="/byggstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                      Byggstädning
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/visningsstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                      Visningsstädning
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/dodsbostadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                      Dödsbostädning
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
