@@ -1031,7 +1031,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   type="date"
                   name="movingDate"
                   value={formData.movingDate}
-                  placeholder="YYYY-MM-DD"
+                  placeholder="yyyy-mm-dd"
                   onChange={(e) => {
                     const selectedDate = e.target.value;
                     setFormData(prev => ({ ...prev, movingDate: selectedDate }));
