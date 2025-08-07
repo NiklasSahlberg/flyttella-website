@@ -2204,7 +2204,7 @@ function FeatureBoxesSection() {
   return (
     <div className="w-full my-4 md:my-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-4xl font-bold text-[#0F172A] text-center mb-2 md:mb-12 mt-2">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-2 md:mb-12 mt-2">
           {t('advantages.title')}
         </h2>
       </div>
