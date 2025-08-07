@@ -752,6 +752,16 @@ export default function Home() {
               zIndex: 0,
             }}
           />
+          {/* Mobile-specific background positioning */}
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-no-repeat md:hidden"
+            style={{
+              backgroundImage: 'url(/efter_flytt.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'right center',
+              zIndex: 0,
+            }}
+          />
           {/* Overlay absolutely positioned, full width */}
           <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
           
