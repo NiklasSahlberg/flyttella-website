@@ -1036,10 +1036,10 @@ export default function Home() {
                           textClass: ""
                         },
                         {
-                          icon: <div className="ml-3 mt-8"><PhoneCallLottie /></div>,
+                          icon: <div className="ml-3 mt-4 md:mt-8"><PhoneCallLottie /></div>,
                           title: "Personlig kontakt",
                           description: "Vi ringer samma dag eller dagen efter",
-                          containerClass: "-mt-7",
+                          containerClass: "-mt-3 md:-mt-7",
                           textClass: ""
                         },
                         {

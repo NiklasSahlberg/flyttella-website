@@ -188,7 +188,39 @@ export default function Bohagsflytt() {
       <div className="main-zoom">
         {/* Hero Section - Matching start page design */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          <div className="mx-auto px-16">
+          {/* Mobile: Form only */}
+          <div className="md:hidden mx-auto px-4 pb-8">
+            <FlyttoffertForm mode="widget" />
+          </div>
+          
+          {/* Mobile: Hero content after form */}
+          <div className="md:hidden mx-auto px-4 py-6">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 relative overflow-hidden">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{
+                  backgroundImage: 'url(/coupleMoving.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center 30%'
+                }}
+              />
+              <div className="relative z-10 text-center space-y-4">
+                <h1 className="text-4xl font-bold">
+                  {t('bohagsflytt.hero.title')}
+                </h1>
+                <p className="text-xl">
+                  {t('bohagsflytt.hero.subtitle')}
+                </p>
+                <p className="text-lg text-white/90">
+                  {t('bohagsflytt.hero.description')}
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Desktop: Full hero section */}
+          <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
@@ -220,7 +252,7 @@ export default function Bohagsflytt() {
         </div>
 
         {/* What is Bohagsflytt Section */}
-        <section className="py-16 bg-white">
+        <section className="py-0 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               {/* Reco Widget - Positioned absolutely to the right */}
@@ -235,10 +267,10 @@ export default function Bohagsflytt() {
                             </div>
               
               {/* Mobile Reco Widget */}
-              <div className="block lg:hidden mb-8">
+              <div className="block lg:hidden mb-0">
                 <iframe 
                   src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=true&reviews=5"
-                  className="w-full h-[900px] border-0"
+                  className="w-full h-[150px] border-0"
                   title="Flyttella recensioner"
                 />
                               </div>
@@ -409,7 +441,7 @@ export default function Bohagsflytt() {
 
               {/* Main content - Centered */}
                 <motion.div
-                className="space-y-16"
+                className="space-y-12 md:space-y-16"
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
@@ -425,8 +457,8 @@ export default function Bohagsflytt() {
                   {
                     title: '',
                     content: (
-                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/magkansla.jpg" alt="Magkänsla" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12">
+                        <img src="/magkansla.jpg" alt="Magkänsla" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" />
                   </div>
                     ),
                     icon: '',
@@ -435,11 +467,11 @@ export default function Bohagsflytt() {
                     title: "Vad kostar en bohagsflytt?",
                     content: (
                       <>
-                        <p className="text-gray-700 leading-relaxed text-xl md:text-2xl mb-8 text-center">
+                        <p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-left md:text-center px-4">
                           Priset på en bohagsflytt varierar beroende på faktorer som mängden bohag, avståndet mellan adresserna, våningsplan, tillgång till hiss och eventuella tilläggstjänster som packning eller magasinering. En normal flytt inom samma stad kan kosta från cirka 1 700 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina behov.
                         </p>
-                        <div className="my-16 text-center">
-                          <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
+                        <div className="my-12 md:my-16 text-left md:text-center px-4">
+                          <p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
                             "Allt gick smidigt och tryggt från första kontakt tills allt var på plats. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri flytt!"
                           </p>
                           <p className="italic text-gray-700 mt-2">- Erika</p>
@@ -461,8 +493,8 @@ export default function Bohagsflytt() {
                   {
                     title: '',
                     content: (
-                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/packing_tips.jpg" alt="Packningstips" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12">
+                        <img src="/packing_tips.jpg" alt="Packningstips" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" />
                   </div>
                     ),
                     icon: '',
@@ -475,8 +507,8 @@ export default function Bohagsflytt() {
                   {
                     title: "Checklista vid flytt",
                     content: (
-                      <div>
-                        <ul className="list-disc pl-5 space-y-2">
+                      <div className="px-4 md:px-0">
+                        <ul className="list-disc pl-5 space-y-3 md:space-y-2">
                           <li><strong>Boka flyttfirma i god tid:</strong> Säkerställ att du får det datum som passar dig bäst.</li>
                           <li><strong>Rensa och sortera:</strong> Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li>
                           <li><strong>Beställ flyttkartonger:</strong> Låna eller köp tillräckligt med kartonger och packmaterial.</li>
@@ -502,15 +534,15 @@ export default function Bohagsflytt() {
                   >
                     <div>
                       <div className="max-w-6xl mx-auto">
-                        <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 group-hover:text-[#10B981] transition-colors duration-300 text-center">
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0F172A] mb-4 md:mb-6 group-hover:text-[#10B981] transition-colors duration-300 text-left md:text-center px-4">
                           {section.title}
                     </h3>
                         {typeof section.content === 'string' ? (
-                          <p className={`text-gray-700 leading-relaxed ${section.title === 'Vad är en bohagsflytt?' || section.title === 'Vad är bohagsflytt 2010?' || section.title === 'Flyttkartonger' || section.title === 'Boka flytthjälp i god tid' ? 'text-xl md:text-2xl text-center' : 'text-lg md:text-xl'}`}>
+                          <p className={`text-gray-700 leading-relaxed px-4 ${section.title === 'Vad är en bohagsflytt?' || section.title === 'Vad är bohagsflytt 2010?' || section.title === 'Flyttkartonger' || section.title === 'Boka flytthjälp i god tid' ? 'text-lg md:text-xl lg:text-2xl text-left md:text-center' : 'text-base md:text-lg lg:text-xl'}`}>
                             {section.content}
                           </p>
                         ) : (
-                          <div className="text-gray-700 leading-relaxed text-lg md:text-xl">
+                          <div className="text-gray-700 leading-relaxed text-base md:text-lg lg:text-xl">
                             {section.content}
                   </div>
                         )}
