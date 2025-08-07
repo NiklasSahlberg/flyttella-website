@@ -178,7 +178,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     heavyItems: [],
     hasDelicateItems: "",
     delicateItemsDescription: "",
-    movingDate: "",
+    movingDate: (() => {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      return tomorrow.toISOString().split('T')[0];
+    })(),
     flexibleMovingDate: "",
     needsPacking: false,
     needsStorage: false,
@@ -1031,7 +1035,6 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   type="date"
                   name="movingDate"
                   value={formData.movingDate}
-                  placeholder="yyyy-mm-dd"
                   onChange={(e) => {
                     const selectedDate = e.target.value;
                     setFormData(prev => ({ ...prev, movingDate: selectedDate }));
