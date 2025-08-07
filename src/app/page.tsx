@@ -1106,11 +1106,10 @@ export default function Home() {
         </motion.section>
 
         {/* 6. Våra fördelar */}
-        {/* Responsive zoom wrapper for wide screens */}
-        <div className="responsive-zoom">
-          <div className="pt-8 md:pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
-            <div className="mx-auto px-0 md:px-24">
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-4 md:p-8">
+        <div className="py-8 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 shadow-2xl">
                 <div className="flex flex-col lg:flex-row items-stretch gap-4 md:gap-8 h-full">
                   {/* Left side - Features content */}
                   <div className="flex-[2] w-full md:flex-[2]">
@@ -1360,16 +1359,20 @@ export default function Home() {
         </div>
 
         {/* Mobile Image below container */}
-        <div className="md:hidden">
-          <Image
-            src="/intro_picture.jpg"
-            alt="Flyttella introduktion"
-            width={600}
-            height={400}
-            className="rounded-none shadow-lg object-cover w-full h-80 max-w-none"
-            style={{ objectPosition: '80% 80%' }}
-            priority={false}
-          />
+        <div className="md:hidden mt-6">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <Image
+                src="/intro_picture.jpg"
+                alt="Flyttella introduktion"
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-lg object-cover w-full h-80 max-w-none"
+                style={{ objectPosition: '80% 80%' }}
+                priority={false}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Awards Section */}
