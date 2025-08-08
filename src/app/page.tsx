@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import FlyttoffertForm from './components/FlyttoffertForm';
 import StadningOffertFormCustomAkersberga from './components/StadningOffertFormCustomAkersberga';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Variants } from "framer-motion";
 import Lottie from "lottie-react";
 import LocationsCard from './components/LocationsCard';
@@ -18,14 +18,46 @@ const AutoSlidingCards = () => {
   const { t } = useLanguage();
   const [currentCard, setCurrentCard] = useState(0);
   const [showFullExperienceText, setShowFullExperienceText] = useState(false);
+  const autoIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchStartXRef = useRef<number | null>(null);
+  const touchCurrentXRef = useRef<number | null>(null);
   
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const restartAutoSlide = () => {
+    if (autoIntervalRef.current) clearInterval(autoIntervalRef.current);
+    autoIntervalRef.current = setInterval(() => {
       setCurrentCard((prev) => (prev + 1) % 3);
-    }, 3000); // Change card every 3 seconds
-    
-    return () => clearInterval(interval);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    restartAutoSlide();
+    return () => {
+      if (autoIntervalRef.current) clearInterval(autoIntervalRef.current);
+    };
   }, []);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+    touchCurrentXRef.current = null;
+  };
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchCurrentXRef.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = () => {
+    if (touchStartXRef.current == null || touchCurrentXRef.current == null) return;
+    const deltaX = touchCurrentXRef.current - touchStartXRef.current;
+    const threshold = 50; // px
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX < 0) {
+        setCurrentCard((prev) => (prev + 1) % 3);
+      } else {
+        setCurrentCard((prev) => (prev - 1 + 3) % 3);
+      }
+      restartAutoSlide();
+    }
+    touchStartXRef.current = null;
+    touchCurrentXRef.current = null;
+  };
 
   const cards = [
     {
@@ -91,7 +123,7 @@ const AutoSlidingCards = () => {
           
           {/* Mobile: Auto-sliding cards */}
           <div className="md:hidden mt-8">
-            <div className="relative overflow-hidden rounded-xl">
+            <div className="relative overflow-hidden rounded-xl" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentCard * 100}%)` }}
@@ -134,7 +166,7 @@ const AutoSlidingCards = () => {
               <button
                 type="button"
                 aria-label="Föregående"
-                onClick={() => setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length)}
+                onClick={() => { setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length); restartAutoSlide(); }}
                 className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-[#0F172A]/70 hover:text-[#0F172A] transition-colors p-2 -m-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -144,7 +176,7 @@ const AutoSlidingCards = () => {
               <button
                 type="button"
                 aria-label="Nästa"
-                onClick={() => setCurrentCard((prev) => (prev + 1) % cards.length)}
+                onClick={() => { setCurrentCard((prev) => (prev + 1) % cards.length); restartAutoSlide(); }}
                 className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-[#0F172A]/70 hover:text-[#0F172A] transition-colors p-2 -m-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -602,16 +634,48 @@ export default function Home() {
   const [showFullAboutText, setShowFullAboutText] = useState(false);
   const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
   const totalFeatureCards = 9;
+  const featureIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const featureTouchStartXRef = useRef<number | null>(null);
+  const featureTouchCurrentXRef = useRef<number | null>(null);
   const [expandedTipSection, setExpandedTipSection] = useState<string | null>(null);
 
   // Auto-sliding for feature cards
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const restartFeatureAutoSlide = () => {
+    if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);
+    featureIntervalRef.current = setInterval(() => {
       setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards);
-    }, 4000); // Change card every 4 seconds
-    
-    return () => clearInterval(interval);
+    }, 4000);
+  };
+
+  useEffect(() => {
+    restartFeatureAutoSlide();
+    return () => {
+      if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);
+    };
   }, [totalFeatureCards]);
+
+  const handleFeatureTouchStart = (e: React.TouchEvent) => {
+    featureTouchStartXRef.current = e.touches[0].clientX;
+    featureTouchCurrentXRef.current = null;
+  };
+  const handleFeatureTouchMove = (e: React.TouchEvent) => {
+    featureTouchCurrentXRef.current = e.touches[0].clientX;
+  };
+  const handleFeatureTouchEnd = () => {
+    if (featureTouchStartXRef.current == null || featureTouchCurrentXRef.current == null) return;
+    const deltaX = featureTouchCurrentXRef.current - featureTouchStartXRef.current;
+    const threshold = 50;
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX < 0) {
+        setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards);
+      } else {
+        setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards);
+      }
+      restartFeatureAutoSlide();
+    }
+    featureTouchStartXRef.current = null;
+    featureTouchCurrentXRef.current = null;
+  };
 
   const toggleFAQ = (id: string) => {
     setOpenFAQ(openFAQ === id ? null : id);
@@ -1141,7 +1205,7 @@ export default function Home() {
                     
                     {/* Mobile: Sliding carousel */}
                     <div className="md:hidden">
-                    <div className="relative overflow-hidden rounded-xl">
+                    <div className="relative overflow-hidden rounded-xl" onTouchStart={handleFeatureTouchStart} onTouchMove={handleFeatureTouchMove} onTouchEnd={handleFeatureTouchEnd}>
                         <div 
                           className="flex transition-transform duration-500 ease-in-out"
                           style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}
@@ -1245,7 +1309,7 @@ export default function Home() {
                         <button
                           type="button"
                           aria-label="Föregående"
-                          onClick={() => setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards)}
+                          onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }}
                           className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
                         >
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -1255,7 +1319,7 @@ export default function Home() {
                         <button
                           type="button"
                           aria-label="Nästa"
-                          onClick={() => setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards)}
+                          onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }}
                           className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
                         >
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
