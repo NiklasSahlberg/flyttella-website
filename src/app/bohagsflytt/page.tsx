@@ -202,7 +202,7 @@ export default function Bohagsflytt() {
   ];
 
   return (
-    <main className="overflow-hidden">
+    <main id="top" className="overflow-hidden">
       <div className="main-zoom">
         {/* Hero Section - Matching start page design */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
@@ -575,6 +575,8 @@ export default function Bohagsflytt() {
 
 
 
+        {/* (CTA moved to below Om Flyttella) */}
+
         {/* Om Flyttella Section */}
         <motion.section
           className="relative overflow-hidden"
@@ -595,7 +597,7 @@ export default function Bohagsflytt() {
             style={{
               backgroundImage: 'url(/efter_flytt.jpg)',
               backgroundSize: 'cover',
-              backgroundPosition: 'center center',
+              backgroundPosition: 'center 85%',
               zIndex: 0,
             }}
           />
@@ -801,7 +803,71 @@ export default function Bohagsflytt() {
         {/* Vad tycker våra kunder om oss */}
         <ReviewsWidget />
 
+        {/* Redo att börja din flytt? (duplicate above Om Flyttella) - moved above Om Flyttella */}
+        {/* (Duplicate rendered here above Om Flyttella) */}
+        
+        {/* Removed duplicate second instance of "Redo att börja din flytt?" */}
 
+
+
+        {/* CTA: Redo att börja din flytt? (placed above Service Cards) */}
+        <section className="py-12 bg-white">
+          <div className="mx-auto px-4">
+            <motion.div
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Background pattern */}
+              <motion.div 
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                initial={{ backgroundPosition: '0% 0%' }}
+                animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              <div className="flex items-center gap-4 relative z-10 mb-4">
+                <span className="text-4xl">🚚</span>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    Redo att börja din flytt?
+                  </h3>
+                  <p className="text-lg text-gray-100">
+                    Få en snabb och gratis offert på din bohagsflytt
+                  </p>
+                </div>
+              </div>
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block"
+                >
+                  <Link 
+                    href="#top"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                  >
+                    Få gratis offert
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Service Cards Section */}
         <section className="py-16 bg-white">
@@ -810,10 +876,10 @@ export default function Bohagsflytt() {
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
                 Våra andra huvudtjänster
               </h2>
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 gap-12">
               {/* Flyttstädning Card */}
               <motion.div
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -830,14 +896,17 @@ export default function Bohagsflytt() {
                     backgroundSize: '20px 20px'
                   }}
                 />
-                <div className="flex items-center gap-4 mb-6 relative">
-                  <span className="text-4xl">✨</span>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
+                  <span className="text-4xl md:text-6xl">✨</span>
+                  <h3 className="text-4xl md:text-5xl font-bold text-white">
                     Flyttstädning
                   </h3>
                 </div>
-                <p className="text-lg text-gray-100 mb-6 relative">
+                <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
                   Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.
+                </p>
+                <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
+                  Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 
@@ -847,12 +916,12 @@ export default function Bohagsflytt() {
                   >
                     <Link 
                       href="/flyttstadning" 
-                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
+                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
                     >
                       Läs mer
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                        className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -866,7 +935,7 @@ export default function Bohagsflytt() {
 
               {/* Magasinering Card */}
               <motion.div
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -883,14 +952,17 @@ export default function Bohagsflytt() {
                     backgroundSize: '20px 20px'
                   }}
                 />
-                <div className="flex items-center gap-4 mb-6 relative">
-                  <span className="text-4xl">🏢</span>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
+                  <span className="text-4xl md:text-6xl">🏢</span>
+                  <h3 className="text-4xl md:text-5xl font-bold text-white">
                     Magasinering
                   </h3>
                 </div>
-                <p className="text-lg text-gray-100 mb-6 relative">
+                <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
                   Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.
+                </p>
+                <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
+                  Behöver du magasinera bohag under flyttprocessen? Vi tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan – och kan även hjälpa till med hämtning och återleverans.
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 
@@ -900,12 +972,12 @@ export default function Bohagsflytt() {
                   >
                     <Link 
                       href="/magasinering" 
-                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
+                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
                     >
                       Läs mer
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                        className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -919,7 +991,7 @@ export default function Bohagsflytt() {
 
               {/* Packhjälp Card */}
               <motion.div
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -936,14 +1008,20 @@ export default function Bohagsflytt() {
                     backgroundSize: '20px 20px'
                   }}
                 />
-                <div className="flex items-center gap-4 mb-6 relative">
-                  <span className="text-4xl">📦</span>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
+                  <span className="text-4xl md:text-6xl">📦</span>
+                  <h3 className="text-4xl md:text-5xl font-bold text-white">
                     Packhjälp
                   </h3>
                 </div>
-                <p className="text-lg text-gray-100 mb-6 relative">
+                <p className="text-lg md:text-xl text-gray-100 mb-1 md:mb-8 relative">
                   Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.
+                </p>
+                <p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">
+                  Vi hjälper med märkning och organisering för enklare uppackning.
+                </p>
+                <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
+                  Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med märkning av kartonger och inventarielista för smidig uppackning.
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 
@@ -953,12 +1031,12 @@ export default function Bohagsflytt() {
                   >
                     <Link 
                       href="/barhjalp" 
-                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
+                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
                     >
                       Läs mer
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                        className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -1334,7 +1412,7 @@ export default function Bohagsflytt() {
                   className="inline-block"
                 >
                   <Link 
-                    href="#flytt-offert"
+                    href="#top"
                     className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
                   >
                     Få gratis offert
@@ -1679,35 +1757,35 @@ export default function Bohagsflytt() {
         </motion.section>
 
         {/* Process Section */}
-        <section className="py-16 bg-white relative overflow-hidden">
-          <div className="mx-auto px-24 relative z-10">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-10 mb-8 w-full">
+        <section className="section-padding bg-white relative overflow-hidden">
+          <div className="mx-auto px-0 md:px-24 relative z-10">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full">
               <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
                   {t('bohagsflytt.process.title')}
                 </h2>
 
                 {/* Process Description */}
-                <div className="text-center mb-8">
-                  <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-6 leading-relaxed">
+                <div className="text-center mb-6 md:mb-8 hidden md:block">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
                     {t('bohagsflytt.process.description')}
                   </p>
                 </div>
 
                 {/* Pricing Info */}
-                <div className="text-center mb-8">
-                  <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-4">
+                <div className="text-center mb-4 md:mb-8">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
                     {t('bohagsflytt.process.pricing')}
                   </p>
                 </div>
 
                 {/* Process Flow Section */}
-                <div className="mb-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">{t('bohagsflytt.process.subtitle')}</h3>
+                <div className="mb-4 md:mb-8">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">{t('bohagsflytt.process.subtitle')}</h3>
                   <div className="relative w-full">
                     {/* Timeline connector line */}
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
-                    <div className="grid grid-cols-1 md:grid-cols-6 gap-3 w-full">
+                    <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                       {[
                         {
                           icon: <FillFormLottie />,
@@ -1722,37 +1800,37 @@ export default function Bohagsflytt() {
                           textClass: ""
                         },
                         {
-                          icon: <div className="ml-3 mt-8"><PhoneCallLottie /></div>,
-                          title: t('bohagsflytt.process.steps.2.title'),
-                          description: t('bohagsflytt.process.steps.2.description'),
-                          containerClass: "-mt-7",
-                          textClass: ""
-                        },
-                        {
-                          icon: <div className="ml-6 -mt-0"><SignFormLottie /></div>,
+                          icon: <div className="md:ml-6"><SignFormLottie /></div>,
                           title: t('bohagsflytt.process.steps.3.title'),
                           description: t('bohagsflytt.process.steps.3.description'),
-                          containerClass: "-mt-6",
+                          containerClass: "md:-mt-6",
                           textClass: ""
                         },
                         {
-                          icon: <div className="mr-3"><MovingTruckLottie /></div>,
-                          title: t('bohagsflytt.process.steps.4.title'),
-                          description: t('bohagsflytt.process.steps.4.description'),
-                          containerClass: "-mt-14",
-                          textClass: "-mt-8",
+                          icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
+                          title: t('bohagsflytt.process.steps.2.title'),
+                          description: t('bohagsflytt.process.steps.2.description'),
+                          containerClass: "md:-mt-7",
+                          textClass: ""
                         },
                         {
-                          icon: <div className="mt-0"><HappyCustomerLottie /></div>,
+                          icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
+                          title: t('bohagsflytt.process.steps.4.title'),
+                          description: t('bohagsflytt.process.steps.4.description'),
+                          containerClass: "md:-mt-14",
+                          textClass: "md:-mt-8",
+                        },
+                        {
+                          icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
                           title: t('bohagsflytt.process.steps.5.title'),
                           description: t('bohagsflytt.process.steps.5.description'),
-                          containerClass: "-mt-6",
+                          containerClass: "md:-mt-6",
                           textClass: ""
                         }
                       ].map((step, index) => (
                         <motion.div
                           key={index}
-                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 h-full"
+                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0"
                           initial="initial"
                           whileInView="animate"
                           viewport={{ once: true, amount: 0.2 }}
@@ -1762,10 +1840,10 @@ export default function Bohagsflytt() {
                           {/* Timeline dot */}
                           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
                           <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
-                            <div className="mb-2">{step.icon}</div>
+                            <div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div>
                             <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
-                              <h4 className="text-white font-semibold text-base md:text-lg mb-1 text-center w-full">{step.title}</h4>
-                              <p className="text-white/80 text-sm md:text-base text-center w-full">{step.description}</p>
+                              <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
+                              <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -1785,14 +1863,14 @@ export default function Bohagsflytt() {
 
 
         {/* Blog Post Section (copied from start page) */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+        <section className="py-8 md:py-16 bg-gray-50">
+          <div className="w-full px-4 md:px-6">
+            <div className="w-full">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
                   Läs mer om flytt i Stockholm
                 </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
                   Få värdefulla tips och råd för en smidig flytt
                 </p>
               </div>
@@ -1803,62 +1881,37 @@ export default function Bohagsflytt() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="md:flex">
-                  <div className="md:w-1/3">
+                <div className="flex flex-col md:flex-row h-full items-stretch">
+                  <div className="w-full md:w-1/3 h-48 md:h-full">
                     <img 
                       src="/tipsforflytt.jpg" 
                       alt="Flytttips Stockholm" 
-                      className="w-full h-64 md:h-full object-cover"
+                      className="w-full h-full object-cover object-[60%_center]"
                     />
                   </div>
-                  <div className="md:w-2/3 p-8">
-                    <div className="flex items-center mb-4">
-                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="w-full md:w-2/3 p-4 md:p-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
+                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
                         Flytttips
                       </span>
-                      <span className="text-gray-500 text-sm ml-4">5 min läsning</span>
+                      <span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">
+                    <h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
                       Vad bör du tänka på när du väljer en seriös flyttfirma
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                      Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös flyttfirma som levererar kvalitet och trygghet.
+                    <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
+                      Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.
                     </p>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-sm">FE</span>
-                        </div>
-                        <div className="ml-3">
-                          <p className="text-sm font-medium text-[#0F172A]">Flyttella Expert</p>
-                          <p className="text-sm text-gray-500">Flyttspecialist i Stockholm</p>
-                        </div>
-                      </div>
+                    <div className="flex justify-start sm:justify-between items-center">
+                      <div></div>
                       <Link 
                         href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
-                        className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                        className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
                       >
-                        Läs hela artikeln
+                        Läs mer
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
-                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                    <div className="text-center">
-                      <Link 
-                        href="/blogg" 
-                        className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-6 py-3 rounded-full font-medium group shadow-lg hover:shadow-xl"
-                      >
-                        Se alla artiklar om flytt
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                          className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
                           fill="none" 
                           viewBox="0 0 24 24" 
                           stroke="currentColor"
@@ -1870,6 +1923,23 @@ export default function Bohagsflytt() {
                   </div>
                 </div>
               </motion.div>
+            </div>
+            <div className="text-center mt-8 md:mt-12">
+              <Link 
+                href="/blogg" 
+                className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base"
+              >
+                Se alla artiklar om flytt
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>

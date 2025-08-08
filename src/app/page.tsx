@@ -845,7 +845,7 @@ export default function Home() {
             style={{
               backgroundImage: 'url(/efter_flytt.jpg)',
               backgroundSize: 'cover',
-              backgroundPosition: 'center center',
+              backgroundPosition: 'center 85%',
               zIndex: 0,
             }}
           />
@@ -1100,7 +1100,7 @@ export default function Home() {
                   <div className="relative w-full">
                     {/* Timeline connector line */}
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
-                    <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full">
+                    <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                       {[
                         {
                           icon: <FillFormLottie />,
@@ -1116,37 +1116,37 @@ export default function Home() {
                         },
                         
                         {
-                          icon: <div className="ml-6 -mt-0"><SignFormLottie /></div>,
+                          icon: <div className="md:ml-6"><SignFormLottie /></div>,
                           title: "Signera & bekräfta",
                           description: "Få bokningsbekräftelse direkt",
-                          containerClass: "-mt-6",
+                          containerClass: "md:-mt-6",
                           textClass: ""
                         },
                         {
-                          icon: <div className="ml-3 mt-4 md:mt-8"><PhoneCallLottie /></div>,
+                          icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
                           title: "Personlig kontakt",
                           description: "Vi ringer samma dag eller dagen efter",
-                          containerClass: "-mt-3 md:-mt-7",
+                          containerClass: "md:-mt-7",
                           textClass: ""
                         },
                         {
-                          icon: <div className="mr-3"><MovingTruckLottie /></div>,
+                          icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
                           title: "Flytt genomförd",
                           description: "Vi tar hand om allt",
-                          containerClass: "-mt-14",
-                          textClass: "-mt-8",
+                          containerClass: "md:-mt-14",
+                          textClass: "md:-mt-8",
                         },
                         {
-                          icon: <div className="mt-0"><HappyCustomerLottie /></div>,
+                          icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
                           title: "Nöjd kund",
                           description: "Återkommande kund",
-                          containerClass: "-mt-6",
+                          containerClass: "md:-mt-6",
                           textClass: ""
                         }
                       ].map((step, index) => (
                         <motion.div
                           key={index}
-                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full"
+                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0"
                           initial="initial"
                           whileInView="animate"
                           viewport={{ once: true, amount: 0.2 }}
@@ -1156,7 +1156,7 @@ export default function Home() {
                           {/* Timeline dot */}
                           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
                           <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
-                            <div className="mb-1 md:mb-2">{step.icon}</div>
+                            <div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div>
                             <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
                               <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
                               <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
@@ -1985,16 +1985,8 @@ export default function Home() {
                           <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
                             Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.
                           </p>
-                          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
-                            <div className="flex items-center">
-                              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
-                                <span className="text-white font-bold text-xs md:text-sm">FE</span>
-                              </div>
-                              <div className="ml-3">
-                                <p className="text-sm md:text-base font-medium text-[#0F172A]">Flyttella Expert</p>
-                                <p className="text-xs md:text-sm text-gray-500">Flyttspecialist i Stockholm</p>
-                              </div>
-                            </div>
+                          <div className="flex justify-start sm:justify-between items-center">
+                            <div></div>
                             <Link 
                               href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
                               className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
