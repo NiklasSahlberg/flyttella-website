@@ -167,7 +167,7 @@ const AutoSlidingCards = () => {
                 type="button"
                 aria-label="Föregående"
                 onClick={() => { setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length); restartAutoSlide(); }}
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-[#0F172A]/70 hover:text-[#0F172A] transition-colors p-2 -m-2"
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                   <path fillRule="evenodd" d="M15.78 19.28a.75.75 0 01-1.06 0l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 111.06 1.06L10.56 12l5.22 5.22a.75.75 0 010 1.06z" clipRule="evenodd" />
@@ -177,7 +177,7 @@ const AutoSlidingCards = () => {
                 type="button"
                 aria-label="Nästa"
                 onClick={() => { setCurrentCard((prev) => (prev + 1) % cards.length); restartAutoSlide(); }}
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-[#0F172A]/70 hover:text-[#0F172A] transition-colors p-2 -m-2"
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                   <path fillRule="evenodd" d="M8.22 4.72a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06L13.44 12 8.22 6.78a.75.75 0 010-1.06z" clipRule="evenodd" />
