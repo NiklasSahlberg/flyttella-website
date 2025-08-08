@@ -135,7 +135,7 @@ const AutoSlidingCards = () => {
                 type="button"
                 aria-label="Föregående"
                 onClick={() => setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length)}
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-[#0F172A] shadow rounded-full p-2 transition-colors"
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-[#0F172A]/70 hover:text-[#0F172A] transition-colors p-2 -m-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                   <path fillRule="evenodd" d="M15.78 19.28a.75.75 0 01-1.06 0l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 111.06 1.06L10.56 12l5.22 5.22a.75.75 0 010 1.06z" clipRule="evenodd" />
@@ -145,7 +145,7 @@ const AutoSlidingCards = () => {
                 type="button"
                 aria-label="Nästa"
                 onClick={() => setCurrentCard((prev) => (prev + 1) % cards.length)}
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-[#0F172A] shadow rounded-full p-2 transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-[#0F172A]/70 hover:text-[#0F172A] transition-colors p-2 -m-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                   <path fillRule="evenodd" d="M8.22 4.72a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06L13.44 12 8.22 6.78a.75.75 0 010-1.06z" clipRule="evenodd" />
@@ -601,16 +601,17 @@ export default function Home() {
   const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const [showFullAboutText, setShowFullAboutText] = useState(false);
   const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
+  const totalFeatureCards = 9;
   const [expandedTipSection, setExpandedTipSection] = useState<string | null>(null);
 
   // Auto-sliding for feature cards
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentFeatureCard((prev) => (prev + 1) % 9);
+      setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards);
     }, 4000); // Change card every 4 seconds
     
     return () => clearInterval(interval);
-  }, []);
+  }, [totalFeatureCards]);
 
   const toggleFAQ = (id: string) => {
     setOpenFAQ(openFAQ === id ? null : id);
@@ -1140,7 +1141,7 @@ export default function Home() {
                     
                     {/* Mobile: Sliding carousel */}
                     <div className="md:hidden">
-                      <div className="relative overflow-hidden rounded-xl">
+                    <div className="relative overflow-hidden rounded-xl">
                         <div 
                           className="flex transition-transform duration-500 ease-in-out"
                           style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}
@@ -1240,28 +1241,27 @@ export default function Home() {
                           ))}
                         </div>
                         
-                        {/* Dots indicator */}
-                        <div className="flex justify-center mt-2 md:mt-4 space-x-2">
-                          {[
-                            { icon: "💰", title: "Fast pris" },
-                            { icon: "📋", title: "RUT-avdrag" },
-                            { icon: "📦", title: "Fritt lån av kartonger" },
-                            { icon: "⏰", title: "Omboka kostnadsfritt" },
-                            { icon: "✅", title: "Nöjd kund garanti" },
-                            { icon: "🔒", title: "Trafiktillstånd" },
-                            { icon: "🎓", title: "Utbildad personal" },
-                            { icon: "📈", title: "Ledningssystem" },
-                            { icon: "🦺", title: "Arbetsmiljö" }
-                          ].map((_, index) => (
-                            <button
-                              key={index}
-                              onClick={() => setCurrentFeatureCard(index)}
-                              className={`w-2 h-2 rounded-full transition-colors ${
-                                index === currentFeatureCard ? 'bg-[#10B981]' : 'bg-white/30'
-                              }`}
-                            />
-                          ))}
-                        </div>
+                        {/* Arrow controls */}
+                        <button
+                          type="button"
+                          aria-label="Föregående"
+                          onClick={() => setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards)}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                            <path fillRule="evenodd" d="M15.78 19.28a.75.75 0 01-1.06 0l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 111.06 1.06L10.56 12l5.22 5.22a.75.75 0 010 1.06z" clipRule="evenodd" />
+                          </svg>
+                        </button>
+                        <button
+                          type="button"
+                          aria-label="Nästa"
+                          onClick={() => setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards)}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                            <path fillRule="evenodd" d="M8.22 4.72a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06L13.44 12 8.22 6.78a.75.75 0 010-1.06z" clipRule="evenodd" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                     
