@@ -1116,7 +1116,7 @@ export default function Home() {
                         },
                         
                         {
-                          icon: <div className="md:ml-6"><SignFormLottie /></div>,
+                          icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
                           title: "Signera & bekräfta",
                           description: "Få bokningsbekräftelse direkt",
                           containerClass: "md:-mt-6",

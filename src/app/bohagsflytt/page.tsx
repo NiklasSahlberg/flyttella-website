@@ -831,13 +831,13 @@ export default function Bohagsflytt() {
                   backgroundSize: '20px 20px'
                 }}
               />
-              <div className="flex items-center gap-4 relative z-10 mb-4">
-                <span className="text-4xl">🚚</span>
+              <div className="flex items-center gap-3 md:gap-4 relative z-10 mb-3 md:mb-4">
+                <span className="text-3xl md:text-4xl">🚚</span>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
                     Redo att börja din flytt?
                   </h3>
-                  <p className="text-lg text-gray-100">
+                  <p className="text-base md:text-lg text-gray-100">
                     Få en snabb och gratis offert på din bohagsflytt
                   </p>
                 </div>
@@ -850,12 +850,12 @@ export default function Bohagsflytt() {
                 >
                   <Link 
                     href="#top"
-                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
                     Få gratis offert
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -1800,7 +1800,7 @@ export default function Bohagsflytt() {
                           textClass: ""
                         },
                         {
-                          icon: <div className="md:ml-6"><SignFormLottie /></div>,
+                          icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
                           title: t('bohagsflytt.process.steps.3.title'),
                           description: t('bohagsflytt.process.steps.3.description'),
                           containerClass: "md:-mt-6",
