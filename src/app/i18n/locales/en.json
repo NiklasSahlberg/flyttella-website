@@ -228,4 +228,12 @@
       ]
     }
   }
+  ,
+  "flyttstadning": {
+    "hero": {
+      "title": "Professional move-out cleaning",
+      "subtitle": "Let our experienced team handle the cleaning",
+      "description": "We guarantee a thorough move-out cleaning that meets all requirements. Our professional cleaning service ensures your old home is left in perfect condition."
+    }
+  }
 } 

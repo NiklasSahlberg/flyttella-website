@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 import FlyttoffertForm from '../components/FlyttoffertForm'
+import StadningOffertFormCustomAkersberga from '../components/StadningOffertFormCustomAkersberga'
 import ReviewsWidget from '../components/ReviewsWidget'
 import LocationsCard from '../components/LocationsCard'
 import React, { useEffect, useState } from "react";
@@ -36,7 +37,9 @@ const variants = {
 };
 
 export default function FlyttstadningPage() {
+  const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const [openFAQFlyttstadning, setOpenFAQFlyttstadning] = useState<string | null>(null);
+  const [showFullAboutText, setShowFullAboutText] = useState(false);
   const toggleFAQFlyttstadning = (id: string) => {
     setOpenFAQFlyttstadning(openFAQFlyttstadning === id ? null : id);
   };
@@ -174,7 +177,43 @@ export default function FlyttstadningPage() {
       <div className="main-zoom">
         {/* Hero Section - Matching bohagsflytt design */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          <div className="mx-auto px-16">
+          {/* Mobile: Form only */}
+          <div className="md:hidden mx-auto px-4 pb-8">
+            {selectedServiceType === 'flyttstad' ? (
+              <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
+            ) : (
+              <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
+            )}
+          </div>
+          
+          {/* Mobile: Hero content after form */}
+          <div className="md:hidden mx-auto px-4 py-6">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 relative overflow-hidden">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{
+                  backgroundImage: 'url(/cleaning_background.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center 30%'
+                }}
+              />
+              <div className="relative z-10 text-center space-y-4">
+                <h1 className="text-4xl font-bold">
+                  {t('flyttstadning.hero.title')}
+                </h1>
+                <p className="text-xl">
+                  {t('flyttstadning.hero.subtitle')}
+                </p>
+                <p className="text-lg text-white/90">
+                  {t('flyttstadning.hero.description')}
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Desktop: Full hero section */}
+          <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
@@ -188,17 +227,21 @@ export default function FlyttstadningPage() {
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
                   <h1 className="text-5xl md:text-6xl font-bold mb-8">
-                    Professionell flyttstädning
+                    {t('flyttstadning.hero.title')}
                   </h1>
                   <p className="text-2xl md:text-3xl mb-12">
-                    Låt vårt erfarna team ta hand om städningen
+                    {t('flyttstadning.hero.subtitle')}
                   </p>
                   <p className="text-lg text-white/90">
-                    Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.
+                    {t('flyttstadning.hero.description')}
                   </p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
-                  <FlyttoffertForm mode="widget" />
+                  {selectedServiceType === 'flyttstad' ? (
+                    <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
+                  ) : (
+                    <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
+                  )}
                 </div>
               </div>
             </div>
@@ -206,7 +249,7 @@ export default function FlyttstadningPage() {
         </div>
 
         {/* What is Flyttstädning Section */}
-        <section className="py-16 bg-white">
+        <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               {/* Reco Widget - Positioned absolutely to the right */}
@@ -220,14 +263,7 @@ export default function FlyttstadningPage() {
                 </div>
               </div>
               
-              {/* Mobile Reco Widget */}
-              <div className="block lg:hidden mb-8">
-                <iframe 
-                  src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=true&reviews=5"
-                  className="w-full h-[900px] border-0"
-                  title="Flyttella recensioner"
-                />
-              </div>
+              {/* Mobile Reco Widget removed per request */}
               
               {/* Montering Card - Positioned absolutely to the right */}
               <div className="hidden lg:block absolute -right-72 top-[1515px] w-64">
@@ -395,7 +431,7 @@ export default function FlyttstadningPage() {
 
               {/* Main content - Centered */}
               <motion.div
-                className="space-y-16"
+                className="space-y-12 md:space-y-16"
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
@@ -421,7 +457,7 @@ export default function FlyttstadningPage() {
                     title: "Vad kostar flyttstädning?",
                     content: (
                       <>
-                        <p className="text-gray-700 leading-relaxed text-xl md:text-2xl mb-8 text-center">
+                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
                           Priset på flyttstädning varierar beroende på bostadens storlek, antal rum, tillstånd och eventuella tilläggstjänster. En normal flyttstädning för en lägenhet kan kosta från cirka 1 200 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina specifika behov och bostadens förutsättningar.
                         </p>
                         <div className="my-16 text-center">
@@ -443,7 +479,7 @@ export default function FlyttstadningPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/cleaning_background.png" alt="Städmaterial" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/flyttstad_intro.png" alt="Städmaterial" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover object-[center_85%]" />
                       </div>
                     ),
                     icon: '',
@@ -480,15 +516,15 @@ export default function FlyttstadningPage() {
                   >
                     <div>
                       <div className="max-w-6xl mx-auto">
-                        <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 group-hover:text-[#10B981] transition-colors duration-300 text-center">
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0F172A] mb-4 md:mb-6 group-hover:text-[#10B981] transition-colors duration-300 text-left md:text-center px-4">
                           {section.title}
               </h3>
                         {typeof section.content === 'string' ? (
-                          <p className={`text-gray-700 leading-relaxed ${section.title === 'Vad är flyttstädning?' || section.title === 'Vad ingår i flyttstädning?' || section.title === '14 dagars nöjd kund-garanti' || section.title === 'Förberedelser inför flyttstädning' ? 'text-xl md:text-2xl text-center' : 'text-lg md:text-xl'}`}>
+                          <p className={`text-gray-700 leading-relaxed px-4 ${section.title === 'Vad är flyttstädning?' || section.title === 'Vad ingår i flyttstädning?' || section.title === '14 dagars nöjd kund-garanti' || section.title === 'Förberedelser inför flyttstädning' ? 'text-lg md:text-xl lg:text-2xl text-left md:text-center' : 'text-base md:text-lg lg:text-xl'}`}>
                             {section.content}
                           </p>
                         ) : (
-                          <div className="text-gray-700 leading-relaxed text-lg md:text-xl">
+                          <div className="text-gray-700 leading-relaxed text-base md:text-lg lg:text-xl">
                             {section.content}
                           </div>
                         )}
@@ -543,9 +579,9 @@ export default function FlyttstadningPage() {
             >
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
-                {/* Left: Image */}
+                {/* Left: Image - desktop only (mobile image moved below section) */}
                 <motion.div 
-                  className="w-full lg:w-1/3 relative lg:-ml-8 lg:pr-8" 
+                  className="hidden lg:block w-full lg:w-1/3 relative lg:-ml-8 lg:pr-8" 
                   initial="initial" 
                   whileInView="animate" 
                   viewport={{ once: true, amount: 0.2 }} 
@@ -554,69 +590,110 @@ export default function FlyttstadningPage() {
                 >
                   <div className="relative h-80 lg:h-full w-full overflow-hidden rounded-2xl">
                     <img 
-                      src="/cleaning_lady.png" 
+                      src="/omflyttella_flyttstad.png" 
                       alt="Om Flyttella Städ" 
                       className="object-cover rounded-2xl w-full h-full" 
-                      style={{ objectPosition: 'center 25%', transform: 'scale(1.10)' }} 
+                      style={{ objectPosition: '80% 25%', transform: 'scale(1.10)' }} 
                     />
                   </div>
                 </motion.div>
-                {/* Right: Text content */}
-                <div className="flex-1 flex flex-col justify-center">
-                  <div className="space-y-8 max-w-3xl mx-auto lg:mx-0">
-                    <motion.div 
-                      initial="initial" 
-                      whileInView="animate" 
-                      viewport={{ once: true, amount: 0.2 }} 
-                      variants={fadeInUp}
-                      transition={{ duration: 0.8, delay: 0 * 0.25 }}
-                    >
-                      <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed font-bold">
-                        Flyttella är Stockholms ledande flyttstädfirma med över 8 års erfarenhet av professionell flyttstädning, hemstädning och kontorsstädning. Vi erbjuder alltid 14 dagars städgaranti, fasta priser och personlig service för alla flyttstädningar i Stockholm.
-                      </p>
-                      <br />
-                      <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed font-bold">
-                        Vi känner till alla Stockholms områden och anpassar våra flyttstädtjänster efter just dina behov – från lägenheter och villor till kontor och butiker. Vår flyttstädning följer branschstandarder och säkerställer att din gamla bostad lämnas i perfekt skick.
-                      </p>
-                      <br />
-                      <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed font-bold">
-                        Vårt mål är att göra din flyttstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela flyttstädningsprocessen. Med vår erfarenhet av flyttstädning i Stockholm kan du känna dig trygg.
-                      </p>
-                      <br />
-                      <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed font-bold">
-                        Kontakta oss idag för en kostnadsfri offert på flyttstädning i Stockholm – vi ser fram emot att hjälpa dig till en skinande ren flyttstädning som uppfyller alla krav!
-                      </p>
-                      <motion.div 
-                        className="mt-12 text-center" 
-                        initial="initial" 
-                        whileInView="animate" 
-                        viewport={{ once: true, amount: 0.2 }} 
-                        variants={fadeInUp}
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                      >
-                        <Link 
-                          href="/om-oss" 
-                          className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
-                        >
-                          Läs mer om oss
-                          <svg 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                            fill="none" 
-                            viewBox="0 0 24 24" 
-                            stroke="currentColor"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </Link>
-                      </motion.div>
-                    </motion.div>
+                {/* Right: Text content with mobile Läs mer behavior (match bohagsflytt) */}
+                <motion.div
+                  className="w-full lg:w-4/5 space-y-4 lg:space-y-8 flex flex-col justify-center"
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.2 }}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  {/* Desktop: full text */}
+                  <div className="hidden lg:block space-y-8">
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Flyttella är Stockholms ledande flyttstädfirma med över 8 års erfarenhet av professionell flyttstädning, hemstädning och kontorsstädning. Vi erbjuder alltid 14 dagars städgaranti, fasta priser och personlig service för alla flyttstädningar i Stockholm.
+                    </p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Vi känner till alla Stockholms områden och anpassar våra flyttstädtjänster efter just dina behov – från lägenheter och villor till kontor och butiker. Vår flyttstädning följer branschstandarder och säkerställer att din gamla bostad lämnas i perfekt skick.
+                    </p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Vårt mål är att göra din flyttstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela flyttstädningsprocessen. Med vår erfarenhet av flyttstädning i Stockholm kan du känna dig trygg.
+                    </p>
                   </div>
-                </div>
+                  {/* Mobile: short text with expand */}
+                  <div className="lg:hidden space-y-4">
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Flyttella är Stockholms ledande flyttstädfirma med över 8 års erfarenhet av professionell flyttstädning, hemstädning och kontorsstädning.
+                    </p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Vi erbjuder 14 dagars städgaranti, fasta priser och personlig service – alltid anpassat efter dina behov.
+                    </p>
+                    {!showFullAboutText && (
+                      <button
+                        onClick={() => setShowFullAboutText(true)}
+                        className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    )}
+                    {showFullAboutText && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        transition={{ duration: 0.5 }}
+                        className="space-y-4 mt-4"
+                      >
+                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                          Vi känner till alla Stockholms områden och anpassar våra flyttstädtjänster efter just dina behov – från lägenheter och villor till kontor och butiker. Vår flyttstädning följer branschstandarder och säkerställer att din gamla bostad lämnas i perfekt skick.
+                        </p>
+                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                          Vårt mål är att göra din flyttstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela flyttstädningsprocessen. Med vår erfarenhet av flyttstädning i Stockholm kan du känna dig trygg.
+                        </p>
+                        <motion.div
+                          className="pt-6"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                          <Link 
+                            href="/om-oss" 
+                            className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+                          >
+                            Läs mer om oss
+                            <svg 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                              fill="none" 
+                              viewBox="0 0 24 24" 
+                              stroke="currentColor"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </motion.div>
+                      </motion.div>
+                    )}
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </motion.section>
+        {/* Mobile image displayed below the section to match bohagsflytt behavior */}
+        <div className="lg:hidden px-4 mt-6">
+          <img 
+            src="/omflyttella_flyttstad.png" 
+            alt="Om Flyttella Städ"
+            className="w-full h-auto rounded-2xl shadow-lg object-contain"
+          />
+        </div>
 
         {/* Vad tycker våra kunder om oss */}
         <ReviewsWidget 
@@ -632,7 +709,7 @@ export default function FlyttstadningPage() {
         <section className="pt-0 pb-4 bg-white">
           <div className="mx-auto px-4">
             <motion.div
-              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[180px] md:min-h-[200px] w-full max-w-xl md:max-w-3xl mx-auto text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -649,13 +726,13 @@ export default function FlyttstadningPage() {
                   backgroundSize: '20px 20px'
                 }}
               />
-              <div className="flex items-center gap-4 relative z-10 mb-4">
-                <span className="text-4xl">🧹</span>
+              <div className="flex items-center gap-3 md:gap-4 relative z-10 mb-3 md:mb-4">
+                <span className="text-3xl md:text-4xl">🧹</span>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
                     Redo att börja din flyttstädning?
                   </h3>
-                  <p className="text-lg text-gray-100">
+                  <p className="text-base md:text-lg text-gray-100">
                     Få en snabb och gratis offert på din flyttstädning
                   </p>
                 </div>
@@ -668,12 +745,12 @@ export default function FlyttstadningPage() {
                 >
                   <Link 
                     href="#flytt-offert"
-                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
                     Få gratis offert
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -688,7 +765,7 @@ export default function FlyttstadningPage() {
         </section>
 
         {/* Service Cards Section */}
-        <section className="py-16 bg-white">
+        <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
@@ -697,7 +774,7 @@ export default function FlyttstadningPage() {
               <div className="grid grid-cols-1 gap-12">
               {/* Bohagsflytt Card */}
               <motion.div
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-12 shadow-lg text-white flex flex-col min-h-[340px] h-full"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -714,16 +791,16 @@ export default function FlyttstadningPage() {
                     backgroundSize: '20px 20px'
                   }}
                 />
-                <div className="flex items-center gap-4 mb-8 relative">
-                  <span className="text-6xl">🏠</span>
-                  <h3 className="text-4xl md:text-5xl font-bold text-white">
+                <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
+                  <span className="text-4xl md:text-6xl">🏠</span>
+                  <h3 className="text-3xl md:text-5xl font-bold text-white">
                     Bohagsflytt
                   </h3>
                 </div>
-                <p className="text-xl text-gray-100 mb-8 relative">
+                <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
                   Professionell flytt av hela eller delar av ett hushålls tillhörigheter. Vi säkerställer en trygg och smidig flyttprocess från start till mål.
                 </p>
-                <p className="text-lg text-gray-100 mb-8 relative">
+                <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
                   Flyttella erbjuder kompletta bohagsflyttar med allt från packning och transport till uppackning och eventuell magasinering. Vi följer branschstandarder och erbjuder försäkringar för att säkerställa att dina tillhörigheter är säkra under hela flyttprocessen. Med vår erfarenhet och noggrannhet kan du känna dig trygg under hela flytten.
                 </p>
                 <div className="mt-auto relative">
@@ -734,12 +811,12 @@ export default function FlyttstadningPage() {
                   >
                     <Link 
                       href="/bohagsflytt" 
-                      className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
+                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg"
                     >
                       Läs mer
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-6 w-6 ml-2 group-hover:translate-x-1 transition-transform" 
+                        className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -753,7 +830,7 @@ export default function FlyttstadningPage() {
 
               {/* Magasinering Card */}
               <motion.div
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-12 shadow-lg text-white flex flex-col min-h-[340px] h-full"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -770,16 +847,16 @@ export default function FlyttstadningPage() {
                     backgroundSize: '20px 20px'
                   }}
                 />
-                <div className="flex items-center gap-4 mb-8 relative">
-                  <span className="text-6xl">🏢</span>
-                  <h3 className="text-4xl md:text-5xl font-bold text-white">
+                <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
+                  <span className="text-4xl md:text-6xl">🏢</span>
+                  <h3 className="text-3xl md:text-5xl font-bold text-white">
                     Magasinering
                   </h3>
                 </div>
-                <p className="text-xl text-gray-100 mb-8 relative">
+                <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
                   Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.
                 </p>
-                <p className="text-lg text-gray-100 mb-8 relative">
+                <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
                   Behöver du magasinera bohag under flyttprocessen? Flyttella tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan. Som extra service erbjuder vi den första månaden gratis för att göra din flyttprocess ännu smidigare.
                 </p>
                 <div className="mt-auto relative">
@@ -790,12 +867,12 @@ export default function FlyttstadningPage() {
                   >
                     <Link 
                       href="/magasinering" 
-                      className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
+                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg"
                     >
                       Läs mer
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-6 w-6 ml-2 group-hover:translate-x-1 transition-transform" 
+                        className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -809,7 +886,7 @@ export default function FlyttstadningPage() {
 
               {/* Packhjälp Card */}
               <motion.div
-                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-12 shadow-lg text-white flex flex-col min-h-[340px] h-full"
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -826,16 +903,16 @@ export default function FlyttstadningPage() {
                     backgroundSize: '20px 20px'
                   }}
                 />
-                <div className="flex items-center gap-4 mb-8 relative">
-                  <span className="text-6xl">📦</span>
-                  <h3 className="text-4xl md:text-5xl font-bold text-white">
+                <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
+                  <span className="text-4xl md:text-6xl">📦</span>
+                  <h3 className="text-3xl md:text-5xl font-bold text-white">
                     Packhjälp
               </h3>
                 </div>
-                <p className="text-xl text-gray-100 mb-8 relative">
+                <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
                   Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.
                 </p>
-                <p className="text-lg text-gray-100 mb-8 relative">
+                <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
                   Packning är ofta den mest tidskrävande delen av en flytt. Flyttella erbjuder professionell packhjälp där våra erfarna flyttare hjälper dig packa dina tillhörigheter på ett säkert och organiserat sätt. Vi använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vår packhjälp inkluderar även märkning av kartonger och skapande av en inventarielista för enkel uppackning på den nya adressen.
                 </p>
                 <div className="mt-auto relative">
@@ -846,12 +923,12 @@ export default function FlyttstadningPage() {
                   >
                     <Link 
                       href="/barhjalp" 
-                      className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
+                      className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg"
                     >
                       Läs mer
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-6 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                        className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -869,26 +946,87 @@ export default function FlyttstadningPage() {
 
         {/* Features Section */}
         
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Våra tjänster</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Vi erbjuder ett komplett utbud av flyttjänster för att göra din flytt så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som piano- och magasinering.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/stadtjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                  Se alla våra städtjänster
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </Link>
-                <Link href="/tjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                  Se alla våra flytttjänster
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </Link>
-              </div>
+        <motion.section 
+          className="py-12 md:py-24 bg-white text-[#0F172A] relative overflow-hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold mb-6 hidden md:block"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.8, delay: 0 }}
+                id="upptack-tjanster"
+              >
+                Våra tjänster
+              </motion.h2>
+              <motion.p 
+                className="text-lg md:text-xl mb-8 text-[#0F172A]/90"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.8, delay: 0 }}
+              >
+                Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. 
+                Från bohagsflytt och flyttstädning till specialtjänster som piano- och magasinering.
+              </motion.p>
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link 
+                    href="/tjanster" 
+                    className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                  >
+                    Se alla våra flyttjänster
+                    <motion.svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </motion.svg>
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link 
+                    href="/stadtjanster" 
+                    className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                  >
+                    Se alla våra städtjänster
+                    <motion.svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </motion.svg>
+                  </Link>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Våra förmåner */}
         {/* Responsive zoom wrapper for wide screens */}
@@ -1012,10 +1150,10 @@ export default function FlyttstadningPage() {
         </div>
 
         {/* Redo att börja din flyttstädning? */}
-        <section className="py-16 bg-white mt-12 -mb-16">
+        <section className="py-12 md:py-16 bg-white mt-8 md:mt-12 -mb-12 md:-mb-16">
           <div className="mx-auto px-4">
             <motion.div
-              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[180px] md:min-h-[200px] w-full max-w-xl md:max-w-3xl mx-auto text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1032,13 +1170,13 @@ export default function FlyttstadningPage() {
                   backgroundSize: '20px 20px'
                 }}
               />
-              <div className="flex items-center gap-4 relative z-10 mb-4">
-                <span className="text-4xl">🧹</span>
+              <div className="flex items-center gap-3 md:gap-4 relative z-10 mb-3 md:mb-4">
+                <span className="text-3xl md:text-4xl">🧹</span>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
                     Redo att börja din flyttstädning?
                   </h3>
-                  <p className="text-lg text-gray-100">
+                  <p className="text-base md:text-lg text-gray-100">
                     Få en snabb och gratis offert på din flyttstädning
                   </p>
                 </div>
@@ -1051,12 +1189,12 @@ export default function FlyttstadningPage() {
                 >
                   <Link 
                     href="#flytt-offert"
-                    className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
+                    className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
                     Få gratis offert
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -1172,10 +1310,10 @@ export default function FlyttstadningPage() {
                 {/* Process Flow Section */}
                 <div className="mb-8">
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Så fungerar det</h3>
-                  <div className="relative w-full">
+                    <div className="relative w-full">
                     {/* Timeline connector line */}
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
-                    <div className="grid grid-cols-1 md:grid-cols-6 gap-3 w-full">
+                      <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                       {[
                         {
                           icon: <FillFormLottie />,
@@ -1190,37 +1328,37 @@ export default function FlyttstadningPage() {
                           textClass: ""
                         },
                         {
-                          icon: <div className="ml-3 mt-8"><PhoneCallLottie /></div>,
+                            icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
                           title: "Personlig kontakt",
                           description: "Vi ringer samma dag eller dagen efter",
-                          containerClass: "-mt-7",
+                            containerClass: "md:-mt-7",
                           textClass: ""
                         },
                         {
-                          icon: <div className="ml-6 -mt-0"><SignFormLottie /></div>,
+                            icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
                           title: "Signera & bekräfta",
                           description: "Få bokningsbekräftelse direkt",
-                          containerClass: "-mt-6",
+                            containerClass: "md:-mt-6",
                           textClass: ""
                         },
                         {
-                          icon: <div className="mr-3"><MovingTruckLottie /></div>,
+                            icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
                           title: "Städning genomförd",
                           description: "Vi tar hand om allt - från start till slut",
-                          containerClass: "-mt-14",
-                          textClass: "-mt-8",
+                            containerClass: "md:-mt-14",
+                            textClass: "md:-mt-8",
                         },
                         {
-                          icon: <div className="mt-0"><HappyCustomerLottie /></div>,
+                            icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
                           title: "Nöjd kund",
                           description: "Återkommande kund",
-                          containerClass: "-mt-6",
+                            containerClass: "md:-mt-6",
                           textClass: ""
                         }
                       ].map((step, index) => (
                         <motion.div
                           key={index}
-                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 h-full"
+                            className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0"
                           initial="initial"
                           whileInView="animate"
                           viewport={{ once: true, amount: 0.2 }}
@@ -1229,11 +1367,11 @@ export default function FlyttstadningPage() {
                         >
                           {/* Timeline dot */}
                           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
-                          <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
-                            <div className="mb-2">{step.icon}</div>
-                            <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
-                              <h4 className="text-white font-semibold text-base md:text-lg mb-1 text-center w-full">{step.title}</h4>
-                              <p className="text-white/80 text-sm md:text-base text-center w-full">{step.description}</p>
+                            <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
+                              <div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div>
+                              <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
+                                <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
+                                <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -1288,21 +1426,12 @@ export default function FlyttstadningPage() {
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                       Att välja rätt städfirma är avgörande för en grundlig flyttstädning. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från städgaranti och miljövänliga produkter till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös städfirma som levererar kvalitet och trygghet.
                     </p>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-sm">FE</span>
-                        </div>
-                        <div className="ml-3">
-                          <p className="text-sm font-medium text-[#0F172A]">Flyttella Expert</p>
-                          <p className="text-sm text-gray-500">Städspecialist i Stockholm</p>
-                        </div>
-                      </div>
+                    <div className="flex items-center justify-end mb-4">
                       <Link 
                         href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-stadfirma" 
                         className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
                       >
-                        Läs hela artikeln
+                        Läs mer
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1314,26 +1443,27 @@ export default function FlyttstadningPage() {
                         </svg>
                       </Link>
                     </div>
-                    <div className="text-center">
-                      <Link 
-                        href="/blogg" 
-                        className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-6 py-3 rounded-full font-medium group shadow-lg hover:shadow-xl"
-                      >
-                        Se alla artiklar om städning
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                      </Link>
-                    </div>
+                    
                   </div>
                 </div>
               </motion.div>
+              <div className="text-center mt-8 md:mt-12">
+                <Link 
+                  href="/blogg" 
+                  className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base"
+                >
+                  Se alla artiklar om städning
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

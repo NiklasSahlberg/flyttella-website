@@ -622,14 +622,14 @@ export default function Bohagsflytt() {
           />
           
           {/* Bottom gradient fade */}
-          <div className="absolute bottom-0 left-0 w-full h-32 z-30 pointer-events-none"
+          <div className="absolute bottom-0 left-0 w-full h-32 z-10 pointer-events-none"
                style={{
                  background: 'linear-gradient(to top, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
                }}
           />
           
           {/* Centered content */}
-          <div className="relative z-40 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60">
+          <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
             <motion.div
               initial="initial"
               whileInView="animate"
@@ -656,7 +656,7 @@ export default function Bohagsflytt() {
                       src="/omoss.jpg"
                       alt="Om Flyttella"
                       className="object-cover rounded-2xl w-full h-full"
-                      style={{ objectPosition: 'center 25%', transform: 'scale(1.20)' }}
+                      style={{ objectPosition: 'center center', transform: 'scale(1.0)' }}
                     />
                   </div>
                 </motion.div>
@@ -1874,55 +1874,59 @@ export default function Bohagsflytt() {
                   Få värdefulla tips och råd för en smidig flytt
                 </p>
               </div>
-              <motion.div 
-                className="bg-white rounded-2xl shadow-lg overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex flex-col md:flex-row h-full items-stretch">
-                  <div className="w-full md:w-1/3 h-48 md:h-full">
-                    <img 
-                      src="/tipsforflytt.jpg" 
-                      alt="Flytttips Stockholm" 
-                      className="w-full h-full object-cover object-[60%_center]"
-                    />
-                  </div>
-                  <div className="w-full md:w-2/3 p-4 md:p-6">
-                    <div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
-                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
-                        Flytttips
-                      </span>
-                      <span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
+              <div className="max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-1 gap-4 md:gap-2">
+                  <motion.div 
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex flex-col md:flex-row h-full items-stretch">
+                      <div className="w-full md:w-1/3 h-48 md:h-full">
+                        <img 
+                          src="/tipsforflytt.jpg" 
+                          alt="Flytttips Stockholm" 
+                          className="w-full h-full object-cover object-[60%_center]"
+                        />
+                      </div>
+                      <div className="w-full md:w-2/3 p-4 md:p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
+                          <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
+                            Flytttips
+                          </span>
+                          <span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
+                        </div>
+                        <h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
+                          Vad bör du tänka på när du väljer en seriös flyttfirma
+                        </h3>
+                        <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
+                          Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.
+                        </p>
+                        <div className="flex justify-start sm:justify-between items-center">
+                          <div></div>
+                          <Link 
+                            href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
+                            className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
+                          >
+                            Läs mer
+                            <svg 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                              fill="none" 
+                              viewBox="0 0 24 24" 
+                              stroke="currentColor"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
-                      Vad bör du tänka på när du väljer en seriös flyttfirma
-                    </h3>
-                    <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
-                      Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.
-                    </p>
-                    <div className="flex justify-start sm:justify-between items-center">
-                      <div></div>
-                      <Link 
-                        href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
-                        className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
-                      >
-                        Läs mer
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </motion.div>
+              </div>
             </div>
             <div className="text-center mt-8 md:mt-12">
               <Link 

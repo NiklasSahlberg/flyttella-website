@@ -232,4 +232,12 @@
       ]
     }
   }
+  ,
+  "flyttstadning": {
+    "hero": {
+      "title": "Professionell flyttstädning",
+      "subtitle": "Låt vårt erfarna team ta hand om städningen",
+      "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick."
+    }
+  }
 } 
