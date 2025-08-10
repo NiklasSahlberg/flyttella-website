@@ -7,7 +7,7 @@ import FlyttoffertForm from '../components/FlyttoffertForm'
 import StadningOffertFormCustomAkersberga from '../components/StadningOffertFormCustomAkersberga'
 import ReviewsWidget from '../components/ReviewsWidget'
 import LocationsCard from '../components/LocationsCard'
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import CountUp from "react-countup";
 import Lottie from "lottie-react";
@@ -40,6 +40,25 @@ export default function FlyttstadningPage() {
   const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const [openFAQFlyttstadning, setOpenFAQFlyttstadning] = useState<string | null>(null);
   const [showFullAboutText, setShowFullAboutText] = useState(false);
+  const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
+  const featureTouchStartXRef = useRef<number | null>(null);
+  const featureTouchCurrentXRef = useRef<number | null>(null);
+  const totalFeatureCards = 9;
+  const featureIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const restartFeatureAutoSlide = () => {
+    if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);
+    featureIntervalRef.current = setInterval(() => {
+      setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards);
+    }, 4000);
+  };
+
+  useEffect(() => {
+    restartFeatureAutoSlide();
+    return () => {
+      if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);
+    };
+  }, [totalFeatureCards]);
   const toggleFAQFlyttstadning = (id: string) => {
     setOpenFAQFlyttstadning(openFAQFlyttstadning === id ? null : id);
   };
@@ -1028,9 +1047,68 @@ export default function FlyttstadningPage() {
           </div>
         </motion.section>
 
-        {/* Våra förmåner */}
+        {/* Våra förmåner - Mobile slider to match main page */}
+        <section className="md:hidden py-8 bg-white">
+          <div className="mx-auto px-4">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6">
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">Våra förmåner</h2>
+              <div className="relative overflow-hidden rounded-xl" onTouchStart={(e)=>{featureTouchStartXRef.current=e.touches[0].clientX; if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);}} onTouchMove={(e)=>featureTouchCurrentXRef.current=e.touches[0].clientX} onTouchEnd={()=>{ if (featureTouchStartXRef.current!=null && featureTouchCurrentXRef.current!=null){ const dx=featureTouchCurrentXRef.current-featureTouchStartXRef.current; const th=50; if(Math.abs(dx)>th){ if(dx<0){ setCurrentFeatureCard((prev)=>(prev+1)%totalFeatureCards);} else { setCurrentFeatureCard((prev)=>(prev-1+totalFeatureCards)%totalFeatureCards);} restartFeatureAutoSlide(); } } featureTouchStartXRef.current=null; featureTouchCurrentXRef.current=null; }}>
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}
+                >
+                  {[
+                    { icon: "💰", title: "Fast pris", description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser", link: "/priser" },
+                    { icon: "📋", title: "RUT-avdrag", description: "Vi hanterar allt pappersarbete för RUT-avdrag", link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
+                    { icon: "✅", title: "14 dagars städgaranti", description: "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti", link: "/garanti" },
+                    { icon: "⏰", title: "Omboka eller avboka kostnadsfritt", description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan städningen", link: "/avbokning" },
+                    { icon: "🔒", title: "Tillstånd och försäkring", description: "Alla nödvändiga tillstånd och försäkringar på plats", link: "/tillstand" },
+                    { icon: "🎓", title: "Utbildad personal", description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.", link: "/om-oss" },
+                    { icon: "🧴", title: "Miljövänliga produkter", description: "Vi använder miljövänliga och säkra rengöringsmedel", link: "/om-oss" },
+                    { icon: "📈", title: "Ledningssystem", description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.", link: "/om-oss" },
+                    { icon: "🦺", title: "Arbetsmiljö", description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.", link: "/om-oss" }
+                  ].map((feature, index) => (
+                    <div key={feature.icon} className="w-full flex-shrink-0">
+                      <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
+                        <div className="flex items-start gap-3 h-full">
+                          <span className="text-2xl">{feature.icon}</span>
+                          <div className="flex-1">
+                            <h4 className="text-white font-semibold text-base mb-1">{feature.title}</h4>
+                            <p className="text-white/80 text-sm mb-2">{feature.description}</p>
+                            <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
+                              Läs mer
+                              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Arrow controls */}
+                <button type="button" aria-label="Föregående" onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                </button>
+                <button type="button" aria-label="Nästa" onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Image below mobile "Våra förmåner" slider */}
+        <div className="md:hidden px-4 mt-4">
+          <img
+            src="/varafarmaner_flyttstad.png"
+            alt="Våra förmåner"
+            className="w-full h-auto rounded-2xl shadow-lg"
+          />
+        </div>
+
         {/* Responsive zoom wrapper for wide screens */}
-        <div className="responsive-zoom">
+        <div className="responsive-zoom hidden md:block">
           <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
             <div className="mx-auto px-24">
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
