@@ -496,7 +496,7 @@ export default function FlyttstadningPage() {
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Priset på flyttstädning varierar beroende på bostadens storlek, antal rum, tillstånd och eventuella tilläggstjänster. En normal flyttstädning för en lägenhet kan kosta från cirka 1 200 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina specifika behov och bostadens förutsättningar.
+                          Priset på flyttstädning varierar beroende på bostadens storlek, antal rum, tillstånd och eventuella tilläggstjänster. En normal flyttstädning för en lägenhet kan kosta från cirka 1 400 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina specifika behov och bostadens förutsättningar.
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
