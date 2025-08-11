@@ -747,7 +747,7 @@ export default function FlyttstadningPage() {
         <section className="pt-0 pb-4 bg-white">
           <div className="mx-auto px-4">
             <motion.div
-              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[180px] md:min-h-[200px] w-full max-w-xl md:max-w-3xl mx-auto text-center"
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[180px] md:min-h-[200px] w-full max-w-sm sm:max-w-md md:max-w-3xl mx-auto text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -764,7 +764,7 @@ export default function FlyttstadningPage() {
                   backgroundSize: '20px 20px'
                 }}
               />
-              <div className="flex items-center gap-3 md:gap-4 relative z-10 mb-3 md:mb-4">
+              <div className="flex items-center justify-center gap-3 md:gap-4 relative z-10 mb-3 md:mb-4">
                 <span className="text-3xl md:text-4xl">🧹</span>
                 <div>
                   <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
@@ -1267,7 +1267,7 @@ export default function FlyttstadningPage() {
                   backgroundSize: '20px 20px'
                 }}
               />
-              <div className="flex items-center gap-3 md:gap-4 relative z-10 mb-3 md:mb-4">
+              <div className="flex items-center justify-center gap-3 md:gap-4 relative z-10 mb-3 md:mb-4">
                 <span className="text-3xl md:text-4xl">🧹</span>
                 <div>
                   <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
