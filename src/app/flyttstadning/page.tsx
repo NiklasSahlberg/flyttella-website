@@ -764,18 +764,18 @@ export default function FlyttstadningPage() {
                   backgroundSize: '20px 20px'
                 }}
               />
-              <div className="flex items-center justify-center gap-3 md:gap-4 relative z-10 mb-3 md:mb-4">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 relative z-10 mb-3 md:mb-4">
                 <span className="text-3xl md:text-4xl">🧹</span>
-                <div>
-                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
+                <div className="text-center md:text-left">
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">
                     Redo att börja din flyttstädning?
                   </h3>
-                  <p className="text-base md:text-lg text-gray-100">
+                  <p className="text-base md:text-lg text-gray-100 leading-snug">
                     Få en snabb och gratis offert på din flyttstädning
                   </p>
                 </div>
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 text-center">
                 <motion.div 
                   whileHover={{ scale: 1.05 }} 
                   whileTap={{ scale: 0.95 }}
@@ -1267,18 +1267,18 @@ export default function FlyttstadningPage() {
                   backgroundSize: '20px 20px'
                 }}
               />
-              <div className="flex items-center justify-center gap-3 md:gap-4 relative z-10 mb-3 md:mb-4">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 relative z-10 mb-3 md:mb-4">
                 <span className="text-3xl md:text-4xl">🧹</span>
-                <div>
-                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
+                <div className="text-center md:text-left">
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">
                     Redo att börja din flyttstädning?
                   </h3>
-                  <p className="text-base md:text-lg text-gray-100">
+                  <p className="text-base md:text-lg text-gray-100 leading-snug">
                     Få en snabb och gratis offert på din flyttstädning
                   </p>
                 </div>
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 text-center">
                 <motion.div 
                   whileHover={{ scale: 1.05 }} 
                   whileTap={{ scale: 0.95 }}
