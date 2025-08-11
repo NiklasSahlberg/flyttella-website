@@ -36,6 +36,91 @@ const variants = {
   }),
 };
 
+// Lottie component functions (moved to module scope to avoid remounting on page re-renders)
+function FillFormLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/fillform.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-14 h-14 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function FastLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/fast.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-14 h-14 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function PhoneCallLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/phonecall.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-20 h-20 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function SignFormLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/signform.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-20 h-20 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function MovingTruckLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/movingtruck.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-36 h-36 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function HappyCustomerLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch("/happycustomer.json").then((res) => res.json()).then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return <div className="w-24 h-24 flex items-center justify-center -m-2"><Lottie animationData={animationData} loop autoplay /></div>;
+}
+
 export default function FlyttstadningPage() {
   const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const [openFAQFlyttstadning, setOpenFAQFlyttstadning] = useState<string | null>(null);
@@ -124,90 +209,7 @@ export default function FlyttstadningPage() {
     { name: "Västerhaninge", slug: "vasterhaninge" }
   ];
 
-  // Lottie component functions
-  function FillFormLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
-      fetch("/fillform.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-14 h-14 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-
-  function FastLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
-      fetch("/fast.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-14 h-14 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-
-  function PhoneCallLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
-      fetch("/phonecall.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-  return (
-      <div className="w-20 h-20 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-            </div>
-    );
-  }
-
-  function SignFormLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
-      fetch("/signform.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-20 h-20 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-          </div>
-    );
-  }
-
-  function MovingTruckLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
-      fetch("/movingtruck.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-36 h-36 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-        </div>
-    );
-  }
-
-  function HappyCustomerLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
-      fetch("/happycustomer.json").then((res) => res.json()).then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return <div className="w-24 h-24 flex items-center justify-center -m-2"><Lottie animationData={animationData} loop autoplay /></div>;
-  }
+  // Lottie helpers are defined at module scope above
   const { t } = useLanguage();
 
   return (
