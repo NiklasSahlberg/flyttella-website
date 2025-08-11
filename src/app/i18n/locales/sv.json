@@ -239,5 +239,12 @@
       "subtitle": "Låt vårt erfarna team ta hand om städningen",
       "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick."
     }
+  },
+  "hemstadning": {
+    "hero": {
+      "title": "Professionell hemstädning i Stockholm",
+      "subtitle": "Regelbunden städning anpassad efter dina behov",
+      "description": "Vi levererar trygg och noggrann hemstädning med RUT-avdrag och städgaranti. Offert på 1 minut."
+    }
   }
 } 

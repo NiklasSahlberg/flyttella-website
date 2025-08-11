@@ -524,7 +524,7 @@ export default function FlyttstadningPage() {
                   },
                   {
                     title: "14 dagars nöjd kund-garanti",
-                    content: "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti på alla flyttstädningar. Detta betyder att om du inte är helt nöjd med städningen kommer vi tillbaka och fixar det utan extra kostnad. Vår garanti ger dig trygghet och säkerställer att du får exakt den kvalitet du förväntar dig. Vi värdesätter din tillfredsställelse och arbetar hårt för att leverera en flyttstädning som överstiger dina förväntningar.",
+                    content: "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti på alla flyttstädningar. Detta betyder att om du inte är helt nöjd med städningen kommer vi tillbaka och fixar det utan extra kostnad. Vår garanti ger dig trygghet och säkerställer att du får exakt den kvalitet du förväntar dig. Vi värdesätter din tillfredsställelse och arbetar hårt för att leverera en flyttstädning som överträffar dina förväntningar.",
                     icon: '✅',
                   },
                   {
@@ -535,10 +535,9 @@ export default function FlyttstadningPage() {
                           <li><strong>Stäng av och frosta av kyl och frys:</strong> Gör detta minst en dag innan städningen för bästa resultat.</li>
                           <li><strong>Rensa vattenlås:</strong> Ta bort eventuella blockeringar för att underlätta rengöringen.</li>
                           <li><strong>Dra ut vitvaror:</strong> Om du vill att vi rengör bakom kyl, frys, spis eller tvättmaskin.</li>
-                          <li><strong>Rengör persienner:</strong> Ta bort grovt damm från persienner och gardiner.</li>
                           <li><strong>Töm alla rum:</strong> Se till att alla rum är tomma från möbler och personliga tillhörigheter.</li>
                           <li><strong>Lämna nycklar:</strong> Se till att vi har tillgång till bostaden på städdagen.</li>
-                          <li><strong>Kommunera specialkrav:</strong> Informera oss om eventuella särskilda behov eller känsliga ytor.</li>
+                          <li><strong>Kommunicera specialkrav:</strong> Informera oss om eventuella särskilda behov eller känsliga ytor.</li>
                         </ul>
                       </div>
                     ),
@@ -1694,7 +1693,7 @@ export default function FlyttstadningPage() {
                   {
                     id: "stadning-1",
                     question: "Hur förbereder jag mig bäst inför flyttstädning?",
-                    answer: "Börja med att rensa ut allt du inte längre behöver och packa bort dina tillhörigheter. Ta bort alla personliga föremål och lösöre. Se till att alla ytor är tillgängliga för städning. Informera oss om eventuella särskilda krav från hyresvärden eller köparen, och boka städning i god tid för att säkerställa tillgänglighet."
+                    answer: "Börja med att rensa ut allt du inte längre behöver. Ta bort alla personliga föremål och lösöre. Se till att alla ytor är tillgängliga för städning. Informera oss om eventuella särskilda krav från hyresvärden eller köparen, och boka städning i god tid för att säkerställa tillgänglighet."
                   },
                   {
                     id: "stadning-2",
