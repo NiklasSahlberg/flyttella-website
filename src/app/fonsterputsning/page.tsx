@@ -492,6 +492,14 @@ export default function FonsterputsningPage() {
             </div>
           </div>
         </section>
+        {/* Image below mobile "Våra förmåner" slider */}
+        <div className="md:hidden px-4 mt-4">
+          <img
+            src="/window_worker.png"
+            alt="Våra förmåner"
+            className="w-full h-auto rounded-2xl shadow-lg"
+          />
+        </div>
 
         {/* Desktop features grid with image */}
         <div className="responsive-zoom hidden md:block">
@@ -526,7 +534,7 @@ export default function FonsterputsningPage() {
                   </div>
                   <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
                     <div className="w-full h-full flex items-stretch">
-                      <img src="/cleaning_lady.png" alt="Städpersonal i Stockholm - Flyttella" className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
+                      <img src="/window_worker.png" alt="Städpersonal i Stockholm - Flyttella" className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
                     </div>
                   </div>
                 </div>
