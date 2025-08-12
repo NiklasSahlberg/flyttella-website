@@ -326,21 +326,12 @@ export default function FonsterputsningPage() {
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vi har stark lokal närvaro i hela Storstockholm och får höga betyg av våra kunder. Med tydliga rutiner, miljövänliga produkter och kvalitetssäkring i varje steg levererar vi ett pålitligt resultat – varje gång.</p>
                   </div>
                   <div className="lg:hidden space-y-4">
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en städfirma i Stockholm med lång erfarenhet av fönsterputsning.</p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vi erbjuder städgaranti, fasta priser och personlig service – med randfritt resultat.</p>
-                    {!showFullAboutText && (
-                      <button onClick={() => setShowFullAboutText(true)} className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></button>
-                    )}
-                    {showFullAboutText && (
-                      <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 0.5 }} className="space-y-4 mt-4">
-                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vi planerar insatsen utifrån dina fönster och åtkomlighet – och levererar ett resultat du märker direkt.</p>
-                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Kostnadsfri offert, snabb bokning och personlig kontakt.</p>
-                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Miljövänliga produkter och kvalitetssäkrade arbetssätt gör att du alltid kan känna dig trygg med oss.</p>
-                        <motion.div className="pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
-                          <Link href="/om-oss" className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer om oss<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
-                        </motion.div>
-                      </motion.div>
-                    )}
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Flyttella är en städfirma i Stockholm med lång erfarenhet av fönsterputsning. Vi erbjuder städgaranti, fasta priser och personlig service – med randfria resultat. Vi planerar insatsen utifrån dina fönster och åtkomlighet och levererar ett resultat du märker direkt. Randfria resultat invändigt och, där det är säkert och åtkomligt, utvändigt. Snabb bokning och 50% RUT‑avdrag gör det enkelt och prisvärt.
+                    </p>
+                    <div className="pt-2">
+                      <Link href="/om-oss" className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer om oss<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                    </div>
                   </div>
                 </motion.div>
               </div>
