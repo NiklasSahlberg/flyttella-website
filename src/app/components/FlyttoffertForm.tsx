@@ -136,9 +136,10 @@ interface FlyttoffertFormProps {
   mode?: 'full' | 'widget';
   swapServiceOrder?: boolean;
   onServiceTypeSelect?: (serviceType: string) => void;
+  cleaningCardSubtitle?: string; // optional override for cleaning card subtitle
 }
 
-export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect }: FlyttoffertFormProps) {
+export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle }: FlyttoffertFormProps) {
   const [step, setStep] = useState(0);
   const [showSteps, setShowSteps] = useState(false);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
@@ -941,7 +942,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           <span className="text-2xl md:text-4xl mb-2 md:mb-4">✨</span>
                           <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">{swapServiceOrder ? 'Städtjänster' : 'Städ'}</h3>
                           <p className="text-sm md:text-base opacity-90">
-                            Komplett städservice med professionell städning för alla behov
+                            {cleaningCardSubtitle ?? 'Komplett städservice med professionell städning för alla behov'}
                           </p>
                         </div>
                       </motion.div>

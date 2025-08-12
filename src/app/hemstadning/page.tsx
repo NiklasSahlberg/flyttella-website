@@ -94,6 +94,21 @@ function SignFormLottie() {
   );
 }
 
+function MovingTruckLottie() {
+  const [animationData, setAnimationData] = useState(null);
+  useEffect(() => {
+    fetch('/movingtruck.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-36 h-36 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
 function CleanHomeLottie() {
   const [animationData, setAnimationData] = useState(null);
   useEffect(() => {
@@ -189,17 +204,7 @@ export default function HemstadningPage() {
               <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
             )}
           </div>
-          {/* Mobile: Hero content after form */}
-          <div className="md:hidden mx-auto px-4 py-6">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 relative overflow-hidden">
-              <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: 'url(/cleaning_background.png)' }} />
-              <div className="relative z-10 text-center space-y-4">
-                <h1 className="text-4xl font-bold">{t('hemstadning.hero.title')}</h1>
-                <p className="text-xl">{t('hemstadning.hero.subtitle')}</p>
-                <p className="text-lg text-white/90">{t('hemstadning.hero.description')}</p>
-              </div>
-            </div>
-          </div>
+          {/* Mobile: Hero content after form — removed per request */}
           {/* Desktop hero */}
           <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
@@ -938,12 +943,15 @@ export default function HemstadningPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår hemstädningsprocess är enkel och trygg: fyll i formuläret, få pris direkt, bekräfta digitalt – sedan tar vi hand om resten. Resultatet är ett skinande rent hem.
+                    Vår hemstädningsprocess är utformad för att vara enkel, flexibel och trygg. Det börjar med att du fyller i vårt korta formulär där du anger boyta, städfrekvens och eventuella tillval. Inom en minut får du en tydlig offert direkt till din e‑post. Samma dag eller senast dagen efter tar vi personlig kontakt för att säkerställa att allt stämmer och för att svara på dina frågor. När du är nöjd signerar du enkelt digitalt.
+                  </p>
+                  <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
+                    Därefter planerar vi städningen utifrån dina önskemål och vår checklista för hemstädning. Våra utbildade medarbetare använder skonsamma och miljövänliga produkter och ser till att kök, badrum, allrum och sovrum blir skinande rena vid varje tillfälle. Vi påminner inför varje besök och du kan enkelt boka om vid behov. Resultatet? Ett jämnt och pålitligt städresultat samt mer tid över till det som är viktigt för dig.
                   </p>
                 </div>
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4">
-                    Alla priser baseras på boyta, frekvens och dina behov. Inga dolda avgifter. Har du särskilda önskemål? Vi anpassar offerten.
+                    Våra priser beräknas utifrån boyta, städfrekvens och valda tillägg som fönsterputs eller storstädning. Alla priser är fasta utan dolda avgifter. Om du har särskilda önskemål anpassar vi offerten efter dina behov och förutsättningar. RUT‑avdraget hanteras automatiskt av oss för att göra det enkelt och prisvärt.
                   </p>
                 </div>
                 <div className="mb-8">
@@ -951,14 +959,14 @@ export default function HemstadningPage() {
                   <div className="relative w-full">
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
-                      {[
-                        { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din städning' },
-                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' },
-                        { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
-                        { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
-                        { icon: <div className="md:mt-0"><CleanHomeLottie /></div>, title: 'Städning utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-6' },
-                        { icon: <div className="md:mt-0"><CleanHomeLottie /></div>, title: 'Nöjd kund', description: 'Återkommande städning', containerClass: 'md:-mt-6' }
-                      ].map((step: any, index: number) => (
+                    {[
+                      { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din städning' },
+                      { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' },
+                      { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
+                      { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
+                      { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Städning utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
+                      { icon: <div className="md:mt-0"><CleanHomeLottie /></div>, title: 'Nöjd kund', description: 'Återkommande städning', containerClass: 'md:-mt-6' }
+                    ].map((step: any, index: number) => (
                         <motion.div key={index} className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={index}>
                           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
                           <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
