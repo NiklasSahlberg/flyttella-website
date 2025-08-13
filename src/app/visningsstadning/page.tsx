@@ -218,6 +218,53 @@ export default function VisningsstadningPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               <motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+                {/* Sidebar service cards (desktop) */}
+                <div className="hidden lg:block absolute -right-72 top-[1450px] w-64">
+                  <div className="sticky top-8">
+                    <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">Storstädning</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">Grundlig storstädning med fokus på kök, badrum och svåråtkomliga ytor. Perfekt som komplement till fönsterputs.</p>
+                      <div className="mt-auto relative">
+                        <Link href="/storstädning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden lg:block absolute -right-72 top-[1645px] w-64">
+                  <div className="sticky top-8">
+                    <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧱</span><h3 className="text-xl font-bold text-white">Byggstädning</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">Effektiv byggstädning efter renovering – grov- och finstädning för inflyttningsklart resultat.</p>
+                      <div className="mt-auto relative">
+                        <Link href="/byggstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden lg:block absolute -right-72 top-[1905px] w-64">
+                  <div className="sticky top-8">
+                    <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🕊️</span><h3 className="text-xl font-bold text-white">Dödsbostädning</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">Omsorgsfull dödsbostädning – sortering samt grov- och finstädning inför försäljning eller överlåtelse.</p>
+                      <div className="mt-auto relative">
+                        <Link href="/dodsbo" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Reco Widget - Positioned absolutely to the right (desktop) */}
+                <div className="hidden lg:block absolute -right-72 top-[10rem] w-72 z-40">
+                  <div className="sticky top-8">
+                    <iframe
+                      src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
+                      className="w-full h-[1000px] border-0"
+                      title="Flyttella recensioner"
+                    />
+                  </div>
+                </div>
                 {([
                   {
                     title: 'Vad är visningsstädning?',
@@ -239,10 +286,7 @@ export default function VisningsstadningPage() {
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Pris för visningsstädning beror på boyta, planlösning och grad av förberedelse. Med 50% RUT‑avdrag på arbetskostnaden blir visningsstädning prisvärd. Begär en kostnadsfri offert – du får pris på 1 minut.
-                        </p>
-                        <p className="text-gray-700 leading-relaxed px-4 text-base md:text-lg lg:text-xl mb-8 text-left md:text-center">
-                          Faktorer som påverkar priset är bland annat antal badrum, fönsterputs som tillval och bostadens skick. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad som ingår i din visningsstädning.
+                          Pris för visningsstädning beror på boyta, planlösning och grad av förberedelse. Med 50% RUT‑avdrag på arbetskostnaden blir visningsstädning prisvärd. Begär en kostnadsfri offert – du får pris på 1 minut. Faktorer som påverkar priset är bland annat antal badrum, fönsterputs som tillval och bostadens skick. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad som ingår i din visningsstädning.
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
@@ -259,6 +303,23 @@ export default function VisningsstadningPage() {
                     content:
                       'Visningsstädning innefattar dammtorkning av fria ytor, avtorkning av lister, dörrar och handtag, puts av speglar och blanka ytor, noggrann rengöring av kök (arbetsbänkar, spishäll, diskho, vitvarors utsidor) och badrum (handfat, dusch/badkar, toalett). Golv dammsugs och moppas, och detaljer arrangeras för ett prydligt intryck. Som tillval erbjuder vi fönsterputs, punktinsatser i kök/badrum och doftneutralisering. Vi använder miljövänliga produkter och arbetar efter en tydlig checklista.',
                     icon: '🧹'
+                  }
+                  ,
+                  {
+                    title: '',
+                    content: (
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
+                        <img src="/cleaning_background.png" alt="Boka visningsstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                      </div>
+                    ),
+                    icon: ''
+                  }
+                  ,
+                  {
+                    title: 'Hur bokar jag visningsstädning?',
+                    content:
+                      'Boka på en minut via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och tid och lägg till eventuella tillval som fönsterputs. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta och tidplan inför foto och visning. Därefter bekräftar vi starttid – enkelt och tryggt. Du kan justera bokningen via vår kundtjänst. RUT‑avdraget (50% på arbetskostnaden) sköts automatiskt. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
+                    icon: '📅'
                   }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
                   <motion.div key={index} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
@@ -330,7 +391,7 @@ export default function VisningsstadningPage() {
                 >
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en ledande städfirma i Stockholm med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi erbjuder 14 dagars städgaranti, fasta priser och personlig service i hela Storstockholm.
+                      Flyttella är en ledande städfirma i Stockholm med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Storstockholm.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
                       Vi anpassar alltid städningen efter dina mål – från fotoanpassade detaljer till tidsplan inför visning. Vår visningsstädning följer en tydlig checklista för ett jämnt och högt resultat.
@@ -415,7 +476,7 @@ export default function VisningsstadningPage() {
           location="Stockholm"
           title="Vad tycker våra kunder om oss?"
           subtitle="Pålitlig visningsstädning i Stockholm"
-          description="Professionell visningsstädning i Stockholm med fokus på första intrycket – fast pris och 50% RUT‑avdrag. Nöjd‑kund‑garanti, punktliga städare och höga betyg. Läs vad våra kunder tycker."
+          description="Professionell visningsstädning i Stockholm inför fotografering och visning – fokus på skinande kök, badrum och blanka ytor – fast pris och 50% RUT‑avdrag. Punktliga städare och höga betyg. Läs vad våra kunder tycker om vår visningsstädning i Stockholm."
           badgeAlt="8+ års erfarenhet av visningsstädning i Stockholm"
           arrowText="Läs vad våra kunder säger om vår visningsstädning"
         />
@@ -490,18 +551,18 @@ export default function VisningsstadningPage() {
                   </div>
                 </motion.div>
 
-                {/* Visningsstädning Card */}
+                {/* Hemstädning Card */}
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
-                    <span className="text-4xl md:text-6xl">🏠✨</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Visningsstädning</h3>
+                    <span className="text-4xl md:text-6xl">🏡</span>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">Hemstädning</h3>
                   </div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Professionell visningsstädning som får bostaden att glänsa inför försäljning. Fast pris och 50% RUT‑avdrag.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Fokus på första intrycket: kök och badrum, blanka ytor och snygga detaljer. Fönsterputs som tillval. Vi följer en visningsanpassad checklista och tidsplan.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Regelbunden hemstädning med flexibla intervall – veckovis, varannan vecka eller månadsvis. Fast pris och 50% RUT‑avdrag.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar efter tydliga checklistor: alla rum, kök och badrum. Samma städare för kontinuitet och trygghet. Miljövänliga produkter och pålitliga rutiner.</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-                      <Link href="/visningsstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
+                      <Link href="/hemstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
                         Läs mer
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
@@ -553,7 +614,7 @@ export default function VisningsstadningPage() {
                   {[
                     { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                     { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                    { icon: '✅', title: '14 dagars städgaranti', description: 'Nöjd‑kund‑garanti och trygghet', link: '/garanti' },
+                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#visningsstad-offert' },
                     { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                     { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                     { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -568,12 +629,16 @@ export default function VisningsstadningPage() {
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm mb-2">{feature.description}</p>
-                            <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
-                              Läs mer
-                              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                              </svg>
-                            </a>
+                            {feature.title === 'RUT-avdrag' ? (
+                              <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
+                                Läs mer
+                                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </a>
+                            ) : (
+                              <div className="h-6" />
+                            )}
                           </div>
                         </div>
                       </div>
@@ -603,7 +668,7 @@ export default function VisningsstadningPage() {
                       {[
                         { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                         { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                        { icon: '✅', title: '14 dagars städgaranti', description: 'Nöjd‑kund‑garanti och trygghet', link: '/garanti' },
+                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#visningsstad-offert' },
                         { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                         { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                         { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -618,10 +683,14 @@ export default function VisningsstadningPage() {
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
-                            <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center">
-                              Läs mer
-                              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                            </a>
+                            {feature.title === 'RUT-avdrag' ? (
+                              <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center">
+                                Läs mer
+                                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                              </a>
+                            ) : (
+                              <div className="h-6 md:h-7" />
+                            )}
                           </div>
                         </motion.div>
                       ))}

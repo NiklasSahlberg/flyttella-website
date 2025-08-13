@@ -232,6 +232,53 @@ export default function HemstadningPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               <motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+                {/* Sidebar service cards (desktop) */}
+                <div className="hidden lg:block absolute -right-72 top-[1580px] w-64">
+                  <div className="sticky top-8">
+                    <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">Storstädning</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">Grundlig storstädning med fokus på kök, badrum och svåråtkomliga ytor. Perfekt som komplement till fönsterputs.</p>
+                      <div className="mt-auto relative">
+                        <Link href="/storstädning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden lg:block absolute -right-72 top-[1775px] w-64">
+                  <div className="sticky top-8">
+                    <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧱</span><h3 className="text-xl font-bold text-white">Byggstädning</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">Effektiv byggstädning efter renovering – grov- och finstädning för inflyttningsklart resultat.</p>
+                      <div className="mt-auto relative">
+                        <Link href="/byggstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden lg:block absolute -right-72 top-[2035px] w-64">
+                  <div className="sticky top-8">
+                    <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+                      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🕊️</span><h3 className="text-xl font-bold text-white">Dödsbostädning</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">Omsorgsfull dödsbostädning – sortering samt grov- och finstädning inför försäljning eller överlåtelse.</p>
+                      <div className="mt-auto relative">
+                        <Link href="/dodsbo" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Reco Widget - Positioned absolutely to the right (desktop) */}
+                <div className="hidden lg:block absolute -right-72 top-[16rem] w-72 z-40">
+                  <div className="sticky top-8">
+                    <iframe 
+                      src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
+                      className="w-full h-[1000px] border-0"
+                      title="Flyttella recensioner"
+                    />
+                  </div>
+                </div>
                 {([
                   {
                     title: 'Vad är hemstädning?',
@@ -243,7 +290,7 @@ export default function HemstadningPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/cleaning_background.png" alt="Hemstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/fonsterputs_info.png" alt="Hemstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -253,16 +300,13 @@ export default function HemstadningPage() {
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Pris för hemstädning beror på boyta, planlösning, städfrekvens och dina specifika önskemål. Med 50% RUT‑avdrag på arbetskostnaden blir återkommande hemstädning mycket prisvärt. Begär en kostnadsfri offert – du får pris på 1 minut.
-                        </p>
-                        <p className="text-gray-700 leading-relaxed px-4 text-base md:text-lg lg:text-xl mb-8 text-left md:text-center">
-                          Faktorer som påverkar priset är bland annat antal badrum, grad av nedsmutsning samt eventuella tillval (t.ex. fönsterputs, ugnsrengöring eller invändig skåprengöring). Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad din hemstädning kostar.
+                          Pris för hemstädning beror på boyta, planlösning, städfrekvens och dina specifika önskemål. Med 50% RUT‑avdrag på arbetskostnaden blir återkommande hemstädning mycket prisvärt. Begär en kostnadsfri offert – du får pris på 1 minut. Faktorer som påverkar priset är bland annat antal badrum, grad av nedsmutsning samt eventuella tillval (t.ex. fönsterputs, ugnsrengöring eller invändig skåprengöring). Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad din hemstädning kostar.
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-                            "Fantastiskt resultat varje gång! Det känns alltid nystädat och fräscht. Rekommenderas varmt."
+                            "Som att komma hem till ett helt nytt hem varje gång – proffsigt, pålitligt och prisvärt!"
                           </p>
-                          <p className="italic text-gray-700 mt-2">- Johan</p>
+                          <p className="italic text-gray-700 mt-2">- Emma</p>
                         </div>
                       </>
                     ),
@@ -273,6 +317,24 @@ export default function HemstadningPage() {
                     content:
                       'Hemstädning innefattar dammsugning och moppning av alla golv, dammtorkning av fria ytor, avtorkning av lister, dörrar och handtag, speglar och synliga ytor. I köket rengörs arbetsbänkar, spishäll, diskho och vitvarornas utsidor, och i badrum avkalkas och rengörs handfat, dusch/badkar och toalett. Papperskorgar töms och ytor snyggas till. Som tillval kan du lägga till fönsterputs, sängklädesbyte, invändig skåprengöring, ugnsplåt/ugn samt djuprengöring. Vi använder miljövänliga produkter och arbetar efter en tydlig checklista för ett jämnt och skinande resultat.',
                     icon: '🧹'
+                  },
+                  {
+                    title: '',
+                    content: (
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
+                        <img src="/cleaning_background.png" alt="Hemstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                      </div>
+                    ),
+                    icon: ''
+                  },
+                  {
+                    title: 'Hur bokar jag hemstädning?',
+                    content: (
+                      <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-0 text-left md:text-center">
+                        Boka på en minut: fyll i formuläret, få pris direkt och bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta, frekvens och eventuella tillval. Därefter planerar vi startdatum – enkelt och tryggt. Vi matchar dig med en fast städare eller ett litet team för kontinuitet och trygghet. Du väljer veckodag och tid som passar, och kan enkelt justera eller pausa via vår kundtjänst. Betalning sker smidigt efter utförd städning. RUT‑avdraget (50% på arbetskostnaden) sköter vi automatiskt. Självklart ingår vår 14 dagars städgaranti.
+                      </p>
+                    ),
+                    icon: '📅'
                   }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
                   <motion.div key={index} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
@@ -283,7 +345,7 @@ export default function HemstadningPage() {
                       {typeof section.content === 'string' ? (
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">{section.content}</p>
                       ) : (
-                        <div className="text-gray-700 leading-relaxed text-base md:text-lg lg:text-xl">{section.content}</div>
+                        <div className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{section.content}</div>
                       )}
                     </div>
                   </motion.div>
@@ -433,7 +495,7 @@ export default function HemstadningPage() {
           location="Stockholm"
           title="Vad tycker våra kunder om oss?"
           subtitle="Pålitlig hemstädning i Stockholm"
-          description="Professionell hemstädning i Stockholm med flexibla intervall – veckovis, varannan vecka, månadsvis eller engångsstädning – fast pris och 50% RUT‑avdrag. Nöjd‑kund‑garanti, punktliga städare och höga betyg. Läs vad våra kunder tycker om vår hemstädning i Stockholm."
+          description="Professionell hemstädning i Stockholm med flexibla intervall – veckovis, varannan vecka, månadsvis eller engångsstädning – fast pris och 50% RUT‑avdrag. Punktliga städare och höga betyg. Läs vad våra kunder tycker om vår hemstädning i Stockholm."
           badgeAlt="8+ års erfarenhet som städfirma i Stockholm"
           arrowText="Läs vad våra kunder säger om vår hemstädning i Stockholm"
         />
@@ -656,15 +718,15 @@ export default function HemstadningPage() {
                   style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}
                 >
                   {[
-                    { icon: "💰", title: "Fast pris", description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser", link: "/priser" },
-                    { icon: "📋", title: "RUT-avdrag", description: "Vi hanterar allt pappersarbete för RUT-avdrag", link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
-                    { icon: "✅", title: "14 dagars städgaranti", description: "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti", link: "/garanti" },
-                    { icon: "⏰", title: "Omboka eller avboka kostnadsfritt", description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan städningen", link: "/avbokning" },
-                    { icon: "🔒", title: "Tillstånd och försäkring", description: "Alla nödvändiga tillstånd och försäkringar på plats", link: "/tillstand" },
-                    { icon: "🎓", title: "Utbildad personal", description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.", link: "/om-oss" },
-                    { icon: "🧴", title: "Miljövänliga produkter", description: "Vi använder miljövänliga och säkra rengöringsmedel", link: "/om-oss" },
-                    { icon: "📈", title: "Ledningssystem", description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.", link: "/om-oss" },
-                    { icon: "🦺", title: "Arbetsmiljö", description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.", link: "/om-oss" }
+                    { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
+                    { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
+                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#hemstad-offert' },
+                    { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
+                    { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
+                    { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
+                    { icon: '🧴', title: 'Miljövänliga produkter', description: 'Skonsamma och miljövänliga rengöringsmedel', link: '/om-oss' },
+                    { icon: '📈', title: 'Ledningssystem', description: 'Effektiva rutiner för kvalitet och struktur', link: '/om-oss' },
+                    { icon: '🦺', title: 'Arbetsmiljö', description: 'Trygg arbetsmiljö för både kunder och personal', link: '/om-oss' }
                   ].map((feature, index) => (
                     <div key={feature.icon} className="w-full flex-shrink-0">
                       <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
@@ -673,12 +735,16 @@ export default function HemstadningPage() {
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm mb-2">{feature.description}</p>
-                            <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
-                              Läs mer
-                              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                              </svg>
-                            </a>
+                            {feature.title === 'RUT-avdrag' ? (
+                              <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
+                                Läs mer
+                                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </a>
+                            ) : (
+                              <div className="h-6" />
+                            )}
                           </div>
                         </div>
                       </div>
@@ -706,60 +772,15 @@ export default function HemstadningPage() {
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
                       {[
-                        {
-                          icon: "💰",
-                          title: "Fast pris",
-                          description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
-                          link: "/priser"
-                        },
-                        {
-                          icon: "📋",
-                          title: "RUT-avdrag",
-                          description: "Vi hanterar allt pappersarbete för RUT-avdrag",
-                          link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
-                        },
-                        {
-                          icon: "✅",
-                          title: "14 dagars städgaranti",
-                          description: "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti",
-                          link: "/garanti"
-                        },
-                        {
-                          icon: "⏰",
-                          title: "Omboka eller avboka kostnadsfritt",
-                          description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan städningen",
-                          link: "/avbokning"
-                        },
-                        {
-                          icon: "🔒",
-                          title: "Tillstånd och försäkring",
-                          description: "Alla nödvändiga tillstånd och försäkringar på plats",
-                          link: "/tillstand"
-                        },
-                        {
-                          icon: "🎓",
-                          title: "Utbildad personal",
-                          description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
-                          link: "/om-oss"
-                        },
-                        {
-                          icon: "🧴",
-                          title: "Miljövänliga produkter",
-                          description: "Vi använder miljövänliga och säkra rengöringsmedel",
-                          link: "/om-oss"
-                        },
-                        {
-                          icon: "📈",
-                          title: "Ledningssystem",
-                          description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
-                          link: "/om-oss"
-                        },
-                        {
-                          icon: "🦺",
-                          title: "Arbetsmiljö",
-                          description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
-                          link: "/om-oss"
-                        }
+                        { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
+                        { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
+                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#hemstad-offert' },
+                        { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
+                        { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
+                        { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
+                        { icon: '🧴', title: 'Miljövänliga produkter', description: 'Skonsamma och miljövänliga rengöringsmedel', link: '/om-oss' },
+                        { icon: '📈', title: 'Ledningssystem', description: 'Effektiva rutiner för kvalitet och struktur', link: '/om-oss' },
+                        { icon: '🦺', title: 'Arbetsmiljö', description: 'Trygg arbetsmiljö för både kunder och personal', link: '/om-oss' }
                       ].map((feature, i) => (
                         <motion.div key={feature.title} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={i}>
                           <motion.span className="text-2xl md:text-3xl" initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }} animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [-180, 20, 0], color: ['#10B981', '#34D399', '#10B981'] }} transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}>
@@ -768,10 +789,14 @@ export default function HemstadningPage() {
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
-                            <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center">
-                              Läs mer
-                              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                            </a>
+                            {feature.title === 'RUT-avdrag' ? (
+                              <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center">
+                                Läs mer
+                                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                              </a>
+                            ) : (
+                              <div className="h-6 md:h-7" />
+                            )}
                           </div>
                         </motion.div>
                       ))}
@@ -993,7 +1018,7 @@ export default function HemstadningPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Läs mer om hemstädning</h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">Tips för ett skinande rent hem och hur du väljer rätt städfirma.</p>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">Tips för ett skinande rent hem, smarta rutiner för vardagsstädning och hur du väljer rätt städfirma. Vi går igenom RUT‑avdrag, pris, vad som ingår och hur du förbereder inför första städningen.</p>
               </div>
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
@@ -1006,7 +1031,7 @@ export default function HemstadningPage() {
                       <span className="text-gray-500 text-sm ml-4">4 min läsning</span>
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">Så väljer du rätt hemstädning</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">Vad ska man tänka på när man bokar hemstädning? Här går vi igenom pris, kvalitet, RUT-avdrag och vad som brukar ingå.</p>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">Vad ska man tänka på när man bokar hemstädning? Här går vi igenom pris, kvalitet, RUT‑avdrag och vad som brukar ingå. Du får även en enkel checklista för att förbereda hemmet, råd om rätt städfrekvens och hur du får en trygg start med en fast städare.</p>
                     <div className="flex items-center justify-end mb-4">
                       <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">
                         Läs mer
