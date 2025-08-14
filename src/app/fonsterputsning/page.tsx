@@ -258,7 +258,7 @@ export default function FonsterputsningPage() {
                   {
                     title: 'Fönsterputsning i Stockholm – därför ska du välja oss',
                     content:
-                      'Vi erbjuder professionell fönsterputsning i Stockholm för lägenhet, villa och kontor. Våra utbildade fönsterputsare ger randfritt resultat invändigt och utvändigt där det är säkert och åtkomligt. Med fast pris, snabb bokning och 50% RUT‑avdrag blir fönsterputsningen både smidig och prisvärd. Vi kan även schemalägga återkommande fönsterputs som abonnemang för ett jämnt resultat året runt.',
+                      'Vi erbjuder professionell fönsterputsning i Stockholm för lägenhet, villa och kontor. Våra utbildade fönsterputsare ger skinande rent resultat invändigt och utvändigt där det är säkert och åtkomligt. Med fast pris, snabb bokning och 50% RUT‑avdrag blir fönsterputsningen både smidig och prisvärd. Vi kan även schemalägga återkommande fönsterputs som abonnemang för ett jämnt resultat året runt.',
                     icon: '⭐'
                   },
                   {
@@ -278,7 +278,7 @@ export default function FonsterputsningPage() {
                   {
                     title: 'Vad ingår i fönsterputsning?',
                     content:
-                      'Invändig och, där det är säkert och åtkomligt, utvändig fönsterputs. Rengöring av karmar och fönsterbrädor. Vi använder professionella verktyg och metoder för ett randfritt resultat. Som tillval erbjuder vi utvändig puts på högre våningsplan, puts av spröjsade fönster och abonnemang.',
+                      'Invändig och, där det är säkert och åtkomligt, utvändig fönsterputs. Rengöring av karmar och fönsterbrädor. Vi använder professionella verktyg och metoder – inklusive specialbehandling för olika material – för ett skinande rent resultat. Som tillval erbjuder vi utvändig puts på högre våningsplan, puts av spröjsade fönster och abonnemang.',
                     icon: '🧼'
                   }
                 ] as { title: string; content: any; icon: string; preTitleContent?: any }[]).map((section, index) => (
@@ -321,7 +321,7 @@ export default function FonsterputsningPage() {
                 <motion.div className="w-full lg:w-4/5 space-y-4 lg:space-y-8 flex flex-col justify-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.4 }}>
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en ledande städfirma i Stockholm med över 8 års erfarenhet av fönsterputsning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Storstockholm.</p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vi använder professionella verktyg och tekniker för ett randfritt resultat – oavsett årstid. Vi kan schemalägga återkommande puts för ett jämnt resultat över tid.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vi använder professionella verktyg och tekniker för ett skinande rent resultat – oavsett årstid. Vi kan schemalägga återkommande puts för ett jämnt resultat över tid.</p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vårt mål är att göra din vardag enklare. Kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen.</p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vi har stark lokal närvaro i hela Storstockholm och får höga betyg av våra kunder. Med tydliga rutiner, miljövänliga produkter och kvalitetssäkring i varje steg levererar vi ett pålitligt resultat – varje gång.</p>
                   </div>

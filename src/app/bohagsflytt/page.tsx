@@ -211,31 +211,7 @@ export default function Bohagsflytt() {
             <FlyttoffertForm mode="widget" />
           </div>
           
-          {/* Mobile: Hero content after form */}
-          <div className="md:hidden mx-auto px-4 py-6">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 relative overflow-hidden">
-              {/* Background image */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-                style={{
-                  backgroundImage: 'url(/coupleMoving.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center 30%'
-                }}
-              />
-              <div className="relative z-10 text-center space-y-4">
-                <h1 className="text-4xl font-bold">
-                  {t('bohagsflytt.hero.title')}
-                </h1>
-                <p className="text-xl">
-                  {t('bohagsflytt.hero.subtitle')}
-                </p>
-                <p className="text-lg text-white/90">
-                  {t('bohagsflytt.hero.description')}
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* Mobile: Hero content after form removed per request */}
           
           {/* Desktop: Full hero section */}
           <div className="hidden md:block mx-auto px-16">
@@ -284,14 +260,7 @@ export default function Bohagsflytt() {
                               </div>
                             </div>
               
-              {/* Mobile Reco Widget */}
-              <div className="block lg:hidden mb-0">
-                <iframe 
-                  src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=true&reviews=5"
-                  className="w-full h-[150px] border-0"
-                  title="Flyttella recensioner"
-                />
-                              </div>
+              {/* Mobile Reco Widget removed per request */}
               
               {/* Montering Card - Positioned absolutely to the right */}
               <div className="hidden lg:block absolute -right-72 top-[1835px] w-64">

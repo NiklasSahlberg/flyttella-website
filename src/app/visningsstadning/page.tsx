@@ -183,7 +183,7 @@ export default function VisningsstadningPage() {
         {/* Hero Section */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
           {/* Mobile: Form */}
-          <div className="md:hidden mx-auto px-4 pb-8" id="visningsstad-offert">
+          <div className="md:hidden mx-auto px-4 pb-2" id="visningsstad-offert">
             {selectedServiceType === 'flyttstad' ? (
               <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
             ) : (
@@ -214,7 +214,7 @@ export default function VisningsstadningPage() {
         </div>
 
         {/* What is Visningsstädning */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="pt-2 pb-12 md:pt-2 md:pb-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               <motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>

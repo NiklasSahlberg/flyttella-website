@@ -197,7 +197,7 @@ export default function HemstadningPage() {
         {/* Hero Section */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
           {/* Mobile: Form */}
-          <div className="md:hidden mx-auto px-4 pb-8" id="hemstad-offert">
+          <div className="md:hidden mx-auto px-4 pb-2" id="hemstad-offert">
             {selectedServiceType === 'flyttstad' ? (
               <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
             ) : (
@@ -228,7 +228,7 @@ export default function HemstadningPage() {
         </div>
 
         {/* What is Hemstädning */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="pt-2 pb-12 md:pt-2 md:pb-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               <motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
@@ -331,7 +331,7 @@ export default function HemstadningPage() {
                     title: 'Hur bokar jag hemstädning?',
                     content: (
                       <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-0 text-left md:text-center">
-                        Boka på en minut: fyll i formuläret, få pris direkt och bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta, frekvens och eventuella tillval. Därefter planerar vi startdatum – enkelt och tryggt. Vi matchar dig med en fast städare eller ett litet team för kontinuitet och trygghet. Du väljer veckodag och tid som passar, och kan enkelt justera eller pausa via vår kundtjänst. Betalning sker smidigt efter utförd städning. RUT‑avdraget (50% på arbetskostnaden) sköter vi automatiskt. Självklart ingår vår 14 dagars städgaranti.
+                        Boka på en minut: fyll i formuläret, få pris direkt och bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta, frekvens och eventuella tillval. Därefter planerar vi startdatum – enkelt och tryggt. Vi matchar dig med en fast städare eller ett litet team för kontinuitet och trygghet. Du väljer veckodag och tid som passar, och kan enkelt justera eller pausa via vår kundtjänst. Betalning sker smidigt efter utförd städning. RUT‑avdraget (50% på arbetskostnaden) sköter vi automatiskt.
                       </p>
                     ),
                     icon: '📅'
