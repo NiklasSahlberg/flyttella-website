@@ -300,7 +300,7 @@ export default function HemstadningPage() {
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Pris för hemstädning beror på boyta, planlösning, städfrekvens och dina specifika önskemål. Med 50% RUT‑avdrag på arbetskostnaden blir återkommande hemstädning mycket prisvärt. Begär en kostnadsfri offert – du får pris på 1 minut. Faktorer som påverkar priset är bland annat antal badrum, grad av nedsmutsning samt eventuella tillval (t.ex. fönsterputs, ugnsrengöring eller invändig skåprengöring). Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad din hemstädning kostar.
+                          Pris för hemstädning beror på boyta, planlösning, städfrekvens och dina specifika önskemål. Med 50% RUT‑avdrag på arbetskostnaden blir återkommande hemstädning mycket prisvärt. Begär en kostnadsfri offert – du får pris på 1 minut. Faktorer som påverkar priset är bland annat antal badrum, grad av nedsmutsning samt eventuella tillval (t.ex. fönsterputs eller ugnsrengöring). Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad din hemstädning kostar.
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>

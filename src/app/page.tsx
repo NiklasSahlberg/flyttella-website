@@ -1473,7 +1473,7 @@ export default function Home() {
               </div>
               
               {/* Mobile: Image below text */}
-              <div className="w-full md:w-3/5 flex justify-center order-2 md:order-1">
+              <div className="w-full md:w-3/5 flex justify-center order-2 md:order-2">
                 <Image
                   src="/awards_no_bg.png"
                   alt="Flyttella's utmärkelser och priser"
@@ -1485,7 +1485,7 @@ export default function Home() {
               </div>
               
               {/* Desktop: Text on the right */}
-              <div className="hidden md:flex w-full md:w-2/5 text-left flex-col items-start justify-center">
+              <div className="hidden md:flex w-full md:w-2/5 md:order-1 text-left flex-col items-start justify-center">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('awards.title')}</h2>
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
                   Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet.<br />

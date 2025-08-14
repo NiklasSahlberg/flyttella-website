@@ -276,7 +276,7 @@ export default function VisningsstadningPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/cleaning_background.png" alt="Visningsstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/fonsterputs_info.png" alt="Visningsstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -391,21 +391,21 @@ export default function VisningsstadningPage() {
                 >
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en ledande städfirma i Stockholm med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Storstockholm.
+                      Flyttella är Stockholms ledande städfirma med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Stockholm.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi anpassar alltid städningen efter dina mål – från fotoanpassade detaljer till tidsplan inför visning. Vår visningsstädning följer en tydlig checklista för ett jämnt och högt resultat.
+                      Vi känner till alla Stockholms områden och anpassar vår visningsstädning efter just dina behov – från lägenheter och villor till bostadsrätter i innerstan. Vår visningsstädning följer tydliga checklistor och säkerställer ett resultat som syns både på bilder och under visning.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vårt mål är att göra din försäljning enklare. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt. Med vår erfarenhet levererar vi ett resultat som syns på både bilder och visning.
+                      Vårt mål är att göra din visningsstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen.
                     </p>
                   </div>
                   <div className="lg:hidden space-y-4">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en städfirma i Stockholm med lång erfarenhet av visningsstädning.
+                      Flyttella är Stockholms ledande städfirma med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi arbetar i hela Storstockholm och vet vad som krävs för att hemmet ska se sitt bästa ut på bild och under visning.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi erbjuder städgaranti, fasta priser och personlig service – anpassat för foto och visning.
+                      Fasta priser och personlig service – anpassat för foto och visning. Vi planerar städningen efter bostadens planlösning, ytskikt och tidsplan, så att allt blir klart i tid.
                     </p>
                     {!showFullAboutText && (
                       <button
@@ -432,10 +432,10 @@ export default function VisningsstadningPage() {
                         className="space-y-4 mt-4"
                       >
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Vi planerar städningen utifrån din bostad och tidsplan, och säkerställer ett resultat som märks på visningen.
+                          Vår visningsstädning följer tydliga checklistor för kök, badrum och alla rum – med fokus på blanka ytor, speglar och detaljer som syns i kamera. Resultatet märks på både bilder och visning.
                         </p>
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen.
+                          Du får kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen. Behöver du fönsterputs eller andra tillval hjälper vi till.
                         </p>
                         <motion.div className="pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
                           <Link 
