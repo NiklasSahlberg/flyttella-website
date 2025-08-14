@@ -656,6 +656,15 @@ export default function VisningsstadningPage() {
           </div>
         </section>
 
+        {/* Image below mobile "Våra förmåner" slider */}
+        <div className="md:hidden px-4 mt-4">
+          <img
+            src="/varafarmaner_flyttstad.png"
+            alt="Våra förmåner"
+            className="w-full h-auto rounded-2xl shadow-lg"
+          />
+        </div>
+
         {/* Desktop features grid with image */}
         <div className="responsive-zoom hidden md:block">
           <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
