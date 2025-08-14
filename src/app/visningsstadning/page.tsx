@@ -199,7 +199,7 @@ export default function VisningsstadningPage() {
                 <div className="max-w-xl w-full">
                   <h1 className="text-5xl md:text-6xl font-bold mb-8">Professionell visningsstädning i Stockholm</h1>
                   <p className="text-2xl md:text-3xl mb-12">Maximera intrycket inför försäljningen</p>
-                  <p className="text-lg text-white/90">Skinande kök och badrum, polerade ytor och doftneutralt resultat – anpassat för foto och visning.</p>
+                  <p className="text-lg text-white/90">Skinande kök och badrum, polerade ytor och doftneutralt resultat – anpassat för fotografering och visning.</p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
                   {selectedServiceType === 'flyttstad' ? (
@@ -318,7 +318,7 @@ export default function VisningsstadningPage() {
                   {
                     title: 'Hur bokar jag visningsstädning?',
                     content:
-                      'Boka på en minut via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och tid och lägg till eventuella tillval som fönsterputs. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta och tidplan inför foto och visning. Därefter bekräftar vi starttid – enkelt och tryggt. Du kan justera bokningen via vår kundtjänst. RUT‑avdraget (50% på arbetskostnaden) sköts automatiskt. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
+                      'Boka på en minut via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och tid och lägg till eventuella tillval som fönsterputs. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta och tidplan inför fotografering och visning. Därefter bekräftar vi starttid – enkelt och tryggt. Du kan justera bokningen via vår kundtjänst. RUT‑avdraget (50% på arbetskostnaden) sköts automatiskt. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
                     icon: '📅'
                   }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
@@ -405,7 +405,7 @@ export default function VisningsstadningPage() {
                       Flyttella är Stockholms ledande städfirma med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi arbetar i hela Storstockholm och vet vad som krävs för att hemmet ska se sitt bästa ut på bild och under visning.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Fasta priser och personlig service – anpassat för foto och visning. Vi planerar städningen efter bostadens planlösning, ytskikt och tidsplan, så att allt blir klart i tid.
+                      Fasta priser och personlig service – anpassat för fotografering och visning. Vi planerar städningen efter bostadens planlösning, ytskikt och tidsplan, så att allt blir klart i tid.
                     </p>
                     {!showFullAboutText && (
                       <button
@@ -928,7 +928,7 @@ export default function VisningsstadningPage() {
                 '@context': 'https://schema.org',
                 '@type': 'FAQPage',
                 mainEntity: [
-                  { '@type': 'Question', name: 'Vad är visningsstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Visningsstädning är en noggrann städning anpassad för foto och visning, med fokus på ytor som skapar ett starkt första intryck.' } },
+                  { '@type': 'Question', name: 'Vad är visningsstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Visningsstädning är en noggrann städning anpassad för fotografering och visning, med fokus på ytor som skapar ett starkt första intryck.' } },
                   { '@type': 'Question', name: 'Vad kostar visningsstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Priset beror på boyta och önskade tillägg. Med RUT‑avdrag blir visningsstädning prisvärt.' } },
                   { '@type': 'Question', name: 'Ingår fönsterputs?', acceptedAnswer: { '@type': 'Answer', text: 'Fönsterputs kan läggas till som tillval för bästa helhetsintryck.' } },
                   { '@type': 'Question', name: 'Kan ni samordna med mäklare?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, vi kan anpassa tidplanen och samordna vid behov.' } }
