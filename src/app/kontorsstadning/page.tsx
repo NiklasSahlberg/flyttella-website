@@ -212,7 +212,7 @@ export default function KontorsstadningPage() {
                 <div className="max-w-xl w-full">
                   <h1 className="text-5xl md:text-6xl font-bold mb-8">Professionell kontorsstädning i Stockholm</h1>
                   <p className="text-2xl md:text-3xl mb-12">Regelbunden städning för företag</p>
-                  <p className="text-lg text-white/90">Vi erbjuder professionell kontorsstädning anpassad efter ert schema. Fast pris, RUT-avdrag och en ren arbetsmiljö för era medarbetare.</p>
+                  <p className="text-lg text-white/90">Vi erbjuder professionell kontorsstädning anpassad efter ert schema. Löpande priser, RUT-avdrag och en ren arbetsmiljö för era medarbetare.</p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
                   {selectedServiceType === 'flyttstad' ? (
@@ -237,7 +237,7 @@ export default function KontorsstadningPage() {
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                       <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧽</span><h3 className="text-xl font-bold text-white">Flyttstädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Grundlig flyttstädning enligt branschstandard – fast pris och 14 dagars garanti.</p>
+                      <p className="text-sm text-gray-100 mb-4 relative">Grundlig flyttstädning enligt branschstandard – löpande priser och 14 dagars garanti.</p>
                       <div className="mt-auto relative">
                         <Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
@@ -296,7 +296,7 @@ export default function KontorsstadningPage() {
                     title: 'Vad kostar kontorsstädning?',
                     content: (
                       <>
-                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Priset för kontorsstädning beror på lokalernas storlek, städfrekvens och omfattning. Med RUT-avdrag blir kontorsstädning mycket prisvärt. Begär en kostnadsfri offert – vi ger er ett fast, transparent pris utan dolda avgifter.</p>
+                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Priset för kontorsstädning beror på lokalernas storlek, städfrekvens och omfattning. Med RUT-avdrag blir kontorsstädning mycket prisvärt. Begär en kostnadsfri offert – vi arbetar med löpande priser utan dolda avgifter.</p>
                         <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;Ett rent kontor skapar en bättre arbetsmiljö för alla – professionellt och välorganiserat!&quot;</p><p className="italic text-gray-700 mt-2">- Maria, Kontorschef</p></div>
                       </>
                     ),
@@ -399,13 +399,13 @@ export default function KontorsstadningPage() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
                   <div className="hidden lg:block space-y-8">
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en erfaren städfirma i Stockholm som erbjuder professionell kontorsstädning för företag av alla storlekar. Vi arbetar med fasta priser, tydliga checklistor och flexibel service anpassad efter ert schema.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en erfaren städfirma i Stockholm som erbjuder professionell kontorsstädning för företag av alla storlekar. Vi arbetar med löpande priser, tydliga checklistor och flexibel service anpassad efter ert schema.</p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vårt team använder miljövänliga produkter och moderna metoder för att skapa en ren, hälsosam arbetsmiljö. Vi förstår att varje företag har unika behov och anpassar därför våra tjänster efter er verksamhet.</p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Med många års erfarenhet av kontorsstädning i Stockholm levererar vi pålitlig service som gör att ni kan fokusera på ert kärnverksamhet. Snabb kommunikation och flexibla lösningar.</p>
                   </div>
                   <div className="lg:hidden space-y-4">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en erfaren städfirma i Stockholm med specialisering på kontorsstädning för företag.</p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Fasta priser, miljövänliga produkter och flexibel service anpassad efter ert schema.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Löpande priser, miljövänliga produkter och flexibel service anpassad efter ert schema.</p>
                     {!showFullAboutText && (
                       <button onClick={() => setShowFullAboutText(true)} className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></button>
                     )}
@@ -433,7 +433,7 @@ export default function KontorsstadningPage() {
           location="Stockholm" 
           title="Vad tycker våra kunder om oss?" 
           subtitle="Pålitlig kontorsstädning i Stockholm" 
-          description="Professionell kontorsstädning i Stockholm – regelbunden städning för företag. Fast pris och RUT-avdrag. Pålitliga städare och höga betyg. Läs vad våra företagskunder tycker om vår kontorsstädning i Stockholm." 
+          description="Professionell kontorsstädning i Stockholm – regelbunden städning för företag. Löpande priser och RUT-avdrag. Pålitliga städare och höga betyg. Läs vad våra företagskunder tycker om vår kontorsstädning i Stockholm." 
           badgeAlt="Erfarenhet av kontorsstädning i Stockholm" 
           arrowText="Läs vad våra kunder säger om vår kontorsstädning" 
         />
@@ -467,7 +467,7 @@ export default function KontorsstadningPage() {
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🏡</span><h3 className="text-3xl md:text-5xl font-bold text-white">Hemstädning</h3></div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Regelbunden hemstädning – veckovis, varannan vecka eller månadsvis. Fast pris och 50% RUT‑avdrag.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Regelbunden hemstädning – veckovis, varannan vecka eller månadsvis. Löpande priser och 50% RUT‑avdrag.</p>
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi anpassar städningen efter dina behov och önskemål – från kök och badrum till vardagsrum och sovrum. Miljövänliga produkter och flexibla intervaller. Som tillval erbjuds fönsterputs och storstädning. Samma erfarna städare för kontinuitet och trygghet.</p>
                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/hemstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                 </motion.div>
@@ -475,11 +475,448 @@ export default function KontorsstadningPage() {
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧽</span><h3 className="text-3xl md:text-5xl font-bold text-white">Flyttstädning</h3></div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Grundlig flyttstädning enligt branschstandard – fast pris, 14 dagars garanti och full RUT‑hantering.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Grundlig flyttstädning enligt branschstandard – löpande priser, 14 dagars garanti och full RUT‑hantering.</p>
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar enligt en komplett checklista: alla rum, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du välja fönsterputs, balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.</p>
                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                 </motion.div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Våra förmåner - Mobile slider */}
+        <section className="md:hidden py-8 bg-white">
+          <div className="mx-auto px-4">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6">
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">Våra förmåner</h2>
+              <div className="relative overflow-hidden rounded-xl">
+                <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}>
+                  {[
+                    { icon: "💰", title: "Löpande priser", description: "Transparenta löpande priser – du vet vad du betalar för", link: "/priser" },
+                    { icon: "📋", title: "RUT-avdrag", description: "Vi hanterar allt pappersarbete för RUT-avdrag - upp till 50% avdrag", link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
+                    { icon: "✅", title: "Kvalitetsgaranti", description: "Vi är så säkra på vår kvalitet att vi erbjuder nöjd kund-garanti", link: "/garanti" },
+                    { icon: "⏰", title: "Flexibla tider", description: "Vi anpassar städningen efter ert schema - kvällar och helger", link: "/kontakt" },
+                    { icon: "🔒", title: "Försäkring", description: "Full ansvarsförsäkring och alla nödvändiga tillstånd på plats", link: "/tillstand" },
+                    { icon: "🎓", title: "Utbildad personal", description: "Vår personal är utbildad för kontorsmiljöer och professionell service", link: "/om-oss" },
+                    { icon: "🧴", title: "Miljövänliga produkter", description: "Vi använder certifierade miljövänliga rengöringsmedel", link: "/om-oss" },
+                    { icon: "📈", title: "Regelbunden service", description: "Pålitlig och konsekvent städning enligt överenskommen frekvens", link: "/om-oss" },
+                    { icon: "🦺", title: "Trygg arbetsmiljö", description: "Vi prioriterar säkerhet för både kunder och personal", link: "/om-oss" }
+                  ].map((feature, index) => (
+                    <div key={feature.icon} className="w-full flex-shrink-0">
+                      <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
+                        <div className="flex items-start gap-3 h-full">
+                          <span className="text-2xl">{feature.icon}</span>
+                          <div className="flex-1">
+                            <h4 className="text-white font-semibold text-base mb-1">{feature.title}</h4>
+                            <p className="text-white/80 text-sm mb-2">{feature.description}</p>
+                            {feature.title === 'RUT-avdrag' ? (
+                              <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
+                                Läs mer
+                                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                              </a>
+                            ) : (
+                              <div className="h-6" />
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Arrow controls */}
+                <button type="button" aria-label="Föregående" onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                </button>
+                <button type="button" aria-label="Nästa" onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Desktop Våra förmåner */}
+        <div className="responsive-zoom hidden md:block">
+          <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
+            <div className="mx-auto px-24">
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
+                <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
+                  {/* Left side - Features content */}
+                  <div className="flex-[2] w-full">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
+                      {[
+                        { icon: "💰", title: "Löpande priser", description: "Transparenta löpande priser – du vet vad du betalar för", link: "/priser" },
+                        { icon: "📋", title: "RUT-avdrag", description: "Vi hanterar allt pappersarbete för RUT-avdrag - upp till 50% avdrag", link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
+                        { icon: "✅", title: "Kvalitetsgaranti", description: "Vi är så säkra på vår kvalitet att vi erbjuder nöjd kund-garanti", link: "/garanti" },
+                        { icon: "⏰", title: "Flexibla tider", description: "Vi anpassar städningen efter ert schema - kvällar och helger", link: "/kontakt" },
+                        { icon: "🔒", title: "Försäkring", description: "Full ansvarsförsäkring och alla nödvändiga tillstånd på plats", link: "/tillstand" },
+                        { icon: "🎓", title: "Utbildad personal", description: "Vår personal är utbildad för kontorsmiljöer och professionell service", link: "/om-oss" },
+                        { icon: "🧴", title: "Miljövänliga produkter", description: "Vi använder certifierade miljövänliga rengöringsmedel", link: "/om-oss" },
+                        { icon: "📈", title: "Regelbunden service", description: "Pålitlig och konsekvent städning enligt överenskommen frekvens", link: "/om-oss" },
+                        { icon: "🦺", title: "Trygg arbetsmiljö", description: "Vi prioriterar säkerhet för både kunder och personal", link: "/om-oss" }
+                                             ].map((feature, index) => (
+                         <motion.div key={feature.icon} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
+                           <span className="text-2xl md:text-3xl">{feature.icon}</span>
+                           <div className="flex-1">
+                             <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
+                             <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
+                              {feature.title === 'RUT-avdrag' ? (
+                                <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center mt-auto">
+                                  Läs mer
+                                  <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                                </a>
+                                                             ) : (
+                                 <div className="h-6" />
+                               )}
+                           </div>
+                         </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Right side - Image */}
+                  <div className="flex-1 w-full lg:w-auto flex items-center justify-center">
+                    <div className="relative w-full max-w-md">
+                      <img src="/cleaning_lady.png" alt="Professionell kontorsstädning" className="w-full h-auto rounded-xl shadow-lg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Vår erfarenhet */}
+        <motion.section className="relative overflow-hidden" style={{ paddingTop: '14rem', paddingBottom: '6rem', marginTop: '2rem', borderTop: 'none', boxShadow: 'none' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/our_experience.png)', backgroundSize: 'cover', backgroundPosition: 'center 85%', zIndex: 0 }} />
+          <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
+          <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)' }} />
+          <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
+            <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+              {/* Mobile: auto-sliding cards */}
+              <div className="md:hidden mt-8">
+                <div className="relative overflow-hidden rounded-xl" onTouchStart={(e)=>{expTouchStartXRef.current=e.touches[0].clientX; if (experienceIntervalRef.current) clearInterval(experienceIntervalRef.current);}} onTouchMove={(e)=>expTouchCurrentXRef.current=e.touches[0].clientX} onTouchEnd={()=>{ if (expTouchStartXRef.current!=null && expTouchCurrentXRef.current!=null){ const dx=expTouchCurrentXRef.current-expTouchStartXRef.current; const th=50; if(Math.abs(dx)>th){ if(dx<0){ setCurrentExperienceCard((prev)=>(prev+1)%totalExperienceCards);} else { setCurrentExperienceCard((prev)=>(prev-1+totalExperienceCards)%totalExperienceCards);} restartExperienceAutoSlide(); } } expTouchStartXRef.current=null; expTouchCurrentXRef.current=null; }}>
+                  <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentExperienceCard * 100}%)` }}>
+                    {[
+                      { title: 'Kontorsstädningar', count: 2000 },
+                      { title: 'Hemstädningar', count: 5000 },
+                      { title: 'Flyttstädningar', count: 7000 },
+                    ].map((card, index) => (
+                      <div key={card.title} className="w-full flex-shrink-0">
+                        <div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
+                          <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                            <h4 className="text-lg font-bold mb-1 text-white">{card.title}</h4>
+                            <div className="text-4xl font-bold mb-1 text-white"><CountUp end={card.count} duration={2.0} suffix="+" /></div>
+                            <p className="text-white/90 text-sm">uppdrag utförda</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Arrow controls */}
+                  <button type="button" aria-label="Föregående" onClick={() => { setCurrentExperienceCard((prev) => (prev - 1 + totalExperienceCards) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                  </button>
+                  <button type="button" aria-label="Nästa" onClick={() => { setCurrentExperienceCard((prev) => (prev + 1) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* Desktop: grid */}
+              <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-12">
+                <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 0 * 0.25 }}>
+                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                    <motion.h2 className="text-xl font-bold mb-2 text-white">Kontorsstädningar</motion.h2>
+                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={2000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
+                    <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                  </div>
+                </motion.div>
+                <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 1 * 0.25 }}>
+                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                    <motion.h2 className="text-xl font-bold mb-2 text-white">Hemstädningar</motion.h2>
+                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={5000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
+                    <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                  </div>
+                </motion.div>
+                <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
+                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                    <motion.h2 className="text-xl font-bold mb-2 text-white">Flyttstädningar</motion.h2>
+                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={7000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
+                    <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="mt-8 flex flex-col items-center justify-center gap-4">
+                <motion.div className="flex-1 max-w-4xl text-center px-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet ger resultat</h4>
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
+                    Med tusentals städningar bakom oss har vi byggt upp en unik expertis inom kontorsstädning i Stockholm. Vi hjälper både privatpersoner och företag till skinande rena kontor och arbetsplatser. Vårt erfarna team arbetar alltid noggrant och effektivt, med miljövänliga produkter och modern utrustning. Vi strävar efter att överträffa dina förväntningar vid varje uppdrag och är stolta över vår höga kundnöjdhet.
+                  </p>
+                </motion.div>
+                <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
+                  {/* Mobile pyramid layout */}
+                  <div className="md:hidden flex flex-col items-center">
+                    {/* Top badge */}
+                    <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
+                      <Image
+                        src="/1000reviewspicture.png"
+                        alt="1000+ positiva recensioner från kunder"
+                        width={200}
+                        height={200}
+                        className="object-contain h-36 w-36"
+                        priority={false}
+                      />
+                    </motion.div>
+                    {/* Bottom row */}
+                    <div className="flex items-center justify-center gap-4">
+                      <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                        <Image
+                          src="/recommendedcompany2.png"
+                          alt="Rekommenderad kontorsstädfirma - Flyttella"
+                          width={160}
+                          height={160}
+                          className="object-contain h-32 w-32"
+                          priority={false}
+                        />
+                      </motion.div>
+                      <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                        <Image
+                          src="/bestinswedenbadge-modified.png"
+                          alt="Top 10 kontorsstädfirma - Flyttella"
+                          width={180}
+                          height={180}
+                          className="object-contain h-28 w-28"
+                          priority={false}
+                        />
+                      </motion.div>
+                    </div>
+                  </div>
+                  {/* Desktop horizontal layout */}
+                  <div className="hidden md:flex items-center justify-center gap-6">
+                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                    <Image
+                      src="/recommendedcompany2.png"
+                      alt="Rekommenderad kontorsstädfirma - Flyttella"
+                      width={240}
+                      height={240}
+                      className="object-contain h-60 w-60"
+                      priority={false}
+                    />
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                    <Image
+                      src="/1000reviewspicture.png"
+                      alt="1000+ positiva recensioner från kunder"
+                      width={260}
+                      height={260}
+                      className="object-contain h-64 w-64 mt-3"
+                      priority={false}
+                    />
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                    <Image
+                      src="/bestinswedenbadge-modified.png"
+                      alt="Top 10 kontorsstädfirma - Flyttella"
+                      width={300}
+                      height={300}
+                      className="object-contain h-48 w-48"
+                      priority={false}
+                    />
+                  </motion.div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Vår process */}
+        <section className="py-16 bg-white relative overflow-hidden">
+          <div className="mx-auto px-4 md:px-24 relative z-10">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 mb-6 md:mb-8 w-full">
+              <div className="w-full">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+                  Vår process
+            </h2>
+
+                {/* Process Description */}
+                <div className="text-center mb-6 md:mb-8 hidden md:block">
+                  <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
+                    Vår kontorsstädningsprocess är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär där du anger dina uppgifter och städbehov. Inom en minut får du en offert skickad till din angivna e-postadress. Samma dag eller dagen efter tar vi personlig kontakt med dig för att diskutera detaljerna och svara på eventuella frågor. När du är nöjd med offerten kan du enkelt signera den digitalt. Sedan genomför vi städningen enligt dina önskemål och avtal. Resultatet? En nöjd kund som kan lämna sitt kontor i perfekt skick.
+                  </p>
+                </div>
+
+                {/* Pricing Info */}
+                <div className="text-center mb-4 md:mb-8">
+                  <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4">
+                    Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som kontorsyta, antal rum, tillgänglighet och städkrav för att ge dig en offert som passar just din situation. Alla priser är löpande utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+                  </p>
+                </div>
+
+                {/* Process Flow Section */}
+                <div className="mb-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3>
+                  <div className="relative w-full">
+                    {/* Timeline connector line */}
+                    <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
+                      <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
+                      {[
+                        {
+                          icon: <FillFormLottie />,
+                          title: "Fyll i formuläret",
+                          description: "Berätta om din kontorsstädning",
+                          textClass: ""
+                        },
+                        {
+                          icon: <FastLottie />,
+                          title: "Snabb offert",
+                          description: "Få pris på 1 minut",
+                          textClass: ""
+                        },
+                        {
+                            icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
+                          title: "Personlig kontakt",
+                          description: "Vi ringer samma dag eller dagen efter",
+                            containerClass: "md:-mt-7",
+                          textClass: ""
+                        },
+                        {
+                            icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
+                          title: "Signera & bekräfta",
+                          description: "Få bokningsbekräftelse direkt",
+                            containerClass: "md:-mt-6",
+                          textClass: ""
+                        },
+                        {
+                            icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
+                          title: "Städning genomförd",
+                          description: "Vi tar hand om allt - från start till slut",
+                            containerClass: "md:-mt-14",
+                            textClass: "md:-mt-8",
+                        },
+                        {
+                            icon: <div className="md:mt-0"><CleanHomeLottie /></div>,
+                          title: "Nöjd kund",
+                          description: "Återkommande kund",
+                            containerClass: "md:-mt-6",
+                          textClass: ""
+                        }
+                      ].map((step, index) => (
+                        <motion.div
+                          key={index}
+                            className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0"
+                          initial="initial"
+                          whileInView="animate"
+                          viewport={{ once: true, amount: 0.2 }}
+                          variants={fadeInUp}
+                          custom={index}
+                        >
+                          {/* Timeline dot */}
+                          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
+                          <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
+                              <div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div>
+                            <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
+                                <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
+                                <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* White gradient fade to blend into next section */}
+          <div className="absolute left-0 bottom-0 w-full h-10 pointer-events-none" style={{background: 'linear-gradient(to bottom, white 60%, rgba(255,255,255,0) 100%)', zIndex: 20}} />
+        </section>
+
+        {/* Blog Post Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+                  Läs mer om kontorsstädning i Stockholm
+            </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Få värdefulla tips och råd för professionell kontorsstädning
+                </p>
+              </div>
+              <motion.div 
+                className="bg-white rounded-2xl shadow-lg overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="md:flex">
+                  <div className="md:w-1/3">
+                    <img 
+                      src="/cleaning_lady.png" 
+                      alt="Kontorsstädtips Stockholm" 
+                      className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center"
+                    />
+                  </div>
+                  <div className="md:w-2/3 p-8">
+                    <div className="flex items-center mb-4">
+                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">
+                        Kontorsstädning
+                      </span>
+                      <span className="text-gray-500 text-sm ml-4">5 min läsning</span>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">
+                      Vad bör du tänka på när du väljer kontorsstädfirma
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      Att välja rätt kontorsstädfirma är avgörande för en professionell arbetsmiljö. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från kvalitetsgaranti och miljövänliga produkter till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös kontorsstädfirma som levererar kvalitet och trygghet för ditt kontor.
+                    </p>
+                    <div className="flex items-center justify-end mb-4">
+                      <Link 
+                        href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-kontorsstadfirma" 
+                        className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                      >
+                        Läs mer
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+                    
+                  </div>
+                </div>
+              </motion.div>
+              <div className="text-center mt-8 md:mt-12">
+                      <Link 
+                        href="/blogg" 
+                  className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base"
+                      >
+                        Se alla artiklar om städning
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                    className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                      </Link>
+                    </div>
             </div>
           </div>
         </section>
