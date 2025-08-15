@@ -137,9 +137,10 @@ interface FlyttoffertFormProps {
   swapServiceOrder?: boolean;
   onServiceTypeSelect?: (serviceType: string) => void;
   cleaningCardSubtitle?: string; // optional override for cleaning card subtitle
+  defaultCustomerType?: 'privat' | 'foretag'; // optional default customer type
 }
 
-export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle }: FlyttoffertFormProps) {
+export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle, defaultCustomerType = 'privat' }: FlyttoffertFormProps) {
   const [step, setStep] = useState(0);
   const [showSteps, setShowSteps] = useState(false);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
@@ -192,7 +193,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     wantsFlexibleDate: false,
     elevatorSize: "",
     toElevatorSize: "",
-    customerType: 'privat', // default
+    customerType: defaultCustomerType, // use prop or default to 'privat'
     hasLoadingDock: "no", // default for step 3
     toHasLoadingDock: "no", // default for step 5
     contactFirstName: '',

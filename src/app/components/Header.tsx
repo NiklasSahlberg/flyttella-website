@@ -295,6 +295,10 @@ export default function Header() {
                           <span className="text-lg mr-3">🌍</span>
                           <span>Utlandsflytt</span>
                         </Link>
+                        <Link href="/montering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                          <span className="text-lg mr-3">🔧</span>
+                          <span>Montering</span>
+                        </Link>
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
                         <Link href="/tjanster" onClick={() => setIsServicesOpen(false)} className="flex items-center justify-between text-base font-medium text-[#10B981] hover:text-[#0F172A] transition-colors">
@@ -344,7 +348,11 @@ export default function Header() {
                           <span className="text-lg mr-3">🏡</span>
                           <span>Hemstädning</span>
                         </Link>
-                        <Link href="/bygg-grovstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/fonsterputsning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                          <span className="text-lg mr-3">🪟</span>
+                          <span>Fönsterputs</span>
+                        </Link>
+                        <Link href="/byggstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
                           <span className="text-lg mr-3">🚧</span>
                           <span>Byggstädning</span>
                         </Link>
