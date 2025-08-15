@@ -339,7 +339,7 @@ export default function KontorsflyttPage() {
                   {
                     title: 'Vad ingår i kontorsflytt?',
                     content:
-                      'Planering och projektledning, transport med full försäkring, hantering av känsliga dokument och arkiv, installation och uppsättning på nya lokaler, koordinering med leverantörer och tekniker. Vi anpassar tjänsten efter era specifika behov och verksamhet.',
+                      'Planering och projektledning, demontage och montage av möbler, transport med full försäkring, hantering av känsliga dokument och arkiv, installation och uppsättning på nya lokaler, koordinering med leverantörer och tekniker. Vi anpassar tjänsten efter era specifika behov och verksamhet.',
                     icon: '📋'
                   },
                   {
