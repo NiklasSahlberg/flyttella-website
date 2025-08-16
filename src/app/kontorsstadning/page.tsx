@@ -207,12 +207,12 @@ export default function KontorsstadningPage() {
           {/* Desktop: Full hero section */}
           <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: 'url(/cleaning_background.png)' }} />
+              <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: 'url(/nystadat_kontor.png)' }} />
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
                   <h1 className="text-5xl md:text-6xl font-bold mb-8">Professionell kontorsstädning i Stockholm</h1>
                   <p className="text-2xl md:text-3xl mb-12">Regelbunden städning för företag</p>
-                  <p className="text-lg text-white/90">Vi erbjuder professionell kontorsstädning anpassad efter ert schema. Löpande priser, RUT-avdrag och en ren arbetsmiljö för era medarbetare.</p>
+                  <p className="text-lg text-white/90">Vi erbjuder professionell kontorsstädning anpassad efter ert schema. Löpande priser och en ren arbetsmiljö för era medarbetare.</p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
                   {selectedServiceType === 'flyttstad' ? (
@@ -287,7 +287,7 @@ export default function KontorsstadningPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/office-moving.png" alt="Kontorsstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/nystadat_kontor2.png" alt="Kontorsstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -296,7 +296,7 @@ export default function KontorsstadningPage() {
                     title: 'Vad kostar kontorsstädning?',
                     content: (
                       <>
-                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Priset för kontorsstädning beror på lokalernas storlek, städfrekvens och omfattning. Med RUT-avdrag blir kontorsstädning mycket prisvärt. Begär en kostnadsfri offert – vi arbetar med löpande priser utan dolda avgifter.</p>
+                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Priset för kontorsstädning beror på lokalernas storlek, städfrekvens och omfattning. Begär en kostnadsfri offert – vi arbetar med löpande priser utan dolda avgifter.</p>
                         <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;Ett rent kontor skapar en bättre arbetsmiljö för alla – professionellt och välorganiserat!&quot;</p><p className="italic text-gray-700 mt-2">- Maria, Kontorschef</p></div>
                       </>
                     ),
@@ -312,7 +312,7 @@ export default function KontorsstadningPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/cleaning_lady.png" alt="Kontorsstädning service" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/nystadat_kontor.png" alt="Kontorsstädning service" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -383,10 +383,10 @@ export default function KontorsstadningPage() {
                 >
                   <div className="relative h-80 lg:h-full w-full overflow-hidden rounded-2xl">
                     <img 
-                      src="/cleaning_lady.png" 
-                      alt="Om Flyttella" 
+                      src="/omflyttella_flyttstad.png" 
+                      alt="Om Flyttella Städ" 
                       className="object-cover rounded-2xl w-full h-full" 
-                      style={{ objectPosition: '30% 25%', transform: 'scale(1.10)' }}
+                      style={{ objectPosition: '80% 25%', transform: 'scale(1.10)' }}
                     />
                   </div>
                 </motion.div>
@@ -425,7 +425,7 @@ export default function KontorsstadningPage() {
         </motion.section>
         {/* Mobile image below the section */}
         <div className="lg:hidden px-4 mt-6">
-          <img src="/cleaning_lady.png" alt="Om Flyttella" className="w-full h-auto rounded-2xl shadow-lg object-contain" />
+          <img src="/omflyttella_flyttstad.png" alt="Om Flyttella Städ" className="w-full h-auto rounded-2xl shadow-lg object-contain" />
         </div>
 
         {/* Reviews Widget */}
@@ -433,7 +433,7 @@ export default function KontorsstadningPage() {
           location="Stockholm" 
           title="Vad tycker våra kunder om oss?" 
           subtitle="Pålitlig kontorsstädning i Stockholm" 
-          description="Professionell kontorsstädning i Stockholm – regelbunden städning för företag. Löpande priser och RUT-avdrag. Pålitliga städare och höga betyg. Läs vad våra företagskunder tycker om vår kontorsstädning i Stockholm." 
+          description="Professionell kontorsstädning i Stockholm – regelbunden städning för företag. Löpande priser och pålitliga städare med höga betyg. Läs vad våra företagskunder tycker om vår kontorsstädning i Stockholm." 
           badgeAlt="Erfarenhet av kontorsstädning i Stockholm" 
           arrowText="Läs vad våra kunder säger om vår kontorsstädning" 
         />
@@ -453,7 +453,7 @@ export default function KontorsstadningPage() {
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Våra Städtjänster</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Våra andra huvudtjänster</h2>
               <div className="grid grid-cols-1 gap-12">
                 {/* Kontorsflytt Card */}
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
@@ -463,26 +463,26 @@ export default function KontorsstadningPage() {
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi hanterar hela processen från planering till genomförande. Professionell hantering av IT-utrustning, möbler och dokument. Minimal störning av verksamheten.</p>
                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/kontorsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                 </motion.div>
-                {/* Hemstädning Card */}
+                {/* Bemanning och underentreprenad Card */}
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                  <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🏡</span><h3 className="text-3xl md:text-5xl font-bold text-white">Hemstädning</h3></div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Regelbunden hemstädning – veckovis, varannan vecka eller månadsvis. Löpande priser och 50% RUT‑avdrag.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi anpassar städningen efter dina behov och önskemål – från kök och badrum till vardagsrum och sovrum. Miljövänliga produkter och flexibla intervaller. Som tillval erbjuds fönsterputs och storstädning. Samma erfarna städare för kontinuitet och trygghet.</p>
-                  <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/hemstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
+                  <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🔧</span><h3 className="text-3xl md:text-5xl font-bold text-white">Bemanning och underentreprenad</h3></div>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Professionell bemanning för era projekt – kvalificerad personal och pålitliga underentreprenörer.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi tillhandahåller erfaren personal för både kortsiktiga och långsiktiga uppdrag. Våra underentreprenörer är noggrant utvalda och kvalitetssäkrade. Flexibla lösningar anpassade efter era specifika behov och krav.</p>
+                  <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/bemanning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                 </motion.div>
                 {/* Flyttstädning Card */}
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧽</span><h3 className="text-3xl md:text-5xl font-bold text-white">Flyttstädning</h3></div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Grundlig flyttstädning enligt branschstandard – löpande priser, 14 dagars garanti och full RUT‑hantering.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Grundlig flyttstädning enligt branschstandard – löpande priser, 14 dagars garanti och professionell service.</p>
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar enligt en komplett checklista: alla rum, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du välja fönsterputs, balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.</p>
                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                 </motion.div>
-              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Våra förmåner - Mobile slider */}
         <section className="md:hidden py-8 bg-white">
@@ -493,32 +493,23 @@ export default function KontorsstadningPage() {
                 <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}>
                   {[
                     { icon: "💰", title: "Löpande priser", description: "Transparenta löpande priser – du vet vad du betalar för", link: "/priser" },
-                    { icon: "📋", title: "RUT-avdrag", description: "Vi hanterar allt pappersarbete för RUT-avdrag - upp till 50% avdrag", link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
                     { icon: "✅", title: "Kvalitetsgaranti", description: "Vi är så säkra på vår kvalitet att vi erbjuder nöjd kund-garanti", link: "/garanti" },
                     { icon: "⏰", title: "Flexibla tider", description: "Vi anpassar städningen efter ert schema - kvällar och helger", link: "/kontakt" },
                     { icon: "🔒", title: "Försäkring", description: "Full ansvarsförsäkring och alla nödvändiga tillstånd på plats", link: "/tillstand" },
                     { icon: "🎓", title: "Utbildad personal", description: "Vår personal är utbildad för kontorsmiljöer och professionell service", link: "/om-oss" },
                     { icon: "🧴", title: "Miljövänliga produkter", description: "Vi använder certifierade miljövänliga rengöringsmedel", link: "/om-oss" },
                     { icon: "📈", title: "Regelbunden service", description: "Pålitlig och konsekvent städning enligt överenskommen frekvens", link: "/om-oss" },
-                    { icon: "🦺", title: "Trygg arbetsmiljö", description: "Vi prioriterar säkerhet för både kunder och personal", link: "/om-oss" }
+                    { icon: "🦺", title: "Trygg arbetsmiljö", description: "Vi prioriterar säkerhet för både kunder och personal", link: "/om-oss" },
+                    { icon: "📞", title: "Personlig kontakt", description: "Direkt kontakt med er kontaktperson för snabb service och support", link: "/kontakt" }
                   ].map((feature, index) => (
                     <div key={feature.icon} className="w-full flex-shrink-0">
                       <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
                         <div className="flex items-start gap-3 h-full">
                           <span className="text-2xl">{feature.icon}</span>
-                          <div className="flex-1">
+              <div className="flex-1">
                             <h4 className="text-white font-semibold text-base mb-1">{feature.title}</h4>
-                            <p className="text-white/80 text-sm mb-2">{feature.description}</p>
-                            {feature.title === 'RUT-avdrag' ? (
-                              <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
-                                Läs mer
-                                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                              </a>
-                            ) : (
-                              <div className="h-6" />
-                            )}
+                                                         <p className="text-white/80 text-sm mb-2">{feature.description}</p>
+                             <div className="h-6" />
                           </div>
                         </div>
                       </div>
@@ -547,41 +538,32 @@ export default function KontorsstadningPage() {
                   <div className="flex-[2] w-full">
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
-                      {[
+                                             {[
                         { icon: "💰", title: "Löpande priser", description: "Transparenta löpande priser – du vet vad du betalar för", link: "/priser" },
-                        { icon: "📋", title: "RUT-avdrag", description: "Vi hanterar allt pappersarbete för RUT-avdrag - upp till 50% avdrag", link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
                         { icon: "✅", title: "Kvalitetsgaranti", description: "Vi är så säkra på vår kvalitet att vi erbjuder nöjd kund-garanti", link: "/garanti" },
                         { icon: "⏰", title: "Flexibla tider", description: "Vi anpassar städningen efter ert schema - kvällar och helger", link: "/kontakt" },
                         { icon: "🔒", title: "Försäkring", description: "Full ansvarsförsäkring och alla nödvändiga tillstånd på plats", link: "/tillstand" },
                         { icon: "🎓", title: "Utbildad personal", description: "Vår personal är utbildad för kontorsmiljöer och professionell service", link: "/om-oss" },
                         { icon: "🧴", title: "Miljövänliga produkter", description: "Vi använder certifierade miljövänliga rengöringsmedel", link: "/om-oss" },
                         { icon: "📈", title: "Regelbunden service", description: "Pålitlig och konsekvent städning enligt överenskommen frekvens", link: "/om-oss" },
-                        { icon: "🦺", title: "Trygg arbetsmiljö", description: "Vi prioriterar säkerhet för både kunder och personal", link: "/om-oss" }
+                        { icon: "🦺", title: "Trygg arbetsmiljö", description: "Vi prioriterar säkerhet för både kunder och personal", link: "/om-oss" },
+                        { icon: "📞", title: "Personlig kontakt", description: "Direkt kontakt med er kontaktperson för snabb service och support", link: "/kontakt" }
                                              ].map((feature, index) => (
                          <motion.div key={feature.icon} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
                            <span className="text-2xl md:text-3xl">{feature.icon}</span>
-                           <div className="flex-1">
+              <div className="flex-1">
                              <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
                              <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
-                              {feature.title === 'RUT-avdrag' ? (
-                                <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center mt-auto">
-                                  Läs mer
-                                  <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                                </a>
-                                                             ) : (
-                                 <div className="h-6" />
-                               )}
+                             <div className="h-6" />
                            </div>
                          </motion.div>
                       ))}
                     </div>
                   </div>
                   {/* Right side - Image */}
-                  <div className="flex-1 w-full lg:w-auto flex items-center justify-center">
-                    <div className="relative w-full max-w-md">
-                      <img src="/cleaning_lady.png" alt="Professionell kontorsstädning" className="w-full h-auto rounded-xl shadow-lg" />
+                  <div className="flex-1 w-full lg:w-auto flex items-center justify-center min-h-[420px]">
+                    <div className="relative w-full max-w-md h-full flex items-center">
+                      <img src="/varafarmaner_flyttstad.png" alt="Våra förmåner" className="w-full h-full object-cover rounded-xl shadow-lg" />
                     </div>
                   </div>
                 </div>
@@ -589,6 +571,73 @@ export default function KontorsstadningPage() {
             </div>
           </div>
         </div>
+        {/* Image below mobile "Våra förmåner" slider */}
+        <div className="md:hidden px-4 mt-4">
+          <img
+            src="/varafarmaner_flyttstad.png"
+            alt="Våra förmåner"
+            className="w-full h-auto rounded-2xl shadow-lg"
+          />
+        </div>
+
+        {/* Redo att börja er kontorsstädning? */}
+        <section className="py-12 md:py-16 bg-white mt-8 md:mt-12">
+          <div className="mx-auto px-4">
+            <motion.div
+              className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[180px] md:min-h-[200px] w-full max-w-sm sm:max-w-md md:max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Background pattern */}
+              <motion.div 
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                initial={{ backgroundPosition: '0% 0%' }}
+                animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 relative z-10 mb-3 md:mb-4">
+                <span className="text-3xl md:text-4xl">🏢</span>
+                <div className="text-center md:text-left">
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">
+                    Redo att börja er kontorsstädning?
+                  </h3>
+                  <p className="text-base md:text-lg text-gray-100 leading-snug">
+                    Få en snabb och gratis offert på er kontorsstädning
+                  </p>
+                </div>
+              </div>
+              <div className="relative z-10 text-center">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block"
+                >
+                  <button
+                    onClick={() => document.getElementById('top')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
+                  >
+                    Få gratis offert
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Vår erfarenhet */}
         <motion.section className="relative overflow-hidden" style={{ paddingTop: '14rem', paddingBottom: '6rem', marginTop: '2rem', borderTop: 'none', boxShadow: 'none' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
@@ -603,9 +652,9 @@ export default function KontorsstadningPage() {
                 <div className="relative overflow-hidden rounded-xl" onTouchStart={(e)=>{expTouchStartXRef.current=e.touches[0].clientX; if (experienceIntervalRef.current) clearInterval(experienceIntervalRef.current);}} onTouchMove={(e)=>expTouchCurrentXRef.current=e.touches[0].clientX} onTouchEnd={()=>{ if (expTouchStartXRef.current!=null && expTouchCurrentXRef.current!=null){ const dx=expTouchCurrentXRef.current-expTouchStartXRef.current; const th=50; if(Math.abs(dx)>th){ if(dx<0){ setCurrentExperienceCard((prev)=>(prev+1)%totalExperienceCards);} else { setCurrentExperienceCard((prev)=>(prev-1+totalExperienceCards)%totalExperienceCards);} restartExperienceAutoSlide(); } } expTouchStartXRef.current=null; expTouchCurrentXRef.current=null; }}>
                   <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentExperienceCard * 100}%)` }}>
                     {[
-                      { title: 'Kontorsstädningar', count: 2000 },
+                      { title: 'Kontorsstädningar', count: 7000 },
+                      { title: 'Kontorsflyttstädningar', count: 2000 },
                       { title: 'Hemstädningar', count: 5000 },
-                      { title: 'Flyttstädningar', count: 7000 },
                     ].map((card, index) => (
                       <div key={card.title} className="w-full flex-shrink-0">
                         <div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
@@ -633,25 +682,25 @@ export default function KontorsstadningPage() {
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 0 * 0.25 }}>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full">
                     <motion.h2 className="text-xl font-bold mb-2 text-white">Kontorsstädningar</motion.h2>
-                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={2000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
+                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={7000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
                     <motion.p className="text-white/90">uppdrag utförda</motion.p>
                   </div>
                 </motion.div>
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 1 * 0.25 }}>
+                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                    <motion.h2 className="text-xl font-bold mb-2 text-white">Kontorsflyttstädningar</motion.h2>
+                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={2000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
+                    <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                  </div>
+                </motion.div>
+                <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full">
                     <motion.h2 className="text-xl font-bold mb-2 text-white">Hemstädningar</motion.h2>
                     <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={5000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
                     <motion.p className="text-white/90">uppdrag utförda</motion.p>
                   </div>
                 </motion.div>
-                <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 className="text-xl font-bold mb-2 text-white">Flyttstädningar</motion.h2>
-                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={7000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
-                    <motion.p className="text-white/90">uppdrag utförda</motion.p>
-                  </div>
-                </motion.div>
-              </div>
+            </div>
 
               <div className="mt-8 flex flex-col items-center justify-center gap-4">
                 <motion.div className="flex-1 max-w-4xl text-center px-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -757,8 +806,8 @@ export default function KontorsstadningPage() {
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4">
                     Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som kontorsyta, antal rum, tillgänglighet och städkrav för att ge dig en offert som passar just din situation. Alla priser är löpande utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
-                  </p>
-                </div>
+              </p>
+            </div>
 
                 {/* Process Flow Section */}
                 <div className="mb-8">
@@ -893,10 +942,10 @@ export default function KontorsstadningPage() {
                           stroke="currentColor"
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                  </svg>
                       </Link>
-                    </div>
-                    
+          </div>
+
                   </div>
                 </div>
               </motion.div>
@@ -923,13 +972,13 @@ export default function KontorsstadningPage() {
 
         {/* FAQ Section */}
         <section className="py-20 bg-white">
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [ { '@type': 'Question', name: 'Vad ingår i kontorsstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Dammsugning, våttorkning av golv, tömning av papperskorgar, torkning av skrivbord, rengöring av kök/pentry och toaletter.' } }, { '@type': 'Question', name: 'Vad kostar kontorsstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Priset beror på lokalernas storlek, städfrekvens och omfattning. RUT‑avdrag ger 50% på arbetskostnaden.' } }, { '@type': 'Question', name: 'Kan ni städa utanför kontorstid?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, vi anpassar städningen efter ert schema och kan arbeta kvällar och helger.' } }, { '@type': 'Question', name: 'Hur ofta ska man städa kontoret?', acceptedAnswer: { '@type': 'Answer', text: 'Beror på antal medarbetare och verksamhet. Vanligt är 1-3 gånger per vecka.' } } ] }) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [ { '@type': 'Question', name: 'Vad ingår i kontorsstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Dammsugning, våttorkning av golv, tömning av papperskorgar, torkning av skrivbord, rengöring av kök/pentry och toaletter.' } }, { '@type': 'Question', name: 'Vad kostar kontorsstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Priset beror på lokalernas storlek, städfrekvens och omfattning. Vi arbetar med löpande priser utan dolda avgifter.' } }, { '@type': 'Question', name: 'Kan ni städa utanför kontorstid?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, vi anpassar städningen efter ert schema och kan arbeta kvällar och helger.' } }, { '@type': 'Question', name: 'Hur ofta ska man städa kontoret?', acceptedAnswer: { '@type': 'Answer', text: 'Beror på antal medarbetare och verksamhet. Vanligt är 1-3 gånger per vecka.' } } ] }) }} />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Vanliga frågor om kontorsstädning</h2>
               <div className="space-y-4">
                 {[
-                  { id: 'kontor-1', question: 'Vilka miljövänliga produkter använder ni?', answer: 'Vi använder certifierade miljövänliga rengöringsmedel som är säkra för både medarbetare och miljö, utan starka kemikalier eller allergiframkallande ämnen.' },
+                  { id: 'kontor-1', question: 'Erbjuder ni engångsstädning eller bara regelbunden städning?', answer: 'Vi erbjuder både engångsstädning och regelbunden kontorsstädning. Många kunder börjar med en engångsstädning och övergår sedan till regelbunden service.' },
                   { id: 'kontor-2', question: 'Kan ni arbeta när kontoret är öppet?', answer: 'Ja, vi anpassar städningen efter er verksamhet och kan arbeta tidigt på morgonen, sent på kvällen eller helger för minimal störning.' },
                   { id: 'kontor-3', question: 'Vad händer om något går sönder?', answer: 'Vi har full ansvarsförsäkring som täcker eventuella skador. Vi hanterar alla ärenden snabbt och professionellt.' },
                   { id: 'kontor-4', question: 'Kan vi ändra städfrekvensen?', answer: 'Ja, ni kan enkelt justera städfrekvensen eller pausa tjänsten med kort varsel för att anpassa efter era behov.' }
