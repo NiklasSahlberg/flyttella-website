@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import Script from "next/script";
 import { motion } from "framer-motion";
 import StadningOffertForm from './StadningOffertForm';
 
@@ -149,6 +148,14 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [lastValidCurrentAddress, setLastValidCurrentAddress] = useState("");
   const [lastValidNewAddress, setLastValidNewAddress] = useState("");
+  
+  // Custom address autocomplete states
+  const [currentAddressSuggestions, setCurrentAddressSuggestions] = useState<any[]>([]);
+  const [newAddressSuggestions, setNewAddressSuggestions] = useState<any[]>([]);
+  const [showCurrentSuggestions, setShowCurrentSuggestions] = useState(false);
+  const [showNewSuggestions, setShowNewSuggestions] = useState(false);
+  const [isLoadingCurrentSuggestions, setIsLoadingCurrentSuggestions] = useState(false);
+  const [isLoadingNewSuggestions, setIsLoadingNewSuggestions] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     serviceType: '',
     name: "",
@@ -215,172 +222,100 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (!isGoogleMapsLoaded) return;
-    if (!window.google?.maps?.places) return;
-    
-    // Helper function to fix dropdown positioning on mobile
-    const fixDropdownPositioning = (inputElement: HTMLInputElement) => {
-      const isMobile = window.innerWidth <= 768;
-      if (!isMobile) return;
-      
-      let pacContainer: HTMLElement | null = null;
-      let isRepositioned = false;
-      
-      // Function to move dropdown to relative container and position it
-      const moveAndPositionDropdown = () => {
-        if (!pacContainer) {
-          pacContainer = document.querySelector('.pac-container') as HTMLElement;
-        }
-        
-        if (pacContainer && !isRepositioned) {
-          const relativeContainer = inputElement.parentElement;
-          if (relativeContainer) {
-            // Move the dropdown from body to the relative container
-            relativeContainer.appendChild(pacContainer);
-            
-            // Position it absolutely within the relative container
-            pacContainer.style.position = 'absolute';
-            pacContainer.style.top = `${inputElement.offsetHeight + 2}px`;
-            pacContainer.style.left = '0';
-            pacContainer.style.right = '0';
-            pacContainer.style.width = '100%';
-            pacContainer.style.zIndex = '10000';
-            pacContainer.style.maxHeight = '200px';
-            pacContainer.style.overflowY = 'auto';
-            pacContainer.style.backgroundColor = 'white';
-            pacContainer.style.border = '1px solid #e5e7eb';
-            pacContainer.style.borderRadius = '8px';
-            pacContainer.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-            
-            isRepositioned = true;
-          }
-        }
-      };
-      
-      // Monitor for dropdown appearance
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          mutation.addedNodes.forEach((node) => {
-            if (node instanceof Element && node.classList.contains('pac-container')) {
-              pacContainer = node as HTMLElement;
-              isRepositioned = false;
-              setTimeout(() => {
-                moveAndPositionDropdown();
-              }, 10);
-            }
-          });
-        });
-      });
-      
-      // Start observing for dropdown creation
-      observer.observe(document.body, { childList: true });
-      
-      // Add event listeners
-      const handleFocus = () => {
-        setTimeout(() => {
-          moveAndPositionDropdown();
-        }, 50);
-      };
-      
-      const handleInput = () => {
-        setTimeout(() => {
-          moveAndPositionDropdown();
-        }, 10);
-      };
-      
-      inputElement.addEventListener('focus', handleFocus);
-      inputElement.addEventListener('input', handleInput);
-      
-      // Cleanup function
-      return () => {
-        observer.disconnect();
-        inputElement.removeEventListener('focus', handleFocus);
-        inputElement.removeEventListener('input', handleInput);
-      };
-    };
-    
-    const cleanupFunctions: (() => void)[] = [];
-    
-    try {
-      const currentAddressInput = document.getElementById('currentAddress') as HTMLInputElement;
-      const newAddressInput = document.getElementById('newAddress') as HTMLInputElement;
-      if (currentAddressInput) {
-        const autocomplete1 = new window.google.maps.places.Autocomplete(currentAddressInput, {
-          componentRestrictions: { country: 'se' },
-          fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
-          types: ['address']
-        });
-        
-        // Fix positioning for mobile
-        const cleanup1 = fixDropdownPositioning(currentAddressInput);
-        if (cleanup1) cleanupFunctions.push(cleanup1);
-        
-        autocomplete1.addListener('place_changed', () => {
-          const place = autocomplete1.getPlace();
-          if (place.formatted_address) {
-            let streetName = '';
-            let _streetNumber = '';
-            let city = '';
-            place.address_components.forEach((component: AddressComponent) => {
-              if (component.types.includes('route')) streetName = component.long_name;
-              if (component.types.includes('street_number')) _streetNumber = component.long_name;
-              if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
-            });
-            const formattedAddress = `${streetName}, ${city}, Sweden`;
-            setFormData(prev => ({ ...prev, currentAddress: formattedAddress }));
-            setLastValidCurrentAddress(formattedAddress);
-          }
-        });
-        currentAddressInput.addEventListener('blur', () => {
-          if (lastValidCurrentAddress && formData.currentAddress !== lastValidCurrentAddress) {
-            setFormData(prev => ({ ...prev, currentAddress: lastValidCurrentAddress }));
-          }
-        });
+  
+  // Custom address search function using Swedish address API
+  const searchAddresses = async (query: string, isCurrentAddress: boolean = true) => {
+    if (query.length < 2) {
+      if (isCurrentAddress) {
+        setCurrentAddressSuggestions([]);
+        setShowCurrentSuggestions(false);
+      } else {
+        setNewAddressSuggestions([]);
+        setShowNewSuggestions(false);
       }
-      if (newAddressInput) {
-        const autocomplete2 = new window.google.maps.places.Autocomplete(newAddressInput, {
-          componentRestrictions: { country: 'se' },
-          fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
-          types: ['address']
-        });
-        
-        // Fix positioning for mobile
-        const cleanup2 = fixDropdownPositioning(newAddressInput);
-        if (cleanup2) cleanupFunctions.push(cleanup2);
-        
-        autocomplete2.addListener('place_changed', () => {
-          const place = autocomplete2.getPlace();
-          if (place.formatted_address) {
-            let streetName = '';
-            let _streetNumber = '';
-            let city = '';
-            place.address_components.forEach((component: AddressComponent) => {
-              if (component.types.includes('route')) streetName = component.long_name;
-              if (component.types.includes('street_number')) _streetNumber = component.long_name;
-              if (component.types.includes('locality') || component.types.includes('postal_town')) city = component.long_name;
-            });
-            const formattedAddress = `${streetName}, ${city}, Sweden`;
-            setFormData(prev => ({ ...prev, newAddress: formattedAddress }));
-            setLastValidNewAddress(formattedAddress);
-          }
-        });
-        newAddressInput.addEventListener('blur', () => {
-          if (lastValidNewAddress && formData.newAddress !== lastValidNewAddress) {
-            setFormData(prev => ({ ...prev, newAddress: lastValidNewAddress }));
-          }
-        });
+      return;
+    }
+
+    if (isCurrentAddress) {
+      setIsLoadingCurrentSuggestions(true);
+    } else {
+      setIsLoadingNewSuggestions(true);
+    }
+
+    try {
+      const response = await fetch(
+        `https://ovuvdmhqcg.execute-api.eu-central-1.amazonaws.com/production/search/addresses?country=SE&query=${encodeURIComponent(query)}&limit=8`
+      );
+      const data = await response.json();
+      
+      if (data.success && data.data) {
+        const suggestions = data.data.map((item: any) => ({
+          display_name: item.text,
+          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}, Sweden`,
+          address_components: {
+            street_name: item.street,
+            street_number: item.streetNumber || '',
+            city: item.postarea,
+            postcode: item.postcode || '',
+            municipality: item.municipality || '',
+            county: item.county || ''
+          },
+          full_text: item.text
+        }));
+
+        if (isCurrentAddress) {
+          setCurrentAddressSuggestions(suggestions);
+          setShowCurrentSuggestions(suggestions.length > 0);
+        } else {
+          setNewAddressSuggestions(suggestions);
+          setShowNewSuggestions(suggestions.length > 0);
+        }
+      } else {
+        if (isCurrentAddress) {
+          setCurrentAddressSuggestions([]);
+          setShowCurrentSuggestions(false);
+        } else {
+          setNewAddressSuggestions([]);
+          setShowNewSuggestions(false);
+        }
       }
     } catch (error) {
-      console.error('Error initializing Google Places:', error);
+      console.error('Error fetching address suggestions:', error);
+      if (isCurrentAddress) {
+        setCurrentAddressSuggestions([]);
+        setShowCurrentSuggestions(false);
+      } else {
+        setNewAddressSuggestions([]);
+        setShowNewSuggestions(false);
+      }
+    } finally {
+      if (isCurrentAddress) {
+        setIsLoadingCurrentSuggestions(false);
+      } else {
+        setIsLoadingNewSuggestions(false);
+      }
     }
-    
-    // Return cleanup function for the useEffect
+  };
+
+  // Debounced search
+  const debounceSearch = useRef<NodeJS.Timeout>();
+  const handleAddressSearch = (query: string, isCurrentAddress: boolean = true) => {
+    if (debounceSearch.current) {
+      clearTimeout(debounceSearch.current);
+    }
+    debounceSearch.current = setTimeout(() => {
+      searchAddresses(query, isCurrentAddress);
+    }, 300);
+  };
+
+  // Cleanup debounce on unmount
+  useEffect(() => {
     return () => {
-      cleanupFunctions.forEach(cleanup => cleanup());
+      if (debounceSearch.current) {
+        clearTimeout(debounceSearch.current);
+      }
     };
-  }, [step, isGoogleMapsLoaded, formData.currentAddress, formData.newAddress, lastValidCurrentAddress, lastValidNewAddress]);
+  }, []);
 
   useEffect(() => {
     if (currentAddressRef.current) {
@@ -804,12 +739,6 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
   return (
     <div>
-      <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBZSNfM36ny9L-S04VbU0xzhkGdaPAm_gU&libraries=places`}
-        strategy="lazyOnload"
-        async
-        onLoad={() => setIsGoogleMapsLoaded(true)}
-      />
       <div className="relative rounded-2xl shadow-2xl border-2 border-[#10B981] p-6 md:p-12 max-w-xl w-full mx-auto overflow-hidden bg-gradient-to-br from-white to-blue-50">
         {/* Background image for mobile only - first step only */}
         {!showSteps && (
@@ -1452,12 +1381,60 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         onChange={(e) => {
                           setFormData({ ...formData, currentAddress: e.target.value });
                           setErrors({ ...errors, currentAddress: "" });
+                          handleAddressSearch(e.target.value, true);
+                        }}
+                        onFocus={() => {
+                          if (formData.currentAddress.length >= 2) {
+                            setShowCurrentSuggestions(true);
+                          }
+                        }}
+                        onBlur={() => {
+                          // Delay hiding suggestions to allow for selection
+                          setTimeout(() => setShowCurrentSuggestions(false), 200);
                         }}
                         placeholder="Börja skriva din adress"
                         required
                         className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.currentAddress ? " border-red-500" : ""}`}
                         style={{ WebkitOverflowScrolling: 'touch' }}
                       />
+                      
+                      {/* Custom dropdown */}
+                      {showCurrentSuggestions && (
+                        <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
+                          {isLoadingCurrentSuggestions && (
+                            <div className="p-4 text-center text-gray-500">
+                              Söker adresser...
+                            </div>
+                          )}
+                          {!isLoadingCurrentSuggestions && currentAddressSuggestions.length === 0 && formData.currentAddress.length >= 2 && (
+                            <div className="p-4 text-center text-gray-500">
+                              Inga adresser hittades
+                            </div>
+                          )}
+                          {!isLoadingCurrentSuggestions && currentAddressSuggestions.map((suggestion, index) => (
+                            <div
+                              key={index}
+                              className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                              onMouseDown={(e) => {
+                                e.preventDefault(); // Prevent blur from firing
+                                setFormData({ ...formData, currentAddress: suggestion.full_text });
+                                setLastValidCurrentAddress(suggestion.full_text);
+                                setShowCurrentSuggestions(false);
+                                setErrors({ ...errors, currentAddress: "" });
+                              }}
+                            >
+                              <div className="font-medium text-sm text-gray-900">
+                                {suggestion.full_text}
+                              </div>
+                              {suggestion.address_components.postcode && (
+                                <div className="text-xs text-gray-500 mt-1">
+                                  {suggestion.address_components.postcode} {suggestion.address_components.city}
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     {errors.currentAddress && (
                       <p className="mt-1 text-base text-red-600">{errors.currentAddress}</p>
@@ -2143,12 +2120,63 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         id="newAddress"
                         name="newAddress"
                         value={formData.newAddress}
-                        onChange={handleInputChange}
+                        onChange={(e) => {
+                          setFormData({ ...formData, newAddress: e.target.value });
+                          setErrors({ ...errors, newAddress: "" });
+                          handleAddressSearch(e.target.value, false);
+                        }}
+                        onFocus={() => {
+                          if (formData.newAddress.length >= 2) {
+                            setShowNewSuggestions(true);
+                          }
+                        }}
+                        onBlur={() => {
+                          // Delay hiding suggestions to allow for selection
+                          setTimeout(() => setShowNewSuggestions(false), 200);
+                        }}
                         placeholder="Börja skriva din adress"
                         required
                         className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.newAddress ? " border-red-500" : ""}`}
                         style={{ WebkitOverflowScrolling: 'touch' }}
                       />
+                      
+                      {/* Custom dropdown */}
+                      {showNewSuggestions && (
+                        <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
+                          {isLoadingNewSuggestions && (
+                            <div className="p-4 text-center text-gray-500">
+                              Söker adresser...
+                            </div>
+                          )}
+                          {!isLoadingNewSuggestions && newAddressSuggestions.length === 0 && formData.newAddress.length >= 2 && (
+                            <div className="p-4 text-center text-gray-500">
+                              Inga adresser hittades
+                            </div>
+                          )}
+                          {!isLoadingNewSuggestions && newAddressSuggestions.map((suggestion, index) => (
+                            <div
+                              key={index}
+                              className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                              onMouseDown={(e) => {
+                                e.preventDefault(); // Prevent blur from firing
+                                setFormData({ ...formData, newAddress: suggestion.full_text });
+                                setLastValidNewAddress(suggestion.full_text);
+                                setShowNewSuggestions(false);
+                                setErrors({ ...errors, newAddress: "" });
+                              }}
+                            >
+                              <div className="font-medium text-sm text-gray-900">
+                                {suggestion.full_text}
+                              </div>
+                              {suggestion.address_components.postcode && (
+                                <div className="text-xs text-gray-500 mt-1">
+                                  {suggestion.address_components.postcode} {suggestion.address_components.city}
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     {errors.newAddress && (
                       <p className="mt-1 text-sm text-red-600">{errors.newAddress}</p>
