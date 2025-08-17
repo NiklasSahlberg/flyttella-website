@@ -225,27 +225,83 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
       const isMobile = window.innerWidth <= 768;
       if (!isMobile) return;
       
-      // Add event listeners to fix positioning when dropdown appears
-      const fixPosition = () => {
-        setTimeout(() => {
-          const pacContainer = document.querySelector('.pac-container') as HTMLElement;
-          if (pacContainer) {
-            const inputRect = inputElement.getBoundingClientRect();
-            const scrollY = window.scrollY || window.pageYOffset;
+      let pacContainer: HTMLElement | null = null;
+      let isRepositioned = false;
+      
+      // Function to move dropdown to relative container and position it
+      const moveAndPositionDropdown = () => {
+        if (!pacContainer) {
+          pacContainer = document.querySelector('.pac-container') as HTMLElement;
+        }
+        
+        if (pacContainer && !isRepositioned) {
+          const relativeContainer = inputElement.parentElement;
+          if (relativeContainer) {
+            // Move the dropdown from body to the relative container
+            relativeContainer.appendChild(pacContainer);
             
-            // Position dropdown directly below the input field
+            // Position it absolutely within the relative container
             pacContainer.style.position = 'absolute';
-            pacContainer.style.left = `${inputRect.left}px`;
-            pacContainer.style.top = `${inputRect.bottom + scrollY}px`;
-            pacContainer.style.width = `${inputRect.width}px`;
-            pacContainer.style.zIndex = '9999';
+            pacContainer.style.top = `${inputElement.offsetHeight + 2}px`;
+            pacContainer.style.left = '0';
+            pacContainer.style.right = '0';
+            pacContainer.style.width = '100%';
+            pacContainer.style.zIndex = '10000';
+            pacContainer.style.maxHeight = '200px';
+            pacContainer.style.overflowY = 'auto';
+            pacContainer.style.backgroundColor = 'white';
+            pacContainer.style.border = '1px solid #e5e7eb';
+            pacContainer.style.borderRadius = '8px';
+            pacContainer.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+            
+            isRepositioned = true;
           }
+        }
+      };
+      
+      // Monitor for dropdown appearance
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node instanceof Element && node.classList.contains('pac-container')) {
+              pacContainer = node as HTMLElement;
+              isRepositioned = false;
+              setTimeout(() => {
+                moveAndPositionDropdown();
+              }, 10);
+            }
+          });
+        });
+      });
+      
+      // Start observing for dropdown creation
+      observer.observe(document.body, { childList: true });
+      
+      // Add event listeners
+      const handleFocus = () => {
+        setTimeout(() => {
+          moveAndPositionDropdown();
+        }, 50);
+      };
+      
+      const handleInput = () => {
+        setTimeout(() => {
+          moveAndPositionDropdown();
         }, 10);
       };
       
-      inputElement.addEventListener('focus', fixPosition);
-      inputElement.addEventListener('input', fixPosition);
+      inputElement.addEventListener('focus', handleFocus);
+      inputElement.addEventListener('input', handleInput);
+      
+      // Cleanup function
+      return () => {
+        observer.disconnect();
+        inputElement.removeEventListener('focus', handleFocus);
+        inputElement.removeEventListener('input', handleInput);
+      };
     };
+    
+    const cleanupFunctions: (() => void)[] = [];
     
     try {
       const currentAddressInput = document.getElementById('currentAddress') as HTMLInputElement;
@@ -258,7 +314,8 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
         });
         
         // Fix positioning for mobile
-        fixDropdownPositioning(currentAddressInput);
+        const cleanup1 = fixDropdownPositioning(currentAddressInput);
+        if (cleanup1) cleanupFunctions.push(cleanup1);
         
         autocomplete1.addListener('place_changed', () => {
           const place = autocomplete1.getPlace();
@@ -290,7 +347,8 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
         });
         
         // Fix positioning for mobile
-        fixDropdownPositioning(newAddressInput);
+        const cleanup2 = fixDropdownPositioning(newAddressInput);
+        if (cleanup2) cleanupFunctions.push(cleanup2);
         
         autocomplete2.addListener('place_changed', () => {
           const place = autocomplete2.getPlace();
@@ -317,6 +375,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     } catch (error) {
       console.error('Error initializing Google Places:', error);
     }
+    
+    // Return cleanup function for the useEffect
+    return () => {
+      cleanupFunctions.forEach(cleanup => cleanup());
+    };
   }, [step, isGoogleMapsLoaded, formData.currentAddress, formData.newAddress, lastValidCurrentAddress, lastValidNewAddress]);
 
   useEffect(() => {
@@ -1379,21 +1442,23 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
                     <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Nuvarande adress</strong></label>
-                    <input
-                      type="text"
-                      id="currentAddress"
-                      name="currentAddress"
-                      ref={currentAddressRef}
-                      value={formData.currentAddress}
-                      onChange={(e) => {
-                        setFormData({ ...formData, currentAddress: e.target.value });
-                        setErrors({ ...errors, currentAddress: "" });
-                      }}
-                      placeholder="Börja skriva din adress"
-                      required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.currentAddress ? " border-red-500" : ""}`}
-                      style={{ WebkitOverflowScrolling: 'touch' }}
-                    />
+                    <div className="relative">
+                      <input
+                        type="text"
+                        id="currentAddress"
+                        name="currentAddress"
+                        ref={currentAddressRef}
+                        value={formData.currentAddress}
+                        onChange={(e) => {
+                          setFormData({ ...formData, currentAddress: e.target.value });
+                          setErrors({ ...errors, currentAddress: "" });
+                        }}
+                        placeholder="Börja skriva din adress"
+                        required
+                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.currentAddress ? " border-red-500" : ""}`}
+                        style={{ WebkitOverflowScrolling: 'touch' }}
+                      />
+                    </div>
                     {errors.currentAddress && (
                       <p className="mt-1 text-base text-red-600">{errors.currentAddress}</p>
                     )}
@@ -2072,17 +2137,19 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
                     <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Ny adress</strong></label>
-                    <input
-                      type="text"
-                      id="newAddress"
-                      name="newAddress"
-                      value={formData.newAddress}
-                      onChange={handleInputChange}
-                      placeholder="Börja skriva din adress"
-                      required
-                      className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.newAddress ? " border-red-500" : ""}`}
-                      style={{ WebkitOverflowScrolling: 'touch' }}
-                    />
+                    <div className="relative">
+                      <input
+                        type="text"
+                        id="newAddress"
+                        name="newAddress"
+                        value={formData.newAddress}
+                        onChange={handleInputChange}
+                        placeholder="Börja skriva din adress"
+                        required
+                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.newAddress ? " border-red-500" : ""}`}
+                        style={{ WebkitOverflowScrolling: 'touch' }}
+                      />
+                    </div>
                     {errors.newAddress && (
                       <p className="mt-1 text-sm text-red-600">{errors.newAddress}</p>
                     )}
