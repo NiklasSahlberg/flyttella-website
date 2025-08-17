@@ -219,6 +219,34 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
   useEffect(() => {
     if (!isGoogleMapsLoaded) return;
     if (!window.google?.maps?.places) return;
+    
+    // Helper function to fix dropdown positioning on mobile
+    const fixDropdownPositioning = (inputElement: HTMLInputElement) => {
+      const isMobile = window.innerWidth <= 768;
+      if (!isMobile) return;
+      
+      // Add event listeners to fix positioning when dropdown appears
+      const fixPosition = () => {
+        setTimeout(() => {
+          const pacContainer = document.querySelector('.pac-container') as HTMLElement;
+          if (pacContainer) {
+            const inputRect = inputElement.getBoundingClientRect();
+            const scrollY = window.scrollY || window.pageYOffset;
+            
+            // Position dropdown directly below the input field
+            pacContainer.style.position = 'absolute';
+            pacContainer.style.left = `${inputRect.left}px`;
+            pacContainer.style.top = `${inputRect.bottom + scrollY}px`;
+            pacContainer.style.width = `${inputRect.width}px`;
+            pacContainer.style.zIndex = '9999';
+          }
+        }, 10);
+      };
+      
+      inputElement.addEventListener('focus', fixPosition);
+      inputElement.addEventListener('input', fixPosition);
+    };
+    
     try {
       const currentAddressInput = document.getElementById('currentAddress') as HTMLInputElement;
       const newAddressInput = document.getElementById('newAddress') as HTMLInputElement;
@@ -228,6 +256,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
           fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
           types: ['address']
         });
+        
+        // Fix positioning for mobile
+        fixDropdownPositioning(currentAddressInput);
+        
         autocomplete1.addListener('place_changed', () => {
           const place = autocomplete1.getPlace();
           if (place.formatted_address) {
@@ -256,6 +288,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
           fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
           types: ['address']
         });
+        
+        // Fix positioning for mobile
+        fixDropdownPositioning(newAddressInput);
+        
         autocomplete2.addListener('place_changed', () => {
           const place = autocomplete2.getPlace();
           if (place.formatted_address) {
