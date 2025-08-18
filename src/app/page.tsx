@@ -272,16 +272,14 @@ const AutoSlidingCards = () => {
               )}
               {/* Mobile: Expanded text when Läs mer is clicked */}
               {showFullExperienceText && (
-                <motion.div
+                <motion.p
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   transition={{ duration: 0.5 }}
-                  className="space-y-3 mt-3 md:hidden"
+                  className="text-lg md:text-2xl text-[#0F172A] leading-relaxed mb-3 md:mb-4 md:hidden"
                 >
-                  <p className="text-lg text-[#0F172A] leading-relaxed">
-                    {t('aboutSection.localExperienceDesc2')}
-                  </p>
-                </motion.div>
+                  {t('aboutSection.localExperienceDesc2')}
+                </motion.p>
               )}
               <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
                 {t('aboutSection.localExperienceDesc2')}

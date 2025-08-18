@@ -131,7 +131,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     hasFreezerDefrosting: false,
     squareMeters: '',
     comments: '',
-    movingDate: '',
+    movingDate: (() => {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      return tomorrow.toISOString().split('T')[0];
+    })(),
     flexibleMovingDate: '',
     wantsFlexibleDate: false,
     additionalInfo: '',
@@ -521,10 +525,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       return tomorrow.toISOString().split('T')[0];
                     })()}
                     onKeyDown={(e) => e.preventDefault()}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
-                      errors.movingDate ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                    style={{ backgroundColor: 'white', color: 'black' }}
+                    className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg bg-white appearance-none min-h-[44px] h-[44px]${errors.movingDate ? ' border-red-500' : ''}`}
                   />
                   {errors.movingDate && (
                     <p className="mt-1 text-sm text-red-600">{errors.movingDate}</p>

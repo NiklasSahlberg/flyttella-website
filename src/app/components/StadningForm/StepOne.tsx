@@ -19,7 +19,12 @@ export interface StepOneData {
 
 export default function StepOne({ onNext, initialData }: StepOneProps) {
   const [formData, setFormData] = useState<StepOneData>(initialData || {
-    preferredDate: null,
+    preferredDate: (() => {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      tomorrow.setHours(0, 0, 0, 0);
+      return tomorrow;
+    })(),
     isFlexible: false,
     flexibilityRange: '1-week'
   });
@@ -58,11 +63,12 @@ export default function StepOne({ onNext, initialData }: StepOneProps) {
             onChange={(date) => setFormData({ ...formData, preferredDate: date })}
             locale={sv as Locale}
             dateFormat="yyyy-MM-dd"
-            minDate={new Date()}
+            minDate={(() => { const t = new Date(); t.setDate(t.getDate() + 1); t.setHours(0,0,0,0); return t; })()}
             placeholderText="Välj datum"
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-              errors.preferredDate ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg bg-white appearance-none min-h-[44px] h-[44px] ${
+              errors.preferredDate ? 'border-red-500' : ''
             }`}
+            withPortal
           />
           {errors.preferredDate && (
             <p className="mt-1 text-sm text-red-600">{errors.preferredDate}</p>
