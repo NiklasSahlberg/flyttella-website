@@ -323,7 +323,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   // console.log('Current step:', step);
 
   // 1. Add the cleaning alternatives array
-  const cleaningAlternatives = [
+  const allCleaningAlternatives = [
     "Flyttstädning",
     "Hemstädning",
     "Storstädning",
@@ -332,8 +332,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     "Dödsbostädning",
     "Fönsterputs",
     "Annan städning",
-    
   ];
+
+  const cleaningAlternatives = localCustomerType === 'foretag'
+    ? ["Kontorsstädning", "Byggstädning"]
+    : allCleaningAlternatives;
 
   // Adjust step count for progress bar (now 4 steps)
   const totalSteps = 4;
@@ -412,6 +415,27 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
       input.scrollLeft = input.scrollWidth;
     }
   }, [formData.address]);
+
+  // Smooth scroll to the step progress bar (aligns with flytt form behavior)
+  const scrollToStepBar = () => {
+    setTimeout(() => {
+      if (typeof window === 'undefined') return;
+      const allSpans = document.querySelectorAll('span');
+      const stepTextElement = Array.from(allSpans).find(span => span.textContent && span.textContent.includes('Steg'));
+      if (stepTextElement) {
+        const elementRect = stepTextElement.getBoundingClientRect();
+        const headerHeight = 100;
+        const scrollTop = window.pageYOffset + elementRect.top - headerHeight - 50;
+        window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+      }
+    }, 150);
+  };
+
+  // Auto-scroll whenever the visible step changes (cleaning or moving steps)
+  useEffect(() => {
+    scrollToStepBar();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step, movingStep]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -1006,7 +1030,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     </button>
                   </div>
                   <h2 className="text-xl font-bold text-[#0F172A] mb-4">Vilken typ av städtjänst vill du ha?</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
                     {cleaningAlternatives.map((alt) => (
                       <button
                         key={alt}

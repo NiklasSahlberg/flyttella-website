@@ -493,7 +493,7 @@ export default function Header() {
               </div>
 
               {/* Navigation */}
-              <nav className="space-y-3 w-full max-w-sm">
+              <nav className="flex flex-col space-y-3 w-full max-w-sm">
                   <Link
                   href="/om-oss"
                   className="block py-2 text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
@@ -524,7 +524,7 @@ export default function Header() {
                 </Link>
 
                 {/* Våra Tjänster Section (Mobile) */}
-                <div className="py-2 w-full max-w-sm">
+                <div className="py-2 w-full max-w-sm order-first">
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                     className="flex items-center justify-center w-full text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"

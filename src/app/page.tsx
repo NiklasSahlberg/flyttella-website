@@ -1285,17 +1285,19 @@ export default function Home() {
                                   <div className="flex-1">
                                     <h4 className="text-white font-semibold text-base md:text-lg mb-1 md:mb-2">{feature.title}</h4>
                                     <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">{feature.description}</p>
-                                    <a 
-                                      href={feature.link}
-                                      target={feature.link.startsWith('http') ? '_blank' : undefined}
-                                      rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                      className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
-                                    >
-                                      Läs mer
-                                      <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                      </svg>
-                                    </a>
+                                    {feature.title === "RUT-avdrag" && (
+                                      <a 
+                                        href={feature.link}
+                                        target={feature.link.startsWith('http') ? '_blank' : undefined}
+                                        rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
+                                      >
+                                        Läs mer
+                                        <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                      </a>
+                                    )}
                                   </div>
                                 </div>
                               </motion.div>
@@ -1405,17 +1407,19 @@ export default function Home() {
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
-                            <a 
-                              href={feature.link}
-                              target={feature.link.startsWith('http') ? '_blank' : undefined}
-                              rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                              className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
-                            >
-                              Läs mer
-                              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                              </svg>
-                            </a>
+                            {feature.title === "RUT-avdrag" && (
+                              <a 
+                                href={feature.link}
+                                target={feature.link.startsWith('http') ? '_blank' : undefined}
+                                rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
+                              >
+                                Läs mer
+                                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </a>
+                            )}
                           </div>
                         </motion.div>
                       ))}
