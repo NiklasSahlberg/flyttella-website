@@ -641,11 +641,53 @@ export default function Header() {
                       Flyttstädning
                     </Link>
                     <Link
+                      href="/hemstadning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Hemstädning
+                    </Link>
+                    <Link
+                      href="/storstadning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Storstädning
+                    </Link>
+                    <Link
+                      href="/byggstadning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Byggstädning
+                    </Link>
+                    <Link
+                      href="/fonsterputsning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Fönsterputs
+                    </Link>
+                    <Link
+                      href="/visningsstadning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Visningsstädning
+                    </Link>
+                    <Link
                       href="/kontorsstadning"
                               className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Kontorsstädning
+                    </Link>
+                    <Link
+                      href="/dodsbo-stadning"
+                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Dödsbostädning
                     </Link>
                             <Link
                               href="/stadtjanster"

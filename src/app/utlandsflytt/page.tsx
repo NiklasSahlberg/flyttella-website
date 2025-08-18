@@ -9,6 +9,7 @@ import ReviewsWidget from '../components/ReviewsWidget';
 import React, { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
 import LocationsCard from '../components/LocationsCard';
+import type ReactType from 'react';
 
 const fadeInUp = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8 } };
 const staggerContainer = { animate: { transition: { staggerChildren: 0.1 } } };
@@ -26,14 +27,15 @@ export default function Utlandsflytt() {
   const [showFullAboutText, setShowFullAboutText] = useState(false);
   const [currentCard, setCurrentCard] = useState(0);
   const [showFullExperienceText, setShowFullExperienceText] = useState(false);
+  const [expandedTipSection, setExpandedTipSection] = useState<string | null>(null);
   const toggleFAQ = (id: string) => setOpenFAQ(openFAQ === id ? null : id);
 
   useEffect(()=>{ const i=setInterval(()=>setCurrentCard(p=>(p+1)%3),3000); return ()=>clearInterval(i); },[]);
 
   const experienceCards = [
     { title: 'Utlandsflyttar', count: '1500+', description: 'Genomförda uppdrag', delay: 0 },
-    { title: 'Städningar', count: '7000+', description: 'Genomförda städningar', delay: 1 },
-    { title: 'Länder', count: '25+', description: 'Till destination', delay: 2 },
+    { title: 'Bohagsflyttar', count: '8000+', description: 'Genomförda uppdrag', delay: 1 },
+    { title: 'Länder', count: '25+', description: 'Vi har flyttat till', delay: 2 },
   ];
 
   const locations = [
@@ -127,7 +129,7 @@ export default function Utlandsflytt() {
                 ), icon: '📦' },
                 { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/fonsterputs_intro.png" alt="Utlandsflytt tjänster" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
                 { title: 'Hur bokar jag utlandsflytt?', content: (<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8 md:mb-12">Boka via formuläret – ange adress, volym och destination. Du får pris direkt och kan bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av detaljer, önskade datum och eventuella tillval. Vi erbjuder paketlösningar för bästa pris.</p>), icon: '📅' },
-                { title: 'Checklista vid utlandsflytt', content: (<div className="px-4 md:px-0"><ul className="list-disc pl-5 space-y-3 md:space-y-2"><li><strong>Boka flyttfirma i god tid:</strong> Säkerställ att du får det datum som passar dig bäst.</li><li><strong>Rensa och sortera:</strong> Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li><li><strong>Beställ flyttkartonger:</strong> Låna eller köp tillräckligt med kartonger och packmaterial.</li><li><strong>Packa smart:</strong> Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.</li><li><strong>Adressändra och meddela viktiga kontakter:</strong> Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.</li><li><strong>Boka flyttstädning:</strong> Se till att bostaden är ordentligt städad inför överlämning.</li><li><strong>Töm och frosta av frysen:</strong> Gör detta minst en dag innan flytten.</li><li><strong>Plocka ner gardiner, lampor och hyllor:</strong> Förbered så mycket som möjligt innan flyttdagen.</li><li><strong>Packa en "första natten-låda":</strong> Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.</li><li><strong>Dubbelkolla allt på flyttdagen:</strong> Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.</li><li><strong>Pass, visum och uppehållstillstånd:</strong> Säkerställ giltighet och rätt intyg för alla i hushållet.</li><li><strong>Inventarielista och tullvärden:</strong> Lista bohaget och förbered tullvärden enligt destinationslandets krav.</li><li><strong>Införselregler:</strong> Kontrollera vad som får tas in (t.ex. livsmedel, växter, batterier) och om tillstånd krävs.</li><li><strong>Internationell försäkring:</strong> Se att försäkringen täcker långdistans vägtransport och hela flyttkedjan.</li><li><strong>Parkering och bärväg:</strong> Ordna lastzon/tillstånd och hissbokning på båda adresser.</li><li><strong>Husdjur:</strong> Kontrollera veterinärintyg, vaccinationer och införselkrav.</li></ul></div>), icon: '' },
+                { title: 'Checklista vid utlandsflytt', content: (<div className="px-4 md:px-0"><ul className="list-disc pl-5 space-y-3 md:space-y-2"><li><strong>Boka flyttfirma i god tid:</strong> Säkerställ att du får det datum som passar dig bäst.</li><li><strong>Rensa och sortera:</strong> Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li><li><strong>Beställ flyttkartonger:</strong> Låna eller köp tillräckligt med kartonger och packmaterial.</li><li><strong>Packa smart:</strong> Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.</li><li><strong>Adressändra och meddela viktiga kontakter:</strong> Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.</li><li><strong>Boka flyttstädning:</strong> Se till att bostaden är ordentligt städad inför överlämning.</li><li><strong>Plocka ner gardiner, lampor och hyllor:</strong> Förbered så mycket som möjligt innan flyttdagen.</li><li><strong>Packa en "första natten-låda":</strong> Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.</li><li><strong>Dubbelkolla allt på flyttdagen:</strong> Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.</li><li><strong>Pass, visum och uppehållstillstånd:</strong> Säkerställ giltighet och rätt intyg för alla i hushållet.</li><li><strong>Inventarielista och tullvärden:</strong> Lista bohaget och förbered tullvärden enligt destinationslandets krav.</li><li><strong>Införselregler:</strong> Kontrollera vad som får tas in (t.ex. livsmedel, växter, batterier) och om tillstånd krävs.</li><li><strong>Internationell försäkring:</strong> Se att försäkringen täcker långdistans vägtransport och hela flyttkedjan.</li><li><strong>Parkering och bärväg:</strong> Ordna lastzon/tillstånd och hissbokning på båda adresser.</li><li><strong>Husdjur:</strong> Kontrollera veterinärintyg, vaccinationer och införselkrav.</li></ul></div>), icon: '' },
               ] as { title: string; content: any; icon: string }[]).map((section, idx) => (
                 <motion.div key={idx} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
                   <div className="max-w-6xl mx-auto">
@@ -217,6 +219,119 @@ export default function Utlandsflytt() {
           </div>
         </section>
 
+        {/* Våra andra huvudtjänster */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Våra andra huvudtjänster</h2>
+              <div className="grid grid-cols-1 gap-12">
+                {/* Flyttstädning Card */}
+                <motion.div
+                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {/* Background pattern */}
+                  <motion.div
+                    className="absolute inset-0 opacity-10 pointer-events-none"
+                    initial={{ backgroundPosition: '0% 0%' }}
+                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                    transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
+                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                  />
+                  <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
+                    <span className="text-4xl md:text-6xl">✨</span>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white">Flyttstädning</h3>
+                  </div>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.</p>
+                  <div className="mt-auto relative">
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+                      <Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">
+                        Läs mer
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Magasinering Card */}
+                <motion.div
+                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  {/* Background pattern */}
+                  <motion.div
+                    className="absolute inset-0 opacity-10 pointer-events-none"
+                    initial={{ backgroundPosition: '0% 0%' }}
+                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                    transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
+                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                  />
+                  <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
+                    <span className="text-4xl md:text-6xl">🏢</span>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white">Magasinering</h3>
+                  </div>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Behöver du magasinera bohag under flyttprocessen? Vi tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan – och kan även hjälpa till med hämtning och återleverans.</p>
+                  <div className="mt-auto relative">
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+                      <Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">
+                        Läs mer
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Packhjälp Card */}
+                <motion.div
+                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  {/* Background pattern */}
+                  <motion.div
+                    className="absolute inset-0 opacity-10 pointer-events-none"
+                    initial={{ backgroundPosition: '0% 0%' }}
+                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                    transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
+                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                  />
+                  <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
+                    <span className="text-4xl md:text-6xl">📦</span>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white">Packhjälp</h3>
+                  </div>
+                  <p className="text-lg md:text-xl text-gray-100 mb-1 md:mb-8 relative">Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.</p>
+                  <p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">Vi hjälper med märkning och organisering för enklare uppackning.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med märkning av kartonger och inventarielista för smidig uppackning.</p>
+                  <div className="mt-auto relative">
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+                      <Link href="/barhjalp" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">
+                        Läs mer
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Våra tjänster CTA row */}
         <motion.section className="py-12 md:py-24 bg-white text-[#0F172A] relative overflow-hidden" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
           <div className="container mx-auto px-4 relative z-10">
@@ -231,30 +346,95 @@ export default function Utlandsflytt() {
           </div>
         </motion.section>
 
-        {/* Tips för din flytt */}
-        <section className="py-16 bg-gray-50">
+        {/* Tips för din flytt Section */}
+        <section className="py-8 md:py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12"><h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Tips för din utlandsflytt</h2><p className="text-lg text-gray-600 max-w-3xl mx-auto">Praktiska råd inför flytt utomlands – dokument, packning och planering för en trygg resa.</p></div>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { title: 'Dokument och tull', text: 'Säkerställ pass, visum och intyg i god tid. Gör inventarielista och förbered tulldokument enligt destinationslandets krav.' },
-                  { title: 'packning', text: 'Packa för lång transport: stötdämpande material, förslutning och märkning. Låt ömtåligt gods packas av proffs.' },
-                  { title: 'Planera datum', text: 'Koordinera hämtning, transit och leverans. Var flexibel med datum då internationell logistik kan påverkas av externa faktorer.' }
-                ].map((tip, i) => (
-                  <motion.div key={tip.title} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i*0.1 }} viewport={{ once: true }}>
-                    <h3 className="text-xl font-semibold text-[#0F172A] mb-2">{tip.title}</h3>
-                    <p className="text-gray-600">{tip.text}</p>
-                  </motion.div>
-                ))}
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Tips för din flytt</h2>
+              <div className="space-y-4 md:space-y-16">
+                {/* Innan flytten */}
+                <div>
+                  {/* Mobile: Expandable section header */}
+                  <div className="md:hidden mb-4">
+                    <button onClick={() => setExpandedTipSection(expandedTipSection === 'innan' ? null : 'innan')} className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                      <h3 className="text-xl font-bold text-white">Innan flytten</h3>
+                      <svg className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'innan' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  {/* Desktop: Always visible title */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Innan flytten</h3>
+                  {/* Mobile: Expandable content */}
+                  <div className={`md:block ${expandedTipSection === 'innan' ? 'block' : 'hidden'}`}>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                      <TipCard title="Planera och förbered" imageSrc="/tipsforflytt.jpg" imageAlt="Planering" content={<ul className="list-disc pl-5 space-y-2"><li>Gör en checklista.</li><li>Rensa ut onödiga saker.</li><li>Boka flyttfirma och städning.</li><li>Beställ flyttkartonger.</li></ul>} />
+                      <TipCard title="Avtal och anmälningar" imageSrc="/viktigaavtalcustomer.png" imageAlt="Avtal" content={<ul className="list-disc pl-5 space-y-2"><li>Adressändra hos Skatteverket.</li><li>Flytta el, bredband, etc.</li><li>Teckna nya avtal.</li><li>Meddela viktiga kontakter.</li></ul>} />
+                      <TipCard title="Innan flyttfirman kommer" imageSrc="/innanflyttfirmankommer.jpg" imageAlt="Förberedelse för flytt" objectPosition="object-[center_45%]" content={<ul className="list-disc pl-5 space-y-2"><li>Packa ner allt lösöre i kartonger</li><li>Montera ner alla gardiner</li><li>Montera ner alla lampor</li><li>Dubbelkolla packning och märkning.</li></ul>} />
+                      <TipCard title="Packtips" imageSrc="/packing_tips.jpg" imageAlt="Packning" content={<ul className="list-disc pl-5 space-y-2"><li>Märk alla kartonger tydligt.</li><li>Håll nycklar tillgängliga.</li><li>Överbelasta inte flyttlådorna.</li><li>Använd silkespapper för ömtåliga föremål och porslin.</li></ul>} />
+                    </div>
+                  </div>
+                </div>
+                {/* Under flytten */}
+                <div>
+                  {/* Mobile: Expandable section header */}
+                  <div className="md:hidden mb-4">
+                    <button onClick={() => setExpandedTipSection(expandedTipSection === 'under' ? null : 'under')} className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                      <h3 className="text-xl font-bold text-white">Under flytten</h3>
+                      <svg className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'under' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  {/* Desktop: Always visible title */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Under flytten</h3>
+                  {/* Mobile: Expandable content */}
+                  <div className={`md:block ${expandedTipSection === 'under' ? 'block' : 'hidden'}`}>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                      <TipCard title="En smidig flyttdag" imageSrc="/smidigflyttdag.jpg" imageAlt="Glad flyttarbetare" objectPosition="object-[center_35%]" content={<ul className="list-disc pl-5 space-y-2"><li>Håll värdesaker tillgängliga.</li><li>Säkerställ fri väg för flytthjälp.</li><li>Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.</li><li>Se till att montera ner eller packa ner bortglömda föremål.</li></ul>} />
+                      <TipCard title="Kommunikation och koordinering" imageSrc="/under_flytt.jpg" imageAlt="Flytt under pågående" objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2"><li>Håll kontakt med flyttledaren.</li><li>Fotografera eventuella skador.</li><li>Kontrollera att allt laddas korrekt.</li><li>Följ med till den nya adressen.</li><li>Var tydlig med särskilda önskemål.</li><li>Var tillgänglig för frågor.</li></ul>} />
+                    </div>
+                  </div>
+                </div>
+                {/* Efter flytten */}
+                <div>
+                  {/* Mobile: Expandable section header */}
+                  <div className="md:hidden mb-4">
+                    <button onClick={() => setExpandedTipSection(expandedTipSection === 'efter' ? null : 'efter')} className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                      <h3 className="text-xl font-bold text-white">Efter flytten</h3>
+                      <svg className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'efter' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  {/* Desktop: Always visible title */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Efter flytten</h3>
+                  {/* Mobile: Expandable content */}
+                  <div className={`md:block ${expandedTipSection === 'efter' ? 'block' : 'hidden'}`}>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                      <TipCard title="Start i nya hemmet" imageSrc="/efter_flytt.jpg" imageAlt="Nytt hem" objectPosition="object-[10%_center]" content={<ul className="list-disc pl-5 space-y-2"><li>Kontrollera flyttstädningen.</li><li>Packa upp det viktigaste först.</li><li>Kontrollera att alla föremål anlänt.</li><li>Montera upp gardiner och lampor.</li><li>Uppdatera adress hos myndigheter.</li><li>Testa alla vitvaror och eluttag.</li><li>Ta bort tomma kartonger och emballage.</li></ul>} />
+                      <TipCard title="Dokumentation och uppföljning" imageSrc="/godtid.jpg" imageAlt="Dokumentation efter flytt" objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2"><li>Fotografera ditt nya hem.</li><li>Kontakta flyttfirman för feedback.</li><li>Skriv en recension av tjänsten.</li><li>Organisera flyttkvitton och dokument.</li><li>Fira din nya bostad med familj och vänner.</li><li>Uppdatera försäkringar för nya bostaden.</li></ul>} />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
+        
 
         {/* Vår erfarenhet (re-using bohags layout) */}
         <motion.section className="relative overflow-hidden" style={{ paddingTop: '14rem', paddingBottom: '6rem', marginTop: '2rem', borderTop: 'none', boxShadow: 'none' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/our_experience.png)', backgroundSize: 'cover', backgroundPosition: 'center 85%', zIndex: 0 }} />
+          {/* Background image absolutely positioned (desktop) */}
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
+            style={{ backgroundImage: 'url(/backgroundpicture.jpg)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }}
+          />
+          {/* Mobile-specific background image */}
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
+            style={{ backgroundImage: 'url(/omoss.jpg)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }}
+          />
           <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{ zIndex: 1 }} />
           <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)' }} />
           <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
@@ -324,13 +504,51 @@ export default function Utlandsflytt() {
 
         {/* Process */}
         <section className="py-16 bg-white relative overflow-hidden">
-          <div className="mx-auto px-4 md:px-24 relative z-10">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 mb-6 md:mb-8 w-full">
+          <div className="mx-auto px-0 md:px-24 relative z-10">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full">
               <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
-                <div className="text-center mb-6 md:mb-8 hidden md:block"><p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">Vår process för utlandsflytt är transparent och trygg. Fyll i formuläret – du får pris på 1 minut och kan bekräfta digitalt. Vi ringer samma dag eller nästkommande vardag för att stämma av volym, destination och tidplan.</p><p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">Vi planerar packning, dokument och vägtransport och håller dig uppdaterad genom hela resan till leverans. Resultatet är en smidig flytt med tydlig kommunikation från start till mål.</p><p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">Efter bekräftelse bokar vi lastning och preliminärt leveransfönster. Vid hämtning skyddas möbler med filtar och sträckfilm och känsligt gods packas enligt exportstandard. Under resan får du statusuppdateringar och inför leverans stämmer vi av lossning och bärväg för en trygg mottagning.</p></div>
-                <div className="text-center mb-4 md:mb-8"><p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4">Priset baseras på volym, destination och tillval. Transparent pris utan dolda avgifter.</p></div>
-                <div className="mb-8"><h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3><div className="relative w-full"><div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div><div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">{[{ icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din flytt' }, { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' }, { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' }, { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' }, { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Flytt genomförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' }, { icon: <div className="md:mt-0"><HappyCustomerLottie /></div>, title: 'Nöjd kund', description: 'Trygg leverans', containerClass: 'md:-mt-6' }].map((step: any, index: number) => (<motion.div key={index} className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={index}><div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div><div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}><div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div><div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>{<h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>}<p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p></div></div></motion.div>))}</div></div></div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">{t('bohagsflytt.process.title')}</h2>
+
+                {/* Process Description */}
+                <div className="text-center mb-6 md:mb-8 hidden md:block">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">{t('bohagsflytt.process.description')}</p>
+                </div>
+
+                {/* Pricing Info */}
+                <div className="text-center mb-4 md:mb-8">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">{t('bohagsflytt.process.pricing')}</p>
+                </div>
+
+                {/* Process Flow Section */}
+                <div className="mb-4 md:mb-8">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">{t('bohagsflytt.process.subtitle')}</h3>
+                  <div className="relative w-full">
+                    {/* Timeline connector line */}
+                    <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
+                    <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
+                      {[
+                        { icon: <FillFormLottie />, title: t('bohagsflytt.process.steps.0.title'), description: t('bohagsflytt.process.steps.0.description'), textClass: '' },
+                        { icon: <FastLottie />, title: t('bohagsflytt.process.steps.1.title'), description: t('bohagsflytt.process.steps.1.description'), textClass: '' },
+                        { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: t('bohagsflytt.process.steps.3.title'), description: t('bohagsflytt.process.steps.3.description'), containerClass: 'md:-mt-6', textClass: '' },
+                        { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: t('bohagsflytt.process.steps.2.title'), description: t('bohagsflytt.process.steps.2.description'), containerClass: 'md:-mt-7', textClass: '' },
+                        { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: t('bohagsflytt.process.steps.4.title'), description: t('bohagsflytt.process.steps.4.description'), containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
+                        { icon: <div className="md:mt-0"><HappyCustomerLottie /></div>, title: t('bohagsflytt.process.steps.5.title'), description: t('bohagsflytt.process.steps.5.description'), containerClass: 'md:-mt-6', textClass: '' }
+                      ].map((step: any, index: number) => (
+                        <motion.div key={index} className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={index}>
+                          {/* Timeline dot */}
+                          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
+                          <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
+                            <div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div>
+                            <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
+                              <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
+                              <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -379,6 +597,26 @@ export default function Utlandsflytt() {
     </main>
   );
 } 
+
+interface TipCardProps {
+  title: string;
+  content: React.ReactNode;
+  imageSrc: string;
+  imageAlt: string;
+  objectPosition?: string;
+}
+
+const TipCard: React.FC<TipCardProps> = ({ title, content, imageSrc, imageAlt, objectPosition = 'object-center' }) => (
+  <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+    {imageSrc && (
+      <img src={imageSrc} alt={imageAlt || ''} className={`w-full h-48 object-cover ${objectPosition}`} />
+    )}
+    <div className="p-6">
+      <h4 className="text-2xl font-bold text-[#0F172A] mb-3">{title}</h4>
+      <div className="text-gray-600 text-lg leading-relaxed">{content}</div>
+    </div>
+  </div>
+);
 
 
 // Placeholder component removed; page implemented above
