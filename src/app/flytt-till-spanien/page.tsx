@@ -11,6 +11,157 @@ import React, { useEffect, useState, useRef } from 'react';
 import Lottie from 'lottie-react';
 import { Variants } from 'framer-motion';
 
+// Lottie animation components moved to module scope to match kontorsflytt implementation
+function FillFormLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/fillform.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-14 h-14 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function FastLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/fast.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-14 h-14 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function PhoneCallLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/phonecall.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-20 h-20 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function SignFormLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/signform.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-20 h-20 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function MovingTruckLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/movingtruck.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-36 h-36 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function HappyCustomerLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/happycustomer.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-24 h-24 flex items-center justify-center -m-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function CashLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/cash.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-32 h-32 flex items-center justify-center -m-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function BoxesLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/boxes.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-24 h-24 flex items-center justify-center -m-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function InsuranceLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/insurance.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-24 h-24 flex items-center justify-center -m-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
+function ScheduleLottie() {
+  const [animationData, setAnimationData] = useState<any>(null);
+  useEffect(() => {
+    fetch('/schedule2.json')
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+  if (!animationData) return null;
+  return (
+    <div className="w-24 h-24 flex items-center justify-center -m-2">
+      <Lottie animationData={animationData} loop autoplay />
+    </div>
+  );
+}
+
 interface TipCardProps {
   title: string;
   content: React.ReactNode;
@@ -146,147 +297,6 @@ export default function FlyttTillSpanienPage() {
     }),
   };
 
-  // Lottie component functions (same as Åkersberga)
-  function FillFormLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/fillform.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-14 h-14 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-  function FastLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/fast.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-14 h-14 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-  function PhoneCallLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/phonecall.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-20 h-20 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-  function SignFormLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/signform.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-20 h-20 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-  function MovingTruckLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/movingtruck.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-36 h-36 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-  function HappyCustomerLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/happycustomer.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-24 h-24 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-  function CashLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/cash.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-32 h-32 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-  function BoxesLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/boxes.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-24 h-24 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-  function InsuranceLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/insurance.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-24 h-24 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
-  function ScheduleLottie() {
-    const [animationData, setAnimationData] = useState<any>(null);
-    useEffect(() => {
-      fetch("/schedule2.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
-    return (
-      <div className="w-24 h-24 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
-      </div>
-    );
-  }
 
   function FeatureBoxesSection() {
     const features = [
@@ -676,8 +686,76 @@ export default function FlyttTillSpanienPage() {
           arrowText="Läs vad våra kunder säger om oss"
         />
 
-        {/* Redo att börja din flytt? */}
-        <section className="py-16 bg-white -mt-20 -mb-16">
+        
+
+        {/* Process and Features Section */}
+        <section className="py-8 md:py-16 bg-white relative overflow-hidden">
+          <div className="mx-auto px-0 md:px-24 relative z-10">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full relative">
+              <div className="w-full">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
+                  Vår process
+                </h2>
+                {/* Process Description - Hidden on mobile */}
+                <div className="text-center mb-6 md:mb-8 hidden md:block">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
+                    Vi gör din utlandsflytt till Spanien enkel och trygg – från första kontakt till inflyttning. Vi tar hand om allt det praktiska och guidar dig genom hela processen, så att du kan fokusera på ditt nya liv i solen.
+                  </p>
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
+                    Vår flyttprocess till Spanien är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär där du anger dina uppgifter och behov för din Spanienflytt. Inom en minut får du en offert skickad till din e-post. Samma dag eller dagen efter tar vi personlig kontakt för att gå igenom detaljer, svara på frågor och ge råd kring utlandsflytt. När du är nöjd signerar du offerten digitalt. Sedan genomför vi flytten enligt dina önskemål och avtal – hela vägen till din nya adress i Spanien. Resultatet? En nöjd kund som kan fokusera på sitt nya liv i solen.
+                  </p>
+                </div>
+                {/* Pricing Info */}
+                <div className="text-center mb-4 md:mb-8">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
+                    Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som mängd bohag, avstånd, tillval och eventuella särskilda önskemål för att ge dig en offert som passar just din utlandsflytt. Alla priser är fasta utan dolda avgifter – har du frågor eller särskilda önskemål? Kontakta oss så anpassar vi offerten efter dina behov.
+                  </p>
+                </div>
+                {/* Process Flow Section */}
+                <div className="mb-4 md:mb-8">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3>
+                  <div className="relative w-full">
+                    <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
+                    <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
+                      {[
+                        { icon: <FillFormLottie />, title: "Fyll i formuläret", description: "Berätta om din utlandsflytt", textClass: "" },
+                        { icon: <FastLottie />, title: "Snabb offert", description: "Få pris på 1 minut", textClass: "" },
+                        { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: "Personlig kontakt", description: "Vi ringer dig för att gå igenom detaljerna", containerClass: "md:-mt-7", textClass: "" },
+                        { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: "Signera & bekräfta", description: "Få bokningsbekräftelse och all dokumentation", containerClass: "md:-mt-6", textClass: "" },
+                        { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: "Flytt genomförd", description: "Vi hämtar, transporterar och levererar till Spanien", containerClass: "md:-mt-14", textClass: "md:-mt-8" },
+                        { icon: <div className="md:mt-0"><HappyCustomerLottie /></div>, title: "Nöjd kund", description: "Återkommande kund", containerClass: "md:-mt-6", textClass: "" }
+                      ].map((step, index) => (
+                        <motion.div
+                          key={index}
+                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, amount: 0.2 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                        >
+                          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
+                          <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
+                            <div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div>
+                            <div className={`flex flex-col items-center justify-center w-full md:min-h-[84px] lg:min-h-[96px] ${step.textClass || ''}`}>
+                              <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
+                              <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        {/* Erfarenhet Section */}
+        {/* Redo att börja din flytt? (moved here to be under Vår process) */}
+        <section className="pt-0 pb-8 bg-white">
           <div className="mx-auto px-4">
             <motion.div
               className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
@@ -734,73 +812,10 @@ export default function FlyttTillSpanienPage() {
             </motion.div>
           </div>
         </section>
-
-        {/* Process and Features Section */}
-        <section className="py-8 md:py-16 bg-white relative overflow-hidden">
-          <div className="mx-auto px-0 md:px-24 relative z-10">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full relative">
-              <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
-                  Vår process
-                </h2>
-                {/* Process Description - Hidden on mobile */}
-                <div className="text-center mb-6 md:mb-8 hidden md:block">
-                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vi gör din utlandsflytt till Spanien enkel och trygg – från första kontakt till inflyttning. Vi tar hand om allt det praktiska och guidar dig genom hela processen, så att du kan fokusera på ditt nya liv i solen.
-                  </p>
-                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår flyttprocess till Spanien är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär där du anger dina uppgifter och behov för din Spanienflytt. Inom en minut får du en offert skickad till din e-post. Samma dag eller dagen efter tar vi personlig kontakt för att gå igenom detaljer, svara på frågor och ge råd kring utlandsflytt. När du är nöjd signerar du offerten digitalt. Sedan genomför vi flytten enligt dina önskemål och avtal – hela vägen till din nya adress i Spanien. Resultatet? En nöjd kund som kan fokusera på sitt nya liv i solen.
-                  </p>
-                </div>
-                {/* Pricing Info */}
-                <div className="text-center mb-4 md:mb-8">
-                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-                    Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som mängd bohag, avstånd, tillval och eventuella särskilda önskemål för att ge dig en offert som passar just din utlandsflytt. Alla priser är fasta utan dolda avgifter – har du frågor eller särskilda önskemål? Kontakta oss så anpassar vi offerten efter dina behov.
-                  </p>
-                </div>
-                {/* Process Flow Section */}
-                <div className="mb-4 md:mb-8">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3>
-                  <div className="relative w-full">
-                    <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
-                    <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
-                      {[
-                        { icon: <FillFormLottie />, title: "Fyll i formuläret", description: "Berätta om din utlandsflytt", textClass: "" },
-                        { icon: <FastLottie />, title: "Snabb offert", description: "Få pris på 1 minut", textClass: "" },
-                        { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: "Signera & bekräfta", description: "Få bokningsbekräftelse och all dokumentation", containerClass: "md:-mt-6", textClass: "" },
-                        { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: "Personlig kontakt", description: "Vi ringer dig för att gå igenom detaljerna", containerClass: "md:-mt-7", textClass: "" },
-                        { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: "Flytt genomförd", description: "Vi hämtar, transporterar och levererar till Spanien", containerClass: "md:-mt-14", textClass: "md:-mt-8" },
-                        { icon: <div className="md:mt-0"><HappyCustomerLottie /></div>, title: "Nöjd kund", description: "Återkommande kund", containerClass: "md:-mt-6", textClass: "" }
-                      ].map((step, index) => (
-                        <motion.div
-                          key={index}
-                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full"
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true, amount: 0.2 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                        >
-                          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
-                          <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
-                            <div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div>
-                            <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
-                              <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
-                              <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-
-        {/* Erfarenhet Section */}
+        
+        
+        
+        
         <motion.section
           className="relative overflow-hidden py-12 md:py-20"
           initial={{ opacity: 0 }}
@@ -948,6 +963,21 @@ export default function FlyttTillSpanienPage() {
                   <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">Erfarenhet av utlandsflytt</h4>
                   <p className="text-lg md:text-xl lg:text-2xl text-[#0F172A] leading-relaxed mb-3 md:mb-4">Vi har hjälpt över 1800 familjer och företag att flytta till Spanien och andra länder i Europa. Vår erfarenhet gör att vi kan erbjuda trygga och effektiva lösningar för din utlandsflytt.</p>
                   <p className="text-lg md:text-xl lg:text-2xl text-[#0F172A] leading-relaxed mb-4 md:mb-6">Vi är stolta över våra många nöjda kunder och vårt rykte som en pålitlig partner för internationella flyttar.</p>
+                  <p className="text-lg md:text-xl lg:text-2xl text-[#0F172A] leading-relaxed mb-4 md:mb-6">Vi kör regelbundna avgångar mellan Sverige och Spanien med täckning i bland annat Costa del Sol, Barcelona, Madrid, Valencia och Alicante. Du kan välja kostnadseffektiv samlastning eller dedikerad expressleverans med fasta tidsfönster – vi anpassar lösningen efter tidsplan och budget.</p>
+                  <p className="text-lg md:text-xl lg:text-2xl text-[#0F172A] leading-relaxed mb-4 md:mb-6">Vårt team hjälper dig med all planering och dokumentation som krävs, inklusive hissbokning, bärvägar, parkeringstillstånd och hantering av ömtåligt eller värdefullt gods som piano, konst och glas. Vi erbjuder professionell packning och skräddarsydda emballagelösningar för extra trygghet.</p>
+                  <p className="text-lg md:text-xl lg:text-2xl text-[#0F172A] leading-relaxed mb-4 md:mb-6">Under hela flytten har du en personlig kontakt och tydlig spårbarhet. Full försäkring ingår och vi arbetar med en transparent skadehanteringsprocess om något oväntat skulle inträffa.</p>
+                  <div className="text-[#0F172A] text-base md:text-lg lg:text-xl leading-relaxed mt-2 md:mt-4">
+                    <p className="font-semibold mb-2 md:mb-3">Det här ingår ofta i våra Spanienflyttar:</p>
+                    <ul className="list-disc list-inside space-y-1 md:space-y-1.5 text-left md:text-center">
+                      <li>Planering, rådgivning och personlig projektledare</li>
+                      <li>Packmaterial och möjlighet till professionell packhjälp</li>
+                      <li>Demontering och montering av möbler vid behov</li>
+                      <li>Bärhjälp och logistik på både avhämtnings- och leveransadress</li>
+                      <li>Full försäkring och tydliga transportvillkor</li>
+                      <li>Magasinering i Sverige eller Spanien vid behov</li>
+                      <li>Uppackningshjälp som tillval</li>
+                    </ul>
+                  </div>
                 </motion.div>
                 
                 {/* Mobile: Pyramid layout */}

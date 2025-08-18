@@ -117,6 +117,16 @@ export default function FaOffert() {
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [lastValidCurrentAddress, setLastValidCurrentAddress] = useState("");
   const [lastValidNewAddress, setLastValidNewAddress] = useState("");
+  
+  // Custom address autocomplete states
+  const [currentAddressSuggestions, setCurrentAddressSuggestions] = useState<any[]>([]);
+  const [newAddressSuggestions, setNewAddressSuggestions] = useState<any[]>([]);
+  const [showCurrentSuggestions, setShowCurrentSuggestions] = useState(false);
+  const [showNewSuggestions, setShowNewSuggestions] = useState(false);
+  const [isLoadingCurrentSuggestions, setIsLoadingCurrentSuggestions] = useState(false);
+  const [isLoadingNewSuggestions, setIsLoadingNewSuggestions] = useState(false);
+  const [isCurrentAddressValid, setIsCurrentAddressValid] = useState(false);
+  const [isNewAddressValid, setIsNewAddressValid] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -157,6 +167,91 @@ export default function FaOffert() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
+
+  // Custom address search function using Swedish address API
+  const searchAddresses = async (query: string, isCurrentAddress: boolean = true) => {
+    if (query.length < 2) {
+      if (isCurrentAddress) {
+        setCurrentAddressSuggestions([]);
+        setShowCurrentSuggestions(false);
+      } else {
+        setNewAddressSuggestions([]);
+        setShowNewSuggestions(false);
+      }
+      return;
+    }
+
+    if (isCurrentAddress) {
+      setIsLoadingCurrentSuggestions(true);
+    } else {
+      setIsLoadingNewSuggestions(true);
+    }
+
+    try {
+      const response = await fetch(
+        `https://ovuvdmhqcg.execute-api.eu-central-1.amazonaws.com/production/search/addresses?country=SE&query=${encodeURIComponent(query)}&limit=8`
+      );
+      const data = await response.json();
+      
+      if (data.success && data.data) {
+        const suggestions = data.data.map((item: any) => ({
+          display_name: item.text,
+          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}, Sweden`,
+          address_components: {
+            street_name: item.street,
+            street_number: item.streetNumber || '',
+            city: item.postarea,
+            postcode: item.postcode || '',
+            municipality: item.municipality || '',
+            county: item.county || ''
+          },
+          full_text: item.text
+        }));
+
+        if (isCurrentAddress) {
+          setCurrentAddressSuggestions(suggestions);
+          setShowCurrentSuggestions(suggestions.length > 0);
+        } else {
+          setNewAddressSuggestions(suggestions);
+          setShowNewSuggestions(suggestions.length > 0);
+        }
+      } else {
+        if (isCurrentAddress) {
+          setCurrentAddressSuggestions([]);
+          setShowCurrentSuggestions(false);
+        } else {
+          setNewAddressSuggestions([]);
+          setShowNewSuggestions(false);
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching address suggestions:', error);
+      if (isCurrentAddress) {
+        setCurrentAddressSuggestions([]);
+        setShowCurrentSuggestions(false);
+      } else {
+        setNewAddressSuggestions([]);
+        setShowNewSuggestions(false);
+      }
+    } finally {
+      if (isCurrentAddress) {
+        setIsLoadingCurrentSuggestions(false);
+      } else {
+        setIsLoadingNewSuggestions(false);
+      }
+    }
+  };
+
+  // Debounced search
+  const debounceSearch = useRef<NodeJS.Timeout>();
+  const handleAddressSearch = (query: string, isCurrentAddress: boolean = true) => {
+    if (debounceSearch.current) {
+      clearTimeout(debounceSearch.current);
+    }
+    debounceSearch.current = setTimeout(() => {
+      searchAddresses(query, isCurrentAddress);
+    }, 300);
+  };
 
   useEffect(() => {
     if (!isGoogleMapsLoaded) return;

@@ -156,6 +156,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
   const [showNewSuggestions, setShowNewSuggestions] = useState(false);
   const [isLoadingCurrentSuggestions, setIsLoadingCurrentSuggestions] = useState(false);
   const [isLoadingNewSuggestions, setIsLoadingNewSuggestions] = useState(false);
+  
+  // Track if addresses were selected from dropdown (not manually typed)
+  const [isCurrentAddressValid, setIsCurrentAddressValid] = useState(false);
+  const [isNewAddressValid, setIsNewAddressValid] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     serviceType: '',
     name: "",
@@ -479,7 +483,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     if (!formData.currentAddress || !formData.currentAddress.trim()) {
       newErrors.currentAddress = "Vänligen ange en giltig adress";
       isValid = false;
-    } else if (!formData.currentAddress.includes(',')) {
+    } else if (!isCurrentAddressValid) {
       newErrors.currentAddress = "Vänligen välj en adress från listan";
       isValid = false;
     }
@@ -588,7 +592,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     if (!formData.newAddress || !formData.newAddress.trim()) {
       newErrors.newAddress = "Vänligen ange en giltig adress";
       isValid = false;
-    } else if (!formData.newAddress.includes(',')) {
+    } else if (!isNewAddressValid) {
       newErrors.newAddress = "Vänligen välj en adress från listan";
       isValid = false;
     }
@@ -1381,6 +1385,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         onChange={(e) => {
                           setFormData({ ...formData, currentAddress: e.target.value });
                           setErrors({ ...errors, currentAddress: "" });
+                          setIsCurrentAddressValid(false); // Invalidate when manually edited
                           handleAddressSearch(e.target.value, true);
                         }}
                         onFocus={() => {
@@ -1394,9 +1399,17 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         }}
                         placeholder="Börja skriva din adress"
                         required
-                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg${errors.currentAddress ? " border-red-500" : ""}`}
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg ${
+                          errors.currentAddress 
+                            ? "border-red-500" 
+                            : isCurrentAddressValid 
+                              ? "border-green-500" 
+                              : "border-gray-300"
+                        }`}
                         style={{ WebkitOverflowScrolling: 'touch' }}
                       />
+                      
+
                       
                       {/* Custom dropdown */}
                       {showCurrentSuggestions && (
@@ -1417,10 +1430,27 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                               className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
                               onMouseDown={(e) => {
                                 e.preventDefault(); // Prevent blur from firing
-                                setFormData({ ...formData, currentAddress: suggestion.full_text });
-                                setLastValidCurrentAddress(suggestion.full_text);
+                                
+                                // Create clean address without street number
+                                const streetName = suggestion.address_components.street_name || '';
+                                const city = suggestion.address_components.city || '';
+                                const cleanAddress = `${streetName}, ${city}, Sweden`;
+                                
+                                setFormData({ 
+                                  ...formData, 
+                                  currentAddress: cleanAddress,
+                                  apartmentNumber: suggestion.address_components.street_number || formData.apartmentNumber,
+                                  postalCode: suggestion.address_components.postcode || formData.postalCode
+                                });
+                                setLastValidCurrentAddress(cleanAddress);
+                                setIsCurrentAddressValid(true); // Mark as valid when selected from dropdown
                                 setShowCurrentSuggestions(false);
-                                setErrors({ ...errors, currentAddress: "" });
+                                setErrors({ 
+                                  ...errors, 
+                                  currentAddress: "",
+                                  apartmentNumber: "",
+                                  postalCode: ""
+                                });
                               }}
                             >
                               <div className="font-medium text-sm text-gray-900">
@@ -2123,6 +2153,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         onChange={(e) => {
                           setFormData({ ...formData, newAddress: e.target.value });
                           setErrors({ ...errors, newAddress: "" });
+                          setIsNewAddressValid(false); // Invalidate when manually edited
                           handleAddressSearch(e.target.value, false);
                         }}
                         onFocus={() => {
@@ -2136,9 +2167,17 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         }}
                         placeholder="Börja skriva din adress"
                         required
-                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.newAddress ? " border-red-500" : ""}`}
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
+                          errors.newAddress 
+                            ? "border-red-500" 
+                            : isNewAddressValid 
+                              ? "border-green-500" 
+                              : "border-gray-300"
+                        }`}
                         style={{ WebkitOverflowScrolling: 'touch' }}
                       />
+                      
+
                       
                       {/* Custom dropdown */}
                       {showNewSuggestions && (
@@ -2159,10 +2198,27 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                               className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
                               onMouseDown={(e) => {
                                 e.preventDefault(); // Prevent blur from firing
-                                setFormData({ ...formData, newAddress: suggestion.full_text });
-                                setLastValidNewAddress(suggestion.full_text);
+                                
+                                // Create clean address without street number
+                                const streetName = suggestion.address_components.street_name || '';
+                                const city = suggestion.address_components.city || '';
+                                const cleanAddress = `${streetName}, ${city}, Sweden`;
+                                
+                                setFormData({ 
+                                  ...formData, 
+                                  newAddress: cleanAddress,
+                                  toApartmentNumber: suggestion.address_components.street_number || formData.toApartmentNumber,
+                                  toPostalCode: suggestion.address_components.postcode || formData.toPostalCode
+                                });
+                                setLastValidNewAddress(cleanAddress);
+                                setIsNewAddressValid(true); // Mark as valid when selected from dropdown
                                 setShowNewSuggestions(false);
-                                setErrors({ ...errors, newAddress: "" });
+                                setErrors({ 
+                                  ...errors, 
+                                  newAddress: "",
+                                  toApartmentNumber: "",
+                                  toPostalCode: ""
+                                });
                               }}
                             >
                               <div className="font-medium text-sm text-gray-900">

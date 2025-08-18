@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Script from "next/script";
 
 declare global {
   interface Window {
@@ -73,6 +72,12 @@ export default function FaStadningOffert() {
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [lastValidAddress, setLastValidAddress] = useState("");
   
+  // Custom address autocomplete states
+  const [addressSuggestions, setAddressSuggestions] = useState<any[]>([]);
+  const [showAddressSuggestions, setShowAddressSuggestions] = useState(false);
+  const [isLoadingAddressSuggestions, setIsLoadingAddressSuggestions] = useState(false);
+  const [isAddressValid, setIsAddressValid] = useState(false);
+  
   // Calculate tomorrow's date for minDate
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
@@ -114,67 +119,71 @@ export default function FaStadningOffert() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  useEffect(() => {
-    if (!isGoogleMapsLoaded) return;
+  // Custom address search function using Swedish address API
+  const searchAddresses = async (query: string) => {
+    if (query.length < 2) {
+      setAddressSuggestions([]);
+      setShowAddressSuggestions(false);
+      return;
+    }
 
-    // Initialize Google Places Autocomplete
-    if (!window.google?.maps?.places) return;
+    setIsLoadingAddressSuggestions(true);
 
     try {
-      const addressInput = document.getElementById('address') as HTMLInputElement;
+      const response = await fetch(
+        `https://ovuvdmhqcg.execute-api.eu-central-1.amazonaws.com/production/search/addresses?country=SE&query=${encodeURIComponent(query)}&limit=8`
+      );
+      const data = await response.json();
+      
+      if (data.success && data.data) {
+        const suggestions = data.data.map((item: any) => ({
+          display_name: item.text,
+          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}, Sweden`,
+          address_components: {
+            street_name: item.street,
+            street_number: item.streetNumber || '',
+            city: item.postarea,
+            postcode: item.postcode || '',
+            municipality: item.municipality || '',
+            county: item.county || ''
+          },
+          full_text: item.text
+        }));
 
-      if (addressInput) {
-        const autocomplete = new window.google.maps.places.Autocomplete(addressInput, {
-          componentRestrictions: { country: 'se' },
-          fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
-          types: ['address']
-        });
-
-        autocomplete.addListener('place_changed', () => {
-          const place = autocomplete.getPlace();
-          if (place.formatted_address) {
-            // Extract street name, number, and city from address components
-            let streetName = '';
-            let streetNumber = '';
-            let city = '';
-            
-            place.address_components.forEach((component: AddressComponent) => {
-              if (component.types.includes('route')) {
-                streetName = component.long_name;
-              }
-              if (component.types.includes('street_number')) {
-                streetNumber = component.long_name;
-              }
-              if (component.types.includes('locality') || component.types.includes('postal_town')) {
-                city = component.long_name;
-              }
-            });
-
-            // Format address as "Street, City, Sweden"
-            const formattedAddress = `${streetName}, ${city}, Sweden`;
-            setFormData(prev => ({
-              ...prev,
-              address: formattedAddress,
-              streetNumber: streetNumber
-            }));
-            setLastValidAddress(formattedAddress);
-          }
-        });
-
-        // Add blur event listener to restore last valid address
-        addressInput.addEventListener('blur', () => {
-          if (lastValidAddress && formData.address !== lastValidAddress) {
-            setFormData(prev => ({
-              ...prev,
-              address: lastValidAddress
-            }));
-          }
-        });
+        setAddressSuggestions(suggestions);
+        setShowAddressSuggestions(suggestions.length > 0);
+      } else {
+        setAddressSuggestions([]);
+        setShowAddressSuggestions(false);
       }
     } catch (error) {
-      console.error('Error initializing Google Places:', error);
+      console.error('Error fetching address suggestions:', error);
+      setAddressSuggestions([]);
+      setShowAddressSuggestions(false);
+    } finally {
+      setIsLoadingAddressSuggestions(false);
     }
-  }, [step, isGoogleMapsLoaded, formData.address, lastValidAddress]);
+  };
+
+  // Debounced search
+  const debounceSearch = React.useRef<NodeJS.Timeout>();
+  const handleAddressSearch = (query: string) => {
+    if (debounceSearch.current) {
+      clearTimeout(debounceSearch.current);
+    }
+    debounceSearch.current = setTimeout(() => {
+      searchAddresses(query);
+    }, 300);
+  };
+
+  // Cleanup debounce on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceSearch.current) {
+        clearTimeout(debounceSearch.current);
+      }
+    };
+  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -359,6 +368,8 @@ export default function FaStadningOffert() {
     // Always validate address
     if (!formData.address.trim()) {
       newErrors.address = "Vänligen ange din adress";
+    } else if (!isAddressValid) {
+      newErrors.address = "Vänligen välj en adress från listan";
     }
 
     // Always validate street number
@@ -469,12 +480,6 @@ export default function FaStadningOffert() {
 
   return (
     <>
-      <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBZSNfM36ny9L-S04VbU0xzhkGdaPAm_gU&libraries=places`}
-        strategy="lazyOnload"
-        async
-        onLoad={() => setIsGoogleMapsLoaded(true)}
-      />
       <main className="min-h-screen py-16 bg-gradient-to-r from-[#0F172A]/5 to-[#10B981]/5">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
@@ -993,21 +998,93 @@ export default function FaStadningOffert() {
                         <div className="flex flex-col md:flex-row gap-4">
                           <div className="flex-1">
                             <label className="block text-sm font-medium text-gray-700 mb-2">Adress</label>
-                            <input
-                              type="text"
-                              id="address"
-                              name="address"
-                              value={formData.address}
-                              onChange={(e) => {
-                                setFormData({ ...formData, address: e.target.value });
-                                setErrors({ ...errors, address: "" });
-                              }}
-                              placeholder="Börja skriva din adress"
-                              required
-                              className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
-                                errors.address ? "border-red-500" : ""
-                              }`}
-                            />
+                            <div className="relative">
+                              <input
+                                type="text"
+                                id="address"
+                                name="address"
+                                value={formData.address}
+                                onChange={(e) => {
+                                  setFormData({ ...formData, address: e.target.value });
+                                  setErrors({ ...errors, address: "" });
+                                  setIsAddressValid(false); // Invalidate when manually edited
+                                  handleAddressSearch(e.target.value);
+                                }}
+                                onFocus={() => {
+                                  if (formData.address.length >= 2) {
+                                    setShowAddressSuggestions(true);
+                                  }
+                                }}
+                                onBlur={() => {
+                                  // Delay hiding suggestions to allow for selection
+                                  setTimeout(() => setShowAddressSuggestions(false), 200);
+                                }}
+                                placeholder="Börja skriva din adress"
+                                required
+                                className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent ${
+                                  errors.address 
+                                    ? "border-red-500" 
+                                    : isAddressValid 
+                                      ? "border-green-500" 
+                                      : "border-gray-300"
+                                }`}
+                              />
+                              
+                              {/* Custom dropdown */}
+                              {showAddressSuggestions && (
+                                <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
+                                  {isLoadingAddressSuggestions && (
+                                    <div className="p-4 text-center text-gray-500">
+                                      Söker adresser...
+                                    </div>
+                                  )}
+                                  {!isLoadingAddressSuggestions && addressSuggestions.length === 0 && formData.address.length >= 2 && (
+                                    <div className="p-4 text-center text-gray-500">
+                                      Inga adresser hittades
+                                    </div>
+                                  )}
+                                  {!isLoadingAddressSuggestions && addressSuggestions.map((suggestion, index) => (
+                                    <div
+                                      key={index}
+                                      className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                                      onMouseDown={(e) => {
+                                        e.preventDefault(); // Prevent blur from firing
+                                        
+                                        // Create clean address without street number
+                                        const streetName = suggestion.address_components.street_name || '';
+                                        const city = suggestion.address_components.city || '';
+                                        const cleanAddress = `${streetName}, ${city}, Sweden`;
+                                        
+                                        setFormData({ 
+                                          ...formData, 
+                                          address: cleanAddress,
+                                          streetNumber: suggestion.address_components.street_number || formData.streetNumber,
+                                          postalCode: suggestion.address_components.postcode || formData.postalCode
+                                        });
+                                        setLastValidAddress(cleanAddress);
+                                        setIsAddressValid(true); // Mark as valid when selected from dropdown
+                                        setShowAddressSuggestions(false);
+                                        setErrors({ 
+                                          ...errors, 
+                                          address: "",
+                                          streetNumber: "",
+                                          postalCode: ""
+                                        });
+                                      }}
+                                    >
+                                      <div className="font-medium text-sm text-gray-900">
+                                        {suggestion.full_text}
+                                      </div>
+                                      {suggestion.address_components.postcode && (
+                                        <div className="text-xs text-gray-500 mt-1">
+                                          {suggestion.address_components.postcode} {suggestion.address_components.city}
+                                        </div>
+                                      )}
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
                             {errors.address && (
                               <p className="mt-1 text-sm text-red-600">{errors.address}</p>
                             )}
