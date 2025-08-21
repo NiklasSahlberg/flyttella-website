@@ -874,6 +874,23 @@ export default function Home() {
                }}
           />
           
+          {/* Mobile: Personal picture card above the section */}
+          <div className="lg:hidden px-4 py-6 relative z-40">
+            <div className="relative h-96 overflow-hidden rounded-3xl shadow-xl">
+              <Image
+                src="/personalpicture.jpg"
+                alt="Flyttella personal"
+                fill
+                className="object-cover rounded-3xl"
+                style={{ 
+                  objectPosition: 'center 70%',
+                  transform: 'scale(1.0)'
+                }}
+                priority
+              />
+            </div>
+          </div>
+
           {/* Centered content */}
           <div className="relative z-40 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60">
 
@@ -1037,22 +1054,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Mobile: Personal picture card below the section */}
-        <div className="lg:hidden px-4 py-6">
-          <div className="relative h-96 overflow-hidden rounded-3xl shadow-xl">
-            <Image
-              src="/personalpicture.jpg"
-              alt="Flyttella personal"
-              fill
-              className="object-cover rounded-3xl"
-              style={{ 
-                objectPosition: 'center 70%',
-                transform: 'scale(1.0)'
-              }}
-              priority
-            />
-          </div>
-        </div>
+
 
         {/* 3. Vilka förmåner får du med Flyttella? */}
        
