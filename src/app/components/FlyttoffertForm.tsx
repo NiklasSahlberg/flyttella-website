@@ -992,9 +992,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     <Image 
                       src="/BadgeFiveYearsNew.png" 
                       alt="Five Years Badge" 
-                      width={250} 
-                      height={125} 
-                      className="w-32 h-30 object-contain"
+                      width={220} 
+                      height={110} 
+                      className="w-28 h-28 object-contain"
                     />
                   </div>
                 </div>
