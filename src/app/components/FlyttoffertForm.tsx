@@ -761,7 +761,8 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             <>
           <h1 className="text-2xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-8 md:mb-2 leading-tight">
             <span className="md:hidden">
-              Välj tjänst för att komma igång<br />
+              Välj tjänst<br />
+              för att komma igång<br />
               med en kostnadsfri offert<br />
               inom en minut!
             </span>
@@ -986,7 +987,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 
                 {/* Five Years Badge for mobile */}
-                <div className="md:hidden mt-12 pt-12">
+                <div className="md:hidden mt-12 pt-4">
                   <div className="flex justify-center">
                     <Image 
                       src="/BadgeFiveYearsNew.png" 
@@ -999,7 +1000,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 
                 {/* Recommended company badges for mobile */}
-                <div className="md:hidden mt-3">
+                <div className="md:hidden -mt-8 ">
                   <div className="flex flex-row justify-center -space-x-14">
                     <Image 
                       src="/recommendedcompany2021-no-bg.png" 
