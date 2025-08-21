@@ -759,8 +759,15 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
           <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4 hidden md:block" />
           {!showSteps && (
             <>
-          <h1 className="text-lg md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
-            Välj tjänst för att komma igång med en kostnadsfri offert med ett fast pris <span className="md:hidden"> inom en minut!</span>
+          <h1 className="text-lg md:text-4xl font-extrabold text-center text-[#0F172A] mb-8 md:mb-2 leading-tight">
+            <span className="md:hidden">
+              Välj tjänst för att komma igång<br />
+              med en kostnadsfri offert<br />
+              med ett fast pris inom en minut!
+            </span>
+            <span className="hidden md:inline">
+              Välj tjänst för att komma igång med en kostnadsfri offert med ett fast pris
+            </span>
           </h1>
           <h2 className="text-lg md:text-xl font-extrabold text-center text-gray-700 mb-8 hidden md:block">
             Vi återkommer inom en minut!
@@ -988,14 +995,14 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 
                 {/* Five Years Badge for mobile */}
-                <div className="md:hidden mt-4">
+                <div className="md:hidden mt-12 pt-12">
                   <div className="flex justify-center">
                     <Image 
                       src="/BadgeFiveYearsNew.png" 
                       alt="Five Years Badge" 
-                      width={200} 
-                      height={100} 
-                      className="w-48 h-24 object-contain"
+                      width={250} 
+                      height={125} 
+                      className="w-32 h-30 object-contain"
                     />
                   </div>
                 </div>
