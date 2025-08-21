@@ -759,11 +759,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
           <Image src="/flyttella-logo.png" alt="Flyttella logo" width={80} height={80} className="mb-4 hidden md:block" />
           {!showSteps && (
             <>
-          <h1 className="text-lg md:text-4xl font-extrabold text-center text-[#0F172A] mb-8 md:mb-2 leading-tight">
+          <h1 className="text-2xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-8 md:mb-2 leading-tight">
             <span className="md:hidden">
               Välj tjänst för att komma igång<br />
               med en kostnadsfri offert<br />
-              med ett fast pris inom en minut!
+              inom en minut!
             </span>
             <span className="hidden md:inline">
               Välj tjänst för att komma igång med en kostnadsfri offert med ett fast pris
@@ -775,16 +775,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             </>
           )}
         </div>
-        <div className="text-center mb-6 md:mb-12 mt-4 md:mt-8 relative z-10 hidden md:block">
-          <div className="flex flex-row md:flex-col items-center justify-center gap-2 md:gap-0">
-            <h2 className="text-lg md:text-3xl font-bold text-gray-900 mb-0 md:mb-4">
-              {!showSteps ? 'Välj tjänst' : ''}
-            </h2>
-            <p className="text-lg md:text-lg text-gray-900 font-bold">
-              {!showSteps ? 'för att komma igång' : ''}
-            </p>
-          </div>
-        </div>
+
         {/* Only swap the form fields and logic for Flyttstäd, keep the rest of the UI the same */}
         {showSteps && formData.serviceType === 'flyttstad' ? (
           <StadningOffertForm
