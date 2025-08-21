@@ -760,7 +760,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
           {!showSteps && (
             <>
           <h1 className="text-lg md:text-4xl font-extrabold text-center text-[#0F172A] mb-2 leading-tight">
-            Fyll i formuläret för en kostnadsfri offert med ett fast pris<span className="md:hidden"> inom en minut!</span>
+            Välj tjänst för att komma igång med en kostnadsfri offert med ett fast pris <span className="md:hidden"> inom en minut!</span>
           </h1>
           <h2 className="text-lg md:text-xl font-extrabold text-center text-gray-700 mb-8 hidden md:block">
             Vi återkommer inom en minut!
@@ -768,7 +768,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             </>
           )}
         </div>
-        <div className="text-center mb-6 md:mb-12 mt-4 md:mt-8 relative z-10">
+        <div className="text-center mb-6 md:mb-12 mt-4 md:mt-8 relative z-10 hidden md:block">
           <div className="flex flex-row md:flex-col items-center justify-center gap-2 md:gap-0">
             <h2 className="text-lg md:text-3xl font-bold text-gray-900 mb-0 md:mb-4">
               {!showSteps ? 'Välj tjänst' : ''}
@@ -893,7 +893,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   {swapServiceOrder ? (
                     <>
                       <motion.div
-                        className="relative rounded-xl p-2 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl py-6 px-3 md:py-8 md:px-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -906,15 +906,16 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex flex-col items-center text-center">
-                          <span className="text-2xl md:text-4xl mb-2 md:mb-4">✨</span>
-                          <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">{swapServiceOrder ? 'Städtjänster' : 'Flyttstäd'}</h3>
-                          <p className="text-sm md:text-base opacity-90">
-                            Professionell flyttstädning för att lämna din gamla bostad i perfekt skick
+                          <span className="text-3xl md:text-5xl mb-3 md:mb-5">✨</span>
+                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{swapServiceOrder ? 'Städtjänster' : 'Flyttstäd'}</h3>
+                          <p className="text-base md:text-lg opacity-90">
+                            <span className="md:hidden">Komplett Städservice</span>
+                            <span className="hidden md:inline">Professionell flyttstädning för att lämna din gamla bostad i perfekt skick</span>
                           </p>
                         </div>
                       </motion.div>
                       <motion.div
-                        className="relative rounded-xl p-3 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl py-6 px-3 md:py-8 md:px-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flytt' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -927,10 +928,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex flex-col items-center text-center">
-                          <span className="text-2xl md:text-4xl mb-2 md:mb-4">🏠</span>
-                          <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">Flytt</h3>
-                          <p className="text-sm md:text-base opacity-90">
-                            Komplett flyttservice med professionell packning, transport och uppackning
+                          <span className="text-3xl md:text-5xl mb-3 md:mb-5">🏠</span>
+                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">Flytt</h3>
+                          <p className="text-base md:text-lg opacity-90">
+                            <span className="md:hidden">Komplett Flyttservice</span>
+                            <span className="hidden md:inline">Komplett flyttservice med professionell packning, transport och uppackning</span>
                           </p>
                         </div>
                       </motion.div>
@@ -938,7 +940,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   ) : (
                     <>
                       <motion.div
-                        className="relative rounded-xl p-2 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl py-6 px-3 md:py-8 md:px-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flytt' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -951,15 +953,16 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex flex-col items-center text-center">
-                          <span className="text-2xl md:text-4xl mb-2 md:mb-4">🏠</span>
-                          <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">Flytt</h3>
-                          <p className="text-sm md:text-base opacity-90">
-                            Komplett flyttservice med professionell packning, transport och uppackning
+                          <span className="text-3xl md:text-5xl mb-3 md:mb-5">🏠</span>
+                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">Flytt</h3>
+                          <p className="text-base md:text-lg opacity-90">
+                            <span className="md:hidden">Komplett Flyttservice</span>
+                            <span className="hidden md:inline">Komplett flyttservice med professionell packning, transport och uppackning</span>
                           </p>
                         </div>
                       </motion.div>
                       <motion.div
-                        className="relative rounded-xl p-2 md:p-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
+                        className="relative rounded-xl py-6 px-3 md:py-8 md:px-6 cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg"
                         onClick={() => {
                           setFormData(prev => ({ ...prev, serviceType: 'flyttstad' }));
                           setErrors(prev => ({ ...prev, serviceType: '' }));
@@ -972,10 +975,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex flex-col items-center text-center">
-                          <span className="text-2xl md:text-4xl mb-2 md:mb-4">✨</span>
-                          <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">{swapServiceOrder ? 'Städtjänster' : 'Städ'}</h3>
-                          <p className="text-sm md:text-base opacity-90">
-                            {cleaningCardSubtitle ?? 'Komplett städservice med professionell städning för alla behov'}
+                          <span className="text-3xl md:text-5xl mb-3 md:mb-5">✨</span>
+                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{swapServiceOrder ? 'Städtjänster' : 'Städ'}</h3>
+                          <p className="text-base md:text-lg opacity-90">
+                            <span className="md:hidden">Komplett Städservice</span>
+                            <span className="hidden md:inline">{cleaningCardSubtitle ?? 'Komplett städservice med professionell städning för alla behov'}</span>
                           </p>
                         </div>
                       </motion.div>

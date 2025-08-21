@@ -1,261 +1,104 @@
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import FlyttoffertForm from '../components/FlyttoffertForm';
+import Link from 'next/link'
 
 export default function BortforslingPage() {
-  return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] to-[#10B981]"></div>
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Bortforsling</h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8">
-              Professionell bortforsling av möbler, vitvaror och andra föremål med miljövänlig hantering
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/kontakt#contact-form" className="bg-white text-[#0F172A] px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium">
-                Få offert
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+	const fadeInUp = {
+		initial: { opacity: 0, y: 20 },
+		animate: { opacity: 1, y: 0 },
+		transition: { duration: 0.8 }
+	};
+	const staggerContainer = {
+		animate: { transition: { staggerChildren: 0.1 } }
+	};
+	return (
+		<main id="top" className="overflow-hidden">
+			<div className="main-zoom">
+				{/* Hero Section - Matching bohagsflytt header */}
+				<div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
+					{/* Mobile: Form only */}
+					<div className="md:hidden mx-auto px-4 pb-8">
+						<FlyttoffertForm mode="widget" />
+					</div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-16">
-        {/* Introduction */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">
-                  Miljövänlig bortforsling av allt från möbler till vitvaror
-                </h2>
-                <div className="space-y-4 text-gray-600">
-                  <p className="text-lg">
-                    När du flyttar eller renoverar behöver du ofta bli av med gamla möbler, vitvaror eller andra föremål. 
-                    Vi erbjuder professionell bortforsling med fokus på miljövänlig hantering och återvinning.
-                  </p>
-                  <p className="text-lg">
-                    Vårt team tar hand om allt från små möbler till stora vitvaror och säkerställer att allt 
-                    hanteras på rätt sätt enligt miljöregler och återvinningskrav.
-                  </p>
-                </div>
-              </div>
-              <div className="flex-1">
-                <div className="relative h-[400px] w-full">
-                  <Image
-                    src="/waste-removal.png"
-                    alt="Bortforsling av möbler och vitvaror"
-                    fill
-                    className="object-cover rounded-lg"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+					{/* Desktop: Full hero section */}
+					<div className="hidden md:block mx-auto px-16">
+						<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
+							{/* Background image */}
+							<div
+								className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+								style={{
+									backgroundImage: 'url(/coupleMoving.png)',
+									backgroundSize: 'cover',
+									backgroundPosition: 'center 30%'
+								}}
+							/>
+							<div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
+								<div className="max-w-xl w-full">
+									<h1 className="text-5xl md:text-6xl font-bold mb-8">Bortforsling i Stockholm</h1>
+									<p className="text-2xl md:text-3xl mb-12">Professionell bortforsling av möbler, bohag och grovsopor</p>
+									<p className="text-lg text-white/90">Vi hämtar, bär och kör bort – snabbt och tryggt. Miljövänlig hantering och återvinning när det är möjligt. Få offert på 1 minut.</p>
+								</div>
+								<div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
+									<FlyttoffertForm mode="widget" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        {/* Services Included */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {/* Furniture Removal */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-[#0F172A] mb-4">
-              Möbler
-            </h2>
-            <ul className="space-y-2">
-              {[
-                "Soffor och fåtöljer",
-                "Sängar och madrasser",
-                "Bord och stolar",
-                "Skåp och byråar",
-                "Garderober",
-                "Matsalsmöbler",
-                "Kontorsmöbler",
-                "Trädgårdsmöbler"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-600">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+				{/* What is Bortforsling Section with Sidebar (SEO-optimized) */}
+				<section className="py-0 md:py-16 bg-white">
+					<div className="container mx-auto px-4">
+						<div className="max-w-6xl mx-auto relative">
+							{/* Sidebar: Reviews widget (sticky) */}
+							<div className="hidden lg:block absolute -right-72 top-[22rem] w-72">
+								<div className="sticky top-8">
+									<iframe 
+										src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
+										className="w-full h-[1000px] border-0"
+										title="Flyttella recensioner"
+									/>
+								</div>
+							</div>
 
-          {/* Appliances */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-[#0F172A] mb-4">
-              Vitvaror & Elektronik
-            </h2>
-            <ul className="space-y-2">
-              {[
-                "Kylskåp och frysar",
-                "Tvättmaskiner och torktumlare",
-                "Diskmaskiner",
-                "Spisar och ugnar",
-                "Mikrovågsugnar",
-                "TV-apparater",
-                "Datorer och skärmar",
-                "Övrig elektronik"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-600">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+							{/* Main content - Centered (matching bohagsflytt) */}
+							<motion.div
+								className="space-y-12 md:space-y-16"
+								variants={staggerContainer}
+								initial="initial"
+								whileInView="animate"
+								viewport={{ once: true }}
+							>
+								{([
+									{ title: 'Vad är bortforsling?', content: 'Bortforsling innebär att vi hämtar, bär och transporterar bort möbler, vitvaror, elektronik och grovsopor på ett säkert och miljövänligt sätt. Vi sorterar och lämnar avfallet på återvinningscentral eller godkänd mottagare. Tjänsten passar vid flytt, dödsbo, kontorsrensning eller när du behöver frigöra utrymme hemma.', icon: '🗑️' },
+									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/bortforsling.jpg" alt="Bortforsling av möbler och grovsopor i Stockholm" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
+									{ title: 'Vad kostar bortforsling?', content: (<><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-left md:text-center px-4">Pris beror på volym, våningsplan, tillgänglighet och typ av material. Mindre uppdrag kan börja från cirka 990 kr. Begär en kostnadsfri offert – du får pris på 1 minut och kan boka direkt.</p><div className="my-12 md:my-16 text-left md:text-center px-4"><p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;Snabbt, smidigt och trevligt bemötande – våra gamla möbler hämtades samma dag och allt gick perfekt!&quot;</p><p className="italic text-gray-700 mt-2">- Maria</p></div></>), icon: '💸' },
+									{ title: 'Vad ingår i tjänsten?', content: (<div className="px-4 md:px-0"><ul className="list-disc pl-5 space-y-3 md:space-y-2"><li><strong>Bärhjälp:</strong> Hämtning från bostad, vind, källare eller kontor.</li><li><strong>Nedmontering:</strong> Enklare demontering av möbler vid behov.</li><li><strong>Transport:</strong> Körning till återvinningscentral/godkänd mottagare.</li><li><strong>Miljösortering:</strong> Vi sorterar avfallet för återvinning när det är möjligt.</li><li><strong>Tydliga priser:</strong> Fasta priser utan dolda avgifter.</li></ul></div>), icon: '✅' },
+								] as { title: string; content: any; icon: string }[]).map((section, index) => (
+									<motion.div key={index} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
+										<div>
+											<div className="max-w-6xl mx-auto">
+												<h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0F172A] mb-4 md:mb-6 group-hover:text-[#10B981] transition-colors duration-300 text-left md:text-center px-4">{section.title}</h3>
+												{typeof section.content === 'string' ? (
+													<p className="text-gray-700 leading-relaxed px-4 text-base md:text-lg lg:text-xl">{section.content}</p>
+												) : (
+													<div className="text-gray-700 leading-relaxed text-base md:text-lg lg:text-xl">{section.content}</div>
+												)}
+											</div>
+										</div>
+									</motion.div>
+								))}
+							</motion.div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+	);
+}
 
-          {/* Other Items */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-[#0F172A] mb-4">
-              Övriga föremål
-            </h2>
-            <ul className="space-y-2">
-              {[
-                "Mattor och golvbeläggningar",
-                "Gardiner och rullgardiner",
-                "Lampor och belysning",
-                "Speglar och tavlor",
-                "Trädgårdsredskap",
-                "Cyklar och leksaker",
-                "Byggmaterial",
-                "Övriga hushållsartiklar"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-600">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
 
-        {/* Process Steps */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-16">
-            Så går bortforslingen till
-          </h2>
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* Step 1 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#0F172A] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
-                1
-              </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">
-                Bedömning
-              </h3>
-              <p className="text-gray-600">
-                Vi bedömer vilka föremål som ska bortforslas och planerar den bästa metoden för hantering.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#0F172A] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
-                2
-              </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">
-                Bortforsling
-              </h3>
-              <p className="text-gray-600">
-                Vi bortforslar föremålen säkert och effektivt med rätt utrustning och personal.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#0F172A] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
-                3
-              </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">
-                Miljövänlig hantering
-              </h3>
-              <p className="text-gray-600">
-                Vi säkerställer att allt återvinns eller hanteras på miljövänligt sätt enligt gällande regler.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Environmental Section */}
-        <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg shadow-lg p-8 text-white mb-16">
-          <h2 className="text-2xl font-bold mb-6">
-            Miljövänlig hantering
-          </h2>
-          <p className="text-white/90 mb-6">
-            Vi tar ansvar för miljön genom att:
-          </p>
-          <ul className="grid md:grid-cols-2 gap-4">
-            {[
-              "Sorterar föremål för återvinning",
-              "Återvinner metaller och elektronik",
-              "Donerar användbara föremål till välgörenhet",
-              "Hanterar farligt avfall enligt regler",
-              "Använder miljövänliga transportmetoder",
-              "Ger kvitto på miljöhantering"
-            ].map((item, index) => (
-              <li key={index} className="flex items-start">
-                <svg className="w-5 h-5 text-white mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-white/90">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Preparation Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-          <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-            Inför bortforslingen
-          </h2>
-          <p className="text-gray-600 mb-6">
-            För att göra bortforslingen så smidig som möjligt:
-          </p>
-          <ul className="grid md:grid-cols-2 gap-4">
-            {[
-              "Markera tydligt vilka föremål som ska bort",
-              "Se till att tillgångsbanan är fri från hinder",
-              "Töm kylskåp och frysar innan bortforsling",
-              "Ange eventuella särskilda instruktioner",
-              "Säkerställ att vi har tillgång till eluttag",
-              "Informera om eventuella skador på föremål"
-            ].map((item, index) => (
-              <li key={index} className="flex items-start">
-                <svg className="w-5 h-5 text-[#10B981] mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-600">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#0F172A] mb-4">
-            Behöver ni hjälp med bortforsling?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Kontakta oss för en kostnadsfri offert på bortforsling av era föremål!
-          </p>
-          <Link 
-            href="/kontakt#contact-form" 
-            className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity inline-block font-medium"
-          >
-            Få offert
-          </Link>
-        </div>
-      </div>
-    </main>
-  );
-} 

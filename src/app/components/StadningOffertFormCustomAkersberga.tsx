@@ -858,6 +858,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
             console.log('Starting moving form');
             setIsMovingForm(true);
             setMovingStep(1);
+            // push past step 3 so the Flytthjälp block won't re-render on next render
+            setStep(4);
             setErrors({});
             setTouchedFields({});
           } else {
@@ -1954,7 +1956,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                         </div>
                       </div>
                     </>
-                  ) : selectedCleaningType === 'Flyttstädning' ? (
+                  ) : selectedCleaningType === 'Flyttstädning' && step === 3 ? (
                     <div className="space-y-6">
                       <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
                         Flytthjälp
@@ -2000,7 +2002,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                         </div>
                       </div>
                     </div>
-                  ) : !isMovingForm && (
+                  ) : (!isMovingForm || step !== 3) && (
                     <>
                       <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Kontaktinformation</h2>
                       
@@ -2328,17 +2330,72 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       <div className="flex flex-col md:flex-row gap-4">
                         <div className="flex-1">
                           <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Nuvarande adress</strong></label>
-                          <input
-                            type="text"
-                            name="currentAddress"
-                            value={formData.currentAddress}
-                            onChange={handleInputChange}
-                            placeholder="Börja skriva din adress"
-                            className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
-                              errors.currentAddress ? "border-red-500" : ""
-                            }`}
-                            style={{ backgroundColor: 'white', color: 'black' }}
-                          />
+                          <div className="relative">
+                            <input
+                              type="text"
+                              name="currentAddress"
+                              value={formData.currentAddress}
+                              onChange={(e) => {
+                                setFormData({ ...formData, currentAddress: e.target.value });
+                                setErrors({ ...errors, currentAddress: "" });
+                                setIsAddressValid(false);
+                                handleAddressSearch(e.target.value);
+                              }}
+                              onFocus={() => {
+                                if (formData.currentAddress.length >= 2) {
+                                  setShowAddressSuggestions(true);
+                                }
+                              }}
+                              onBlur={() => {
+                                setTimeout(() => setShowAddressSuggestions(false), 200);
+                              }}
+                              placeholder="Börja skriva din adress"
+                              className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                                errors.currentAddress ? "border-red-500" : ""
+                              }`}
+                              style={{ backgroundColor: 'white', color: 'black' }}
+                              ref={addressRef}
+                            />
+                            {showAddressSuggestions && (
+                              <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
+                                {isLoadingAddressSuggestions && (
+                                  <div className="p-4 text-center text-gray-500">Söker adresser...</div>
+                                )}
+                                {!isLoadingAddressSuggestions && addressSuggestions.length === 0 && formData.currentAddress.length >= 2 && (
+                                  <div className="p-4 text-center text-gray-500">Inga adresser hittades</div>
+                                )}
+                                {!isLoadingAddressSuggestions && addressSuggestions.map((suggestion: any, index: number) => (
+                                  <div
+                                    key={index}
+                                    className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                                    onMouseDown={(e) => {
+                                      e.preventDefault();
+                                      const streetName = suggestion.address_components.street_name || '';
+                                      const city = suggestion.address_components.city || '';
+                                      const cleanAddress = `${streetName}, ${city}, Sweden`;
+                                      setFormData({
+                                        ...formData,
+                                        currentAddress: cleanAddress,
+                                        apartmentNumber: suggestion.address_components.street_number || formData.apartmentNumber,
+                                        postalCode: suggestion.address_components.postcode || formData.postalCode,
+                                      });
+                                      setLastValidAddress(cleanAddress);
+                                      setIsAddressValid(true);
+                                      setShowAddressSuggestions(false);
+                                      setErrors({ ...errors, currentAddress: "", apartmentNumber: "", postalCode: "" });
+                                    }}
+                                  >
+                                    <div className="font-medium text-sm text-gray-900">{suggestion.full_text}</div>
+                                    {suggestion.address_components.postcode && (
+                                      <div className="text-xs text-gray-500 mt-1">
+                                        {suggestion.address_components.postcode} {suggestion.address_components.city}
+                                      </div>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                           {errors.currentAddress && (
                             <p className="mt-1 text-sm text-red-600">{errors.currentAddress}</p>
                           )}
@@ -2568,17 +2625,72 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                        <div className="flex flex-col md:flex-row gap-4">
                          <div className="flex-1">
                            <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Ny adress</strong></label>
-                           <input
-                             type="text"
-                             name="newAddress"
-                             value={formData.newAddress}
-                             onChange={handleInputChange}
-                             placeholder="Börja skriva din nya adress"
-                             className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
-                               errors.newAddress ? "border-red-500" : ""
-                             }`}
-                             style={{ backgroundColor: 'white', color: 'black' }}
-                           />
+                           <div className="relative">
+                             <input
+                               type="text"
+                               name="newAddress"
+                               value={formData.newAddress}
+                               onChange={(e) => {
+                                 setFormData({ ...formData, newAddress: e.target.value });
+                                 setErrors({ ...errors, newAddress: "" });
+                                 setIsAddressValid(false);
+                                 handleAddressSearch(e.target.value);
+                               }}
+                               onFocus={() => {
+                                 if (formData.newAddress.length >= 2) {
+                                   setShowAddressSuggestions(true);
+                                 }
+                               }}
+                               onBlur={() => {
+                                 setTimeout(() => setShowAddressSuggestions(false), 200);
+                               }}
+                               placeholder="Börja skriva din nya adress"
+                               className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                                 errors.newAddress ? "border-red-500" : ""
+                               }`}
+                               style={{ backgroundColor: 'white', color: 'black' }}
+                               ref={addressRef}
+                             />
+                             {showAddressSuggestions && (
+                               <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
+                                 {isLoadingAddressSuggestions && (
+                                   <div className="p-4 text-center text-gray-500">Söker adresser...</div>
+                                 )}
+                                 {!isLoadingAddressSuggestions && addressSuggestions.length === 0 && formData.newAddress.length >= 2 && (
+                                   <div className="p-4 text-center text-gray-500">Inga adresser hittades</div>
+                                 )}
+                                 {!isLoadingAddressSuggestions && addressSuggestions.map((suggestion: any, index: number) => (
+                                   <div
+                                     key={index}
+                                     className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                                     onMouseDown={(e) => {
+                                       e.preventDefault();
+                                       const streetName = suggestion.address_components.street_name || '';
+                                       const city = suggestion.address_components.city || '';
+                                       const cleanAddress = `${streetName}, ${city}, Sweden`;
+                                       setFormData({
+                                         ...formData,
+                                         newAddress: cleanAddress,
+                                         toApartmentNumber: suggestion.address_components.street_number || formData.toApartmentNumber,
+                                         toPostalCode: suggestion.address_components.postcode || formData.toPostalCode,
+                                       });
+                                       setLastValidAddress(cleanAddress);
+                                       setIsAddressValid(true);
+                                       setShowAddressSuggestions(false);
+                                       setErrors({ ...errors, newAddress: "", toApartmentNumber: "", toPostalCode: "" });
+                                     }}
+                                   >
+                                     <div className="font-medium text-sm text-gray-900">{suggestion.full_text}</div>
+                                     {suggestion.address_components.postcode && (
+                                       <div className="text-xs text-gray-500 mt-1">
+                                         {suggestion.address_components.postcode} {suggestion.address_components.city}
+                                       </div>
+                                     )}
+                                   </div>
+                                 ))}
+                               </div>
+                             )}
+                           </div>
                            {errors.newAddress && (
                              <p className="mt-1 text-sm text-red-600">{errors.newAddress}</p>
                            )}
