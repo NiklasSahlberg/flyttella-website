@@ -815,7 +815,7 @@ export default function Bohagsflytt() {
                   className="inline-block"
                 >
                   <Link 
-                    href="#top"
+                    href="/offert"
                     className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
                     Få gratis offert
@@ -1378,7 +1378,7 @@ export default function Bohagsflytt() {
                   className="inline-block"
                 >
                   <Link 
-                    href="#top"
+                    href="/offert"
                     className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
                   >
                     Få gratis offert
