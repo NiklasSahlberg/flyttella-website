@@ -15,7 +15,7 @@ export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [showQuoteButton, setShowQuoteButton] = useState(pathname !== "/");
+  const [showQuoteButton, setShowQuoteButton] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout>();
   const [isBusinessOpen, setIsBusinessOpen] = useState(false);
@@ -28,27 +28,19 @@ export default function Header() {
   const cleaningTimeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    if (pathname === "/") {
-      setShowQuoteButton(false);
-      const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        setShowQuoteButton(scrollPosition > 600);
-        setIsMobileScrolled(scrollPosition > 100);
-      };
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-        if (timeoutRef.current) {
-          clearTimeout(timeoutRef.current);
-        }
-      };
-    } else {
-      setShowQuoteButton(true);
-      setIsMobileScrolled(true);
+    setShowQuoteButton(false);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setShowQuoteButton(scrollPosition > 600);
+      setIsMobileScrolled(scrollPosition > 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
-    }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
@@ -189,7 +181,16 @@ export default function Header() {
             {/* Logo - centered on mobile, left on desktop */}
             <div className="flex-1 flex justify-center md:justify-start items-center relative">
               {/* Desktop: Always show logo */}
-              <Link href="/" className="cursor-pointer hidden md:block">
+              <Link 
+                href="/" 
+                className="cursor-pointer hidden md:block"
+                onClick={(e) => {
+                  if (pathname === '/') {
+                    e.preventDefault();
+                    window.location.reload();
+                  }
+                }}
+              >
                 <div className="relative h-12 w-24 md:h-20 md:w-96 mx-auto">
                   <Image
                     src="/flyttella-logo.png"
@@ -204,7 +205,16 @@ export default function Header() {
               {/* Mobile: Show logo or "Få offert" button based on scroll */}
               <div className="md:hidden">
                 {!isMobileScrolled ? (
-                  <Link href="/" className="cursor-pointer">
+                  <Link 
+                    href="/" 
+                    className="cursor-pointer"
+                    onClick={(e) => {
+                      if (pathname === '/') {
+                        e.preventDefault();
+                        window.location.reload();
+                      }
+                    }}
+                  >
                     <div className="relative h-12 w-24 mx-auto">
                       <Image
                         src="/flyttella-logo.png"
@@ -481,7 +491,17 @@ export default function Header() {
             <div className="h-full overflow-y-auto pt-12 pb-4 px-6 flex flex-col items-center text-center">
               {/* Logo */}
               <div className="mb-4">
-                <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link 
+                  href="/" 
+                  onClick={(e) => {
+                    if (pathname === '/') {
+                      e.preventDefault();
+                      window.location.reload();
+                    } else {
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
+                >
                 <Image
                   src="/flyttella-logo.png"
                   alt="Flyttella Logo"

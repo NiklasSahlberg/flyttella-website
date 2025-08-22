@@ -206,10 +206,7 @@ export default function Bohagsflytt() {
       <div className="main-zoom">
         {/* Hero Section - Matching start page design */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          {/* Mobile: Form only */}
-          <div className="md:hidden mx-auto px-4 pb-8">
-            <FlyttoffertForm mode="widget" />
-          </div>
+
           
           {/* Mobile: Hero content after form removed per request */}
           

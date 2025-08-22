@@ -1596,17 +1596,39 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile Image below container */}
-        <div className="md:hidden">
-          <Image
-            src="/intro_picture.jpg"
-            alt="Flyttella introduktion"
-            width={600}
-            height={400}
-            className="rounded-none shadow-lg object-cover w-full h-80 max-w-none"
-            style={{ objectPosition: '80% 80%' }}
-            priority={false}
+        {/* Mobile Image Transition - intro_picture.jpg */}
+        <div className="md:hidden relative -mt-4">
+          {/* Enhanced gradient overlay to blend from omoss.jpg background */}
+          <div 
+            className="absolute top-0 left-0 w-full h-24 z-20 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 20%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.3) 65%, rgba(255,255,255,0.1) 85%, rgba(255,255,255,0) 100%)'
+            }}
           />
+          
+          {/* Main image with subtle animation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative"
+          >
+            <Image
+              src="/intro_picture.jpg"
+              alt="Flyttella - Professionell flyttservice i Stockholm"
+              width={800}
+              height={500}
+              className="w-full h-96 object-cover shadow-lg"
+              style={{ objectPosition: '80% 80%' }}
+              priority={false}
+            />
+            
+            {/* Subtle overlay for better text contrast if needed */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+          </motion.div>
+          
+
         </div>
 
         {/* Awards Section */}

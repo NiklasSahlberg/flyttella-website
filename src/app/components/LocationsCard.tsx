@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -17,10 +17,25 @@ const fadeInUp = {
 };
 
 export default function LocationsCard({ locations }: LocationsCardProps) {
+  const [isFlyttfirmaExpanded, setIsFlyttfirmaExpanded] = useState(false);
+  const [isFlyttstadExpanded, setIsFlyttstadExpanded] = useState(false);
+  
   // Create separate arrays for flyttfirma and flyttstad
   const flyttfirmaLocations = [
     ...locations
   ];
+  
+  // Calculate how many cities to show initially (about half)
+  const initialShowCount = Math.ceil(locations.length / 2);
+  
+  // Get visible cities based on expanded state
+  const getVisibleFlyttfirmaLocations = () => {
+    return isFlyttfirmaExpanded ? flyttfirmaLocations : flyttfirmaLocations.slice(0, initialShowCount);
+  };
+  
+  const getVisibleFlyttstadLocations = () => {
+    return isFlyttstadExpanded ? locations : locations.slice(0, initialShowCount);
+  };
 
   return (
     <section className="py-6 md:py-16 bg-gray-50">
@@ -74,7 +89,7 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                   Flyttfirma
                 </h3>
                 <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
-                  {flyttfirmaLocations.map((location, idx) => (
+                  {getVisibleFlyttfirmaLocations().map((location, idx) => (
                     <motion.div
                       key={`flyttfirma-${location.slug}`}
                       variants={fadeInUp}
@@ -92,6 +107,18 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                     </motion.div>
                   ))}
                 </div>
+                
+                {/* Read More button for Flyttfirma - Mobile only */}
+                {!isFlyttfirmaExpanded && flyttfirmaLocations.length > initialShowCount && (
+                  <div className="mt-4 text-center md:hidden">
+                    <button
+                      onClick={() => setIsFlyttfirmaExpanded(true)}
+                      className="text-white/90 hover:text-white text-sm font-medium underline transition-colors"
+                    >
+                      Läs mer
+                    </button>
+                  </div>
+                )}
                 <div className="mt-4 md:mt-6 text-center">
                   <h4 className="text-lg md:text-xl font-bold text-white flex items-center justify-center gap-2">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,7 +155,7 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                   Flyttstäd
                 </h3>
                 <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
-                  {locations.map((location, idx) => (
+                  {getVisibleFlyttstadLocations().map((location, idx) => (
                     <motion.div
                       key={`flyttstad-${location.slug}`}
                       variants={fadeInUp}
@@ -146,6 +173,18 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                     </motion.div>
                   ))}
                 </div>
+                
+                {/* Read More button for Flyttstäd - Mobile only */}
+                {!isFlyttstadExpanded && locations.length > initialShowCount && (
+                  <div className="mt-4 text-center md:hidden">
+                    <button
+                      onClick={() => setIsFlyttstadExpanded(true)}
+                      className="text-white/90 hover:text-white text-sm font-medium underline transition-colors"
+                    >
+                      Läs mer
+                    </button>
+                  </div>
+                )}
               </motion.div>
             </div>
           </div>
