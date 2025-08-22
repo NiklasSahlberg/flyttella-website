@@ -232,7 +232,7 @@ export default function Header() {
               {/* Hamburger menu */}
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="text-[#0F172A] hover:text-[#10B981] transition-colors p-1"
+                className="text-[#0F172A]  transition-colors p-1"
                 aria-label="Öppna meny"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -253,7 +253,7 @@ export default function Header() {
                 >
                   <Link 
                     href="/tjanster"
-                    className="text-[#0F172A] hover:text-[#10B981] transition-colors text-base font-medium tracking-wide flex items-center"
+                    className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide flex items-center"
                   >
                     {t('header.movingServices')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -271,37 +271,37 @@ export default function Header() {
                         <h3 className="text-sm font-semibold text-[#0F172A]">{t('header.seeAllMoving')}</h3>
                       </div>
                       <div className="py-2">
-                        <Link href="/bohagsflytt" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/bohagsflytt" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🏠</span>
                           <span>Bohagsflytt</span>
                         </Link>
-                        <Link href="/barhjalp" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/barhjalp" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">💪</span>
                           <span>Bärhjälp</span>
                         </Link>
-                        <Link href="/piano-tunglyft" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/piano-tunglyft" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🎹</span>
                           <span>Piano/Tunglyft</span>
                         </Link>
-                        <Link href="/bortforsling" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/bortforsling" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">♻️</span>
                           <span>Bortforsling</span>
                         </Link>
-                        <Link href="/magasinering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/magasinering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">📦</span>
                           <span>Magasinering</span>
                         </Link>
-                        <Link href="/utlandsflytt" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/utlandsflytt" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🌍</span>
                           <span>Utlandsflytt</span>
                         </Link>
-                        <Link href="/montering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/montering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🔧</span>
                           <span>Montering</span>
                         </Link>
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
-                        <Link href="/tjanster" onClick={() => setIsServicesOpen(false)} className="flex items-center justify-between text-base font-medium text-[#10B981] hover:text-[#0F172A] transition-colors">
+                        <Link href="/tjanster" onClick={() => setIsServicesOpen(false)} className="flex items-center justify-between text-base font-medium text-[#0F172A] transition-colors">
                           <span>{t('header.seeAllMoving')}</span>
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -319,7 +319,7 @@ export default function Header() {
                 >
                   <Link
                     href="/flyttstadning"
-                    className="text-[#0F172A] hover:text-[#10B981] transition-colors text-base font-medium tracking-wide flex items-center"
+                    className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide flex items-center"
                   >
                     {t('header.cleaningServices')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -336,41 +336,41 @@ export default function Header() {
                         <h3 className="text-sm font-semibold text-[#0F172A]">{t('header.seeAllCleaning')}</h3>
                       </div>
                       <div className="py-2">
-                        <Link href="/flyttstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/flyttstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">✨</span>
                           <span>Flyttstädning</span>
                         </Link>
-                        <Link href="/kontorsstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/kontorsstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🧹</span>
                           <span>Kontorsstädning</span>
                         </Link>
-                        <Link href="/hemstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/hemstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🏡</span>
                           <span>Hemstädning</span>
                         </Link>
-                        <Link href="/fonsterputsning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/fonsterputsning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🪟</span>
                           <span>Fönsterputs</span>
                         </Link>
-                        <Link href="/byggstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/byggstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🚧</span>
                           <span>Byggstädning</span>
                         </Link>
-                        <Link href="/storstädning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/storstädning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🧽</span>
                           <span>Storstädning</span>
                         </Link>
-                        <Link href="/visningsstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/visningsstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🏠</span>
                           <span>Visningsstädning</span>
                         </Link>
-                        <Link href="/dodsbo-stadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/dodsbo-stadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🕊️</span>
                           <span>Dödsbostädning</span>
                         </Link>
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
-                        <Link href="/stadtjanster" onClick={() => setIsCleaningOpen(false)} className="flex items-center justify-between text-base font-medium text-[#10B981] hover:text-[#0F172A] transition-colors">
+                        <Link href="/stadtjanster" onClick={() => setIsCleaningOpen(false)} className="flex items-center justify-between text-base font-medium text-[#0F172A] transition-colors">
                           <span>{t('header.seeAllCleaning')}</span>
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -389,7 +389,7 @@ export default function Header() {
                 >
                   <Link
                     href="/foretag"
-                    className="text-[#0F172A] hover:text-[#10B981] transition-colors text-base font-medium tracking-wide flex items-center"
+                    className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide flex items-center"
                   >
                     {t('header.business')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -406,21 +406,21 @@ export default function Header() {
                         <h3 className="text-sm font-semibold text-[#0F172A]">{t('header.seeAllBusiness')}</h3>
                       </div>
                       <div className="py-2">
-                        <Link href="/kontorsflytt" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/kontorsflytt" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🏢</span>
                           <span>Kontorsflytt</span>
                         </Link>
-                        <Link href="/kontorsstadning" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/kontorsstadning" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🧹</span>
                           <span>Kontorsstädning</span>
                         </Link>
-                        <Link href="/bemanning" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50 hover:text-[#10B981] transition-colors">
+                        <Link href="/bemanning" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">👷‍♂️</span>
                           <span>Bemanning och underentreprenad</span>
                         </Link>
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
-                        <Link href="/foretag" onClick={() => setIsBusinessOpen(false)} className="flex items-center justify-between text-base font-medium text-[#10B981] hover:text-[#0F172A] transition-colors">
+                        <Link href="/foretag" onClick={() => setIsBusinessOpen(false)} className="flex items-center justify-between text-base font-medium text-[#0F172A] transition-colors">
                           <span>{t('header.seeAllBusiness')}</span>
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -430,10 +430,10 @@ export default function Header() {
                     </div>
                   )}
                 </div>
-                <Link href="/om-oss" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-base font-medium tracking-wide">{t('header.about')}</Link>
-                <Link href="/faq" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-base font-medium tracking-wide">{t('header.faq')}</Link>
-                <Link href="/blogg" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-base font-medium tracking-wide">{t('header.blog')}</Link>
-                <Link href="/kontakt" className="text-[#0F172A] hover:text-[#10B981] transition-colors text-base font-medium tracking-wide">{t('header.contact')}</Link>
+                <Link href="/om-oss" className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide">{t('header.about')}</Link>
+                <Link href="/faq" className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide">{t('header.faq')}</Link>
+                <Link href="/blogg" className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide">{t('header.blog')}</Link>
+                <Link href="/kontakt" className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide">{t('header.contact')}</Link>
               </nav>
 
 
@@ -469,7 +469,7 @@ export default function Header() {
               {/* Close button */}
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-[#10B981]"
+              className="absolute top-4 right-4 p-2 text-gray-400 "
                 aria-label="Stäng meny"
               >
               <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -478,9 +478,9 @@ export default function Header() {
               </button>
 
             {/* Menu Content */}
-            <div className="h-full overflow-y-auto pt-16 pb-6 px-6 flex flex-col items-center text-center">
+            <div className="h-full overflow-y-auto pt-12 pb-4 px-6 flex flex-col items-center text-center">
               {/* Logo */}
-              <div className="mb-6">
+              <div className="mb-4">
                 <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
                 <Image
                   src="/flyttella-logo.png"
@@ -493,41 +493,45 @@ export default function Header() {
               </div>
 
               {/* Navigation */}
-              <nav className="flex flex-col space-y-3 w-full max-w-sm">
+              <nav className="flex flex-col space-y-2 w-full max-w-sm">
                   <Link
                   href="/om-oss"
-                  className="block py-2 text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                   {t('header.about')}
                   </Link>
                 <Link
                   href="/faq"
-                  className="block py-2 text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.faq')}
                 </Link>
                 <Link
                   href="/blogg"
-                  className="block py-2 text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.blog')}
                 </Link>
                 <Link
                   href="/kontakt"
-                  className="block py-2 text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.contact')}
                 </Link>
 
                 {/* Våra Tjänster Section (Mobile) */}
-                <div className="py-2 w-full max-w-sm order-first">
+                <div className="py-1 w-full max-w-sm order-first">
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className="flex items-center justify-center w-full text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                    className={`flex items-center justify-center w-full text-3xl font-medium transition-colors py-1 relative ${
+                      isMobileServicesOpen 
+                        ? 'text-[#10B981]' 
+                        : 'text-[#0F172A]'
+                    }`}
                   >
                     <span>Våra tjänster</span>
                     <svg
@@ -541,7 +545,7 @@ export default function Header() {
                     </svg>
                 </button>
                 {isMobileServicesOpen && (
-                    <div className="mt-2 space-y-2 text-center">
+                    <div className="mt-1 space-y-1 text-center">
                       {/* Flyttjänster Subsection */}
                       <div className="py-1">
                         <button
@@ -549,7 +553,7 @@ export default function Header() {
                           className={`flex items-center justify-center w-full text-2xl font-medium transition-colors py-2 relative ${
                             isMobileFlyttOpen 
                               ? 'text-[#10B981]' 
-                              : 'text-[#0F172A] hover:text-[#10B981]'
+                              : 'text-[#0F172A] '
                           }`}
                         >
                           <span>Flyttjänster</span>
@@ -567,53 +571,47 @@ export default function Header() {
                           <div className="mt-1 space-y-1 text-center">
                       <Link
                         href="/bohagsflytt"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Bohagsflytt
                       </Link>
                       <Link
                         href="/barhjalp"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Bärhjälp
                       </Link>
                       <Link
                         href="/piano-tunglyft"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Piano/Tunglyft
                       </Link>
                       <Link
                         href="/bortforsling"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Bortforsling
                       </Link>
                       <Link
                         href="/magasinering"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Magasinering
                       </Link>
                       <Link
                         href="/utlandsflytt"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Utlandsflytt
                       </Link>
-                            <Link
-                              href="/tjanster"
-                              className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              Se alla våra flyttjänster
-                            </Link>
+
                   </div>
                 )}
                 </div>
@@ -625,7 +623,7 @@ export default function Header() {
                           className={`flex items-center justify-center w-full text-2xl font-medium transition-colors py-2 relative ${
                             isMobileCleaningOpen 
                               ? 'text-[#10B981]' 
-                              : 'text-[#0F172A] hover:text-[#10B981]'
+                              : 'text-[#0F172A] '
                           }`}
                   >
                           <span>Städtjänster</span>
@@ -643,67 +641,61 @@ export default function Header() {
                           <div className="mt-1 space-y-1 text-center">
                     <Link
                       href="/flyttstadning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Flyttstädning
                     </Link>
                     <Link
                       href="/hemstadning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Hemstädning
                     </Link>
                     <Link
                       href="/storstadning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Storstädning
                     </Link>
                     <Link
                       href="/byggstadning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Byggstädning
                     </Link>
                     <Link
                       href="/fonsterputsning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Fönsterputs
                     </Link>
                     <Link
                       href="/visningsstadning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Visningsstädning
                     </Link>
                     <Link
                       href="/kontorsstadning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Kontorsstädning
                     </Link>
                     <Link
                       href="/dodsbo-stadning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Dödsbostädning
                     </Link>
-                            <Link
-                              href="/stadtjanster"
-                              className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              Se alla våra städtjänster
-                            </Link>
+
                   </div>
                 )}
                 </div>
@@ -715,7 +707,7 @@ export default function Header() {
                           className={`flex items-center justify-center w-full text-2xl font-medium transition-colors py-2 relative ${
                             isDropdownOpen 
                               ? 'text-[#10B981]' 
-                              : 'text-[#0F172A] hover:text-[#10B981]'
+                              : 'text-[#0F172A] '
                           }`}
                   >
                           <span>Företagstjänster</span>
@@ -733,32 +725,26 @@ export default function Header() {
                           <div className="mt-1 space-y-1 text-center">
                     <Link
                       href="/kontorsflytt"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Kontorsflytt
                     </Link>
                     <Link
                       href="/kontorsstadning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Kontorsstädning
                     </Link>
                     <Link
                       href="/bemanning"
-                              className="block py-1 text-lg text-[#0F172A] hover:text-[#10B981] transition-colors"
+                              className="block py-1 text-lg text-[#0F172A]  transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Bemanning och underentreprenad
                     </Link>
-                    <Link
-                      href="/foretag"
-                              className="block py-1 text-lg text-[#10B981] hover:text-[#0F172A] transition-colors font-medium"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                              Se alla våra företagstjänster
-                    </Link>
+
                           </div>
                         )}
                       </div>
@@ -770,22 +756,21 @@ export default function Header() {
               </nav>
 
               {/* CTA Buttons */}
-              <div className="space-y-2 py-1 border-t border-gray-200">
+              <div className="space-y-2 py-3 border-t border-gray-200">
                 <button
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     setIsMobileMenuOpen(false);
                   }}
-                  className="block w-full py-4 px-6 text-center text-2xl font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
+                  className="block w-full py-3 px-6 text-center text-2xl font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
                 >
                   Få offert
                 </button>
               </div>
 
               {/* Language Toggle for Mobile */}
-              <div className="py-1 border-t border-gray-200">
+              <div className="py-3 border-t border-gray-200">
                 <div className="text-center">
-                  <span className="text-2xl font-medium text-[#0F172A] block mb-1">{t('common.language')}</span>
                   <div className="flex justify-center items-center space-x-6">
                     <button
                       onClick={() => setLocale('sv')}
@@ -816,10 +801,10 @@ export default function Header() {
               </div>
 
               {/* Divider */}
-              <div className="my-1 border-t border-gray-200"></div>
+              <div className="my-0 border-t border-gray-200"></div>
 
               {/* Social Media Buttons */}
-              <div className="flex items-center justify-center space-x-4 py-2">
+              <div className="flex items-center justify-center space-x-4 py-1">
                 <a 
                   href="https://www.facebook.com/flyttella" 
                   target="_blank" 
