@@ -635,7 +635,20 @@ export default function Home() {
   const featureIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const featureTouchStartXRef = useRef<number | null>(null);
   const featureTouchCurrentXRef = useRef<number | null>(null);
-  const [expandedTipSection, setExpandedTipSection] = useState<string | null>(null);
+  const [expandedTipSections, setExpandedTipSections] = useState<Set<string>>(new Set());
+
+  // Helper function to toggle tip sections
+  const toggleTipSection = (section: string) => {
+    setExpandedTipSections(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(section)) {
+        newSet.delete(section);
+      } else {
+        newSet.add(section);
+      }
+      return newSet;
+    });
+  };
 
   // Auto-sliding for feature cards
   const restartFeatureAutoSlide = () => {
@@ -1882,12 +1895,12 @@ export default function Home() {
                     {/* Mobile: Expandable section header */}
                     <div className="md:hidden mb-4">
                       <button
-                        onClick={() => setExpandedTipSection(expandedTipSection === 'innan' ? null : 'innan')}
+                        onClick={() => toggleTipSection('innan')}
                         className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
                         <h3 className="text-xl font-bold text-white">Innan flytten</h3>
                         <svg 
-                          className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'innan' ? 'rotate-180' : ''}`}
+                          className={`w-6 h-6 transition-transform duration-300 ${expandedTipSections.has('innan') ? 'rotate-180' : ''}`}
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"
@@ -1901,7 +1914,7 @@ export default function Home() {
                     <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Innan flytten</h3>
                     
                     {/* Mobile: Expandable content */}
-                    <div className={`md:block ${expandedTipSection === 'innan' ? 'block' : 'hidden'}`}>
+                    <div className={`md:block ${expandedTipSections.has('innan') ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                       <TipCard
                         title="Planera och förbered"
@@ -1966,12 +1979,12 @@ export default function Home() {
                     {/* Mobile: Expandable section header */}
                     <div className="md:hidden mb-4">
                       <button
-                        onClick={() => setExpandedTipSection(expandedTipSection === 'under' ? null : 'under')}
+                        onClick={() => toggleTipSection('under')}
                         className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
                         <h3 className="text-xl font-bold text-white">Under flytten</h3>
                         <svg 
-                          className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'under' ? 'rotate-180' : ''}`}
+                          className={`w-6 h-6 transition-transform duration-300 ${expandedTipSections.has('under') ? 'rotate-180' : ''}`}
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"
@@ -1985,7 +1998,7 @@ export default function Home() {
                     <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Under flytten</h3>
                     
                     {/* Mobile: Expandable content */}
-                    <div className={`md:block ${expandedTipSection === 'under' ? 'block' : 'hidden'}`}>
+                    <div className={`md:block ${expandedTipSections.has('under') ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title="En smidig flyttdag"
@@ -2028,12 +2041,12 @@ export default function Home() {
                     {/* Mobile: Expandable section header */}
                     <div className="md:hidden mb-4">
                       <button
-                        onClick={() => setExpandedTipSection(expandedTipSection === 'efter' ? null : 'efter')}
+                        onClick={() => toggleTipSection('efter')}
                         className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
                         <h3 className="text-xl font-bold text-white">Efter flytten</h3>
                         <svg 
-                          className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'efter' ? 'rotate-180' : ''}`}
+                          className={`w-6 h-6 transition-transform duration-300 ${expandedTipSections.has('efter') ? 'rotate-180' : ''}`}
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"
@@ -2047,7 +2060,7 @@ export default function Home() {
                     <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Efter flytten</h3>
                     
                     {/* Mobile: Expandable content */}
-                    <div className={`md:block ${expandedTipSection === 'efter' ? 'block' : 'hidden'}`}>
+                    <div className={`md:block ${expandedTipSections.has('efter') ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title="Start i nya hemmet"
