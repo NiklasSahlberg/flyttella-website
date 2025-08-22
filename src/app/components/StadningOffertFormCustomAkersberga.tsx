@@ -1037,7 +1037,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       <button
                         key={alt}
                         type="button"
-                        className={`px-2 py-3 rounded-lg border text-sm md:text-lg font-semibold focus:outline-none transition-colors duration-200 text-center whitespace-nowrap overflow-hidden ${selectedCleaningType === alt ? 'bg-[#10B981] text-white border-[#10B981]' : 'bg-white text-[#10B981] border-[#10B981]'}`}
+                        className={`px-3 py-4 rounded-lg border text-sm md:text-lg font-semibold focus:outline-none transition-colors duration-200 text-center whitespace-nowrap overflow-hidden ${selectedCleaningType === alt ? 'bg-[#10B981] text-white border-[#10B981]' : 'bg-white text-[#10B981] border-[#10B981]'}`}
                         onClick={() => setSelectedCleaningType(alt)}
                       >
                         <span className="block truncate">{alt}</span>
