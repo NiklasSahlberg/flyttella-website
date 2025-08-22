@@ -235,7 +235,7 @@ export default function Header() {
                 className="text-[#0F172A] hover:text-[#10B981] transition-colors p-1"
                 aria-label="Öppna meny"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
@@ -496,28 +496,28 @@ export default function Header() {
               <nav className="flex flex-col space-y-3 w-full max-w-sm">
                   <Link
                   href="/om-oss"
-                  className="block py-2 text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-2 text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                   {t('header.about')}
                   </Link>
                 <Link
                   href="/faq"
-                  className="block py-2 text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-2 text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.faq')}
                 </Link>
                 <Link
                   href="/blogg"
-                  className="block py-2 text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-2 text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.blog')}
                 </Link>
                 <Link
                   href="/kontakt"
-                  className="block py-2 text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
+                  className="block py-2 text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('header.contact')}
@@ -527,7 +527,7 @@ export default function Header() {
                 <div className="py-2 w-full max-w-sm order-first">
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className="flex items-center justify-center w-full text-2xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                    className="flex items-center justify-center w-full text-3xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
                   >
                     <span>Våra tjänster</span>
                     <svg
@@ -546,7 +546,11 @@ export default function Header() {
                       <div className="py-1">
                         <button
                           onClick={() => setIsMobileFlyttOpen(!isMobileFlyttOpen)}
-                          className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                          className={`flex items-center justify-center w-full text-2xl font-medium transition-colors py-2 relative ${
+                            isMobileFlyttOpen 
+                              ? 'text-[#10B981]' 
+                              : 'text-[#0F172A] hover:text-[#10B981]'
+                          }`}
                         >
                           <span>Flyttjänster</span>
                           <svg
@@ -618,7 +622,11 @@ export default function Header() {
                       <div className="py-1">
                   <button
                     onClick={() => setIsMobileCleaningOpen(!isMobileCleaningOpen)}
-                          className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                          className={`flex items-center justify-center w-full text-2xl font-medium transition-colors py-2 relative ${
+                            isMobileCleaningOpen 
+                              ? 'text-[#10B981]' 
+                              : 'text-[#0F172A] hover:text-[#10B981]'
+                          }`}
                   >
                           <span>Städtjänster</span>
                     <svg
@@ -704,7 +712,11 @@ export default function Header() {
                       <div className="py-1">
                   <button
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                          className="flex items-center justify-center w-full text-xl font-medium text-[#0F172A] hover:text-[#10B981] transition-colors py-2 relative"
+                          className={`flex items-center justify-center w-full text-2xl font-medium transition-colors py-2 relative ${
+                            isDropdownOpen 
+                              ? 'text-[#10B981]' 
+                              : 'text-[#0F172A] hover:text-[#10B981]'
+                          }`}
                   >
                           <span>Företagstjänster</span>
                     <svg
@@ -757,10 +769,23 @@ export default function Header() {
                 </div>
               </nav>
 
+              {/* CTA Buttons */}
+              <div className="space-y-2 py-1 border-t border-gray-200">
+                <button
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="block w-full py-4 px-6 text-center text-2xl font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
+                >
+                  Få offert
+                </button>
+              </div>
+
               {/* Language Toggle for Mobile */}
               <div className="py-1 border-t border-gray-200">
                 <div className="text-center">
-                  <span className="text-xl font-medium text-[#0F172A] block mb-1">{t('common.language')}</span>
+                  <span className="text-2xl font-medium text-[#0F172A] block mb-1">{t('common.language')}</span>
                   <div className="flex justify-center items-center space-x-6">
                     <button
                       onClick={() => setLocale('sv')}
@@ -817,19 +842,6 @@ export default function Header() {
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
                 </a>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="space-y-2">
-                <button
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="block w-full py-4 px-6 text-center text-xl font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
-                >
-                  Få offert
-                </button>
               </div>
               </div>
             </div>
