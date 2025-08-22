@@ -1065,6 +1065,151 @@ export default function Home() {
         {/* 4. Vad tycker våra kunder om oss */}
         <ReviewsWidget />
 
+        {/* Mobile only: Våra förmåner moved here */}
+        <div className="md:hidden mb-3">
+          {/* Responsive zoom wrapper for wide screens */}
+          <div className="responsive-zoom">
+            <div className="pt-8" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
+              <div className="mx-auto px-4">
+                <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4">
+                  <div className="flex flex-col items-stretch gap-4 h-full">
+                    {/* Features content */}
+                    <div className="flex-[2] w-full">
+                      <h2 className="text-2xl font-bold text-white mb-4 text-center">Våra förmåner</h2>
+                      
+                      {/* Mobile: Sliding carousel */}
+                      <div className="relative overflow-hidden rounded-xl" onTouchStart={handleFeatureTouchStart} onTouchMove={handleFeatureTouchMove} onTouchEnd={handleFeatureTouchEnd}>
+                          <div 
+                            className="flex transition-transform duration-500 ease-in-out"
+                            style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}
+                          >
+                            {[
+                              {
+                                icon: "💰",
+                                title: "Fast pris",
+                                description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                                link: "/priser"
+                              },
+                              {
+                                icon: "📋",
+                                title: "RUT-avdrag",
+                                description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                                link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                              },
+                              {
+                                icon: "📦",
+                                title: "Fritt lån av kartonger i 4 veckor",
+                                description: "Specialgjorda flyttkartonger med vår logga",
+                                link: "/kartonger"
+                              },
+                              {
+                                icon: "⏰",
+                                title: "Omboka eller avboka kostnadsfritt",
+                                description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                                link: "/avbokning"
+                              },
+                              {
+                                icon: "✅",
+                                title: "Nöjd kund garanti",
+                                description: "14 dagars garanti på flyttstädning",
+                                link: "/garanti"
+                              },
+                              {
+                                icon: "🔒",
+                                title: "Trafiktillstånd och försäkring",
+                                description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                                link: "/tillstand"
+                              },
+                              {
+                                icon: "🎓",
+                                title: "Utbildad personal",
+                                description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                                link: "/om-oss"
+                              },
+                              {
+                                icon: "📈",
+                                title: "Ledningssystem",
+                                description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                                link: "/om-oss"
+                              },
+                              {
+                                icon: "🦺",
+                                title: "Arbetsmiljö",
+                                description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                                link: "/om-oss"
+                              }
+                            ].map((feature, index) => (
+                              <div key={feature.icon} className="w-full flex-shrink-0">
+                                <motion.div 
+                                  className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2"
+                                  initial="initial"
+                                  whileInView="animate"
+                                  viewport={{ once: true, amount: 0.2 }}
+                                  variants={fadeInUp}
+                                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                                >
+                                  <div className="flex items-start gap-3 h-full">
+                                    <motion.span
+                                      className="text-2xl"
+                                      initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                                      animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                                      transition={{ duration: 1, delay: index * 0.1 + 0.2, type: 'tween', ease: 'easeInOut' }}
+                                    >
+                                      {feature.icon}
+                                    </motion.span>
+                                    <div className="flex-1">
+                                      <h4 className="text-white font-semibold text-base mb-1">{feature.title}</h4>
+                                      <p className="text-white/80 text-sm mb-2">{feature.description}</p>
+                                      {feature.title === "RUT-avdrag" && (
+                                        <a 
+                                          href={feature.link}
+                                          target={feature.link.startsWith('http') ? '_blank' : undefined}
+                                          rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                          className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center"
+                                        >
+                                          Läs mer
+                                          <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                          </svg>
+                                        </a>
+                                      )}
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              </div>
+                            ))}
+                          </div>
+                          
+                          {/* Arrow controls */}
+                          <button
+                            type="button"
+                            aria-label="Föregående"
+                            onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                              <path fillRule="evenodd" d="M15.78 19.28a.75.75 0 01-1.06 0l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 111.06 1.06L10.56 12l5.22 5.22a.75.75 0 010 1.06z" clipRule="evenodd" />
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            aria-label="Nästa"
+                            onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                              <path fillRule="evenodd" d="M8.22 4.72a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06L13.44 12 8.22 6.78a.75.75 0 010-1.06z" clipRule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 5. Vår process och fördelar */}
         <section className="section-padding bg-white relative overflow-hidden"
           style={{ borderBottom: 'none', boxShadow: 'none' }}>
@@ -1192,9 +1337,9 @@ export default function Home() {
           <AutoSlidingCards />
         </motion.section>
 
-        {/* 6. Våra fördelar */}
+        {/* 6. Våra fördelar - Desktop only */}
         {/* Responsive zoom wrapper for wide screens */}
-        <div className="responsive-zoom">
+        <div className="responsive-zoom hidden md:block">
           <div className="pt-8 md:pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
             <div className="mx-auto px-0 md:px-24">
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-4 md:p-8">
