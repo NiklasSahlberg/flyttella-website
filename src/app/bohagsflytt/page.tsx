@@ -211,8 +211,8 @@ export default function Bohagsflytt() {
           {/* Mobile: Hero content after form removed per request */}
           
           {/* Mobile: Hero section */}
-          <div className="md:hidden mx-auto px-4 py-12">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 relative overflow-hidden">
+          <div className="md:hidden">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white py-12 relative overflow-hidden">
               {/* Background image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -222,7 +222,7 @@ export default function Bohagsflytt() {
                   backgroundPosition: 'center 30%'
                 }}
               />
-              <div className="relative z-10 text-center">
+              <div className="relative z-10 text-center px-4">
                 <h1 className="text-5xl font-bold mb-6">
                   Bohagsflytt
                 </h1>

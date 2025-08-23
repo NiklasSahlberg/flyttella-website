@@ -27,15 +27,15 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     ...locations
   ];
   
-  // Calculate how many cities to show initially on mobile (about half)
-  const initialShowCount = Math.ceil(locations.length / 2);
+  // Calculate how many cities to show initially on mobile (up to Kungsholmen)
+  const initialShowCount = 16; // Show first 16 cities (ending with Kungsholmen)
   
   // Get visible cities based on expanded state (mobile only)
   const getVisibleFlyttfirmaLocations = () => {
     if (isFlyttfirmaExpanded) {
       return flyttfirmaLocations; // Show all when expanded
     } else {
-      return flyttfirmaLocations.slice(0, initialShowCount); // Show half initially
+      return flyttfirmaLocations.slice(0, initialShowCount); // Show first 16 cities initially
     }
   };
   
@@ -43,7 +43,7 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     if (isFlyttstadExpanded) {
       return locations; // Show all when expanded
     } else {
-      return locations.slice(0, initialShowCount); // Show half initially
+      return locations.slice(0, initialShowCount); // Show first 16 cities initially
     }
   };
 
