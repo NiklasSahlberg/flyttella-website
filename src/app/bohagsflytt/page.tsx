@@ -233,6 +233,9 @@ export default function Bohagsflytt() {
             </div>
           </div>
           
+          {/* Spacing between hero and content */}
+          <div className="md:hidden py-2"></div>
+          
           {/* Desktop: Full hero section */}
           <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
