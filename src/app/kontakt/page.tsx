@@ -133,7 +133,9 @@ export default function KontaktPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-[#0F172A] mb-2">Besök oss</h3>
-              <p className="text-gray-600 mb-3 text-base">Stockholm</p>
+              <p className="text-[#0F172A] font-medium text-base">
+                Lännavägen 64F, Huddinge
+              </p>
               <p className="text-[#10B981] font-semibold text-base">
                 Flyttella AB
               </p>
@@ -221,6 +223,24 @@ export default function KontaktPage() {
                   </div>
                 </div>
                 <div>
+                  <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Tjänst *
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
+                    required
+                  >
+                    <option value="">Välj tjänst</option>
+                    <option value="montering">Montering</option>
+                    <option value="piano">Piano / Tunglyft</option>
+                    <option value="barhjalp">Bärhjälp</option>
+                    <option value="bortforsling">Bortforsling</option>
+                    <option value="annat">Annat</option>
+                  </select>
+                </div>
+                <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                     Telefon
                   </label>
@@ -276,6 +296,24 @@ export default function KontaktPage() {
                     placeholder="Ditt namn"
                     required
                   />
+                </div>
+                <div>
+                  <label htmlFor="callback-service" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Tjänst *
+                  </label>
+                  <select
+                    id="callback-service"
+                    name="callback-service"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
+                    required
+                  >
+                    <option value="">Välj tjänst</option>
+                    <option value="montering">Montering</option>
+                    <option value="piano">Piano / Tunglyft</option>
+                    <option value="barhjalp">Bärhjälp</option>
+                    <option value="bortforsling">Bortforsling</option>
+                    <option value="annat">Annat</option>
+                  </select>
                 </div>
                 <div>
                   <label htmlFor="callback-phone" className="block text-sm font-semibold text-gray-700 mb-2">

@@ -20,21 +20,31 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
   const [isFlyttfirmaExpanded, setIsFlyttfirmaExpanded] = useState(false);
   const [isFlyttstadExpanded, setIsFlyttstadExpanded] = useState(false);
   
+
+  
   // Create separate arrays for flyttfirma and flyttstad
   const flyttfirmaLocations = [
     ...locations
   ];
   
-  // Calculate how many cities to show initially (about half)
+  // Calculate how many cities to show initially on mobile (about half)
   const initialShowCount = Math.ceil(locations.length / 2);
   
-  // Get visible cities based on expanded state
+  // Get visible cities based on expanded state (mobile only)
   const getVisibleFlyttfirmaLocations = () => {
-    return isFlyttfirmaExpanded ? flyttfirmaLocations : flyttfirmaLocations.slice(0, initialShowCount);
+    if (isFlyttfirmaExpanded) {
+      return flyttfirmaLocations; // Show all when expanded
+    } else {
+      return flyttfirmaLocations.slice(0, initialShowCount); // Show half initially
+    }
   };
   
   const getVisibleFlyttstadLocations = () => {
-    return isFlyttstadExpanded ? locations : locations.slice(0, initialShowCount);
+    if (isFlyttstadExpanded) {
+      return locations; // Show all when expanded
+    } else {
+      return locations.slice(0, initialShowCount); // Show half initially
+    }
   };
 
   return (
@@ -89,23 +99,45 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                   Flyttfirma
                 </h3>
                 <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
-                  {getVisibleFlyttfirmaLocations().map((location, idx) => (
-                    <motion.div
-                      key={`flyttfirma-${location.slug}`}
-                      variants={fadeInUp}
-                      whileHover={{ scale: 1.05, x: 2 }}
-                      transition={{ duration: 0.3, delay: idx * 0.02 }}
-                    >
-                      <Link
-                        href={location.slug === "flytta-till-spanien" ? "/flytt-till-spanien" : `/flyttfirma-i-${location.slug}`}
+                  {/* Desktop: Always show all cities */}
+                  <div className="hidden md:flex flex-wrap gap-2 md:gap-3 justify-center">
+                    {flyttfirmaLocations.map((location, idx) => (
+                      <motion.div
+                        key={`flyttfirma-desktop-${location.slug}`}
+                        variants={fadeInUp}
+                        whileHover={{ scale: 1.05, x: 2 }}
+                        transition={{ duration: 0.3, delay: idx * 0.02 }}
+                      >
+                        <Link
+                          href={location.slug === "flytta-till-spanien" ? "/flytt-till-spanien" : `/flyttfirma-i-${location.slug}`}
+                          className="group transition-all block"
+                        >
+                          <span className="text-white/90 group-hover:text-white group-hover:underline text-xs md:text-sm font-medium transition-colors block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-white/10 whitespace-nowrap">
+                            {location.name}
+                          </span>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  {/* Mobile: Conditional display with Läs mer */}
+                  <div className="md:hidden flex flex-wrap gap-2 md:gap-3 justify-center">
+                    {getVisibleFlyttfirmaLocations().map((location, idx) => (
+                      <div
+                        key={`flyttfirma-mobile-${location.slug}`}
                         className="group transition-all block"
                       >
-                        <span className="text-white/90 group-hover:text-white group-hover:underline text-xs md:text-sm font-medium transition-colors block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-white/10 whitespace-nowrap">
-                          {location.name}
-                        </span>
-                      </Link>
-                    </motion.div>
-                  ))}
+                        <Link
+                          href={location.slug === "flytta-till-spanien" ? "/flytt-till-spanien" : `/flyttfirma-i-${location.slug}`}
+                          className="group transition-all block"
+                        >
+                          <span className="text-white group-hover:text-white group-hover:underline text-xs md:text-sm font-medium transition-colors block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-white/10 whitespace-nowrap">
+                            {location.name}
+                          </span>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 
                 {/* Read More button for Flyttfirma - Mobile only */}
@@ -119,6 +151,8 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                     </button>
                   </div>
                 )}
+                
+
                 <div className="mt-4 md:mt-6 text-center">
                   <h4 className="text-lg md:text-xl font-bold text-white flex items-center justify-center gap-2">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -155,23 +189,45 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                   Flyttstäd
                 </h3>
                 <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
-                  {getVisibleFlyttstadLocations().map((location, idx) => (
-                    <motion.div
-                      key={`flyttstad-${location.slug}`}
-                      variants={fadeInUp}
-                      whileHover={{ scale: 1.05, x: 2 }}
-                      transition={{ duration: 0.3, delay: idx * 0.02 }}
-                    >
-                      <Link
-                        href={`/flyttstad-i-${location.slug}`}
+                  {/* Desktop: Always show all cities */}
+                  <div className="hidden md:flex flex-wrap gap-2 md:gap-3 justify-center">
+                    {locations.map((location, idx) => (
+                      <motion.div
+                        key={`flyttstad-desktop-${location.slug}`}
+                        variants={fadeInUp}
+                        whileHover={{ scale: 1.05, x: 2 }}
+                        transition={{ duration: 0.3, delay: idx * 0.02 }}
+                      >
+                        <Link
+                          href={`/flyttstad-i-${location.slug}`}
+                          className="group transition-all block"
+                        >
+                          <span className="text-white/90 group-hover:text-white group-hover:underline text-xs md:text-sm font-medium transition-colors block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-white/10 whitespace-nowrap">
+                            {location.name}
+                          </span>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  {/* Mobile: Conditional display with Läs mer */}
+                  <div className="md:hidden flex flex-wrap gap-2 md:gap-3 justify-center">
+                    {getVisibleFlyttstadLocations().map((location, idx) => (
+                      <div
+                        key={`flyttstad-mobile-${location.slug}`}
                         className="group transition-all block"
                       >
-                        <span className="text-white/90 group-hover:text-white group-hover:underline text-xs md:text-sm font-medium transition-colors block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-white/10 whitespace-nowrap">
-                          {location.name}
+                        <Link
+                          href={`/flyttstad-i-${location.slug}`}
+                          className="group transition-all block"
+                        >
+                          <span className="text-white group-hover:text-white group-hover:underline text-xs md:text-sm font-medium transition-colors block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-white/10 whitespace-nowrap">
+                            {location.name}
                         </span>
-                      </Link>
-                    </motion.div>
-                  ))}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 
                 {/* Read More button for Flyttstäd - Mobile only */}
@@ -185,6 +241,8 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                     </button>
                   </div>
                 )}
+                
+
               </motion.div>
             </div>
           </div>

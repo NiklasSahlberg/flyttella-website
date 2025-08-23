@@ -210,6 +210,29 @@ export default function Bohagsflytt() {
           
           {/* Mobile: Hero content after form removed per request */}
           
+          {/* Mobile: Hero section */}
+          <div className="md:hidden mx-auto px-4 py-8">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 relative overflow-hidden">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{
+                  backgroundImage: 'url(/coupleMoving.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center 30%'
+                }}
+              />
+              <div className="relative z-10 text-center">
+                <h1 className="text-4xl font-bold mb-4">
+                  Bohagsflytt
+                </h1>
+                <p className="text-xl text-white/90">
+                  Vi tar hand om hela din flytt
+                </p>
+              </div>
+            </div>
+          </div>
+          
           {/* Desktop: Full hero section */}
           <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
