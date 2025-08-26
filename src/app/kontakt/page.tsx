@@ -1,7 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
+
+// Selected files state for attachments
+// (keeps track of chosen images to show Swedish status text)
+// Note: file upload handling can be wired to FormData on submit
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -38,6 +43,41 @@ const cardVariants = {
 
 export default function KontaktPage() {
   const [formType, setFormType] = useState('message'); // 'message' or 'callback'
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Handle URL parameters for scrolling and service pre-selection
+    const scrollTo = searchParams.get('scroll');
+    const service = searchParams.get('service');
+    
+    if (scrollTo === 'message') {
+      setFormType('message');
+              // Scroll to the "Skicka oss ett meddelande" heading
+        setTimeout(() => {
+          const messageHeading = document.getElementById('skicka-meddelande');
+          if (messageHeading) {
+            messageHeading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Add a small delay and then scroll up a bit to position the heading higher
+            
+          }
+        }, 100);
+    }
+    
+    if (service) {
+      // Pre-select the service in both forms
+      setTimeout(() => {
+        const messageServiceSelect = document.getElementById('service') as HTMLSelectElement;
+        const callbackServiceSelect = document.getElementById('callback-service') as HTMLSelectElement;
+        
+        if (messageServiceSelect) {
+          messageServiceSelect.value = service;
+        }
+        if (callbackServiceSelect) {
+          callbackServiceSelect.value = service;
+        }
+      }, 200);
+    }
+  }, [searchParams]);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
@@ -151,7 +191,7 @@ export default function KontaktPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">
+              <h2 id="skicka-meddelande" className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3 scroll-mt-20">
                 Skicka oss ett meddelande
               </h2>
               <p className="text-gray-600 text-base max-w-2xl mx-auto">
@@ -188,6 +228,7 @@ export default function KontaktPage() {
 
             {/* Regular Contact Form */}
             <motion.div 
+              id="message-form"
               className={formType === 'message' ? '' : 'hidden'}
               initial={{ opacity: 0 }}
               animate={{ opacity: formType === 'message' ? 1 : 0 }}
@@ -264,6 +305,50 @@ export default function KontaktPage() {
                     placeholder="Berätta mer om vad du behöver hjälp med..."
                     required
                   ></textarea>
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Bilder (valfritt)
+                  </label>
+                  <input
+                    type="file"
+                    id="attachments"
+                    name="attachments"
+                    accept="image/*"
+                    multiple
+                    onChange={(e) => {
+                      const files = e.target.files;
+                      // @ts-ignore store on window to avoid unused var warnings if needed
+                      window.__files = files;
+                      // Using state so we can show Swedish status text
+                      // We can't declare hooks here; so we rely on form-level state above
+                    }}
+                    className="hidden"
+                  />
+                  <label
+                    htmlFor="attachments"
+                    className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity font-semibold cursor-pointer"
+                  >
+                    Välj filer
+                  </label>
+                  <span id="attachments-status" className="ml-3 text-sm text-gray-600 align-middle">
+                    Inga filer valda
+                  </span>
+                  <p className="mt-2 text-xs text-gray-500">Du kan ladda upp flera bilder (JPG, PNG). Max 10 MB per bild.</p>
+                  <script dangerouslySetInnerHTML={{ __html: `
+                    (function(){
+                      var input = document.getElementById('attachments');
+                      var status = document.getElementById('attachments-status');
+                      if(input && status){
+                        input.addEventListener('change', function(){
+                          var count = input.files ? input.files.length : 0;
+                          if(count === 0){ status.textContent = 'Inga filer valda'; return; }
+                          if(count === 1){ status.textContent = '1 fil vald'; return; }
+                          status.textContent = count + ' filer valda';
+                        });
+                      }
+                    })();
+                  ` }} />
                 </div>
                 <div>
                   <button

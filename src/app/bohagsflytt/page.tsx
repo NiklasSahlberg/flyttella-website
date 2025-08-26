@@ -627,9 +627,20 @@ export default function Bohagsflytt() {
               whileInView="animate"
               viewport={{ once: true }}
             >
+              {/* Mobile image above title to match main page */}
+              <div className="lg:hidden px-4 mb-6 -mx-8">
+                <div className="relative w-full h-96 rounded-3xl overflow-hidden">
+                  <img
+                    src="/personalpicture.jpg"
+                    alt="Om Flyttella"
+                    className="object-cover w-full h-full"
+                    style={{ objectPosition: 'center 70%' }}
+                  />
+                </div>
+              </div>
+
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60">Om Flyttella</h3>
-              
-              {/* Text content only - image moved outside section on mobile */}
+
               <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
                 {/* Left: Image - desktop only */}
                 <motion.div
@@ -777,20 +788,7 @@ export default function Bohagsflytt() {
           </div>
         </motion.section>
 
-        {/* Mobile: Personal picture card below the section */}
-        <div className="lg:hidden px-4 py-6">
-          <div className="relative h-96 overflow-hidden rounded-3xl shadow-xl">
-            <img
-              src="/personalpicture.jpg"
-              alt="Flyttella personal"
-              className="object-cover rounded-3xl w-full h-full"
-              style={{ 
-                objectPosition: 'center 70%',
-                transform: 'scale(1.0)'
-              }}
-            />
-          </div>
-        </div>
+        
 
         {/* Vad tycker våra kunder om oss */}
         <ReviewsWidget />
