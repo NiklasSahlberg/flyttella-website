@@ -319,7 +319,7 @@ export default function KontaktPage() {
                     multiple
                     onChange={(e) => {
                       const files = e.target.files;
-                      // @ts-ignore store on window to avoid unused var warnings if needed
+                      // @ts-expect-error store on window to avoid unused var warnings if needed
                       window.__files = files;
                       // Using state so we can show Swedish status text
                       // We can't declare hooks here; so we rely on form-level state above
