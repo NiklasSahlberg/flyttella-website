@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from "next/image";
@@ -99,7 +98,7 @@ const AutoSlidingCards = () => {
         style={{
           backgroundImage: 'url(/omoss.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center center',
+          backgroundPosition: 'center calc(40% - 40px)',
           zIndex: 0,
         }}
       />
@@ -107,14 +106,30 @@ const AutoSlidingCards = () => {
       <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
       
       {/* Top gradient fade */}
-      <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none"
+      <div className="absolute top-0 left-0 w-full h-32 z-15 pointer-events-none"
            style={{
              background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
            }}
       />
       
+      {/* Bottom gradient fade - Desktop only */}
+      <div className="absolute bottom-0 left-0 w-full h-32 z-30 pointer-events-none hidden md:block"
+           style={{
+             background: 'linear-gradient(to top, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+           }}
+      />
+      
+      {/* Bottom gradient fade - mobile only, shorter */}
+      <div
+        className="absolute bottom-0 left-0 w-full h-24 md:h-48 z-30 pointer-events-none md:hidden"
+        style={{
+          background:
+            'linear-gradient(to top, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0) 100%)',
+        }}
+      />
+      
       {/* Centered content only */}
-      <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
+      <div className="relative z-20 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
         <motion.div
           initial="initial"
           whileInView="animate"
@@ -168,7 +183,7 @@ const AutoSlidingCards = () => {
                 type="button"
                 aria-label="Föregående"
                 onClick={() => { setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length); restartAutoSlide(); }}
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                   <path fillRule="evenodd" d="M15.78 19.28a.75.75 0 01-1.06 0l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 111.06 1.06L10.56 12l5.22 5.22a.75.75 0 010 1.06z" clipRule="evenodd" />
@@ -178,7 +193,7 @@ const AutoSlidingCards = () => {
                 type="button"
                 aria-label="Nästa"
                 onClick={() => { setCurrentCard((prev) => (prev + 1) % cards.length); restartAutoSlide(); }}
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                   <path fillRule="evenodd" d="M8.22 4.72a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06L13.44 12 8.22 6.78a.75.75 0 010-1.06z" clipRule="evenodd" />
@@ -367,12 +382,7 @@ const AutoSlidingCards = () => {
         </motion.div>
       </div>
       
-      {/* Bottom gradient fade - mobile only, shorter */}
-      <div className="absolute bottom-0 left-0 w-full h-24 md:h-48 z-30 pointer-events-none"
-           style={{
-             background: 'linear-gradient(to top, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0) 100%)'
-           }}
-      />
+      
     </>
   );
 };
@@ -877,6 +887,8 @@ export default function Home() {
                }}
           />
           
+          
+          
           {/* Mobile: Personal picture card above the section */}
           <div className="lg:hidden px-4 py-6 relative z-40">
             <div className="relative h-96 overflow-hidden rounded-3xl shadow-xl">
@@ -1318,19 +1330,19 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* White gradient fade to blend into next section */}
-          <div className="absolute left-0 bottom-0 w-full h-10 pointer-events-none" style={{background: 'linear-gradient(to bottom, white 60%, rgba(255,255,255,0) 100%)', zIndex: 20}} />
+
         </section>
 
         {/* 6. Vår erfarenhet */}
         <motion.section
-          className="relative overflow-hidden"
+          className="relative overflow-hidden experience-section"
           style={{
-            paddingTop: '14rem',
-            paddingBottom: '6rem',
+            paddingTop: '15rem',
+            paddingBottom: '4rem',
             marginTop: '-2rem',
             borderTop: 'none',
             boxShadow: 'none',
+            zIndex: 10,
           }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -1339,6 +1351,39 @@ export default function Home() {
         >
           <AutoSlidingCards />
         </motion.section>
+
+        {/* Mobile Image Transition - intro_picture.jpg */}
+        <div className="md:hidden relative -mt-4" style={{ marginTop: '-2rem', zIndex: 20 }}>
+          {/* Gradient fade overlay to blend with section above */}
+          <div 
+            className="absolute top-0 left-0 w-full h-48 z-10 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 15%, rgba(255,255,255,0.8) 35%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0.05) 95%, rgba(255,255,255,0) 100%)'
+            }}
+          />
+          
+          {/* Main image with subtle animation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative"
+          >
+            <Image
+              src="/intro_picture.jpg"
+              alt="Flyttella - Professionell flyttservice i Stockholm"
+              width={800}
+              height={500}
+              className="w-full h-96 object-cover shadow-lg"
+              style={{ objectPosition: '80% 80%' }}
+              priority={false}
+            />
+            
+            {/* Subtle overlay for better text contrast if needed */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+          </motion.div>
+        </div>
 
         {/* 6. Våra fördelar - Desktop only */}
         {/* Responsive zoom wrapper for wide screens */}
@@ -1597,40 +1642,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile Image Transition - intro_picture.jpg */}
-        <div className="md:hidden relative -mt-4">
-          {/* Enhanced gradient overlay to blend from omoss.jpg background */}
-          <div 
-            className="absolute top-0 left-0 w-full h-24 z-20 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 20%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.3) 65%, rgba(255,255,255,0.1) 85%, rgba(255,255,255,0) 100%)'
-            }}
-          />
-          
-          {/* Main image with subtle animation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative"
-          >
-            <Image
-              src="/intro_picture.jpg"
-              alt="Flyttella - Professionell flyttservice i Stockholm"
-              width={800}
-              height={500}
-              className="w-full h-96 object-cover shadow-lg"
-              style={{ objectPosition: '80% 80%' }}
-              priority={false}
-            />
-            
-            {/* Subtle overlay for better text contrast if needed */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
-          </motion.div>
-          
 
-        </div>
 
         {/* Awards Section */}
         <section className="py-12 md:py-24 bg-gradient-to-b from-gray-50 to-white">

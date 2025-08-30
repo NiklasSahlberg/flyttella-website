@@ -105,6 +105,13 @@ body {
   }
 }
 
+/* Reduce top padding for the experience section on mobile by ~20px */
+@media (max-width: 768px) {
+  .experience-section {
+    padding-top: calc(15rem - 100px) !important;
+  }
+}
+
 .blog-card:hover {
   @apply transform -translate-y-1 shadow-xl;
 }

@@ -278,6 +278,7 @@ export default function KontaktPage() {
                     <option value="piano">Piano / Tunglyft</option>
                     <option value="barhjalp">Bärhjälp</option>
                     <option value="bortforsling">Bortforsling</option>
+                    <option value="magasinering">Magasinering</option>
                     <option value="annat">Annat</option>
                   </select>
                 </div>
@@ -397,6 +398,7 @@ export default function KontaktPage() {
                     <option value="piano">Piano / Tunglyft</option>
                     <option value="barhjalp">Bärhjälp</option>
                     <option value="bortforsling">Bortforsling</option>
+                    <option value="magasinering">Magasinering</option>
                     <option value="annat">Annat</option>
                   </select>
                 </div>

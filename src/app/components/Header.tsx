@@ -113,6 +113,16 @@ export default function Header() {
     }, 200);
   };
 
+  const getQuoteLink = () => {
+    if (pathname === '/magasinering') {
+      return '/kontakt?scroll=message&service=magasinering';
+    }
+    if (pathname === '/bortforsling') {
+      return '/kontakt?scroll=message&service=bortforsling';
+    }
+    return '/offert';
+  };
+
   return (
     <>
     <header className="sticky top-0 z-50">
@@ -227,7 +237,7 @@ export default function Header() {
                   </Link>
                 ) : (
                   <Link 
-                    href="/offert"
+                    href={getQuoteLink()}
                     className="cursor-pointer"
                   >
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-lg">
@@ -452,7 +462,7 @@ export default function Header() {
               <div className="relative">
                 {showQuoteButton && (
                   <Link 
-                    href="/offert"
+                    href={getQuoteLink()}
                     className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity flex items-center"
                   >
                     FÅ OFFERT
@@ -778,7 +788,7 @@ export default function Header() {
               {/* CTA Buttons */}
               <div className="space-y-2 py-3 border-t border-gray-200">
                 <Link
-                  href="/offert"
+                  href={getQuoteLink()}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full py-3 px-6 text-center text-2xl font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
                 >
