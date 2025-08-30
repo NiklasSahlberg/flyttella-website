@@ -1353,7 +1353,7 @@ export default function Home() {
         </motion.section>
 
         {/* Mobile Image Transition - intro_picture.jpg */}
-        <div className="md:hidden relative -mt-4" style={{ marginTop: '-2rem', zIndex: 20 }}>
+        <div className="md:hidden relative -mt-4" style={{ marginTop: '-1.3rem', zIndex: 20 }}>
           {/* Gradient fade overlay to blend with section above */}
           <div 
             className="absolute top-0 left-0 w-full h-48 z-10 pointer-events-none"
