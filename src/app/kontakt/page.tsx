@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 
@@ -41,8 +41,11 @@ const cardVariants = {
   }
 };
 
-export default function KontaktPage() {
-  const [formType, setFormType] = useState('message'); // 'message' or 'callback'
+// Separate component to handle search params
+function SearchParamsHandler({ onFormTypeChange, onServiceChange }: { 
+  onFormTypeChange: (type: string) => void;
+  onServiceChange: (service: string) => void;
+}) {
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -51,16 +54,15 @@ export default function KontaktPage() {
     const service = searchParams.get('service');
     
     if (scrollTo === 'message') {
-      setFormType('message');
-              // Scroll to the "Skicka oss ett meddelande" heading
-        setTimeout(() => {
-          const messageHeading = document.getElementById('skicka-meddelande');
-          if (messageHeading) {
-            messageHeading.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            // Add a small delay and then scroll up a bit to position the heading higher
-            
-          }
-        }, 100);
+      onFormTypeChange('message');
+      // Scroll to the "Skicka oss ett meddelande" heading
+      setTimeout(() => {
+        const messageHeading = document.getElementById('skicka-meddelande');
+        if (messageHeading) {
+          messageHeading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Add a small delay and then scroll up a bit to position the heading higher
+        }
+      }, 100);
     }
     
     if (service) {
@@ -75,12 +77,28 @@ export default function KontaktPage() {
         if (callbackServiceSelect) {
           callbackServiceSelect.value = service;
         }
+        onServiceChange(service);
       }, 200);
     }
-  }, [searchParams]);
+  }, [searchParams, onFormTypeChange, onServiceChange]);
+
+  return null; // This component doesn't render anything
+}
+
+export default function KontaktPage() {
+  const [formType, setFormType] = useState('message'); // 'message' or 'callback'
+  const [selectedService, setSelectedService] = useState('');
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Search Params Handler */}
+      <Suspense fallback={null}>
+        <SearchParamsHandler 
+          onFormTypeChange={setFormType}
+          onServiceChange={setSelectedService}
+        />
+      </Suspense>
+      
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-r from-[#0F172A] to-[#10B981]">
         <div className="absolute inset-0 bg-black/10"></div>
