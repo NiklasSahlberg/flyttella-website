@@ -167,7 +167,7 @@ export default function MagasineringPage() {
                 { title: 'Vad ingår i magasinering?', content: (
                   <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">Hämtning och bärhjälp vid behov, skyddande packning (filtar, sträckfilm), märkning och registrering, transport till magasin, säker förvaring i torrt och larmat utrymme, grundförsäkring samt återleverans när du önskar. Tillval: packmaterial, packhjälp av hela hemmet, montering/demontering och möjlighet till tillgång till specifika kollin under perioden.</p>
                 ), icon: '📦' },
-                { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/fonsterputs_intro.png" alt="Magasinering tjänster" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
+                { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/smidigflyttdag.jpg" alt="Magasinering tjänster" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 37%' }} /></div>), icon: '' },
                 { title: 'Hur bokar jag magasinering?', content: (<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8 md:mb-12">Använd <Link href="/kontakt?scroll=message&service=magasinering" className="text-[#10B981] hover:text-[#059669] underline decoration-2 underline-offset-4 transition-colors">kontaktformuläret</Link> – ange uppskattad volym, önskat datum och om du vill ha hämtning/återleverans. Du får en offert och kan bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av detaljer, tillgång till hiss/parkering och eventuella tillval.</p>), icon: '📅' },
               ] as { title: string; content: any; icon: string }[]).map((section, idx) => (
                 <motion.div key={idx} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
@@ -211,20 +211,18 @@ export default function MagasineringPage() {
                 {/* Right text */}
                 <motion.div className="w-full lg:w-4/5 space-y-4 lg:space-y-8 flex flex-col justify-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.4 }}>
                   <div className="hidden lg:block space-y-8">
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en flytt- och städfirma i Stockholm som erbjuder trygg magasinering. I över åtta år har vi hjälpt kunder att förvara bohag säkert – vid flytt, renovering och längre vistelser utomlands. Målet är enkel, transparent och prisvärd förvaring.</p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vi hämtar hemma hos dig, skyddar och märker ditt bohag och magasinerar i torra, ventilerade och larmade utrymmen. Med tydliga villkor och fasta upplägg vet du exakt vad som ingår.</p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Behöver du packmaterial, packhjälp, montering/demontering eller flyttstädning kan vi ordna det. Du får snabb offert och löpande uppdateringar – enkelt från start till mål.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en flytt- och städfirma i Stockholm som erbjuder trygg magasinering. I över åtta år har vi hjälpt kunder att förvara bohag säkert – vid flytt, renovering och längre vistelser utomlands. Vi hämtar hemma hos dig, skyddar och märker ditt bohag och magasinerar i torra, ventilerade och larmade utrymmen. Med tydliga villkor och fasta upplägg vet du exakt vad som ingår.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Behöver du packmaterial, packhjälp, montering/demontering eller flyttstädning kan vi ordna det. Du får snabb offert och löpande uppdateringar – enkelt från start till mål. Våra magasin är strategiskt placerade i Stockholm med moderna säkerhetssystem och kontinuerlig övervakning. Våra medarbetare är utbildade i försiktig hantering av alla typer av föremål, och vi erbjuder flexibla lösningar för både kort- och långsiktig förvaring. Vårt team är alltid tillgängligt för frågor och support under hela förvaringsperioden.</p>
                   </div>
                   {/* Mobile with expand */}
                   <div className="lg:hidden space-y-4">
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en flytt- och städfirma i Stockholm som erbjuder trygg magasinering. I över åtta år har vi hjälpt kunder att förvara bohag säkert – vid flytt, renovering och längre vistelser utomlands. Målet är enkel, transparent och prisvärd förvaring.</p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vi hämtar hemma hos dig, skyddar och märker ditt bohag och magasinerar i torra, ventilerade och larmade utrymmen. Med tydliga villkor och fasta upplägg vet du exakt vad som ingår.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en flytt- och städfirma i Stockholm som erbjuder trygg magasinering. I över åtta år har vi hjälpt kunder att förvara bohag säkert – vid flytt, renovering och längre vistelser utomlands. Vi hämtar hemma hos dig, skyddar och märker ditt bohag och magasinerar i torra, ventilerade och larmade utrymmen. Med tydliga villkor och fasta upplägg vet du exakt vad som ingår.</p>
                     {!showFullAboutText && (
                       <button onClick={() => setShowFullAboutText(true)} className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></button>
                     )}
                     {showFullAboutText && (
                       <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 0.5 }} className="space-y-4 mt-4">
-                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Behöver du packmaterial, packhjälp, montering/demontering eller flyttstädning kan vi ordna det. Du får snabb offert och löpande uppdateringar – enkelt från start till mål.</p>
+                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Behöver du packmaterial, packhjälp, montering/demontering eller flyttstädning kan vi ordna det. Du får snabb offert och löpande uppdateringar – enkelt från start till mål. Våra magasin är strategiskt placerade i Stockholm med moderna säkerhetssystem och kontinuerlig övervakning. Våra medarbetare är utbildade i försiktig hantering av alla typer av föremål, och vi erbjuder flexibla lösningar för både kort- och långsiktig förvaring. Vårt team är alltid tillgängligt för frågor och support under hela förvaringsperioden.</p>
 
                         <motion.div className="pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
                           <Link href="/om-oss" className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer om oss<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
@@ -427,18 +425,105 @@ export default function MagasineringPage() {
         </motion.section>
 
         {/* Process */}
-        <section className="py-16 bg-white relative overflow-hidden">
-          <div className="mx-auto px-4 md:px-24 relative z-10">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 mb-6 md:mb-8 w-full">
+        <section className="section-padding bg-white relative overflow-hidden">
+          <div className="mx-auto px-0 md:px-24 relative z-10">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full">
               <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
-                <div className="text-center mb-6 md:mb-8 hidden md:block"><p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">Vår process är enkel och trygg – fyll i formuläret, få pris direkt och bekräfta digitalt. Vi planerar hämtning, skyddande packning och säker magasinering i våra utrymmen.</p><p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">Vi märker och registrerar varje kolli för spårbarhet och håller dig uppdaterad. När du är redo bokar vi återleverans till din adress. Transparent pris utan dolda avgifter.</p><p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">På hämtdagen skyddar vi möbler med filtar och sträckfilm och packar ömtåligt enligt rekommendation. Under förvaringen står bohaget torrt och larmat. Inför återleverans stämmer vi av bärväg och tidfönster.</p></div>
-                <div className="text-center mb-4 md:mb-8"><p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4">Pris baseras på volym, tid och tillval – allt sammanfattas i din offert.</p></div>
-                <div className="mb-8"><h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3><div className="relative w-full"><div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div><div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">{[{ icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din förvaring' }, { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' }, { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' }, { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' }, { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Hämtning & magasinering', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' }, { icon: <div className="md:mt-0"><HappyCustomerLottie /></div>, title: 'Nöjd kund', description: 'Smidig återleverans', containerClass: 'md:-mt-6' }].map((step: any, index: number) => (<motion.div key={index} className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={index}><div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div><div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}><div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div><div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>{<h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>}<p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p></div></div></motion.div>))}</div></div></div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
+                  Vår process för magasinering
+                </h2>
+
+                {/* Process Description */}
+                <div className="text-center mb-6 md:mb-8 hidden md:block">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
+                    Vår magasineringsprocess är utformad för att vara enkel, säker och transparent. Vi följer strikta riktlinjer för att säkerställa att ditt bohag hanteras försiktigt och lagras säkert i våra torra, larmade utrymmen.
+                  </p>
+                </div>
+
+                {/* Pricing Info */}
+                <div className="text-center mb-4 md:mb-8">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
+                    Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som volym av bohag, typ av möbler, tillgänglighet och transportavstånd för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+                  </p>
+                </div>
+
+                {/* Process Flow Section */}
+                <div className="mb-4 md:mb-8">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar vår magasinering</h3>
+                  <div className="relative w-full">
+                    {/* Timeline connector line */}
+                    <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
+                    <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
+                      {[
+                        {
+                          icon: <FillFormLottie />,
+                          title: "Kontakta oss",
+                          description: "Kontakta oss för en kostnadsfri offert på magasinering",
+                          textClass: ""
+                        },
+                        {
+                          icon: <FastLottie />,
+                          title: "Få offert",
+                          description: "Få en snabb och kostnadsfri offert på din magasinering",
+                          textClass: ""
+                        },
+                        {
+                          icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
+                          title: "Bekräftelse",
+                          description: "Bekräfta bokning och få all information",
+                          containerClass: "md:-mt-6",
+                          textClass: ""
+                        },
+                        {
+                          icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
+                          title: "Personlig kontakt",
+                          description: "Vi kontaktar dig för att bekräfta detaljer och planera hämtning",
+                          containerClass: "md:-mt-7",
+                          textClass: ""
+                        },
+                        {
+                          icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
+                          title: "Hämtning & Magasinering",
+                          description: "Vi hämtar och lagrar ditt bohag säkert",
+                          containerClass: "md:-mt-14",
+                          textClass: "md:-mt-8",
+                        },
+                        {
+                          icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
+                          title: "Nöjd kund",
+                          description: "Trygg förvaring - du är nöjd!",
+                          containerClass: "md:-mt-6",
+                          textClass: ""
+                        }
+                      ].map((step, index) => (
+                        <motion.div
+                          key={index}
+                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0"
+                          initial="initial"
+                          whileInView="animate"
+                          viewport={{ once: true, amount: 0.2 }}
+                          variants={fadeInUp}
+                          custom={index}
+                        >
+                          {/* Timeline dot */}
+                          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
+                          <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
+                            <div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div>
+                            <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
+                              <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
+                              <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="absolute left-0 bottom-0 w-full h-10 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 60%, rgba(255,255,255,0) 100%)', zIndex: 20 }} />
+          {/* White gradient fade to blend into next section */}
+          <div className="absolute left-0 bottom-0 w-full h-10 pointer-events-none" style={{background: 'linear-gradient(to bottom, white 60%, rgba(255,255,255,0) 100%)', zIndex: 20}} />
         </section>
 
         {/* Blog Post Section */}

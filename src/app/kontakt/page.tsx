@@ -292,6 +292,7 @@ export default function KontaktPage() {
                     required
                   >
                     <option value="">Välj tjänst</option>
+                    <option value="bemanning">Bemanning / Underentreprenad</option>
                     <option value="montering">Montering</option>
                     <option value="piano">Piano / Tunglyft</option>
                     <option value="barhjalp">Bärhjälp</option>
@@ -412,6 +413,7 @@ export default function KontaktPage() {
                     required
                   >
                     <option value="">Välj tjänst</option>
+                    <option value="bemanning">Bemanning / Underentreprenad</option>
                     <option value="montering">Montering</option>
                     <option value="piano">Piano / Tunglyft</option>
                     <option value="barhjalp">Bärhjälp</option>

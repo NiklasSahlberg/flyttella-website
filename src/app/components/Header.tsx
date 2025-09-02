@@ -120,6 +120,12 @@ export default function Header() {
     if (pathname === '/bortforsling') {
       return '/kontakt?scroll=message&service=bortforsling';
     }
+    if (pathname === '/piano-tunglyft') {
+      return '/kontakt?scroll=message&service=piano';
+    }
+    if (pathname === '/bemanning') {
+      return '/kontakt?scroll=message&service=bemanning';
+    }
     return '/offert';
   };
 

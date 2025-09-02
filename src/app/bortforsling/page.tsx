@@ -124,9 +124,10 @@ export default function BortforslingPage() {
 	}, []);
 
 	const experienceCards = [
+		{ title: 'Bortforslingar', count: '2500+', description: 'Genomförda bortforslingar', delay: 0 },
 		{ title: 'Flyttar', count: '8000+', description: 'Genomförda flyttar', delay: 0 },
 		{ title: 'Städningar', count: '7000+', description: 'Genomförda städningar', delay: 1 },
-		{ title: 'Månadsvis', count: '500+', description: 'Nöjda kunder', delay: 2 },
+		
 	];
 	
 	const fadeInUp = {
@@ -211,13 +212,45 @@ export default function BortforslingPage() {
 					<div className="container mx-auto px-4">
 						<div className="max-w-6xl mx-auto relative">
 							{/* Sidebar: Reviews widget (sticky) */}
-							<div className="hidden lg:block absolute -right-72 top-[22rem] w-72">
+							<div className="hidden lg:block absolute -right-72 top-[14rem] w-72">
 								<div className="sticky top-8">
 									<iframe 
 										src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
 										className="w-full h-[1000px] border-0"
 										title="Flyttella recensioner"
 									/>
+								</div>
+							</div>
+
+							{/* Sidebar Service Cards */}
+							<div className="hidden lg:block absolute -right-72 top-[1440px] w-64">
+								<div className="sticky top-8">
+									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">Magasinering</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi hämtar, packar och lagrar säkert.</p>
+										<div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+									</div>
+								</div>
+							</div>
+							<div className="hidden lg:block absolute -right-72 top-[1670px] w-64">
+								<div className="sticky top-8">
+									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">Montering</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.</p>
+										<div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+									</div>
+								</div>
+							</div>
+							<div className="hidden lg:block absolute -right-72 top-[1900px] w-64">
+								<div className="sticky top-8">
+									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">Tunglyft</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">Säker hantering av tunga och skrymmande föremål som piano, kassaskåp och stora möbler.</p>
+										<div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+									</div>
 								</div>
 							</div>
 
@@ -235,8 +268,16 @@ export default function BortforslingPage() {
 									{ title: 'Vad kostar bortforsling?', content: (<div className="px-4 md:px-0">
 											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">Priset för bortforsling beror främst på mängd och typ av avfall, tillgänglighet (våningsplan, hiss, bärväg), samt hur långt transporten är till återvinningscentral. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.</p>
 											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett fast pris. <Link href="/kontakt?scroll=message&service=bortforsling" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">Kontakta oss</Link>.</p>
+											
+											<div className="my-12 md:my-16 text-left md:text-center px-4">
+												<p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
+													"Allt gick smidigt och tryggt från första kontakt tills allt var bortforslat. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri bortforsling!"
+												</p>
+												<p className="italic text-gray-700 mt-2">- Martin</p>
+											</div>
 										</div>), icon: '💸' },
 									{ title: 'Vad ingår i tjänsten?', content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">I vår bortforsling ingår bärhjälp från bostad, vind, källare eller kontor, enklare nedmontering av möbler vid behov, transport till återvinningscentral eller godkänd mottagare, samt miljösortering där vi återvinner när det är möjligt. Allt till tydliga, fasta priser utan dolda avgifter.</p>), icon: '✅' },
+									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.jpg" alt="Tips för bortforsling" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
 									{ title: 'Hur bokar jag bortforsling?', content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Boka bortforsling enkelt genom att <Link href="/kontakt?scroll=message&service=bortforsling" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">kontakta oss</Link>. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, våningsplan och om hiss finns, ungefärlig mängd och typ av avfall (t.ex. möbler, vitvaror, byggavfall), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma volymen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan hämtning.</p></div>), icon: '📞' },
 								] as { title: string; content: any; icon: string }[]).map((section, index) => (
 									<motion.div key={index} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
@@ -650,7 +691,7 @@ export default function BortforslingPage() {
 								</div>
 							</motion.div>
 
-							{/* Packhjälp Card */}
+														{/* Magasinering Card */}
 							<motion.div
 								className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]"
 								initial={{ opacity: 0, y: 20 }}
@@ -670,19 +711,19 @@ export default function BortforslingPage() {
 									}}
 								/>
 								<div className="flex items-center gap-4 mb-6 md:mb-8 relative">
-									<span className="text-4xl md:text-6xl">📦</span>
+									<span className="text-4xl md:text-6xl">🏬</span>
 									<h3 className="text-4xl md:text-5xl font-bold text-white">
-										Packhjälp
+										Magasinering
 									</h3>
 								</div>
 								<p className="text-lg md:text-xl text-gray-100 mb-1 md:mb-8 relative">
-									Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.
+									Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi hämtar, packar och lagrar säkert.
 								</p>
 								<p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">
-									Vi hjälper med märkning och organisering för enklare uppackning.
+									Vi hjälper med märkning och organisering för enklare återleverans.
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med märkning av kartonger och inventarielista för smidig uppackning.
+									Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi hjälper även till med märkning av kartonger och inventarielista för smidig återleverans.
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -691,7 +732,7 @@ export default function BortforslingPage() {
 										className="inline-block"
 									>
 										<Link 
-											href="/barhjalp" 
+											href="/magasinering" 
 											className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
 										>
 											Läs mer
@@ -703,8 +744,8 @@ export default function BortforslingPage() {
 												stroke="currentColor"
 											>
 												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-											</svg>
-										</Link>
+												</svg>
+											</Link>
 									</motion.div>
 								</div>
 							</motion.div>
@@ -1015,7 +1056,7 @@ export default function BortforslingPage() {
 								>
 									<h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet i Stockholm</h4>
 									<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4 px-4 md:px-8">
-										Vi har hjälpt tusentals kunder med deras flyttar i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av flyttar, från små lägenheter till stora villor.
+										Vi har hjälpt tusentals kunder med deras bortforsling i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av bortforsling, från små lägenheter till stora kontorsrensningar.
 									</p>
 									{!showFullExperienceText && (
 										<div className="md:hidden mb-3">
@@ -1044,12 +1085,12 @@ export default function BortforslingPage() {
 											className="space-y-4 mt-4 md:hidden px-4 md:px-8"
 										>
 											<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-												Med vår erfarenhet sedan 2010 har vi byggt upp en solid reputation för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+												Med över 8 års erfarenhet har vi byggt upp en solid reputation för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
 											</p>
 										</motion.div>
 									)}
 									<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
-										Med vår erfarenhet sedan 2010 har vi byggt upp en solid reputation för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+										Med över 8 års erfarenhet har vi byggt upp en solid reputation för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
 									</p>
 								</motion.div>
 
@@ -1069,7 +1110,7 @@ export default function BortforslingPage() {
 										<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 											<Image
 												src="/recommendedcompany2.png"
-												alt="Rekommenderad flyttfirma - Flyttella"
+												alt="Rekommenderad bortforslingsfirma - Flyttella"
 												width={160}
 												height={160}
 												className="object-contain h-32 w-32"
@@ -1079,7 +1120,7 @@ export default function BortforslingPage() {
 										<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 											<Image
 												src="/bestinswedenbadge-modified.png"
-												alt="Top 10 flyttfirma - Flyttella"
+												alt="Top 10 bortforslingsfirma - Flyttella"
 												width={180}
 												height={180}
 												className="object-contain h-28 w-28"
@@ -1094,7 +1135,7 @@ export default function BortforslingPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 										<Image
 											src="/recommendedcompany2.png"
-											alt="Rekommenderad flyttfirma - Flyttella"
+											alt="Rekommenderad bortforslingsfirma - Flyttella"
 											width={240}
 											height={240}
 											className="object-contain h-60 w-60"
@@ -1114,7 +1155,7 @@ export default function BortforslingPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 										<Image
 											src="/bestinswedenbadge-modified.png"
-											alt="Top 10 flyttfirma - Flyttella"
+											alt="Top 10 bortforslingsfirma - Flyttella"
 											width={300}
 											height={300}
 											className="object-contain h-48 w-48"
@@ -1175,8 +1216,8 @@ export default function BortforslingPage() {
 												},
 												{
 													icon: <FastLottie />,
-													title: "Bokning & Planering",
-													description: "Boka tid som passar dig och planera bortforsling",
+													title: "Få offert",
+													description: "Få en snabb och kostnadsfri offert på din bortforsling",
 													textClass: ""
 												},
 												{

@@ -141,7 +141,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/stockholm.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg -mt-20" />
+          <img src="/stockholm.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-20" />
         </div>
       </div>
       
@@ -161,7 +161,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/kundservice.jpg" alt="Kundservice och kommunikation" class="w-full h-60 rounded-lg shadow-lg -mt-12 object-cover" />
+          <img src="/kundservice.jpg" alt="Kundservice och kommunikation" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
         </div>
       </div>
       
@@ -491,7 +491,7 @@ export default function BlogPostPage() {
     <main className="min-h-screen bg-white">
       {/* Hero Section styled like the FAQ page */}
       <section className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
-        <div className="mx-auto px-24">
+        <div className="mx-auto px-0 md:px-24">
           <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
             {/* Background image */}
             <div 
@@ -561,7 +561,7 @@ export default function BlogPostPage() {
 
       {/* Content Section */}
       <section className="py-16">
-        <div className="mx-auto px-24">
+        <div className="mx-auto px-0 md:px-24">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial="initial"
@@ -645,7 +645,7 @@ export default function BlogPostPage() {
 
       {/* Call to Action - Moved outside max-width constraint */}
       <section className="py-16">
-        <div className="mx-auto px-24">
+        <div className="mx-auto px-0 md:px-24">
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -822,7 +822,7 @@ export default function BlogPostPage() {
       {/* Related Posts */}
       {post.relatedPosts && post.relatedPosts.length > 0 && (
         <section className="py-20 bg-gray-50">
-          <div className="mx-auto px-24">
+          <div className="mx-auto px-0 md:px-24">
             <div className="max-w-4xl mx-auto">
               <motion.h2
                 initial="initial"
