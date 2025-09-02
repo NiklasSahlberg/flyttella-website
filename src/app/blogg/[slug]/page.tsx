@@ -490,9 +490,9 @@ export default function BlogPostPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section styled like the FAQ page */}
-      <section className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
+      <section className="relative pt-0 md:pt-20 pb-12 md:pb-20 bg-white text-[#0F172A] overflow-hidden">
         <div className="mx-auto px-0 md:px-24">
-          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-6 md:p-12 relative overflow-hidden">
             {/* Background image */}
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
