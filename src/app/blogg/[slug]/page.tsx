@@ -560,7 +560,14 @@ export default function BlogPostPage() {
 
 
               {/* Key Points Summary */}
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 text-white mb-8">
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-2xl p-8 md:p-12 text-white mb-8 relative overflow-hidden">
+                {/* Mobile-only background image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center opacity-20 md:hidden"
+                  style={{
+                    backgroundImage: 'url(/coupleMoving.png)'
+                  }}
+                />
                 <h3 className="text-2xl font-bold mb-6 text-center">Viktiga punkter att komma ihåg</h3>
                 <div className="grid md:grid-cols-2 gap-6 justify-items-center">
                   <div className="flex items-start w-full max-w-xs">
