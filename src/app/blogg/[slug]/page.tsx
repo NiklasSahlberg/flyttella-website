@@ -4,11 +4,169 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import CountUp from "react-countup";
+import { useState, useEffect, useRef } from "react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.8 }
+};
+
+// Mobile Statistics Slider Component
+const MobileStatsSlider = ({ postSlug }: { postSlug: string }) => {
+  const [currentCard, setCurrentCard] = useState(0);
+  const autoIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchStartXRef = useRef<number | null>(null);
+  const touchCurrentXRef = useRef<number | null>(null);
+  
+  const restartAutoSlide = () => {
+    if (autoIntervalRef.current) clearInterval(autoIntervalRef.current);
+    autoIntervalRef.current = setInterval(() => {
+      setCurrentCard((prev) => (prev + 1) % 3);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    restartAutoSlide();
+    return () => {
+      if (autoIntervalRef.current) clearInterval(autoIntervalRef.current);
+    };
+  }, []);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+    touchCurrentXRef.current = null;
+  };
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchCurrentXRef.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = () => {
+    if (touchStartXRef.current == null || touchCurrentXRef.current == null) return;
+    const deltaX = touchCurrentXRef.current - touchStartXRef.current;
+    const threshold = 50; // px
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX < 0) {
+        setCurrentCard((prev) => (prev + 1) % 3);
+      } else {
+        setCurrentCard((prev) => (prev - 1 + 3) % 3);
+      }
+      restartAutoSlide();
+    }
+    touchStartXRef.current = null;
+    touchCurrentXRef.current = null;
+  };
+
+  const cards = postSlug === "flyttstadning-vad-du-behover-veta" ? [
+    {
+      title: 'Flyttstädningar',
+      count: 7000,
+      description: 'uppdrag utförda',
+      delay: 0
+    },
+    {
+      title: 'Hemstädningar',
+      count: 5000,
+      description: 'uppdrag utförda',
+      delay: 1
+    },
+    {
+      title: 'Företagsstädningar',
+      count: 2000,
+      description: 'uppdrag utförda',
+      delay: 2
+    }
+  ] : [
+    {
+      title: 'Flyttar',
+      count: 8000,
+      description: 'uppdrag utförda',
+      delay: 0
+    },
+    {
+      title: 'Städningar',
+      count: 7000,
+      description: 'uppdrag utförda',
+      delay: 1
+    },
+    {
+      title: 'Månadsvis',
+      count: 500,
+      description: 'uppdrag per månad',
+      delay: 2
+    }
+  ];
+
+  return (
+    <div className="md:hidden flex justify-center">
+      <div className="relative overflow-hidden rounded-xl w-full max-w-sm" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+        <div 
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentCard * 100}%)` }}
+        >
+          {cards.map((card, index) => (
+            <div key={index} className="w-full flex-shrink-0">
+              <motion.div 
+                className="relative bg-white/10 rounded-xl p-8 shadow-lg text-white flex flex-col items-center justify-center h-full mx-2"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.8, delay: card.delay * 0.25 }}
+              >
+                <div className="text-3xl font-bold mb-2">
+                  <CountUp 
+                    end={card.count} 
+                    duration={2.5}
+                    suffix="+"
+                    useEasing={true}
+                    enableScrollSpy={true}
+                    scrollSpyOnce={true}
+                  />
+                </div>
+                <div className="text-base font-medium mb-1">{card.title}</div>
+                <div className="text-sm text-white/80">{card.description}</div>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+
+        {/* Arrow controls */}
+        <button
+          type="button"
+          aria-label="Föregående"
+          onClick={() => { setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length); restartAutoSlide(); }}
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+            <path fillRule="evenodd" d="M15.78 19.28a.75.75 0 01-1.06 0l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 111.06 1.06L10.56 12l5.22 5.22a.75.75 0 010 1.06z" clipRule="evenodd" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          aria-label="Nästa"
+          onClick={() => { setCurrentCard((prev) => (prev + 1) % cards.length); restartAutoSlide(); }}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+            <path fillRule="evenodd" d="M8.22 4.72a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06L13.44 12 8.22 6.78a.75.75 0 010-1.06z" clipRule="evenodd" />
+          </svg>
+        </button>
+        
+        {/* Dots indicator */}
+        <div className="flex justify-center mt-3 space-x-2">
+          {cards.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentCard(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                index === currentCard ? 'bg-[#10B981]' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 // Sample blog post data - you can replace this with real content from a CMS or database
@@ -37,7 +195,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/innanflyttfirmankommer.jpg" alt="Förberedelser innan flyttfirman kommer" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-8" />
+          <img src="/innanflyttfirmankommer.jpg" alt="Förberedelser innan flyttfirman kommer" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Förberedelser innan flyttfirman kommer - en viktig del av att välja rätt flyttfirma</p>
         </div>
       </div>
@@ -80,7 +238,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/viktigaavtalcustomer.png" alt="Skriftlig offert och kontrakt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/viktigaavtalcustomer.png" alt="Skriftlig offert och kontrakt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">En seriös flyttfirma ger alltid en skriftlig och detaljerad offert</p>
         </div>
       </div>
@@ -121,7 +279,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-8 object-cover" />
+          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Erfaren och professionell personal är avgörande för en smidig flytt</p>
         </div>
       </div>
@@ -183,7 +341,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/specialicering.jpg" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/specialicering.jpg" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Vissa flyttar kräver specialkompetens, som pianoflytt eller flytt av konst</p>
         </div>
       </div>
@@ -203,7 +361,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Miljövänlig flytt och hållbarhet" class="w-full h-64 rounded-lg shadow-lg -mt-16 object-cover" />
+          <img src="/intro_picture.jpg" alt="Miljövänlig flytt och hållbarhet" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-16 object-cover" />
         </div>
       </div>
       
@@ -223,7 +381,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/magkansla.jpg" alt="Lita på din magkänsla" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/magkansla.jpg" alt="Lita på din magkänsla" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
         </div>
       </div>
       
@@ -258,7 +416,7 @@ const blogPosts = [
       },
       {
         title: "Flyttstädning - Vad Du Behöver Veta",
-        slug: "flyttstädning-vad-du-behöver-veta",
+        slug: "flyttstadning-vad-du-behover-veta",
         excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick."
       }
     ]
@@ -399,8 +557,271 @@ const blogPosts = [
       },
       {
         title: "Flyttstädning - Vad Du Behöver Veta",
-        slug: "flyttstädning-vad-du-behöver-veta",
+        slug: "flyttstadning-vad-du-behover-veta",
         excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick."
+      }
+    ]
+  },
+  {
+    slug: "flyttstadning-vad-du-behover-veta",
+    title: "Flyttstädning - Vad Du Behöver Veta",
+    excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick. Vi guidar dig genom hela processen.",
+    category: "Städning",
+    date: "2024-01-25",
+    readTime: "8 min",
+    author: "Flyttella Team",
+    content: `
+      <h2 class="font-bold">1. Vad är flyttstädning?</h2>
+      <p>Flyttstädning är en grundlig städning av din gamla bostad som ska utföras innan du lämnar den. Detta är ofta ett krav i hyreskontrakt och är viktigt för att säkerställa att du får tillbaka din deposition eller att köparen får en ren bostad.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Vad som förväntas av en flyttstädning:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Grundlig städning av alla ytor</li>
+            <li>Fönsterputsning</li>
+            <li>Sanering av kök och badrum</li>
+            <li>Städning av garderober och förråd</li>
+            <li>Balkong/terrassstädning</li>
+            <li>Städning av källare/garage</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/cleaning_lady.png" alt="Professionell flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 30%;" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Professionell flyttstädning säkerställer att din bostad lämnas i perfekt skick</p>
+        </div>
+      </div>
+      
+      <h2 class="font-bold">2. Undersök företagets rykte och erfarenhet</h2>
+      <p>Läs recensioner och omdömen från tidigare kunder. En seriös flyttfirma har vanligtvis många positiva recensioner och är transparent med både positiva och negativa omdömen. Undersök också hur länge företaget har varit verksamt.</p>
+      
+      <p><strong>Var du kan hitta recensioner:</strong></p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Google Reviews</li>
+            <li>Trustpilot</li>
+            <li>Företagets hemsida</li>
+            <li>Bekanta och familj</li>
+            <li>Reco</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/top10.png" alt="Kundrecensioner och omdömen" class="w-full h-64 -mt-20 object-contain" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">3. Vad kostar flyttstädning?</h2>
+      <p>Kostnaden för flyttstädning varierar beroende på storlek, skick och omfattning. En lägenhet på 50-70 kvm kostar vanligtvis mellan 1 450-2 000 kr.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Faktorer som påverkar priset:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Bostadens storlek</li>
+            <li>Antal rum och våningar</li>
+            <li>Bostadens skick</li>
+            <li>Specialbehov (höga tak, svårtillgängliga ytor)</li>
+            <li>Balkong/terrass</li>
+            <li>Källare/garage</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/cleaning_background.png" alt="Flyttstädning kostnad" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Kostnaden för flyttstädning varierar beroende på bostadens storlek och skick</p>
+        </div>
+      </div>
+      
+      <h2 class="font-bold">4. RUT-avdrag på flyttstädning</h2>
+      <p>Flyttstädning är RUT-avdragsgill, vilket betyder att du kan få 50% av kostnaden tillbaka via skatteverket. Detta gör professionell flyttstädning mycket mer kostnadseffektiv.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Vad du behöver veta om RUT-avdrag:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Max 50 000 kr per person och år</li>
+            <li>Kvittot från städfirman krävs</li>
+            <li>Företaget måste vara RUT-registrerat</li>
+            <li>Avdraget görs i din deklaration</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/flyttella-logo.png" alt="RUT-avdrag flyttstädning" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">5. Vad ingår i en professionell flyttstädning?</h2>
+      <p>En professionell flyttstädning inkluderar allt som behövs för att lämna bostaden i perfekt skick. Här är en detaljerad översikt:</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Kök:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Städning av alla skåb och lådor</li>
+            <li>Sanering av spis, ugn och micro</li>
+            <li>Diskbänk och kranar</li>
+            <li>Kylskåp och frys</li>
+            <li>Golv och väggar</li>
+          </ul>
+          
+          <p><strong>Badrum:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Toalett, handfat och badkar/dusch</li>
+            <li>Speglar och väggar</li>
+            <li>Golv och fogar</li>
+            <li>Ventilation</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <p><strong>Övriga rum:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Alla golvytor</li>
+            <li>Dörrar och karmar</li>
+            <li>Lister och taklister</li>
+            <li>Eluttag och strömbrytare</li>
+            <li>Fönster och fönsterkarmar</li>
+          </ul>
+          
+          <p><strong>Fönsterputsning:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Alla fönster in- och utsida</li>
+            <li>Fönsterkarmar</li>
+            <li>Balkongdörrar</li>
+            <li>Speglar</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h2 class="font-bold">6. Förberedelser innan flyttstädning</h2>
+      <p>För att få bästa resultat från flyttstädningen är det viktigt att förbereda bostaden ordentligt. Här är vad du behöver göra:</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Innan städfirman kommer:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Flytta ut allt bohag</li>
+            <li>Ta bort alla personliga föremål</li>
+            <li>Lämna nycklar tillgängliga</li>
+            <li>Informera om eventuella problem</li>
+            <li>Stäng av vatten och el om möjligt</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/innanflyttfirmankommer.jpg" alt="Förberedelser inför flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Förbered bostaden ordentligt innan städfirman kommer för bästa resultat</p>
+        </div>
+      </div>
+      
+      <h2 class="font-bold">7. När ska flyttstädning utföras?</h2>
+      <p>Flyttstädning ska utföras efter att du har flyttat ut allt ditt bohag men innan du lämnar nycklarna. Detta ger dig bästa möjliga resultat och säkerställer att inget missas.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Optimal tidpunkt:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Efter att allt bohag är utflyttat</li>
+            <li>Innan nycklarna lämnas tillbaka</li>
+            <li>Minst 24 timmar innan överlämning</li>
+            <li>Under vardagar för bästa tillgänglighet</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/fonsterputs_intro.png" alt="När ska flyttstädning utföras" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">8. Välja rätt städfirma</h2>
+      <p>Att välja rätt städfirma är avgörande för en lyckad flyttstädning. Här är vad du ska tänka på:</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Kontrollera:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>F-skattregistrering</li>
+            <li>Försäkringar</li>
+            <li>Referenser från tidigare kunder</li>
+            <li>Transparenta priser</li>
+            <li>Städgaranti</li>
+            <li>RUT-registrering</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/varafarmaner_flyttstad.png" alt="Professionell städfirma" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Välj en seriös och RUT-registrerad städfirma för bästa resultat</p>
+        </div>
+      </div>
+      
+      <h2 class="font-bold">9. Tips för att spara pengar</h2>
+      <p>Det finns flera sätt att göra flyttstädningen mer kostnadseffektiv utan att kompromissa med kvaliteten:</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Boka i god tid för bättre priser</li>
+            <li>Undvik helger och högtider</li>
+            <li>Förbered bostaden ordentligt</li>
+            <li>Utnyttja RUT-avdraget</li>
+            <li>Jämför priser från flera firmor</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/flyttella-logo.png" alt="Tips för att spara pengar" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">10. Efter flyttstädningen</h2>
+      <p>När flyttstädningen är klar är det viktigt att kontrollera resultatet och säkerställa att allt är som det ska vara innan du lämnar nycklarna.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Kontrollera:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Alla rum systematiskt</li>
+            <li>Att inget är kvar i skåp</li>
+            <li>Att alla ytor är rena</li>
+            <li>Att fönster är putsade</li>
+            <li>Att allt fungerar som det ska</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/byggstadning_2.png" alt="Nöjd kund efter flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+        </div>
+      </div>
+      
+      <h2 class="font-bold">Sammanfattning</h2>
+      <p>Flyttstädning är en viktig del av flyttprocessen som inte bör underskattas. Genom att välja en professionell städfirma och förbereda bostaden ordentligt kan du säkerställa en smidig överlämning och få tillbaka din deposition.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Viktiga punkter att komma ihåg:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Boka flyttstädning i god tid</li>
+            <li>Välj en seriös och RUT-registrerad firma</li>
+            <li>Förbered bostaden ordentligt</li>
+            <li>Kontrollera resultatet noggrant</li>
+            <li>Utnyttja RUT-avdraget</li>
+            <li>Krav på städgaranti</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/omflyttella_flyttstad.png" alt="Om Flyttella flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Flyttella - Din pålitliga partner för professionell flyttstädning</p>
+        </div>
+      </div>
+      
+      <p><strong>Behöver du hjälp med flyttstädning?</strong> Flyttella erbjuder professionell flyttstädning i Stockholmsområdet med städgaranti och RUT-avdrag. Kontakta oss för en kostnadsfri offert och låt oss hjälpa dig att lämna din bostad i perfekt skick.</p>
+    `,
+    relatedPosts: [
+      {
+        title: "Vad bör du tänka på när du väljer en seriös flyttfirma",
+        slug: "vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma",
+        excerpt: "Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips."
+      },
+      {
+        title: "10 Tips för en Smidig Flytt i Stockholm",
+        slug: "10-tips-for-en-smidig-flytt-i-stockholm",
+        excerpt: "Planera din flytt i Stockholm med våra beprövade tips."
       }
     ]
   },
@@ -442,7 +863,7 @@ const blogPosts = [
       },
       {
         title: "Flyttstädning - Vad Du Behöver Veta",
-        slug: "flyttstädning-vad-du-behöver-veta",
+        slug: "flyttstadning-vad-du-behover-veta",
         excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick."
       }
     ]
@@ -499,7 +920,7 @@ export default function BlogPostPage() {
               style={{
                 backgroundImage: 'url(/intro_picture.jpg)',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundPosition: '75% center'
               }}
             />
             <div className="flex flex-col items-center justify-center gap-8 relative z-10">
@@ -539,7 +960,10 @@ export default function BlogPostPage() {
 
                 {/* Lead paragraph */}
                 <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium">
-                  Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips för att identifiera en seriös och pålitlig flyttfirma som tar hand om dina ägodelar med omsorg.
+                  {post.slug === "flyttstadning-vad-du-behover-veta" 
+                    ? "Flyttstädning är en viktig del av flyttprocessen som kräver noggrannhet och professionell service. Här guidar vi dig genom allt du behöver veta för att lämna din bostad i perfekt skick."
+                    : "Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips för att identifiera en seriös och pålitlig flyttfirma som tar hand om dina ägodelar med omsorg."
+                  }
                 </p>
               </div>
             </div>
@@ -570,42 +994,85 @@ export default function BlogPostPage() {
                 />
                 <h3 className="text-2xl font-bold mb-6 text-center">Viktiga punkter att komma ihåg</h3>
                 <div className="grid md:grid-cols-2 gap-6 justify-items-center">
-                  <div className="flex items-start w-full max-w-xs">
-                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white font-bold">1</span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold mb-2">Planera tidigt</h4>
-                      <p className="text-white/80 text-sm">Börja planeringen tidigt</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start w-full max-w-xs">
-                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white font-bold">2</span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold mb-2">Jämför flyttfirmor</h4>
-                      <p className="text-white/80 text-sm">Kontrollera fasta eller rörliga priser</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start w-full max-w-xs">
-                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white font-bold">3</span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold mb-2">Boka flytthjälp</h4>
-                      <p className="text-white/80 text-sm">Kontrollera försäkring och garantier</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start w-full max-w-xs">
-                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white font-bold">4</span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold mb-2">Boka flyttstädning</h4>
-                      <p className="text-white/80 text-sm">Säkra professionell städning i tid</p>
-                    </div>
-                  </div>
+                  {post.slug === "flyttstadning-vad-du-behover-veta" ? (
+                    <>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">1</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Boka i god tid</h4>
+                          <p className="text-white/80 text-sm">Planera flyttstädning tidigt</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">2</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">RUT-avdrag</h4>
+                          <p className="text-white/80 text-sm">Utnyttja skatteavdraget</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">3</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Förbered bostaden</h4>
+                          <p className="text-white/80 text-sm">Flytta ut allt bohag först</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">4</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Städgaranti</h4>
+                          <p className="text-white/80 text-sm">Krav på omstädning vid behov</p>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">1</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Planera tidigt</h4>
+                          <p className="text-white/80 text-sm">Börja planeringen tidigt</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">2</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Jämför flyttfirmor</h4>
+                          <p className="text-white/80 text-sm">Kontrollera fasta eller rörliga priser</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">3</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Boka flytthjälp</h4>
+                          <p className="text-white/80 text-sm">Kontrollera försäkring och garantier</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">4</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Boka flyttstädning</h4>
+                          <p className="text-white/80 text-sm">Säkra professionell städning i tid</p>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -659,14 +1126,24 @@ export default function BlogPostPage() {
             <div className="relative z-10">
               {/* Statistics Section */}
               <div className="mb-8">
-                <h4 className="text-2xl md:text-3xl font-bold mb-6 text-center">Behöver du hjälp med din flytt i Stockholm?</h4>
+                <h4 className={`text-2xl md:text-3xl font-bold mb-6 text-center ${post.slug === "flyttstadning-vad-du-behover-veta" ? "" : "md:text-center md:ml-[-120px]"}`}>
+                   {post.slug === "flyttstadning-vad-du-behover-veta" 
+                     ? "Behöver du hjälp med flyttstädning i Stockholm?"
+                     : "Behöver du hjälp med din flytt i Stockholm?"
+                   }
+                 </h4>
                     <div className="flex flex-col lg:flex-row gap-8 items-start">
-    {/* Statistics boxes on the left */}
-    <div className="grid grid-cols-1 md:grid-cols-1 gap-6 justify-start w-auto lg:w-80 flex-shrink-0">
+    {/* Mobile Statistics Slider */}
+    <div className="w-full flex justify-center lg:w-auto lg:justify-start">
+      <MobileStatsSlider postSlug={post.slug} />
+    </div>
+    
+    {/* Desktop Statistics boxes */}
+    <div className="hidden md:grid grid-cols-1 gap-6 justify-start w-auto lg:w-80 flex-shrink-0">
       <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center justify-center w-full">
         <div className="text-3xl md:text-4xl font-bold mb-2">
           <CountUp 
-            end={8000} 
+            end={post.slug === "flyttstadning-vad-du-behover-veta" ? 7000 : 8000} 
             duration={2.5}
             suffix="+"
             useEasing={true}
@@ -674,13 +1151,15 @@ export default function BlogPostPage() {
             scrollSpyOnce={true}
           />
         </div>
-        <div className="text-base font-medium mb-1">Flyttar</div>
+        <div className="text-base font-medium mb-1">
+          {post.slug === "flyttstadning-vad-du-behover-veta" ? "Flyttstädningar" : "Flyttar"}
+        </div>
         <div className="text-sm text-white/80">uppdrag utförda</div>
       </div>
       <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center justify-center w-full">
         <div className="text-3xl md:text-4xl font-bold mb-2">
           <CountUp 
-            end={7000} 
+            end={post.slug === "flyttstadning-vad-du-behover-veta" ? 5000 : 7000} 
             duration={2.5}
             suffix="+"
             useEasing={true}
@@ -688,13 +1167,15 @@ export default function BlogPostPage() {
             scrollSpyOnce={true}
           />
         </div>
-        <div className="text-base font-medium mb-1">Städningar</div>
+        <div className="text-base font-medium mb-1">
+          {post.slug === "flyttstadning-vad-du-behover-veta" ? "Hemstädningar" : "Städningar"}
+        </div>
         <div className="text-sm text-white/80">uppdrag utförda</div>
       </div>
       <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center justify-center w-full">
         <div className="text-3xl md:text-4xl font-bold mb-2">
           <CountUp 
-            end={500} 
+            end={post.slug === "flyttstadning-vad-du-behover-veta" ? 2000 : 500} 
             duration={2.5}
             suffix="+"
             useEasing={true}
@@ -702,34 +1183,65 @@ export default function BlogPostPage() {
             scrollSpyOnce={true}
           />
         </div>
-        <div className="text-base font-medium mb-1">Månadsvis</div>
-        <div className="text-sm text-white/80">uppdrag per månad</div>
+        <div className="text-base font-medium mb-1">
+          {post.slug === "flyttstadning-vad-du-behover-veta" ? "Företagsstädningar" : "Månadsvis"}
+        </div>
+        <div className="text-sm text-white/80">
+          {post.slug === "flyttstadning-vad-du-behover-veta" ? "uppdrag utförda" : "uppdrag per månad"}
+        </div>
       </div>
     </div>
 
     {/* About text in the center */}
-    <div className="flex-1 text-white/90 min-w-0 text-center lg:text-left">
+    <div className="flex-1 text-white/90 min-w-0">
       <p className="text-xl md:text-2xl leading-relaxed mb-6">
-        Vi är en etablerad flyttfirma i Stockholmsområdet med över 10 års erfarenhet av att hjälpa privatpersoner och företag med deras flyttar. Vårt team av erfarna flyttarbetare är dedikerade till att säkerställa att din flytt blir så smidig och stressfri som möjligt.
+        Vi är en etablerad städfirma i Stockholmsområdet med över 10 års erfarenhet av att hjälpa privatpersoner och företag med deras flyttstädning. Vårt team av erfarna städare är dedikerade till att säkerställa att din bostad lämnas i perfekt skick.
       </p>
       <p className="text-xl md:text-2xl leading-relaxed mb-6">
-        Vi erbjuder allt från små lägenhetsflyttar till stora villaflyttar och kontorsflyttar. Med vår omfattande erfarenhet och professionella service kan du lita på att dina ägodelar tas hand om med största omsorg.
+        Vi erbjuder allt från små lägenhetsstädningar till stora villastädningar och kontorsstädningar. Med vår omfattande erfarenhet och professionella service kan du lita på att din bostad städas med största omsorg och noggrannhet.
       </p>
-      <p className="text-xl md:text-2xl leading-relaxed">
-        Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flytt i Stockholm!
+      <p className="text-xl md:text-2xl leading-relaxed mb-12">
+        Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flyttstädning i Stockholm!
       </p>
-    </div>
-
-    {/* Space for picture on the right */}
-    <div className="hidden lg:block w-auto lg:w-[500px] flex-shrink-0 flex items-center justify-center">
-      <div className="rounded-2xl overflow-hidden">
-        <img 
-          src="/smiling_worker_new.png" 
-          alt="Flyttella team" 
-          className="w-full h-auto max-h-[540px] object-contain"
-        />
+      
+      {/* Få offert button */}
+      <div className="flex justify-center">
+        <Link
+          href="/offert"
+          className="bg-white text-[#0F172A] px-8 py-4 md:px-12 md:py-6 rounded-full font-bold text-lg md:text-xl hover:bg-gray-100 transition-colors shadow-lg"
+        >
+          Få offert
+        </Link>
       </div>
     </div>
+
+    {/* Picture on the right - visible on both mobile and desktop */}
+    <div className={`${post.slug === "flyttstadning-vad-du-behover-veta" ? "w-full lg:w-[460px]" : "w-full lg:w-[500px]"} flex-shrink-0 flex items-center justify-center`}>
+        <div className="rounded-2xl overflow-hidden">
+           {post.slug === "flyttstadning-vad-du-behover-veta" ? (
+             <>
+               {/* Mobile image */}
+               <img 
+                 src="/omflyttella_flyttstad.png" 
+                 alt="Flyttella team" 
+                 className="block lg:hidden w-full h-auto max-h-[600px] object-contain rounded-2xl"
+               />
+               {/* Desktop image */}
+               <img 
+                 src="/stad_vertical_happy_cleaner.png" 
+                 alt="Flyttella team" 
+                 className="hidden lg:block w-full h-auto lg:max-h-[540px] object-contain rounded-2xl"
+               />
+             </>
+           ) : (
+             <img 
+               src="/smiling_worker_new.png" 
+               alt="Flyttella team" 
+               className="w-full h-auto max-h-[300px] lg:max-h-[540px] object-contain rounded-2xl"
+             />
+           )}
+         </div>
+     </div>
   </div>
               </div>
 
@@ -792,19 +1304,21 @@ export default function BlogPostPage() {
                       >
                         {feature.icon}
                       </motion.span>
-                      <h5 className="text-white font-semibold text-base md:text-lg mb-1 text-center">{feature.title}</h5>
-                      <p className="text-white/80 text-sm md:text-base mb-2 line-clamp-3 text-center">{feature.description}</p>
-                      <a 
-                        href={feature.link}
-                        target={feature.link.startsWith('http') ? '_blank' : undefined}
-                        rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center justify-center"
-                      >
-                        Läs mer
-                        <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </a>
+                      <h5 className="text-white font-semibold text-base md:text-lg mb-1 text-center">{post.slug === 'flyttstadning-vad-du-behover-veta' && feature.title === 'Fritt lån av kartonger i 4 veckor' ? 'Miljövänliga produkter' : feature.title}</h5>
+                      <p className="text-white/80 text-sm md:text-base mb-2 line-clamp-3 text-center">{post.slug === 'flyttstadning-vad-du-behover-veta' && feature.title === 'Fritt lån av kartonger i 4 veckor' ? 'Vi använder miljövänliga och säkra rengöringsmedel' : feature.description}</p>
+                      {feature.title === "RUT-avdrag" && (
+                        <a 
+                          href={feature.link}
+                          target={feature.link.startsWith('http') ? '_blank' : undefined}
+                          rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center justify-center"
+                        >
+                          Läs mer
+                          <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </a>
+                      )}
                     </motion.div>
                   ))}
                 </div>
