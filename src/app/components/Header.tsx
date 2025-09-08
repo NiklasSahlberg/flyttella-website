@@ -29,6 +29,15 @@ export default function Header() {
   // Add cleaning dropdown timeout logic
   const cleaningTimeoutRef = useRef<NodeJS.Timeout | undefined>();
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setMobileView('root');
+    setServicesView('list');
+    setIsMobileFlyttOpen(false);
+    setIsMobileCleaningOpen(false);
+    setIsDropdownOpen(false);
+  };
+
   useEffect(() => {
     setShowQuoteButton(false);
     setMobileView('root');
@@ -492,14 +501,17 @@ export default function Header() {
         {isMobileMenuOpen && (
         <div 
           className="fixed inset-0 z-[9999] bg-white md:hidden"
+          onClick={closeMobileMenu}
         >
           <div 
             className="h-full w-full flex flex-col"
+            onClick={(e) => e.stopPropagation()}
           >
               {/* Close button */}
               <button
-                onClick={() => setIsMobileMenuOpen(false)}
-              className="absolute top-4 right-4 p-2 text-gray-400 "
+                type="button"
+                onClick={closeMobileMenu}
+              className="absolute top-4 right-4 p-2 text-gray-400 z-[10000] pointer-events-auto"
                 aria-label="Stäng meny"
               >
               <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -511,130 +523,130 @@ export default function Header() {
             <div className="relative h-full overflow-hidden pt-12 pb-4">
               {/* Root View */}
               <div className={`absolute inset-0 px-6 flex flex-col items-center text-center transition-transform duration-300 ${mobileView === 'services' ? '-translate-x-full' : 'translate-x-0'}`}>
-               {/* Logo */}
-               <div className="mb-4">
-                 <Link 
-                   href="/" 
-                   onClick={(e) => {
-                     if (pathname === '/') {
-                       e.preventDefault();
-                       window.location.reload();
-                     } else {
-                       setIsMobileMenuOpen(false);
-                     }
-                   }}
-                 >
-                 <Image
-                   src="/flyttella-logo.png"
-                   alt="Flyttella Logo"
-                   width={220}
-                   height={56}
-                   className="h-16 w-auto"
-                 />
-               </Link>
-               </div>
+              {/* Logo */}
+              <div className="mb-4">
+                <Link 
+                  href="/" 
+                  onClick={(e) => {
+                    if (pathname === '/') {
+                      e.preventDefault();
+                      window.location.reload();
+                    } else {
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
+                >
+                <Image
+                  src="/flyttella-logo.png"
+                  alt="Flyttella Logo"
+                  width={220}
+                  height={56}
+                  className="h-16 w-auto"
+                />
+              </Link>
+              </div>
 
-               {/* Navigation */}
-               <nav className="flex flex-col space-y-2 w-full max-w-sm">
-                   <Link
-                   href="/om-oss"
-                   className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
-                     onClick={() => setIsMobileMenuOpen(false)}
-                   >
-                   {t('header.about')}
-                   </Link>
-                 <Link
-                   href="/faq"
-                   className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
-                   onClick={() => setIsMobileMenuOpen(false)}
-                 >
-                   {t('header.faq')}
-                 </Link>
-                 <Link
-                   href="/blogg"
-                   className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
-                   onClick={() => setIsMobileMenuOpen(false)}
-                 >
-                   {t('header.blog')}
-                 </Link>
-                 <Link
-                   href="/kontakt"
-                   className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
-                   onClick={() => setIsMobileMenuOpen(false)}
-                 >
-                   {t('header.contact')}
-                 </Link>
+              {/* Navigation */}
+              <nav className="flex flex-col space-y-2 w-full max-w-sm">
+                  <Link
+                  href="/om-oss"
+                  className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                  {t('header.about')}
+                  </Link>
+                <Link
+                  href="/faq"
+                  className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {t('header.faq')}
+                </Link>
+                <Link
+                  href="/blogg"
+                  className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {t('header.blog')}
+                </Link>
+                <Link
+                  href="/kontakt"
+                  className="block py-1 text-3xl font-medium text-[#0F172A] transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {t('header.contact')}
+                </Link>
 
-                 {/* Våra Tjänster Section (Mobile) */}
-                 <div className="py-1 w-full max-w-sm order-first">
-                   <button
+                {/* Våra Tjänster Section (Mobile) */}
+                <div className="py-1 w-full max-w-sm order-first">
+                  <button
                     onClick={() => setMobileView('services')}
-                     className={`flex items-center justify-center w-full text-3xl font-medium transition-colors py-1 relative ${
+                    className={`flex items-center justify-center w-full text-3xl font-medium transition-colors py-1 relative ${
                        'text-[#0F172A]'
-                     }`}
-                   >
-                     <span>Våra tjänster</span>
-                     <svg
-                       xmlns="http://www.w3.org/2000/svg"
+                    }`}
+                  >
+                    <span>Våra tjänster</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
                        className={`h-5 w-5 transition-transform absolute right-0`}
-                       fill="none"
-                       viewBox="0 0 24 24"
-                       stroke="currentColor"
-                     >
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                     </svg>
-                 </button>
-                 </div>
-               </nav>
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                </div>
+              </nav>
 
-               {/* CTA Buttons */}
-               <div className="space-y-2 py-3 border-t border-gray-200">
-                 <Link
-                   href={getQuoteLink()}
-                   onClick={() => setIsMobileMenuOpen(false)}
-                   className="block w-full py-3 px-6 text-center text-2xl font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
-                 >
-                   Få offert
-                 </Link>
-               </div>
+              {/* CTA Buttons */}
+              <div className="space-y-2 py-3 border-t border-gray-200">
+                <Link
+                  href={getQuoteLink()}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block w-full py-3 px-6 text-center text-2xl font-bold text-white bg-[#10B981] rounded-full hover:bg-[#059669] transition shadow-md"
+                >
+                  Få offert
+                </Link>
+              </div>
 
-               {/* Language Toggle for Mobile */}
-               <div className="py-3 border-t border-gray-200">
-                 <div className="text-center">
-                   <div className="flex justify-center items-center space-x-6">
-                     <button
-                       onClick={() => setLocale('sv')}
-                       className={`transition-all duration-200 ${locale === 'sv' ? 'scale-110' : 'hover:scale-105'}`}
-                     >
-                       <Image 
-                         src="/flags/se.svg" 
-                         alt="Svenska" 
-                         width={36} 
-                         height={27} 
-                         className={`rounded-sm border-2 shadow-sm ${locale === 'sv' ? 'border-[#10B981]' : 'border-gray-300'}`}
-                       />
-                     </button>
-                     <button
-                       onClick={() => setLocale('en')}
-                       className={`transition-all duration-200 ${locale === 'en' ? 'scale-110' : 'hover:scale-105'}`}
-                     >
-                       <Image 
-                         src="/flags/gb.svg" 
-                         alt="English" 
-                         width={36} 
-                         height={27} 
-                         className={`rounded-sm border-2 shadow-sm ${locale === 'en' ? 'border-[#10B981]' : 'border-gray-300'}`}
-                       />
-                     </button>
-                   </div>
-                 </div>
-               </div>
+              {/* Language Toggle for Mobile */}
+              <div className="py-3 border-t border-gray-200">
+                <div className="text-center">
+                  <div className="flex justify-center items-center space-x-6">
+                    <button
+                      onClick={() => setLocale('sv')}
+                      className={`transition-all duration-200 ${locale === 'sv' ? 'scale-110' : 'hover:scale-105'}`}
+                    >
+                      <Image 
+                        src="/flags/se.svg" 
+                        alt="Svenska" 
+                        width={36} 
+                        height={27} 
+                        className={`rounded-sm border-2 shadow-sm ${locale === 'sv' ? 'border-[#10B981]' : 'border-gray-300'}`}
+                      />
+                    </button>
+                    <button
+                      onClick={() => setLocale('en')}
+                      className={`transition-all duration-200 ${locale === 'en' ? 'scale-110' : 'hover:scale-105'}`}
+                    >
+                      <Image 
+                        src="/flags/gb.svg" 
+                        alt="English" 
+                        width={36} 
+                        height={27} 
+                        className={`rounded-sm border-2 shadow-sm ${locale === 'en' ? 'border-[#10B981]' : 'border-gray-300'}`}
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
 
-               {/* Divider */}
-               <div className="my-0 border-t border-gray-200"></div>
+              {/* Divider */}
+              <div className="my-0 border-t border-gray-200"></div>
 
-               {/* Social Media Buttons */}
-               <div className="flex items-center justify-center space-x-4 py-1">
+              {/* Social Media Buttons */}
+              <div className="flex items-center justify-center space-x-4 py-1">
                  {/* existing icons retained above */}
                </div>
                </div>
@@ -642,12 +654,14 @@ export default function Header() {
                {/* Services Categories View */}
                <div aria-hidden={mobileView !== 'services'} className={`absolute inset-0 px-6 flex flex-col transition-transform duration-300 ${mobileView === 'services' ? 'translate-x-0' : 'translate-x-full invisible pointer-events-none'}`}>
                  {/* Back button */}
-                 <div className="flex items-center h-12">
-                   <button className="flex items-center text-[#0F172A]" onClick={() => { setServicesView('list'); setMobileView('root'); }} aria-label="Tillbaka">
-                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-                     Tillbaka
-                   </button>
-                 </div>
+                 {servicesView === 'list' && (
+                   <div className="flex items-center h-12">
+                     <button className="flex items-center text-[#0F172A]" onClick={() => { setServicesView('list'); setMobileView('root'); }} aria-label="Tillbaka">
+                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                       Tillbaka
+                     </button>
+                   </div>
+                 )}
                  {/* Inner sliding container: list vs category */}
                  <div className="relative flex-1 w-full">
                    {/* Categories list */}
@@ -723,11 +737,11 @@ export default function Header() {
                      </div>
                    </div>
                  </div>
-               </div>
-             </div>
-           </div>
-         </div>
-         )}
+              </div>
+              </div>
+            </div>
+          </div>
+        )}
     </>
   );
 } 
