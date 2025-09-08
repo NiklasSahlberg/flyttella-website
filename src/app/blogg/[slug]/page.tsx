@@ -658,7 +658,7 @@ const blogPosts = [
         <div class="flex-1">
           <p><strong>Kök:</strong></p>
           <ul class="list-disc pl-5 space-y-2">
-            <li>Städning av alla skåb och lådor</li>
+            <li>Städning av alla skåp och lådor</li>
             <li>Sanering av spis, ugn och micro</li>
             <li>Diskbänk och kranar</li>
             <li>Kylskåp och frys</li>
