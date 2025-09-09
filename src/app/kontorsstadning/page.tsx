@@ -195,14 +195,33 @@ export default function KontorsstadningPage() {
       <div className="main-zoom">
       {/* Hero Section */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          {/* Mobile: Form only */}
-          <div className="md:hidden mx-auto px-4 pb-2" id="kontor-offert">
-            {selectedServiceType === 'flyttstad' ? (
-              <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
-            ) : (
-              <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
-            )}
+          
+          {/* Mobile: Hero content after form removed per request */}
+          
+          {/* Mobile: Hero section */}
+          <div className="md:hidden">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white py-12 relative overflow-hidden">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{ 
+                  backgroundImage: 'url(/nystadat_kontor.png)',
+                  backgroundPosition: 'center 50%'
+                }}
+              />
+              <div className="relative z-10 px-4 text-center">
+                <h1 className="text-4xl font-bold mb-4">
+                  Professionell kontorsstädning i Stockholm
+                </h1>
+                <p className="text-xl mb-6">
+                  Regelbunden städning för företag
+                </p>
+              </div>
+            </div>
           </div>
+          
+          {/* Spacing between hero and content */}
+          <div className="md:hidden py-2"></div>
           
           {/* Desktop: Full hero section */}
           <div className="hidden md:block mx-auto px-16">
@@ -227,7 +246,7 @@ export default function KontorsstadningPage() {
         </div>
 
         {/* What is Kontorsstädning Section */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-6 md:py-12 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               <motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
@@ -370,6 +389,13 @@ export default function KontorsstadningPage() {
                style={{background: 'linear-gradient(to top, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)'}}></div>
           <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
+              {/* Mobile image above title to match Bohagsflytt */}
+              <div className="lg:hidden px-4 mb-6 -mx-8">
+                <div className="relative w-full h-96 rounded-3xl overflow-hidden">
+                  <img src="/omflyttella_flyttstad.png" alt="Om Flyttella" className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                </div>
+              </div>
+
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 {/* Left: Image - desktop only */}
@@ -423,10 +449,6 @@ export default function KontorsstadningPage() {
             </motion.div>
           </div>
         </motion.section>
-        {/* Mobile image below the section */}
-        <div className="lg:hidden px-4 mt-6">
-          <img src="/omflyttella_flyttstad.png" alt="Om Flyttella Städ" className="w-full h-auto rounded-2xl shadow-lg object-contain" />
-        </div>
 
         {/* Reviews Widget */}
         <ReviewsWidget 
@@ -444,7 +466,7 @@ export default function KontorsstadningPage() {
             <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[180px] md:min-h-[200px] w-full max-w-sm sm:max-w-md md:max-w-3xl mx-auto text-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
               <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 relative z-10 mb-3 md:mb-4"><span className="text-3xl md:text-4xl">🧹</span><div className="text-center md:text-left"><h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">Redo att börja er kontorsstädning?</h3><p className="text-base md:text-lg text-gray-100 leading-snug">Få en snabb och gratis offert</p></div></div>
-              <div className="relative z-10 text-center"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="#kontor-offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">Få gratis offert<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
+              <div className="relative z-10 text-center"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">Få gratis offert<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
             </motion.div>
           </div>
         </section>

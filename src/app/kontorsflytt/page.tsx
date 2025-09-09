@@ -416,6 +416,13 @@ export default function KontorsflyttPage() {
                style={{background: 'linear-gradient(to top, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)'}}></div>
           <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
+              {/* Mobile image above title to match Bohagsflytt */}
+              <div className="lg:hidden px-4 mb-6 -mx-8">
+                <div className="relative w-full h-96 rounded-3xl overflow-hidden">
+                  <img src="/personalpicture.jpg" alt="Om Flyttella" className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                </div>
+              </div>
+
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 {/* Left: Image - desktop only */}
@@ -469,21 +476,6 @@ export default function KontorsflyttPage() {
             </motion.div>
           </div>
         </motion.section>
-      
-        {/* Mobile: Personal picture card below the section */}
-        <div className="lg:hidden px-4 py-6">
-          <div className="relative h-96 overflow-hidden rounded-3xl shadow-xl">
-            <img
-              src="/personalpicture.jpg"
-              alt="Flyttella personal"
-              className="object-cover rounded-3xl w-full h-full"
-              style={{ 
-                objectPosition: 'center 70%',
-                transform: 'scale(1.0)'
-              }}
-            />
-          </div>
-        </div>
 
         {/* Vad tycker våra kunder om oss? */}
         <ReviewsWidget 

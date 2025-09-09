@@ -182,14 +182,34 @@ export default function DodsboStadningPage() {
       <div className="main-zoom">
         {/* Hero Section */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          {/* Mobile: Form */}
-          <div className="md:hidden mx-auto px-4 pb-2" id="dodsbo-offert">
-            {selectedServiceType === 'flyttstad' ? (
-              <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
-            ) : (
-              <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
-            )}
+          
+          {/* Mobile: Hero content after form removed per request */}
+          
+          {/* Mobile: Hero section */}
+          <div className="md:hidden">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white py-12 relative overflow-hidden">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{ 
+                  backgroundImage: 'url(/cleaning_background.png)',
+                  backgroundPosition: 'center 50%'
+                }}
+              />
+              <div className="relative z-10 px-4 text-center">
+                <h1 className="text-4xl font-bold mb-4">
+                  Professionell dödsbostädning i Stockholm
+                </h1>
+                <p className="text-xl mb-6">
+                  Omsorgsfullt genomförd med respekt och trygghet
+                </p>
+              </div>
+            </div>
           </div>
+          
+          {/* Spacing between hero and content */}
+          <div className="md:hidden py-2"></div>
+          
           {/* Desktop hero */}
           <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
@@ -367,6 +387,13 @@ export default function DodsboStadningPage() {
           />
           <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
+              {/* Mobile image above title to match Bohagsflytt */}
+              <div className="lg:hidden px-4 mb-6 -mx-8">
+                <div className="relative w-full h-96 rounded-3xl overflow-hidden">
+                  <img src="/omflyttella_flyttstad.png" alt="Om Flyttella" className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                </div>
+              </div>
+
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 <motion.div 
@@ -467,14 +494,6 @@ export default function DodsboStadningPage() {
             </motion.div>
           </div>
         </motion.section>
-        {/* Mobile image below the section */}
-        <div className="lg:hidden px-4 mt-6">
-          <img 
-            src="/omflyttella_flyttstad.png" 
-            alt="Om Flyttella"
-            className="w-full h-auto rounded-2xl shadow-lg object-contain"
-          />
-        </div>
 
         {/* Vad tycker våra kunder om oss? */}
         <ReviewsWidget 
@@ -500,7 +519,7 @@ export default function DodsboStadningPage() {
               </div>
               <div className="relative z-10 text-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-                  <Link href="#dodsbo-offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
+                  <Link href="/offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
                     Få gratis offert
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -734,7 +753,7 @@ export default function DodsboStadningPage() {
               </div>
               <div className="relative z-10 text-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-                  <Link href="#dodsbo-offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
+                  <Link href="/offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
                     Få gratis offert
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                   </Link>

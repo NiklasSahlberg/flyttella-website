@@ -216,7 +216,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/top10.png" alt="Kundrecensioner och omdömen" class="w-full h-64 -mt-20 object-contain" />
+          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
       
@@ -258,7 +258,8 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/trygg-hansa-logo.png" alt="Försäkringar och säkerhet" class="w-full -mt-8" />
+          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Erfaren och professionell personal är avgörande för en smidig flytt</p>
         </div>
       </div>
       
@@ -299,7 +300,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/stockholm.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-20" />
+          <img src="/intro_picture.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
         </div>
       </div>
       
@@ -361,7 +362,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Miljövänlig flytt och hållbarhet" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-16 object-cover" />
+          <img src="/malaga.jpg" alt="Destinationer" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
       
@@ -608,7 +609,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/top10.png" alt="Kundrecensioner och omdömen" class="w-full h-64 -mt-20 object-contain" />
+          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
       
@@ -865,6 +866,197 @@ const blogPosts = [
         title: "Flyttstädning - Vad Du Behöver Veta",
         slug: "flyttstadning-vad-du-behover-veta",
         excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick."
+      }
+    ]
+  },
+  {
+    slug: "utlandsflytt-vad-du-behover-veta",
+    title: "Utlandsflytt – Vad du behöver veta",
+    excerpt: "Planering, dokument och genomförande av utlandsflytt. En komplett guide för en trygg flytt över gränser.",
+    category: "Utlandsflytt",
+    date: "2024-02-01",
+    readTime: "9 min",
+    author: "Flyttella Team",
+    content: `
+      <h2 class="font-bold">1. Planera i god tid</h2>
+      <p>Utlandsflytt kräver längre framförhållning än en inrikes flytt. Sätt en tidsplan för packning, dokument, transport och leveransfönster. Räkna med extra tid för gränsövergångar, helgdagar och oförutsedda händelser.</p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Inventera bohaget och uppskatta volym (m³)</li>
+            <li>Bestäm preliminärt flyttdatum och leveransfönster</li>
+            <li>Gör en checklista vecka för vecka</li>
+            <li>Identifiera särskilda behov (pianon, konst, etc.)</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/innanflyttfirmankommer.jpg" alt="Förberedelser innan flyttfirman kommer" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Förberedelser innan flyttfirman kommer - en viktig del av att välja rätt flyttfirma</p>
+        </div>
+      </div>
+
+      <h2 class="font-bold">2. Dokument och tull</h2>
+      <p>Förbered nödvändiga dokument: inventarielista, tullvärden, försäkringsunderlag och identitetshandlingar. Reglerna varierar mellan länder – kontrollera införselregler i god tid.</p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Inventarielista med värden</li>
+            <li>Pass, visum och eventuellt uppehållstillstånd</li>
+            <li>Försäkringsbrev för internationell transport</li>
+            <li>Intyg för husdjur, läkemedel och elektronik</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">3. Pris – fast eller rörligt</h2>
+      <p>Pris påverkas av volym, destination, bärväg och tillval (packning, magasinering, montering). Välj mellan fast pris (förutsägbart) eller rörligt (flexibelt vid osäker omfattning).</p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Volym i m³ och avstånd</li>
+            <li>Bärväg, våningsplan, hiss</li>
+            <li>Tidsfönster och åtkomlighet/parkering</li>
+            <li>Tillägg: packning, emballage, magasinering</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/viktigaavtalcustomer.png" alt="Skriftlig offert och kontrakt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <p class="text-sm text-gray-600 mt-2 text-center">En seriös flyttfirma ger alltid en skriftlig och detaljerad offert</p>
+        </div>
+      </div>
+
+      <h2 class="font-bold">4. Undersök företagets rykte och erfarenhet</h2>
+      <p>Läs recensioner och omdömen från tidigare kunder. En seriös flyttfirma har vanligtvis många positiva recensioner och är transparent med både positiva och negativa omdömen. Undersök också hur länge företaget har varit verksamt.</p>
+      <p><strong>Var du kan hitta recensioner:</strong></p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Google Reviews</li>
+            <li>Trustpilot</li>
+            <li>Företagets hemsida</li>
+            <li>Bekanta och familj</li>
+            <li>Reco</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">5. Försäkring och ansvar</h2>
+      <p>Se över att försäkring täcker hela transportkedjan internationellt. Begär skriftliga villkor och förstå självrisken.</p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Godsansvar och transportförsäkring</li>
+            <li>Villkor vid oförutsedda händelser</li>
+            <li>Hur skador hanteras och anmäls</li>
+            <li>Begränsningar och undantag</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/trygg-hansa-logo.png" alt="Försäkring utlandsflytt" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">6. Logistik och rutt</h2>
+      <p>Samordna lastningspunkt, rutt och leveransfönster. Kommunicera tydligt kring åtkomst, parkering och bärväg på båda adresserna.</p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Bokad lastzon och hiss</li>
+            <li>Kontroll av vägavgifter och broar</li>
+            <li>Tydlig kontakt vid leverans</li>
+            <li>Buffert för förseningar</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/intro_picture.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">7. Packhjälp och montering</h2>
+      <p>Överväg professionell packhjälp och montering/demontering av möbler och vitvaror för att spara tid och minska risker.</p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Exportpackning av känsliga föremål</li>
+            <li>Demontering före lastning</li>
+            <li>Montering vid leverans</li>
+            <li>Emballagehantering</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/kundservice.jpg" alt="Kundservice och kommunikation" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">8. Magasinering vid behov</h2>
+      <p>Om datum inte sammanfaller kan tillfällig magasinering vara rätt. Välj säker förvaring och planera in/utleverans.</p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Kort- eller långtidsbehov</li>
+            <li>Försäkringsskydd i förrådet</li>
+            <li>Inventering vid in- och utleverans</li>
+            <li>Temperatur och fukt</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/specialicering.jpg" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Vissa flyttar kräver specialkompetens, som pianoflytt eller flytt av konst</p>
+        </div>
+      </div>
+
+      <h2 class="font-bold">9. Vanliga destinationer och tips</h2>
+      <p>Olika länder har olika regler. Läs på om införsel, helgdagar och parkering. Planera tidsmarginal för högsäsonger.</p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Norden och EU: enklare tullprocesser</li>
+            <li>Storbritannien: särskilda införselregler</li>
+            <li>Spanien/Portugal: planera för värme och siesta</li>
+            <li>Norge/Schweiz: tull och dokument</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/malaga.jpg" alt="Destinationer" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">10. Sammanfattning</h2>
+      <p>Med rätt planering, dokument och partners blir utlandsflytten trygg och effektiv. Sätt en tydlig tidsplan, säkerställ dokument och välj en erfaren flyttfirma.</p>
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Viktiga punkter att komma ihåg:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Inventarielista och tullvärden i tid</li>
+            <li>Exportpackning och korrekt märkning</li>
+            <li>Försäkring som täcker hela kedjan</li>
+            <li>Logistik och tydlig kommunikation</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/happycustomeraftermoving.png" alt="Nöjd kund efter flytt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <p class="text-sm text-gray-600 mt-2 text-center">En seriös flyttfirma säkerställer en smidig flytt och nöjda kunder</p>
+        </div>
+      </div>
+
+      <p><strong>Behöver du hjälp med din utlandsflytt?</strong> Flyttella har lång erfarenhet av internationella flyttar – från planering och exportpackning till tullhandlingar och leverans. Kontakta oss för en kostnadsfri offert.</p>
+    `,
+    relatedPosts: [
+      {
+        title: "Vad bör du tänka på när du väljer en seriös flyttfirma",
+        slug: "vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma",
+        excerpt: "Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi våra viktigaste tips."
+      },
+      {
+        title: "10 Tips för en Smidig Flytt i Stockholm",
+        slug: "10-tips-for-en-smidig-flytt-i-stockholm",
+        excerpt: "Planera din flytt i Stockholm med våra beprövade tips."
       }
     ]
   }
@@ -1195,7 +1387,7 @@ export default function BlogPostPage() {
     {/* About text in the center */}
     <div className="flex-1 text-white/90 min-w-0">
       <p className="text-xl md:text-2xl leading-relaxed mb-6">
-        Vi är en etablerad städfirma i Stockholmsområdet med över 10 års erfarenhet av att hjälpa privatpersoner och företag med deras flyttstädning. Vårt team av erfarna städare är dedikerade till att säkerställa att din bostad lämnas i perfekt skick.
+        Vi är en etablerad flytt och städfirma i Stockholmsområdet med över 10 års erfarenhet av att hjälpa privatpersoner och företag med deras flyttstädning. Vårt team av erfarna städare är dedikerade till att säkerställa att din bostad lämnas i perfekt skick.
       </p>
       <p className="text-xl md:text-2xl leading-relaxed mb-6">
         Vi erbjuder allt från små lägenhetsstädningar till stora villastädningar och kontorsstädningar. Med vår omfattande erfarenhet och professionella service kan du lita på att din bostad städas med största omsorg och noggrannhet.

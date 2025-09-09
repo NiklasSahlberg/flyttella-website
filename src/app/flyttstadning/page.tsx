@@ -217,40 +217,33 @@ export default function FlyttstadningPage() {
       <div className="main-zoom">
         {/* Hero Section - Matching bohagsflytt design */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          {/* Mobile: Form only */}
-          <div className="md:hidden mx-auto px-4 pb-8">
-            {selectedServiceType === 'flyttstad' ? (
-              <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
-            ) : (
-              <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
-            )}
-          </div>
           
-          {/* Mobile: Hero content after form */}
-          <div className="md:hidden mx-auto px-4 py-6">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 relative overflow-hidden">
+          {/* Mobile: Hero content after form removed per request */}
+          
+          {/* Mobile: Hero section */}
+          <div className="md:hidden">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white py-12 relative overflow-hidden">
               {/* Background image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-                style={{
+                style={{ 
                   backgroundImage: 'url(/cleaning_background.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center 30%'
+                  backgroundPosition: 'center 50%'
                 }}
               />
-              <div className="relative z-10 text-center space-y-4">
-                <h1 className="text-4xl font-bold">
+              <div className="relative z-10 px-4 text-center">
+                <h1 className="text-4xl font-bold mb-4">
                   {t('flyttstadning.hero.title')}
                 </h1>
-                <p className="text-xl">
+                <p className="text-xl mb-6">
                   {t('flyttstadning.hero.subtitle')}
-                </p>
-                <p className="text-lg text-white/90">
-                  {t('flyttstadning.hero.description')}
                 </p>
               </div>
             </div>
           </div>
+          
+          {/* Spacing between hero and content */}
+          <div className="md:hidden py-2"></div>
           
           {/* Desktop: Full hero section */}
           <div className="hidden md:block mx-auto px-16">
@@ -616,6 +609,13 @@ export default function FlyttstadningPage() {
               whileInView="animate" 
               viewport={{ once: true }}
             >
+              {/* Mobile image above title to match Bohagsflytt */}
+              <div className="lg:hidden px-4 mb-6 -mx-8">
+                <div className="relative w-full h-96 rounded-3xl overflow-hidden">
+                  <img src="/omflyttella_flyttstad.png" alt="Om Flyttella Städ" className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                </div>
+              </div>
+
               <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 {/* Left: Image - desktop only (mobile image moved below section) */}
@@ -725,14 +725,6 @@ export default function FlyttstadningPage() {
             </motion.div>
           </div>
         </motion.section>
-        {/* Mobile image displayed below the section to match bohagsflytt behavior */}
-        <div className="lg:hidden px-4 mt-6">
-          <img 
-            src="/omflyttella_flyttstad.png" 
-            alt="Om Flyttella Städ"
-            className="w-full h-auto rounded-2xl shadow-lg object-contain"
-          />
-        </div>
 
         {/* Vad tycker våra kunder om oss */}
         <ReviewsWidget 
@@ -783,7 +775,7 @@ export default function FlyttstadningPage() {
                   className="inline-block"
                 >
                   <Link 
-                    href="#flytt-offert"
+                    href="/offert"
                     className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
                     Få gratis offert
@@ -1294,7 +1286,7 @@ export default function FlyttstadningPage() {
                   className="inline-block"
                 >
                   <Link 
-                    href="#flytt-offert"
+                    href="/offert"
                     className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
                     Få gratis offert
