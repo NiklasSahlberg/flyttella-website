@@ -157,8 +157,8 @@ export default function BemanningPage() {
 								}}
 							/>
 							<div className="relative z-10 text-center px-4">
-								<h1 className="text-5xl font-bold mb-6">Bemanning och underentreprenad</h1>
-								<p className="text-2xl text-white/90">Flexibel bemanning och pålitliga underentreprenörer för flytt, logistik och städ.</p>
+								<h1 className="text-3xl md:text-5xl font-bold mb-6">Bemanning och underentreprenad</h1>
+								<p className="text-lg md:text-2xl text-white/90">Flexibel bemanning och pålitliga underentreprenörer för flytt, logistik och städ.</p>
 							</div>
 						</div>
 					</div>
