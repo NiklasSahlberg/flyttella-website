@@ -65,34 +65,77 @@ export default function OmOssPage() {
               Om oss
             </h2>
           </div>
-          <div className="space-y-2 text-[#0F172A] text-lg leading-tight font-bold max-w-4xl mx-auto">
-            <p>
+          <div className="text-[#0F172A] text-lg leading-tight font-bold max-w-4xl mx-auto">
+            <p className="mb-8">
               Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder. Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning.
             </p>
-            <p>
+            
+            {/* Image after first paragraph */}
+            <div className="mb-8 flex justify-center">
+              <div className="relative w-full h-64 rounded-3xl overflow-hidden">
+                <img 
+                  src="/intro_picture.jpg" 
+                  alt="Flyttella team" 
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+            
+            <p className="mb-8">
               Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar. Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.
             </p>
+            
+            {/* Image after second paragraph */}
+            <div className="my-6 flex justify-center">
+              <img 
+                src="/recommendedcompany2.png" 
+                alt="Recommended company badge" 
+                className="w-64 h-auto rounded-lg"
+              />
+            </div>
+            
             <br />
-            <p>
+            <p className="mb-8">
               Vi vet att tid ofta är en bristvara vid flytt, därför har vi utvecklat en smidig offertlösning där du får svar inom 1 minut – helt utan förpliktelser. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut. Självklart erbjuder vi fri rådgivning i samband med både flytt och städning – allt för att din upplevelse med oss ska kännas enkel och trygg från början till slut.
             </p>
-            <p>
+            
+            {/* Image after third paragraph */}
+            <div className="my-6 flex justify-center">
+              <div className="relative w-full h-64 rounded-3xl overflow-hidden">
+                <img 
+                  src="/specialicering.jpg" 
+                  alt="Specialization" 
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+            
+            <p className="mb-8">
               Vi på Flyttella tror på att bygga långsiktiga relationer genom att leverera hög kvalitet, punktlighet och lyhörd service. Vår filosofi är enkel: ingen kund ska känna sig osäker, stressad eller överraskad av dolda kostnader. Därför har vi tagit fram tjänster och arbetsmetoder som är transparenta, kundvänliga och anpassade efter verkliga behov.
             </p>
-            <p>
+            <p className="mb-8">
               Oavsett om du ska flytta inom Stockholm eller behöver städhjälp efter en renovering eller försäljning, kan du lita på att vi tar hand om det med samma noggrannhet och engagemang varje gång. Vi är stolta över det rykte vi har byggt upp – ett rykte som vilar på förtroende, god kommunikation och ett genuint engagemang för varje kunds unika situation.
             </p>
+            
+            {/* Image after fifth paragraph */}
+            <div className="mt-6 flex justify-center">
+              <img 
+                src="/flyttella-logo.png" 
+                alt="Flyttella logo" 
+                className="w-64 h-auto rounded-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Proud of our reviews section */}
       <section className="py-8">
-        <div className="max-w-4xl mx-auto px-4 text-center mb-4">
+        <div className="max-w-4xl mx-auto px-4 text-center mb-2">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Vi är stolta över våra kundomdömen</h2>
-          <p className="text-lg text-gray-700 mb-8">Vi arbetar hårt för att varje kund ska bli nöjd – och det syns i våra recensioner. Läs vad våra kunder tycker om oss!</p>
+          <p className="text-lg text-gray-700 -mb-2">Vi arbetar hårt för att varje kund ska bli nöjd – och det syns i våra recensioner. Läs vad våra kunder tycker om oss!</p>
         </div>
-        <ReviewsWidget />
+        <ReviewsWidget hideTitle={true} />
       </section>
 
       {/* Picture Slider Section */}

@@ -16,6 +16,7 @@ interface ReviewsWidgetProps {
   description?: string;
   badgeAlt?: string;
   arrowText?: string;
+  hideTitle?: boolean;
 }
 
 const Counter = ({ end, duration = 2 }: CounterProps) => {
@@ -72,7 +73,8 @@ export default function ReviewsWidget({
   subtitle,
   description,
   badgeAlt,
-  arrowText
+  arrowText,
+  hideTitle = false
 }: ReviewsWidgetProps) {
   const { t } = useLanguage();
   return (
@@ -91,9 +93,11 @@ export default function ReviewsWidget({
       <div className="container mx-auto px-4 relative">
         <div className="max-w-[1400px] mx-auto">
           {/* Centered Title */}
-          <h3 className="text-3xl md:text-5xl font-bold text-[#0F172A] text-center mb-6 md:mb-12 mt-2">
-            {title || t('reviews.title')}
-          </h3>
+          {!hideTitle && (
+            <h3 className="text-3xl md:text-5xl font-bold text-[#0F172A] text-center mb-6 md:mb-12 mt-2">
+              {title || t('reviews.title')}
+            </h3>
+          )}
           {/* Badge */}
           <motion.div 
             className="flex justify-center mb-8 md:mb-16"
