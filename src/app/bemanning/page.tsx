@@ -690,52 +690,11 @@ export default function BemanningPage() {
 								viewport={{ once: true }}
 								transition={{ duration: 0.5, delay: 0.1 }}
 							>
-								{/* Background pattern */}
-								<motion.div 
-									className="absolute inset-0 opacity-10 pointer-events-none"
-									initial={{ backgroundPosition: '0% 0%' }}
-									animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-									transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-									style={{
-										backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-										backgroundSize: '20px 20px'
-									}}
-								/>
-								<div className="flex items-center gap-4 mb-6 md:mb-8 relative">
-									<span className="text-4xl md:text-6xl">✨</span>
-									<h3 className="text-4xl md:text-5xl font-bold text-white">
-										Kontorsstädning
-									</h3>
-								</div>
-								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-									Professionell städning av kontor och företagslokaler. Vi säkerställer en ren och hygienisk arbetsmiljö för era medarbetare.
-								</p>
-								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Vår kontorsstädning omfattar allt från daglig städning till djupstädning. Vi använder miljövänliga produkter och följer era specifika rutiner. Med vår service får ni en konsekvent ren arbetsmiljö som bidrar till produktivitet och välbefinnande.
-								</p>
-								<div className="mt-auto relative">
-									<motion.div 
-										whileHover={{ scale: 1.05 }} 
-										whileTap={{ scale: 0.95 }}
-										className="inline-block"
-									>
-										<Link 
-											href="/kontorsstadning" 
-											className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
-										>
-											Läs mer
-											<svg 
-												xmlns="http://www.w3.org/2000/svg" 
-												className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
-												fill="none" 
-												viewBox="0 0 24 24" 
-												stroke="currentColor"
-											>
-												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-											</svg>
-										</Link>
-									</motion.div>
-								</div>
+								<motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+								<div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧹</span><h3 className="text-3xl md:text-5xl font-bold text-white">Kontorsstädning</h3></div>
+								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Professionell kontorsstädning för företag – regelbunden städning för en ren och produktiv arbetsmiljö.</p>
+								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi erbjuder skräddarsydd kontorsstädning anpassad efter era behov. Daglig, veckovis eller månatlig städning med kvalificerad personal och miljövänliga produkter.</p>
+								<div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/kontorsstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
 							</motion.div>
 							</div>
 						</div>
