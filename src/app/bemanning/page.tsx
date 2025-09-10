@@ -309,7 +309,7 @@ export default function BemanningPage() {
 										icon: ''
 									},
 									{
-										title: 'Hur bokar ni bemanning?',
+										title: 'Hur bokar man bemanning?',
 										content:
 											'Kontakta oss direkt via telefon eller e‑post för en behovsanalys. Vi återkommer så snart som möjligt med pris och förslag. Därefter planerar vi bemanningen och startar enligt överenskommen tidsplan.',
 										icon: '📞'
@@ -327,7 +327,7 @@ export default function BemanningPage() {
 												{section.title}
 											</h3>
 											{typeof section.content === 'string' ? (
-												<p className={`text-gray-700 leading-relaxed px-4 ${section.title === 'Vad är bemanning och underentreprenad?' || section.title === 'Vad ingår i bemanning och underentreprenad?' || section.title === 'Hur bokar ni bemanning?' ? 'text-lg md:text-xl lg:text-2xl text-left md:text-center' : 'text-base md:text-lg lg:text-xl'}`}>
+												<p className={`text-gray-700 leading-relaxed px-4 ${section.title === 'Vad är bemanning och underentreprenad?' || section.title === 'Vad ingår i bemanning och underentreprenad?' || section.title === 'Hur bokar man bemanning?' ? 'text-lg md:text-xl lg:text-2xl text-left md:text-center' : 'text-base md:text-lg lg:text-xl'}`}>
 													{section.content}
 												</p>
 											) : (

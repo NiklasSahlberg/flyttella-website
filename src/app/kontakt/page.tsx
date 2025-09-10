@@ -297,7 +297,7 @@ export default function KontaktPage() {
                   <select
                     id="service"
                     name="service"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base text-[#0F172A] bg-white appearance-none"
                     required
                   >
                     <option value="">Välj tjänst</option>
@@ -418,7 +418,7 @@ export default function KontaktPage() {
                   <select
                     id="callback-service"
                     name="callback-service"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base text-[#0F172A] bg-white appearance-none"
                     required
                   >
                     <option value="">Välj tjänst</option>
@@ -451,7 +451,7 @@ export default function KontaktPage() {
                   <select
                     id="callback-time"
                     name="callback-time"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base text-[#0F172A] bg-white appearance-none"
                     required
                   >
                     <option value="">Välj tid</option>
