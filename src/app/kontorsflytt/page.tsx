@@ -217,10 +217,31 @@ export default function KontorsflyttPage() {
       <div className="main-zoom">
         {/* Hero Section - Matching bohagsflytt design */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          {/* Mobile: Form only */}
-          <div className="md:hidden mx-auto px-4 pb-8">
-            <FlyttoffertForm mode="widget" defaultCustomerType="foretag" />
+          {/* Mobile: Hero content */}
+          <div className="md:hidden">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white py-12 relative overflow-hidden">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{
+                  backgroundImage: 'url(/office-moving.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center 30%'
+                }}
+              />
+              <div className="relative z-10 text-center px-4">
+                <h1 className="text-4xl font-bold mb-6">
+                  Kontorsflytt
+                </h1>
+                <p className="text-xl text-white/90">
+                  Professionell företagsflytt med minimal störning
+                </p>
+              </div>
+            </div>
           </div>
+          
+          {/* Spacing between hero and content */}
+          <div className="md:hidden py-2"></div>
           
           {/* Desktop: Full hero section */}
           <div className="hidden md:block mx-auto px-16">
