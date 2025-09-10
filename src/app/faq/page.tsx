@@ -153,9 +153,9 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section styled like the start page */}
-      <section className="relative py-20 bg-white text-[#0F172A] overflow-hidden">
-        <div className="mx-auto px-24">
-          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
+      <section className="relative pt-0 pb-12 md:pt-0 md:pb-20 bg-white text-[#0F172A] overflow-hidden">
+        <div className="mx-auto px-0 md:px-24">
+          <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-6 md:p-8 lg:p-12 relative overflow-hidden">
             {/* Background image */}
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -165,18 +165,17 @@ export default function FAQPage() {
                 backgroundPosition: 'center top'
               }}
             />
-            <div className="flex flex-col items-center justify-center gap-8 relative z-10">
-              <div className="w-full max-w-2xl mx-auto text-center">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">Vanliga frågor</h1>
-                <p className="text-xl text-white/90 mb-8">
+            <div className="flex flex-col items-center justify-center gap-6 md:gap-8 relative z-10">
+              <div className="w-full max-w-2xl mx-auto text-center px-4 md:px-0">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Vanliga frågor</h1>
+                <p className="text-lg md:text-xl text-white/90 mb-6 md:mb-8">
                   Här hittar du svar på de vanligaste frågorna om våra flyttjänster. 
                   Kan du inte hitta det du letar efter? Kontakta oss så hjälper vi dig!
                 </p>
-                <div className="flex justify-center space-x-4">
-                  {/* Removed Få offert button */}
+                <div className="flex justify-center">
                   <Link 
                     href="/kontakt" 
-                    className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#0F172A] transition-all font-medium"
+                    className="border-2 border-white text-white px-6 md:px-8 py-3 rounded-full hover:bg-white hover:text-[#0F172A] transition-all font-medium text-sm md:text-base"
                   >
                     Kontakta oss
                   </Link>
@@ -188,12 +187,12 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Section with light background */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           {Object.entries(faqData).map(([category, questions], categoryIndex) => (
-            <div key={category} className="bg-white/95 rounded-2xl p-8 md:p-12 mb-10">
+            <div key={category} className="bg-white/95 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12 mb-6 md:mb-10">
               <motion.h2 
-                className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6 text-center"
+                className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
@@ -204,7 +203,7 @@ export default function FAQPage() {
               {questions.map((faq, index) => (
                 <motion.div
                   key={faq.id}
-                  className="bg-white rounded-xl overflow-hidden"
+                  className="bg-white rounded-lg md:rounded-xl overflow-hidden mb-2 md:mb-3"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: (categoryIndex * 0.2) + (index * 0.1) }}
@@ -212,9 +211,9 @@ export default function FAQPage() {
                 >
                   <button
                     onClick={() => toggleFAQ(faq.id)}
-                    className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                    className="w-full px-4 md:px-6 py-4 md:py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                   >
-                    <h3 className="text-lg md:text-xl font-semibold text-[#0F172A] pr-4">
+                    <h3 className="text-base md:text-lg lg:text-xl font-semibold text-[#0F172A] pr-3 md:pr-4 leading-tight">
                       {faq.question}
                     </h3>
                     <motion.div
@@ -223,7 +222,7 @@ export default function FAQPage() {
                       className="flex-shrink-0"
                     >
                       <svg
-                        className="w-6 h-6 text-[#10B981]"
+                        className="w-5 h-5 md:w-6 md:h-6 text-[#10B981]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -250,8 +249,8 @@ export default function FAQPage() {
                     }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                    <div className="px-4 md:px-6 pb-4 md:pb-6">
+                      <p className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -262,28 +261,28 @@ export default function FAQPage() {
           ))}
 
           <motion.div 
-            className="text-center mt-16"
+            className="text-center mt-12 md:mt-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-[#0F172A] mb-4">
+            <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 max-w-2xl mx-auto">
+              <h3 className="text-xl md:text-2xl font-bold text-[#0F172A] mb-3 md:mb-4">
                 Har du fler frågor?
               </h3>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-base md:text-lg text-gray-600 mb-4 md:mb-6">
                 Vi finns här för att hjälpa dig! Kontakta oss så svarar vi på alla dina frågor.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                 <Link 
                   href="/kontakt" 
-                  className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                  className="inline-flex items-center justify-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 md:px-8 py-3 md:py-4 rounded-full hover:opacity-90 transition-opacity font-medium group text-sm md:text-base"
                 >
                   Kontakta oss
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
-                    className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                    className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"

@@ -100,7 +100,16 @@ export default function KontaktPage() {
       </Suspense>
       
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-r from-[#0F172A] to-[#10B981]">
+      <section className="relative py-16 md:py-32 overflow-hidden bg-gradient-to-r from-[#0F172A] to-[#10B981]">
+        {/* Background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: 'url(/kontakta_oss_picture.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 20%'
+          }}
+        />
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
@@ -109,10 +118,10 @@ export default function KontaktPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h1 className="text-3xl md:text-6xl font-bold text-white mb-4">
               Kontakta oss
             </h1>
-            <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
               Har du frågor eller vill boka en tjänst? Vi finns här för att hjälpa dig. 
               Kontakta oss via telefon, e-post eller använd formuläret nedan.
             </p>

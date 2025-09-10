@@ -204,12 +204,51 @@ export default function BemanningPage() {
 									</div>
 								</div>
 							</div>
+							
+							{/* Läs mer button with arrow down */}
+							<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+								<motion.div
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ delay: 1, duration: 0.5 }}
+								>
+									<button
+										onClick={() => {
+											const element = document.getElementById('content');
+											if (element) {
+												const headerHeight = 80; // Approximate header height
+												const elementPosition = element.offsetTop - headerHeight;
+												window.scrollTo({
+													top: elementPosition,
+													behavior: 'smooth'
+												});
+											}
+										}}
+										className="flex flex-col items-center text-white hover:text-white/80 transition-colors group"
+									>
+										<span className="text-sm font-medium mb-2">Läs mer</span>
+										<motion.div
+											animate={{ y: [0, 5, 0] }}
+											transition={{ duration: 2, repeat: Infinity }}
+										>
+											<svg 
+												className="w-6 h-6 group-hover:scale-110 transition-transform" 
+												fill="none" 
+												stroke="currentColor" 
+												viewBox="0 0 24 24"
+											>
+												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+											</svg>
+										</motion.div>
+									</button>
+								</motion.div>
+							</div>
 						</div>
 					</div>
 				</div>
 
 				{/* What is Bemanning Section - matching kontorsflytt structure */}
-				<section className="py-0 md:py-16 bg-white">
+				<section id="content" className="py-0 md:py-16 bg-white">
 					<div className="container mx-auto px-4">
 						<div className="max-w-6xl mx-auto relative">
 							{/* Sidebar service cards removed as requested */}

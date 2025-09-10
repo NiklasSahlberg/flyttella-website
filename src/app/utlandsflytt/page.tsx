@@ -78,7 +78,7 @@ export default function Utlandsflytt() {
           {/* Desktop: Full hero section */}
           <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: 'url(/coupleMoving.png)' }} />
+              <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: 'url(/malaga.jpg)', backgroundPosition: 'center 20%' }} />
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
                   <h1 className="text-5xl md:text-6xl font-bold mb-8">Utlandsflytt från Stockholm</h1>
@@ -89,12 +89,51 @@ export default function Utlandsflytt() {
                   <FlyttoffertForm mode="widget" />
                 </div>
               </div>
+              
+              {/* Läs mer button with arrow down */}
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                >
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('content');
+                      if (element) {
+                        const headerHeight = 80; // Approximate header height
+                        const elementPosition = element.offsetTop - headerHeight;
+                        window.scrollTo({
+                          top: elementPosition,
+                          behavior: 'smooth'
+                        });
+                      }
+                    }}
+                    className="flex flex-col items-center text-white hover:text-white/80 transition-colors group"
+                  >
+                    <span className="text-sm font-medium mb-2">Läs mer</span>
+                    <motion.div
+                      animate={{ y: [0, 5, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <svg 
+                        className="w-6 h-6 group-hover:scale-110 transition-transform" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </motion.div>
+                  </button>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* What is Utlandsflytt Section */}
-        <section className="py-0 md:py-16 bg-white">
+        <section id="content" className="py-0 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               {/* Reco Widget - Positioned absolutely to the right */}
@@ -151,7 +190,7 @@ export default function Utlandsflytt() {
                 { title: 'Vad ingår i utlandsflytt?', content: (
                   <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">Inventering och planering, exportpackning och märkning, lastning med möbelskydd, tull- och importdokument, försäkring, internationell vägtransport samt lossning på destinationen. Vi stämmer av bärväg och leveransfönster och gör en enkel mottagningskontroll. Tillval: packning av hela hemmet, magasinering, montering/demontering och flyttstädning inför överlämning.</p>
                 ), icon: '📦' },
-                { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/fonsterputs_intro.png" alt="Utlandsflytt tjänster" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
+                { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/coupleMoving.png" alt="Utlandsflytt tjänster" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 30%' }} /></div>), icon: '' },
                 { title: 'Hur bokar jag utlandsflytt?', content: (<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8 md:mb-12">Boka via formuläret – ange adress, volym och destination. Du får pris direkt och kan bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av detaljer, önskade datum och eventuella tillval. Vi erbjuder paketlösningar för bästa pris.</p>), icon: '📅' },
                 { title: 'Checklista vid utlandsflytt', content: (<div className="px-4 md:px-0"><ul className="list-disc pl-5 space-y-3 md:space-y-2"><li><strong>Boka flyttfirma i god tid:</strong> Säkerställ att du får det datum som passar dig bäst.</li><li><strong>Rensa och sortera:</strong> Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li><li><strong>Beställ flyttkartonger:</strong> Låna eller köp tillräckligt med kartonger och packmaterial.</li><li><strong>Packa smart:</strong> Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.</li><li><strong>Adressändra och meddela viktiga kontakter:</strong> Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.</li><li><strong>Boka flyttstädning:</strong> Se till att bostaden är ordentligt städad inför överlämning.</li><li><strong>Plocka ner gardiner, lampor och hyllor:</strong> Förbered så mycket som möjligt innan flyttdagen.</li><li><strong>Packa en "första natten-låda":</strong> Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.</li><li><strong>Dubbelkolla allt på flyttdagen:</strong> Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.</li><li><strong>Pass, visum och uppehållstillstånd:</strong> Säkerställ giltighet och rätt intyg för alla i hushållet.</li><li><strong>Inventarielista och tullvärden:</strong> Lista bohaget och förbered tullvärden enligt destinationslandets krav.</li><li><strong>Införselregler:</strong> Kontrollera vad som får tas in (t.ex. livsmedel, växter, batterier) och om tillstånd krävs.</li><li><strong>Internationell försäkring:</strong> Se att försäkringen täcker långdistans vägtransport och hela flyttkedjan.</li><li><strong>Parkering och bärväg:</strong> Ordna lastzon/tillstånd och hissbokning på båda adresser.</li><li><strong>Husdjur:</strong> Kontrollera veterinärintyg, vaccinationer och införselkrav.</li></ul></div>), icon: '' },
               ] as { title: string; content: any; icon: string }[]).map((section, idx) => (
