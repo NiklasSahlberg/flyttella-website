@@ -76,13 +76,13 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "Flyttstädning - Vad Du Behöver Veta",
+    title: "Flyttstädning - Vad du behöver veta",
     excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick.",
     category: "Flyttstädning",
     date: "2024-01-05",
     readTime: "6 min",
     image: "/blog-flyttstadning.jpg",
-    slug: "flyttstädning-vad-du-behöver-veta"
+    slug: "flyttstadning-vad-du-behover-veta"
   },
   {
     id: 5,

@@ -709,8 +709,8 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/innanflyttfirmankommer.jpg" alt="Förberedelser inför flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
-          <p class="text-sm text-gray-600 mt-2 text-center">Förbered bostaden ordentligt innan städfirman kommer för bästa resultat</p>
+          <img src="/cleaning_lady.png" alt="Professionell flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 30%;" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Professionell flyttstädning säkerställer att din bostad lämnas i perfekt skick</p>
         </div>
       </div>
       
@@ -1110,9 +1110,9 @@ export default function BlogPostPage() {
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
               style={{
-                backgroundImage: 'url(/intro_picture.jpg)',
+                backgroundImage: `url(/cleaning_background.png)`,
                 backgroundSize: 'cover',
-                backgroundPosition: '75% center'
+                backgroundPosition: 'center top'
               }}
             />
             <div className="flex flex-col items-center justify-center gap-8 relative z-10">
@@ -1181,7 +1181,7 @@ export default function BlogPostPage() {
                 <div 
                   className="absolute inset-0 bg-cover bg-center opacity-20 md:hidden"
                   style={{
-                    backgroundImage: 'url(/coupleMoving.png)'
+                    backgroundImage: 'url(/flyttstad_intro.png)'
                   }}
                 />
                 <h3 className="text-2xl font-bold mb-6 text-center">Viktiga punkter att komma ihåg</h3>

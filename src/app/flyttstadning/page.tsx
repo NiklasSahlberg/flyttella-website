@@ -1629,14 +1629,14 @@ export default function FlyttstadningPage() {
                       <span className="text-gray-500 text-sm ml-4">5 min läsning</span>
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">
-                      Vad bör du tänka på när du väljer en seriös städfirma
+                      Flyttstädning - Vad du behöver veta
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                       Att välja rätt städfirma är avgörande för en grundlig flyttstädning. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från städgaranti och miljövänliga produkter till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös städfirma som levererar kvalitet och trygghet.
                     </p>
                     <div className="flex items-center justify-end mb-4">
                       <Link 
-                        href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-stadfirma" 
+                        href="/blogg/flyttstadning-vad-du-behover-veta" 
                         className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
                       >
                         Läs mer
