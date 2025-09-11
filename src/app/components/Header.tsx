@@ -220,7 +220,7 @@ export default function Header() {
                   }
                 }}
               >
-                <div className="relative h-12 w-24 md:h-20 md:w-96 mx-auto">
+                <div className="relative h-12 w-24 md:h-20 md:w-80 mx-auto">
                   <Image
                     src="/flyttella-logo.png"
                     alt="Flyttella Logo"
@@ -280,7 +280,7 @@ export default function Header() {
               </button>
             </div>
             {/* Desktop navigation and CTA (unchanged) */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               <nav className="flex items-center space-x-8">
                 
                 {/* Services Dropdown */}
@@ -477,19 +477,19 @@ export default function Header() {
 
 
 
-              {/* Quote Button Dropdown */}
-              <div className="relative">
-                {showQuoteButton && (
-                  <Link 
-                    href={getQuoteLink()}
-                    className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity flex items-center"
-                  >
-                    FÅ OFFERT
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                )}
+              {/* Quote Button - reserve space to avoid layout shift on appear */}
+              <div className="relative w-[160px] md:w-[180px] flex justify-center flex-shrink-0">
+                <Link 
+                  href={getQuoteLink()}
+                  className={`bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-2.5 rounded-full flex items-center transition-opacity duration-300 hover:opacity-90 ${showQuoteButton ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+                  aria-hidden={!showQuoteButton}
+                  tabIndex={showQuoteButton ? 0 : -1}
+                >
+                  FÅ OFFERT
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>

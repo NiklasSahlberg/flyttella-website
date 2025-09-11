@@ -216,7 +216,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/recommendedcompany2.png" alt="Rekommenderad flyttfirma" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
       
@@ -258,8 +258,8 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
-          <p class="text-sm text-gray-600 mt-2 text-center">Erfaren och professionell personal är avgörande för en smidig flytt</p>
+          <img src="/trygg-hansa-logo.png" alt="Trygg-Hansa försäkring" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Trygg-Hansa försäkring - viktigt för din trygghet vid flytt</p>
         </div>
       </div>
       
@@ -362,7 +362,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/malaga.jpg" alt="Destinationer" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/flyttella-logo.png" alt="Flyttella logo" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
       
@@ -609,7 +609,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/recommendedcompany2.png" alt="Rekommenderad flyttfirma" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
       

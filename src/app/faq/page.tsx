@@ -65,6 +65,48 @@ export default function FAQPage() {
         answer: "Du kan omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten. Vi förstår att saker kan hända och gör det enkelt för dig att ändra din bokning."
       }
     ],
+    "Vanliga frågor – Utlandsflytt": [
+      {
+        id: "utland-1",
+        question: "Vilka dokument behöver jag för utlandsflytt?",
+        answer: "Det varierar mellan länder, men vanligtvis behövs inventarielista (på engelska), kopia på pass, eventuella visum/uppehållstillstånd och försäkringsbrev. Vi guidar dig i vad som krävs för din destination."
+      },
+      {
+        id: "utland-2",
+        question: "Hur fungerar tull och införselregler?",
+        answer: "Tullregler skiljer sig åt per land. Personligt bohag för eget bruk är oftast tullfritt men måste förtullas korrekt. Vi hjälper dig med underlag och information om införselregler samt eventuella avgifter."
+      },
+      {
+        id: "utland-3",
+        question: "Är mina saker försäkrade under transporten?",
+        answer: "Ja, vi erbjuder transportförsäkring för internationella uppdrag. Vi rekommenderar även att du kontrollerar din hemförsäkring. Tillsammans säkerställer vi rätt skydd för ditt bohag under hela resan."
+      },
+      {
+        id: "utland-4",
+        question: "Hur lång tid tar en utlandsflytt?",
+        answer: "Leveranstid beror på sträcka, rutt, säsong och eventuella tullprocesser. Inom Norden/EU kan det ta från några dagar till ett par veckor. Vi ger alltid en tidsram i offerten."
+      },
+      {
+        id: "utland-5",
+        question: "Kan ni hjälpa till med packning och exportemballering?",
+        answer: "Ja, vi erbjuder professionell packning, exportemballering och specialskydd för känsliga föremål. Vi kan även hjälpa till med demontering/montering och uppackning på destinationen."
+      },
+      {
+        id: "utland-6",
+        question: "Vad får jag inte ta med mig?",
+        answer: "Farligt gods (t.ex. gas, brandfarliga vätskor), färskvaror samt vissa växt- och djurprodukter kan vara förbjudna. Reglerna skiljer sig per land – vi informerar dig om begränsningar för din rutt."
+      },
+      {
+        id: "utland-7",
+        question: "Hur prissätts en utlandsflytt?",
+        answer: "Priset baseras på volym/vikt, avstånd, tillgänglighet, tullhantering och tilläggstjänster som packning och magasinering. Begär en offert så återkommer vi med ett tydligt fast pris eller uppskattning."
+      },
+      {
+        id: "utland-8",
+        question: "Kan ni hjälpa till med magasinering före/efter flytten?",
+        answer: "Ja, vi erbjuder säker magasinering kort- eller långsiktigt både inför avresa och vid ankomst. Vi kan samordna hämtning/leverans enligt din tidsplan."
+      }
+    ],
     "Vanliga frågor – Städning": [
       {
         id: "stadning-1",
