@@ -253,8 +253,8 @@ export default function BemanningPage() {
 						<div className="max-w-6xl mx-auto relative">
 							{/* Sidebar service cards removed as requested */}
 
-							{/* Reco Widget - Positioned absolutely to the right (desktop) */}
-							<div className="hidden lg:block absolute -right-72 top-[14.25rem] w-72 z-40">
+										{/* Reco Widget - Positioned absolutely to the right (desktop) */}
+										<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[14.25rem] w-72 z-40 sidebar-widget">
 								<div className="sticky top-8">
 									<iframe src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5" className="w-full h-[1000px] border-0" title="Flyttella recensioner" />
 								</div>
@@ -385,7 +385,7 @@ export default function BemanningPage() {
 					/>
 					
 					{/* Centered content */}
-					<div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
+					<div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60 om-oss-container">
 						<motion.div
 							initial="initial"
 							whileInView="animate"
@@ -403,7 +403,7 @@ export default function BemanningPage() {
 								</div>
 							</div>
 
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60">Om Flyttella</h3>
+							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">Om Flyttella</h3>
 
 							<div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
 								{/* Left: Image - desktop only */}

@@ -907,14 +907,14 @@ export default function Home() {
           </div>
 
           {/* Centered content */}
-          <div className="relative z-40 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60">
+          <div className="relative z-40 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60 om-oss-container">
 
             <motion.div
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60">{t('about.title')}</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">{t('about.title')}</h3>
               
               {/* Text content only - image moved outside section on mobile */}
               <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">

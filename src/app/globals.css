@@ -133,9 +133,54 @@ body {
 .main-zoom {
   zoom: 0.75;
 }
-@media (min-width: 1536px) {
+@media (min-width: 1440px) {
   .main-zoom {
     zoom: 1;
+  }
+}
+
+/* Responsive margin adjustments for Om oss section on medium-large screens */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .om-oss-container {
+    margin-right: 5rem !important;
+  }
+  
+  .om-oss-title {
+    margin-right: 5rem !important;
+  }
+}
+
+/* Responsive sidebar positioning for MacBook 13-inch and similar screens */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  /* Prevent horizontal scrolling on MacBook */
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  .sidebar-widget {
+    right: -16rem !important; /* Move from -18rem to -12rem */
+  }
+  
+  .sidebar-widget.w-72 {
+    width: 10rem !important; /* Make review widget narrower but still wide enough */
+    right: calc(-16rem + 97px) !important; /* Move 10px to the right */
+  }
+  
+  .sidebar-widget.w-64 {
+    width: 16rem !important; /* Keep original w-64 width */
+    right: calc(-16rem - 10px) !important; /* Move to the right to fit */
+  }
+  
+  /* Adjust iframe height and width for review widget only */
+  .sidebar-widget.w-72 iframe {
+    height: 1000px !important; /* More reasonable height */
+    width: 18rem !important; /* Match the widget width */
+  }
+  
+  /* Ensure header navigation items stay in one row on MacBook */
+  .header-nav-link {
+    white-space: nowrap !important;
+    font-size: 0.875rem !important; /* Slightly smaller text */
   }
 }
 

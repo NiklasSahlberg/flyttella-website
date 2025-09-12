@@ -350,7 +350,7 @@ export default function PianoTunglyftPage() {
 					/>
 					
 					{/* Centered content */}
-					<div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
+					<div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60 om-oss-container">
 						<motion.div
 							initial="initial"
 							whileInView="animate"
@@ -368,7 +368,7 @@ export default function PianoTunglyftPage() {
           </div>
         </div>
 
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60">Om Flyttella</h3>
+							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">Om Flyttella</h3>
 
 							<div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
 								{/* Left: Image - desktop only */}

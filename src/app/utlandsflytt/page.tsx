@@ -137,14 +137,14 @@ export default function Utlandsflytt() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               {/* Reco Widget - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 top-[22rem] w-72">
+              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[22rem] w-72 sidebar-widget">
                 <div className="sticky top-8">
                   <iframe src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5" className="w-full h-[1000px] border-0" title="Flyttella recensioner" />
                 </div>
               </div>
 
               {/* Sidebar Service Cards */}
-              <div className="hidden lg:block absolute -right-72 top-[1595px] w-64">
+              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1595px] w-64 sidebar-widget">
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
@@ -154,7 +154,7 @@ export default function Utlandsflytt() {
                   </div>
                 </div>
               </div>
-              <div className="hidden lg:block absolute -right-72 top-[1880px] w-64">
+              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1880px] w-64 sidebar-widget">
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
@@ -164,7 +164,7 @@ export default function Utlandsflytt() {
                   </div>
                 </div>
               </div>
-              <div className="hidden lg:block absolute -right-72 top-[2140px] w-64">
+              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[2140px] w-64 sidebar-widget">
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
@@ -216,7 +216,7 @@ export default function Utlandsflytt() {
           <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{ zIndex: 1 }} />
           <div className="absolute top-0 left-0 w-full h-16 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)' }} />
           <div className="absolute bottom-0 left-0 w-full h-16 z-30 pointer-events-none" style={{ background: 'linear-gradient(to top, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)' }} />
-          <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
+          <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60 om-oss-container">
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
               {/* Mobile image above title to match Bohagsflytt */}
               <div className="lg:hidden px-4 mb-6 -mx-8">
@@ -225,7 +225,7 @@ export default function Utlandsflytt() {
                 </div>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60">Om Flyttella</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">Om Flyttella</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
                 {/* Left image desktop */}
                 <motion.div className="hidden lg:block w-full lg:w-1/5 relative lg:-ml-16 lg:pr-16" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.2 }}>

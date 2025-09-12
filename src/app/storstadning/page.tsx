@@ -169,7 +169,7 @@ export default function StorstadningPage() {
             <div className="max-w-6xl mx-auto relative">
               <motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
                 {/* Sidebar service cards (desktop) */}
-                <div className="hidden lg:block absolute -right-72 top-[1385px] w-64">
+                <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1385px] w-64 sidebar-widget">
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
@@ -181,7 +181,7 @@ export default function StorstadningPage() {
                     </div>
                   </div>
                 </div>
-                <div className="hidden lg:block absolute -right-72 top-[1570px] w-64">
+                <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1570px] w-64 sidebar-widget">
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
@@ -193,7 +193,7 @@ export default function StorstadningPage() {
                     </div>
                   </div>
                 </div>
-                <div className="hidden lg:block absolute -right-72 top-[1830px] w-64">
+                <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1830px] w-64 sidebar-widget">
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
@@ -206,7 +206,7 @@ export default function StorstadningPage() {
                   </div>
                 </div>
                 {/* Reco Widget - Positioned absolutely to the right (desktop) */}
-                <div className="hidden lg:block absolute -right-72 top-[12rem] w-72 z-40">
+                <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[12rem] w-72 z-40 sidebar-widget">
                   <div className="sticky top-8">
                     <iframe src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5" className="w-full h-[1000px] border-0" title="Flyttella recensioner" />
                   </div>

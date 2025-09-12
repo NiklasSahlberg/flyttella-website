@@ -395,7 +395,7 @@ export default function Header() {
                           <span className="text-lg mr-3">🚧</span>
                           <span>Byggstädning</span>
                         </Link>
-                        <Link href="/storstädning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
+                        <Link href="/storstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🧽</span>
                           <span>Storstädning</span>
                         </Link>
@@ -469,7 +469,7 @@ export default function Header() {
                     </div>
                   )}
                 </div>
-                <Link href="/om-oss" className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide">{t('header.about')}</Link>
+                <Link href="/om-oss" className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide header-nav-link">{t('header.about')}</Link>
                 <Link href="/faq" className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide">{t('header.faq')}</Link>
                 <Link href="/blogg" className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide">{t('header.blog')}</Link>
                 <Link href="/kontakt" className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide">{t('header.contact')}</Link>

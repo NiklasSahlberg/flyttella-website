@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import StadningOffertForm from './StadningOffertForm';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Interfaces
 interface HeavyItem {
@@ -140,6 +141,7 @@ interface FlyttoffertFormProps {
 }
 
 export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle, defaultCustomerType = 'privat' }: FlyttoffertFormProps) {
+  const { t } = useLanguage();
   const [step, setStep] = useState(0);
   const [showSteps, setShowSteps] = useState(false);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
@@ -761,17 +763,21 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             <>
           <h1 className="text-2xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-8 md:mb-2 leading-tight">
             <span className="md:hidden">
-              Välj tjänst<br />
-              för att komma igång<br />
-              med en kostnadsfri offert<br />
-              inom en minut!
+              {t('hero.formSubtitleMobile').split(' ').map((word, index, array) => (
+                <React.Fragment key={index}>
+                  {word}
+                  {index < array.length - 1 && (
+                    index === 1 || index === 3 || index === 6 ? <br /> : ' '
+                  )}
+                </React.Fragment>
+              ))}
             </span>
             <span className="hidden md:inline">
-              Välj tjänst för att komma igång med en kostnadsfri offert med ett fast pris
+              {t('hero.formSubtitle')}
             </span>
           </h1>
           <h2 className="text-lg md:text-xl font-extrabold text-center text-gray-700 mb-8 hidden md:block">
-            Vi återkommer inom en minut!
+            {t('hero.responseTime')}
           </h2>
             </>
           )}
@@ -906,10 +912,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       >
                         <div className="flex flex-col items-center text-center">
                           <span className="text-3xl md:text-5xl mb-3 md:mb-5">✨</span>
-                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{swapServiceOrder ? 'Städtjänster' : 'Flyttstäd'}</h3>
+                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{swapServiceOrder ? t('hero.services.stadning') : t('hero.services.flyttstad')}</h3>
                           <p className="text-base md:text-lg opacity-90">
-                            <span className="md:hidden">Komplett Städservice</span>
-                            <span className="hidden md:inline">Professionell flyttstädning för att lämna din gamla bostad i perfekt skick</span>
+                            <span className="md:hidden">{t('hero.services.stadningDesc')}</span>
+                            <span className="hidden md:inline">{t('hero.services.flyttstadDesc')}</span>
                           </p>
                         </div>
                       </motion.div>
@@ -928,10 +934,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       >
                         <div className="flex flex-col items-center text-center">
                           <span className="text-3xl md:text-5xl mb-3 md:mb-5">🏠</span>
-                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">Flytt</h3>
+                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{t('hero.services.flytt')}</h3>
                           <p className="text-base md:text-lg opacity-90">
-                            <span className="md:hidden">Komplett Flyttservice</span>
-                            <span className="hidden md:inline">Komplett flyttservice med professionell packning, transport och uppackning</span>
+                            <span className="md:hidden">{t('hero.services.flyttDesc')}</span>
+                            <span className="hidden md:inline">{t('hero.services.flyttDesc')}</span>
                           </p>
                         </div>
                       </motion.div>
@@ -953,10 +959,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       >
                         <div className="flex flex-col items-center text-center">
                           <span className="text-3xl md:text-5xl mb-3 md:mb-5">🏠</span>
-                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">Flytt</h3>
+                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{t('hero.services.flytt')}</h3>
                           <p className="text-base md:text-lg opacity-90">
-                            <span className="md:hidden">Komplett Flyttservice</span>
-                            <span className="hidden md:inline">Komplett flyttservice med professionell packning, transport och uppackning</span>
+                            <span className="md:hidden">{t('hero.services.flyttDesc')}</span>
+                            <span className="hidden md:inline">{t('hero.services.flyttDesc')}</span>
                           </p>
                         </div>
                       </motion.div>
@@ -975,10 +981,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       >
                         <div className="flex flex-col items-center text-center">
                           <span className="text-3xl md:text-5xl mb-3 md:mb-5">✨</span>
-                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{swapServiceOrder ? 'Städtjänster' : 'Städ'}</h3>
+                          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{swapServiceOrder ? t('hero.services.stadning') : t('hero.services.stad')}</h3>
                           <p className="text-base md:text-lg opacity-90">
-                            <span className="md:hidden">Komplett Städservice</span>
-                            <span className="hidden md:inline">{cleaningCardSubtitle ?? 'Komplett städservice med professionell städning för alla behov'}</span>
+                            <span className="md:hidden">{t('hero.services.stadningDesc')}</span>
+                            <span className="hidden md:inline">{cleaningCardSubtitle ?? t('hero.services.stadningDesc')}</span>
                           </p>
                         </div>
                       </motion.div>
@@ -1055,19 +1061,19 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   className={`px-6 py-2 rounded-l-lg border border-[#10B981] text-lg font-semibold focus:outline-none transition-colors duration-200 ${formData.customerType === 'privat' ? 'bg-[#10B981] text-white' : 'bg-white text-[#10B981]'}`}
                   onClick={() => setFormData(prev => ({ ...prev, customerType: 'privat' }))}
                 >
-                  Privat
+                  {t('hero.buttons.privat')}
                 </button>
                 <button
                   type="button"
                   className={`px-6 py-2 rounded-r-lg border border-[#10B981] text-lg font-semibold focus:outline-none transition-colors duration-200 -ml-px ${formData.customerType === 'foretag' ? 'bg-[#10B981] text-white' : 'bg-white text-[#10B981]'}`}
                   onClick={() => setFormData(prev => ({ ...prev, customerType: 'foretag' }))}
                 >
-                  Företag
+                  {t('hero.buttons.foretag')}
                 </button>
               </div>
-              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Flyttinformation</h2>
+              <h2 className="text-2xl font-bold text-[#0F172A] mb-6">{t('hero.form.title')}</h2>
               <div>
-                                  <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Önskat flyttdatum</strong></label>
+                                  <label className="block text-lg font-medium text-gray-700 mb-2"><strong>{t('hero.form.desiredMovingDate')}</strong></label>
                 <input
                   type="date"
                   name="movingDate"
@@ -1113,30 +1119,30 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
                   />
                   <label className="ml-2 text-lg text-gray-700">
-                    Jag är flexibel med flyttdatum
+                    {t('hero.form.flexibleWithDate')}
                   </label>
                 </div>
                 {formData.wantsFlexibleDate && (
                   <div>
-                    <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Flexibelt flyttdatum</strong></label>
+                    <label className="block text-lg font-medium text-gray-700 mb-2"><strong>{t('hero.form.flexibleMovingDate')}</strong></label>
                     <select
                       name="flexibleMovingDate"
                       value={formData.flexibleMovingDate}
                       onChange={handleInputChange}
                       className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg bg-white appearance-none${errors.flexibleMovingDate ? " border-red-500" : " border-gray-300"}`}
                     >
-                      <option value="">-- Välj --</option>
-                      <option value="1">+ 1 dag</option>
-                      <option value="2">+ 2 dagar</option>
-                      <option value="3">+ 3 dagar</option>
-                      <option value="4">+ 4 dagar</option>
-                      <option value="5">+ 5 dagar</option>
-                      <option value="6">+ 6 dagar</option>
-                      <option value="7">+ 1 vecka</option>
-                      <option value="14">+ 2 veckor</option>
-                      <option value="21">+ 3 veckor</option>
-                      <option value="30">+ 1 månad</option>
-                      <option value="31+">+ mer än 1 månad</option>
+                      <option value="">{t('hero.form.select')}</option>
+                      <option value="1">{t('hero.form.options.flexibleDate.1')}</option>
+                      <option value="2">{t('hero.form.options.flexibleDate.2')}</option>
+                      <option value="3">{t('hero.form.options.flexibleDate.3')}</option>
+                      <option value="4">{t('hero.form.options.flexibleDate.4')}</option>
+                      <option value="5">{t('hero.form.options.flexibleDate.5')}</option>
+                      <option value="6">{t('hero.form.options.flexibleDate.6')}</option>
+                      <option value="7">{t('hero.form.options.flexibleDate.7')}</option>
+                      <option value="14">{t('hero.form.options.flexibleDate.14')}</option>
+                      <option value="21">{t('hero.form.options.flexibleDate.21')}</option>
+                      <option value="30">{t('hero.form.options.flexibleDate.30')}</option>
+                      <option value="31+">{t('hero.form.options.flexibleDate.31plus')}</option>
                     </select>
                     {errors.flexibleMovingDate && (
                       <p className="mt-1 text-base text-red-600">{errors.flexibleMovingDate}</p>
@@ -1150,7 +1156,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
               {/* Packing help question */}
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">
-                  <strong>{formData.customerType === 'foretag' ? 'Vill ni ha hjälp med packning?' : 'Vill du ha hjälp med packning?'}</strong>
+                  <strong>{formData.customerType === 'foretag' ? t('hero.form.packingHelpBusiness') : t('hero.form.packingHelp')}</strong>
                 </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
@@ -1204,7 +1210,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
               {/* Storage question */}
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">
-                  <strong>{formData.customerType === 'foretag' ? 'Behöver ni magasinering?' : 'Behöver du magasinering?'}</strong>
+                  <strong>{formData.customerType === 'foretag' ? t('hero.form.storageBusiness') : t('hero.form.storage')}</strong>
                 </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
@@ -1258,7 +1264,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
               {/* Cleaning question */}
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">
-                  <strong>{formData.customerType === 'foretag' ? 'Vill ni ha flyttstädning?' : 'Vill du ha flyttstädning?'}</strong>
+                  <strong>{formData.customerType === 'foretag' ? t('hero.form.cleaningBusiness') : t('hero.form.cleaning')}</strong>
                 </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
@@ -1298,7 +1304,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
               {/* Disposal question */}
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">
-                  <strong>{formData.customerType === 'foretag' ? 'Vill ni ha bortforsling?' : 'Vill du ha bortforsling?'}</strong>
+                  <strong>{formData.customerType === 'foretag' ? t('hero.form.disposalBusiness') : t('hero.form.disposal')}</strong>
                 </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
@@ -1354,14 +1360,14 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     onClick={handleBackToServiceSelection}
                     className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
                   >
-                    Tillbaka
+                    {t('hero.buttons.tillbaka')}
                   </button>
                 <button
                   type="button"
                   onClick={nextStep}
                   className="px-6 py-3 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-lg hover:opacity-90 transition-opacity"
                 >
-                  Nästa
+                  {t('hero.buttons.nasta')}
                 </button>
               </div>
             </div>
@@ -1377,7 +1383,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
-                    <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Nuvarande adress</strong></label>
+                    <label className="block text-lg font-medium text-gray-700 mb-2"><strong>{t('hero.form.currentAddress')}</strong></label>
                     <div className="relative">
                       <input
                         type="text"
@@ -1400,7 +1406,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           // Delay hiding suggestions to allow for selection
                           setTimeout(() => setShowCurrentSuggestions(false), 200);
                         }}
-                        placeholder="Börja skriva din adress"
+                        placeholder={t('hero.form.placeholders.startTypingAddress')}
                         required
                         className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg ${
                           errors.currentAddress 
@@ -1419,12 +1425,12 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
                           {isLoadingCurrentSuggestions && (
                             <div className="p-4 text-center text-gray-500">
-                              Söker adresser...
+                              {t('hero.form.searchingAddresses')}
                             </div>
                           )}
                           {!isLoadingCurrentSuggestions && currentAddressSuggestions.length === 0 && formData.currentAddress.length >= 2 && (
                             <div className="p-4 text-center text-gray-500">
-                              Inga adresser hittades
+                              {t('hero.form.noAddressesFound')}
                             </div>
                           )}
                           {!isLoadingCurrentSuggestions && currentAddressSuggestions.map((suggestion, index) => (
@@ -1474,7 +1480,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     )}
                   </div>
                   <div className="md:w-1/4">
-                    <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Gatunr.</strong></label>
+                    <label className="block text-lg font-medium text-gray-700 mb-2"><strong>{t('hero.form.streetNumber')}</strong></label>
                     <input
                       type="text"
                       name="apartmentNumber"
@@ -1514,7 +1520,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   </div>
                 </div>
                 <div>
-                  <label className="block text-lg font-medium text-gray-700 mb-2"><strong>Postnummer</strong></label>
+                  <label className="block text-lg font-medium text-gray-700 mb-2"><strong>{t('hero.form.postalCode')}</strong></label>
                   <input
                     type="text"
                     name="postalCode"
@@ -1537,7 +1543,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 <div>
                                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Lokalens storlek (kvm)' : 'Bostadens storlek (kvm)'}</strong>
+                      <strong>{formData.customerType === 'foretag' ? t('hero.form.apartmentSizeBusiness') : t('hero.form.apartmentSize')}</strong>
                     </label>
                   <input
                     type="text"
@@ -1575,7 +1581,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 {((formData.customerType as string) === 'foretag') && (
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>Hur många arbetsplatser finns det?</strong>
+                      <strong>{t('hero.form.workplaceCount')}</strong>
                     </label>
                     <input
                       type="text"
@@ -1587,7 +1593,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         setFormData(prev => ({ ...prev, workplaceCount: value }));
                         setErrors(prev => ({ ...prev, workplaceCount: "" }));
                       }}
-                      placeholder="Ange antal"
+                      placeholder={t('hero.form.enterCount')}
                       required
                       className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A]${errors.workplaceCount ? " border-red-500" : ""}`}
                     />
@@ -1599,7 +1605,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 {((formData.customerType as string) !== 'foretag') && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>Typ av bostad</strong>
+                      <strong>{t('hero.form.typeOfHome')}</strong>
                     </label>
                   <select
                     name="typeOfHome"
@@ -1609,12 +1615,12 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none${errors.typeOfHome ? " border-red-500" : ""}`}
                   >
                     <option value="">-- Välj --</option>
-                    <option value="lagenhet">Lägenhet</option>
-                    <option value="villa">Villa</option>
-                    <option value="parhus">Parhus</option>
-                    <option value="radhus">Radhus</option>
-                    <option value="fritidshus">Fritidshus</option>
-                    <option value="magasin">Magasin</option>
+                    <option value="lagenhet">{t('hero.form.options.apartment')}</option>
+                    <option value="villa">{t('hero.form.options.house')}</option>
+                    <option value="parhus">{t('hero.form.options.rowHouse')}</option>
+                    <option value="radhus">{t('hero.form.options.townhouse')}</option>
+                    <option value="fritidshus">{t('hero.form.options.vacationHome')}</option>
+                    <option value="magasin">{t('hero.form.options.storage')}</option>
                   </select>
                   {errors.typeOfHome && (
                     <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
@@ -1628,7 +1634,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   onClick={prevStep}
                   className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
                 >
-                  Tillbaka
+                  {t('hero.buttons.tillbaka')}
                 </button>
                 <button
                   type="button"
@@ -1643,13 +1649,13 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             {showSteps && step === 3 && (
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-                {formData.customerType === 'foretag' ? 'Nuvarande företagsadress' : 'Nuvarande adress'}
+                {formData.customerType === 'foretag' ? t('hero.form.currentBusinessAddress') : t('hero.form.currentAddressStep3')}
               </h2>
               <div className="space-y-6">
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.typeOfHome === 'lagenhet')) ? (
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}</strong>
+                      <strong>{formData.customerType === 'foretag' ? t('hero.form.floorBusiness') : t('hero.form.floor')}</strong>
                     </label>
                   <select
                     name="floor"
@@ -1664,15 +1670,15 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     }`}
                   >
                     <option value="">-- Välj --</option>
-                    <option value="-2">Våning -2</option>
-                    <option value="-1">Våning -1</option>
-                    <option value="entreplan">Entréplan</option>
-                    <option value="1">Våning 1</option>
-                    <option value="2">Våning 2</option>
-                    <option value="3">Våning 3</option>
-                    <option value="4">Våning 4</option>
-                    <option value="5">Våning 5</option>
-                    <option value="6+">Våning 6 eller högre</option>
+                    <option value="-2">{t('hero.form.options.floor.minus2')}</option>
+                    <option value="-1">{t('hero.form.options.floor.minus1')}</option>
+                    <option value="entreplan">{t('hero.form.options.floor.ground')}</option>
+                    <option value="1">{t('hero.form.options.floor.1')}</option>
+                    <option value="2">{t('hero.form.options.floor.2')}</option>
+                    <option value="3">{t('hero.form.options.floor.3')}</option>
+                    <option value="4">{t('hero.form.options.floor.4')}</option>
+                    <option value="5">{t('hero.form.options.floor.5')}</option>
+                    <option value="6+">{t('hero.form.options.floor.6plus')}</option>
                   </select>
                   {errors.floor && (
                     <p className="mt-1 text-sm text-red-600">{errors.floor}</p>
@@ -1681,7 +1687,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 ) : (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.typeOfHome === 'magasin' ? 'Vilken våning ligger magasinet på?' : 'Antal våningar'}</strong>
+                      <strong>{formData.typeOfHome === 'magasin' ? t('hero.form.floorStorage') : t('hero.form.floors')}</strong>
                     </label>
                     <select
                       name="floor"
@@ -1724,7 +1730,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && (formData.typeOfHome === 'lagenhet' || formData.typeOfHome === 'magasin'))) && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Finns hiss i byggnaden?</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.elevatorInBuilding')}</strong></label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -1738,7 +1744,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           }}
                           className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                         />
-                        <span className="ml-2 text-sm text-gray-700">Ja</span>
+                        <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.yes')}</span>
                       </label>
                       <label className="flex items-center">
                         <input
@@ -1752,7 +1758,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           }}
                           className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                         />
-                        <span className="ml-2 text-sm text-gray-700">Nej</span>
+                        <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.no')}</span>
                       </label>
                     </div>
                     {errors.hasElevator && (
@@ -1762,7 +1768,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
                 {formData.hasElevator === "yes" && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Hisstorlek</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.elevatorSize')}</strong></label>
                     <select
                       name="elevatorSize"
                       value={formData.elevatorSize}
@@ -1778,14 +1784,14 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       <option value="">-- Välj --</option>
                       {(formData.customerType === 'foretag' || (formData.customerType === 'privat' && formData.typeOfHome === 'magasin')) ? (
                         <>
-                          <option value="small">Liten (2-4 personer)</option>
-                          <option value="medium">Mellanstor (6-8 personer)</option>
-                          <option value="large">Stor (10+ personer)</option>
+                          <option value="small">{t('hero.form.options.elevator.small')}</option>
+                          <option value="medium">{t('hero.form.options.elevator.medium')}</option>
+                          <option value="large">{t('hero.form.options.elevator.large')}</option>
                         </>
                       ) : (
                         <>
-                      <option value="small">Liten (2-4 personer)</option>
-                      <option value="large">Stor (6+ personer)</option>
+                      <option value="small">{t('hero.form.options.elevator.small')}</option>
+                      <option value="large">{t('hero.form.options.elevator.largeResidential')}</option>
                         </>
                       )}
                     </select>
@@ -1797,10 +1803,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
                 <div>
                                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Avstånd till lastningsplats (meter)' : 'Avstånd till lastningsplats (meter)'}</strong>
+                      <strong>{t('hero.form.loadingDistance')}</strong>
                     </label>
                   <p className="text-sm text-gray-600 mb-2">
-                    {formData.customerType === 'foretag' ? 'Den närmaste punkt en flyttbil kan stå vid er lokal under lastning och lossning' : 'Den närmaste punkt en flyttbil kan stå under lastning och lossning'}
+                    {formData.customerType === 'foretag' ? t('hero.form.loadingDistanceDescription') : t('hero.form.loadingDistanceDescriptionPrivate')}
                   </p>
                   <input
                     type="text"
@@ -1842,7 +1848,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
                 <div>
                                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Har ni vind?' : 'Har du vind?'}</strong>
+                      <strong>{formData.customerType === 'foretag' ? t('hero.form.hasAtticBusiness') : t('hero.form.hasAttic')}</strong>
                     </label>
                   <div className="flex gap-6">
                     <label className="flex items-center">
@@ -1923,7 +1929,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
                 <div>
                                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Har ni källarförråd?' : 'Har du källarförråd?'}</strong>
+                      <strong>{formData.customerType === 'foretag' ? t('hero.form.hasStorageRoomBusiness') : t('hero.form.hasStorageRoom')}</strong>
                     </label>
                   <div className="flex gap-6">
                     <label className="flex items-center">
@@ -2006,7 +2012,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
                 <div>
                                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Har ni garage?' : 'Har du garage?'}</strong>
+                      <strong>{formData.customerType === 'foretag' ? t('hero.form.hasGarageBusiness') : t('hero.form.hasGarage')}</strong>
                     </label>
                   <div className="flex gap-6">
                     <label className="flex items-center">
@@ -2089,7 +2095,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
                 {((formData.customerType as string) === 'foretag') && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Finns lastkaj i byggnaden?</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.hasLoadingDock')}</strong></label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -2123,7 +2129,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   onClick={prevStep}
                   className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
                 >
-                  Tillbaka
+                  {t('hero.buttons.tillbaka')}
                 </button>
                 <button
                   type="button"
@@ -2138,15 +2144,15 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             {showSteps && step === 4 && (
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-                {formData.customerType === 'foretag' ? 'Ny företagsadress' : 'Ny adress'}
+                {formData.customerType === 'foretag' ? t('hero.form.newBusinessAddress') : t('hero.form.newAddressStep4')}
               </h2>
               <p className="text-sm text-gray-700 mb-6">
-                {formData.customerType === 'foretag' ? 'Information om er nya lokal' : 'Information om din nya bostad'}
+                {formData.customerType === 'foretag' ? t('hero.form.newBusinessInfo') : t('hero.form.newAddressInfo')}
               </p>
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Ny adress</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.newAddress')}</strong></label>
                     <div className="relative">
                       <input
                         type="text"
@@ -2168,7 +2174,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           // Delay hiding suggestions to allow for selection
                           setTimeout(() => setShowNewSuggestions(false), 200);
                         }}
-                        placeholder="Börja skriva din adress"
+                        placeholder={t('hero.form.placeholders.startTypingAddress')}
                         required
                         className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
                           errors.newAddress 
@@ -2187,12 +2193,12 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
                           {isLoadingNewSuggestions && (
                             <div className="p-4 text-center text-gray-500">
-                              Söker adresser...
+                              {t('hero.form.searchingAddresses')}
                             </div>
                           )}
                           {!isLoadingNewSuggestions && newAddressSuggestions.length === 0 && formData.newAddress.length >= 2 && (
                             <div className="p-4 text-center text-gray-500">
-                              Inga adresser hittades
+                              {t('hero.form.noAddressesFound')}
                             </div>
                           )}
                           {!isLoadingNewSuggestions && newAddressSuggestions.map((suggestion, index) => (
@@ -2242,7 +2248,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     )}
                   </div>
                   <div className="md:w-1/4">
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Gatunr.</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.streetNumber')}</strong></label>
                     <input
                       type="text"
                       name="toApartmentNumber"
@@ -2282,7 +2288,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Postnummer</strong></label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.postalCode')}</strong></label>
                   <input
                     type="text"
                     name="toPostalCode"
@@ -2305,7 +2311,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <strong>{formData.customerType === 'foretag' ? 'Lokalens storlek (kvm)' : 'Bostadens storlek (kvm)'}</strong>
+                    <strong>{formData.customerType === 'foretag' ? t('hero.form.apartmentSizeBusiness') : t('hero.form.apartmentSize')}</strong>
                   </label>
                   <input
                     type="text"
@@ -2343,7 +2349,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 {((formData.customerType as string) !== 'foretag') && (
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>Typ av bostad</strong>
+                      <strong>{t('hero.form.typeOfHome')}</strong>
                     </label>
                   <select
                     name="toTypeOfHome"
@@ -2352,13 +2358,13 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     required
                     className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none${errors.toTypeOfHome ? " border-red-500" : ""}`}
                   >
-                    <option value="">-- Välj --</option>
-                    <option value="lagenhet">Lägenhet</option>
-                    <option value="villa">Villa</option>
-                    <option value="parhus">Parhus</option>
-                    <option value="radhus">Radhus</option>
-                    <option value="fritidshus">Fritidshus</option>
-                    <option value="magasin">Magasin</option>
+                    <option value="">{t('hero.form.select')}</option>
+                    <option value="lagenhet">{t('hero.form.options.apartment')}</option>
+                    <option value="villa">{t('hero.form.options.house')}</option>
+                    <option value="parhus">{t('hero.form.options.rowHouse')}</option>
+                    <option value="radhus">{t('hero.form.options.townhouse')}</option>
+                    <option value="fritidshus">{t('hero.form.options.vacationHome')}</option>
+                    <option value="magasin">{t('hero.form.options.storage')}</option>
                   </select>
                   {errors.toTypeOfHome && (
                     <p className="mt-1 text-sm text-red-600">{errors.toTypeOfHome}</p>
@@ -2372,7 +2378,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   onClick={prevStep}
                   className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
                 >
-                  Tillbaka
+                  {t('hero.buttons.tillbaka')}
                 </button>
                 <button
                   type="button"
@@ -2387,13 +2393,13 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             {showSteps && step === 5 && (
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-                {formData.customerType === 'foretag' ? 'Ny företagsadress' : 'Ny adress'}
+                {formData.customerType === 'foretag' ? t('hero.form.newBusinessAddress') : t('hero.form.newAddressStep4')}
               </h2>
               <div className="space-y-6">
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'lagenhet')) ? (
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'På vilken våning ligger lokalen?' : 'På vilken våning ligger lägenheten?'}</strong>
+                      <strong>{formData.customerType === 'foretag' ? t('hero.form.floorBusiness') : t('hero.form.floor')}</strong>
                     </label>
                   <select
                     name="toFloor"
@@ -2407,16 +2413,16 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       errors.toFloor ? "border-red-500" : ""
                     }`}
                   >
-                    <option value="">-- Välj --</option>
-                    <option value="-2">Våning -2</option>
-                    <option value="-1">Våning -1</option>
-                    <option value="entreplan">Entréplan</option>
-                    <option value="1">Våning 1</option>
-                    <option value="2">Våning 2</option>
-                    <option value="3">Våning 3</option>
-                    <option value="4">Våning 4</option>
-                    <option value="5">Våning 5</option>
-                    <option value="6+">Våning 6 eller högre</option>
+                    <option value="">{t('hero.form.select')}</option>
+                    <option value="-2">{t('hero.form.options.floor.minus2')}</option>
+                    <option value="-1">{t('hero.form.options.floor.minus1')}</option>
+                    <option value="entreplan">{t('hero.form.options.floor.ground')}</option>
+                    <option value="1">{t('hero.form.options.floor.1')}</option>
+                    <option value="2">{t('hero.form.options.floor.2')}</option>
+                    <option value="3">{t('hero.form.options.floor.3')}</option>
+                    <option value="4">{t('hero.form.options.floor.4')}</option>
+                    <option value="5">{t('hero.form.options.floor.5')}</option>
+                    <option value="6+">{t('hero.form.options.floor.6plus')}</option>
                   </select>
                   {errors.toFloor && (
                     <p className="mt-1 text-sm text-red-600">{errors.toFloor}</p>
@@ -2425,7 +2431,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 ) : (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.toTypeOfHome === 'magasin' ? 'Vilken våning ligger magasinet på?' : 'Antal våningar'}</strong>
+                      <strong>{formData.toTypeOfHome === 'magasin' ? t('hero.form.floorStorage') : t('hero.form.floors')}</strong>
                     </label>
                     <select
                       name="toFloor"
@@ -2439,7 +2445,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         errors.toFloor ? "border-red-500" : ""
                       }`}
                     >
-                      <option value="">-- Välj --</option>
+                      <option value="">{t('hero.form.select')}</option>
                       {formData.toTypeOfHome === 'magasin' ? (
                         <>
                           <option value="-2">Våning -2</option>
@@ -2468,7 +2474,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
                 {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && (formData.toTypeOfHome === 'lagenhet' || formData.toTypeOfHome === 'magasin'))) && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Finns hiss i byggnaden?</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.elevatorInBuilding')}</strong></label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -2482,7 +2488,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           }}
                           className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                         />
-                        <span className="ml-2 text-sm text-gray-700">Ja</span>
+                        <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.yes')}</span>
                       </label>
                       <label className="flex items-center">
                         <input
@@ -2496,7 +2502,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           }}
                           className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                         />
-                        <span className="ml-2 text-sm text-gray-700">Nej</span>
+                        <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.no')}</span>
                       </label>
                     </div>
                     {errors.toHasElevator && (
@@ -2506,7 +2512,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
                 {formData.toHasElevator === "yes" && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Hisstorlek</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.elevatorSize')}</strong></label>
                     <select
                       name="toElevatorSize"
                       value={formData.toElevatorSize}
@@ -2519,17 +2525,17 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         errors.toElevatorSize ? "border-red-500" : ""
                       }`}
                     >
-                      <option value="">-- Välj --</option>
+                      <option value="">{t('hero.form.select')}</option>
                       {(formData.customerType === 'foretag' || (formData.customerType === 'privat' && formData.typeOfHome === 'magasin')) ? (
                         <>
-                          <option value="small">Liten (2-4 personer)</option>
-                          <option value="medium">Mellanstor (6-8 personer)</option>
-                          <option value="large">Stor (10+ personer)</option>
+                          <option value="small">{t('hero.form.options.elevator.small')}</option>
+                          <option value="medium">{t('hero.form.options.elevator.medium')}</option>
+                          <option value="large">{t('hero.form.options.elevator.large')}</option>
                         </>
                       ) : (
                         <>
-                      <option value="small">Liten (2-4 personer)</option>
-                      <option value="large">Stor (6+ personer)</option>
+                      <option value="small">{t('hero.form.options.elevator.small')}</option>
+                      <option value="large">{t('hero.form.options.elevator.largeResidential')}</option>
                         </>
                       )}
                     </select>
@@ -2540,10 +2546,10 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <strong>{formData.customerType === 'foretag' ? 'Avstånd till lossningsplats (meter)' : 'Avstånd till lossningsplats (meter)'}</strong>
+                    <strong>{t('hero.form.unloadingDistance')}</strong>
                   </label>
                   <p className="text-sm text-gray-600 mb-2">
-                    {formData.customerType === 'foretag' ? 'Den närmaste punkt en flyttbil kan stå vid er lokal under lastning och lossning' : 'Den närmaste punkt en flyttbil kan stå under lastning och lossning'}
+                    {formData.customerType === 'foretag' ? t('hero.form.loadingDistanceDescription') : t('hero.form.loadingDistanceDescriptionPrivate')}
                   </p>
                   <input
                     type="text"
@@ -2584,7 +2590,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 {((formData.customerType as string) === 'foretag') && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Finns lastkaj i byggnaden?</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.hasLoadingDock')}</strong></label>
                     <div className="flex gap-6">
                       <label className="flex items-center">
                         <input
@@ -2595,7 +2601,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           onChange={() => setFormData(prev => ({ ...prev, toHasLoadingDock: "yes" }))}
                           className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                         />
-                        <span className="ml-2 text-sm text-gray-700">Ja</span>
+                        <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.yes')}</span>
                       </label>
                       <label className="flex items-center">
                         <input
@@ -2606,7 +2612,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           onChange={() => setFormData(prev => ({ ...prev, toHasLoadingDock: "no" }))}
                           className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                         />
-                        <span className="ml-2 text-sm text-gray-700">Nej</span>
+                        <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.no')}</span>
                       </label>
                     </div>
                   </div>
@@ -2618,7 +2624,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   onClick={prevStep}
                   className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
                 >
-                  Tillbaka
+                  {t('hero.buttons.tillbaka')}
                 </button>
                 <button
                   type="button"
@@ -2633,19 +2639,19 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             {showSteps && step === 6 && (
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-                {formData.customerType === 'foretag' ? 'Tunga och ömtåliga föremål (företagsflytt)' : 'Tunga och ömtåliga föremål'}
+                {formData.customerType === 'foretag' ? t('hero.form.heavyAndDelicateItemsBusiness') : t('hero.form.heavyAndDelicateItems')}
               </h2>
               
               <div className="space-y-6">
                 <div>
                   <label className="block text-xl font-bold text-gray-700 mb-3">
-                    {formData.customerType === 'foretag' ? 'Har ni enskilda föremål som väger över 100 kg?' : 'Har du enskilda föremål som väger över 100 kg?'}
+                    {formData.customerType === 'foretag' ? t('hero.form.hasHeavyItemsBusiness') : t('hero.form.hasHeavyItems')}
                   </label>
                   <p className="text-sm text-gray-600 mb-3">
                     {formData.customerType === 'foretag'
-                      ? <span className="font-bold">OBS! Markera endast "Ja" om ni har enskilda föremål som väger mer än 100 kg</span>
-                      : <span className="font-bold">OBS! Markera endast "Ja" om du har enskilda föremål som väger mer än 100 kg</span>
-                    } (t.ex. ett piano eller kassaskåp). Vanliga möbler som soffor, sängar eller garderober väger normalt under 100 kg.
+                      ? <span className="font-bold">{t('hero.form.heavyItemsWarningBusiness')}</span>
+                      : <span className="font-bold">{t('hero.form.heavyItemsWarning')}</span>
+                    } {t('hero.form.heavyItemsExamples')}
                   </p>
                   <div className="flex gap-6 mb-4">
                     <label className="flex items-center">
@@ -2657,7 +2663,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         onChange={handleInputChange}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Ja</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.yes')}</span>
                     </label>
                     <label className="flex items-center">
                       <input
@@ -2668,7 +2674,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         onChange={handleInputChange}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Nej</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.no')}</span>
                     </label>
                   </div>
                   {errors.hasHeavyItems && (
@@ -2696,7 +2702,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         <p className="text-sm text-red-600 mt-1">{errors.heavyItems}</p>
                       )}
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Lägg till tungt föremål</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">{t('hero.form.addHeavyItem')}</label>
                         <div className="space-y-4">
                           <select
                             name="heavyItemType"
@@ -2712,14 +2718,14 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                               }
                             }}
                           >
-                            <option value="">-- Välj --</option>
-                            <option value="Piano">Piano</option>
-                            <option value="Flygel">Flygel</option>
-                            <option value="Kassaskåp">Kassaskåp</option>
-                            <option value="Akvarium (över 400L)">Akvarium (över 400L)</option>
-                            <option value="Stenbänkskiva">Stenbänkskiva</option>
-                            <option value="Annan tung maskin (över 100kg)">Annan tung maskin (över 100kg)</option>
-                            <option value="other">Annat (specificera)</option>
+                            <option value="">{t('hero.form.select')}</option>
+                            <option value="Piano">{t('hero.form.options.heavyItems.piano')}</option>
+                            <option value="Flygel">{t('hero.form.options.heavyItems.grandPiano')}</option>
+                            <option value="Kassaskåp">{t('hero.form.options.heavyItems.safe')}</option>
+                            <option value="Akvarium (över 400L)">{t('hero.form.options.heavyItems.aquarium')}</option>
+                            <option value="Stenbänkskiva">{t('hero.form.options.heavyItems.stoneCountertop')}</option>
+                            <option value="Annan tung maskin (över 100kg)">{t('hero.form.options.heavyItems.heavyMachine')}</option>
+                            <option value="other">{t('hero.form.options.heavyItems.other')}</option>
                           </select>
                         </div>
                       </div>
@@ -2729,12 +2735,12 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
                 <div>
                   <label className="block text-xl font-bold text-gray-700 mb-3">
-                    {formData.customerType === 'foretag' ? 'Ska några särskilt ömtåliga föremål flyttas för ert företag?' : 'Ska några särskilt ömtåliga föremål flyttas?'}
+                    {formData.customerType === 'foretag' ? t('hero.form.hasDelicateItemsBusiness') : t('hero.form.hasDelicateItems')}
                   </label>
                   <p className="text-sm text-gray-600 mb-3">
                     {formData.customerType === 'foretag'
-                      ? 'Flyttfirman behöver få veta om särskilt ömtåliga eller värdefulla föremål, som antikviteter, i förväg för att planera företagsflytten.'
-                      : 'Flyttfirman behöver få veta om särskilt ömtåliga eller värdefulla föremål, som antikviteter, i förväg för att planera flytten.'}
+                      ? t('hero.form.delicateItemsDescriptionBusiness')
+                      : t('hero.form.delicateItemsDescription')}
                   </p>
                   <div className="flex gap-6 mb-4">
                     <label className="flex items-center">
@@ -2746,7 +2752,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         onChange={handleInputChange}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Ja</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.yes')}</span>
                     </label>
                     <label className="flex items-center">
                       <input
@@ -2757,7 +2763,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         onChange={handleInputChange}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Nej</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.options.no')}</span>
                     </label>
                   </div>
                   {errors.hasDelicateItems && (
@@ -2765,7 +2771,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   )}
                   {formData.hasDelicateItems === "yes" && (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Vilka särskilt ömtåliga föremål ska flyttas?</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">{t('hero.form.whichDelicateItems')}</label>
                       <textarea
                         name="delicateItemsDescription"
                         value={formData.delicateItemsDescription}
@@ -2787,7 +2793,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   onClick={prevStep}
                   className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
                 >
-                  Tillbaka
+                  {t('hero.buttons.tillbaka')}
                 </button>
                 <button
                   type="button"
@@ -2802,12 +2808,12 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             {showSteps && step === 7 && (
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-                {formData.customerType === 'foretag' ? 'Kontaktuppgifter till företaget' : 'Kontaktuppgifter'}
+                {formData.customerType === 'foretag' ? t('hero.form.contactInfoBusiness') : t('hero.form.contactInfo')}
               </h2>
               {formData.customerType === 'foretag' && (
                 <>
               <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Kontaktperson för och efternamn</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.contactPersonName')}</strong></label>
                     <input
                       type="text"
                       name="contactPersonName"
@@ -2821,7 +2827,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
               )}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <strong>{formData.customerType === 'foretag' ? 'Företagsnamn' : 'Namn'}</strong>
+                  <strong>{formData.customerType === 'foretag' ? t('hero.form.companyName') : t('hero.form.name')}</strong>
                 </label>
                 <input
                   type="text"
@@ -2836,7 +2842,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2"><strong>E-post</strong></label>
+                <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.email')}</strong></label>
                 <input
                   type="email"
                   name="email"
@@ -2850,7 +2856,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Telefon</strong></label>
+                <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.phone')}</strong></label>
                 <input
                   type="tel"
                   name="phone"
@@ -2869,13 +2875,13 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   onClick={prevStep}
                   className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
                 >
-                  Tillbaka
+                  {t('hero.buttons.tillbaka')}
                 </button>
                 <button
                   type="submit"
                   className="px-6 py-3 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-lg hover:opacity-90 transition-opacity"
                 >
-                  Skicka offertförfrågan
+                  {t('hero.buttons.skicka')}
                 </button>
               </div>
             </div>
@@ -2933,7 +2939,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 }}
                 className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#0F172A]"
               >
-                Avbryt
+                {t('hero.buttons.avbryt')}
               </button>
               <button
                 type="button"
@@ -2959,7 +2965,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 }}
                 className="px-4 py-2 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-lg hover:opacity-90 transition-opacity"
               >
-                Lägg till
+                {t('hero.buttons.laggTill')}
               </button>
             </div>
           </div>
