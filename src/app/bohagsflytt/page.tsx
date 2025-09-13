@@ -1693,12 +1693,12 @@ export default function Bohagsflytt() {
                       className="space-y-4 mt-4 md:hidden px-4 md:px-8"
                     >
                       <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                        Med vår erfarenhet sedan 2010 har vi byggt upp en solid reputation för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+                        Med vår erfarenhet sedan 2010 har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
                       </p>
                     </motion.div>
                   )}
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
-                    Med vår erfarenhet sedan 2010 har vi byggt upp en solid reputation för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+                    Med vår erfarenhet sedan 2010 har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
                   </p>
                 </motion.div>
 
