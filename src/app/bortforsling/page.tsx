@@ -310,7 +310,7 @@ export default function BortforslingPage() {
 											
 											<div className="my-12 md:my-16 text-left md:text-center px-4">
 												<p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-													"Allt gick smidigt och tryggt från första kontakt tills allt var bortforslat. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri bortforsling!"
+													"Allt gick smidigt och tryggt från första kontakt tills allt var klar. Rekommenderar varmt till alla som vill ha en smidig bortforsling!"
 												</p>
 												<p className="italic text-gray-700 mt-2">- Martin</p>
 											</div>
@@ -1423,7 +1423,7 @@ export default function BortforslingPage() {
 								'name': 'Hur lång tid tar en bortforsling?',
 								'acceptedAnswer': {
 									'@type': 'Answer',
-									'text': 'Tiden beror på mängden avfall, tillgänglighet och eventuella tilläggstjänster. En normal bortforsling tar oftast 2-4 timmar, men större projekt kan ta en hel dag.'
+									'text': 'Tiden beror på mängden avfall, tillgänglighet och eventuella tilläggstjänster. En normal bortforsling tar oftast några timmar, men större projekt kan ta en hel dag.'
 								}
 							},
 							{
@@ -1462,7 +1462,7 @@ export default function BortforslingPage() {
 									{
 										id: "bortforsling-1",
 										question: "Hur förbereder jag mig bäst inför bortforsling?",
-										answer: "Börja med att sortera dina saker i högar: vad som ska kastas, vad som kan säljas/doneras och vad som ska behållas. Ta bort alla lösa föremål från området som ska rensas. Se till att vi har tillgång till området och att det finns plats för våra fordon. Om du har särskilt känsliga eller värdefulla föremål, markera dessa tydligt."
+										answer: "Börja med att sortera dina saker i högar: vad som ska kastas, vad som kan säljas/doneras och vad som ska behållas. Ta bort alla lösa föremål från området som ska rensas. Se till att vi har tillgång till området och att det finns plats för våra fordon."
 									},
 									{
 										id: "bortforsling-2",
@@ -1472,17 +1472,17 @@ export default function BortforslingPage() {
 									{
 										id: "bortforsling-3",
 										question: "Hur fungerar miljöhantering vid bortforsling?",
-										answer: "Vi följer strikta miljöregler och sorterar allt material för maximal återvinning. Elektronik, farligt avfall och byggmaterial hanteras enligt särskilda regler. Vi dokumenterar all hantering och kan ge dig kvitton på att allt har hanterats korrekt."
+										answer: "Vi följer strikta miljöregler och sorterar allt material för maximal återvinning. Elektronik, farligt avfall och byggmaterial hanteras enligt särskilda regler. Vi dokumenterar all hantering och du kan känna dig trygg att allt har hanterats korrekt."
 									},
 									{
 										id: "bortforsling-4",
 										question: "Hur lång tid tar en bortforsling och vad påverkar tidsåtgången?",
-										answer: "Tidsåtgången beror på flera faktorer: mängden avfall, tillgänglighet till området, behov av specialutrustning, och om du valt tilläggstjänster som städning. En normal bortforsling tar oftast 2-4 timmar, men större projekt kan ta en hel dag."
+										answer: "Tidsåtgången beror på flera faktorer: mängden avfall, tillgänglighet till området, behov av specialutrustning, och om du valt tilläggstjänster som städning. En normal bortforsling tar oftast några timmar, men större projekt kan ta en hel dag."
 									},
 									{
 										id: "bortforsling-5",
 										question: "Kan ni hantera alla typer av avfall?",
-										answer: "Vi hanterar de flesta typer av avfall inklusive möbler, vitvaror, byggavfall och trädgårdsavfall. För farligt avfall som asbest, kemikalier eller medicinsk avfall krävs särskild hantering - kontakta oss för rådgivning. Vi kan även hjälpa dig med sortering av återvinningsbart material."
+										answer: "Vi hanterar de flesta typer av avfall inklusive möbler, vitvaror, byggavfall och trädgårdsavfall. För farligt avfall, kemikalier eller medicinsk avfall krävs särskild hantering - kontakta oss för rådgivning. Vi kan även hjälpa dig med sortering av återvinningsbart material."
 									}
 								].map((faq, index) => (
 									<motion.div

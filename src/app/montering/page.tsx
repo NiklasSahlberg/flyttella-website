@@ -290,23 +290,23 @@ export default function MonteringPage() {
 							{/* Main content - Centered (matching bortforsling) */}
 							<div className="space-y-12 md:space-y-16">
 								{([
-									{ title: 'Vad är montering?', content: 'Montering innebär att vi monterar och demonterar möbler, inredning och system med precision och omsorg. Vi använder rätt verktyg och tekniker för att säkerställa att allt fungerar perfekt. Tjänsten passar vid flytt, renovering eller när du behöver hjälp med kompletta möbler.', icon: '🔧' },
+									{ title: 'Vad är montering?', content: 'Montering innebär att vi monterar och demonterar möbler och inredning med precision och omsorg. Vi använder rätt verktyg och tekniker för att säkerställa att allt fungerar perfekt. Tjänsten passar vid flytt, renovering eller när du behöver hjälp med kompletta möbler.', icon: '🔧' },
 									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/montering_ny2.png" alt="Montering och demontering i Stockholm" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 40%' }} /></div>), icon: '' },
 									{ title: 'Vad kostar montering?', content: (<div className="px-4 md:px-0">
-											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">Priset för montering beror främst på typ av möbler, komplexitet, tillgänglighet (våningsplan, hiss, bärväg), samt hur långt transporten är. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.</p>
-											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett fast pris. <Link href="/kontakt?scroll=message&service=montering" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">Kontakta oss</Link>.</p>
+											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">Priset för montering beror främst på typ av möbler, komplexitet samt hur långt transporten är. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.</p>
+											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett pris utan dolda avgifter. <Link href="/kontakt?scroll=message&service=montering" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">Kontakta oss</Link>.</p>
 											
 											{/* Customer Quote */}
 											<div className="my-12 md:my-16 text-left md:text-center px-4">
 												<p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-													"Allt gick smidigt och tryggt från första kontakt tills allt var monterat. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri montering!"
+													"Jag fick hjälp med montering och nedmontering och allt fungerade jättebra. Arbetet gick snabbt och smidigt och de var noggranna hela vägen. Väldigt nöjd med resultatet!"
 												</p>
-												<p className="italic text-gray-700 mt-2">- Maria</p>
+												<p className="italic text-gray-700 mt-2">- Emma</p>
 											</div>
 										</div>), icon: '💸' },
-									{ title: 'Vad ingår i tjänsten?', content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">I vår montering ingår besiktning på plats, professionella verktyg och utrustning, bärhjälp med erfarna medarbetare, säker hantering av alla möblertyper, samt kvalitetskontroll efter montering. Vi hanterar allt från enkla möbler till komplexa system. Allt till tydliga, fasta priser utan dolda avgifter.</p>), icon: '✅' },
+									{ title: 'Vad ingår i tjänsten?', content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">I vår montering ingår professionella verktyg och utrustning, bärhjälp med erfarna medarbetare, säker hantering av alla möbeltyper, samt kvalitetskontroll efter montering. Vi hanterar allt från enklare möbler till mer komplexa inredningar. Allt till tydliga, fasta priser utan dolda avgifter.</p>), icon: '✅' },
 									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.jpg" alt="Tips för montering" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
-									{ title: 'Hur bokar jag montering?', content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Boka montering enkelt genom att <Link href="/kontakt?scroll=message&service=montering" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">kontakta oss</Link>. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, våningsplan och om hiss finns, typ av möbler (t.ex. köksmöbler, garderober, sängar), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma omfattningen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan montering.</p></div>), icon: '📞' },
+									{ title: 'Hur bokar jag montering?', content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Boka montering enkelt genom att <Link href="/kontakt?scroll=message&service=montering" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">kontakta oss</Link>. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, typ av möbler (t.ex. köksmöbler, garderober, sängar), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma omfattningen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan montering.</p></div>), icon: '📞' },
 								] as { title: string; content: any; icon: string }[]).map((section, index) => (
 									<div key={index} className="group">
 										<div>
@@ -436,20 +436,20 @@ export default function MonteringPage() {
 									{/* Desktop: Always show full text in 3 sections */}
 									<div className="hidden lg:block space-y-8">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar, städtjänster och montering enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, våra kvalitet och våra nöjda kunder.
+											Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar, städtjänster och montering enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, kvalitet och våra nöjda kunder.
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
 											Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning, montering och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Vi erbjuder professionell montering av alla typer av möbler, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla våra tjänster. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.
+											Vi erbjuder professionell montering av alla typer av möbler, kostnadsfri om- och avbokning upp till 24 timmar innan. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.
 										</p>
 									</div>
 									
 									{/* Mobile: Show shortened text with expand option */}
 									<div className="lg:hidden space-y-4">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar, städtjänster och montering enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, våra kvalitet och våra nöjda kunder.
+											Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar, städtjänster och montering enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, kvalitet och våra nöjda kunder.
 										</p>
 										
 										{!showFullAboutText && (
@@ -1091,7 +1091,7 @@ export default function MonteringPage() {
 								>
 									<h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet i Stockholm</h4>
 									<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4 px-4 md:px-8">
-										Vi har hjälpt tusentals kunder med deras montering i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av montering, från enkla möbler till komplexa system.
+										Vi har hjälpt tusentals kunder med deras montering i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av montering, från enkla möbler till komplex inredning.
 									</p>
 									{!showFullExperienceText && (
 										<div className="md:hidden mb-3">
@@ -1231,7 +1231,7 @@ export default function MonteringPage() {
 								{/* Pricing Info */}
 								<div className="text-center mb-4 md:mb-8">
 									<p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-										Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som typ av montering, komplexitet, tillgänglighet och material för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+										Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som typ av montering, komplexitet, tillgänglighet och material för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Våra priser är utan några dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
 									</p>
 								</div>
 
@@ -1394,7 +1394,7 @@ export default function MonteringPage() {
 								'name': 'Vad är montering?',
 								'acceptedAnswer': {
 									'@type': 'Answer',
-									'text': 'Montering innebär att sätta ihop och installera möbler, inredning och andra föremål. Detta kan vara allt från enkla möbler som bordsstolar till komplexa system som köksinredning och garderober.'
+									'text': 'Montering innebär att sätta ihop och installera möbler, inredning och andra föremål. Detta kan vara allt från enkla möbler som bordsstolar till mer komplexa inredningar som köksinredning och garderober.'
 								}
 							},
 							{
@@ -1402,7 +1402,7 @@ export default function MonteringPage() {
 								'name': 'Hur lång tid tar en montering?',
 								'acceptedAnswer': {
 									'@type': 'Answer',
-									'text': 'Tiden beror på komplexiteten av monteringen, antalet möbler och eventuella tilläggstjänster. En normal montering tar oftast 2-6 timmar, men större projekt kan ta en hel dag.'
+									'text': 'Tiden beror på komplexiteten av monteringen, antalet möbler och eventuella tilläggstjänster. En normal montering tar oftast några timmar, men större projekt kan ta en hel dag.'
 								}
 							},
 							{
@@ -1410,7 +1410,7 @@ export default function MonteringPage() {
 								'name': 'Vad kostar montering?',
 								'acceptedAnswer': {
 									'@type': 'Answer',
-									'text': 'Priset varierar beroende på komplexitet, antal möbler, tillgänglighet och eventuella specialkrav. Vi ger alltid en fast prisoffert utan dolda avgifter.'
+									'text': 'Priset varierar beroende på komplexitet, antal möbler, tillgänglighet och eventuella specialkrav. Vi ger alltid en prisoffert utan några dolda avgifter.'
 								}
 							},
 							{
@@ -1456,7 +1456,7 @@ export default function MonteringPage() {
 									{
 										id: "montering-4",
 										question: "Hur lång tid tar en montering och vad påverkar tidsåtgången?",
-										answer: "Tidsåtgången beror på flera faktorer: komplexiteten av möblerna, antalet möbler, tillgänglighet till området och eventuella specialkrav. En normal montering tar oftast 2-6 timmar, men större projekt kan ta en hel dag."
+										answer: "Tidsåtgången beror på flera faktorer: komplexiteten av möblerna, antalet möbler, tillgänglighet till området och eventuella specialkrav. En normal montering tar oftast några timmar, men större projekt kan ta en hel dag."
 									},
 									{
 										id: "montering-5",
