@@ -157,7 +157,7 @@ export default function BortforslingPage() {
 							/>
 							<div className="relative z-10 text-center px-4">
 								<h1 className="text-5xl font-bold mb-6">Bortforsling</h1>
-								<p className="text-2xl text-white/90">Vi hämtar, bär och kör bort – snabbt och tryggt. Miljövänlig hantering och återvinning när det är möjligt.</p>
+								<p className="text-2xl text-white/90">Vi hämtar, bär och kör bort – snabbt och tryggt. Miljövänlig hantering och återvinning.</p>
 							</div>
 						</div>
 					</div>
@@ -178,7 +178,7 @@ export default function BortforslingPage() {
 								<div className="max-w-xl w-full">
 									<h1 className="text-5xl md:text-6xl font-bold mb-8">Bortforsling i Stockholm</h1>
 									<p className="text-2xl md:text-3xl mb-12">Professionell bortforsling av möbler, bohag och grovsopor</p>
-									<p className="text-xl md:text-2xl text-white/90">Vi hämtar, bär och kör bort – snabbt och tryggt. Miljövänlig hantering och återvinning när det är möjligt.</p>
+									<p className="text-xl md:text-2xl text-white/90">Vi hämtar, bär och kör bort – snabbt och tryggt. Miljövänlig hantering och återvinning.</p>
 								</div>
 								{/* Right-side CTA directly on background */}
 								<div className="w-full md:w-1/2 lg:w-[40%]">
@@ -315,7 +315,7 @@ export default function BortforslingPage() {
 												<p className="italic text-gray-700 mt-2">- Martin</p>
 											</div>
 										</div>), icon: '💸' },
-									{ title: 'Vad ingår i tjänsten?', content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">I vår bortforsling ingår bärhjälp från bostad, vind, källare eller kontor, enklare nedmontering av möbler vid behov, transport till återvinningscentral eller godkänd mottagare, samt miljösortering där vi återvinner när det är möjligt. Allt till tydliga, fasta priser utan dolda avgifter.</p>), icon: '✅' },
+									{ title: 'Vad ingår i tjänsten?', content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">I vår bortforsling ingår bärhjälp från bostad, vind, källare eller kontor, enklare nedmontering av möbler vid behov, transport till återvinningscentral eller godkänd mottagare, samt miljösortering där vi återvinner. Allt till tydliga, fasta priser utan dolda avgifter.</p>), icon: '✅' },
 									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.jpg" alt="Tips för bortforsling" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
 									{ title: 'Hur bokar jag bortforsling?', content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Boka bortforsling enkelt genom att <Link href="/kontakt?scroll=message&service=bortforsling" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">kontakta oss</Link>. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, våningsplan och om hiss finns, ungefärlig mängd och typ av avfall (t.ex. möbler, vitvaror, byggavfall), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma volymen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan hämtning.</p></div>), icon: '📞' },
 								] as { title: string; content: any; icon: string }[]).map((section, index) => (
@@ -438,7 +438,7 @@ export default function BortforslingPage() {
 											Flyttella är Stockholms ledande företag för professionell bortforsling och flyttjänster. Med över 8 års erfarenhet hjälper vi både privatpersoner och företag med säker och miljövänlig bortforsling av möbler, vitvaror och grovsopor i hela Stockholm.
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Vårt team av erfarna flyttare och bärhjälpare är specialiserade på att hantera alla typer av bortforsling - från små möbler till stora kontorsrensningar. Vi använder modern utrustning och följer strikta miljöriktlinjer för att säkerställa att allt avfall hanteras korrekt och återvinns när det är möjligt.
+											Vårt team av erfarna flyttare och bärhjälpare är specialiserade på att hantera alla typer av bortforsling - från små möbler till stora kontorsrensningar. Vi använder modern utrustning och följer strikta miljöriktlinjer för att säkerställa att allt avfall hanteras korrekt och återvinns.
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
 											Som en del av våra omfattande flyttjänster erbjuder vi också bärhjälp, montering, piano- och tunglyft samt kontorsflyttar. Vårt mål är att göra bortforsling enkel, säker och miljövänlig för alla våra kunder i Stockholm med transparenta priser och professionell service.
@@ -1228,7 +1228,7 @@ export default function BortforslingPage() {
 								{/* Process Description */}
 								<div className="text-center mb-6 md:mb-8 hidden md:block">
 									<p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-										Vår bortforslingsprocess är utformad för att vara enkel, säker och miljövänlig. Vi följer strikta riktlinjer för att säkerställa att allt avfall hanteras korrekt och återvinns när det är möjligt.
+										Vår bortforslingsprocess är utformad för att vara enkel, säker och miljövänlig. Vi följer strikta riktlinjer för att säkerställa att allt avfall hanteras korrekt och återvinns.
 									</p>
 								</div>
 

@@ -1396,7 +1396,7 @@ export default function PianoTunglyftPage() {
 								'name': 'Hur lång tid tar en piano & tunglyft?',
 								'acceptedAnswer': {
 									'@type': 'Answer',
-									'text': 'Tiden beror på typ av föremål, vikt, tillgänglighet och eventuella tilläggstjänster. En normal piano & tunglyft tar oftast 2-6 timmar, men större projekt kan ta en hel dag.'
+									'text': 'Tiden beror på typ av föremål, vikt, tillgänglighet och eventuella tilläggstjänster. En normal piano & tunglyft tar oftast några timmar, men större projekt kan ta en hel dag.'
 								}
 							},
 							{
@@ -1435,7 +1435,7 @@ export default function PianoTunglyftPage() {
 									{
 										id: "piano-tunglyft-1",
 										question: "Hur förbereder jag mig bäst inför piano & tunglyft?",
-										answer: "Börja med att rensa området runt föremålet som ska flyttas. Ta bort alla lösa föremål och se till att vi har tillgång till området. Om det är ett piano, öppna alla dörrar och lådor. Se till att det finns plats för våra fordon och att vi kan komma åt med specialiserad utrustning. Markera eventuella särskilt känsliga eller värdefulla föremål tydligt."
+										answer: "Börja med att rensa området runt föremålet som ska flyttas. Ta bort alla lösa föremål och se till att vi har tillgång till området. Se till att det finns plats för våra fordon och att vi kan komma åt med specialiserad utrustning. Markera eventuella särskilt känsliga eller värdefulla föremål tydligt."
 									},
 									{
 										id: "piano-tunglyft-2",
@@ -1445,12 +1445,12 @@ export default function PianoTunglyftPage() {
 									{
 										id: "piano-tunglyft-3",
 										question: "Hur fungerar säkerhetsrutiner vid piano & tunglyft?",
-										answer: "Vi följer strikta säkerhetsriktlinjer och använder specialiserad utrustning för varje typ av föremål. Alla medarbetare är utbildade i säker hantering av tunga föremål. Vi dokumenterar all hantering och kan ge dig kvitton på att allt har hanterats korrekt."
+										answer: "Vi följer strikta säkerhetsriktlinjer och använder specialiserad utrustning för varje typ av föremål. Alla medarbetare är utbildade i säker hantering av tunga föremål. Vi dokumenterar all hantering noggrant för att du som kund ska känna dig helt trygg.."
 									},
 									{
 										id: "piano-tunglyft-4",
 										question: "Hur lång tid tar en piano & tunglyft och vad påverkar tidsåtgången?",
-										answer: "Tidsåtgången beror på flera faktorer: typ och vikt av föremålet, tillgänglighet till området (våningsplan, hiss, bärväg), behov av specialutrustning, och transportavstånd. En normal piano & tunglyft tar oftast 2-6 timmar, men större projekt kan ta en hel dag."
+										answer: "Tidsåtgången beror på flera faktorer: typ och vikt av föremålet, tillgänglighet till området (våningsplan, hiss, bärväg), behov av specialutrustning, och transportavstånd. En normal piano & tunglyft tar oftast några timmar, men större projekt kan ta en hel dag."
 									},
 									{
 										id: "piano-tunglyft-5",
