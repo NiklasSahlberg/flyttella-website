@@ -1045,7 +1045,7 @@ export default function FlyttstadningPage() {
                 transition={{ duration: 0.8, delay: 0 }}
               >
                 Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. 
-                Från bohagsflytt och flyttstädning till specialtjänster som piano- och magasinering.
+                Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center"

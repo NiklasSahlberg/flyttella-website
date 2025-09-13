@@ -1442,7 +1442,7 @@ export default function FlyttfirmaAkersbergaPage() {
                 }}
               >
                   Vi erbjuder ett komplett utbud av flyttjänster i Åkersberga för att göra din flytt så smidig som möjligt. 
-                  Från bohagsflytt och flyttstädning till specialtjänster som piano- och magasinering.
+                  Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center"
