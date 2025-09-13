@@ -383,7 +383,7 @@ export default function Utlandsflytt() {
                   </div>
                   <p className="text-lg md:text-xl text-gray-100 mb-1 md:mb-8 relative">Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.</p>
                   <p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">Vi hjälper med märkning och organisering för enklare uppackning.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med märkning av kartonger och inventarielista för smidig uppackning.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med märkning av kartonger och inventarielista för smidig uppackning</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/barhjalp" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">

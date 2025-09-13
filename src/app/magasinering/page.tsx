@@ -80,7 +80,7 @@ export default function MagasineringPage() {
                 <div className="max-w-xl w-full">
                   <h1 className="text-5xl md:text-6xl font-bold mb-8">Magasinering i Stockholm</h1>
                   <p className="text-2xl md:text-3xl mb-12">Säker förvaring av bohag – flexibla lösningar för kort och lång tid</p>
-                  <p className="text-xl md:text-2xl text-white/90">Behöver du mellanlagra inför flytt, renovering eller utlandsvistelse? Vi hämtar, packar och magasinerar torrt, larmat och försäkrat. När du är redo levererar vi tillbaka – smidigt och prisvärt.</p>
+                  <p className="text-xl md:text-2xl text-white/90">Behöver du mellanlagra inför flytt, renovering eller utlandsvistelse? Vi erbjuder hämtning, packning och magasinerar torrt, larmat och försäkrat. När du är redo levererar vi tillbaka – smidigt och prisvärt.</p>
                 </div>
                 {/* Right-side CTA directly on background */}
                 <div className="w-full md:w-1/2 lg:w-[40%]">
@@ -165,7 +165,7 @@ export default function MagasineringPage() {
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                     <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">Tunglyft</h3></div>
-                    <p className="text-sm text-gray-100 mb-4 relative">Säker hantering av tunga och skrymmande föremål som piano, kassaskåp och stora möbler.</p>
+                    <p className="text-sm text-gray-100 mb-4 relative">Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.</p>
                     <div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
                   </div>
                 </div>

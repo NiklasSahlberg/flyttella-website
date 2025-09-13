@@ -267,7 +267,7 @@ export default function BortforslingPage() {
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
 										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">Magasinering</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi hämtar, packar och lagrar säkert.</p>
+										<p className="text-sm text-gray-100 mb-4 relative">Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.</p>
 										<div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
 									</div>
 								</div>
@@ -287,7 +287,7 @@ export default function BortforslingPage() {
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
 										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">Tunglyft</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Säker hantering av tunga och skrymmande föremål som piano, kassaskåp och stora möbler.</p>
+										<p className="text-sm text-gray-100 mb-4 relative">Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.</p>
 										<div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
 									</div>
 								</div>
@@ -703,7 +703,7 @@ export default function BortforslingPage() {
 									Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Vår bohagsflytt omfattar allt från packning och transport till uppackning och montering. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt.
+								Vi erbjuder packning och uppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt.
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -756,13 +756,13 @@ export default function BortforslingPage() {
 									</h3>
 								</div>
 								<p className="text-lg md:text-xl text-gray-100 mb-1 md:mb-8 relative">
-									Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi hämtar, packar och lagrar säkert.
+								Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.
 								</p>
 								<p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">
 									Vi hjälper med märkning och organisering för enklare återleverans.
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi hjälper även till med märkning av kartonger och inventarielista för smidig återleverans.
+									Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi hjälper även till med smidig återleverans.
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 

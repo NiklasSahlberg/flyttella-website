@@ -1050,7 +1050,7 @@ export default function Bohagsflytt() {
                   Vi hjälper med märkning och organisering för enklare uppackning.
                 </p>
                 <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                  Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med märkning av kartonger och inventarielista för smidig uppackning.
+                  Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med smidig återleverans.
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 

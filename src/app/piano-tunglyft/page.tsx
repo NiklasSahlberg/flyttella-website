@@ -161,7 +161,7 @@ export default function PianoTunglyftPage() {
 							/>
 							<div className="relative z-10 text-center px-4">
 								<h1 className="text-5xl font-bold mb-6">Piano & Tunglyft</h1>
-								<p className="text-2xl text-white/90">Säker hantering av tunga och skrymmande föremål. Vi flyttar piano, kassaskåp och stora möbler med precision.</p>
+								<p className="text-2xl text-white/90">Säker hantering av tunga och storskaliga föremål. Vi flyttar piano, kassaskåp och stora möbler med precision.</p>
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@ export default function PianoTunglyftPage() {
 							<div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
 								<div className="max-w-xl w-full">
 									<h1 className="text-5xl md:text-6xl font-bold mb-8">Piano & Tunglyft i Stockholm</h1>
-									<p className="text-2xl md:text-3xl mb-12">Professionell hantering av tunga och skrymmande föremål</p>
+									<p className="text-2xl md:text-3xl mb-12">Professionell hantering av tunga och storskaliga föremål</p>
 									<p className="text-xl md:text-2xl text-white/90">Vi flyttar piano, kassaskåp och stora möbler med precision och säkerhet. Specialiserad utrustning och erfarna medarbetare.</p>
                 </div>
 								{/* Right-side CTA directly on background */}
@@ -274,7 +274,7 @@ export default function PianoTunglyftPage() {
 								viewport={{ once: true }}
 							>
 								{([
-									{ title: 'Vad är piano & tunglyft?', content: 'Piano & tunglyft innebär professionell hantering av tunga och skrymmande föremål som kräver specialiserad utrustning och erfarenhet. Vi flyttar pianon, kassaskåp, vapenskåp och andra tunga möbler med precision och säkerhet. Tjänsten passar vid flytt, renovering eller när du behöver flytta tunga föremål som inte kan hanteras med vanlig flyttmetodik.', icon: '🎹' },
+									{ title: 'Vad är piano & tunglyft?', content: 'Piano & tunglyft innebär professionell hantering av tunga och storskaliga föremål som kräver specialiserad utrustning och erfarenhet. Vi flyttar pianon, kassaskåp, vapenskåp och andra tunga möbler med precision och säkerhet. Tjänsten passar vid flytt, renovering eller när du behöver flytta tunga föremål som inte kan hanteras med vanlig flyttmetodik.', icon: '🎹' },
 									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/piano_tunglyft.png" alt="Piano och tunglyft i Stockholm" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 40%' }} /></div>), icon: '' },
 									{ title: 'Vad kostar piano & tunglyft?', content: (<div className="px-4 md:px-0">
 											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">Priset för piano & tunglyft beror främst på typ av föremål, vikt, tillgänglighet (våningsplan, hiss, bärväg), samt hur långt transporten är. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.</p>
@@ -283,12 +283,12 @@ export default function PianoTunglyftPage() {
 											{/* Customer Quote */}
 											<div className="my-12 md:my-16 text-left md:text-center px-4">
 												<p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-													"Allt gick smidigt och tryggt från första kontakt tills allt var flyttat. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri tunglyft!"
+													"Allt gick smidigt och tryggt från första kontakt tills allt var flyttat. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri lösning!"
 												</p>
 												<p className="italic text-gray-700 mt-2">- Erik</p>
 											</div>
 										</div>), icon: '💸' },
-									{ title: 'Vad ingår i tjänsten?', content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">I vår piano & tunglyft ingår besiktning på plats, specialiserad utrustning (pianovagnar, lyftkranar, skydd), bärhjälp med erfarna medarbetare, säker transport och leverans. Vi hanterar alla typer av tunga föremål från pianon och kassaskåp till antikviteter och skulpturer. Allt till tydliga, fasta priser utan dolda avgifter.</p>), icon: '✅' },
+									{ title: 'Vad ingår i tjänsten?', content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">I vår piano & tunglyft ingår besiktning på plats, specialiserad utrustning som exempelvis pianovagnar och skydd, bärhjälp med erfarna medarbetare, säker transport och leverans. Vi hanterar alla typer av tunga föremål från pianon och kassaskåp till antikviteter och skulpturer. Allt till tydliga, fasta priser utan dolda avgifter.</p>), icon: '✅' },
 									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.jpg" alt="Tips för piano och tunglyft" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
 									{ title: 'Hur bokar jag piano & tunglyft?', content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Boka piano & tunglyft enkelt genom att <Link href="/kontakt?scroll=message&service=piano" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">kontakta oss</Link>. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, våningsplan och om hiss finns, typ av föremål (piano, kassaskåp, etc.), ungefärlig vikt och mått, samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma omfattningen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan flytt.</p></div>), icon: '📞' },
 								] as { title: string; content: any; icon: string }[]).map((section, index) => (
@@ -408,7 +408,7 @@ export default function PianoTunglyftPage() {
 									{/* Desktop: Always show full text in 3 sections - SEO optimized for piano & tunglyft */}
 									<div className="hidden lg:block space-y-8">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är en flytt- och städfirma i Stockholm som specialiserar sig på piano & tunglyft. I över åtta år har vi hjälpt kunder att flytta tunga och skrymmande föremål med precision och säkerhet. Våra erfarna medarbetare använder specialiserad utrustning och teknik för att hantera alla typer av tunga föremål, från pianon och kassaskåp till antikviteter och skulpturer.
+											Flyttella är en flytt- och städfirma i Stockholm som specialiserar sig på piano & tunglyft. I över åtta år har vi hjälpt kunder att flytta tunga och storskaliga föremål med precision och säkerhet. Våra erfarna medarbetare använder specialiserad utrustning och teknik för att hantera alla typer av tunga föremål, från pianon och kassaskåp till antikviteter och skulpturer.
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
 											Vi erbjuder komplett service med besiktning på plats, säker transport och leverans. Med tydliga villkor och fasta upplägg vet du exakt vad som ingår. Vårt team är alltid tillgängligt för frågor och support under hela processen, och vi säkerställer att varje tunglyft genomförs med högsta säkerhet och precision.
@@ -421,7 +421,7 @@ export default function PianoTunglyftPage() {
 									{/* Mobile: Show shortened text with expand option - SEO optimized for piano & tunglyft */}
 									<div className="lg:hidden space-y-4">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är en flytt- och städfirma i Stockholm som specialiserar sig på piano & tunglyft. I över åtta år har vi hjälpt kunder att flytta tunga och skrymmande föremål med precision och säkerhet. Våra erfarna medarbetare använder specialiserad utrustning och teknik för att hantera alla typer av tunga föremål.
+											Flyttella är en flytt- och städfirma i Stockholm som specialiserar sig på piano & tunglyft. I över åtta år har vi hjälpt kunder att flytta tunga och storskaliga föremål med precision och säkerhet. Våra erfarna medarbetare använder specialiserad utrustning och teknik för att hantera alla typer av tunga föremål.
 										</p>
 										
 										{!showFullAboutText && (
@@ -549,7 +549,7 @@ export default function PianoTunglyftPage() {
 								<span className="text-3xl md:text-4xl">🎹</span>
 								<div>
 									<h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
-										Redo att boka din tunglyft?
+										Redo att boka tunglyft?
 									</h3>
 									<p className="text-base md:text-lg text-gray-100">
 										Få en snabb och gratis offert på din piano & tunglyft
@@ -673,10 +673,10 @@ export default function PianoTunglyftPage() {
 									</h3>
 								</div>
 								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-									Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.
+									Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora föremål med omsorg och precision.
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Vår bohagsflytt omfattar allt från packning och transport till uppackning och montering. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt.
+								Vi erbjuder packning och uppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt.
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -729,13 +729,13 @@ export default function PianoTunglyftPage() {
 									</h3>
 								</div>
 								<p className="text-lg md:text-xl text-gray-100 mb-1 md:mb-8 relative">
-									Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi hämtar, packar och lagrar säkert.
+								Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.
 								</p>
 								<p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">
 									Vi hjälper med märkning och organisering för enklare återleverans.
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi hjälper även till med märkning av kartonger och inventarielista för smidig återleverans.
+									Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi hjälper även till med smidig återleverans.
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -1388,7 +1388,7 @@ export default function PianoTunglyftPage() {
 								'name': 'Vad är piano & tunglyft?',
 								'acceptedAnswer': {
 									'@type': 'Answer',
-									'text': 'Piano & tunglyft innebär professionell hantering av tunga och skrymmande föremål som kräver specialiserad utrustning och erfarenhet. Vi flyttar pianon, kassaskåp, vapenskåp och andra tunga möbler med precision och säkerhet.'
+									'text': 'Piano & tunglyft innebär professionell hantering av tunga och storskaliga föremål som kräver specialiserad utrustning och erfarenhet. Vi flyttar pianon, kassaskåp, vapenskåp och andra tunga möbler med precision och säkerhet.'
 								}
 							},
 							{
@@ -1440,7 +1440,7 @@ export default function PianoTunglyftPage() {
 									{
 										id: "piano-tunglyft-2",
 										question: "Vad ingår vanligtvis i en piano & tunglyft?",
-										answer: "En piano & tunglyft inkluderar oftast besiktning på plats, specialiserad utrustning (pianovagnar, lyftkranar, skydd), bärhjälp med erfarna medarbetare, säker transport och leverans. Vi använder kvalitativa skyddsmaterial och säkerställer att allt hanteras med omsorg."
+										answer: "En piano & tunglyft inkluderar oftast besiktning på plats, specialiserad utrustning som exempelvis pianovagnar och skydd, bärhjälp med erfarna medarbetare, säker transport och leverans. Vi använder kvalitativa skyddsmaterial och säkerställer att allt hanteras med omsorg."
 									},
 									{
 										id: "piano-tunglyft-3",
