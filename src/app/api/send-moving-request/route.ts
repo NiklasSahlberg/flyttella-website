@@ -152,19 +152,23 @@ export async function POST(req: Request) {
     </tr>
   </table>
 
-  <div class="section-header">Tjänster</div>
+  <div class="section-header">${data.language === 'en' ? 'Services' : 'Tjänster'}</div>
   <table>
     <tr>
-      <th>Vill du att flyttfirman packar dina ägodelar?</th>
-      <td>${data.villDuHaPackhjalp ? 'Ja' : 'Nej'}</td>
+      <th>${data.language === 'en' ? 'Do you want help with packing?' : 'Vill du ha hjälp med packning?'}</th>
+      <td>${data.villDuHaPackhjalp || (data.language === 'en' ? 'No' : 'Nej')}</td>
     </tr>
     <tr>
-      <th>Ska dina ägodelar förvaras i lager mellan ut- och inflyttning?</th>
-      <td>${data.villDuHaLagring ? 'Ja' : 'Nej'}</td>
+      <th>${data.language === 'en' ? 'Do you want help with storage?' : 'Vill du ha hjälp med magasinering?'}</th>
+      <td>${data.villDuHaLagring || (data.language === 'en' ? 'No' : 'Nej')}</td>
     </tr>
     <tr>
-      <th>Vill du ha flyttstädning i din nuvarande bostad?</th>
-      <td>${data.villDuHaStadning ? 'Ja' : 'Nej'}</td>
+      <th>${data.language === 'en' ? 'Do you want moving cleaning?' : 'Vill du ha flyttstädning?'}</th>
+      <td>${data.villDuHaStadning || (data.language === 'en' ? 'No' : 'Nej')}</td>
+    </tr>
+    <tr>
+      <th>${data.language === 'en' ? 'Do you want disposal service?' : 'Vill du ha bortforsling?'}</th>
+      <td>${data.villDuHaBortforsling || (data.language === 'en' ? 'No' : 'Nej')}</td>
     </tr>
   </table>
 

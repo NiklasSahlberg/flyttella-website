@@ -28,7 +28,6 @@ interface StadningFormData {
   email: string;
   phone: string;
   typeOfHome: string;
-  numberOfFloors: string;
   bedrooms: number;
   bathrooms: number;
   kitchen: number;
@@ -52,7 +51,6 @@ interface StadningFormData {
   waterTrapCleaningCount: number;
   blindsCleaningCount: number;
   hasFreezerDefrosting: boolean;
-  squareMeters: string;
   comments: string;
   movingDate: string;
   flexibleMovingDate: string;
@@ -135,8 +133,6 @@ interface FormErrors {
   email?: string;
   phone?: string;
   typeOfHome?: string;
-  numberOfFloors?: string;
-  squareMeters?: string;
   movingDate?: string;
   flexibleMovingDate?: string;
   rooms?: string;
@@ -214,7 +210,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     email: '',
     phone: '',
     typeOfHome: '',
-    numberOfFloors: '',
     bedrooms: 0,
     bathrooms: 0,
     kitchen: 0,
@@ -238,7 +233,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     waterTrapCleaningCount: 0,
     blindsCleaningCount: 0,
     hasFreezerDefrosting: false,
-    squareMeters: '',
     comments: '',
     movingDate: (() => {
       const tomorrow = new Date();
@@ -468,11 +462,11 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
   const validateStep1 = (): boolean => {
     const newErrors: FormErrors = {};
-    if (selectedCleaningType === 'Hemstädning') {
+    if (selectedCleaningType === 'Hemstädning' || selectedCleaningType === 'Home cleaning') {
       if (!formData.cleaningDayTimePair || !formData.cleaningDayTimePair.day || !formData.cleaningDayTimePair.time) {
         newErrors.cleaningDayTimePair = t('hero.form.validation.selectCleaningDayTime');
       }
-    } else if (selectedCleaningType === 'Storstädning' || selectedCleaningType === 'Annan städning') {
+    } else if (selectedCleaningType === 'Storstädning' || selectedCleaningType === 'Deep cleaning' || selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') {
       if (!formData.movingDate.trim()) {
         newErrors.movingDate = t('hero.form.validation.selectCleaningDate');
       }
@@ -508,35 +502,28 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     const newErrors: FormErrors = {};
     
     // Byggstädning: require at least one work type and one cleaning service
-    if (selectedCleaningType === 'Byggstädning') {
+    if (selectedCleaningType === 'Byggstädning' || selectedCleaningType === 'Construction cleaning') {
       if (!formData.constructionWorkType || formData.constructionWorkType.length === 0) {
-        newErrors.constructionWorkType = 'Vänligen välj minst en sorts arbete.';
+        newErrors.constructionWorkType = t('hero.form.validation.selectConstructionWork');
       }
-      if (!formData.constructionCleaningServices || formData.constructionCleaningServices.length === 0) {
-        newErrors.constructionCleaningServices = 'Vänligen välj minst en sak som ska ingå i städningen.';
-      }
+      // Additional services are optional for construction cleaning
+      // if (!formData.constructionCleaningServices || formData.constructionCleaningServices.length === 0) {
+      //   newErrors.constructionCleaningServices = t('hero.form.validation.selectConstructionCleaning');
+      // }
     } else if (selectedCleaningType !== 'Annan städning' && selectedCleaningType !== 'Fönsterputs') {
       if (!formData.typeOfHome.trim()) {
-        newErrors.typeOfHome = 'Vänligen välj bostadstyp';
-      }
-      if (!formData.numberOfFloors.trim()) {
-        newErrors.numberOfFloors = 'Vänligen ange antal våningar';
-      }
-      if (!formData.squareMeters.trim()) {
-        newErrors.squareMeters = 'Vänligen ange ytstorlek';
-      } else if (!/^\d+$/.test(formData.squareMeters)) {
-        newErrors.squareMeters = 'Vänligen ange endast siffror';
+        newErrors.typeOfHome = t('hero.form.validation.selectHomeType');
       }
     }
-    if (selectedCleaningType === 'Fönsterputs' && !formData.needsLadder.trim()) {
-      newErrors.needsLadder = 'Vänligen välj om ni behöver en stege';
+    if ((selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') && !formData.needsLadder.trim()) {
+      newErrors.needsLadder = t('hero.form.validation.selectLadderNeed');
     }
-    if (selectedCleaningType === 'Fönsterputs' && (!formData.windowTypes || formData.windowTypes.length === 0)) {
-      newErrors.windowTypes = 'Vänligen välj minst en typ av fönster';
+    if ((selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') && (!formData.windowTypes || formData.windowTypes.length === 0)) {
+      newErrors.windowTypes = t('hero.form.validation.selectWindowType');
     }
-    if (selectedCleaningType === 'Fönsterputs' && 
+    if ((selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') && 
         (formData.windowsWithMullions || 0) + (formData.windowsWithoutMullions || 0) + (formData.topHungWindows || 0) === 0) {
-      newErrors.windowCount = 'Vänligen ange antal fönster för minst en typ';
+      newErrors.windowCount = t('hero.form.validation.enterWindowCount');
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -545,15 +532,15 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   const validateStep3 = (): boolean => {
     const newErrors: FormErrors = {};
     
-    if (selectedCleaningType === 'Annan städning') {
+    if (selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') {
       // For "Annan städning", only validate the comments field
       if (!formData.comments.trim()) {
-        newErrors.comments = 'Vänligen beskriv din städtjänst';
+        newErrors.comments = t('hero.form.validation.describeCleaningService');
       }
-    } else if (selectedCleaningType === 'Flyttstädning') {
+    } else if (selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') {
       // For "Flyttstädning", validate the moving help question
       if (!formData.wantsMovingHelp) {
-        newErrors.wantsMovingHelp = 'Vänligen välj om du vill ha flytthjälp';
+        newErrors.wantsMovingHelp = t('hero.form.validation.selectMovingHelp');
       }
     }
     
@@ -564,34 +551,34 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   const validateStep4 = (): boolean => {
     const newErrors: FormErrors = {};
     
-    if (selectedCleaningType === 'Annan städning') {
+    if (selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') {
       // For "Annan städning", only validate contact fields
       if (!formData.name.trim()) {
         newErrors.name = t('hero.form.validation.enterName');
       }
       if (localCustomerType === 'foretag' && !formData.contactPersonName?.trim()) {
-        newErrors.contactPersonName = 'Vänligen ange kontaktpersonens namn';
+        newErrors.contactPersonName = t('hero.form.validation.enterContactPersonName');
       }
       if (!formData.email.trim()) {
         newErrors.email = t('hero.form.validation.enterEmail');
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        newErrors.email = 'Vänligen ange en giltig e-postadress';
+        newErrors.email = t('hero.form.validation.enterValidEmail');
       }
       if (!formData.phone.trim()) {
         newErrors.phone = t('hero.form.validation.enterPhone');
       }
-    } else if (selectedCleaningType === 'Flyttstädning' && formData.wantsMovingHelp === 'Nej') {
+    } else if ((selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') && formData.wantsMovingHelp === 'Nej') {
       // For "Flyttstädning" with "Nej", only validate contact fields
       if (!formData.name.trim()) {
         newErrors.name = t('hero.form.validation.enterName');
       }
       if (localCustomerType === 'foretag' && !formData.contactPersonName?.trim()) {
-        newErrors.contactPersonName = 'Vänligen ange kontaktpersonens namn';
+        newErrors.contactPersonName = t('hero.form.validation.enterContactPersonName');
       }
       if (!formData.email.trim()) {
         newErrors.email = t('hero.form.validation.enterEmail');
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        newErrors.email = 'Vänligen ange en giltig e-postadress';
+        newErrors.email = t('hero.form.validation.enterValidEmail');
       }
       if (!formData.phone.trim()) {
         newErrors.phone = t('hero.form.validation.enterPhone');
@@ -602,12 +589,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         newErrors.name = t('hero.form.validation.enterName');
       }
       if (localCustomerType === 'foretag' && !formData.contactPersonName?.trim()) {
-        newErrors.contactPersonName = 'Vänligen ange kontaktpersonens namn';
+        newErrors.contactPersonName = t('hero.form.validation.enterContactPersonName');
       }
       if (!formData.email.trim()) {
         newErrors.email = t('hero.form.validation.enterEmail');
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        newErrors.email = 'Vänligen ange en giltig e-postadress';
+        newErrors.email = t('hero.form.validation.enterValidEmail');
       }
       if (!formData.phone.trim()) {
         newErrors.phone = t('hero.form.validation.enterPhone');
@@ -761,7 +748,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   // Validation for step 0
   const validateStep0 = (): boolean => {
     if (!selectedCleaningType) {
-      setErrors({ cleaningType: 'Vänligen välj en städtjänst' });
+      setErrors({ cleaningType: t('hero.form.validation.selectCleaningService') });
       return false;
     }
     setErrors({});
@@ -802,21 +789,21 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         break;
       case 2:
         console.log('Validating step 2');
-        if (selectedCleaningType === 'Annan städning') {
+        if (selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') {
           // Skip step 2 for "Annan städning" - go directly to step 3
           console.log('Skipping step 2 for Annan städning');
           setStep(3);
           return;
         } else {
-          setTouchedFields(prev => ({ ...prev, typeOfHome: true, numberOfFloors: true, squareMeters: true }));
+          setTouchedFields(prev => ({ ...prev, typeOfHome: true }));
           isValid = validateStep2();
         }
         break;
       case 3:
         console.log('Validating step 3');
-        if (selectedCleaningType === 'Annan städning') {
+        if (selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') {
           setTouchedFields({ comments: true });
-        } else if (selectedCleaningType === 'Flyttstädning') {
+        } else if (selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') {
           setTouchedFields({ wantsMovingHelp: true });
         } else {
           setTouchedFields({ 
@@ -843,7 +830,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     }
     console.log('Validation result:', isValid);
     if (isValid) {
-      if (selectedCleaningType === 'Annan städning') {
+      if (selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') {
         // For "Annan städning": step 0 -> 1 -> 3 -> 4
         if (step === 0 || step === 1 || step === 3) {
           console.log('Proceeding to next step for Annan städning');
@@ -851,7 +838,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
           setErrors({});
           setTouchedFields({});
         }
-      } else if (selectedCleaningType === 'Flyttstädning') {
+      } else if (selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') {
         // For "Flyttstädning": step 0 -> 1 -> 2 -> 3 -> 4
         if (step < 4) {
           console.log('Proceeding to next step for Flyttstädning');
@@ -885,7 +872,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   };
 
   const handlePrev = () => {
-    if (selectedCleaningType === 'Annan städning') {
+    if (selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') {
       setStep((prev) => {
         if (prev === 4) return 3; // from contact info to describe box
         if (prev === 3) return 1; // from describe box to address (skip step 2)
@@ -956,14 +943,14 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   if (isMovingForm) {
     displayStep = movingStep;
     displayTotal = 7;
-  } else if (selectedCleaningType === 'Annan städning') {
+  } else if (selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') {
     // Map step to visible step for Annan städning
     if (step === 0) displayStep = 1;
     else if (step === 1) displayStep = 2;
     else if (step === 3) displayStep = 3;
     else if (step === 4) displayStep = 4;
     displayTotal = 4;
-  } else if (selectedCleaningType === 'Flyttstädning') {
+  } else if (selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') {
     // Map step to visible step for Flyttstädning
     if (step === 0) displayStep = 1;
     else if (step === 1) displayStep = 2;
@@ -1017,9 +1004,9 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
               className="relative z-10"
               onSubmit={(e) => {
                 e.preventDefault();
-                if ((step === 3 && selectedCleaningType !== 'Flyttstädning') || 
-                    (step === 4 && selectedCleaningType === 'Flyttstädning') ||
-                    (step === 4 && selectedCleaningType === 'Annan städning')) {
+                if ((step === 3 && selectedCleaningType !== 'Flyttstädning' && selectedCleaningType !== 'Moving cleaning') || 
+                    (step === 4 && (selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning')) ||
+                    (step === 4 && (selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning'))) {
                   handleFinalSubmit(e);
                 }
               }} 
@@ -1064,7 +1051,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
               {step === 1 && (
                 <div className="space-y-6">
                   <div>
-                    {selectedCleaningType === 'Hemstädning' ? (
+                    {(selectedCleaningType === 'Hemstädning' || selectedCleaningType === 'Home cleaning') ? (
                       <>
                         <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.cleaningFrequency')}</strong></label>
                         <select
@@ -1097,7 +1084,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               className="px-2 py-1 border rounded w-32 bg-white text-black"
                               style={{ backgroundColor: 'white', color: 'black' }}
                             >
-                              <option value="">Välj dag</option>
+                              <option value="">{t('hero.form.selectDay')}</option>
                               {daysOfWeek.map(day => (
                                 <option key={day} value={day}>{day}</option>
                               ))}
@@ -1108,7 +1095,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               className="px-2 py-1 border rounded w-32 bg-white text-black"
                               style={{ backgroundColor: 'white', color: 'black' }}
                             >
-                              <option value="">Välj tid</option>
+                              <option value="">{t('hero.form.selectTime')}</option>
                               {timeSlots.map(slot => (
                                 <option key={slot} value={slot}>{slot}</option>
                               ))}
@@ -1119,7 +1106,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                           )}
                         </div>
                       </>
-                    ) : selectedCleaningType === 'Storstädning' ? (
+                    ) : (selectedCleaningType === 'Storstädning' || selectedCleaningType === 'Deep cleaning') ? (
                       <>
                         <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.desiredCleaningDate')}</strong></label>
                         <input
@@ -1143,7 +1130,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </>
                     ) : (
                       <>
-                        <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{selectedCleaningType === 'Fönsterputs' ? t('hero.form.desiredWindowCleaningDate') : t('hero.form.desiredCleaningDate')}</strong></label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{(selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') ? t('hero.form.desiredWindowCleaningDate') : t('hero.form.desiredCleaningDate')}</strong></label>
                         <input
                           type="date"
                           name="movingDate"
@@ -1166,7 +1153,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     )}
                   </div>
                   <div className="space-y-4">
-                    {selectedCleaningType === 'Hemstädning' ? (
+                    {(selectedCleaningType === 'Hemstädning' || selectedCleaningType === 'Home cleaning') ? (
                       <>
                         {/* Do not render the 'Jag är flexibel med städdatum' checkbox or flexibleMovingDate select here */}
                       </>
@@ -1181,12 +1168,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300 rounded"
                           />
                           <label className="ml-2 text-sm text-gray-700">
-                            {selectedCleaningType === 'Fönsterputs' ? t('hero.form.flexibleWithWindowCleaningDate') : t('hero.form.flexibleWithCleaningDate')}
+                            {(selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') ? t('hero.form.flexibleWithWindowCleaningDate') : t('hero.form.flexibleWithCleaningDate')}
                           </label>
                         </div>
                         {formData.wantsFlexibleDate && (
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{selectedCleaningType === 'Fönsterputs' ? t('hero.form.flexibleWindowCleaningDate') : t('hero.form.flexibleCleaningDate')}</strong></label>
+                            <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{(selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') ? t('hero.form.flexibleWindowCleaningDate') : t('hero.form.flexibleCleaningDate')}</strong></label>
                             <select
                               name="flexibleMovingDate"
                               value={formData.flexibleMovingDate}
@@ -1196,26 +1183,26 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               }`}
                               style={{ backgroundColor: 'white', color: 'black' }}
                             >
-                              <option value="">-- Välj --</option>
-                              <option value="+- 1 dag">+- 1 dag</option>
-                              <option value="+- 2 dagar">+- 2 dagar</option>
-                              <option value="+- 3 dagar">+- 3 dagar</option>
-                              <option value="+- 4 dagar">+- 4 dagar</option>
-                              <option value="+- 5 dagar">+- 5 dagar</option>
-                              <option value="+- 6 dagar">+- 6 dagar</option>
-                              <option value="+- 1 vecka">+- 1 vecka</option>
-                              <option value="+- 2 veckor">+- 2 veckor</option>
-                              <option value="+- 3 veckor">+- 3 veckor</option>
-                              <option value="+- 1 månad">+- 1 månad</option>
-                              <option value="mer än 1 månad">mer än 1 månad</option>
+                              <option value="">{t('hero.form.select')}</option>
+                              <option value="+- 1 dag">{t('hero.form.plusMinus1Day')}</option>
+                              <option value="+- 2 dagar">{t('hero.form.plusMinus2Days')}</option>
+                              <option value="+- 3 dagar">{t('hero.form.plusMinus3Days')}</option>
+                              <option value="+- 4 dagar">{t('hero.form.plusMinus4Days')}</option>
+                              <option value="+- 5 dagar">{t('hero.form.plusMinus5Days')}</option>
+                              <option value="+- 6 dagar">{t('hero.form.plusMinus6Days')}</option>
+                              <option value="+- 1 vecka">{t('hero.form.plusMinus1Week')}</option>
+                              <option value="+- 2 veckor">{t('hero.form.plusMinus2Weeks')}</option>
+                              <option value="+- 3 veckor">{t('hero.form.plusMinus3Weeks')}</option>
+                              <option value="+- 1 månad">{t('hero.form.plusMinus1Month')}</option>
+                              <option value="mer än 1 månad">{t('hero.form.moreThan1Month')}</option>
                             </select>
                             {errors.flexibleMovingDate && (
                               <p className="mt-1 text-sm text-red-600">{errors.flexibleMovingDate}</p>
                             )}
                             <p className="mt-2 text-sm text-gray-600">
-                              {selectedCleaningType === 'Fönsterputs' 
-                                ? 'Om du väljer ett flexibelt datum för fönsterputsning sker fönsterputsningen inom vald tidsperiod från det datum du har valt.'
-                                : 'Om du väljer ett flexibelt städdatum sker städningen inom vald tidsperiod från det datum du har valt.'
+                              {(selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning')
+                                ? t('hero.form.flexibleWindowCleaningDateExplanation')
+                                : t('hero.form.flexibleCleaningDateExplanation')
                               }
                             </p>
                           </div>
@@ -1417,12 +1404,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                         </>
                       ) : (
                         <>
-                    <option value="villa">Villa</option>
-                    <option value="lagenhet">Lägenhet</option>
-                    <option value="parhus">Parhus</option>
-                    <option value="radhus">Radhus</option>
-                    <option value="fritidshus">Fritidshus</option>
-                    <option value="annat">Annat</option>
+                    <option value="villa">{t('hero.form.house')}</option>
+                    <option value="lagenhet">{t('hero.form.apartment')}</option>
+                    <option value="parhus">{t('hero.form.townhouse')}</option>
+                    <option value="radhus">{t('hero.form.rowHouse')}</option>
+                    <option value="fritidshus">{t('hero.form.vacationHome')}</option>
+                    <option value="annat">{t('hero.form.other')}</option>
                         </>
                       )}
                     </select>
@@ -1431,87 +1418,24 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     )}
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1"><strong>{formData.typeOfHome.toLowerCase() === 'lagenhet' ? t('hero.form.whichFloor') : t('hero.form.howManyFloors')}</strong></label>
-                    <select
-                      name="numberOfFloors"
-                      value={formData.numberOfFloors}
-                      onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
-                        errors.numberOfFloors ? 'border-red-500' : 'border-gray-300'
-                      }`}
-                      style={{ backgroundColor: 'white', color: 'black' }}
-                    >
-                      <option value="">{formData.typeOfHome.toLowerCase() === 'lagenhet' ? t('hero.form.selectFloor') : t('hero.form.selectNumberOfFloors')}</option>
-                      {formData.typeOfHome.toLowerCase() === 'lagenhet' ? (
-                        <>
-                          <option value="entréplan">Entréplan</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10+">10+</option>
-                        </>
-                      ) : (
-                        <>
-                    <option value="1">1 våning</option>
-                    <option value="2">2 våningar</option>
-                    <option value="3">3 våningar</option>
-                    <option value="4">4 våningar eller fler</option>
-                        </>
-                      )}
-                    </select>
-                    {errors.numberOfFloors && (
-                      <p className="mt-1 text-sm text-red-600">{errors.numberOfFloors}</p>
-                    )}
-                  </div>
 
-                  {selectedCleaningType !== 'Fönsterputs' && (
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1 mt-6"><strong>{t('hero.form.howBigArea')}</strong></label>
-                      <input
-                        type="text"
-                        name="squareMeters"
-                        value={formData.squareMeters}
-                        onChange={e => {
-                          // Only allow numbers
-                          const value = e.target.value.replace(/\D/g, '');
-                          setFormData({ ...formData, squareMeters: value });
-                          setErrors({ ...errors, squareMeters: '' });
-                        }}
-                        placeholder={t('hero.form.enterAreaInSqm')}
-                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
-                          errors.squareMeters ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                        style={{ backgroundColor: 'white', color: 'black' }}
-                      />
-                      {errors.squareMeters && (
-                        <p className="mt-1 text-sm text-red-600">{errors.squareMeters}</p>
-                      )}
-                    </div>
-                  )}
 
-                  {selectedCleaningType === 'Fönsterputs' && (
+                  {(selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') && (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1 mt-6"><strong>Behöver vi ta med oss en stege för att nå alla fönster?</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1 mt-6"><strong>{t('hero.form.doWeNeedLadder')}</strong></label>
                       <div className="mt-2 flex space-x-6">
                         <div className="flex items-center">
                           <input
                             type="radio"
                             id="ladder-yes"
                             name="needsLadder"
-                            value="Ja"
-                            checked={formData.needsLadder === 'Ja'}
+                            value={t('hero.form.yes')}
+                            checked={formData.needsLadder === t('hero.form.yes')}
                             onChange={handleInputChange}
                             className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                           />
                           <label htmlFor="ladder-yes" className="ml-2 text-sm text-gray-700">
-                            Ja
+                            {t('hero.form.yes')}
                           </label>
                         </div>
                         <div className="flex items-center">
@@ -1519,13 +1443,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             type="radio"
                             id="ladder-no"
                             name="needsLadder"
-                            value="Nej"
-                            checked={formData.needsLadder === 'Nej'}
+                            value={t('hero.form.no')}
+                            checked={formData.needsLadder === t('hero.form.no')}
                             onChange={handleInputChange}
                             className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                           />
                           <label htmlFor="ladder-no" className="ml-2 text-sm text-gray-700">
-                            Nej
+                            {t('hero.form.no')}
                           </label>
                         </div>
                         <div className="flex items-center">
@@ -1533,13 +1457,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             type="radio"
                             id="ladder-unknown"
                             name="needsLadder"
-                            value="Vet ej"
-                            checked={formData.needsLadder === 'Vet ej'}
+                            value={t('hero.form.dontKnow')}
+                            checked={formData.needsLadder === t('hero.form.dontKnow')}
                             onChange={handleInputChange}
                             className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                           />
                           <label htmlFor="ladder-unknown" className="ml-2 text-sm text-gray-700">
-                            Vet ej
+                            {t('hero.form.dontKnow')}
                           </label>
                         </div>
                       </div>
@@ -1549,13 +1473,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     </div>
                   )}
 
-                  {selectedCleaningType === 'Fönsterputs' && (
+                  {(selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') && (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1 mt-6"><strong>Vilken typ av fönster har du?</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1 mt-6"><strong>{t('hero.form.whatTypeOfWindows')}</strong></label>
                       <div className="mt-2 grid grid-cols-2 gap-4">
                         <div className="flex items-start">
                           <div className="flex items-center h-5">
-                            <input id="single-glass" name="windowTypes" type="checkbox" value="Englasfönster (2 sidor)" checked={formData.windowTypes.includes('Englasfönster (2 sidor)')} onChange={(e) => {
+                            <input id="single-glass" name="windowTypes" type="checkbox" value={t('hero.form.singleGlassWindows')} checked={formData.windowTypes.includes(t('hero.form.singleGlassWindows'))} onChange={(e) => {
                               const value = e.target.value;
                               const checked = e.target.checked;
                               setFormData(prev => ({
@@ -1567,12 +1491,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="single-glass" className="font-medium text-gray-700">Englasfönster (2 sidor)</label>
+                            <label htmlFor="single-glass" className="font-medium text-gray-700">{t('hero.form.singleGlassWindows')}</label>
                           </div>
                         </div>
                         <div className="flex items-start">
                           <div className="flex items-center h-5">
-                            <input id="double-glass" name="windowTypes" type="checkbox" value="Tvåglasfönster (4 sidor)" checked={formData.windowTypes.includes('Tvåglasfönster (4 sidor)')} onChange={(e) => {
+                            <input id="double-glass" name="windowTypes" type="checkbox" value={t('hero.form.doubleGlassWindows')} checked={formData.windowTypes.includes(t('hero.form.doubleGlassWindows'))} onChange={(e) => {
                               const value = e.target.value;
                               const checked = e.target.checked;
                               setFormData(prev => ({
@@ -1584,12 +1508,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="double-glass" className="font-medium text-gray-700">Tvåglasfönster (4 sidor)</label>
+                            <label htmlFor="double-glass" className="font-medium text-gray-700">{t('hero.form.doubleGlassWindows')}</label>
                           </div>
                         </div>
                         <div className="flex items-start">
                           <div className="flex items-center h-5">
-                            <input id="triple-glass" name="windowTypes" type="checkbox" value="Treglasfönster (6 sidor)" checked={formData.windowTypes.includes('Treglasfönster (6 sidor)')} onChange={(e) => {
+                            <input id="triple-glass" name="windowTypes" type="checkbox" value={t('hero.form.tripleGlassWindows')} checked={formData.windowTypes.includes(t('hero.form.tripleGlassWindows'))} onChange={(e) => {
                               const value = e.target.value;
                               const checked = e.target.checked;
                               setFormData(prev => ({
@@ -1601,12 +1525,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="triple-glass" className="font-medium text-gray-700">Treglasfönster (6 sidor)</label>
+                            <label htmlFor="triple-glass" className="font-medium text-gray-700">{t('hero.form.tripleGlassWindows')}</label>
                           </div>
                         </div>
                         <div className="flex items-start">
                           <div className="flex items-center h-5">
-                            <input id="unknown-windows" name="windowTypes" type="checkbox" value="Vet ej" checked={formData.windowTypes.includes('Vet ej')} onChange={(e) => {
+                            <input id="unknown-windows" name="windowTypes" type="checkbox" value={t('hero.form.dontKnow')} checked={formData.windowTypes.includes(t('hero.form.dontKnow'))} onChange={(e) => {
                               const value = e.target.value;
                               const checked = e.target.checked;
                               setFormData(prev => ({
@@ -1618,7 +1542,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="unknown-windows" className="font-medium text-gray-700">Vet ej</label>
+                            <label htmlFor="unknown-windows" className="font-medium text-gray-700">{t('hero.form.dontKnow')}</label>
                           </div>
                         </div>
                       </div>
@@ -1628,12 +1552,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     </div>
                   )}
 
-                  {selectedCleaningType === 'Fönsterputs' && (
+                  {(selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') && (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1 mt-6"><strong>Antal fönster av varje typ</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1 mt-6"><strong>{t('hero.form.numberOfWindowsEachType')}</strong></label>
                       <div className="mt-2 space-y-4">
                         <div className="flex items-center justify-between">
-                          <label className="text-sm font-medium text-gray-700">Fönster med spröjs</label>
+                          <label className="text-sm font-medium text-gray-700">{t('hero.form.windowsWithMullions')}</label>
                           <div className="flex items-center">
                             <button type="button" onClick={() => setFormData(prev => ({ ...prev, windowsWithMullions: Math.max(0, (prev.windowsWithMullions || 0) - 1) }))} className="px-2 py-1 border rounded-l-md bg-gray-200 hover:bg-gray-300 text-black">-</button>
                             <span className="px-4 py-1 border-t border-b text-black">{formData.windowsWithMullions || 0}</span>
@@ -1641,7 +1565,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                           </div>
                         </div>
                         <div className="flex items-center justify-between">
-                          <label className="text-sm font-medium text-gray-700">Fönster utan spröjs</label>
+                          <label className="text-sm font-medium text-gray-700">{t('hero.form.windowsWithoutMullions')}</label>
                           <div className="flex items-center">
                             <button type="button" onClick={() => setFormData(prev => ({ ...prev, windowsWithoutMullions: Math.max(0, (prev.windowsWithoutMullions || 0) - 1) }))} className="px-2 py-1 border rounded-l-md bg-gray-200 hover:bg-gray-300 text-black">-</button>
                             <span className="px-4 py-1 border-t border-b text-black">{formData.windowsWithoutMullions || 0}</span>
@@ -1649,7 +1573,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                           </div>
                         </div>
                         <div className="flex items-center justify-between">
-                          <label className="text-sm font-medium text-gray-700">Överkantshängda fönster</label>
+                          <label className="text-sm font-medium text-gray-700">{t('hero.form.topHungWindows')}</label>
                           <div className="flex items-center">
                             <button type="button" onClick={() => setFormData(prev => ({ ...prev, topHungWindows: Math.max(0, (prev.topHungWindows || 0) - 1) }))} className="px-2 py-1 border rounded-l-md bg-gray-200 hover:bg-gray-300 text-black">-</button>
                             <span className="px-4 py-1 border-t border-b text-black">{formData.topHungWindows || 0}</span>
@@ -1665,7 +1589,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
                   {/* Tilläggstjänster section */}
                   {/* Debug: selectedCleaningType = ${selectedCleaningType} */}
-                  {selectedCleaningType === 'Dödsbostädning' ? (
+                  {(selectedCleaningType === 'Dödsbostädning' || selectedCleaningType === 'Estate cleaning') ? (
                     <div className="mt-6">
                       <h3 className="text-lg font-medium text-gray-900"><strong>{t('hero.form.additionalServices')}</strong></h3>
                       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1674,15 +1598,15 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             <input id="estate-clearing" name="estateClearing" type="checkbox" checked={formData.estateClearing} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="estate-clearing" className="font-medium text-gray-700">Önskar tömning/bortforsling och flytt av möbler</label>
+                            <label htmlFor="estate-clearing" className="font-medium text-gray-700">{t('hero.form.wantsEstateClearing')}</label>
                           </div>
                         </div>
                       </div>
                     </div>
-                  ) : selectedCleaningType === 'Byggstädning' ? (
+                  ) : selectedCleaningType === 'Byggstädning' || selectedCleaningType === 'Construction cleaning' ? (
                     <div className="mt-6 space-y-6">
                       <div>
-                        <h3 className="text-lg font-medium text-gray-900 mb-4"><strong>Vilken sorts arbete har du gjort?</strong></h3>
+                        <h3 className="text-lg font-medium text-gray-900 mb-4"><strong>{t('hero.form.whatTypeOfWork')}</strong></h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="flex items-start">
                             <div className="flex items-center h-5">
@@ -1698,7 +1622,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                             </div>
                             <div className="ml-3 text-sm">
-                              <label htmlFor="renovering" className="font-medium text-gray-700">Renovering/Ombyggnad</label>
+                              <label htmlFor="renovering" className="font-medium text-gray-700">{t('hero.form.renovationRebuilding')}</label>
                             </div>
                           </div>
                           <div className="flex items-start">
@@ -1715,7 +1639,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                             </div>
                             <div className="ml-3 text-sm">
-                              <label htmlFor="tillbyggnad" className="font-medium text-gray-700">Tillbyggnad/Utbyggnad</label>
+                              <label htmlFor="tillbyggnad" className="font-medium text-gray-700">{t('hero.form.extensionExpansion')}</label>
                             </div>
                           </div>
                           <div className="flex items-start">
@@ -1732,7 +1656,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                             </div>
                             <div className="ml-3 text-sm">
-                              <label htmlFor="malning" className="font-medium text-gray-700">Målning/Slipning</label>
+                              <label htmlFor="malning" className="font-medium text-gray-700">{t('hero.form.paintingSanding')}</label>
                             </div>
                           </div>
                           <div className="flex items-start">
@@ -1749,7 +1673,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                             </div>
                             <div className="ml-3 text-sm">
-                              <label htmlFor="golvlaggning" className="font-medium text-gray-700">Golvläggning/Golvslipning</label>
+                              <label htmlFor="golvlaggning" className="font-medium text-gray-700">{t('hero.form.flooringFloorSanding')}</label>
                             </div>
                           </div>
                           <div className="flex items-start">
@@ -1766,7 +1690,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                             </div>
                             <div className="ml-3 text-sm">
-                              <label htmlFor="annat-arbete" className="font-medium text-gray-700">Annat</label>
+                              <label htmlFor="annat-arbete" className="font-medium text-gray-700">{t('hero.form.otherWork')}</label>
                             </div>
                           </div>
                         </div>
@@ -1776,7 +1700,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </div>
                       
                       <div>
-                        <h3 className="text-lg font-medium text-gray-900 mb-4"><strong>Tilläggstjänster</strong></h3>
+                        <h3 className="text-lg font-medium text-gray-900 mb-4"><strong>{t('hero.form.additionalServices')}</strong></h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="flex items-start">
                             <div className="flex items-center h-5">
@@ -1792,7 +1716,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               }} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                             </div>
                             <div className="ml-3 text-sm">
-                              <label htmlFor="slang-skrap" className="font-medium text-gray-700">Släng skräp och avfall</label>
+                              <label htmlFor="slang-skrap" className="font-medium text-gray-700">{t('hero.form.disposeWaste')}</label>
                             </div>
                           </div>
                         </div>
@@ -1801,7 +1725,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                         )}
                       </div>
                     </div>
-                  ) : selectedCleaningType === 'Hemstädning' ? (
+                  ) : (selectedCleaningType === 'Hemstädning' || selectedCleaningType === 'Home cleaning') ? (
                     <div className="mt-6">
                       <h3 className="text-lg font-medium text-gray-900"><strong>{t('hero.form.additionalServices')}</strong></h3>
                       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1810,7 +1734,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             <input id="window-cleaning" name="windowCleaning" type="checkbox" checked={formData.windowCleaning} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="window-cleaning" className="font-medium text-gray-700">Önskar fönsterputsning</label>
+                            <label htmlFor="window-cleaning" className="font-medium text-gray-700">{t('hero.form.wantsWindowCleaning')}</label>
                           </div>
                         </div>
                         <div className="flex items-start">
@@ -1818,7 +1742,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             <input id="bed-making" name="bedMaking" type="checkbox" checked={formData.bedMaking} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="bed-making" className="font-medium text-gray-700">Önskar bäddning</label>
+                            <label htmlFor="bed-making" className="font-medium text-gray-700">{t('hero.form.wantsBedMaking')}</label>
                           </div>
                         </div>
                         <div className="flex items-start">
@@ -1826,7 +1750,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             <input id="dish-washing" name="dishWashing" type="checkbox" checked={formData.dishWashing} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="dish-washing" className="font-medium text-gray-700">Önskar diskning</label>
+                            <label htmlFor="dish-washing" className="font-medium text-gray-700">{t('hero.form.wantsDishWashing')}</label>
                           </div>
                         </div>
                         <div className="flex items-start">
@@ -1834,12 +1758,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             <input id="ironing" name="ironing" type="checkbox" checked={formData.ironing} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="ironing" className="font-medium text-gray-700">Önskar strykning</label>
+                            <label htmlFor="ironing" className="font-medium text-gray-700">{t('hero.form.wantsIroning')}</label>
                           </div>
                         </div>
                       </div>
                     </div>
-                  ) : selectedCleaningType === 'Storstädning' ? (
+                  ) : (selectedCleaningType === 'Storstädning' || selectedCleaningType === 'Deep cleaning') ? (
                     <div className="mt-6">
                       <h3 className="text-lg font-medium text-gray-900"><strong>{t('hero.form.additionalServices')}</strong></h3>
                       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1848,7 +1772,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             <input id="bed-making-storstädning" name="bedMaking" type="checkbox" checked={formData.bedMaking} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="bed-making-storstädning" className="font-medium text-gray-700">Önskar bäddning</label>
+                            <label htmlFor="bed-making-storstädning" className="font-medium text-gray-700">{t('hero.form.wantsBedMaking')}</label>
                           </div>
                         </div>
                         <div className="flex items-start">
@@ -1856,7 +1780,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             <input id="dish-washing-storstädning" name="dishWashing" type="checkbox" checked={formData.dishWashing} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="dish-washing-storstädning" className="font-medium text-gray-700">Önskar diskning</label>
+                            <label htmlFor="dish-washing-storstädning" className="font-medium text-gray-700">{t('hero.form.wantsDishWashing')}</label>
                           </div>
                         </div>
                         <div className="flex items-start">
@@ -1864,12 +1788,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             <input id="ironing-storstädning" name="ironing" type="checkbox" checked={formData.ironing} onChange={handleInputChange} className="focus:ring-[#10B981] h-4 w-4 text-[#10B981] border-gray-300 rounded" />
                           </div>
                           <div className="ml-3 text-sm">
-                            <label htmlFor="ironing-storstädning" className="font-medium text-gray-700">Önskar strykning</label>
+                            <label htmlFor="ironing-storstädning" className="font-medium text-gray-700">{t('hero.form.wantsIroning')}</label>
                           </div>
                         </div>
                       </div>
                     </div>
-                  ) : selectedCleaningType !== 'Fönsterputs' ? (
+                  ) : selectedCleaningType !== 'Fönsterputs' && selectedCleaningType !== 'Window cleaning' ? (
                     <div className="mt-6">
                       <h3 className="text-lg font-medium text-gray-900"><strong>{t('hero.form.additionalServices')}</strong></h3>
                       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1949,7 +1873,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
               )}
               {step === 3 && (
                 <div className="space-y-6">
-                  {selectedCleaningType === 'Annan städning' ? (
+                  {(selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') ? (
                     <>
                       <h2 className="text-2xl font-bold text-[#0F172A] mb-6">{t('hero.form.describeCleaningService')}</h2>
                       
@@ -1968,7 +1892,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                         </div>
                       </div>
                     </>
-                  ) : selectedCleaningType === 'Flyttstädning' && step === 3 ? (
+                  ) : (selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') && step === 3 ? (
                     <div className="space-y-6">
                       <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
                         {t('hero.form.movingHelp')}
@@ -2054,7 +1978,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                           </div>
                         )}
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2"><strong>E-post</strong></label>
+                          <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.email')}</strong></label>
                           <input
                             type="email"
                             name="email"
@@ -2070,7 +1994,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                           )}
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Telefon</strong></label>
+                          <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.phone')}</strong></label>
                           <input
                             type="tel"
                             name="phone"
@@ -2086,12 +2010,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                           )}
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Kommentarer (frivilligt)</strong></label>
+                          <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.commentsOptional')}</strong></label>
                           <textarea
                             name="comments"
                             value={formData.comments}
                             onChange={handleInputChange}
-                            placeholder="Här kan du nämna särskilda detaljer, t.ex. om du har stuckaturer som behöver rengöras varsamt."
+                            placeholder={t('hero.form.commentsPlaceholder')}
                             rows={4}
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black"
                             style={{ backgroundColor: 'white', color: 'black' }}
@@ -2157,7 +2081,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               }`}
                               style={{ backgroundColor: 'white', color: 'black' }}
                             >
-                              <option value="">-- Välj --</option>
+                              <option value="">{t('hero.form.select')}</option>
                               <option value="1">+ 1 dag</option>
                               <option value="2">+ 2 dagar</option>
                               <option value="3">+ 3 dagar</option>
@@ -2483,13 +2407,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                             }`}
                             style={{ backgroundColor: 'white', color: 'black' }}
                           >
-                            <option value="">-- Välj --</option>
-                            <option value="lagenhet">Lägenhet</option>
-                            <option value="villa">Villa</option>
-                            <option value="parhus">Parhus</option>
-                            <option value="radhus">Radhus</option>
-                            <option value="fritidshus">Fritidshus</option>
-                            <option value="magasin">Magasin</option>
+                            <option value="">{t('hero.form.select')}</option>
+                            <option value="lagenhet">{t('hero.form.apartment')}</option>
+                            <option value="villa">{t('hero.form.house')}</option>
+                            <option value="parhus">{t('hero.form.townhouse')}</option>
+                            <option value="radhus">{t('hero.form.rowHouse')}</option>
+                            <option value="fritidshus">{t('hero.form.vacationHome')}</option>
+                            <option value="magasin">{t('hero.form.storage')}</option>
                           </select>
                           {errors.typeOfHome && (
                             <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
@@ -2539,7 +2463,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                              }`}
                              style={{ backgroundColor: 'white', color: 'black' }}
                            >
-                             <option value="">-- Välj --</option>
+                             <option value="">{t('hero.form.select')}</option>
                              <option value="-2">Våning -2</option>
                              <option value="-1">Våning -1</option>
                              <option value="entreplan">Entréplan</option>
@@ -2777,13 +2701,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                            }`}
                            style={{ backgroundColor: 'white', color: 'black' }}
                          >
-                           <option value="">-- Välj --</option>
+                             <option value="">{t('hero.form.select')}</option>
                            <option value="lagenhet">Lägenhet</option>
                            <option value="villa">Villa</option>
                            <option value="parhus">Parhus</option>
                            <option value="radhus">Radhus</option>
                            <option value="fritidshus">Fritidshus</option>
-                           <option value="magasin">Magasin</option>
+                           <option value="magasin">Vill du ha hjälp med magasinering?</option>
                          </select>
                          {errors.toTypeOfHome && (
                            <p className="mt-1 text-sm text-red-600">{errors.toTypeOfHome}</p>
@@ -2810,7 +2734,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                              }`}
                              style={{ backgroundColor: 'white', color: 'black' }}
                            >
-                             <option value="">-- Välj --</option>
+                             <option value="">{t('hero.form.select')}</option>
                              <option value="-2">Våning -2</option>
                              <option value="-1">Våning -1</option>
                              <option value="entreplan">Entréplan</option>
@@ -3001,7 +2925,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                        
                        <div>
                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                           <strong>{localCustomerType === 'foretag' ? 'Företagsnamn' : 'Ditt namn'}</strong>
+                           <strong>{localCustomerType === 'foretag' ? t('hero.form.companyName') : t('hero.form.yourName')}</strong>
                          </label>
                          <input
                            type="text"
@@ -3041,7 +2965,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
                        <div>
                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                           <strong>E-post</strong>
+                           <strong>{t('hero.form.email')}</strong>
                          </label>
                          <input
                            type="email"
@@ -3060,7 +2984,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
                        <div>
                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                           <strong>Telefon</strong>
+                           <strong>{t('hero.form.phone')}</strong>
                          </label>
                          <input
                            type="tel"
@@ -3101,7 +3025,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                   
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{localCustomerType === 'foretag' ? 'Företagsnamn' : 'Ditt namn'}</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{localCustomerType === 'foretag' ? t('hero.form.companyName') : t('hero.form.yourName')}</strong></label>
                       <input
                         type="text"
                         name="name"
@@ -3135,7 +3059,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </div>
                     )}
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>E-post</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.email')}</strong></label>
                       <input
                         type="email"
                         name="email"
@@ -3151,7 +3075,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Telefon</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.phone')}</strong></label>
                       <input
                         type="tel"
                         name="phone"
@@ -3182,13 +3106,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                 </div>
               )}
 
-              {step === 4 && selectedCleaningType === 'Annan städning' && (
+              {step === 4 && (selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') && (
                 <div className="space-y-6">
                   <h2 className="text-2xl font-bold text-[#0F172A] mb-6">{t('hero.form.contactInformation')}</h2>
                   
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{localCustomerType === 'foretag' ? 'Företagsnamn' : 'Ditt namn'}</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{localCustomerType === 'foretag' ? t('hero.form.companyName') : t('hero.form.yourName')}</strong></label>
                       <input
                         type="text"
                         name="name"
@@ -3222,7 +3146,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       </div>
                     )}
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>E-post</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.email')}</strong></label>
                       <input
                         type="email"
                         name="email"
@@ -3238,7 +3162,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Telefon</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.phone')}</strong></label>
                       <input
                         type="tel"
                         name="phone"
@@ -3324,8 +3248,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                         {t('hero.buttons.tillbaka')}
                       </button>
                     )}
-                    {(selectedCleaningType === 'Annan städning' ? (step < 4) : 
-                      selectedCleaningType === 'Flyttstädning' ? (step < 4) : 
+                    {((selectedCleaningType === 'Annan städning' || selectedCleaningType === 'Other cleaning') ? (step < 4) : 
+                      (selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') ? (step < 4) : 
                       (step < 3)) ? (
                       <button
                         type="button"

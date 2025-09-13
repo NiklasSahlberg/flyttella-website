@@ -141,7 +141,7 @@ interface FlyttoffertFormProps {
 }
 
 export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle, defaultCustomerType = 'privat' }: FlyttoffertFormProps) {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const [step, setStep] = useState(0);
   const [showSteps, setShowSteps] = useState(false);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
@@ -835,6 +835,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 villDuHaPackhjalp: formData.needsPacking ? "Ja" : "Nej",
                 villDuHaLagring: formData.needsStorage ? "Ja" : "Nej",
                 villDuHaStadning: formData.needsCleaning ? "Ja" : "Nej",
+                villDuHaBortforsling: formData.needsDisposal ? "Ja" : "Nej",
                 tungaForemal: formData.hasHeavyItems === "yes" ? 
                   formData.heavyItems.map(item => `${item.type}${item.description ? ` (${item.description})` : ''}`).join(", ") : 
                   "Nej",
@@ -844,7 +845,8 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   email: formData.email,
                   telefon: formData.phone
                 },
-                additionalInfo: formData.additionalInfo || "Inga övriga önskemål"
+                additionalInfo: formData.additionalInfo || "Inga övriga önskemål",
+                language: locale
               };
 
               try {
@@ -1620,7 +1622,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     <option value="parhus">{t('hero.form.options.rowHouse')}</option>
                     <option value="radhus">{t('hero.form.options.townhouse')}</option>
                     <option value="fritidshus">{t('hero.form.options.vacationHome')}</option>
-                    <option value="magasin">{t('hero.form.options.storage')}</option>
+                    <option value="magasin">{t('hero.form.storageOption')}</option>
                   </select>
                   {errors.typeOfHome && (
                     <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
@@ -2364,7 +2366,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     <option value="parhus">{t('hero.form.options.rowHouse')}</option>
                     <option value="radhus">{t('hero.form.options.townhouse')}</option>
                     <option value="fritidshus">{t('hero.form.options.vacationHome')}</option>
-                    <option value="magasin">{t('hero.form.options.storage')}</option>
+                    <option value="magasin">{t('hero.form.storageOption')}</option>
                   </select>
                   {errors.toTypeOfHome && (
                     <p className="mt-1 text-sm text-red-600">{errors.toTypeOfHome}</p>
