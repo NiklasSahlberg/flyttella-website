@@ -436,11 +436,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     const newErrors: FormErrors = {};
     let isValid = true;
     if (!formData.serviceType) {
-      newErrors.serviceType = "Vänligen välj vilken tjänst du vill ha";
+      newErrors.serviceType = t('hero.form.validation.selectService');
       isValid = false;
     }
     if (!formData.movingDate || !formData.movingDate.trim()) {
-      newErrors.movingDate = "Vänligen välj önskat flyttdatum";
+      newErrors.movingDate = t('hero.form.validation.selectMovingDate');
       isValid = false;
     } else {
       const selectedDate = new Date(formData.movingDate);
@@ -448,28 +448,28 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
       tomorrow.setDate(tomorrow.getDate() + 1);
       tomorrow.setHours(0, 0, 0, 0);
       if (selectedDate < tomorrow) {
-        newErrors.movingDate = "Flyttdatum måste vara minst imorgon";
+        newErrors.movingDate = t('hero.form.validation.movingDateTomorrow');
         isValid = false;
       }
     }
     if (formData.wantsFlexibleDate && (!formData.flexibleMovingDate || !formData.flexibleMovingDate.trim())) {
-      newErrors.flexibleMovingDate = "Vänligen välj flexibilitet för flyttdatum";
+      newErrors.flexibleMovingDate = t('hero.form.validation.selectFlexibleDate');
       isValid = false;
     }
     if (formData.needsPacking === undefined) {
-      newErrors.needsPacking = "Vänligen välj om du vill ha packhjälp";
+      newErrors.needsPacking = t('hero.form.validation.selectPackingHelp');
       isValid = false;
     }
     if (formData.needsStorage === undefined) {
-      newErrors.needsStorage = "Vänligen välj om du behöver lagerförvaring";
+      newErrors.needsStorage = t('hero.form.validation.selectStorage');
       isValid = false;
     }
     if (formData.needsCleaning === undefined) {
-      newErrors.needsCleaning = "Vänligen välj om du vill ha flyttstädning";
+      newErrors.needsCleaning = t('hero.form.validation.selectCleaning');
       isValid = false;
     }
     if (formData.needsDisposal === undefined) {
-      newErrors.needsDisposal = "Vänligen välj om du vill ha bortforsling";
+      newErrors.needsDisposal = t('hero.form.validation.selectDisposal');
       isValid = false;
     }
 
@@ -483,45 +483,45 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     const newErrors: FormErrors = {};
     let isValid = true;
     if (!formData.currentAddress || !formData.currentAddress.trim()) {
-      newErrors.currentAddress = "Vänligen ange en giltig adress";
+      newErrors.currentAddress = t('hero.form.validation.enterValidAddress');
       isValid = false;
     } else if (!isCurrentAddressValid) {
-      newErrors.currentAddress = "Vänligen välj en adress från listan";
+      newErrors.currentAddress = t('hero.form.validation.selectAddressFromList');
       isValid = false;
     }
     if (!formData.apartmentNumber || !formData.apartmentNumber.trim()) {
-      newErrors.apartmentNumber = "Vänligen ange gatunummer";
+      newErrors.apartmentNumber = t('hero.form.validation.enterStreetNumber');
       isValid = false;
     } else if (!/^[0-9]+[A-Za-z]?$/.test(formData.apartmentNumber)) {
       newErrors.apartmentNumber = "Gatunummer måste börja med siffror och kan avslutas med en bokstav";
       isValid = false;
     }
     if (!formData.postalCode || !formData.postalCode.trim()) {
-      newErrors.postalCode = "Vänligen ange postnummer";
+      newErrors.postalCode = t('hero.form.validation.enterPostalCode');
       isValid = false;
     } else if (!/^\d{5}$/.test(formData.postalCode)) {
-      newErrors.postalCode = "Postnummer måste vara exakt 5 siffror";
+      newErrors.postalCode = t('hero.form.validation.postalCodeFiveDigits');
       isValid = false;
     }
     if (!formData.apartmentSize || !formData.apartmentSize.trim()) {
-      newErrors.apartmentSize = formData.customerType === 'foretag' ? "Vänligen ange lokalens storlek" : "Vänligen ange bostadens storlek";
+      newErrors.apartmentSize = formData.customerType === 'foretag' ? t('hero.form.validation.enterOfficeSize') : t('hero.form.validation.enterApartmentSize');
       isValid = false;
     } else if (isNaN(Number(formData.apartmentSize)) || Number(formData.apartmentSize) <= 0) {
-      newErrors.apartmentSize = formData.customerType === 'foretag' ? "Lokalens storlek måste vara ett positivt tal" : "Bostadens storlek måste vara ett positivt tal";
+      newErrors.apartmentSize = formData.customerType === 'foretag' ? t('hero.form.validation.officeSizePositive') : t('hero.form.validation.apartmentSizePositive');
       isValid = false;
     }
     if (formData.customerType !== 'foretag') {
     if (!formData.typeOfHome || !formData.typeOfHome.trim()) {
-      newErrors.typeOfHome = "Vänligen välj typ av bostad";
+      newErrors.typeOfHome = t('hero.form.validation.selectHomeType');
       isValid = false;
       }
     }
     if (formData.customerType === 'foretag') {
       if (!formData.workplaceCount || !formData.workplaceCount.trim()) {
-        newErrors.workplaceCount = "Vänligen ange antal arbetsplatser";
+        newErrors.workplaceCount = t('hero.form.validation.enterWorkplaceCount');
         isValid = false;
       } else if (isNaN(Number(formData.workplaceCount)) || Number(formData.workplaceCount) <= 0) {
-        newErrors.workplaceCount = "Antal arbetsplatser måste vara ett positivt tal";
+        newErrors.workplaceCount = t('hero.form.validation.workplaceCountPositive');
         isValid = false;
       }
     }
@@ -533,55 +533,55 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     const newErrors: FormErrors = {};
     let isValid = true;
     if (!formData.floor || !formData.floor.trim()) {
-      newErrors.floor = "Vänligen välj våning";
+      newErrors.floor = t('hero.form.validation.selectFloor');
       isValid = false;
     }
     if (formData.typeOfHome === "lagenhet" && !formData.hasElevator) {
-      newErrors.hasElevator = "Vänligen ange om det finns hiss";
+      newErrors.hasElevator = t('hero.form.validation.selectElevator');
       isValid = false;
     }
     if (formData.hasElevator === "yes" && !formData.elevatorSize) {
-      newErrors.elevatorSize = "Vänligen välj hisstorlek";
+      newErrors.elevatorSize = t('hero.form.validation.selectElevatorSize');
       isValid = false;
     }
     if (!formData.parkingDistance || !formData.parkingDistance.trim()) {
-      newErrors.parkingDistance = "Vänligen ange avstånd till parkering";
+      newErrors.parkingDistance = t('hero.form.validation.enterParkingDistance');
       isValid = false;
     } else if (isNaN(Number(formData.parkingDistance)) || Number(formData.parkingDistance) < 0) {
-      newErrors.parkingDistance = "Avståndet måste vara ett positivt tal i meter";
+      newErrors.parkingDistance = t('hero.form.validation.parkingDistancePositive');
       isValid = false;
     }
     if (!formData.hasAttic) {
-      newErrors.hasAttic = "Vänligen välj om du har vind";
+      newErrors.hasAttic = t('hero.form.validation.selectAttic');
       isValid = false;
     }
     if (formData.hasAttic === "yes" && (!formData.atticArea || !formData.atticArea.trim())) {
-      newErrors.atticArea = "Vänligen ange vindens yta";
+      newErrors.atticArea = t('hero.form.validation.enterAtticArea');
       isValid = false;
     } else if (formData.hasAttic === "yes" && (isNaN(Number(formData.atticArea)) || Number(formData.atticArea) <= 0)) {
-      newErrors.atticArea = "Ytan måste vara ett positivt tal";
+      newErrors.atticArea = t('hero.form.validation.areaPositive');
       isValid = false;
     }
     if (!formData.hasBasementStorage) {
-      newErrors.hasBasementStorage = "Vänligen välj om du har källarförråd";
+      newErrors.hasBasementStorage = t('hero.form.validation.selectBasementStorage');
       isValid = false;
     }
     if (formData.hasBasementStorage === "yes" && (!formData.basementStorageArea || !formData.basementStorageArea.trim())) {
-      newErrors.basementStorageArea = "Vänligen ange källarförrådets yta";
+      newErrors.basementStorageArea = t('hero.form.validation.enterBasementStorageArea');
       isValid = false;
     } else if (formData.hasBasementStorage === "yes" && (isNaN(Number(formData.basementStorageArea)) || Number(formData.basementStorageArea) <= 0)) {
-      newErrors.basementStorageArea = "Ytan måste vara ett positivt tal";
+      newErrors.basementStorageArea = t('hero.form.validation.areaPositive');
       isValid = false;
     }
     if (!formData.hasGarage) {
-      newErrors.hasGarage = "Vänligen välj om du har garage";
+      newErrors.hasGarage = t('hero.form.validation.selectGarage');
       isValid = false;
     }
     if (formData.hasGarage === "yes" && (!formData.garageArea || !formData.garageArea.trim())) {
-      newErrors.garageArea = "Vänligen ange garagets yta";
+      newErrors.garageArea = t('hero.form.validation.enterGarageArea');
       isValid = false;
     } else if (formData.hasGarage === "yes" && (isNaN(Number(formData.garageArea)) || Number(formData.garageArea) <= 0)) {
-      newErrors.garageArea = "Ytan måste vara ett positivt tal";
+      newErrors.garageArea = t('hero.form.validation.areaPositive');
       isValid = false;
     }
     setErrors(newErrors);
@@ -592,33 +592,33 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     const newErrors: FormErrors = {};
     let isValid = true;
     if (!formData.newAddress || !formData.newAddress.trim()) {
-      newErrors.newAddress = "Vänligen ange en giltig adress";
+      newErrors.newAddress = t('hero.form.validation.enterNewAddress');
       isValid = false;
     } else if (!isNewAddressValid) {
-      newErrors.newAddress = "Vänligen välj en adress från listan";
+      newErrors.newAddress = t('hero.form.validation.selectNewAddressFromList');
       isValid = false;
     }
     if (!formData.toApartmentNumber || !formData.toApartmentNumber.trim()) {
-      newErrors.toApartmentNumber = "Vänligen ange gatunummer";
+      newErrors.toApartmentNumber = t('hero.form.validation.enterNewStreetNumber');
       isValid = false;
     }
     if (!formData.toPostalCode || !formData.toPostalCode.trim()) {
-      newErrors.toPostalCode = "Vänligen ange postnummer";
+      newErrors.toPostalCode = t('hero.form.validation.enterNewPostalCode');
       isValid = false;
     } else if (!/^\d{5}$/.test(formData.toPostalCode)) {
-      newErrors.toPostalCode = "Postnummer måste vara exakt 5 siffror";
+      newErrors.toPostalCode = t('hero.form.validation.newPostalCodeFiveDigits');
       isValid = false;
     }
     if (!formData.toApartmentSize || !formData.toApartmentSize.trim()) {
-      newErrors.toApartmentSize = formData.customerType === 'foretag' ? "Vänligen ange lokalens storlek" : "Vänligen ange bostadens storlek";
+      newErrors.toApartmentSize = formData.customerType === 'foretag' ? t('hero.form.validation.enterNewOfficeSize') : t('hero.form.validation.enterNewApartmentSize');
       isValid = false;
     } else if (isNaN(Number(formData.toApartmentSize)) || Number(formData.toApartmentSize) <= 0) {
-      newErrors.toApartmentSize = formData.customerType === 'foretag' ? "Lokalens storlek måste vara ett positivt tal" : "Bostadens storlek måste vara ett positivt tal";
+      newErrors.toApartmentSize = formData.customerType === 'foretag' ? t('hero.form.validation.newOfficeSizePositive') : t('hero.form.validation.newApartmentSizePositive');
       isValid = false;
     }
     if (formData.customerType !== 'foretag') {
     if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
-      newErrors.toTypeOfHome = "Vänligen välj typ av bostad";
+      newErrors.toTypeOfHome = t('hero.form.validation.selectNewHomeType');
       isValid = false;
       }
     }
@@ -631,28 +631,28 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     let isValid = true;
     if (formData.toTypeOfHome === "lagenhet") {
       if (!formData.toFloor) {
-        newErrors.toFloor = "Vänligen välj våning";
+        newErrors.toFloor = t('hero.form.validation.selectNewFloor');
         isValid = false;
       }
       if (!formData.toHasElevator) {
-        newErrors.toHasElevator = "Vänligen ange om det finns hiss";
+        newErrors.toHasElevator = t('hero.form.validation.selectNewElevator');
         isValid = false;
       }
       if (formData.toHasElevator === "yes" && !formData.toElevatorSize) {
-        newErrors.toElevatorSize = "Vänligen välj hisstorlek";
+        newErrors.toElevatorSize = t('hero.form.validation.selectNewElevatorSize');
         isValid = false;
       }
     } else if (formData.toTypeOfHome !== "annat") {
       if (!formData.toFloor) {
-        newErrors.toFloor = "Vänligen ange antal våningar";
+        newErrors.toFloor = t('hero.form.validation.enterNewFloorCount');
         isValid = false;
       }
     }
     if (!formData.toParkingDistance || !formData.toParkingDistance.trim()) {
-      newErrors.toParkingDistance = "Vänligen ange avstånd till lossningsplats";
+      newErrors.toParkingDistance = t('hero.form.validation.enterUnloadingDistance');
       isValid = false;
     } else if (isNaN(Number(formData.toParkingDistance)) || Number(formData.toParkingDistance) < 0) {
-      newErrors.toParkingDistance = "Avståndet måste vara ett positivt tal i meter";
+      newErrors.toParkingDistance = t('hero.form.validation.unloadingDistancePositive');
       isValid = false;
     }
     setErrors(newErrors);
@@ -663,19 +663,19 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     const newErrors: FormErrors = {};
     let isValid = true;
     if (formData.hasHeavyItems === "yes" && (!formData.heavyItems || formData.heavyItems.length === 0)) {
-      newErrors.heavyItems = "Vänligen ange vilka tunga föremål som ska flyttas";
+      newErrors.heavyItems = t('hero.form.validation.enterHeavyItems');
       isValid = false;
     }
     if (formData.hasDelicateItems === "yes" && !formData.delicateItemsDescription.trim()) {
-      newErrors.delicateItemsDescription = "Vänligen beskriv de känsliga föremålen";
+      newErrors.delicateItemsDescription = t('hero.form.validation.enterDelicateItems');
       isValid = false;
     }
     if (!formData.hasHeavyItems) {
-      newErrors.hasHeavyItems = "Vänligen välj ett alternativ";
+      newErrors.hasHeavyItems = t('hero.form.validation.selectOption');
       isValid = false;
     }
     if (!formData.hasDelicateItems) {
-      newErrors.hasDelicateItems = "Vänligen välj ett alternativ";
+      newErrors.hasDelicateItems = t('hero.form.validation.selectOption');
       isValid = false;
     }
     setErrors(newErrors);
@@ -686,21 +686,21 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     const newErrors: FormErrors = {};
     let isValid = true;
     if (!formData.name || !formData.name.trim()) {
-      newErrors.name = "Vänligen ange ditt namn";
+      newErrors.name = t('hero.form.validation.enterName');
       isValid = false;
     }
     if (!formData.email || !formData.email.trim()) {
-      newErrors.email = "Vänligen ange din e-postadress";
+      newErrors.email = t('hero.form.validation.enterEmail');
       isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Vänligen ange en giltig e-postadress";
+      newErrors.email = t('hero.form.validation.enterValidEmail');
       isValid = false;
     }
     if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Vänligen ange ditt telefonnummer";
+      newErrors.phone = t('hero.form.validation.enterPhone');
       isValid = false;
     } else if (!/^[0-9\s-+()]*$/.test(formData.phone)) {
-      newErrors.phone = "Vänligen ange ett giltigt telefonnummer";
+      newErrors.phone = t('hero.form.validation.enterValidPhone');
       isValid = false;
     }
     setErrors(newErrors);
@@ -814,10 +814,16 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   kvadrat: formData.apartmentSize,
                   antalRum: formData.numberOfRooms,
                   vaningNr: formData.floor,
-                  hasElevator: formData.hasElevator === "yes" ? "Ja" : "Nej",
+                  hasElevator: formData.hasElevator === "yes" ? t('hero.form.yes') : t('hero.form.no'),
                   elevatorSize: formData.hasElevator === "yes" ? formData.elevatorSize : undefined,
                   parkeringsAvstand: formData.parkingDistance,
-                  workplaceCount: formData.customerType === 'foretag' ? formData.workplaceCount : undefined
+                  workplaceCount: formData.customerType === 'foretag' ? formData.workplaceCount : undefined,
+                  hasAttic: formData.hasAttic === "yes" ? t('hero.form.yes') : t('hero.form.no'),
+                  atticArea: formData.hasAttic === "yes" ? formData.atticArea : undefined,
+                  hasBasementStorage: formData.hasBasementStorage === "yes" ? t('hero.form.yes') : t('hero.form.no'),
+                  basementStorageArea: formData.hasBasementStorage === "yes" ? formData.basementStorageArea : undefined,
+                  hasGarage: formData.hasGarage === "yes" ? t('hero.form.yes') : t('hero.form.no'),
+                  garageArea: formData.hasGarage === "yes" ? formData.garageArea : undefined
                 },
                 flyttaTill: {
                   address: formData.newAddress,
@@ -827,19 +833,19 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   kvadrat: formData.toApartmentSize,
                   antalRum: formData.toNumberOfRooms,
                   vaningNr: formData.toFloor,
-                  hasElevator: formData.toHasElevator === "yes" ? "Ja" : "Nej",
+                  hasElevator: formData.toHasElevator === "yes" ? t('hero.form.yes') : t('hero.form.no'),
                   elevatorSize: formData.toHasElevator === "yes" ? formData.toElevatorSize : undefined,
                   parkeringsAvstand: formData.toParkingDistance
                 },
-                flexibeltDatum: formData.wantsFlexibleDate ? formData.flexibleMovingDate : "Nej",
-                villDuHaPackhjalp: formData.needsPacking ? "Ja" : "Nej",
-                villDuHaLagring: formData.needsStorage ? "Ja" : "Nej",
-                villDuHaStadning: formData.needsCleaning ? "Ja" : "Nej",
-                villDuHaBortforsling: formData.needsDisposal ? "Ja" : "Nej",
+                flexibeltDatum: formData.wantsFlexibleDate ? formData.flexibleMovingDate : t('hero.form.no'),
+                villDuHaPackhjalp: formData.needsPacking ? t('hero.form.yes') : t('hero.form.no'),
+                villDuHaLagring: formData.needsStorage ? t('hero.form.yes') : t('hero.form.no'),
+                villDuHaStadning: formData.needsCleaning ? t('hero.form.yes') : t('hero.form.no'),
+                villDuHaBortforsling: formData.needsDisposal ? t('hero.form.yes') : t('hero.form.no'),
                 tungaForemal: formData.hasHeavyItems === "yes" ? 
                   formData.heavyItems.map(item => `${item.type}${item.description ? ` (${item.description})` : ''}`).join(", ") : 
-                  "Nej",
-                omtaligaForemal: formData.hasDelicateItems === "yes" ? formData.delicateItemsDescription : "Nej",
+                  t('hero.form.no'),
+                omtaligaForemal: formData.hasDelicateItems === "yes" ? formData.delicateItemsDescription : t('hero.form.no'),
                 kontaktInfo: {
                   namn: formData.name,
                   email: formData.email,
@@ -1179,7 +1185,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-lg text-gray-700">Ja</span>
+                    <span className="ml-2 text-lg text-gray-700">{t('hero.form.yes')}</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -1199,7 +1205,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-lg text-gray-700">Nej</span>
+                    <span className="ml-2 text-lg text-gray-700">{t('hero.form.no')}</span>
                   </label>
                 </div>
                 {errors.needsPacking && (
@@ -1233,7 +1239,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-lg text-gray-700">Ja</span>
+                    <span className="ml-2 text-lg text-gray-700">{t('hero.form.yes')}</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -1253,7 +1259,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-lg text-gray-700">Nej</span>
+                    <span className="ml-2 text-lg text-gray-700">{t('hero.form.no')}</span>
                   </label>
                 </div>
                 {errors.needsStorage && (
@@ -1281,7 +1287,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-lg text-gray-700">Ja</span>
+                    <span className="ml-2 text-lg text-gray-700">{t('hero.form.yes')}</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -1295,7 +1301,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-lg text-gray-700">Nej</span>
+                    <span className="ml-2 text-lg text-gray-700">{t('hero.form.no')}</span>
                   </label>
                 </div>
                 {errors.needsCleaning && (
@@ -1327,7 +1333,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-lg text-gray-700">Ja</span>
+                    <span className="ml-2 text-lg text-gray-700">{t('hero.form.yes')}</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -1347,7 +1353,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }}
                       className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                     />
-                    <span className="ml-2 text-lg text-gray-700">Nej</span>
+                    <span className="ml-2 text-lg text-gray-700">{t('hero.form.no')}</span>
                   </label>
                 </div>
                 {errors.needsDisposal && (
@@ -1865,7 +1871,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         }}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Ja</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.yes')}</span>
                     </label>
                     <label className="flex items-center">
                       <input
@@ -1879,7 +1885,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         }}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Nej</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.no')}</span>
                     </label>
                   </div>
                   {errors.hasAttic && (
@@ -1889,7 +1895,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
 
                 {formData.hasAttic === "yes" && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Vindens yta (kvm)</strong></label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.atticArea')}</strong></label>
                     <input
                       type="text"
                       inputMode="numeric"
@@ -1946,7 +1952,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         }}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Ja</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.yes')}</span>
                     </label>
                     <label className="flex items-center">
                       <input
@@ -1960,7 +1966,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         }}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Nej</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.no')}</span>
                     </label>
                   </div>
                   {errors.hasBasementStorage && (
@@ -1971,7 +1977,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 {formData.hasBasementStorage === "yes" && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Källarförrådets yta (kvm)' : 'Källarförrådets yta (kvm)'}</strong>
+                      <strong>{t('hero.form.basementStorageArea')}</strong>
                     </label>
                     <input
                       type="text"
@@ -2029,7 +2035,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         }}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Ja</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.yes')}</span>
                     </label>
                     <label className="flex items-center">
                       <input
@@ -2043,7 +2049,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         }}
                         className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Nej</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('hero.form.no')}</span>
                     </label>
                   </div>
                   {errors.hasGarage && (
@@ -2054,7 +2060,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 {formData.hasGarage === "yes" && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? 'Garagets yta (kvm)' : 'Garagets yta (kvm)'}</strong>
+                      <strong>{t('hero.form.garageArea')}</strong>
                     </label>
                     <input
                       type="text"
@@ -2108,7 +2114,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           onChange={() => setFormData(prev => ({ ...prev, hasLoadingDock: "yes" }))}
                           className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                         />
-                        <span className="ml-2 text-sm text-gray-700">Ja</span>
+                        <span className="ml-2 text-sm text-gray-700">{t('hero.form.yes')}</span>
                       </label>
                       <label className="flex items-center">
                         <input
@@ -2119,7 +2125,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                           onChange={() => setFormData(prev => ({ ...prev, hasLoadingDock: "no" }))}
                           className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                         />
-                        <span className="ml-2 text-sm text-gray-700">Nej</span>
+                        <span className="ml-2 text-sm text-gray-700">{t('hero.form.no')}</span>
                       </label>
                     </div>
                   </div>

@@ -31,9 +31,9 @@ export default function MagasineringPage() {
   useEffect(()=>{ const i=setInterval(()=>setCurrentCard(p=>(p+1)%3),3000); return ()=>clearInterval(i); },[]);
 
   const experienceCards = [
-    { title: 'Magasinerade bohag', count: '3000+', description: 'Uppdrag i Stockholm', delay: 0 },
-    { title: 'Bohagsflyttar', count: '8000+', description: 'Genomförda uppdrag', delay: 1 },
-    { title: 'Flyttstädningar', count: '7000+', description: 'Genomförda städningar', delay: 2 },
+    { title: t('magasinering.experience.magasineradeBohag'), count: t('magasinering.experience.magasineradeBohagCount'), description: t('magasinering.experience.magasineradeBohagDesc'), delay: 0 },
+    { title: t('magasinering.experience.moves'), count: t('magasinering.experience.movesCount'), description: t('magasinering.experience.movesDesc'), delay: 1 },
+    { title: t('magasinering.experience.cleanings'), count: t('magasinering.experience.cleaningsCount'), description: t('magasinering.experience.cleaningsDesc'), delay: 2 },
   ];
 
   const locations = [
@@ -58,8 +58,8 @@ export default function MagasineringPage() {
                 }}
               />
               <div className="relative z-10 text-center px-4">
-                <h1 className="text-5xl font-bold mb-6">Magasinering</h1>
-                <p className="text-2xl text-white/90">Säker förvaring av bohag – flexibla lösningar för kort och lång tid</p>
+                <h1 className="text-5xl font-bold mb-6">{t('magasinering.hero.title')}</h1>
+                <p className="text-2xl text-white/90">{t('magasinering.hero.description')}</p>
               </div>
             </div>
           </div>
@@ -78,20 +78,20 @@ export default function MagasineringPage() {
               />
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
-                  <h1 className="text-5xl md:text-6xl font-bold mb-8">Magasinering i Stockholm</h1>
-                  <p className="text-2xl md:text-3xl mb-12">Säker förvaring av bohag – flexibla lösningar för kort och lång tid</p>
-                  <p className="text-xl md:text-2xl text-white/90">Behöver du mellanlagra inför flytt, renovering eller utlandsvistelse? Vi erbjuder hämtning, packning och magasinerar torrt, larmat och försäkrat. När du är redo levererar vi tillbaka – smidigt och prisvärt.</p>
+                  <h1 className="text-5xl md:text-6xl font-bold mb-8">{t('magasinering.hero.title')} i Stockholm</h1>
+                  <p className="text-2xl md:text-3xl mb-12">{t('magasinering.hero.subtitle')}</p>
+                  <p className="text-xl md:text-2xl text-white/90">{t('magasinering.hero.description')}</p>
                 </div>
                 {/* Right-side CTA directly on background */}
                 <div className="w-full md:w-1/2 lg:w-[40%]">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Kontakta oss för offert</h3>
-                  <p className="text-white/90 mb-6 text-lg md:text-xl">Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.</p>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">{t('magasinering.hero.ctaTitle')}</h3>
+                  <p className="text-white/90 mb-6 text-lg md:text-xl">{t('magasinering.hero.ctaDescription')}</p>
                   <div>
                     <Link 
                       href="/kontakt?scroll=message&service=magasinering"
                       className="inline-flex items-center bg-white text-[#0B172A] px-5 py-3 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
                     >
-                      Kontakta oss
+                      {t('magasinering.hero.ctaButton')}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -127,7 +127,7 @@ export default function MagasineringPage() {
                     }}
                     className="flex flex-col items-center text-white hover:text-white/80 transition-colors group"
                   >
-                    <span className="text-sm font-medium mb-2">Läs mer</span>
+                    <span className="text-sm font-medium mb-2">{t('magasinering.hero.readMore')}</span>
                     <motion.div
                       animate={{ y: [0, 5, 0] }}
                       transition={{ duration: 2, repeat: Infinity }}
@@ -164,9 +164,9 @@ export default function MagasineringPage() {
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                    <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">Tunglyft</h3></div>
-                    <p className="text-sm text-gray-100 mb-4 relative">Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.</p>
-                    <div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                    <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">{t('magasinering.sidebar.tunglyft.title')}</h3></div>
+                    <p className="text-sm text-gray-100 mb-4 relative">{t('magasinering.sidebar.tunglyft.description')}</p>
+                    <div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('magasinering.sidebar.tunglyft.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
                   </div>
                 </div>
               </div>
@@ -174,9 +174,9 @@ export default function MagasineringPage() {
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                    <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">Montering</h3></div>
-                    <p className="text-sm text-gray-100 mb-4 relative">Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.</p>
-                    <div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                    <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">{t('magasinering.sidebar.montering.title')}</h3></div>
+                    <p className="text-sm text-gray-100 mb-4 relative">{t('magasinering.sidebar.montering.description')}</p>
+                    <div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('magasinering.sidebar.montering.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
                   </div>
                 </div>
               </div>
@@ -184,30 +184,30 @@ export default function MagasineringPage() {
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                    <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🗑️</span><h3 className="text-xl font-bold text-white">Bortforsling</h3></div>
-                    <p className="text-sm text-gray-100 mb-4 relative">Bortforsling och återvinning av möbler, elektronik och grovsopor – smidigt och ansvarsfullt.</p>
-                    <div className="mt-auto relative"><Link href="/bortforsling" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                    <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🗑️</span><h3 className="text-xl font-bold text-white">{t('magasinering.sidebar.bortforsling.title')}</h3></div>
+                    <p className="text-sm text-gray-100 mb-4 relative">{t('magasinering.sidebar.bortforsling.description')}</p>
+                    <div className="mt-auto relative"><Link href="/bortforsling" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('magasinering.sidebar.bortforsling.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
                   </div>
                 </div>
               </div>
 
               {/* Content blocks */}
               {([
-                { title: 'Vad är magasinering?', content: (
+                { title: t('magasinering.content.whatIsTitle'), content: (
                   <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8">
-                    Magasinering innebär att förvara bohag eller inventarier säkert under en period – vid flytt, renovering, utlandsvistelse eller platsbrist. Förvaringen ska vara torr, ventilerad och skyddad mot stöld och skador. Ofta hämtas bohaget hos kunden, packas med skydd och körs till ett larmat magasin. När du vill ha återleverans levereras bohaget ut igen. Vanliga tillval är packhjälp, montering/demontering, extra försäkring och möjlighet att komma åt utvalda lådor under perioden.
+                    {t('magasinering.content.whatIsDescription')}
                   </p>
                 ), icon: '🏬' },
                 { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/under_flytt.jpg" alt="Magasinering" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
-                { title: 'Vad kostar magasinering?', content: (<>
-                  <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Pris beror på volym (kubikmeter), magasineringstid, åtkomlighet och eventuella tillval som hämtning/återleverans, packhjälp och extra försäkring. Debitering sker ofta per kubik och månad. En riktlinje är att kostnaden kan minskas genom att rensa i förväg, packa effektivt och välja längre bindningstid. Transparens är viktigt – be om tydlig offert med vad som ingår såsom hyra, försäkring, hantering och eventuella startavgifter.</p>
-                  <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;Trygg och smidig magasinering – enkelt att både lämna in och få tillbaka.&quot;</p><p className="italic text-gray-700 mt-2">- Sofia</p></div>
+                { title: t('magasinering.content.pricingTitle'), content: (<>
+                  <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">{t('magasinering.content.pricingDescription')}</p>
+                  <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;{t('magasinering.content.pricingTestimonial')}&quot;</p><p className="italic text-gray-700 mt-2">- {t('magasinering.content.testimonialAuthor')}</p></div>
                 </>), icon: '💸' },
-                { title: 'Vad ingår i magasinering?', content: (
-                  <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">Hämtning och bärhjälp, skyddande packning (filtar, emballeringsmaterial), transport till magasin, säker förvaring i torrt och larmat utrymme, grundförsäkring samt återleverans när du önskar. Tillval: packmaterial, packhjälp av hela hemmet, montering/demontering och möjlighet till tillgång till specifika kollin under perioden.</p>
+                { title: t('magasinering.content.includesTitle'), content: (
+                  <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">{t('magasinering.content.includesDescription')}</p>
                 ), icon: '📦' },
                 { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/smidigflyttdag.jpg" alt="Magasinering tjänster" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 37%' }} /></div>), icon: '' },
-                { title: 'Hur bokar jag magasinering?', content: (<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8 md:mb-12">Använd <Link href="/kontakt?scroll=message&service=magasinering" className="text-[#10B981] hover:text-[#059669] underline decoration-2 underline-offset-4 transition-colors">kontaktformuläret</Link> – ange uppskattad volym, önskat datum och om du vill ha hämtning/återleverans. Du får en offert och kan bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av detaljer, tillgång till hiss/parkering och eventuella tillval.</p>), icon: '📅' },
+                { title: t('magasinering.content.bookingTitle'), content: (<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8 md:mb-12">{t('magasinering.content.bookingDescription')}</p>), icon: '📅' },
               ] as { title: string; content: any; icon: string }[]).map((section, idx) => (
                 <motion.div key={idx} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
                   <div className="max-w-6xl mx-auto">
@@ -239,7 +239,7 @@ export default function MagasineringPage() {
                   <img src="/personalpicture.jpg" alt="Om Flyttella" className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
                 </div>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">Om Flyttella</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">{t('magasinering.about.title')}</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
                 {/* Left image desktop */}
                 <motion.div className="hidden lg:block w-full lg:w-1/5 relative lg:-ml-16 lg:pr-16" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.2 }}>
@@ -250,28 +250,28 @@ export default function MagasineringPage() {
                 {/* Right text */}
                 <motion.div className="w-full lg:w-4/5 space-y-4 lg:space-y-8 flex flex-col justify-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.4 }}>
                   <div className="hidden lg:block space-y-8">
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en flytt- och städfirma i Stockholm som erbjuder trygg magasinering. I över åtta år har vi hjälpt kunder att förvara bohag säkert – vid flytt, renovering och längre vistelser utomlands. Vi hämtar hemma hos dig, skyddar och märker ditt bohag och magasinerar i torra, ventilerade och larmade utrymmen. Med tydliga villkor och fasta upplägg vet du exakt vad som ingår.</p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Behöver du packmaterial, packhjälp, montering/demontering eller flyttstädning kan vi ordna det. Du får snabb offert och löpande uppdateringar – enkelt från start till mål. Våra magasin är strategiskt placerade i Stockholm med moderna säkerhetssystem och kontinuerlig övervakning. Våra medarbetare är utbildade i försiktig hantering av alla typer av föremål, och vi erbjuder flexibla lösningar för både kort- och långsiktig förvaring. Vårt team är alltid tillgängligt för frågor och support under hela förvaringsperioden.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">{t('magasinering.about.description1')}</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">{t('magasinering.about.description2')}</p>
                   </div>
                   {/* Mobile with expand */}
                   <div className="lg:hidden space-y-4">
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en flytt- och städfirma i Stockholm som erbjuder trygg magasinering. I över åtta år har vi hjälpt kunder att förvara bohag säkert – vid flytt, renovering och längre vistelser utomlands. Vi hämtar hemma hos dig, skyddar och märker ditt bohag och magasinerar i torra, ventilerade och larmade utrymmen. Med tydliga villkor och fasta upplägg vet du exakt vad som ingår.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">{t('magasinering.about.description1')}</p>
                     {!showFullAboutText && (
-                      <button onClick={() => setShowFullAboutText(true)} className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></button>
+                      <button onClick={() => setShowFullAboutText(true)} className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">{t('magasinering.about.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></button>
                     )}
                     {showFullAboutText && (
                       <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 0.5 }} className="space-y-4 mt-4">
-                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Behöver du packmaterial, packhjälp, montering/demontering eller flyttstädning kan vi ordna det. Du får snabb offert och löpande uppdateringar – enkelt från start till mål. Våra magasin är strategiskt placerade i Stockholm med moderna säkerhetssystem och kontinuerlig övervakning. Våra medarbetare är utbildade i försiktig hantering av alla typer av föremål, och vi erbjuder flexibla lösningar för både kort- och långsiktig förvaring. Vårt team är alltid tillgängligt för frågor och support under hela förvaringsperioden.</p>
+                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">{t('magasinering.about.description2')}</p>
 
                         <motion.div className="pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
-                          <Link href="/om-oss" className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer om oss<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                          <Link href="/om-oss" className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">{t('magasinering.about.readMoreAbout')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                         </motion.div>
                       </motion.div>
                     )}
                   </div>
                   {/* Desktop link */}
                   <motion.div className="pt-6 hidden lg:block" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.6 }}>
-                    <Link href="/om-oss" className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer om oss<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                    <Link href="/om-oss" className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">{t('magasinering.about.readMoreAbout')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                   </motion.div>
                 </motion.div>
               </div>
@@ -282,9 +282,9 @@ export default function MagasineringPage() {
         {/* Reviews */}
         <ReviewsWidget
           location="Stockholm"
-          title="Vad tycker våra kunder om oss?"
-          subtitle="Trygg magasinering i Stockholm"
-          description="Vi är stolta över att rekommenderas av våra kunder. Med tydlig kommunikation och säkra rutiner gör vi magasinering enkel – från hämtning till återleverans. Läs vad andra tycker om vår service."
+          title={t('magasinering.reviews.title')}
+          subtitle={t('magasinering.reviews.subtitle')}
+          description={t('magasinering.reviews.description')}
           badgeAlt="Erfarenhet av magasinering i Stockholm"
           arrowText="Läs vad våra kunder säger om vår magasinering"
         />
@@ -298,17 +298,17 @@ export default function MagasineringPage() {
                 <span className="text-3xl md:text-4xl">🏬</span>
                 <div>
                   <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
-                    Redo att boka din magasinering?
+                    {t('magasinering.cta.title')}
                   </h3>
                   <p className="text-base md:text-lg text-gray-100">
-                    Få en snabb och gratis offert på din magasinering
+                    {t('magasinering.cta.subtitle')}
                   </p>
                 </div>
               </div>
               <div className="relative z-10">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                   <Link href="/kontakt?scroll=message&service=magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
-                    Kontakta oss
+                    {t('magasinering.cta.button')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -325,33 +325,33 @@ export default function MagasineringPage() {
          <section className="py-16 bg-white">
            <div className="container mx-auto px-4">
              <div className="max-w-7xl mx-auto">
-               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Våra andra huvudtjänster</h2>
+               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('magasinering.services.title')}</h2>
                <div className="grid grid-cols-1 gap-12">
                  {/* Bohagsflytt Card */}
                  <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
                    <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🏠</span><h3 className="text-4xl md:text-5xl font-bold text-white">Bohagsflytt</h3></div>
-                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Flytt av hela hem – planerat, säkert och effektivt från dörr till dörr.</p>
-                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi erbjuder packning, bärhjälp och transport. Tydliga tider, försäkring och personlig service genom hela flytten. Vi kan även hjälpa till med montering/demontering och tillhandahåller packmaterial vid behov.</p>
-                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/bohagsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
+                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🏠</span><h3 className="text-4xl md:text-5xl font-bold text-white">{t('magasinering.services.bohagsflytt.title')}</h3></div>
+                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{t('magasinering.services.bohagsflytt.description')}</p>
+                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{t('magasinering.services.bohagsflytt.descriptionExtended')}</p>
+                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/bohagsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">{t('magasinering.services.bohagsflytt.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                  </motion.div>
 
                  {/* Flyttstädning Card */}
                  <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
                    <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧽</span><h3 className="text-4xl md:text-5xl font-bold text-white">Flyttstädning</h3></div>
-                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Grundlig flyttstädning enligt checklista – klart för besiktning och överlämning.</p>
-                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi följer etablerade checklistor för alla rum, kök och badrum med miljövänliga metoder för ett godkänt resultat. Fönsterputs ingår alltid och vi stämmer av särskilda önskemål och ytor så att städningen blir redo för besiktning.</p>
-                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
+                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧽</span><h3 className="text-4xl md:text-5xl font-bold text-white">{t('magasinering.services.flyttstadning.title')}</h3></div>
+                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{t('magasinering.services.flyttstadning.description')}</p>
+                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{t('magasinering.services.flyttstadning.descriptionExtended')}</p>
+                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">{t('magasinering.services.flyttstadning.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                  </motion.div>
 
                  {/* Utlandsflytt Card */}
                  <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
                    <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🌍</span><h3 className="text-4xl md:text-5xl font-bold text-white">Utlandsflytt</h3></div>
-                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Flytt över gränser – planering, packning och vägtransport.</p>
-                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi tar hand om exportpackning, dokument och säker vägtransport. Tydlig kommunikation från start till mål. Vi hjälper till med planering av rutt och leveransfönster för en smidig resa.</p>
-                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/utlandsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
+                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🌍</span><h3 className="text-4xl md:text-5xl font-bold text-white">{t('magasinering.services.utlandsflytt.title')}</h3></div>
+                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{t('magasinering.services.utlandsflytt.description')}</p>
+                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{t('magasinering.services.utlandsflytt.descriptionExtended')}</p>
+                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/utlandsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">{t('magasinering.services.utlandsflytt.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                  </motion.div>
                </div>
              </div>
@@ -362,11 +362,11 @@ export default function MagasineringPage() {
          <motion.section className="py-12 md:py-24 bg-white text-[#0F172A] relative overflow-hidden" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
            <div className="container mx-auto px-4 relative z-10">
              <div className="max-w-3xl mx-auto text-center">
-               <motion.h2 className="text-3xl md:text-4xl font-bold mb-6 hidden md:block" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }}>Våra tjänster</motion.h2>
-               <motion.p className="text-lg md:text-xl mb-8 text-[#0F172A]/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }}>Komplett hjälp för flytt och förvaring – kombinera magasinering med hämtning, packning och städning.</motion.p>
+               <motion.h2 className="text-3xl md:text-4xl font-bold mb-6 hidden md:block" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }}>{t('magasinering.services.allServices.title')}</motion.h2>
+               <motion.p className="text-lg md:text-xl mb-8 text-[#0F172A]/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }}>{t('magasinering.services.allServices.description')}</motion.p>
                <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.2 }}>
-                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}><Link href="/tjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">Se alla våra flyttjänster<motion.svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></motion.svg></Link></motion.div>
-                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}><Link href="/stadtjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">Se alla våra städtjänster<motion.svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></motion.svg></Link></motion.div>
+                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}><Link href="/tjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">{t('magasinering.services.allServices.movingServices')}<motion.svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></motion.svg></Link></motion.div>
+                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}><Link href="/stadtjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">{t('magasinering.services.allServices.cleaningServices')}<motion.svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></motion.svg></Link></motion.div>
                </motion.div>
              </div>
            </div>
@@ -400,7 +400,7 @@ export default function MagasineringPage() {
           <div className="absolute top-0 left-0 w-full h-32 z-15 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)' }} />
           <div className="relative z-20 max-w-7xl mx-auto" style={{ marginTop: '-5rem' }}>
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('magasinering.experience.title')}</h3>
               <div className="md:hidden mt-8">
                 <div className="relative overflow-hidden rounded-xl">
                   <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentCard * 100}%)` }}>
@@ -427,9 +427,9 @@ export default function MagasineringPage() {
               </div>
               <div className="mt-8 flex flex-col items-center justify-center gap-4">
                 <motion.div className="flex-1 max-w-4xl text-center px-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Trygg förvaring genom erfarenhet</h4>
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">Med många års erfarenhet av magasinering i Stockholm vet vi vad som krävs för att skydda ditt bohag – från packning till återleverans. Tydliga rutiner och transparent kommunikation gör allt enklare.</p>
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">Vi arbetar med varsam hantering i varje steg för att säkerställa trygg förvaring. Våra lokaler är torra, ventilerade och larmade. Vid behov kan vi även bistå med packmaterial, packhjälp samt montering och demontering.</p>
+                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{t('magasinering.experience.localExperienceTitle')}</h4>
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">{t('magasinering.experience.localExperienceDesc1')}</p>
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">{t('magasinering.experience.localExperienceDesc2')}</p>
                 </motion.div>
                 <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
                   <div className="md:hidden flex flex-col items-center">
@@ -469,26 +469,26 @@ export default function MagasineringPage() {
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full">
               <div className="w-full">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
-                  Vår process för magasinering
+                  {t('magasinering.process.title')}
                 </h2>
 
                 {/* Process Description */}
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår magasineringsprocess är utformad för att vara enkel, säker och transparent. Vi följer strikta riktlinjer för att säkerställa att ditt bohag hanteras försiktigt och lagras säkert i våra torra, larmade utrymmen.
+                    {t('magasinering.process.description')}
                   </p>
                 </div>
 
                 {/* Pricing Info */}
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-                    Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som volym av bohag, typ av möbler, tillgänglighet och transportavstånd för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+                    {t('magasinering.process.pricingDescription')}
                   </p>
                 </div>
 
                 {/* Process Flow Section */}
                 <div className="mb-4 md:mb-8">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar vår magasinering</h3>
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">{t('magasinering.process.howItWorks')}</h3>
                   <div className="relative w-full">
                     {/* Timeline connector line */}
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
@@ -496,41 +496,41 @@ export default function MagasineringPage() {
                       {[
                         {
                           icon: <FillFormLottie />,
-                          title: "Kontakta oss",
-                          description: "Kontakta oss för en kostnadsfri offert på magasinering",
+                          title: t('magasinering.process.steps.0.title'),
+                          description: t('magasinering.process.steps.0.description'),
                           textClass: ""
                         },
                         {
                           icon: <FastLottie />,
-                          title: "Få offert",
-                          description: "Få en snabb och kostnadsfri offert på din magasinering",
+                          title: t('magasinering.process.steps.1.title'),
+                          description: t('magasinering.process.steps.1.description'),
                           textClass: ""
                         },
                         {
                           icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
-                          title: "Bekräftelse",
-                          description: "Bekräfta bokning och få all information",
+                          title: t('magasinering.process.steps.2.title'),
+                          description: t('magasinering.process.steps.2.description'),
                           containerClass: "md:-mt-6",
                           textClass: ""
                         },
                         {
                           icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
-                          title: "Personlig kontakt",
-                          description: "Vi kontaktar dig för att bekräfta detaljer och planera hämtning",
+                          title: t('magasinering.process.steps.3.title'),
+                          description: t('magasinering.process.steps.3.description'),
                           containerClass: "md:-mt-7",
                           textClass: ""
                         },
                         {
                           icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
-                          title: "Hämtning & Magasinering",
-                          description: "Vi hämtar och lagrar ditt bohag säkert",
+                          title: t('magasinering.process.steps.4.title'),
+                          description: t('magasinering.process.steps.4.description'),
                           containerClass: "md:-mt-14",
                           textClass: "md:-mt-8",
                         },
                         {
                           icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
-                          title: "Nöjd kund",
-                          description: "Trygg förvaring - du är nöjd!",
+                          title: t('magasinering.process.steps.5.title'),
+                          description: t('magasinering.process.steps.5.description'),
                           containerClass: "md:-mt-6",
                           textClass: ""
                         }
@@ -569,11 +569,11 @@ export default function MagasineringPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12"><h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Läs mer om magasinering</h2><p className="text-lg text-gray-600 max-w-2xl mx-auto">Råd om packning, skydd och planering – så får du en trygg förvaring utan stress.</p></div>
+              <div className="text-center mb-12"><h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{t('magasinering.blog.title')}</h2><p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('magasinering.blog.subtitle')}</p></div>
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-                <div className="md:flex"><div className="md:w-1/3"><img src="/cleaning_lady.png" alt="Magasinering tips" className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" /></div><div className="md:w-2/3 p-8"><div className="flex items-center mb-4"><span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] textWhite px-3 py-1 rounded-full text-sm font-medium">Magasinering</span><span className="text-gray-500 text-sm ml-4">4 min läsning</span></div><h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">Guide: Så packar du för magasinering</h3><p className="text-gray-600 text-lg leading-relaxed mb-6">Smart packning och tydlig märkning minskar risk för skador och gör återleveransen snabbare.</p><div className="flex items-center justify-end mb-4"><Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div></div></div>
+                <div className="md:flex"><div className="md:w-1/3"><img src="/cleaning_lady.png" alt="Magasinering tips" className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" /></div><div className="md:w-2/3 p-8"><div className="flex items-center mb-4"><span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] textWhite px-3 py-1 rounded-full text-sm font-medium">{t('magasinering.blog.category')}</span><span className="text-gray-500 text-sm ml-4">{t('magasinering.blog.readTime')}</span></div><h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{t('magasinering.blog.postTitle')}</h3><p className="text-gray-600 text-lg leading-relaxed mb-6">{t('magasinering.blog.postDescription')}</p><div className="flex items-center justify-end mb-4"><Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">{t('magasinering.blog.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div></div></div>
               </motion.div>
-              <div className="text-center mt-8 md:mt-12"><Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base">Se alla artiklar om flytt och städning<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+              <div className="text-center mt-8 md:mt-12"><Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base">{t('magasinering.blog.allArticles')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
             </div>
           </div>
         </section>
@@ -583,13 +583,13 @@ export default function MagasineringPage() {
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [ { '@type': 'Question', name: 'Vad ingår i magasinering?', acceptedAnswer: { '@type': 'Answer', text: 'Hämtning och bärhjälp vid behov, skyddande packning, registrering och säker förvaring i torra, larmade utrymmen samt återleverans.' } }, { '@type': 'Question', name: 'Vad kostar magasinering?', acceptedAnswer: { '@type': 'Answer', text: 'Pris beror på volym (kubikmeter), tid och tillval som hämtning/återleverans. Begär kostnadsfri offert för exakt pris.' } }, { '@type': 'Question', name: 'Hur snabbt kan jag få tillbaka mina saker?', acceptedAnswer: { '@type': 'Answer', text: 'Vi bokar återleverans enligt dina önskemål. Normalt inom några arbetsdagar beroende på säsong och volym.' } }, { '@type': 'Question', name: 'Kan jag få åtkomst till enstaka lådor under perioden?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, efter överenskommelse kan vi tillhandahålla åtkomst till utvalda kollin.' } } ] }) }} />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Vanliga frågor om magasinering</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('magasinering.faq.title')}</h2>
               <div className="space-y-4">
                 {[
-                  { id: 'mag-1', question: 'Ingår hämtning och återleverans?', answer: 'Det är helt valbart. Många kunder väljer vår smidiga helhetslösning där vi hämtar, magasinerar och kör tillbaka bohaget när det passar bäst. På så sätt slipper du tänka på logistik och kan känna dig trygg med att allt hanteras professionellt och säkert från början till slut.' },
-                  { id: 'mag-2', question: 'Är förvaringen uppvärmd och larmad?', answer: 'Ja, våra magasin är torra, ventilerade och larmade för att ge trygg förvaring året runt. Här förvaras ditt bohag i en säker miljö med goda förhållanden som skyddar mot fukt, skador och obehörig åtkomst.' },
-                  { id: 'mag-3', question: 'Vilken volym behöver jag?', answer: 'Det beror på mängden bohag och vilka saker som ska magasineras. Vi hjälper dig gärna att uppskatta volymen i kubik – skicka till exempel några bilder så kan vi ge en snabb och smidig bedömning.' },
-                  { id: 'mag-4', question: 'Hur bokar jag?', answer: 'Det är enkelt att boka. Fyll i formuläret så får du ett pris och kan bekräfta digitalt. När bokningen är klar återkommer vi vid behov för att stämma av detaljer.' }
+                  { id: 'mag-1', question: t('magasinering.faq.questions.0.question'), answer: t('magasinering.faq.questions.0.answer') },
+                  { id: 'mag-2', question: t('magasinering.faq.questions.1.question'), answer: t('magasinering.faq.questions.1.answer') },
+                  { id: 'mag-3', question: t('magasinering.faq.questions.2.question'), answer: t('magasinering.faq.questions.2.answer') },
+                  { id: 'mag-4', question: t('magasinering.faq.questions.3.question'), answer: t('magasinering.faq.questions.3.answer') }
                 ].map((faq, index) => (
                   <motion.div key={faq.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>
                     <button onClick={() => toggleFAQ(faq.id)} className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"><h3 className="text-lg md:text-xl font-semibold text-[#0F172A] pr-4">{faq.question}</h3><motion.div animate={{ rotate: openFAQ === faq.id ? 180 : 0 }} transition={{ duration: 0.3 }} className="flex-shrink-0"><svg className="w-6 h-6 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></motion.div></button>

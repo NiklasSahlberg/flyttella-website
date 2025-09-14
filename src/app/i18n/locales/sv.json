@@ -104,13 +104,9 @@
       "delicateItemsDescription": "Flyttfirman behöver få veta om särskilt ömtåliga eller värdefulla föremål, som antikviteter, i förväg för att planera flytten.",
       "delicateItemsDescriptionBusiness": "Flyttfirman behöver få veta om särskilt ömtåliga eller värdefulla föremål, som antikviteter, i förväg för att planera företagsflytten.",
       "whichDelicateItems": "Vilka särskilt ömtåliga föremål ska flyttas?",
-      "contactInfo": "Kontaktuppgifter",
       "contactInfoBusiness": "Kontaktuppgifter till företaget",
       "contactPersonName": "Kontaktperson för och efternamn",
       "companyName": "Företagsnamn",
-      "name": "Namn",
-      "email": "E-post",
-      "phone": "Telefon",
       "enterCount": "Ange antal",
       "cleaningType": "Vilken typ av städtjänst vill du ha?",
       "cleaningFrequency": "Hur ofta vill du ha städhjälp?",
@@ -211,19 +207,73 @@
       "wantsBedMaking": "Önskar bäddning",
       "wantsDishWashing": "Önskar diskning",
       "wantsIroning": "Önskar strykning",
+      "atticArea": "Vindens yta (kvm)",
+      "basementStorageArea": "Källarförrådets yta (kvm)",
+      "garageArea": "Garagets yta (kvm)",
       "step": "Steg",
       "of": "av",
       "validation": {
         "selectCleaningDayTime": "Vänligen välj en städdag och tid",
         "selectCleaningDate": "Vänligen välj städdatum",
-        "selectFlexibleCleaningDate": "Vänligen välj flexibelt städdatum",
-        "enterAddress": "Vänligen ange din adress",
+        "selectService": "Vänligen välj vilken tjänst du vill ha",
+        "selectMovingDate": "Vänligen välj önskat flyttdatum",
+        "movingDateTomorrow": "Flyttdatum måste vara minst imorgon",
+        "selectFlexibleDate": "Vänligen välj flexibilitet för flyttdatum",
+        "selectPackingHelp": "Vänligen välj om du vill ha packhjälp",
+        "selectStorage": "Vänligen välj om du behöver lagerförvaring",
+        "selectCleaning": "Vänligen välj om du vill ha flyttstädning",
+        "selectDisposal": "Vänligen välj om du vill ha bortforsling",
+        "enterValidAddress": "Vänligen ange en giltig adress",
         "selectAddressFromList": "Vänligen välj en adress från listan",
         "enterStreetNumber": "Vänligen ange gatunummer",
         "enterPostalCode": "Vänligen ange postnummer",
+        "postalCodeFiveDigits": "Postnummer måste vara exakt 5 siffror",
+        "enterApartmentSize": "Vänligen ange bostadens storlek",
+        "enterOfficeSize": "Vänligen ange lokalens storlek",
+        "apartmentSizePositive": "Bostadens storlek måste vara ett positivt tal",
+        "officeSizePositive": "Lokalens storlek måste vara ett positivt tal",
+        "selectHomeType": "Vänligen välj typ av bostad",
+        "enterWorkplaceCount": "Vänligen ange antal arbetsplatser",
+        "workplaceCountPositive": "Antal arbetsplatser måste vara ett positivt tal",
+        "selectFloor": "Vänligen välj våning",
+        "selectElevator": "Vänligen ange om det finns hiss",
+        "selectElevatorSize": "Vänligen välj hisstorlek",
+        "enterParkingDistance": "Vänligen ange avstånd till parkering",
+        "parkingDistancePositive": "Avståndet måste vara ett positivt tal i meter",
+        "selectAttic": "Vänligen välj om du har vind",
+        "enterAtticArea": "Vänligen ange vindens yta",
+        "areaPositive": "Ytan måste vara ett positivt tal",
+        "selectBasementStorage": "Vänligen välj om du har källarförråd",
+        "enterBasementStorageArea": "Vänligen ange källarförrådets yta",
+        "selectGarage": "Vänligen välj om du har garage",
+        "enterGarageArea": "Vänligen ange garagets yta",
+        "enterNewAddress": "Vänligen ange en giltig adress",
+        "selectNewAddressFromList": "Vänligen välj en adress från listan",
+        "enterNewStreetNumber": "Vänligen ange gatunummer",
+        "enterNewPostalCode": "Vänligen ange postnummer",
+        "newPostalCodeFiveDigits": "Postnummer måste vara exakt 5 siffror",
+        "enterNewApartmentSize": "Vänligen ange bostadens storlek",
+        "enterNewOfficeSize": "Vänligen ange lokalens storlek",
+        "newApartmentSizePositive": "Bostadens storlek måste vara ett positivt tal",
+        "newOfficeSizePositive": "Lokalens storlek måste vara ett positivt tal",
+        "selectNewHomeType": "Vänligen välj typ av bostad",
+        "selectNewFloor": "Vänligen välj våning",
+        "selectNewElevator": "Vänligen ange om det finns hiss",
+        "selectNewElevatorSize": "Vänligen välj hisstorlek",
+        "enterNewFloorCount": "Vänligen ange antal våningar",
+        "enterUnloadingDistance": "Vänligen ange avstånd till lossningsplats",
+        "unloadingDistancePositive": "Avståndet måste vara ett positivt tal i meter",
+        "enterHeavyItems": "Vänligen ange vilka tunga föremål som ska flyttas",
+        "enterDelicateItems": "Vänligen beskriv vilka ömtåliga föremål som ska flyttas",
+        "enterName": "Vänligen ange ditt namn",
+        "enterEmail": "Vänligen ange din e-postadress",
+        "enterValidEmail": "Vänligen ange en giltig e-postadress",
+        "enterPhone": "Vänligen ange ditt telefonnummer",
+        "enterValidPhone": "Vänligen ange ett giltigt telefonnummer",
+        "selectOption": "Vänligen välj ett alternativ",
         "selectConstructionWork": "Vänligen välj minst en sorts arbete.",
         "selectConstructionCleaning": "Vänligen välj minst en sak som ska ingå i städningen.",
-        "selectHomeType": "Vänligen välj bostadstyp",
+        "selectHomeTypeCleaning": "Vänligen välj bostadstyp",
         "enterNumberOfFloors": "Vänligen ange antal våningar",
         "enterAreaSize": "Vänligen ange ytstorlek",
         "enterOnlyNumbers": "Vänligen ange endast siffror",
@@ -231,19 +281,8 @@
         "selectWindowType": "Vänligen välj minst en typ av fönster",
         "enterWindowCount": "Vänligen ange antal fönster för minst en typ",
         "describeCleaningService": "Vänligen beskriv din städtjänst",
-        "selectMovingHelp": "Vänligen välj om du vill ha flytthjälp",
-        "enterName": "Vänligen ange ditt namn",
-        "enterContactPersonName": "Vänligen ange kontaktpersonens namn",
-        "enterValidEmail": "Vänligen ange en giltig e-postadress",
-        "selectCleaningService": "Vänligen välj en städtjänst",
-        "enterEmail": "Vänligen ange din e-postadress",
-        "enterValidEmail": "Vänligen ange en giltig e-postadress",
-        "enterPhone": "Vänligen ange ditt telefonnummer",
-        "selectDesiredMovingDate": "Vänligen välj önskat flyttdatum",
-        "movingDateMustBeTomorrow": "Flyttdatum måste vara minst imorgon",
-        "selectMovingDateFlexibility": "Vänligen välj flexibilitet för flyttdatum",
-        "selectPackingHelp": "Vänligen välj om du vill ha packhjälp",
-        "selectStorageNeed": "Vänligen välj om du behöver lagerförvaring"
+        "approximatelyHowBigArea": "Ungefär hur stor yta ska städas?",
+        "enterAreaSize": "Vänligen ange ytstorlek"
       },
       "placeholders": {
         "startTypingAddress": "Börja skriva din adress",
@@ -572,6 +611,1330 @@
       "title": "Professionell hemstädning i Stockholm",
       "subtitle": "Regelbunden städning anpassad efter dina behov",
       "description": "Vi levererar trygg och noggrann hemstädning med RUT-avdrag och städgaranti. Offert på 1 minut."
+    }
+  },
+  "barhjalp": {
+    "hero": {
+      "title": "Bärhjälp",
+      "titleDesktop": "Bärhjälp i Stockholm",
+      "subtitle": "Professionell bärhjälp för flytt, möbler och tunga föremål i Stockholm.",
+      "description": "Vi erbjuder pålitlig bärhjälp för alla typer av flytt och transport. Våra erfarna medarbetare hjälper dig att bära möbler, flyttkartonger och andra tunga föremål säkert och effektivt.",
+      "ctaTitle": "Kontakta oss för offert",
+      "ctaDescription": "Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.",
+      "ctaButton": "Kontakta oss",
+      "readMore": "Läs mer"
+    },
+    "content": {
+      "whatIsTitle": "Vad är bärhjälp?",
+      "whatIsDescription": "Bärhjälp innebär att vi hjälper dig att bära tunga föremål, möbler och flyttkartonger på ett säkert och effektivt sätt. Vi kan hjälpa dig med allt från små möbler till stora, tunga föremål som piano, kassaskåp och specialutrustning. Tjänsten passar vid flytt, kontorsflytt eller när du bara behöver hjälp med att flytta tunga föremål.",
+      "pricingTitle": "Vad kostar bärhjälp?",
+      "pricingDescription1": "Priset för bärhjälp beror främst på antal föremål, vikt och storlek, tillgänglighet (våningsplan, hiss, bärväg), samt hur långt transporten är. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.",
+      "pricingDescription2": "Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett fast pris.",
+      "pricingTestimonial": "Perfekt bärhjälp! De kom i tid, var professionella och tog hand om allt säkert. Rekommenderar Flyttella varmt för alla som behöver bärhjälp!",
+      "testimonialAuthor": "Anna",
+      "includesTitle": "Vad ingår i tjänsten?",
+      "includesDescription": "Med vår bärhjälp får du hjälp att bära från bostad, vind, källare eller kontor. Vi kan även bistå med enklare nedmontering av möbler vid behov och ser till att alla föremål hanteras tryggt och säkert. Allt till tydliga, fasta priser utan dolda avgifter.",
+      "bookingTitle": "Hur bokar jag bärhjälp?",
+      "bookingDescription": "Boka bärhjälp enkelt genom att kontakta oss. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, våningsplan och om hiss finns, ungefärlig mängd och typ av föremål (t.ex. möbler, piano, kassaskåp), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma volymen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan bärhjälp."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är Stockholms ledande företag för professionell bärhjälp och flyttjänster. Med över 8 års erfarenhet hjälper vi både privatpersoner och företag med säker och effektiv bärhjälp av möbler, flyttkartonger och tunga föremål i hela Stockholm.",
+      "description2": "Vårt team av erfarna flyttare och bärhjälpare är specialiserade på att hantera alla typer av föremål - från små möbler till stora, tunga föremål som piano och kassaskåp. Vi använder modern utrustning och följer strikta säkerhetsriktlinjer för att säkerställa att allt hanteras korrekt och säkert.",
+      "description3": "Som en del av våra omfattande flyttjänster erbjuder vi också bortforsling, montering, piano- och tunglyft samt kontorsflyttar. Vårt mål är att göra bärhjälp enkel, säker och effektiv för alla våra kunder i Stockholm med transparenta priser och professionell service.",
+      "readMore": "Läs mer",
+      "readMoreAbout": "Läs mer om oss"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "En trygg och professionell bärhjälp",
+      "description": "Vi har hjälpt tusentals kunder med säker och professionell bärhjälp av möbler och tunga föremål. Våra kunder uppskattar vår snabba service, transparenta priser och professionella hantering av allt från små möbler till stora, tunga föremål som piano och kassaskåp. Hos Flyttella får du professionell bärhjälp med fokus på kundnöjdhet och säkerhet."
+    },
+    "cta": {
+      "title": "Redo att boka din bärhjälp?",
+      "subtitle": "Få en snabb och gratis offert på din bärhjälp",
+      "button": "Kontakta oss"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "descriptionExtended": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg."
+      },
+      "bohagsflytt": {
+        "title": "Bohagsflytt",
+        "description": "Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.",
+        "descriptionExtended": "Vi erbjuder packning och upppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt."
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "descriptionMobile": "Vi hjälper med märkning och organisering för enklare återleverans.",
+        "descriptionExtended": "Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi kan även hjälpa till med märkning av kartonger och inventarielista för smidig återleverans."
+      },
+      "allServices": {
+        "title": "Våra tjänster",
+        "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.",
+        "movingServices": "Se alla våra flyttjänster",
+        "cleaningServices": "Se alla våra städtjänster"
+      }
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "barhjalp": "Bärhjälp",
+      "barhjalpCount": "3000+",
+      "barhjalpDesc": "Genomförda bärhjälp",
+      "moves": "Flyttar",
+      "movesCount": "8000+",
+      "movesDesc": "Genomförda flyttar",
+      "cleanings": "Städningar",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Genomförda städningar",
+      "localExperienceTitle": "Lokal erfarenhet i Stockholm",
+      "localExperienceDesc1": "Vi har hjälpt tusentals kunder med deras bärhjälp i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av bärhjälp, från små möbler till stora, tunga föremål som piano och kassaskåp.",
+      "localExperienceDesc2": "Med över 8 års erfarenhet har vi byggt upp ett rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.",
+      "readMore": "Läs mer"
+    },
+    "process": {
+      "title": "Vår process för bärhjälp",
+      "description": "Vår bärhjälpsprocess är utformad för att vara enkel, säker och effektiv. Vi följer strikta säkerhetsriktlinjer för att säkerställa att allt hanteras korrekt och säkert.",
+      "pricingDescription": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som mängd föremål, typ av möbler, tillgänglighet och transportavstånd för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
+      "howItWorks": "Så fungerar vår bärhjälp",
+      "steps": [
+        {
+          "title": "Kontakta oss",
+          "description": "Kontakta oss för en kostnadsfri offert på bärhjälp"
+        },
+        {
+          "title": "Få offert",
+          "description": "Få en snabb och kostnadsfri offert på din bärhjälp"
+        },
+        {
+          "title": "Bekräftelse",
+          "description": "Bekräfta bokning och få all information"
+        },
+        {
+          "title": "Personlig kontakt",
+          "description": "Vi kontaktar dig för att bekräfta detaljer och planera bärhjälp"
+        },
+        {
+          "title": "Bärhjälp & Transport",
+          "description": "Vi bär och transporterar dina föremål säkert"
+        },
+        {
+          "title": "Nöjd kund",
+          "description": "Allt är på plats - du är nöjd!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Läs mer om bärhjälp i Stockholm",
+      "subtitle": "Få värdefulla tips och råd för en smidig bärhjälp",
+      "category": "Bärhjälp",
+      "readTime": "5 min läsning",
+      "postTitle": "Vad bör du tänka på inför bärhjälp av möbler och tunga föremål",
+      "postDescription": "Rätt planering gör bärhjälpen enkel och säker. Vi går igenom viktiga steg – från förberedelse och tillgänglighet till säker hantering och professionell service.",
+      "readMore": "Läs mer",
+      "allArticles": "Se alla artiklar"
+    },
+    "faq": {
+      "title": "Vanliga frågor om bärhjälp",
+      "questions": [
+        {
+          "question": "Hur förbereder jag mig bäst inför bärhjälp?",
+          "answer": "Börja med att sortera dina föremål och markera vad som ska flyttas. Ta bort alla lösa föremål från området som ska användas. Se till att vi har tillgång till området. Om du har särskilt känsliga eller värdefulla föremål, markera dessa tydligt och berätta för oss."
+        },
+        {
+          "question": "Vad ingår vanligtvis i bärhjälp?",
+          "answer": "Bärhjälp innebär att vi hjälper dig att bära föremål från exempelvis bostad, vind, källare eller kontor. Vi använder alltid rätt skydds- och säkerhetsutrustning för att hantera allt på ett tryggt sätt."
+        },
+        {
+          "question": "Hur fungerar säkerhetshantering vid bärhjälp?",
+          "answer": "Vi följer strikta säkerhetsriktlinjer och använder lämplig skyddsutrustning. För tunga föremål använder vi specialutrustning som dolly, lyftband och skydd. Vi dokumenterar all hantering och säkerställer att inget skadas under transporten."
+        },
+        {
+          "question": "Hur lång tid tar bärhjälp och vad påverkar tidsåtgången?",
+          "answer": "Tidsåtgången beror på flera faktorer: mängden föremål, tillgänglighet till området, behov av specialutrustning. Hur lång tid en bärhjälp tar beror helt på omfattningen och dina specifika behov. Vi anpassar alltid arbetet efter situationen för att ge en smidig och trygg hantering."
+        },
+        {
+          "question": "Kan ni hantera alla typer av föremål?",
+          "answer": "Vi hanterar de flesta typer av föremål inklusive möbler, flyttkartonger, piano, kassaskåp och stora vitvaror. För särskilt känsliga eller värdefulla föremål kan vi erbjuda extra skydd."
+        }
+      ],
+      "moreQuestions": "Har du fler frågor?",
+      "allFaq": "Se alla vanliga frågor"
+    },
+    "sidebar": {
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "readMore": "Läs mer"
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.",
+        "readMore": "Läs mer"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.",
+        "readMore": "Läs mer"
+      }
+    }
+  },
+  "pianoTunglyft": {
+    "hero": {
+      "title": "Piano & Tunglyft",
+      "subtitle": "Professionell hantering av tunga och storskaliga föremål",
+      "description": "Vi flyttar piano, kassaskåp och stora möbler med precision och säkerhet. Specialiserad utrustning och erfarna medarbetare.",
+      "readMore": "Läs mer"
+    },
+    "content": {
+      "whatIsTitle": "Vad är piano & tunglyft?",
+      "whatIsDescription": "Piano & tunglyft innebär professionell hantering av tunga och storskaliga föremål som kräver specialiserad utrustning och erfarenhet. Vi flyttar pianon, kassaskåp, vapenskåp och andra tunga möbler med precision och säkerhet. Tjänsten passar vid flytt, renovering eller när du behöver flytta tunga föremål som inte kan hanteras med vanlig flyttmetodik.",
+      "pricingTitle": "Vad kostar piano & tunglyft?",
+      "pricingDescription1": "Priset för piano & tunglyft beror främst på typ av föremål, vikt, tillgänglighet (våningsplan, hiss, bärväg), samt hur långt transporten är. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.",
+      "pricingDescription2": "Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett fast pris.",
+      "pricingTestimonial": "Perfekt piano & tunglyft! De kom i tid, var professionella och tog hand om allt säkert. Rekommenderar Flyttella varmt för alla som behöver hjälp med tunga föremål!",
+      "testimonialAuthor": "Erik",
+      "includesTitle": "Vad ingår i tjänsten?",
+      "includesDescription": "I vår piano & tunglyft ingår besiktning på plats, specialiserad utrustning som exempelvis pianovagnar och skydd, bärhjälp med erfarna medarbetare, säker transport och leverans. Vi hanterar alla typer av tunga föremål från pianon och kassaskåp till antikviteter och skulpturer. Allt till tydliga, fasta priser utan dolda avgifter.",
+      "bookingTitle": "Hur bokar jag piano & tunglyft?",
+      "bookingDescription": "Boka piano & tunglyft enkelt genom att kontakta oss. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, våningsplan och om hiss finns, typ av föremål (piano, kassaskåp, etc.), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma volymen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan tunglyft."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är en flytt- och städfirma i Stockholm som specialiserar sig på piano & tunglyft. I över åtta år har vi hjälpt kunder att flytta tunga och storskaliga föremål med precision och säkerhet. Våra erfarna medarbetare använder specialiserad utrustning och teknik för att hantera alla typer av tunga föremål, från pianon och kassaskåp till antikviteter och skulpturer.",
+      "description2": "Vi erbjuder komplett service med besiktning på plats, säker transport och leverans. Med tydliga villkor och fasta upplägg vet du exakt vad som ingår. Vårt team är alltid tillgängligt för frågor och support under hela processen, och vi säkerställer att varje tunglyft genomförs med högsta säkerhet och precision.",
+      "description3": "Behöver du hjälp med piano & tunglyft, kontakta oss för en snabb och kostnadsfri offert. Vi kan även kombinera tjänsten med flyttstädning, packning eller andra flyttrelaterade tjänster för en komplett lösning.",
+      "readMore": "Läs mer",
+      "readMoreAbout": "Läs mer om oss"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "En trygg och professionell piano & tunglyft",
+      "description": "Vi har hjälpt tusentals kunder med säker och professionell piano & tunglyft av tunga föremål. Våra kunder uppskattar vår snabba service, transparenta priser och professionella hantering av allt från pianon och kassaskåp till stora möbler och antikviteter. Hos Flyttella får du professionell piano & tunglyft med fokus på kundnöjdhet och säkerhet."
+    },
+    "cta": {
+      "title": "Redo att boka tunglyft?",
+      "subtitle": "Få en snabb och gratis offert på din piano & tunglyft",
+      "button": "Kontakta oss"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "descriptionExtended": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg."
+      },
+      "bohagsflytt": {
+        "title": "Bohagsflytt",
+        "description": "Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.",
+        "descriptionExtended": "Vi erbjuder packning och upppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt."
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "descriptionMobile": "Vi hjälper med märkning och organisering för enklare återleverans.",
+        "descriptionExtended": "Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi kan även hjälpa till med märkning av kartonger och inventarielista för smidig återleverans."
+      },
+      "allServices": {
+        "title": "Våra tjänster",
+        "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.",
+        "movingServices": "Se alla våra flyttjänster",
+        "cleaningServices": "Se alla våra städtjänster"
+      }
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "tunglyft": "Tunglyft",
+      "tunglyftCount": "1500+",
+      "tunglyftDesc": "Genomförda tunglyft",
+      "moves": "Flyttar",
+      "movesCount": "8000+",
+      "movesDesc": "Genomförda flyttar",
+      "cleanings": "Städningar",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Genomförda städningar",
+      "localExperienceTitle": "Lokal erfarenhet i Stockholm",
+      "localExperienceDesc1": "Vi har hjälpt tusentals kunder med deras piano & tunglyft i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av tunga föremål, från pianon och kassaskåp till stora möbler och antikviteter.",
+      "localExperienceDesc2": "Med över 8 års erfarenhet har vi byggt upp ett rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.",
+      "readMore": "Läs mer"
+    },
+    "process": {
+      "title": "Vår process för piano & tunglyft",
+      "description": "Vår piano & tunglyft process är utformad för att vara säker, professionell och smidig. Vi använder specialiserad utrustning och följer strikta säkerhetsriktlinjer för att säkerställa att alla tunga föremål hanteras korrekt.",
+      "pricingDescription": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som typ av föremål, vikt, tillgänglighet (våningsplan, hiss, bärväg), transportavstånd och eventuella specialkrav för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
+      "howItWorks": "Så fungerar vår piano & tunglyft",
+      "steps": [
+        {
+          "title": "Kontakta oss",
+          "description": "Kontakta oss för en kostnadsfri offert på piano & tunglyft"
+        },
+        {
+          "title": "Få offert",
+          "description": "Få en snabb och kostnadsfri offert på din piano & tunglyft"
+        },
+        {
+          "title": "Bekräftelse",
+          "description": "Bekräfta bokning och få all information"
+        },
+        {
+          "title": "Personlig kontakt",
+          "description": "Vi kontaktar dig för att bekräfta detaljer och planera tunglyft"
+        },
+        {
+          "title": "Tunglyft & Transport",
+          "description": "Vi flyttar och transporterar dina tunga föremål säkert"
+        },
+        {
+          "title": "Nöjd kund",
+          "description": "Allt är på plats - du är nöjd!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Läs mer om piano & tunglyft i Stockholm",
+      "subtitle": "Få värdefulla tips och råd för en smidig piano & tunglyft",
+      "category": "Piano & Tunglyft",
+      "readTime": "5 min läsning",
+      "postTitle": "Vad bör du tänka på inför piano & tunglyft av tunga föremål",
+      "postDescription": "Rätt planering gör piano & tunglyft enkel och säker. Vi går igenom viktiga steg – från förberedelse och tillgänglighet till säker hantering och professionell service.",
+      "readMore": "Läs mer",
+      "allArticles": "Se alla artiklar"
+    },
+    "faq": {
+      "title": "Vanliga frågor om piano & tunglyft",
+      "questions": [
+        {
+          "question": "Hur förbereder jag mig bäst inför piano & tunglyft?",
+          "answer": "Börja med att markera området runt föremålet och ta bort alla lösa föremål. Se till att vi har tillgång till området och att inga hinder finns i vägen. Om du har särskilt känsliga eller värdefulla föremål, markera dessa tydligt och berätta för oss."
+        },
+        {
+          "question": "Vad ingår vanligtvis i piano & tunglyft?",
+          "answer": "Piano & tunglyft innebär att vi hjälper dig att flytta tunga föremål med specialiserad utrustning och teknik. Vi använder alltid rätt skydds- och säkerhetsutrustning för att hantera allt på ett tryggt sätt."
+        },
+        {
+          "question": "Hur fungerar säkerhetshantering vid piano & tunglyft?",
+          "answer": "Vi följer strikta säkerhetsriktlinjer och använder lämplig skyddsutrustning. För tunga föremål använder vi specialutrustning som pianovagnar, lyftband och skydd. Vi dokumenterar all hantering och säkerställer att inget skadas under transporten."
+        },
+        {
+          "question": "Hur lång tid tar piano & tunglyft och vad påverkar tidsåtgången?",
+          "answer": "Tidsåtgången beror på flera faktorer: typ av föremål, tillgänglighet till området, behov av specialutrustning. Hur lång tid en piano & tunglyft tar beror helt på omfattningen och dina specifika behov. Vi anpassar alltid arbetet efter situationen för att ge en smidig och trygg hantering."
+        },
+        {
+          "question": "Kan ni hantera alla typer av tunga föremål?",
+          "answer": "Vi hanterar de flesta typer av tunga föremål inklusive pianon, kassaskåp, vapenskåp, stora möbler och antikviteter. För särskilt känsliga eller värdefulla föremål kan vi erbjuda extra skydd."
+        }
+      ],
+      "moreQuestions": "Har du fler frågor?",
+      "allFaq": "Se alla vanliga frågor"
+    },
+    "sidebar": {
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "readMore": "Läs mer"
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.",
+        "readMore": "Läs mer"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.",
+        "readMore": "Läs mer"
+      }
+    }
+  },
+  "bortforsling": {
+    "hero": {
+      "title": "Bortforsling",
+      "subtitle": "Professionell bortforsling av möbler, bohag och grovsopor",
+      "description": "Vi hämtar, bär och kör bort – snabbt och tryggt. Miljövänlig hantering och återvinning.",
+      "ctaTitle": "Kontakta oss för offert",
+      "ctaDescription": "Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.",
+      "ctaButton": "Kontakta oss",
+      "readMore": "Läs mer"
+    },
+    "content": {
+      "whatIsTitle": "Vad är bortforsling?",
+      "whatIsDescription": "Bortforsling innebär professionell hantering och transport av avfall, möbler, bohag och grovsopor från din bostad eller kontor. Vi tar hand om allt från gamla möbler och vitvaror till byggavfall och elektronik, med fokus på miljövänlig hantering och återvinning.",
+      "pricingTitle": "Vad kostar bortforsling?",
+      "pricingDescription1": "Priset för bortforsling beror främst på mängd och typ av avfall, tillgänglighet (våningsplan, hiss, bärväg), samt transportavstånd. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.",
+      "pricingDescription2": "Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett fast pris.",
+      "pricingTestimonial": "Perfekt bortforsling! De kom i tid, var professionella och tog hand om allt miljövänligt. Rekommenderar Flyttella varmt för alla som behöver hjälp med bortforsling!",
+      "testimonialAuthor": "Anna",
+      "includesTitle": "Vad ingår i tjänsten?",
+      "includesDescription": "I vår bortforsling ingår bärhjälp från bostad, vind, källare eller kontor, enklare nedmontering av möbler vid behov, transport till återvinningscentral eller godkänd mottagare, samt miljösortering där vi återvinner. Allt till tydliga, fasta priser utan dolda avgifter.",
+      "bookingTitle": "Hur bokar jag bortforsling?",
+      "bookingDescription": "Boka bortforsling enkelt genom att kontakta oss. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, våningsplan och om hiss finns, ungefärlig mängd och typ av avfall (t.ex. möbler, vitvaror, byggavfall), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma volymen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan hämtning."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är Stockholms ledande företag för professionell bortforsling och flyttjänster. Med över 8 års erfarenhet hjälper vi både privatpersoner och företag med säker och miljövänlig bortforsling av möbler, vitvaror och grovsopor i hela Stockholm.",
+      "description2": "Vårt team av erfarna flyttare och bärhjälpare är specialiserade på att hantera alla typer av bortforsling - från små möbler till stora kontorsrensningar. Vi använder modern utrustning och följer strikta miljöriktlinjer för att säkerställa att allt avfall hanteras korrekt och återvinns.",
+      "description3": "Som en del av våra omfattande flyttjänster erbjuder vi också bärhjälp, montering, piano- och tunglyft samt kontorsflyttar. Vårt mål är att göra bortforsling enkel, säker och miljövänlig för alla våra kunder i Stockholm med transparenta priser och professionell service.",
+      "readMore": "Läs mer",
+      "readMoreAbout": "Läs mer om oss"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "En trygg och professionell bortforsling",
+      "description": "Vi har hjälpt tusentals kunder med säker och professionell bortforsling av möbler, vitvaror och grovsopor. Våra kunder uppskattar vår snabba service, transparenta priser och miljövänliga hantering av allt från gamla möbler till byggavfall. Hos Flyttella får du professionell bortforsling med fokus på miljö och kundnöjdhet."
+    },
+    "cta": {
+      "title": "Redo att boka bortforsling?",
+      "subtitle": "Få en snabb och gratis offert på din bortforsling",
+      "button": "Kontakta oss"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "descriptionExtended": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg."
+      },
+      "bohagsflytt": {
+        "title": "Bohagsflytt",
+        "description": "Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.",
+        "descriptionExtended": "Vi erbjuder packning och upppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt."
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "descriptionMobile": "Vi hjälper med märkning och organisering för enklare återleverans.",
+        "descriptionExtended": "Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi kan även hjälpa till med märkning av kartonger och inventarielista för smidig återleverans."
+      },
+      "allServices": {
+        "title": "Våra tjänster",
+        "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som bortforsling och magasinering.",
+        "movingServices": "Se alla våra flyttjänster",
+        "cleaningServices": "Se alla våra städtjänster"
+      }
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "bortforslingar": "Bortforslingar",
+      "bortforslingarCount": "2500+",
+      "bortforslingarDesc": "Genomförda bortforslingar",
+      "moves": "Flyttar",
+      "movesCount": "8000+",
+      "movesDesc": "Genomförda flyttar",
+      "cleanings": "Städningar",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Genomförda städningar",
+      "localExperienceTitle": "Lokal erfarenhet i Stockholm",
+      "localExperienceDesc1": "Vi har hjälpt tusentals kunder med deras bortforsling i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av avfall, från möbler och vitvaror till byggavfall och elektronik.",
+      "localExperienceDesc2": "Med över 8 års erfarenhet har vi byggt upp ett rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.",
+      "readMore": "Läs mer"
+    },
+    "process": {
+      "title": "Vår process för bortforsling",
+      "description": "Vår bortforsling process är utformad för att vara säker, professionell och miljövänlig. Vi följer strikta miljöriktlinjer och säkerställer att allt avfall hanteras korrekt och återvinns.",
+      "pricingDescription": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som mängd och typ av avfall, tillgänglighet (våningsplan, hiss, bärväg), transportavstånd och eventuella specialkrav för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
+      "howItWorks": "Så fungerar vår bortforsling",
+      "steps": [
+        {
+          "title": "Kontakta oss",
+          "description": "Kontakta oss för en kostnadsfri offert på bortforsling"
+        },
+        {
+          "title": "Få offert",
+          "description": "Få en snabb och kostnadsfri offert på din bortforsling"
+        },
+        {
+          "title": "Bekräftelse",
+          "description": "Bekräfta bokning och få all information"
+        },
+        {
+          "title": "Personlig kontakt",
+          "description": "Vi kontaktar dig för att bekräfta detaljer och planera hämtning"
+        },
+        {
+          "title": "Hämtning & Transport",
+          "description": "Vi hämtar och transporterar ditt avfall säkert"
+        },
+        {
+          "title": "Miljövänlig hantering",
+          "description": "Allt avfall hanteras miljövänligt och återvinns"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Läs mer om bortforsling i Stockholm",
+      "subtitle": "Få värdefulla tips och råd för en miljövänlig bortforsling",
+      "category": "Bortforsling",
+      "readTime": "5 min läsning",
+      "postTitle": "Vad bör du tänka på inför bortforsling av möbler och avfall",
+      "postDescription": "Rätt planering gör bortforsling enkel och miljövänlig. Vi går igenom viktiga steg – från förberedelse och sortering till miljövänlig hantering och återvinning.",
+      "readMore": "Läs mer",
+      "allArticles": "Se alla artiklar"
+    },
+    "faq": {
+      "title": "Vanliga frågor om bortforsling",
+      "questions": [
+        {
+          "question": "Hur förbereder jag mig bäst inför bortforsling?",
+          "answer": "Börja med att sortera och separera olika typer av avfall. Ta bort alla lösa föremål och se till att vi har tillgång till området. Se till att det finns plats för våra fordon och att vi kan komma åt med utrustning. Markera eventuella särskilt känsliga eller värdefulla föremål tydligt."
+        },
+        {
+          "question": "Vad ingår vanligtvis i bortforsling?",
+          "answer": "Bortforsling innebär att vi hjälper dig att ta bort avfall, möbler och bohag med professionell hantering. Vi använder alltid rätt utrustning och följer miljöriktlinjer för att hantera allt på ett tryggt och miljövänligt sätt."
+        },
+        {
+          "question": "Hur fungerar miljöhantering vid bortforsling?",
+          "answer": "Vi följer strikta miljöriktlinjer och sorterar allt avfall korrekt. För olika typer av avfall använder vi olika hanteringsmetoder och transporterar till rätt mottagare. Vi dokumenterar all hantering och säkerställer att allt återvinns eller hanteras miljövänligt."
+        },
+        {
+          "question": "Hur lång tid tar bortforsling och vad påverkar tidsåtgången?",
+          "answer": "Tidsåtgången beror på flera faktorer: mängd och typ av avfall, tillgänglighet till området, behov av specialutrustning. Hur lång tid en bortforsling tar beror helt på omfattningen och dina specifika behov. Vi anpassar alltid arbetet efter situationen för att ge en smidig och trygg hantering."
+        },
+        {
+          "question": "Kan ni hantera alla typer av avfall?",
+          "answer": "Vi hanterar de flesta typer av avfall inklusive möbler, vitvaror, byggavfall, elektronik och grovsopor. För särskilt farliga ämnen eller kemikalier har vi specialiserad hantering och transporterar till godkända mottagare."
+        }
+      ],
+      "moreQuestions": "Har du fler frågor?",
+      "allFaq": "Se alla vanliga frågor"
+    },
+    "sidebar": {
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "readMore": "Läs mer"
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.",
+        "readMore": "Läs mer"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.",
+        "readMore": "Läs mer"
+      }
+    }
+  },
+  "magasinering": {
+    "hero": {
+      "title": "Magasinering",
+      "subtitle": "Trygg förvaring av ditt bohag i torra, larmade utrymmen",
+      "description": "Vi hjälper dig med säker förvaring av ditt bohag – från hämtning och packning till återleverans.",
+      "ctaTitle": "Kontakta oss för offert",
+      "ctaDescription": "Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.",
+      "ctaButton": "Kontakta oss",
+      "readMore": "Läs mer"
+    },
+    "content": {
+      "whatIsTitle": "Vad är magasinering?",
+      "whatIsDescription": "Magasinering innebär att förvara bohag eller inventarier säkert under en period – vid flytt, renovering, utlandsvistelse eller platsbrist. Förvaringen ska vara torr, ventilerad och skyddad mot stöld och skador. Ofta hämtas bohaget hos kunden, packas med skydd och körs till ett larmat magasin. När du vill ha återleverans levereras bohaget ut igen. Vanliga tillval är packhjälp, montering/demontering, extra försäkring och möjlighet att komma åt utvalda lådor under perioden.",
+      "pricingTitle": "Vad kostar magasinering?",
+      "pricingDescription": "Pris beror på volym (kubikmeter), magasineringstid, åtkomlighet och eventuella tillval som hämtning/återleverans, packhjälp och extra försäkring. Debitering sker ofta per kubik och månad. En riktlinje är att kostnaden kan minskas genom att rensa i förväg, packa effektivt och välja längre bindningstid. Transparens är viktigt – be om tydlig offert med vad som ingår såsom hyra, försäkring, hantering och eventuella startavgifter.",
+      "pricingTestimonial": "Trygg och smidig magasinering – enkelt att både lämna in och få tillbaka.",
+      "testimonialAuthor": "Sofia",
+      "includesTitle": "Vad ingår i magasinering?",
+      "includesDescription": "I magasinering ingår vanligtvis hämtning av bohag, säker packning med skydd, transport till larmat magasin, förvaring under avtalad tid samt återleverans. Vi kan även erbjuda packhjälp, montering/demontering av möbler, extra försäkring och möjlighet att komma åt utvalda lådor under perioden. Allt till tydliga, fasta priser utan dolda avgifter.",
+      "bookingTitle": "Hur bokar jag magasinering?",
+      "bookingDescription": "Boka magasinering enkelt genom att kontakta oss. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, ungefärlig volym (kubikmeter), önskad magasineringstid, samt eventuella tillval som packhjälp eller extra försäkring. Vi kan även besikta på plats för en mer exakt bedömning. Vi återkommer snabbt med pris och bekräftelse."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är en flytt- och städfirma i Stockholm som erbjuder trygg magasinering. I över åtta år har vi hjälpt kunder att förvara bohag säkert – vid flytt, renovering och längre vistelser utomlands. Vi hämtar hemma hos dig, skyddar och märker ditt bohag och magasinerar i torra, ventilerade och larmade utrymmen. Med tydliga villkor och fasta upplägg vet du exakt vad som ingår.",
+      "description2": "Behöver du packmaterial, packhjälp, montering/demontering eller flyttstädning kan vi ordna det. Du får snabb offert och löpande uppdateringar – enkelt från start till mål. Våra magasin är strategiskt placerade i Stockholm med moderna säkerhetssystem och kontinuerlig övervakning. Våra medarbetare är utbildade i försiktig hantering av alla typer av föremål, och vi erbjuder flexibla lösningar för både kort- och långsiktig förvaring. Vårt team är alltid tillgängligt för frågor och support under hela förvaringsperioden.",
+      "description3": "Som en del av våra omfattande flyttjänster erbjuder vi också bohagsflytt, flyttstädning, bortforsling och specialtjänster. Vårt mål är att göra magasinering enkel, säker och kostnadseffektiv för alla våra kunder i Stockholm med transparenta priser och professionell service.",
+      "readMore": "Läs mer",
+      "readMoreAbout": "Läs mer om oss"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "En trygg och professionell magasinering",
+      "description": "Vi har hjälpt tusentals kunder med säker och professionell magasinering av bohag och inventarier. Våra kunder uppskattar vår snabba service, transparenta priser och säkra förvaring av allt från små hushåll till stora företagslösningar. Hos Flyttella får du professionell magasinering med fokus på kundnöjdhet och säkerhet."
+    },
+    "cta": {
+      "title": "Redo att boka magasinering?",
+      "subtitle": "Få en snabb och gratis offert på din magasinering",
+      "button": "Kontakta oss"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "descriptionExtended": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.",
+        "readMore": "Läs mer"
+      },
+      "bohagsflytt": {
+        "title": "Bohagsflytt",
+        "description": "Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.",
+        "descriptionExtended": "Vi erbjuder packning och upppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt.",
+        "readMore": "Läs mer"
+      },
+        "bortforsling": {
+          "title": "Bortforsling",
+          "description": "Professionell hantering och transport av avfall, möbler och bohag. Vi tar hand om allt från gamla möbler till byggavfall med fokus på miljövänlig hantering.",
+          "descriptionMobile": "Vi hjälper med sortering och miljövänlig hantering av avfall.",
+          "descriptionExtended": "Bortforsling är perfekt vid flytt, renovering eller när du behöver frigöra utrymme. Våra erfarna medarbetare använder rätt utrustning och säkerställer att allt avfall hanteras korrekt och återvinns. Vi kan även hjälpa med sortering och dokumentation för en smidig process."
+        },
+        "utlandsflytt": {
+          "title": "Utlandsflytt",
+          "description": "Flytt över gränser – planering, packning och vägtransport.",
+          "readMore": "Läs mer",
+          "descriptionExtended": "Vi tar hand om exportpackning, dokument och säker vägtransport. Tydlig kommunikation från start till mål. Vi hjälper till med planering av rutt och leveransfönster för en smidig resa."
+        },
+      "allServices": {
+        "title": "Våra tjänster",
+        "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som magasinering och bortforsling.",
+        "movingServices": "Se alla våra flyttjänster",
+        "cleaningServices": "Se alla våra städtjänster"
+      }
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "magasineradeBohag": "Magasinerade bohag",
+      "magasineradeBohagCount": "3000+",
+      "magasineradeBohagDesc": "Uppdrag i Stockholm",
+      "moves": "Bohagsflyttar",
+      "movesCount": "8000+",
+      "movesDesc": "Genomförda uppdrag",
+      "cleanings": "Flyttstädningar",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Genomförda städningar",
+      "localExperienceTitle": "Lokal erfarenhet i Stockholm",
+      "localExperienceDesc1": "Vi har hjälpt tusentals kunder med deras magasinering i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av förvaring, från små lägenheter till stora företagslösningar.",
+      "localExperienceDesc2": "Med över 8 års erfarenhet har vi byggt upp ett rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.",
+      "readMore": "Läs mer"
+    },
+    "process": {
+      "title": "Vår process för magasinering",
+      "description": "Vår magasineringsprocess är utformad för att vara säker, professionell och smidig. Vi följer strikta säkerhetsriktlinjer och säkerställer att allt bohag hanteras korrekt och förvaras säkert.",
+      "pricingDescription": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som volym (kubikmeter), magasineringstid, åtkomlighet och eventuella tillval för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
+      "howItWorks": "Så fungerar vår magasinering",
+      "steps": [
+        {
+          "title": "Kontakta oss",
+          "description": "Kontakta oss för en kostnadsfri offert på magasinering"
+        },
+        {
+          "title": "Få offert",
+          "description": "Få en snabb och kostnadsfri offert på din magasinering"
+        },
+        {
+          "title": "Bekräftelse",
+          "description": "Bekräfta bokning och få all information"
+        },
+        {
+          "title": "Personlig kontakt",
+          "description": "Vi kontaktar dig för att bekräfta detaljer och planera hämtning"
+        },
+        {
+          "title": "Hämtning & Packning",
+          "description": "Vi hämtar och packar ditt bohag säkert"
+        },
+        {
+          "title": "Säker förvaring",
+          "description": "Ditt bohag förvaras säkert i våra magasin"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Läs mer om magasinering i Stockholm",
+      "subtitle": "Få värdefulla tips och råd för en trygg magasinering",
+      "category": "Magasinering",
+      "readTime": "5 min läsning",
+      "postTitle": "Vad bör du tänka på inför magasinering av bohag",
+      "postDescription": "Rätt planering gör magasinering enkel och säker. Vi går igenom viktiga steg – från förberedelse och packning till säker förvaring och återleverans.",
+      "readMore": "Läs mer",
+      "allArticles": "Se alla artiklar"
+    },
+    "faq": {
+      "title": "Vanliga frågor om magasinering",
+      "questions": [
+        {
+          "question": "Hur förbereder jag mig bäst inför magasinering?",
+          "answer": "Börja med att sortera dina saker i högar: vad som ska magasineras, vad som kan säljas/doneras och vad som ska behållas. Ta bort alla lösa föremål och se till att vi har tillgång till området. Se till att det finns plats för våra fordon och att vi kan komma åt med utrustning. Markera eventuella särskilt känsliga eller värdefulla föremål tydligt."
+        },
+        {
+          "question": "Vad ingår vanligtvis i magasinering?",
+          "answer": "Magasinering innebär att vi hjälper dig att förvara bohag säkert under en period. Vi använder alltid rätt packmaterial och följer säkerhetsriktlinjer för att hantera allt på ett tryggt sätt."
+        },
+        {
+          "question": "Hur fungerar säkerhetshantering vid magasinering?",
+          "answer": "Vi följer strikta säkerhetsriktlinjer och använder lämplig försäkring och skydd. För värdefulla föremål erbjuder vi extra försäkring och dokumentation. Vi dokumenterar all hantering och säkerställer att inget skadas under förvaringen."
+        },
+        {
+          "question": "Hur lång tid tar magasinering och vad påverkar tidsåtgången?",
+          "answer": "Tidsåtgången beror på flera faktorer: volym av bohag, åtkomlighet till området, behov av packning. Hur lång tid en magasinering tar beror helt på omfattningen och dina specifika behov. Vi anpassar alltid arbetet efter situationen för att ge en smidig och trygg hantering."
+        },
+        {
+          "question": "Kan ni hantera alla typer av bohag?",
+          "answer": "Vi hanterar de flesta typer av bohag inklusive möbler, vitvaror, elektronik och känsliga föremål. För särskilt känsliga eller värdefulla föremål kan vi erbjuda extra skydd och försäkring."
+        }
+      ],
+      "moreQuestions": "Har du fler frågor?",
+      "allFaq": "Se alla vanliga frågor"
+    },
+    "sidebar": {
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.",
+        "readMore": "Läs mer"
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.",
+        "readMore": "Läs mer"
+      },
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Bortforsling och återvinning av möbler, elektronik och grovsopor – smidigt och ansvarsfullt.",
+        "readMore": "Läs mer"
+      }
+    }
+  },
+  "utlandsflytt": {
+    "hero": {
+      "title": "Utlandsflytt från Stockholm",
+      "subtitle": "Internationell flytt – trygg planering, packning och transport",
+      "description": "Vi hjälper dig genom hela flytten – från planering och förberedelser till säker hantering och leverans. Vårt mål är att göra processen enkel, trygg och smidig för dig. Fyll i formuläret och få en offert på bara en minut.",
+      "readMore": "Läs mer"
+    },
+    "content": {
+      "whatIsTitle": "Vad är utlandsflytt?",
+      "whatIsDescription": "En utlandsflytt är en förflyttning av bohag över en landsgräns, ofta mellan olika regelverk och språk. Jämfört med en inrikes flytt kräver den längre framförhållning, mer dokumentation och hänsyn till tull- och importregler, försäkringsvillkor, väg- och gränskontroller samt tidsskillnader och helgdagar i flera länder. Typiska moment är rensning och inventering av bohag, långdistansanpassad packning, framtagning av inventarielista och tullvärden, planering av rutt och leveransfönster samt mottagningskontroll på destinationen. Ledtiderna är i regel längre än vid en inrikes flytt och det är klokt att planera med buffert för gränsövergångar och oförutsedda händelser.",
+      "pricingTitle": "Vad kostar utlandsflytt?",
+      "pricingDescription": "Priset beror främst på volym (kubik), destination, tillgänglighet på adresserna (våningsplan, hiss, bärväg) och tillval som packning, magasinering och montering/nedmontering. Avstånd, bro- och vägavgifter samt önskade leveransfönster påverkar också totalpriset. Prissättning sker vanligtvis som fast pris eller rörligt pris. Fast pris innebär en totalsumma för en tydligt definierad omfattning (volym, adresser, bärväg, tidsfönster) och ändras inte så länge förutsättningarna stämmer – förutsägbart och lätt att budgetera. Rörligt pris debiteras per tid/volym eller enligt löpande räkning utifrån faktisk insats och eventuella tillägg – flexibelt vid osäker omfattning, men slutkostnaden kan variera. I båda fallen kan priset omfatta material, arbetstid, transport, försäkring och ibland tullrelaterade kostnader. Kostnaden kan ofta sänkas genom att minska volymen (rensa), vara flexibel med datum och säkra god åtkomlighet/parkering.",
+      "pricingTestimonial": "Trygg och smidig utlandsflytt – Flyttella hade tydlig kommunikation hela vägen.",
+      "testimonialAuthor": "Daniel",
+      "includesTitle": "Vad ingår i utlandsflytt?",
+      "includesDescription": "Inventering och planering, lastning med möbelskydd, försäkring, internationell vägtransport samt lossning på destinationen. Vi stämmer av bärväg och leveransfönster och gör en enkel mottagningskontroll. Tillval: packning av hela hemmet, magasinering, montering/demontering och flyttstädning inför överlämning.",
+      "bookingTitle": "Hur bokar jag utlandsflytt?",
+      "bookingDescription": "Boka via formuläret – ange adress, volym och destination. Du får pris direkt och kan bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av detaljer, önskade datum och eventuella tillval. Vi erbjuder paketlösningar för bästa pris.",
+      "checklistTitle": "Checklista vid utlandsflytt",
+      "checklistItems": [
+        "Boka flyttfirma i god tid: Säkerställ att du får det datum som passar dig bäst.",
+        "Rensa och sortera: Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.",
+        "Beställ flyttkartonger: Låna eller köp tillräckligt med kartonger och packmaterial.",
+        "Packa smart: Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.",
+        "Adressändra och meddela viktiga kontakter: Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.",
+        "Boka flyttstädning: Se till att bostaden är ordentligt städad inför överlämning.",
+        "Plocka ner gardiner, lampor och hyllor: Förbered så mycket som möjligt innan flyttdagen.",
+        "Packa en \"första natten-låda\": Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.",
+        "Dubbelkolla allt på flyttdagen: Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.",
+        "Pass, visum och uppehållstillstånd: Säkerställ giltighet och rätt intyg för alla i hushållet.",
+        "Inventarielista och tullvärden: Lista bohaget och förbered tullvärden enligt destinationslandets krav.",
+        "Införselregler: Kontrollera vad som får tas in (t.ex. livsmedel, växter, batterier) och om tillstånd krävs.",
+        "Internationell försäkring: Se att försäkringen täcker långdistans vägtransport och hela flyttkedjan.",
+        "Parkering och bärväg: Ordna lastzon/tillstånd och hissbokning på båda adresser.",
+        "Husdjur: Kontrollera veterinärintyg, vaccinationer och införselkrav."
+      ]
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är en flytt- och städfirma i Stockholm med spetskompetens inom utlandsflytt. I över åtta år har vi hjälpt kunder att flytta mellan länder – med tydliga steg, trygg planering och samma höga kvalitet som vid en lokal flytt. Vårt mål är att göra internationella flyttar enkla, förutsägbara och transparenta.",
+      "description2": "Vi hanterar packning, försäkring och vägtransport. Vi koordinerar hela kedjan dörr‑till‑dörr med tydliga tidplaner och uppdateringar. Med fasta villkor och tydliga priser vet du alltid vad som ingår – oavsett destination.",
+      "description3": "Du får snabb offert och löpande uppdateringar om tidplan och leverans. Behöver du magasinering, montering/demontering eller flyttstädning inför överlämning ordnar vi det också. Målet är en smidig utlandsflytt där du kan känna dig trygg genom hela processen.",
+      "mobileDescription": "Flyttella är en flytt- och städfirma i Stockholm med lång erfarenhet av utlandsflytt – tydliga steg, trygg planering och personlig kontakt.",
+      "mobileDescription2": "Vi hjälper till med packning, tull- och importdokument, försäkring och internationell vägtransport – allt samordnat av oss. Fasta villkor och transparent pris gör att du vet exakt vad som ingår.",
+      "mobileDescription3": "Du får snabb offert och löpande uppdateringar om tidplan och leverans. Behöver du magasinering, montering/demontering eller flyttstädning inför överlämning löser vi det också.",
+      "readMore": "Läs mer",
+      "readMoreAbout": "Läs mer om oss"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Pålitlig utlandsflytt i Stockholm",
+      "description": "Som en av Sveriges mest rekommenderade flyttfirmor för utlandsflytt sätter vi kunden i fokus. Vi vet att flytt över gränser kan vara extra krävande – med dokument, tidsplaner och vägtransport – därför gör vi processen så smidig och trygg som möjligt. Med lång erfarenhet av internationella flyttar och ett dedikerat team ser vi till att din utlandsflytt blir en positiv upplevelse från start till mål.",
+      "arrowText": "Läs vad våra kunder säger om vår utlandsflytt"
+    },
+    "cta": {
+      "title": "Redo att börja din utlandsflytt?",
+      "subtitle": "Få en snabb och gratis offert",
+      "button": "Få gratis offert"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "descriptionExtended": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.",
+        "readMore": "Läs mer"
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
+        "descriptionExtended": "Behöver du magasinera bohag under flyttprocessen? Vi tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan – och kan även hjälpa till med hämtning och återleverans.",
+        "readMore": "Läs mer"
+      },
+      "packhjälp": {
+        "title": "Packhjälp",
+        "description": "Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.",
+        "descriptionMobile": "Vi hjälper med märkning och organisering för enklare upppackning.",
+        "descriptionExtended": "Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport.",
+        "readMore": "Läs mer"
+      },
+      "allServices": {
+        "title": "Våra tjänster",
+        "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster – allt du behöver för en smidig flytt.",
+        "movingServices": "Se alla våra flyttjänster",
+        "cleaningServices": "Se alla våra städtjänster"
+      }
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "utlandsflyttar": "Utlandsflyttar",
+      "utlandsflyttarCount": "1500+",
+      "utlandsflyttarDesc": "Genomförda uppdrag",
+      "bohagsflyttar": "Bohagsflyttar",
+      "bohagsflyttarCount": "8000+",
+      "bohagsflyttarDesc": "Genomförda uppdrag",
+      "länder": "Länder",
+      "länderCount": "25+",
+      "länderDesc": "Vi har flyttat till",
+      "localExperienceTitle": "Erfarenhet ger resultat",
+      "localExperienceDesc1": "Med hundratals utlandsflyttar bakom oss vet vi vad som krävs för en trygg resa över gränserna. Vi arbetar metodiskt med planering, exportpackning och dokument – och håller dig uppdaterad från hämtning till leverans. Resultatet är en smidigare flytt och nöjda kunder.",
+      "localExperienceDesc2": "Vår rutin bygger på tydliga tidplaner, kontroll vid lastning och leverans samt transparent kommunikation under hela transporten. Det gör att du kan planera i lugn och ro, medan vi tar ansvar för detaljerna."
+    },
+    "tips": {
+      "title": "Tips för din flytt",
+      "innan": "Innan flytten",
+      "under": "Under flytten",
+      "efter": "Efter flytten",
+      "planera": "Planera och förbered",
+      "avtal": "Avtal och anmälningar",
+      "innanFlyttfirma": "Innan flyttfirman kommer",
+      "packtips": "Packtips",
+      "smidigFlyttdag": "En smidig flyttdag",
+      "kommunikation": "Kommunikation och koordinering",
+      "startNyaHemmet": "Start i nya hemmet",
+      "dokumentation": "Dokumentation och uppföljning",
+      "tipCards": {
+        "planera": {
+          "title": "Planera och förbered",
+          "items": [
+            "Gör en checklista.",
+            "Rensa ut onödiga saker.",
+            "Boka flyttfirma och städning.",
+            "Beställ flyttkartonger."
+          ]
+        },
+        "avtal": {
+          "title": "Avtal och anmälningar",
+          "items": [
+            "Adressändra hos Skatteverket.",
+            "Flytta el, bredband, etc.",
+            "Teckna nya avtal.",
+            "Meddela viktiga kontakter."
+          ]
+        },
+        "innanFlyttfirma": {
+          "title": "Innan flyttfirman kommer",
+          "items": [
+            "Packa ner allt lösöre i kartonger",
+            "Montera ner alla gardiner",
+            "Montera ner alla lampor",
+            "Dubbelkolla packning och märkning."
+          ]
+        },
+        "packtips": {
+          "title": "Packtips",
+          "items": [
+            "Märk alla kartonger tydligt.",
+            "Håll nycklar tillgängliga.",
+            "Överbelasta inte flyttlådorna.",
+            "Använd silkespapper för ömtåliga föremål och porslin."
+          ]
+        },
+        "smidigFlyttdag": {
+          "title": "En smidig flyttdag",
+          "items": [
+            "Håll värdesaker tillgängliga.",
+            "Säkerställ fri väg för flytthjälp.",
+            "Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.",
+            "Se till att montera ner eller packa ner bortglömda föremål."
+          ]
+        },
+        "kommunikation": {
+          "title": "Kommunikation och koordinering",
+          "items": [
+            "Håll kontakt med flyttledaren.",
+            "Fotografera eventuella skador.",
+            "Kontrollera att allt laddas korrekt.",
+            "Följ med till den nya adressen.",
+            "Var tydlig med särskilda önskemål.",
+            "Var tillgänglig för frågor."
+          ]
+        },
+        "startNyaHemmet": {
+          "title": "Start i nya hemmet",
+          "items": [
+            "Kontrollera flyttstädningen.",
+            "Packa upp det viktigaste först.",
+            "Kontrollera att alla föremål anlänt.",
+            "Montera upp gardiner och lampor.",
+            "Uppdatera adress hos myndigheter.",
+            "Testa alla vitvaror och eluttag.",
+            "Ta bort tomma kartonger och emballage."
+          ]
+        },
+        "dokumentation": {
+          "title": "Dokumentation och uppföljning",
+          "items": [
+            "Kontakta flyttfirman för feedback.",
+            "Skriv en recension av tjänsten.",
+            "Organisera flyttkvitton och dokument.",
+            "Fira din nya bostad med familj och vänner.",
+            "Uppdatera försäkringar för nya bostaden."
+          ]
+        }
+      }
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Montering",
+        "description": "Säker montering och demontering av möbler och vitvaror inför packning och leverans.",
+        "readMore": "Läs mer"
+      },
+      "packning": {
+        "title": "Packning",
+        "description": "packning med rätt material och märkning för säker transport över gränser.",
+        "readMore": "Läs mer"
+      },
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Avslutande flyttstädning enligt checklista – klart för besiktning och överlämning.",
+        "readMore": "Läs mer"
+      }
+    },
+    "process": {
+      "title": "Vår process för utlandsflytt",
+      "description": "Vår utlandsflytt process är utformad för att vara säker, professionell och smidig. Vi följer strikta riktlinjer för att säkerställa att allt bohag hanteras korrekt och transporteras säkert.",
+      "pricing": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som volym (kubik), destination, tillgänglighet och eventuella tillval för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
+      "subtitle": "Så fungerar vår utlandsflytt",
+      "steps": [
+        {
+          "title": "Kontakta oss",
+          "description": "Kontakta oss för en kostnadsfri offert på utlandsflytt"
+        },
+        {
+          "title": "Få offert",
+          "description": "Få en snabb och kostnadsfri offert på din utlandsflytt"
+        },
+        {
+          "title": "Personlig kontakt",
+          "description": "Vi kontaktar dig för att bekräfta detaljer och planera flytt"
+        },
+        {
+          "title": "Bekräftelse",
+          "description": "Bekräfta bokning och få all information"
+        },
+        {
+          "title": "Packning & Transport",
+          "description": "Vi packar och transporterar ditt bohag säkert"
+        },
+        {
+          "title": "Nöjd kund",
+          "description": "Säker leverans - du är nöjd!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Läs mer om utlandsflytt",
+      "subtitle": "Råd kring dokument, packning och leverans – så blir flytten över gränser enklare.",
+      "category": "Utlandsflytt",
+      "readTime": "4 min läsning",
+      "postTitle": "Checklista: Utlandsflytt steg för steg",
+      "postDescription": "Dokument, packning och leverans – en tydlig ordning som sparar tid och minskar stress.",
+      "readMore": "Läs mer",
+      "allArticles": "Se alla artiklar om flytt och städning"
+    },
+    "faq": {
+      "title": "Vanliga frågor om utlandsflytt",
+      "questions": [
+        {
+          "question": "Ingår packning?",
+          "answer": "Packning ingår inte som standard men kan bokas som packning där vi använder godkända material och tydlig märkning inför lång transport."
+        },
+        {
+          "question": "Hjälper ni med tull?",
+          "answer": "Ja, vi hjälper med tulldokument, importhandlingar och rådgivning om vad som gäller för ditt destinationsland."
+        },
+        {
+          "question": "Kan ni magasinera?",
+          "answer": "Absolut – vi erbjuder både kort- och långtidsmagasinering som kan kombineras med en utlandsflytt. Om flyttdatum inte sammanfaller, eller om du tillfälligt behöver mellanlagra ditt bohag, ser vi till att allt förvaras tryggt i våra torra, ventilerade och larmade lokaler. På så sätt kan du känna dig säker på att dina ägodelar är i gott förvar tills det är dags för transport vidare till din nya adress utomlands. Vi anpassar lösningen helt efter dina behov och ser till att processen blir smidig från början till slut."
+        },
+        {
+          "question": "Hur bokar jag?",
+          "answer": "Fyll i formuläret så får du ett pris direkt på bara en minut och kan enkelt bekräfta digitalt. Därefter ser vi tillsammans över detaljer som omfattning, datum och eventuella tillval, så att allt planeras på bästa möjliga sätt för en smidig flytt."
+        }
+      ]
+    }
+  },
+  "montering": {
+    "hero": {
+      "title": "Montering i Stockholm",
+      "subtitle": "Professionell montering och demontering av möbler och bohag",
+      "description": "Vi monterar och demonterar – snabbt och professionellt. Varsam hantering och precision i varje detalj.",
+      "cta": {
+        "title": "Kontakta oss för offert",
+        "description": "Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.",
+        "button": "Kontakta oss"
+      },
+      "readMore": "Läs mer"
+    },
+    "content": {
+      "whatIsTitle": "Vad är montering?",
+      "whatIsDescription": "Montering innebär att vi monterar och demonterar möbler och inredning med precision och omsorg. Vi använder rätt verktyg och tekniker för att säkerställa att allt fungerar perfekt. Tjänsten passar vid flytt, renovering eller när du behöver hjälp med kompletta möbler.",
+      "pricingTitle": "Vad kostar montering?",
+      "pricingDescription": "Priset för montering beror främst på typ av möbler, komplexitet samt hur långt transporten är. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.",
+      "pricingTestimonial": "Jag fick hjälp med montering och nedmontering och allt fungerade jättebra. Arbetet gick snabbt och smidigt och de var noggranna hela vägen. Väldigt nöjd med resultatet!",
+      "testimonialAuthor": "Emma",
+      "includesTitle": "Vad ingår i tjänsten?",
+      "includesDescription": "I vår montering ingår professionella verktyg och utrustning, bärhjälp med erfarna medarbetare, säker hantering av alla möbeltyper, samt kvalitetskontroll efter montering. Vi hanterar allt från enklare möbler till mer komplexa inredningar. Allt till tydliga, fasta priser utan dolda avgifter.",
+      "bookingTitle": "Hur bokar jag montering?",
+      "bookingDescription": "Boka montering enkelt genom att kontakta oss. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, typ av möbler (t.ex. köksmöbler, garderober, sängar), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma omfattningen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan montering."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar, städtjänster och montering enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, kvalitet och våra nöjda kunder.",
+      "description2": "Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning, montering och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.",
+      "description3": "Vi erbjuder professionell montering av alla typer av möbler, kostnadsfri om- och avbokning upp till 24 timmar innan. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.",
+      "mobileDescription": "Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar, städtjänster och montering enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, kvalitet och våra nöjda kunder.",
+      "mobileDescription2": "Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning, montering och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.",
+      "mobileDescription3": "Vi erbjuder professionell montering av alla typer av möbler, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla våra tjänster. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.",
+      "readMore": "Läs mer",
+      "readMoreAbout": "Läs mer om oss"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "En professionell och pålitlig montering",
+      "description": "Vi har hjälpt tusentals kunder med säker och professionell montering och demontering av möbler och inredning. Våra kunder uppskattar vår noggranna hantering, snabba service och transparenta priser. Hos Flyttella får du professionell montering med fokus på kvalitet och kundnöjdhet.",
+      "arrowText": "Läs vad våra kunder säger om vår montering"
+    },
+    "cta": {
+      "title": "Redo att boka din montering?",
+      "subtitle": "Få en snabb och gratis offert på din montering",
+      "button": "Kontakta oss"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "descriptionExtended": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.",
+        "readMore": "Läs mer"
+      },
+      "bohagsflytt": {
+        "title": "Bohagsflytt",
+        "description": "Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.",
+        "descriptionExtended": "Vi erbjuder packning och uppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt.",
+        "readMore": "Läs mer"
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "descriptionMobile": "Vi hjälper med märkning och organisering för enklare återleverans.",
+        "descriptionExtended": "Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi hjälper även till med smidig återleverans.",
+        "readMore": "Läs mer"
+      },
+      "allServices": {
+        "title": "Våra tjänster",
+        "description": "Utforska vårt kompletta utbud av flytt- och städtjänster",
+        "movingServices": "Se alla våra flyttjänster",
+        "cleaningServices": "Se alla våra städtjänster"
+      }
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "localExperience": "Lokal erfarenhet i Stockholm",
+      "localExperienceDescription": "Vi har hjälpt tusentals kunder med deras montering i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av montering, från enkla möbler till komplex inredning.",
+      "experienceDescription": "Med över 8 års erfarenhet har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.",
+      "readMore": "Läs mer",
+      "cards": [
+        { "title": "Monteringar", "count": "3000+", "description": "Genomförda monteringar" },
+        { "title": "Flyttar", "count": "8000+", "description": "Genomförda flyttar" },
+        { "title": "Städningar", "count": "7000+", "description": "Genomförda städningar" }
+      ]
+    },
+    "process": {
+      "title": "Vår process för montering",
+      "description": "Vår monteringsprocess är utformad för att vara enkel, säker och professionell. Vi följer strikta riktlinjer för att säkerställa att all montering utförs korrekt och med högsta kvalitet.",
+      "pricingInfo": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som typ av montering, komplexitet, tillgänglighet och material för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Våra priser är utan några dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
+      "stepsTitle": "Så fungerar vår montering",
+      "steps": [
+        {
+          "title": "Kontakta oss",
+          "description": "Kontakta oss för en kostnadsfri offert på montering"
+        },
+        {
+          "title": "Få offert",
+          "description": "Få en snabb och kostnadsfri offert på din montering"
+        },
+        {
+          "title": "Bekräftelse",
+          "description": "Bekräfta bokning och få all information"
+        },
+        {
+          "title": "Personlig kontakt",
+          "description": "Vi kontaktar dig för att bekräfta detaljer och planera montering"
+        },
+        {
+          "title": "Montering & Installation",
+          "description": "Vi monterar och installerar enligt dina önskemål"
+        },
+        {
+          "title": "Nöjd kund",
+          "description": "Perfekt monterat - du är nöjd!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Läs mer om montering i Stockholm",
+      "subtitle": "Få värdefulla tips och råd för en smidig montering",
+      "post": {
+        "category": "Montering",
+        "readTime": "5 min läsning",
+        "title": "Vad bör du tänka på inför montering av möbler och inredning",
+        "description": "Rätt planering gör monteringen enkel och trygg. Vi går igenom viktiga steg – från förberedelser och verktyg till professionell hantering och säker installation.",
+        "readMore": "Läs mer"
+      }
+    },
+    "faq": {
+      "title": "Vanliga frågor om montering",
+      "moreQuestions": "Har du fler frågor?",
+      "allFaq": "Se alla vanliga frågor",
+      "questions": [
+        {
+          "id": "montering-1",
+          "question": "Hur förbereder jag mig bäst inför montering?",
+          "answer": "Börja med att rensa området där monteringen ska ske. Se till att alla delar och instruktioner finns tillgängliga. Kontrollera att det finns tillräckligt med utrymme för att arbeta. Om du har särskilda önskemål eller preferenser, skriv ner dessa så vi kan följa dem."
+        },
+        {
+          "id": "montering-2",
+          "question": "Vad ingår vanligtvis i en montering?",
+          "answer": "En montering inkluderar oftast sammanbyggning av möbler, installation av beslag och eventuell justering. Vi följer instruktionerna noggrant och ser till att allt sitter säkert och fungerar som det ska. Vi kan även erbjuda tilläggstjänster som flytt av möbler eller städning."
+        },
+        {
+          "id": "montering-3",
+          "question": "Hur fungerar kvalitetskontroll vid montering?",
+          "answer": "Vi kontrollerar varje steg i monteringsprocessen för att säkerställa att allt är korrekt monterat. Vi testar funktionaliteten och justerar vid behov. Vi dokumenterar allt arbete och ger dig en genomgång av det färdiga resultatet."
+        },
+        {
+          "id": "montering-4",
+          "question": "Hur lång tid tar en montering och vad påverkar tidsåtgången?",
+          "answer": "Tidsåtgången beror på flera faktorer: komplexiteten av möblerna, antalet möbler, tillgänglighet till området och eventuella specialkrav. En normal montering tar oftast några timmar, men större projekt kan ta en hel dag."
+        },
+        {
+          "id": "montering-5",
+          "question": "Kan ni hantera alla typer av monteringsuppgifter?",
+          "answer": "Vi hanterar de flesta typer av monteringsuppgifter inklusive IKEA-möbler, köksinredning, garderober och specialmöbler. Vi har erfarenhet av både enkla och komplexa monteringsuppgifter. För särskilt känsliga eller värdefulla möbler kan vi erbjuda extra omsorg och precision."
+        }
+      ]
+    },
+    "sidebar": {
+      "reviews": {
+        "title": "Flyttella recensioner"
+      },
+      "services": {
+        "magasinering": {
+          "title": "Magasinering",
+          "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+          "readMore": "Läs mer"
+        },
+        "bortforsling": {
+          "title": "Bortforsling",
+          "description": "Professionell bortforsling av möbler, vitvaror och grovsopor. Miljövänlig hantering och återvinning.",
+          "readMore": "Läs mer"
+        },
+        "tunglyft": {
+          "title": "Tunglyft",
+          "description": "Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.",
+          "readMore": "Läs mer"
+        }
+      }
+    }
+  },
+  "bohagsflytt": {
+    "hero": {
+      "title": "Bohagsflytt",
+      "subtitle": "Komplett flyttservice för hela hushållet. Vi hjälper dig med allt från planering och packning till transport och upppackning.",
+      "description": "Professionell bohagsflytt som gör din flytt så smidig som möjligt. Med oss kan du vara lugn för dina ägodelar och din plånbok."
+    },
+    "content": {
+      "whatIsTitle": "Vad är bohagsflytt?",
+      "whatIsDescription": "Bohagsflytt innebär att flytta hela eller delar av ett hushålls tillhörigheter från en bostad till en annan. Det omfattar allt från planering, packning och transport till upppackning och eventuell magasinering.",
+      "whyChooseTitle": "Varför välja oss för din bohagsflytt?",
+      "whyChooseDescription": "Vi har över 15 års erfarenhet av bohagsflyttar i Stockholm och har hjälpt tusentals kunder med sina flyttar. Vårt team av professionella flyttare ser till att din flytt blir så smidig och trygg som möjligt.",
+      "imageAlt": "Magkänsla vid flytt",
+      "pricingTitle": "Vad kostar en bohagsflytt?",
+      "pricingDescription": "Priset på en bohagsflytt varierar beroende på faktorer som mängden bohag, avståndet mellan adresserna, våningsplan, tillgång till hiss och eventuella tilläggstjänster som packning eller magasinering. En normal flytt inom samma stad kan kosta från cirka 1 700 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina behov.",
+      "testimonial": "Allt gick smidigt och tryggt från första kontakt tills allt var på plats. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri flytt!",
+      "bohag2010Title": "Vad är bohagsflytt 2010?",
+      "bohag2010Description": "Bohagsflytt 2010 syftar på de regler och riktlinjer som fastställts i \"Bohag 2010\" – ett avtal framtaget av Sveriges Åkeriföretag och Svenska Möbeltransportörers Förbund. Avtalet reglerar ansvaret mellan flyttföretag och kund vid bohagsflytt, och säkerställer att flytten sker på ett tryggt och professionellt sätt. Det omfattar bland annat försäkringar, hantering av bohag, reklamationer och betalningsvillkor. När du anlitar en flyttfirma som följer Bohag 2010 kan du känna dig extra trygg under hela flyttprocessen.",
+      "boxesTitle": "Flyttkartonger",
+      "boxesDescription": "Flyttkartonger är en viktig del av en smidig och säker bohagsflytt. Med rätt kartonger blir packningen enklare och dina saker skyddas bättre under transporten. Vi erbjuder stabila och rymliga flyttkartonger som är anpassade för olika typer av föremål – från böcker och porslin till kläder och elektronik. Hos oss kan du låna flyttkartonger kostnadsfritt i upp till 4 veckor när du bokar din flytt, vilket gör hela processen både enklare och mer kostnadseffektiv.",
+      "packingTipsAlt": "Packningstips",
+      "bookingTitle": "Boka flytthjälp i god tid",
+      "bookingDescription": "För en smidig och stressfri flytt är det viktigt att boka flytthjälp i god tid. Vi rekommenderar att du bokar minst 2-3 veckor i förväg för att säkerställa tillgänglighet och få den flyttdag som passar dig bäst. Vi erbjuder flexibla bokningsmöjligheter och kan anpassa oss efter dina behov. Boka redan idag för att säkerställa en professionell och pålitlig flyttservice.",
+      "checklistTitle": "Checklista vid flytt",
+      "services": {
+        "planning": {
+          "title": "Flyttplanering",
+          "description": "Vi hjälper dig att planera din flytt från början till slut."
+        },
+        "packing": {
+          "title": "Packning",
+          "description": "Professionell packning med rätt material för att skydda dina ägodelar."
+        },
+        "transport": {
+          "title": "Transport",
+          "description": "Säker transport med moderna fordon och erfarna förare."
+        },
+        "unpacking": {
+          "title": "Upppackning",
+          "description": "Vi hjälper dig att packa upp och ställa in dina möbler på den nya adressen."
+        }
+      }
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description": "Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder.",
+      "experience": "Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.",
+      "quality": "Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.",
+      "customerFocus": "Kunden står alltid i centrum. Vi lyssnar på dina önskemål och behov, och anpassar vår service därefter. Oavsett om du flyttar inom samma stad eller till en ny ort, så finns vi här för att hjälpa dig.",
+      "readMore": "Läs mer om oss",
+      "imageAlt": "Om Flyttella"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "description": "Våra kunder är nöjda med vår service. Här är några exempel på vad de säger om oss:",
+      "arrowText": "Vi har hjälpt tusentals kunder med flyttar, städning och bohagsflytt över åren. Våra kunder uppskattar vår professionella service, punktlighet och omtanke.",
+      "cta": "Läs fler recensioner"
+    },
+    "cta": {
+      "title": "Redo att börja din flytt?",
+      "subtitle": "Få en kostnadsfri offert på din bohagsflytt idag",
+      "button": "Få gratis offert"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "readMore": "Läs mer"
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
+        "readMore": "Läs mer"
+      },
+      "packhjalp": {
+        "title": "Packhjälp",
+        "description": "Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.",
+        "readMore": "Läs mer"
+      }
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "description": "Med över 15 års erfarenhet av bohagsflyttar i Stockholm har vi hjälpt tusentals kunder med deras flyttbehov.",
+      "stats": {
+        "flyttar": {
+          "count": "8000+",
+          "description": "Genomförda flyttar"
+        },
+        "stadningar": {
+          "count": "7000+",
+          "description": "Genomförda städningar"
+        },
+        "manadsvis": {
+          "count": "500+",
+          "description": "Nöjda kunder"
+        }
+      }
+    },
+    "process": {
+      "title": "Så fungerar det",
+      "description": "Vi gör flyttprocessen enkel och smidig för dig.",
+      "pricing": "Fast pris - inga dolda kostnader",
+      "steps": {
+        "1": {
+          "title": "Fyll i formuläret",
+          "description": "Berätta för oss vad du behöver hjälp med och när du vill att vi ska komma."
+        },
+        "2": {
+          "title": "Snabb återkoppling",
+          "description": "Vi återkommer inom en minut med en kostnadsfri offert."
+        },
+        "3": {
+          "title": "Bekräfta bokningen",
+          "description": "Godkänn offerten och vi bokar in din flytt direkt."
+        },
+        "4": {
+          "title": "Professionell flytt",
+          "description": "Våra erfarna flyttare kommer och hjälper dig med hela flytten."
+        },
+        "5": {
+          "title": "Klar och nöjd",
+          "description": "Vi städar upp efter oss och du kan njuta av din nya bostad."
+        }
+      }
+    },
+    "blog": {
+      "title": "Senaste från vår blogg",
+      "readMore": "Läs mer"
+    },
+    "faq": {
+      "title": "Vanliga frågor om bohagsflytt",
+      "questions": [
+        {
+          "id": "bohagsflytt-1",
+          "question": "Vad ingår i en bohagsflytt?",
+          "answer": "En bohagsflytt inkluderar allt från planering och packning till transport och upppackning. Vi hjälper dig med att inventera dina ägodelar, packa säkert med rätt material, transporterar allt till din nya adress och hjälper dig att packa upp och ställa in möblerna."
+        },
+        {
+          "id": "bohagsflytt-2",
+          "question": "Hur lång tid i förväg ska jag boka?",
+          "answer": "Vi rekommenderar att du bokar minst 2-3 veckor i förväg, särskilt under högsäsong (maj-september). För mindre flyttar kan vi ofta hjälpa dig även med kortare varsel, men det beror på vår tillgänglighet."
+        },
+        {
+          "id": "bohagsflytt-3",
+          "question": "Vad kostar en bohagsflytt?",
+          "answer": "Kostnaden för en bohagsflytt beror på flera faktorer som avstånd, volym, antal flyttare och eventuella tilläggstjänster. Vi ger dig alltid ett fast pris utan dolda kostnader när vi gör offerten."
+        },
+        {
+          "id": "bohagsflytt-4",
+          "question": "Har ni försäkring?",
+          "answer": "Ja, vi har full försäkring som täcker skador som kan uppstå under flytten. Om något går sönder på grund av vår hantering ersätter vi det. Det är också viktigt att notera att vi följer branschstandarder för att minimera risken för skador."
+        },
+        {
+          "id": "bohagsflytt-5",
+          "question": "Kan ni hjälpa med packning?",
+          "answer": "Ja, vi erbjuder komplett packhjälp som inkluderar packning, transport och upppackning. Vi har allt nödvändigt material och kan hjälpa dig med hela processen från början till slut."
+        }
+      ]
+    },
+    "sidebar": {
+      "reco": {
+        "title": "Rekommenderat",
+        "description": "Andra kunder har också valt dessa tjänster"
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Professionell montering av möbler och prylar"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Säker hantering av tunga föremål"
+      },
+      "barhjalp": {
+        "title": "Bärhjälp",
+        "description": "Hjälp med att bära och flytta föremål"
+      },
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Miljövänlig hantering av saker du inte behöver"
+      }
     }
   }
 } 

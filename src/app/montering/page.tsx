@@ -101,6 +101,7 @@ function HappyCustomerLottie() {
 }
 
 export default function MonteringPage() {
+	const { t, locale } = useLanguage();
 	const [showFullAboutText, setShowFullAboutText] = useState(false);
 	const [showFullExperienceText, setShowFullExperienceText] = useState(false);
 	const [currentCard, setCurrentCard] = useState(0);
@@ -121,9 +122,9 @@ export default function MonteringPage() {
 	}, []);
 
 	const experienceCards = [
-		{ title: 'Monteringar', count: '3000+', description: 'Genomförda monteringar', delay: 0 },
-		{ title: 'Flyttar', count: '8000+', description: 'Genomförda flyttar', delay: 0 },
-		{ title: 'Städningar', count: '7000+', description: 'Genomförda städningar', delay: 1 },
+		{ title: t('montering.experience.cards.0.title'), count: t('montering.experience.cards.0.count'), description: t('montering.experience.cards.0.description'), delay: 0 },
+		{ title: t('montering.experience.cards.1.title'), count: t('montering.experience.cards.1.count'), description: t('montering.experience.cards.1.description'), delay: 0 },
+		{ title: t('montering.experience.cards.2.title'), count: t('montering.experience.cards.2.count'), description: t('montering.experience.cards.2.description'), delay: 1 },
 	];
 	
 	const fadeInUp = {
@@ -150,8 +151,8 @@ export default function MonteringPage() {
 								}}
 							/>
 							<div className="relative z-10 text-center px-4">
-								<h1 className="text-5xl font-bold mb-6">Montering</h1>
-								<p className="text-2xl text-white/90">Vi monterar och demonterar – snabbt och professionellt. Varsam hantering och precision i varje detalj.</p>
+								<h1 className="text-5xl font-bold mb-6">{t('montering.hero.title')}</h1>
+								<p className="text-2xl text-white/90">{t('montering.hero.description')}</p>
 							</div>
 						</div>
 					</div>
@@ -170,20 +171,20 @@ export default function MonteringPage() {
 							/>
 							<div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
 								<div className="max-w-xl w-full">
-									<h1 className="text-5xl md:text-6xl font-bold mb-8">Montering i Stockholm</h1>
-									<p className="text-2xl md:text-3xl mb-12">Professionell montering och demontering av möbler och bohag</p>
-									<p className="text-xl md:text-2xl text-white/90">Vi monterar och demonterar – snabbt och professionellt. Varsam hantering och precision i varje detalj.</p>
+									<h1 className="text-5xl md:text-6xl font-bold mb-8">{t('montering.hero.title')}</h1>
+									<p className="text-2xl md:text-3xl mb-12">{t('montering.hero.subtitle')}</p>
+									<p className="text-xl md:text-2xl text-white/90">{t('montering.hero.description')}</p>
 								</div>
 								{/* Right-side CTA directly on background */}
 								<div className="w-full md:w-1/2 lg:w-[40%]">
-									<h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Kontakta oss för offert</h3>
-									<p className="text-white/90 mb-6 text-lg md:text-xl">Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.</p>
+									<h3 className="text-2xl md:text-3xl font-bold text-white mb-3">{t('montering.hero.cta.title')}</h3>
+									<p className="text-white/90 mb-6 text-lg md:text-xl">{t('montering.hero.cta.description')}</p>
 									<div>
 										<Link 
 											href="/kontakt?scroll=message&service=montering"
 											className="inline-flex items-center bg-white text-[#0F172A] px-5 py-3 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
 										>
-											Kontakta oss
+											{t('montering.hero.cta.button')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -219,7 +220,7 @@ export default function MonteringPage() {
 										}}
 										className="flex flex-col items-center text-white hover:text-white/80 transition-colors group"
 									>
-										<span className="text-sm font-medium mb-2">Läs mer</span>
+										<span className="text-sm font-medium mb-2">{t('montering.hero.readMore')}</span>
 										<motion.div
 											animate={{ y: [0, 5, 0] }}
 											transition={{ duration: 2, repeat: Infinity }}
@@ -250,7 +251,7 @@ export default function MonteringPage() {
 									<iframe 
 										src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
 										className="w-full h-[1000px] border-0"
-										title="Flyttella recensioner"
+										title={t('montering.sidebar.reviews.title')}
 									/>
 								</div>
 							</div>
@@ -260,9 +261,9 @@ export default function MonteringPage() {
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">Magasinering</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.</p>
-										<div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">{t('montering.sidebar.services.magasinering.title')}</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">{t('montering.sidebar.services.magasinering.description')}</p>
+										<div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('montering.sidebar.services.magasinering.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
 									</div>
 								</div>
 							</div>
@@ -270,9 +271,9 @@ export default function MonteringPage() {
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🗑️</span><h3 className="text-xl font-bold text-white">Bortforsling</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Professionell bortforsling av möbler, vitvaror och grovsopor. Miljövänlig hantering och återvinning.</p>
-										<div className="mt-auto relative"><Link href="/bortforsling" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🗑️</span><h3 className="text-xl font-bold text-white">{t('montering.sidebar.services.bortforsling.title')}</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">{t('montering.sidebar.services.bortforsling.description')}</p>
+										<div className="mt-auto relative"><Link href="/bortforsling" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('montering.sidebar.services.bortforsling.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
 									</div>
 								</div>
 							</div>
@@ -280,9 +281,9 @@ export default function MonteringPage() {
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">Tunglyft</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.</p>
-										<div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">{t('montering.sidebar.services.tunglyft.title')}</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">{t('montering.sidebar.services.tunglyft.description')}</p>
+										<div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('montering.sidebar.services.tunglyft.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
 									</div>
 								</div>
 							</div>
@@ -290,23 +291,23 @@ export default function MonteringPage() {
 							{/* Main content - Centered (matching bortforsling) */}
 							<div className="space-y-12 md:space-y-16">
 								{([
-									{ title: 'Vad är montering?', content: 'Montering innebär att vi monterar och demonterar möbler och inredning med precision och omsorg. Vi använder rätt verktyg och tekniker för att säkerställa att allt fungerar perfekt. Tjänsten passar vid flytt, renovering eller när du behöver hjälp med kompletta möbler.', icon: '🔧' },
-									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/montering_ny2.png" alt="Montering och demontering i Stockholm" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 40%' }} /></div>), icon: '' },
-									{ title: 'Vad kostar montering?', content: (<div className="px-4 md:px-0">
-											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">Priset för montering beror främst på typ av möbler, komplexitet samt hur långt transporten är. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.</p>
+									{ title: t('montering.content.whatIsTitle'), content: t('montering.content.whatIsDescription'), icon: '🔧' },
+									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/montering_ny2.png" alt={t('montering.hero.subtitle')} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 40%' }} /></div>), icon: '' },
+									{ title: t('montering.content.pricingTitle'), content: (<div className="px-4 md:px-0">
+											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">{t('montering.content.pricingDescription')}</p>
 											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett pris utan dolda avgifter. <Link href="/kontakt?scroll=message&service=montering" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">Kontakta oss</Link>.</p>
 											
 											{/* Customer Quote */}
 											<div className="my-12 md:my-16 text-left md:text-center px-4">
 												<p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-													"Jag fick hjälp med montering och nedmontering och allt fungerade jättebra. Arbetet gick snabbt och smidigt och de var noggranna hela vägen. Väldigt nöjd med resultatet!"
+													"{t('montering.content.pricingTestimonial')}"
 												</p>
-												<p className="italic text-gray-700 mt-2">- Emma</p>
+												<p className="italic text-gray-700 mt-2">- {t('montering.content.testimonialAuthor')}</p>
 											</div>
 										</div>), icon: '💸' },
-									{ title: 'Vad ingår i tjänsten?', content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">I vår montering ingår professionella verktyg och utrustning, bärhjälp med erfarna medarbetare, säker hantering av alla möbeltyper, samt kvalitetskontroll efter montering. Vi hanterar allt från enklare möbler till mer komplexa inredningar. Allt till tydliga, fasta priser utan dolda avgifter.</p>), icon: '✅' },
-									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.jpg" alt="Tips för montering" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
-									{ title: 'Hur bokar jag montering?', content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Boka montering enkelt genom att <Link href="/kontakt?scroll=message&service=montering" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">kontakta oss</Link>. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, typ av möbler (t.ex. köksmöbler, garderober, sängar), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma omfattningen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan montering.</p></div>), icon: '📞' },
+									{ title: t('montering.content.includesTitle'), content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('montering.content.includesDescription')}</p>), icon: '✅' },
+									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.jpg" alt="Assembly tips" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
+									{ title: t('montering.content.bookingTitle'), content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('montering.content.bookingDescription')}</p></div>), icon: '📞' },
 								] as { title: string; content: any; icon: string }[]).map((section, index) => (
 									<div key={index} className="group">
 										<div>
@@ -396,7 +397,7 @@ export default function MonteringPage() {
 								</div>
 							</div>
 
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">Om Flyttella</h3>
+							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">{t('montering.about.title')}</h3>
 
 							<div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
 								{/* Left: Image - desktop only */}
@@ -436,20 +437,20 @@ export default function MonteringPage() {
 									{/* Desktop: Always show full text in 3 sections */}
 									<div className="hidden lg:block space-y-8">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar, städtjänster och montering enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, kvalitet och våra nöjda kunder.
+											{t('montering.about.description1')}
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning, montering och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.
+											{t('montering.about.description2')}
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Vi erbjuder professionell montering av alla typer av möbler, kostnadsfri om- och avbokning upp till 24 timmar innan. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.
+											{t('montering.about.description3')}
 										</p>
 									</div>
 									
 									{/* Mobile: Show shortened text with expand option */}
 									<div className="lg:hidden space-y-4">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar, städtjänster och montering enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, kvalitet och våra nöjda kunder.
+											{t('montering.about.mobileDescription')}
 										</p>
 										
 										{!showFullAboutText && (
@@ -457,7 +458,7 @@ export default function MonteringPage() {
 												onClick={() => setShowFullAboutText(true)}
 												className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
 											>
-												Läs mer
+												{t('montering.about.readMore')}
 												<svg 
 													xmlns="http://www.w3.org/2000/svg" 
 													className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -478,10 +479,10 @@ export default function MonteringPage() {
 												className="space-y-4 mt-4"
 											>
 												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-													Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning, montering och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.
+													{t('montering.about.mobileDescription2')}
 												</p>
 												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-													Vi erbjuder professionell montering av alla typer av möbler, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla våra tjänster. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.
+													{t('montering.about.mobileDescription3')}
 												</p>
 												
 												{/* Läs mer om oss link - Mobile only when expanded */}
@@ -495,7 +496,7 @@ export default function MonteringPage() {
 														href="/om-oss" 
 														className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
 													>
-														Läs mer om oss
+														{t('montering.about.readMoreAbout')}
 														<svg 
 															xmlns="http://www.w3.org/0 24" 
 															stroke="currentColor"
@@ -524,7 +525,7 @@ export default function MonteringPage() {
 											href="/om-oss" 
 											className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
 										>
-											Läs mer om oss
+											{t('montering.about.readMoreAbout')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -544,9 +545,10 @@ export default function MonteringPage() {
 
 				{/* Vad tycker våra kunder om oss */}
 				<ReviewsWidget 
-					title="Vad tycker våra kunder om oss?"
-					subtitle="En professionell och pålitlig montering"
-					description="Vi har hjälpt tusentals kunder med säker och professionell montering och demontering av möbler och inredning. Våra kunder uppskattar vår noggranna hantering, snabba service och transparenta priser. Hos Flyttella får du professionell montering med fokus på kvalitet och kundnöjdhet."
+					title={t('montering.reviews.title')}
+					subtitle={t('montering.reviews.subtitle')}
+					description={t('montering.reviews.description')}
+					arrowText={t('montering.reviews.arrowText')}
 				/>
 
 				{/* CTA: Redo att boka din montering? */}
@@ -574,10 +576,10 @@ export default function MonteringPage() {
 								<span className="text-3xl md:text-4xl">🔧</span>
 								<div>
 									<h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
-										Redo att boka din montering?
+										{t('montering.cta.title')}
 									</h3>
 									<p className="text-base md:text-lg text-gray-100">
-										Få en snabb och gratis offert på din montering
+										{t('montering.cta.subtitle')}
 									</p>
 								</div>
 							</div>
@@ -591,7 +593,7 @@ export default function MonteringPage() {
 										href="/kontakt?scroll=message&service=montering"
 										className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
 									>
-										Kontakta oss
+										{t('montering.cta.button')}
 										<svg 
 											xmlns="http://www.w3.org/2000/svg" 
 											className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -613,7 +615,7 @@ export default function MonteringPage() {
 					<div className="container mx-auto px-4">
 						<div className="max-w-7xl mx-auto">
 							<h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-								Våra andra huvudtjänster
+								{t('montering.services.title')}
                 </h2>
 							<div className="grid grid-cols-1 gap-12">
 							{/* Flyttstädning Card */}
@@ -638,14 +640,14 @@ export default function MonteringPage() {
 								<div className="flex items-center gap-4 mb-6 md:mb-8 relative">
 									<span className="text-4xl md:text-6xl">✨</span>
 									<h3 className="text-4xl md:text-5xl font-bold text-white">
-										Flyttstädning
+										{t('montering.services.flyttstadning.title')}
 									</h3>
 								</div>
 								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-									Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.
+									{t('montering.services.flyttstadning.description')}
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.
+									{t('montering.services.flyttstadning.descriptionExtended')}
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -657,7 +659,7 @@ export default function MonteringPage() {
 											href="/flyttstadning" 
 											className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
 										>
-											Läs mer
+											{t('montering.services.flyttstadning.readMore')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -694,14 +696,14 @@ export default function MonteringPage() {
 								<div className="flex items-center gap-4 mb-6 md:mb-8 relative">
 									<span className="text-4xl md:text-6xl">🚚</span>
 									<h3 className="text-4xl md:text-5xl font-bold text-white">
-										Bohagsflytt
+										{t('montering.services.bohagsflytt.title')}
 									</h3>
               </div>
 								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-									Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.
+									{t('montering.services.bohagsflytt.description')}
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-								Vi erbjuder packning och uppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt.
+								{t('montering.services.bohagsflytt.descriptionExtended')}
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -713,7 +715,7 @@ export default function MonteringPage() {
 											href="/bohagsflytt" 
 											className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
 										>
-											Läs mer
+											{t('montering.services.bohagsflytt.readMore')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -750,17 +752,17 @@ export default function MonteringPage() {
 								<div className="flex items-center gap-4 mb-6 md:mb-8 relative">
 									<span className="text-4xl md:text-6xl">🏬</span>
 									<h3 className="text-4xl md:text-5xl font-bold text-white">
-										Magasinering
+										{t('montering.services.magasinering.title')}
 									</h3>
                 </div>
 								<p className="text-lg md:text-xl text-gray-100 mb-1 md:mb-8 relative">
-								Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.
+								{t('montering.services.magasinering.description')}
 								</p>
 								<p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">
-									Vi hjälper med märkning och organisering för enklare återleverans.
+									{t('montering.services.magasinering.descriptionMobile')}
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi hjälper även till med smidig återleverans.
+									{t('montering.services.magasinering.descriptionExtended')}
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -772,7 +774,7 @@ export default function MonteringPage() {
 											href="/magasinering" 
 											className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
 										>
-											Läs mer
+											{t('montering.services.magasinering.readMore')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -813,7 +815,7 @@ export default function MonteringPage() {
 								}}
 								id="upptack-tjanster"
 							>
-								Våra tjänster
+								{t('montering.services.allServices.title')}
 							</motion.h2>
 							<motion.h2 
 								className="text-3xl md:text-4xl font-bold mb-6 md:hidden"
@@ -827,7 +829,7 @@ export default function MonteringPage() {
 								}}
 								id="upptack-tjanster-mobile"
 							>
-								Våra tjänster
+								{t('montering.services.allServices.title')}
 							</motion.h2>
 							<motion.p 
 								className="text-lg md:text-xl text-gray-600 mb-8 md:mb-12"
@@ -840,7 +842,7 @@ export default function MonteringPage() {
 									delay: 0.25
 								}}
 							>
-								Utforska vårt kompletta utbud av flytt- och städtjänster
+								{t('montering.services.allServices.description')}
 							</motion.p>
 							<motion.div 
 								className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center"
@@ -857,7 +859,7 @@ export default function MonteringPage() {
 									href="/tjanster" 
 									className="inline-flex items-center justify-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 md:px-8 md:py-4 rounded-full hover:opacity-90 transition-opacity font-medium group text-base md:text-lg"
 								>
-									Se alla våra flyttjänster
+									{t('montering.services.allServices.movingServices')}
 									<svg 
 										xmlns="http://www.w3.org/2000/svg" 
 										className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -872,7 +874,7 @@ export default function MonteringPage() {
 									href="/stadtjanster" 
 									className="inline-flex items-center justify-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 md:px-8 md:py-4 rounded-full hover:opacity-90 transition-opacity font-medium group text-base md:text-lg"
 								>
-									Se alla våra städtjänster
+									{t('montering.services.allServices.cleaningServices')}
 									<svg 
 										xmlns="http://www.w3.org/2000/svg" 
 										className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -938,7 +940,7 @@ export default function MonteringPage() {
 					{/* Centered content only */}
 					<div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
 						<motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('montering.experience.title')}</h3>
 
 							{/* Mobile: Auto-sliding cards */}
 							<div className="md:hidden mt-8">
@@ -1089,9 +1091,9 @@ export default function MonteringPage() {
 									viewport={{ once: true }}
 									transition={{ duration: 0.8 }}
 								>
-									<h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet i Stockholm</h4>
+									<h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{t('montering.experience.localExperience')}</h4>
 									<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4 px-4 md:px-8">
-										Vi har hjälpt tusentals kunder med deras montering i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av montering, från enkla möbler till komplex inredning.
+										{t('montering.experience.localExperienceDescription')}
 									</p>
 									{!showFullExperienceText && (
 										<div className="md:hidden mb-3">
@@ -1099,7 +1101,7 @@ export default function MonteringPage() {
 												onClick={() => setShowFullExperienceText(true)}
 												className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-lg underline decoration-2 underline-offset-4"
 											>
-												Läs mer
+												{t('montering.experience.readMore')}
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform"
@@ -1120,12 +1122,12 @@ export default function MonteringPage() {
 											className="space-y-4 mt-4 md:hidden px-4 md:px-8"
 										>
 											<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-												Med över 8 års erfarenhet har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+												{t('montering.experience.experienceDescription')}
 											</p>
 										</motion.div>
 									)}
 									<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
-										Med över 8 års erfarenhet har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+										{t('montering.experience.experienceDescription')}
 									</p>
 								</motion.div>
 
@@ -1134,7 +1136,7 @@ export default function MonteringPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
 										<Image
 											src="/1000reviewspicture.png"
-											alt="1000+ positiva recensioner från kunder"
+											alt="1000+ positive customer reviews"
 											width={200}
 											height={200}
 											className="object-contain h-36 w-36"
@@ -1145,7 +1147,7 @@ export default function MonteringPage() {
 										<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 											<Image
 												src="/recommendedcompany2.png"
-												alt="Rekommenderad monteringsfirma - Flyttella"
+												alt="Recommended assembly company - Flyttella"
 												width={160}
 												height={160}
 												className="object-contain h-32 w-32"
@@ -1155,7 +1157,7 @@ export default function MonteringPage() {
 										<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 											<Image
 												src="/bestinswedenbadge-modified.png"
-												alt="Top 10 monteringsfirma - Flyttella"
+												alt="Top 10 assembly company - Flyttella"
 												width={180}
 												height={180}
 												className="object-contain h-28 w-28"
@@ -1170,7 +1172,7 @@ export default function MonteringPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 										<Image
 											src="/recommendedcompany2.png"
-											alt="Rekommenderad monteringsfirma - Flyttella"
+											alt="Recommended assembly company - Flyttella"
 											width={240}
 											height={240}
 											className="object-contain h-60 w-60"
@@ -1180,7 +1182,7 @@ export default function MonteringPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 										<Image
 											src="/1000reviewspicture.png"
-											alt="1000+ positiva recensioner från kunder"
+											alt="1000+ positive customer reviews"
 											width={260}
 											height={260}
 											className="object-contain h-64 w-64 mt-3"
@@ -1190,7 +1192,7 @@ export default function MonteringPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 										<Image
 											src="/bestinswedenbadge-modified.png"
-											alt="Top 10 monteringsfirma - Flyttella"
+											alt="Top 10 assembly company - Flyttella"
 											width={300}
 											height={300}
 											className="object-contain h-48 w-48"
@@ -1218,26 +1220,26 @@ export default function MonteringPage() {
 						<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full">
 							<div className="w-full">
 								<h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
-									Vår process för montering
+									{t('montering.process.title')}
             </h2>
 
 								{/* Process Description */}
 								<div className="text-center mb-6 md:mb-8 hidden md:block">
 									<p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-										Vår monteringsprocess är utformad för att vara enkel, säker och professionell. Vi följer strikta riktlinjer för att säkerställa att all montering utförs korrekt och med högsta kvalitet.
+										{t('montering.process.description')}
 									</p>
 								</div>
 
 								{/* Pricing Info */}
 								<div className="text-center mb-4 md:mb-8">
 									<p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-										Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som typ av montering, komplexitet, tillgänglighet och material för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Våra priser är utan några dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+										{t('montering.process.pricingInfo')}
 									</p>
 								</div>
 
 								{/* Process Flow Section */}
 								<div className="mb-4 md:mb-8">
-									<h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar vår montering</h3>
+									<h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">{t('montering.process.stepsTitle')}</h3>
 									<div className="relative w-full">
 										{/* Timeline connector line */}
 										<div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
@@ -1245,41 +1247,41 @@ export default function MonteringPage() {
 											{[
 												{
 													icon: <FillFormLottie />,
-													title: "Kontakta oss",
-													description: "Kontakta oss för en kostnadsfri offert på montering",
+													title: t('montering.process.steps.0.title'),
+													description: t('montering.process.steps.0.description'),
 													textClass: ""
 												},
 												{
 													icon: <FastLottie />,
-													title: "Få offert",
-													description: "Få en snabb och kostnadsfri offert på din montering",
+													title: t('montering.process.steps.1.title'),
+													description: t('montering.process.steps.1.description'),
 													textClass: ""
 												},
 												{
 													icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
-													title: "Bekräftelse",
-													description: "Bekräfta bokning och få all information",
+													title: t('montering.process.steps.2.title'),
+													description: t('montering.process.steps.2.description'),
 													containerClass: "md:-mt-6",
 													textClass: ""
 												},
 												{
 													icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
-													title: "Personlig kontakt",
-													description: "Vi kontaktar dig för att bekräfta detaljer och planera montering",
+													title: t('montering.process.steps.3.title'),
+													description: t('montering.process.steps.3.description'),
 													containerClass: "md:-mt-7",
 													textClass: ""
 												},
 												{
 													icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
-													title: "Montering & Installation",
-													description: "Vi monterar och installerar enligt dina önskemål",
+													title: t('montering.process.steps.4.title'),
+													description: t('montering.process.steps.4.description'),
 													containerClass: "md:-mt-14",
 													textClass: "md:-mt-8",
 												},
 												{
 													icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
-													title: "Nöjd kund",
-													description: "Perfekt monterat - du är nöjd!",
+													title: t('montering.process.steps.5.title'),
+													description: t('montering.process.steps.5.description'),
 													containerClass: "md:-mt-6",
 													textClass: ""
 												}
@@ -1320,10 +1322,10 @@ export default function MonteringPage() {
 						<div className="w-full">
 							<div className="text-center mb-8 md:mb-12">
 								<h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
-									Läs mer om montering i Stockholm
+									{t('montering.blog.title')}
           </h2>
 								<p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-									Få värdefulla tips och råd för en smidig montering
+									{t('montering.blog.subtitle')}
 								</p>
 							</div>
 							<div className="max-w-6xl mx-auto">
@@ -1339,22 +1341,22 @@ export default function MonteringPage() {
 											<div className="w-full md:w-1/3 h-48 md:h-full">
 												<img 
 													src="/montering_ny2.png" 
-													alt="Monteringstips Stockholm" 
+													alt="Assembly tips Stockholm" 
 													className="w-full h-full object-cover object-center"
 												/>
 											</div>
 											<div className="w-full md:w-2/3 p-4 md:p-6">
 												<div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
 													<span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
-														Montering
+														{t('montering.blog.post.category')}
 													</span>
-													<span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
+													<span className="text-gray-500 text-sm md:text-base sm:ml-4">{t('montering.blog.post.readTime')}</span>
 												</div>
 												<h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
-													Vad bör du tänka på inför montering av möbler och inredning
+													{t('montering.blog.post.title')}
 												</h3>
 												<p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
-													Rätt planering gör monteringen enkel och trygg. Vi går igenom viktiga steg – från förberedelser och verktyg till professionell hantering och säker installation.
+													{t('montering.blog.post.description')}
 												</p>
 												<div className="flex justify-start sm:justify-between items-center">
 													<div></div>
@@ -1362,7 +1364,7 @@ export default function MonteringPage() {
 														href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
 														className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
 													>
-														Läs mer
+														{t('montering.blog.post.readMore')}
 														<svg 
 															xmlns="http://www.w3.org/2000/svg" 
 															className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1434,10 +1436,10 @@ export default function MonteringPage() {
 					<div className="container mx-auto px-4">
 						<div className="max-w-4xl mx-auto">
 							<h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-								Vanliga frågor om montering
+								{t('montering.faq.title')}
           </h2>
 							<div className="space-y-4">
-								{[
+								{(locale === 'sv' ? [
 									{
 										id: "montering-1",
 										question: "Hur förbereder jag mig bäst inför montering?",
@@ -1463,7 +1465,33 @@ export default function MonteringPage() {
 										question: "Kan ni hantera alla typer av monteringsuppgifter?",
 										answer: "Vi hanterar de flesta typer av monteringsuppgifter inklusive IKEA-möbler, köksinredning, garderober och specialmöbler. Vi har erfarenhet av både enkla och komplexa monteringsuppgifter. För särskilt känsliga eller värdefulla möbler kan vi erbjuda extra omsorg och precision."
 									}
-								].map((faq, index) => (
+								] : [
+									{
+										id: "montering-1",
+										question: "How do I best prepare for assembly?",
+										answer: "Start by clearing the area where the assembly should take place. Make sure all parts and instructions are available. Check that there is enough space to work. If you have special wishes or preferences, write them down so we can follow them."
+									},
+									{
+										id: "montering-2",
+										question: "What is usually included in an assembly?",
+										answer: "An assembly usually includes assembly of furniture, installation of hardware and possible adjustment. We follow the instructions carefully and make sure everything is secure and works as it should. We can also offer additional services such as moving furniture or cleaning."
+									},
+									{
+										id: "montering-3",
+										question: "How does quality control work for assembly?",
+										answer: "We check every step in the assembly process to ensure everything is correctly assembled. We test functionality and adjust if needed. We document all work and give you a walkthrough of the finished result."
+									},
+									{
+										id: "montering-4",
+										question: "How long does an assembly take and what affects the time?",
+										answer: "The time depends on several factors: the complexity of the furniture, the number of furniture, accessibility to the area and any special requirements. A normal assembly usually takes a few hours, but larger projects can take a whole day."
+									},
+									{
+										id: "montering-5",
+										question: "Can you handle all types of assembly tasks?",
+										answer: "We handle most types of assembly tasks including IKEA furniture, kitchen fittings, wardrobes and special furniture. We have experience with both simple and complex assembly tasks. For particularly sensitive or valuable furniture, we can offer extra care and precision."
+									}
+								]).map((faq, index) => (
 									<motion.div
 										key={faq.id}
 										className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm"
@@ -1524,13 +1552,13 @@ export default function MonteringPage() {
 					</div>
 					<div className="text-center mt-12">
 						<p className="text-lg text-gray-600 mb-6">
-							Har du fler frågor?
+							{t('montering.faq.moreQuestions')}
           </p>
           <Link 
 							href="/faq" 
 							className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
 						>
-							Se alla vanliga frågor
+							{t('montering.faq.allFaq')}
 															<svg 
 									xmlns="http://www.w3.org/2000/svg" 
 									className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 

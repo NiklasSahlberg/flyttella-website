@@ -131,7 +131,7 @@ export async function POST(req: Request) {
   <div class="section-header">Städdatum</div>
   <table>
     <tr>
-      <th>När ska flyttstädningen ske?</th>
+      <th>${data.cleaningType === 'Fönsterputs' || data.cleaningType === 'Window cleaning' ? 'När ska fönsterputsningen ske?' : 'När ska städningen ske?'}</th>
       <td>${data.movingDate || ''}</td>
     </tr>
     <tr>
@@ -152,10 +152,7 @@ export async function POST(req: Request) {
       <th>${data.customerType === 'foretag' ? 'Bostadstyp' : 'Vilken typ av bostad ska städas?'}</th>
       <td>${data.typeOfHome || ''}</td>
     </tr>
-    <tr>
-      <th>${data.customerType === 'privat' && data.typeOfHome?.toLowerCase() === 'lagenhet' ? 'Vilken våning ligger lägenheten på?' : 'Antal våningar'}</th>
-      <td>${data.numberOfFloors || ''}</td>
-    </tr>
+
     ${(data.customerType === 'foretag' || (data.customerType === 'privat' && data.typeOfHome?.toLowerCase() === 'lagenhet')) ? `
     <tr>
       <th>Finns hiss i byggnaden?</th>
@@ -168,33 +165,11 @@ export async function POST(req: Request) {
     </tr>
     <tr>
       <th>Yta</th>
-      <td>${data.squareMeters || ''} kvm</td>
+      <td>${data.areaSize || ''} kvm</td>
     </tr>
   </table>
 
-  <div class="section-header">Rum</div>
-  <table>
-    <tr>
-      <th>Sovrum</th>
-      <td>${data.bedrooms || 0}</td>
-    </tr>
-    <tr>
-      <th>Badrum</th>
-      <td>${data.bathrooms || 0}</td>
-    </tr>
-    <tr>
-      <th>Kök</th>
-      <td>${data.kitchen || 0}</td>
-    </tr>
-    <tr>
-      <th>Vardagsrum</th>
-      <td>${data.livingRoom || 0}</td>
-    </tr>
-    <tr>
-      <th>Övriga rum</th>
-      <td>${data.otherRooms || 0}</td>
-    </tr>
-  </table>
+ 
 
   <div class="section-header">Ytterligare utrymmen</div>
   <table>
@@ -216,6 +191,7 @@ export async function POST(req: Request) {
 
   <div class="section-header">Tilläggstjänster</div>
   <table>
+    ${data.cleaningType === 'Flyttstädning' || data.cleaningType === 'Moving cleaning' || data.cleaningType === 'Visningsstädning' || data.cleaningType === 'Viewing cleaning' ? `
     <tr>
       <th>Balkong, max 5 kvm</th>
       <td>${data.hasBalconyCleaning ? "Ja" : "Nej"}</td>
@@ -248,6 +224,77 @@ export async function POST(req: Request) {
       <th>Rengöring av persienner</th>
       <td>${data.blindsCleaningCount > 0 ? data.blindsCleaningCount : "Nej"}</td>
     </tr>
+    ` : ''}
+    ${data.cleaningType === 'Hemstädning' || data.cleaningType === 'Home cleaning' ? `
+    <tr>
+      <th>Önskar fönsterputsning</th>
+      <td>${data.windowCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Önskar bäddning</th>
+      <td>${data.bedMaking ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Önskar diskning</th>
+      <td>${data.dishWashing ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Önskar strykning</th>
+      <td>${data.ironing ? "Ja" : "Nej"}</td>
+    </tr>
+    ` : ''}
+    ${data.cleaningType === 'Byggstädning' || data.cleaningType === 'Construction cleaning' ? `
+    <tr>
+      <th>Vilken sorts arbete har du gjort?</th>
+      <td>${data.constructionWorkType ? data.constructionWorkType.join(', ') : ''}</td>
+    </tr>
+    <tr>
+      <th>Släng skräp och avfall</th>
+      <td>${data.constructionCleaningServices && data.constructionCleaningServices.includes('Släng skräp och avfall') ? "Ja" : "Nej"}</td>
+    </tr>
+    ` : ''}
+    ${data.cleaningType === 'Dödsbostädning' || data.cleaningType === 'Estate cleaning' ? `
+    <tr>
+      <th>Önskar tömning/bortforsling och flytt av möbler</th>
+      <td>${data.estateClearing ? "Ja" : "Nej"}</td>
+    </tr>
+    ` : ''}
+    ${data.cleaningType === 'Fönsterputs' || data.cleaningType === 'Window cleaning' ? `
+    <tr>
+      <th>Behöver vi ta med oss en stege för att nå alla fönster?</th>
+      <td>${data.needsLadder === 'Yes' ? 'Ja' : data.needsLadder === 'No' ? 'Nej' : data.needsLadder === 'Dont know' ? 'Vet ej' : data.needsLadder || ''}</td>
+    </tr>
+    <tr>
+      <th>Vilken typ av fönster har du?</th>
+      <td>${data.windowTypes ? data.windowTypes.join(', ') : ''}</td>
+    </tr>
+    <tr>
+      <th>Fönster med spröjs</th>
+      <td>${data.windowsWithMullions || 0}</td>
+    </tr>
+    <tr>
+      <th>Fönster utan spröjs</th>
+      <td>${data.windowsWithoutMullions || 0}</td>
+    </tr>
+    <tr>
+      <th>Överkantshängda fönster</th>
+      <td>${data.topHungWindows || 0}</td>
+    </tr>
+    ` : ''}
+    ${data.cleaningType !== 'Flyttstädning' && data.cleaningType !== 'Moving cleaning' && data.cleaningType !== 'Visningsstädning' && data.cleaningType !== 'Viewing cleaning' && data.cleaningType !== 'Hemstädning' && data.cleaningType !== 'Home cleaning' && data.cleaningType !== 'Byggstädning' && data.cleaningType !== 'Construction cleaning' && data.cleaningType !== 'Dödsbostädning' && data.cleaningType !== 'Estate cleaning' && data.cleaningType !== 'Fönsterputs' && data.cleaningType !== 'Window cleaning' ? `
+    <tr>
+      <th>Önskar bäddning</th>
+      <td>${data.bedMaking ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Önskar diskning</th>
+      <td>${data.dishWashing ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Önskar strykning</th>
+      <td>${data.ironing ? "Ja" : "Nej"}</td>
+    </tr>
+    ` : ''}
   </table>
 
   <div class="section-header">Kontakttyp</div>

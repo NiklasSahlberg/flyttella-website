@@ -130,14 +130,7 @@ export async function POST(req: Request) {
 
   <div class="section-header">Behov</div>
   <table>
-    <tr>
-      <th>Flytta från utlandet</th>
-      <td>${data.flyttaFran?.fromAbroad || 'no'}</td>
-    </tr>
-    <tr>
-      <th>Flytta till utlandet</th>
-      <td>${data.flyttaTill?.toAbroad || 'no'}</td>
-    </tr>
+ 
     <tr>
       <th>Kontakttyp</th>
       <td>${data.kontaktTyp || 'Privat'}</td>
@@ -148,27 +141,27 @@ export async function POST(req: Request) {
     </tr>
     <tr>
       <th>Flexibelt flyttdatum</th>
-      <td>${data.flexibeltDatum || ''}</td>
+      <td>${data.flexibeltDatum === 'Yes' ? 'Ja' : data.flexibeltDatum === 'No' ? 'Nej' : data.flexibeltDatum || ''}</td>
     </tr>
   </table>
 
-  <div class="section-header">${data.language === 'en' ? 'Services' : 'Tjänster'}</div>
+  <div class="section-header">Tjänster</div>
   <table>
     <tr>
-      <th>${data.language === 'en' ? 'Do you want help with packing?' : 'Vill du ha hjälp med packning?'}</th>
-      <td>${data.villDuHaPackhjalp || (data.language === 'en' ? 'No' : 'Nej')}</td>
+      <th>Vill du ha hjälp med packning?</th>
+      <td>${data.villDuHaPackhjalp === 'Yes' ? 'Ja' : data.villDuHaPackhjalp === 'No' ? 'Nej' : data.villDuHaPackhjalp || 'Nej'}</td>
     </tr>
     <tr>
-      <th>${data.language === 'en' ? 'Do you want help with storage?' : 'Vill du ha hjälp med magasinering?'}</th>
-      <td>${data.villDuHaLagring || (data.language === 'en' ? 'No' : 'Nej')}</td>
+      <th>Vill du ha hjälp med magasinering?</th>
+      <td>${data.villDuHaLagring === 'Yes' ? 'Ja' : data.villDuHaLagring === 'No' ? 'Nej' : data.villDuHaLagring || 'Nej'}</td>
     </tr>
     <tr>
-      <th>${data.language === 'en' ? 'Do you want moving cleaning?' : 'Vill du ha flyttstädning?'}</th>
-      <td>${data.villDuHaStadning || (data.language === 'en' ? 'No' : 'Nej')}</td>
+      <th>Vill du ha flyttstädning?</th>
+      <td>${data.villDuHaStadning === 'Yes' ? 'Ja' : data.villDuHaStadning === 'No' ? 'Nej' : data.villDuHaStadning || 'Nej'}</td>
     </tr>
     <tr>
-      <th>${data.language === 'en' ? 'Do you want disposal service?' : 'Vill du ha bortforsling?'}</th>
-      <td>${data.villDuHaBortforsling || (data.language === 'en' ? 'No' : 'Nej')}</td>
+      <th>Vill du ha bortforsling?</th>
+      <td>${data.villDuHaBortforsling === 'Yes' ? 'Ja' : data.villDuHaBortforsling === 'No' ? 'Nej' : data.villDuHaBortforsling || 'Nej'}</td>
     </tr>
   </table>
 
@@ -195,18 +188,14 @@ export async function POST(req: Request) {
       <td>${data.flyttaFran?.kvadrat || ''}</td>
     </tr>
     <tr>
-      <th>Nuvarande antal rum</th>
-      <td>${data.flyttaFran?.antalRum || ''}</td>
-    </tr>
-    <tr>
       <th>Nuvarande våning</th>
       <td>${data.flyttaFran?.vaningNr || ''}</td>
     </tr>
     <tr>
       <th>Nuvarande hiss</th>
-      <td>${data.flyttaFran?.hasElevator || ''}</td>
+      <td>${data.flyttaFran?.hasElevator === 'Yes' ? 'Ja' : data.flyttaFran?.hasElevator === 'No' ? 'Nej' : data.flyttaFran?.hasElevator || ''}</td>
     </tr>
-    ${data.flyttaFran?.hasElevator === 'Ja' ? `
+    ${data.flyttaFran?.hasElevator === 'Ja' || data.flyttaFran?.hasElevator === 'Yes' ? `
     <tr>
       <th>Nuvarande hisstorlek</th>
       <td>${data.flyttaFran?.elevatorSize || ''}</td>
@@ -220,6 +209,36 @@ export async function POST(req: Request) {
     <tr>
       <th>Antal arbetsplatser</th>
       <td>${data.flyttaFran.workplaceCount}</td>
+    </tr>
+    ` : ''}
+    ${data.flyttaFran?.hasAttic === 'Ja' || data.flyttaFran?.hasAttic === 'Yes' ? `
+    <tr>
+      <th>Har vind</th>
+      <td>${data.flyttaFran.hasAttic === 'Yes' ? 'Ja' : data.flyttaFran.hasAttic}</td>
+    </tr>
+    <tr>
+      <th>Vindens yta (kvm)</th>
+      <td>${data.flyttaFran.atticArea || ''}</td>
+    </tr>
+    ` : ''}
+    ${data.flyttaFran?.hasBasementStorage === 'Ja' || data.flyttaFran?.hasBasementStorage === 'Yes' ? `
+    <tr>
+      <th>Har källarförråd</th>
+      <td>${data.flyttaFran.hasBasementStorage === 'Yes' ? 'Ja' : data.flyttaFran.hasBasementStorage}</td>
+    </tr>
+    <tr>
+      <th>Källarförrådets yta (kvm)</th>
+      <td>${data.flyttaFran.basementStorageArea || ''}</td>
+    </tr>
+    ` : ''}
+    ${data.flyttaFran?.hasGarage === 'Ja' || data.flyttaFran?.hasGarage === 'Yes' ? `
+    <tr>
+      <th>Har garage</th>
+      <td>${data.flyttaFran.hasGarage === 'Yes' ? 'Ja' : data.flyttaFran.hasGarage}</td>
+    </tr>
+    <tr>
+      <th>Garagets yta (kvm)</th>
+      <td>${data.flyttaFran.garageArea || ''}</td>
     </tr>
     ` : ''}
   </table>
@@ -247,18 +266,14 @@ export async function POST(req: Request) {
       <td>${data.flyttaTill?.kvadrat || ''}</td>
     </tr>
     <tr>
-      <th>Nytt antal rum</th>
-      <td>${data.flyttaTill?.antalRum || ''}</td>
-    </tr>
-    <tr>
       <th>Ny våning</th>
       <td>${data.flyttaTill?.vaningNr || ''}</td>
     </tr>
     <tr>
       <th>Ny hiss</th>
-      <td>${data.flyttaTill?.hasElevator || ''}</td>
+      <td>${data.flyttaTill?.hasElevator === 'Yes' ? 'Ja' : data.flyttaTill?.hasElevator === 'No' ? 'Nej' : data.flyttaTill?.hasElevator || ''}</td>
     </tr>
-    ${data.flyttaTill?.hasElevator === 'Ja' ? `
+    ${data.flyttaTill?.hasElevator === 'Ja' || data.flyttaTill?.hasElevator === 'Yes' ? `
     <tr>
       <th>Ny hisstorlek</th>
       <td>${data.flyttaTill?.elevatorSize || ''}</td>
@@ -274,11 +289,11 @@ export async function POST(req: Request) {
   <table>
     <tr>
       <th>Tunga föremål</th>
-      <td>${data.tungaForemal || 'Nej'}</td>
+      <td>${data.tungaForemal === 'Yes' ? 'Ja' : data.tungaForemal === 'No' ? 'Nej' : data.tungaForemal || 'Nej'}</td>
     </tr>
     <tr>
       <th>Ömtåliga föremål</th>
-      <td>${data.omtaligaForemal || 'Nej'}</td>
+      <td>${data.omtaligaForemal === 'Yes' ? 'Ja' : data.omtaligaForemal === 'No' ? 'Nej' : data.omtaligaForemal || 'Nej'}</td>
     </tr>
   </table>
 

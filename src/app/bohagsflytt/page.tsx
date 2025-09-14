@@ -135,7 +135,7 @@ const features = [
 ]
 
 export default function Bohagsflytt() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   const [openFAQBohag, setOpenFAQBohag] = useState<string | null>(null);
   const [showFullAboutText, setShowFullAboutText] = useState(false);
@@ -224,10 +224,10 @@ export default function Bohagsflytt() {
               />
               <div className="relative z-10 text-center px-4">
                 <h1 className="text-5xl font-bold mb-6">
-                  Bohagsflytt
+                  {t('bohagsflytt.hero.title')}
                 </h1>
                 <p className="text-2xl text-white/90">
-                  Vi tar hand om hela din flytt
+                  {t('bohagsflytt.hero.subtitle')}
                 </p>
               </div>
             </div>
@@ -499,29 +499,29 @@ export default function Bohagsflytt() {
                     {/* Main content sections */}
                     {([
                                         {
-                    title: "Vad är en bohagsflytt?",
-                    content: "En bohagsflytt innebär att flytta hela eller delar av ett hushålls tillhörigheter från en bostad till en annan. Det omfattar allt från planering, packning och transport till uppackning och eventuell magasinering. En professionell bohagsflytt gör processen trygg, smidig och säker – oavsett om du flyttar inom samma stad eller till en ny ort. Bohagsflyttar kan variera i omfattning från små flyttar med endast några få möbler till omfattande flyttar som inkluderar hela hushållets tillhörigheter. Processen omfattar vanligtvis inventering av bohag, säker packning med lämpligt material, säker transport med skyddad lastning, och noggrann uppackning på den nya adressen. För att säkerställa en framgångsrik bohagsflytt är det viktigt att välja en erfaren flyttfirma som följer branschstandarder och har rätt försäkringar på plats.",
+                    title: t('bohagsflytt.content.whatIsTitle'),
+                    content: t('bohagsflytt.content.whatIsDescription'),
                     icon: '🏠',
                   },
                   {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12">
-                        <img src="/magkansla.jpg" alt="Magkänsla" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/magkansla.jpg" alt={t('bohagsflytt.content.imageAlt')} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" />
                   </div>
                     ),
                     icon: '',
                   },
                   {
-                    title: "Vad kostar en bohagsflytt?",
+                    title: t('bohagsflytt.content.pricingTitle'),
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-left md:text-center px-4">
-                          Priset på en bohagsflytt varierar beroende på faktorer som mängden bohag, avståndet mellan adresserna, våningsplan, tillgång till hiss och eventuella tilläggstjänster som packning eller magasinering. En normal flytt inom samma stad kan kosta från cirka 1 700 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina behov.
+                          {t('bohagsflytt.content.pricingDescription')}
                         </p>
                         <div className="my-12 md:my-16 text-left md:text-center px-4">
                           <p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-                            "Allt gick smidigt och tryggt från första kontakt tills allt var på plats. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri flytt!"
+                            {t('bohagsflytt.content.testimonial')}
                           </p>
                           <p className="italic text-gray-700 mt-2">- Erika</p>
                   </div>
@@ -530,44 +530,57 @@ export default function Bohagsflytt() {
                     icon: '💸',
                   },
                   {
-                    title: "Vad är bohagsflytt 2010?",
-                    content: 'Bohagsflytt 2010 syftar på de regler och riktlinjer som fastställts i "Bohag 2010" – ett avtal framtaget av Sveriges Åkeriföretag och Svenska Möbeltransportörers Förbund. Avtalet reglerar ansvaret mellan flyttföretag och kund vid bohagsflytt, och säkerställer att flytten sker på ett tryggt och professionellt sätt. Det omfattar bland annat försäkringar, hantering av bohag, reklamationer och betalningsvillkor. När du anlitar en flyttfirma som följer Bohag 2010 kan du känna dig extra trygg under hela flyttprocessen.',
+                    title: t('bohagsflytt.content.bohag2010Title'),
+                    content: t('bohagsflytt.content.bohag2010Description'),
                     icon: '📜',
                   },
                   {
-                    title: "Flyttkartonger",
-                    content: 'Flyttkartonger är en viktig del av en smidig och säker bohagsflytt. Med rätt kartonger blir packningen enklare och dina saker skyddas bättre under transporten. Vi erbjuder stabila och rymliga flyttkartonger som är anpassade för olika typer av föremål – från böcker och porslin till kläder och elektronik. Hos oss kan du låna flyttkartonger kostnadsfritt i upp till 4 veckor när du bokar din flytt, vilket gör hela processen både enklare och mer kostnadseffektiv.',
+                    title: t('bohagsflytt.content.boxesTitle'),
+                    content: t('bohagsflytt.content.boxesDescription'),
                     icon: '📦',
                   },
                   {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12">
-                        <img src="/packing_tips.jpg" alt="Packningstips" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/packing_tips.jpg" alt={t('bohagsflytt.content.packingTipsAlt')} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" />
                   </div>
                     ),
                     icon: '',
                   },
                   {
-                    title: "Boka flytthjälp i god tid",
-                    content: "För en smidig och stressfri flytt är det viktigt att boka flytthjälp i god tid. Vi rekommenderar att du bokar minst 2-3 veckor i förväg för att säkerställa tillgänglighet och få den flyttdag som passar dig bäst. Vi erbjuder flexibla bokningsmöjligheter och kan anpassa oss efter dina behov. Boka redan idag för att säkerställa en professionell och pålitlig flyttservice.",
+                    title: t('bohagsflytt.content.bookingTitle'),
+                    content: t('bohagsflytt.content.bookingDescription'),
                     icon: '📅',
                   },
                   {
-                    title: "Checklista vid flytt",
+                    title: t('bohagsflytt.content.checklistTitle'),
                     content: (
                       <div className="px-4 md:px-0">
                         <ul className="list-disc pl-5 space-y-3 md:space-y-2">
-                          <li><strong>Boka flyttfirma i god tid:</strong> Säkerställ att du får det datum som passar dig bäst.</li>
-                          <li><strong>Rensa och sortera:</strong> Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li>
-                          <li><strong>Beställ flyttkartonger:</strong> Låna eller köp tillräckligt med kartonger och packmaterial.</li>
-                          <li><strong>Packa smart:</strong> Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.</li>
-                          <li><strong>Adressändra och meddela viktiga kontakter:</strong> Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.</li>
-                          <li><strong>Boka flyttstädning:</strong> Se till att bostaden är ordentligt städad inför överlämning.</li>
-                          <li><strong>Töm och frosta av frysen:</strong> Gör detta minst en dag innan flytten.</li>
-                          <li><strong>Plocka ner gardiner, lampor och hyllor:</strong> Förbered så mycket som möjligt innan flyttdagen.</li>
-                          <li><strong>Packa en "första natten-låda":</strong> Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.</li>
-                          <li><strong>Dubbelkolla allt på flyttdagen:</strong> Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.</li>
+                          {locale === 'sv' ? [
+                            <li key="1"><strong>Boka flyttfirma i god tid:</strong> Säkerställ att du får det datum som passar dig bäst.</li>,
+                            <li key="2"><strong>Rensa och sortera:</strong> Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li>,
+                            <li key="3"><strong>Beställ flyttkartonger:</strong> Låna eller köp tillräckligt med kartonger och packmaterial.</li>,
+                            <li key="4"><strong>Packa smart:</strong> Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.</li>,
+                            <li key="5"><strong>Adressändra och meddela viktiga kontakter:</strong> Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.</li>,
+                            <li key="6"><strong>Boka flyttstädning:</strong> Se till att bostaden är ordentligt städad inför överlämning.</li>,
+                            <li key="7"><strong>Töm och frosta av frysen:</strong> Gör detta minst en dag innan flytten.</li>,
+                            <li key="8"><strong>Plocka ner gardiner, lampor och hyllor:</strong> Förbered så mycket som möjligt innan flyttdagen.</li>,
+                            <li key="9"><strong>Packa en "första natten-låda":</strong> Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.</li>,
+                            <li key="10"><strong>Dubbelkolla allt på flyttdagen:</strong> Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.</li>
+                          ] : [
+                            <li key="1"><strong>Book moving company in good time:</strong> Make sure you get the date that suits you best.</li>,
+                            <li key="2"><strong>Clean and sort:</strong> Go through your things and throw away, sell or donate what you don't need.</li>,
+                            <li key="3"><strong>Order moving boxes:</strong> Borrow or buy enough boxes and packing materials.</li>,
+                            <li key="4"><strong>Pack smart:</strong> Label boxes with contents and room. Pack heavy things in small boxes and light things in large ones. We also offer packing help as an option - contact us for more information.</li>,
+                            <li key="5"><strong>Change address and notify important contacts:</strong> Report move to Tax Agency, insurance companies, bank, electricity company and other suppliers.</li>,
+                            <li key="6"><strong>Book moving cleaning:</strong> Make sure the home is properly cleaned before handover.</li>,
+                            <li key="7"><strong>Empty and defrost the freezer:</strong> Do this at least one day before the move.</li>,
+                            <li key="8"><strong>Take down curtains, lamps and shelves:</strong> Prepare as much as possible before moving day.</li>,
+                            <li key="9"><strong>Pack a "first night box":</strong> Put in the most important: clothes, hygiene items, chargers and important papers.</li>,
+                            <li key="10"><strong>Double-check everything on moving day:</strong> Make sure nothing is left, that all windows and doors are locked and that keys are handed over as agreed.</li>
+                          ]}
                         </ul>
                   </div>
                     ),
@@ -671,14 +684,14 @@ export default function Bohagsflytt() {
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
                   <img
                     src="/personalpicture.jpg"
-                    alt="Om Flyttella"
+                    alt={t('bohagsflytt.about.imageAlt')}
                     className="object-cover w-full h-full"
                     style={{ objectPosition: 'center 70%' }}
                   />
                 </div>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">Om Flyttella</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">{t('bohagsflytt.about.title')}</h3>
 
               <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
                 {/* Left: Image - desktop only */}
@@ -696,7 +709,7 @@ export default function Bohagsflytt() {
                   <div className="relative h-96 lg:h-full w-full lg:w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
                     <img
                       src="/omoss.jpg"
-                      alt="Om Flyttella"
+                      alt={t('bohagsflytt.about.imageAlt')}
                       className="object-cover rounded-2xl w-full h-full"
                       style={{ objectPosition: 'center center', transform: 'scale(1.0)' }}
                     />
@@ -718,20 +731,20 @@ export default function Bohagsflytt() {
                   {/* Desktop: Always show full text in 3 sections */}
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder.
+                      {t('bohagsflytt.about.description')}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.
+                      {t('bohagsflytt.about.experience')}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.
+                      {t('bohagsflytt.about.quality')}
                     </p>
                   </div>
                   
                   {/* Mobile: Show shortened text with expand option */}
                   <div className="lg:hidden space-y-4">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder.
+                      {t('bohagsflytt.about.description')}
                     </p>
                     
                     {!showFullAboutText && (
@@ -739,7 +752,7 @@ export default function Bohagsflytt() {
                         onClick={() => setShowFullAboutText(true)}
                         className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                       >
-                        Läs mer
+                        {t('bohagsflytt.about.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -760,10 +773,10 @@ export default function Bohagsflytt() {
                         className="space-y-4 mt-4"
                       >
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.
+                          {t('bohagsflytt.about.experience')}
                         </p>
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.
+                          {t('bohagsflytt.about.quality')}
                         </p>
                         
                         {/* Läs mer om oss link - Mobile only when expanded */}
@@ -777,7 +790,7 @@ export default function Bohagsflytt() {
                             href="/om-oss" 
                             className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                           >
-                            Läs mer om oss
+                            {t('bohagsflytt.about.readMore')}
                             <svg 
                               xmlns="http://www.w3.org/2000/svg" 
                               className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -809,7 +822,7 @@ export default function Bohagsflytt() {
                       href="/om-oss" 
                       className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                     >
-                      Läs mer om oss
+                      {t('bohagsflytt.about.readMore')}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -864,10 +877,10 @@ export default function Bohagsflytt() {
                 <span className="text-3xl md:text-4xl">🚚</span>
                 <div>
                   <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
-                    Redo att börja din flytt?
+                    {t('bohagsflytt.cta.title')}
                   </h3>
                   <p className="text-base md:text-lg text-gray-100">
-                    Få en snabb och gratis offert på din bohagsflytt
+                    {t('bohagsflytt.cta.subtitle')}
                   </p>
                 </div>
               </div>
@@ -881,7 +894,7 @@ export default function Bohagsflytt() {
                     href="/offert"
                     className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
-                    Få gratis offert
+                    {t('bohagsflytt.cta.button')}
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -903,7 +916,7 @@ export default function Bohagsflytt() {
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-                Våra andra huvudtjänster
+                {t('bohagsflytt.services.title')}
               </h2>
               <div className="grid grid-cols-1 gap-12">
               {/* Flyttstädning Card */}
@@ -928,11 +941,11 @@ export default function Bohagsflytt() {
                 <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                   <span className="text-4xl md:text-6xl">✨</span>
                   <h3 className="text-4xl md:text-5xl font-bold text-white">
-                    Flyttstädning
+                    {t('bohagsflytt.services.flyttstadning.title')}
                   </h3>
                 </div>
                 <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-                  Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.
+                  {t('bohagsflytt.services.flyttstadning.description')}
                 </p>
                 <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
                   Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.
@@ -947,7 +960,7 @@ export default function Bohagsflytt() {
                       href="/flyttstadning" 
                       className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
                     >
-                      Läs mer
+                      {t('bohagsflytt.services.flyttstadning.readMore')}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -984,11 +997,11 @@ export default function Bohagsflytt() {
                 <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                   <span className="text-4xl md:text-6xl">🏢</span>
                   <h3 className="text-4xl md:text-5xl font-bold text-white">
-                    Magasinering
+                    {t('bohagsflytt.services.magasinering.title')}
                   </h3>
                 </div>
                 <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-                  Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.
+                  {t('bohagsflytt.services.magasinering.description')}
                 </p>
                 <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
                   Behöver du magasinera bohag under flyttprocessen? Vi tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan – och kan även hjälpa till med hämtning och återleverans.
@@ -1003,7 +1016,7 @@ export default function Bohagsflytt() {
                       href="/magasinering" 
                       className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
                     >
-                      Läs mer
+                      {t('bohagsflytt.services.magasinering.readMore')}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1040,11 +1053,11 @@ export default function Bohagsflytt() {
                 <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                   <span className="text-4xl md:text-6xl">📦</span>
                   <h3 className="text-4xl md:text-5xl font-bold text-white">
-                    Packhjälp
+                    {t('bohagsflytt.services.packhjalp.title')}
                   </h3>
                 </div>
                 <p className="text-lg md:text-xl text-gray-100 mb-1 md:mb-8 relative">
-                  Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.
+                  {t('bohagsflytt.services.packhjalp.description')}
                 </p>
                 <p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">
                   Vi hjälper med märkning och organisering för enklare uppackning.
@@ -1062,7 +1075,7 @@ export default function Bohagsflytt() {
                       href="/barhjalp" 
                       className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
                     >
-                      Läs mer
+                      {t('bohagsflytt.services.packhjalp.readMore')}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1427,10 +1440,10 @@ export default function Bohagsflytt() {
                 <span className="text-4xl">🚚</span>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                    Redo att börja din flytt?
+                    {t('bohagsflytt.cta.title')}
                   </h3>
                   <p className="text-lg text-gray-100">
-                    Få en snabb och gratis offert på din bohagsflytt
+                    {t('bohagsflytt.cta.subtitle')}
                   </p>
                 </div>
               </div>
@@ -1444,7 +1457,7 @@ export default function Bohagsflytt() {
                     href="/offert"
                     className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base"
                   >
-                    Få gratis offert
+                    {t('bohagsflytt.cta.button')}
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -2028,10 +2041,10 @@ export default function Bohagsflytt() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-                Vanliga frågor om bohagsflytt
+                {t('bohagsflytt.faq.title')}
               </h2>
               <div className="space-y-4">
-                {[
+                {(locale === 'sv' ? [
                   {
                     id: "bohag-1",
                     question: "Hur förbereder jag mig bäst inför en bohagsflytt?",
@@ -2057,7 +2070,33 @@ export default function Bohagsflytt() {
                     question: "Kan jag boka flyttkartonger och packmaterial via er?",
                     answer: "Ja, vi erbjuder uthyrning och försäljning av flyttkartonger och packmaterial. När du bokar din flytt med oss kan du låna flyttkartonger kostnadsfritt under en viss period. Vi har även specialkartonger för exempelvis glas, porslin och kläder för att skydda dina saker på bästa sätt."
                   }
-                ].map((faq, index) => (
+                ] : [
+                  {
+                    id: "bohag-1",
+                    question: "How do I best prepare for a household move?",
+                    answer: "Start by clearing out things you no longer need and sorting your belongings. Pack in good time and clearly label all boxes with contents and which room they should go to. Inform important authorities about your address change and book a moving company in good time, especially if you're moving during peak season. Also make sure to book elevator and parking if needed."
+                  },
+                  {
+                    id: "bohag-2",
+                    question: "What is usually included in a household move with a moving company?",
+                    answer: "A household move with a moving company usually includes carrying help, loading, transport and unloading of your belongings. Many companies also offer additional services such as packing, assembly, storage and moving cleaning. Always check what's included in the quote and which services can be added to adapt the move to your needs."
+                  },
+                  {
+                    id: "bohag-3",
+                    question: "How does insurance work for household moving?",
+                    answer: "Most serious moving companies have liability insurance that covers any damage that may occur during the move. However, it's important that you yourself have home insurance that applies on moving day. Read through the terms carefully and ask your moving company what applies if something breaks or disappears."
+                  },
+                  {
+                    id: "bohag-4",
+                    question: "How long does a household move take and what affects the time?",
+                    answer: "The time depends on several factors: the amount of belongings, the distance between addresses, access to elevator, floor level, and whether you've chosen additional services such as packing or assembly. A normal household move within the same city usually takes one day, but larger or more complex moves can take longer."
+                  },
+                  {
+                    id: "bohag-5",
+                    question: "Can I book moving boxes and packing materials through you?",
+                    answer: "Yes, we offer rental and sale of moving boxes and packing materials. When you book your move with us, you can borrow moving boxes free of charge for a certain period. We also have special boxes for items such as glass, porcelain and clothes to protect your things in the best way."
+                  }
+                ]).map((faq, index) => (
                   <motion.div
                     key={faq.id}
                     className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm"

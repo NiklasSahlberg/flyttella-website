@@ -530,11 +530,11 @@ export default function FlyttstadningPage() {
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Priset på flyttstädning varierar beroende på bostadens storlek, antal rum, tillstånd och eventuella tilläggstjänster. En normal flyttstädning för en lägenhet kan kosta från cirka 1 400 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina specifika behov och bostadens förutsättningar.
+                          Priset på flyttstädning varierar beroende på bostadens storlek, antal rum, tillstånd och eventuella tilläggstjänster. En normal flyttstädning för en lägenhet kan kosta från cirka 1 400 kr efter rut-avdrag och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina specifika behov och bostadens förutsättningar.
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-                            "Flyttella gjorde en fantastisk flyttstädning! Allt var skinande rent och jag kunde lämna lägenheten utan bekymmer. Högst rekommenderat!"
+                            "Flyttella fixade flyttstädningen och det blev riktigt bra. Lägenheten var ren och fräsch och besiktningen gick utan problem. Kan rekommenderas."
                           </p>
                           <p className="italic text-gray-700 mt-2">- Maria</p>
                         </div>
@@ -687,7 +687,7 @@ export default function FlyttstadningPage() {
                   {/* Desktop: full text */}
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                        Flyttella är Stockholms ledande flyttstädfirma med över 8 års erfarenhet av professionell flyttstädning, hemstädning och kontorsstädning. Vi erbjuder alltid 14 dagars städgaranti, fasta priser och personlig service för alla flyttstädningar i Stockholm.
+                        Flyttella är en av Stockholms ledande aktörer inom flyttstädning med över 8 års erfarenhet av professionell flyttstädning, hemstädning och kontorsstädning. Vi erbjuder alltid 14 dagars städgaranti, fasta priser och personlig service för alla flyttstädningar i Stockholm.
                       </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
                         Vi känner till alla Stockholms områden och anpassar våra flyttstädtjänster efter just dina behov – från lägenheter och villor till kontor och butiker. Vår flyttstädning följer branschstandarder och säkerställer att din gamla bostad lämnas i perfekt skick.
@@ -699,7 +699,7 @@ export default function FlyttstadningPage() {
                   {/* Mobile: short text with expand */}
                   <div className="lg:hidden space-y-4">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är Stockholms ledande flyttstädfirma med över 8 års erfarenhet av professionell flyttstädning, hemstädning och kontorsstädning.
+                    Flyttella är en av Stockholms ledande aktörer inom flyttstädning med över 8 års erfarenhet flyttstädning, hemstädning och kontorsstädning.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
                       Vi erbjuder 14 dagars städgaranti, fasta priser och personlig service – alltid anpassat efter dina behov.
@@ -1695,7 +1695,7 @@ export default function FlyttstadningPage() {
                 'name': 'Hur lång tid tar flyttstädning?',
                 'acceptedAnswer': {
                   '@type': 'Answer',
-                  'text': 'Tiden beror på bostadens storlek och tillstånd. En normal lägenhet tar oftast 4-8 timmar, medan större villor kan ta en hel dag eller mer.'
+                  'text': 'Tiden beror på bostadens storlek och tillstånd. En normal lägenhet tar oftast några timmar, medan större villor kan ta en hel dag eller mer.'
                 }
               },
               {
@@ -1749,7 +1749,7 @@ export default function FlyttstadningPage() {
                   {
                     id: "stadning-4",
                     question: "Hur lång tid tar flyttstädning och vad påverkar tidsåtgången?",
-                    answer: "Tidsåtgången beror på flera faktorer: bostadens storlek, antal rum, tillstånd, tillgänglighet och eventuella särskilda krav. En normal lägenhet tar oftast 4-8 timmar, medan större villor kan ta en hel dag eller mer. Vi ger dig alltid en realistisk tidsuppskattning innan vi börjar."
+                    answer: "Tidsåtgången beror på flera faktorer: bostadens storlek, antal rum, tillstånd, tillgänglighet och eventuella särskilda krav. En normal lägenhet tar oftast några timmar, medan större villor kan ta en hel dag eller mer. Vi ger dig alltid en realistisk tidsuppskattning innan vi börjar."
                   },
                   {
                     id: "stadning-5",

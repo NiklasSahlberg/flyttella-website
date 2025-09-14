@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ReviewsWidget from '../components/ReviewsWidget';
 import Lottie from "lottie-react";
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Lottie animation functions
 function FillFormLottie() {
@@ -113,6 +114,7 @@ const staggerContainer = {
 };
 
 export default function BarhjalpPage() {
+	const { t } = useLanguage();
 	const [showFullAboutText, setShowFullAboutText] = React.useState(false);
 	const [currentCard, setCurrentCard] = React.useState(0);
 	const [showFullExperienceText, setShowFullExperienceText] = React.useState(false);
@@ -131,9 +133,9 @@ export default function BarhjalpPage() {
 	};
 
 	const experienceCards = [
-		{ title: 'Bärhjälp', count: '3000+', description: 'Genomförda bärhjälp', delay: 0 },
-		{ title: 'Flyttar', count: '8000+', description: 'Genomförda flyttar', delay: 0 },
-		{ title: 'Städningar', count: '7000+', description: 'Genomförda städningar', delay: 1 },
+		{ title: t('barhjalp.experience.barhjalp'), count: t('barhjalp.experience.barhjalpCount'), description: t('barhjalp.experience.barhjalpDesc'), delay: 0 },
+		{ title: t('barhjalp.experience.moves'), count: t('barhjalp.experience.movesCount'), description: t('barhjalp.experience.movesDesc'), delay: 0 },
+		{ title: t('barhjalp.experience.cleanings'), count: t('barhjalp.experience.cleaningsCount'), description: t('barhjalp.experience.cleaningsDesc'), delay: 1 },
 	];
 	
   return (
@@ -154,8 +156,8 @@ export default function BarhjalpPage() {
 								}}
 							/>
 							<div className="relative z-10 text-center px-4">
-								<h1 className="text-5xl font-bold mb-6">Bärhjälp</h1>
-								<p className="text-2xl text-white/90">Professionell bärhjälp för flytt, möbler och tunga föremål i Stockholm.</p>
+								<h1 className="text-5xl font-bold mb-6">{t('barhjalp.hero.title')}</h1>
+								<p className="text-2xl text-white/90">{t('barhjalp.hero.subtitle')}</p>
 							</div>
 						</div>
 					</div>
@@ -174,20 +176,20 @@ export default function BarhjalpPage() {
 							/>
 							<div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
 								<div className="max-w-xl w-full">
-									<h1 className="text-5xl md:text-6xl font-bold mb-8">Bärhjälp i Stockholm</h1>
-									<p className="text-2xl md:text-3xl mb-12">Professionell bärhjälp för flytt, möbler och tunga föremål</p>
-									<p className="text-xl md:text-2xl text-white/90">Vi erbjuder pålitlig bärhjälp för alla typer av flytt och transport. Våra erfarna medarbetare hjälper dig att bära möbler, flyttkartonger och andra tunga föremål säkert och effektivt.</p>
+									<h1 className="text-5xl md:text-6xl font-bold mb-8">{t('barhjalp.hero.titleDesktop')}</h1>
+									<p className="text-2xl md:text-3xl mb-12">{t('barhjalp.hero.subtitle')}</p>
+									<p className="text-xl md:text-2xl text-white/90">{t('barhjalp.hero.description')}</p>
 								</div>
 								{/* Right-side CTA directly on background */}
 								<div className="w-full md:w-1/2 lg:w-[40%]">
-									<h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Kontakta oss för offert</h3>
-									<p className="text-white/90 mb-6 text-lg md:text-xl">Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.</p>
+									<h3 className="text-2xl md:text-3xl font-bold text-white mb-3">{t('barhjalp.hero.ctaTitle')}</h3>
+									<p className="text-white/90 mb-6 text-lg md:text-xl">{t('barhjalp.hero.ctaDescription')}</p>
 									<div>
 										<Link 
 											href="/kontakt?scroll=message&service=barhjalp"
 											className="inline-flex items-center bg-white text-[#0F172A] px-5 py-3 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
 										>
-											Kontakta oss
+											{t('barhjalp.hero.ctaButton')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -223,7 +225,7 @@ export default function BarhjalpPage() {
 										}}
 										className="flex flex-col items-center text-white hover:text-white/80 transition-colors group"
 									>
-										<span className="text-sm font-medium mb-2">Läs mer</span>
+										<span className="text-sm font-medium mb-2">{t('barhjalp.hero.readMore')}</span>
 										<motion.div
 											animate={{ y: [0, 5, 0] }}
 											transition={{ duration: 2, repeat: Infinity }}
@@ -264,9 +266,9 @@ export default function BarhjalpPage() {
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">Magasinering</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.</p>
-										<div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">{t('barhjalp.sidebar.magasinering.title')}</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">{t('barhjalp.sidebar.magasinering.description')}</p>
+										<div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('barhjalp.sidebar.magasinering.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
 									</div>
 								</div>
 							</div>
@@ -274,9 +276,9 @@ export default function BarhjalpPage() {
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">Montering</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.</p>
-										<div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">{t('barhjalp.sidebar.montering.title')}</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">{t('barhjalp.sidebar.montering.description')}</p>
+										<div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('barhjalp.sidebar.montering.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
 									</div>
 								</div>
 							</div>
@@ -284,9 +286,9 @@ export default function BarhjalpPage() {
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">Tunglyft</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.</p>
-										<div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">{t('barhjalp.sidebar.tunglyft.title')}</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">{t('barhjalp.sidebar.tunglyft.description')}</p>
+										<div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('barhjalp.sidebar.tunglyft.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
 									</div>
 								</div>
 							</div>
@@ -300,22 +302,22 @@ export default function BarhjalpPage() {
 								viewport={{ once: true }}
 							>
 								{([
-									{ title: 'Vad är bärhjälp?', content: 'Bärhjälp innebär att vi hjälper dig att bära tunga föremål, möbler och flyttkartonger på ett säkert och effektivt sätt. Vi kan hjälpa dig med allt från små möbler till stora, tunga föremål som piano, kassaskåp och specialutrustning. Tjänsten passar vid flytt, kontorsflytt eller när du bara behöver hjälp med att flytta tunga föremål.', icon: '💪' },
+									{ title: t('barhjalp.content.whatIsTitle'), content: t('barhjalp.content.whatIsDescription'), icon: '💪' },
 									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/smidigflyttdag.jpg" alt="Bärhjälp för flytt och transport i Stockholm" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 40%' }} /></div>), icon: '' },
-									{ title: 'Vad kostar bärhjälp?', content: (<div className="px-4 md:px-0">
-											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">Priset för bärhjälp beror främst på antal föremål, vikt och storlek, tillgänglighet (våningsplan, hiss, bärväg), samt hur långt transporten är. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.</p>
-											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett fast pris. <Link href="/kontakt?scroll=message&service=barhjalp" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">Kontakta oss</Link>.</p>
+									{ title: t('barhjalp.content.pricingTitle'), content: (<div className="px-4 md:px-0">
+											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">{t('barhjalp.content.pricingDescription1')}</p>
+											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('barhjalp.content.pricingDescription2')} <Link href="/kontakt?scroll=message&service=barhjalp" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">{t('common.contactUs')}</Link>.</p>
 											
 											<div className="my-12 md:my-16 text-left md:text-center px-4">
 												<p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-													"Perfekt bärhjälp! De kom i tid, var professionella och tog hand om allt säkert. Rekommenderar Flyttella varmt för alla som behöver bärhjälp!"
+													"{t('barhjalp.content.pricingTestimonial')}"
 												</p>
-												<p className="italic text-gray-700 mt-2">- Anna</p>
+												<p className="italic text-gray-700 mt-2">- {t('barhjalp.content.testimonialAuthor')}</p>
 											</div>
 										</div>), icon: '💸' },
-									{ title: 'Vad ingår i tjänsten?', content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Med vår bärhjälp får du hjälp att bära från bostad, vind, källare eller kontor. Vi kan även bistå med enklare nedmontering av möbler vid behov och ser till att alla föremål hanteras tryggt och säkert. Allt till tydliga, fasta priser utan dolda avgifter.</p>), icon: '✅' },
+									{ title: t('barhjalp.content.includesTitle'), content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('barhjalp.content.includesDescription')}</p>), icon: '✅' },
 									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.jpg" alt="Tips för bärhjälp" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
-									{ title: 'Hur bokar jag bärhjälp?', content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Boka bärhjälp enkelt genom att <Link href="/kontakt?scroll=message&service=barhjalp" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">kontakta oss</Link>. Vi erbjuder snabb service och flexibla tider som passar dig. För snabbare offert, ange gärna adress, våningsplan och om hiss finns, ungefärlig mängd och typ av föremål (t.ex. möbler, piano, kassaskåp), samt önskat datum och tid. Du kan även bifoga bilder i meddelandet så kan vi bedöma volymen direkt. Vi återkommer snabbt med pris och bekräftelse. Vid behov kan vi även göra en kort besiktning på plats innan bärhjälp.</p></div>), icon: '📞' },
+									{ title: t('barhjalp.content.bookingTitle'), content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('barhjalp.content.bookingDescription')}</p></div>), icon: '📞' },
 								] as { title: string; content: any; icon: string }[]).map((section, index) => (
 									<motion.div key={index} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
 										<div>
@@ -393,7 +395,7 @@ export default function BarhjalpPage() {
 								</div>
 							</div>
 
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">Om Flyttella</h3>
+							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">{t('barhjalp.about.title')}</h3>
 
 							<div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
 								{/* Left: Image - desktop only */}
@@ -433,20 +435,20 @@ export default function BarhjalpPage() {
 									{/* Desktop: Always show full text in 3 sections - SEO optimized for bärhjälp */}
 									<div className="hidden lg:block space-y-8">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är Stockholms ledande företag för professionell bärhjälp och flyttjänster. Med över 8 års erfarenhet hjälper vi både privatpersoner och företag med säker och effektiv bärhjälp av möbler, flyttkartonger och tunga föremål i hela Stockholm.
+											{t('barhjalp.about.description1')}
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Vårt team av erfarna flyttare och bärhjälpare är specialiserade på att hantera alla typer av föremål - från små möbler till stora, tunga föremål som piano och kassaskåp. Vi använder modern utrustning och följer strikta säkerhetsriktlinjer för att säkerställa att allt hanteras korrekt och säkert.
+											{t('barhjalp.about.description2')}
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Som en del av våra omfattande flyttjänster erbjuder vi också bortforsling, montering, piano- och tunglyft samt kontorsflyttar. Vårt mål är att göra bärhjälp enkel, säker och effektiv för alla våra kunder i Stockholm med transparenta priser och professionell service.
+											{t('barhjalp.about.description3')}
 										</p>
 									</div>
 									
 									{/* Mobile: Show shortened text with expand option - SEO optimized for bärhjälp */}
 									<div className="lg:hidden space-y-4">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är Stockholms ledande företag för professionell bärhjälp och flyttjänster. Med över 8 års erfarenhet hjälper vi både privatpersoner och företag med säker och effektiv bärhjälp av möbler, flyttkartonger och tunga föremål i hela Stockholm.
+											{t('barhjalp.about.description1')}
 										</p>
 										
 										{!showFullAboutText && (
@@ -454,7 +456,7 @@ export default function BarhjalpPage() {
 												onClick={() => setShowFullAboutText(true)}
 												className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
 											>
-												Läs mer
+												{t('barhjalp.about.readMore')}
 												<svg 
 													xmlns="http://www.w3.org/2000/svg" 
 													className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -475,10 +477,10 @@ export default function BarhjalpPage() {
 												className="space-y-4 mt-4"
 											>
 												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-													Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med bärhjälp, packning och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.
+													{t('barhjalp.about.description2')}
 												</p>
 												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-													Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla våra tjänster. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.
+													{t('barhjalp.about.description3')}
 												</p>
 												
 												{/* Läs mer om oss link - Mobile only when expanded */}
@@ -492,7 +494,7 @@ export default function BarhjalpPage() {
 														href="/om-oss" 
 														className="inline-flex items-center text-xl text-[#0F172A] hover:text-[#10B981] transition-colors font-bold underline decoration-2 underline-offset-4"
 													>
-														Läs mer om oss
+														{t('barhjalp.about.readMoreAbout')}
 														<svg 
 															xmlns="http://www.w3.org/2000/svg" 
 															className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -524,7 +526,7 @@ export default function BarhjalpPage() {
 											href="/om-oss" 
 											className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
 										>
-											Läs mer om oss
+											{t('barhjalp.about.readMoreAbout')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -544,9 +546,9 @@ export default function BarhjalpPage() {
 
 				{/* Vad tycker våra kunder om oss */}
 				<ReviewsWidget 
-					title="Vad tycker våra kunder om oss?"
-					subtitle="En trygg och professionell bärhjälp"
-					description="Vi har hjälpt tusentals kunder med säker och professionell bärhjälp av möbler och tunga föremål. Våra kunder uppskattar vår snabba service, transparenta priser och professionella hantering av allt från små möbler till stora, tunga föremål som piano och kassaskåp. Hos Flyttella får du professionell bärhjälp med fokus på kundnöjdhet och säkerhet."
+					title={t('barhjalp.reviews.title')}
+					subtitle={t('barhjalp.reviews.subtitle')}
+					description={t('barhjalp.reviews.description')}
 				/>
 
 				{/* CTA: Redo att boka din bärhjälp? */}
@@ -574,10 +576,10 @@ export default function BarhjalpPage() {
 								<span className="text-3xl md:text-4xl">💪</span>
 								<div>
 									<h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
-										Redo att boka din bärhjälp?
+										{t('barhjalp.cta.title')}
 									</h3>
 									<p className="text-base md:text-lg text-gray-100">
-										Få en snabb och gratis offert på din bärhjälp
+										{t('barhjalp.cta.subtitle')}
 									</p>
 								</div>
 							</div>
@@ -591,7 +593,7 @@ export default function BarhjalpPage() {
 										href="/kontakt?scroll=message&service=barhjalp"
 										className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
               >
-                Kontakta oss
+                {t('barhjalp.cta.button')}
 										<svg 
 											xmlns="http://www.w3.org/2000/svg" 
 											className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -613,7 +615,7 @@ export default function BarhjalpPage() {
 					<div className="container mx-auto px-4">
 						<div className="max-w-7xl mx-auto">
 							<h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-								Våra andra huvudtjänster
+								{t('barhjalp.services.title')}
 							</h2>
 							<div className="grid grid-cols-1 gap-12">
 							{/* Flyttstädning Card */}
@@ -638,14 +640,14 @@ export default function BarhjalpPage() {
 								<div className="flex items-center gap-4 mb-6 md:mb-8 relative">
 									<span className="text-4xl md:text-6xl">✨</span>
 									<h3 className="text-4xl md:text-5xl font-bold text-white">
-										Flyttstädning
+										{t('barhjalp.services.flyttstadning.title')}
 									</h3>
 								</div>
 								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-									Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.
+									{t('barhjalp.services.flyttstadning.description')}
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.
+									{t('barhjalp.services.flyttstadning.descriptionExtended')}
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -657,7 +659,7 @@ export default function BarhjalpPage() {
 											href="/flyttstadning" 
 											className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
 										>
-											Läs mer
+											{t('common.readMore')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -694,11 +696,11 @@ export default function BarhjalpPage() {
 								<div className="flex items-center gap-4 mb-6 md:mb-8 relative">
 									<span className="text-4xl md:text-6xl">🚚</span>
 									<h3 className="text-4xl md:text-5xl font-bold text-white">
-										Bohagsflytt
+										{t('barhjalp.services.bohagsflytt.title')}
 									</h3>
 								</div>
 								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-									Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.
+									{t('barhjalp.services.bohagsflytt.description')}
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
 								Vi erbjuder packning och uppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt.
@@ -713,7 +715,7 @@ export default function BarhjalpPage() {
 											href="/bohagsflytt" 
 											className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
 										>
-											Läs mer
+											{t('common.readMore')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -750,17 +752,17 @@ export default function BarhjalpPage() {
 								<div className="flex items-center gap-4 mb-6 md:mb-8 relative">
 									<span className="text-4xl md:text-6xl">🏬</span>
 									<h3 className="text-4xl md:text-5xl font-bold text-white">
-										Magasinering
+										{t('barhjalp.services.magasinering.title')}
 									</h3>
 								</div>
 								<p className="text-lg md:text-xl text-gray-100 mb-1 md:mb-8 relative">
-								Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.
+								{t('barhjalp.services.magasinering.description')}
 								</p>
 								<p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">
-									Vi hjälper med märkning och organisering för enklare återleverans.
+									{t('barhjalp.services.magasinering.descriptionMobile')}
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi kan även hjälpa till med märkning av kartonger och inventarielista för smidig återleverans.
+									{t('barhjalp.services.magasinering.descriptionExtended')}
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -772,7 +774,7 @@ export default function BarhjalpPage() {
 											href="/magasinering" 
 											className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
 										>
-											Läs mer
+											{t('common.readMore')}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -813,7 +815,7 @@ export default function BarhjalpPage() {
 								}}
 								id="upptack-tjanster"
 							>
-								Våra tjänster
+								{t('barhjalp.services.allServices.title')}
 							</motion.h2>
 							<motion.p 
 								className="text-lg md:text-xl mb-8 text-[#0F172A]/90"
@@ -826,8 +828,7 @@ export default function BarhjalpPage() {
 									delay: 0 * 0.25
 								}}
 							>
-								Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. 
-								Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.
+								{t('barhjalp.services.allServices.description')}
 							</motion.p>
 							<motion.div
 								className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -848,7 +849,7 @@ export default function BarhjalpPage() {
 										href="/tjanster" 
 										className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
 									>
-										Se alla våra flyttjänster
+										{t('barhjalp.services.allServices.movingServices')}
 										<motion.svg 
 											xmlns="http://www.w3.org/2000/svg" 
 											className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -871,7 +872,7 @@ export default function BarhjalpPage() {
 										href="/stadtjanster" 
 										className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
 									>
-										Se alla våra städtjänster
+										{t('barhjalp.services.allServices.cleaningServices')}
 										<motion.svg 
 											xmlns="http://www.w3.org/2000/svg" 
 											className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -940,7 +941,7 @@ export default function BarhjalpPage() {
 					{/* Centered content only */}
 					<div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
 						<motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('barhjalp.experience.title')}</h3>
 
 							{/* Mobile: Auto-sliding cards */}
 							<div className="md:hidden mt-8">
@@ -1091,9 +1092,9 @@ export default function BarhjalpPage() {
 									viewport={{ once: true }}
 									transition={{ duration: 0.8 }}
 								>
-									<h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet i Stockholm</h4>
+									<h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{t('barhjalp.experience.localExperienceTitle')}</h4>
 									<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4 px-4 md:px-8">
-										Vi har hjälpt tusentals kunder med deras bärhjälp i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av bärhjälp, från små möbler till stora, tunga föremål som piano och kassaskåp.
+										{t('barhjalp.experience.localExperienceDesc1')}
 									</p>
 									{!showFullExperienceText && (
 										<div className="md:hidden mb-3">
@@ -1101,7 +1102,7 @@ export default function BarhjalpPage() {
 												onClick={() => setShowFullExperienceText(true)}
 												className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-lg underline decoration-2 underline-offset-4"
 											>
-												Läs mer
+												{t('barhjalp.experience.readMore')}
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform"
@@ -1122,12 +1123,12 @@ export default function BarhjalpPage() {
 											className="space-y-4 mt-4 md:hidden px-4 md:px-8"
 										>
 											<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-												Med över 8 års erfarenhet har vi byggt upp ett rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+												{t('barhjalp.experience.localExperienceDesc2')}
 											</p>
 										</motion.div>
 									)}
 									<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
-										Med över 8 års erfarenhet har vi byggt upp ett rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+										{t('barhjalp.experience.localExperienceDesc2')}
 									</p>
 								</motion.div>
 
@@ -1220,26 +1221,26 @@ export default function BarhjalpPage() {
 						<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full">
 							<div className="w-full">
 								<h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
-									Vår process för bärhjälp
+									{t('barhjalp.process.title')}
                   </h2>
 
 								{/* Process Description */}
 								<div className="text-center mb-6 md:mb-8 hidden md:block">
 									<p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-										Vår bärhjälpsprocess är utformad för att vara enkel, säker och effektiv. Vi följer strikta säkerhetsriktlinjer för att säkerställa att allt hanteras korrekt och säkert.
+										{t('barhjalp.process.description')}
 									</p>
 								</div>
 
 								{/* Pricing Info */}
 								<div className="text-center mb-4 md:mb-8">
 									<p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-										Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som mängd föremål, typ av möbler, tillgänglighet och transportavstånd för att ge dig en offert som passar just din situation. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+										{t('barhjalp.process.pricingDescription')}
                   </p>
                 </div>
 
 								{/* Process Flow Section */}
 								<div className="mb-4 md:mb-8">
-									<h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar vår bärhjälp</h3>
+									<h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">{t('barhjalp.process.howItWorks')}</h3>
 									<div className="relative w-full">
 										{/* Timeline connector line */}
 										<div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
@@ -1247,41 +1248,41 @@ export default function BarhjalpPage() {
 											{[
 												{
 													icon: <FillFormLottie />,
-													title: "Kontakta oss",
-													description: "Kontakta oss för en kostnadsfri offert på bärhjälp",
+													title: t('barhjalp.process.steps.0.title'),
+													description: t('barhjalp.process.steps.0.description'),
 													textClass: ""
 												},
 												{
 													icon: <FastLottie />,
-													title: "Få offert",
-													description: "Få en snabb och kostnadsfri offert på din bärhjälp",
+													title: t('barhjalp.process.steps.1.title'),
+													description: t('barhjalp.process.steps.1.description'),
 													textClass: ""
 												},
 												{
 													icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
-													title: "Bekräftelse",
-													description: "Bekräfta bokning och få all information",
+													title: t('barhjalp.process.steps.2.title'),
+													description: t('barhjalp.process.steps.2.description'),
 													containerClass: "md:-mt-6",
 													textClass: ""
 												},
 												{
 													icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
-													title: "Personlig kontakt",
-													description: "Vi kontaktar dig för att bekräfta detaljer och planera bärhjälp",
+													title: t('barhjalp.process.steps.3.title'),
+													description: t('barhjalp.process.steps.3.description'),
 													containerClass: "md:-mt-7",
 													textClass: ""
 												},
 												{
 													icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
-													title: "Bärhjälp & Transport",
-													description: "Vi bär och transporterar dina föremål säkert",
+													title: t('barhjalp.process.steps.4.title'),
+													description: t('barhjalp.process.steps.4.description'),
 													containerClass: "md:-mt-14",
 													textClass: "md:-mt-8",
 												},
 												{
 													icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
-													title: "Nöjd kund",
-													description: "Allt är på plats - du är nöjd!",
+													title: t('barhjalp.process.steps.5.title'),
+													description: t('barhjalp.process.steps.5.description'),
 													containerClass: "md:-mt-6",
 													textClass: ""
 												}
@@ -1322,10 +1323,10 @@ export default function BarhjalpPage() {
 						<div className="w-full">
 							<div className="text-center mb-8 md:mb-12">
 								<h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
-									Läs mer om bärhjälp i Stockholm
+									{t('barhjalp.blog.title')}
 								</h2>
 								<p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-									Få värdefulla tips och råd för en smidig bärhjälp
+									{t('barhjalp.blog.subtitle')}
 								</p>
 							</div>
 							<div className="max-w-6xl mx-auto">
@@ -1348,15 +1349,15 @@ export default function BarhjalpPage() {
 											<div className="w-full md:w-2/3 p-4 md:p-6">
 												<div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
 													<span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
-														Bärhjälp
+														{t('barhjalp.blog.category')}
 													</span>
-													<span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
+													<span className="text-gray-500 text-sm md:text-base sm:ml-4">{t('barhjalp.blog.readTime')}</span>
 												</div>
 												<h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
-													Vad bör du tänka på inför bärhjälp av möbler och tunga föremål
+													{t('barhjalp.blog.postTitle')}
 												</h3>
 												<p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
-													Rätt planering gör bärhjälpen enkel och säker. Vi går igenom viktiga steg – från förberedelse och tillgänglighet till säker hantering och professionell service.
+													{t('barhjalp.blog.postDescription')}
 												</p>
 												<div className="flex justify-start sm:justify-between items-center">
 													<div></div>
@@ -1364,7 +1365,7 @@ export default function BarhjalpPage() {
 														href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
 														className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
 													>
-														Läs mer
+														{t('barhjalp.blog.readMore')}
 														<svg 
 															xmlns="http://www.w3.org/2000/svg" 
 															className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1387,7 +1388,7 @@ export default function BarhjalpPage() {
 								href="/blogg" 
 								className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base"
 							>
-								Se alla artiklar
+										{t('barhjalp.blog.allArticles')}
 								<svg 
 									xmlns="http://www.w3.org/2000/svg" 
 									className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1453,34 +1454,34 @@ export default function BarhjalpPage() {
 					<div className="container mx-auto px-4">
 						<div className="max-w-4xl mx-auto">
 							<h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-								Vanliga frågor om bärhjälp
+								{t('barhjalp.faq.title')}
 							</h2>
 							<div className="space-y-4">
 								{[
 									{
 										id: "barhjalp-1",
-										question: "Hur förbereder jag mig bäst inför bärhjälp?",
-										answer: "Börja med att sortera dina föremål och markera vad som ska flyttas. Ta bort alla lösa föremål från området som ska användas. Se till att vi har tillgång till området. Om du har särskilt känsliga eller värdefulla föremål, markera dessa tydligt och berätta för oss."
+										question: t('barhjalp.faq.questions.0.question'),
+										answer: t('barhjalp.faq.questions.0.answer')
 									},
 									{
 										id: "barhjalp-2",
-										question: "Vad ingår vanligtvis i bärhjälp?",
-										answer: "Bärhjälp innebär att vi hjälper dig att bära föremål från exempelvis bostad, vind, källare eller kontor. Vi använder alltid rätt skydds- och säkerhetsutrustning för att hantera allt på ett tryggt sätt."
+										question: t('barhjalp.faq.questions.1.question'),
+										answer: t('barhjalp.faq.questions.1.answer')
 									},
 									{
 										id: "barhjalp-3",
-										question: "Hur fungerar säkerhetshantering vid bärhjälp?",
-										answer: "Vi följer strikta säkerhetsriktlinjer och använder lämplig skyddsutrustning. För tunga föremål använder vi specialutrustning som dolly, lyftband och skydd. Vi dokumenterar all hantering och säkerställer att inget skadas under transporten."
+										question: t('barhjalp.faq.questions.2.question'),
+										answer: t('barhjalp.faq.questions.2.answer')
 									},
 									{
 										id: "barhjalp-4",
-										question: "Hur lång tid tar bärhjälp och vad påverkar tidsåtgången?",
-										answer: "Tidsåtgången beror på flera faktorer: mängden föremål, tillgänglighet till området, behov av specialutrustning. Hur lång tid en bärhjälp tar beror helt på omfattningen och dina specifika behov. Vi anpassar alltid arbetet efter situationen för att ge en smidig och trygg hantering."
+										question: t('barhjalp.faq.questions.3.question'),
+										answer: t('barhjalp.faq.questions.3.answer')
 									},
 									{
 										id: "barhjalp-5",
-										question: "Kan ni hantera alla typer av föremål?",
-										answer: "Vi hanterar de flesta typer av föremål inklusive möbler, flyttkartonger, piano, kassaskåp och stora vitvaror. För särskilt känsliga eller värdefulla föremål kan vi erbjuda extra skydd."
+										question: t('barhjalp.faq.questions.4.question'),
+										answer: t('barhjalp.faq.questions.4.answer')
 									}
 								].map((faq, index) => (
 									<motion.div
@@ -1543,13 +1544,13 @@ export default function BarhjalpPage() {
 					</div>
 					<div className="text-center mt-12">
 						<p className="text-lg text-gray-600 mb-6">
-							Har du fler frågor?
+							{t('barhjalp.faq.moreQuestions')}
               </p>
               <Link 
 							href="/faq" 
 							className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
 						>
-							Se alla vanliga frågor
+							{t('barhjalp.faq.allFaq')}
 							<svg 
 								xmlns="http://www.w3.org/2000/svg" 
 								className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 

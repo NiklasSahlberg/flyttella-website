@@ -28,6 +28,7 @@ interface StadningFormData {
   email: string;
   phone: string;
   typeOfHome: string;
+  areaSize: string;
   bedrooms: number;
   bathrooms: number;
   kitchen: number;
@@ -133,6 +134,7 @@ interface FormErrors {
   email?: string;
   phone?: string;
   typeOfHome?: string;
+  areaSize?: string;
   movingDate?: string;
   flexibleMovingDate?: string;
   rooms?: string;
@@ -210,6 +212,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     email: '',
     phone: '',
     typeOfHome: '',
+    areaSize: '',
     bedrooms: 0,
     bathrooms: 0,
     kitchen: 0,
@@ -510,9 +513,14 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
       // if (!formData.constructionCleaningServices || formData.constructionCleaningServices.length === 0) {
       //   newErrors.constructionCleaningServices = t('hero.form.validation.selectConstructionCleaning');
       // }
-    } else if (selectedCleaningType !== 'Annan städning' && selectedCleaningType !== 'Fönsterputs') {
+    } else if (selectedCleaningType !== 'Annan städning' && selectedCleaningType !== 'Fönsterputs' && selectedCleaningType !== 'Window cleaning') {
       if (!formData.typeOfHome.trim()) {
         newErrors.typeOfHome = t('hero.form.validation.selectHomeType');
+      }
+      if (!formData.areaSize.trim()) {
+        newErrors.areaSize = t('hero.form.validation.enterAreaSize');
+      } else if (isNaN(Number(formData.areaSize)) || Number(formData.areaSize) <= 0) {
+        newErrors.areaSize = t('hero.form.validation.areaPositive');
       }
     }
     if ((selectedCleaningType === 'Fönsterputs' || selectedCleaningType === 'Window cleaning') && !formData.needsLadder.trim()) {
@@ -1417,6 +1425,28 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       <p className="mt-1 text-sm text-red-600">{errors.typeOfHome}</p>
                     )}
                   </div>
+
+                  {selectedCleaningType !== 'Fönsterputs' && selectedCleaningType !== 'Window cleaning' && (
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <strong>{t('hero.form.validation.approximatelyHowBigArea')}</strong>
+                      </label>
+                      <input
+                        type="text"
+                        name="areaSize"
+                        value={formData.areaSize}
+                        onChange={handleInputChange}
+                        placeholder="100"
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
+                          errors.areaSize ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                        style={{ backgroundColor: 'white', color: 'black' }}
+                      />
+                      {errors.areaSize && (
+                        <p className="mt-1 text-sm text-red-600">{errors.areaSize}</p>
+                      )}
+                    </div>
+                  )}
 
 
 

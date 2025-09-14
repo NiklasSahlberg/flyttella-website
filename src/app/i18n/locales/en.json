@@ -211,19 +211,73 @@
       "wantsBedMaking": "Want bed making",
       "wantsDishWashing": "Want dish washing",
       "wantsIroning": "Want ironing",
+      "atticArea": "Attic area (sqm)",
+      "basementStorageArea": "Basement storage area (sqm)",
+      "garageArea": "Garage area (sqm)",
       "step": "Step",
       "of": "of",
       "validation": {
         "selectCleaningDayTime": "Please select a cleaning day and time",
         "selectCleaningDate": "Please select a cleaning date",
-        "selectFlexibleCleaningDate": "Please select a flexible cleaning date",
-        "enterAddress": "Please enter your address",
+        "selectService": "Please select which service you want",
+        "selectMovingDate": "Please select desired moving date",
+        "movingDateTomorrow": "Moving date must be at least tomorrow",
+        "selectFlexibleDate": "Please select flexibility for moving date",
+        "selectPackingHelp": "Please select if you want packing help",
+        "selectStorage": "Please select if you need storage",
+        "selectCleaning": "Please select if you want moving cleaning",
+        "selectDisposal": "Please select if you want disposal service",
+        "enterValidAddress": "Please enter a valid address",
         "selectAddressFromList": "Please select an address from the list",
         "enterStreetNumber": "Please enter street number",
         "enterPostalCode": "Please enter postal code",
+        "postalCodeFiveDigits": "Postal code must be exactly 5 digits",
+        "enterApartmentSize": "Please enter apartment size",
+        "enterOfficeSize": "Please enter office size",
+        "apartmentSizePositive": "Apartment size must be a positive number",
+        "officeSizePositive": "Office size must be a positive number",
+        "selectHomeType": "Please select type of home",
+        "enterWorkplaceCount": "Please enter number of workplaces",
+        "workplaceCountPositive": "Number of workplaces must be a positive number",
+        "selectFloor": "Please select floor",
+        "selectElevator": "Please indicate if there is an elevator",
+        "selectElevatorSize": "Please select elevator size",
+        "enterParkingDistance": "Please enter distance to parking",
+        "parkingDistancePositive": "Distance must be a positive number in meters",
+        "selectAttic": "Please select if you have an attic",
+        "enterAtticArea": "Please enter attic area",
+        "areaPositive": "Area must be a positive number",
+        "selectBasementStorage": "Please select if you have basement storage",
+        "enterBasementStorageArea": "Please enter basement storage area",
+        "selectGarage": "Please select if you have a garage",
+        "enterGarageArea": "Please enter garage area",
+        "enterNewAddress": "Please enter a valid address",
+        "selectNewAddressFromList": "Please select an address from the list",
+        "enterNewStreetNumber": "Please enter street number",
+        "enterNewPostalCode": "Please enter postal code",
+        "newPostalCodeFiveDigits": "Postal code must be exactly 5 digits",
+        "enterNewApartmentSize": "Please enter apartment size",
+        "enterNewOfficeSize": "Please enter office size",
+        "newApartmentSizePositive": "Apartment size must be a positive number",
+        "newOfficeSizePositive": "Office size must be a positive number",
+        "selectNewHomeType": "Please select type of home",
+        "selectNewFloor": "Please select floor",
+        "selectNewElevator": "Please indicate if there is an elevator",
+        "selectNewElevatorSize": "Please select elevator size",
+        "enterNewFloorCount": "Please enter number of floors",
+        "enterUnloadingDistance": "Please enter distance to unloading area",
+        "unloadingDistancePositive": "Distance must be a positive number in meters",
+        "enterHeavyItems": "Please specify which heavy items should be moved",
+        "enterDelicateItems": "Please describe which delicate items should be moved",
+        "enterName": "Please enter your name",
+        "enterEmail": "Please enter your email address",
+        "enterValidEmail": "Please enter a valid email address",
+        "enterPhone": "Please enter your phone number",
+        "enterValidPhone": "Please enter a valid phone number",
+        "selectOption": "Please select an option",
         "selectConstructionWork": "Please select at least one type of work.",
         "selectConstructionCleaning": "Please select at least one thing to include in the cleaning.",
-        "selectHomeType": "Please select home type",
+        "selectHomeTypeCleaning": "Please select home type",
         "enterNumberOfFloors": "Please enter number of floors",
         "enterAreaSize": "Please enter area size",
         "enterOnlyNumbers": "Please enter only numbers",
@@ -231,19 +285,8 @@
         "selectWindowType": "Please select at least one type of window",
         "enterWindowCount": "Please enter number of windows for at least one type",
         "describeCleaningService": "Please describe your cleaning service",
-        "selectMovingHelp": "Please select if you want moving help",
-        "enterName": "Please enter your name",
-        "enterContactPersonName": "Please enter contact person's name",
-        "enterValidEmail": "Please enter a valid email address",
-        "selectCleaningService": "Please select a cleaning service",
-        "enterEmail": "Please enter your email address",
-        "enterValidEmail": "Please enter a valid email address",
-        "enterPhone": "Please enter your phone number",
-        "selectDesiredMovingDate": "Please select desired moving date",
-        "movingDateMustBeTomorrow": "Moving date must be at least tomorrow",
-        "selectMovingDateFlexibility": "Please select moving date flexibility",
-        "selectPackingHelp": "Please select if you want packing help",
-        "selectStorageNeed": "Please select if you need storage"
+        "approximatelyHowBigArea": "Approximately how big area should be cleaned?",
+        "enterAreaSize": "Please enter area size"
       },
       "placeholders": {
         "startTypingAddress": "Start typing your address",
@@ -569,6 +612,1330 @@
       "title": "Professional home cleaning in Stockholm",
       "subtitle": "Regular cleaning tailored to your needs",
       "description": "Reliable and thorough home cleaning with RUT deduction and satisfaction guarantee. Get a quote in 1 minute."
+    }
+  },
+  "barhjalp": {
+    "hero": {
+      "title": "Moving Help",
+      "titleDesktop": "Moving Help in Stockholm",
+      "subtitle": "Professional moving help for moving, furniture and heavy items in Stockholm.",
+      "description": "We offer reliable moving help for all types of moves and transport. Our experienced staff help you carry furniture, moving boxes and other heavy items safely and efficiently.",
+      "ctaTitle": "Contact us for a quote",
+      "ctaDescription": "Tell us briefly what you need help with and we'll get back to you quickly with price and time. We can also inspect on site if needed.",
+      "ctaButton": "Contact us",
+      "readMore": "Read more"
+    },
+    "content": {
+      "whatIsTitle": "What is moving help?",
+      "whatIsDescription": "Moving help means we help you carry heavy items, furniture and moving boxes in a safe and efficient way. We can help you with everything from small furniture to large, heavy items like pianos, safes and special equipment. The service is suitable for moving, office moves or when you just need help moving heavy items.",
+      "pricingTitle": "What does moving help cost?",
+      "pricingDescription1": "The price for moving help depends mainly on the number of items, weight and size, accessibility (floor, elevator, carrying distance), and how far the transport is. We always provide a clear fixed price without hidden fees before we start work. If needed, we can do a quick inspection on site or assess based on pictures.",
+      "pricingDescription2": "Send a request with a brief description and preferably pictures and we'll get back to you quickly with a fixed price.",
+      "pricingTestimonial": "Perfect moving help! They came on time, were professional and took care of everything safely. I warmly recommend Flyttella for anyone who needs moving help!",
+      "testimonialAuthor": "Anna",
+      "includesTitle": "What's included in the service?",
+      "includesDescription": "With our moving help, you get help carrying from home, attic, basement or office. We can also assist with simple disassembly of furniture if needed and ensure that all items are handled safely and securely. All at clear, fixed prices without hidden fees.",
+      "bookingTitle": "How do I book moving help?",
+      "bookingDescription": "Book moving help easily by contacting us. We offer quick service and flexible times that suit you. For a faster quote, please provide address, floor and if there's an elevator, approximate amount and type of items (e.g. furniture, piano, safe), as well as desired date and time. You can also attach pictures in the message so we can assess the volume directly. We'll get back to you quickly with price and confirmation. If needed, we can also do a short inspection on site before moving help."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is Stockholm's leading company for professional moving help and moving services. With over 8 years of experience, we help both individuals and companies with safe and efficient moving help of furniture, moving boxes and heavy items throughout Stockholm.",
+      "description2": "Our team of experienced movers and moving helpers specialize in handling all types of items - from small furniture to large, heavy items like pianos and safes. We use modern equipment and follow strict safety guidelines to ensure everything is handled correctly and safely.",
+      "description3": "As part of our comprehensive moving services, we also offer disposal, assembly, piano and heavy lifting as well as office moves. Our goal is to make moving help simple, safe and efficient for all our customers in Stockholm with transparent prices and professional service.",
+      "readMore": "Read more",
+      "readMoreAbout": "Read more about us"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "A safe and professional moving help",
+      "description": "We have helped thousands of customers with safe and professional moving help of furniture and heavy items. Our customers appreciate our fast service, transparent prices and professional handling of everything from small furniture to large, heavy items like pianos and safes. At Flyttella you get professional moving help with focus on customer satisfaction and safety."
+    },
+    "cta": {
+      "title": "Ready to book your moving help?",
+      "subtitle": "Get a quick and free quote on your moving help",
+      "button": "Contact us"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures your old home is left in perfect condition.",
+        "descriptionExtended": "Our moving cleaning follows established industry standards and includes everything from kitchen and bathroom to window cleaning and details. We use eco-friendly products and provide a 14-day cleaning guarantee so you can feel completely secure."
+      },
+      "bohagsflytt": {
+        "title": "Household Moving",
+        "description": "Professional move of your entire household. We take care of everything from small furniture to large pianos with care and precision.",
+        "descriptionExtended": "We offer packing and unpacking as well as assembly and disassembly of furniture - everything to make your move as simple and comfortable as possible. We use quality materials and have experience with all types of moves. With our service you get a stress-free move where everything is handled professionally."
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "descriptionMobile": "We help with labeling and organization for easier return delivery.",
+        "descriptionExtended": "Storage is perfect for moving, renovation or longer stays abroad. Our experienced staff use quality packing materials and ensure everything is packed correctly for long-term storage. We can also help with labeling of boxes and inventory list for smooth return delivery."
+      },
+      "allServices": {
+        "title": "Our services",
+        "description": "We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. From household moving and moving cleaning to special services like heavy lifting and storage.",
+        "movingServices": "See all our moving services",
+        "cleaningServices": "See all our cleaning services"
+      }
+    },
+    "experience": {
+      "title": "Our experience",
+      "barhjalp": "Moving Help",
+      "barhjalpCount": "3000+",
+      "barhjalpDesc": "Completed moving help",
+      "moves": "Moves",
+      "movesCount": "8000+",
+      "movesDesc": "Completed moves",
+      "cleanings": "Cleanings",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Completed cleanings",
+      "localExperienceTitle": "Local experience in Stockholm",
+      "localExperienceDesc1": "We have helped thousands of customers with their moving help in Stockholm and the surrounding area. Our local knowledge and experience ensures we can handle all types of moving help, from small furniture to large, heavy items like pianos and safes.",
+      "localExperienceDesc2": "With over 8 years of experience, we have built a reputation for quality, reliability and customer satisfaction. We understand the local conditions and can offer tailored solutions for all needs.",
+      "readMore": "Read more"
+    },
+    "process": {
+      "title": "Our process for moving help",
+      "description": "Our moving help process is designed to be simple, safe and efficient. We follow strict safety guidelines to ensure everything is handled correctly and safely.",
+      "pricingDescription": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as amount of items, type of furniture, accessibility and transport distance to give you a quote that fits your specific situation. We can also inspect the site if needed. All prices are fixed without hidden fees - we always base our work on your wishes and information we receive from you as a customer. Do you have special wishes or questions? Contact us and we'll adapt the quote to your needs.",
+      "howItWorks": "How our moving help works",
+      "steps": [
+        {
+          "title": "Contact us",
+          "description": "Contact us for a free quote on moving help"
+        },
+        {
+          "title": "Get quote",
+          "description": "Get a quick and free quote on your moving help"
+        },
+        {
+          "title": "Confirmation",
+          "description": "Confirm booking and get all information"
+        },
+        {
+          "title": "Personal contact",
+          "description": "We contact you to confirm details and plan moving help"
+        },
+        {
+          "title": "Moving Help & Transport",
+          "description": "We carry and transport your items safely"
+        },
+        {
+          "title": "Satisfied customer",
+          "description": "Everything is in place - you're satisfied!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Read more about moving help in Stockholm",
+      "subtitle": "Get valuable tips and advice for smooth moving help",
+      "category": "Moving Help",
+      "readTime": "5 min read",
+      "postTitle": "What should you think about before moving help with furniture and heavy items",
+      "postDescription": "Right planning makes moving help simple and safe. We go through important steps - from preparation and accessibility to safe handling and professional service.",
+      "readMore": "Read more",
+      "allArticles": "See all articles"
+    },
+    "faq": {
+      "title": "Common questions about moving help",
+      "questions": [
+        {
+          "question": "How do I best prepare for moving help?",
+          "answer": "Start by sorting your items and marking what should be moved. Remove all loose items from the area that will be used. Make sure we have access to the area. If you have particularly sensitive or valuable items, mark these clearly and tell us."
+        },
+        {
+          "question": "What is usually included in moving help?",
+          "answer": "Moving help means we help you carry items from e.g. home, attic, basement or office. We always use proper protective and safety equipment to handle everything safely."
+        },
+        {
+          "question": "How does safety handling work during moving help?",
+          "answer": "We follow strict safety guidelines and use appropriate protective equipment. For heavy items we use special equipment like dollies, lifting straps and protection. We document all handling and ensure nothing is damaged during transport."
+        },
+        {
+          "question": "How long does moving help take and what affects the time required?",
+          "answer": "The time required depends on several factors: the amount of items, accessibility to the area, need for special equipment. How long moving help takes depends entirely on the scope and your specific needs. We always adapt the work to the situation to provide smooth and safe handling."
+        },
+        {
+          "question": "Can you handle all types of items?",
+          "answer": "We handle most types of items including furniture, moving boxes, pianos, safes and large appliances. For particularly sensitive or valuable items we can offer extra protection."
+        }
+      ],
+      "moreQuestions": "Do you have more questions?",
+      "allFaq": "See all common questions"
+    },
+    "sidebar": {
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "readMore": "Read more"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Assembly and disassembly of furniture and interior - right tools and careful handling.",
+        "readMore": "Read more"
+      },
+      "tunglyft": {
+        "title": "Heavy Lifting",
+        "description": "Safe handling of heavy and large-scale items like pianos, safes and large furniture.",
+        "readMore": "Read more"
+      }
+    }
+  },
+  "pianoTunglyft": {
+    "hero": {
+      "title": "Piano & Heavy Lifting",
+      "subtitle": "Professional handling of heavy and large-scale items",
+      "description": "We move pianos, safes and large furniture with precision and safety. Specialized equipment and experienced staff.",
+      "readMore": "Read more"
+    },
+    "content": {
+      "whatIsTitle": "What is piano & heavy lifting?",
+      "whatIsDescription": "Piano & heavy lifting means professional handling of heavy and large-scale items that require specialized equipment and experience. We move pianos, safes, gun safes and other heavy furniture with precision and safety. The service is suitable for moving, renovation or when you need to move heavy items that cannot be handled with regular moving methodology.",
+      "pricingTitle": "What does piano & heavy lifting cost?",
+      "pricingDescription1": "The price for piano & heavy lifting depends mainly on the type of item, weight, accessibility (floor, elevator, carrying distance), and how far the transport is. We always provide a clear fixed price without hidden fees before we start work. If needed, we can do a quick inspection on site or assess based on pictures.",
+      "pricingDescription2": "Send a request with a brief description and preferably pictures and we'll get back to you quickly with a fixed price.",
+      "pricingTestimonial": "Perfect piano & heavy lifting! They came on time, were professional and took care of everything safely. I warmly recommend Flyttella for anyone who needs help with heavy items!",
+      "testimonialAuthor": "Erik",
+      "includesTitle": "What's included in the service?",
+      "includesDescription": "Our piano & heavy lifting includes on-site inspection, specialized equipment such as piano trolleys and protection, moving help with experienced staff, safe transport and delivery. We handle all types of heavy items from pianos and safes to antiques and sculptures. All at clear, fixed prices without hidden fees.",
+      "bookingTitle": "How do I book piano & heavy lifting?",
+      "bookingDescription": "Book piano & heavy lifting easily by contacting us. We offer quick service and flexible times that suit you. For a faster quote, please provide address, floor and if there's an elevator, type of item (piano, safe, etc.), as well as desired date and time. You can also attach pictures in the message so we can assess the volume directly. We'll get back to you quickly with price and confirmation. If needed, we can also do a short inspection on site before heavy lifting."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is a moving and cleaning company in Stockholm that specializes in piano & heavy lifting. For over eight years, we have helped customers move heavy and large-scale items with precision and safety. Our experienced staff use specialized equipment and techniques to handle all types of heavy items, from pianos and safes to antiques and sculptures.",
+      "description2": "We offer complete service with on-site inspection, safe transport and delivery. With clear terms and fixed arrangements, you know exactly what's included. Our team is always available for questions and support throughout the process, and we ensure that every heavy lifting is carried out with the highest safety and precision.",
+      "description3": "Need help with piano & heavy lifting, contact us for a quick and free quote. We can also combine the service with moving cleaning, packing or other moving-related services for a complete solution.",
+      "readMore": "Read more",
+      "readMoreAbout": "Read more about us"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "A safe and professional piano & heavy lifting",
+      "description": "We have helped thousands of customers with safe and professional piano & heavy lifting of heavy items. Our customers appreciate our fast service, transparent prices and professional handling of everything from pianos and safes to large furniture and antiques. At Flyttella you get professional piano & heavy lifting with focus on customer satisfaction and safety."
+    },
+    "cta": {
+      "title": "Ready to book heavy lifting?",
+      "subtitle": "Get a quick and free quote on your piano & heavy lifting",
+      "button": "Contact us"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures your old home is left in perfect condition.",
+        "descriptionExtended": "Our moving cleaning follows established industry standards and includes everything from kitchen and bathroom to window cleaning and details. We use eco-friendly products and provide a 14-day cleaning guarantee so you can feel completely secure."
+      },
+      "bohagsflytt": {
+        "title": "Household Moving",
+        "description": "Professional move of your entire household. We take care of everything from small furniture to large pianos with care and precision.",
+        "descriptionExtended": "We offer packing and unpacking as well as assembly and disassembly of furniture - everything to make your move as simple and comfortable as possible. We use quality materials and have experience with all types of moves. With our service you get a stress-free move where everything is handled professionally."
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "descriptionMobile": "We help with labeling and organization for easier return delivery.",
+        "descriptionExtended": "Storage is perfect for moving, renovation or longer stays abroad. Our experienced staff use quality packing materials and ensure everything is packed correctly for long-term storage. We can also help with labeling of boxes and inventory list for smooth return delivery."
+      },
+      "allServices": {
+        "title": "Our services",
+        "description": "We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. From household moving and moving cleaning to special services like heavy lifting and storage.",
+        "movingServices": "See all our moving services",
+        "cleaningServices": "See all our cleaning services"
+      }
+    },
+    "experience": {
+      "title": "Our experience",
+      "tunglyft": "Heavy Lifting",
+      "tunglyftCount": "1500+",
+      "tunglyftDesc": "Completed heavy lifting",
+      "moves": "Moves",
+      "movesCount": "8000+",
+      "movesDesc": "Completed moves",
+      "cleanings": "Cleanings",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Completed cleanings",
+      "localExperienceTitle": "Local experience in Stockholm",
+      "localExperienceDesc1": "We have helped thousands of customers with their piano & heavy lifting in Stockholm and the surrounding area. Our local knowledge and experience ensures we can handle all types of heavy items, from pianos and safes to large furniture and antiques.",
+      "localExperienceDesc2": "With over 8 years of experience, we have built a reputation for quality, reliability and customer satisfaction. We understand the local conditions and can offer tailored solutions for all needs.",
+      "readMore": "Read more"
+    },
+    "process": {
+      "title": "Our process for piano & heavy lifting",
+      "description": "Our piano & heavy lifting process is designed to be safe, professional and smooth. We use specialized equipment and follow strict safety guidelines to ensure all heavy items are handled correctly.",
+      "pricingDescription": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as type of item, weight, accessibility (floor, elevator, carrying distance), transport distance and any special requirements to give you a quote that fits your specific situation. We can also inspect the site if needed. All prices are fixed without hidden fees - we always base our work on your wishes and information we receive from you as a customer. Do you have special wishes or questions? Contact us and we'll adapt the quote to your needs.",
+      "howItWorks": "How our piano & heavy lifting works",
+      "steps": [
+        {
+          "title": "Contact us",
+          "description": "Contact us for a free quote on piano & heavy lifting"
+        },
+        {
+          "title": "Get quote",
+          "description": "Get a quick and free quote on your piano & heavy lifting"
+        },
+        {
+          "title": "Confirmation",
+          "description": "Confirm booking and get all information"
+        },
+        {
+          "title": "Personal contact",
+          "description": "We contact you to confirm details and plan heavy lifting"
+        },
+        {
+          "title": "Heavy Lifting & Transport",
+          "description": "We move and transport your heavy items safely"
+        },
+        {
+          "title": "Satisfied customer",
+          "description": "Everything is in place - you're satisfied!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Read more about piano & heavy lifting in Stockholm",
+      "subtitle": "Get valuable tips and advice for smooth piano & heavy lifting",
+      "category": "Piano & Heavy Lifting",
+      "readTime": "5 min read",
+      "postTitle": "What should you think about before piano & heavy lifting of heavy items",
+      "postDescription": "Right planning makes piano & heavy lifting simple and safe. We go through important steps - from preparation and accessibility to safe handling and professional service.",
+      "readMore": "Read more",
+      "allArticles": "See all articles"
+    },
+    "faq": {
+      "title": "Common questions about piano & heavy lifting",
+      "questions": [
+        {
+          "question": "How do I best prepare for piano & heavy lifting?",
+          "answer": "Start by marking the area around the item and removing all loose items. Make sure we have access to the area and that no obstacles are in the way. If you have particularly sensitive or valuable items, mark these clearly and tell us."
+        },
+        {
+          "question": "What is usually included in piano & heavy lifting?",
+          "answer": "Piano & heavy lifting means we help you move heavy items with specialized equipment and techniques. We always use proper protective and safety equipment to handle everything safely."
+        },
+        {
+          "question": "How does safety handling work during piano & heavy lifting?",
+          "answer": "We follow strict safety guidelines and use appropriate protective equipment. For heavy items we use special equipment like piano trolleys, lifting straps and protection. We document all handling and ensure nothing is damaged during transport."
+        },
+        {
+          "question": "How long does piano & heavy lifting take and what affects the time required?",
+          "answer": "The time required depends on several factors: type of item, accessibility to the area, need for special equipment. How long piano & heavy lifting takes depends entirely on the scope and your specific needs. We always adapt the work to the situation to provide smooth and safe handling."
+        },
+        {
+          "question": "Can you handle all types of heavy items?",
+          "answer": "We handle most types of heavy items including pianos, safes, gun safes, large furniture and antiques. For particularly sensitive or valuable items we can offer extra protection."
+        }
+      ],
+      "moreQuestions": "Do you have more questions?",
+      "allFaq": "See all common questions"
+    },
+    "sidebar": {
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "readMore": "Read more"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Assembly and disassembly of furniture and interior - right tools and careful handling.",
+        "readMore": "Read more"
+      },
+      "tunglyft": {
+        "title": "Heavy Lifting",
+        "description": "Safe handling of heavy and large-scale items like pianos, safes and large furniture.",
+        "readMore": "Read more"
+      }
+    }
+  },
+  "bortforsling": {
+    "hero": {
+      "title": "Waste Disposal",
+      "subtitle": "Professional disposal of furniture, household goods and bulk waste",
+      "description": "We collect, carry and dispose – quickly and safely. Eco-friendly handling and recycling.",
+      "ctaTitle": "Contact us for a quote",
+      "ctaDescription": "Tell us briefly what you need help with and we'll get back to you quickly with price and time. We can also inspect on site if needed.",
+      "ctaButton": "Contact us",
+      "readMore": "Read more"
+    },
+    "content": {
+      "whatIsTitle": "What is waste disposal?",
+      "whatIsDescription": "Waste disposal means professional handling and transport of waste, furniture, household goods and bulk waste from your home or office. We take care of everything from old furniture and appliances to construction waste and electronics, with focus on eco-friendly handling and recycling.",
+      "pricingTitle": "What does waste disposal cost?",
+      "pricingDescription1": "The price for waste disposal depends mainly on amount and type of waste, accessibility (floor, elevator, carrying distance), and transport distance. We always provide a clear fixed price without hidden fees before we start work. If needed, we can do a quick inspection on site or assess based on pictures.",
+      "pricingDescription2": "Send a request with a brief description and preferably pictures and we'll get back to you quickly with a fixed price.",
+      "pricingTestimonial": "Perfect waste disposal! They came on time, were professional and took care of everything environmentally friendly. I warmly recommend Flyttella for anyone who needs help with waste disposal!",
+      "testimonialAuthor": "Anna",
+      "includesTitle": "What's included in the service?",
+      "includesDescription": "Our waste disposal includes carrying help from home, attic, basement or office, simple disassembly of furniture if needed, transport to recycling center or approved recipient, and environmental sorting where we recycle. All at clear, fixed prices without hidden fees.",
+      "bookingTitle": "How do I book waste disposal?",
+      "bookingDescription": "Book waste disposal easily by contacting us. We offer quick service and flexible times that suit you. For a faster quote, please provide address, floor and if there's an elevator, approximate amount and type of waste (e.g. furniture, appliances, construction waste), as well as desired date and time. You can also attach pictures in the message so we can assess the volume directly. We'll get back to you quickly with price and confirmation. If needed, we can also do a short inspection on site before collection."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is Stockholm's leading company for professional waste disposal and moving services. With over 8 years of experience, we help both individuals and companies with safe and eco-friendly disposal of furniture, appliances and bulk waste throughout Stockholm.",
+      "description2": "Our team of experienced movers and carriers are specialized in handling all types of disposal - from small furniture to large office cleanouts. We use modern equipment and follow strict environmental guidelines to ensure all waste is handled correctly and recycled.",
+      "description3": "As part of our comprehensive moving services, we also offer carrying help, assembly, piano and heavy lifting and office moves. Our goal is to make disposal simple, safe and eco-friendly for all our customers in Stockholm with transparent prices and professional service.",
+      "readMore": "Read more",
+      "readMoreAbout": "Read more about us"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "A safe and professional waste disposal",
+      "description": "We have helped thousands of customers with safe and professional disposal of furniture, appliances and bulk waste. Our customers appreciate our fast service, transparent prices and eco-friendly handling of everything from old furniture to construction waste. At Flyttella you get professional waste disposal with focus on environment and customer satisfaction."
+    },
+    "cta": {
+      "title": "Ready to book waste disposal?",
+      "subtitle": "Get a quick and free quote on your waste disposal",
+      "button": "Contact us"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures your old home is left in perfect condition.",
+        "descriptionExtended": "Our moving cleaning follows established industry standards and includes everything from kitchen and bathroom to window cleaning and details. We use eco-friendly products and provide a 14-day cleaning guarantee so you can feel completely secure."
+      },
+      "bohagsflytt": {
+        "title": "Household Moving",
+        "description": "Professional move of your entire household. We take care of everything from small furniture to large pianos with care and precision.",
+        "descriptionExtended": "We offer packing and unpacking as well as assembly and disassembly of furniture - everything to make your move as simple and comfortable as possible. We use quality materials and have experience with all types of moves. With our service you get a stress-free move where everything is handled professionally."
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "descriptionMobile": "We help with labeling and organization for easier return delivery.",
+        "descriptionExtended": "Storage is perfect for moving, renovation or longer stays abroad. Our experienced staff use quality packing materials and ensure everything is packed correctly for long-term storage. We can also help with labeling of boxes and inventory list for smooth return delivery."
+      },
+      "allServices": {
+        "title": "Our services",
+        "description": "We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. From household moving and moving cleaning to special services like waste disposal and storage.",
+        "movingServices": "See all our moving services",
+        "cleaningServices": "See all our cleaning services"
+      }
+    },
+    "experience": {
+      "title": "Our experience",
+      "bortforslingar": "Disposals",
+      "bortforslingarCount": "2500+",
+      "bortforslingarDesc": "Completed disposals",
+      "moves": "Moves",
+      "movesCount": "8000+",
+      "movesDesc": "Completed moves",
+      "cleanings": "Cleanings",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Completed cleanings",
+      "localExperienceTitle": "Local experience in Stockholm",
+      "localExperienceDesc1": "We have helped thousands of customers with their waste disposal in Stockholm and the surrounding area. Our local knowledge and experience ensures we can handle all types of waste, from furniture and appliances to construction waste and electronics.",
+      "localExperienceDesc2": "With over 8 years of experience, we have built a reputation for quality, reliability and customer satisfaction. We understand the local conditions and can offer tailored solutions for all needs.",
+      "readMore": "Read more"
+    },
+    "process": {
+      "title": "Our process for waste disposal",
+      "description": "Our waste disposal process is designed to be safe, professional and eco-friendly. We follow strict environmental guidelines and ensure all waste is handled correctly and recycled.",
+      "pricingDescription": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as amount and type of waste, accessibility (floor, elevator, carrying distance), transport distance and any special requirements to give you a quote that fits your specific situation. We can also inspect the site if needed. All prices are fixed without hidden fees - we always base our work on your wishes and information we receive from you as a customer. Do you have special wishes or questions? Contact us and we'll adapt the quote to your needs.",
+      "howItWorks": "How our waste disposal works",
+      "steps": [
+        {
+          "title": "Contact us",
+          "description": "Contact us for a free quote on waste disposal"
+        },
+        {
+          "title": "Get quote",
+          "description": "Get a quick and free quote on your waste disposal"
+        },
+        {
+          "title": "Confirmation",
+          "description": "Confirm booking and get all information"
+        },
+        {
+          "title": "Personal contact",
+          "description": "We contact you to confirm details and plan collection"
+        },
+        {
+          "title": "Collection & Transport",
+          "description": "We collect and transport your waste safely"
+        },
+        {
+          "title": "Eco-friendly handling",
+          "description": "All waste is handled environmentally friendly and recycled"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Read more about waste disposal in Stockholm",
+      "subtitle": "Get valuable tips and advice for eco-friendly waste disposal",
+      "category": "Waste Disposal",
+      "readTime": "5 min read",
+      "postTitle": "What should you think about before disposal of furniture and waste",
+      "postDescription": "Right planning makes waste disposal simple and eco-friendly. We go through important steps - from preparation and sorting to eco-friendly handling and recycling.",
+      "readMore": "Read more",
+      "allArticles": "See all articles"
+    },
+    "faq": {
+      "title": "Common questions about waste disposal",
+      "questions": [
+        {
+          "question": "How do I best prepare for waste disposal?",
+          "answer": "Start by sorting and separating different types of waste. Remove all loose items and make sure we have access to the area. Make sure there's room for our vehicles and that we can access with equipment. Mark any particularly sensitive or valuable items clearly."
+        },
+        {
+          "question": "What is usually included in waste disposal?",
+          "answer": "Waste disposal means we help you remove waste, furniture and household goods with professional handling. We always use proper equipment and follow environmental guidelines to handle everything safely and eco-friendly."
+        },
+        {
+          "question": "How does environmental handling work during waste disposal?",
+          "answer": "We follow strict environmental guidelines and sort all waste correctly. For different types of waste we use different handling methods and transport to the right recipient. We document all handling and ensure everything is recycled or handled environmentally friendly."
+        },
+        {
+          "question": "How long does waste disposal take and what affects the time required?",
+          "answer": "The time required depends on several factors: amount and type of waste, accessibility to the area, need for special equipment. How long waste disposal takes depends entirely on the scope and your specific needs. We always adapt the work to the situation to provide smooth and safe handling."
+        },
+        {
+          "question": "Can you handle all types of waste?",
+          "answer": "We handle most types of waste including furniture, appliances, construction waste, electronics and bulk waste. For particularly hazardous substances or chemicals we have specialized handling and transport to approved recipients."
+        }
+      ],
+      "moreQuestions": "Do you have more questions?",
+      "allFaq": "See all common questions"
+    },
+    "sidebar": {
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "readMore": "Read more"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Assembly and disassembly of furniture and interior - right tools and careful handling.",
+        "readMore": "Read more"
+      },
+      "tunglyft": {
+        "title": "Heavy Lifting",
+        "description": "Safe handling of heavy and large-scale items like pianos, safes and large furniture.",
+        "readMore": "Read more"
+      }
+    }
+  },
+  "magasinering": {
+    "hero": {
+      "title": "Storage",
+      "subtitle": "Secure storage of your household goods in dry, alarmed spaces",
+      "description": "We help you with secure storage of your household goods – from collection and packing to return delivery.",
+      "ctaTitle": "Contact us for a quote",
+      "ctaDescription": "Tell us briefly what you need help with and we'll get back to you quickly with price and time. We can also inspect on site if needed.",
+      "ctaButton": "Contact us",
+      "readMore": "Read more"
+    },
+    "content": {
+      "whatIsTitle": "What is storage?",
+      "whatIsDescription": "Storage means storing household goods or inventory safely for a period – during moving, renovation, overseas stay or space shortage. The storage should be dry, ventilated and protected against theft and damage. Often the household goods are collected from the customer, packed with protection and transported to an alarmed warehouse. When you want return delivery, the household goods are delivered again. Common options are packing help, assembly/disassembly, extra insurance and the possibility to access selected boxes during the period.",
+      "pricingTitle": "What does storage cost?",
+      "pricingDescription": "Price depends on volume (cubic meters), storage time, accessibility and any options such as collection/return delivery, packing help and extra insurance. Billing is often per cubic and month. A guideline is that the cost can be reduced by clearing in advance, packing efficiently and choosing longer binding time. Transparency is important – ask for a clear quote with what's included such as rent, insurance, handling and any start-up fees.",
+      "pricingTestimonial": "Safe and smooth storage – easy to both drop off and get back.",
+      "testimonialAuthor": "Sofia",
+      "includesTitle": "What's included in storage?",
+      "includesDescription": "Storage usually includes collection of household goods, safe packing with protection, transport to alarmed warehouse, storage during agreed time and return delivery. We can also offer packing help, assembly/disassembly of furniture, extra insurance and the possibility to access selected boxes during the period. All at clear, fixed prices without hidden fees.",
+      "bookingTitle": "How do I book storage?",
+      "bookingDescription": "Book storage easily by contacting us. We offer quick service and flexible times that suit you. For a faster quote, please provide address, approximate volume (cubic meters), desired storage time, and any options such as packing help or extra insurance. We can also inspect on site for a more accurate assessment. We'll get back to you quickly with price and confirmation."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is a moving and cleaning company in Stockholm that offers secure storage. For over eight years, we have helped customers store household goods safely – during moves, renovations and longer stays abroad. We collect from your home, protect and mark your household goods and store them in dry, ventilated and alarmed spaces. With clear terms and fixed arrangements, you know exactly what's included.",
+      "description2": "If you need packing materials, packing help, assembly/disassembly or moving cleaning, we can arrange it. You get quick quotes and ongoing updates – easy from start to finish. Our warehouses are strategically located in Stockholm with modern security systems and continuous monitoring. Our staff are trained in careful handling of all types of items, and we offer flexible solutions for both short- and long-term storage. Our team is always available for questions and support throughout the storage period.",
+      "description3": "As part of our comprehensive moving services, we also offer household moving, moving cleaning, waste disposal and special services. Our goal is to make storage simple, safe and cost-effective for all our customers in Stockholm with transparent prices and professional service.",
+      "readMore": "Read more",
+      "readMoreAbout": "Read more about us"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "A safe and professional storage",
+      "description": "We have helped thousands of customers with safe and professional storage of household goods and inventory. Our customers appreciate our fast service, transparent prices and secure storage of everything from small households to large corporate solutions. At Flyttella you get professional storage with focus on customer satisfaction and security."
+    },
+    "cta": {
+      "title": "Ready to book storage?",
+      "subtitle": "Get a quick and free quote on your storage",
+      "button": "Contact us"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures your old home is left in perfect condition.",
+        "descriptionExtended": "Our moving cleaning follows established industry standards and includes everything from kitchen and bathroom to window cleaning and details. We use eco-friendly products and provide a 14-day cleaning guarantee so you can feel completely secure.",
+        "readMore": "Read more"
+      },
+      "bohagsflytt": {
+        "title": "Household Moving",
+        "description": "Professional move of your entire household. We take care of everything from small furniture to large pianos with care and precision.",
+        "descriptionExtended": "We offer packing and unpacking as well as assembly and disassembly of furniture - everything to make your move as simple and comfortable as possible. We use quality materials and have experience with all types of moves. With our service you get a stress-free move where everything is handled professionally.",
+        "readMore": "Read more"
+      },
+        "bortforsling": {
+          "title": "Waste Disposal",
+          "description": "Professional handling and transport of waste, furniture and household goods. We take care of everything from old furniture to construction waste with focus on eco-friendly handling.",
+          "descriptionMobile": "We help with sorting and eco-friendly handling of waste.",
+          "descriptionExtended": "Waste disposal is perfect for moving, renovation or when you need to free up space. Our experienced staff use the right equipment and ensure all waste is handled correctly and recycled. We can also help with sorting and documentation for a smooth process."
+        },
+        "utlandsflytt": {
+          "title": "International Moving",
+          "description": "Moving across borders – planning, packing and road transport.",
+          "readMore": "Read more",
+          "descriptionExtended": "We take care of export packing, documents and safe road transport. Clear communication from start to finish. We help with route planning and delivery windows for a smooth journey."
+        },
+      "allServices": {
+        "title": "Our services",
+        "description": "We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. From household moving and moving cleaning to special services like storage and waste disposal.",
+        "movingServices": "See all our moving services",
+        "cleaningServices": "See all our cleaning services"
+      }
+    },
+    "experience": {
+      "title": "Our experience",
+      "magasineradeBohag": "Stored household goods",
+      "magasineradeBohagCount": "3000+",
+      "magasineradeBohagDesc": "Assignments in Stockholm",
+      "moves": "Household moves",
+      "movesCount": "8000+",
+      "movesDesc": "Completed assignments",
+      "cleanings": "Moving cleanings",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Completed cleanings",
+      "localExperienceTitle": "Local experience in Stockholm",
+      "localExperienceDesc1": "We have helped thousands of customers with their storage in Stockholm and the surrounding area. Our local knowledge and experience ensures we can handle all types of storage, from small apartments to large corporate solutions.",
+      "localExperienceDesc2": "With over 8 years of experience, we have built a reputation for quality, reliability and customer satisfaction. We understand the local conditions and can offer tailored solutions for all needs.",
+      "readMore": "Read more"
+    },
+    "process": {
+      "title": "Our process for storage",
+      "description": "Our storage process is designed to be safe, professional and smooth. We follow strict security guidelines and ensure all household goods are handled correctly and stored safely.",
+      "pricingDescription": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as volume (cubic meters), storage time, accessibility and any options to give you a quote that fits your specific situation. We can also inspect the site if needed. All prices are fixed without hidden fees - we always base our work on your wishes and information we receive from you as a customer. Do you have special wishes or questions? Contact us and we'll adapt the quote to your needs.",
+      "howItWorks": "How our storage works",
+      "steps": [
+        {
+          "title": "Contact us",
+          "description": "Contact us for a free quote on storage"
+        },
+        {
+          "title": "Get quote",
+          "description": "Get a quick and free quote on your storage"
+        },
+        {
+          "title": "Confirmation",
+          "description": "Confirm booking and get all information"
+        },
+        {
+          "title": "Personal contact",
+          "description": "We contact you to confirm details and plan collection"
+        },
+        {
+          "title": "Collection & Packing",
+          "description": "We collect and pack your household goods safely"
+        },
+        {
+          "title": "Secure storage",
+          "description": "Your household goods are stored safely in our warehouses"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Read more about storage in Stockholm",
+      "subtitle": "Get valuable tips and advice for safe storage",
+      "category": "Storage",
+      "readTime": "5 min read",
+      "postTitle": "What should you think about before storage of household goods",
+      "postDescription": "Right planning makes storage simple and safe. We go through important steps - from preparation and packing to secure storage and return delivery.",
+      "readMore": "Read more",
+      "allArticles": "See all articles"
+    },
+    "faq": {
+      "title": "Common questions about storage",
+      "questions": [
+        {
+          "question": "How do I best prepare for storage?",
+          "answer": "Start by sorting your things into piles: what should be stored, what can be sold/donated and what should be kept. Remove all loose items and make sure we have access to the area. Make sure there's room for our vehicles and that we can access with equipment. Mark any particularly sensitive or valuable items clearly."
+        },
+        {
+          "question": "What is usually included in storage?",
+          "answer": "Storage means we help you store household goods safely for a period. We always use proper packing materials and follow security guidelines to handle everything safely."
+        },
+        {
+          "question": "How does security handling work during storage?",
+          "answer": "We follow strict security guidelines and use appropriate insurance and protection. For valuable items we offer extra insurance and documentation. We document all handling and ensure nothing is damaged during storage."
+        },
+        {
+          "question": "How long does storage take and what affects the time required?",
+          "answer": "The time required depends on several factors: volume of household goods, accessibility to the area, need for packing. How long storage takes depends entirely on the scope and your specific needs. We always adapt the work to the situation to provide smooth and safe handling."
+        },
+        {
+          "question": "Can you handle all types of household goods?",
+          "answer": "We handle most types of household goods including furniture, appliances, electronics and sensitive items. For particularly sensitive or valuable items we can offer extra protection and insurance."
+        }
+      ],
+      "moreQuestions": "Do you have more questions?",
+      "allFaq": "See all common questions"
+    },
+    "sidebar": {
+      "tunglyft": {
+        "title": "Heavy Lifting",
+        "description": "Safe handling of heavy and large-scale items such as pianos, safes and large furniture.",
+        "readMore": "Read more"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Assembly and disassembly of furniture and interior - right tools and careful handling.",
+        "readMore": "Read more"
+      },
+      "bortforsling": {
+        "title": "Waste Disposal",
+        "description": "Waste disposal and recycling of furniture, electronics and bulk waste - smooth and responsible.",
+        "readMore": "Read more"
+      }
+    }
+  },
+  "utlandsflytt": {
+    "hero": {
+      "title": "International Moving from Stockholm",
+      "subtitle": "International moving – secure planning, packing and transport",
+      "description": "We help you through the entire move – from planning and preparation to secure handling and delivery. Our goal is to make the process simple, safe and smooth for you. Fill out the form and get a quote in just one minute.",
+      "readMore": "Read more"
+    },
+    "content": {
+      "whatIsTitle": "What is international moving?",
+      "whatIsDescription": "International moving is the relocation of household goods across a national border, often between different regulations and languages. Compared to domestic moving, it requires longer lead times, more documentation and consideration of customs and import rules, insurance conditions, road and border controls as well as time differences and holidays in several countries. Typical steps include cleaning and inventory of household goods, long-distance adapted packing, creation of inventory lists and customs values, planning of routes and delivery windows as well as receiving control at the destination. Lead times are usually longer than for domestic moving and it is wise to plan with buffer for border crossings and unforeseen events.",
+      "pricingTitle": "What does international moving cost?",
+      "pricingDescription": "The price depends mainly on volume (cubic), destination, accessibility at the addresses (floor, elevator, carrying distance) and options such as packing, storage and assembly/disassembly. Distance, bridge and road fees as well as desired delivery windows also affect the total price. Pricing is usually done as a fixed price or variable price. Fixed price means a total sum for a clearly defined scope (volume, addresses, carrying distance, time windows) and does not change as long as the conditions match – predictable and easy to budget. Variable price is charged per time/volume or according to running billing based on actual effort and possible additions – flexible with uncertain scope, but the final cost may vary. In both cases, the price may include materials, working time, transport, insurance and sometimes customs-related costs. The cost can often be reduced by reducing the volume (cleaning), being flexible with dates and ensuring good accessibility/parking.",
+      "pricingTestimonial": "Safe and smooth international move – Flyttella had clear communication all the way.",
+      "testimonialAuthor": "Daniel",
+      "includesTitle": "What is included in international moving?",
+      "includesDescription": "Inventory and planning, loading with furniture protection, insurance, international road transport and unloading at destination. We coordinate carrying distance and delivery windows and do a simple receiving control. Options: packing of the entire home, storage, assembly/disassembly and moving cleaning before handover.",
+      "bookingTitle": "How do I book international moving?",
+      "bookingDescription": "Book via the form – specify address, volume and destination. You get a price directly and can confirm digitally. We contact you the same day or next business day to coordinate details, desired dates and any options. We offer package solutions for the best price.",
+      "checklistTitle": "Checklist for international moving",
+      "checklistItems": [
+        "Book moving company in good time: Ensure you get the date that suits you best.",
+        "Clean and sort: Go through your things and throw away, sell or donate what you don't need.",
+        "Order moving boxes: Borrow or buy enough boxes and packing materials.",
+        "Pack smart: Mark boxes with content and room. Pack heavy things in small boxes and light things in large ones. We also offer packing help as an option - contact us for more information.",
+        "Change address and notify important contacts: Report move to Tax Agency, insurance company, bank, electricity company and other suppliers.",
+        "Book moving cleaning: Make sure the home is properly cleaned before handover.",
+        "Take down curtains, lamps and shelves: Prepare as much as possible before moving day.",
+        "Pack a \"first night box\": Put in the most important: clothes, toiletries, chargers and important papers.",
+        "Double check everything on moving day: Check that nothing is left, that all windows and doors are locked and that keys are left according to agreement.",
+        "Passport, visa and residence permit: Ensure validity and right certificates for everyone in the household.",
+        "Inventory list and customs values: List household goods and prepare customs values according to destination country's requirements.",
+        "Import rules: Check what can be brought in (e.g. food, plants, batteries) and if permits are required.",
+        "International insurance: Make sure the insurance covers long-distance road transport and the entire moving chain.",
+        "Parking and carrying distance: Arrange loading zone/permit and elevator booking at both addresses.",
+        "Pets: Check veterinary certificates, vaccinations and import requirements."
+      ]
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is a moving and cleaning company in Stockholm with expertise in international moving. For over eight years, we have helped customers move between countries – with clear steps, secure planning and the same high quality as a local move. Our goal is to make international moves simple, predictable and transparent.",
+      "description2": "We handle packing, insurance and road transport. We coordinate the entire door-to-door chain with clear timelines and updates. With fixed terms and clear prices, you always know what's included – regardless of destination.",
+      "description3": "You get quick quotes and ongoing updates on schedule and delivery. If you need storage, assembly/disassembly or moving cleaning before handover, we arrange that too. The goal is a smooth international move where you can feel secure throughout the process.",
+      "mobileDescription": "Flyttella is a moving and cleaning company in Stockholm with long experience in international moving – clear steps, secure planning and personal contact.",
+      "mobileDescription2": "We help with packing, customs and import documents, insurance and international road transport – everything coordinated by us. Fixed terms and transparent pricing ensure you know exactly what's included.",
+      "mobileDescription3": "You get quick quotes and ongoing updates on schedule and delivery. If you need storage, assembly/disassembly or moving cleaning before handover, we solve that too.",
+      "readMore": "Read more",
+      "readMoreAbout": "Read more about us"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "Reliable international moving in Stockholm",
+      "description": "As one of Sweden's most recommended moving companies for international moving, we put the customer in focus. We know that moving across borders can be extra demanding – with documents, schedules and road transport – so we make the process as smooth and safe as possible. With long experience in international moves and a dedicated team, we ensure that your international move becomes a positive experience from start to finish.",
+      "arrowText": "Read what our customers say about our international moving"
+    },
+    "cta": {
+      "title": "Ready to start your international move?",
+      "subtitle": "Get a quick and free quote",
+      "button": "Get free quote"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures that your old home is left in perfect condition.",
+        "descriptionExtended": "Our moving cleaning follows established industry standards and includes everything from kitchen and bathroom to window cleaning and details. We use environmentally friendly products and provide a 14-day cleaning guarantee so you can feel completely secure.",
+        "readMore": "Read more"
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your belongings. We offer flexible solutions for shorter and longer storage with secure handling.",
+        "descriptionExtended": "Do you need to store household goods during the moving process? We provide secure and reliable storage solutions for your belongings. We offer flexible options that suit your needs and schedule – and can also help with pickup and redelivery.",
+        "readMore": "Read more"
+      },
+      "packhjälp": {
+        "title": "Packing Help",
+        "description": "Professional packing help for a stress-free move. We help you pack your belongings safely and organized.",
+        "descriptionMobile": "We help with marking and organization for easier unpacking.",
+        "descriptionExtended": "Packing is often the most time-consuming part of a move. Our experienced movers use quality packing materials and ensure everything is packed correctly for transport.",
+        "readMore": "Read more"
+      },
+      "allServices": {
+        "title": "Our services",
+        "description": "We offer a complete range of moving and cleaning services – everything you need for a smooth move.",
+        "movingServices": "See all our moving services",
+        "cleaningServices": "See all our cleaning services"
+      }
+    },
+    "experience": {
+      "title": "Our experience",
+      "utlandsflyttar": "International moves",
+      "utlandsflyttarCount": "1500+",
+      "utlandsflyttarDesc": "Completed assignments",
+      "bohagsflyttar": "Household moves",
+      "bohagsflyttarCount": "8000+",
+      "bohagsflyttarDesc": "Completed assignments",
+      "länder": "Countries",
+      "länderCount": "25+",
+      "länderDesc": "We have moved to",
+      "localExperienceTitle": "Experience gives results",
+      "localExperienceDesc1": "With hundreds of international moves behind us, we know what's needed for a safe journey across borders. We work methodically with planning, export packing and documents – and keep you updated from pickup to delivery. The result is a smoother move and satisfied customers.",
+      "localExperienceDesc2": "Our routine is based on clear timelines, control at loading and delivery as well as transparent communication throughout the transport. This allows you to plan in peace and quiet, while we take responsibility for the details."
+    },
+    "tips": {
+      "title": "Tips for your move",
+      "innan": "Before the move",
+      "under": "During the move",
+      "efter": "After the move",
+      "planera": "Plan and prepare",
+      "avtal": "Contracts and notifications",
+      "innanFlyttfirma": "Before the moving company arrives",
+      "packtips": "Packing tips",
+      "smidigFlyttdag": "A smooth moving day",
+      "kommunikation": "Communication and coordination",
+      "startNyaHemmet": "Start in new home",
+      "dokumentation": "Documentation and follow-up",
+      "tipCards": {
+        "planera": {
+          "title": "Plan and prepare",
+          "items": [
+            "Make a checklist.",
+            "Clean out unnecessary things.",
+            "Book moving company and cleaning.",
+            "Order moving boxes."
+          ]
+        },
+        "avtal": {
+          "title": "Contracts and notifications",
+          "items": [
+            "Change address with the Tax Agency.",
+            "Transfer electricity, broadband, etc.",
+            "Sign new contracts.",
+            "Notify important contacts."
+          ]
+        },
+        "innanFlyttfirma": {
+          "title": "Before the moving company arrives",
+          "items": [
+            "Pack all loose items in boxes",
+            "Take down all curtains",
+            "Take down all lamps",
+            "Double-check packing and labeling."
+          ]
+        },
+        "packtips": {
+          "title": "Packing tips",
+          "items": [
+            "Mark all boxes clearly.",
+            "Keep keys accessible.",
+            "Don't overload moving boxes.",
+            "Use tissue paper for delicate items and porcelain."
+          ]
+        },
+        "smidigFlyttdag": {
+          "title": "A smooth moving day",
+          "items": [
+            "Keep valuables accessible.",
+            "Ensure free passage for moving help.",
+            "Do a final check of the home after loading and after unloading in both homes to ensure nothing is forgotten.",
+            "Make sure to dismantle or pack forgotten items."
+          ]
+        },
+        "kommunikation": {
+          "title": "Communication and coordination",
+          "items": [
+            "Stay in contact with the move leader.",
+            "Photograph any damage.",
+            "Check that everything is loaded correctly.",
+            "Follow to the new address.",
+            "Be clear with special requests.",
+            "Be available for questions."
+          ]
+        },
+        "startNyaHemmet": {
+          "title": "Start in new home",
+          "items": [
+            "Check the moving cleaning.",
+            "Unpack the most important first.",
+            "Check that all items have arrived.",
+            "Mount curtains and lamps.",
+            "Update address with authorities.",
+            "Test all appliances and outlets.",
+            "Remove empty boxes and packaging."
+          ]
+        },
+        "dokumentation": {
+          "title": "Documentation and follow-up",
+          "items": [
+            "Contact the moving company for feedback.",
+            "Write a review of the service.",
+            "Organize moving receipts and documents.",
+            "Celebrate your new home with family and friends.",
+            "Update insurance for the new home."
+          ]
+        }
+      }
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Assembly",
+        "description": "Safe assembly and disassembly of furniture and appliances before packing and delivery.",
+        "readMore": "Read more"
+      },
+      "packning": {
+        "title": "Packing",
+        "description": "Packing with the right materials and marking for safe transport across borders.",
+        "readMore": "Read more"
+      },
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "Final moving cleaning according to checklist – ready for inspection and handover.",
+        "readMore": "Read more"
+      }
+    },
+    "process": {
+      "title": "Our process for international moving",
+      "description": "Our international moving process is designed to be safe, professional and smooth. We follow strict guidelines to ensure all household goods are handled correctly and transported safely.",
+      "pricing": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as volume (cubic), destination, accessibility and any options to give you a quote that fits your exact situation. We can also inspect the site if needed. All prices are fixed without hidden fees - we always base our quotes on your wishes and information we receive from you as a customer. Do you have special requests or questions? Contact us and we'll adapt the quote to your needs.",
+      "subtitle": "How our international moving works",
+      "steps": [
+        {
+          "title": "Contact us",
+          "description": "Contact us for a free quote on international moving"
+        },
+        {
+          "title": "Get quote",
+          "description": "Get a quick and free quote on your international move"
+        },
+        {
+          "title": "Personal contact",
+          "description": "We contact you to confirm details and plan the move"
+        },
+        {
+          "title": "Confirmation",
+          "description": "Confirm booking and get all information"
+        },
+        {
+          "title": "Packing & Transport",
+          "description": "We pack and transport your household goods safely"
+        },
+        {
+          "title": "Satisfied customer",
+          "description": "Safe delivery - you are satisfied!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Read more about international moving",
+      "subtitle": "Advice on documents, packing and delivery – so the move across borders becomes easier.",
+      "category": "International Moving",
+      "readTime": "4 min reading",
+      "postTitle": "Checklist: International moving step by step",
+      "postDescription": "Documents, packing and delivery – a clear order that saves time and reduces stress.",
+      "readMore": "Read more",
+      "allArticles": "See all articles about moving and cleaning"
+    },
+    "faq": {
+      "title": "Frequently asked questions about international moving",
+      "questions": [
+        {
+          "question": "Is packing included?",
+          "answer": "Packing is not included as standard but can be booked as packing where we use approved materials and clear marking for long transport."
+        },
+        {
+          "question": "Do you help with customs?",
+          "answer": "Yes, we help with customs documents, import procedures and advice on what applies for your destination country."
+        },
+        {
+          "question": "Can you store items?",
+          "answer": "Absolutely – we offer both short- and long-term storage that can be combined with an international move. If the moving dates don't coincide, or if you temporarily need to store your household goods, we ensure that everything is stored safely in our dry, ventilated and alarmed facilities. This way you can feel secure that your belongings are in good storage until it's time for transport further to your new address abroad. We adapt the solution completely to your needs and ensure that the process becomes smooth from start to finish."
+        },
+        {
+          "question": "How do I book?",
+          "answer": "Fill out the form and you'll get a price directly in just one minute and can easily confirm digitally. Then we review details together such as scope, dates and any options, so that everything is planned in the best possible way for a smooth move."
+        }
+      ]
+    }
+  },
+  "montering": {
+    "hero": {
+      "title": "Assembly in Stockholm",
+      "subtitle": "Professional assembly and disassembly of furniture and belongings",
+      "description": "We assemble and disassemble – quickly and professionally. Careful handling and precision in every detail.",
+      "cta": {
+        "title": "Contact us for a quote",
+        "description": "Tell us briefly what you need help with and we'll get back to you quickly with price and time. We can also inspect on site if needed.",
+        "button": "Contact us"
+      },
+      "readMore": "Read more"
+    },
+    "content": {
+      "whatIsTitle": "What is assembly?",
+      "whatIsDescription": "Assembly means that we assemble and disassemble furniture and furnishings with precision and care. We use the right tools and techniques to ensure everything works perfectly. The service is suitable for moving, renovation or when you need help with complete furniture.",
+      "pricingTitle": "What does assembly cost?",
+      "pricingDescription": "The price for assembly depends mainly on the type of furniture, complexity and how far the transport is. We always provide a clear fixed price without hidden fees before we start the work. If needed, we can do a quick on-site inspection or assess based on pictures.",
+      "pricingTestimonial": "I got help with assembly and disassembly and everything worked great. The work went quickly and smoothly and they were thorough all the way. Very satisfied with the result!",
+      "testimonialAuthor": "Emma",
+      "includesTitle": "What is included in the service?",
+      "includesDescription": "Our assembly includes professional tools and equipment, carrying assistance with experienced staff, safe handling of all furniture types, and quality control after assembly. We handle everything from simpler furniture to more complex furnishings. All at clear, fixed prices without hidden fees.",
+      "bookingTitle": "How do I book assembly?",
+      "bookingDescription": "Book assembly easily by contacting us. We offer fast service and flexible times that suit you. For a faster quote, please provide address, type of furniture (e.g. kitchen furniture, wardrobes, beds), and desired date and time. You can also attach pictures in the message so we can assess the scope directly. We'll get back to you quickly with price and confirmation. If needed, we can also do a short on-site inspection before assembly."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is a moving and cleaning company based in Stockholm founded with the goal of making moves, cleaning services and assembly easier, safer and more transparent. We have been a company for 5 years, but have over 8 years of experience in the industry – something that is reflected in our approach, quality and satisfied customers.",
+      "description2": "So far we have had the pleasure of helping over 8000 customers, both private individuals and companies, with everything from small moves to complete solutions with cleaning, packing, assembly and advice. What makes us unique is our focus on clear terms and fixed prices – with us you always know what's included and what it costs.",
+      "description3": "We offer professional assembly of all types of furniture, free rebooking and cancellation up to 24 hours in advance. Behind all this is our competent and personal customer service, which is always available to answer questions, give tips and help you make the right decision.",
+      "mobileDescription": "Flyttella is a moving and cleaning company based in Stockholm founded with the goal of making moves, cleaning services and assembly easier, safer and more transparent. We have been a company for 5 years, but have over 8 years of experience in the industry – something that is reflected in our approach, quality and satisfied customers.",
+      "mobileDescription2": "So far we have had the pleasure of helping over 8000 customers, both private individuals and companies, with everything from small moves to complete solutions with cleaning, packing, assembly and advice. What makes us unique is our focus on clear terms and fixed prices – with us you always know what's included and what it costs.",
+      "mobileDescription3": "We offer professional assembly of all types of furniture, free rebooking and cancellation up to 24 hours in advance, and a generous 14-day guarantee on all our services. Behind all this is our competent and personal customer service, which is always available to answer questions, give tips and help you make the right decision.",
+      "readMore": "Read more",
+      "readMoreAbout": "Read more about us"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "Professional and reliable assembly",
+      "description": "We have helped thousands of customers with safe and professional assembly and disassembly of furniture and furnishings. Our customers appreciate our careful handling, fast service and transparent prices. At Flyttella you get professional assembly with focus on quality and customer satisfaction.",
+      "arrowText": "Read what our customers say about our assembly"
+    },
+    "cta": {
+      "title": "Ready to book your assembly?",
+      "subtitle": "Get a quick and free quote for your assembly",
+      "button": "Contact us"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Moving cleaning",
+        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures that your old home is left in perfect condition.",
+        "descriptionExtended": "Our moving cleaning follows established industry standards and covers everything from kitchen and bathroom to window cleaning and details. We use environmentally friendly products and provide a 14-day cleaning guarantee so you can feel completely safe.",
+        "readMore": "Read more"
+      },
+      "bohagsflytt": {
+        "title": "Household moving",
+        "description": "Professional move of your entire household. We take care of everything from small furniture to large pianos with care and precision.",
+        "descriptionExtended": "We offer packing and unpacking as well as assembly and disassembly of furniture – everything to make your move as simple and comfortable as possible. We use quality materials and have experience with all types of moves. With our service you get a stress-free move where everything is handled professionally.",
+        "readMore": "Read more"
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Safe storage of your belongings in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "descriptionMobile": "We help with labeling and organization for easier retrieval.",
+        "descriptionExtended": "Storage is perfect for moving, renovation or longer stays abroad. Our experienced staff use quality packing materials and ensure that everything is packed correctly for long-term storage. We also help with smooth retrieval.",
+        "readMore": "Read more"
+      },
+      "allServices": {
+        "title": "Our services",
+        "description": "Explore our complete range of moving and cleaning services",
+        "movingServices": "See all our moving services",
+        "cleaningServices": "See all our cleaning services"
+      }
+    },
+    "experience": {
+      "title": "Our experience",
+      "localExperience": "Local experience in Stockholm",
+      "localExperienceDescription": "We have helped thousands of customers with their assembly in Stockholm and the surrounding area. Our local knowledge and experience ensures that we can handle all types of assembly, from simple furniture to complex furnishings.",
+      "experienceDescription": "With over 8 years of experience, we have built a reputation for quality, reliability and customer satisfaction. We understand the local conditions and can offer tailored solutions for all needs.",
+      "readMore": "Read more",
+      "cards": [
+        { "title": "Assemblies", "count": "3000+", "description": "Completed assemblies" },
+        { "title": "Moves", "count": "8000+", "description": "Completed moves" },
+        { "title": "Cleanings", "count": "7000+", "description": "Completed cleanings" }
+      ]
+    },
+    "process": {
+      "title": "Our assembly process",
+      "description": "Our assembly process is designed to be simple, safe and professional. We follow strict guidelines to ensure that all assembly is performed correctly and with the highest quality.",
+      "pricingInfo": "Our quotes are always based on your specific needs and circumstances. We consider factors such as type of assembly, complexity, accessibility and materials to give you a quote that fits your situation. We can also inspect the site if needed. Our prices are without any hidden fees - we always base on your wishes and information we get from you as a customer. Do you have special wishes or questions? Contact us and we'll adapt the quote to your needs.",
+      "stepsTitle": "How our assembly works",
+      "steps": [
+        {
+          "title": "Contact us",
+          "description": "Contact us for a free quote on assembly"
+        },
+        {
+          "title": "Get quote",
+          "description": "Get a quick and free quote for your assembly"
+        },
+        {
+          "title": "Confirmation",
+          "description": "Confirm booking and get all information"
+        },
+        {
+          "title": "Personal contact",
+          "description": "We contact you to confirm details and plan assembly"
+        },
+        {
+          "title": "Assembly & Installation",
+          "description": "We assemble and install according to your wishes"
+        },
+        {
+          "title": "Satisfied customer",
+          "description": "Perfectly assembled - you're satisfied!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Read more about assembly in Stockholm",
+      "subtitle": "Get valuable tips and advice for a smooth assembly",
+      "post": {
+        "category": "Assembly",
+        "readTime": "5 min read",
+        "title": "What should you think about before assembly of furniture and furnishings",
+        "description": "Right planning makes assembly easy and safe. We go through important steps - from preparations and tools to professional handling and safe installation.",
+        "readMore": "Read more"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions about assembly",
+      "moreQuestions": "Do you have more questions?",
+      "allFaq": "See all frequently asked questions",
+      "questions": [
+        {
+          "id": "montering-1",
+          "question": "How do I best prepare for assembly?",
+          "answer": "Start by clearing the area where the assembly should take place. Make sure all parts and instructions are available. Check that there is enough space to work. If you have special wishes or preferences, write them down so we can follow them."
+        },
+        {
+          "id": "montering-2",
+          "question": "What is usually included in an assembly?",
+          "answer": "An assembly usually includes assembly of furniture, installation of hardware and possible adjustment. We follow the instructions carefully and make sure everything is secure and works as it should. We can also offer additional services such as moving furniture or cleaning."
+        },
+        {
+          "id": "montering-3",
+          "question": "How does quality control work for assembly?",
+          "answer": "We check every step in the assembly process to ensure everything is correctly assembled. We test functionality and adjust if needed. We document all work and give you a walkthrough of the finished result."
+        },
+        {
+          "id": "montering-4",
+          "question": "How long does an assembly take and what affects the time?",
+          "answer": "The time depends on several factors: the complexity of the furniture, the number of furniture, accessibility to the area and any special requirements. A normal assembly usually takes a few hours, but larger projects can take a whole day."
+        },
+        {
+          "id": "montering-5",
+          "question": "Can you handle all types of assembly tasks?",
+          "answer": "We handle most types of assembly tasks including IKEA furniture, kitchen fittings, wardrobes and special furniture. We have experience with both simple and complex assembly tasks. For particularly sensitive or valuable furniture, we can offer extra care and precision."
+        }
+      ]
+    },
+    "sidebar": {
+      "reviews": {
+        "title": "Flyttella reviews"
+      },
+      "services": {
+        "magasinering": {
+          "title": "Storage",
+          "description": "Safe storage of your belongings in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+          "readMore": "Read more"
+        },
+        "bortforsling": {
+          "title": "Removal",
+          "description": "Professional removal of furniture, appliances and bulk waste. Environmentally friendly handling and recycling.",
+          "readMore": "Read more"
+        },
+        "tunglyft": {
+          "title": "Heavy lifting",
+          "description": "Safe handling of heavy and large-scale items such as pianos, safes and large furniture.",
+          "readMore": "Read more"
+        }
+      }
+    }
+  },
+  "bohagsflytt": {
+    "hero": {
+      "title": "Household Moving",
+      "subtitle": "Complete moving service for the entire household. We help you with everything from planning and packing to transport and unpacking.",
+      "description": "Professional household moving that makes your move as smooth as possible. With us, you can be confident about your belongings and your wallet."
+    },
+    "content": {
+      "whatIsTitle": "What is household moving?",
+      "whatIsDescription": "Household moving involves moving all or parts of a household's belongings from one residence to another. It includes everything from planning, packing and transport to unpacking and possible storage.",
+      "whyChooseTitle": "Why choose us for your household move?",
+      "whyChooseDescription": "We have over 15 years of experience with household moves in Stockholm and have helped thousands of customers with their moves. Our team of professional movers ensures that your move becomes as smooth and secure as possible.",
+      "imageAlt": "Moving feeling",
+      "pricingTitle": "What does a household move cost?",
+      "pricingDescription": "The price of a household move varies depending on factors such as the amount of belongings, the distance between addresses, floor level, access to elevator and any additional services such as packing or storage. A normal move within the same city can cost from about 1,700 SEK and up. To get an exact price, we recommend that you request a free quote tailored to your needs.",
+      "testimonial": "Everything went smoothly and safely from first contact until everything was in place. Highly recommend Flyttella to everyone who wants a worry-free move!",
+      "bohag2010Title": "What is household moving 2010?",
+      "bohag2010Description": "Household moving 2010 refers to the rules and guidelines established in \"Bohag 2010\" – an agreement developed by Sweden's Haulage Companies and Swedish Furniture Transporters' Association. The agreement regulates the responsibility between moving companies and customers in household moving, and ensures that the move takes place in a safe and professional manner. It includes among other things insurance, handling of belongings, complaints and payment terms. When you hire a moving company that follows Bohag 2010, you can feel extra secure throughout the entire moving process.",
+      "boxesTitle": "Moving Boxes",
+      "boxesDescription": "Moving boxes are an important part of a smooth and safe household move. With the right boxes, packing becomes easier and your things are better protected during transport. We offer stable and spacious moving boxes that are adapted for different types of items – from books and porcelain to clothes and electronics. With us, you can borrow moving boxes free of charge for up to 4 weeks when you book your move, which makes the entire process both easier and more cost-effective.",
+      "packingTipsAlt": "Packing tips",
+      "bookingTitle": "Book moving help in good time",
+      "bookingDescription": "For a smooth and stress-free move, it's important to book moving help in good time. We recommend that you book at least 2-3 weeks in advance to ensure availability and get the moving day that suits you best. We offer flexible booking options and can adapt to your needs. Book today to ensure a professional and reliable moving service.",
+      "checklistTitle": "Moving checklist",
+      "services": {
+        "planning": {
+          "title": "Move Planning",
+          "description": "We help you plan your move from start to finish."
+        },
+        "packing": {
+          "title": "Packing",
+          "description": "Professional packing with the right materials to protect your belongings."
+        },
+        "transport": {
+          "title": "Transport",
+          "description": "Safe transport with modern vehicles and experienced drivers."
+        },
+        "unpacking": {
+          "title": "Unpacking",
+          "description": "We help you unpack and set up your furniture at the new address."
+        }
+      }
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description": "Flyttella is a moving and cleaning company based in Stockholm that was founded with the goal of making moves and cleaning services easier, safer and more transparent. We have been in business for 5 years as a company, but have over 8 years of experience in the industry – something that is reflected in our working methods, our quality and our satisfied customers.",
+      "experience": "So far we have had the pleasure of helping over 8000 customers, both individuals and companies, with everything from small moves to complete solutions with cleaning, packing and advice. What makes us unique is our focus on clear terms and fixed prices – with us you always know what's included and what it costs.",
+      "quality": "We offer free loan of moving boxes, free rebooking and cancellation up to 24 hours before, as well as a generous 14-day guarantee on all moving cleaning. Behind all this stands our competent and personal customer service, which is always available to answer questions, give tips and help you make the right decision.",
+      "customerFocus": "The customer is always at the center. We listen to your wishes and needs, and adapt our service accordingly. Whether you're moving within the same city or to a new location, we're here to help you.",
+      "readMore": "Read more about us",
+      "imageAlt": "About Flyttella"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "description": "Our customers are satisfied with our service. Here are some examples of what they say about us:",
+      "arrowText": "We have helped thousands of customers with moves, cleaning and household moving over the years. Our customers appreciate our professional service, punctuality and care.",
+      "cta": "Read more reviews"
+    },
+    "cta": {
+      "title": "Ready to start your move?",
+      "subtitle": "Get a free quote on your household move today",
+      "button": "Get free quote"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures that your old home is left in perfect condition.",
+        "readMore": "Read more"
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Safe storage of your belongings. We offer flexible solutions for shorter and longer storage with secure handling.",
+        "readMore": "Read more"
+      },
+      "packhjalp": {
+        "title": "Packing Help",
+        "description": "Professional packing help for a stress-free move. We help you pack your belongings safely and organized.",
+        "readMore": "Read more"
+      }
+    },
+    "experience": {
+      "title": "Our Experience",
+      "description": "With over 15 years of experience with household moves in Stockholm, we have helped thousands of customers with their moving needs.",
+      "stats": {
+        "flyttar": {
+          "count": "8000+",
+          "description": "Completed moves"
+        },
+        "stadningar": {
+          "count": "7000+",
+          "description": "Completed cleanings"
+        },
+        "manadsvis": {
+          "count": "500+",
+          "description": "Satisfied customers"
+        }
+      }
+    },
+    "process": {
+      "title": "How it works",
+      "description": "We make the moving process simple and smooth for you.",
+      "pricing": "Fixed price - no hidden costs",
+      "steps": {
+        "1": {
+          "title": "Fill out the form",
+          "description": "Tell us what you need help with and when you want us to come."
+        },
+        "2": {
+          "title": "Quick response",
+          "description": "We respond within a minute with a free quote."
+        },
+        "3": {
+          "title": "Confirm booking",
+          "description": "Approve the quote and we book your move immediately."
+        },
+        "4": {
+          "title": "Professional move",
+          "description": "Our experienced movers come and help you with the entire move."
+        },
+        "5": {
+          "title": "Ready and satisfied",
+          "description": "We clean up after ourselves and you can enjoy your new home."
+        }
+      }
+    },
+    "blog": {
+      "title": "Latest from our blog",
+      "readMore": "Read more"
+    },
+    "faq": {
+      "title": "Frequently asked questions about household moving",
+      "questions": [
+        {
+          "id": "bohagsflytt-1",
+          "question": "What is included in a household move?",
+          "answer": "A household move includes everything from planning and packing to transport and unpacking. We help you inventory your belongings, pack safely with the right materials, transport everything to your new address and help you unpack and set up the furniture."
+        },
+        {
+          "id": "bohagsflytt-2",
+          "question": "How far in advance should I book?",
+          "answer": "We recommend that you book at least 2-3 weeks in advance, especially during peak season (May-September). For smaller moves, we can often help you even with shorter notice, but it depends on our availability."
+        },
+        {
+          "id": "bohagsflytt-3",
+          "question": "What does a household move cost?",
+          "answer": "The cost of a household move depends on several factors such as distance, volume, number of movers and any additional services. We always give you a fixed price without hidden costs when we make the quote."
+        },
+        {
+          "id": "bohagsflytt-4",
+          "question": "Do you have insurance?",
+          "answer": "Yes, we have full insurance that covers damage that may occur during the move. If something breaks due to our handling, we replace it. It's also important to note that we follow industry standards to minimize the risk of damage."
+        },
+        {
+          "id": "bohagsflytt-5",
+          "question": "Can you help with packing?",
+          "answer": "Yes, we offer complete packing help that includes packing, transport and unpacking. We have all the necessary materials and can help you with the entire process from start to finish."
+        }
+      ]
+    },
+    "sidebar": {
+      "reco": {
+        "title": "Recommended",
+        "description": "Other customers have also chosen these services"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Professional assembly of furniture and items"
+      },
+      "tunglyft": {
+        "title": "Heavy Lifting",
+        "description": "Safe handling of heavy items"
+      },
+      "barhjalp": {
+        "title": "Carrying Help",
+        "description": "Help with carrying and moving items"
+      },
+      "bortforsling": {
+        "title": "Removal",
+        "description": "Environmentally friendly handling of things you don't need"
+      }
     }
   }
 } 
