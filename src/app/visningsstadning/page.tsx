@@ -376,7 +376,7 @@ export default function VisningsstadningPage() {
                   {
                     title: 'Hur bokar jag visningsstädning?',
                     content:
-                      'Boka på en minut via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och tid och lägg till eventuella tillval som fönsterputs. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta och tidplan inför fotografering och visning. Därefter bekräftar vi starttid – enkelt och tryggt. Du kan justera bokningen via vår kundtjänst. RUT‑avdraget (50% på arbetskostnaden) sköts automatiskt. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
+                      'Boka på en minut via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och tid och lägg till eventuella tillval som fönsterputs. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta och tidsplan inför fotografering och visning. Därefter bekräftar vi starttid – enkelt och tryggt. Du kan justera bokningen via vår kundtjänst. RUT‑avdraget (50% på arbetskostnaden) sköts automatiskt. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
                     icon: '📅'
                   }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
@@ -988,7 +988,7 @@ export default function VisningsstadningPage() {
                   { '@type': 'Question', name: 'Vad är visningsstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Visningsstädning är en noggrann städning anpassad för fotografering och visning, med fokus på ytor som skapar ett starkt första intryck.' } },
                   { '@type': 'Question', name: 'Vad kostar visningsstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Priset beror på boyta och önskade tillägg. Med RUT‑avdrag blir visningsstädning prisvärt.' } },
                   { '@type': 'Question', name: 'Ingår fönsterputs?', acceptedAnswer: { '@type': 'Answer', text: 'Fönsterputs kan läggas till som tillval för bästa helhetsintryck.' } },
-                  { '@type': 'Question', name: 'Kan ni samordna med mäklare?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, vi kan anpassa tidplanen och samordna vid behov.' } }
+                  { '@type': 'Question', name: 'Kan ni samordna med mäklare?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, vi kan anpassa tidsplanen och samordna vid behov.' } }
                 ]
               })
             }}

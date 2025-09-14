@@ -610,7 +610,7 @@
     "hero": {
       "title": "Professionell hemstädning i Stockholm",
       "subtitle": "Regelbunden städning anpassad efter dina behov",
-      "description": "Vi levererar trygg och noggrann hemstädning med RUT-avdrag och städgaranti. Offert på 1 minut."
+      "description": "Vi levererar trygg och noggrann hemstädning med RUT-avdrag. Begär en offert snabbt och enkelt."
     }
   },
   "barhjalp": {
@@ -1334,11 +1334,11 @@
     "about": {
       "title": "Om Flyttella",
       "description1": "Flyttella är en flytt- och städfirma i Stockholm med spetskompetens inom utlandsflytt. I över åtta år har vi hjälpt kunder att flytta mellan länder – med tydliga steg, trygg planering och samma höga kvalitet som vid en lokal flytt. Vårt mål är att göra internationella flyttar enkla, förutsägbara och transparenta.",
-      "description2": "Vi hanterar packning, försäkring och vägtransport. Vi koordinerar hela kedjan dörr‑till‑dörr med tydliga tidplaner och uppdateringar. Med fasta villkor och tydliga priser vet du alltid vad som ingår – oavsett destination.",
-      "description3": "Du får snabb offert och löpande uppdateringar om tidplan och leverans. Behöver du magasinering, montering/demontering eller flyttstädning inför överlämning ordnar vi det också. Målet är en smidig utlandsflytt där du kan känna dig trygg genom hela processen.",
+      "description2": "Vi hanterar packning, försäkring och vägtransport. Vi koordinerar hela kedjan dörr‑till‑dörr med tydliga tidsplaner och uppdateringar. Med fasta villkor och tydliga priser vet du alltid vad som ingår – oavsett destination.",
+      "description3": "Du får snabb offert och löpande uppdateringar om tidsplan och leverans. Behöver du magasinering, montering/demontering eller flyttstädning inför överlämning ordnar vi det också. Målet är en smidig utlandsflytt där du kan känna dig trygg genom hela processen.",
       "mobileDescription": "Flyttella är en flytt- och städfirma i Stockholm med lång erfarenhet av utlandsflytt – tydliga steg, trygg planering och personlig kontakt.",
       "mobileDescription2": "Vi hjälper till med packning, tull- och importdokument, försäkring och internationell vägtransport – allt samordnat av oss. Fasta villkor och transparent pris gör att du vet exakt vad som ingår.",
-      "mobileDescription3": "Du får snabb offert och löpande uppdateringar om tidplan och leverans. Behöver du magasinering, montering/demontering eller flyttstädning inför överlämning löser vi det också.",
+      "mobileDescription3": "Du får snabb offert och löpande uppdateringar om tidsplan och leverans. Behöver du magasinering, montering/demontering eller flyttstädning inför överlämning löser vi det också.",
       "readMore": "Läs mer",
       "readMoreAbout": "Läs mer om oss"
     },
@@ -1394,7 +1394,7 @@
       "länderDesc": "Vi har flyttat till",
       "localExperienceTitle": "Erfarenhet ger resultat",
       "localExperienceDesc1": "Med hundratals utlandsflyttar bakom oss vet vi vad som krävs för en trygg resa över gränserna. Vi arbetar metodiskt med planering, exportpackning och dokument – och håller dig uppdaterad från hämtning till leverans. Resultatet är en smidigare flytt och nöjda kunder.",
-      "localExperienceDesc2": "Vår rutin bygger på tydliga tidplaner, kontroll vid lastning och leverans samt transparent kommunikation under hela transporten. Det gör att du kan planera i lugn och ro, medan vi tar ansvar för detaljerna."
+      "localExperienceDesc2": "Vår rutin bygger på tydliga tidsplaner, kontroll vid lastning och leverans samt transparent kommunikation under hela transporten. Det gör att du kan planera i lugn och ro, medan vi tar ansvar för detaljerna."
     },
     "tips": {
       "title": "Tips för din flytt",

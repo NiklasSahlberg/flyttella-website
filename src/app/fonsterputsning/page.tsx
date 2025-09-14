@@ -301,11 +301,11 @@ export default function FonsterputsningPage() {
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Priset beror på antal fönster, våningsplan, åtkomlighet och om utvändig puts önskas. Med 50% RUT‑avdrag blir fönsterputsning prisvärd. Tillval som spröjs, svåråtkomliga fönster eller inglasade balkonger påverkar priset. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter. Begär en kostnadsfri offert – du får pris på 1 minut.
+                          Priset beror på antal fönster, våningsplan, åtkomlighet och om utvändig puts önskas. Med 50% RUT‑avdrag blir fönsterputsning prisvärd. Tillval som spröjs, svåråtkomliga fönster eller inglasade balkonger påverkar priset. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter. Begär en kostnadsfri offert – du får ett prisförslag snabbt och enkelt.
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-                            "Kristallklara fönster som verkligen lyfte hela hemmet inför visningen. Snabbt, proffsigt och prisvärt!"
+                            "Skinande fönster som verkligen lyfte hela hemmet inför visningen. Väldigt nöjd med resultatet!"
                           </p>
                           <p className="italic text-gray-700 mt-2">- Sofia</p>
                         </div>
@@ -328,7 +328,7 @@ export default function FonsterputsningPage() {
                     ),
                     content: (
                       <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">
-                        Boka fönsterputsning på en minut: fyll i formuläret, få pris direkt och bekräfta digitalt. Vi återkommer samma dag eller nästkommande vardag för att säkerställa detaljer om antal fönster, åtkomlighet och eventuella tillval. Därefter planerar vi ett passande datum och levererar ett randfritt resultat som lyfter hela hemmet.
+                        Boka fönsterputsning enkelt: fyll i formuläret, få pris direkt och bekräfta digitalt. Vi återkommer samma dag eller nästkommande vardag för att säkerställa detaljer om antal fönster, åtkomlighet och eventuella tillval. Därefter planerar vi ett passande datum och levererar ett randfritt resultat som lyfter hela hemmet.
                       </p>
                     ),
                     icon: '📅'
@@ -449,7 +449,7 @@ export default function FonsterputsningPage() {
                   </div>
                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Grundlig flyttstädning enligt branschstandard – fast pris, garanti och RUT.</p>
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                    Vi städar enligt en komplett checklista: alla rum, kök (inklusive skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du lägga till fönsterputs, balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.
+                    Vi städar enligt en komplett checklista: alla rum, fönsterputsning av alla fönster, kök (inklusive skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du lägga till balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.
                   </p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
@@ -483,7 +483,7 @@ export default function FonsterputsningPage() {
                     <span className="text-4xl md:text-6xl">🏠✨</span>
                     <h3 className="text-3xl md:text-5xl font-bold text-white">Visningsstädning</h3>
                   </div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Städning anpassad för foto och visning – fokus på första intrycket.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Städning anpassad för fotografering och visning – fokus på första intrycket.</p>
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
                     Fokus på att lyfta helhetsintrycket: skinande kök och badrum, polerade ytor och speglar, prydligt arrangerade detaljer och doftneutralt resultat. Vi följer en visningsanpassad checklista och tidsplan i samråd med dig eller mäklaren för att maximera effekten.
                   </p>
@@ -526,7 +526,7 @@ export default function FonsterputsningPage() {
                   {[
                     { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                     { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#fonsterputs-offert' },
+                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#fonsterputs-offert' },
                     { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                     { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                     { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -577,7 +577,7 @@ export default function FonsterputsningPage() {
                       {[
                         { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                         { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#fonsterputs-offert' },
+                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#fonsterputs-offert' },
                         { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                         { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                         { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -722,7 +722,7 @@ export default function FonsterputsningPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår process för fönsterputsning är utformad för att vara enkel, trygg och effektiv. Börja med att fylla i formuläret – du får pris på 1 minut och kan bekräfta digitalt. Samma dag eller senast nästkommande vardag kontaktar vi dig för att stämma av antal fönster, åtkomlighet och eventuella tillval.
+                    Vår process för fönsterputsning är utformad för att vara enkel, trygg och effektiv. Börja med att fylla i formuläret – du får pris snabbt och enkelt och kan bekräfta digitalt. Samma dag eller senast nästkommande vardag kontaktar vi dig för att stämma av antal fönster, åtkomlighet och eventuella tillval.
                   </p>
                   <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
                     Därefter planerar vi insatsen och genomför fönsterputsningen med professionella verktyg och metoder för ett randfritt resultat – invändigt och, där det är säkert och åtkomligt, utvändigt. Om du vill kan vi även schemalägga återkommande putsning så att dina fönster håller sig kristallklara året runt.
@@ -738,7 +738,7 @@ export default function FonsterputsningPage() {
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                       {[
                         { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din fönsterputsning' },
-                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' },
+                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris snabbt och enkelt' },
                         { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
                         { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
                         { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Putsning utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },

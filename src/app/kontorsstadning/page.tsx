@@ -214,7 +214,7 @@ export default function KontorsstadningPage() {
                   Professionell kontorsstädning i Stockholm
                 </h1>
                 <p className="text-xl mb-6">
-                  Regelbunden städning för företag
+                  Regelbunden eller engångsstädning för företag
                 </p>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function KontorsstadningPage() {
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
                   <h1 className="text-5xl md:text-6xl font-bold mb-8">Professionell kontorsstädning i Stockholm</h1>
-                  <p className="text-2xl md:text-3xl mb-12">Regelbunden städning för företag</p>
+                  <p className="text-2xl md:text-3xl mb-12">Regelbunden eller engångsstädning för företag</p>
                   <p className="text-lg text-white/90">Vi erbjuder professionell kontorsstädning anpassad efter ert schema. Löpande priser och en ren arbetsmiljö för era medarbetare.</p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
@@ -338,7 +338,7 @@ export default function KontorsstadningPage() {
                   {
                     title: 'Vad är kontorsstädning?',
                     content:
-                      'Kontorsstädning är regelbunden professionell städning av kontorslokaler och arbetsplatser. Vi anpassar städningen efter ert schema och behov – från daglig städning till veckovis underhåll. Vårt erfarna team använder miljövänliga produkter och moderna metoder för att skapa en ren, hälsosam och trivsam arbetsmiljö. Med kontorsstädning från Flyttella får ni en pålitlig partner som säkerställer att era lokaler alltid håller hög standard. Vi arbetar efter tydliga checklistor och erbjuder flexibla lösningar anpassade efter företagets storlek och verksamhet. Allt för att er kontorsstädning i Stockholm ska bli enkel, prisvärd och professionell.',
+                      'Kontorsstädning är professionell regelbunden eller engångs städning av kontorslokaler och arbetsplatser. Vi anpassar städningen efter ert schema och behov – från daglig städning till veckovis underhåll. Vårt erfarna team använder miljövänliga produkter och moderna metoder för att skapa en ren, hälsosam och trivsam arbetsmiljö. Med kontorsstädning från Flyttella får ni en pålitlig partner som säkerställer att era lokaler alltid håller hög standard. Vi arbetar efter tydliga checklistor och erbjuder flexibla lösningar anpassade efter företagets storlek och verksamhet. Allt för att er kontorsstädning i Stockholm ska bli enkel, prisvärd och professionell.',
                     icon: '🧹'
                   },
                   {
@@ -355,7 +355,7 @@ export default function KontorsstadningPage() {
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Priset för kontorsstädning beror på lokalernas storlek, städfrekvens och omfattning. Begär en kostnadsfri offert – vi arbetar med löpande priser utan dolda avgifter.</p>
-                        <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;Ett rent kontor skapar en bättre arbetsmiljö för alla – professionellt och välorganiserat!&quot;</p><p className="italic text-gray-700 mt-2">- Maria, Kontorschef</p></div>
+                        <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;Kontoret känns mycket trevligare och mer lättjobbat när det är rent och välstädat. Vi är väldigt nöjda!&quot;</p><p className="italic text-gray-700 mt-2">- Johan</p></div>
                       </>
                     ),
                     icon: '💸'
@@ -537,7 +537,7 @@ export default function KontorsstadningPage() {
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧽</span><h3 className="text-3xl md:text-5xl font-bold text-white">Flyttstädning</h3></div>
                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Grundlig flyttstädning enligt branschstandard – löpande priser, 14 dagars garanti och professionell service.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar enligt en komplett checklista: alla rum, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du välja fönsterputs, balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar enligt en komplett checklista: alla rum, fönsterputsning av alla fönster, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du välja balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.</p>
                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                 </motion.div>
             </div>
@@ -1042,7 +1042,7 @@ export default function KontorsstadningPage() {
                   { id: 'kontor-1', question: 'Erbjuder ni engångsstädning eller bara regelbunden städning?', answer: 'Vi erbjuder både engångsstädning och regelbunden kontorsstädning. Många kunder börjar med en engångsstädning och övergår sedan till regelbunden service.' },
                   { id: 'kontor-2', question: 'Kan ni arbeta när kontoret är öppet?', answer: 'Ja, vi anpassar städningen efter er verksamhet och kan arbeta tidigt på morgonen, sent på kvällen eller helger för minimal störning.' },
                   { id: 'kontor-3', question: 'Vad händer om något går sönder?', answer: 'Vi har full ansvarsförsäkring som täcker eventuella skador. Vi hanterar alla ärenden snabbt och professionellt.' },
-                  { id: 'kontor-4', question: 'Kan vi ändra städfrekvensen?', answer: 'Ja, ni kan enkelt justera städfrekvensen eller pausa tjänsten med kort varsel för att anpassa efter era behov.' }
+                  { id: 'kontor-4', question: 'Kan vi ändra städfrekvensen?', answer: 'Ja, ni kan när som helst ändra städfrekvensen för att bättre passa era behov. Oavsett om ni vill öka antalet städtillfällen under en intensiv period, minska när det är lugnare, eller pausa tjänsten helt under en tid, så går det smidigt att ordna. På så sätt får ni alltid en lösning som är flexibel och anpassad efter er verksamhet.' }
                 ].map((faq, index) => (
                   <motion.div key={faq.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>
                     <button onClick={() => toggleFAQ(faq.id)} className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"><h3 className="text-lg md:text-xl font-semibold text-[#0F172A] pr-4">{faq.question}</h3><motion.div animate={{ rotate: openFAQ === faq.id ? 180 : 0 }} transition={{ duration: 0.3 }} className="flex-shrink-0"><svg className="w-6 h-6 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></motion.div></button>

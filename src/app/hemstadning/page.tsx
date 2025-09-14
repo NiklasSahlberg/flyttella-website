@@ -358,7 +358,7 @@ export default function HemstadningPage() {
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Pris för hemstädning beror på boyta, planlösning, städfrekvens och dina specifika önskemål. Med 50% RUT‑avdrag på arbetskostnaden blir återkommande hemstädning mycket prisvärt. Begär en kostnadsfri offert – du får pris på 1 minut. Faktorer som påverkar priset är bland annat antal badrum, grad av nedsmutsning samt eventuella tillval (t.ex. fönsterputs eller ugnsrengöring). Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad din hemstädning kostar.
+                          Pris för hemstädning beror på boyta, planlösning, städfrekvens och dina specifika önskemål. Med 50% RUT‑avdrag på arbetskostnaden blir återkommande hemstädning mycket prisvärt. Begär en kostnadsfri offert snabbt och enkelt. Faktorer som påverkar priset är bland annat grad av nedsmutsning samt eventuella tillval (t.ex. fönsterputs eller ugnsrengöring). Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad din hemstädning kostar.
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
@@ -389,7 +389,7 @@ export default function HemstadningPage() {
                     title: 'Hur bokar jag hemstädning?',
                     content: (
                       <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-0 text-left md:text-center">
-                        Boka på en minut: fyll i formuläret, få pris direkt och bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta, frekvens och eventuella tillval. Därefter planerar vi startdatum – enkelt och tryggt. Vi matchar dig med en fast städare eller ett litet team för kontinuitet och trygghet. Du väljer veckodag och tid som passar, och kan enkelt justera eller pausa via vår kundtjänst. Betalning sker smidigt efter utförd städning. RUT‑avdraget (50% på arbetskostnaden) sköter vi automatiskt.
+                        Boka direkt genom att fylla i formuläret, få prisförslag snabbt och enkelt och bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta, frekvens och eventuella tillval. Därefter planerar vi startdatum – enkelt och tryggt. Vi matchar dig med en fast städare eller ett litet team för kontinuitet och trygghet. Du väljer veckodag och tid som passar, och kan enkelt justera eller pausa via vår kundtjänst. Betalning sker smidigt efter utförd städning. RUT‑avdraget (50% på arbetskostnaden) sköter vi automatiskt.
                       </p>
                     ),
                     icon: '📅'
@@ -474,7 +474,7 @@ export default function HemstadningPage() {
                   {/* Desktop: full text */}
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en ledande städfirma i Stockholm med över 8 års erfarenhet av hemstädning, flyttstädning och kontorsstädning. Vi erbjuder 14 dagars städgaranti, fasta priser och personlig service i hela Storstockholm.
+                      Flyttella är en ledande städfirma i Stockholm med över 8 års erfarenhet av hemstädning, flyttstädning och kontorsstädning. Vi erbjuder fasta priser och personlig service i hela Storstockholm.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
                       Vi känner till alla Stockholms områden och anpassar våra städtjänster efter dina behov – från lägenheter och villor till kontor och butiker. Vår hemstädning följer tydliga checklistor för en jämn och hög kvalitet.
@@ -608,7 +608,7 @@ export default function HemstadningPage() {
                     Grundlig flyttstädning enligt branschstandard – fast pris, 14 dagars garanti och full RUT‑hantering.
                   </p>
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                    Vi städar enligt en komplett checklista: alla rum, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du välja fönsterputs, balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.
+                    Vi städar enligt en komplett checklista: alla rum, fönsterputsning av alla fönster, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du välja balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.
                   </p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
@@ -777,7 +777,7 @@ export default function HemstadningPage() {
                   {[
                     { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                     { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#hemstad-offert' },
+                    { icon: '⚡', title: 'Snabb offert', description: 'Få prisförslag snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#hemstad-offert' },
                     { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                     { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                     { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -831,7 +831,7 @@ export default function HemstadningPage() {
                       {[
                         { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                         { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#hemstad-offert' },
+                        { icon: '⚡', title: 'Snabb offert', description: 'Få prisförslag snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#hemstad-offert' },
                         { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                         { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                         { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -1025,10 +1025,10 @@ export default function HemstadningPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår hemstädningsprocess är utformad för att vara enkel, flexibel och trygg. Det börjar med att du fyller i vårt korta formulär där du anger boyta, städfrekvens och eventuella tillval. Inom en minut får du en tydlig offert direkt till din e‑post. Samma dag eller senast dagen efter tar vi personlig kontakt för att säkerställa att allt stämmer och för att svara på dina frågor. När du är nöjd signerar du enkelt digitalt.
+                    Vår hemstädningsprocess är utformad för att vara enkel, flexibel och trygg. Det börjar med att du fyller i vårt korta formulär där du anger boyta, städfrekvens och eventuella tillval. Du får du en tydlig offert direkt till din e‑post. Samma dag eller senast dagen efter tar vi personlig kontakt för att säkerställa att allt stämmer och för att svara på dina frågor. När du är nöjd signerar du enkelt digitalt.
                   </p>
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Därefter planerar vi städningen utifrån dina önskemål och vår checklista för hemstädning. Våra utbildade medarbetare använder skonsamma och miljövänliga produkter och ser till att kök, badrum, allrum och sovrum blir skinande rena vid varje tillfälle. Vi påminner inför varje besök och du kan enkelt boka om vid behov. Resultatet? Ett jämnt och pålitligt städresultat samt mer tid över till det som är viktigt för dig.
+                    Därefter planerar vi städningen utifrån dina önskemål och vår checklista för hemstädning. Våra utbildade medarbetare använder skonsamma och miljövänliga produkter och ser till att kök, badrum, allrum och sovrum blir skinande rena vid varje tillfälle. Du kan enkelt boka om vid behov. Resultatet? Ett jämnt och pålitligt städresultat samt mer tid över till det som är viktigt för dig.
                   </p>
                 </div>
                 <div className="text-center mb-4 md:mb-8">
@@ -1043,7 +1043,7 @@ export default function HemstadningPage() {
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                     {[
                       { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din städning' },
-                      { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' },
+                      { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris snabbt och enkelt' },
                       { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
                       { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
                       { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Städning utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
@@ -1136,7 +1136,7 @@ export default function HemstadningPage() {
                 {[
                   { id: 'hem-1', question: 'Hur ofta kan jag boka hemstädning?', answer: 'Du kan boka allt från engångsstädning till veckovis, varannan vecka eller månadsvis.' },
                   { id: 'hem-2', question: 'Behöver jag vara hemma under städningen?', answer: 'Nej, många kunder föredrar att vi har nyckel eller portkod. Vi hanterar det tryggt och säkert.' },
-                  { id: 'hem-3', question: 'Vad ingår i hemstädning?', answer: 'Dammsugning, moppning, dammtorkning, kök och badrum. Vi kan även lägga till fönsterputs och andra tillval.' },
+                  { id: 'hem-3', question: 'Vad ingår i hemstädning?', answer: 'I hemstädning ingår bland annat dammsugning av golv och mattor, moppning av golv samt dammtorkning av fria ytor. Vi ser också till att kök och badrum rengörs ordentligt, till exempel avtorkning av bänkar, vitvaror och sanitetsutrustning. Utöver detta kan ni välja till extra tjänster som fönsterputs eller andra tillval, så att städningen blir helt anpassad efter era behov.' },
                   { id: 'hem-4', question: 'Kan jag avboka?', answer: 'Ja, du kan avboka eller omboka utan kostnad upp till 24 timmar innan bokad tid.' }
                 ].map((faq, index) => (
                   <motion.div key={faq.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>

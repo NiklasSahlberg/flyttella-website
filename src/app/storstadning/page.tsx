@@ -216,7 +216,7 @@ export default function StorstadningPage() {
                   {
                     title: 'Vad är storstädning?',
                     content:
-                      'Storstädning är en grundlig djuprengöring som går djupare än vanlig veckostädning. Vi fokuserar på svåråtkomliga ytor, avkalkning i badrum, detaljer i kök, bakom och under möbler samt noggrann dammbindning. Lister, dörrar, kontakter, socklar och snickerier torkas av, och glasytor poleras. Arbetet följer en tydlig checklista och anpassas efter ytskikt och material för ett jämnt, fräscht resultat i hela bostaden – perfekt inför säsongsstart, efter renovering eller som nystart hemma.',
+                      'Storstädning är en grundlig djuprengöring som går djupare än vanlig städning. Vi fokuserar på svåråtkomliga ytor, avkalkning i badrum, detaljer i kök, samt noggrann dammtorkning. Lister, dörrar, kontakter, socklar och snickerier torkas av, och glasytor putsas. Arbetet följer en tydlig checklista och anpassas efter ytskikt och material för ett jämnt, fräscht resultat i hela bostaden – perfekt inför säsongsstart, efter renovering eller som nystart hemma.',
                     icon: '🧼'
                   },
                   {
@@ -230,7 +230,7 @@ export default function StorstadningPage() {
                     title: 'Vad kostar storstädning?',
                     content: (
                       <>
-                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Priset beror på boyta, antal våtutrymmen och grad av nedsmutsning. Med 50% RUT‑avdrag blir storstädning prisvärt. Begär en kostnadsfri offert – du får pris på 1 minut. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter.</p>
+                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Priset beror på boyta och grad av nedsmutsning. Med 50% RUT‑avdrag blir storstädning prisvärt. Begär en kostnadsfri offert – du får pris snabbt och enkelt. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter.</p>
                         <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;Hemmet kändes som nytt efter storstädningen – varje detalj på plats!&quot;</p><p className="italic text-gray-700 mt-2">- Sara</p></div>
                       </>
                     ),
@@ -239,7 +239,7 @@ export default function StorstadningPage() {
                   {
                     title: 'Vad ingår i storstädning?',
                     content:
-                      'Dammsugning och moppning av alla golv, dammtorkning av fria ytor, noggrann avtorkning av lister, dörrar, handtag, eluttag, socklar och snickerier. I kök: avtorkning av alla ytor, spishäll, kakel, fläkt, och vitvarors utsidor, samt avtorkning invändigt i skåp/lådor som tillval. I badrum: avkalkning av dusch/badkar, kakel och glasytor, rengöring av toalett och handfat. Rengöring bakom och under flyttbara möbler. Miljövänliga produkter används.',
+                      'Dammsugning och moppning av golv, dammtorkning av fria ytor, noggrann avtorkning av lister, dörrar, handtag, eluttag, socklar och snickerier. I kök: avtorkning av alla ytor, spishäll, kakel, fläkt, och vitvarors utsidor, samt avtorkning invändigt i skåp/lådor som tillval. I badrum: avkalkning av dusch/badkar, kakel och glasytor, rengöring av toalett och handfat.Rengöring bakom och under möbler (kunden flyttar vid behov). Miljövänliga produkter används.',
                     icon: '🧹'
                   },
                   {
@@ -252,7 +252,7 @@ export default function StorstadningPage() {
                   {
                     title: 'Hur bokar jag storstädning?',
                     content:
-                      'Boka på en minut via formuläret högst upp på sidan – ange boyta och antal våtutrymmen. Du får pris direkt och kan bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av detaljer och eventuella tillval. Du kan lämna portkod/nyckel eller möta upp på plats. Du kan omboka/avboka kostnadsfritt upp till 24 timmar innan och RUT‑avdraget (50% på arbetskostnaden) hanteras automatiskt.',
+                      'Boka enkelt minut via formuläret högst upp på sidan. Du får pris direkt och kan bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av detaljer och eventuella tillval. Du kan lämna portkod/nyckel eller möta upp på plats. Du kan omboka/avboka kostnadsfritt upp till 24 timmar innan och RUT‑avdraget (50% på arbetskostnaden) hanteras automatiskt.',
                     icon: '📅'
                   }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
@@ -346,24 +346,24 @@ export default function StorstadningPage() {
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🏠</span><h3 className="text-3xl md:text-5xl font-bold text-white">Visningsstädning</h3></div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Noggrann städning inför foto och visning – rätt detaljer för ett starkt första intryck. Ytor, glas och detaljer som märks i bilderna prioriteras.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi fokuserar på kök, badrum och sociala ytor, tar bort fingeravtryck, fläckar och damm, och skapar en luftig, välkomnande känsla. Perfekt komplement till styling – skinande rent och fotoklart.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Noggrann städning inför fotografering och visning – rätt detaljer för ett starkt första intryck. Ytor, glas och detaljer som märks i bilderna prioriteras.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi fokuserar på kök, badrum och sociala ytor, fläckar och damm, och skapar en välkomnande känsla - skinande rent och fotoklart.</p>
                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/visningsstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                 </motion.div>
                 {/* Flyttstädning Card */}
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧽</span><h3 className="text-3xl md:text-5xl font-bold text-white">Flyttstädning</h3></div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Branschstandard, 14 dagars garanti och fast pris. Komplett flyttstäd enligt checklista med RUT‑avdrag. Offert på 1 minut – bekräfta digitalt.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Alla rum, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och detaljer. Åtkomst bakom vitvaror där möjligt och tydlig slutkontroll. Fönsterputs som tillval; nyckel/portkod hanteras tryggt.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Branschstandard, 14 dagars garanti och fast pris. Komplett flyttstäd enligt checklista med RUT‑avdrag. Snabb offert – bekräfta digitalt.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Alla rum, kök, fönsterputsning av alla fönster, (inkl. skåp och lådor invändigt), vitvaror, badrum och detaljer. Åtkomst bakom vitvaror där möjligt och tydlig slutkontroll. Nyckel/portkod hanteras tryggt.</p>
                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                 </motion.div>
                 {/* Hemstädning Card */}
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🏡</span><h3 className="text-3xl md:text-5xl font-bold text-white">Hemstädning</h3></div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Regelbunden städning – samma städare om möjligt och tydliga checklistor. Flexibla intervaller efter behov. Offert på 1 minut och enkel ombokning/avbokning.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Fokus på jämn kvalitet och trygg kontinuitet. Köks- och badrumsdetaljer, dammbindning och golvvård ingår; tillval som fönsterputs och storstädning vid behov. Du väljer veckodag och tid; vi använder miljövänliga produkter.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Regelbunden städning – samma städare om möjligt och tydliga checklistor. Flexibla intervaller efter behov. Snabb offert och enkel ombokning/avbokning.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Fokus på jämn kvalitet och trygg kontinuitet. Köks- och badrumsdetaljer, dammtorkning och golvvård ingår tillval som fönsterputs och storstädning vid behov. Du väljer veckodag och tid, vi använder miljövänliga produkter.</p>
                   <div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/hemstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
                 </motion.div>
               </div>
@@ -395,7 +395,7 @@ export default function StorstadningPage() {
                   {[
                     { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                     { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#storstad-offert' },
+                    { icon: '⚡', title: 'Snabb offert', description: 'Få prisförslag snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#storstad-offert' },
                     { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                     { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                     { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -431,7 +431,7 @@ export default function StorstadningPage() {
                       {[
                         { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                         { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#storstad-offert' },
+                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#storstad-offert' },
                         { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                         { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                         { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -544,7 +544,7 @@ export default function StorstadningPage() {
               <div className="w-full">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
-                  <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">Vår storstädningsprocess är enkel, trygg och effektiv. Fyll i formuläret – du får pris på 1 minut och kan bekräfta digitalt. Vi ringer samma dag eller senast nästkommande vardag för att stämma av boyta, antal våtutrymmen och eventuella tillval.</p>
+                  <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">Vår storstädningsprocess är enkel, trygg och effektiv. Fyll i formuläret – du får pris snabbt och enkelt och kan bekräfta digitalt. Vi ringer samma dag eller senast nästkommande vardag för att stämma av boyta, antal våtutrymmen och eventuella tillval.</p>
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">Vi planerar insatsen, kommer i tid och arbetar enligt en tydlig checklista. Fokus på djuprengöring i kök och badrum, avkalkning och detaljer i hela hemmet. Resultatet är jämn renhet och ett fräscht hem.</p>
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">Under arbetet håller vi en löpande dialog och gör en avslutande kvalitetskontroll. Vid behov kan vi anpassa moment efter ytskikt och material – alltid med skonsamma, miljövänliga produkter. Nyckel/portkod hanteras tryggt och du får tydlig återkoppling när allt är klart.</p>
                 </div>
@@ -556,7 +556,7 @@ export default function StorstadningPage() {
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                       {[
                         { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din städning' },
-                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' },
+                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få prisförslag snabbt och enkelt' },
                         { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
                         { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
                         { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Städning utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
@@ -597,7 +597,7 @@ export default function StorstadningPage() {
 
         {/* FAQ */}
         <section className="py-20 bg-white">
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [ { '@type': 'Question', name: 'Vad ingår i storstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Djuprengöring i kök och badrum, avtorkning av detaljer, dammbindning och moppning.' } }, { '@type': 'Question', name: 'Vad kostar storstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Priset beror på boyta och omfattning. RUT‑avdrag ger 50% på arbetskostnaden.' } }, { '@type': 'Question', name: 'Behöver jag vara hemma?', acceptedAnswer: { '@type': 'Answer', text: 'Nej, nyckel/portkod kan lämnas och hanteras tryggt.' } }, { '@type': 'Question', name: 'När kan ni komma?', acceptedAnswer: { '@type': 'Answer', text: 'Ofta inom ett par dagar, beroende på omfattning och schema.' } } ] }) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [ { '@type': 'Question', name: 'Vad ingår i storstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Djuprengöring i kök och badrum, avtorkning av detaljer, dammtorkning och moppning.' } }, { '@type': 'Question', name: 'Vad kostar storstädning?', acceptedAnswer: { '@type': 'Answer', text: 'Priset beror på boyta och omfattning. RUT‑avdrag ger 50% på arbetskostnaden.' } }, { '@type': 'Question', name: 'Behöver jag vara hemma?', acceptedAnswer: { '@type': 'Answer', text: 'Nej, nyckel/portkod kan lämnas och hanteras tryggt.' } }, { '@type': 'Question', name: 'När kan ni komma?', acceptedAnswer: { '@type': 'Answer', text: 'Ofta inom ett par dagar, beroende på omfattning och schema.' } } ] }) }} />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Vanliga frågor om storstädning</h2>

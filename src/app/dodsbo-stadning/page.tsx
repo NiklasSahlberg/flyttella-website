@@ -382,7 +382,7 @@ export default function DodsboStadningPage() {
                   {
                     title: 'Hur bokar jag dödsbostädning?',
                     content:
-                      'Boka på en minut via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och beskriv omfattningen. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av omfattning och tidplan. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
+                      'Boka på en minut via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och beskriv omfattningen. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av omfattning och tidsplan. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
                     icon: '📅'
                   }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
@@ -898,7 +898,7 @@ export default function DodsboStadningPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår process för dödsbostädning är enkel, trygg och strukturerad. Börja med att fylla i formuläret – du får pris på 1 minut och kan bekräfta digitalt. Vi ringer samma dag eller senast nästkommande vardag för att gå igenom omfattning och tidplan.
+                    Vår process för dödsbostädning är enkel, trygg och strukturerad. Börja med att fylla i formuläret – du får pris på 1 minut och kan bekräfta digitalt. Vi ringer samma dag eller senast nästkommande vardag för att gå igenom omfattning och tidsplan.
                   </p>
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
                     När allt är klart planerar vi insatsen och genomför städningen enligt en tydlig checklista. Vi kan samordna fönsterputs som tillval. Resultatet är ett prydligt hem redo för nästa steg.
