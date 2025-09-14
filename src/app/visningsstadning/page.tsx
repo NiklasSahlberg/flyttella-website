@@ -344,13 +344,13 @@ export default function VisningsstadningPage() {
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Pris för visningsstädning beror på boyta, planlösning och grad av förberedelse. Med 50% RUT‑avdrag på arbetskostnaden blir visningsstädning prisvärd. Begär en kostnadsfri offert – du får pris på 1 minut. Faktorer som påverkar priset är bland annat antal badrum, fönsterputs som tillval och bostadens skick. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad som ingår i din visningsstädning.
+                          Pris för visningsstädning beror på boyta, planlösning och grad av förberedelse. Med 50% RUT‑avdrag på arbetskostnaden blir visningsstädning prisvärd. Begär en kostnadsfri offert – du får pris snabbt och enkelt. Faktorer som påverkar priset är bland är boyta, fönsterputs som tillval och bostadens skick. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad som ingår i din visningsstädning.
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
                             "Bostaden såg fantastisk ut på bilderna och under visningen – städningen gjorde verkligen skillnad!"
                           </p>
-                          <p className="italic text-gray-700 mt-2">- Maria</p>
+                          <p className="italic text-gray-700 mt-2">- Niloufar</p>
                         </div>
                       </>
                     ),
@@ -376,7 +376,7 @@ export default function VisningsstadningPage() {
                   {
                     title: 'Hur bokar jag visningsstädning?',
                     content:
-                      'Boka på en minut via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och tid och lägg till eventuella tillval som fönsterputs. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta och tidsplan inför fotografering och visning. Därefter bekräftar vi starttid – enkelt och tryggt. Du kan justera bokningen via vår kundtjänst. RUT‑avdraget (50% på arbetskostnaden) sköts automatiskt. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
+                      'Boka snabbt och enkelt via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och tid och lägg till eventuella tillval som fönsterputs. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta och tidsplan inför fotografering och visning. Därefter bekräftar vi starttid – enkelt och tryggt. Du kan justera bokningen via vår kundtjänst. RUT‑avdraget (50% på arbetskostnaden) sköts automatiskt. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
                     icon: '📅'
                   }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
@@ -456,10 +456,10 @@ export default function VisningsstadningPage() {
                 >
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är Stockholms ledande städfirma med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Stockholm.
+                      Flyttella är en av Stockholms ledande aktörer inom visningsstädning med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Stockholm.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi känner till alla Stockholms områden och anpassar vår visningsstädning efter just dina behov – från lägenheter och villor till bostadsrätter i innerstan. Vår visningsstädning följer tydliga checklistor och säkerställer ett resultat som syns både på bilder och under visning.
+                      Vi känner till alla Stockholms områden och anpassar vår visningsstädning efter just dina behov. Vår visningsstädning följer tydliga checklistor och säkerställer ett resultat som syns både på bilder och under visning.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
                       Vårt mål är att göra din visningsstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen.
@@ -671,7 +671,7 @@ export default function VisningsstadningPage() {
                   {[
                     { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                     { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#visningsstad-offert' },
+                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#visningsstad-offert' },
                     { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                     { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                     { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -734,7 +734,7 @@ export default function VisningsstadningPage() {
                       {[
                         { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                         { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#visningsstad-offert' },
+                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#visningsstad-offert' },
                         { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                         { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                         { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -893,7 +893,7 @@ export default function VisningsstadningPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår process för visningsstädning är enkel, flexibel och trygg. Du börjar med att fylla i vårt formulär med dina uppgifter och önskemål. Inom en minut får du en offert till din e‑post. Samma dag eller senast dagen efter tar vi personlig kontakt för att säkerställa detaljer och tidsplan.
+                    Vår process för visningsstädning är enkel, flexibel och trygg. Du börjar med att fylla i vårt formulär med dina uppgifter och önskemål. Du får snabbt en offert till din e‑post. Samma dag eller senast dagen efter tar vi personlig kontakt för att säkerställa detaljer och tidsplan.
                   </p>
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
                     När du är nöjd signerar du digitalt. Vi planerar sedan städningen utifrån vår visningsanpassade checklista, med fokus på kök, badrum och blanka ytor. Vi kan även samordna med din mäklare vid behov. Resultatet är ett skinande rent hem som gör ett starkt första intryck på både bilder och visning.
@@ -911,7 +911,7 @@ export default function VisningsstadningPage() {
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                       {[
                         { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din städning' },
-                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' },
+                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris snabbt och enkelt' },
                         { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
                         { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
                         { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Städning utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
@@ -998,8 +998,8 @@ export default function VisningsstadningPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Vanliga frågor om visningsstädning</h2>
               <div className="space-y-4">
                 {[
-                  { id: 'vis-1', question: 'Hur nära inpå visning bör städningen ske?', answer: 'Helst samma dag eller dagen innan, för att säkerställa bästa möjliga intryck.' },
-                  { id: 'vis-2', question: 'Ingår fönsterputs i visningsstädning?', answer: 'Fönsterputs är ett vanligt tillval och rekommenderas för extra lyster i rummen.' },
+                  { id: 'vis-1', question: 'Hur nära inpå visning bör städningen ske?', answer: 'Vi rekommenderar att städningen görs senast dagen innan visningen. På så sätt hinner allt torka och kännas fräscht, samtidigt som du kan vara säker på att hemmet ger ett riktigt bra första intryck för spekulanterna.' },
+                  { id: 'vis-2', question: 'Ingår fönsterputs i visningsstädning?', answer: 'Fönsterputs ingår inte som standard i en visningsstädning, men det är ett vanligt tillval. Vi rekommenderar starkt att boka det inför en visning, eftersom rena och skinande fönster släpper in mer ljus och ger rummen en fräschare och mer inbjudande känsla. Många upplever att det gör en stor skillnad för helhetsintrycket.' },
                   { id: 'vis-3', question: 'Behöver jag vara hemma?', answer: 'Nej, många kunder lämnar nyckel eller portkod – vi hanterar detta tryggt och säkert.' },
                   { id: 'vis-4', question: 'Kan jag avboka?', answer: 'Ja, om- eller avbokning är kostnadsfri upp till 24 timmar innan.' }
                 ].map((faq, index) => (
