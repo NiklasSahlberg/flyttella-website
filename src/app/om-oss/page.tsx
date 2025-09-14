@@ -1012,9 +1012,9 @@ export default function OmOssPage() {
                 "Transparent kommunikation",
                 "Snabb respons",
                 "Anpassade erbjudanden",
-                "Kundvård",
+                "Lyhörd kundservice",
                 "Uppföljning",
-                "Nöjd-kund-garanti"
+                "Nöjd-kund-garanti på flyttstädning"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <svg className="w-5 h-5 text-white mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">

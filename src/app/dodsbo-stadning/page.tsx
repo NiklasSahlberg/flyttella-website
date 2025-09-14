@@ -354,11 +354,11 @@ export default function DodsboStadningPage() {
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
                             "Städningen gjordes respektfullt och effektivt – det underlättade hela processen."
                           </p>
-                          <p className="italic text-gray-700 mt-2">- Anders</p>
+                          <p className="italic text-gray-700 mt-2">- Diana</p>
                         </div>
                         <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0F172A] mb-4 md:mb-6 text-left md:text-center px-4">Vad kostar dödsbostädning?</h3>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Priset beror på bostadens storlek, omfattning av tömning och grad av städning. Med 50% RUT‑avdrag på arbetskostnaden blir tjänsten prisvärd. Begär en kostnadsfri offert – du får pris på 1 minut. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter.
+                          Priset beror på bostadens storlek, omfattning av tömning och grad av städning. Med 50% RUT‑avdrag på arbetskostnaden blir tjänsten prisvärd. Begär en kostnadsfri offert – du får pris snabbt och enkelt. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter.
                         </p>
                       </>
                     ),
@@ -382,7 +382,7 @@ export default function DodsboStadningPage() {
                   {
                     title: 'Hur bokar jag dödsbostädning?',
                     content:
-                      'Boka på en minut via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och beskriv omfattningen. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av omfattning och tidsplan. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
+                      'Boka enkelt via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och beskriv omfattningen. Du får pris och bekräftelse direkt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av omfattning och tidsplan. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
                     icon: '📅'
                   }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
@@ -622,7 +622,7 @@ export default function DodsboStadningPage() {
                     <h3 className="text-3xl md:text-5xl font-bold text-white">Hemstädning</h3>
                   </div>
                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Regelbunden hemstädning – veckovis, varannan vecka eller månadsvis. Fast pris och 50% RUT‑avdrag.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar efter tydliga checklistor: alla rum, kök och badrum. Samma städare för kontinuitet och trygghet. Miljövänliga produkter och pålitliga rutiner.</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar efter tydliga checklistor: alla rum, kök och badrum. Samma städare om möjligt för kontinuitet och trygghet. Miljövänliga produkter och pålitliga rutiner.</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/hemstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
@@ -677,7 +677,7 @@ export default function DodsboStadningPage() {
                   {[
                     { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                     { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#dodsbo-offert' },
+                    { icon: '⚡', title: 'Snabb offert', description: 'Få prisförlsag snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#dodsbo-offert' },
                     { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                     { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                     { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -739,7 +739,7 @@ export default function DodsboStadningPage() {
                       {[
                         { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                         { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
-                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – Fyll enkelt formuläret högst upp på sidan', link: '#dodsbo-offert' },
+                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#dodsbo-offert' },
                         { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                         { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                         { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
@@ -898,7 +898,7 @@ export default function DodsboStadningPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår process för dödsbostädning är enkel, trygg och strukturerad. Börja med att fylla i formuläret – du får pris på 1 minut och kan bekräfta digitalt. Vi ringer samma dag eller senast nästkommande vardag för att gå igenom omfattning och tidsplan.
+                    Vår process för dödsbostädning är enkel, trygg och strukturerad. Börja med att fylla i formuläret – du får pris snabbt och enkelt och kan bekräfta digitalt. Vi ringer samma dag eller senast nästkommande vardag för att gå igenom omfattning och tidsplan.
                   </p>
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
                     När allt är klart planerar vi insatsen och genomför städningen enligt en tydlig checklista. Vi kan samordna fönsterputs som tillval. Resultatet är ett prydligt hem redo för nästa steg.
@@ -916,7 +916,7 @@ export default function DodsboStadningPage() {
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                       {[
                         { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din städning' },
-                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' },
+                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris snabbt och enkelt' },
                         { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
                         { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
                         { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Städning utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
@@ -997,9 +997,9 @@ export default function DodsboStadningPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Vanliga frågor om dödsbostädning</h2>
               <div className="space-y-4">
                 {[
-                  { id: 'db-1', question: 'Ingår tömning vid dödsbostädning?', answer: 'Vi kan bistå med sortering och enklare bortforsling i samband med städning. Full tömning kan vi hänvisa till samarbetspartner.' },
+                  { id: 'db-1', question: 'Ingår tömning vid dödsbostädning?', answer: 'Vi kan hjälpa till med sortering och bortforsling i samband med en dödsbostädning. Eftersom vi även är en flyttfirma finns möjlighet att ordna en helhetslösning med både tömning och städning, men det kräver att kunden informerar oss i förväg så att vi kan komma överens om upplägget.' },
                   { id: 'db-2', question: 'Hur snabbt kan ni börja?', answer: 'Ofta inom några dagar. Fyll i formuläret så återkommer vi med tider.' },
-                  { id: 'db-3', question: 'Ingår fönsterputs?', answer: 'Fönsterputs kan läggas till som tillval.' },
+                  { id: 'db-3', question: 'Ingår fönsterputs?', answer: 'Fönsterputs ingår inte som standard vid en dödsbostädning, men kan enkelt läggas till som ett tillval. Många väljer att boka fönsterputs i samband med städningen eftersom rena fönster släpper in mer ljus och gör bostaden både ljusare och mer inbjudande. Det kan vara särskilt värdefullt inför en försäljning eller visning av bostaden.' },
                   { id: 'db-4', question: 'Kan jag avboka?', answer: 'Ja, kostnadsfri ombokning/avbokning upp till 24 timmar innan.' }
                 ].map((faq, index) => (
                   <motion.div key={faq.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>

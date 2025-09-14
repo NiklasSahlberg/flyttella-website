@@ -388,7 +388,7 @@ export default function KontorsflyttPage() {
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Priset för kontorsflytt beror på flera faktorer: storlek på kontoret, mängd utrustning, avstånd och komplexitet. Vi arbetar med löpande priser utan dolda kostnader och erbjuder kostnadsfri offert.</p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-                            &quot;Vi är väldigt nöjda med vår kontorsflytt med Flyttella! Rekommenderas starkt!&quot;
+                            &quot;Vi är väldigt nöjda med Flyttellas tjänster. De kunde hantera allt utan att störa verksamheten!&quot;
                           </p>
                           <p className="italic text-gray-700 mt-2">- Lars</p>
                         </div>
@@ -399,11 +399,11 @@ export default function KontorsflyttPage() {
                   {
                     title: 'Vad ingår i kontorsflytt?',
                     content:
-                      'Planering och projektledning, demontage och montage av möbler, transport med full försäkring, hantering av känsliga dokument och arkiv, installation och uppsättning på nya lokaler, koordinering med leverantörer och tekniker. Vi anpassar tjänsten efter era specifika behov och verksamhet.',
+                      'Planering och projektledning, transport med försäkring, hantering av känsliga dokument och arkiv, installation, uppsättning, montage och demontage kan ordnas vid behov. Vi anpassar tjänsten efter era specifika behov och verksamhet.',
                     icon: '📋'
                   },
                   {
-                    title: '',
+                    title: '',g
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
                         <img src="/kontor.png" alt="Kontorsflytt service Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
@@ -414,7 +414,7 @@ export default function KontorsflyttPage() {
                   {
                     title: 'Hur bokar jag kontorsflytt?',
                     content:
-                      'Fyll i formuläret ovan för en kostnadsfri offert på 1 minut, eller kontakta oss direkt för en personlig konsultation. Vi kartlägger era behov och skapar en skräddarsydd lösning. Vid behov kan vi göra en platsbesiktning för att säkerställa en exakt bedömning och erbjuda en kostnadsfri offert. Därefter planerar vi flytten i detalj och koordinerar allt från start till mål. Ni kan fokusera på er verksamhet medan vi sköter flytten professionellt.',
+                      'Fyll i formuläret ovan för en kostnadsfri offert snabbt och enkelt, eller kontakta oss direkt för en personlig konsultation. Vi kartlägger era behov och skapar en skräddarsydd lösning. Vid behov kan vi göra en platsbesiktning för att säkerställa en exakt bedömning och erbjuda en kostnadsfri offert. Därefter planerar vi flytten i detalj och koordinerar allt från start till mål. Ni kan fokusera på er verksamhet medan vi sköter flytten professionellt.',
                     icon: '📞'
                   }
                 ] as { title: string; content: any; icon: string; image?: string }[]).map((section, index) => (
@@ -512,9 +512,9 @@ export default function KontorsflyttPage() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
                   <div className="hidden lg:block space-y-8">
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är Stockholms ledande företag inom kontorsflytt med över 8 års erfarenhet av att hjälpa företag att flytta säkert och effektivt. Vi förstår att en kontorsflytt är mer än bara transport – det handlar om kontinuitet i er verksamhet.</p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vårt specialiserade team har gedigen kunskap om IT-utrustning, känsliga dokument och komplexa logistiklösningar. Vi arbetar med detaljerad planering och har rätt utrustning för att hantera allt från skrivbord till servrack.</p>
-                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Med över 1200 genomförda kontorsflyttar har vi utvecklat effektiva metoder som minimerar störningar och säkerställer att ni kan komma igång snabbt på er nya adress. Löpande priser, full försäkring och personlig projektledning.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är en av Stockholms ledande aktörer inom kontorsflytt med över 8 års erfarenhet av att hjälpa företag att flytta säkert och effektivt. Vi förstår att en kontorsflytt är mer än bara transport – det handlar om kontinuitet i er verksamhet.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Vårt specialiserade team har gedigen kunskap om IT-utrustning, känsliga dokument och komplexa logistiklösningar. Vi arbetar med detaljerad planering och har rätt utrustning för att hantera allt från skrivbord till IT-utrustning.</p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Med över 1200 genomförda kontorsflyttar har vi utvecklat effektiva metoder som minimerar störningar och säkerställer att ni kan komma igång snabbt på er nya adress. Löpande priser, försäkring och personlig projektledning.</p>
                   </div>
                   <div className="lg:hidden space-y-4">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Flyttella är Stockholms ledande företag inom kontorsflytt med över 8 års erfarenhet.</p>
@@ -524,7 +524,7 @@ export default function KontorsflyttPage() {
                     )}
                     {showFullAboutText && (
                       <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 0.5 }} className="space-y-4 mt-4">
-                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Med över 1200 genomförda kontorsflytt levererar vi trygg service med löpande priser och full försäkring.</p>
+                        <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">Med över 1200 genomförda kontorsflytt levererar vi trygg service med löpande priser och försäkring.</p>
                         <motion.div className="pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
                           <Link href="/om-oss" className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4">Läs mer om oss<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                         </motion.div>
@@ -542,7 +542,7 @@ export default function KontorsflyttPage() {
           location="Stockholm" 
           title="Vad tycker våra kunder om oss?" 
           subtitle="Pålitlig kontorsflytt i Stockholm" 
-          description="Professionell kontorsflytt i Stockholm – från planering till installation. Löpande priser och minimal störning av verksamheten. Pålitliga flyttare och höga betyg från företagskunder. Läs vad våra kunder tycker om vår kontorsflytt i Stockholm." 
+          description="Professionell kontorsflytt i Stockholm – från planering till installation. Löpande priser och minimal störning av verksamheten. Pålitliga flyttkillar och höga betyg från företagskunder. Läs vad våra kunder tycker om vår kontorsflytt i Stockholm." 
           badgeAlt="Erfarenhet av kontorsflytt i Stockholm" 
           arrowText="Läs vad våra kunder säger om vår kontorsflytt" 
         />
@@ -694,7 +694,7 @@ export default function KontorsflyttPage() {
                   {[
                     { icon: '💰', title: 'Löpande priser', description: 'Transparenta löpande priser – du vet vad du betalar för', link: '/priser' },
                     { icon: '📋', title: 'Försäkring', description: 'Full ansvarsförsäkring och skadeersättning vid behov', link: '/om-oss' },
-                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – fyll enkelt formuläret ovan', link: '#top' },
+                    { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – fyll enkelt formuläret ovan', link: '#top' },
                     { icon: '⏰', title: 'Flexibla tider', description: 'Vi anpassar oss efter era behov och tidsschema', link: '/kontakt' },
                     { icon: '🔒', title: 'Tillstånd', description: 'Alla nödvändiga tillstånd och certifieringar', link: '/om-oss' },
                     { icon: '🎓', title: 'Erfaren personal', description: 'Utbildade medarbetare med mångårig erfarenhet', link: '/om-oss' },
@@ -737,7 +737,7 @@ export default function KontorsflyttPage() {
                       {[
                         { icon: '💰', title: 'Löpande priser', description: 'Transparenta löpande priser – du vet vad du betalar för', link: '/priser' },
                         { icon: '📋', title: 'Försäkring', description: 'Full ansvarsförsäkring och skadeersättning vid behov', link: '/om-oss' },
-                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris på 1 minut – fyll enkelt formuläret ovan', link: '#top' },
+                        { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – fyll enkelt formuläret ovan', link: '#top' },
                         { icon: '⏰', title: 'Flexibla tider', description: 'Vi anpassar oss efter era behov och tidsschema', link: '/kontakt' },
                         { icon: '🔒', title: 'Tillstånd', description: 'Alla nödvändiga tillstånd och certifieringar', link: '/om-oss' },
                         { icon: '🎓', title: 'Erfaren personal', description: 'Utbildade medarbetare med mångårig erfarenhet', link: '/om-oss' },
@@ -823,7 +823,7 @@ export default function KontorsflyttPage() {
                       Med över 1200 genomförda kontorsflytt i Stockholm har vi utvecklat unik expertis inom företagsflytt. Vi förstår komplexiteten i att flytta IT-system, känsliga dokument och hela kontorsmiljöer utan att störa er verksamhet. Våra projektledare har gedigen erfarenhet och arbetar systematiskt för att säkerställa en smidig övergång till era nya lokaler.
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi har specialiserat oss på allt från små internflytt till stora kontorsetableringar med hundratals arbetsplatser. Vårt team har hanterat känslig IT-utrustning värd miljontals kronor och flyttat tusentals servrar, datorer och kontorsmöbler säkert och effektivt. Med rätt utrustning, detaljerad planering och erfaren personal levererar vi resultat som överträffar förväntningarna.
+                      Vi har specialiserat oss på allt från små internflytt till stora kontorsetableringar med hundratals arbetsplatser. Vårt team har flyttat tusentals datorer och kontorsmöbler säkert och effektivt. Med rätt utrustning, detaljerad planering och erfaren personal levererar vi resultat som överträffar förväntningarna.
                     </p>
                   </div>
                   
@@ -843,7 +843,7 @@ export default function KontorsflyttPage() {
                     {showFullExperienceText && (
                       <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 0.5 }} className="mt-4">
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Vi har specialiserat oss på allt från små internflytt till stora kontorsetableringar med hundratals arbetsplatser. Vårt team har hanterat känslig IT-utrustning värd miljontals kronor och flyttat tusentals servrar, datorer och kontorsmöbler säkert och effektivt. Med rätt utrustning, detaljerad planering och erfaren personal levererar vi resultat som överträffar förväntningarna.
+                          Vi har specialiserat oss på allt från små internflytt till stora kontorsetableringar med hundratals arbetsplatser. Vårt team har hanterat känslig IT-utrustning värd miljontals kronor och flyttat tusentals datorer och kontorsmöbler säkert och effektivt. Med rätt utrustning, detaljerad planering och erfaren personal levererar vi resultat som överträffar förväntningarna.
                         </p>
                       </motion.div>
                     )}
@@ -941,7 +941,7 @@ export default function KontorsflyttPage() {
                 </div>
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4">
-                    Priset baseras på kontorsstorlek, mängd utrustning, avstånd och komplexitet. Alla priser är fasta utan dolda avgifter. Full försäkring ingår och ni får personlig projektledning från start till mål.
+                    Priset baseras på kontorsstorlek, mängd utrustning, avstånd och komplexitet. Alla priser är fasta utan dolda avgifter. Försäkring ingår och ni får personlig projektledning från start till mål.
                   </p>
                 </div>
                 <div className="mb-8">
@@ -951,7 +951,7 @@ export default function KontorsflyttPage() {
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                       {[
                         { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om era behov' },
-                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris på 1 minut' },
+                        { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris snabbt och enkelt' },
                         { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
                         { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
                         { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Kontorsflytt utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
@@ -1070,17 +1070,17 @@ export default function KontorsflyttPage() {
                   {
                     id: 'faq-2',
                     question: 'Hur lång tid tar en kontorsflytt?',
-                    answer: 'Tiden beror på kontorsstorlek och komplexitet. Mindre kontor (5-10 personer) kan ofta flyttas på en dag, medan större kontor kan ta flera dagar. Vi planerar noggrant för att minimera störningar i er verksamhet.'
+                    answer: 'Tiden beror på kontorsstorlek och komplexitet. Mindre kontor kan ofta flyttas på en dag, medan större kontor kan ta flera dagar. Vi planerar noggrant för att minimera störningar i er verksamhet.'
                   },
                   {
                     id: 'faq-3',
                     question: 'Arbetar ni utanför kontorstid?',
-                    answer: 'Ja, vi kan utföra kontorsflytt kvällar, nätter och helger för att minimera störningar i er dagliga verksamhet. Detta är särskilt viktigt för företag som inte kan stänga under arbetsdagar.'
+                    answer: 'Ja, vi kan utföra kontorsflytt kvällar och helger för att minimera störningar i er dagliga verksamhet. Detta är särskilt viktigt för företag som inte kan stänga under arbetsdagar.'
                   },
                   {
                     id: 'faq-4',
                     question: 'Behöver vi packa själva innan kontorsflytten?',
-                    answer: 'Nej, vi kan sköta all packning åt er. Vi har professionellt packningsmaterial och erfarenhet av att packa kontorsutrustning säkert. Ni kan också välja att packa vissa saker själva om ni föredrar det.'
+                    answer: 'Nej, ni behöver inte packa själva om ni inte vill. Vi erbjuder ett tillvalspaket där vi sköter all packning åt er med professionellt material och lång erfarenhet av att packa kontorsutrustning på ett säkert sätt. Om ni föredrar kan ni självklart packa vissa delar själva och låta oss ta hand om resten.'
                   },
 
                 ].map((faq, index) => (

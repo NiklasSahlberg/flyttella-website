@@ -134,8 +134,8 @@ export default function BemanningPage() {
 	}, []);
 
 	const experienceCards = [
-		{ title: 'Bemanningar', count: '1000+', description: 'Genomförda bemanningar', delay: 0 },
-		{ title: 'Företag', count: '500+', description: 'Nöjda företagskunder', delay: 1 },
+		{ title: 'Bemanningar', count: '500+', description: 'Genomförda bemanningar', delay: 0 },
+		{ title: 'Företag', count: '1200+', description: 'Nöjda företagskunder', delay: 1 },
 		{ title: 'År', count: '8+', description: 'År i branschen', delay: 2 },
 	];
 	
@@ -184,7 +184,7 @@ export default function BemanningPage() {
 								{/* Right-side CTA directly on background */}
 								<div className="w-full md:w-1/2 lg:w-[40%]">
 									<h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Kontakta oss för offert</h3>
-									<p className="text-white/90 mb-6 text-lg md:text-xl">Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även möta på plats vid behov.</p>
+									<p className="text-white/90 mb-6 text-lg md:text-xl">Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.</p>
 									<div>
 										<Link 
 											href="/kontakt?scroll=message&service=bemanning"
@@ -285,9 +285,9 @@ export default function BemanningPage() {
 												<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Pris påverkas av kompetensnivå, antal timmar, tider och uppdragets omfattning. Vi erbjuder tydliga timpriser utan dolda avgifter och kan lämna fastpris för definierade delmoment.</p>
 												<div className="my-16 text-center">
 													<p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-														"Flyttella levererade exakt den bemanning vi behövde – snabbt och proffsigt!"
+														"Flyttella levererade exakt den bemanning vi behövde!"
 													</p>
-													<p className="italic text-gray-700 mt-2">- Maria</p>
+													<p className="italic text-gray-700 mt-2">- Irina</p>
 												</div>
 											</>
 										),
@@ -692,7 +692,7 @@ export default function BemanningPage() {
 							>
 								<motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
 								<div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧹</span><h3 className="text-3xl md:text-5xl font-bold text-white">Kontorsstädning</h3></div>
-								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Professionell kontorsstädning för företag – regelbunden städning för en ren och produktiv arbetsmiljö.</p>
+								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Professionell kontorsstädning för företag – regelbunden eller engångsstädning för en ren och produktiv arbetsmiljö.</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi erbjuder skräddarsydd kontorsstädning anpassad efter era behov. Daglig, veckovis eller månatlig städning med kvalificerad personal och miljövänliga produkter.</p>
 								<div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/kontorsstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
 							</motion.div>
@@ -1043,7 +1043,7 @@ export default function BemanningPage() {
 								{/* Pricing Info */}
 								<div className="text-center mb-4 md:mb-8">
 									<p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-										Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som kompetensnivå, projektets längd, arbetstider och specialkrav för att ge dig en offert som passar just din situation. Vi kan även möta på plats vid behov. Alla priser är transparenta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+										Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som kompetensnivå, projektets längd, arbetstider och specialkrav för att ge dig en offert som passar just din situation. Vi kan även besikta på plats vid behov. Alla priser är transparenta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
 									</p>
 								</div>
 
@@ -1229,12 +1229,12 @@ export default function BemanningPage() {
 								{
 									id: 'faq-1',
 									question: 'Vilka typer av bemanning erbjuder ni?',
-									answer: 'Vi erbjuder bemanning för flytt, logistik och städ. Detta inkluderar flyttare, lastare, städare och logistikpersonal. Vi kan anpassa bemanningen efter dina specifika behov och kompetenskrav.'
+									answer: 'Vi erbjuder bemanning för flytt, logistik och städ. Vi kan anpassa bemanningen efter dina specifika behov och kompetenskrav.'
 								},
 								{
 									id: 'faq-2',
 									question: 'Hur snabbt kan ni leverera bemanning?',
-									answer: 'Vi kan vanligtvis leverera kvalificerad personal inom 24-48 timmar, beroende på dina specifika krav och tillgänglighet. För akuta behov kontaktar vi dig direkt för att diskutera möjligheter.'
+									answer: 'Vi kan vanligtvis leverera kvalificerad personal inom några dagar, beroende på dina specifika krav och tillgänglighet. För akuta behov kontakta oss för att diskutera möjligheter.'
 								},
 								{
 									id: 'faq-3',
@@ -1249,13 +1249,9 @@ export default function BemanningPage() {
 								{
 									id: 'faq-5',
 									question: 'Kan ni leverera bemanning utanför kontorstid?',
-									answer: 'Ja, vi kan leverera bemanning dygnet runt, inklusive helger och helger. Vi förstår att många projekt kräver flexibla arbetstider och vi anpassar oss efter dina scheman.'
+									answer: 'Ja, vi kan leverera bemanning dygnet runt, inklusive kvällar och helger. Vi förstår att många projekt kräver flexibla arbetstider och vi anpassar oss efter ert schema.'
 								},
-								{
-									id: 'faq-6',
-									question: 'Vad händer om jag inte är nöjd med den bemannade personalen?',
-									answer: 'Vi strävar alltid efter högsta kvalitet och kundnöjdhet. Om du inte är nöjd med den levererade personalen kontaktar vi dig omedelbart för att lösa situationen. Vi kan ersätta personal eller justera tjänsten enligt dina önskemål.'
-								}
+							
 							].map((faq) => (
 								<motion.div
 									key={faq.id}

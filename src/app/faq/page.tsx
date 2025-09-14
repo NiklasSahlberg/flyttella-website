@@ -17,7 +17,7 @@ export default function FAQPage() {
       {
         id: "flytt-2",
         question: "Hur lång tid tar en flytt?",
-        answer: "Tiden varierar beroende på storleken på flytten. En vanlig lägenhetsflytt tar vanligtvis 2-4 timmar, medan en villa kan ta 4-8 timmar. Vi ger dig en mer exakt tidsuppskattning när vi ser din specifika situation."
+        answer: "Tiden för en flytt kan variera mycket och beror bland annat på bostadens storlek, hur mycket som ska flyttas, samt avståndet mellan adresserna. Mindre flyttar går ofta snabbare, medan större bostäder eller längre transporter kan ta längre tid. Vi kan alltid ge en mer anpassad uppskattning när vi vet mer om just er flytt."
       },
       {
         id: "flytt-3",
@@ -37,12 +37,12 @@ export default function FAQPage() {
       {
         id: "flytt-7",
         question: "Kan jag låna flyttkartonger?",
-        answer: "Ja, vi erbjuder fritt lån av specialgjorda flyttkartonger med vår logga i upp till 4 veckor. Detta ingår i vårt servicepaket."
+        answer: "Ja, vi erbjuder kostnadsfritt lån av flyttkartonger i upp till 4 veckor inom Stockholm. Om ni hämtar kartongerna själva från vårt kontor är det helt gratis."
       },
       {
         id: "flytt-8",
         question: "Hanterar ni piano och tunga föremål?",
-        answer: "Ja, vi har specialiserad service för flytt av piano och andra tunga föremål. Vår personal är utbildad och har rätt utrustning för säker hantering av känsliga föremål."
+        answer: "Ja, vi har specialiserad service för flytt av piano och andra tunga föremål (över 100kg). Vår personal är utbildad och har rätt utrustning för säker hantering av tunga föremål."
       },
       {
         id: "flytt-9",
@@ -69,12 +69,12 @@ export default function FAQPage() {
       {
         id: "utland-1",
         question: "Vilka dokument behöver jag för utlandsflytt?",
-        answer: "Det varierar mellan länder, men vanligtvis behövs inventarielista (på engelska), kopia på pass, eventuella visum/uppehållstillstånd och försäkringsbrev. Vi guidar dig i vad som krävs för din destination."
+        answer: "Det varierar mellan länder, men vanligtvis behövs inventarielista (på engelska), kopia på pass, eventuella visum/uppehållstillstånd och försäkringsbrev."
       },
       {
         id: "utland-2",
         question: "Hur fungerar tull och införselregler?",
-        answer: "Tullregler skiljer sig åt per land. Personligt bohag för eget bruk är oftast tullfritt men måste förtullas korrekt. Vi hjälper dig med underlag och information om införselregler samt eventuella avgifter."
+        answer: "Tullregler skiljer sig åt per land. Personligt bohag för eget bruk är oftast tullfritt men måste förtullas korrekt."
       },
       {
         id: "utland-3",
@@ -94,7 +94,7 @@ export default function FAQPage() {
       {
         id: "utland-6",
         question: "Vad får jag inte ta med mig?",
-        answer: "Farligt gods (t.ex. gas, brandfarliga vätskor), färskvaror samt vissa växt- och djurprodukter kan vara förbjudna. Reglerna skiljer sig per land – vi informerar dig om begränsningar för din rutt."
+        answer: "Farligt gods (t.ex. gas, brandfarliga vätskor), färskvaror samt vissa växt- och djurprodukter kan vara förbjudna. Reglerna skiljer sig per land."
       },
       {
         id: "utland-7",
@@ -136,7 +136,7 @@ export default function FAQPage() {
       {
         id: "stadning-6",
         question: "Måste bostaden vara tom inför städningen?",
-        answer: "Ja, för att kunna städa effektivt behöver bostaden vara tömd."
+        answer: "Ja, för bästa resultat behöver bostaden vara helt tömd. Om den inte är det – till exempel när flyttstädningen beställs av en andra part – så städar vi de ytor vi kommer åt. Observera dock att resultatet blir bäst när bostaden är helt tom."
       },
       {
         id: "stadning-7",

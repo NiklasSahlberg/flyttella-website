@@ -1806,9 +1806,56 @@
       "readMore": "Läs mer om oss",
       "imageAlt": "Om Flyttella"
     },
+    "tipsSection": {
+      "title": "Tips för din flytt",
+      "beforeMoving": {
+        "title": "Innan flytten"
+      },
+      "duringMoving": {
+        "title": "Under flytten"
+      },
+      "afterMoving": {
+        "title": "Efter flytten"
+      },
+      "packingTips": {
+        "title": "Packtips",
+        "imageAlt": "Packning"
+      },
+      "smoothMovingDay": {
+        "title": "En smidig flyttdag",
+        "imageAlt": "Glad flyttarbetare"
+      },
+      "startInNewHome": {
+        "title": "Start i nya hemmet",
+        "imageAlt": "Nytt hem"
+      }
+    },
+    "tips": {
+      "planning": {
+        "title": "Planera och förbered",
+        "imageAlt": "Planering"
+      },
+      "contracts": {
+        "title": "Avtal och anmälningar",
+        "imageAlt": "Avtal"
+      },
+      "beforeMoving": {
+        "title": "Innan flyttfirman kommer",
+        "imageAlt": "Förberedelse för flytt"
+      },
+      "duringMoving": {
+        "title": "Kommunikation och koordinering",
+        "imageAlt": "Flytt under pågående"
+      },
+      "afterMoving": {
+        "title": "Dokumentation och uppföljning",
+        "imageAlt": "Dokumentation efter flytt"
+      }
+    },
     "reviews": {
       "title": "Vad tycker våra kunder om oss?",
       "description": "Våra kunder är nöjda med vår service. Här är några exempel på vad de säger om oss:",
+      "imageAlt": "1000+ positiva recensioner från kunder",
       "arrowText": "Vi har hjälpt tusentals kunder med flyttar, städning och bohagsflytt över åren. Våra kunder uppskattar vår professionella service, punktlighet och omtanke.",
       "cta": "Läs fler recensioner"
     },
@@ -1822,16 +1869,20 @@
       "flyttstadning": {
         "title": "Flyttstädning",
         "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "extendedDescription": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.",
         "readMore": "Läs mer"
       },
       "magasinering": {
         "title": "Magasinering",
         "description": "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
+        "extendedDescription": "Behöver du magasinera bohag under flyttprocessen? Vi tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan – och kan även hjälpa till med hämtning och återleverans.",
         "readMore": "Läs mer"
       },
       "packhjalp": {
         "title": "Packhjälp",
         "description": "Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.",
+        "extendedDescription": "Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med smidig återleverans.",
+        "mobileDescription": "Vi hjälper med märkning och organisering för enklare uppackning.",
         "readMore": "Läs mer"
       }
     },
@@ -1855,16 +1906,21 @@
     },
     "process": {
       "title": "Så fungerar det",
-      "description": "Vi gör flyttprocessen enkel och smidig för dig.",
-      "pricing": "Fast pris - inga dolda kostnader",
+      "description": "Vår flyttprocess är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär på startsidan där du anger dina uppgifter och flyttbehov. Inom en minut får du en offert skickad till din angivna e-postadress. Samma dag eller dagen efter tar vi personlig kontakt med dig för att diskutera detaljerna och svara på eventuella frågor. När du är nöjd med offerten kan du enkelt signera den digitalt. Sedan genomför vi flytten enligt dina önskemål och avtal. Resultatet? En nöjd kund som kan fokusera på att komma hem till sitt nya hem.",
+      "pricing": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation, vi kan även besikta bostaden vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
+      "subtitle": "Vår flyttprocess i 6 enkla steg",
       "steps": {
-        "1": {
+        "0": {
           "title": "Fyll i formuläret",
           "description": "Berätta för oss vad du behöver hjälp med och när du vill att vi ska komma."
         },
-        "2": {
+        "1": {
           "title": "Snabb återkoppling",
           "description": "Vi återkommer inom en minut med en kostnadsfri offert."
+        },
+        "2": {
+          "title": "Personlig kontakt",
+          "description": "Vi ringer samma dag eller dagen efter för att diskutera detaljerna."
         },
         "3": {
           "title": "Bekräfta bokningen",

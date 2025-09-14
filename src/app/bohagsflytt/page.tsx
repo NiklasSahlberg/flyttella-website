@@ -109,11 +109,12 @@ function HappyCustomerLottie() {
   }, []);
   if (!animationData) return null;
   return (
-    <div className="w-24 h-24 flex items-center justify-center -m-2">
+    <div className="w-20 h-20 mx-auto mb-2">
       <Lottie animationData={animationData} loop autoplay />
     </div>
   );
 }
+
 
 const features = [
   {
@@ -154,9 +155,9 @@ export default function Bohagsflytt() {
   }, []);
 
   const experienceCards = [
-    { title: 'Flyttar', count: '8000+', description: 'Genomförda flyttar', delay: 0 },
-    { title: 'Städningar', count: '7000+', description: 'Genomförda städningar', delay: 1 },
-    { title: 'Månadsvis', count: '500+', description: 'Nöjda kunder', delay: 2 },
+    { title: locale === 'sv' ? 'Flyttar' : 'Moves', count: '8000+', description: locale === 'sv' ? 'Genomförda flyttar' : 'Completed moves', delay: 0 },
+    { title: locale === 'sv' ? 'Städningar' : 'Cleanings', count: '7000+', description: locale === 'sv' ? 'Genomförda städningar' : 'Completed cleanings', delay: 1 },
+    { title: locale === 'sv' ? 'Månadsvis' : 'Monthly', count: '500+', description: locale === 'sv' ? 'Nöjda kunder' : 'Satisfied customers', delay: 2 },
   ];
 
   const locations = [
@@ -948,7 +949,7 @@ export default function Bohagsflytt() {
                   {t('bohagsflytt.services.flyttstadning.description')}
                 </p>
                 <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                  Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.
+                  {t('bohagsflytt.services.flyttstadning.extendedDescription')}
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 
@@ -1004,7 +1005,7 @@ export default function Bohagsflytt() {
                   {t('bohagsflytt.services.magasinering.description')}
                 </p>
                 <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                  Behöver du magasinera bohag under flyttprocessen? Vi tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan – och kan även hjälpa till med hämtning och återleverans.
+                  {t('bohagsflytt.services.magasinering.extendedDescription')}
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 
@@ -1060,10 +1061,10 @@ export default function Bohagsflytt() {
                   {t('bohagsflytt.services.packhjalp.description')}
                 </p>
                 <p className="md:hidden text-lg text-gray-100 mb-6 md:mb-0 relative">
-                  Vi hjälper med märkning och organisering för enklare uppackning.
+                  {t('bohagsflytt.services.packhjalp.mobileDescription')}
                 </p>
                 <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                  Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med smidig återleverans.
+                  {t('bohagsflytt.services.packhjalp.extendedDescription')}
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 
@@ -1116,7 +1117,7 @@ export default function Bohagsflytt() {
                   }}
                   id="upptack-tjanster"
                 >
-                    Våra tjänster
+                    {locale === 'sv' ? 'Våra tjänster' : 'Our Services'}
                 </motion.h2>
                 <motion.p 
                   className="text-lg md:text-xl mb-8 text-[#0F172A]/90"
@@ -1129,8 +1130,10 @@ export default function Bohagsflytt() {
                     delay: 0 * 0.25
                   }}
                 >
-                    Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. 
-                    Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.
+                    {locale === 'sv' 
+                      ? 'Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.'
+                      : 'We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. From household moves and moving cleaning to special services like heavy lifting and storage.'
+                    }
                 </motion.p>
                 <motion.div
                   className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -1151,7 +1154,7 @@ export default function Bohagsflytt() {
                       href="/tjanster" 
                       className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                     >
-                      Se alla våra flyttjänster
+                      {locale === 'sv' ? 'Se alla våra flyttjänster' : 'See all our moving services'}
                       <motion.svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1174,7 +1177,7 @@ export default function Bohagsflytt() {
                       href="/stadtjanster" 
                       className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                     >
-                      Se alla våra städtjänster
+                      {locale === 'sv' ? 'Se alla våra städtjänster' : 'See all our cleaning services'}
                       <motion.svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1197,7 +1200,7 @@ export default function Bohagsflytt() {
           <section className="py-8 md:py-20 bg-gray-50">
             <div className="container mx-auto px-4">
               <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Tips för din flytt</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('bohagsflytt.tipsSection.title')}</h2>
                 
                 <div className="space-y-4 md:space-y-16">
                   
@@ -1222,62 +1225,89 @@ export default function Bohagsflytt() {
                     </div>
                     
                     {/* Desktop: Always visible title */}
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Innan flytten</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">{t('bohagsflytt.tipsSection.beforeMoving.title')}</h3>
                     
                     {/* Mobile: Expandable content */}
                     <div className={`md:block ${expandedTipSection === 'innan' ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                       <TipCard
-                        title="Planera och förbered"
+                        title={t('bohagsflytt.tips.planning.title')}
                         imageSrc="/tipsforflytt.jpg"
-                        imageAlt="Planering"
+                        imageAlt={t('bohagsflytt.tips.planning.imageAlt')}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
-                            <li>Gör en checklista.</li>
-                            <li>Rensa ut onödiga saker.</li>
-                            <li>Boka flyttfirma och städning.</li>
-                            <li>Beställ flyttkartonger.</li>
+                            {locale === 'sv' ? [
+                              <li key="1">Gör en checklista.</li>,
+                              <li key="2">Rensa ut onödiga saker.</li>,
+                              <li key="3">Boka flyttfirma och städning.</li>,
+                              <li key="4">Beställ flyttkartonger.</li>
+                            ] : [
+                              <li key="1">Make a checklist.</li>,
+                              <li key="2">Clear out unnecessary things.</li>,
+                              <li key="3">Book moving company and cleaning.</li>,
+                              <li key="4">Order moving boxes.</li>
+                            ]}
                           </ul>
                         }
                       />
                       <TipCard
-                        title="Avtal och anmälningar"
+                        title={t('bohagsflytt.tips.contracts.title')}
                         imageSrc="/viktigaavtalcustomer.png"
-                        imageAlt="Avtal"
+                        imageAlt={t('bohagsflytt.tips.contracts.imageAlt')}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
-                            <li>Adressändra hos Skatteverket.</li>
-                            <li>Flytta el, bredband, etc.</li>
-                            <li>Teckna nya avtal.</li>
-                            <li>Meddela viktiga kontakter.</li>
+                            {locale === 'sv' ? [
+                              <li key="1">Adressändra hos Skatteverket.</li>,
+                              <li key="2">Flytta el, bredband, etc.</li>,
+                              <li key="3">Teckna nya avtal.</li>,
+                              <li key="4">Meddela viktiga kontakter.</li>
+                            ] : [
+                              <li key="1">Change address with the Tax Agency.</li>,
+                              <li key="2">Move electricity, broadband, etc.</li>,
+                              <li key="3">Sign new contracts.</li>,
+                              <li key="4">Notify important contacts.</li>
+                            ]}
                           </ul>
                         }
                       />
                       <TipCard
-                          title="Innan flyttfirman kommer"
+                          title={t('bohagsflytt.tips.beforeMoving.title')}
                           imageSrc="/innanflyttfirmankommer.jpg"
-                          imageAlt="Förberedelse för flytt"
+                          imageAlt={t('bohagsflytt.tips.beforeMoving.imageAlt')}
                           objectPosition="object-[center_45%]"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
-                              <li>Packa ner allt lösöre i kartonger</li>
-                              <li>Montera ner alla gardiner</li>
-                              <li>Montera ner alla lampor</li>
-                              <li>Dubbelkolla packning och märkning.</li>
+                              {locale === 'sv' ? [
+                                <li key="1">Packa ner allt lösöre i kartonger</li>,
+                                <li key="2">Montera ner alla gardiner</li>,
+                                <li key="3">Montera ner alla lampor</li>,
+                                <li key="4">Dubbelkolla packning och märkning.</li>
+                              ] : [
+                                <li key="1">Pack all loose items in boxes</li>,
+                                <li key="2">Take down all curtains</li>,
+                                <li key="3">Take down all lamps</li>,
+                                <li key="4">Double-check packing and labeling.</li>
+                              ]}
                             </ul>
                           }
                         />
                       <TipCard
-                        title="Packtips"
+                        title={t('bohagsflytt.tipsSection.packingTips.title')}
                         imageSrc="/packing_tips.jpg"
-                        imageAlt="Packning"
+                        imageAlt={t('bohagsflytt.tipsSection.packingTips.imageAlt')}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
-                            <li>Märk alla kartonger tydligt.</li>
-
-                            <li>Håll nycklar tillgängliga.</li>
-                            <li>Överbelasta inte flyttlådorna.</li>
-                            <li>Använd silkespapper för ömtåliga föremål och porslin.</li>
+                            {locale === 'sv' ? [
+                              <li key="1">Märk alla kartonger tydligt.</li>,
+                              <li key="2">Håll nycklar tillgängliga.</li>,
+                              <li key="3">Överbelasta inte flyttlådorna.</li>,
+                              <li key="4">Använd silkespapper för ömtåliga föremål och porslin.</li>
+                            ] : [
+                              <li key="1">Label all boxes clearly.</li>,
+                              <li key="2">Keep keys accessible.</li>,
+                              <li key="3">Don't overload moving boxes.</li>,
+                              <li key="4">Use tissue paper for delicate items and porcelain.</li>
+                            ]}
                           </ul>
                         }
                       />
@@ -1306,40 +1336,54 @@ export default function Bohagsflytt() {
                     </div>
                     
                     {/* Desktop: Always visible title */}
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Under flytten</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">{t('bohagsflytt.tipsSection.duringMoving.title')}</h3>
                     
                     {/* Mobile: Expandable content */}
                     <div className={`md:block ${expandedTipSection === 'under' ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
-                          title="En smidig flyttdag"
+                          title={t('bohagsflytt.tipsSection.smoothMovingDay.title')}
                           imageSrc="/smidigflyttdag.jpg"
-                          imageAlt="Glad flyttarbetare"
+                          imageAlt={t('bohagsflytt.tipsSection.smoothMovingDay.imageAlt')}
                           objectPosition="object-[center_35%]"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
-          
-                              <li>Håll värdesaker tillgängliga.</li>
-                              <li>Säkerställ fri väg för flytthjälp.</li>
-                              
-                              <li>Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.</li>
-                              <li>Se till att montera ner eller packa ner bortglömda föremål.</li>
+                              {locale === 'sv' ? [
+                                <li key="1">Håll värdesaker tillgängliga.</li>,
+                                <li key="2">Säkerställ fri väg för flytthjälp.</li>,
+                                <li key="3">Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.</li>,
+                                <li key="4">Se till att montera ner eller packa ner bortglömda föremål.</li>
+                              ] : [
+                                <li key="1">Keep valuables accessible.</li>,
+                                <li key="2">Ensure clear path for movers.</li>,
+                                <li key="3">Do a final check of the home after loading and unloading in both homes to ensure nothing is left behind.</li>,
+                                <li key="4">Make sure to dismantle or pack forgotten items.</li>
+                              ]}
                             </ul>
                           }
                         />
                       <TipCard
-                          title="Kommunikation och koordinering"
+                          title={t('bohagsflytt.tips.duringMoving.title')}
                           imageSrc="/under_flytt.jpg"
-                          imageAlt="Flytt under pågående"
+                          imageAlt={t('bohagsflytt.tips.duringMoving.imageAlt')}
                           objectPosition="object-center"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
-                              <li>Håll kontakt med flyttledaren.</li>
-                              <li>Fotografera eventuella skador.</li>
-                              <li>Kontrollera att allt laddas korrekt.</li>
-                              <li>Följ med till den nya adressen.</li>
-                              <li>Var tydlig med särskilda önskemål.</li>
-                              <li>Var tillgänglig för frågor.</li>
+                              {locale === 'sv' ? [
+                                <li key="1">Håll kontakt med flyttledaren.</li>,
+                                <li key="2">Fotografera eventuella skador.</li>,
+                                <li key="3">Kontrollera att allt laddas korrekt.</li>,
+                                <li key="4">Följ med till den nya adressen.</li>,
+                                <li key="5">Var tydlig med särskilda önskemål.</li>,
+                                <li key="6">Var tillgänglig för frågor.</li>
+                              ] : [
+                                <li key="1">Keep contact with the moving leader.</li>,
+                                <li key="2">Photograph any damages.</li>,
+                                <li key="3">Check that everything is loaded correctly.</li>,
+                                <li key="4">Follow to the new address.</li>,
+                                <li key="5">Be clear with special requests.</li>,
+                                <li key="6">Be available for questions.</li>
+                              ]}
                             </ul>
                           }
                         />
@@ -1368,41 +1412,60 @@ export default function Bohagsflytt() {
                     </div>
                     
                     {/* Desktop: Always visible title */}
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Efter flytten</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">{t('bohagsflytt.tipsSection.afterMoving.title')}</h3>
                     
                     {/* Mobile: Expandable content */}
                     <div className={`md:block ${expandedTipSection === 'efter' ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
-                          title="Start i nya hemmet"
+                          title={t('bohagsflytt.tipsSection.startInNewHome.title')}
                           imageSrc="/efter_flytt.jpg"
-                          imageAlt="Nytt hem"
+                          imageAlt={t('bohagsflytt.tipsSection.startInNewHome.imageAlt')}
                           objectPosition="object-[10%_center]"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
-                              <li>Kontrollera flyttstädningen.</li>
-                              <li>Packa upp det viktigaste först.</li>
-                              <li>Kontrollera att alla föremål anlänt.</li>
-                              <li>Montera upp gardiner och lampor.</li>
-                              <li>Uppdatera adress hos myndigheter.</li>
-                              <li>Testa alla vitvaror och eluttag.</li>
-                              <li>Ta bort tomma kartonger och emballage.</li>
+                              {locale === 'sv' ? [
+                                <li key="1">Kontrollera flyttstädningen.</li>,
+                                <li key="2">Packa upp det viktigaste först.</li>,
+                                <li key="3">Kontrollera att alla föremål anlänt.</li>,
+                                <li key="4">Montera upp gardiner och lampor.</li>,
+                                <li key="5">Uppdatera adress hos myndigheter.</li>,
+                                <li key="6">Testa alla vitvaror och eluttag.</li>,
+                                <li key="7">Ta bort tomma kartonger och emballage.</li>
+                              ] : [
+                                <li key="1">Check the moving cleaning.</li>,
+                                <li key="2">Unpack the most important things first.</li>,
+                                <li key="3">Check that all items have arrived.</li>,
+                                <li key="4">Mount curtains and lamps.</li>,
+                                <li key="5">Update address with authorities.</li>,
+                                <li key="6">Test all appliances and outlets.</li>,
+                                <li key="7">Remove empty boxes and packaging.</li>
+                              ]}
                             </ul>
                           }
                         />
                       <TipCard
-                          title="Dokumentation och uppföljning"
+                          title={t('bohagsflytt.tips.afterMoving.title')}
                           imageSrc="/godtid.jpg"
-                          imageAlt="Dokumentation efter flytt"
+                          imageAlt={t('bohagsflytt.tips.afterMoving.imageAlt')}
                           objectPosition="object-center"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
-                              <li>Fotografera ditt nya hem.</li>
-                              <li>Kontakta flyttfirman för feedback.</li>
-                              <li>Skriv en recension av tjänsten.</li>
-                              <li>Organisera flyttkvitton och dokument.</li>
-                              <li>Fira din nya bostad med familj och vänner.</li>
-                              <li>Uppdatera försäkringar för nya bostaden.</li>
+                              {locale === 'sv' ? [
+                                <li key="1">Fotografera ditt nya hem.</li>,
+                                <li key="2">Kontakta flyttfirman för feedback.</li>,
+                                <li key="3">Skriv en recension av tjänsten.</li>,
+                                <li key="4">Organisera flyttkvitton och dokument.</li>,
+                                <li key="5">Fira din nya bostad med familj och vänner.</li>,
+                                <li key="6">Uppdatera försäkringar för nya bostaden.</li>
+                              ] : [
+                                <li key="1">Photograph your new home.</li>,
+                                <li key="2">Contact the moving company for feedback.</li>,
+                                <li key="3">Write a review of the service.</li>,
+                                <li key="4">Organize moving receipts and documents.</li>,
+                                <li key="5">Celebrate your new home with family and friends.</li>,
+                                <li key="6">Update insurance for the new home.</li>
+                              ]}
                             </ul>
                           }
                         />
@@ -1524,7 +1587,7 @@ export default function Bohagsflytt() {
           {/* Centered content only */}
           <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('bohagsflytt.experience.title')}</h3>
 
               {/* Mobile: Auto-sliding cards */}
               <div className="md:hidden mt-8">
@@ -1675,9 +1738,12 @@ export default function Bohagsflytt() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet i Stockholm</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Lokal erfarenhet i Stockholm' : 'Local experience in Stockholm'}</h4>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4 px-4 md:px-8">
-                    Vi har hjälpt tusentals kunder med deras flyttar i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av flyttar, från små lägenheter till stora villor.
+                    {locale === 'sv' 
+                      ? 'Vi har hjälpt tusentals kunder med deras flyttar i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av flyttar, från små lägenheter till stora villor.'
+                      : 'We have helped thousands of customers with their moves in Stockholm and the surrounding area. Our local knowledge and experience ensures that we can handle all types of moves, from small apartments to large villas.'
+                    }
                   </p>
                   {!showFullExperienceText && (
                     <div className="md:hidden mb-3">
@@ -1706,12 +1772,18 @@ export default function Bohagsflytt() {
                       className="space-y-4 mt-4 md:hidden px-4 md:px-8"
                     >
                       <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                        Med vår erfarenhet sedan 2010 har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+                        {locale === 'sv' 
+                          ? 'Med vår erfarenhet sedan 2010 har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.'
+                          : 'With our experience since 2010, we have built a reputation for quality, reliability and customer satisfaction. We understand the local conditions and can offer tailored solutions for all needs.'
+                        }
                       </p>
                     </motion.div>
                   )}
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
-                    Med vår erfarenhet sedan 2010 har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.
+                    {locale === 'sv' 
+                      ? 'Med vår erfarenhet sedan 2010 har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.'
+                      : 'With our experience since 2010, we have built a reputation for quality, reliability and customer satisfaction. We understand the local conditions and can offer tailored solutions for all needs.'
+                    }
                   </p>
                 </motion.div>
 
@@ -1720,7 +1792,7 @@ export default function Bohagsflytt() {
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
                     <Image
                       src="/1000reviewspicture.png"
-                      alt="1000+ positiva recensioner från kunder"
+                      alt={t('bohagsflytt.reviews.imageAlt')}
                       width={200}
                       height={200}
                       className="object-contain h-36 w-36"
@@ -1766,7 +1838,7 @@ export default function Bohagsflytt() {
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
                       src="/1000reviewspicture.png"
-                      alt="1000+ positiva recensioner från kunder"
+                      alt={t('bohagsflytt.reviews.imageAlt')}
                       width={260}
                       height={260}
                       className="object-contain h-64 w-64 mt-3"
@@ -1910,10 +1982,10 @@ export default function Bohagsflytt() {
             <div className="w-full">
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
-                  Läs mer om flytt i Stockholm
+                  {locale === 'sv' ? 'Läs mer om flytt i Stockholm' : 'Read more about moving in Stockholm'}
                 </h2>
                 <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
-                  Få värdefulla tips och råd för en smidig flytt
+                  {locale === 'sv' ? 'Få värdefulla tips och råd för en smidig flytt' : 'Get valuable tips and advice for a smooth move'}
                 </p>
               </div>
               <div className="max-w-6xl mx-auto">
@@ -1929,22 +2001,25 @@ export default function Bohagsflytt() {
                       <div className="w-full md:w-1/3 h-48 md:h-full">
                         <img 
                           src="/tipsforflytt.jpg" 
-                          alt="Flytttips Stockholm" 
+                          alt={locale === 'sv' ? 'Flytttips Stockholm' : 'Moving tips Stockholm'} 
                           className="w-full h-full object-cover object-[60%_center]"
                         />
                       </div>
                       <div className="w-full md:w-2/3 p-4 md:p-6">
                         <div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
                           <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
-                            Flytttips
+                            {locale === 'sv' ? 'Flytttips' : 'Moving Tips'}
                           </span>
-                          <span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
+                          <span className="text-gray-500 text-sm md:text-base sm:ml-4">{locale === 'sv' ? '5 min läsning' : '5 min read'}</span>
                         </div>
                         <h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
-                          Vad bör du tänka på när du väljer en seriös flyttfirma
+                          {locale === 'sv' ? 'Vad bör du tänka på när du väljer en seriös flyttfirma' : 'What should you consider when choosing a serious moving company'}
                         </h3>
                         <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
-                          Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.
+                          {locale === 'sv' 
+                            ? 'Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.'
+                            : 'Choosing the right moving company is crucial for a smooth move. In this guide, we go through the most important factors you should consider - from insurance and permits to customer reviews and price transparency.'
+                          }
                         </p>
                         <div className="flex justify-start sm:justify-between items-center">
                           <div></div>
@@ -1952,7 +2027,7 @@ export default function Bohagsflytt() {
                             href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
                             className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
                           >
-                            Läs mer
+                            {locale === 'sv' ? 'Läs mer' : 'Read more'}
                             <svg 
                               xmlns="http://www.w3.org/2000/svg" 
                               className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1975,7 +2050,7 @@ export default function Bohagsflytt() {
                 href="/blogg" 
                 className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base"
               >
-                Se alla artiklar om flytt
+                {locale === 'sv' ? 'Se alla artiklar om flytt' : 'See all moving articles'}
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -2158,13 +2233,13 @@ export default function Bohagsflytt() {
         </section>
         <div className="text-center mt-12">
           <p className="text-lg text-gray-600 mb-6">
-            Har du fler frågor?
+            {locale === 'sv' ? 'Har du fler frågor?' : 'Do you have more questions?'}
           </p>
           <Link 
             href="/faq" 
             className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
           >
-            Se alla vanliga frågor
+            {locale === 'sv' ? 'Se alla vanliga frågor' : 'See all common questions'}
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 

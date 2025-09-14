@@ -1807,9 +1807,56 @@
       "readMore": "Read more about us",
       "imageAlt": "About Flyttella"
     },
+    "tipsSection": {
+      "title": "Tips for your move",
+      "beforeMoving": {
+        "title": "Before the move"
+      },
+      "duringMoving": {
+        "title": "During the move"
+      },
+      "afterMoving": {
+        "title": "After the move"
+      },
+      "packingTips": {
+        "title": "Packing tips",
+        "imageAlt": "Packing"
+      },
+      "smoothMovingDay": {
+        "title": "A smooth moving day",
+        "imageAlt": "Happy mover"
+      },
+      "startInNewHome": {
+        "title": "Start in new home",
+        "imageAlt": "New home"
+      }
+    },
+    "tips": {
+      "planning": {
+        "title": "Plan and prepare",
+        "imageAlt": "Planning"
+      },
+      "contracts": {
+        "title": "Contracts and notifications",
+        "imageAlt": "Contracts"
+      },
+      "beforeMoving": {
+        "title": "Before the moving company arrives",
+        "imageAlt": "Moving preparation"
+      },
+      "duringMoving": {
+        "title": "Communication and coordination",
+        "imageAlt": "Move in progress"
+      },
+      "afterMoving": {
+        "title": "Documentation and follow-up",
+        "imageAlt": "Post-move documentation"
+      }
+    },
     "reviews": {
       "title": "What do our customers think of us?",
       "description": "Our customers are satisfied with our service. Here are some examples of what they say about us:",
+      "imageAlt": "1000+ positive reviews from customers",
       "arrowText": "We have helped thousands of customers with moves, cleaning and household moving over the years. Our customers appreciate our professional service, punctuality and care.",
       "cta": "Read more reviews"
     },
@@ -1823,16 +1870,20 @@
       "flyttstadning": {
         "title": "Moving Cleaning",
         "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures that your old home is left in perfect condition.",
+        "extendedDescription": "Our moving cleaning follows established industry standards and includes everything from kitchen and bathroom to window cleaning and details. We use environmentally friendly products and offer a 14-day cleaning guarantee so you can feel completely secure.",
         "readMore": "Read more"
       },
       "magasinering": {
         "title": "Storage",
         "description": "Safe storage of your belongings. We offer flexible solutions for shorter and longer storage with secure handling.",
+        "extendedDescription": "Do you need to store belongings during the moving process? We provide safe and reliable storage solutions for your belongings. We offer flexible options that suit your needs and timeline – and can also help with pickup and redelivery.",
         "readMore": "Read more"
       },
       "packhjalp": {
         "title": "Packing Help",
         "description": "Professional packing help for a stress-free move. We help you pack your belongings safely and organized.",
+        "extendedDescription": "Packing is often the most time-consuming part of a move. Our experienced movers use quality packing materials and ensure everything is packed correctly for transport. We also help with smooth redelivery.",
+        "mobileDescription": "We help with labeling and organizing for easier unpacking.",
         "readMore": "Read more"
       }
     },
@@ -1856,16 +1907,21 @@
     },
     "process": {
       "title": "How it works",
-      "description": "We make the moving process simple and smooth for you.",
-      "pricing": "Fixed price - no hidden costs",
+      "description": "Our moving process is designed to be simple, transparent and safe. It starts with you filling out our form on the homepage where you enter your details and moving needs. Within a minute you get a quote sent to your specified email address. The same day or the day after we take personal contact with you to discuss the details and answer any questions. When you are satisfied with the quote you can easily sign it digitally. Then we carry out the move according to your wishes and agreement. The result? A satisfied customer who can focus on coming home to their new home.",
+      "pricing": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as living area, floor, elevator and parking distance to give you a quote that fits your situation, we can also inspect the home if needed. All prices are fixed without hidden fees - we always start from your wishes and information we get from you as a customer. Do you have special wishes or questions? Contact us and we will adapt the quote to your needs.",
+      "subtitle": "Our moving process in 6 simple steps",
       "steps": {
-        "1": {
+        "0": {
           "title": "Fill out the form",
           "description": "Tell us what you need help with and when you want us to come."
         },
-        "2": {
+        "1": {
           "title": "Quick response",
           "description": "We respond within a minute with a free quote."
+        },
+        "2": {
+          "title": "Personal contact",
+          "description": "We call the same day or the day after to discuss the details."
         },
         "3": {
           "title": "Confirm booking",
