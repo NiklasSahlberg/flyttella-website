@@ -37,7 +37,45 @@ export default function MagasineringPage() {
   ];
 
   const locations = [
-    { name: 'Åkersberga', slug: 'akersberga' }, { name: 'Älvsjö', slug: 'alvsjo' }, { name: 'Årsta', slug: 'arsta' }, { name: 'Bromma', slug: 'bromma' }, { name: 'Danderyd', slug: 'danderyd' }, { name: 'Ekerö', slug: 'ekero' }, { name: 'Hägersten', slug: 'hagersten' }, { name: 'Haninge', slug: 'haninge' }, { name: 'Huddinge', slug: 'huddinge' }, { name: 'Järfälla', slug: 'jarfalla' }, { name: 'Kista', slug: 'kista' }, { name: 'Kungsholmen', slug: 'kungsholmen' }, { name: 'Lidingö', slug: 'lidingo' }, { name: 'Nacka', slug: 'nacka' }, { name: 'Norrmalm', slug: 'norrmalm' }, { name: 'Östermalm', slug: 'ostermalm' }, { name: 'Sollentuna', slug: 'sollentuna' }, { name: 'Solna', slug: 'solna' }, { name: 'Täby', slug: 'taby' }, { name: 'Vasastan', slug: 'vasastan' }
+    { name: "Åkersberga", slug: "akersberga" },
+    { name: "Älvsjö", slug: "alvsjo" },
+    { name: "Årsta", slug: "arsta" },
+    { name: "Botkyrka", slug: "botkyrka" },
+    { name: "Bromma", slug: "bromma" },
+    { name: "Bro", slug: "bro" },
+    { name: "Danderyd", slug: "danderyd" },
+    { name: "Ekerö", slug: "ekero" },
+    { name: "Enskede", slug: "enskede" },
+    { name: "Farsta", slug: "farsta" },
+    { name: "Hägersten", slug: "hagersten" },
+    { name: "Haninge", slug: "haninge" },
+    { name: "Huddinge", slug: "huddinge" },
+    { name: "Järfälla", slug: "jarfalla" },
+    { name: "Kista", slug: "kista" },
+    { name: "Kungsholmen", slug: "kungsholmen" },
+    { name: "Kungsängen", slug: "kungsangen" },
+    { name: "Lidingö", slug: "lidingo" },
+    { name: "Märsta", slug: "marsta" },
+    { name: "Nacka", slug: "nacka" },
+    { name: "Norrmalm", slug: "norrmalm" },
+    { name: "Nynäshamn", slug: "nynashamn" },
+    { name: "Östermalm", slug: "ostermalm" },
+    { name: "Salem", slug: "salem" },
+    { name: "Skärholmen", slug: "skarholmen" },
+    { name: "Södermalm", slug: "sodermalm" },
+    { name: "Södertälje", slug: "sodertalje" },
+    { name: "Solna", slug: "solna" },
+    { name: "Sollentuna", slug: "sollentuna" },
+    { name: "Spånga", slug: "spanga" },
+    { name: "Sundbyberg", slug: "sundbyberg" },
+    { name: "Täby", slug: "taby" },
+    { name: "Tumba", slug: "tumba" },
+    { name: "Tyresö", slug: "tyreso" },
+    { name: "Upplands Väsby", slug: "upplands-vasby" },
+    { name: "Vallentuna", slug: "vallentuna" },
+    { name: "Varmdö", slug: "varmdo" },
+    { name: "Vasastan", slug: "vasastan" },
+    { name: "Västerhaninge", slug: "vasterhaninge" }
   ];
 
   return (

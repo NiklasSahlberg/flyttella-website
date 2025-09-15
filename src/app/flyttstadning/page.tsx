@@ -210,7 +210,7 @@ export default function FlyttstadningPage() {
   ];
 
   // Lottie helpers are defined at module scope above
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <main className="overflow-hidden">
@@ -351,18 +351,18 @@ export default function FlyttstadningPage() {
                     <div className="flex items-center gap-3 mb-4 relative">
                       <span className="text-4xl">🔧</span>
                       <h3 className="text-xl font-bold text-white">
-                        Montering
+                        {t('flyttstadning.sidebar.montering.title')}
                       </h3>
                     </div>
                     <p className="text-sm text-gray-100 mb-4 relative">
-                      Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.
+                      {t('flyttstadning.sidebar.montering.description')}
                     </p>
                     <div className="mt-auto relative">
                       <Link 
                         href="/montering" 
                         className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
                       >
-                        Läs mer
+                        {t('flyttstadning.sidebar.montering.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -392,18 +392,18 @@ export default function FlyttstadningPage() {
                     <div className="flex items-center gap-3 mb-4 relative">
                       <span className="text-4xl">🎹</span>
                       <h3 className="text-xl font-bold text-white">
-                        Tunglyft
+                        {t('flyttstadning.sidebar.tunglyft.title')}
                       </h3>
                     </div>
                     <p className="text-sm text-gray-100 mb-4 relative">
-                      Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.
+                      {t('flyttstadning.sidebar.tunglyft.description')}
                     </p>
                     <div className="mt-auto relative">
                       <Link 
                         href="/piano-tunglyft" 
                         className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
                       >
-                        Läs mer
+                        {t('flyttstadning.sidebar.tunglyft.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -433,18 +433,18 @@ export default function FlyttstadningPage() {
                     <div className="flex items-center gap-3 mb-4 relative">
                       <span className="text-4xl">💪</span>
                       <h3 className="text-xl font-bold text-white">
-                        Bärhjälp
+                        {t('flyttstadning.sidebar.barhjalp.title')}
               </h3>
                     </div>
                     <p className="text-sm text-gray-100 mb-4 relative">
-                      Extra hjälp vid flytt för tunga och stora föremål. Vi hjälper dig med det tunga lyftet.
+                      {t('flyttstadning.sidebar.barhjalp.description')}
                     </p>
                     <div className="mt-auto relative">
                       <Link 
                         href="/barhjalp" 
                         className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
                       >
-                        Läs mer
+                        {t('flyttstadning.sidebar.barhjalp.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -474,18 +474,18 @@ export default function FlyttstadningPage() {
                     <div className="flex items-center gap-3 mb-4 relative">
                       <span className="text-4xl">🗑️</span>
                       <h3 className="text-xl font-bold text-white">
-                        Bortforsling
+                        {t('flyttstadning.sidebar.bortforsling.title')}
                       </h3>
                     </div>
                     <p className="text-sm text-gray-100 mb-4 relative">
-                      Professionell bortforsling av möbler och bohag som inte längre behövs. Miljövänlig hantering.
+                      {t('flyttstadning.sidebar.bortforsling.description')}
                     </p>
                     <div className="mt-auto relative">
                       <Link 
                         href="/bortforsling" 
                         className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
                       >
-                        Läs mer
+                        {t('flyttstadning.sidebar.bortforsling.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -512,66 +512,75 @@ export default function FlyttstadningPage() {
                 {/* Main content sections */}
                 {([
                   {
-                    title: "Vad är flyttstädning?",
-                    content: "Flyttstädning är en grundlig städning av en bostad som ska lämnas vid flytt. Det är en viktig del av flyttprocessen som säkerställer att den gamla bostaden lämnas i perfekt skick för nästa boende. En professionell flyttstädning omfattar allt från grundlig rengöring av alla ytor till specialbehandling av kök och badrum. Vi följer branschstandarder och säkerställer att städningen uppfyller alla krav som ställs av hyresvärdar eller köpare. Med vår erfarenhet och noggrannhet kan du känna dig trygg i att din gamla bostad lämnas i skinande skick.",
+                    title: t('flyttstadning.content.whatIsTitle'),
+                    content: t('flyttstadning.content.whatIsDescription'),
                     icon: '✨',
                   },
                   {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/cleaning_background.png" alt="Flyttstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/cleaning_background.png" alt={locale === 'sv' ? 'Flyttstädning' : 'Move-out cleaning'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: '',
                   },
                   {
-                    title: "Vad kostar flyttstädning?",
+                    title: t('flyttstadning.content.pricingTitle'),
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Priset på flyttstädning varierar beroende på bostadens storlek, antal rum, tillstånd och eventuella tilläggstjänster. En normal flyttstädning för en lägenhet kan kosta från cirka 1 400 kr efter rut-avdrag och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina specifika behov och bostadens förutsättningar.
+                          {t('flyttstadning.content.pricingDescription')}
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-                            "Flyttella fixade flyttstädningen och det blev riktigt bra. Lägenheten var ren och fräsch och besiktningen gick utan problem. Kan rekommenderas."
+                            "{t('flyttstadning.content.pricingTestimonial')}"
                           </p>
-                          <p className="italic text-gray-700 mt-2">- Maria</p>
+                          <p className="italic text-gray-700 mt-2">- {t('flyttstadning.content.testimonialAuthor')}</p>
                         </div>
                       </>
                     ),
                     icon: '💸',
                   },
                   {
-                    title: "Vad ingår i flyttstädning?",
-                    content: 'En komplett flyttstädning inkluderar grundlig rengöring av alla rum, kök och badrum. Vi rengör alla ytor, putsar fönster, dammsuger och moppar golv, rengör vitvaror och sanitetsutrustning. Vi använder professionella rengöringsmedel och följer branschstandarder för att säkerställa högsta kvalitet. Vår flyttstädning omfattar även specialbehandling av kök och badrum, inklusive rengöring av kyl/frys, spis, ugn och alla sanitetsutrustningar. Vi erbjuder också tilläggstjänster som rengöring av balkong, garage eller förråd vid behov.',
+                    title: t('flyttstadning.content.includesTitle'),
+                    content: t('flyttstadning.content.includesDescription'),
                     icon: '🧹',
                   },
                   {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/flyttstad_intro.png" alt="Städmaterial" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover object-[center_85%]" />
+                        <img src="/flyttstad_intro.png" alt={locale === 'sv' ? 'Städmaterial' : 'Cleaning supplies'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover object-[center_85%]" />
                       </div>
                     ),
                     icon: '',
                   },
                   {
-                    title: "14 dagars nöjd kund-garanti",
-                    content: "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti på alla flyttstädningar. Detta betyder att om du inte är helt nöjd med städningen kommer vi tillbaka och fixar det utan extra kostnad. Vår garanti ger dig trygghet och säkerställer att du får exakt den kvalitet du förväntar dig. Vi värdesätter din tillfredsställelse och arbetar hårt för att leverera en flyttstädning som överträffar dina förväntningar.",
+                    title: t('flyttstadning.content.guaranteeTitle'),
+                    content: t('flyttstadning.content.guaranteeDescription'),
                     icon: '✅',
                   },
                   {
-                    title: "Checklista inför flyttstädning",
+                    title: t('flyttstadning.content.checklistTitle'),
                     content: (
                       <div>
                         <ul className="list-disc pl-5 space-y-2">
-                          <li><strong>Stäng av och frosta av kyl och frys:</strong> Gör detta minst en dag innan städningen för bästa resultat.</li>
-                          <li><strong>Rensa vattenlås:</strong> Ta bort eventuella blockeringar för att underlätta rengöringen.</li>
-                          <li><strong>Dra ut vitvaror:</strong> Om du vill att vi rengör bakom kyl, frys, spis eller tvättmaskin.</li>
-                          <li><strong>Töm alla rum:</strong> Se till att alla rum är tomma från möbler och personliga tillhörigheter.</li>
-                          <li><strong>Lämna nycklar:</strong> Se till att vi har tillgång till bostaden på städdagen.</li>
-                          <li><strong>Kommunicera specialkrav:</strong> Informera oss om eventuella särskilda behov eller känsliga ytor.</li>
+                          {locale === 'sv' ? [
+                            <li key="1"><strong>Stäng av och frosta av kyl och frys:</strong> Gör detta minst en dag innan städningen för bästa resultat.</li>,
+                            <li key="2"><strong>Rensa vattenlås:</strong> Ta bort eventuella blockeringar för att underlätta rengöringen.</li>,
+                            <li key="3"><strong>Dra ut vitvaror:</strong> Om du vill att vi rengör bakom kyl, frys, spis eller tvättmaskin.</li>,
+                            <li key="4"><strong>Töm alla rum:</strong> Se till att alla rum är tomma från möbler och personliga tillhörigheter.</li>,
+                            <li key="5"><strong>Lämna nycklar:</strong> Se till att vi har tillgång till bostaden på städdagen.</li>,
+                            <li key="6"><strong>Kommunicera specialkrav:</strong> Informera oss om eventuella särskilda behov eller känsliga ytor.</li>
+                          ] : [
+                            <li key="1"><strong>Turn off and defrost refrigerator and freezer:</strong> Do this at least one day before cleaning for best results.</li>,
+                            <li key="2"><strong>Clean drains:</strong> Remove any blockages to facilitate cleaning.</li>,
+                            <li key="3"><strong>Pull out appliances:</strong> If you want us to clean behind refrigerator, freezer, stove or washing machine.</li>,
+                            <li key="4"><strong>Empty all rooms:</strong> Make sure all rooms are empty of furniture and personal belongings.</li>,
+                            <li key="5"><strong>Leave keys:</strong> Make sure we have access to the home on cleaning day.</li>,
+                            <li key="6"><strong>Communicate special requirements:</strong> Inform us of any special needs or sensitive surfaces.</li>
+                          ]}
                         </ul>
                       </div>
                     ),
@@ -651,11 +660,11 @@ export default function FlyttstadningPage() {
               {/* Mobile image above title to match Bohagsflytt */}
               <div className="lg:hidden px-4 mb-6 -mx-8">
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
-                  <img src="/omflyttella_flyttstad.png" alt="Om Flyttella Städ" className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                  <img src="/omflyttella_flyttstad.png" alt={t('flyttstadning.about.imageAlt')} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
                 </div>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('flyttstadning.about.title')}</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 {/* Left: Image - desktop only (mobile image moved below section) */}
                 <motion.div 
@@ -669,7 +678,7 @@ export default function FlyttstadningPage() {
                   <div className="relative h-80 lg:h-full w-full overflow-hidden rounded-2xl">
                     <img 
                       src="/omflyttella_flyttstad.png" 
-                      alt="Om Flyttella Städ" 
+                      alt={t('flyttstadning.about.imageAlt')} 
                       className="object-cover rounded-2xl w-full h-full" 
                       style={{ objectPosition: '80% 25%', transform: 'scale(1.10)' }} 
                     />
@@ -687,29 +696,35 @@ export default function FlyttstadningPage() {
                   {/* Desktop: full text */}
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                        Flyttella är en av Stockholms ledande aktörer inom flyttstädning med över 8 års erfarenhet av professionell flyttstädning, hemstädning och kontorsstädning. Vi erbjuder alltid 14 dagars städgaranti, fasta priser och personlig service för alla flyttstädningar i Stockholm.
+                        {t('flyttstadning.about.description1')}
                       </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                        Vi känner till alla Stockholms områden och anpassar våra flyttstädtjänster efter just dina behov – från lägenheter och villor till kontor och butiker. Vår flyttstädning följer branschstandarder och säkerställer att din gamla bostad lämnas i perfekt skick.
+                        {t('flyttstadning.about.description2')}
                       </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                        Vårt mål är att göra din flyttstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela flyttstädningsprocessen. Med vår erfarenhet av flyttstädning i Stockholm kan du känna dig trygg.
+                        {t('flyttstadning.about.description3')}
                       </p>
                   </div>
                   {/* Mobile: short text with expand */}
                   <div className="lg:hidden space-y-4">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    Flyttella är en av Stockholms ledande aktörer inom flyttstädning med över 8 års erfarenhet flyttstädning, hemstädning och kontorsstädning.
+                    {locale === 'sv' 
+                      ? 'Flyttella är en av Stockholms ledande aktörer inom flyttstädning med över 8 års erfarenhet flyttstädning, hemstädning och kontorsstädning.'
+                      : 'Flyttella is one of Stockholm\'s leading players in move-out cleaning with over 8 years of experience in move-out cleaning, home cleaning and office cleaning.'
+                    }
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi erbjuder 14 dagars städgaranti, fasta priser och personlig service – alltid anpassat efter dina behov.
+                      {locale === 'sv' 
+                        ? 'Vi erbjuder 14 dagars städgaranti, fasta priser och personlig service – alltid anpassat efter dina behov.'
+                        : 'We offer 14-day cleaning guarantee, fixed prices and personal service – always adapted to your needs.'
+                      }
                     </p>
                     {!showFullAboutText && (
                       <button
                         onClick={() => setShowFullAboutText(true)}
                         className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                       >
-                        Läs mer
+                        {t('flyttstadning.about.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -729,10 +744,10 @@ export default function FlyttstadningPage() {
                         className="space-y-4 mt-4"
                       >
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Vi känner till alla Stockholms områden och anpassar våra flyttstädtjänster efter just dina behov – från lägenheter och villor till kontor och butiker. Vår flyttstädning följer branschstandarder och säkerställer att din gamla bostad lämnas i perfekt skick.
+                          {t('flyttstadning.about.description2')}
                         </p>
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Vårt mål är att göra din flyttstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela flyttstädningsprocessen. Med vår erfarenhet av flyttstädning i Stockholm kan du känna dig trygg.
+                          {t('flyttstadning.about.description3')}
                         </p>
                         <motion.div
                           className="pt-6"
@@ -744,7 +759,7 @@ export default function FlyttstadningPage() {
                           href="/om-oss" 
                           className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                         >
-                          Läs mer om oss
+                          {locale === 'sv' ? 'Läs mer om oss' : 'Read more about us'}
                           <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -768,11 +783,11 @@ export default function FlyttstadningPage() {
         {/* Vad tycker våra kunder om oss */}
         <ReviewsWidget 
           location="Stockholm"
-          title="Vad tycker våra kunder om oss?"
-          subtitle="Pålitlig flyttstädning i Stockholm"
-          description="Som Stockholms föredragna flyttstädfirma prioriterar vi din tillfredsställelse. Med vår lokalkännedom och engagerade personal säkerställer vi att varje flyttstädning i Stockholm blir en smidig upplevelse. Våra kunder uppskattar vår noggrannhet och professionella flyttstädtjänster."
-          badgeAlt="8+ års erfarenhet som flyttstädfirma i Stockholm"
-          arrowText="Läs vad våra kunder säger om vår flyttstädning"
+          title={t('flyttstadning.reviews.title')}
+          subtitle={t('flyttstadning.reviews.subtitle')}
+          description={t('flyttstadning.reviews.description')}
+          badgeAlt={t('flyttstadning.reviews.badgeAlt')}
+          arrowText={t('flyttstadning.reviews.arrowText')}
         />
 
         {/* Redo att börja din flyttstädning? */}
@@ -800,10 +815,10 @@ export default function FlyttstadningPage() {
                 <span className="text-3xl md:text-4xl">🧹</span>
                 <div className="text-center md:text-left">
                   <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">
-                    Redo att börja din flyttstädning?
+                    {t('flyttstadning.cta.title')}
                   </h3>
                   <p className="text-base md:text-lg text-gray-100 leading-snug">
-                    Få en snabb och gratis offert på din flyttstädning
+                    {t('flyttstadning.cta.subtitle')}
                   </p>
                 </div>
               </div>
@@ -817,7 +832,7 @@ export default function FlyttstadningPage() {
                     href="/offert"
                     className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
-                    Få gratis offert
+                    {t('flyttstadning.cta.button')}
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -839,7 +854,7 @@ export default function FlyttstadningPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-                Kombinera din flyttstädning med andra tjänster
+                {t('flyttstadning.services.title')}
               </h2>
               <div className="grid grid-cols-1 gap-12">
               {/* Bohagsflytt Card */}
@@ -864,14 +879,14 @@ export default function FlyttstadningPage() {
                 <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                   <span className="text-4xl md:text-6xl">🏠</span>
                   <h3 className="text-3xl md:text-5xl font-bold text-white">
-                    Bohagsflytt
+                    {t('flyttstadning.services.bohagsflytt.title')}
                   </h3>
                 </div>
                 <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-                  Professionell flytt av hela eller delar av ett hushålls tillhörigheter. Vi säkerställer en trygg och smidig flyttprocess från start till mål.
+                  {t('flyttstadning.services.bohagsflytt.description')}
                 </p>
                 <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                  Flyttella erbjuder kompletta bohagsflyttar med allt från packning och transport till uppackning och eventuell magasinering. Vi följer branschstandarder och erbjuder försäkringar för att säkerställa att dina tillhörigheter är säkra under hela flyttprocessen. Med vår erfarenhet och noggrannhet kan du känna dig trygg under hela flytten.
+                  {t('flyttstadning.services.bohagsflytt.extendedDescription')}
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 
@@ -883,7 +898,7 @@ export default function FlyttstadningPage() {
                       href="/bohagsflytt" 
                       className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg"
                     >
-                      Läs mer
+                      {t('flyttstadning.services.bohagsflytt.readMore')}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -920,14 +935,14 @@ export default function FlyttstadningPage() {
                 <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                   <span className="text-4xl md:text-6xl">🏢</span>
                   <h3 className="text-3xl md:text-5xl font-bold text-white">
-                    Magasinering
+                    {t('flyttstadning.services.magasinering.title')}
                   </h3>
                 </div>
                 <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-                  Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.
+                  {t('flyttstadning.services.magasinering.description')}
                 </p>
                 <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                  Behöver du magasinera bohag under flyttprocessen? Flyttella tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan. Som extra service erbjuder vi den första månaden gratis för att göra din flyttprocess ännu smidigare.
+                  {t('flyttstadning.services.magasinering.extendedDescription')}
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 
@@ -939,7 +954,7 @@ export default function FlyttstadningPage() {
                       href="/magasinering" 
                       className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg"
                     >
-                      Läs mer
+                      {t('flyttstadning.services.bohagsflytt.readMore')}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -976,14 +991,14 @@ export default function FlyttstadningPage() {
                 <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                   <span className="text-4xl md:text-6xl">📦</span>
                   <h3 className="text-3xl md:text-5xl font-bold text-white">
-                    Packhjälp
+                    {t('flyttstadning.services.packhjalp.title')}
               </h3>
                 </div>
                 <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-                  Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.
+                  {t('flyttstadning.services.packhjalp.description')}
                 </p>
                 <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                  Packning är ofta den mest tidskrävande delen av en flytt. Flyttella erbjuder professionell packhjälp där våra erfarna flyttare hjälper dig packa dina tillhörigheter på ett säkert och organiserat sätt. Vi använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vår packhjälp inkluderar även märkning av kartonger och skapande av en inventarielista för enkel uppackning på den nya adressen.
+                  {t('flyttstadning.services.packhjalp.extendedDescription')}
                 </p>
                 <div className="mt-auto relative">
                   <motion.div 
@@ -995,7 +1010,7 @@ export default function FlyttstadningPage() {
                       href="/barhjalp" 
                       className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg"
                     >
-                      Läs mer
+                      {t('flyttstadning.services.bohagsflytt.readMore')}
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1034,7 +1049,7 @@ export default function FlyttstadningPage() {
                 transition={{ duration: 0.8, delay: 0 }}
                 id="upptack-tjanster"
               >
-                Våra tjänster
+                {t('flyttstadning.features.title')}
               </motion.h2>
               <motion.p 
                 className="text-lg md:text-xl mb-8 text-[#0F172A]/90"
@@ -1044,8 +1059,7 @@ export default function FlyttstadningPage() {
                 variants={fadeInUp}
                 transition={{ duration: 0.8, delay: 0 }}
               >
-                Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. 
-                Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.
+                {t('flyttstadning.features.description')}
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -1060,7 +1074,7 @@ export default function FlyttstadningPage() {
                     href="/tjanster" 
                     className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                   >
-                    Se alla våra flyttjänster
+                    {t('flyttstadning.features.flyttServicesButton')}
                     <motion.svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1079,7 +1093,7 @@ export default function FlyttstadningPage() {
                     href="/stadtjanster" 
                     className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                   >
-                  Se alla våra städtjänster
+                  {t('flyttstadning.features.cleaningServicesButton')}
                     <motion.svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1102,13 +1116,13 @@ export default function FlyttstadningPage() {
         <section className="md:hidden py-8 bg-white">
           <div className="mx-auto px-4">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">Våra förmåner</h2>
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">{t('flyttstadning.benefits.title')}</h2>
               <div className="relative overflow-hidden rounded-xl" onTouchStart={(e)=>{featureTouchStartXRef.current=e.touches[0].clientX; if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);}} onTouchMove={(e)=>featureTouchCurrentXRef.current=e.touches[0].clientX} onTouchEnd={()=>{ if (featureTouchStartXRef.current!=null && featureTouchCurrentXRef.current!=null){ const dx=featureTouchCurrentXRef.current-featureTouchStartXRef.current; const th=50; if(Math.abs(dx)>th){ if(dx<0){ setCurrentFeatureCard((prev)=>(prev+1)%totalFeatureCards);} else { setCurrentFeatureCard((prev)=>(prev-1+totalFeatureCards)%totalFeatureCards);} restartFeatureAutoSlide(); } } featureTouchStartXRef.current=null; featureTouchCurrentXRef.current=null; }}>
                 <div 
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}
                 >
-                  {[
+                  {(locale === 'sv' ? [
                     { icon: "💰", title: "Fast pris", description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser", link: "/priser" },
                     { icon: "📋", title: "RUT-avdrag", description: "Vi hanterar allt pappersarbete för RUT-avdrag", link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
                     { icon: "✅", title: "14 dagars städgaranti", description: "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti", link: "/garanti" },
@@ -1118,7 +1132,17 @@ export default function FlyttstadningPage() {
                     { icon: "🧴", title: "Miljövänliga produkter", description: "Vi använder miljövänliga och säkra rengöringsmedel", link: "/om-oss" },
                     { icon: "📈", title: "Ledningssystem", description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.", link: "/om-oss" },
                     { icon: "🦺", title: "Arbetsmiljö", description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.", link: "/om-oss" }
-                  ].map((feature, index) => (
+                  ] : [
+                    { icon: "💰", title: "Fixed price", description: "No surprises - we offer both fixed prices and the possibility of ongoing prices", link: "/priser" },
+                    { icon: "📋", title: "RUT deduction", description: "We handle all paperwork for RUT deduction", link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
+                    { icon: "✅", title: "14-day cleaning guarantee", description: "We are so confident in our quality that we offer a 14-day satisfied customer guarantee", link: "/garanti" },
+                    { icon: "⏰", title: "Reschedule or cancel free of charge", description: "Reschedule or cancel free of charge up to 24 hours before cleaning", link: "/avbokning" },
+                    { icon: "🔒", title: "Permits and insurance", description: "All necessary permits and insurance in place", link: "/tillstand" },
+                    { icon: "🎓", title: "Trained staff", description: "Our staff is trained to ensure the highest quality and service.", link: "/om-oss" },
+                    { icon: "🧴", title: "Eco-friendly products", description: "We use eco-friendly and safe cleaning products", link: "/om-oss" },
+                    { icon: "📈", title: "Management system", description: "We work with effective management systems to guarantee structure and quality.", link: "/om-oss" },
+                    { icon: "🦺", title: "Work environment", description: "We prioritize a safe and secure work environment for both customers and staff.", link: "/om-oss" }
+                  ]).map((feature, index) => (
                     <div key={feature.icon} className="w-full flex-shrink-0">
                       <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
                         <div className="flex items-start gap-3 h-full">
@@ -1128,7 +1152,7 @@ export default function FlyttstadningPage() {
                             <p className="text-white/80 text-sm mb-2">{feature.description}</p>
                             {feature.title === 'RUT-avdrag' ? (
                               <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
-                                Läs mer
+                                {t('flyttstadning.services.bohagsflytt.readMore')}
                                 <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
@@ -1157,7 +1181,7 @@ export default function FlyttstadningPage() {
         <div className="md:hidden px-4 mt-4">
           <img
             src="/varafarmaner_flyttstad.png"
-            alt="Våra förmåner"
+            alt={t('flyttstadning.benefits.imageAlt')}
             className="w-full h-auto rounded-2xl shadow-lg"
           />
         </div>
@@ -1170,9 +1194,9 @@ export default function FlyttstadningPage() {
                 <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
                   {/* Left side - Features content */}
                   <div className="flex-[2] w-full">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">{t('flyttstadning.benefits.title')}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
-                      {[
+                      {(locale === 'sv' ? [
                         {
                           icon: "💰",
                           title: "Fast pris",
@@ -1227,7 +1251,62 @@ export default function FlyttstadningPage() {
                           description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
                           link: "/om-oss"
                         }
-                      ].map((feature, i) => (
+                      ] : [
+                        {
+                          icon: "💰",
+                          title: "Fixed price",
+                          description: "No surprises - we offer both fixed prices and the possibility of ongoing prices",
+                          link: "/priser"
+                        },
+                        {
+                          icon: "📋",
+                          title: "RUT deduction",
+                          description: "We handle all paperwork for RUT deduction",
+                          link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                        },
+                        {
+                          icon: "✅",
+                          title: "14-day cleaning guarantee",
+                          description: "We are so confident in our quality that we offer a 14-day satisfied customer guarantee",
+                          link: "/garanti"
+                        },
+                        {
+                          icon: "⏰",
+                          title: "Reschedule or cancel free of charge",
+                          description: "Reschedule or cancel free of charge up to 24 hours before cleaning",
+                          link: "/avbokning"
+                        },
+                        {
+                          icon: "🔒",
+                          title: "Permits and insurance",
+                          description: "All necessary permits and insurance in place",
+                          link: "/tillstand"
+                        },
+                        {
+                          icon: "🎓",
+                          title: "Trained staff",
+                          description: "Our staff is trained to ensure the highest quality and service.",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "🧴",
+                          title: "Eco-friendly products",
+                          description: "We use eco-friendly and safe cleaning products",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "📈",
+                          title: "Management system",
+                          description: "We work with effective management systems to guarantee structure and quality.",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "🦺",
+                          title: "Work environment",
+                          description: "We prioritize a safe and secure work environment for both customers and staff.",
+                          link: "/om-oss"
+                        }
+                      ]).map((feature, i) => (
                         <motion.div
                           key={feature.icon}
                           className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full"
@@ -1255,7 +1334,7 @@ export default function FlyttstadningPage() {
                                 rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                                 className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
                               >
-                                Läs mer
+                                {t('flyttstadning.services.bohagsflytt.readMore')}
                                 <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
@@ -1311,10 +1390,10 @@ export default function FlyttstadningPage() {
                 <span className="text-3xl md:text-4xl">🧹</span>
                 <div className="text-center md:text-left">
                   <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">
-                    Redo att börja din flyttstädning?
+                    {t('flyttstadning.cta.title')}
                   </h3>
                   <p className="text-base md:text-lg text-gray-100 leading-snug">
-                    Få en snabb och gratis offert på din flyttstädning
+                    {t('flyttstadning.cta.subtitle')}
                   </p>
                 </div>
               </div>
@@ -1328,7 +1407,7 @@ export default function FlyttstadningPage() {
                     href="/offert"
                     className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
-                    Få gratis offert
+                    {t('flyttstadning.cta.button')}
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1352,22 +1431,26 @@ export default function FlyttstadningPage() {
           <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)' }} />
           <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('flyttstadning.experience.title')}</h3>
               {/* Mobile: auto-sliding cards like main page */}
               <div className="md:hidden mt-8">
                 <div className="relative overflow-hidden rounded-xl" onTouchStart={(e)=>{expTouchStartXRef.current=e.touches[0].clientX; if (experienceIntervalRef.current) clearInterval(experienceIntervalRef.current);}} onTouchMove={(e)=>expTouchCurrentXRef.current=e.touches[0].clientX} onTouchEnd={()=>{ if (expTouchStartXRef.current!=null && expTouchCurrentXRef.current!=null){ const dx=expTouchCurrentXRef.current-expTouchStartXRef.current; const th=50; if(Math.abs(dx)>th){ if(dx<0){ setCurrentExperienceCard((prev)=>(prev+1)%totalExperienceCards);} else { setCurrentExperienceCard((prev)=>(prev-1+totalExperienceCards)%totalExperienceCards);} restartExperienceAutoSlide(); } } expTouchStartXRef.current=null; expTouchCurrentXRef.current=null; }}>
                   <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentExperienceCard * 100}%)` }}>
-                    {[
-                      { title: 'Flyttstädningar', count: 7000 },
-                      { title: 'Hemstädningar', count: 5000 },
-                      { title: 'Företagsstädningar', count: 2000 },
-                    ].map((card, index) => (
+                    {(locale === 'sv' ? [
+                      { title: 'Flyttstädningar', count: 7000, description: 'uppdrag utförda' },
+                      { title: 'Hemstädningar', count: 5000, description: 'uppdrag utförda' },
+                      { title: 'Företagsstädningar', count: 2000, description: 'uppdrag utförda' },
+                    ] : [
+                      { title: 'Move-out cleanings', count: 7000, description: 'assignments completed' },
+                      { title: 'Home cleanings', count: 5000, description: 'assignments completed' },
+                      { title: 'Office cleanings', count: 2000, description: 'assignments completed' },
+                    ]).map((card, index) => (
                       <div key={card.title} className="w-full flex-shrink-0">
                         <div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
                           <div className="relative z-10 flex flex-col items-center justify-center h-full">
                             <h4 className="text-lg font-bold mb-1 text-white">{card.title}</h4>
                             <div className="text-4xl font-bold mb-1 text-white"><CountUp end={card.count} duration={2.0} suffix="+" /></div>
-                            <p className="text-white/90 text-sm">uppdrag utförda</p>
+                            <p className="text-white/90 text-sm">{card.description}</p>
                           </div>
                         </div>
                       </div>
@@ -1387,31 +1470,31 @@ export default function FlyttstadningPage() {
               <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-12">
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 0 * 0.25 }}>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 className="text-xl font-bold mb-2 text-white">Flyttstädningar</motion.h2>
+                    <motion.h2 className="text-xl font-bold mb-2 text-white">{locale === 'sv' ? 'Flyttstädningar' : 'Move-out cleanings'}</motion.h2>
                     <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={7000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
-                    <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                    <motion.p className="text-white/90">{locale === 'sv' ? 'uppdrag utförda' : 'assignments completed'}</motion.p>
                   </div>
                 </motion.div>
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 1 * 0.25 }}>
                   <div className="relative z-10 flex flex-col items-center justifyCenter h-full">
-                    <motion.h2 className="text-xl font-bold mb-2 textWhite">Hemstädningar</motion.h2>
-                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 textWhite"><CountUp end={5000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
-                    <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                    <motion.h2 className="text-xl font-bold mb-2 text-white">{locale === 'sv' ? 'Hemstädningar' : 'Home cleanings'}</motion.h2>
+                    <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={5000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
+                    <motion.p className="text-white/90">{locale === 'sv' ? 'uppdrag utförda' : 'assignments completed'}</motion.p>
                   </div>
                 </motion.div>
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: 2 * 0.25 }}>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 className="text-xl font-bold mb-2 text-white">Företagsstädningar</motion.h2>
+                    <motion.h2 className="text-xl font-bold mb-2 text-white">{locale === 'sv' ? 'Företagsstädningar' : 'Office cleanings'}</motion.h2>
                     <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={2000} duration={2.5} suffix="+" useEasing={true} enableScrollSpy={true} scrollSpyOnce={true} /></motion.div>
-                    <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                    <motion.p className="text-white/90">{locale === 'sv' ? 'uppdrag utförda' : 'assignments completed'}</motion.p>
                   </div>
                 </motion.div>
               </div>
               <div className="mt-8 flex flex-col items-center justify-center gap-4">
                 <motion.div className="flex-1 max-w-4xl text-center px-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet ger resultat</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{t('flyttstadning.experience.localExperienceTitle')}</h4>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
-                    Med tusentals städningar bakom oss har vi byggt upp en unik expertis inom städbranschen i Stockholm. Vi hjälper både privatpersoner och företag till skinande rena hem och arbetsplatser. Vårt erfarna team arbetar alltid noggrant och effektivt, med miljövänliga produkter och modern utrustning. Vi strävar efter att överträffa dina förväntningar vid varje uppdrag och är stolta över vår höga kundnöjdhet.
+                    {t('flyttstadning.experience.localExperienceDescription')}
                   </p>
                 </motion.div>
                 <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
@@ -1498,13 +1581,13 @@ export default function FlyttstadningPage() {
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 mb-6 md:mb-8 w-full">
               <div className="w-full">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
-                  Vår process
+                  {t('flyttstadning.process.title')}
             </h2>
 
                 {/* Process Description */}
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår flyttstädningsprocess är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär där du anger dina uppgifter och städbehov. Inom en minut får du en offert skickad till din angivna e-postadress. Samma dag eller dagen efter tar vi personlig kontakt med dig för att diskutera detaljerna och svara på eventuella frågor. När du är nöjd med offerten kan du enkelt signera den digitalt. Sedan genomför vi städningen enligt dina önskemål och avtal. Resultatet? En nöjd kund som kan lämna sin gamla bostad i perfekt skick.
+                    {t('flyttstadning.process.description')}
                   </p>
                 </div>
 
@@ -1600,10 +1683,10 @@ export default function FlyttstadningPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-                  Läs mer om städning i Stockholm
+                  {t('flyttstadning.blog.title')}
             </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Få värdefulla tips och råd för en grundlig flyttstädning
+                  {t('flyttstadning.blog.subtitle')}
                 </p>
               </div>
               <motion.div 
@@ -1617,29 +1700,29 @@ export default function FlyttstadningPage() {
                   <div className="md:w-1/3">
                     <img 
                       src="/cleaning_lady.png" 
-                      alt="Flyttstädtips Stockholm" 
+                      alt={t('flyttstadning.blog.imageAlt')} 
                       className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center"
                     />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">
                       <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">
-                        Städtips
+                        {t('flyttstadning.blog.category')}
                       </span>
-                      <span className="text-gray-500 text-sm ml-4">5 min läsning</span>
+                      <span className="text-gray-500 text-sm ml-4">{t('flyttstadning.blog.readingTime')}</span>
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">
-                      Flyttstädning - Vad du behöver veta
+                      {t('flyttstadning.blog.articleTitle')}
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                      Att välja rätt städfirma är avgörande för en grundlig flyttstädning. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från städgaranti och miljövänliga produkter till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös städfirma som levererar kvalitet och trygghet.
+                      {t('flyttstadning.blog.articleDescription')}
                     </p>
                     <div className="flex items-center justify-end mb-4">
                       <Link 
                         href="/blogg/flyttstadning-vad-du-behover-veta" 
                         className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
                       >
-                        Läs mer
+                        {t('flyttstadning.blog.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1660,7 +1743,7 @@ export default function FlyttstadningPage() {
                         href="/blogg" 
                   className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base"
                       >
-                        Se alla artiklar om städning
+                        {t('flyttstadning.blog.seeAllArticles')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                     className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1727,10 +1810,10 @@ export default function FlyttstadningPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-                Vanliga frågor om flyttstädning
+                {t('flyttstadning.faq.title')}
           </h2>
               <div className="space-y-4">
-                {[
+                {(locale === 'sv' ? [
                   {
                     id: "stadning-1",
                     question: "Hur förbereder jag mig bäst inför flyttstädning?",
@@ -1756,7 +1839,33 @@ export default function FlyttstadningPage() {
                     question: "Kan ni anpassa städningen efter specifika krav?",
                     answer: "Ja, vi kan anpassa städningen efter dina specifika behov och eventuella krav från hyresvärden eller köparen. Vi har erfarenhet av olika städkrav och kan säkerställa att städningen uppfyller alla förväntningar. Kontakta oss för att diskutera dina specifika behov."
                   }
-                ].map((faq, index) => (
+                ] : [
+                  {
+                    id: "stadning-1",
+                    question: "How do I best prepare for move-out cleaning?",
+                    answer: "Start by clearing out everything you no longer need. Remove all personal items and loose property. Make sure all surfaces are accessible for cleaning. Inform us of any special requirements from the landlord or buyer, and book cleaning well in advance to ensure availability."
+                  },
+                  {
+                    id: "stadning-2",
+                    question: "What is usually included in a move-out cleaning?",
+                    answer: "A thorough move-out cleaning includes cleaning of all surfaces, floors, walls, ceilings, windows, kitchen, bathroom and toilets. We also clean appliances, cabinets, drawers and all hard surfaces. The cleaning follows industry standards and ensures that the home is left in perfect condition according to common requirements."
+                  },
+                  {
+                    id: "stadning-3",
+                    question: "How does the cleaning guarantee work?",
+                    answer: "Our 14-day cleaning guarantee means that if the landlord or buyer is not satisfied with the cleaning, we will come back and fix any deficiencies at no extra cost. This gives you security and ensures that you get the quality you pay for."
+                  },
+                  {
+                    id: "stadning-4",
+                    question: "How long does move-out cleaning take and what affects the time required?",
+                    answer: "The time required depends on several factors: the home's size, number of rooms, condition, accessibility and any special requirements. A normal apartment usually takes a few hours, while larger villas can take a full day or more. We always give you a realistic time estimate before we start."
+                  },
+                  {
+                    id: "stadning-5",
+                    question: "Can you adapt the cleaning to specific requirements?",
+                    answer: "Yes, we can adapt the cleaning to your specific needs and any requirements from the landlord or buyer. We have experience with different cleaning requirements and can ensure that the cleaning meets all expectations. Contact us to discuss your specific needs."
+                  }
+                ]).map((faq, index) => (
                   <motion.div
                     key={faq.id}
                     className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm"
@@ -1818,13 +1927,13 @@ export default function FlyttstadningPage() {
         </section>
         <div className="text-center mt-12">
           <p className="text-lg text-gray-600 mb-6">
-            Har du fler frågor?
+            {t('flyttstadning.faq.moreQuestions')}
           </p>
           <Link 
             href="/faq" 
             className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
           >
-            Se alla vanliga frågor
+            {t('flyttstadning.faq.seeAllQuestions')}
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 

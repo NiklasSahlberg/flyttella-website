@@ -175,7 +175,7 @@ export default function VisningsstadningPage() {
     { name: 'Vasastan', slug: 'vasastan' }
   ];
 
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <main className="overflow-hidden">
@@ -198,10 +198,10 @@ export default function VisningsstadningPage() {
               />
               <div className="relative z-10 px-4 text-center">
                 <h1 className="text-4xl font-bold mb-4">
-                  Professionell visningsstädning i Stockholm
+                  {locale === 'sv' ? 'Professionell visningsstädning i Stockholm' : 'Professional Viewing Cleaning in Stockholm'}
                 </h1>
                 <p className="text-xl mb-6">
-                  Maximera intrycket inför försäljningen
+                  {locale === 'sv' ? 'Maximera intrycket inför försäljningen' : 'Maximize the impression before sale'}
                 </p>
               </div>
             </div>
@@ -216,15 +216,15 @@ export default function VisningsstadningPage() {
               <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: 'url(/fonsterputs_info.png)' }} />
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
-                  <h1 className="text-5xl md:text-6xl font-bold mb-8">Professionell visningsstädning i Stockholm</h1>
-                  <p className="text-2xl md:text-3xl mb-12">Maximera intrycket inför försäljningen</p>
-                  <p className="text-lg text-white/90">Skinande kök och badrum, polerade ytor och doftneutralt resultat – anpassat för fotografering och visning.</p>
+                  <h1 className="text-5xl md:text-6xl font-bold mb-8">{locale === 'sv' ? 'Professionell visningsstädning i Stockholm' : 'Professional Viewing Cleaning in Stockholm'}</h1>
+                  <p className="text-2xl md:text-3xl mb-12">{locale === 'sv' ? 'Maximera intrycket inför försäljningen' : 'Maximize the impression before sale'}</p>
+                  <p className="text-lg text-white/90">{locale === 'sv' ? 'Skinande kök och badrum, polerade ytor och doftneutralt resultat – anpassat för fotografering och visning.' : 'Sparkling kitchen and bathroom, polished surfaces and odor-neutral result – adapted for photography and viewing.'}</p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
                   {selectedServiceType === 'flyttstad' ? (
                     <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
                   ) : (
-                    <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
+                    <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} cleaningCardSubtitle={locale === 'sv' ? 'Professionell visningsstädning – skinande kök, badrum och blanka ytor för fotografering och visning' : 'Professional viewing cleaning – sparkling kitchen, bathroom and shiny surfaces for photography and viewing'} />
                   )}
                 </div>
               </div>
@@ -250,7 +250,7 @@ export default function VisningsstadningPage() {
                     }}
                     className="flex flex-col items-center text-white hover:text-white/80 transition-colors group"
                   >
-                    <span className="text-sm font-medium mb-2">Läs mer</span>
+                    <span className="text-sm font-medium mb-2">{locale === 'sv' ? 'Läs mer' : 'Read more'}</span>
                     <motion.div
                       animate={{ y: [0, 5, 0] }}
                       transition={{ duration: 2, repeat: Infinity }}
@@ -281,10 +281,10 @@ export default function VisningsstadningPage() {
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">Storstädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Grundlig storstädning med fokus på kök, badrum och svåråtkomliga ytor. Perfekt som komplement till fönsterputs.</p>
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Storstädning' : 'Deep Cleaning'}</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Grundlig storstädning med fokus på kök, badrum och svåråtkomliga ytor. Perfekt som komplement till fönsterputs.' : 'Thorough deep cleaning with focus on kitchen, bathroom and hard-to-reach areas. Perfect as complement to window cleaning.'}</p>
                       <div className="mt-auto relative">
-                        <Link href="/storstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                        <Link href="/storstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
                     </div>
                   </div>
@@ -293,10 +293,10 @@ export default function VisningsstadningPage() {
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧱</span><h3 className="text-xl font-bold text-white">Byggstädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Effektiv byggstädning efter renovering – grov- och finstädning för inflyttningsklart resultat.</p>
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧱</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Byggstädning' : 'Construction Cleaning'}</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Effektiv byggstädning efter renovering – grov- och finstädning för inflyttningsklart resultat.' : 'Effective construction cleaning after renovation – rough and fine cleaning for move-in ready result.'}</p>
                       <div className="mt-auto relative">
-                        <Link href="/byggstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                        <Link href="/byggstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
                     </div>
                   </div>
@@ -305,10 +305,10 @@ export default function VisningsstadningPage() {
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🕊️</span><h3 className="text-xl font-bold text-white">Dödsbostädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Omsorgsfull dödsbostädning – sortering samt grov- och finstädning inför försäljning eller överlåtelse.</p>
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🕊️</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Dödsbostädning' : 'Estate Cleaning'}</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Omsorgsfull dödsbostädning – sortering samt grov- och finstädning inför försäljning eller överlåtelse.' : 'Caring estate cleaning – sorting as well as rough and fine cleaning before sale or transfer.'}</p>
                       <div className="mt-auto relative">
-                        <Link href="/dodsbo" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                        <Link href="/dodsbo" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
                     </div>
                   </div>
@@ -323,7 +323,7 @@ export default function VisningsstadningPage() {
                     />
                   </div>
                 </div>
-                {([
+                {(locale === 'sv' ? [
                   {
                     title: 'Vad är visningsstädning?',
                     content:
@@ -361,8 +361,7 @@ export default function VisningsstadningPage() {
                     content:
                       'Visningsstädning innefattar dammtorkning av fria ytor, avtorkning av lister, dörrar och handtag, puts av speglar och blanka ytor, noggrann rengöring av kök (arbetsbänkar, spishäll, diskho, vitvarors utsidor) och badrum (handfat, dusch/badkar, toalett). Golv dammsugs och moppas, och detaljer arrangeras för ett prydligt intryck. Som tillval erbjuder vi fönsterputs, punktinsatser i kök/badrum och doftneutralisering. Vi använder miljövänliga produkter och arbetar efter en tydlig checklista.',
                     icon: '🧹'
-                  }
-                  ,
+                  },
                   {
                     title: '',
                     content: (
@@ -371,12 +370,65 @@ export default function VisningsstadningPage() {
                       </div>
                     ),
                     icon: ''
-                  }
-                  ,
+                  },
                   {
                     title: 'Hur bokar jag visningsstädning?',
                     content:
                       'Boka snabbt och enkelt via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och tid och lägg till eventuella tillval som fönsterputs. Du får pris direkt och en bekräftelse via e‑post och SMS. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta och tidsplan inför fotografering och visning. Därefter bekräftar vi starttid – enkelt och tryggt. Du kan justera bokningen via vår kundtjänst. RUT‑avdraget (50% på arbetskostnaden) sköts automatiskt. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
+                    icon: '📅'
+                  }
+                ] : [
+                  {
+                    title: 'What is Viewing Cleaning?',
+                    content:
+                      'Viewing cleaning is a carefully performed cleaning adapted for photography and viewing before sale. The focus is on highlighting the property\'s best sides: shiny surfaces, fresh kitchen and bathroom and a tidy overall impression. We work according to a viewing-adapted checklist and plan together with you or your real estate agent when needed.',
+                    icon: '✨'
+                  },
+                  {
+                    title: '',
+                    content: (
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
+                        <img src="/fonsterputs_info.png" alt="Viewing Cleaning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                      </div>
+                    ),
+                    icon: ''
+                  },
+                  {
+                    title: 'What does Viewing Cleaning Cost?',
+                    content: (
+                      <>
+                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
+                          Price for viewing cleaning depends on floor area, layout and degree of preparation. With 50% RUT deduction on labor costs, viewing cleaning becomes cost-effective. Request a free quote – you get a price quickly and easily. Factors that affect the price include floor area, window cleaning as an option and the property\'s condition. We always provide a fixed, transparent price without hidden fees so you know exactly what is included in your viewing cleaning.
+                        </p>
+                        <div className="my-16 text-center">
+                          <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
+                            "The property looked fantastic in the pictures and during the viewing – the cleaning really made a difference!"
+                          </p>
+                          <p className="italic text-gray-700 mt-2">- Niloufar</p>
+                        </div>
+                      </>
+                    ),
+                    icon: '💸'
+                  },
+                  {
+                    title: 'What is Included in Viewing Cleaning?',
+                    content:
+                      'Viewing cleaning includes dust wiping of free surfaces, wiping of moldings, doors and handles, polishing of mirrors and shiny surfaces, thorough cleaning of kitchen (worktops, stove, sink, appliance exteriors) and bathroom (sink, shower/bathtub, toilet). Floors are vacuumed and mopped, and details are arranged for a tidy impression. As options we offer window cleaning, spot treatments in kitchen/bathroom and odor neutralization. We use eco-friendly products and work according to a clear checklist.',
+                    icon: '🧹'
+                  },
+                  {
+                    title: '',
+                    content: (
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
+                        <img src="/cleaning_background.png" alt="Book Viewing Cleaning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                      </div>
+                    ),
+                    icon: ''
+                  },
+                  {
+                    title: 'How do I Book Viewing Cleaning?',
+                    content:
+                      'Book quickly and easily via the form at the top of the page: fill in your details, choose date and time and add any options like window cleaning. You get a price immediately and a confirmation via email and SMS. We contact you the same day or next business day to coordinate floor area and schedule before photography and viewing. Then we confirm start time – simple and safe. You can adjust the booking via our customer service. The RUT deduction (50% of labor costs) is handled automatically. Free rescheduling/cancellation up to 24 hours before.',
                     icon: '📅'
                   }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
@@ -423,11 +475,11 @@ export default function VisningsstadningPage() {
               {/* Mobile image above title to match Bohagsflytt */}
               <div className="lg:hidden px-4 mb-6 -mx-8">
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
-                  <img src="/omflyttella_flyttstad.png" alt="Om Flyttella" className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                  <img src="/omflyttella_flyttstad.png" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
                 </div>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 <motion.div 
                   className="hidden lg:block w-full lg:w-1/3 relative lg:-ml-8 lg:pr-8" 
@@ -440,7 +492,7 @@ export default function VisningsstadningPage() {
                   <div className="relative h-80 lg:h-full w-full overflow-hidden rounded-2xl">
                     <img 
                       src="/omflyttella_flyttstad.png" 
-                      alt="Om Flyttella" 
+                      alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} 
                       className="object-cover rounded-2xl w-full h-full" 
                       style={{ objectPosition: '80% 25%', transform: 'scale(1.10)' }} 
                     />
@@ -456,28 +508,28 @@ export default function VisningsstadningPage() {
                 >
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en av Stockholms ledande aktörer inom visningsstädning med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Stockholm.
+                      {locale === 'sv' ? 'Flyttella är en av Stockholms ledande aktörer inom visningsstädning med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Stockholm.' : 'Flyttella is one of Stockholm\'s leading players in viewing cleaning with over 8 years of experience in viewing cleaning, home cleaning and move-out cleaning. We offer fixed prices and personal service throughout Stockholm.'}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi känner till alla Stockholms områden och anpassar vår visningsstädning efter just dina behov. Vår visningsstädning följer tydliga checklistor och säkerställer ett resultat som syns både på bilder och under visning.
+                      {locale === 'sv' ? 'Vi känner till alla Stockholms områden och anpassar vår visningsstädning efter just dina behov. Vår visningsstädning följer tydliga checklistor och säkerställer ett resultat som syns både på bilder och under visning.' : 'We know all of Stockholm\'s areas and adapt our viewing cleaning to your specific needs. Our viewing cleaning follows clear checklists and ensures a result that shows both in pictures and during viewing.'}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vårt mål är att göra din visningsstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen.
+                      {locale === 'sv' ? 'Vårt mål är att göra din visningsstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen.' : 'Our goal is to make your viewing cleaning as simple and safe as possible. We offer free quote, quick booking and personal contact throughout the entire process.'}
                     </p>
                   </div>
                   <div className="lg:hidden space-y-4">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är Stockholms ledande städfirma med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi arbetar i hela Storstockholm och vet vad som krävs för att hemmet ska se sitt bästa ut på bild och under visning.
+                      {locale === 'sv' ? 'Flyttella är Stockholms ledande städfirma med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi arbetar i hela Storstockholm och vet vad som krävs för att hemmet ska se sitt bästa ut på bild och under visning.' : 'Flyttella is Stockholm\'s leading cleaning company with over 8 years of experience in viewing cleaning, home cleaning and move-out cleaning. We work throughout Greater Stockholm and know what is required for the home to look its best in pictures and during viewing.'}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Fasta priser och personlig service – anpassat för fotografering och visning. Vi planerar städningen efter bostadens planlösning, ytskikt och tidsplan, så att allt blir klart i tid.
+                      {locale === 'sv' ? 'Fasta priser och personlig service – anpassat för fotografering och visning. Vi planerar städningen efter bostadens planlösning, ytskikt och tidsplan, så att allt blir klart i tid.' : 'Fixed prices and personal service – adapted for photography and viewing. We plan the cleaning according to the property\'s layout, surface layers and schedule, so everything is ready on time.'}
                     </p>
                     {!showFullAboutText && (
                       <button
                         onClick={() => setShowFullAboutText(true)}
                         className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                       >
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -497,17 +549,17 @@ export default function VisningsstadningPage() {
                         className="space-y-4 mt-4"
                       >
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Vår visningsstädning följer tydliga checklistor för kök, badrum och alla rum – med fokus på blanka ytor, speglar och detaljer som syns i kamera. Resultatet märks på både bilder och visning.
+                          {locale === 'sv' ? 'Vår visningsstädning följer tydliga checklistor för kök, badrum och alla rum – med fokus på blanka ytor, speglar och detaljer som syns i kamera. Resultatet märks på både bilder och visning.' : 'Our viewing cleaning follows clear checklists for kitchen, bathroom and all rooms – with focus on shiny surfaces, mirrors and details that show in camera. The result is noticeable in both pictures and viewing.'}
                         </p>
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Du får kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen. Behöver du fönsterputs eller andra tillval hjälper vi till.
+                          {locale === 'sv' ? 'Du får kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen. Behöver du fönsterputs eller andra tillval hjälper vi till.' : 'You get free quote, quick booking and personal contact throughout the entire process. If you need window cleaning or other options we help out.'}
                         </p>
                         <motion.div className="pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
                           <Link 
                             href="/om-oss" 
                             className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                           >
-                            Läs mer om oss
+                            {locale === 'sv' ? 'Läs mer om oss' : 'Read more about us'}
                             <svg 
                               xmlns="http://www.w3.org/2000/svg" 
                               className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -531,11 +583,11 @@ export default function VisningsstadningPage() {
         {/* Vad tycker våra kunder om oss? */}
         <ReviewsWidget 
           location="Stockholm"
-          title="Vad tycker våra kunder om oss?"
-          subtitle="Pålitlig visningsstädning i Stockholm"
-          description="Professionell visningsstädning i Stockholm inför fotografering och visning – fokus på skinande kök, badrum och blanka ytor – fast pris och 50% RUT‑avdrag. Punktliga städare och höga betyg. Läs vad våra kunder tycker om vår visningsstädning i Stockholm."
-          badgeAlt="8+ års erfarenhet av visningsstädning i Stockholm"
-          arrowText="Läs vad våra kunder säger om vår visningsstädning"
+          title={locale === 'sv' ? 'Vad tycker våra kunder om oss?' : 'What do our customers think of us?'}
+          subtitle={locale === 'sv' ? 'Pålitlig visningsstädning i Stockholm' : 'Reliable Viewing Cleaning in Stockholm'}
+          description={locale === 'sv' ? 'Professionell visningsstädning i Stockholm inför fotografering och visning – fokus på skinande kök, badrum och blanka ytor – fast pris och 50% RUT‑avdrag. Punktliga städare och höga betyg. Läs vad våra kunder tycker om vår visningsstädning i Stockholm.' : 'Professional viewing cleaning in Stockholm for photography and viewing – focus on sparkling kitchen, bathroom and shiny surfaces – fixed price and 50% RUT deduction. Punctual cleaners and high ratings. Read what our customers think about our viewing cleaning in Stockholm.'}
+          badgeAlt={locale === 'sv' ? '8+ års erfarenhet av visningsstädning i Stockholm' : '8+ years experience in Viewing Cleaning in Stockholm'}
+          arrowText={locale === 'sv' ? 'Läs vad våra kunder säger om vår visningsstädning' : 'Read what our customers say about our viewing cleaning'}
         />
 
         {/* CTA: Redo att börja din visningsstädning? */}
@@ -546,14 +598,14 @@ export default function VisningsstadningPage() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 relative z-10 mb-3 md:mb-4">
                 <span className="text-3xl md:text-4xl">🏠✨</span>
                 <div className="text-center md:text-left">
-                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">Redo att börja din visningsstädning?</h3>
-                  <p className="text-base md:text-lg text-gray-100 leading-snug">Få en snabb och gratis offert på din visningsstädning</p>
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">{locale === 'sv' ? 'Redo att börja din visningsstädning?' : 'Ready to start your viewing cleaning?'}</h3>
+                  <p className="text-base md:text-lg text-gray-100 leading-snug">{locale === 'sv' ? 'Få en snabb och gratis offert på din visningsstädning' : 'Get a quick and free quote on your viewing cleaning'}</p>
                 </div>
               </div>
               <div className="relative z-10 text-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                   <Link href="/offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
-                    Få gratis offert
+                    {locale === 'sv' ? 'Få gratis offert' : 'Get free quote'}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -568,21 +620,21 @@ export default function VisningsstadningPage() {
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Våra Städtjänster</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{locale === 'sv' ? 'Våra Städtjänster' : 'Our Cleaning Services'}</h2>
               <div className="grid grid-cols-1 gap-12">
                 {/* Flyttstädning Card */}
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                     <span className="text-4xl md:text-6xl">🧽</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Flyttstädning</h3>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">{locale === 'sv' ? 'Flyttstädning' : 'Move-out Cleaning'}</h3>
                   </div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Grundlig flyttstädning enligt branschstandard – fast pris, 14 dagars garanti och full RUT‑hantering.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar enligt en komplett checklista: alla rum, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{locale === 'sv' ? 'Grundlig flyttstädning enligt branschstandard – fast pris, 14 dagars garanti och full RUT‑hantering.' : 'Thorough move-out cleaning according to industry standard – fixed price, 14-day guarantee and full RUT handling.'}</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{locale === 'sv' ? 'Vi städar enligt en komplett checklista: alla rum, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt.' : 'We clean according to a complete checklist: all rooms, kitchen (incl. cabinets and drawers inside), appliances, bathroom and toilets. Backs and spaces behind appliances are cleaned where accessible.'}</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </motion.div>
@@ -594,14 +646,14 @@ export default function VisningsstadningPage() {
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                     <span className="text-4xl md:text-6xl">🪟</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Fönsterputs</h3>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">{locale === 'sv' ? 'Fönsterputs' : 'Window Cleaning'}</h3>
                   </div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Kristallklara fönster som lyfter helhetsintrycket vid visning – som tillval eller separat tjänst.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi putsar invändigt och utvändigt där det är säkert och åtkomligt. Rätt verktyg och metod ger ett kristallklart resultat utan ränder – perfekt för bilder och visning.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{locale === 'sv' ? 'Kristallklara fönster som lyfter helhetsintrycket vid visning – som tillval eller separat tjänst.' : 'Crystal clear windows that lift the overall impression during viewing – as an option or separate service.'}</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{locale === 'sv' ? 'Vi putsar invändigt och utvändigt där det är säkert och åtkomligt. Rätt verktyg och metod ger ett kristallklart resultat utan ränder – perfekt för bilder och visning.' : 'We clean inside and outside where it is safe and accessible. Right tools and method give a crystal clear result without streaks – perfect for pictures and viewing.'}</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/stadtjanster" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </motion.div>
@@ -613,14 +665,14 @@ export default function VisningsstadningPage() {
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                     <span className="text-4xl md:text-6xl">🏡</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Hemstädning</h3>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">{locale === 'sv' ? 'Hemstädning' : 'Home Cleaning'}</h3>
                   </div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Regelbunden hemstädning med flexibla intervall – veckovis, varannan vecka eller månadsvis. Fast pris och 50% RUT‑avdrag.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar efter tydliga checklistor: alla rum, kök och badrum. Samma städare för kontinuitet och trygghet. Miljövänliga produkter och pålitliga rutiner.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{locale === 'sv' ? 'Regelbunden hemstädning med flexibla intervall – veckovis, varannan vecka eller månadsvis. Fast pris och 50% RUT‑avdrag.' : 'Regular home cleaning with flexible intervals – weekly, bi-weekly or monthly. Fixed price and 50% RUT deduction.'}</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{locale === 'sv' ? 'Vi städar efter tydliga checklistor: alla rum, kök och badrum. Samma städare för kontinuitet och trygghet. Miljövänliga produkter och pålitliga rutiner.' : 'We clean according to clear checklists: all rooms, kitchen and bathroom. Same cleaner for continuity and safety. Eco-friendly products and reliable routines.'}</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/hemstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </motion.div>
@@ -635,14 +687,14 @@ export default function VisningsstadningPage() {
         <motion.section className="py-12 md:py-24 bg-white text-[#0F172A] relative overflow-hidden" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <motion.h2 className="text-3xl md:text-4xl font-bold mb-6 hidden md:block" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }} id="upptack-tjanster">Våra tjänster</motion.h2>
+              <motion.h2 className="text-3xl md:text-4xl font-bold mb-6 hidden md:block" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }} id="upptack-tjanster">{locale === 'sv' ? 'Våra tjänster' : 'Our Services'}</motion.h2>
               <motion.p className="text-lg md:text-xl mb-8 text-[#0F172A]/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }}>
-                Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din försäljning och vardag enklare.
+                {locale === 'sv' ? 'Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din försäljning och vardag enklare.' : 'We offer a complete range of moving and cleaning services to make your sale and everyday life easier.'}
               </motion.p>
               <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.2 }}>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link href="/tjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                    Se alla våra flyttjänster
+                    {locale === 'sv' ? 'Se alla våra flyttjänster' : 'See all our moving services'}
                     <motion.svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </motion.svg>
@@ -650,7 +702,7 @@ export default function VisningsstadningPage() {
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link href="/stadtjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                    Se alla våra städtjänster
+                    {locale === 'sv' ? 'Se alla våra städtjänster' : 'See all our cleaning services'}
                     <motion.svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </motion.svg>
@@ -665,10 +717,10 @@ export default function VisningsstadningPage() {
         <section className="md:hidden py-8 bg-white">
           <div className="mx-auto px-4">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">Våra förmåner</h2>
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">{locale === 'sv' ? 'Våra förmåner' : 'Our Benefits'}</h2>
               <div className="relative overflow-hidden rounded-xl" onTouchStart={(e)=>{featureTouchStartXRef.current=e.touches[0].clientX; if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);}} onTouchMove={(e)=>featureTouchCurrentXRef.current=e.touches[0].clientX} onTouchEnd={()=>{ if (featureTouchStartXRef.current!=null && featureTouchCurrentXRef.current!=null){ const dx=featureTouchCurrentXRef.current-featureTouchStartXRef.current; const th=50; if(Math.abs(dx)>th){ if(dx<0){ setCurrentFeatureCard((prev)=>(prev+1)%totalFeatureCards);} else { setCurrentFeatureCard((prev)=>(prev-1+totalFeatureCards)%totalFeatureCards);} restartFeatureAutoSlide(); } } featureTouchStartXRef.current=null; featureTouchCurrentXRef.current=null; }}>
                 <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}>
-                  {[
+                  {(locale === 'sv' ? [
                     { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                     { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
                     { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#visningsstad-offert' },
@@ -678,7 +730,17 @@ export default function VisningsstadningPage() {
                     { icon: '🧴', title: 'Miljövänliga produkter', description: 'Skonsamma och miljövänliga rengöringsmedel', link: '/om-oss' },
                     { icon: '📈', title: 'Ledningssystem', description: 'Effektiva rutiner för kvalitet och struktur', link: '/om-oss' },
                     { icon: '🦺', title: 'Arbetsmiljö', description: 'Trygg arbetsmiljö för både kunder och personal', link: '/om-oss' }
-                  ].map((feature, index) => (
+                  ] : [
+                    { icon: '💰', title: 'Fixed Price', description: 'No surprises – fixed prices and option for extras', link: '/priser' },
+                    { icon: '📋', title: 'RUT Deduction', description: 'We handle all paperwork for RUT deduction', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
+                    { icon: '⚡', title: 'Quick Quote', description: 'Get price quickly and easily – Fill out the form at the top of the page', link: '#visningsstad-offert' },
+                    { icon: '⏰', title: 'Reschedule or Cancel', description: 'Reschedule/cancel free of charge up to 24 hours before', link: '/avbokning' },
+                    { icon: '🔒', title: 'Permits and Insurance', description: 'All necessary permits and insurance in place', link: '/tillstand' },
+                    { icon: '🎓', title: 'Trained Staff', description: 'Trained employees and quality-assured routines', link: '/om-oss' },
+                    { icon: '🧴', title: 'Eco-friendly Products', description: 'Gentle and eco-friendly cleaning products', link: '/om-oss' },
+                    { icon: '📈', title: 'Management System', description: 'Effective routines for quality and structure', link: '/om-oss' },
+                    { icon: '🦺', title: 'Work Environment', description: 'Safe work environment for both customers and staff', link: '/om-oss' }
+                  ]).map((feature, index) => (
                     <div key={feature.icon} className="w-full flex-shrink-0">
                       <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
                         <div className="flex items-start gap-3 h-full">
@@ -686,9 +748,9 @@ export default function VisningsstadningPage() {
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm mb-2">{feature.description}</p>
-                            {feature.title === 'RUT-avdrag' ? (
+                            {feature.title === 'RUT-avdrag' || feature.title === 'RUT Deduction' ? (
                               <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
-                                Läs mer
+                                {locale === 'sv' ? 'Läs mer' : 'Read more'}
                                 <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
@@ -702,10 +764,10 @@ export default function VisningsstadningPage() {
                     </div>
                   ))}
                 </div>
-                <button type="button" aria-label="Föregående" onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                <button type="button" aria-label={locale === 'sv' ? 'Föregående' : 'Previous'} onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
                 </button>
-                <button type="button" aria-label="Nästa" onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                <button type="button" aria-label={locale === 'sv' ? 'Nästa' : 'Next'} onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
                 </button>
               </div>
@@ -717,7 +779,7 @@ export default function VisningsstadningPage() {
         <div className="md:hidden px-4 mt-4">
           <img
             src="/varafarmaner_flyttstad.png"
-            alt="Våra förmåner"
+            alt={locale === 'sv' ? 'Våra förmåner' : 'Our Benefits'}
             className="w-full h-auto rounded-2xl shadow-lg"
           />
         </div>
@@ -729,9 +791,9 @@ export default function VisningsstadningPage() {
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
                 <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
                   <div className="flex-[2] w-full">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">{locale === 'sv' ? 'Våra förmåner' : 'Our Benefits'}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
-                      {[
+                      {(locale === 'sv' ? [
                         { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                         { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
                         { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#visningsstad-offert' },
@@ -741,7 +803,17 @@ export default function VisningsstadningPage() {
                         { icon: '🧴', title: 'Miljövänliga produkter', description: 'Skonsamma och miljövänliga rengöringsmedel', link: '/om-oss' },
                         { icon: '📈', title: 'Ledningssystem', description: 'Effektiva rutiner för kvalitet och struktur', link: '/om-oss' },
                         { icon: '🦺', title: 'Arbetsmiljö', description: 'Trygg arbetsmiljö för både kunder och personal', link: '/om-oss' }
-                      ].map((feature, i) => (
+                      ] : [
+                        { icon: '💰', title: 'Fixed Price', description: 'No surprises – fixed prices and option for extras', link: '/priser' },
+                        { icon: '📋', title: 'RUT Deduction', description: 'We handle all paperwork for RUT deduction', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
+                        { icon: '⚡', title: 'Quick Quote', description: 'Get price quickly and easily – Fill out the form at the top of the page', link: '#visningsstad-offert' },
+                        { icon: '⏰', title: 'Reschedule or Cancel', description: 'Reschedule/cancel free of charge up to 24 hours before', link: '/avbokning' },
+                        { icon: '🔒', title: 'Permits and Insurance', description: 'All necessary permits and insurance in place', link: '/tillstand' },
+                        { icon: '🎓', title: 'Trained Staff', description: 'Trained employees and quality-assured routines', link: '/om-oss' },
+                        { icon: '🧴', title: 'Eco-friendly Products', description: 'Gentle and eco-friendly cleaning products', link: '/om-oss' },
+                        { icon: '📈', title: 'Management System', description: 'Effective routines for quality and structure', link: '/om-oss' },
+                        { icon: '🦺', title: 'Work Environment', description: 'Safe work environment for both customers and staff', link: '/om-oss' }
+                      ]).map((feature, i) => (
                         <motion.div key={feature.title} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={i}>
                           <motion.span className="text-2xl md:text-3xl" initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }} animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [-180, 20, 0], color: ['#10B981', '#34D399', '#10B981'] }} transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}>
                             {feature.icon}
@@ -749,9 +821,9 @@ export default function VisningsstadningPage() {
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
-                            {feature.title === 'RUT-avdrag' ? (
+                            {feature.title === 'RUT-avdrag' || feature.title === 'RUT Deduction' ? (
                               <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center">
-                                Läs mer
+                                {locale === 'sv' ? 'Läs mer' : 'Read more'}
                                 <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                               </a>
                             ) : (
@@ -764,7 +836,7 @@ export default function VisningsstadningPage() {
                   </div>
                   <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
                     <div className="w-full h-full flex items-stretch">
-                      <img src="/cleaning_lady.png" alt="Städpersonal i Stockholm - Flyttella" className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
+                      <img src="/cleaning_lady.png" alt={locale === 'sv' ? 'Städpersonal i Stockholm - Flyttella' : 'Cleaning Staff in Stockholm - Flyttella'} className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
                     </div>
                   </div>
                 </div>
@@ -781,14 +853,14 @@ export default function VisningsstadningPage() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 relative z-10 mb-3 md:mb-4">
                 <span className="text-3xl md:text-4xl">🏡✨</span>
                 <div className="text-center md:text-left">
-                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">Redo att börja din visningsstädning?</h3>
-                  <p className="text-base md:text-lg text-gray-100 leading-snug">Få en snabb och gratis offert</p>
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">{locale === 'sv' ? 'Redo att börja din visningsstädning?' : 'Ready to start your viewing cleaning?'}</h3>
+                  <p className="text-base md:text-lg text-gray-100 leading-snug">{locale === 'sv' ? 'Få en snabb och gratis offert' : 'Get a quick and free quote'}</p>
                 </div>
               </div>
               <div className="relative z-10 text-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                   <Link href="/offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
-                    Få gratis offert
+                    {locale === 'sv' ? 'Få gratis offert' : 'Get free quote'}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                   </Link>
                 </motion.div>
@@ -804,78 +876,82 @@ export default function VisningsstadningPage() {
           <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)' }} />
           <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{locale === 'sv' ? 'Vår erfarenhet' : 'Our Experience'}</h3>
               {/* Mobile slider */}
               <div className="md:hidden mt-8">
                 <div className="relative overflow-hidden rounded-xl" onTouchStart={(e) => { expTouchStartXRef.current = e.touches[0].clientX; if (experienceIntervalRef.current) clearInterval(experienceIntervalRef.current); }} onTouchMove={(e) => (expTouchCurrentXRef.current = e.touches[0].clientX)} onTouchEnd={() => { if (expTouchStartXRef.current != null && expTouchCurrentXRef.current != null) { const dx = expTouchCurrentXRef.current - expTouchStartXRef.current; const th = 50; if (Math.abs(dx) > th) { if (dx < 0) { setCurrentExperienceCard((prev) => (prev + 1) % totalExperienceCards); } else { setCurrentExperienceCard((prev) => (prev - 1 + totalExperienceCards) % totalExperienceCards); } restartExperienceAutoSlide(); } } expTouchStartXRef.current = null; expTouchCurrentXRef.current = null; }}>
                   <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentExperienceCard * 100}%)` }}>
-                    {[
+                    {(locale === 'sv' ? [
                       { title: 'Visningsstädningar', count: 3000 },
                       { title: 'Flyttstädningar', count: 7000 },
                       { title: 'Hemstädningar', count: 5000 }
-                    ].map((card) => (
+                    ] : [
+                      { title: 'Viewing Cleanings', count: 3000 },
+                      { title: 'Move-out Cleanings', count: 7000 },
+                      { title: 'Home Cleanings', count: 5000 }
+                    ]).map((card) => (
                       <div key={card.title} className="w-full flex-shrink-0">
                         <div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
                           <div className="relative z-10 flex flex-col items-center justify-center h-full">
                             <h4 className="text-lg font-bold mb-1 text-white">{card.title}</h4>
                             <div className="text-4xl font-bold mb-1 text-white"><CountUp end={card.count} duration={2.0} suffix="+" /></div>
-                            <p className="text-white/90 text-sm">uppdrag utförda</p>
+                            <p className="text-white/90 text-sm">{locale === 'sv' ? 'uppdrag utförda' : 'assignments completed'}</p>
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <button type="button" aria-label="Föregående" onClick={() => { setCurrentExperienceCard((prev) => (prev - 1 + totalExperienceCards) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                  <button type="button" aria-label={locale === 'sv' ? 'Föregående' : 'Previous'} onClick={() => { setCurrentExperienceCard((prev) => (prev - 1 + totalExperienceCards) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
                   </button>
-                  <button type="button" aria-label="Nästa" onClick={() => { setCurrentExperienceCard((prev) => (prev + 1) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                  <button type="button" aria-label={locale === 'sv' ? 'Nästa' : 'Next'} onClick={() => { setCurrentExperienceCard((prev) => (prev + 1) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
                   </button>
                 </div>
               </div>
               {/* Desktop grid */}
               <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-12">
-                {[{ title: 'Visningsstädningar', count: 3000 }, { title: 'Flyttstädningar', count: 7000 }, { title: 'Hemstädningar', count: 5000 }].map((card, i) => (
+                {(locale === 'sv' ? [{ title: 'Visningsstädningar', count: 3000 }, { title: 'Flyttstädningar', count: 7000 }, { title: 'Hemstädningar', count: 5000 }] : [{ title: 'Viewing Cleanings', count: 3000 }, { title: 'Move-out Cleanings', count: 7000 }, { title: 'Home Cleanings', count: 5000 }]).map((card, i) => (
                   <motion.div key={card.title} className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: i * 0.25 }}>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full">
                       <motion.h2 className="text-xl font-bold mb-2 text-white">{card.title}</motion.h2>
                       <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={card.count} duration={2.5} suffix="+" useEasing enableScrollSpy scrollSpyOnce /></motion.div>
-                      <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                      <motion.p className="text-white/90">{locale === 'sv' ? 'uppdrag utförda' : 'assignments completed'}</motion.p>
                     </div>
                   </motion.div>
                 ))}
               </div>
               <div className="mt-8 flex flex-col items-center justify-center gap-4">
                 <motion.div className="flex-1 max-w-4xl text-center px-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet ger resultat</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Lokal erfarenhet ger resultat' : 'Local Experience Delivers Results'}</h4>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
-                    Med tusentals städningar i Stockholm har vi byggt upp en stark expertis inom visningsstädning. Vi arbetar metodiskt med tydliga checklistor och miljövänliga produkter för ett jämnt, pålitligt resultat som märks på både bilder och visning.
+                    {locale === 'sv' ? 'Med tusentals städningar i Stockholm har vi byggt upp en stark expertis inom visningsstädning. Vi arbetar metodiskt med tydliga checklistor och miljövänliga produkter för ett jämnt, pålitligt resultat som märks på både bilder och visning.' : 'With thousands of cleanings in Stockholm, we have built strong expertise in viewing cleaning. We work methodically with clear checklists and eco-friendly products for an even, reliable result that shows in both pictures and viewing.'}
                   </p>
                 </motion.div>
                 {/* Badges - pyramid on mobile */}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
                   <div className="md:hidden flex flex-col items-center">
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
-                      <Image src="/1000reviewspicture.png" alt="1000+ positiva recensioner" width={200} height={200} className="object-contain h-36 w-36" />
+                      <Image src="/1000reviewspicture.png" alt={locale === 'sv' ? '1000+ positiva recensioner' : '1000+ positive reviews'} width={200} height={200} className="object-contain h-36 w-36" />
                     </motion.div>
                     <div className="flex items-center justify-center gap-4">
                       <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                        <Image src="/recommendedcompany2.png" alt="Rekommenderad städfirma" width={160} height={160} className="object-contain h-32 w-32" />
+                        <Image src="/recommendedcompany2.png" alt={locale === 'sv' ? 'Rekommenderad städfirma' : 'Recommended cleaning company'} width={160} height={160} className="object-contain h-32 w-32" />
                       </motion.div>
                       <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                        <Image src="/bestinswedenbadge-modified.png" alt="Top 10 städfirma" width={180} height={180} className="object-contain h-28 w-28" />
+                        <Image src="/bestinswedenbadge-modified.png" alt={locale === 'sv' ? 'Top 10 städfirma' : 'Top 10 cleaning company'} width={180} height={180} className="object-contain h-28 w-28" />
                       </motion.div>
                     </div>
                   </div>
                   <div className="hidden md:flex items-center justify-center gap-6">
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                      <Image src="/recommendedcompany2.png" alt="Rekommenderad städfirma" width={240} height={240} className="object-contain h-60 w-60" />
+                      <Image src="/recommendedcompany2.png" alt={locale === 'sv' ? 'Rekommenderad städfirma' : 'Recommended cleaning company'} width={240} height={240} className="object-contain h-60 w-60" />
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                      <Image src="/1000reviewspicture.png" alt="1000+ positiva recensioner" width={260} height={260} className="object-contain h-64 w-64 mt-3" />
+                      <Image src="/1000reviewspicture.png" alt={locale === 'sv' ? '1000+ positiva recensioner' : '1000+ positive reviews'} width={260} height={260} className="object-contain h-64 w-64 mt-3" />
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                      <Image src="/bestinswedenbadge-modified.png" alt="Top 10 städfirma" width={300} height={300} className="object-contain h-48 w-48" />
+                      <Image src="/bestinswedenbadge-modified.png" alt={locale === 'sv' ? 'Top 10 städfirma' : 'Top 10 cleaning company'} width={300} height={300} className="object-contain h-48 w-48" />
                     </motion.div>
                   </div>
                 </div>
@@ -890,33 +966,40 @@ export default function VisningsstadningPage() {
           <div className="mx-auto px-4 md:px-24 relative z-10">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 mb-6 md:mb-8 w-full">
               <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">{locale === 'sv' ? 'Vår process' : 'Our Process'}</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår process för visningsstädning är enkel, flexibel och trygg. Du börjar med att fylla i vårt formulär med dina uppgifter och önskemål. Du får snabbt en offert till din e‑post. Samma dag eller senast dagen efter tar vi personlig kontakt för att säkerställa detaljer och tidsplan.
+                    {locale === 'sv' ? 'Vår process för visningsstädning är enkel, flexibel och trygg. Du börjar med att fylla i vårt formulär med dina uppgifter och önskemål. Du får snabbt en offert till din e‑post. Samma dag eller senast dagen efter tar vi personlig kontakt för att säkerställa detaljer och tidsplan.' : 'Our process for viewing cleaning is simple, flexible and safe. You start by filling out our form with your details and wishes. You quickly get a quote to your email. The same day or latest the day after we take personal contact to ensure details and schedule.'}
                   </p>
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    När du är nöjd signerar du digitalt. Vi planerar sedan städningen utifrån vår visningsanpassade checklista, med fokus på kök, badrum och blanka ytor. Vi kan även samordna med din mäklare vid behov. Resultatet är ett skinande rent hem som gör ett starkt första intryck på både bilder och visning.
+                    {locale === 'sv' ? 'När du är nöjd signerar du digitalt. Vi planerar sedan städningen utifrån vår visningsanpassade checklista, med fokus på kök, badrum och blanka ytor. Vi kan även samordna med din mäklare vid behov. Resultatet är ett skinande rent hem som gör ett starkt första intryck på både bilder och visning.' : 'When you are satisfied you sign digitally. We then plan the cleaning based on our viewing-adapted checklist, with focus on kitchen, bathroom and shiny surfaces. We can also coordinate with your real estate agent when needed. The result is a sparkling clean home that makes a strong first impression in both pictures and viewing.'}
                   </p>
                 </div>
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4">
-                    Våra priser baseras på boyta och dina specifika önskemål. Alla priser är fasta utan dolda avgifter. RUT‑avdraget hanteras automatiskt för att göra det enkelt och prisvärt.
+                    {locale === 'sv' ? 'Våra priser baseras på boyta och dina specifika önskemål. Alla priser är fasta utan dolda avgifter. RUT‑avdraget hanteras automatiskt för att göra det enkelt och prisvärt.' : 'Our prices are based on floor area and your specific wishes. All prices are fixed without hidden fees. The RUT deduction is handled automatically to make it simple and cost-effective.'}
                   </p>
                 </div>
                 <div className="mb-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-8 text-center">{locale === 'sv' ? 'Så fungerar det' : 'How it works'}</h3>
                   <div className="relative w-full">
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
-                      {[
+                      {(locale === 'sv' ? [
                         { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din städning' },
                         { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris snabbt och enkelt' },
                         { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
                         { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
                         { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Städning utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
                         { icon: <div className="md:mt-0"><CleanHomeLottie /></div>, title: 'Nöjd kund', description: 'Framgångsrik visning', containerClass: 'md:-mt-6' }
-                      ].map((step: any, index: number) => (
+                      ] : [
+                        { icon: <FillFormLottie />, title: 'Fill in the form', description: 'Tell us about your cleaning' },
+                        { icon: <FastLottie />, title: 'Quick quote', description: 'Get price quickly and easily' },
+                        { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personal contact', description: 'We call the same day or the day after', containerClass: 'md:-mt-7' },
+                        { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Sign & confirm', description: 'Book digitally', containerClass: 'md:-mt-6' },
+                        { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Cleaning completed', description: 'We take care of everything', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
+                        { icon: <div className="md:mt-0"><CleanHomeLottie /></div>, title: 'Happy customer', description: 'Successful viewing', containerClass: 'md:-mt-6' }
+                      ]).map((step: any, index: number) => (
                         <motion.div key={index} className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={index}>
                           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
                           <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
@@ -942,24 +1025,24 @@ export default function VisningsstadningPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Läs mer om visningsstädning</h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">Tips för hur du gör bästa möjliga intryck inför visning och hur du förbereder bostaden.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Läs mer om visningsstädning' : 'Read more about viewing cleaning'}</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">{locale === 'sv' ? 'Tips för hur du gör bästa möjliga intryck inför visning och hur du förbereder bostaden.' : 'Tips for how to make the best possible impression before viewing and how to prepare the property.'}</p>
               </div>
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/cleaning_lady.png" alt="Visningsstädningstips" className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
+                    <img src="/cleaning_lady.png" alt={locale === 'sv' ? 'Visningsstädningstips' : 'Viewing cleaning tips'} className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">
-                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">Visningsstädning</span>
-                      <span className="text-gray-500 text-sm ml-4">4 min läsning</span>
+                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">{locale === 'sv' ? 'Visningsstädning' : 'Viewing Cleaning'}</span>
+                      <span className="text-gray-500 text-sm ml-4">{locale === 'sv' ? '4 min läsning' : '4 min read'}</span>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">Så förbereder du bostaden för visning</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">Vad ska du tänka på inför fotografering och visning? Vi går igenom städningens viktigaste moment och smarta tips för ett starkt första intryck.</p>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Så förbereder du bostaden för visning' : 'How to prepare the property for viewing'}</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">{locale === 'sv' ? 'Vad ska du tänka på inför fotografering och visning? Vi går igenom städningens viktigaste moment och smarta tips för ett starkt första intryck.' : 'What should you think about before photography and viewing? We go through the most important moments of cleaning and smart tips for a strong first impression.'}</p>
                     <div className="flex items-center justify-end mb-4">
                       <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </div>
@@ -968,7 +1051,7 @@ export default function VisningsstadningPage() {
               </motion.div>
               <div className="text-center mt-8 md:mt-12">
                 <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base">
-                  Se alla artiklar om städning
+                  {locale === 'sv' ? 'Se alla artiklar om städning' : 'See all articles about cleaning'}
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </Link>
               </div>
@@ -995,14 +1078,19 @@ export default function VisningsstadningPage() {
           />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Vanliga frågor om visningsstädning</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{locale === 'sv' ? 'Vanliga frågor om visningsstädning' : 'Frequently Asked Questions about Viewing Cleaning'}</h2>
               <div className="space-y-4">
-                {[
+                {(locale === 'sv' ? [
                   { id: 'vis-1', question: 'Hur nära inpå visning bör städningen ske?', answer: 'Vi rekommenderar att städningen görs senast dagen innan visningen. På så sätt hinner allt torka och kännas fräscht, samtidigt som du kan vara säker på att hemmet ger ett riktigt bra första intryck för spekulanterna.' },
                   { id: 'vis-2', question: 'Ingår fönsterputs i visningsstädning?', answer: 'Fönsterputs ingår inte som standard i en visningsstädning, men det är ett vanligt tillval. Vi rekommenderar starkt att boka det inför en visning, eftersom rena och skinande fönster släpper in mer ljus och ger rummen en fräschare och mer inbjudande känsla. Många upplever att det gör en stor skillnad för helhetsintrycket.' },
                   { id: 'vis-3', question: 'Behöver jag vara hemma?', answer: 'Nej, många kunder lämnar nyckel eller portkod – vi hanterar detta tryggt och säkert.' },
                   { id: 'vis-4', question: 'Kan jag avboka?', answer: 'Ja, om- eller avbokning är kostnadsfri upp till 24 timmar innan.' }
-                ].map((faq, index) => (
+                ] : [
+                  { id: 'vis-1', question: 'How close to the viewing should the cleaning be done?', answer: 'We recommend that the cleaning is done at the latest the day before the viewing. This way everything has time to dry and feel fresh, while you can be sure that the home gives a really good first impression for the potential buyers.' },
+                  { id: 'vis-2', question: 'Is window cleaning included in viewing cleaning?', answer: 'Window cleaning is not included as standard in a viewing cleaning, but it is a common option. We strongly recommend booking it before a viewing, because clean and shiny windows let in more light and give the rooms a fresher and more inviting feeling. Many experience that it makes a big difference for the overall impression.' },
+                  { id: 'vis-3', question: 'Do I need to be home?', answer: 'No, many customers leave a key or door code – we handle this safely and securely.' },
+                  { id: 'vis-4', question: 'Can I cancel?', answer: 'Yes, rescheduling or cancellation is free of charge up to 24 hours before.' }
+                ]).map((faq, index) => (
                   <motion.div key={faq.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>
                     <button onClick={() => toggleFAQ(faq.id)} className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200">
                       <h3 className="text-lg md:text-xl font-semibold text-[#0F172A] pr-4">{faq.question}</h3>

@@ -189,7 +189,7 @@ export default function HemstadningPage() {
 
   // Lottie helpers are defined at module scope above
 
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <main className="overflow-hidden">
@@ -264,7 +264,7 @@ export default function HemstadningPage() {
                     }}
                     className="flex flex-col items-center text-white hover:text-white/80 transition-colors group"
                   >
-                    <span className="text-sm font-medium mb-2">Läs mer</span>
+                    <span className="text-sm font-medium mb-2">{locale === 'sv' ? 'Läs mer' : 'Read more'}</span>
                     <motion.div
                       animate={{ y: [0, 5, 0] }}
                       transition={{ duration: 2, repeat: Infinity }}
@@ -295,10 +295,10 @@ export default function HemstadningPage() {
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">Storstädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Grundlig storstädning med fokus på kök, badrum och svåråtkomliga ytor. Perfekt som komplement till fönsterputs.</p>
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">{t('hemstadning.sidebar.storstadning.title')}</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">{t('hemstadning.sidebar.storstadning.description')}</p>
                       <div className="mt-auto relative">
-                        <Link href="/storstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                        <Link href="/storstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('hemstadning.sidebar.storstadning.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
                     </div>
                   </div>
@@ -307,10 +307,10 @@ export default function HemstadningPage() {
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧱</span><h3 className="text-xl font-bold text-white">Byggstädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Effektiv byggstädning efter renovering – grov- och finstädning för inflyttningsklart resultat.</p>
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧱</span><h3 className="text-xl font-bold text-white">{t('hemstadning.sidebar.byggstadning.title')}</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">{t('hemstadning.sidebar.byggstadning.description')}</p>
                       <div className="mt-auto relative">
-                        <Link href="/byggstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                        <Link href="/byggstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('hemstadning.sidebar.byggstadning.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
                     </div>
                   </div>
@@ -319,10 +319,10 @@ export default function HemstadningPage() {
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🕊️</span><h3 className="text-xl font-bold text-white">Dödsbostädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Omsorgsfull dödsbostädning – sortering samt grov- och finstädning inför försäljning eller överlåtelse.</p>
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🕊️</span><h3 className="text-xl font-bold text-white">{t('hemstadning.sidebar.dodsbo.title')}</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">{t('hemstadning.sidebar.dodsbo.description')}</p>
                       <div className="mt-auto relative">
-                        <Link href="/dodsbo" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                        <Link href="/dodsbo" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('hemstadning.sidebar.dodsbo.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
                     </div>
                   </div>
@@ -339,57 +339,55 @@ export default function HemstadningPage() {
                 </div>
                 {([
                   {
-                    title: 'Vad är hemstädning?',
-                    content:
-                      'Hemstädning är regelbunden eller återkommande städning av ditt hem. Vi anpassar städningen efter dina behov och önskemål – från kök och badrum till vardagsrum och sovrum. Vårt erfarna team använder miljövänliga produkter och säkerställer ett skinande rent resultat varje gång. Med hemstädning från en professionell städfirma får du hög, jämn kvalitet och mer tid över till det som är viktigt. Vi arbetar efter en tydlig checklista och erbjuder flexibla intervaller (varje vecka, varannan vecka eller månadsvis) samt tillval som fönsterputs och storstädning. Allt för att din hemstädning i Stockholm ska bli enkel, trygg och prisvärd.',
+                    title: t('hemstadning.content.whatIsTitle'),
+                    content: t('hemstadning.content.whatIsDescription'),
                     icon: '✨'
                   },
                   {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/fonsterputs_info.png" alt="Hemstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/fonsterputs_info.png" alt={locale === 'sv' ? 'Hemstädning' : 'Home cleaning'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
                   },
                   {
-                    title: 'Vad kostar hemstädning?',
+                    title: t('hemstadning.content.pricingTitle'),
                     content: (
                       <>
                         <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
-                          Pris för hemstädning beror på boyta, planlösning, städfrekvens och dina specifika önskemål. Med 50% RUT‑avdrag på arbetskostnaden blir återkommande hemstädning mycket prisvärt. Begär en kostnadsfri offert snabbt och enkelt. Faktorer som påverkar priset är bland annat grad av nedsmutsning samt eventuella tillval (t.ex. fönsterputs eller ugnsrengöring). Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad din hemstädning kostar.
+                          {t('hemstadning.content.pricingDescription')}
                         </p>
                         <div className="my-16 text-center">
                           <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-                            "Som att komma hem till ett helt nytt hem varje gång – proffsigt, pålitligt och prisvärt!"
+                            "{t('hemstadning.content.pricingTestimonial')}"
                           </p>
-                          <p className="italic text-gray-700 mt-2">- Emma</p>
+                          <p className="italic text-gray-700 mt-2">- {t('hemstadning.content.testimonialAuthor')}</p>
                         </div>
                       </>
                     ),
                     icon: '💸'
                   },
                   {
-                    title: 'Vad ingår i hemstädning?',
-                    content:
-                      'Hemstädning innefattar dammsugning och moppning av alla golv, dammtorkning av fria ytor, avtorkning av lister, dörrar och handtag, speglar och synliga ytor. I köket rengörs arbetsbänkar, spishäll, diskho och vitvarornas utsidor, och i badrum avkalkas och rengörs handfat, dusch/badkar och toalett. Papperskorgar töms och ytor snyggas till. Som tillval kan du lägga till fönsterputs, sängklädesbyte, invändig skåprengöring, ugnsplåt/ugn samt djuprengöring. Vi använder miljövänliga produkter och arbetar efter en tydlig checklista för ett jämnt och skinande resultat.',
+                    title: t('hemstadning.content.includesTitle'),
+                    content: t('hemstadning.content.includesDescription'),
                     icon: '🧹'
                   },
                   {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/cleaning_background.png" alt="Hemstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/cleaning_background.png" alt={locale === 'sv' ? 'Hemstädning' : 'Home cleaning'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
                   },
                   {
-                    title: 'Hur bokar jag hemstädning?',
+                    title: t('hemstadning.content.howToBookTitle'),
                     content: (
                       <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-0 text-left md:text-center">
-                        Boka direkt genom att fylla i formuläret, få prisförslag snabbt och enkelt och bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta, frekvens och eventuella tillval. Därefter planerar vi startdatum – enkelt och tryggt. Vi matchar dig med en fast städare eller ett litet team för kontinuitet och trygghet. Du väljer veckodag och tid som passar, och kan enkelt justera eller pausa via vår kundtjänst. Betalning sker smidigt efter utförd städning. RUT‑avdraget (50% på arbetskostnaden) sköter vi automatiskt.
+                        {t('hemstadning.content.howToBookDescription')}
                       </p>
                     ),
                     icon: '📅'
@@ -438,11 +436,11 @@ export default function HemstadningPage() {
               {/* Mobile image above title to match Bohagsflytt */}
               <div className="lg:hidden px-4 mb-6 -mx-8">
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
-                  <img src="/omflyttella_flyttstad.png" alt="Om Flyttella" className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                  <img src="/omflyttella_flyttstad.png" alt={t('hemstadning.about.imageAlt')} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
                 </div>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('hemstadning.about.title')}</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 {/* Left: Image - desktop only */}
                 <motion.div 
@@ -456,7 +454,7 @@ export default function HemstadningPage() {
                   <div className="relative h-80 lg:h-full w-full overflow-hidden rounded-2xl">
                     <img 
                       src="/omflyttella_flyttstad.png" 
-                      alt="Om Flyttella" 
+                      alt={t('hemstadning.about.imageAlt')} 
                       className="object-cover rounded-2xl w-full h-full" 
                       style={{ objectPosition: '80% 25%', transform: 'scale(1.10)' }} 
                     />
@@ -474,29 +472,29 @@ export default function HemstadningPage() {
                   {/* Desktop: full text */}
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en ledande städfirma i Stockholm med över 8 års erfarenhet av hemstädning, flyttstädning och kontorsstädning. Vi erbjuder fasta priser och personlig service i hela Storstockholm.
+                      {t('hemstadning.about.description1')}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi känner till alla Stockholms områden och anpassar våra städtjänster efter dina behov – från lägenheter och villor till kontor och butiker. Vår hemstädning följer tydliga checklistor för en jämn och hög kvalitet.
+                      {t('hemstadning.about.description2')}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vårt mål är att göra din hemstädning enkel och trygg. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt. Med vår erfarenhet av hemstädning i Stockholm kan du känna dig trygg med resultatet varje gång.
+                      {t('hemstadning.about.description3')}
                     </p>
                   </div>
                   {/* Mobile: short text with expand */}
                   <div className="lg:hidden space-y-4">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en städfirma i Stockholm med över 8 års erfarenhet av hemstädning, flyttstädning och kontorsstädning.
+                      {locale === 'sv' ? 'Flyttella är en städfirma i Stockholm med över 8 års erfarenhet av hemstädning, flyttstädning och kontorsstädning.' : 'Flyttella is a cleaning company in Stockholm with over 8 years of experience in home cleaning, move-out cleaning and office cleaning.'}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi erbjuder städgaranti, fasta priser och personlig service – alltid anpassat efter dina behov.
+                      {locale === 'sv' ? 'Vi erbjuder städgaranti, fasta priser och personlig service – alltid anpassat efter dina behov.' : 'We offer cleaning guarantee, fixed prices and personal service – always adapted to your needs.'}
                     </p>
                     {!showFullAboutText && (
                       <button
                         onClick={() => setShowFullAboutText(true)}
                         className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                       >
-                        Läs mer
+                        {t('hemstadning.about.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -516,17 +514,17 @@ export default function HemstadningPage() {
                         className="space-y-4 mt-4"
                       >
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Vi känner till alla Stockholms områden och anpassar våra städtjänster efter just dina behov – från lägenheter och villor till kontor och butiker. Vår hemstädning följer tydliga checklistor för en jämn och hög kvalitet.
+                          {locale === 'sv' ? 'Vi känner till alla Stockholms områden och anpassar våra städtjänster efter just dina behov – från lägenheter och villor till kontor och butiker. Vår hemstädning följer tydliga checklistor för en jämn och hög kvalitet.' : 'We know all Stockholm areas and adapt our cleaning services to your specific needs – from apartments and villas to offices and shops. Our home cleaning follows clear checklists for consistent and high quality.'}
                         </p>
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Vårt mål är att göra din hemstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen.
+                          {locale === 'sv' ? 'Vårt mål är att göra din hemstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen.' : 'Our goal is to make your home cleaning as simple and safe as possible. We offer free quotes, quick booking and personal contact throughout the process.'}
                         </p>
                         <motion.div className="pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
                           <Link 
                             href="/om-oss" 
                             className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                           >
-                            Läs mer om oss
+                            {locale === 'sv' ? 'Läs mer om oss' : 'Read more about us'}
                             <svg 
                               xmlns="http://www.w3.org/2000/svg" 
                               className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -550,11 +548,11 @@ export default function HemstadningPage() {
         {/* Vad tycker våra kunder om oss */}
         <ReviewsWidget 
           location="Stockholm"
-          title="Vad tycker våra kunder om oss?"
-          subtitle="Pålitlig hemstädning i Stockholm"
-          description="Professionell hemstädning i Stockholm med flexibla intervall – veckovis, varannan vecka, månadsvis eller engångsstädning – fast pris och 50% RUT‑avdrag. Punktliga städare och höga betyg. Läs vad våra kunder tycker om vår hemstädning i Stockholm."
-          badgeAlt="8+ års erfarenhet som städfirma i Stockholm"
-          arrowText="Läs vad våra kunder säger om vår hemstädning i Stockholm"
+          title={t('hemstadning.reviews.title')}
+          subtitle={t('hemstadning.reviews.subtitle')}
+          description={t('hemstadning.reviews.description')}
+          badgeAlt={t('hemstadning.reviews.badgeAlt')}
+          arrowText={t('hemstadning.reviews.arrowText')}
         />
 
         {/* CTA: Redo att börja din hemstädning? */}
@@ -565,14 +563,14 @@ export default function HemstadningPage() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 relative z-10 mb-3 md:mb-4">
                 <span className="text-3xl md:text-4xl">🏠</span>
                 <div className="text-center md:text-left">
-                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">Redo att börja din hemstädning?</h3>
-                  <p className="text-base md:text-lg text-gray-100 leading-snug">Få en snabb och gratis offert på din hemstädning</p>
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">{t('hemstadning.cta.title')}</h3>
+                  <p className="text-base md:text-lg text-gray-100 leading-snug">{t('hemstadning.cta.subtitle')}</p>
                 </div>
               </div>
               <div className="relative z-10 text-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                   <Link href="/offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
-                    Få gratis offert
+                    {t('hemstadning.cta.button')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -588,7 +586,7 @@ export default function HemstadningPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-                Våra Städtjänster
+                {t('hemstadning.services.title')}
               </h2>
               <div className="grid grid-cols-1 gap-12">
                 {/* Flyttstädning Card */}
@@ -602,18 +600,18 @@ export default function HemstadningPage() {
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                     <span className="text-4xl md:text-6xl">🧽</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Flyttstädning</h3>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">{t('hemstadning.services.flyttstadning.title')}</h3>
                   </div>
                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-                    Grundlig flyttstädning enligt branschstandard – fast pris, 14 dagars garanti och full RUT‑hantering.
+                    {t('hemstadning.services.flyttstadning.description')}
                   </p>
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                    Vi städar enligt en komplett checklista: alla rum, fönsterputsning av alla fönster, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du välja balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.
+                    {t('hemstadning.services.flyttstadning.extendedDescription')}
                   </p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
-                        Läs mer
+                        {t('hemstadning.services.flyttstadning.readMore')}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </motion.div>
@@ -631,18 +629,18 @@ export default function HemstadningPage() {
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                     <span className="text-4xl md:text-6xl">🪟</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Fönsterputs</h3>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">{t('hemstadning.services.fonsterputs.title')}</h3>
                   </div>
                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-                    Kristallklara fönster året runt – som tillval till hemstädning eller som separat tjänst.
+                    {t('hemstadning.services.fonsterputs.description')}
                   </p>
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                    Vi putsar fönster invändigt och utvändigt där det är säkert och åtkomligt, och tar hand om bågar och fönsterbrädor. Rätt verktyg och metoder ger ett kristallklart resultat utan ränder. Finns även som tillval i samband med hemstädning, storstädning eller flyttstädning – samt som säsongsabonnemang.
+                    {t('hemstadning.services.fonsterputs.extendedDescription')}
                   </p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/stadtjanster" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
-                        Läs mer
+                        {t('hemstadning.services.fonsterputs.readMore')}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </motion.div>
@@ -660,18 +658,18 @@ export default function HemstadningPage() {
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                     <span className="text-4xl md:text-6xl">🏠✨</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Visningsstädning</h3>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">{t('hemstadning.services.visningsstadning.title')}</h3>
                   </div>
                   <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-                    Professionell visningsstädning som får bostaden att glänsa inför försäljning. Fast pris och 50% RUT‑avdrag.
+                    {t('hemstadning.services.visningsstadning.description')}
                   </p>
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-                    Fokus på första intrycket: skinande kök och badrum, polerade ytor och speglar, snyggt ordnade detaljer och doftneutralt resultat. Fönsterputs som tillval. Vi följer en visningsanpassad checklista och tidsplan i samråd med dig eller mäklaren.
+                    {t('hemstadning.services.visningsstadning.extendedDescription')}
                   </p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/stadtjanster" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
-                        Läs mer
+                        {t('hemstadning.services.visningsstadning.readMore')}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </motion.div>
@@ -701,7 +699,7 @@ export default function HemstadningPage() {
                 transition={{ duration: 0.8, delay: 0 }}
                 id="upptack-tjanster"
               >
-                Våra tjänster
+                {t('hemstadning.features.title')}
               </motion.h2>
               <motion.p 
                 className="text-lg md:text-xl mb-8 text-[#0F172A]/90"
@@ -711,7 +709,7 @@ export default function HemstadningPage() {
                 variants={fadeInUp}
                 transition={{ duration: 0.8, delay: 0 }}
               >
-                Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din vardag enklare.
+                {t('hemstadning.features.description')}
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -726,7 +724,7 @@ export default function HemstadningPage() {
                     href="/tjanster" 
                     className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                   >
-                    Se alla våra flyttjänster
+                    {t('hemstadning.features.flyttServicesButton')}
                     <motion.svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -745,7 +743,7 @@ export default function HemstadningPage() {
                     href="/stadtjanster" 
                     className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                   >
-                    Se alla våra städtjänster
+                    {t('hemstadning.features.cleaningServicesButton')}
                     <motion.svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -768,7 +766,7 @@ export default function HemstadningPage() {
         <section className="md:hidden py-8 bg-white">
           <div className="mx-auto px-4">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">Våra förmåner</h2>
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">{t('hemstadning.benefits.title')}</h2>
               <div className="relative overflow-hidden rounded-xl" onTouchStart={(e)=>{featureTouchStartXRef.current=e.touches[0].clientX; if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);}} onTouchMove={(e)=>featureTouchCurrentXRef.current=e.touches[0].clientX} onTouchEnd={()=>{ if (featureTouchStartXRef.current!=null && featureTouchCurrentXRef.current!=null){ const dx=featureTouchCurrentXRef.current-featureTouchStartXRef.current; const th=50; if(Math.abs(dx)>th){ if(dx<0){ setCurrentFeatureCard((prev)=>(prev+1)%totalFeatureCards);} else { setCurrentFeatureCard((prev)=>(prev-1+totalFeatureCards)%totalFeatureCards);} restartFeatureAutoSlide(); } } featureTouchStartXRef.current=null; featureTouchCurrentXRef.current=null; }}>
                 <div 
                   className="flex transition-transform duration-500 ease-in-out"
@@ -826,19 +824,29 @@ export default function HemstadningPage() {
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
                 <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
                   <div className="flex-[2] w-full">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">{t('hemstadning.benefits.title')}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
-                      {[
+                      {(locale === 'sv' ? [
                         { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                         { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
                         { icon: '⚡', title: 'Snabb offert', description: 'Få prisförslag snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#hemstad-offert' },
                         { icon: '⏰', title: 'Omboka eller avboka', description: 'Omboka/avboka kostnadsfritt upp till 24 timmar innan', link: '/avbokning' },
                         { icon: '🔒', title: 'Tillstånd och försäkring', description: 'Alla nödvändiga tillstånd och försäkringar på plats', link: '/tillstand' },
                         { icon: '🎓', title: 'Utbildad personal', description: 'Utbildade medarbetare och kvalitetssäkrade rutiner', link: '/om-oss' },
-                        { icon: '🧴', title: 'Miljövänliga produkter', description: 'Skonsamma och miljövänliga rengöringsmedel', link: '/om-oss' },
-                        { icon: '📈', title: 'Ledningssystem', description: 'Effektiva rutiner för kvalitet och struktur', link: '/om-oss' },
-                        { icon: '🦺', title: 'Arbetsmiljö', description: 'Trygg arbetsmiljö för både kunder och personal', link: '/om-oss' }
-                      ].map((feature, i) => (
+                        { icon: '🧴', title: 'Miljövänliga produkter', description: 'Skonsamma och miljövänliga rengöringsmedel', link: '/miljovanlig-stadning' },
+                        { icon: '📈', title: 'Ledningssystem', description: 'Effektiva rutiner för kvalitet och struktur', link: '/kvalitet' },
+                        { icon: '🦺', title: 'Arbetsmiljö', description: 'Trygg arbetsmiljö för både kunder och personal', link: '/arbetsmiljo' }
+                      ] : [
+                        { icon: '💰', title: 'Fixed Price', description: 'No surprises – fixed prices and options available', link: '/priser' },
+                        { icon: '📋', title: 'RUT Deduction', description: 'We handle all paperwork for RUT deduction', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
+                        { icon: '⚡', title: 'Quick Quote', description: 'Get price suggestions quickly and easily – Simply fill out the form at the top of the page', link: '#hemstad-offert' },
+                        { icon: '⏰', title: 'Reschedule or Cancel', description: 'Reschedule/cancel free of charge up to 24 hours before', link: '/avbokning' },
+                        { icon: '🔒', title: 'Permits and Insurance', description: 'All necessary permits and insurance in place', link: '/tillstand' },
+                        { icon: '🎓', title: 'Trained Staff', description: 'Trained employees and quality-assured routines', link: '/om-oss' },
+                        { icon: '🧴', title: 'Eco-friendly Products', description: 'Gentle and eco-friendly cleaning products', link: '/miljovanlig-stadning' },
+                        { icon: '📈', title: 'Management System', description: 'Effective routines for quality and structure', link: '/kvalitet' },
+                        { icon: '🦺', title: 'Work Environment', description: 'Safe work environment for both customers and staff', link: '/arbetsmiljo' }
+                      ]).map((feature, i) => (
                         <motion.div key={feature.title} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={i}>
                           <motion.span className="text-2xl md:text-3xl" initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }} animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [-180, 20, 0], color: ['#10B981', '#34D399', '#10B981'] }} transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}>
                             {feature.icon}
@@ -861,7 +869,7 @@ export default function HemstadningPage() {
                   </div>
                   <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
                     <div className="w-full h-full flex items-stretch">
-                      <img src="/cleaning_lady.png" alt="Städpersonal i Stockholm - Flyttella" className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
+                      <img src="/cleaning_lady.png" alt={t('hemstadning.benefits.imageAlt')} className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
                     </div>
                   </div>
                 </div>
@@ -895,10 +903,10 @@ export default function HemstadningPage() {
                 <span className="text-3xl md:text-4xl">🏡</span>
                 <div className="text-center md:text-left">
                   <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">
-                    Redo att börja din hemstädning?
+                    {t('hemstadning.cta.title')}
                   </h3>
                   <p className="text-base md:text-lg text-gray-100 leading-snug">
-                    Få en snabb och gratis offert på din hemstädning
+                    {t('hemstadning.cta.subtitle')}
                   </p>
                 </div>
               </div>
@@ -912,7 +920,7 @@ export default function HemstadningPage() {
                     href="/offert"
                     className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
                   >
-                    Få gratis offert
+                    {t('hemstadning.cta.button')}
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -936,22 +944,22 @@ export default function HemstadningPage() {
           <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)' }} />
           <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('hemstadning.experience.title')}</h3>
               {/* Mobile slider */}
               <div className="md:hidden mt-8">
                 <div className="relative overflow-hidden rounded-xl" onTouchStart={(e) => { expTouchStartXRef.current = e.touches[0].clientX; if (experienceIntervalRef.current) clearInterval(experienceIntervalRef.current); }} onTouchMove={(e) => (expTouchCurrentXRef.current = e.touches[0].clientX)} onTouchEnd={() => { if (expTouchStartXRef.current != null && expTouchCurrentXRef.current != null) { const dx = expTouchCurrentXRef.current - expTouchStartXRef.current; const th = 50; if (Math.abs(dx) > th) { if (dx < 0) { setCurrentExperienceCard((prev) => (prev + 1) % totalExperienceCards); } else { setCurrentExperienceCard((prev) => (prev - 1 + totalExperienceCards) % totalExperienceCards); } restartExperienceAutoSlide(); } } expTouchStartXRef.current = null; expTouchCurrentXRef.current = null; }}>
                   <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentExperienceCard * 100}%)` }}>
                     {[
-                      { title: 'Hemstädningar', count: 5000 },
-                      { title: 'Flyttstädningar', count: 7000 },
-                      { title: 'Företagsstädningar', count: 2000 }
+                      { title: t('hemstadning.experience.stats.hemstadningar.title'), count: 5000 },
+                      { title: t('hemstadning.experience.stats.flyttstadningar.title'), count: 7000 },
+                      { title: t('hemstadning.experience.stats.foretagsstadningar.title'), count: 2000 }
                     ].map((card) => (
                       <div key={card.title} className="w-full flex-shrink-0">
                         <div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
                           <div className="relative z-10 flex flex-col items-center justify-center h-full">
                             <h4 className="text-lg font-bold mb-1 text-white">{card.title}</h4>
                             <div className="text-4xl font-bold mb-1 text-white"><CountUp end={card.count} duration={2.0} suffix="+" /></div>
-                            <p className="text-white/90 text-sm">uppdrag utförda</p>
+                            <p className="text-white/90 text-sm">{locale === 'sv' ? 'uppdrag utförda' : 'assignments completed'}</p>
                           </div>
                         </div>
                       </div>
@@ -967,21 +975,21 @@ export default function HemstadningPage() {
               </div>
               {/* Desktop grid */}
               <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-12">
-                {[{ title: 'Hemstädningar', count: 5000 }, { title: 'Flyttstädningar', count: 7000 }, { title: 'Företagsstädningar', count: 2000 }].map((card, i) => (
+                {[{ title: t('hemstadning.experience.stats.hemstadningar.title'), count: 5000 }, { title: t('hemstadning.experience.stats.flyttstadningar.title'), count: 7000 }, { title: t('hemstadning.experience.stats.foretagsstadningar.title'), count: 2000 }].map((card, i) => (
                   <motion.div key={card.title} className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: i * 0.25 }}>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full">
                       <motion.h2 className="text-xl font-bold mb-2 text-white">{card.title}</motion.h2>
                       <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={card.count} duration={2.5} suffix="+" useEasing enableScrollSpy scrollSpyOnce /></motion.div>
-                      <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                      <motion.p className="text-white/90">{locale === 'sv' ? 'uppdrag utförda' : 'assignments completed'}</motion.p>
                     </div>
                   </motion.div>
                 ))}
               </div>
               <div className="mt-8 flex flex-col items-center justify-center gap-4">
                 <motion.div className="flex-1 max-w-4xl text-center px-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet ger resultat</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{t('hemstadning.experience.localExperienceTitle')}</h4>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
-                    Med tusentals städningar i Stockholm har vi byggt upp en stark expertis inom hemstädning. Vi arbetar metodiskt med tydliga checklistor och miljövänliga produkter för ett jämnt, pålitligt resultat i alla rum. Städningen anpassas efter ditt hem och dina önskemål. Våra höga kundbetyg och många återkommande kunder visar att vår process fungerar.
+                    {t('hemstadning.experience.localExperienceDescription')}
                   </p>
                 </motion.div>
                 {/* Badges - pyramid on mobile */}
@@ -1022,22 +1030,22 @@ export default function HemstadningPage() {
           <div className="mx-auto px-4 md:px-24 relative z-10">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 mb-6 md:mb-8 w-full">
               <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">{t('hemstadning.process.title')}</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår hemstädningsprocess är utformad för att vara enkel, flexibel och trygg. Det börjar med att du fyller i vårt korta formulär där du anger boyta, städfrekvens och eventuella tillval. Du får du en tydlig offert direkt till din e‑post. Samma dag eller senast dagen efter tar vi personlig kontakt för att säkerställa att allt stämmer och för att svara på dina frågor. När du är nöjd signerar du enkelt digitalt.
+                    {t('hemstadning.process.description')}
                   </p>
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Därefter planerar vi städningen utifrån dina önskemål och vår checklista för hemstädning. Våra utbildade medarbetare använder skonsamma och miljövänliga produkter och ser till att kök, badrum, allrum och sovrum blir skinande rena vid varje tillfälle. Du kan enkelt boka om vid behov. Resultatet? Ett jämnt och pålitligt städresultat samt mer tid över till det som är viktigt för dig.
+                    {t('hemstadning.process.description2')}
                   </p>
                 </div>
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4">
-                    Våra priser beräknas utifrån boyta, städfrekvens och valda tillägg som fönsterputs eller storstädning. Alla priser är fasta utan dolda avgifter. Om du har särskilda önskemål anpassar vi offerten efter dina behov och förutsättningar. RUT‑avdraget hanteras automatiskt av oss för att göra det enkelt och prisvärt.
+                    {t('hemstadning.process.pricing')}
                   </p>
                 </div>
                 <div className="mb-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-8 text-center">{t('hemstadning.process.howItWorksTitle')}</h3>
                   <div className="relative w-full">
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
@@ -1074,24 +1082,24 @@ export default function HemstadningPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Läs mer om hemstädning</h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">Tips för ett skinande rent hem, smarta rutiner för vardagsstädning och hur du väljer rätt städfirma. Vi går igenom RUT‑avdrag, pris, vad som ingår och hur du förbereder inför första städningen.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{t('hemstadning.blog.title')}</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('hemstadning.blog.subtitle')}</p>
               </div>
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/cleaning_lady.png" alt="Hemstädtips" className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
+                    <img src="/cleaning_lady.png" alt={t('hemstadning.blog.imageAlt')} className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">
-                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">Hemstädtips</span>
-                      <span className="text-gray-500 text-sm ml-4">4 min läsning</span>
+                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">{t('hemstadning.blog.category')}</span>
+                      <span className="text-gray-500 text-sm ml-4">{t('hemstadning.blog.readingTime')}</span>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">Så väljer du rätt hemstädning</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">Vad ska man tänka på när man bokar hemstädning? Här går vi igenom pris, kvalitet, RUT‑avdrag och vad som brukar ingå. Du får även en enkel checklista för att förbereda hemmet, råd om rätt städfrekvens och hur du får en trygg start med en fast städare.</p>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{t('hemstadning.blog.articleTitle')}</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">{t('hemstadning.blog.articleDescription')}</p>
                     <div className="flex items-center justify-end mb-4">
                       <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                        Läs mer
+                        {t('hemstadning.blog.readMore')}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
@@ -1102,7 +1110,7 @@ export default function HemstadningPage() {
               </motion.div>
               <div className="text-center mt-8 md:mt-12">
                 <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base">
-                  Se alla artiklar om städning
+                  {t('hemstadning.blog.seeAllArticles')}
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -1131,14 +1139,19 @@ export default function HemstadningPage() {
           />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Vanliga frågor om hemstädning</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{t('hemstadning.faq.title')}</h2>
               <div className="space-y-4">
-                {[
+                {(locale === 'sv' ? [
                   { id: 'hem-1', question: 'Hur ofta kan jag boka hemstädning?', answer: 'Du kan boka allt från engångsstädning till veckovis, varannan vecka eller månadsvis.' },
                   { id: 'hem-2', question: 'Behöver jag vara hemma under städningen?', answer: 'Nej, många kunder föredrar att vi har nyckel eller portkod. Vi hanterar det tryggt och säkert.' },
                   { id: 'hem-3', question: 'Vad ingår i hemstädning?', answer: 'I hemstädning ingår bland annat dammsugning av golv och mattor, moppning av golv samt dammtorkning av fria ytor. Vi ser också till att kök och badrum rengörs ordentligt, till exempel avtorkning av bänkar, vitvaror och sanitetsutrustning. Utöver detta kan ni välja till extra tjänster som fönsterputs eller andra tillval, så att städningen blir helt anpassad efter era behov.' },
                   { id: 'hem-4', question: 'Kan jag avboka?', answer: 'Ja, du kan avboka eller omboka utan kostnad upp till 24 timmar innan bokad tid.' }
-                ].map((faq, index) => (
+                ] : [
+                  { id: 'hem-1', question: 'How often can I book home cleaning?', answer: 'You can book everything from one-time cleaning to weekly, bi-weekly or monthly.' },
+                  { id: 'hem-2', question: 'Do I need to be home during cleaning?', answer: 'No, many customers prefer that we have a key or door code. We handle it safely and securely.' },
+                  { id: 'hem-3', question: 'What is included in home cleaning?', answer: 'Home cleaning includes vacuuming floors and carpets, mopping floors and dusting free surfaces. We also ensure that kitchen and bathroom are cleaned properly, for example wiping countertops, appliances and sanitary equipment. In addition, you can choose extra services such as window cleaning or other options, so that the cleaning becomes completely adapted to your needs.' },
+                  { id: 'hem-4', question: 'Can I cancel?', answer: 'Yes, you can cancel or reschedule free of charge up to 24 hours before the booked time.' }
+                ]).map((faq, index) => (
                   <motion.div key={faq.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>
                     <button onClick={() => toggleFAQ(faq.id)} className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200">
                       <h3 className="text-lg md:text-xl font-semibold text-[#0F172A] pr-4">{faq.question}</h3>

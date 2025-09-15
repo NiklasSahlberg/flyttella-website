@@ -7,6 +7,7 @@ import Image from 'next/image';
 import FlyttoffertForm from '../components/FlyttoffertForm';
 import ReviewsWidget from '../components/ReviewsWidget';
 import Lottie from "lottie-react";
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Lottie animation functions
 function FillFormLottie() {
@@ -114,6 +115,7 @@ const staggerContainer = {
 };
 
 export default function BemanningPage() {
+	const { t, locale } = useLanguage();
 	const [showFullAboutText, setShowFullAboutText] = React.useState(false);
 	const [currentCard, setCurrentCard] = React.useState(0);
 	const [showFullExperienceText, setShowFullExperienceText] = React.useState(false);
@@ -134,9 +136,9 @@ export default function BemanningPage() {
 	}, []);
 
 	const experienceCards = [
-		{ title: 'Bemanningar', count: '500+', description: 'Genomförda bemanningar', delay: 0 },
-		{ title: 'Företag', count: '1200+', description: 'Nöjda företagskunder', delay: 1 },
-		{ title: 'År', count: '8+', description: 'År i branschen', delay: 2 },
+		{ title: locale === 'sv' ? 'Bemanningar' : 'Staffing assignments', count: '500+', description: locale === 'sv' ? 'Genomförda bemanningar' : 'Completed staffing assignments', delay: 0 },
+		{ title: locale === 'sv' ? 'Företag' : 'Companies', count: '1200+', description: locale === 'sv' ? 'Nöjda företagskunder' : 'Satisfied business customers', delay: 1 },
+		{ title: locale === 'sv' ? 'År' : 'Years', count: '8+', description: locale === 'sv' ? 'År i branschen' : 'Years in the industry', delay: 2 },
 	];
 	
 	return (
@@ -157,8 +159,8 @@ export default function BemanningPage() {
 								}}
 							/>
 							<div className="relative z-10 text-center px-4">
-								<h1 className="text-3xl md:text-5xl font-bold mb-6">Bemanning och underentreprenad</h1>
-								<p className="text-lg md:text-2xl text-white/90">Flexibel bemanning och pålitliga underentreprenörer för flytt, logistik och städ.</p>
+								<h1 className="text-3xl md:text-5xl font-bold mb-6">{locale === 'sv' ? 'Bemanning och underentreprenad' : 'Staffing and Subcontracting'}</h1>
+								<p className="text-lg md:text-2xl text-white/90">{locale === 'sv' ? 'Flexibel bemanning och pålitliga underentreprenörer för flytt, logistik och städ.' : 'Flexible staffing and reliable subcontractors for moving, logistics and cleaning.'}</p>
 							</div>
 						</div>
 					</div>
@@ -177,20 +179,20 @@ export default function BemanningPage() {
 							/>
 							<div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
 								<div className="max-w-xl w-full">
-									<h1 className="text-5xl md:text-6xl font-bold mb-8">Bemanning och underentreprenad i Stockholm</h1>
-									<p className="text-2xl md:text-3xl mb-12">Flexibel bemanning och pålitliga underentreprenörer</p>
-									<p className="text-xl md:text-2xl text-white/90">Vi erbjuder bemanning och underentreprenad för flytt, logistik och städ – när ni behöver förstärka teamet snabbt och säkert. Skalbara lösningar, erfaren personal och smidig projektledning.</p>
+									<h1 className="text-5xl md:text-6xl font-bold mb-8">{locale === 'sv' ? 'Bemanning och underentreprenad i Stockholm' : 'Staffing and Subcontracting in Stockholm'}</h1>
+									<p className="text-2xl md:text-3xl mb-12">{locale === 'sv' ? 'Flexibel bemanning och pålitliga underentreprenörer' : 'Flexible staffing and reliable subcontractors'}</p>
+									<p className="text-xl md:text-2xl text-white/90">{locale === 'sv' ? 'Vi erbjuder bemanning och underentreprenad för flytt, logistik och städ – när ni behöver förstärka teamet snabbt och säkert. Skalbara lösningar, erfaren personal och smidig projektledning.' : 'We offer staffing and subcontracting for moving, logistics and cleaning – when you need to strengthen your team quickly and safely. Scalable solutions, experienced staff and smooth project management.'}</p>
 								</div>
 								{/* Right-side CTA directly on background */}
 								<div className="w-full md:w-1/2 lg:w-[40%]">
-									<h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Kontakta oss för offert</h3>
-									<p className="text-white/90 mb-6 text-lg md:text-xl">Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.</p>
+									<h3 className="text-2xl md:text-3xl font-bold text-white mb-3">{locale === 'sv' ? 'Kontakta oss för offert' : 'Contact us for a quote'}</h3>
+									<p className="text-white/90 mb-6 text-lg md:text-xl">{locale === 'sv' ? 'Berätta kort vad du behöver hjälp med så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.' : 'Tell us briefly what you need help with and we will quickly get back to you with price and time. We can also inspect on site if needed.'}</p>
 									<div>
 										<Link 
 											href="/kontakt?scroll=message&service=bemanning"
 											className="inline-flex items-center bg-white text-[#0F172A] px-5 py-3 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
 										>
-											Kontakta oss
+											{locale === 'sv' ? 'Kontakta oss' : 'Contact us'}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -226,7 +228,7 @@ export default function BemanningPage() {
 										}}
 										className="flex flex-col items-center text-white hover:text-white/80 transition-colors group"
 									>
-										<span className="text-sm font-medium mb-2">Läs mer</span>
+										<span className="text-sm font-medium mb-2">{locale === 'sv' ? 'Läs mer' : 'Read more'}</span>
 										<motion.div
 											animate={{ y: [0, 5, 0] }}
 											transition={{ duration: 2, repeat: Infinity }}
@@ -264,28 +266,29 @@ export default function BemanningPage() {
 								{/* Main content sections */}
 								{([
 									{
-										title: 'Vad är bemanning och underentreprenad?',
-										content:
-											'Bemanning och underentreprenad innebär att vi tillhandahåller kompetenta resurser till ert projekt när behov uppstår – tillfälligt eller långsiktigt. Vi arbetar med flytt, logistik, montering och städ där vårt team integreras i er organisation och levererar enligt era processer. Med tydlig projektledning, försäkringar och arbetsmiljörutiner säkerställer vi kvalitet och effektivitet utan att störa er verksamhet.',
+										title: locale === 'sv' ? 'Vad är bemanning och underentreprenad?' : 'What is staffing and subcontracting?',
+										content: locale === 'sv' ? 
+											'Bemanning och underentreprenad innebär att vi tillhandahåller kompetenta resurser till ert projekt när behov uppstår – tillfälligt eller långsiktigt. Vi arbetar med flytt, logistik, montering och städ där vårt team integreras i er organisation och levererar enligt era processer. Med tydlig projektledning, försäkringar och arbetsmiljörutiner säkerställer vi kvalitet och effektivitet utan att störa er verksamhet.' :
+											'Staffing and subcontracting means that we provide competent resources to your project when needs arise – temporarily or long-term. We work with moving, logistics, assembly and cleaning where our team integrates into your organization and delivers according to your processes. With clear project management, insurance and work environment routines, we ensure quality and efficiency without disrupting your business.',
 										icon: '👷‍♂️',
 									},
 									{
 										title: '',
 										content: (
 											<div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-												<img src="/godtid.jpg" alt="Bemanning och underentreprenad i Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+												<img src="/godtid.jpg" alt={locale === 'sv' ? 'Bemanning och underentreprenad i Stockholm' : 'Staffing and subcontracting in Stockholm'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
 											</div>
 										),
 										icon: ''
 									},
 									{
-										title: 'Vad kostar bemanning?',
+										title: locale === 'sv' ? 'Vad kostar bemanning?' : 'How much does staffing cost?',
 										content: (
 											<>
-												<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">Pris påverkas av kompetensnivå, antal timmar, tider och uppdragets omfattning. Vi erbjuder tydliga timpriser utan dolda avgifter och kan lämna fastpris för definierade delmoment.</p>
+												<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">{locale === 'sv' ? 'Pris påverkas av kompetensnivå, antal timmar, tider och uppdragets omfattning. Vi erbjuder tydliga timpriser utan dolda avgifter och kan lämna fastpris för definierade delmoment.' : 'Price is affected by skill level, number of hours, times and scope of the assignment. We offer clear hourly rates without hidden fees and can provide fixed prices for defined sub-tasks.'}</p>
 												<div className="my-16 text-center">
 													<p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
-														"Flyttella levererade exakt den bemanning vi behövde!"
+														{locale === 'sv' ? '"Flyttella levererade exakt den bemanning vi behövde!"' : '"Flyttella delivered exactly the staffing we needed!"'}
 													</p>
 													<p className="italic text-gray-700 mt-2">- Irina</p>
 												</div>
@@ -294,24 +297,26 @@ export default function BemanningPage() {
 										icon: '💼'
 									},
 									{
-										title: 'Vad ingår i bemanning och underentreprenad?',
-										content:
-											'Planering och bemanningsplan, introduktion på plats, arbetsledning vid behov, rapportering, kvalitetssäkring och arbetsmiljö. Vi tillhandahåller bärare, montörer, arbetsledare, logistikkoordinatorer och städpersonal beroende på uppdragets omfattning.',
+										title: locale === 'sv' ? 'Vad ingår i bemanning och underentreprenad?' : 'What is included in staffing and subcontracting?',
+										content: locale === 'sv' ? 
+											'Planering och bemanningsplan, introduktion på plats, arbetsledning vid behov, rapportering, kvalitetssäkring och arbetsmiljö. Vi tillhandahåller bärare, montörer, arbetsledare, logistikkoordinatorer och städpersonal beroende på uppdragets omfattning.' :
+											'Planning and staffing plan, on-site introduction, work supervision when needed, reporting, quality assurance and work environment. We provide carriers, assemblers, work supervisors, logistics coordinators and cleaning staff depending on the scope of the assignment.',
 										icon: '📋'
 									},
 									{
 										title: '',
 										content: (
 											<div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-												<img src="/kontor.png" alt="Underentreprenad och bemanning – tjänster" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+												<img src="/kontor.png" alt={locale === 'sv' ? 'Underentreprenad och bemanning – tjänster' : 'Subcontracting and staffing – services'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
 											</div>
 										),
 										icon: ''
 									},
 									{
-										title: 'Hur bokar man bemanning?',
-										content:
-											'Kontakta oss direkt via telefon eller e‑post för en behovsanalys. Vi återkommer så snart som möjligt med pris och förslag. Därefter planerar vi bemanningen och startar enligt överenskommen tidsplan.',
+										title: locale === 'sv' ? 'Hur bokar man bemanning?' : 'How do you book staffing?',
+										content: locale === 'sv' ? 
+											'Kontakta oss direkt via telefon eller e‑post för en behovsanalys. Vi återkommer så snart som möjligt med pris och förslag. Därefter planerar vi bemanningen och startar enligt överenskommen tidsplan.' :
+											'Contact us directly by phone or email for a needs analysis. We will get back to you as soon as possible with price and proposal. Then we plan the staffing and start according to the agreed schedule.',
 										icon: '📞'
 									}
 								] as { title: string; content: any; icon: string; image?: string }[]).map((section, index) => (
@@ -396,14 +401,14 @@ export default function BemanningPage() {
 								<div className="relative w-full h-96 rounded-3xl overflow-hidden">
 									<img
 										src="/personalpicture.jpg"
-										alt="Om Flyttella"
+										alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}
 										className="object-cover w-full h-full"
 										style={{ objectPosition: 'center 70%' }}
 									/>
 								</div>
 							</div>
 
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">Om Flyttella</h3>
+							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">{locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}</h3>
 
 							<div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
 								{/* Left: Image - desktop only */}
@@ -421,7 +426,7 @@ export default function BemanningPage() {
 									<div className="relative h-96 lg:h-full w-full lg:w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
 										<img
 											src="/omoss.jpg"
-											alt="Om Flyttella"
+											alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}
 											className="object-cover rounded-2xl w-full h-full"
 											style={{ objectPosition: 'center center', transform: 'scale(1.0)' }}
 										/>
@@ -443,20 +448,20 @@ export default function BemanningPage() {
 									{/* Desktop: Always show full text in 3 sections */}
 									<div className="hidden lg:block space-y-8">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är en flytt- och städfirma med bas i Stockholm som specialiserat sig på att hjälpa företag med bemanning och underentreprenad. Vi grundades med målet att göra det enklare för företag att få tillgång till kompetent personal och pålitliga partners – allt med tydliga villkor och transparenta priser.
+											{locale === 'sv' ? 'Flyttella är en flytt- och städfirma med bas i Stockholm som specialiserat sig på att hjälpa företag med bemanning och underentreprenad. Vi grundades med målet att göra det enklare för företag att få tillgång till kompetent personal och pålitliga partners – allt med tydliga villkor och transparenta priser.' : 'Flyttella is a moving and cleaning company based in Stockholm that specializes in helping companies with staffing and subcontracting. We were founded with the goal of making it easier for companies to access competent staff and reliable partners – all with clear terms and transparent prices.'}
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning, bemanning, underentreprenad och rådgivning. Vi förstår företagens behov av snabb service, kvalitetssäkring och kostnadseffektivitet. Hos oss vet ni alltid vad som ingår och vad det kostar.
+											{locale === 'sv' ? 'Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning, bemanning, underentreprenad och rådgivning. Vi förstår företagens behov av snabb service, kvalitetssäkring och kostnadseffektivitet. Hos oss vet ni alltid vad som ingår och vad det kostar.' : 'So far we have had the pleasure of helping over 8000 customers, both individuals and companies, with everything from small moves to complete solutions with cleaning, packing, staffing, subcontracting and consulting. We understand companies\' needs for fast service, quality assurance and cost efficiency. With us you always know what\'s included and what it costs.'}
 										</p>
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Vi erbjuder företagsanpassade lösningar med flexibel bemanning och pålitlig underentreprenad för alla typer av projekt. Vi arbetar enligt era processer och rutiner, erbjuder kostnadsfri om- och avbokning upp till 24 timmar innan. Vår företagsfokuserade kundtjänst finns alltid tillgänglig för att hjälpa er optimera era resurser.
+											{locale === 'sv' ? 'Vi erbjuder företagsanpassade lösningar med flexibel bemanning och pålitlig underentreprenad för alla typer av projekt. Vi arbetar enligt era processer och rutiner, erbjuder kostnadsfri om- och avbokning upp till 24 timmar innan. Vår företagsfokuserade kundtjänst finns alltid tillgänglig för att hjälpa er optimera era resurser.' : 'We offer customized business solutions with flexible staffing and reliable subcontracting for all types of projects. We work according to your processes and routines, offer free rebooking and cancellation up to 24 hours before. Our business-focused customer service is always available to help you optimize your resources.'}
 										</p>
 									</div>
 									
 									{/* Mobile: Show shortened text with expand option */}
 									<div className="lg:hidden space-y-4">
 										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-											Flyttella är en flytt- och städfirma med bas i Stockholm som specialiserat sig på att hjälpa företag med bemanning och underentreprenad. Vi grundades med målet att göra det enklare för företag att få tillgång till kompetent personal och pålitliga partners – allt med tydliga villkor och transparenta priser.
+											{locale === 'sv' ? 'Flyttella är en flytt- och städfirma med bas i Stockholm som specialiserat sig på att hjälpa företag med bemanning och underentreprenad. Vi grundades med målet att göra det enklare för företag att få tillgång till kompetent personal och pålitliga partners – allt med tydliga villkor och transparenta priser.' : 'Flyttella is a moving and cleaning company based in Stockholm that specializes in helping companies with staffing and subcontracting. We were founded with the goal of making it easier for companies to access competent staff and reliable partners – all with clear terms and transparent prices.'}
 										</p>
 										
 										{!showFullAboutText && (
@@ -464,7 +469,7 @@ export default function BemanningPage() {
 												onClick={() => setShowFullAboutText(true)}
 												className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
 											>
-												Läs mer
+												{locale === 'sv' ? 'Läs mer' : 'Read more'}
 												<svg 
 													xmlns="http://www.w3.org/2000/svg" 
 													className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -485,10 +490,10 @@ export default function BemanningPage() {
 												className="space-y-4 mt-4"
 											>
 												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-													Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning, bemanning, underentreprenad och rådgivning. Vi förstår företagens behov av snabb service, kvalitetssäkring och kostnadseffektivitet. Hos oss vet ni alltid vad som ingår och vad det kostar.
+													{locale === 'sv' ? 'Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning, bemanning, underentreprenad och rådgivning. Vi förstår företagens behov av snabb service, kvalitetssäkring och kostnadseffektivitet. Hos oss vet ni alltid vad som ingår och vad det kostar.' : 'So far we have had the pleasure of helping over 8000 customers, both individuals and companies, with everything from small moves to complete solutions with cleaning, packing, staffing, subcontracting and consulting. We understand companies\' needs for fast service, quality assurance and cost efficiency. With us you always know what\'s included and what it costs.'}
 												</p>
 												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-													Vi erbjuder företagsanpassade lösningar med flexibel bemanning och pålitlig underentreprenad för alla typer av projekt. Vi arbetar enligt era processer och rutiner, erbjuder kostnadsfri om- och avbokning upp till 24 timmar innan. Vår företagsfokuserade kundtjänst finns alltid tillgänglig för att hjälpa er optimera era resurser.
+													{locale === 'sv' ? 'Vi erbjuder företagsanpassade lösningar med flexibel bemanning och pålitlig underentreprenad för alla typer av projekt. Vi arbetar enligt era processer och rutiner, erbjuder kostnadsfri om- och avbokning upp till 24 timmar innan. Vår företagsfokuserade kundtjänst finns alltid tillgänglig för att hjälpa er optimera era resurser.' : 'We offer customized business solutions with flexible staffing and reliable subcontracting for all types of projects. We work according to your processes and routines, offer free rebooking and cancellation up to 24 hours before. Our business-focused customer service is always available to help you optimize your resources.'}
 												</p>
 												
 												{/* Läs mer om oss link - Mobile only when expanded */}
@@ -502,7 +507,7 @@ export default function BemanningPage() {
 														href="/om-oss" 
 														className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
 													>
-														Läs mer om oss
+														{locale === 'sv' ? 'Läs mer om oss' : 'Read more about us'}
 														<svg 
 															xmlns="http://www.w3.org/2000/svg" 
 															className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -534,7 +539,7 @@ export default function BemanningPage() {
 											href="/om-oss" 
 											className="inline-flex items-center text-[#0F172A] leading-relaxed text-xl underline decoration-2 underline-offset-4"
 										>
-											Läs mer om oss
+											{locale === 'sv' ? 'Läs mer om oss' : 'Read more about us'}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -554,9 +559,9 @@ export default function BemanningPage() {
 
 				{/* Vad tycker våra kunder om oss */}
 				<ReviewsWidget 
-					title="Vad tycker våra kunder om oss?"
-					subtitle="En professionell och pålitlig bemanning"
-					description="Vi har hjälpt många företag med flexibel bemanning och pålitlig underentreprenad. Våra kunder uppskattar vår snabba service, kvalitetssäkring och kostnadseffektivitet. Hos Flyttella får ni professionell bemanning med fokus på att optimera era resurser och processer."
+					title={locale === 'sv' ? "Vad tycker våra kunder om oss?" : "What do our customers think about us?"}
+					subtitle={locale === 'sv' ? "En professionell och pålitlig bemanning" : "Professional and reliable staffing"}
+					description={locale === 'sv' ? "Vi har hjälpt många företag med flexibel bemanning och pålitlig underentreprenad. Våra kunder uppskattar vår snabba service, kvalitetssäkring och kostnadseffektivitet. Hos Flyttella får ni professionell bemanning med fokus på att optimera era resurser och processer." : "We have helped many companies with flexible staffing and reliable subcontracting. Our customers appreciate our fast service, quality assurance and cost efficiency. At Flyttella you get professional staffing with a focus on optimizing your resources and processes."}
 				/>
 
 				{/* CTA: Redo att boka bemanning? */}
@@ -584,10 +589,10 @@ export default function BemanningPage() {
 								<span className="text-3xl md:text-4xl">👷‍♂️</span>
 								<div>
 									<h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
-										Redo att boka bemanning?
+										{locale === 'sv' ? 'Redo att boka bemanning?' : 'Ready to book staffing?'}
 									</h3>
 									<p className="text-base md:text-lg text-gray-100">
-										Få en snabb och gratis offert på din bemanning
+										{locale === 'sv' ? 'Få en snabb och gratis offert på din bemanning' : 'Get a quick and free quote on your staffing'}
 									</p>
 								</div>
 							</div>
@@ -601,7 +606,7 @@ export default function BemanningPage() {
 										href="/kontakt?scroll=message&service=bemanning"
 										className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base"
 									>
-										Kontakta oss
+										{locale === 'sv' ? 'Kontakta oss' : 'Contact us'}
 										<svg 
 											xmlns="http://www.w3.org/2000/svg" 
 											className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -623,7 +628,7 @@ export default function BemanningPage() {
 					<div className="container mx-auto px-4">
 						<div className="max-w-7xl mx-auto">
 							<h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-								Våra företagstjänster
+								{locale === 'sv' ? 'Våra företagstjänster' : 'Our business services'}
 							</h2>
 							<div className="grid grid-cols-1 gap-12">
 							{/* Kontorsflytt Card */}
@@ -648,14 +653,14 @@ export default function BemanningPage() {
 								<div className="flex items-center gap-4 mb-6 md:mb-8 relative">
 									<span className="text-4xl md:text-6xl">🏢</span>
 									<h3 className="text-4xl md:text-5xl font-bold text-white">
-										Kontorsflytt
+										{locale === 'sv' ? 'Kontorsflytt' : 'Office Moving'}
 									</h3>
 								</div>
 								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">
-									Professionell flytt av kontor och företagslokaler. Vi tar hand om allt från IT-utrustning till möbler med minimal driftstopp.
+									{locale === 'sv' ? 'Professionell flytt av kontor och företagslokaler. Vi tar hand om allt från IT-utrustning till möbler med minimal driftstopp.' : 'Professional moving of offices and business premises. We handle everything from IT equipment to furniture with minimal downtime.'}
 								</p>
 								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">
-									Vår kontorsflytt omfattar allt från planering och packning till transport och uppackning. Vi arbetar utanför kontorstid för att minimera påverkan på er verksamhet. Med vår service får ni en smidig flytt där allt hanteras professionellt och säkert.
+									{locale === 'sv' ? 'Vår kontorsflytt omfattar allt från planering och packning till transport och uppackning. Vi arbetar utanför kontorstid för att minimera påverkan på er verksamhet. Med vår service får ni en smidig flytt där allt hanteras professionellt och säkert.' : 'Our office move includes everything from planning and packing to transport and unpacking. We work outside office hours to minimize impact on your business. With our service you get a smooth move where everything is handled professionally and safely.'}
 								</p>
 								<div className="mt-auto relative">
 									<motion.div 
@@ -667,7 +672,7 @@ export default function BemanningPage() {
 											href="/kontorsflytt" 
 											className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
 										>
-											Läs mer
+											{locale === 'sv' ? 'Läs mer' : 'Read more'}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
 												className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -691,10 +696,10 @@ export default function BemanningPage() {
 								transition={{ duration: 0.5, delay: 0.1 }}
 							>
 								<motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-								<div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧹</span><h3 className="text-3xl md:text-5xl font-bold text-white">Kontorsstädning</h3></div>
-								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Professionell kontorsstädning för företag – regelbunden eller engångsstädning för en ren och produktiv arbetsmiljö.</p>
-								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi erbjuder skräddarsydd kontorsstädning anpassad efter era behov. Daglig, veckovis eller månatlig städning med kvalificerad personal och miljövänliga produkter.</p>
-								<div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/kontorsstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
+								<div className="flex items-center gap-4 mb-6 md:mb-8 relative"><span className="text-4xl md:text-6xl">🧹</span><h3 className="text-3xl md:text-5xl font-bold text-white">{locale === 'sv' ? 'Kontorsstädning' : 'Office Cleaning'}</h3></div>
+								<p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{locale === 'sv' ? 'Professionell kontorsstädning för företag – regelbunden eller engångsstädning för en ren och produktiv arbetsmiljö.' : 'Professional office cleaning for companies – regular or one-time cleaning for a clean and productive work environment.'}</p>
+								<p className="hidden md:block text-lg text-gray-100 mb-8 relative">{locale === 'sv' ? 'Vi erbjuder skräddarsydd kontorsstädning anpassad efter era behov. Daglig, veckovis eller månatlig städning med kvalificerad personal och miljövänliga produkter.' : 'We offer tailored office cleaning adapted to your needs. Daily, weekly or monthly cleaning with qualified staff and environmentally friendly products.'}</p>
+								<div className="mt-auto relative"><motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block"><Link href="/kontorsstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></motion.div></div>
 							</motion.div>
 							</div>
 						</div>
@@ -751,7 +756,7 @@ export default function BemanningPage() {
 					{/* Centered content only */}
 					<div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
 						<motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{locale === 'sv' ? 'Vår erfarenhet' : 'Our experience'}</h3>
 
 							{/* Mobile: Auto-sliding cards */}
 							<div className="md:hidden mt-8">
@@ -901,9 +906,9 @@ export default function BemanningPage() {
 									viewport={{ once: true }}
 									transition={{ duration: 0.8 }}
 								>
-									<h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet i Stockholm</h4>
+									<h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Lokal erfarenhet i Stockholm' : 'Local experience in Stockholm'}</h4>
 									<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4 px-4 md:px-8">
-										Vi har hjälpt många företag med bemanning och underentreprenad i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av bemanningsbehov, från små projekt till stora entreprenader.
+										{locale === 'sv' ? 'Vi har hjälpt många företag med bemanning och underentreprenad i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av bemanningsbehov, från små projekt till stora entreprenader.' : 'We have helped many companies with staffing and subcontracting in Stockholm and the surrounding area. Our local knowledge and experience ensures that we can handle all types of staffing needs, from small projects to large contracts.'}
 									</p>
 									{!showFullExperienceText && (
 										<div className="md:hidden mb-3">
@@ -911,7 +916,7 @@ export default function BemanningPage() {
 												onClick={() => setShowFullExperienceText(true)}
 												className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-lg underline decoration-2 underline-offset-4"
 											>
-												Läs mer
+												{locale === 'sv' ? 'Läs mer' : 'Read more'}
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform"
@@ -932,12 +937,12 @@ export default function BemanningPage() {
 											className="space-y-4 mt-4 md:hidden px-4 md:px-8"
 										>
 											<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-												Med över 8 års erfarenhet har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet inom bemanning och underentreprenad. Vi förstår företagens behov och kan erbjuda skräddarsydda lösningar för alla typer av projekt.
+												{locale === 'sv' ? 'Med över 8 års erfarenhet har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet inom bemanning och underentreprenad. Vi förstår företagens behov och kan erbjuda skräddarsydda lösningar för alla typer av projekt.' : 'With over 8 years of experience, we have built a reputation for quality, reliability and customer satisfaction in staffing and subcontracting. We understand companies\' needs and can offer tailored solutions for all types of projects.'}
 											</p>
 										</motion.div>
 									)}
 									<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
-										Med över 8 års erfarenhet har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet inom bemanning och underentreprenad. Vi förstår företagens behov och kan erbjuda skräddarsydda lösningar för alla typer av projekt.
+										{locale === 'sv' ? 'Med över 8 års erfarenhet har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet inom bemanning och underentreprenad. Vi förstår företagens behov och kan erbjuda skräddarsydda lösningar för alla typer av projekt.' : 'With over 8 years of experience, we have built a reputation for quality, reliability and customer satisfaction in staffing and subcontracting. We understand companies\' needs and can offer tailored solutions for all types of projects.'}
 									</p>
 								</motion.div>
 
@@ -946,7 +951,7 @@ export default function BemanningPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
 										<Image
 											src="/1000reviewspicture.png"
-											alt="1000+ positiva recensioner från kunder"
+											alt={locale === 'sv' ? '1000+ positiva recensioner från kunder' : '1000+ positive reviews from customers'}
 											width={200}
 											height={200}
 											className="object-contain h-36 w-36"
@@ -957,7 +962,7 @@ export default function BemanningPage() {
 										<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 											<Image
 												src="/recommendedcompany2.png"
-												alt="Rekommenderad bemanningsfirma - Flyttella"
+												alt={locale === 'sv' ? 'Rekommenderad bemanningsfirma - Flyttella' : 'Recommended staffing company - Flyttella'}
 												width={160}
 												height={160}
 												className="object-contain h-32 w-32"
@@ -967,7 +972,7 @@ export default function BemanningPage() {
 										<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 											<Image
 												src="/bestinswedenbadge-modified.png"
-												alt="Top 10 bemanningsfirma - Flyttella"
+												alt={locale === 'sv' ? 'Top 10 bemanningsfirma - Flyttella' : 'Top 10 staffing company - Flyttella'}
 												width={180}
 												height={180}
 												className="object-contain h-28 w-28"
@@ -982,7 +987,7 @@ export default function BemanningPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 										<Image
 											src="/recommendedcompany2.png"
-											alt="Rekommenderad bemanningsfirma - Flyttella"
+											alt={locale === 'sv' ? 'Rekommenderad bemanningsfirma - Flyttella' : 'Recommended staffing company - Flyttella'}
 											width={240}
 											height={240}
 											className="object-contain h-60 w-60"
@@ -992,7 +997,7 @@ export default function BemanningPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 										<Image
 											src="/1000reviewspicture.png"
-											alt="1000+ positiva recensioner från kunder"
+											alt={locale === 'sv' ? '1000+ positiva recensioner från kunder' : '1000+ positive reviews from customers'}
 											width={260}
 											height={260}
 											className="object-contain h-64 w-64 mt-3"
@@ -1002,7 +1007,7 @@ export default function BemanningPage() {
 									<motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
 										<Image
 											src="/bestinswedenbadge-modified.png"
-											alt="Top 10 bemanningsfirma - Flyttella"
+											alt={locale === 'sv' ? 'Top 10 bemanningsfirma - Flyttella' : 'Top 10 staffing company - Flyttella'}
 											width={300}
 											height={300}
 											className="object-contain h-48 w-48"
@@ -1030,26 +1035,26 @@ export default function BemanningPage() {
 						<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full">
 							<div className="w-full">
 								<h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
-									Vår process för bemanning
+									{locale === 'sv' ? 'Vår process för bemanning' : 'Our staffing process'}
 								</h2>
 
 								{/* Process Description */}
 								<div className="text-center mb-6 md:mb-8 hidden md:block">
 									<p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-										Vår bemanningsprocess är utformad för att vara snabb, flexibel och pålitlig. Vi förstår att företag behöver kvalificerad personal snabbt och vi levererar alltid enligt avtal.
+										{locale === 'sv' ? 'Vår bemanningsprocess är utformad för att vara snabb, flexibel och pålitlig. Vi förstår att företag behöver kvalificerad personal snabbt och vi levererar alltid enligt avtal.' : 'Our staffing process is designed to be fast, flexible and reliable. We understand that companies need qualified staff quickly and we always deliver according to agreement.'}
 									</p>
 								</div>
 
 								{/* Pricing Info */}
 								<div className="text-center mb-4 md:mb-8">
 									<p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-										Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som kompetensnivå, projektets längd, arbetstider och specialkrav för att ge dig en offert som passar just din situation. Vi kan även besikta på plats vid behov. Alla priser är transparenta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.
+										{locale === 'sv' ? 'Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som kompetensnivå, projektets längd, arbetstider och specialkrav för att ge dig en offert som passar just din situation. Vi kan även besikta på plats vid behov. Alla priser är transparenta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.' : 'Our quotes are always based on your specific needs and circumstances. We take into account factors such as skill level, project duration, working hours and special requirements to give you a quote that fits your situation. We can also inspect on site if needed. All prices are transparent without hidden fees - we always start from your wishes and information we get from you as a customer. Do you have special wishes or questions? Contact us and we will adapt the quote to your needs.'}
 									</p>
 								</div>
 
 								{/* Process Flow Section */}
 								<div className="mb-4 md:mb-8">
-									<h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar vår bemanning</h3>
+									<h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">{locale === 'sv' ? 'Så fungerar vår bemanning' : 'How our staffing works'}</h3>
 									<div className="relative w-full">
 										{/* Timeline connector line */}
 										<div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
@@ -1057,41 +1062,41 @@ export default function BemanningPage() {
 											{[
 												{
 													icon: <FillFormLottie />,
-													title: "Kontakta oss",
-													description: "Kontakta oss för en kostnadsfri offert på bemanning",
+													title: locale === 'sv' ? "Kontakta oss" : "Contact us",
+													description: locale === 'sv' ? "Kontakta oss för en kostnadsfri offert på bemanning" : "Contact us for a free quote on staffing",
 													textClass: ""
 												},
 												{
 													icon: <FastLottie />,
-													title: "Få offert",
-													description: "Få en snabb och kostnadsfri offert på din bemanning",
+													title: locale === 'sv' ? "Få offert" : "Get quote",
+													description: locale === 'sv' ? "Få en snabb och kostnadsfri offert på din bemanning" : "Get a quick and free quote on your staffing",
 													textClass: ""
 												},
 												{
 													icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
-													title: "Bekräftelse",
-													description: "Bekräfta avtal och få all information",
+													title: locale === 'sv' ? "Bekräftelse" : "Confirmation",
+													description: locale === 'sv' ? "Bekräfta avtal och få all information" : "Confirm agreement and get all information",
 													containerClass: "md:-mt-6",
 													textClass: ""
 												},
 												{
 													icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
-													title: "Personlig kontakt",
-													description: "Vi kontaktar dig för att bekräfta detaljer och planera start",
+													title: locale === 'sv' ? "Personlig kontakt" : "Personal contact",
+													description: locale === 'sv' ? "Vi kontaktar dig för att bekräfta detaljer och planera start" : "We contact you to confirm details and plan start",
 													containerClass: "md:-mt-7",
 													textClass: ""
 												},
 												{
 													icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
-													title: "Bemanning & Utförande",
-													description: "Vi levererar kvalificerad personal enligt avtal",
+													title: locale === 'sv' ? "Bemanning & Utförande" : "Staffing & Execution",
+													description: locale === 'sv' ? "Vi levererar kvalificerad personal enligt avtal" : "We deliver qualified staff according to agreement",
 													containerClass: "md:-mt-14",
 													textClass: "md:-mt-8",
 												},
 												{
 													icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
-													title: "Nöjd kund",
-													description: "Ett slutfört projekt - du är nöjd!",
+													title: locale === 'sv' ? "Nöjd kund" : "Satisfied customer",
+													description: locale === 'sv' ? "Ett slutfört projekt - du är nöjd!" : "A completed project - you are satisfied!",
 													containerClass: "md:-mt-6",
 													textClass: ""
 												}
@@ -1132,10 +1137,10 @@ export default function BemanningPage() {
 						<div className="w-full">
 							<div className="text-center mb-8 md:mb-12">
 								<h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
-									Läs mer om bemanning i Stockholm
+									{locale === 'sv' ? 'Läs mer om bemanning i Stockholm' : 'Read more about staffing in Stockholm'}
 								</h2>
 								<p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-									Få värdefulla tips och råd för smidig bemanning och underentreprenad
+									{locale === 'sv' ? 'Få värdefulla tips och råd för smidig bemanning och underentreprenad' : 'Get valuable tips and advice for smooth staffing and subcontracting'}
 								</p>
 							</div>
 							<div className="max-w-6xl mx-auto">
@@ -1151,22 +1156,22 @@ export default function BemanningPage() {
 											<div className="w-full md:w-1/3 h-48 md:h-full">
 												<img 
 													src="/office-moving.png" 
-													alt="Bemanningstips Stockholm" 
+													alt={locale === 'sv' ? 'Bemanningstips Stockholm' : 'Staffing tips Stockholm'} 
 													className="w-full h-full object-cover object-[60%_center]"
 												/>
 											</div>
 											<div className="w-full md:w-2/3 p-4 md:p-6">
 												<div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
 													<span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
-														Bemanning
+														{locale === 'sv' ? 'Bemanning' : 'Staffing'}
 													</span>
-													<span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
+													<span className="text-gray-500 text-sm md:text-base sm:ml-4">{locale === 'sv' ? '5 min läsning' : '5 min read'}</span>
 												</div>
 												<h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
-													Vad bör du tänka på när du väljer bemanning och underentreprenad
+													{locale === 'sv' ? 'Vad bör du tänka på när du väljer bemanning och underentreprenad' : 'What should you consider when choosing staffing and subcontracting'}
 												</h3>
 												<p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
-													Rätt bemanning är avgörande för projektets framgång. Vi går igenom viktiga faktorer – från kompetens och erfarenhet till flexibilitet och pålitlighet för att säkerställa en smidig samarbete.
+													{locale === 'sv' ? 'Rätt bemanning är avgörande för projektets framgång. Vi går igenom viktiga faktorer – från kompetens och erfarenhet till flexibilitet och pålitlighet för att säkerställa en smidig samarbete.' : 'The right staffing is crucial for the project\'s success. We go through important factors – from competence and experience to flexibility and reliability to ensure smooth cooperation.'}
 												</p>
 												<div className="flex justify-start sm:justify-between items-center">
 													<div></div>
@@ -1174,7 +1179,7 @@ export default function BemanningPage() {
 														href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
 														className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
 													>
-														Läs mer
+														{locale === 'sv' ? 'Läs mer' : 'Read more'}
 														<svg 
 															xmlns="http://www.w3.org/2000/svg" 
 															className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1217,10 +1222,10 @@ export default function BemanningPage() {
 					<div className="max-w-4xl mx-auto px-4">
 						<div className="text-center mb-12">
 							<h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-								Vanliga frågor om bemanning
+								{locale === 'sv' ? 'Vanliga frågor om bemanning' : 'Frequently Asked Questions about Staffing'}
 							</h2>
 							<p className="text-lg md:text-xl text-gray-600">
-								Svar på de vanligaste frågorna om våra bemannings- och underentreprenadtjänster
+								{locale === 'sv' ? 'Svar på de vanligaste frågorna om våra bemannings- och underentreprenadtjänster' : 'Answers to the most common questions about our staffing and subcontracting services'}
 							</p>
 						</div>
 
@@ -1228,28 +1233,28 @@ export default function BemanningPage() {
 							{[
 								{
 									id: 'faq-1',
-									question: 'Vilka typer av bemanning erbjuder ni?',
-									answer: 'Vi erbjuder bemanning för flytt, logistik och städ. Vi kan anpassa bemanningen efter dina specifika behov och kompetenskrav.'
+									question: locale === 'sv' ? 'Vilka typer av bemanning erbjuder ni?' : 'What types of staffing do you offer?',
+									answer: locale === 'sv' ? 'Vi erbjuder bemanning för flytt, logistik och städ. Vi kan anpassa bemanningen efter dina specifika behov och kompetenskrav.' : 'We offer staffing for moving, logistics and cleaning. We can adapt the staffing to your specific needs and competence requirements.'
 								},
 								{
 									id: 'faq-2',
-									question: 'Hur snabbt kan ni leverera bemanning?',
-									answer: 'Vi kan vanligtvis leverera kvalificerad personal inom några dagar, beroende på dina specifika krav och tillgänglighet. För akuta behov kontakta oss för att diskutera möjligheter.'
+									question: locale === 'sv' ? 'Hur snabbt kan ni leverera bemanning?' : 'How quickly can you deliver staffing?',
+									answer: locale === 'sv' ? 'Vi kan vanligtvis leverera kvalificerad personal inom några dagar, beroende på dina specifika krav och tillgänglighet. För akuta behov kontakta oss för att diskutera möjligheter.' : 'We can usually deliver qualified staff within a few days, depending on your specific requirements and availability. For urgent needs, contact us to discuss possibilities.'
 								},
 								{
 									id: 'faq-3',
-									question: 'Vad kostar bemanning och underentreprenad?',
-									answer: 'Priserna varierar beroende på kompetensnivå, projektets längd, arbetstider och specialkrav. Vi ger alltid en transparent offert utan dolda avgifter. Kontakta oss för en kostnadsfri offert anpassad efter dina behov.'
+									question: locale === 'sv' ? 'Vad kostar bemanning och underentreprenad?' : 'How much does staffing and subcontracting cost?',
+									answer: locale === 'sv' ? 'Priserna varierar beroende på kompetensnivå, projektets längd, arbetstider och specialkrav. Vi ger alltid en transparent offert utan dolda avgifter. Kontakta oss för en kostnadsfri offert anpassad efter dina behov.' : 'Prices vary depending on skill level, project duration, working hours and special requirements. We always give a transparent quote without hidden fees. Contact us for a free quote tailored to your needs.'
 								},
 								{
 									id: 'faq-4',
-									question: 'Har ni försäkringar för bemannad personal?',
-									answer: 'Ja, all vår bemannade personal är försäkrade. Vi har fullständiga försäkringar som täcker arbetsolyckor, skador på egendom och ansvar. Detta ger dig trygghet och säkerhet i samarbetet.'
+									question: locale === 'sv' ? 'Har ni försäkringar för bemannad personal?' : 'Do you have insurance for staffed personnel?',
+									answer: locale === 'sv' ? 'Ja, all vår bemannade personal är försäkrade. Vi har fullständiga försäkringar som täcker arbetsolyckor, skador på egendom och ansvar. Detta ger dig trygghet och säkerhet i samarbetet.' : 'Yes, all our staffed personnel are insured. We have comprehensive insurance that covers work accidents, property damage and liability. This gives you security and safety in the collaboration.'
 								},
 								{
 									id: 'faq-5',
-									question: 'Kan ni leverera bemanning utanför kontorstid?',
-									answer: 'Ja, vi kan leverera bemanning dygnet runt, inklusive kvällar och helger. Vi förstår att många projekt kräver flexibla arbetstider och vi anpassar oss efter ert schema.'
+									question: locale === 'sv' ? 'Kan ni leverera bemanning utanför kontorstid?' : 'Can you deliver staffing outside office hours?',
+									answer: locale === 'sv' ? 'Ja, vi kan leverera bemanning dygnet runt, inklusive kvällar och helger. Vi förstår att många projekt kräver flexibla arbetstider och vi anpassar oss efter ert schema.' : 'Yes, we can deliver staffing around the clock, including evenings and weekends. We understand that many projects require flexible working hours and we adapt to your schedule.'
 								},
 							
 							].map((faq) => (

@@ -605,13 +605,653 @@
       "title": "Professional move-out cleaning",
       "subtitle": "Let our experienced team handle the cleaning",
       "description": "We guarantee a thorough move-out cleaning that meets all requirements. Our professional cleaning service ensures your old home is left in perfect condition."
+    },
+    "content": {
+      "whatIsTitle": "What is move-out cleaning?",
+      "whatIsDescription": "Move-out cleaning is a thorough cleaning of a home that is to be left during a move. It is an important part of the moving process that ensures the old home is left in perfect condition for the next tenant. A professional move-out cleaning includes everything from thorough cleaning of all surfaces to special treatment of kitchen and bathroom. We follow industry standards and ensure that the cleaning meets all requirements set by landlords or buyers. With our experience and thoroughness, you can feel confident that your old home is left in sparkling condition.",
+      "pricingTitle": "What does move-out cleaning cost?",
+      "pricingDescription": "The price of move-out cleaning varies depending on the home's size, number of rooms, condition and any additional services. A normal move-out cleaning for an apartment can cost from around 1,400 SEK after RUT deduction and upwards. To get an exact price, we recommend that you request a free quote tailored to your specific needs and the home's conditions.",
+      "pricingTestimonial": "Flyttella fixed the move-out cleaning and it turned out really well. The apartment was clean and fresh and the inspection went without problems. Can be recommended.",
+      "testimonialAuthor": "Maria",
+      "includesTitle": "What is included in move-out cleaning?",
+      "includesDescription": "A complete move-out cleaning includes thorough cleaning of all rooms, kitchen and bathroom. We clean all surfaces, polish windows, vacuum and mop floors, clean appliances and sanitary equipment. We use professional cleaning products and follow industry standards to ensure the highest quality. Our move-out cleaning also includes special treatment of kitchen and bathroom, including cleaning of refrigerator/freezer, stove, oven and all sanitary equipment. We also offer additional services such as cleaning of balcony, garage or storage room when needed.",
+      "guaranteeTitle": "14-day customer satisfaction guarantee",
+      "guaranteeDescription": "We are so confident in our quality that we offer a 14-day customer satisfaction guarantee on all move-out cleanings. This means that if you are not completely satisfied with the cleaning, we will come back and fix it at no extra cost. Our guarantee gives you security and ensures that you get exactly the quality you expect. We value your satisfaction and work hard to deliver a move-out cleaning that exceeds your expectations.",
+      "checklistTitle": "Checklist before move-out cleaning",
+      "checklistItems": [
+        "Turn off and defrost refrigerator and freezer: Do this at least one day before cleaning for best results.",
+        "Clean drains: Remove any blockages to facilitate cleaning.",
+        "Pull out appliances: If you want us to clean behind refrigerator, freezer, stove or washing machine.",
+        "Empty all rooms: Make sure all rooms are empty of furniture and personal belongings.",
+        "Leave keys: Make sure we have access to the home on cleaning day.",
+        "Communicate special requirements: Inform us of any special needs or sensitive surfaces."
+      ]
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is one of Stockholm's leading players in move-out cleaning with over 8 years of experience in professional move-out cleaning, home cleaning and office cleaning. We always offer 14-day cleaning guarantee, fixed prices and personal service for all move-out cleanings in Stockholm.",
+      "description2": "We know all Stockholm areas and adapt our move-out cleaning services to your specific needs - from apartments and villas to offices and shops. Our move-out cleaning follows industry standards and ensures that your old home is left in perfect condition.",
+      "description3": "Our goal is to make your move-out cleaning as simple and secure as possible. We offer free quote, quick booking and personal contact throughout the move-out cleaning process. With our experience of move-out cleaning in Stockholm, you can feel secure.",
+      "readMore": "Read more",
+      "imageAlt": "About Flyttella Cleaning"
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Assembly",
+        "description": "Safe assembly and disassembly of furniture and appliances. We ensure that everything is assembled correctly and safely.",
+        "readMore": "Read more"
+      }
+    },
+    "faq": {
+      "title": "Common questions about move-out cleaning",
+      "moreQuestions": "Do you have more questions?",
+      "seeAllQuestions": "See all common questions",
+      "questions": [
+        {
+          "id": "stadning-1",
+          "question": "How do I best prepare for move-out cleaning?",
+          "answer": "Start by clearing out everything you no longer need. Remove all personal items and loose property. Make sure all surfaces are accessible for cleaning. Inform us of any special requirements from the landlord or buyer, and book cleaning well in advance to ensure availability."
+        },
+        {
+          "id": "stadning-2",
+          "question": "What is usually included in a move-out cleaning?",
+          "answer": "A thorough move-out cleaning includes cleaning of all surfaces, floors, walls, ceilings, windows, kitchen, bathroom and toilets. We also clean appliances, cabinets, drawers and all hard surfaces. The cleaning follows industry standards and ensures that the home is left in perfect condition according to common requirements."
+        },
+        {
+          "id": "stadning-3",
+          "question": "How does the cleaning guarantee work?",
+          "answer": "Our 14-day cleaning guarantee means that if the landlord or buyer is not satisfied with the cleaning, we will come back and fix any deficiencies at no extra cost. This gives you security and ensures that you get the quality you pay for."
+        },
+        {
+          "id": "stadning-4",
+          "question": "How long does move-out cleaning take and what affects the time required?",
+          "answer": "The time required depends on several factors: the home's size, number of rooms, condition, accessibility and any special requirements. A normal apartment usually takes a few hours, while larger villas can take a full day or more. We always give you a realistic time estimate before we start."
+        },
+        {
+          "id": "stadning-5",
+          "question": "Can you adapt the cleaning to specific requirements?",
+          "answer": "Yes, we can adapt the cleaning to your specific needs and any requirements from the landlord or buyer. We have experience with different cleaning requirements and can ensure that the cleaning meets all expectations. Contact us to discuss your specific needs."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to start your move-out cleaning?",
+      "subtitle": "Get a quick and free quote on your move-out cleaning",
+      "button": "Get free quote"
+    },
+    "services": {
+      "title": "Combine your move-out cleaning with other services",
+      "bohagsflytt": {
+        "title": "Household Move",
+        "description": "Professional move of all or parts of household belongings. We ensure a safe and smooth moving process from start to finish.",
+        "extendedDescription": "Flyttella offers complete household moves with everything from packing and transport to unpacking and possible storage. We follow industry standards and offer insurance to ensure that your belongings are safe throughout the entire moving process. With our experience and thoroughness, you can feel secure throughout the entire move.",
+        "readMore": "Read more"
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Safe storage of your belongings. We offer flexible solutions for shorter and longer storage with secure handling.",
+        "extendedDescription": "Do you need to store belongings during the moving process? Flyttella provides secure and reliable storage solutions for your belongings. We offer flexible alternatives that suit your needs and schedule. As an extra service, we offer the first month free to make your moving process even smoother.",
+        "readMore": "Read more"
+      },
+      "packhjalp": {
+        "title": "Packing Help",
+        "description": "Professional packing help for a stress-free move. We help you pack your belongings safely and organized.",
+        "extendedDescription": "Packing is often the most time-consuming part of a move. Flyttella offers professional packing help where our experienced movers help you pack your belongings in a safe and organized way. We use quality packing materials and ensure that everything is packed correctly for transport. Our packing help also includes marking boxes and creating an inventory list for easy unpacking at the new address.",
+        "readMore": "Read more"
+      }
+    },
+    "features": {
+      "title": "Our services",
+      "description": "We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. From household moves and move-out cleaning to special services like heavy lifting and storage.",
+      "flyttServicesButton": "See all our moving services",
+      "cleaningServicesButton": "See all our cleaning services"
+    },
+    "reviews": {
+      "title": "What do our customers think about us?",
+      "subtitle": "Reliable move-out cleaning in Stockholm",
+      "description": "As Stockholm's preferred move-out cleaning company, we prioritize your satisfaction. With our local knowledge and dedicated staff, we ensure that every move-out cleaning in Stockholm becomes a smooth experience. Our customers appreciate our thoroughness and professional move-out cleaning services.",
+      "badgeAlt": "8+ years of experience as a move-out cleaning company in Stockholm",
+      "arrowText": "Read what our customers say about our move-out cleaning"
+    },
+    "benefits": {
+      "title": "Our benefits",
+      "imageAlt": "Our benefits",
+      "features": [
+        { "icon": "💰", "title": "Fixed price", "description": "No surprises - we offer both fixed prices and the possibility of ongoing prices" },
+        { "icon": "📋", "title": "RUT deduction", "description": "We handle all paperwork for RUT deduction" },
+        { "icon": "✅", "title": "14-day cleaning guarantee", "description": "We are so confident in our quality that we offer a 14-day satisfied customer guarantee" },
+        { "icon": "⏰", "title": "Reschedule or cancel free of charge", "description": "Reschedule or cancel free of charge up to 24 hours before cleaning" },
+        { "icon": "🔒", "title": "Permits and insurance", "description": "All necessary permits and insurance in place" },
+        { "icon": "🎓", "title": "Trained staff", "description": "Our staff is trained to ensure the highest quality and service." },
+        { "icon": "🧴", "title": "Eco-friendly products", "description": "We use eco-friendly and safe cleaning products" },
+        { "icon": "📈", "title": "Management system", "description": "We work with effective management systems to guarantee structure and quality." },
+        { "icon": "🦺", "title": "Work environment", "description": "We prioritize a safe and secure work environment for both customers and staff." }
+      ]
+    },
+    "experience": {
+      "title": "Our experience",
+      "localExperienceTitle": "Local experience delivers results",
+      "localExperienceDescription": "With thousands of cleanings behind us, we have built up unique expertise in the cleaning industry in Stockholm. We help both individuals and companies to sparkling clean homes and workplaces. Our experienced team always works carefully and efficiently, with eco-friendly products and modern equipment. We strive to exceed your expectations on every assignment and are proud of our high customer satisfaction.",
+      "stats": {
+        "flyttstadningar": {
+          "title": "Move-out cleanings",
+          "count": 7000,
+          "description": "assignments completed"
+        },
+        "hemstadningar": {
+          "title": "Home cleanings", 
+          "count": 5000,
+          "description": "assignments completed"
+        },
+        "foretagsstadningar": {
+          "title": "Office cleanings",
+          "count": 2000,
+          "description": "assignments completed"
+        }
+      }
+    },
+    "process": {
+      "title": "Our process",
+      "description": "Our move-out cleaning process is designed to be simple, transparent and secure. It starts with you filling out our form where you provide your details and cleaning needs. Within a minute you get a quote sent to your specified email address. The same day or the day after we take personal contact with you to discuss the details and answer any questions. When you are satisfied with the quote you can easily sign it digitally. Then we carry out the cleaning according to your wishes and agreement. The result? A satisfied customer who can leave their old home in perfect condition."
+    },
+    "blog": {
+      "title": "Read more about cleaning in Stockholm",
+      "subtitle": "Get valuable tips and advice for thorough move-out cleaning",
+      "imageAlt": "Move-out cleaning tips Stockholm",
+      "category": "Cleaning tips",
+      "readingTime": "5 min reading",
+      "articleTitle": "Move-out cleaning - What you need to know",
+      "articleDescription": "Choosing the right cleaning company is crucial for thorough move-out cleaning. In this guide we go through the most important factors you should think about - from cleaning guarantee and eco-friendly products to customer reviews and price transparency. Learn how to identify a serious cleaning company that delivers quality and security.",
+      "readMore": "Read more",
+      "seeAllArticles": "See all articles about cleaning"
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Assembly",
+        "description": "Safe assembly and disassembly of furniture and appliances. We ensure that everything is assembled correctly and safely.",
+        "readMore": "Read more"
+      },
+      "tunglyft": {
+        "title": "Heavy lifting",
+        "description": "Specialized move and lifting of heavy and unwieldy items such as piano, safes and machines.",
+        "readMore": "Read more"
+      },
+      "barhjalp": {
+        "title": "Carrying help",
+        "description": "Extra help during move for heavy and large items. We help you with the heavy lifting.",
+        "readMore": "Read more"
+      },
+      "bortforsling": {
+        "title": "Disposal",
+        "description": "Professional disposal of old furniture, appliances and other items you no longer need.",
+        "readMore": "Read more"
+      }
     }
   },
   "hemstadning": {
     "hero": {
       "title": "Professional home cleaning in Stockholm",
-      "subtitle": "Regular cleaning tailored to your needs",
-      "description": "Reliable and thorough home cleaning with RUT deduction. Get a quote fast and easy"
+      "subtitle": "Keep your home clean and fresh with our reliable home cleaning",
+      "description": "We offer regular home cleaning for homes in Stockholm. With our experience and thoroughness, we ensure a sparkling clean result every time."
+    },
+    "content": {
+      "whatIsTitle": "What is home cleaning?",
+      "whatIsDescription": "Home cleaning is regular or recurring cleaning of your home. We adapt the cleaning to your needs and wishes – from kitchen and bathroom to living room and bedroom. Our experienced team uses eco-friendly products and ensures a sparkling clean result every time. With home cleaning from a professional cleaning company, you get high, consistent quality and more time for what's important. We work according to a clear checklist and offer flexible intervals (weekly, bi-weekly or monthly) as well as options such as window cleaning and deep cleaning. Everything to make your home cleaning in Stockholm simple, safe and affordable.",
+      "pricingTitle": "What does home cleaning cost?",
+      "pricingDescription": "Price for home cleaning depends on living area, layout, cleaning frequency and your specific wishes. With 50% RUT deduction on labor costs, recurring home cleaning becomes very cost-effective. Request a free quote quickly and easily. Factors that affect the price include degree of soiling and any options (e.g. window cleaning or oven cleaning). We always provide a fixed, transparent price without hidden fees so you know exactly what your home cleaning costs.",
+      "pricingTestimonial": "Like coming home to a completely new home every time – professional, reliable and affordable!",
+      "testimonialAuthor": "Emma",
+      "includesTitle": "What is included in home cleaning?",
+      "includesDescription": "Home cleaning includes vacuuming and mopping all floors, dusting free surfaces, wiping baseboards, doors and handles, mirrors and visible surfaces. In the kitchen, countertops, stovetop, sink and exterior of appliances are cleaned, and in the bathroom, sink, shower/bathtub and toilet are descaled and cleaned. Trash cans are emptied and surfaces are tidied up. As an option, you can add window cleaning, bed linen change, internal cabinet cleaning, oven tray/oven and deep cleaning. We use eco-friendly products and work according to a clear checklist for a consistent and sparkling result.",
+      "howToBookTitle": "How do I book home cleaning?",
+      "howToBookDescription": "Book directly by filling out the form, get a price quote quickly and easily and confirm digitally. We contact you the same day or the next business day to confirm living area, frequency and any options. Then we plan the start date – simple and safe. We match you with a fixed cleaner or a small team for continuity and security. You choose the day of the week and time that suits you, and can easily adjust or pause via our customer service. Payment is made smoothly after completed cleaning. The RUT deduction (50% on labor costs) is handled automatically by us."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is a leading cleaning company in Stockholm with over 8 years of experience in home cleaning, move-out cleaning and office cleaning. We offer fixed prices and personal service throughout Greater Stockholm.",
+      "description2": "We know all Stockholm areas and adapt our cleaning services to your needs – from apartments and villas to offices and shops. Our home cleaning follows clear checklists for consistent and high quality.",
+      "description3": "Our goal is to make your home cleaning simple and safe. We offer free quotes, quick booking and personal contact. With our experience in home cleaning in Stockholm, you can feel confident with the result every time.",
+      "readMore": "Read more",
+      "imageAlt": "About Flyttella"
+    },
+    "reviews": {
+      "title": "What do our customers think about us?",
+      "subtitle": "Reliable home cleaning in Stockholm",
+      "description": "Professional home cleaning in Stockholm with flexible intervals – weekly, bi-weekly, monthly or one-time cleaning – fixed price and 50% RUT deduction. Punctual cleaners and high ratings. Read what our customers think about our home cleaning in Stockholm.",
+      "badgeAlt": "8+ years of experience as a cleaning company in Stockholm",
+      "arrowText": "Read what our customers say about our home cleaning in Stockholm"
+    },
+    "cta": {
+      "title": "Ready to start your home cleaning?",
+      "subtitle": "Get a quick and free quote on your home cleaning",
+      "button": "Get free quote"
+    },
+    "services": {
+      "title": "Our Cleaning Services",
+      "flyttstadning": {
+        "title": "Move-out cleaning",
+        "description": "Thorough move-out cleaning according to industry standards – fixed price, 14-day guarantee and full RUT handling.",
+        "extendedDescription": "We clean according to a complete checklist: all rooms, window cleaning of all windows, kitchen (incl. cabinets and drawers inside), appliances, bathroom and toilets. Backs and spaces behind appliances are cleaned where accessible. As an option, you can choose balcony/storage/garage and extra rough cleaning. The result is a move-in ready home that meets requirements from landlord or buyer.",
+        "readMore": "Read more"
+      },
+      "fonsterputs": {
+        "title": "Window cleaning",
+        "description": "Crystal clear windows year-round – as an option to home cleaning or as a separate service.",
+        "extendedDescription": "We clean windows inside and outside where it's safe and accessible, and take care of frames and window sills. The right tools and methods give a crystal clear result without streaks. Also available as an option in connection with home cleaning, deep cleaning or move-out cleaning – as well as seasonal subscriptions.",
+        "readMore": "Read more"
+      },
+      "visningsstadning": {
+        "title": "Viewing cleaning",
+        "description": "Professional viewing cleaning that makes the home shine for sale. Fixed price and 50% RUT deduction.",
+        "extendedDescription": "Focus on first impression: sparkling kitchen and bathroom, polished surfaces and mirrors, neatly arranged details and odor-neutral result. Window cleaning as an option. We follow a viewing-adapted checklist and schedule in consultation with you or the real estate agent.",
+        "readMore": "Read more"
+      }
+    },
+    "features": {
+      "title": "Our services",
+      "description": "We offer a complete range of moving and cleaning services to make your everyday life easier.",
+      "flyttServicesButton": "See all our moving services",
+      "cleaningServicesButton": "See all our cleaning services"
+    },
+    "benefits": {
+      "title": "Our benefits",
+      "imageAlt": "Cleaning staff in Stockholm - Flyttella",
+      "items": [
+        { "icon": "💰", "title": "Fixed Price", "description": "No surprises – fixed prices and options available", "link": "/priser" },
+        { "icon": "📋", "title": "RUT Deduction", "description": "We handle all paperwork for RUT deduction", "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
+        { "icon": "⚡", "title": "Quick Quote", "description": "Get price suggestions quickly and easily – Simply fill out the form at the top of the page", "link": "#hemstad-offert" },
+        { "icon": "⏰", "title": "Reschedule or Cancel", "description": "Reschedule/cancel free of charge up to 24 hours before", "link": "/avbokning" },
+        { "icon": "🔒", "title": "Permits and Insurance", "description": "All necessary permits and insurance in place", "link": "/tillstand" },
+        { "icon": "🎓", "title": "Trained Staff", "description": "Trained employees and quality-assured routines", "link": "/om-oss" },
+        { "icon": "🧴", "title": "Eco-friendly Products", "description": "Gentle and eco-friendly cleaning products", "link": "/miljovanlig-stadning" },
+        { "icon": "📈", "title": "Management System", "description": "Effective routines for quality and structure", "link": "/kvalitet" },
+        { "icon": "🦺", "title": "Work Environment", "description": "Safe work environment for both customers and staff", "link": "/arbetsmiljo" }
+      ]
+    },
+    "experience": {
+      "title": "Our experience",
+      "localExperienceTitle": "Local experience delivers results",
+      "localExperienceDescription": "With thousands of cleanings in Stockholm, we have built up strong expertise in home cleaning. We work methodically with clear checklists and eco-friendly products for a consistent, reliable result in all rooms. The cleaning is adapted to your home and your wishes. Our high customer ratings and many returning customers show that our process works.",
+      "stats": {
+        "hemstadningar": {
+          "title": "Home cleanings",
+          "count": 5000,
+          "description": "assignments completed"
+        },
+        "flyttstadningar": {
+          "title": "Move-out cleanings",
+          "count": 7000,
+          "description": "assignments completed"
+        },
+        "foretagsstadningar": {
+          "title": "Business cleanings",
+          "count": 2000,
+          "description": "assignments completed"
+        }
+      }
+    },
+    "process": {
+      "title": "Our process",
+      "description": "Our home cleaning process is designed to be simple, flexible and safe. It starts with you filling out our short form where you specify living area, cleaning frequency and any options. You get a clear quote directly to your email. The same day or latest the day after, we take personal contact to ensure everything is correct and to answer your questions. When you're satisfied, you sign digitally easily.",
+      "description2": "Then we plan the cleaning based on your wishes and our checklist for home cleaning. Our trained employees use gentle and eco-friendly products and ensure that kitchen, bathroom, living room and bedroom become sparkling clean on every occasion. You can easily reschedule if needed. The result? A consistent and reliable cleaning result and more time for what's important to you.",
+      "pricing": "Our prices are calculated based on living area, cleaning frequency and selected additions such as window cleaning or deep cleaning. All prices are fixed without hidden fees. If you have special wishes, we adapt the quote to your needs and conditions. The RUT deduction is handled automatically by us to make it simple and affordable.",
+      "howItWorksTitle": "How it works"
+    },
+    "blog": {
+      "title": "Read more about home cleaning",
+      "subtitle": "Tips for a sparkling clean home, smart routines for everyday cleaning and how to choose the right cleaning company. We go through RUT deduction, price, what's included and how you prepare for the first cleaning.",
+      "imageAlt": "Home cleaning tips",
+      "category": "Home cleaning tips",
+      "readingTime": "4 min reading",
+      "articleTitle": "How to choose the right home cleaning",
+      "articleDescription": "What should you think about when booking home cleaning? Here we go through price, quality, RUT deduction and what's usually included. You also get a simple checklist to prepare the home, advice on the right cleaning frequency and how you get a safe start with a fixed cleaner.",
+      "readMore": "Read more",
+      "seeAllArticles": "See all articles about cleaning"
+    },
+    "faq": {
+      "title": "Frequently asked questions about home cleaning"
+    },
+    "sidebar": {
+      "storstadning": {
+        "title": "Deep cleaning",
+        "description": "Thorough deep cleaning with focus on kitchen, bathroom and hard-to-reach surfaces. Perfect as a complement to window cleaning.",
+        "readMore": "Read more"
+      },
+      "byggstadning": {
+        "title": "Construction cleaning",
+        "description": "Effective construction cleaning after renovation – rough and fine cleaning for move-in ready results.",
+        "readMore": "Read more"
+      },
+      "dodsbo": {
+        "title": "Estate cleaning",
+        "description": "Careful estate cleaning – sorting as well as rough and fine cleaning for sale or transfer.",
+        "readMore": "Read more"
+      }
+    }
+  },
+  "kontorsstadning": {
+    "hero": {
+      "title": "Professional office cleaning in Stockholm",
+      "subtitle": "Keep your office clean and professional with our reliable office cleaning",
+      "description": "We offer complete office cleaning for companies in Stockholm. With our experience and thoroughness, we ensure a clean and professional work environment for your employees."
+    },
+    "content": {
+      "whatIsTitle": "What is office cleaning?",
+      "whatIsDescription": "Office cleaning is a specialized cleaning service that focuses on keeping office premises clean, organized and professional. It includes everything from daily cleaning of workstations to deep cleaning of common areas such as kitchens, toilets and conference rooms.",
+      "pricingTitle": "What does office cleaning cost?",
+      "pricingDescription": "The price for office cleaning depends on several factors: the size of the premises, number of employees, cleaning frequency and scope of cleaning. We work with transparent ongoing prices without hidden fees and adapt our services to your specific needs and budget.",
+      "pricingTestimonial": "Flyttella has been cleaning our office for over two years. They are always punctual, professional and do an excellent job. Our employees appreciate the clean work environment.",
+      "testimonialAuthor": "Anna Lindberg, CEO at Tech Solutions AB",
+      "includesTitle": "What is included in office cleaning?",
+      "includesDescription": "Our office cleaning includes vacuuming and wet mopping of floors, emptying waste bins, wiping desks and workstations, cleaning kitchen/pantry (sink, countertops, microwave), cleaning toilets and washbasins, polishing mirrors and glass sections, dusting window sills and office furniture. We use eco-friendly products for a healthy work environment.",
+      "guaranteeTitle": "Quality guarantee",
+      "guaranteeDescription": "We are so confident in our quality that we offer a satisfied customer guarantee. If you are not completely satisfied with our cleaning, we will come back and redo the work at no extra cost.",
+      "checklistTitle": "Checklist before office cleaning",
+      "checklistItems": [
+        "Turn off computers and electronics",
+        "Lock sensitive documents in secure cabinets",
+        "Empty personal waste bins",
+        "Mark any damage to furniture",
+        "Inform about special cleaning requirements",
+        "Ensure access to all areas"
+      ],
+      "howToBookTitle": "How do I book office cleaning?",
+      "howToBookDescription": "Booking office cleaning is easy. Fill out our form with information about your premises and cleaning needs, and we will contact you within 24 hours to discuss details and give you a tailored quote."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is one of Stockholm's leading players in office cleaning with over 8 years of experience in professional cleaning for companies. We understand the importance of a clean and well-organized work environment for productivity and well-being.",
+      "description2": "Our team consists of trained and experienced cleaners who work with modern methods and eco-friendly products. We adapt our services to each company's specific needs and work schedule.",
+      "description3": "With thousands of satisfied business customers behind us, we have built a strong position in the market. We strive to exceed expectations and deliver consistently high quality with every cleaning.",
+      "readMore": "Read more",
+      "imageAlt": "About Flyttella Cleaning"
+    },
+    "reviews": {
+      "title": "What do our customers think about us?",
+      "subtitle": "Reliable office cleaning in Stockholm",
+      "description": "As Stockholm's preferred office cleaning company, we prioritize your satisfaction. With our local knowledge and dedicated staff, we ensure that every office cleaning in Stockholm becomes a smooth experience. Our business customers appreciate our thoroughness and professional office cleaning services.",
+      "badgeAlt": "8+ years of experience as an office cleaning company in Stockholm",
+      "arrowText": "Read what our customers say about our office cleaning"
+    },
+    "cta": {
+      "title": "Ready to start your office cleaning?",
+      "subtitle": "Get a quick and free quote on your office cleaning",
+      "button": "Get free quote"
+    },
+    "services": {
+      "title": "Combine your office cleaning with other services",
+      "kontorsflytt": {
+        "title": "Office Move",
+        "description": "Efficient office move with minimal disruption to business – planning, execution and follow-up.",
+        "extendedDescription": "We handle the entire process from planning to execution. Professional handling of IT equipment, furniture and documents. Minimal disruption to business.",
+        "readMore": "Read more"
+      },
+      "bemanning": {
+        "title": "Staffing and subcontracting",
+        "description": "Professional staffing for your projects – qualified personnel and reliable subcontractors.",
+        "extendedDescription": "We provide experienced personnel for both short-term and long-term assignments. Our subcontractors are carefully selected and quality assured. Flexible solutions adapted to your specific needs and requirements.",
+        "readMore": "Read more"
+      },
+      "flyttstadning": {
+        "title": "Move-out cleaning",
+        "description": "Thorough move-out cleaning according to industry standards – ongoing prices, 14-day guarantee and professional service.",
+        "extendedDescription": "We clean according to a complete checklist: all rooms, window cleaning of all windows, kitchen (incl. cabinets and drawers inside), appliances, bathroom and toilets. Backs and spaces behind appliances are cleaned where accessible. As an option, you can choose balcony/storage/garage and extra rough cleaning. The result is a move-in ready home that meets requirements from landlord or buyer.",
+        "readMore": "Read more"
+      }
+    },
+    "features": {
+      "title": "Our services",
+      "description": "We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. From household moves and move-out cleaning to special services like heavy lifting and storage.",
+      "flyttServicesButton": "See all our moving services",
+      "cleaningServicesButton": "See all our cleaning services"
+    },
+    "benefits": {
+      "title": "Our benefits",
+      "imageAlt": "Our benefits",
+      "features": [
+        { "icon": "💰", "title": "Ongoing prices", "description": "Transparent ongoing prices – you know what you pay for" },
+        { "icon": "✅", "title": "Quality guarantee", "description": "We are so confident in our quality that we offer a satisfied customer guarantee" },
+        { "icon": "⏰", "title": "Flexible times", "description": "We adapt the cleaning to your schedule - evenings and weekends" },
+        { "icon": "🔒", "title": "Insurance", "description": "Full liability insurance and all necessary permits in place" },
+        { "icon": "🎓", "title": "Trained staff", "description": "Our staff is trained to ensure the highest quality and service." },
+        { "icon": "🧴", "title": "Eco-friendly products", "description": "We use eco-friendly and safe cleaning products" },
+        { "icon": "📈", "title": "Management system", "description": "We work with effective management systems to guarantee structure and quality." },
+        { "icon": "🦺", "title": "Work environment", "description": "We prioritize a safe and secure work environment for both customers and staff." }
+      ]
+    },
+    "experience": {
+      "title": "Our experience",
+      "localExperienceTitle": "Local experience delivers results",
+      "localExperienceDescription": "With thousands of office cleanings behind us, we have built up unique expertise in office cleaning in Stockholm. We help both small and large companies to sparkling clean office premises. Our experienced team always works carefully and efficiently, with eco-friendly products and modern equipment. We strive to exceed your expectations on every assignment and are proud of our high customer satisfaction.",
+      "stats": {
+        "flyttstadningar": {
+          "title": "Move-out cleanings",
+          "count": 7000,
+          "description": "assignments completed"
+        },
+        "hemstadningar": {
+          "title": "Home cleanings", 
+          "count": 5000,
+          "description": "assignments completed"
+        },
+        "foretagsstadningar": {
+          "title": "Office cleanings",
+          "count": 2000,
+          "description": "assignments completed"
+        }
+      }
+    },
+    "process": {
+      "title": "Our process",
+      "description": "Our office cleaning process is designed to be simple, transparent and secure. It starts with you filling out our form where you provide your details and cleaning needs. Within a minute you get a quote sent to your specified email address. The same day or the day after we take personal contact with you to discuss the details and answer any questions. When you are satisfied with the quote you can easily sign it digitally. Then we carry out the cleaning according to your wishes and agreement. The result? A satisfied customer who can focus on their business while we handle the cleaning."
+    },
+    "blog": {
+      "title": "Read more about office cleaning in Stockholm",
+      "subtitle": "Get valuable tips and advice for professional office cleaning",
+      "imageAlt": "Office cleaning tips Stockholm",
+      "category": "Cleaning tips",
+      "readingTime": "5 min reading",
+      "articleTitle": "Office cleaning - What you need to know",
+      "articleDescription": "Choosing the right office cleaning company is crucial for a professional work environment. In this guide we go through the most important factors you should think about - from cleaning guarantee and eco-friendly products to customer reviews and price transparency. Learn how to identify a serious office cleaning company that delivers quality and security.",
+      "readMore": "Read more",
+      "seeAllArticles": "See all articles about office cleaning"
+    },
+    "faq": {
+      "title": "Common questions about office cleaning",
+      "moreQuestions": "Do you have more questions?",
+      "seeAllQuestions": "See all common questions",
+      "questions": [
+        {
+          "id": "kontorsstadning-1",
+          "question": "What is included in office cleaning?",
+          "answer": "Office cleaning includes vacuuming, wet mopping of floors, emptying waste bins, wiping desks, cleaning kitchen/pantry and toilets. We adapt the cleaning to your specific needs and can include additional services such as window cleaning and deep cleaning."
+        },
+        {
+          "id": "kontorsstadning-2", 
+          "question": "What does office cleaning cost?",
+          "answer": "The price depends on the size of the premises, cleaning frequency and scope. We work with ongoing prices without hidden fees and always give you a transparent cost breakdown before we start."
+        },
+        {
+          "id": "kontorsstadning-3",
+          "question": "Can you clean outside office hours?",
+          "answer": "Yes, we adapt the cleaning to your schedule and can work evenings and weekends. We understand that many companies prefer cleaning to take place outside working hours so as not to disturb operations."
+        },
+        {
+          "id": "kontorsstadning-4",
+          "question": "How often should you clean the office?",
+          "answer": "Depends on number of employees and business. Common is 1-3 times per week for most offices. We help you determine optimal cleaning frequency based on your needs and budget."
+        },
+        {
+          "id": "kontorsstadning-5",
+          "question": "Can you adapt the cleaning to specific requirements?",
+          "answer": "Yes, we can adapt the cleaning to your specific needs and any requirements from the landlord or company policy. We have experience with different cleaning requirements and can ensure that the cleaning meets all expectations. Contact us to discuss your specific needs."
+        }
+      ]
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Assembly",
+        "description": "Safe assembly and disassembly of furniture and appliances. We ensure that everything is assembled correctly and safely.",
+        "readMore": "Read more"
+      },
+      "tunglyft": {
+        "title": "Heavy lifting",
+        "description": "Specialized move and lifting of heavy and unwieldy items such as piano, safes and machines.",
+        "readMore": "Read more"
+      },
+      "barhjalp": {
+        "title": "Carrying help",
+        "description": "Extra help during move for heavy and large items. We help you with the heavy lifting.",
+        "readMore": "Read more"
+      },
+      "bortforsling": {
+        "title": "Disposal",
+        "description": "Professional disposal of old furniture, appliances and other items you no longer need.",
+        "readMore": "Read more"
+      }
+    }
+  },
+  "fonsterputsning": {
+    "hero": {
+      "title": "Professional window cleaning in Stockholm",
+      "subtitle": "Crystal clear windows – every time"
+    },
+    "content": {
+      "whatIsTitle": "What is window cleaning?",
+      "whatIsDescription": "Window cleaning includes thorough cleaning of window panes both inside and outside where it's safe and accessible. We also take care of frames and window sills, leaving a crystal clear result without streaks. Our trained window cleaners use proven techniques, professional scrapers and microfiber cloths for a streak-free result. We adapt the work to window type and accessibility, and can when needed handle mullioned windows, glazed balconies and high-rise windows by agreement.",
+      "whatIsImageAlt": "Window cleaning",
+      "pricingTitle": "What does window cleaning cost?",
+      "pricingDescription": "The price depends on number of windows, floor level, accessibility and whether external cleaning is desired. With 50% RUT deduction, window cleaning becomes cost-effective. Options such as mullions, hard-to-reach windows or glazed balconies affect the price. We always provide a fixed, transparent price without hidden fees. Request a free quote – you get a price suggestion quickly and easily.",
+      "pricingTestimonial": "Shining windows that really lifted the whole home for the viewing. Very satisfied with the result!",
+      "testimonialAuthor": "Sofia",
+      "whyChooseTitle": "Window cleaning in Stockholm – why you should choose us",
+      "whyChooseDescription": "We offer professional window cleaning in Stockholm for apartments, houses and offices. Our trained window cleaners provide a shining clean result both inside and outside where it's safe and accessible. With fixed price, quick booking and 50% RUT deduction, window cleaning becomes both smooth and cost-effective. We can also schedule recurring window cleaning as a subscription for a consistent result year-round.",
+      "howToBookTitle": "How do I book window cleaning?",
+      "howToBookImageAlt": "Book window cleaning",
+      "howToBookDescription": "Book window cleaning easily: fill in the form, get price directly and confirm digitally. We get back to you the same day or next business day to ensure details about number of windows, accessibility and any options. Then we plan a suitable date and deliver a streak-free result that lifts the whole home.",
+      "includesTitle": "What's included in window cleaning?",
+      "includesDescription": "Internal and, where it's safe and accessible, external window cleaning. Cleaning of frames and window sills. We use professional tools and methods – including special treatment for different materials – for a shining clean result. As options we offer external cleaning on higher floors, cleaning of mullioned windows and subscriptions."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "imageAlt": "About Flyttella",
+      "description1": "Flyttella is a leading cleaning company in Stockholm with over 8 years of experience in window cleaning, home cleaning and moving cleaning. We offer fixed prices and personal service throughout Greater Stockholm.",
+      "description2": "We use professional tools and techniques for a shining clean result – regardless of season. We can schedule recurring cleaning for a consistent result over time.",
+      "description3": "Our goal is to make your everyday life easier. Free quote, quick booking and personal contact throughout the process.",
+      "description4": "We have strong local presence throughout Greater Stockholm and receive high ratings from our customers. With clear routines, eco-friendly products and quality assurance in every step, we deliver a reliable result – every time.",
+      "mobileDescription": "Flyttella is a cleaning company in Stockholm with long experience in window cleaning. We offer cleaning guarantee, fixed prices and personal service – with streak-free results. We plan the effort based on your windows and accessibility and deliver a result you notice immediately. Streak-free results inside and, where it's safe and accessible, outside. Quick booking and 50% RUT deduction makes it easy and cost-effective.",
+      "readMore": "Read more about us"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "As one of Sweden's most recommended for window cleaning",
+      "description": "As one of Sweden's most recommended window cleaning services, we put the customer in focus. We know that windows affect the overall impression – therefore we make the process simple, safe and flexible. With our experience and our dedicated team, we ensure that your window cleaning becomes a positive experience from start to finish – with crystal clear results.",
+      "badgeAlt": "8+ years of experience in window cleaning in Stockholm",
+      "arrowText": "Read what our customers say about our window cleaning"
+    },
+    "cta": {
+      "title": "Ready to start with window cleaning?",
+      "subtitle": "Get a quick and free quote",
+      "button": "Get free quote"
+    },
+    "services": {
+      "title": "Our Cleaning Services",
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "Thorough moving cleaning according to industry standards – fixed price, guarantee and RUT.",
+        "extendedDescription": "We clean according to a complete checklist: all rooms, window cleaning of all windows, kitchen (including cabinets and drawers inside), appliances, bathroom and toilets. Backsides and spaces behind appliances are cleaned where accessible. As options you can add balcony/storage/garage and extra deep cleaning. The result is a move-in ready home that meets requirements from landlord or buyer.",
+        "readMore": "Read more"
+      },
+      "hemstadning": {
+        "title": "Home Cleaning",
+        "description": "Recurring cleaning – weekly, bi-weekly or monthly.",
+        "extendedDescription": "Home cleaning adapted to your home and your wishes. We work according to clear checklists for kitchen, bathroom, living room and bedroom, and use gentle, eco-friendly products. Choose flexible intervals and supplement when needed with options such as window cleaning, deep cleaning or oven cleaning.",
+        "readMore": "Read more"
+      },
+      "visningsstadning": {
+        "title": "Viewing Cleaning",
+        "description": "Cleaning adapted for photography and viewing – focus on first impression.",
+        "extendedDescription": "Focus on lifting the overall impression: shining kitchen and bathroom, polished surfaces and mirrors, neatly arranged details and scent-neutral result. We follow a viewing-adapted checklist and schedule in consultation with you or the broker to maximize the effect.",
+        "readMore": "Read more"
+      }
+    },
+    "features": {
+      "title": "Our services",
+      "description": "We offer a complete range of moving and cleaning services to make your everyday life easier.",
+      "flyttServicesButton": "See all our moving services",
+      "cleaningServicesButton": "See all our cleaning services"
+    },
+    "benefits": {
+      "title": "Our Benefits",
+      "imageAlt": "Cleaning staff in Stockholm - Flyttella",
+      "items": [
+        { "icon": "💰", "title": "Fixed Price", "description": "No surprises – fixed prices and options available", "link": "/priser" },
+        { "icon": "📋", "title": "RUT Deduction", "description": "We handle all paperwork for RUT deduction", "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
+        { "icon": "⚡", "title": "Quick Quote", "description": "Get price quickly and easily – Simply fill out the form at the top of the page", "link": "#fonsterputs-offert" },
+        { "icon": "⏰", "title": "Reschedule or Cancel", "description": "Reschedule/cancel free of charge up to 24 hours before", "link": "/avbokning" },
+        { "icon": "🔒", "title": "Permits and Insurance", "description": "All necessary permits and insurance in place", "link": "/tillstand" },
+        { "icon": "🎓", "title": "Trained Staff", "description": "Trained employees and quality-assured routines", "link": "/om-oss" },
+        { "icon": "🧴", "title": "Eco-friendly Products", "description": "Gentle and eco-friendly cleaning products", "link": "/om-oss" },
+        { "icon": "📈", "title": "Management System", "description": "Effective routines for quality and structure", "link": "/om-oss" },
+        { "icon": "🦺", "title": "Work Environment", "description": "Safe work environment for both customers and staff", "link": "/om-oss" }
+      ]
+    },
+    "experience": {
+      "title": "Our Experience",
+      "localExperienceTitle": "Local experience delivers results",
+      "localExperienceDescription": "With thousands of assignments in Stockholm, we have built up strong expertise in window cleaning. We work carefully and efficiently with professional tools and eco-friendly products for a consistent, streak-free result – year-round. We plan according to weather and light when needed and keep the schedule. Our high customer satisfaction is proof that the process works.",
+      "stats": {
+        "fonsterputsningar": {
+          "title": "Window cleanings",
+          "count": 7000,
+          "description": "assignments completed"
+        },
+        "flyttstadningar": {
+          "title": "Moving cleanings",
+          "count": 7000,
+          "description": "assignments completed"
+        },
+        "hemstadningar": {
+          "title": "Home cleanings",
+          "count": 5000,
+          "description": "assignments completed"
+        }
+      }
+    },
+    "process": {
+      "title": "Our Process",
+      "description": "Our process for window cleaning is designed to be simple, safe and effective. Start by filling in the form – you get price quickly and easily and can confirm digitally. The same day or latest next business day we contact you to align on number of windows, accessibility and any options.",
+      "description2": "Then we plan the effort and carry out the window cleaning with professional tools and methods for a streak-free result – inside and, where it's safe and accessible, outside. If you want, we can also schedule recurring cleaning so that your windows stay crystal clear year-round.",
+      "pricing": "The price is based on number of windows, accessibility and options. Fixed price without hidden fees. RUT deduction is handled automatically.",
+      "howItWorksTitle": "How it works",
+      "steps": [
+        { "title": "Fill in the form", "description": "Tell us about your window cleaning" },
+        { "title": "Quick quote", "description": "Get price quickly and easily" },
+        { "title": "Personal contact", "description": "We call the same day or the day after" },
+        { "title": "Sign & confirm", "description": "Book digitally" },
+        { "title": "Cleaning completed", "description": "We take care of everything" },
+        { "title": "Happy customer", "description": "Crystal clear windows" }
+      ]
+    },
+    "blog": {
+      "title": "Read more about window cleaning",
+      "subtitle": "Tips for streak-free cleaning, right interval and how you prepare for visits. We go through tools, technique, weather conditions and how you combine window cleaning with cleaning for best effect.",
+      "imageAlt": "Window cleaning tips",
+      "category": "Window cleaning",
+      "readingTime": "4 min reading",
+      "articleTitle": "How to get crystal clear windows",
+      "articleDescription": "Right tools, right technique and right weather. Our best tips for streak-free window cleaning, how you avoid streaks in sunshine and when it's best to book external cleaning. Plus checklist for preparations and safety.",
+      "readMore": "Read more",
+      "seeAllArticles": "See all articles about cleaning"
+    },
+    "faq": {
+      "title": "Frequently asked questions about window cleaning",
+      "questions": [
+        { "id": "fp-1", "question": "How often should I clean windows?", "answer": "2–4 times per year gives a consistent result year-round." },
+        { "id": "fp-2", "question": "Can you clean externally at high altitude?", "answer": "Yes, where it's safe and accessible. Otherwise we can recommend alternatives." },
+        { "id": "fp-3", "question": "Are window frames included?", "answer": "Yes, cleaning of frames and window sills is included." },
+        { "id": "fp-4", "question": "Can I cancel?", "answer": "Yes, free rescheduling/cancellation up to 24 hours before." }
+      ]
     }
   },
   "barhjalp": {

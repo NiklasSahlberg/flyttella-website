@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Selected files state for attachments
 // (keeps track of chosen images to show Swedish status text)
@@ -86,6 +87,7 @@ function SearchParamsHandler({ onFormTypeChange, onServiceChange }: {
 }
 
 export default function KontaktPage() {
+  const { locale } = useLanguage();
   const [formType, setFormType] = useState('message'); // 'message' or 'callback'
   const [selectedService, setSelectedService] = useState('');
 
@@ -119,11 +121,10 @@ export default function KontaktPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-3xl md:text-6xl font-bold text-white mb-4">
-              Kontakta oss
+              {locale === 'sv' ? 'Kontakta oss' : 'Contact us'}
             </h1>
             <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Har du frågor eller vill boka en tjänst? Vi finns här för att hjälpa dig. 
-              Kontakta oss via telefon, e-post eller använd formuläret nedan.
+              {locale === 'sv' ? 'Har du frågor eller vill boka en tjänst? Vi finns här för att hjälpa dig. Kontakta oss via telefon, e-post eller använd formuläret nedan.' : 'Do you have questions or want to book a service? We are here to help you. Contact us by phone, email or use the form below.'}
             </p>
           </motion.div>
         </div>
@@ -150,8 +151,8 @@ export default function KontaktPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-2">Ring oss</h3>
-              <p className="text-gray-600 mb-3 text-base">Mån-Fre: 08:00-18:00</p>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-2">{locale === 'sv' ? 'Ring oss' : 'Call us'}</h3>
+              <p className="text-gray-600 mb-3 text-base">{locale === 'sv' ? 'Mån-Fre: 08:00-18:00' : 'Mon-Fri: 08:00-18:00'}</p>
               <a 
                 href="tel:08-898-301" 
                 className="inline-flex items-center text-[#10B981] font-semibold text-lg hover:text-[#0F172A] transition-colors group"
@@ -174,8 +175,8 @@ export default function KontaktPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-2">E-post</h3>
-              <p className="text-gray-600 mb-3 text-base">Svar inom 24 timmar</p>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-2">{locale === 'sv' ? 'E-post' : 'Email'}</h3>
+              <p className="text-gray-600 mb-3 text-base">{locale === 'sv' ? 'Svar inom 24 timmar' : 'Response within 24 hours'}</p>
               <a 
                 href="mailto:info@flyttella.se" 
                 className="inline-flex items-center text-[#10B981] font-semibold text-base hover:text-[#0F172A] transition-colors group"
@@ -199,7 +200,7 @@ export default function KontaktPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-2">Besök oss</h3>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-2">{locale === 'sv' ? 'Besök oss' : 'Visit us'}</h3>
               <p className="text-[#0F172A] font-medium text-base">
                 Lännavägen 64F, Huddinge
               </p>
@@ -219,10 +220,10 @@ export default function KontaktPage() {
           >
             <div className="text-center mb-8">
               <h2 id="skicka-meddelande" className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3 scroll-mt-20">
-                Skicka oss ett meddelande
+                {locale === 'sv' ? 'Skicka oss ett meddelande' : 'Send us a message'}
               </h2>
               <p className="text-gray-600 text-base max-w-2xl mx-auto">
-                Fyll i formuläret nedan så återkommer vi så snart som möjligt
+                {locale === 'sv' ? 'Fyll i formuläret nedan så återkommer vi så snart som möjligt' : 'Fill in the form below and we will get back to you as soon as possible'}
               </p>
             </div>
 
@@ -237,7 +238,7 @@ export default function KontaktPage() {
                       : 'text-[#0F172A] hover:bg-gray-50'
                   }`}
                 >
-                  Skicka meddelande
+                  {locale === 'sv' ? 'Skicka meddelande' : 'Send message'}
                 </button>
                 <button
                   type="button"
@@ -248,7 +249,7 @@ export default function KontaktPage() {
                       : 'text-[#0F172A] hover:bg-gray-50'
                   }`}
                 >
-                  Be om att bli uppringd
+                  {locale === 'sv' ? 'Be om att bli uppringd' : 'Request callback'}
                 </button>
               </div>
             </div>
@@ -265,20 +266,20 @@ export default function KontaktPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Namn *
+                      {locale === 'sv' ? 'Namn *' : 'Name *'}
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
-                      placeholder="Ditt namn"
+                      placeholder={locale === 'sv' ? 'Ditt namn' : 'Your name'}
                       required
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      E-post *
+                      {locale === 'sv' ? 'E-post *' : 'Email *'}
                     </label>
                     <input
                       type="email"
@@ -292,7 +293,7 @@ export default function KontaktPage() {
                 </div>
                 <div>
                   <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Tjänst *
+                    {locale === 'sv' ? 'Tjänst *' : 'Service *'}
                   </label>
                   <select
                     id="service"
@@ -300,19 +301,19 @@ export default function KontaktPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base text-[#0F172A] bg-white appearance-none"
                     required
                   >
-                    <option value="">Välj tjänst</option>
-                    <option value="bemanning">Bemanning / Underentreprenad</option>
-                    <option value="montering">Montering</option>
-                    <option value="piano">Piano / Tunglyft</option>
-                    <option value="barhjalp">Bärhjälp</option>
-                    <option value="bortforsling">Bortforsling</option>
-                    <option value="magasinering">Magasinering</option>
-                    <option value="annat">Annat</option>
+                    <option value="">{locale === 'sv' ? 'Välj tjänst' : 'Select service'}</option>
+                    <option value="bemanning">{locale === 'sv' ? 'Bemanning / Underentreprenad' : 'Staffing / Subcontracting'}</option>
+                    <option value="montering">{locale === 'sv' ? 'Montering' : 'Assembly'}</option>
+                    <option value="piano">{locale === 'sv' ? 'Piano / Tunglyft' : 'Piano / Heavy lifting'}</option>
+                    <option value="barhjalp">{locale === 'sv' ? 'Bärhjälp' : 'Carrying help'}</option>
+                    <option value="bortforsling">{locale === 'sv' ? 'Bortforsling' : 'Removal'}</option>
+                    <option value="magasinering">{locale === 'sv' ? 'Magasinering' : 'Storage'}</option>
+                    <option value="annat">{locale === 'sv' ? 'Annat' : 'Other'}</option>
                   </select>
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Telefon
+                    {locale === 'sv' ? 'Telefon' : 'Phone'}
                   </label>
                   <input
                     type="tel"
@@ -324,20 +325,20 @@ export default function KontaktPage() {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Meddelande *
+                    {locale === 'sv' ? 'Meddelande *' : 'Message *'}
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base resize-none"
-                    placeholder="Berätta mer om vad du behöver hjälp med..."
+                    placeholder={locale === 'sv' ? 'Berätta mer om vad du behöver hjälp med...' : 'Tell us more about what you need help with...'}
                     required
                   ></textarea>
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Bilder (valfritt)
+                    {locale === 'sv' ? 'Bilder (valfritt)' : 'Images (optional)'}
                   </label>
                   <input
                     type="file"
@@ -358,12 +359,12 @@ export default function KontaktPage() {
                     htmlFor="attachments"
                     className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity font-semibold cursor-pointer"
                   >
-                    Välj filer
+                    {locale === 'sv' ? 'Välj filer' : 'Choose files'}
                   </label>
                   <span id="attachments-status" className="ml-3 text-sm text-gray-600 align-middle">
-                    Inga filer valda
+                    {locale === 'sv' ? 'Inga filer valda' : 'No files selected'}
                   </span>
-                  <p className="mt-2 text-xs text-gray-500">Du kan ladda upp flera bilder (JPG, PNG). Max 10 MB per bild.</p>
+                  <p className="mt-2 text-xs text-gray-500">{locale === 'sv' ? 'Du kan ladda upp flera bilder (JPG, PNG). Max 10 MB per bild.' : 'You can upload multiple images (JPG, PNG). Max 10 MB per image.'}</p>
                   <script dangerouslySetInnerHTML={{ __html: `
                     (function(){
                       var input = document.getElementById('attachments');
@@ -371,9 +372,10 @@ export default function KontaktPage() {
                       if(input && status){
                         input.addEventListener('change', function(){
                           var count = input.files ? input.files.length : 0;
-                          if(count === 0){ status.textContent = 'Inga filer valda'; return; }
-                          if(count === 1){ status.textContent = '1 fil vald'; return; }
-                          status.textContent = count + ' filer valda';
+                          var isSwedish = document.documentElement.lang === 'sv' || window.location.pathname.includes('/sv');
+                          if(count === 0){ status.textContent = isSwedish ? 'Inga filer valda' : 'No files selected'; return; }
+                          if(count === 1){ status.textContent = isSwedish ? '1 fil vald' : '1 file selected'; return; }
+                          status.textContent = isSwedish ? count + ' filer valda' : count + ' files selected';
                         });
                       }
                     })();
@@ -384,7 +386,7 @@ export default function KontaktPage() {
                     type="submit"
                     className="w-full bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl"
                   >
-                    Skicka meddelande
+                    {locale === 'sv' ? 'Skicka meddelande' : 'Send message'}
                   </button>
                 </div>
               </form>
@@ -400,20 +402,20 @@ export default function KontaktPage() {
               <form className="space-y-6">
                 <div>
                   <label htmlFor="callback-name" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Namn *
+                    {locale === 'sv' ? 'Namn *' : 'Name *'}
                   </label>
                   <input
                     type="text"
                     id="callback-name"
                     name="callback-name"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
-                    placeholder="Ditt namn"
+                    placeholder={locale === 'sv' ? 'Ditt namn' : 'Your name'}
                     required
                   />
                 </div>
                 <div>
                   <label htmlFor="callback-service" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Tjänst *
+                    {locale === 'sv' ? 'Tjänst *' : 'Service *'}
                   </label>
                   <select
                     id="callback-service"
@@ -421,19 +423,19 @@ export default function KontaktPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base text-[#0F172A] bg-white appearance-none"
                     required
                   >
-                    <option value="">Välj tjänst</option>
-                    <option value="bemanning">Bemanning / Underentreprenad</option>
-                    <option value="montering">Montering</option>
-                    <option value="piano">Piano / Tunglyft</option>
-                    <option value="barhjalp">Bärhjälp</option>
-                    <option value="bortforsling">Bortforsling</option>
-                    <option value="magasinering">Magasinering</option>
-                    <option value="annat">Annat</option>
+                    <option value="">{locale === 'sv' ? 'Välj tjänst' : 'Select service'}</option>
+                    <option value="bemanning">{locale === 'sv' ? 'Bemanning / Underentreprenad' : 'Staffing / Subcontracting'}</option>
+                    <option value="montering">{locale === 'sv' ? 'Montering' : 'Assembly'}</option>
+                    <option value="piano">{locale === 'sv' ? 'Piano / Tunglyft' : 'Piano / Heavy lifting'}</option>
+                    <option value="barhjalp">{locale === 'sv' ? 'Bärhjälp' : 'Carrying help'}</option>
+                    <option value="bortforsling">{locale === 'sv' ? 'Bortforsling' : 'Removal'}</option>
+                    <option value="magasinering">{locale === 'sv' ? 'Magasinering' : 'Storage'}</option>
+                    <option value="annat">{locale === 'sv' ? 'Annat' : 'Other'}</option>
                   </select>
                 </div>
                 <div>
                   <label htmlFor="callback-phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Telefonnummer *
+                    {locale === 'sv' ? 'Telefonnummer *' : 'Phone number *'}
                   </label>
                   <input
                     type="tel"
@@ -446,7 +448,7 @@ export default function KontaktPage() {
                 </div>
                 <div>
                   <label htmlFor="callback-time" className="block text-sm font-semibold text-gray-700 mb-2">
-                    När vill du bli uppringd? *
+                    {locale === 'sv' ? 'När vill du bli uppringd? *' : 'When would you like to be called? *'}
                   </label>
                   <select
                     id="callback-time"
@@ -454,22 +456,22 @@ export default function KontaktPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base text-[#0F172A] bg-white appearance-none"
                     required
                   >
-                    <option value="">Välj tid</option>
-                    <option value="morning">Förmiddag (08:00 - 12:00)</option>
-                    <option value="afternoon">Eftermiddag (12:00 - 15:00)</option>
-                    <option value="evening">Sen eftermiddag (15:00 - 18:00)</option>
+                    <option value="">{locale === 'sv' ? 'Välj tid' : 'Select time'}</option>
+                    <option value="morning">{locale === 'sv' ? 'Förmiddag (08:00 - 12:00)' : 'Morning (08:00 - 12:00)'}</option>
+                    <option value="afternoon">{locale === 'sv' ? 'Eftermiddag (12:00 - 15:00)' : 'Afternoon (12:00 - 15:00)'}</option>
+                    <option value="evening">{locale === 'sv' ? 'Sen eftermiddag (15:00 - 18:00)' : 'Late afternoon (15:00 - 18:00)'}</option>
                   </select>
                 </div>
                 <div>
                   <label htmlFor="callback-message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Meddelande (valfritt)
+                    {locale === 'sv' ? 'Meddelande (valfritt)' : 'Message (optional)'}
                   </label>
                   <textarea
                     id="callback-message"
                     name="callback-message"
                     rows={3}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base resize-none"
-                    placeholder="Berätta kort vad du behöver hjälp med..."
+                    placeholder={locale === 'sv' ? 'Berätta kort vad du behöver hjälp med...' : 'Tell us briefly what you need help with...'}
                   ></textarea>
                 </div>
                 <div>
@@ -477,7 +479,7 @@ export default function KontaktPage() {
                     type="submit"
                     className="w-full bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl"
                   >
-                    Be om att bli uppringd
+                    {locale === 'sv' ? 'Be om att bli uppringd' : 'Request callback'}
                   </button>
                 </div>
               </form>

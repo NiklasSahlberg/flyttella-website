@@ -10,12 +10,33 @@ import Image from "next/image";
 
 // AutoSlidingCards component
 const AutoSlidingCards = () => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const [currentCard, setCurrentCard] = useState(0);
   const [showFullExperienceText, setShowFullExperienceText] = useState(false);
   const autoIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartXRef = useRef<number | null>(null);
   const touchCurrentXRef = useRef<number | null>(null);
+  
+  const cards = [
+    {
+      title: t('aboutSection.moves'),
+      count: t('aboutSection.movesCount'),
+      description: t('aboutSection.movesDesc'),
+      delay: 0
+    },
+    {
+      title: t('aboutSection.cleanings'),
+      count: t('aboutSection.cleaningsCount'),
+      description: t('aboutSection.cleaningsDesc'),
+      delay: 1
+    },
+    {
+      title: t('aboutSection.monthly'),
+      count: t('aboutSection.monthlyCount'),
+      description: t('aboutSection.monthlyDesc'),
+      delay: 2
+    }
+  ];
   
   const restartAutoSlide = () => {
     if (autoIntervalRef.current) clearInterval(autoIntervalRef.current);
@@ -54,26 +75,6 @@ const AutoSlidingCards = () => {
     touchCurrentXRef.current = null;
   };
 
-  const cards = [
-    {
-      title: t('aboutSection.moves'),
-      count: t('aboutSection.movesCount'),
-      description: t('aboutSection.movesDesc'),
-      delay: 0
-    },
-    {
-      title: t('aboutSection.cleanings'),
-      count: t('aboutSection.cleaningsCount'),
-      description: t('aboutSection.cleaningsDesc'),
-      delay: 1
-    },
-    {
-      title: t('aboutSection.monthly'),
-      count: t('aboutSection.monthlyCount'),
-      description: t('aboutSection.monthlyDesc'),
-      delay: 2
-    }
-  ];
 
   return (
     <>
@@ -176,7 +177,7 @@ const AutoSlidingCards = () => {
               {/* Arrow controls */}
               <button
                 type="button"
-                aria-label="Föregående"
+                aria-label={locale === 'sv' ? 'Föregående' : 'Previous'}
                 onClick={() => { setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length); restartAutoSlide(); }}
                 className="absolute left-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
               >
@@ -186,7 +187,7 @@ const AutoSlidingCards = () => {
               </button>
               <button
                 type="button"
-                aria-label="Nästa"
+                aria-label={locale === 'sv' ? 'Nästa' : 'Next'}
                 onClick={() => { setCurrentCard((prev) => (prev + 1) % cards.length); restartAutoSlide(); }}
                 className="absolute right-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
               >
@@ -268,7 +269,7 @@ const AutoSlidingCards = () => {
                     onClick={() => setShowFullExperienceText(true)}
                     className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-lg underline decoration-2 underline-offset-4"
                   >
-                    Läs mer
+                    {locale === 'sv' ? 'Läs mer' : 'Read more'}
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -307,7 +308,7 @@ const AutoSlidingCards = () => {
                 <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
                   <Image
                     src="/1000reviewspicture.png"
-                    alt="1000+ positiva recensioner från kunder"
+                    alt={locale === 'sv' ? '1000+ positiva recensioner från kunder' : '1000+ positive reviews from customers'}
                     width={200}
                     height={200}
                     className="object-contain h-36 w-36"
@@ -354,7 +355,7 @@ const AutoSlidingCards = () => {
                 <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                   <Image
                     src="/1000reviewspicture.png"
-                    alt="1000+ positiva recensioner från kunder"
+                    alt={locale === 'sv' ? '1000+ positiva recensioner från kunder' : '1000+ positive reviews from customers'}
                     width={260}
                     height={260}
                     className="object-contain h-64 w-64 mt-3"
@@ -387,6 +388,7 @@ const fadeInUp = {
 };
 
 export default function OmOssPage() {
+  const { t, locale } = useLanguage();
   const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
   const totalFeatureCards = 9;
   const featureIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -441,57 +443,57 @@ export default function OmOssPage() {
   const allCompanyImages = [
     {
       src: "/omoss.jpg",
-      alt: "Flyttella team at work",
-      title: "Vårt team i arbete",
-      description: "Vårt dedikerade team arbetar tillsammans för att säkerställa en smidig flyttprocess."
+      alt: locale === 'sv' ? "Flyttella team at work" : "Flyttella team at work",
+      title: locale === 'sv' ? "Vårt team i arbete" : "Our team at work",
+      description: locale === 'sv' ? "Vårt dedikerade team arbetar tillsammans för att säkerställa en smidig flyttprocess." : "Our dedicated team works together to ensure a smooth moving process."
     },
     {
       src: "/personalpicture.jpg",
-      alt: "Professional moving team",
-      title: "Professionellt flyttteam",
-      description: "Professionella medarbetare med fokus på kvalitet och kundnöjdhet."
+      alt: locale === 'sv' ? "Professional moving team" : "Professional moving team",
+      title: locale === 'sv' ? "Professionellt flyttteam" : "Professional moving team",
+      description: locale === 'sv' ? "Professionella medarbetare med fokus på kvalitet och kundnöjdhet." : "Professional employees with focus on quality and customer satisfaction."
     },
     {
       src: "/smiling_worker_new.png",
-      alt: "Happy worker providing service",
-      title: "Glad medarbetare i tjänst",
-      description: "Glada och engagerade medarbetare som gör skillnaden för våra kunder."
+      alt: locale === 'sv' ? "Happy worker providing service" : "Happy worker providing service",
+      title: locale === 'sv' ? "Glad medarbetare i tjänst" : "Happy employee in service",
+      description: locale === 'sv' ? "Glada och engagerade medarbetare som gör skillnaden för våra kunder." : "Happy and engaged employees who make the difference for our customers."
     },
     {
       src: "/under_flytt.jpg",
-      alt: "Team working during move",
-      title: "Team i arbete under flytt",
-      description: "Vårt team arbetar effektivt under flytten för att minimera stress."
+      alt: locale === 'sv' ? "Team working during move" : "Team working during move",
+      title: locale === 'sv' ? "Team i arbete under flytt" : "Team working during move",
+      description: locale === 'sv' ? "Vårt team arbetar effektivt under flytten för att minimera stress." : "Our team works efficiently during the move to minimize stress."
     },
     {
       src: "/smidigflyttdag.jpg",
-      alt: "Smooth moving day",
-      title: "Smidig flyttdag",
-      description: "Vi ser till att varje flyttdag blir så smidig som möjligt."
+      alt: locale === 'sv' ? "Smooth moving day" : "Smooth moving day",
+      title: locale === 'sv' ? "Smidig flyttdag" : "Smooth moving day",
+      description: locale === 'sv' ? "Vi ser till att varje flyttdag blir så smidig som möjligt." : "We make sure every moving day is as smooth as possible."
     },
     {
       src: "/godtid.jpg",
-      alt: "Good time with customers",
-      title: "God tid med kunder",
-      description: "Vi tar oss tid att skapa en positiv upplevelse för våra kunder."
+      alt: locale === 'sv' ? "Good time with customers" : "Good time with customers",
+      title: locale === 'sv' ? "God tid med kunder" : "Good time with customers",
+      description: locale === 'sv' ? "Vi tar oss tid att skapa en positiv upplevelse för våra kunder." : "We take time to create a positive experience for our customers."
     },
     {
       src: "/innanflyttfirmankommer.jpg",
-      alt: "Before moving company arrives",
-      title: "Innan flyttfirman kommer",
-      description: "Vi förbereder allt noggrant innan flyttfirman kommer."
+      alt: locale === 'sv' ? "Before moving company arrives" : "Before moving company arrives",
+      title: locale === 'sv' ? "Innan flyttfirman kommer" : "Before the moving company arrives",
+      description: locale === 'sv' ? "Vi förbereder allt noggrant innan flyttfirman kommer." : "We prepare everything carefully before the moving company arrives."
     },
     {
       src: "/kundservice.jpg",
-      alt: "Customer service",
-      title: "Kundservice",
-      description: "Vår kundservice är alltid tillgänglig för att hjälpa dig."
+      alt: locale === 'sv' ? "Customer service" : "Customer service",
+      title: locale === 'sv' ? "Kundservice" : "Customer service",
+      description: locale === 'sv' ? "Vår kundservice är alltid tillgänglig för att hjälpa dig." : "Our customer service is always available to help you."
     },
     {
       src: "/magkansla.jpg",
-      alt: "Good feeling",
-      title: "Magkänsla",
-      description: "Vi skapar en trygg och positiv magkänsla kring din flytt."
+      alt: locale === 'sv' ? "Good feeling" : "Good feeling",
+      title: locale === 'sv' ? "Magkänsla" : "Good feeling",
+      description: locale === 'sv' ? "Vi skapar en trygg och positiv magkänsla kring din flytt." : "We create a safe and positive feeling around your move."
     }
   ];
 
@@ -572,12 +574,12 @@ export default function OmOssPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-20 py-8">
           <div className="text-center mb-10 md:mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-[#0F172A] mb-6 md:mb-8">
-              Om oss
+              {locale === 'sv' ? 'Om oss' : 'About us'}
             </h2>
           </div>
           <div className="text-[#0F172A] text-lg md:text-2xl leading-tight md:leading-relaxed font-bold max-w-4xl md:max-w-5xl mx-auto">
             <p className="mb-8 md:mb-10">
-              Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder. Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning.
+              {locale === 'sv' ? 'Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder. Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning.' : 'Flyttella is a moving and cleaning company based in Stockholm that was founded with the goal of making moves and cleaning services easier, safer and more transparent. We have existed as a company for 5 years, but have over 8 years of experience in the industry – something that is reflected in our way of working, our quality and our satisfied customers. So far we have had the pleasure of helping over 8000 customers, both individuals and companies, with everything from small moves to complete solutions with cleaning, packing and consulting.'}
             </p>
             
             {/* Image after first paragraph */}
@@ -585,28 +587,28 @@ export default function OmOssPage() {
               <div className="relative w-full h-64 md:h-80 rounded-3xl overflow-hidden">
                 <img 
                   src="/intro_picture.jpg" 
-                  alt="Flyttella team" 
+                  alt={locale === 'sv' ? 'Flyttella team' : 'Flyttella team'} 
                   className="object-cover w-full h-full"
                 />
               </div>
             </div>
             
             <p className="mb-8 md:mb-10">
-              Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar. Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.
+              {locale === 'sv' ? 'Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar. Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.' : 'What makes us unique is our focus on clear terms and fixed prices – with us you always know what\'s included and what it costs. We offer free loan of moving boxes, free rebooking and cancellation up to 24 hours before, as well as a generous 14-day guarantee on all moving cleanings. For you who also book packing help, we offer packing guarantee, which means we take full responsibility for what we pack.'}
             </p>
             
             {/* Image after second paragraph */}
             <div className="my-0 flex justify-center">
               <img 
                 src="/recommendedcompany2.png" 
-                alt="Recommended company badge" 
+                alt={locale === 'sv' ? 'Rekommenderad företagsmärkning' : 'Recommended company badge'} 
                 className="w-64 md:w-80 h-auto rounded-lg"
               />
             </div>
             
             <br />
             <p className="mb-8 md:mb-10">
-              Vi vet att tid ofta är en bristvara vid flytt, därför har vi utvecklat en smidig offertlösning där du får svar inom 1 minut – helt utan förpliktelser. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut. Självklart erbjuder vi fri rådgivning i samband med både flytt och städning – allt för att din upplevelse med oss ska kännas enkel och trygg från början till slut.
+              {locale === 'sv' ? 'Vi vet att tid ofta är en bristvara vid flytt, därför har vi utvecklat en smidig offertlösning där du får svar inom 1 minut – helt utan förpliktelser. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut. Självklart erbjuder vi fri rådgivning i samband med både flytt och städning – allt för att din upplevelse med oss ska kännas enkel och trygg från början till slut.' : 'We know that time is often a scarce resource when moving, which is why we have developed a smooth quote solution where you get an answer within 1 minute – completely without obligations. Behind all this is our competent and personal customer service, which is always available to answer questions, give tips and help you make the right decision. Of course we offer free consultation in connection with both moving and cleaning – all so that your experience with us feels simple and safe from start to finish.'}
             </p>
             
             {/* Image after third paragraph */}
@@ -614,34 +616,34 @@ export default function OmOssPage() {
               <div className="relative w-full h-64 md:h-80 rounded-3xl overflow-hidden">
                 <img 
                   src="/specialicering.jpg" 
-                  alt="Specialization" 
+                  alt={locale === 'sv' ? 'Specialisering' : 'Specialization'} 
                   className="object-cover w-full h-full"
                 />
               </div>
             </div>
             
             <p className="mb-8 md:mb-10">
-              Vi på Flyttella tror på att bygga långsiktiga relationer genom att leverera hög kvalitet, punktlighet och lyhörd service. Vår filosofi är enkel: ingen kund ska känna sig osäker, stressad eller överraskad av dolda kostnader. Därför har vi tagit fram tjänster och arbetsmetoder som är transparenta, kundvänliga och anpassade efter verkliga behov.
+              {locale === 'sv' ? 'Vi på Flyttella tror på att bygga långsiktiga relationer genom att leverera hög kvalitet, punktlighet och lyhörd service. Vår filosofi är enkel: ingen kund ska känna sig osäker, stressad eller överraskad av dolda kostnader. Därför har vi tagit fram tjänster och arbetsmetoder som är transparenta, kundvänliga och anpassade efter verkliga behov.' : 'We at Flyttella believe in building long-term relationships by delivering high quality, punctuality and responsive service. Our philosophy is simple: no customer should feel uncertain, stressed or surprised by hidden costs. That\'s why we have developed services and working methods that are transparent, customer-friendly and adapted to real needs.'}
             </p>
             
             {/* Image after "anpassade efter verkliga behov" */}
             <div className="my-6 flex justify-center">
               <img 
                 src="/under_flytt.jpg" 
-                alt="Under flytt - Flyttella team i arbete" 
+                alt={locale === 'sv' ? 'Under flytt - Flyttella team i arbete' : 'During move - Flyttella team at work'} 
                 className="w-full h-64 md:h-80 rounded-3xl overflow-hidden object-cover"
                 style={{ objectPosition: 'center 80%' }}
               />
             </div>
             <p className="mb-8 md:mb-10">
-              Oavsett om du ska flytta inom Stockholm eller behöver städhjälp efter en renovering eller försäljning, kan du lita på att vi tar hand om det med samma noggrannhet och engagemang varje gång. Vi är stolta över det rykte vi har byggt upp – ett rykte som vilar på förtroende, god kommunikation och ett genuint engagemang för varje kunds unika situation.
+              {locale === 'sv' ? 'Oavsett om du ska flytta inom Stockholm eller behöver städhjälp efter en renovering eller försäljning, kan du lita på att vi tar hand om det med samma noggrannhet och engagemang varje gång. Vi är stolta över det rykte vi har byggt upp – ett rykte som vilar på förtroende, god kommunikation och ett genuint engagemang för varje kunds unika situation.' : 'Whether you are moving within Stockholm or need cleaning help after a renovation or sale, you can trust that we take care of it with the same care and commitment every time. We are proud of the reputation we have built – a reputation that rests on trust, good communication and a genuine commitment to each customer\'s unique situation.'}
             </p>
             
             {/* Image after fifth paragraph */}
             <div className="mt-6 flex justify-center">
               <img 
                 src="/flyttella-logo.png" 
-                alt="Flyttella logo" 
+                alt={locale === 'sv' ? 'Flyttella logotyp' : 'Flyttella logo'} 
                 className="w-64 md:w-80 h-auto rounded-lg"
               />
             </div>
@@ -651,8 +653,8 @@ export default function OmOssPage() {
 
       {/* Proud of our reviews section */}
       <div className="max-w-4xl mx-auto px-4 text-center mb-2">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Vi är stolta över våra kundomdömen</h2>
-        <p className="text-lg text-gray-700 -mb-2">Vi arbetar hårt för att varje kund ska bli nöjd – och det syns i våra recensioner. Läs vad våra kunder tycker om oss!</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Vi är stolta över våra kundomdömen' : 'We are proud of our customer reviews'}</h2>
+        <p className="text-lg text-gray-700 -mb-2">{locale === 'sv' ? 'Vi arbetar hårt för att varje kund ska bli nöjd – och det syns i våra recensioner. Läs vad våra kunder tycker om oss!' : 'We work hard to ensure every customer is satisfied – and it shows in our reviews. Read what our customers think about us!'}</p>
       </div>
       <ReviewsWidget hideTitle={true} />
 
@@ -685,7 +687,7 @@ export default function OmOssPage() {
                 <div className="flex flex-col items-stretch gap-4 h-full">
                   {/* Features content */}
                   <div className="flex-[2] w-full">
-                    <h2 className="text-2xl font-bold text-white mb-4 text-center">Våra förmåner</h2>
+                    <h2 className="text-2xl font-bold text-white mb-4 text-center">{locale === 'sv' ? 'Våra förmåner' : 'Our benefits'}</h2>
                     
                     {/* Mobile: Sliding carousel */}
                     <div className="relative overflow-hidden rounded-xl" onTouchStart={handleFeatureTouchStart} onTouchMove={handleFeatureTouchMove} onTouchEnd={handleFeatureTouchEnd}>
@@ -696,56 +698,56 @@ export default function OmOssPage() {
                           {[
                             {
                               icon: "💰",
-                              title: "Fast pris",
-                              description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                              title: locale === 'sv' ? "Fast pris" : "Fixed price",
+                              description: locale === 'sv' ? "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser" : "No surprises - we offer both fixed prices and the possibility of ongoing prices",
                               link: "/priser"
                             },
                             {
                               icon: "📋",
-                              title: "RUT-avdrag",
-                              description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                              title: locale === 'sv' ? "RUT-avdrag" : "RUT deduction",
+                              description: locale === 'sv' ? "Vi hanterar allt pappersarbete för RUT-avdrag" : "We handle all paperwork for RUT deduction",
                               link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
                             },
                             {
                               icon: "📦",
-                              title: "Fritt lån av kartonger i 4 veckor",
-                              description: "Specialgjorda flyttkartonger med vår logga",
+                              title: locale === 'sv' ? "Fritt lån av kartonger i 4 veckor" : "Free loan of boxes for 4 weeks",
+                              description: locale === 'sv' ? "Specialgjorda flyttkartonger med vår logga" : "Custom-made moving boxes with our logo",
                               link: "/kartonger"
                             },
                             {
                               icon: "⏰",
-                              title: "Omboka eller avboka kostnadsfritt",
-                              description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                              title: locale === 'sv' ? "Omboka eller avboka kostnadsfritt" : "Rebook or cancel for free",
+                              description: locale === 'sv' ? "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten" : "Rebook or cancel for free up to 24 hours before the move",
                               link: "/avbokning"
                             },
                             {
                               icon: "✅",
-                              title: "Nöjd kund garanti",
-                              description: "14 dagars garanti på flyttstädning",
+                              title: locale === 'sv' ? "Nöjd kund garanti" : "Satisfied customer guarantee",
+                              description: locale === 'sv' ? "14 dagars garanti på flyttstädning" : "14 day guarantee on moving cleaning",
                               link: "/garanti"
                             },
                             {
                               icon: "🔒",
-                              title: "Trafiktillstånd och försäkring",
-                              description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                              title: locale === 'sv' ? "Trafiktillstånd och försäkring" : "Traffic permit and insurance",
+                              description: locale === 'sv' ? "Alla nödvändiga tillstånd och försäkringar på plats" : "All necessary permits and insurance in place",
                               link: "/tillstand"
                             },
                             {
                               icon: "🎓",
-                              title: "Utbildad personal",
-                              description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                              title: locale === 'sv' ? "Utbildad personal" : "Trained staff",
+                              description: locale === 'sv' ? "Vår personal är utbildad för att säkerställa högsta kvalitet och service." : "Our staff is trained to ensure the highest quality and service.",
                               link: "/om-oss"
                             },
                             {
                               icon: "📈",
-                              title: "Ledningssystem",
-                              description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                              title: locale === 'sv' ? "Ledningssystem" : "Management system",
+                              description: locale === 'sv' ? "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." : "We work with effective management systems to guarantee structure and quality.",
                               link: "/om-oss"
                             },
                             {
                               icon: "🦺",
-                              title: "Arbetsmiljö",
-                              description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                              title: locale === 'sv' ? "Arbetsmiljö" : "Work environment",
+                              description: locale === 'sv' ? "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." : "We prioritize a safe and secure work environment for both customers and staff.",
                               link: "/om-oss"
                             }
                           ].map((feature, index) => (
@@ -793,7 +795,7 @@ export default function OmOssPage() {
                         {/* Arrow controls */}
                         <button
                           type="button"
-                          aria-label="Föregående"
+                          aria-label={locale === 'sv' ? 'Föregående' : 'Previous'}
                           onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }}
                           className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
                         >
@@ -803,7 +805,7 @@ export default function OmOssPage() {
                         </button>
                         <button
                           type="button"
-                          aria-label="Nästa"
+                          aria-label={locale === 'sv' ? 'Nästa' : 'Next'}
                           onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }}
                           className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
                         >
@@ -1030,20 +1032,19 @@ export default function OmOssPage() {
         {/* Team Section */}
         <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-lg shadow-lg p-8 text-white mb-16">
           <h2 className="text-2xl font-bold mb-6">
-            Vårt team
+            {locale === 'sv' ? 'Vårt team' : 'Our team'}
           </h2>
           <p className="text-white/90 mb-6">
-            Våra medarbetare är hjärtat i vår verksamhet. Vi investerar i kontinuerlig utbildning 
-            och utveckling för att säkerställa att vi alltid levererar den bästa möjliga servicen.
+            {locale === 'sv' ? 'Våra medarbetare är hjärtat i vår verksamhet. Vi investerar i kontinuerlig utbildning och utveckling för att säkerställa att vi alltid levererar den bästa möjliga servicen.' : 'Our employees are the heart of our business. We invest in continuous training and development to ensure we always deliver the best possible service.'}
           </p>
           <ul className="grid md:grid-cols-2 gap-4">
             {[
-              "Erfarna flyttare",
-              "Utbildade städare",
-              "Certifierade specialister",
-              "Serviceinriktade medarbetare",
-              "Kvalitetsansvariga",
-              "Kundservice-team"
+              locale === 'sv' ? "Erfarna flyttare" : "Experienced movers",
+              locale === 'sv' ? "Utbildade städare" : "Trained cleaners",
+              locale === 'sv' ? "Certifierade specialister" : "Certified specialists",
+              locale === 'sv' ? "Serviceinriktade medarbetare" : "Service-oriented employees",
+              locale === 'sv' ? "Kvalitetsansvariga" : "Quality responsible",
+              locale === 'sv' ? "Kundservice-team" : "Customer service team"
             ].map((item, index) => (
               <li key={index} className="flex items-start">
                 <svg className="w-5 h-5 text-white mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1058,24 +1059,23 @@ export default function OmOssPage() {
         {/* CTA Section */}
         <div className="text-center">
           <h2 className="text-3xl font-bold text-[#0F172A] mb-6">
-            Låt oss hjälpa dig med dina behov
+            {locale === 'sv' ? 'Låt oss hjälpa dig med dina behov' : 'Let us help you with your needs'}
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Vi är redo att hjälpa dig med din flytt, städning eller med någon av våra andra tjänster. Kontakta oss för en 
-            kostnadsfri offert och personlig rådgivning.
+            {locale === 'sv' ? 'Vi är redo att hjälpa dig med din flytt, städning eller med någon av våra andra tjänster. Kontakta oss för en kostnadsfri offert och personlig rådgivning.' : 'We are ready to help you with your move, cleaning or with any of our other services. Contact us for a free quote and personal consultation.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
               href="/offert" 
               className="inline-block bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity font-medium"
             >
-              Få offert
+              {locale === 'sv' ? 'Få offert' : 'Get quote'}
             </Link>
             <Link 
               href="/kontakt" 
               className="inline-block bg-white border-2 border-[#0F172A] text-[#0F172A] px-8 py-3 rounded-full hover:bg-[#0F172A] hover:text-white transition-colors font-medium"
             >
-              Kontakta oss
+              {locale === 'sv' ? 'Kontakta oss' : 'Contact us'}
             </Link>
           </div>
         </div>

@@ -175,7 +175,7 @@ export default function DodsboStadningPage() {
     { name: 'Vasastan', slug: 'vasastan' }
   ];
 
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <main className="overflow-hidden">
@@ -198,10 +198,10 @@ export default function DodsboStadningPage() {
               />
               <div className="relative z-10 px-4 text-center">
                 <h1 className="text-4xl font-bold mb-4">
-                  Professionell dödsbostädning i Stockholm
+                  {locale === 'sv' ? 'Professionell dödsbostädning i Stockholm' : 'Professional Estate Cleaning in Stockholm'}
                 </h1>
                 <p className="text-xl mb-6">
-                  Omsorgsfullt genomförd med respekt och trygghet
+                  {locale === 'sv' ? 'Omsorgsfullt genomförd med respekt och trygghet' : 'Carefully carried out with respect and security'}
                 </p>
               </div>
             </div>
@@ -216,15 +216,15 @@ export default function DodsboStadningPage() {
               <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: 'url(/cleaning_background.png)' }} />
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
-                  <h1 className="text-5xl md:text-6xl font-bold mb-8">Professionell dödsbostädning i Stockholm</h1>
-                  <p className="text-2xl md:text-3xl mb-12">Omsorgsfullt genomförd med respekt och trygghet</p>
-                  <p className="text-lg text-white/90">Sortering, grov- och finstädning samt iordningställande inför försäljning eller överlåtelse. Vi hjälper dig genom hela processen.</p>
+                  <h1 className="text-5xl md:text-6xl font-bold mb-8">{locale === 'sv' ? 'Professionell dödsbostädning i Stockholm' : 'Professional Estate Cleaning in Stockholm'}</h1>
+                  <p className="text-2xl md:text-3xl mb-12">{locale === 'sv' ? 'Omsorgsfullt genomförd med respekt och trygghet' : 'Carefully carried out with respect and security'}</p>
+                  <p className="text-lg text-white/90">{locale === 'sv' ? 'Sortering, grov- och finstädning samt iordningställande inför försäljning eller överlåtelse. Vi hjälper dig genom hela processen.' : 'Sorting, rough and fine cleaning and preparation for sale or transfer. We help you through the entire process.'}</p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
                   {selectedServiceType === 'flyttstad' ? (
                     <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
                   ) : (
-                    <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
+                    <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} cleaningCardSubtitle={locale === 'sv' ? 'Professionell dödsbostädning – sortering, grov- och finstädning inför försäljning eller överlåtelse' : 'Professional estate cleaning – sorting, rough and fine cleaning before sale or transfer'} />
                   )}
                 </div>
               </div>
@@ -250,7 +250,7 @@ export default function DodsboStadningPage() {
                     }}
                     className="flex flex-col items-center text-white hover:text-white/80 transition-colors group"
                   >
-                    <span className="text-sm font-medium mb-2">Läs mer</span>
+                    <span className="text-sm font-medium mb-2">{locale === 'sv' ? 'Läs mer' : 'Read more'}</span>
                     <motion.div
                       animate={{ y: [0, 5, 0] }}
                       transition={{ duration: 2, repeat: Infinity }}
@@ -281,10 +281,10 @@ export default function DodsboStadningPage() {
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">Storstädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Grundlig storstädning med fokus på kök, badrum och svåråtkomliga ytor. Passar bra inför visning och överlåtelse.</p>
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Storstädning' : 'Deep Cleaning'}</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Grundlig storstädning med fokus på kök, badrum och svåråtkomliga ytor. Passar bra inför visning och överlåtelse.' : 'Thorough deep cleaning with focus on kitchen, bathroom and hard-to-reach areas. Perfect for viewing and transfer.'}</p>
                       <div className="mt-auto relative">
-                        <Link href="/storstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                        <Link href="/storstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
                     </div>
                   </div>
@@ -293,10 +293,10 @@ export default function DodsboStadningPage() {
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧱</span><h3 className="text-xl font-bold text-white">Byggstädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Effektiv byggstädning efter renovering – grov- och finstädning för ett inflyttningsklart resultat.</p>
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧱</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Byggstädning' : 'Construction Cleaning'}</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Effektiv byggstädning efter renovering – grov- och finstädning för ett inflyttningsklart resultat.' : 'Effective construction cleaning after renovation – rough and fine cleaning for a move-in ready result.'}</p>
                       <div className="mt-auto relative">
-                        <Link href="/byggstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                        <Link href="/byggstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
                     </div>
                   </div>
@@ -305,10 +305,10 @@ export default function DodsboStadningPage() {
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🕊️</span><h3 className="text-xl font-bold text-white">Dödsbostädning</h3></div>
-                      <p className="text-sm text-gray-100 mb-4 relative">Omsorgsfull tömning och städning – med respekt i varje steg. Vi hjälper till med sortering och iordningställande.</p>
+                      <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🕊️</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Dödsbostädning' : 'Estate Cleaning'}</h3></div>
+                      <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Omsorgsfull tömning och städning – med respekt i varje steg. Vi hjälper till med sortering och iordningställande.' : 'Caring emptying and cleaning – with respect in every step. We help with sorting and preparation.'}</p>
                       <div className="mt-auto relative">
-                        <Link href="/dodsbo-stadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                        <Link href="/dodsbo-stadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                       </div>
                     </div>
                   </div>
@@ -324,7 +324,7 @@ export default function DodsboStadningPage() {
                   </div>
                 </div>
 
-                {([
+                {(locale === 'sv' ? [
                   {
                     title: 'Vad är dödsbostädning?',
                     content:
@@ -385,6 +385,67 @@ export default function DodsboStadningPage() {
                       'Boka enkelt via formuläret högst upp på sidan: fyll i dina uppgifter, välj datum och beskriv omfattningen. Du får pris och bekräftelse direkt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av omfattning och tidsplan. Kostnadsfri ombokning/avbokning upp till 24 timmar innan.',
                     icon: '📅'
                   }
+                ] : [
+                  {
+                    title: 'What is Estate Cleaning?',
+                    content:
+                      'Estate cleaning involves a careful and thorough cleaning of an estate before sale, transfer or return. We help with planning and structure, guidance in sorting and simpler emptying by agreement. The cleaning itself includes both rough and fine cleaning according to clear checklists – kitchen, bathroom and all rooms – as well as preparation of surfaces for a tidy, dignified impression. The goal is to relieve you and make the next step as easy as possible.',
+                    icon: '🕊️'
+                  },
+                  {
+                    title: '',
+                    content: (
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
+                        <img src="/fonsterputs_intro.png" alt="Support in a difficult time" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                      </div>
+                    ),
+                    icon: ''
+                  },
+                  {
+                    title: 'Support in a Difficult Time',
+                    content:
+                      'Taking care of an estate can be heavy. That\'s why we work with a calm, respectful approach and clear steps – from planning and structure to practical solutions that relieve and reduce stress throughout the entire process.',
+                    icon: '🤝'
+                  },
+                  {
+                    title: '',
+                    content: (
+                      <>
+                        <div className="my-16 text-center">
+                          <p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>
+                            "The cleaning was done respectfully and efficiently – it made the whole process easier."
+                          </p>
+                          <p className="italic text-gray-700 mt-2">- Diana</p>
+                        </div>
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0F172A] mb-4 md:mb-6 text-left md:text-center px-4">What does Estate Cleaning Cost?</h3>
+                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">
+                          The price depends on the size of the property, scope of emptying and degree of cleaning. With 50% RUT deduction on labor costs, the service becomes cost-effective. Request a free quote – you get a price quickly and easily. We always provide a fixed, transparent price without hidden fees.
+                        </p>
+                      </>
+                    ),
+                    icon: '💸'
+                  },
+                  {
+                    title: '',
+                    content: (
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
+                        <img src="/cleaning_background.png" alt="Estate Cleaning – what is included" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                      </div>
+                    ),
+                    icon: ''
+                  },
+                  {
+                    title: 'What is Included in Estate Cleaning?',
+                    content:
+                      'Estate cleaning includes rough and fine cleaning of all rooms, kitchen and bathroom, wiping of moldings, doors and handles, polishing of mirrors and visible surfaces, vacuuming and mopping of floors and careful review of details. We can also help with simpler disposal in connection with cleaning (by agreement). Eco-friendly products are used throughout.',
+                    icon: '🧹'
+                  },
+                  {
+                    title: 'How do I Book Estate Cleaning?',
+                    content:
+                      'Book easily via the form at the top of the page: fill in your details, choose date and describe the scope. You get a price and confirmation immediately. We contact you the same day or next business day to coordinate scope and schedule. Free rescheduling/cancellation up to 24 hours before.',
+                    icon: '📅'
+                  }
                 ] as { title: string; content: any; icon: string }[]).map((section, index) => (
                   <motion.div key={index} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
                     <div className="max-w-6xl mx-auto">
@@ -429,11 +490,11 @@ export default function DodsboStadningPage() {
               {/* Mobile image above title to match Bohagsflytt */}
               <div className="lg:hidden px-4 mb-6 -mx-8">
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
-                  <img src="/omflyttella_flyttstad.png" alt="Om Flyttella" className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                  <img src="/omflyttella_flyttstad.png" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
                 </div>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}</h3>
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 <motion.div 
                   className="hidden lg:block w-full lg:w-1/3 relative lg:-ml-8 lg:pr-8" 
@@ -446,7 +507,7 @@ export default function DodsboStadningPage() {
                   <div className="relative h-80 lg:h-full w-full overflow-hidden rounded-2xl">
                     <img 
                       src="/omflyttella_flyttstad.png" 
-                      alt="Om Flyttella" 
+                      alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} 
                       className="object-cover rounded-2xl w-full h-full" 
                       style={{ objectPosition: '80% 25%', transform: 'scale(1.10)' }} 
                     />
@@ -462,31 +523,31 @@ export default function DodsboStadningPage() {
                 >
                   <div className="hidden lg:block space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en städfirma i Stockholm med lång erfarenhet av dödsbostädning, flyttstädning och hemstädning. Vi erbjuder fasta priser, tydlig kommunikation och personlig service i hela Storstockholm.
+                      {locale === 'sv' ? 'Flyttella är en städfirma i Stockholm med lång erfarenhet av dödsbostädning, flyttstädning och hemstädning. Vi erbjuder fasta priser, tydlig kommunikation och personlig service i hela Storstockholm.' : 'Flyttella is a cleaning company in Stockholm with long experience in estate cleaning, move-out cleaning and home cleaning. We offer fixed prices, clear communication and personal service throughout Greater Stockholm.'}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vårt arbetssätt bygger på struktur och omtanke. Vi planerar tillsammans, arbetar efter tydliga checklistor och använder skonsamma, miljövänliga produkter. Resultatet är ett prydligt och värdigt hem – redo för nästa steg.
+                      {locale === 'sv' ? 'Vårt arbetssätt bygger på struktur och omtanke. Vi planerar tillsammans, arbetar efter tydliga checklistor och använder skonsamma, miljövänliga produkter. Resultatet är ett prydligt och värdigt hem – redo för nästa steg.' : 'Our approach is based on structure and care. We plan together, work according to clear checklists and use gentle, eco-friendly products. The result is a tidy and dignified home – ready for the next step.'}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Vi finns nära till hands genom hela processen med snabb återkoppling, flexibla tider och en lösningsorienterad dialog. Du får pris direkt, enkel bokning och trygg uppföljning – så att du kan fokusera på det som är viktigast.
+                      {locale === 'sv' ? 'Vi finns nära till hands genom hela processen med snabb återkoppling, flexibla tider och en lösningsorienterad dialog. Du får pris direkt, enkel bokning och trygg uppföljning – så att du kan fokusera på det som är viktigast.' : 'We are close at hand throughout the entire process with quick feedback, flexible times and a solution-oriented dialogue. You get a price immediately, easy booking and safe follow-up – so you can focus on what is most important.'}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Våra höga kundomdömen speglar vårt engagemang och vår kvalitet. Vi strävar efter att vara pålitliga, varsamma och noggranna i varje uppdrag – oavsett omfattning.
+                      {locale === 'sv' ? 'Våra höga kundomdömen speglar vårt engagemang och vår kvalitet. Vi strävar efter att vara pålitliga, varsamma och noggranna i varje uppdrag – oavsett omfattning.' : 'Our high customer ratings reflect our commitment and quality. We strive to be reliable, careful and thorough in every assignment – regardless of scope.'}
                     </p>
                   </div>
                   <div className="lg:hidden space-y-4">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Flyttella är en städfirma i Stockholm med erfarenhet av dödsbostädning, flyttstädning och hemstädning.
+                      {locale === 'sv' ? 'Flyttella är en städfirma i Stockholm med erfarenhet av dödsbostädning, flyttstädning och hemstädning.' : 'Flyttella is a cleaning company in Stockholm with experience in estate cleaning, move-out cleaning and home cleaning.'}
                     </p>
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                      Fasta priser, tydliga checklistor och personlig service. Snabb återkoppling och flexibla tider – vi finns nära genom hela processen.
+                      {locale === 'sv' ? 'Fasta priser, tydliga checklistor och personlig service. Snabb återkoppling och flexibla tider – vi finns nära genom hela processen.' : 'Fixed prices, clear checklists and personal service. Quick feedback and flexible times – we are close throughout the entire process.'}
                     </p>
                     {!showFullAboutText && (
                       <button
                         onClick={() => setShowFullAboutText(true)}
                         className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                       >
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -506,14 +567,14 @@ export default function DodsboStadningPage() {
                         className="space-y-4 mt-4"
                       >
                         <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                          Vi tar hand om städningen med respekt och noggrannhet. Smidig offert, enkel bokning och personlig kontakt genom hela processen. Tydliga steg och snabb återkoppling gör allt enklare.
+                          {locale === 'sv' ? 'Vi tar hand om städningen med respekt och noggrannhet. Smidig offert, enkel bokning och personlig kontakt genom hela processen. Tydliga steg och snabb återkoppling gör allt enklare.' : 'We handle the cleaning with respect and precision. Smooth quote, easy booking and personal contact throughout the entire process. Clear steps and quick feedback make everything easier.'}
                         </p>
                         <motion.div className="pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
                           <Link 
                             href="/om-oss" 
                             className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                           >
-                            Läs mer om oss
+                            {locale === 'sv' ? 'Läs mer om oss' : 'Read more about us'}
                             <svg 
                               xmlns="http://www.w3.org/2000/svg" 
                               className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -537,11 +598,11 @@ export default function DodsboStadningPage() {
         {/* Vad tycker våra kunder om oss? */}
         <ReviewsWidget 
           location="Stockholm"
-          title="Vad tycker våra kunder om oss?"
-          subtitle="Pålitlig dödsbostädning i Stockholm"
-          description="Omsorgsfull dödsbostädning i Stockholm inför försäljning eller överlåtelse – fast pris och 50% RUT‑avdrag. Punktliga städare och höga betyg. Läs vad våra kunder tycker om vår dödsbostädning i Stockholm."
-          badgeAlt="Erfarenhet av dödsbostädning i Stockholm"
-          arrowText="Läs vad våra kunder säger om vår dödsbostädning"
+          title={locale === 'sv' ? 'Vad tycker våra kunder om oss?' : 'What do our customers think of us?'}
+          subtitle={locale === 'sv' ? 'Pålitlig dödsbostädning i Stockholm' : 'Reliable Estate Cleaning in Stockholm'}
+          description={locale === 'sv' ? 'Omsorgsfull dödsbostädning i Stockholm inför försäljning eller överlåtelse – fast pris och 50% RUT‑avdrag. Punktliga städare och höga betyg. Läs vad våra kunder tycker om vår dödsbostädning i Stockholm.' : 'Caring estate cleaning in Stockholm before sale or transfer – fixed price and 50% RUT deduction. Punctual cleaners and high ratings. Read what our customers think about our estate cleaning in Stockholm.'}
+          badgeAlt={locale === 'sv' ? 'Erfarenhet av dödsbostädning i Stockholm' : 'Experience in Estate Cleaning in Stockholm'}
+          arrowText={locale === 'sv' ? 'Läs vad våra kunder säger om vår dödsbostädning' : 'Read what our customers say about our estate cleaning'}
         />
 
         {/* CTA: Redo att börja din dödsbostädning? */}
@@ -552,14 +613,14 @@ export default function DodsboStadningPage() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 relative z-10 mb-3 md:mb-4">
                 <span className="text-3xl md:text-4xl">🕊️</span>
                 <div className="text-center md:text-left">
-                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">Redo att börja din dödsbostädning?</h3>
-                  <p className="text-base md:text-lg text-gray-100 leading-snug">Få en snabb och gratis offert</p>
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">{locale === 'sv' ? 'Redo att börja din dödsbostädning?' : 'Ready to start your estate cleaning?'}</h3>
+                  <p className="text-base md:text-lg text-gray-100 leading-snug">{locale === 'sv' ? 'Få en snabb och gratis offert' : 'Get a quick and free quote'}</p>
                 </div>
               </div>
               <div className="relative z-10 text-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                   <Link href="/offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
-                    Få gratis offert
+                    {locale === 'sv' ? 'Få gratis offert' : 'Get free quote'}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -574,21 +635,21 @@ export default function DodsboStadningPage() {
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Våra Städtjänster</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{locale === 'sv' ? 'Våra Städtjänster' : 'Our Cleaning Services'}</h2>
               <div className="grid grid-cols-1 gap-12">
                 {/* Flyttstädning Card */}
                 <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-12 shadow-lg text-white flex flex-col h-full md:min-h-[340px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                     <span className="text-4xl md:text-6xl">🧽</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Flyttstädning</h3>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">{locale === 'sv' ? 'Flyttstädning' : 'Move-out Cleaning'}</h3>
                   </div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Grundlig flyttstädning enligt branschstandard – fast pris, 14 dagars garanti och full RUT‑hantering.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar enligt komplett checklista: alla rum, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Utrymmen bakom vitvaror städas där det är åtkomligt.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{locale === 'sv' ? 'Grundlig flyttstädning enligt branschstandard – fast pris, 14 dagars garanti och full RUT‑hantering.' : 'Thorough move-out cleaning according to industry standard – fixed price, 14-day guarantee and full RUT handling.'}</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{locale === 'sv' ? 'Vi städar enligt komplett checklista: alla rum, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Utrymmen bakom vitvaror städas där det är åtkomligt.' : 'We clean according to complete checklist: all rooms, kitchen (incl. cabinets and drawers inside), appliances, bathroom and toilets. Spaces behind appliances are cleaned where accessible.'}</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </motion.div>
@@ -600,14 +661,14 @@ export default function DodsboStadningPage() {
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                     <span className="text-4xl md:text-6xl">🕊️</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Dödsbostädning</h3>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">{locale === 'sv' ? 'Dödsbostädning' : 'Estate Cleaning'}</h3>
                   </div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Omsorgsfull städning av dödsbo – sortering, grov- och finstädning inför försäljning eller överlåtelse.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi arbetar metodiskt och respektfullt enligt tydliga checklistor. Möjlighet till tillval som fönsterputs och extra grovrengöring.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{locale === 'sv' ? 'Omsorgsfull städning av dödsbo – sortering, grov- och finstädning inför försäljning eller överlåtelse.' : 'Caring cleaning of estate – sorting, rough and fine cleaning before sale or transfer.'}</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{locale === 'sv' ? 'Vi arbetar metodiskt och respektfullt enligt tydliga checklistor. Möjlighet till tillval som fönsterputs och extra grovrengöring.' : 'We work methodically and respectfully according to clear checklists. Option for extras like window cleaning and extra rough cleaning.'}</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/dodsbo-stadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </motion.div>
@@ -619,14 +680,14 @@ export default function DodsboStadningPage() {
                   <motion.div className="absolute inset-0 opacity-10 pointer-events-none" initial={{ backgroundPosition: '0% 0%' }} animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }} transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }} style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                   <div className="flex items-center gap-4 mb-6 md:mb-8 relative">
                     <span className="text-4xl md:text-6xl">🏡</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white">Hemstädning</h3>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white">{locale === 'sv' ? 'Hemstädning' : 'Home Cleaning'}</h3>
                   </div>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">Regelbunden hemstädning – veckovis, varannan vecka eller månadsvis. Fast pris och 50% RUT‑avdrag.</p>
-                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">Vi städar efter tydliga checklistor: alla rum, kök och badrum. Samma städare om möjligt för kontinuitet och trygghet. Miljövänliga produkter och pålitliga rutiner.</p>
+                  <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 relative">{locale === 'sv' ? 'Regelbunden hemstädning – veckovis, varannan vecka eller månadsvis. Fast pris och 50% RUT‑avdrag.' : 'Regular home cleaning – weekly, bi-weekly or monthly. Fixed price and 50% RUT deduction.'}</p>
+                  <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{locale === 'sv' ? 'Vi städar efter tydliga checklistor: alla rum, kök och badrum. Samma städare om möjligt för kontinuitet och trygghet. Miljövänliga produkter och pålitliga rutiner.' : 'We clean according to clear checklists: all rooms, kitchen and bathroom. Same cleaner when possible for continuity and security. Eco-friendly products and reliable routines.'}</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                       <Link href="/hemstadning" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-base md:text-lg">
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>
                     </motion.div>
@@ -641,14 +702,14 @@ export default function DodsboStadningPage() {
         <motion.section className="py-12 md:py-24 bg-white text-[#0F172A] relative overflow-hidden" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <motion.h2 className="text-3xl md:text-4xl font-bold mb-6 hidden md:block" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }} id="upptack-tjanster">Våra tjänster</motion.h2>
+              <motion.h2 className="text-3xl md:text-4xl font-bold mb-6 hidden md:block" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }} id="upptack-tjanster">{locale === 'sv' ? 'Våra tjänster' : 'Our Services'}</motion.h2>
               <motion.p className="text-lg md:text-xl mb-8 text-[#0F172A]/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0 }}>
-                Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din vardag enklare.
+                {locale === 'sv' ? 'Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din vardag enklare.' : 'We offer a complete range of moving and cleaning services to make your everyday life easier.'}
               </motion.p>
               <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.2 }}>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link href="/tjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                    Se alla våra flyttjänster
+                    {locale === 'sv' ? 'Se alla våra flyttjänster' : 'See all our moving services'}
                     <motion.svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </motion.svg>
@@ -656,7 +717,7 @@ export default function DodsboStadningPage() {
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link href="/stadtjanster" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group">
-                    Se alla våra städtjänster
+                    {locale === 'sv' ? 'Se alla våra städtjänster' : 'See all our cleaning services'}
                     <motion.svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </motion.svg>
@@ -671,10 +732,10 @@ export default function DodsboStadningPage() {
         <section className="md:hidden py-8 bg-white">
           <div className="mx-auto px-4">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">Våra förmåner</h2>
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">{locale === 'sv' ? 'Våra förmåner' : 'Our Benefits'}</h2>
               <div className="relative overflow-hidden rounded-xl" onTouchStart={(e)=>{featureTouchStartXRef.current=e.touches[0].clientX; if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);}} onTouchMove={(e)=>featureTouchCurrentXRef.current=e.touches[0].clientX} onTouchEnd={()=>{ if (featureTouchStartXRef.current!=null && featureTouchCurrentXRef.current!=null){ const dx=featureTouchCurrentXRef.current-featureTouchStartXRef.current; const th=50; if(Math.abs(dx)>th){ if(dx<0){ setCurrentFeatureCard((prev)=>(prev+1)%totalFeatureCards);} else { setCurrentFeatureCard((prev)=>(prev-1+totalFeatureCards)%totalFeatureCards);} restartFeatureAutoSlide(); } } featureTouchStartXRef.current=null; featureTouchCurrentXRef.current=null; }}>
                 <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}>
-                  {[
+                  {(locale === 'sv' ? [
                     { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                     { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
                     { icon: '⚡', title: 'Snabb offert', description: 'Få prisförlsag snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#dodsbo-offert' },
@@ -684,7 +745,17 @@ export default function DodsboStadningPage() {
                     { icon: '🧴', title: 'Miljövänliga produkter', description: 'Skonsamma och miljövänliga rengöringsmedel', link: '/om-oss' },
                     { icon: '📈', title: 'Ledningssystem', description: 'Effektiva rutiner för kvalitet och struktur', link: '/om-oss' },
                     { icon: '🦺', title: 'Arbetsmiljö', description: 'Trygg arbetsmiljö för både kunder och personal', link: '/om-oss' }
-                  ].map((feature, index) => (
+                  ] : [
+                    { icon: '💰', title: 'Fixed Price', description: 'No surprises – fixed prices and option for extras', link: '/priser' },
+                    { icon: '📋', title: 'RUT Deduction', description: 'We handle all paperwork for RUT deduction', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
+                    { icon: '⚡', title: 'Quick Quote', description: 'Get price proposal quickly and easily – Fill out the form at the top of the page', link: '#dodsbo-offert' },
+                    { icon: '⏰', title: 'Reschedule or Cancel', description: 'Reschedule/cancel free of charge up to 24 hours before', link: '/avbokning' },
+                    { icon: '🔒', title: 'Permits and Insurance', description: 'All necessary permits and insurance in place', link: '/tillstand' },
+                    { icon: '🎓', title: 'Trained Staff', description: 'Trained employees and quality-assured routines', link: '/om-oss' },
+                    { icon: '🧴', title: 'Eco-friendly Products', description: 'Gentle and eco-friendly cleaning products', link: '/om-oss' },
+                    { icon: '📈', title: 'Management System', description: 'Effective routines for quality and structure', link: '/om-oss' },
+                    { icon: '🦺', title: 'Work Environment', description: 'Safe work environment for both customers and staff', link: '/om-oss' }
+                  ]).map((feature, index) => (
                     <div key={feature.icon} className="w-full flex-shrink-0">
                       <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
                         <div className="flex items-start gap-3 h-full">
@@ -692,9 +763,9 @@ export default function DodsboStadningPage() {
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm mb-2">{feature.description}</p>
-                            {feature.title === 'RUT-avdrag' ? (
+                            {feature.title === 'RUT-avdrag' || feature.title === 'RUT Deduction' ? (
                               <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center">
-                                Läs mer
+                                {locale === 'sv' ? 'Läs mer' : 'Read more'}
                                 <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
@@ -709,10 +780,10 @@ export default function DodsboStadningPage() {
                   ))}
                 </div>
                 {/* Arrow controls */}
-                <button type="button" aria-label="Föregående" onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                <button type="button" aria-label={locale === 'sv' ? 'Föregående' : 'Previous'} onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
                 </button>
-                <button type="button" aria-label="Nästa" onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                <button type="button" aria-label={locale === 'sv' ? 'Nästa' : 'Next'} onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
                 </button>
               </div>
@@ -723,7 +794,7 @@ export default function DodsboStadningPage() {
         <div className="md:hidden px-4 mt-4">
           <img
             src="/varafarmaner_flyttstad.png"
-            alt="Våra förmåner"
+            alt={locale === 'sv' ? 'Våra förmåner' : 'Our Benefits'}
             className="w-full h-auto rounded-2xl shadow-lg"
           />
         </div>
@@ -734,9 +805,9 @@ export default function DodsboStadningPage() {
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
                 <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
                   <div className="flex-[2] w-full">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra förmåner</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">{locale === 'sv' ? 'Våra förmåner' : 'Our Benefits'}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
-                      {[
+                      {(locale === 'sv' ? [
                         { icon: '💰', title: 'Fast pris', description: 'Inga överraskningar – fasta priser och möjlighet till tillval', link: '/priser' },
                         { icon: '📋', title: 'RUT-avdrag', description: 'Vi hanterar allt pappersarbete för RUT-avdrag', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
                         { icon: '⚡', title: 'Snabb offert', description: 'Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan', link: '#dodsbo-offert' },
@@ -746,7 +817,17 @@ export default function DodsboStadningPage() {
                         { icon: '🧴', title: 'Miljövänliga produkter', description: 'Skonsamma och miljövänliga rengöringsmedel', link: '/om-oss' },
                         { icon: '📈', title: 'Ledningssystem', description: 'Effektiva rutiner för kvalitet och struktur', link: '/om-oss' },
                         { icon: '🦺', title: 'Arbetsmiljö', description: 'Trygg arbetsmiljö för både kunder och personal', link: '/om-oss' }
-                      ].map((feature, i) => (
+                      ] : [
+                        { icon: '💰', title: 'Fixed Price', description: 'No surprises – fixed prices and option for extras', link: '/priser' },
+                        { icon: '📋', title: 'RUT Deduction', description: 'We handle all paperwork for RUT deduction', link: 'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html' },
+                        { icon: '⚡', title: 'Quick Quote', description: 'Get price quickly and easily – Fill out the form at the top of the page', link: '#dodsbo-offert' },
+                        { icon: '⏰', title: 'Reschedule or Cancel', description: 'Reschedule/cancel free of charge up to 24 hours before', link: '/avbokning' },
+                        { icon: '🔒', title: 'Permits and Insurance', description: 'All necessary permits and insurance in place', link: '/tillstand' },
+                        { icon: '🎓', title: 'Trained Staff', description: 'Trained employees and quality-assured routines', link: '/om-oss' },
+                        { icon: '🧴', title: 'Eco-friendly Products', description: 'Gentle and eco-friendly cleaning products', link: '/om-oss' },
+                        { icon: '📈', title: 'Management System', description: 'Effective routines for quality and structure', link: '/om-oss' },
+                        { icon: '🦺', title: 'Work Environment', description: 'Safe work environment for both customers and staff', link: '/om-oss' }
+                      ]).map((feature, i) => (
                         <motion.div key={feature.title} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={i}>
                           <motion.span className="text-2xl md:text-3xl" initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }} animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [-180, 20, 0], color: ['#10B981', '#34D399', '#10B981'] }} transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}>
                             {feature.icon}
@@ -754,9 +835,9 @@ export default function DodsboStadningPage() {
                           <div className="flex-1">
                             <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
                             <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
-                            {feature.title === 'RUT-avdrag' ? (
+                            {feature.title === 'RUT-avdrag' || feature.title === 'RUT Deduction' ? (
                               <a href={feature.link} target={feature.link.startsWith('http') ? '_blank' : undefined} rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center">
-                                Läs mer
+                                {locale === 'sv' ? 'Läs mer' : 'Read more'}
                                 <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                               </a>
                             ) : (
@@ -769,7 +850,7 @@ export default function DodsboStadningPage() {
                   </div>
                   <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
                     <div className="w-full h-full flex items-stretch">
-                      <img src="/cleaning_lady.png" alt="Städpersonal i Stockholm - Flyttella" className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
+                      <img src="/cleaning_lady.png" alt={locale === 'sv' ? 'Städpersonal i Stockholm - Flyttella' : 'Cleaning Staff in Stockholm - Flyttella'} className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
                     </div>
                   </div>
                 </div>
@@ -786,14 +867,14 @@ export default function DodsboStadningPage() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 relative z-10 mb-3 md:mb-4">
                 <span className="text-3xl md:text-4xl">🕊️</span>
                 <div className="text-center md:text-left">
-                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">Redo att börja din dödsbostädning?</h3>
-                  <p className="text-base md:text-lg text-gray-100 leading-snug">Få en snabb och gratis offert</p>
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2 leading-tight">{locale === 'sv' ? 'Redo att börja din dödsbostädning?' : 'Ready to start your estate cleaning?'}</h3>
+                  <p className="text-base md:text-lg text-gray-100 leading-snug">{locale === 'sv' ? 'Få en snabb och gratis offert' : 'Get a quick and free quote'}</p>
                 </div>
               </div>
               <div className="relative z-10 text-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
                   <Link href="/offert" className="inline-flex items-center bg-white text-[#0F172A] px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm md:text-base">
-                    Få gratis offert
+                    {locale === 'sv' ? 'Få gratis offert' : 'Get free quote'}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                   </Link>
                 </motion.div>
@@ -809,78 +890,82 @@ export default function DodsboStadningPage() {
           <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)' }} />
           <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{locale === 'sv' ? 'Vår erfarenhet' : 'Our Experience'}</h3>
               {/* Mobile slider */}
               <div className="md:hidden mt-8">
                 <div className="relative overflow-hidden rounded-xl" onTouchStart={(e) => { expTouchStartXRef.current = e.touches[0].clientX; if (experienceIntervalRef.current) clearInterval(experienceIntervalRef.current); }} onTouchMove={(e) => (expTouchCurrentXRef.current = e.touches[0].clientX)} onTouchEnd={() => { if (expTouchStartXRef.current != null && expTouchCurrentXRef.current != null) { const dx = expTouchCurrentXRef.current - expTouchStartXRef.current; const th = 50; if (Math.abs(dx) > th) { if (dx < 0) { setCurrentExperienceCard((prev) => (prev + 1) % totalExperienceCards); } else { setCurrentExperienceCard((prev) => (prev - 1 + totalExperienceCards) % totalExperienceCards); } restartExperienceAutoSlide(); } } expTouchStartXRef.current = null; expTouchCurrentXRef.current = null; }}>
                   <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentExperienceCard * 100}%)` }}>
-                    {[
+                    {(locale === 'sv' ? [
                       { title: 'Dödsbostädningar', count: 1500 },
                       { title: 'Flyttstädningar', count: 7000 },
                       { title: 'Hemstädningar', count: 5000 }
-                    ].map((card) => (
+                    ] : [
+                      { title: 'Estate Cleanings', count: 1500 },
+                      { title: 'Move-out Cleanings', count: 7000 },
+                      { title: 'Home Cleanings', count: 5000 }
+                    ]).map((card) => (
                       <div key={card.title} className="w-full flex-shrink-0">
                         <div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2">
                           <div className="relative z-10 flex flex-col items-center justify-center h-full">
                             <h4 className="text-lg font-bold mb-1 text-white">{card.title}</h4>
                             <div className="text-4xl font-bold mb-1 text-white"><CountUp end={card.count} duration={2.0} suffix="+" /></div>
-                            <p className="text-white/90 text-sm">uppdrag utförda</p>
+                            <p className="text-white/90 text-sm">{locale === 'sv' ? 'uppdrag utförda' : 'assignments completed'}</p>
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <button type="button" aria-label="Föregående" onClick={() => { setCurrentExperienceCard((prev) => (prev - 1 + totalExperienceCards) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                  <button type="button" aria-label={locale === 'sv' ? 'Föregående' : 'Previous'} onClick={() => { setCurrentExperienceCard((prev) => (prev - 1 + totalExperienceCards) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
                   </button>
-                  <button type="button" aria-label="Nästa" onClick={() => { setCurrentExperienceCard((prev) => (prev + 1) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
+                  <button type="button" aria-label={locale === 'sv' ? 'Nästa' : 'Next'} onClick={() => { setCurrentExperienceCard((prev) => (prev + 1) % totalExperienceCards); restartExperienceAutoSlide(); }} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
                   </button>
                 </div>
               </div>
               {/* Desktop grid */}
               <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-12">
-                {[{ title: 'Dödsbostädningar', count: 1500 }, { title: 'Flyttstädningar', count: 7000 }, { title: 'Hemstädningar', count: 5000 }].map((card, i) => (
+                {(locale === 'sv' ? [{ title: 'Dödsbostädningar', count: 1500 }, { title: 'Flyttstädningar', count: 7000 }, { title: 'Hemstädningar', count: 5000 }] : [{ title: 'Estate Cleanings', count: 1500 }, { title: 'Move-out Cleanings', count: 7000 }, { title: 'Home Cleanings', count: 5000 }]).map((card, i) => (
                   <motion.div key={card.title} className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={variants} transition={{ duration: 0.8, delay: i * 0.25 }}>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full">
                       <motion.h2 className="text-xl font-bold mb-2 text-white">{card.title}</motion.h2>
                       <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white"><CountUp end={card.count} duration={2.5} suffix="+" useEasing enableScrollSpy scrollSpyOnce /></motion.div>
-                      <motion.p className="text-white/90">uppdrag utförda</motion.p>
+                      <motion.p className="text-white/90">{locale === 'sv' ? 'uppdrag utförda' : 'assignments completed'}</motion.p>
                     </div>
                   </motion.div>
                 ))}
               </div>
               <div className="mt-8 flex flex-col items-center justify-center gap-4">
                 <motion.div className="flex-1 max-w-4xl text-center px-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Lokal erfarenhet ger resultat</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Lokal erfarenhet ger resultat' : 'Local Experience Delivers Results'}</h4>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
-                    Vi utför dödsbostädning i hela Stockholm med fokus på trygghet, respekt och struktur. Med tydliga checklistor och erfarna medarbetare levererar vi ett jämnt, prydligt resultat som underlättar nästa steg.
+                    {locale === 'sv' ? 'Vi utför dödsbostädning i hela Stockholm med fokus på trygghet, respekt och struktur. Med tydliga checklistor och erfarna medarbetare levererar vi ett jämnt, prydligt resultat som underlättar nästa steg.' : 'We perform estate cleaning throughout Stockholm with focus on security, respect and structure. With clear checklists and experienced employees, we deliver an even, tidy result that facilitates the next step.'}
                   </p>
                 </motion.div>
                 {/* Badges - pyramid on mobile */}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
                   <div className="md:hidden flex flex-col items-center">
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
-                      <Image src="/1000reviewspicture.png" alt="1000+ positiva recensioner" width={200} height={200} className="object-contain h-36 w-36" />
+                      <Image src="/1000reviewspicture.png" alt={locale === 'sv' ? '1000+ positiva recensioner' : '1000+ positive reviews'} width={200} height={200} className="object-contain h-36 w-36" />
                     </motion.div>
                     <div className="flex items-center justify-center gap-4">
                       <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                        <Image src="/recommendedcompany2.png" alt="Rekommenderad städfirma" width={160} height={160} className="object-contain h-32 w-32" />
+                        <Image src="/recommendedcompany2.png" alt={locale === 'sv' ? 'Rekommenderad städfirma' : 'Recommended cleaning company'} width={160} height={160} className="object-contain h-32 w-32" />
                       </motion.div>
                       <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                        <Image src="/bestinswedenbadge-modified.png" alt="Top 10 städfirma" width={180} height={180} className="object-contain h-28 w-28" />
+                        <Image src="/bestinswedenbadge-modified.png" alt={locale === 'sv' ? 'Top 10 städfirma' : 'Top 10 cleaning company'} width={180} height={180} className="object-contain h-28 w-28" />
                       </motion.div>
                     </div>
                   </div>
                   <div className="hidden md:flex items-center justify-center gap-6">
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                      <Image src="/recommendedcompany2.png" alt="Rekommenderad städfirma" width={240} height={240} className="object-contain h-60 w-60" />
+                      <Image src="/recommendedcompany2.png" alt={locale === 'sv' ? 'Rekommenderad städfirma' : 'Recommended cleaning company'} width={240} height={240} className="object-contain h-60 w-60" />
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                      <Image src="/1000reviewspicture.png" alt="1000+ positiva recensioner" width={260} height={260} className="object-contain h-64 w-64 mt-3" />
+                      <Image src="/1000reviewspicture.png" alt={locale === 'sv' ? '1000+ positiva recensioner' : '1000+ positive reviews'} width={260} height={260} className="object-contain h-64 w-64 mt-3" />
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                      <Image src="/bestinswedenbadge-modified.png" alt="Top 10 städfirma" width={300} height={300} className="object-contain h-48 w-48" />
+                      <Image src="/bestinswedenbadge-modified.png" alt={locale === 'sv' ? 'Top 10 städfirma' : 'Top 10 cleaning company'} width={300} height={300} className="object-contain h-48 w-48" />
                     </motion.div>
                   </div>
                 </div>
@@ -895,33 +980,40 @@ export default function DodsboStadningPage() {
           <div className="mx-auto px-4 md:px-24 relative z-10">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 mb-6 md:mb-8 w-full">
               <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Vår process</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">{locale === 'sv' ? 'Vår process' : 'Our Process'}</h2>
                 <div className="text-center mb-6 md:mb-8 hidden md:block">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    Vår process för dödsbostädning är enkel, trygg och strukturerad. Börja med att fylla i formuläret – du får pris snabbt och enkelt och kan bekräfta digitalt. Vi ringer samma dag eller senast nästkommande vardag för att gå igenom omfattning och tidsplan.
+                    {locale === 'sv' ? 'Vår process för dödsbostädning är enkel, trygg och strukturerad. Börja med att fylla i formuläret – du får pris snabbt och enkelt och kan bekräfta digitalt. Vi ringer samma dag eller senast nästkommande vardag för att gå igenom omfattning och tidsplan.' : 'Our process for estate cleaning is simple, safe and structured. Start by filling out the form – you get a price quickly and easily and can confirm digitally. We call the same day or latest next business day to go through scope and schedule.'}
                   </p>
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-                    När allt är klart planerar vi insatsen och genomför städningen enligt en tydlig checklista. Vi kan samordna fönsterputs som tillval. Resultatet är ett prydligt hem redo för nästa steg.
+                    {locale === 'sv' ? 'När allt är klart planerar vi insatsen och genomför städningen enligt en tydlig checklista. Vi kan samordna fönsterputs som tillval. Resultatet är ett prydligt hem redo för nästa steg.' : 'When everything is ready, we plan the effort and carry out the cleaning according to a clear checklist. We can coordinate window cleaning as an option. The result is a tidy home ready for the next step.'}
                   </p>
                 </div>
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg max-w-4xl mx-auto mb-4">
-                    Priset beror på omfattningen och dina specifika önskemål. Alla priser är fasta utan dolda avgifter. RUT‑avdraget hanteras automatiskt.
+                    {locale === 'sv' ? 'Priset beror på omfattningen och dina specifika önskemål. Alla priser är fasta utan dolda avgifter. RUT‑avdraget hanteras automatiskt.' : 'The price depends on the scope and your specific wishes. All prices are fixed without hidden fees. The RUT deduction is handled automatically.'}
                   </p>
                 </div>
                 <div className="mb-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-8 text-center">{locale === 'sv' ? 'Så fungerar det' : 'How it works'}</h3>
                   <div className="relative w-full">
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
-                      {[
+                      {(locale === 'sv' ? [
                         { icon: <FillFormLottie />, title: 'Fyll i formuläret', description: 'Berätta om din städning' },
                         { icon: <FastLottie />, title: 'Snabb offert', description: 'Få pris snabbt och enkelt' },
                         { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personlig kontakt', description: 'Vi ringer samma dag eller dagen efter', containerClass: 'md:-mt-7' },
                         { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Signera & bekräfta', description: 'Boka digitalt', containerClass: 'md:-mt-6' },
                         { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Städning utförd', description: 'Vi tar hand om allt', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
                         { icon: <div className="md:mt-0"><CleanHomeLottie /></div>, title: 'Nöjd kund', description: 'Värdigt slutresultat', containerClass: 'md:-mt-6' }
-                      ].map((step: any, index: number) => (
+                      ] : [
+                        { icon: <FillFormLottie />, title: 'Fill out the form', description: 'Tell us about your cleaning' },
+                        { icon: <FastLottie />, title: 'Quick quote', description: 'Get price quickly and easily' },
+                        { icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>, title: 'Personal contact', description: 'We call the same day or the day after', containerClass: 'md:-mt-7' },
+                        { icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>, title: 'Sign & confirm', description: 'Book digitally', containerClass: 'md:-mt-6' },
+                        { icon: <div className="md:mr-3"><MovingTruckLottie /></div>, title: 'Cleaning completed', description: 'We take care of everything', containerClass: 'md:-mt-14', textClass: 'md:-mt-8' },
+                        { icon: <div className="md:mt-0"><CleanHomeLottie /></div>, title: 'Satisfied customer', description: 'Dignified final result', containerClass: 'md:-mt-6' }
+                      ]).map((step: any, index: number) => (
                         <motion.div key={index} className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} custom={index}>
                           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
                           <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
@@ -947,29 +1039,29 @@ export default function DodsboStadningPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Läs mer om dödsbostädning</h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">Praktiska råd kring sortering, planering och checklista inför städning och överlåtelse.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Läs mer om dödsbostädning' : 'Read more about estate cleaning'}</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">{locale === 'sv' ? 'Praktiska råd kring sortering, planering och checklista inför städning och överlåtelse.' : 'Practical advice on sorting, planning and checklist before cleaning and transfer.'}</p>
               </div>
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/cleaning_lady.png" alt="Dödsbostädningstips" className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
+                    <img src="/cleaning_lady.png" alt={locale === 'sv' ? 'Dödsbostädningstips' : 'Estate cleaning tips'} className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">
-                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">Dödsbostädning</span>
-                      <span className="text-gray-500 text-sm ml-4">4 min läsning</span>
+                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">{locale === 'sv' ? 'Dödsbostädning' : 'Estate Cleaning'}</span>
+                      <span className="text-gray-500 text-sm ml-4">{locale === 'sv' ? '4 min läsning' : '4 min read'}</span>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">Så planerar du en smidig dödsbostädning</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">En enkel plan kan göra stor skillnad. Vi går igenom hur du förbereder, vad som brukar ingå och hur du skapar ordning steg för steg.</p>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Så planerar du en smidig dödsbostädning' : 'How to plan a smooth estate cleaning'}</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">{locale === 'sv' ? 'En enkel plan kan göra stor skillnad. Vi går igenom hur du förbereder, vad som brukar ingå och hur du skapar ordning steg för steg.' : 'A simple plan can make a big difference. We go through how you prepare, what usually includes and how you create order step by step.'}</p>
                     <div className="flex items-center justify-end mb-4">
-                      <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                      <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                     </div>
                   </div>
                 </div>
               </motion.div>
               <div className="text-center mt-8 md:mt-12">
-                <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base">Se alla artiklar om städning<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base">{locale === 'sv' ? 'Se alla artiklar om städning' : 'See all articles about cleaning'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
               </div>
             </div>
           </div>
@@ -994,14 +1086,19 @@ export default function DodsboStadningPage() {
           />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Vanliga frågor om dödsbostädning</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">{locale === 'sv' ? 'Vanliga frågor om dödsbostädning' : 'Frequently Asked Questions about Estate Cleaning'}</h2>
               <div className="space-y-4">
-                {[
+                {(locale === 'sv' ? [
                   { id: 'db-1', question: 'Ingår tömning vid dödsbostädning?', answer: 'Vi kan hjälpa till med sortering och bortforsling i samband med en dödsbostädning. Eftersom vi även är en flyttfirma finns möjlighet att ordna en helhetslösning med både tömning och städning, men det kräver att kunden informerar oss i förväg så att vi kan komma överens om upplägget.' },
                   { id: 'db-2', question: 'Hur snabbt kan ni börja?', answer: 'Ofta inom några dagar. Fyll i formuläret så återkommer vi med tider.' },
                   { id: 'db-3', question: 'Ingår fönsterputs?', answer: 'Fönsterputs ingår inte som standard vid en dödsbostädning, men kan enkelt läggas till som ett tillval. Många väljer att boka fönsterputs i samband med städningen eftersom rena fönster släpper in mer ljus och gör bostaden både ljusare och mer inbjudande. Det kan vara särskilt värdefullt inför en försäljning eller visning av bostaden.' },
                   { id: 'db-4', question: 'Kan jag avboka?', answer: 'Ja, kostnadsfri ombokning/avbokning upp till 24 timmar innan.' }
-                ].map((faq, index) => (
+                ] : [
+                  { id: 'db-1', question: 'Is emptying included in estate cleaning?', answer: 'We can help with sorting and disposal in connection with estate cleaning. Since we are also a moving company, there is the possibility to arrange a complete solution with both emptying and cleaning, but it requires that the customer informs us in advance so that we can agree on the approach.' },
+                  { id: 'db-2', question: 'How quickly can you start?', answer: 'Often within a few days. Fill out the form and we will get back to you with times.' },
+                  { id: 'db-3', question: 'Is window cleaning included?', answer: 'Window cleaning is not included as standard in estate cleaning, but can easily be added as an option. Many choose to book window cleaning in connection with the cleaning because clean windows let in more light and make the home both brighter and more inviting. It can be particularly valuable before a sale or viewing of the property.' },
+                  { id: 'db-4', question: 'Can I cancel?', answer: 'Yes, free rescheduling/cancellation up to 24 hours before.' }
+                ]).map((faq, index) => (
                   <motion.div key={faq.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>
                     <button onClick={() => setOpenFAQ(openFAQ === faq.id ? null : faq.id)} className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200">
                       <h3 className="text-lg md:text-xl font-semibold text-[#0F172A] pr-4">{faq.question}</h3>

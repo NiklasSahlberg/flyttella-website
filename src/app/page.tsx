@@ -15,7 +15,7 @@ import { useLanguage } from "./contexts/LanguageContext";
 
 // AutoSlidingCards component
 const AutoSlidingCards = () => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const [currentCard, setCurrentCard] = useState(0);
   const [showFullExperienceText, setShowFullExperienceText] = useState(false);
   const autoIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -181,7 +181,7 @@ const AutoSlidingCards = () => {
               {/* Arrow controls */}
               <button
                 type="button"
-                aria-label="Föregående"
+                aria-label={locale === 'sv' ? 'Föregående' : 'Previous'}
                 onClick={() => { setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length); restartAutoSlide(); }}
                 className="absolute left-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
               >
@@ -191,7 +191,7 @@ const AutoSlidingCards = () => {
               </button>
               <button
                 type="button"
-                aria-label="Nästa"
+                aria-label={locale === 'sv' ? 'Nästa' : 'Next'}
                 onClick={() => { setCurrentCard((prev) => (prev + 1) % cards.length); restartAutoSlide(); }}
                 className="absolute right-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
               >
@@ -273,7 +273,7 @@ const AutoSlidingCards = () => {
                     onClick={() => setShowFullExperienceText(true)}
                     className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-lg underline decoration-2 underline-offset-4"
                   >
-                    Läs mer
+                    {locale === 'sv' ? 'Läs mer' : 'Read more'}
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -324,7 +324,7 @@ const AutoSlidingCards = () => {
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
                       src="/recommendedcompany2.png"
-                      alt="Rekommenderad flyttfirma - Flyttella"
+                      alt={locale === 'sv' ? 'Rekommenderad flyttfirma - Flyttella' : 'Recommended moving company - Flyttella'}
                       width={160}
                       height={160}
                       className="object-contain h-32 w-32"
@@ -334,7 +334,7 @@ const AutoSlidingCards = () => {
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
                       src="/bestinswedenbadge-modified.png"
-                      alt="Top 10 flyttfirma - Flyttella"
+                      alt={locale === 'sv' ? 'Top 10 flyttfirma - Flyttella' : 'Top 10 moving company - Flyttella'}
                       width={180}
                       height={180}
                       className="object-contain h-28 w-28"
@@ -349,7 +349,7 @@ const AutoSlidingCards = () => {
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                 <Image
                   src="/recommendedcompany2.png"
-                  alt="Rekommenderad flyttfirma - Flyttella"
+                  alt={locale === 'sv' ? 'Rekommenderad flyttfirma - Flyttella' : 'Recommended moving company - Flyttella'}
                   width={240}
                   height={240}
                   className="object-contain h-60 w-60"
@@ -369,7 +369,7 @@ const AutoSlidingCards = () => {
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                 <Image
                   src="/bestinswedenbadge-modified.png"
-                  alt="Top 10 flyttfirma - Flyttella"
+                  alt={locale === 'sv' ? 'Top 10 flyttfirma - Flyttella' : 'Top 10 moving company - Flyttella'}
                   width={300}
                   height={300}
                   className="object-contain h-48 w-48"
@@ -639,7 +639,7 @@ function ScheduleLottie() {
 }
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
   const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const [showFullAboutText, setShowFullAboutText] = useState(false);
@@ -981,7 +981,7 @@ export default function Home() {
                         onClick={() => setShowFullAboutText(true)}
                         className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
                       >
-                        Läs mer
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1090,7 +1090,7 @@ export default function Home() {
                   <div className="flex flex-col items-stretch gap-4 h-full">
                     {/* Features content */}
                     <div className="flex-[2] w-full">
-                      <h2 className="text-2xl font-bold text-white mb-4 text-center">Våra förmåner</h2>
+                      <h2 className="text-2xl font-bold text-white mb-4 text-center">{locale === 'sv' ? 'Våra förmåner' : 'Our benefits'}</h2>
                       
                       {/* Mobile: Sliding carousel */}
                       <div className="relative overflow-hidden rounded-xl" onTouchStart={handleFeatureTouchStart} onTouchMove={handleFeatureTouchMove} onTouchEnd={handleFeatureTouchEnd}>
@@ -1101,56 +1101,56 @@ export default function Home() {
                             {[
                               {
                                 icon: "💰",
-                                title: "Fast pris",
-                                description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                                title: locale === 'sv' ? "Fast pris" : "Fixed price",
+                                description: locale === 'sv' ? "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser" : "No surprises - we offer both fixed prices and the possibility of ongoing prices",
                                 link: "/priser"
                               },
                               {
                                 icon: "📋",
-                                title: "RUT-avdrag",
-                                description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                                title: locale === 'sv' ? "RUT-avdrag" : "RUT deduction",
+                                description: locale === 'sv' ? "Vi hanterar allt pappersarbete för RUT-avdrag" : "We handle all paperwork for RUT deduction",
                                 link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
                               },
                               {
                                 icon: "📦",
-                                title: "Fritt lån av kartonger i 4 veckor",
-                                description: "Specialgjorda flyttkartonger med vår logga",
+                                title: locale === 'sv' ? "Fritt lån av kartonger i 4 veckor" : "Free loan of boxes for 4 weeks",
+                                description: locale === 'sv' ? "Specialgjorda flyttkartonger med vår logga" : "Custom-made moving boxes with our logo",
                                 link: "/kartonger"
                               },
                               {
                                 icon: "⏰",
-                                title: "Omboka eller avboka kostnadsfritt",
-                                description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                                title: locale === 'sv' ? "Omboka eller avboka kostnadsfritt" : "Reschedule or cancel free of charge",
+                                description: locale === 'sv' ? "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten" : "Reschedule or cancel free of charge up to 24 hours before the move",
                                 link: "/avbokning"
                               },
                               {
                                 icon: "✅",
-                                title: "Nöjd kund garanti",
-                                description: "14 dagars garanti på flyttstädning",
+                                title: locale === 'sv' ? "Nöjd kund garanti" : "Satisfied customer guarantee",
+                                description: locale === 'sv' ? "14 dagars garanti på flyttstädning" : "14-day guarantee on moving cleaning",
                                 link: "/garanti"
                               },
                               {
                                 icon: "🔒",
-                                title: "Trafiktillstånd och försäkring",
-                                description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                                title: locale === 'sv' ? "Trafiktillstånd och försäkring" : "Traffic permit and insurance",
+                                description: locale === 'sv' ? "Alla nödvändiga tillstånd och försäkringar på plats" : "All necessary permits and insurance in place",
                                 link: "/tillstand"
                               },
                               {
                                 icon: "🎓",
-                                title: "Utbildad personal",
-                                description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                                title: locale === 'sv' ? "Utbildad personal" : "Trained staff",
+                                description: locale === 'sv' ? "Vår personal är utbildad för att säkerställa högsta kvalitet och service." : "Our staff is trained to ensure the highest quality and service.",
                                 link: "/om-oss"
                               },
                               {
                                 icon: "📈",
-                                title: "Ledningssystem",
-                                description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                                title: locale === 'sv' ? "Ledningssystem" : "Management system",
+                                description: locale === 'sv' ? "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." : "We work with effective management systems to guarantee structure and quality.",
                                 link: "/om-oss"
                               },
                               {
                                 icon: "🦺",
-                                title: "Arbetsmiljö",
-                                description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                                title: locale === 'sv' ? "Arbetsmiljö" : "Work environment",
+                                description: locale === 'sv' ? "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." : "We prioritize a safe and secure work environment for both customers and staff.",
                                 link: "/om-oss"
                               }
                             ].map((feature, index) => (
@@ -1182,7 +1182,7 @@ export default function Home() {
                                           rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                                           className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center"
                                         >
-                                          Läs mer
+                                          {locale === 'sv' ? 'Läs mer' : 'Read more'}
                                           <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                           </svg>
@@ -1198,7 +1198,7 @@ export default function Home() {
                           {/* Arrow controls */}
                           <button
                             type="button"
-                            aria-label="Föregående"
+                            aria-label={locale === 'sv' ? 'Föregående' : 'Previous'}
                             onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }}
                             className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
                           >
@@ -1208,7 +1208,7 @@ export default function Home() {
                           </button>
                           <button
                             type="button"
-                            aria-label="Nästa"
+                            aria-label={locale === 'sv' ? 'Nästa' : 'Next'}
                             onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }}
                             className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
                           >
@@ -1247,16 +1247,14 @@ export default function Home() {
                 {/* Pricing Info */}
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-                    Våra offerter är alltid baserade på dina specifika behov och omständigheter. 
-                    Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation, vi kan även besikta bostaden vid behov. 
-                    Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund. 
-                    Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov. 
+                    {locale === 'sv' ? 'Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation, vi kan även besikta bostaden vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund.' : 'Our quotes are always based on your specific needs and circumstances. We take into account factors such as living area, floor, elevator and parking distance to give you a quote that fits your specific situation, we can also inspect the home if needed. All prices are fixed without hidden fees - we always start from your wishes and information we receive from you as a customer.'} 
+                    {locale === 'sv' ? ' Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.' : ' Do you have special requests or questions? Contact us and we will adapt the quote to your needs.'} 
                   </p>
                 </div>
 
                 {/* Process Flow Section */}
                 <div className="mb-4 md:mb-8">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3>
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">{locale === 'sv' ? 'Så fungerar det' : 'How it works'}</h3>
                   <div className="relative w-full">
                     {/* Timeline connector line */}
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
@@ -1264,42 +1262,42 @@ export default function Home() {
                       {[
                         {
                           icon: <FillFormLottie />,
-                          title: "Fyll i formuläret",
-                          description: "Berätta om din flytt",
+                          title: locale === 'sv' ? "Fyll i formuläret" : "Fill in the form",
+                          description: locale === 'sv' ? "Berätta om din flytt" : "Tell us about your move",
                           textClass: ""
                         },
                         {
                           icon: <FastLottie />,
-                          title: "Snabb offert",
-                          description: "Få pris på 1 minut",
+                          title: locale === 'sv' ? "Snabb offert" : "Quick quote",
+                          description: locale === 'sv' ? "Få pris på 1 minut" : "Get price in 1 minute",
                           textClass: ""
                         },
                         
                         {
                           icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
-                          title: "Signera & bekräfta",
-                          description: "Få bokningsbekräftelse direkt",
+                          title: locale === 'sv' ? "Signera & bekräfta" : "Sign & confirm",
+                          description: locale === 'sv' ? "Få bokningsbekräftelse direkt" : "Get booking confirmation immediately",
                           containerClass: "md:-mt-6",
                           textClass: ""
                         },
                         {
                           icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
-                          title: "Personlig kontakt",
-                          description: "Vi ringer samma dag eller dagen efter",
+                          title: locale === 'sv' ? "Personlig kontakt" : "Personal contact",
+                          description: locale === 'sv' ? "Vi ringer samma dag eller dagen efter" : "We call the same day or the day after",
                           containerClass: "md:-mt-7",
                           textClass: ""
                         },
                         {
                           icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
-                          title: "Flytt genomförd",
-                          description: "Vi tar hand om allt",
+                          title: locale === 'sv' ? "Flytt genomförd" : "Move completed",
+                          description: locale === 'sv' ? "Vi tar hand om allt" : "We take care of everything",
                           containerClass: "md:-mt-14",
                           textClass: "md:-mt-8",
                         },
                         {
                           icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
-                          title: "Nöjd kund",
-                          description: "Återkommande kund",
+                          title: locale === 'sv' ? "Nöjd kund" : "Satisfied customer",
+                          description: locale === 'sv' ? "Återkommande kund" : "Returning customer",
                           containerClass: "md:-mt-6",
                           textClass: ""
                         }
@@ -1394,7 +1392,7 @@ export default function Home() {
                 <div className="flex flex-col lg:flex-row items-stretch gap-4 md:gap-8 h-full">
                   {/* Left side - Features content */}
                   <div className="flex-[2] w-full md:flex-[2]">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 text-center lg:text-left">Våra förmåner</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 text-center lg:text-left">{locale === 'sv' ? 'Våra förmåner' : 'Our benefits'}</h2>
                     
                     {/* Mobile: Sliding carousel */}
                     <div className="md:hidden">
@@ -1406,56 +1404,56 @@ export default function Home() {
                           {[
                             {
                               icon: "💰",
-                              title: "Fast pris",
-                              description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                              title: locale === 'sv' ? "Fast pris" : "Fixed price",
+                              description: locale === 'sv' ? "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser" : "No surprises - we offer both fixed prices and the possibility of ongoing prices",
                               link: "/priser"
                             },
                             {
                               icon: "📋",
-                              title: "RUT-avdrag",
-                              description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                              title: locale === 'sv' ? "RUT-avdrag" : "RUT deduction",
+                              description: locale === 'sv' ? "Vi hanterar allt pappersarbete för RUT-avdrag" : "We handle all paperwork for RUT deduction",
                               link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
                             },
                             {
                               icon: "📦",
-                              title: "Fritt lån av kartonger i 4 veckor",
-                              description: "Specialgjorda flyttkartonger med vår logga",
+                              title: locale === 'sv' ? "Fritt lån av kartonger i 4 veckor" : "Free loan of boxes for 4 weeks",
+                              description: locale === 'sv' ? "Specialgjorda flyttkartonger med vår logga" : "Custom-made moving boxes with our logo",
                               link: "/kartonger"
                             },
                             {
                               icon: "⏰",
-                              title: "Omboka eller avboka kostnadsfritt",
-                              description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                              title: locale === 'sv' ? "Omboka eller avboka kostnadsfritt" : "Reschedule or cancel free of charge",
+                              description: locale === 'sv' ? "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten" : "Reschedule or cancel free of charge up to 24 hours before the move",
                               link: "/avbokning"
                             },
                             {
                               icon: "✅",
-                              title: "Nöjd kund garanti",
-                              description: "14 dagars garanti på flyttstädning",
+                              title: locale === 'sv' ? "Nöjd kund garanti" : "Satisfied customer guarantee",
+                              description: locale === 'sv' ? "14 dagars garanti på flyttstädning" : "14-day guarantee on moving cleaning",
                               link: "/garanti"
                             },
                             {
                               icon: "🔒",
-                              title: "Trafiktillstånd och försäkring",
-                              description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                              title: locale === 'sv' ? "Trafiktillstånd och försäkring" : "Traffic permit and insurance",
+                              description: locale === 'sv' ? "Alla nödvändiga tillstånd och försäkringar på plats" : "All necessary permits and insurance in place",
                               link: "/tillstand"
                             },
                             {
                               icon: "🎓",
-                              title: "Utbildad personal",
-                              description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                              title: locale === 'sv' ? "Utbildad personal" : "Trained staff",
+                              description: locale === 'sv' ? "Vår personal är utbildad för att säkerställa högsta kvalitet och service." : "Our staff is trained to ensure the highest quality and service.",
                               link: "/om-oss"
                             },
                             {
                               icon: "📈",
-                              title: "Ledningssystem",
-                              description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                              title: locale === 'sv' ? "Ledningssystem" : "Management system",
+                              description: locale === 'sv' ? "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." : "We work with effective management systems to guarantee structure and quality.",
                               link: "/om-oss"
                             },
                             {
                               icon: "🦺",
-                              title: "Arbetsmiljö",
-                              description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                              title: locale === 'sv' ? "Arbetsmiljö" : "Work environment",
+                              description: locale === 'sv' ? "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." : "We prioritize a safe and secure work environment for both customers and staff.",
                               link: "/om-oss"
                             }
                           ].map((feature, index) => (
@@ -1487,7 +1485,7 @@ export default function Home() {
                                         rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                                         className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
                                       >
-                                        Läs mer
+                                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
                                         <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                         </svg>
@@ -1513,7 +1511,7 @@ export default function Home() {
                         </button>
                         <button
                           type="button"
-                          aria-label="Nästa"
+                          aria-label={locale === 'sv' ? 'Nästa' : 'Next'}
                           onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }}
                           className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
                         >
@@ -1529,56 +1527,56 @@ export default function Home() {
                       {[
                         {
                           icon: "💰",
-                          title: "Fast pris",
-                          description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
+                          title: locale === 'sv' ? "Fast pris" : "Fixed price",
+                          description: locale === 'sv' ? "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser" : "No surprises - we offer both fixed prices and the possibility of ongoing prices",
                           link: "/priser"
                         },
                         {
                           icon: "📋",
-                          title: "RUT-avdrag",
-                          description: "Vi hanterar allt pappersarbete för RUT-avdrag",
+                          title: locale === 'sv' ? "RUT-avdrag" : "RUT deduction",
+                          description: locale === 'sv' ? "Vi hanterar allt pappersarbete för RUT-avdrag" : "We handle all paperwork for RUT deduction",
                           link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
                         },
                         {
                           icon: "📦",
-                          title: "Fritt lån av kartonger i 4 veckor",
-                          description: "Specialgjorda flyttkartonger med vår logga",
+                          title: locale === 'sv' ? "Fritt lån av kartonger i 4 veckor" : "Free loan of boxes for 4 weeks",
+                          description: locale === 'sv' ? "Specialgjorda flyttkartonger med vår logga" : "Custom-made moving boxes with our logo",
                           link: "/kartonger"
                         },
                         {
                           icon: "⏰",
-                          title: "Omboka eller avboka kostnadsfritt",
-                          description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+                          title: locale === 'sv' ? "Omboka eller avboka kostnadsfritt" : "Reschedule or cancel free of charge",
+                          description: locale === 'sv' ? "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten" : "Reschedule or cancel free of charge up to 24 hours before the move",
                           link: "/avbokning"
                         },
                         {
                           icon: "✅",
-                          title: "Nöjd kund garanti",
-                          description: "14 dagars garanti på flyttstädning",
+                          title: locale === 'sv' ? "Nöjd kund garanti" : "Satisfied customer guarantee",
+                          description: locale === 'sv' ? "14 dagars garanti på flyttstädning" : "14-day guarantee on moving cleaning",
                           link: "/garanti"
                         },
                         {
                           icon: "🔒",
-                          title: "Trafiktillstånd och försäkring",
-                          description: "Alla nödvändiga tillstånd och försäkringar på plats",
+                          title: locale === 'sv' ? "Trafiktillstånd och försäkring" : "Traffic permit and insurance",
+                          description: locale === 'sv' ? "Alla nödvändiga tillstånd och försäkringar på plats" : "All necessary permits and insurance in place",
                           link: "/tillstand"
                         },
                         {
                           icon: "🎓",
-                          title: "Utbildad personal",
-                          description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+                          title: locale === 'sv' ? "Utbildad personal" : "Trained staff",
+                          description: locale === 'sv' ? "Vår personal är utbildad för att säkerställa högsta kvalitet och service." : "Our staff is trained to ensure the highest quality and service.",
                           link: "/om-oss"
                         },
                         {
                           icon: "📈",
-                          title: "Ledningssystem",
-                          description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                          title: locale === 'sv' ? "Ledningssystem" : "Management system",
+                          description: locale === 'sv' ? "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." : "We work with effective management systems to guarantee structure and quality.",
                           link: "/om-oss"
                         },
                         {
                           icon: "🦺",
-                          title: "Arbetsmiljö",
-                          description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                          title: locale === 'sv' ? "Arbetsmiljö" : "Work environment",
+                          description: locale === 'sv' ? "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." : "We prioritize a safe and secure work environment for both customers and staff.",
                           link: "/om-oss"
                         }
                       ].map((feature, i) => (
@@ -1609,7 +1607,7 @@ export default function Home() {
                                 rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                                 className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
                               >
-                                Läs mer
+                                {locale === 'sv' ? 'Läs mer' : 'Read more'}
                                 <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
@@ -1652,9 +1650,19 @@ export default function Home() {
               <div className="w-full md:hidden text-center mb-4">
                 <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A] mb-3 md:mb-6">{t('awards.title')}</h2>
                 <p className="text-lg md:text-2xl text-gray-700 leading-relaxed">
-                  Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet.<br />
-                  Genom åren har vi blivit erkända av både branschorganisationer och våra kunder för vårt pålitliga arbete och höga standard.<br />
-                  Dessa utmärkelser inspirerar oss att fortsätta leverera flyttjänster i toppklass – varje dag, till varje kund.
+                  {locale === 'sv' ? (
+                    <>
+                      Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet.<br />
+                      Genom åren har vi blivit erkända av både branschorganisationer och våra kunder för vårt pålitliga arbete och höga standard.<br />
+                      Dessa utmärkelser inspirerar oss att fortsätta leverera flyttjänster i toppklass – varje dag, till varje kund.
+                    </>
+                  ) : (
+                    <>
+                      Our awards are proof of our commitment to quality, service and customer satisfaction.<br />
+                      Over the years, we have been recognized by both industry organizations and our customers for our reliable work and high standards.<br />
+                      These awards inspire us to continue delivering top-class moving services – every day, to every customer.
+                    </>
+                  )}
                 </p>
               </div>
               
@@ -1674,9 +1682,19 @@ export default function Home() {
               <div className="hidden md:flex w-full md:w-2/5 md:order-1 text-left flex-col items-start justify-center">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('awards.title')}</h2>
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-                  Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet.<br />
-                  Genom åren har vi blivit erkända av både branschorganisationer och våra kunder för vårt pålitliga arbete och höga standard.<br />
-                  Dessa utmärkelser inspirerar oss att fortsätta leverera flyttjänster i toppklass – varje dag, till varje kund.
+                  {locale === 'sv' ? (
+                    <>
+                      Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet.<br />
+                      Genom åren har vi blivit erkända av både branschorganisationer och våra kunder för vårt pålitliga arbete och höga standard.<br />
+                      Dessa utmärkelser inspirerar oss att fortsätta leverera flyttjänster i toppklass – varje dag, till varje kund.
+                    </>
+                  ) : (
+                    <>
+                      Our awards are proof of our commitment to quality, service and customer satisfaction.<br />
+                      Over the years, we have been recognized by both industry organizations and our customers for our reliable work and high standards.<br />
+                      These awards inspire us to continue delivering top-class moving services – every day, to every customer.
+                    </>
+                  )}
                 </p>
               </div>
             </div>
@@ -1706,44 +1724,44 @@ export default function Home() {
               {[
                 { 
                   icon: "🏠", 
-                  title: "Bohagsflytt", 
-                  description: "Vi erbjuder professionell flytthjälp för privatpersoner. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg.",
-                  buttonText: "Läs mer",
+                  title: locale === 'sv' ? "Bohagsflytt" : "Household Moving", 
+                  description: locale === 'sv' ? "Vi erbjuder professionell flytthjälp för privatpersoner. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg." : "We offer professional moving assistance for individuals. With our expertise and attention to detail, we ensure your move is smooth and secure.",
+                  buttonText: locale === 'sv' ? "Läs mer" : "Read more",
                   href: "/bohagsflytt"
                 },
                 { 
                   icon: "✨", 
-                  title: "Flyttstädning", 
-                  description: "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
-                  buttonText: "Läs mer",
+                  title: locale === 'sv' ? "Flyttstädning" : "Moving Cleaning", 
+                  description: locale === 'sv' ? "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick." : "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures your old home is left in perfect condition.",
+                  buttonText: locale === 'sv' ? "Läs mer" : "Read more",
                   href: "/flyttstadning"
                 },
                 { 
                   icon: "🏢", 
-                  title: "Kontorsflytt", 
-                  description: "Effektiv flytt av kontor och företag. Vi minimerar avbrott i verksamheten och säkerställer en smidig övergång.",
-                  buttonText: "Läs mer",
+                  title: locale === 'sv' ? "Kontorsflytt" : "Office Moving", 
+                  description: locale === 'sv' ? "Effektiv flytt av kontor och företag. Vi minimerar avbrott i verksamheten och säkerställer en smidig övergång." : "Efficient moving of offices and companies. We minimize business disruption and ensure a smooth transition.",
+                  buttonText: locale === 'sv' ? "Läs mer" : "Read more",
                   href: "/kontorsflytt"
                 },
                 { 
                   icon: "📦", 
-                  title: "Magasinering", 
-                  description: "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
-                  buttonText: "Läs mer",
+                  title: locale === 'sv' ? "Magasinering" : "Storage", 
+                  description: locale === 'sv' ? "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering." : "Secure storage of your belongings. We offer flexible solutions for shorter and longer storage with secure handling.",
+                  buttonText: locale === 'sv' ? "Läs mer" : "Read more",
                   href: "/magasinering"
                 },
                 { 
                   icon: "🎹", 
-                  title: "Piano/Tunglyft", 
-                  description: "Specialiserad service för flytt av piano och andra tunga föremål. Vi har erfarenhet och rätt utrustning för säker hantering.",
-                  buttonText: "Läs mer",
+                  title: locale === 'sv' ? "Piano/Tunglyft" : "Piano/Heavy Lifting", 
+                  description: locale === 'sv' ? "Specialiserad service för flytt av piano och andra tunga föremål. Vi har erfarenhet och rätt utrustning för säker hantering." : "Specialized service for moving pianos and other heavy items. We have experience and the right equipment for safe handling.",
+                  buttonText: locale === 'sv' ? "Läs mer" : "Read more",
                   href: "/piano-tunglyft"
                 },
                 { 
                   icon: "🗑️", 
-                  title: "Bortforsling", 
-                  description: "Professionell bortforsling av möbler, inredning och andra föremål. Vi tar hand om allt från små till stora mängder.",
-                  buttonText: "Läs mer",
+                  title: locale === 'sv' ? "Bortforsling" : "Disposal", 
+                  description: locale === 'sv' ? "Professionell bortforsling av möbler, inredning och andra föremål. Vi tar hand om allt från små till stora mängder." : "Professional disposal of furniture, furnishings and other items. We handle everything from small to large quantities.",
+                  buttonText: locale === 'sv' ? "Läs mer" : "Read more",
                   href: "/bortforsling"
                 }
               ].map((service, index) => (
@@ -1842,8 +1860,17 @@ export default function Home() {
                     delay: 0 * 0.25
                   }}
                 >
-                    Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. 
-                    Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.
+                    {locale === 'sv' ? (
+                      <>
+                        Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. 
+                        Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.
+                      </>
+                    ) : (
+                      <>
+                        We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. 
+                        From household moving and moving cleaning to special services such as heavy lifting and storage.
+                      </>
+                    )}
                 </motion.p>
                 <motion.div
                   className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -1864,7 +1891,7 @@ export default function Home() {
                       href="/tjanster" 
                       className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                     >
-                      Se alla våra flyttjänster
+                      {locale === 'sv' ? 'Se alla våra flyttjänster' : 'See all our moving services'}
                       <motion.svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1887,7 +1914,7 @@ export default function Home() {
                       href="/stadtjanster" 
                       className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                     >
-                      Se alla våra städtjänster
+                      {locale === 'sv' ? 'Se alla våra städtjänster' : 'See all our cleaning services'}
                       <motion.svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -1922,7 +1949,7 @@ export default function Home() {
                         onClick={() => setExpandedTipSection(expandedTipSection === 'innan' ? null : 'innan')}
                         className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
-                        <h3 className="text-xl font-bold text-white">Innan flytten</h3>
+                        <h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Innan flytten' : 'Before the move'}</h3>
                         <svg 
                           className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'innan' ? 'rotate-180' : ''}`}
                           fill="none" 
@@ -1935,62 +1962,62 @@ export default function Home() {
                     </div>
                     
                     {/* Desktop: Always visible title */}
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Innan flytten</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">{locale === 'sv' ? 'Innan flytten' : 'Before the move'}</h3>
                     
                     {/* Mobile: Expandable content */}
                     <div className={`md:block ${expandedTipSection === 'innan' ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                       <TipCard
-                        title="Planera och förbered"
+                        title={locale === 'sv' ? "Planera och förbered" : "Plan and prepare"}
                         imageSrc="/tipsforflytt.jpg"
-                        imageAlt="Planering"
+                        imageAlt={locale === 'sv' ? "Planering" : "Planning"}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
-                            <li>Gör en checklista.</li>
-                            <li>Rensa ut onödiga saker.</li>
-                            <li>Boka flyttfirma och städning.</li>
-                            <li>Beställ flyttkartonger.</li>
+                            <li>{locale === 'sv' ? 'Gör en checklista.' : 'Make a checklist.'}</li>
+                            <li>{locale === 'sv' ? 'Rensa ut onödiga saker.' : 'Clear out unnecessary things.'}</li>
+                            <li>{locale === 'sv' ? 'Boka flyttfirma och städning.' : 'Book moving company and cleaning.'}</li>
+                            <li>{locale === 'sv' ? 'Beställ flyttkartonger.' : 'Order moving boxes.'}</li>
                           </ul>
                         }
                       />
                       <TipCard
-                        title="Avtal och anmälningar"
+                        title={locale === 'sv' ? "Avtal och anmälningar" : "Contracts and notifications"}
                         imageSrc="/viktigaavtalcustomer.png"
-                        imageAlt="Avtal"
+                        imageAlt={locale === 'sv' ? "Avtal" : "Contracts"}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
-                            <li>Adressändra hos Skatteverket.</li>
-                            <li>Flytta el, bredband, etc.</li>
-                            <li>Teckna nya avtal.</li>
-                            <li>Meddela viktiga kontakter.</li>
+                            <li>{locale === 'sv' ? 'Adressändra hos Skatteverket.' : 'Change address with the Tax Agency.'}</li>
+                            <li>{locale === 'sv' ? 'Flytta el, bredband, etc.' : 'Move electricity, broadband, etc.'}</li>
+                            <li>{locale === 'sv' ? 'Teckna nya avtal.' : 'Sign new contracts.'}</li>
+                            <li>{locale === 'sv' ? 'Meddela viktiga kontakter.' : 'Notify important contacts.'}</li>
                           </ul>
                         }
                       />
                       <TipCard
-                          title="Innan flyttfirman kommer"
+                          title={locale === 'sv' ? "Innan flyttfirman kommer" : "Before the moving company arrives"}
                           imageSrc="/innanflyttfirmankommer.jpg"
-                          imageAlt="Förberedelse för flytt"
+                          imageAlt={locale === 'sv' ? "Förberedelse för flytt" : "Preparation for move"}
                           objectPosition="object-[center_45%]"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
-                              <li>Packa ner allt lösöre i kartonger</li>
-                              <li>Montera ner alla gardiner</li>
-                              <li>Montera ner alla lampor</li>
-                              <li>Dubbelkolla packning och märkning.</li>
+                              <li>{locale === 'sv' ? 'Packa ner allt lösöre i kartonger' : 'Pack all loose items in boxes'}</li>
+                              <li>{locale === 'sv' ? 'Montera ner alla gardiner' : 'Take down all curtains'}</li>
+                              <li>{locale === 'sv' ? 'Montera ner alla lampor' : 'Take down all lamps'}</li>
+                              <li>{locale === 'sv' ? 'Dubbelkolla packning och märkning.' : 'Double-check packing and labeling.'}</li>
                             </ul>
                           }
                         />
                       <TipCard
-                        title="Packtips"
+                        title={locale === 'sv' ? "Packtips" : "Packing tips"}
                         imageSrc="/packing_tips.jpg"
-                        imageAlt="Packning"
+                        imageAlt={locale === 'sv' ? "Packning" : "Packing"}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
-                            <li>Märk alla kartonger tydligt.</li>
+                            <li>{locale === 'sv' ? 'Märk alla kartonger tydligt.' : 'Label all boxes clearly.'}</li>
 
-                            <li>Håll nycklar tillgängliga.</li>
-                            <li>Överbelasta inte flyttlådorna.</li>
-                            <li>Använd silkespapper för ömtåliga föremål och porslin.</li>
+                            <li>{locale === 'sv' ? 'Håll nycklar tillgängliga.' : 'Keep keys accessible.'}</li>
+                            <li>{locale === 'sv' ? 'Överbelasta inte flyttlådorna.' : 'Don\'t overload the moving boxes.'}</li>
+                            <li>{locale === 'sv' ? 'Använd silkespapper för ömtåliga föremål och porslin.' : 'Use tissue paper for fragile items and porcelain.'}</li>
                           </ul>
                         }
                       />
@@ -2006,7 +2033,7 @@ export default function Home() {
                         onClick={() => setExpandedTipSection(expandedTipSection === 'under' ? null : 'under')}
                         className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
-                        <h3 className="text-xl font-bold text-white">Under flytten</h3>
+                        <h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Under flytten' : 'During the move'}</h3>
                         <svg 
                           className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'under' ? 'rotate-180' : ''}`}
                           fill="none" 
@@ -2019,40 +2046,40 @@ export default function Home() {
                     </div>
                     
                     {/* Desktop: Always visible title */}
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Under flytten</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">{locale === 'sv' ? 'Under flytten' : 'During the move'}</h3>
                     
                     {/* Mobile: Expandable content */}
                     <div className={`md:block ${expandedTipSection === 'under' ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
-                          title="En smidig flyttdag"
+                          title={locale === 'sv' ? "En smidig flyttdag" : "A smooth moving day"}
                           imageSrc="/smidigflyttdag.jpg"
-                          imageAlt="Glad flyttarbetare"
+                          imageAlt={locale === 'sv' ? "Glad flyttarbetare" : "Happy moving worker"}
                           objectPosition="object-[center_35%]"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
           
-                              <li>Håll värdesaker tillgängliga.</li>
-                              <li>Säkerställ fri väg för flytthjälp.</li>
+                              <li>{locale === 'sv' ? 'Håll värdesaker tillgängliga.' : 'Keep valuables accessible.'}</li>
+                              <li>{locale === 'sv' ? 'Säkerställ fri väg för flytthjälp.' : 'Ensure clear path for moving help.'}</li>
                               
-                              <li>Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.</li>
-                              <li>Se till att montera ner eller packa ner bortglömda föremål.</li>
+                              <li>{locale === 'sv' ? 'Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.' : 'Do a final check of the home after loading and after unloading in both homes to ensure nothing is left behind.'}</li>
+                              <li>{locale === 'sv' ? 'Se till att montera ner eller packa ner bortglömda föremål.' : 'Make sure to take down or pack forgotten items.'}</li>
                             </ul>
                           }
                         />
                       <TipCard
-                          title="Kommunikation och koordinering"
+                          title={locale === 'sv' ? "Kommunikation och koordinering" : "Communication and coordination"}
                           imageSrc="/under_flytt.jpg"
-                          imageAlt="Flytt under pågående"
+                          imageAlt={locale === 'sv' ? "Flytt under pågående" : "Move in progress"}
                           objectPosition="object-center"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
-                              <li>Håll kontakt med flyttledaren.</li>
-                              <li>Fotografera eventuella skador.</li>
-                              <li>Kontrollera att allt laddas korrekt.</li>
-                              <li>Följ med till den nya adressen.</li>
-                              <li>Var tydlig med särskilda önskemål.</li>
-                              <li>Var tillgänglig för frågor.</li>
+                              <li>{locale === 'sv' ? 'Håll kontakt med flyttledaren.' : 'Stay in contact with the move leader.'}</li>
+                              <li>{locale === 'sv' ? 'Fotografera eventuella skador.' : 'Photograph any damage.'}</li>
+                              <li>{locale === 'sv' ? 'Kontrollera att allt laddas korrekt.' : 'Check that everything is loaded correctly.'}</li>
+                              <li>{locale === 'sv' ? 'Följ med till den nya adressen.' : 'Follow to the new address.'}</li>
+                              <li>{locale === 'sv' ? 'Var tydlig med särskilda önskemål.' : 'Be clear with special requests.'}</li>
+                              <li>{locale === 'sv' ? 'Var tillgänglig för frågor.' : 'Be available for questions.'}</li>
                             </ul>
                           }
                         />
@@ -2068,7 +2095,7 @@ export default function Home() {
                         onClick={() => setExpandedTipSection(expandedTipSection === 'efter' ? null : 'efter')}
                         className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
-                        <h3 className="text-xl font-bold text-white">Efter flytten</h3>
+                        <h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Efter flytten' : 'After the move'}</h3>
                         <svg 
                           className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'efter' ? 'rotate-180' : ''}`}
                           fill="none" 
@@ -2081,41 +2108,41 @@ export default function Home() {
                     </div>
                     
                     {/* Desktop: Always visible title */}
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Efter flytten</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">{locale === 'sv' ? 'Efter flytten' : 'After the move'}</h3>
                     
                     {/* Mobile: Expandable content */}
                     <div className={`md:block ${expandedTipSection === 'efter' ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
-                          title="Start i nya hemmet"
+                          title={locale === 'sv' ? "Start i nya hemmet" : "Start in new home"}
                           imageSrc="/efter_flytt.jpg"
-                          imageAlt="Nytt hem"
+                          imageAlt={locale === 'sv' ? "Nytt hem" : "New home"}
                           objectPosition="object-[10%_center]"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
-                              <li>Kontrollera flyttstädningen.</li>
-                              <li>Packa upp det viktigaste först.</li>
-                              <li>Kontrollera att alla föremål anlänt.</li>
-                              <li>Montera upp gardiner och lampor.</li>
-                              <li>Uppdatera adress hos myndigheter.</li>
-                              <li>Testa alla vitvaror och eluttag.</li>
-                              <li>Ta bort tomma kartonger och emballage.</li>
+                              <li>{locale === 'sv' ? 'Kontrollera flyttstädningen.' : 'Check the moving cleaning.'}</li>
+                              <li>{locale === 'sv' ? 'Packa upp det viktigaste först.' : 'Unpack the most important things first.'}</li>
+                              <li>{locale === 'sv' ? 'Kontrollera att alla föremål anlänt.' : 'Check that all items have arrived.'}</li>
+                              <li>{locale === 'sv' ? 'Montera upp gardiner och lampor.' : 'Install curtains and lamps.'}</li>
+                              <li>{locale === 'sv' ? 'Uppdatera adress hos myndigheter.' : 'Update address with authorities.'}</li>
+                              <li>{locale === 'sv' ? 'Testa alla vitvaror och eluttag.' : 'Test all appliances and electrical outlets.'}</li>
+                              <li>{locale === 'sv' ? 'Ta bort tomma kartonger och emballage.' : 'Remove empty boxes and packaging.'}</li>
                             </ul>
                           }
                         />
                       <TipCard
-                          title="Dokumentation och uppföljning"
+                          title={locale === 'sv' ? "Dokumentation och uppföljning" : "Documentation and follow-up"}
                           imageSrc="/godtid.jpg"
-                          imageAlt="Dokumentation efter flytt"
+                          imageAlt={locale === 'sv' ? "Dokumentation efter flytt" : "Documentation after move"}
                           objectPosition="object-center"
                           content={
                             <ul className="list-disc pl-5 space-y-2">
-                              <li>Fotografera ditt nya hem.</li>
-                              <li>Kontakta flyttfirman för feedback.</li>
-                              <li>Skriv en recension av tjänsten.</li>
-                              <li>Organisera flyttkvitton och dokument.</li>
-                              <li>Fira din nya bostad med familj och vänner.</li>
-                              <li>Uppdatera försäkringar för nya bostaden.</li>
+                              <li>{locale === 'sv' ? 'Fotografera ditt nya hem.' : 'Photograph your new home.'}</li>
+                              <li>{locale === 'sv' ? 'Kontakta flyttfirman för feedback.' : 'Contact the moving company for feedback.'}</li>
+                              <li>{locale === 'sv' ? 'Skriv en recension av tjänsten.' : 'Write a review of the service.'}</li>
+                              <li>{locale === 'sv' ? 'Organisera flyttkvitton och dokument.' : 'Organize moving receipts and documents.'}</li>
+                              <li>{locale === 'sv' ? 'Fira din nya bostad med familj och vänner.' : 'Celebrate your new home with family and friends.'}</li>
+                              <li>{locale === 'sv' ? 'Uppdatera försäkringar för nya bostaden.' : 'Update insurance for the new home.'}</li>
                             </ul>
                           }
                         />
@@ -2134,10 +2161,10 @@ export default function Home() {
               <div className="w-full">
                 <div className="text-center mb-8 md:mb-12">
                   <h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
-                    Läs gärna vår blogg
+                    {locale === 'sv' ? 'Läs gärna vår blogg' : 'Read our blog'}
                   </h2>
                   <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
-                    Få värdefulla tips och råd för en smidig flytt
+                    {locale === 'sv' ? 'Få värdefulla tips och råd för en smidig flytt' : 'Get valuable tips and advice for a smooth move'}
                   </p>
                 </div>
                 <div className="max-w-6xl mx-auto">
@@ -2154,22 +2181,22 @@ export default function Home() {
                         <div className="w-full md:w-1/3 h-48 md:h-full">
                           <img 
                             src="/tipsforflytt.jpg" 
-                            alt="Flytttips Stockholm" 
+                            alt={locale === 'sv' ? 'Flytttips Stockholm' : 'Moving tips Stockholm'} 
                             className="w-full h-full object-cover object-[60%_center]"
                           />
                         </div>
                         <div className="w-full md:w-2/3 p-4 md:p-6">
                           <div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
                             <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
-                              Flytttips
+                              {locale === 'sv' ? 'Flytttips' : 'Moving tips'}
                             </span>
-                            <span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
+                            <span className="text-gray-500 text-sm md:text-base sm:ml-4">{locale === 'sv' ? '5 min läsning' : '5 min read'}</span>
                           </div>
                           <h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
-                            Vad bör du tänka på när du väljer en seriös flyttfirma
+                            {locale === 'sv' ? 'Vad bör du tänka på när du väljer en seriös flyttfirma' : 'What should you consider when choosing a serious moving company'}
                           </h3>
                           <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
-                            Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.
+                            {locale === 'sv' ? 'Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från försäkringar och tillstånd till kundrecensioner och pristransparens.' : 'Choosing the right moving company is crucial for a smooth move. In this guide, we go through the most important factors you should consider - from insurance and permits to customer reviews and price transparency.'}
                           </p>
                           <div className="flex justify-start sm:justify-between items-center">
                             <div></div>
@@ -2177,7 +2204,7 @@ export default function Home() {
                               href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
                               className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
                             >
-                              Läs mer
+                              {locale === 'sv' ? 'Läs mer' : 'Read more'}
                               <svg 
                                 xmlns="http://www.w3.org/2000/svg" 
                                 className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -2199,7 +2226,7 @@ export default function Home() {
                     href="/blogg" 
                     className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base"
                   >
-                    Se alla artiklar om flytt
+                    {locale === 'sv' ? 'Se alla artiklar om flytt' : 'See all articles about moving'}
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -2220,35 +2247,35 @@ export default function Home() {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-                  Vanliga frågor
+                  {locale === 'sv' ? 'Vanliga frågor' : 'Frequently Asked Questions'}
                 </h2>
                 
                 <div className="space-y-4">
                   {[
                     {
                       id: "home-1",
-                      question: "Hur mycket kostar en flytt?",
-                      answer: "Våra priser baseras på faktorer som boyta, våning, hiss och parkeringsavstånd. Vi erbjuder både fasta priser och löpande priser. Fyll i vårt formulär för en snabb offert på 1 minut."
+                      question: locale === 'sv' ? "Hur mycket kostar en flytt?" : "How much does a move cost?",
+                      answer: locale === 'sv' ? "Våra priser baseras på faktorer som boyta, våning, hiss och parkeringsavstånd. Vi erbjuder både fasta priser och löpande priser. Fyll i vårt formulär för en snabb offert på 1 minut." : "Our prices are based on factors such as living area, floor, elevator and parking distance. We offer both fixed prices and ongoing prices. Fill in our form for a quick quote in 1 minute."
                     },
                     {
                       id: "home-2",
-                      question: "Vad ingår i en vanlig bohagsflytt?",
-                      answer: "Transport, bärhjälp, lastning och lossning. Vi kan även erbjuda packning, montering och flyttstäd som tillval."
+                      question: locale === 'sv' ? "Vad ingår i en vanlig bohagsflytt?" : "What is included in a regular household move?",
+                      answer: locale === 'sv' ? "Transport, bärhjälp, lastning och lossning. Vi kan även erbjuda packning, montering och flyttstäd som tillval." : "Transport, carrying help, loading and unloading. We can also offer packing, assembly and moving cleaning as options."
                     },
                     {
                       id: "home-3",
-                      question: "Erbjuder ni flyttstädning?",
-                      answer: "Ja, vi erbjuder professionell flyttstädning som uppfyller alla krav. Vi har utfört över 7000 städningar och ger 14 dagars nöjd kund garanti på vår städservice."
+                      question: locale === 'sv' ? "Erbjuder ni flyttstädning?" : "Do you offer moving cleaning?",
+                      answer: locale === 'sv' ? "Ja, vi erbjuder professionell flyttstädning som uppfyller alla krav. Vi har utfört över 7000 städningar och ger 14 dagars nöjd kund garanti på vår städservice." : "Yes, we offer professional moving cleaning that meets all requirements. We have performed over 7000 cleanings and give a 14-day satisfied customer guarantee on our cleaning service."
                     },
                     {
                       id: "home-4",
-                      question: "Kan ni hjälpa med packning?",
-                      answer: "Ja, vi erbjuder komplett packservice där vi packar allt åt dig. Vi har erfarenhet av att packa känsliga föremål och säkerställer att allt packas säkert för transport."
+                      question: locale === 'sv' ? "Kan ni hjälpa med packning?" : "Can you help with packing?",
+                      answer: locale === 'sv' ? "Ja, vi erbjuder komplett packservice där vi packar allt åt dig. Vi har erfarenhet av att packa känsliga föremål och säkerställer att allt packas säkert för transport." : "Yes, we offer complete packing service where we pack everything for you. We have experience packing sensitive items and ensure everything is packed safely for transport."
                     },
                     {
                       id: "home-5",
-                      question: "Hur snabbt kan ni boka in en flytt?",
-                      answer: "Vi är flexibla och kan ofta erbjuda snabba tider. Kontakta oss eller fyll i vårt offertformulär så återkommer vi inom 1 minut med lediga tider och prisförslag."
+                      question: locale === 'sv' ? "Hur snabbt kan ni boka in en flytt?" : "How quickly can you book a move?",
+                      answer: locale === 'sv' ? "Vi är flexibla och kan ofta erbjuda snabba tider. Kontakta oss eller fyll i vårt offertformulär så återkommer vi inom 1 minut med lediga tider och prisförslag." : "We are flexible and can often offer quick times. Contact us or fill in our quote form and we will get back to you within 1 minute with available times and price proposals."
                     },
                   ].map((faq, index) => (
                     <motion.div
@@ -2311,13 +2338,13 @@ export default function Home() {
 
                 <div className="text-center mt-12">
                   <p className="text-lg text-gray-600 mb-6">
-                    Har du fler frågor?
+                    {locale === 'sv' ? 'Har du fler frågor?' : 'Do you have more questions?'}
                   </p>
                   <Link 
                     href="/faq" 
                     className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                   >
-                    Se alla vanliga frågor
+                    {locale === 'sv' ? 'Se alla vanliga frågor' : 'See all frequently asked questions'}
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -2369,7 +2396,74 @@ const TipCard: React.FC<TipCardProps> = ({ title, content, imageSrc, imageAlt, o
 
 // Inline FeatureBoxesSection component
 function FeatureBoxesSection() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  
+  const features = [
+    {
+      key: "pack-garanti",
+      label: locale === 'sv' ? "Pack-garanti" : "Packing guarantee",
+      icon: (
+        <motion.div variants={variants} animate="bounce" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
+        </motion.div>
+      ),
+    },
+    {
+      key: "kundgaranti",
+      label: locale === 'sv' ? "14 dagars nöjd kund garanti" : "14-day satisfied customer guarantee",
+      icon: (
+        <motion.div variants={variants} animate="pulse" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
+          <HappyCustomerLottie />
+        </motion.div>
+      ),
+    },
+    {
+      key: "kartonger",
+      label: locale === 'sv' ? "Fritt lån av kartonger i 4 veckor" : "Free loan of boxes for 4 weeks",
+      icon: (
+        <motion.div variants={variants} animate="bounce" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
+          <BoxesLottie />
+        </motion.div>
+      ),
+    },
+    {
+      key: "rut-avdrag",
+      label: locale === 'sv' ? "50% RUT-avdrag" : "50% RUT deduction",
+      icon: (
+        <motion.div variants={variants} animate="wiggle" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
+          <CashLottie />
+        </motion.div>
+      ),
+    },
+    {
+      key: "ombokning-avbokning",
+      label: locale === 'sv' ? "24h kostnadsfri ombokning och avbokning" : "24h free rescheduling and cancellation",
+      icon: (
+        <motion.div variants={variants} animate="pulse" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
+          <ScheduleLottie />
+        </motion.div>
+      ),
+    },
+    {
+      key: "tillstand",
+      label: locale === 'sv' ? "Trafiktillstånd och försäkring" : "Traffic permit and insurance",
+      icon: (
+        <div className="flex items-center justify-start w-full">
+          <motion.div variants={variants} animate="bounce" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center mr-4 overflow-visible">
+            <InsuranceLottie />
+          </motion.div>
+          <span className="font-medium text-[#0F172A] text-left text-lg md:text-base leading-tight flex-grow">
+            {locale === 'sv' ? "Trafiktillstånd och försäkring" : "Traffic permit and insurance"}
+          </span>
+          <div className="flex items-center ml-4">
+            <Image src="/trygg-hansa-logo.png" alt="Trygg Hansa Logo" width={120} height={120} className="object-contain" />
+            <Image src="/fora-logo.png" alt="Fora Logo" width={60} height={60} className="object-contain ml-2" />
+          </div>
+        </div>
+      ),
+    },
+  ];
+  
   // Animation for insurance logos
   const [logoIndex, setLogoIndex] = React.useState(0);
   React.useEffect(() => {
@@ -2419,71 +2513,6 @@ function FeatureBoxesSection() {
     </div>
   );
 
-  const features = [
-    {
-      key: "pack-garanti",
-      label: "Pack-garanti",
-      icon: (
-        <motion.div variants={variants} animate="bounce" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
-        </motion.div>
-      ),
-    },
-    {
-      key: "kundgaranti",
-      label: "14 dagars nöjd kund garanti",
-      icon: (
-        <motion.div variants={variants} animate="pulse" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
-          <HappyCustomerLottie />
-        </motion.div>
-      ),
-    },
-    {
-      key: "kartonger",
-      label: "Fritt lån av kartonger i 4 veckor",
-      icon: (
-        <motion.div variants={variants} animate="bounce" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
-          <BoxesLottie />
-        </motion.div>
-      ),
-    },
-    {
-      key: "rut-avdrag",
-      label: "50% RUT-avdrag",
-      icon: (
-        <motion.div variants={variants} animate="wiggle" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
-          <CashLottie />
-        </motion.div>
-      ),
-    },
-    {
-      key: "ombokning-avbokning",
-      label: "24h kostnadsfri ombokning och avbokning",
-      icon: (
-        <motion.div variants={variants} animate="pulse" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center overflow-visible">
-          <ScheduleLottie />
-        </motion.div>
-      ),
-    },
-    {
-      key: "tillstand",
-      label: "Trafiktillstånd och försäkring",
-      icon: (
-        <div className="flex items-center justify-start w-full">
-          <motion.div variants={variants} animate="bounce" className="h-8 w-8 md:h-8 md:w-8 flex items-center justify-center mr-4 overflow-visible">
-            <InsuranceLottie />
-          </motion.div>
-          <span className="font-medium text-[#0F172A] text-left text-lg md:text-base leading-tight flex-grow">
-            Trafiktillstånd och försäkring
-          </span>
-          <div className="flex items-center ml-4">
-            <Image src="/trygg-hansa-logo.png" alt="Trygg Hansa Logo" width={120} height={120} className="object-contain" />
-            <Image src="/fora-logo.png" alt="Fora Logo" width={60} height={60} className="object-contain ml-2" />
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <div className="w-full my-4 md:my-12">

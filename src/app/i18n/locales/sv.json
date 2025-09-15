@@ -604,13 +604,653 @@
       "title": "Professionell flyttstädning",
       "subtitle": "Låt vårt erfarna team ta hand om städningen",
       "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick."
+    },
+    "content": {
+      "whatIsTitle": "Vad är flyttstädning?",
+      "whatIsDescription": "Flyttstädning är en grundlig städning av en bostad som ska lämnas vid flytt. Det är en viktig del av flyttprocessen som säkerställer att den gamla bostaden lämnas i perfekt skick för nästa boende. En professionell flyttstädning omfattar allt från grundlig rengöring av alla ytor till specialbehandling av kök och badrum. Vi följer branschstandarder och säkerställer att städningen uppfyller alla krav som ställs av hyresvärdar eller köpare. Med vår erfarenhet och noggrannhet kan du känna dig trygg i att din gamla bostad lämnas i skinande skick.",
+      "pricingTitle": "Vad kostar flyttstädning?",
+      "pricingDescription": "Priset på flyttstädning varierar beroende på bostadens storlek, antal rum, tillstånd och eventuella tilläggstjänster. En normal flyttstädning för en lägenhet kan kosta från cirka 1 400 kr efter rut-avdrag och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina specifika behov och bostadens förutsättningar.",
+      "pricingTestimonial": "Flyttella fixade flyttstädningen och det blev riktigt bra. Lägenheten var ren och fräsch och besiktningen gick utan problem. Kan rekommenderas.",
+      "testimonialAuthor": "Maria",
+      "includesTitle": "Vad ingår i flyttstädning?",
+      "includesDescription": "En komplett flyttstädning inkluderar grundlig rengöring av alla rum, kök och badrum. Vi rengör alla ytor, putsar fönster, dammsuger och moppar golv, rengör vitvaror och sanitetsutrustning. Vi använder professionella rengöringsmedel och följer branschstandarder för att säkerställa högsta kvalitet. Vår flyttstädning omfattar även specialbehandling av kök och badrum, inklusive rengöring av kyl/frys, spis, ugn och alla sanitetsutrustningar. Vi erbjuder också tilläggstjänster som rengöring av balkong, garage eller förråd vid behov.",
+      "guaranteeTitle": "14 dagars nöjd kund-garanti",
+      "guaranteeDescription": "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti på alla flyttstädningar. Detta betyder att om du inte är helt nöjd med städningen kommer vi tillbaka och fixar det utan extra kostnad. Vår garanti ger dig trygghet och säkerställer att du får exakt den kvalitet du förväntar dig. Vi värdesätter din tillfredsställelse och arbetar hårt för att leverera en flyttstädning som överträffar dina förväntningar.",
+      "checklistTitle": "Checklista inför flyttstädning",
+      "checklistItems": [
+        "Stäng av och frosta av kyl och frys: Gör detta minst en dag innan städningen för bästa resultat.",
+        "Rensa vattenlås: Ta bort eventuella blockeringar för att underlätta rengöringen.",
+        "Dra ut vitvaror: Om du vill att vi rengör bakom kyl, frys, spis eller tvättmaskin.",
+        "Töm alla rum: Se till att alla rum är tomma från möbler och personliga tillhörigheter.",
+        "Lämna nycklar: Se till att vi har tillgång till bostaden på städdagen.",
+        "Kommunicera specialkrav: Informera oss om eventuella särskilda behov eller känsliga ytor."
+      ]
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är en av Stockholms ledande aktörer inom flyttstädning med över 8 års erfarenhet av professionell flyttstädning, hemstädning och kontorsstädning. Vi erbjuder alltid 14 dagars städgaranti, fasta priser och personlig service för alla flyttstädningar i Stockholm.",
+      "description2": "Vi känner till alla Stockholms områden och anpassar våra flyttstädtjänster efter just dina behov – från lägenheter och villor till kontor och butiker. Vår flyttstädning följer branschstandarder och säkerställer att din gamla bostad lämnas i perfekt skick.",
+      "description3": "Vårt mål är att göra din flyttstädning så enkel och trygg som möjligt. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt genom hela flyttstädningsprocessen. Med vår erfarenhet av flyttstädning i Stockholm kan du känna dig trygg.",
+      "readMore": "Läs mer",
+      "imageAlt": "Om Flyttella Städ"
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Montering",
+        "description": "Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.",
+        "readMore": "Läs mer"
+      }
+    },
+    "faq": {
+      "title": "Vanliga frågor om flyttstädning",
+      "moreQuestions": "Har du fler frågor?",
+      "seeAllQuestions": "Se alla vanliga frågor",
+      "questions": [
+        {
+          "id": "stadning-1",
+          "question": "Hur förbereder jag mig bäst inför flyttstädning?",
+          "answer": "Börja med att rensa ut allt du inte längre behöver. Ta bort alla personliga föremål och lösöre. Se till att alla ytor är tillgängliga för städning. Informera oss om eventuella särskilda krav från hyresvärden eller köparen, och boka städning i god tid för att säkerställa tillgänglighet."
+        },
+        {
+          "id": "stadning-2",
+          "question": "Vad ingår vanligtvis i en flyttstädning?",
+          "answer": "En grundlig flyttstädning inkluderar städning av alla ytor, golv, väggar, tak, fönster, kök, badrum och toaletter. Vi rengör även vitvaror, skåp, lådor och alla hårdgjorda ytor. Städningen följer branschstandarder och säkerställer att bostaden lämnas i perfekt skick enligt vanliga krav."
+        },
+        {
+          "id": "stadning-3",
+          "question": "Hur fungerar städgarantin?",
+          "answer": "Vår 14-dagars städgaranti innebär att om hyresvärden eller köparen inte är nöjd med städningen, kommer vi tillbaka och fixar eventuella brister utan extra kostnad. Detta ger dig trygghet och säkerställer att du får den kvalitet du betalar för."
+        },
+        {
+          "id": "stadning-4",
+          "question": "Hur lång tid tar flyttstädning och vad påverkar tidsåtgången?",
+          "answer": "Tidsåtgången beror på flera faktorer: bostadens storlek, antal rum, tillstånd, tillgänglighet och eventuella särskilda krav. En normal lägenhet tar oftast några timmar, medan större villor kan ta en hel dag eller mer. Vi ger dig alltid en realistisk tidsuppskattning innan vi börjar."
+        },
+        {
+          "id": "stadning-5",
+          "question": "Kan ni anpassa städningen efter specifika krav?",
+          "answer": "Ja, vi kan anpassa städningen efter dina specifika behov och eventuella krav från hyresvärden eller köparen. Vi har erfarenhet av olika städkrav och kan säkerställa att städningen uppfyller alla förväntningar. Kontakta oss för att diskutera dina specifika behov."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Redo att börja din flyttstädning?",
+      "subtitle": "Få en snabb och gratis offert på din flyttstädning",
+      "button": "Få gratis offert"
+    },
+    "services": {
+      "title": "Kombinera din flyttstädning med andra tjänster",
+      "bohagsflytt": {
+        "title": "Bohagsflytt",
+        "description": "Professionell flytt av hela eller delar av ett hushålls tillhörigheter. Vi säkerställer en trygg och smidig flyttprocess från start till mål.",
+        "extendedDescription": "Flyttella erbjuder kompletta bohagsflyttar med allt från packning och transport till uppackning och eventuell magasinering. Vi följer branschstandarder och erbjuder försäkringar för att säkerställa att dina tillhörigheter är säkra under hela flyttprocessen. Med vår erfarenhet och noggrannhet kan du känna dig trygg under hela flytten.",
+        "readMore": "Läs mer"
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
+        "extendedDescription": "Behöver du magasinera bohag under flyttprocessen? Flyttella tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan. Som extra service erbjuder vi den första månaden gratis för att göra din flyttprocess ännu smidigare.",
+        "readMore": "Läs mer"
+      },
+      "packhjalp": {
+        "title": "Packhjälp",
+        "description": "Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.",
+        "extendedDescription": "Packning är ofta den mest tidskrävande delen av en flytt. Flyttella erbjuder professionell packhjälp där våra erfarna flyttare hjälper dig packa dina tillhörigheter på ett säkert och organiserat sätt. Vi använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vår packhjälp inkluderar även märkning av kartonger och skapande av en inventarielista för enkel uppackning på den nya adressen.",
+        "readMore": "Läs mer"
+      }
+    },
+    "features": {
+      "title": "Våra tjänster",
+      "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.",
+      "flyttServicesButton": "Se alla våra flyttjänster",
+      "cleaningServicesButton": "Se alla våra städtjänster"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Pålitlig flyttstädning i Stockholm",
+      "description": "Som Stockholms föredragna flyttstädfirma prioriterar vi din tillfredsställelse. Med vår lokalkännedom och engagerade personal säkerställer vi att varje flyttstädning i Stockholm blir en smidig upplevelse. Våra kunder uppskattar vår noggrannhet och professionella flyttstädtjänster.",
+      "badgeAlt": "8+ års erfarenhet som flyttstädfirma i Stockholm",
+      "arrowText": "Läs vad våra kunder säger om vår flyttstädning"
+    },
+    "benefits": {
+      "title": "Våra förmåner",
+      "imageAlt": "Våra förmåner",
+      "features": [
+        { "icon": "💰", "title": "Fast pris", "description": "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser" },
+        { "icon": "📋", "title": "RUT-avdrag", "description": "Vi hanterar allt pappersarbete för RUT-avdrag" },
+        { "icon": "✅", "title": "14 dagars städgaranti", "description": "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti" },
+        { "icon": "⏰", "title": "Omboka eller avboka kostnadsfritt", "description": "Omboka eller avboka kostnadsfritt upp till 24 timmar innan städningen" },
+        { "icon": "🔒", "title": "Tillstånd och försäkring", "description": "Alla nödvändiga tillstånd och försäkringar på plats" },
+        { "icon": "🎓", "title": "Utbildad personal", "description": "Vår personal är utbildad för att säkerställa högsta kvalitet och service." },
+        { "icon": "🧴", "title": "Miljövänliga produkter", "description": "Vi använder miljövänliga och säkra rengöringsmedel" },
+        { "icon": "📈", "title": "Ledningssystem", "description": "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." },
+        { "icon": "🦺", "title": "Arbetsmiljö", "description": "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." }
+      ]
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "localExperienceTitle": "Lokal erfarenhet ger resultat",
+      "localExperienceDescription": "Med tusentals städningar bakom oss har vi byggt upp en unik expertis inom städbranschen i Stockholm. Vi hjälper både privatpersoner och företag till skinande rena hem och arbetsplatser. Vårt erfarna team arbetar alltid noggrant och effektivt, med miljövänliga produkter och modern utrustning. Vi strävar efter att överträffa dina förväntningar vid varje uppdrag och är stolta över vår höga kundnöjdhet.",
+      "stats": {
+        "flyttstadningar": {
+          "title": "Flyttstädningar",
+          "count": 7000,
+          "description": "uppdrag utförda"
+        },
+        "hemstadningar": {
+          "title": "Hemstädningar", 
+          "count": 5000,
+          "description": "uppdrag utförda"
+        },
+        "foretagsstadningar": {
+          "title": "Företagsstädningar",
+          "count": 2000,
+          "description": "uppdrag utförda"
+        }
+      }
+    },
+    "process": {
+      "title": "Vår process",
+      "description": "Vår flyttstädningsprocess är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär där du anger dina uppgifter och städbehov. Inom en minut får du en offert skickad till din angivna e-postadress. Samma dag eller dagen efter tar vi personlig kontakt med dig för att diskutera detaljerna och svara på eventuella frågor. När du är nöjd med offerten kan du enkelt signera den digitalt. Sedan genomför vi städningen enligt dina önskemål och avtal. Resultatet? En nöjd kund som kan lämna sin gamla bostad i perfekt skick."
+    },
+    "blog": {
+      "title": "Läs mer om städning i Stockholm",
+      "subtitle": "Få värdefulla tips och råd för en grundlig flyttstädning",
+      "imageAlt": "Flyttstädtips Stockholm",
+      "category": "Städtips",
+      "readingTime": "5 min läsning",
+      "articleTitle": "Flyttstädning - Vad du behöver veta",
+      "articleDescription": "Att välja rätt städfirma är avgörande för en grundlig flyttstädning. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från städgaranti och miljövänliga produkter till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös städfirma som levererar kvalitet och trygghet.",
+      "readMore": "Läs mer",
+      "seeAllArticles": "Se alla artiklar om städning"
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Montering",
+        "description": "Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.",
+        "readMore": "Läs mer"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.",
+        "readMore": "Läs mer"
+      },
+      "barhjalp": {
+        "title": "Bärhjälp",
+        "description": "Extra hjälp vid flytt för tunga och stora föremål. Vi hjälper dig med det tunga lyftet.",
+        "readMore": "Läs mer"
+      },
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Professionell bortforsling av gamla möbler, vitvaror och andra föremål du inte längre behöver.",
+        "readMore": "Läs mer"
+      }
     }
   },
   "hemstadning": {
     "hero": {
       "title": "Professionell hemstädning i Stockholm",
-      "subtitle": "Regelbunden städning anpassad efter dina behov",
-      "description": "Vi levererar trygg och noggrann hemstädning med RUT-avdrag. Begär en offert snabbt och enkelt."
+      "subtitle": "Håll ditt hem rent och fräscht med vår pålitliga hemstädning",
+      "description": "Vi erbjuder regelbunden hemstädning för hem i Stockholm. Med vår erfarenhet och noggrannhet säkerställer vi ett skinande rent resultat varje gång."
+    },
+    "content": {
+      "whatIsTitle": "Vad är hemstädning?",
+      "whatIsDescription": "Hemstädning är regelbunden eller återkommande städning av ditt hem. Vi anpassar städningen efter dina behov och önskemål – från kök och badrum till vardagsrum och sovrum. Vårt erfarna team använder miljövänliga produkter och säkerställer ett skinande rent resultat varje gång. Med hemstädning från en professionell städfirma får du hög, jämn kvalitet och mer tid över till det som är viktigt. Vi arbetar efter en tydlig checklista och erbjuder flexibla intervaller (varje vecka, varannan vecka eller månadsvis) samt tillval som fönsterputs och storstädning. Allt för att din hemstädning i Stockholm ska bli enkel, trygg och prisvärd.",
+      "pricingTitle": "Vad kostar hemstädning?",
+      "pricingDescription": "Pris för hemstädning beror på boyta, planlösning, städfrekvens och dina specifika önskemål. Med 50% RUT‑avdrag på arbetskostnaden blir återkommande hemstädning mycket prisvärt. Begär en kostnadsfri offert snabbt och enkelt. Faktorer som påverkar priset är bland annat grad av nedsmutsning samt eventuella tillval (t.ex. fönsterputs eller ugnsrengöring). Vi lämnar alltid ett fast, transparent pris utan dolda avgifter så att du vet exakt vad din hemstädning kostar.",
+      "pricingTestimonial": "Som att komma hem till ett helt nytt hem varje gång – proffsigt, pålitligt och prisvärt!",
+      "testimonialAuthor": "Emma",
+      "includesTitle": "Vad ingår i hemstädning?",
+      "includesDescription": "Hemstädning innefattar dammsugning och moppning av alla golv, dammtorkning av fria ytor, avtorkning av lister, dörrar och handtag, speglar och synliga ytor. I köket rengörs arbetsbänkar, spishäll, diskho och vitvarornas utsidor, och i badrum avkalkas och rengörs handfat, dusch/badkar och toalett. Papperskorgar töms och ytor snyggas till. Som tillval kan du lägga till fönsterputs, sängklädesbyte, invändig skåprengöring, ugnsplåt/ugn samt djuprengöring. Vi använder miljövänliga produkter och arbetar efter en tydlig checklista för ett jämnt och skinande resultat.",
+      "howToBookTitle": "Hur bokar jag hemstädning?",
+      "howToBookDescription": "Boka direkt genom att fylla i formuläret, få prisförslag snabbt och enkelt och bekräfta digitalt. Vi kontaktar dig samma dag eller nästkommande vardag för att stämma av boyta, frekvens och eventuella tillval. Därefter planerar vi startdatum – enkelt och tryggt. Vi matchar dig med en fast städare eller ett litet team för kontinuitet och trygghet. Du väljer veckodag och tid som passar, och kan enkelt justera eller pausa via vår kundtjänst. Betalning sker smidigt efter utförd städning. RUT‑avdraget (50% på arbetskostnaden) sköter vi automatiskt."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är en ledande städfirma i Stockholm med över 8 års erfarenhet av hemstädning, flyttstädning och kontorsstädning. Vi erbjuder fasta priser och personlig service i hela Storstockholm.",
+      "description2": "Vi känner till alla Stockholms områden och anpassar våra städtjänster efter dina behov – från lägenheter och villor till kontor och butiker. Vår hemstädning följer tydliga checklistor för en jämn och hög kvalitet.",
+      "description3": "Vårt mål är att göra din hemstädning enkel och trygg. Vi erbjuder kostnadsfri offert, snabb bokning och personlig kontakt. Med vår erfarenhet av hemstädning i Stockholm kan du känna dig trygg med resultatet varje gång.",
+      "readMore": "Läs mer",
+      "imageAlt": "Om Flyttella"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Pålitlig hemstädning i Stockholm",
+      "description": "Professionell hemstädning i Stockholm med flexibla intervall – veckovis, varannan vecka, månadsvis eller engångsstädning – fast pris och 50% RUT‑avdrag. Punktliga städare och höga betyg. Läs vad våra kunder tycker om vår hemstädning i Stockholm.",
+      "badgeAlt": "8+ års erfarenhet som städfirma i Stockholm",
+      "arrowText": "Läs vad våra kunder säger om vår hemstädning i Stockholm"
+    },
+    "cta": {
+      "title": "Redo att börja din hemstädning?",
+      "subtitle": "Få en snabb och gratis offert på din hemstädning",
+      "button": "Få gratis offert"
+    },
+    "services": {
+      "title": "Våra Städtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Grundlig flyttstädning enligt branschstandard – fast pris, 14 dagars garanti och full RUT‑hantering.",
+        "extendedDescription": "Vi städar enligt en komplett checklista: alla rum, fönsterputsning av alla fönster, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du välja balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.",
+        "readMore": "Läs mer"
+      },
+      "fonsterputs": {
+        "title": "Fönsterputs",
+        "description": "Kristallklara fönster året runt – som tillval till hemstädning eller som separat tjänst.",
+        "extendedDescription": "Vi putsar fönster invändigt och utvändigt där det är säkert och åtkomligt, och tar hand om bågar och fönsterbrädor. Rätt verktyg och metoder ger ett kristallklart resultat utan ränder. Finns även som tillval i samband med hemstädning, storstädning eller flyttstädning – samt som säsongsabonnemang.",
+        "readMore": "Läs mer"
+      },
+      "visningsstadning": {
+        "title": "Visningsstädning",
+        "description": "Professionell visningsstädning som får bostaden att glänsa inför försäljning. Fast pris och 50% RUT‑avdrag.",
+        "extendedDescription": "Fokus på första intrycket: skinande kök och badrum, polerade ytor och speglar, snyggt ordnade detaljer och doftneutralt resultat. Fönsterputs som tillval. Vi följer en visningsanpassad checklista och tidsplan i samråd med dig eller mäklaren.",
+        "readMore": "Läs mer"
+      }
+    },
+    "features": {
+      "title": "Våra tjänster",
+      "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din vardag enklare.",
+      "flyttServicesButton": "Se alla våra flyttjänster",
+      "cleaningServicesButton": "Se alla våra städtjänster"
+    },
+    "benefits": {
+      "title": "Våra förmåner",
+      "imageAlt": "Städpersonal i Stockholm - Flyttella",
+      "items": [
+        { "icon": "💰", "title": "Fast pris", "description": "Inga överraskningar – fasta priser och möjlighet till tillval", "link": "/priser" },
+        { "icon": "📋", "title": "RUT-avdrag", "description": "Vi hanterar allt pappersarbete för RUT-avdrag", "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
+        { "icon": "⚡", "title": "Snabb offert", "description": "Få prisförslag snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan", "link": "#hemstad-offert" },
+        { "icon": "⏰", "title": "Omboka eller avboka", "description": "Omboka/avboka kostnadsfritt upp till 24 timmar innan", "link": "/avbokning" },
+        { "icon": "🔒", "title": "Tillstånd och försäkring", "description": "Alla nödvändiga tillstånd och försäkringar på plats", "link": "/tillstand" },
+        { "icon": "🎓", "title": "Utbildad personal", "description": "Utbildade medarbetare och kvalitetssäkrade rutiner", "link": "/om-oss" },
+        { "icon": "🧴", "title": "Miljövänliga produkter", "description": "Skonsamma och miljövänliga rengöringsmedel", "link": "/miljovanlig-stadning" },
+        { "icon": "📈", "title": "Ledningssystem", "description": "Effektiva rutiner för kvalitet och struktur", "link": "/kvalitet" },
+        { "icon": "🦺", "title": "Arbetsmiljö", "description": "Trygg arbetsmiljö för både kunder och personal", "link": "/arbetsmiljo" }
+      ]
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "localExperienceTitle": "Lokal erfarenhet ger resultat",
+      "localExperienceDescription": "Med tusentals städningar i Stockholm har vi byggt upp en stark expertis inom hemstädning. Vi arbetar metodiskt med tydliga checklistor och miljövänliga produkter för ett jämnt, pålitligt resultat i alla rum. Städningen anpassas efter ditt hem och dina önskemål. Våra höga kundbetyg och många återkommande kunder visar att vår process fungerar.",
+      "stats": {
+        "hemstadningar": {
+          "title": "Hemstädningar",
+          "count": 5000,
+          "description": "uppdrag utförda"
+        },
+        "flyttstadningar": {
+          "title": "Flyttstädningar",
+          "count": 7000,
+          "description": "uppdrag utförda"
+        },
+        "foretagsstadningar": {
+          "title": "Företagsstädningar",
+          "count": 2000,
+          "description": "uppdrag utförda"
+        }
+      }
+    },
+    "process": {
+      "title": "Vår process",
+      "description": "Vår hemstädningsprocess är utformad för att vara enkel, flexibel och trygg. Det börjar med att du fyller i vårt korta formulär där du anger boyta, städfrekvens och eventuella tillval. Du får du en tydlig offert direkt till din e‑post. Samma dag eller senast dagen efter tar vi personlig kontakt för att säkerställa att allt stämmer och för att svara på dina frågor. När du är nöjd signerar du enkelt digitalt.",
+      "description2": "Därefter planerar vi städningen utifrån dina önskemål och vår checklista för hemstädning. Våra utbildade medarbetare använder skonsamma och miljövänliga produkter och ser till att kök, badrum, allrum och sovrum blir skinande rena vid varje tillfälle. Du kan enkelt boka om vid behov. Resultatet? Ett jämnt och pålitligt städresultat samt mer tid över till det som är viktigt för dig.",
+      "pricing": "Våra priser beräknas utifrån boyta, städfrekvens och valda tillägg som fönsterputs eller storstädning. Alla priser är fasta utan dolda avgifter. Om du har särskilda önskemål anpassar vi offerten efter dina behov och förutsättningar. RUT‑avdraget hanteras automatiskt av oss för att göra det enkelt och prisvärt.",
+      "howItWorksTitle": "Så fungerar det"
+    },
+    "blog": {
+      "title": "Läs mer om hemstädning",
+      "subtitle": "Tips för ett skinande rent hem, smarta rutiner för vardagsstädning och hur du väljer rätt städfirma. Vi går igenom RUT‑avdrag, pris, vad som ingår och hur du förbereder inför första städningen.",
+      "imageAlt": "Hemstädtips",
+      "category": "Hemstädtips",
+      "readingTime": "4 min läsning",
+      "articleTitle": "Så väljer du rätt hemstädning",
+      "articleDescription": "Vad ska man tänka på när man bokar hemstädning? Här går vi igenom pris, kvalitet, RUT‑avdrag och vad som brukar ingå. Du får även en enkel checklista för att förbereda hemmet, råd om rätt städfrekvens och hur du får en trygg start med en fast städare.",
+      "readMore": "Läs mer",
+      "seeAllArticles": "Se alla artiklar om städning"
+    },
+    "faq": {
+      "title": "Vanliga frågor om hemstädning"
+    },
+    "sidebar": {
+      "storstadning": {
+        "title": "Storstädning",
+        "description": "Grundlig storstädning med fokus på kök, badrum och svåråtkomliga ytor. Perfekt som komplement till fönsterputs.",
+        "readMore": "Läs mer"
+      },
+      "byggstadning": {
+        "title": "Byggstädning",
+        "description": "Effektiv byggstädning efter renovering – grov- och finstädning för inflyttningsklart resultat.",
+        "readMore": "Läs mer"
+      },
+      "dodsbo": {
+        "title": "Dödsbostädning",
+        "description": "Omsorgsfull dödsbostädning – sortering samt grov- och finstädning inför försäljning eller överlåtelse.",
+        "readMore": "Läs mer"
+      }
+    }
+  },
+  "kontorsstadning": {
+    "hero": {
+      "title": "Professionell kontorsstädning i Stockholm",
+      "subtitle": "Håll ditt kontor rent och professionellt med vår pålitliga kontorsstädning",
+      "description": "Vi erbjuder komplett kontorsstädning för företag i Stockholm. Med vår erfarenhet och noggrannhet säkerställer vi en ren och professionell arbetsmiljö för dina medarbetare."
+    },
+    "content": {
+      "whatIsTitle": "Vad är kontorsstädning?",
+      "whatIsDescription": "Kontorsstädning är en specialiserad städtjänst som fokuserar på att hålla kontorslokaler rena, organiserade och professionella. Det inkluderar allt från daglig städning av arbetsstationer till djuprengöring av gemensamma utrymmen som kök, toaletter och konferensrum.",
+      "pricingTitle": "Vad kostar kontorsstädning?",
+      "pricingDescription": "Priset för kontorsstädning beror på flera faktorer: lokalernas storlek, antal medarbetare, städfrekvens och omfattning av städningen. Vi arbetar med transparenta löpande priser utan dolda avgifter och anpassar våra tjänster efter dina specifika behov och budget.",
+      "pricingTestimonial": "Flyttella har städat vårt kontor i över två år. De är alltid punktliga, professionella och gör ett utmärkt jobb. Våra medarbetare uppskattar den rena arbetsmiljön.",
+      "testimonialAuthor": "Anna Lindberg, VD på Tech Solutions AB",
+      "includesTitle": "Vad ingår i kontorsstädning?",
+      "includesDescription": "Vår kontorsstädning omfattar dammsugning och våttorkning av golv, tömning av papperskorgar, torkning av skrivbord och arbetsstationer, rengöring av kök/pentry (diskho, bänkar, mikrovågsugn), städning av toaletter och tvättställ, putsning av speglar och glaspartier, damning av fönsterbrädor och kontorsmöbler. Vi använder miljövänliga produkter för en hälsosam arbetsmiljö.",
+      "guaranteeTitle": "Kvalitetsgaranti",
+      "guaranteeDescription": "Vi är så säkra på vår kvalitet att vi erbjuder en nöjd kund-garanti. Om du inte är helt nöjd med vår städning kommer vi tillbaka och gör om arbetet utan extra kostnad.",
+      "checklistTitle": "Kontrollista innan kontorsstädning",
+      "checklistItems": [
+        "Stäng av datorer och elektronik",
+        "Lås känsliga dokument i säkra skåp",
+        "Töm personliga papperskorgar",
+        "Markera eventuella skador på möbler",
+        "Informera om särskilda städkrav",
+        "Säkerställ tillgång till alla utrymmen"
+      ],
+      "howToBookTitle": "Hur bokar jag kontorsstädning?",
+      "howToBookDescription": "Bokning av kontorsstädning är enkelt. Fyll i vårt formulär med information om dina lokaler och städbehov, så kontaktar vi dig inom 24 timmar för att diskutera detaljer och ge dig en skräddarsydd offert."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är en av Stockholms ledande aktörer inom kontorsstädning med över 8 års erfarenhet av professionell städning för företag. Vi förstår vikten av en ren och välordnad arbetsmiljö för produktivitet och välbefinnande.",
+      "description2": "Vårt team består av utbildade och erfarna städare som arbetar med moderna metoder och miljövänliga produkter. Vi anpassar våra tjänster efter varje företags specifika behov och arbetsschema.",
+      "description3": "Med tusentals nöjda företagskunder bakom oss har vi byggt upp en stark position på marknaden. Vi strävar efter att överträffa förväntningar och leverera konsekvent hög kvalitet vid varje städning.",
+      "readMore": "Läs mer",
+      "imageAlt": "Om Flyttella Städ"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Pålitlig kontorsstädning i Stockholm",
+      "description": "Som Stockholms föredragna kontorsstädfirma prioriterar vi din tillfredsställelse. Med vår lokalkännedom och engagerade personal säkerställer vi att varje kontorsstädning i Stockholm blir en smidig upplevelse. Våra företagskunder uppskattar vår noggrannhet och professionella kontorsstädtjänster.",
+      "badgeAlt": "8+ års erfarenhet som kontorsstädfirma i Stockholm",
+      "arrowText": "Läs vad våra kunder säger om vår kontorsstädning"
+    },
+    "cta": {
+      "title": "Redo att börja din kontorsstädning?",
+      "subtitle": "Få en snabb och gratis offert på din kontorsstädning",
+      "button": "Få gratis offert"
+    },
+    "services": {
+      "title": "Kombinera din kontorsstädning med andra tjänster",
+      "kontorsflytt": {
+        "title": "Kontorsflytt",
+        "description": "Effektiv kontorsflytt med minimal störning av verksamheten – planering, genomförande och efterarbete.",
+        "extendedDescription": "Vi hanterar hela processen från planering till genomförande. Professionell hantering av IT-utrustning, möbler och dokument. Minimal störning av verksamheten.",
+        "readMore": "Läs mer"
+      },
+      "bemanning": {
+        "title": "Bemanning och underentreprenad",
+        "description": "Professionell bemanning för era projekt – kvalificerad personal och pålitliga underentreprenörer.",
+        "extendedDescription": "Vi tillhandahåller erfaren personal för både kortsiktiga och långsiktiga uppdrag. Våra underentreprenörer är noggrant utvalda och kvalitetssäkrade. Flexibla lösningar anpassade efter era specifika behov och krav.",
+        "readMore": "Läs mer"
+      },
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Grundlig flyttstädning enligt branschstandard – löpande priser, 14 dagars garanti och professionell service.",
+        "extendedDescription": "Vi städar enligt en komplett checklista: alla rum, fönsterputsning av alla fönster, kök (inkl. skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du välja balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.",
+        "readMore": "Läs mer"
+      }
+    },
+    "features": {
+      "title": "Våra tjänster",
+      "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.",
+      "flyttServicesButton": "Se alla våra flyttjänster",
+      "cleaningServicesButton": "Se alla våra städtjänster"
+    },
+    "benefits": {
+      "title": "Våra förmåner",
+      "imageAlt": "Våra förmåner",
+      "features": [
+        { "icon": "💰", "title": "Löpande priser", "description": "Transparenta löpande priser – du vet vad du betalar för" },
+        { "icon": "✅", "title": "Kvalitetsgaranti", "description": "Vi är så säkra på vår kvalitet att vi erbjuder nöjd kund-garanti" },
+        { "icon": "⏰", "title": "Flexibla tider", "description": "Vi anpassar städningen efter ert schema - kvällar och helger" },
+        { "icon": "🔒", "title": "Försäkring", "description": "Full ansvarsförsäkring och alla nödvändiga tillstånd på plats" },
+        { "icon": "🎓", "title": "Utbildad personal", "description": "Vår personal är utbildad för att säkerställa högsta kvalitet och service." },
+        { "icon": "🧴", "title": "Miljövänliga produkter", "description": "Vi använder miljövänliga och säkra rengöringsmedel" },
+        { "icon": "📈", "title": "Ledningssystem", "description": "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." },
+        { "icon": "🦺", "title": "Arbetsmiljö", "description": "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." }
+      ]
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "localExperienceTitle": "Lokal erfarenhet ger resultat",
+      "localExperienceDescription": "Med tusentals kontorsstädningar bakom oss har vi byggt upp en unik expertis inom kontorsstädning i Stockholm. Vi hjälper både små och stora företag till skinande rena kontorslokaler. Vårt erfarna team arbetar alltid noggrant och effektivt, med miljövänliga produkter och modern utrustning. Vi strävar efter att överträffa dina förväntningar vid varje uppdrag och är stolta över vår höga kundnöjdhet.",
+      "stats": {
+        "flyttstadningar": {
+          "title": "Flyttstädningar",
+          "count": 7000,
+          "description": "uppdrag utförda"
+        },
+        "hemstadningar": {
+          "title": "Hemstädningar", 
+          "count": 5000,
+          "description": "uppdrag utförda"
+        },
+        "foretagsstadningar": {
+          "title": "Företagsstädningar",
+          "count": 2000,
+          "description": "uppdrag utförda"
+        }
+      }
+    },
+    "process": {
+      "title": "Vår process",
+      "description": "Vår kontorsstädningsprocess är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär där du anger dina uppgifter och städbehov. Inom en minut får du en offert skickad till din angivna e-postadress. Samma dag eller dagen efter tar vi personlig kontakt med dig för att diskutera detaljerna och svara på eventuella frågor. När du är nöjd med offerten kan du enkelt signera den digitalt. Sedan genomför vi städningen enligt dina önskemål och avtal. Resultatet? En nöjd kund som kan fokusera på sin verksamhet medan vi sköter städningen."
+    },
+    "blog": {
+      "title": "Läs mer om kontorsstädning i Stockholm",
+      "subtitle": "Få värdefulla tips och råd för en professionell kontorsstädning",
+      "imageAlt": "Kontorsstädtips Stockholm",
+      "category": "Städtips",
+      "readingTime": "5 min läsning",
+      "articleTitle": "Kontorsstädning - Vad du behöver veta",
+      "articleDescription": "Att välja rätt kontorsstädfirma är avgörande för en professionell arbetsmiljö. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från städgaranti och miljövänliga produkter till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös kontorsstädfirma som levererar kvalitet och trygghet.",
+      "readMore": "Läs mer",
+      "seeAllArticles": "Se alla artiklar om kontorsstädning"
+    },
+    "faq": {
+      "title": "Vanliga frågor om kontorsstädning",
+      "moreQuestions": "Har du fler frågor?",
+      "seeAllQuestions": "Se alla vanliga frågor",
+      "questions": [
+        {
+          "id": "kontorsstadning-1",
+          "question": "Vad ingår i kontorsstädning?",
+          "answer": "Kontorsstädning inkluderar dammsugning, våttorkning av golv, tömning av papperskorgar, torkning av skrivbord, rengöring av kök/pentry och toaletter. Vi anpassar städningen efter dina specifika behov och kan inkludera ytterligare tjänster som fönsterputsning och djuprengöring."
+        },
+        {
+          "id": "kontorsstadning-2", 
+          "question": "Vad kostar kontorsstädning?",
+          "answer": "Priset beror på lokalernas storlek, städfrekvens och omfattning. Vi arbetar med löpande priser utan dolda avgifter och ger dig alltid en transparent kostnadsuppdelning innan vi börjar."
+        },
+        {
+          "id": "kontorsstadning-3",
+          "question": "Kan ni städa utanför kontorstid?",
+          "answer": "Ja, vi anpassar städningen efter ert schema och kan arbeta kvällar och helger. Vi förstår att många företag föredrar att städningen sker utanför arbetstid för att inte störa verksamheten."
+        },
+        {
+          "id": "kontorsstadning-4",
+          "question": "Hur ofta ska man städa kontoret?",
+          "answer": "Beror på antal medarbetare och verksamhet. Vanligt är 1-3 gånger per vecka för de flesta kontor. Vi hjälper dig bestämma optimal städfrekvens baserat på dina behov och budget."
+        },
+        {
+          "id": "kontorsstadning-5",
+          "question": "Kan ni anpassa städningen efter specifika krav?",
+          "answer": "Ja, vi kan anpassa städningen efter dina specifika behov och eventuella krav från hyresvärden eller företagspolicy. Vi har erfarenhet av olika städkrav och kan säkerställa att städningen uppfyller alla förväntningar. Kontakta oss för att diskutera dina specifika behov."
+        }
+      ]
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Montering",
+        "description": "Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.",
+        "readMore": "Läs mer"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.",
+        "readMore": "Läs mer"
+      },
+      "barhjalp": {
+        "title": "Bärhjälp",
+        "description": "Extra hjälp vid flytt för tunga och stora föremål. Vi hjälper dig med det tunga lyftet.",
+        "readMore": "Läs mer"
+      },
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Professionell bortforsling av gamla möbler, vitvaror och andra föremål du inte längre behöver.",
+        "readMore": "Läs mer"
+      }
+    }
+  },
+  "fonsterputsning": {
+    "hero": {
+      "title": "Professionell fönsterputsning i Stockholm",
+      "subtitle": "Kristallklara fönster – varje gång"
+    },
+    "content": {
+      "whatIsTitle": "Vad är fönsterputsning?",
+      "whatIsDescription": "Fönsterputsning omfattar noggrann rengöring av fönsterrutor invändigt och utvändigt där det är säkert och åtkomligt. Vi tar även hand om karmar och fönsterbrädor, och lämnar ett kristallklart resultat utan ränder. Våra utbildade fönsterputsare använder beprövade tekniker, professionella skrapor och mikrofiberdukar för ett randfritt resultat. Vi anpassar arbetet efter fönstertyp och åtkomlighet, och kan vid behov hantera spröjsade fönster, inglasade balkonger och högt belägna fönster efter överenskommelse.",
+      "whatIsImageAlt": "Fönsterputsning",
+      "pricingTitle": "Vad kostar fönsterputsning?",
+      "pricingDescription": "Priset beror på antal fönster, våningsplan, åtkomlighet och om utvändig puts önskas. Med 50% RUT‑avdrag blir fönsterputsning prisvärd. Tillval som spröjs, svåråtkomliga fönster eller inglasade balkonger påverkar priset. Vi lämnar alltid ett fast, transparent pris utan dolda avgifter. Begär en kostnadsfri offert – du får ett prisförslag snabbt och enkelt.",
+      "pricingTestimonial": "Skinande fönster som verkligen lyfte hela hemmet inför visningen. Väldigt nöjd med resultatet!",
+      "testimonialAuthor": "Sofia",
+      "whyChooseTitle": "Fönsterputsning i Stockholm – därför ska du välja oss",
+      "whyChooseDescription": "Vi erbjuder professionell fönsterputsning i Stockholm för lägenhet, villa och kontor. Våra utbildade fönsterputsare ger skinande rent resultat invändigt och utvändigt där det är säkert och åtkomligt. Med fast pris, snabb bokning och 50% RUT‑avdrag blir fönsterputsningen både smidig och prisvärd. Vi kan även schemalägga återkommande fönsterputs som abonnemang för ett jämnt resultat året runt.",
+      "howToBookTitle": "Hur bokar jag fönsterputsning?",
+      "howToBookImageAlt": "Boka fönsterputsning",
+      "howToBookDescription": "Boka fönsterputsning enkelt: fyll i formuläret, få pris direkt och bekräfta digitalt. Vi återkommer samma dag eller nästkommande vardag för att säkerställa detaljer om antal fönster, åtkomlighet och eventuella tillval. Därefter planerar vi ett passande datum och levererar ett randfritt resultat som lyfter hela hemmet.",
+      "includesTitle": "Vad ingår i fönsterputsning?",
+      "includesDescription": "Invändig och, där det är säkert och åtkomligt, utvändig fönsterputs. Rengöring av karmar och fönsterbrädor. Vi använder professionella verktyg och metoder – inklusive specialbehandling för olika material – för ett skinande rent resultat. Som tillval erbjuder vi utvändig puts på högre våningsplan, puts av spröjsade fönster och abonnemang."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "imageAlt": "Om Flyttella",
+      "description1": "Flyttella är en ledande städfirma i Stockholm med över 8 års erfarenhet av fönsterputsning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Storstockholm.",
+      "description2": "Vi använder professionella verktyg och tekniker för ett skinande rent resultat – oavsett årstid. Vi kan schemalägga återkommande puts för ett jämnt resultat över tid.",
+      "description3": "Vårt mål är att göra din vardag enklare. Kostnadsfri offert, snabb bokning och personlig kontakt genom hela processen.",
+      "description4": "Vi har stark lokal närvaro i hela Storstockholm och får höga betyg av våra kunder. Med tydliga rutiner, miljövänliga produkter och kvalitetssäkring i varje steg levererar vi ett pålitligt resultat – varje gång.",
+      "mobileDescription": "Flyttella är en städfirma i Stockholm med lång erfarenhet av fönsterputsning. Vi erbjuder städgaranti, fasta priser och personlig service – med randfria resultat. Vi planerar insatsen utifrån dina fönster och åtkomlighet och levererar ett resultat du märker direkt. Randfria resultat invändigt och, där det är säkert och åtkomligt, utvändigt. Snabb bokning och 50% RUT‑avdrag gör det enkelt och prisvärt.",
+      "readMore": "Läs mer om oss"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Som en av Sveriges mest rekommenderade för fönsterputsning",
+      "description": "Som en av Sveriges mest rekommenderade fönsterputstjänster sätter vi kunden i fokus. Vi vet att fönster påverkar helhetsintrycket – därför gör vi processen enkel, trygg och flexibel. Med vår erfarenhet och vårt dedikerade team ser vi till att din fönsterputs blir en positiv upplevelse från början till slut – med kristallklara resultat.",
+      "badgeAlt": "8+ års erfarenhet av fönsterputsning i Stockholm",
+      "arrowText": "Läs vad våra kunder säger om vår fönsterputsning"
+    },
+    "cta": {
+      "title": "Redo att börja med fönsterputs?",
+      "subtitle": "Få en snabb och gratis offert",
+      "button": "Få gratis offert"
+    },
+    "services": {
+      "title": "Våra Städtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Grundlig flyttstädning enligt branschstandard – fast pris, garanti och RUT.",
+        "extendedDescription": "Vi städar enligt en komplett checklista: alla rum, fönsterputsning av alla fönster, kök (inklusive skåp och lådor invändigt), vitvaror, badrum och toaletter. Baksidor och utrymmen bakom vitvaror städas där det är åtkomligt. Som tillval kan du lägga till balkong/förråd/garage och extra grovrengöring. Resultatet är en inflyttningsklar bostad som uppfyller krav från hyresvärd eller köpare.",
+        "readMore": "Läs mer"
+      },
+      "hemstadning": {
+        "title": "Hemstädning",
+        "description": "Återkommande städning – veckovis, varannan vecka eller månadsvis.",
+        "extendedDescription": "Hemstädning anpassad efter ditt hem och dina önskemål. Vi arbetar efter tydliga checklistor för kök, badrum, vardagsrum och sovrum, och använder skonsamma, miljövänliga produkter. Välj flexibla intervall och komplettera vid behov med tillval som fönsterputs, storstädning eller ugnsrengöring.",
+        "readMore": "Läs mer"
+      },
+      "visningsstadning": {
+        "title": "Visningsstädning",
+        "description": "Städning anpassad för fotografering och visning – fokus på första intrycket.",
+        "extendedDescription": "Fokus på att lyfta helhetsintrycket: skinande kök och badrum, polerade ytor och speglar, prydligt arrangerade detaljer och doftneutralt resultat. Vi följer en visningsanpassad checklista och tidsplan i samråd med dig eller mäklaren för att maximera effekten.",
+        "readMore": "Läs mer"
+      }
+    },
+    "features": {
+      "title": "Våra tjänster",
+      "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din vardag enklare.",
+      "flyttServicesButton": "Se alla våra flyttjänster",
+      "cleaningServicesButton": "Se alla våra städtjänster"
+    },
+    "benefits": {
+      "title": "Våra förmåner",
+      "imageAlt": "Städpersonal i Stockholm - Flyttella",
+      "items": [
+        { "icon": "💰", "title": "Fast pris", "description": "Inga överraskningar – fasta priser och möjlighet till tillval", "link": "/priser" },
+        { "icon": "📋", "title": "RUT-avdrag", "description": "Vi hanterar allt pappersarbete för RUT-avdrag", "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
+        { "icon": "⚡", "title": "Snabb offert", "description": "Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan", "link": "#fonsterputs-offert" },
+        { "icon": "⏰", "title": "Omboka eller avboka", "description": "Omboka/avboka kostnadsfritt upp till 24 timmar innan", "link": "/avbokning" },
+        { "icon": "🔒", "title": "Tillstånd och försäkring", "description": "Alla nödvändiga tillstånd och försäkringar på plats", "link": "/tillstand" },
+        { "icon": "🎓", "title": "Utbildad personal", "description": "Utbildade medarbetare och kvalitetssäkrade rutiner", "link": "/om-oss" },
+        { "icon": "🧴", "title": "Miljövänliga produkter", "description": "Skonsamma och miljövänliga rengöringsmedel", "link": "/om-oss" },
+        { "icon": "📈", "title": "Ledningssystem", "description": "Effektiva rutiner för kvalitet och struktur", "link": "/om-oss" },
+        { "icon": "🦺", "title": "Arbetsmiljö", "description": "Trygg arbetsmiljö för både kunder och personal", "link": "/om-oss" }
+      ]
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "localExperienceTitle": "Lokal erfarenhet ger resultat",
+      "localExperienceDescription": "Med tusentals uppdrag i Stockholm har vi byggt upp en stark expertis inom fönsterputsning. Vi arbetar noggrant och effektivt med professionella verktyg och miljövänliga produkter för ett jämnt, randfritt resultat – året runt. Vi planerar efter väder och ljus när det behövs och håller tidsplanen. Vår höga kundnöjdhet är ett kvitto på att processen fungerar.",
+      "stats": {
+        "fonsterputsningar": {
+          "title": "Fönsterputsningar",
+          "count": 7000,
+          "description": "uppdrag utförda"
+        },
+        "flyttstadningar": {
+          "title": "Flyttstädningar",
+          "count": 7000,
+          "description": "uppdrag utförda"
+        },
+        "hemstadningar": {
+          "title": "Hemstädningar",
+          "count": 5000,
+          "description": "uppdrag utförda"
+        }
+      }
+    },
+    "process": {
+      "title": "Vår process",
+      "description": "Vår process för fönsterputsning är utformad för att vara enkel, trygg och effektiv. Börja med att fylla i formuläret – du får pris snabbt och enkelt och kan bekräfta digitalt. Samma dag eller senast nästkommande vardag kontaktar vi dig för att stämma av antal fönster, åtkomlighet och eventuella tillval.",
+      "description2": "Därefter planerar vi insatsen och genomför fönsterputsningen med professionella verktyg och metoder för ett randfritt resultat – invändigt och, där det är säkert och åtkomligt, utvändigt. Om du vill kan vi även schemalägga återkommande putsning så att dina fönster håller sig kristallklara året runt.",
+      "pricing": "Priset baseras på antal fönster, åtkomlighet och tillval. Fast pris utan dolda avgifter. RUT‑avdrag hanteras automatiskt.",
+      "howItWorksTitle": "Så fungerar det",
+      "steps": [
+        { "title": "Fyll i formuläret", "description": "Berätta om din fönsterputsning" },
+        { "title": "Snabb offert", "description": "Få pris snabbt och enkelt" },
+        { "title": "Personlig kontakt", "description": "Vi ringer samma dag eller dagen efter" },
+        { "title": "Signera & bekräfta", "description": "Boka digitalt" },
+        { "title": "Putsning utförd", "description": "Vi tar hand om allt" },
+        { "title": "Nöjd kund", "description": "Kristallklara fönster" }
+      ]
+    },
+    "blog": {
+      "title": "Läs mer om fönsterputsning",
+      "subtitle": "Tips för randfri putsning, rätt intervall och hur du förbereder inför besök. Vi går igenom verktyg, teknik, väderförhållanden och hur du kombinerar fönsterputsning med städning för bästa effekt.",
+      "imageAlt": "Fönsterputstips",
+      "category": "Fönsterputsning",
+      "readingTime": "4 min läsning",
+      "articleTitle": "Så får du kristallklara fönster",
+      "articleDescription": "Rätt verktyg, rätt teknik och rätt väder. Våra bästa tips för randfri fönsterputs, hur du undviker ränder i solsken och när det är bäst att boka utvändig puts. Plus checklista för förberedelser och säkerhet.",
+      "readMore": "Läs mer",
+      "seeAllArticles": "Se alla artiklar om städning"
+    },
+    "faq": {
+      "title": "Vanliga frågor om fönsterputsning",
+      "questions": [
+        { "id": "fp-1", "question": "Hur ofta bör jag putsa fönster?", "answer": "2–4 gånger per år ger ett jämnt resultat året runt." },
+        { "id": "fp-2", "question": "Kan ni putsa utvändigt på hög höjd?", "answer": "Ja, där det är säkert och åtkomligt. Annars kan vi rekommendera alternativ." },
+        { "id": "fp-3", "question": "Ingår fönsterkarmar?", "answer": "Ja, rengöring av karmar och fönsterbrädor ingår." },
+        { "id": "fp-4", "question": "Kan jag avboka?", "answer": "Ja, kostnadsfri ombokning/avbokning upp till 24 timmar innan." }
+      ]
     }
   },
   "barhjalp": {
