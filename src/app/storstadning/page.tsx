@@ -181,7 +181,7 @@ export default function StorstadningPage() {
                     </div>
                   </div>
                 </div>
-                <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1570px] w-64 sidebar-widget">
+                <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1557px] w-64 sidebar-widget">
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
@@ -193,7 +193,7 @@ export default function StorstadningPage() {
                     </div>
                   </div>
                 </div>
-                <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1830px] w-64 sidebar-widget">
+                <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1800px] w-64 sidebar-widget">
                   <div className="sticky top-8">
                     <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />

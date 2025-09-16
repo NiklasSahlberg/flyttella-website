@@ -251,7 +251,7 @@ export default function BortforslingPage() {
 					<div className="container mx-auto px-4">
 						<div className="max-w-6xl mx-auto relative">
 										{/* Sidebar: Reviews widget (sticky) */}
-										<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[14rem] w-72 sidebar-widget">
+										<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[12.2rem] w-72 sidebar-widget">
 								<div className="sticky top-8">
 									<iframe 
 										src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
@@ -262,7 +262,7 @@ export default function BortforslingPage() {
 							</div>
 
 										{/* Sidebar Service Cards */}
-										<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1440px] w-64 sidebar-widget">
+										<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1340px] w-64 sidebar-widget">
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
@@ -272,7 +272,7 @@ export default function BortforslingPage() {
 									</div>
 								</div>
 							</div>
-										<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1670px] w-64 sidebar-widget">
+										<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1650px] w-64 sidebar-widget">
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />

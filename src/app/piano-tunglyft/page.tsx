@@ -267,6 +267,38 @@ export default function PianoTunglyftPage() {
             </div>
           </div>
 
+							{/* Sidebar Service Cards */}
+							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1310px] w-64 sidebar-widget">
+								<div className="sticky top-8">
+									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">Magasinering</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">Säker förvaring av dina ägodelar i våra moderna lagerlokaler med övervakning och försäkring.</p>
+										<div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+									</div>
+								</div>
+							</div>
+							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1560px] w-64 sidebar-widget">
+								<div className="sticky top-8">
+									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">Montering</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.</p>
+										<div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+									</div>
+								</div>
+							</div>
+							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1835px] w-64 sidebar-widget">
+								<div className="sticky top-8">
+									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
+										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">💪</span><h3 className="text-xl font-bold text-white">Bärhjälp</h3></div>
+										<p className="text-sm text-gray-100 mb-4 relative">Professionell bärhjälp för tunga och otympliga föremål. Vi hjälper dig att flytta det som kräver extra kraft och kunskap.</p>
+										<div className="mt-auto relative"><Link href="/barhjalp" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+									</div>
+								</div>
+							</div>
+
 							{/* Main content - Centered (matching bortforsling) */}
 							<motion.div
 								className="space-y-12 md:space-y-16"

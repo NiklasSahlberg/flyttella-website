@@ -313,7 +313,7 @@ export default function Bohagsflytt() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               {/* Reco Widget - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[22rem] w-72 sidebar-widget">
+              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[10rem] w-72 sidebar-widget">
                 <div className="sticky top-8">
                   <iframe 
                     src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
@@ -326,7 +326,7 @@ export default function Bohagsflytt() {
               {/* Mobile Reco Widget removed per request */}
               
               {/* Montering Card - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1835px] w-64 sidebar-widget">
+              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1635px] w-64 sidebar-widget">
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                   {/* Background pattern */}
@@ -367,7 +367,7 @@ export default function Bohagsflytt() {
               </div>
               
               {/* Tunglyft Card - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[2115px] w-64 sidebar-widget">
+              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1915px] w-64 sidebar-widget">
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                   {/* Background pattern */}
@@ -408,7 +408,7 @@ export default function Bohagsflytt() {
               </div>
               
               {/* Bärhjälp Card - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[2380px] w-64 sidebar-widget">
+              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[2180px] w-64 sidebar-widget">
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                   {/* Background pattern */}
@@ -449,7 +449,7 @@ export default function Bohagsflytt() {
               </div>
               
               {/* Bortforsling Card - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[2640px] w-64 sidebar-widget">
+              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[2440px] w-64 sidebar-widget">
                 <div className="sticky top-8">
                   <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
                   {/* Background pattern */}
