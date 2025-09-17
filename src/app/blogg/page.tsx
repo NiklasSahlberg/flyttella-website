@@ -51,68 +51,50 @@ const blogPosts = [
     category: "Flytttips",
     date: "2024-01-20",
     readTime: "10 min",
-    image: "/movingpicture1.png",
+    image: "/innanflyttfirmankommer.jpg",
     slug: "vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma"
   },
+
+  
   {
     id: 2,
-    title: "10 Tips för en Smidig Flytt i Stockholm",
-    excerpt: "En flytt i Stockholm kan kännas överväldigande, men med rätt planering och förberedelser kan den bli en smidig och stressfri upplevelse. Här delar vi med oss av våra bästa tips baserade på över 8000 flyttar i Stockholmsområdet.",
-    category: "Flytttips",
-    date: "2024-01-15",
-    readTime: "8 min",
-    image: "/innanflyttfirmankommer.jpg",
-    slug: "10-tips-for-en-smidig-flytt-i-stockholm"
-  },
-  {
-    id: 3,
-    title: "Så Packar Du Känsliga Föremål Korrekt",
-    excerpt: "Lär dig hur du packar porslin, konst och andra känsliga föremål för att säkerställa att de kommer fram oskadda.",
-    category: "Packning",
-    date: "2024-01-10",
-    readTime: "4 min",
-    image: "/blog-packning.jpg",
-    slug: "så-packar-du-känsliga-föremål-korrekt"
-  },
-  {
-    id: 4,
     title: "Flyttstädning - Vad du behöver veta",
     excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick.",
     category: "Flyttstädning",
     date: "2024-01-05",
     readTime: "6 min",
-    image: "/blog-flyttstadning.jpg",
+    image: "/cleaning_lady.png",
     slug: "flyttstadning-vad-du-behover-veta"
   },
   {
-    id: 5,
-    title: "RUT-avdrag på Flyttstädning - Så Fungerar Det",
-    excerpt: "Förstå hur RUT-avdraget fungerar för flyttstädning och hur du kan spara pengar på din flytt.",
-    category: "Ekonomi",
-    date: "2023-12-28",
-    readTime: "7 min",
-    image: "/blog-rut-avdrag.jpg",
-    slug: "rut-avdrag-på-flyttstädning-så-fungerar-det"
+    id: 3,
+    title: "Utlandsflytt – Vad du behöver veta",
+    excerpt: "Planering, dokument och genomförande av utlandsflytt. En komplett guide för en trygg flytt över gränser.",
+    category: "Utlandsflytt",
+    date: "2024-02-01",
+    readTime: "9 min",
+    image: "/malaga.jpg",
+    slug: "utlandsflytt-vad-du-behover-veta"
   },
   {
-    id: 6,
-    title: "Kontorsflytt - Planera för Minimal Störning",
-    excerpt: "Strategier för att genomföra en kontorsflytt med minimal påverkan på verksamheten.",
-    category: "Företag",
-    date: "2023-12-20",
-    readTime: "8 min",
-    image: "/blog-kontorsflytt.jpg",
-    slug: "kontorsflytt-planera-för-minimal-störning"
-  },
-  {
-    id: 7,
-    title: "Vinterns Flyttar - Särskilda Överväganden",
-    excerpt: "Tips och råd för att hantera flyttar under vintermånaderna när väderförhållandena kan vara utmanande.",
-    category: "Säsong",
-    date: "2023-12-15",
+    id: 4,
+    title: "Piano & Tunglyft - Professionell Hantering av Tunga Föremål",
+    excerpt: "Specialiserad hantering av piano, tunglyft och känsliga föremål. Vi guidar dig genom vad som krävs för en säker och professionell flytt av tunga objekt.",
+    category: "Tunglyft",
+    date: "2024-02-15",
     readTime: "5 min",
-    image: "/blog-vinter-flytt.jpg",
-    slug: "vinters-flyttar-särskilda-överväganden"
+    image: "/piano_tunglyft.png",
+    slug: "piano-tunglyft-vad-du-behover-veta"
+  },
+  {
+    id: 5,
+    title: "Magasinering - Säkra Lösningar för Din Lagring",
+    excerpt: "Lär dig allt om magasinering med våra praktiska tips. Från förberedelse och packning till kostnadsbesparingar och vanliga misstag att undvika.",
+    category: "Magasinering",
+    date: "2024-02-20",
+    readTime: "6 min",
+    image: "/personalpicture.jpg",
+    slug: "magasinering-vad-du-behover-veta"
   }
 ];
 
@@ -121,6 +103,9 @@ const categories = [
   "Flytttips",
   "Packning", 
   "Flyttstädning",
+  "Utlandsflytt",
+  "Tunglyft",
+  "Magasinering",
   "Ekonomi",
   "Företag",
   "Säsong"
@@ -194,6 +179,7 @@ export default function BlogPage() {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full px-4 md:px-6 py-3 md:py-4 text-base md:text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#10B981] focus:border-transparent outline-none transition-all"
+                  suppressHydrationWarning={true}
                 />
                 <svg
                   className="absolute right-3 md:right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-gray-400"
@@ -222,6 +208,7 @@ export default function BlogPage() {
                       ? 'bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg'
                       : 'bg-white text-[#0F172A] border border-gray-300 hover:border-[#10B981] hover:text-[#10B981]'
                   }`}
+                  suppressHydrationWarning={true}
                 >
                   {category}
                 </button>
@@ -253,6 +240,7 @@ export default function BlogPage() {
                   setSelectedCategory("Alla");
                 }}
                 className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-5 md:px-6 py-2 md:py-3 rounded-full hover:opacity-90 transition-opacity text-sm md:text-base"
+                suppressHydrationWarning={true}
               >
                 Rensa filter
               </button>
@@ -278,6 +266,13 @@ export default function BlogPage() {
                       src={post.image} 
                       alt={post.title}
                       className="w-full h-full object-cover"
+                      style={{ 
+                        objectPosition: post.slug === 'flyttstadning-vad-du-behover-veta' 
+                          ? 'center 20%' 
+                          : post.slug === 'vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma'
+                          ? 'center 40%'
+                          : 'center' 
+                      }}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';

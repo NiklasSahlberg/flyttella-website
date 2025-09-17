@@ -1348,7 +1348,7 @@ export default function PianoTunglyftPage() {
 										<div className="flex flex-col md:flex-row h-full items-stretch">
 											<div className="w-full md:w-1/3 h-48 md:h-full">
 												<img 
-													src="/piano.png" 
+													src="/piano_tunglyft.png" 
 													alt="Piano & tunglyft tips Stockholm" 
 													className="w-full h-full object-cover object-[60%_center]"
 												/>
@@ -1369,7 +1369,7 @@ export default function PianoTunglyftPage() {
 												<div className="flex justify-start sm:justify-between items-center">
 													<div></div>
 													<Link 
-														href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
+														href="/blogg/piano-tunglyft-vad-du-behover-veta" 
 														className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
 													>
 														{t('pianoTunglyft.blog.readMore')}

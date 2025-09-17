@@ -273,6 +273,7 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(true)}
                 className="text-[#0F172A]  transition-colors p-1"
                 aria-label="Öppna meny"
+                suppressHydrationWarning={true}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -513,6 +514,7 @@ export default function Header() {
                 onClick={closeMobileMenu}
               className="absolute top-4 right-4 p-2 text-gray-400 z-[10000] pointer-events-auto"
                 aria-label="Stäng meny"
+                suppressHydrationWarning={true}
               >
               <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -584,6 +586,7 @@ export default function Header() {
                     className={`flex items-center justify-center w-full text-3xl font-medium transition-colors py-1 relative ${
                        'text-[#0F172A]'
                     }`}
+                    suppressHydrationWarning={true}
                   >
                     <span>Våra tjänster</span>
                     <svg
@@ -617,6 +620,7 @@ export default function Header() {
                     <button
                       onClick={() => setLocale('sv')}
                       className={`transition-all duration-200 ${locale === 'sv' ? 'scale-110' : 'hover:scale-105'}`}
+                      suppressHydrationWarning={true}
                     >
                       <Image 
                         src="/flags/se.svg" 
@@ -629,6 +633,7 @@ export default function Header() {
                     <button
                       onClick={() => setLocale('en')}
                       className={`transition-all duration-200 ${locale === 'en' ? 'scale-110' : 'hover:scale-105'}`}
+                      suppressHydrationWarning={true}
                     >
                       <Image 
                         src="/flags/gb.svg" 
@@ -656,7 +661,7 @@ export default function Header() {
                  {/* Back button */}
                  {servicesView === 'list' && (
                    <div className="flex items-center h-12">
-                     <button className="flex items-center text-[#0F172A]" onClick={() => { setServicesView('list'); setMobileView('root'); }} aria-label="Tillbaka">
+                     <button className="flex items-center text-[#0F172A]" onClick={() => { setServicesView('list'); setMobileView('root'); }} aria-label="Tillbaka" suppressHydrationWarning={true}>
                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                        Tillbaka
                      </button>
@@ -667,19 +672,19 @@ export default function Header() {
                    {/* Categories list */}
                    <div aria-hidden={servicesView !== 'list'} className={`absolute inset-0 flex flex-col items-stretch justify-start gap-3 pt-2 transition-transform duration-300 ${servicesView === 'list' ? 'translate-x-0' : '-translate-x-full invisible pointer-events-none'}`}>
                      <div className="w-full max-w-sm">
-                       <button onClick={() => setServicesView('flytt')} className="w-full py-3 text-3xl font-medium text-[#0F172A] flex items-center justify-between">
+                       <button onClick={() => setServicesView('flytt')} className="w-full py-3 text-3xl font-medium text-[#0F172A] flex items-center justify-between" suppressHydrationWarning={true}>
                          <span>Flyttjänster</span>
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
                        </button>
                      </div>
                      <div className="w-full max-w-sm">
-                       <button onClick={() => setServicesView('cleaning')} className="w-full py-3 text-3xl font-medium text-[#0F172A] flex items-center justify-between">
+                       <button onClick={() => setServicesView('cleaning')} className="w-full py-3 text-3xl font-medium text-[#0F172A] flex items-center justify-between" suppressHydrationWarning={true}>
                          <span>Städtjänster</span>
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
                        </button>
                      </div>
                      <div className="w-full max-w-sm">
-                       <button onClick={() => setServicesView('business')} className="w-full py-3 text-3xl font-medium text-[#0F172A] flex items-center justify-between">
+                       <button onClick={() => setServicesView('business')} className="w-full py-3 text-3xl font-medium text-[#0F172A] flex items-center justify-between" suppressHydrationWarning={true}>
                          <span>Företagstjänster</span>
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
                        </button>
@@ -688,7 +693,7 @@ export default function Header() {
                    {/* Flytt view */}
                    <div aria-hidden={servicesView !== 'flytt'} className={`absolute inset-0 transition-transform duration-300 px-2 pt-2 ${servicesView === 'flytt' ? 'translate-x-0' : 'translate-x-full invisible pointer-events-none'}`}>
                      <div className="flex items-center h-12">
-                       <button className="flex items-center text-[#0F172A]" onClick={() => setServicesView('list')} aria-label="Tillbaka">
+                       <button className="flex items-center text-[#0F172A]" onClick={() => setServicesView('list')} aria-label="Tillbaka" suppressHydrationWarning={true}>
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/></svg>
                          Tillbaka
                        </button>
@@ -707,7 +712,7 @@ export default function Header() {
                    <div aria-hidden={servicesView !== 'cleaning'} className={`absolute inset-0 transition-transform duration-300 px-2 pt-2 ${servicesView === 'cleaning' ? 'translate-x-0' : 'translate-x-full invisible pointer-events-none'}`}>
                      <div className="space-y-1">
                        <div className="flex items-center h-12">
-                         <button className="flex items-center text-[#0F172A]" onClick={() => setServicesView('list')} aria-label="Tillbaka">
+                         <button className="flex items-center text-[#0F172A]" onClick={() => setServicesView('list')} aria-label="Tillbaka" suppressHydrationWarning={true}>
                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/></svg>
                            Tillbaka
                          </button>
@@ -725,7 +730,7 @@ export default function Header() {
                    {/* Business view */}
                    <div aria-hidden={servicesView !== 'business'} className={`absolute inset-0 transition-transform duration-300 px-2 pt-2 ${servicesView === 'business' ? 'translate-x-0' : 'translate-x-full invisible pointer-events-none'}`}>
                      <div className="flex items-center h-12">
-                       <button className="flex items-center text-[#0F172A]" onClick={() => setServicesView('list')} aria-label="Tillbaka">
+                       <button className="flex items-center text-[#0F172A]" onClick={() => setServicesView('list')} aria-label="Tillbaka" suppressHydrationWarning={true}>
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/></svg>
                          Tillbaka
                        </button>

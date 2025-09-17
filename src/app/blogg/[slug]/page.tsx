@@ -75,6 +75,25 @@ const MobileStatsSlider = ({ postSlug }: { postSlug: string }) => {
       description: 'uppdrag utförda',
       delay: 2
     }
+  ] : postSlug === "magasinering-vad-du-behover-veta" ? [
+    {
+      title: 'Magasineringsuppdrag',
+      count: 3000,
+      description: 'uppdrag utförda',
+      delay: 0
+    },
+    {
+      title: 'Förvaringslokaler',
+      count: 500,
+      description: 'kvm tillgängliga',
+      delay: 1
+    },
+    {
+      title: 'Månadsvis',
+      count: 200,
+      description: 'uppdrag per månad',
+      delay: 2
+    }
   ] : [
     {
       title: 'Flyttar',
@@ -897,6 +916,7 @@ const blogPosts = [
 
       <h2 class="font-bold">2. Dokument och tull</h2>
       <p>Förbered nödvändiga dokument: inventarielista, tullvärden, försäkringsunderlag och identitetshandlingar. Reglerna varierar mellan länder – kontrollera införselregler i god tid.</p>
+      
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
           <ul class="list-disc pl-5 space-y-2">
@@ -906,7 +926,7 @@ const blogPosts = [
             <li>Intyg för husdjur, läkemedel och elektronik</li>
           </ul>
         </div>
-        <div class="flex-1">
+        <div class="w-full md:flex-1">
           <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
@@ -930,7 +950,9 @@ const blogPosts = [
 
       <h2 class="font-bold">4. Undersök företagets rykte och erfarenhet</h2>
       <p>Läs recensioner och omdömen från tidigare kunder. En seriös flyttfirma har vanligtvis många positiva recensioner och är transparent med både positiva och negativa omdömen. Undersök också hur länge företaget har varit verksamt.</p>
+      
       <p><strong>Var du kan hitta recensioner:</strong></p>
+      
       <div class="flex flex-col md:flex-row gap-8 items-start my-8">
         <div class="flex-1">
           <ul class="list-disc pl-5 space-y-2">
@@ -942,7 +964,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/recommendedcompany2.png" alt="Rekommenderad flyttfirma" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
 
@@ -1059,6 +1081,239 @@ const blogPosts = [
         excerpt: "Planera din flytt i Stockholm med våra beprövade tips."
       }
     ]
+  },
+  {
+    slug: "piano-tunglyft-vad-du-behover-veta",
+    title: "Piano & Tunglyft - Professionell Hantering av Tunga Föremål",
+    excerpt: "Specialiserad hantering av piano, tunglyft och känsliga föremål. Vi guidar dig genom vad som krävs för en säker och professionell flytt av tunga objekt.",
+    category: "Tunglyft",
+    date: "2024-02-15",
+    readTime: "5 min",
+    author: "Flyttella Team",
+    content: `
+      <h2 class="font-bold">Varför krävs specialiserad hantering?</h2>
+      <p>Piano och andra tunga föremål kräver expertis och specialutrustning för säker hantering. En vanlig flyttfirma har ofta inte rätt utrustning eller kunskap för att hantera dessa känsliga objekt utan risk för skador.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Vad som gör piano och tunglyft speciellt:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Extremt tungt - piano väger 200-500 kg</li>
+            <li>Känslig mekanik som kan skadas</li>
+            <li>Kräver specialiserad utrustning</li>
+            <li>Behöver erfaren personal</li>
+            <li>Risk för skador på både objekt och miljö</li>
+          </ul>
+        </div>
+        <div class="w-full md:flex-1">
+          <img src="/smiling_worker_new.png" alt="Piano flytt" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 10%;" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">Vår specialiserade service</h2>
+      <p>Vi erbjuder professionell hantering av piano och tunglyft med specialiserad utrustning och erfaren personal. Vårt team har mångårig erfarenhet av att hantera känsliga och tunga föremål.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Specialiserad pianoutrustning</li>
+            <li>Erfaren personal med tunglyftskompetens</li>
+            <li>Försäkring som täcker skador</li>
+            <li>Ställning och justering av piano</li>
+            <li>Demontering och montering vid behov</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/piano_tunglyft.png" alt="Professionell piano hantering" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">Vad ingår i vår service?</h2>
+      <p>Vår piano och tunglyft-service inkluderar allt som behövs för en säker och professionell hantering av dina tunga föremål.</p>
+      
+      <div class="bg-gray-50 rounded-lg p-6 my-8">
+        <h3 class="font-semibold mb-4">Komplett service:</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><strong>Förberedelse:</strong> Bedömning av objekt och miljö</li>
+          <li><strong>Utrustning:</strong> Specialiserad pianoutrustning och skydd</li>
+          <li><strong>Transport:</strong> Säker hantering under hela processen</li>
+          <li><strong>Placering:</strong> Korrekt ställning och justering</li>
+          <li><strong>Efterkontroll:</strong> Verifiering att allt fungerar korrekt</li>
+        </ul>
+      </div>
+
+      <h2 class="font-bold">Viktiga överväganden</h2>
+      <p>Innan du bokar piano eller tunglyft-service finns det några viktiga saker att tänka på för att säkerställa en smidig process.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Förberedelser du kan göra:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Kontrollera åtkomstvägar och dörröppningar</li>
+            <li>Rensa bort hinder i vägen</li>
+            <li>Informera om eventuella trappor eller hiss</li>
+            <li>Planera för eventuell demontering</li>
+            <li>Kontrollera att destinationen är redo</li>
+          </ul>
+        </div>
+        <div class="w-full md:flex-1">
+          <img src="/personalpicture.jpg" alt="Professionell flyttarbetare" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">Sammanfattning</h2>
+      <p>Piano och tunglyft kräver specialiserad hantering för att säkerställa säkerhet och skydd av dina värdefulla föremål. Med rätt utrustning, erfaren personal och noggrann planering kan även de tyngsta och mest känsliga objekten flyttas säkert.</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Viktiga punkter att komma ihåg:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Välj en specialiserad firma med rätt utrustning</li>
+            <li>Kontrollera försäkring och garantier</li>
+            <li>Förbered miljön ordentligt</li>
+            <li>Planera för eventuell demontering</li>
+            <li>Boka i god tid för bästa service</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/happycustomeraftermoving.png" alt="Nöjd kund efter flytt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Professionell hantering säkerställer skydd av dina värdefulla föremål</p>
+        </div>
+      </div>
+      
+      <p><strong>Behöver du hjälp med piano eller tunglyft?</strong> Flyttella har specialiserad utrustning och erfaren personal för säker hantering av piano och andra tunga föremål. Kontakta oss för en kostnadsfri offert och låt oss hjälpa dig med din specialflytt.</p>
+    `,
+    relatedPosts: [
+      {
+        title: "Vad bör du tänka på när du väljer en seriös flyttfirma",
+        slug: "vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma",
+        excerpt: "Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi våra viktigaste tips."
+      },
+      {
+        title: "Utlandsflytt – Vad du behöver veta",
+        slug: "utlandsflytt-vad-du-behover-veta",
+        excerpt: "Planering, dokument och genomförande av utlandsflytt. En komplett guide för en trygg flytt över gränser."
+      }
+    ]
+  },
+  {
+    slug: "magasinering-vad-du-behover-veta",
+    title: "Magasinering - Säkra Lösningar för Din Lagring",
+    excerpt: "Lär dig allt om magasinering med våra praktiska tips. Från förberedelse och packning till kostnadsbesparingar och vanliga misstag att undvika.",
+    category: "Magasinering",
+    date: "2024-02-20",
+    readTime: "6 min",
+    author: "Flyttella Team",
+    content: `
+      <h2 class="font-bold">När behöver du magasinering?</h2>
+      <p>Magasinering kan vara en praktisk lösning för många olika situationer. Här är de vanligaste anledningarna till att folk väljer att förvara sina ägodelar:</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Vanliga anledningar till magasinering:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Mellanflyttar och renoveringar</li>
+            <li>Förvaring av säsongsobjekt (vinter/sommar)</li>
+            <li>Utrymme för nya möbler eller ombyggnation</li>
+            <li>Långtidsförvaring vid utlandsflytt</li>
+            <li>Företagsförvaring av arkiv och inventarier</li>
+            <li>Dödsbo och arv som behöver sorteras</li>
+          </ul>
+        </div>
+        <div class="w-full md:flex-1">
+          <img src="/personalpicture.jpg" alt="Organisering av ägodelar" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">Så här förbereder du dina ägodelar för förvaring</h2>
+      <p>En bra förberedelse är nyckeln till en framgångsrik magasinering. Här är våra bästa tips för att förbereda dina ägodelar:</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Steg-för-steg guide:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Inventera:</strong> Gör en detaljerad lista över allt som ska förvaras</li>
+            <li><strong>Rensa:</strong> Sortera bort saker du inte längre behöver</li>
+            <li><strong>Organisera:</strong> Gruppera liknande föremål tillsammans</li>
+            <li><strong>Förpacka:</strong> Använd rätt förpackningsmaterial för varje typ</li>
+            <li><strong>Märk:</strong> Märk alla lådor och kartonger tydligt</li>
+          </ul>
+        </div>
+        <div class="w-full md:flex-1">
+          <img src="/smiling_worker_new.png" alt="Förberedelse för förvaring" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 5%;" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">Vad ska du tänka på när du väljer magasineringsservice?</h2>
+      <p>Alla magasineringsservice är inte lika. Här är viktiga faktorer att överväga när du väljer en förvaringslösning:</p>
+      
+      <div class="bg-gray-50 rounded-lg p-6 my-8">
+        <h3 class="font-semibold mb-4">Kontrollera följande:</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><strong>Säkerhet:</strong> 24/7 övervakning och säkerhetssystem</li>
+          <li><strong>Försäkring:</strong> Vad täcks av försäkringen?</li>
+          <li><strong>Åtkomst:</strong> När och hur kan du komma åt dina saker?</li>
+          <li><strong>Miljö:</strong> Är lokalen torr, välventilerad och temperaturkontrollerad?</li>
+          <li><strong>Flexibilitet:</strong> Kan du förlänga eller förkorta avtalet?</li>
+          <li><strong>Transport:</strong> Erbjuds hämtning och leverans?</li>
+        </ul>
+      </div>
+
+      <h2 class="font-bold">Tips för att spara pengar på magasinering</h2>
+      <p>Magasinering behöver inte vara dyrt. Här är våra bästa tips för att hålla kostnaderna nere:</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Kostnadsbesparande strategier:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Rensa bort onödiga saker innan förvaring</li>
+            <li>Välj rätt storlek på förvaringsutrymmet</li>
+            <li>Jämför priser mellan olika leverantörer</li>
+            <li>Förhandla om längre avtal för bättre priser</li>
+            <li>Packa effektivt för att spara utrymme</li>
+            <li>Planera för regelbunden åtkomst för att undvika glömda saker</li>
+          </ul>
+        </div>
+        <div class="w-full md:flex-1">
+          <img src="/happycustomeraftermoving.png" alt="Kostnadsbesparande tips" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+        </div>
+      </div>
+
+      <h2 class="font-bold">Vanliga misstag att undvika</h2>
+      <p>Många gör samma misstag när de förvarar sina ägodelar. Här är de vanligaste felen och hur du undviker dem:</p>
+      
+      <div class="flex flex-col md:flex-row gap-8 items-start my-8">
+        <div class="flex-1">
+          <p><strong>Misstag att undvika:</strong></p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Packa för tätt - låt föremål "andas"</li>
+            <li>Glöm att ta bort batterier från elektronik</li>
+            <li>Förvara känsliga föremål utan extra skydd</li>
+            <li>Inte märka kartonger tydligt</li>
+            <li>Förvara saker som inte tål fukt eller temperaturförändringar</li>
+            <li>Inte planera för regelbunden kontroll av förvarade objekt</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <img src="/intro_picture.jpg" alt="Undvik vanliga misstag" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <p class="text-sm text-gray-600 mt-2 text-center">Rätt förberedelse undviker problem senare</p>
+        </div>
+      </div>
+      
+      <p><strong>Sammanfattning:</strong> Magasinering kan vara en utmärkt lösning för många situationer, men framgången beror på noggrann planering och förberedelse. Genom att följa dessa tips kan du säkerställa att dina ägodelar förvaras säkert och kostnadseffektivt.</p>
+    `,
+    relatedPosts: [
+      {
+        title: "Piano & Tunglyft - Professionell Hantering av Tunga Föremål",
+        slug: "piano-tunglyft-vad-du-behover-veta",
+        excerpt: "Specialiserad hantering av piano, tunglyft och känsliga föremål. Vi guidar dig genom vad som krävs för en säker och professionell flytt av tunga objekt."
+      },
+      {
+        title: "Utlandsflytt – Vad du behöver veta",
+        slug: "utlandsflytt-vad-du-behover-veta",
+        excerpt: "Planering, dokument och genomförande av utlandsflytt. En komplett guide för en trygg flytt över gränser."
+      }
+    ]
   }
 ];
 
@@ -1110,9 +1365,29 @@ export default function BlogPostPage() {
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
               style={{
-                backgroundImage: `url(/cleaning_background.png)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center top'
+                backgroundImage: post.slug === 'vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma' 
+                  ? `url(/intro_picture.jpg)`
+                  : post.slug === 'utlandsflytt-vad-du-behover-veta'
+                  ? `url(/malaga.jpg)`
+                  : post.slug === 'magasinering-vad-du-behover-veta'
+                  ? `url(/personalpicture.jpg)`
+                  : post.slug === 'piano-tunglyft-vad-du-behover-veta'
+                  ? `url(/piano_tunglyft.png)`
+                  : `url(/cleaning_background.png)`,
+                backgroundSize: post.slug === 'flyttstadning-vad-du-behover-veta' 
+                  ? '120% auto'
+                  : 'cover',
+                backgroundPosition: post.slug === 'vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma' 
+                  ? 'center 50%'
+                  : post.slug === 'flyttstadning-vad-du-behover-veta'
+                  ? 'center 50%'
+                  : post.slug === 'utlandsflytt-vad-du-behover-veta'
+                  ? 'center 30%'
+                  : post.slug === 'magasinering-vad-du-behover-veta'
+                  ? 'center 58%'
+                  : post.slug === 'piano-tunglyft-vad-du-behover-veta'
+                  ? 'left center'
+                  : 'center top'
               }}
             />
             <div className="flex flex-col items-center justify-center gap-8 relative z-10">
@@ -1181,7 +1456,15 @@ export default function BlogPostPage() {
                 <div 
                   className="absolute inset-0 bg-cover bg-center opacity-20 md:hidden"
                   style={{
-                    backgroundImage: 'url(/flyttstad_intro.png)'
+                    backgroundImage: post.slug === 'vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma' 
+                      ? 'url(/innanflyttfirmankommer.jpg)'
+                      : post.slug === 'utlandsflytt-vad-du-behover-veta'
+                      ? 'url(/intro_picture.jpg)'
+                      : post.slug === 'magasinering-vad-du-behover-veta'
+                      ? 'url(/happycustomeraftermoving.png)'
+                      : post.slug === 'piano-tunglyft-vad-du-behover-veta'
+                      ? 'url(/piano.png)'
+                      : 'url(/flyttstad_intro.png)'
                   }}
                 />
                 <h3 className="text-2xl font-bold mb-6 text-center">Viktiga punkter att komma ihåg</h3>
@@ -1225,6 +1508,84 @@ export default function BlogPostPage() {
                         </div>
                       </div>
                     </>
+                  ) : post.slug === "utlandsflytt-vad-du-behover-veta" ? (
+                    <>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">1</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Planera tidigt</h4>
+                          <p className="text-white/80 text-sm">Börja planeringen tidigt</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">2</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Dokument & tull</h4>
+                          <p className="text-white/80 text-sm">Förbered alla nödvändiga dokument</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">3</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Försäkring</h4>
+                          <p className="text-white/80 text-sm">Säkra internationell försäkring</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">4</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Exportpackning</h4>
+                          <p className="text-white/80 text-sm">Professionell packning för transport</p>
+                        </div>
+                      </div>
+                    </>
+                  ) : post.slug === "magasinering-vad-du-behover-veta" ? (
+                    <>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">1</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Rensa först</h4>
+                          <p className="text-white/80 text-sm">Sortera bort onödiga saker innan förvaring</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">2</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Packa smart</h4>
+                          <p className="text-white/80 text-sm">Använd rätt material och låt föremål "andas"</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">3</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Jämför priser</h4>
+                          <p className="text-white/80 text-sm">Kontrollera säkerhet, försäkring och kostnad</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start w-full max-w-xs">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                          <span className="text-white font-bold">4</span>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-2">Märk tydligt</h4>
+                          <p className="text-white/80 text-sm">Skriv innehåll och datum på alla lådor</p>
+                        </div>
+                      </div>
+                    </>
                   ) : (
                     <>
                       <div className="flex items-start w-full max-w-xs">
@@ -1241,8 +1602,8 @@ export default function BlogPostPage() {
                           <span className="text-white font-bold">2</span>
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-semibold mb-2">Jämför flyttfirmor</h4>
-                          <p className="text-white/80 text-sm">Kontrollera fasta eller rörliga priser</p>
+                          <h4 className="font-semibold mb-2">Rut-avdrag</h4>
+                          <p className="text-white/80 text-sm">Använd dig av rut-avdraget</p>
                         </div>
                       </div>
                       <div className="flex items-start w-full max-w-xs">
@@ -1259,8 +1620,8 @@ export default function BlogPostPage() {
                           <span className="text-white font-bold">4</span>
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-semibold mb-2">Boka flyttstädning</h4>
-                          <p className="text-white/80 text-sm">Säkra professionell städning i tid</p>
+                          <h4 className="font-semibold mb-2">Boka i god tid</h4>
+                          <p className="text-white/80 text-sm">Säkra specialiserad service i tid</p>
                         </div>
                       </div>
                     </>
@@ -1335,7 +1696,7 @@ export default function BlogPostPage() {
       <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center justify-center w-full">
         <div className="text-3xl md:text-4xl font-bold mb-2">
           <CountUp 
-            end={post.slug === "flyttstadning-vad-du-behover-veta" ? 7000 : 8000} 
+            end={post.slug === "flyttstadning-vad-du-behover-veta" ? 7000 : post.slug === "magasinering-vad-du-behover-veta" ? 3000 : 8000} 
             duration={2.5}
             suffix="+"
             useEasing={true}
@@ -1344,14 +1705,14 @@ export default function BlogPostPage() {
           />
         </div>
         <div className="text-base font-medium mb-1">
-          {post.slug === "flyttstadning-vad-du-behover-veta" ? "Flyttstädningar" : "Flyttar"}
+          {post.slug === "flyttstadning-vad-du-behover-veta" ? "Flyttstädningar" : post.slug === "magasinering-vad-du-behover-veta" ? "Magasineringsuppdrag" : "Flyttar"}
         </div>
         <div className="text-sm text-white/80">uppdrag utförda</div>
       </div>
       <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center justify-center w-full">
         <div className="text-3xl md:text-4xl font-bold mb-2">
           <CountUp 
-            end={post.slug === "flyttstadning-vad-du-behover-veta" ? 5000 : 7000} 
+            end={post.slug === "flyttstadning-vad-du-behover-veta" ? 5000 : post.slug === "magasinering-vad-du-behover-veta" ? 500 : 7000} 
             duration={2.5}
             suffix="+"
             useEasing={true}
@@ -1360,14 +1721,16 @@ export default function BlogPostPage() {
           />
         </div>
         <div className="text-base font-medium mb-1">
-          {post.slug === "flyttstadning-vad-du-behover-veta" ? "Hemstädningar" : "Städningar"}
+          {post.slug === "flyttstadning-vad-du-behover-veta" ? "Hemstädningar" : post.slug === "magasinering-vad-du-behover-veta" ? "Förvaringslokaler" : "Städningar"}
         </div>
-        <div className="text-sm text-white/80">uppdrag utförda</div>
+        <div className="text-sm text-white/80">
+          {post.slug === "magasinering-vad-du-behover-veta" ? "kvm tillgängliga" : "uppdrag utförda"}
+        </div>
       </div>
       <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center justify-center w-full">
         <div className="text-3xl md:text-4xl font-bold mb-2">
           <CountUp 
-            end={post.slug === "flyttstadning-vad-du-behover-veta" ? 2000 : 500} 
+            end={post.slug === "flyttstadning-vad-du-behover-veta" ? 2000 : post.slug === "magasinering-vad-du-behover-veta" ? 200 : 500} 
             duration={2.5}
             suffix="+"
             useEasing={true}
@@ -1386,15 +1749,67 @@ export default function BlogPostPage() {
 
     {/* About text in the center */}
     <div className="flex-1 text-white/90 min-w-0">
-      <p className="text-xl md:text-2xl leading-relaxed mb-6">
-        Vi är en etablerad flytt och städfirma i Stockholmsområdet med över 10 års erfarenhet av att hjälpa privatpersoner och företag med deras flyttstädning. Vårt team av erfarna städare är dedikerade till att säkerställa att din bostad lämnas i perfekt skick.
-      </p>
-      <p className="text-xl md:text-2xl leading-relaxed mb-6">
-        Vi erbjuder allt från små lägenhetsstädningar till stora villastädningar och kontorsstädningar. Med vår omfattande erfarenhet och professionella service kan du lita på att din bostad städas med största omsorg och noggrannhet.
-      </p>
-      <p className="text-xl md:text-2xl leading-relaxed mb-12">
-        Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flyttstädning i Stockholm!
-      </p>
+      {post.slug === "flyttstadning-vad-du-behover-veta" ? (
+        <>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Vi är en etablerad flytt och städfirma i Stockholmsområdet med över 10 års erfarenhet av att hjälpa privatpersoner och företag med deras flyttstädning. Vårt team av erfarna städare är dedikerade till att säkerställa att din bostad lämnas i perfekt skick.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Vi erbjuder allt från små lägenhetsstädningar till stora villastädningar och kontorsstädningar. Med vår omfattande erfarenhet och professionella service kan du lita på att din bostad städas med största omsorg och noggrannhet.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-12">
+            Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flyttstädning i Stockholm!
+          </p>
+        </>
+      ) : post.slug === "utlandsflytt-vad-du-behover-veta" ? (
+        <>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Vi är en etablerad flyttfirma i Stockholm med över 10 års erfarenhet av internationella flyttar och utlandsflytt. Vårt team av erfarna flyttarbetare är specialiserade på att hjälpa privatpersoner och företag med säkra och effektiva utlandsflyttar till hela världen.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Vi erbjuder professionella utlandsflyttar. Med vår omfattande erfarenhet av tullregler, försäkringar och internationell logistik kan du lita på att din utlandsflytt genomförs med största säkerhet och noggrannhet.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-12">
+            Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din utlandsflytt från Stockholm!
+          </p>
+        </>
+      ) : post.slug === "piano-tunglyft-vad-du-behover-veta" ? (
+        <>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Vi är en etablerad flyttfirma i Stockholm med över 10 års erfarenhet av specialiserad hantering av piano och tunglyft. Vårt team av erfarna flyttarbetare är specialiserade på att hjälpa privatpersoner och företag med säker hantering av tunga och känsliga föremål.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Vi erbjuder professionell piano och tunglyft-service med specialiserad utrustning och erfaren personal. Med vår omfattande erfarenhet av tunga föremål och känsliga objekt kan du lita på att din piano eller tunglyft genomförs med största säkerhet och noggrannhet.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-12">
+            Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din piano eller tunglyft i Stockholm!
+          </p>
+        </>
+      ) : post.slug === "magasinering-vad-du-behover-veta" ? (
+        <>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Magasinering kan vara en utmärkt lösning för många situationer, från mellanflyttar till långtidsförvaring. Med rätt planering och förberedelse kan du spara pengar och säkerställa att dina ägodelar förvaras säkert.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Genom att följa våra beprövade tips och råd kan du undvika vanliga misstag och få ut mesta möjliga av din magasineringsservice. Oavsett om du behöver kort- eller långtidsförvaring finns det alltid sätt att optimera både kostnad och säkerhet.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-12">
+            Lär dig mer om magasinering och få tips för att göra rätt val för dina behov!
+          </p>
+        </>
+      ) : (
+        <>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Vi är en etablerad flyttfirma i Stockholmsområdet med över 10 års erfarenhet av att hjälpa privatpersoner och företag med deras flyttar. Vårt team av erfarna flyttarbetare är dedikerade till att säkerställa att din flytt blir så smidig som möjligt.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-6">
+            Vi erbjuder allt från små lägenhetsflyttar till stora villaflyttar och kontorsflyttar. Med vår omfattande erfarenhet och professionella service kan du lita på att din flytt genomförs med största omsorg och noggrannhet.
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed mb-12">
+            Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flytt i Stockholm!
+          </p>
+        </>
+      )}
       
       {/* Få offert button */}
       <div className="flex justify-center">
