@@ -263,7 +263,7 @@ export default function BemanningPage() {
 							</div>
 
 							{/* Sidebar Service Cards */}
-							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1310px] w-64 sidebar-widget">
+							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1250px] w-64 sidebar-widget">
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
@@ -273,7 +273,7 @@ export default function BemanningPage() {
 									</div>
 								</div>
 							</div>
-							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1620px] w-64 sidebar-widget">
+							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1525px] w-64 sidebar-widget">
 								<div className="sticky top-8">
 									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
 										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />

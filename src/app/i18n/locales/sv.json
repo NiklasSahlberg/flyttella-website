@@ -2632,5 +2632,31 @@
         "description": "Miljövänlig hantering av saker du inte behöver"
       }
     }
+  },
+  "contact": {
+    "callbackTime": {
+      "selectTime": "Välj tid",
+      "morning": "Förmiddag (08:00 - 12:00)",
+      "afternoon": "Eftermiddag (12:00 - 15:00)",
+      "evening": "Sen eftermiddag (15:00 - 18:00)"
+    }
+  },
+  "stadtjanster": {
+    "hero": {
+      "title": "Våra städtjänster",
+      "subtitle": "Professionell städning i Stockholm med fast pris, RUT-avdrag och miljövänliga produkter. Vi erbjuder ett komplett utbud av städtjänster för hem och företag."
+    }
+  },
+  "tjanster": {
+    "hero": {
+      "title": "Våra flyttjänster",
+      "subtitle": "Professionella flyttjänster i Stockholm med fast pris, försäkring och professionell service. Vi erbjuder ett komplett utbud av flyttjänster för privatpersoner och företag."
+    }
+  },
+  "foretag": {
+    "hero": {
+      "title": "Våra företagstjänster",
+      "subtitle": "Professionella lösningar för företag inom flytt, städning och bemanning. Effektiva lösningar med minimal störning av verksamheten."
+    }
   }
 } 

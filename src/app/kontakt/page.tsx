@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, Suspense, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -87,9 +87,58 @@ function SearchParamsHandler({ onFormTypeChange, onServiceChange }: {
 }
 
 export default function KontaktPage() {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
   const [formType, setFormType] = useState('message'); // 'message' or 'callback'
   const [selectedService, setSelectedService] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [lastResponse, setLastResponse] = useState<any>(null);
+  const messageFormRef = useRef<HTMLFormElement>(null);
+  const callbackFormRef = useRef<HTMLFormElement>(null);
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      
+      // Add formType and callbackTime to FormData
+      formData.append('formType', formType);
+      if (formType === 'callback') {
+        formData.append('callbackTime', formData.get('callback-time') as string || '');
+      }
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        body: formData, // Send FormData directly for file upload support
+      });
+
+      const responseData = await response.json();
+      console.log('API Response:', responseData);
+      setLastResponse(responseData);
+
+      if (response.ok && responseData.success) {
+        setSubmitStatus('success');
+        // Reset form using refs
+        if (formType === 'message' && messageFormRef.current) {
+          messageFormRef.current.reset();
+        } else if (formType === 'callback' && callbackFormRef.current) {
+          callbackFormRef.current.reset();
+        }
+        setSelectedService('');
+      } else {
+        console.error('API Error:', responseData);
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
@@ -237,6 +286,7 @@ export default function KontaktPage() {
                       ? 'bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg'
                       : 'text-[#0F172A] hover:bg-gray-50'
                   }`}
+                  suppressHydrationWarning={true}
                 >
                   {locale === 'sv' ? 'Skicka meddelande' : 'Send message'}
                 </button>
@@ -248,11 +298,40 @@ export default function KontaktPage() {
                       ? 'bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white shadow-lg'
                       : 'text-[#0F172A] hover:bg-gray-50'
                   }`}
+                  suppressHydrationWarning={true}
                 >
                   {locale === 'sv' ? 'Be om att bli uppringd' : 'Request callback'}
                 </button>
               </div>
             </div>
+
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                <div className="flex items-center">
+                  <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  {locale === 'sv' ? 'Meddelandet har skickats! Vi återkommer så snart som möjligt.' : 'Message sent! We will get back to you as soon as possible.'}
+                </div>
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                <div className="flex items-center">
+                  <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                  {locale === 'sv' ? 'Ett fel uppstod när meddelandet skulle skickas. Försök igen eller ring oss direkt.' : 'An error occurred while sending the message. Please try again or call us directly.'}
+                </div>
+                {lastResponse && (
+                  <div className="mt-2 text-xs bg-red-50 p-2 rounded">
+                    <strong>Debug Info:</strong> {JSON.stringify(lastResponse)}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Regular Contact Form */}
             <motion.div 
@@ -262,7 +341,7 @@ export default function KontaktPage() {
               animate={{ opacity: formType === 'message' ? 1 : 0 }}
               transition={{ duration: 0.3 }}
             >
-              <form className="space-y-6">
+              <form ref={messageFormRef} className="space-y-6" onSubmit={handleFormSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -275,6 +354,7 @@ export default function KontaktPage() {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
                       placeholder={locale === 'sv' ? 'Ditt namn' : 'Your name'}
                       required
+                      suppressHydrationWarning={true}
                     />
                   </div>
                   <div>
@@ -288,6 +368,7 @@ export default function KontaktPage() {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
                       placeholder="din.email@example.com"
                       required
+                      suppressHydrationWarning={true}
                     />
                   </div>
                 </div>
@@ -300,6 +381,7 @@ export default function KontaktPage() {
                     name="service"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base text-[#0F172A] bg-white appearance-none"
                     required
+                    suppressHydrationWarning={true}
                   >
                     <option value="">{locale === 'sv' ? 'Välj tjänst' : 'Select service'}</option>
                     <option value="bemanning">{locale === 'sv' ? 'Bemanning / Underentreprenad' : 'Staffing / Subcontracting'}</option>
@@ -321,6 +403,7 @@ export default function KontaktPage() {
                     name="phone"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
                     placeholder="070-123 45 67"
+                    suppressHydrationWarning={true}
                   />
                 </div>
                 <div>
@@ -334,6 +417,7 @@ export default function KontaktPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base resize-none"
                     placeholder={locale === 'sv' ? 'Berätta mer om vad du behöver hjälp med...' : 'Tell us more about what you need help with...'}
                     required
+                    suppressHydrationWarning={true}
                   ></textarea>
                 </div>
                 <div>
@@ -354,6 +438,7 @@ export default function KontaktPage() {
                       // We can't declare hooks here; so we rely on form-level state above
                     }}
                     className="hidden"
+                    suppressHydrationWarning={true}
                   />
                   <label
                     htmlFor="attachments"
@@ -384,9 +469,21 @@ export default function KontaktPage() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    suppressHydrationWarning={true}
                   >
-                    {locale === 'sv' ? 'Skicka meddelande' : 'Send message'}
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        {locale === 'sv' ? 'Skickar...' : 'Sending...'}
+                      </div>
+                    ) : (
+                      locale === 'sv' ? 'Skicka meddelande' : 'Send message'
+                    )}
                   </button>
                 </div>
               </form>
@@ -399,7 +496,7 @@ export default function KontaktPage() {
               animate={{ opacity: formType === 'callback' ? 1 : 0 }}
               transition={{ duration: 0.3 }}
             >
-              <form className="space-y-6">
+              <form ref={callbackFormRef} className="space-y-6" onSubmit={handleFormSubmit}>
                 <div>
                   <label htmlFor="callback-name" className="block text-sm font-semibold text-gray-700 mb-2">
                     {locale === 'sv' ? 'Namn *' : 'Name *'}
@@ -411,6 +508,7 @@ export default function KontaktPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
                     placeholder={locale === 'sv' ? 'Ditt namn' : 'Your name'}
                     required
+                    suppressHydrationWarning={true}
                   />
                 </div>
                 <div>
@@ -422,6 +520,7 @@ export default function KontaktPage() {
                     name="callback-service"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base text-[#0F172A] bg-white appearance-none"
                     required
+                    suppressHydrationWarning={true}
                   >
                     <option value="">{locale === 'sv' ? 'Välj tjänst' : 'Select service'}</option>
                     <option value="bemanning">{locale === 'sv' ? 'Bemanning / Underentreprenad' : 'Staffing / Subcontracting'}</option>
@@ -444,6 +543,7 @@ export default function KontaktPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base"
                     placeholder="070-123 45 67"
                     required
+                    suppressHydrationWarning={true}
                   />
                 </div>
                 <div>
@@ -455,11 +555,12 @@ export default function KontaktPage() {
                     name="callback-time"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base text-[#0F172A] bg-white appearance-none"
                     required
+                    suppressHydrationWarning={true}
                   >
-                    <option value="">{locale === 'sv' ? 'Välj tid' : 'Select time'}</option>
-                    <option value="morning">{locale === 'sv' ? 'Förmiddag (08:00 - 12:00)' : 'Morning (08:00 - 12:00)'}</option>
-                    <option value="afternoon">{locale === 'sv' ? 'Eftermiddag (12:00 - 15:00)' : 'Afternoon (12:00 - 15:00)'}</option>
-                    <option value="evening">{locale === 'sv' ? 'Sen eftermiddag (15:00 - 18:00)' : 'Late afternoon (15:00 - 18:00)'}</option>
+                    <option value="">{t('contact.callbackTime.selectTime')}</option>
+                    <option value="morning">{t('contact.callbackTime.morning')}</option>
+                    <option value="afternoon">{t('contact.callbackTime.afternoon')}</option>
+                    <option value="evening">{t('contact.callbackTime.evening')}</option>
                   </select>
                 </div>
                 <div>
@@ -472,14 +573,27 @@ export default function KontaktPage() {
                     rows={3}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all duration-300 text-base resize-none"
                     placeholder={locale === 'sv' ? 'Berätta kort vad du behöver hjälp med...' : 'Tell us briefly what you need help with...'}
+                    suppressHydrationWarning={true}
                   ></textarea>
                 </div>
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    suppressHydrationWarning={true}
                   >
-                    {locale === 'sv' ? 'Be om att bli uppringd' : 'Request callback'}
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        {locale === 'sv' ? 'Skickar...' : 'Sending...'}
+                      </div>
+                    ) : (
+                      locale === 'sv' ? 'Be om att bli uppringd' : 'Request callback'
+                    )}
                   </button>
                 </div>
               </form>

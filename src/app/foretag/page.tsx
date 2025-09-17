@@ -3,11 +3,9 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
-import FlyttoffertForm from '../components/FlyttoffertForm';
-import StadningOffertFormCustomAkersberga from '../components/StadningOffertFormCustomAkersberga';
 import ReviewsWidget from '../components/ReviewsWidget';
 import LocationsCard from '../components/LocationsCard';
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 const fadeInUp = {
@@ -23,7 +21,6 @@ const staggerContainer = {
 };
 
 export default function ForetagPage() {
-  const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const { t } = useLanguage();
 
   const locations = [
@@ -74,40 +71,36 @@ export default function ForetagPage() {
     <main className="overflow-hidden">
       <div className="main-zoom">
         {/* Hero Section */}
-        <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          {/* Mobile: Form */}
-          <div className="md:hidden mx-auto px-4 pb-2" id="foretag-offert">
-            {selectedServiceType === 'flyttstad' ? (
-              <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
-            ) : (
-              <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
-            )}
+        <section className="relative py-16 md:py-32 overflow-hidden bg-gradient-to-r from-[#0F172A] to-[#10B981]">
+          {/* Background image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            style={{
+              backgroundImage: 'url(/office-moving.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center 40%'
+            }}
+          />
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div 
+              className="max-w-4xl mx-auto text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-3xl md:text-6xl font-bold text-white mb-4">
+                {t('foretag.hero.title')}
+              </h1>
+              <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                {t('foretag.hero.subtitle')}
+              </p>
+            </motion.div>
           </div>
-          
-          {/* Desktop hero */}
-          <div className="hidden md:block mx-auto px-16">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: 'url(/office-moving.png)' }} />
-              <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
-                <div className="max-w-xl w-full">
-                  <h1 className="text-5xl md:text-6xl font-bold mb-8">Våra företagstjänster</h1>
-                  <p className="text-2xl md:text-3xl mb-12">Professionella lösningar för företag</p>
-                  <p className="text-lg text-white/90">Vi erbjuder skräddarsydda tjänster för företag inom flytt, städning och bemanning. Effektiva lösningar med minimal störning av verksamheten.</p>
-                </div>
-                <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
-                  {selectedServiceType === 'flyttstad' ? (
-                    <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
-                  ) : (
-                    <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </section>
 
         {/* Företagstjänster Section */}
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <motion.h2 
@@ -193,7 +186,7 @@ export default function ForetagPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
           <div className="mx-auto px-4">
             <motion.div 
               className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] md:min-h-[240px] w-full max-w-4xl mx-auto text-center"

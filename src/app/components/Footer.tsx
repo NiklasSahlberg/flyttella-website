@@ -220,6 +220,7 @@ export default function Footer() {
                     type="button"
                     className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                     onClick={() => setShowMoreFlytt(true)}
+                    suppressHydrationWarning={true}
                   >
                     Se mer
                   </button>
@@ -276,6 +277,7 @@ export default function Footer() {
                     type="button"
                     className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                     onClick={() => setShowMoreStad(true)}
+                    suppressHydrationWarning={true}
                   >
                     Se mer
                   </button>
@@ -336,6 +338,7 @@ export default function Footer() {
                   type="button"
                   className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                   onClick={() => setIsModalOpen(true)}
+                  suppressHydrationWarning={true}
                 >
                   Allmänna villkor - Flytt
                 </button>
@@ -345,6 +348,7 @@ export default function Footer() {
                   type="button"
                   className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                   onClick={() => setIsStadModalOpen(true)}
+                  suppressHydrationWarning={true}
                 >
                   Allmänna villkor - Flyttstäd
                 </button>
@@ -357,6 +361,7 @@ export default function Footer() {
                     type="button"
                     className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                     onClick={() => setShowMoreLegal(true)}
+                    suppressHydrationWarning={true}
                   >
                     Se mer
                   </button>
@@ -389,6 +394,7 @@ export default function Footer() {
                       type="button"
                       className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                       onClick={() => setIsUtlandsflyttModalOpen(true)}
+                      suppressHydrationWarning={true}
                     >
                       Allmänna villkor - Utlandsflytt
                     </button>
