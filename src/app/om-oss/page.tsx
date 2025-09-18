@@ -577,7 +577,7 @@ export default function OmOssPage() {
               {locale === 'sv' ? 'Om oss' : 'About us'}
             </h2>
           </div>
-          <div className="text-[#0F172A] text-lg md:text-2xl leading-tight md:leading-relaxed font-bold max-w-4xl md:max-w-5xl mx-auto">
+          <div className="text-[#0F172A] text-lg md:text-2xl leading-tight md:leading-relaxed max-w-4xl md:max-w-5xl mx-auto">
             <p className="mb-8 md:mb-10">
               {locale === 'sv' ? 'Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder. Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning.' : 'Flyttella is a moving and cleaning company based in Stockholm that was founded with the goal of making moves and cleaning services easier, safer and more transparent. We have existed as a company for 5 years, but have over 8 years of experience in the industry – something that is reflected in our way of working, our quality and our satisfied customers. So far we have had the pleasure of helping over 8000 customers, both individuals and companies, with everything from small moves to complete solutions with cleaning, packing and consulting.'}
             </p>
