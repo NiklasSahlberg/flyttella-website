@@ -57,22 +57,22 @@ const MobileStatsSlider = ({ postSlug, locale }: { postSlug: string, locale: str
     touchCurrentXRef.current = null;
   };
 
-    const cards = postSlug === "flyttstadning-vad-du-behover-veta" ? [
-      {
+  const cards = postSlug === "flyttstadning-vad-du-behover-veta" ? [
+    {
         title: locale === 'en' ? 'Move-out Cleanings' : 'Flyttstädningar',
-        count: 7000,
+      count: 7000,
         description: locale === 'en' ? 'assignments completed' : 'uppdrag utförda',
-        delay: 0
-      },
-      {
+      delay: 0
+    },
+    {
         title: locale === 'en' ? 'Home Cleanings' : 'Hemstädningar',
-        count: 5000,
+      count: 5000,
         description: locale === 'en' ? 'assignments completed' : 'uppdrag utförda',
-        delay: 1
-      },
-      {
+      delay: 1
+    },
+    {
         title: locale === 'en' ? 'Office Cleanings' : 'Företagsstädningar',
-        count: 2000,
+      count: 2000,
         description: locale === 'en' ? 'assignments completed' : 'uppdrag utförda',
         delay: 2
       }
@@ -905,8 +905,8 @@ const blogPosts = [
       }
     ]
   },
-    {
-      slug: "flyttstadning-vad-du-behover-veta",
+  {
+    slug: "flyttstadning-vad-du-behover-veta",
       title: {
         sv: "Flyttstädning - Vad Du Behöver Veta",
         en: "Move-out Cleaning - What You Need to Know"
@@ -1463,8 +1463,8 @@ const blogPosts = [
       }
     ]
   },
-    {
-      slug: "utlandsflytt-vad-du-behover-veta",
+  {
+    slug: "utlandsflytt-vad-du-behover-veta",
       title: {
         sv: "Utlandsflytt – Vad du behöver veta",
         en: "International Moving – What You Need to Know"
@@ -3285,7 +3285,7 @@ export default function BlogPostPage() {
 
                 {/* Lead paragraph */}
                 <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium">
-                    {post.slug === "flyttstadning-vad-du-behover-veta" 
+                  {post.slug === "flyttstadning-vad-du-behover-veta" 
                      ? (locale === 'en' 
                          ? "Move-out cleaning is an important part of the moving process that requires thoroughness and professional service. Here we guide you through everything you need to know to leave your home in perfect condition."
                          : "Flyttstädning är en viktig del av flyttprocessen som kräver noggrannhet och professionell service. Här guidar vi dig genom allt du behöver veta för att lämna din bostad i perfekt skick.")
@@ -3689,8 +3689,8 @@ export default function BlogPostPage() {
       </section>
 
       {/* Call to Action - Moved outside max-width constraint */}
-      <section className="py-16">
-        <div className="mx-auto px-0 md:px-24">
+      <section className="py-16" >
+        <div className="mx-auto px-0 md:px-24" >
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -3700,17 +3700,17 @@ export default function BlogPostPage() {
           >
             {/* Background pattern */}
             <div 
-              className="absolute inset-0 opacity-10 pointer-events-none"
+             className="absolute inset-0 opacity-10 pointer-events-none lg:scale-100 scale-[0.67] origin-top-left"
               style={{
                 backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                backgroundSize: '20px 20px'
+               backgroundSize: '20px 20px',
               }}
             />
             <div className="relative z-10">
               {/* Statistics Section */}
               <div className="mb-8">
                 <h4 className={`text-2xl md:text-3xl font-bold mb-6 text-center ${post.slug === "flyttstadning-vad-du-behover-veta" ? "" : "md:text-center md:ml-[-120px]"}`}>
-                     {post.slug === "flyttstadning-vad-du-behover-veta" 
+                   {post.slug === "flyttstadning-vad-du-behover-veta" 
                       ? (locale === 'en' ? "Need help with move-out cleaning in Stockholm?" : "Behöver du hjälp med flyttstädning i Stockholm?")
                      : post.slug === "hemstadning-vad-du-behover-veta"
                      ? (locale === 'en' ? "Need help with home cleaning in Stockholm?" : "Behöver du hjälp med hemstädning i Stockholm?")
@@ -3793,19 +3793,19 @@ export default function BlogPostPage() {
     <div className="flex-1 text-white/90 min-w-0">
       {post.slug === "flyttstadning-vad-du-behover-veta" ? (
         <>
-       <p className="text-xl md:text-2xl leading-relaxed mb-6">
+      <p className="text-xl md:text-2xl leading-relaxed mb-6">
          {locale === 'en' 
            ? "We are an established moving and cleaning company in the Stockholm area with over 10 years of experience helping individuals and businesses with their move-out cleaning. Our team of experienced cleaners is dedicated to ensuring your home is left in perfect condition."
            : "Vi är en etablerad flytt och städfirma i Stockholmsområdet med över 10 års erfarenhet av att hjälpa privatpersoner och företag med deras flyttstädning. Vårt team av erfarna städare är dedikerade till att säkerställa att din bostad lämnas i perfekt skick."
          }
-       </p>
-       <p className="text-xl md:text-2xl leading-relaxed mb-6">
+      </p>
+      <p className="text-xl md:text-2xl leading-relaxed mb-6">
          {locale === 'en'
            ? "We offer everything from small apartment cleanings to large house cleanings and office cleanings. With our extensive experience and professional service, you can trust that your home is cleaned with the utmost care and precision."
            : "Vi erbjuder allt från små lägenhetsstädningar till stora villastädningar och kontorsstädningar. Med vår omfattande erfarenhet och professionella service kan du lita på att din bostad städas med största omsorg och noggrannhet."
          }
-       </p>
-       <p className="text-xl md:text-2xl leading-relaxed mb-12">
+      </p>
+      <p className="text-xl md:text-2xl leading-relaxed mb-12">
          {locale === 'en'
            ? "Contact us today for a free quote and let us help you with your move-out cleaning in Stockholm!"
            : "Kontakta oss idag för en kostnadsfri offert och låt oss hjälpa dig med din flyttstädning i Stockholm!"

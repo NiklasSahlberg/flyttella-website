@@ -1177,23 +1177,23 @@ export default function BemanningPage() {
 										<div className="flex flex-col md:flex-row h-full items-stretch">
 											<div className="w-full md:w-1/3 h-48 md:h-full">
 												<img 
-													src="/office-moving.png" 
-													alt={locale === 'sv' ? 'Bemanningstips Stockholm' : 'Staffing tips Stockholm'} 
-													className="w-full h-full object-cover object-[60%_center]"
+													src="/intro_picture.jpg" 
+													alt={locale === 'sv' ? 'Vad bör du tänka på när du väljer en seriös flyttfirma' : 'What should you think about when choosing a serious moving company'} 
+													className="w-full h-full object-cover object-center"
 												/>
 											</div>
 											<div className="w-full md:w-2/3 p-4 md:p-6">
 												<div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
 													<span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
-														{locale === 'sv' ? 'Bemanning' : 'Staffing'}
+														{locale === 'sv' ? 'Flytt' : 'Moving'}
 													</span>
-													<span className="text-gray-500 text-sm md:text-base sm:ml-4">{locale === 'sv' ? '5 min läsning' : '5 min read'}</span>
+													<span className="text-gray-500 text-sm md:text-base sm:ml-4">{locale === 'sv' ? '8 min läsning' : '8 min read'}</span>
 												</div>
 												<h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
-													{locale === 'sv' ? 'Vad bör du tänka på när du väljer bemanning och underentreprenad' : 'What should you consider when choosing staffing and subcontracting'}
+													{locale === 'sv' ? 'Vad bör du tänka på när du väljer en seriös flyttfirma' : 'What should you think about when choosing a serious moving company'}
 												</h3>
 												<p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
-													{locale === 'sv' ? 'Rätt bemanning är avgörande för projektets framgång. Vi går igenom viktiga faktorer – från kompetens och erfarenhet till flexibilitet och pålitlighet för att säkerställa en smidig samarbete.' : 'The right staffing is crucial for the project\'s success. We go through important factors – from competence and experience to flexibility and reliability to ensure smooth cooperation.'}
+													{locale === 'sv' ? 'Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips för att identifiera en seriös och pålitlig flyttfirma som tar hand om dina ägodelar med omsorg.' : 'Choosing the right moving company is crucial for a smooth move. Here we share our most important tips for identifying a serious and reliable moving company that takes care of your belongings with care.'}
 												</p>
 												<div className="flex justify-start sm:justify-between items-center">
 													<div></div>
