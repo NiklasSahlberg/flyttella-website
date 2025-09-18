@@ -66,10 +66,14 @@ async function getGmailClient() {
 }
 
 function createEmail(to: string, from: string, subject: string, messageText: string) {
+  // Encode subject with proper MIME encoding for Swedish characters
+  const subjectBytes = Buffer.from(subject, 'utf8');
+  const encodedSubject = subjectBytes.toString('base64');
+  
   const emailLines = [
     `From: ${from}`,
     `To: ${to}`,
-    `Subject: ${subject}`,
+    `Subject: =?UTF-8?B?${encodedSubject}?=`,
     'MIME-Version: 1.0',
     'Content-Type: text/html; charset=utf-8',
     '',
@@ -77,7 +81,7 @@ function createEmail(to: string, from: string, subject: string, messageText: str
   ];
 
   const email = emailLines.join('\r\n').trim();
-  const base64Email = Buffer.from(email).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const base64Email = Buffer.from(email, 'utf8').toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   
   return base64Email;
 }
@@ -89,10 +93,23 @@ function formatFlexibleDate(value: string | undefined): string {
   return value;
 }
 
+// Function to get base64 encoded logo
+function getLogoBase64(): string {
+  try {
+    const logoPath = path.join(process.cwd(), 'public', 'flyttella-logo.png');
+    const logoBuffer = fs.readFileSync(logoPath);
+    return `data:image/png;base64,${logoBuffer.toString('base64')}`;
+  } catch (error) {
+    console.error('Error reading logo file:', error);
+    return ''; // Return empty string if logo can't be read
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const data = await req.json();
     const isFlexible = data.flexibleMovingDate && data.flexibleMovingDate !== 'Nej';
+    const logoBase64 = getLogoBase64();
 
     // Format the email content with HTML table
     const emailContent = `
@@ -100,53 +117,101 @@ export async function POST(req: Request) {
 <html>
 <head>
 <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #0F172A 0%, #10B981 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  .logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .content {
+    padding: 20px;
+  }
   table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 800px;
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
+    margin: 15px 0;
+    font-size: 14px;
   }
   th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    border: 1px solid #e5e7eb;
+    padding: 8px 12px;
     text-align: left;
+    vertical-align: top;
   }
   th {
-    background-color: #f8f9fa;
-    font-weight: bold;
+    background-color: #f3f4f6;
+    font-weight: 600;
+    color: #374151;
+    width: 40%;
+  }
+  td {
+    background-color: white;
+    color: #1f2937;
   }
   .section-header {
-    background-color: #f8f9fa;
-    padding: 10px;
-    margin-top: 20px;
-    font-weight: bold;
-    border: 1px solid #ddd;
+    background: linear-gradient(135deg, #0F172A 0%, #10B981 100%);
+    color: white;
+    padding: 12px 16px;
+    margin: 20px 0 10px 0;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  .compact-row {
+    margin-bottom: 5px;
+  }
+  .highlight {
+    background-color: #fef3c7;
+    border-left: 4px solid #f59e0b;
   }
 </style>
 </head>
 <body>
-  <h2>Ny lead Flyttella - Städning</h2>
+  <div class="container">
+             <div class="header">
+               ${logoBase64 ? `<img src="${logoBase64}" alt="Flyttella Logo" class="logo" style="max-width: 120px; height: auto;">` : ''}
+               <h2 style="margin: 0; font-size: 24px;">Ny Lead - ${data.cleaningType || 'Städning'}</h2>
+             </div>
+    <div class="content">
 
-  <div class="section-header">Städdatum</div>
-  <table>
-    <tr>
-      <th>${data.cleaningType === 'Fönsterputs' || data.cleaningType === 'Window cleaning' ? 'När ska fönsterputsningen ske?' : 'När ska städningen ske?'}</th>
-      <td>${data.movingDate || ''}</td>
-    </tr>
-    <tr>
-      <th>Är städdatumet flexibelt?</th>
-      <td>${isFlexible ? 'Ja' : 'Nej'}</td>
-    </tr>
-    ${isFlexible ? `
-    <tr>
-      <th>Flexibilitet</th>
-      <td>${formatFlexibleDate(data.flexibleMovingDate)}</td>
-    </tr>
-    ` : ''}
-  </table>
+      <div class="section-header">📅 Städdatum</div>
+      <table>
+        <tr>
+          <th>${data.cleaningType === 'Fönsterputs' || data.cleaningType === 'Window cleaning' ? 'Fönsterputsning' : 'Städning'}</th>
+          <td>${data.movingDate || ''}</td>
+        </tr>
+        <tr>
+          <th>Flexibelt datum</th>
+          <td>${isFlexible ? 'Ja' : 'Nej'}</td>
+        </tr>
+        ${isFlexible ? `
+        <tr>
+          <th>Flexibilitet</th>
+          <td>${formatFlexibleDate(data.flexibleMovingDate)}</td>
+        </tr>
+        ` : ''}
+      </table>
 
-  <div class="section-header">Bostadsinformation</div>
+      <div class="section-header">🏠 Bostadsinformation</div>
   <table>
     <tr>
       <th>${data.customerType === 'foretag' ? 'Bostadstyp' : 'Vilken typ av bostad ska städas?'}</th>
@@ -169,27 +234,7 @@ export async function POST(req: Request) {
     </tr>
   </table>
 
- 
-
-  <div class="section-header">Ytterligare utrymmen</div>
-  <table>
-    ${data.customerType !== 'foretag' ? `
-    <tr>
-      <th>Garage</th>
-      <td>${data.hasGarage ? "Ja" : "Nej"}</td>
-    </tr>
-    <tr>
-      <th>Balkong/veranda/terrass</th>
-      <td>${data.hasBalcony ? "Ja" : "Nej"}</td>
-    </tr>
-    <tr>
-      <th>Förråd/uthus</th>
-      <td>${data.hasStorage ? "Ja" : "Nej"}</td>
-    </tr>
-    ` : ''}
-  </table>
-
-  <div class="section-header">Tilläggstjänster</div>
+      <div class="section-header">🔧 Tilläggstjänster</div>
   <table>
     ${data.cleaningType === 'Flyttstädning' || data.cleaningType === 'Moving cleaning' || data.cleaningType === 'Visningsstädning' || data.cleaningType === 'Viewing cleaning' ? `
     <tr>
@@ -359,52 +404,62 @@ export async function POST(req: Request) {
     ` : ''}
   </table>
 
-  <div class="section-header">Kontakttyp</div>
-  <table>
-    <tr>
-      <th>Kontakttyp</th>
-      <td>${data.customerType === 'foretag' ? 'Företag' : 'Privat'}</td>
-    </tr>
-  </table>
+      <div class="section-header">👤 Kontakttyp</div>
+      <table>
+        <tr>
+          <th>Typ</th>
+          <td>${data.customerType === 'foretag' ? 'Företag' : 'Privat'}</td>
+        </tr>
+      </table>
 
-  <div class="section-header">Kontaktinformation</div>
-  <table>
-    <tr>
-      <th>${data.customerType === 'foretag' ? 'Företagsnamn' : 'Namn'}</th>
-      <td>${data.name || ''}</td>
-    </tr>
-    ${data.customerType === 'foretag' ? `
-    <tr>
-      <th>Kontaktperson för och efternamn</th>
-      <td>${data.contactPersonName || ''}</td>
-    </tr>
-    ` : ''}
-    <tr>
-      <th>E-post</th>
-      <td>${data.email || ''}</td>
-    </tr>
-    <tr>
-      <th>Telefon</th>
-      <td>${data.phone || ''}</td>
-    </tr>
-    <tr>
-      <th>Adress</th>
-      <td>${data.address || ''} ${data.streetNumber || ''}</td>
-    </tr>
-    <tr>
-      <th>Postnummer</th>
-      <td>${data.postalCode || ''}</td>
-    </tr>
-  </table>
+      <div class="section-header">📞 Kontaktinformation</div>
+      <table>
+        <tr>
+          <th>${data.customerType === 'foretag' ? 'Företagsnamn' : 'Namn'}</th>
+          <td>${data.name || ''}</td>
+        </tr>
+        ${data.customerType === 'foretag' ? `
+        <tr>
+          <th>Kontaktperson</th>
+          <td>${data.contactPersonName || ''}</td>
+        </tr>
+        ` : ''}
+        <tr>
+          <th>E-post</th>
+          <td>${data.email || ''}</td>
+        </tr>
+        <tr>
+          <th>Telefon</th>
+          <td>${data.phone || ''}</td>
+        </tr>
+        <tr>
+          <th>Adress</th>
+          <td>${data.address || ''} ${data.streetNumber || ''}</td>
+        </tr>
+        <tr>
+          <th>Postnummer</th>
+          <td>${data.postalCode || ''}</td>
+        </tr>
+      </table>
 
-  ${data.comments ? `
-  <div class="section-header">Kommentarer</div>
-  <table>
-    <tr>
-      <td>${data.comments}</td>
-    </tr>
-  </table>
-  ` : ''}
+      ${data.comments ? `
+      <div class="section-header">💬 Kommentarer</div>
+      <table>
+        <tr>
+          <td style="padding: 12px; background-color: #f9fafb; border-radius: 4px;">${data.comments}</td>
+        </tr>
+      </table>
+      ` : ''}
+      ${data.additionalInfo ? `
+      <div class="section-header">💬 Övrig information</div>
+      <table>
+        <tr>
+          <td style="padding: 12px; background-color: #f9fafb; border-radius: 4px;">${data.additionalInfo}</td>
+        </tr>
+      </table>
+      ` : ''}
+    </div>
+  </div>
 </body>
 </html>
     `;
@@ -416,7 +471,7 @@ export async function POST(req: Request) {
     const raw = createEmail(
       'niklassahlbergdeveloper@gmail.com',
       'niklassahlbergdeveloper@gmail.com',
-      'Ny lead Flyttella',
+      `Ny lead - ${data.cleaningType || 'Städning'}`,
       emailContent
     );
 

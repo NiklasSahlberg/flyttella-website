@@ -394,8 +394,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
       }
     }
     
+    // Clear elevator-related fields when new address property type changes
     if (name === 'toTypeOfHome') {
-      const shouldShowElevator = value === 'lagenhet' || value === 'magasin';
+      const shouldShowElevator = value === 'Lägenhet' || value === 'magasin';
       if (!shouldShowElevator) {
         setFormData(prev => ({ 
           ...prev, 
@@ -659,9 +660,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
       isValid = false;
     }
     if (formData.customerType !== 'foretag') {
-    if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
-      newErrors.toTypeOfHome = t('hero.form.validation.selectNewHomeType');
-      isValid = false;
+      if (!formData.toTypeOfHome || !formData.toTypeOfHome.trim()) {
+        newErrors.toTypeOfHome = t('hero.form.validation.selectNewHomeType');
+        isValid = false;
       }
     }
     setErrors(newErrors);
@@ -671,7 +672,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
   const validateStep5 = (): boolean => {
     const newErrors: FormErrors = {};
     let isValid = true;
-    if (formData.toTypeOfHome === "lagenhet") {
+    
+    // Lägenhet-specific validation
+    if ((formData.customerType as string) !== 'foretag' && formData.toTypeOfHome === 'Lägenhet') {
       if (!formData.toFloor) {
         newErrors.toFloor = t('hero.form.validation.selectNewFloor');
         isValid = false;
@@ -684,12 +687,30 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
         newErrors.toElevatorSize = t('hero.form.validation.selectNewElevatorSize');
         isValid = false;
       }
-    } else if (formData.toTypeOfHome !== "annat") {
+    } else {
+      // Validation for other property types (företag, villa, etc.)
       if (!formData.toFloor) {
-        newErrors.toFloor = t('hero.form.validation.enterNewFloorCount');
+        if (formData.customerType === 'foretag') {
+          newErrors.toFloor = t('hero.form.validation.selectNewFloor');
+        } else {
+          newErrors.toFloor = t('hero.form.validation.enterNewFloorCount');
+        }
         isValid = false;
       }
+      
+      // Elevator validation for företag and magasin
+      if ((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'magasin')) {
+        if (!formData.toHasElevator) {
+          newErrors.toHasElevator = t('hero.form.validation.selectNewElevator');
+          isValid = false;
+        }
+        if (formData.toHasElevator === "yes" && !formData.toElevatorSize) {
+          newErrors.toElevatorSize = t('hero.form.validation.selectNewElevatorSize');
+          isValid = false;
+        }
+      }
     }
+    
     if (!formData.toParkingDistance || !formData.toParkingDistance.trim()) {
       newErrors.toParkingDistance = t('hero.form.validation.enterUnloadingDistance');
       isValid = false;
@@ -858,7 +879,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   antalRum: formData.numberOfRooms,
                   vaningNr: formData.floor,
                   hasElevator: formData.hasElevator === "yes" ? t('hero.form.yes') : t('hero.form.no'),
-                  elevatorSize: formData.hasElevator === "yes" ? formData.elevatorSize : undefined,
+                  elevatorSize: formData.hasElevator === "yes" ? (formData.elevatorSize === "small" ? t('hero.form.options.elevator.small') : formData.elevatorSize === "large" ? t('hero.form.options.elevator.largeResidential') : formData.elevatorSize) : undefined,
                   parkeringsAvstand: formData.parkingDistance,
                   workplaceCount: formData.customerType === 'foretag' ? formData.workplaceCount : undefined,
                   hasAttic: formData.hasAttic === "yes" ? t('hero.form.yes') : t('hero.form.no'),
@@ -878,7 +899,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   antalRum: formData.toNumberOfRooms,
                   vaningNr: formData.toFloor,
                   hasElevator: formData.toHasElevator === "yes" ? t('hero.form.yes') : t('hero.form.no'),
-                  elevatorSize: formData.toHasElevator === "yes" ? formData.toElevatorSize : undefined,
+                  elevatorSize: formData.toHasElevator === "yes" ? (formData.toElevatorSize === "small" ? t('hero.form.options.elevator.small') : formData.toElevatorSize === "large" ? t('hero.form.options.elevator.largeResidential') : formData.toElevatorSize) : undefined,
                   parkeringsAvstand: formData.toParkingDistance,
                   hasLoadingDock: formData.customerType === 'foretag' ? (formData.toHasLoadingDock === "yes" ? t('hero.form.yes') : t('hero.form.no')) : undefined
                 },
@@ -2450,42 +2471,110 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 {formData.customerType === 'foretag' ? t('hero.form.newBusinessAddress') : t('hero.form.newAddressStep4')}
               </h2>
               <div className="space-y-6">
-                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'lagenhet')) ? (
-                <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.customerType === 'foretag' ? t('hero.form.floorBusiness') : t('hero.form.floor')}</strong>
-                    </label>
-                  <select
-                    name="toFloor"
-                    value={formData.toFloor}
-                    onChange={(e) => {
-                      handleInputChange(e);
-                      setErrors(prev => ({ ...prev, toFloor: "" }));
-                    }}
-                    required
-                    className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none ${
-                      errors.toFloor ? "border-red-500" : ""
-                    }`}
-                  >
-                    <option value="">{t('hero.form.select')}</option>
-                    <option value="-2">{t('hero.form.options.floor.minus2')}</option>
-                    <option value="-1">{t('hero.form.options.floor.minus1')}</option>
-                    <option value="entreplan">{t('hero.form.options.floor.ground')}</option>
-                    <option value="1">{t('hero.form.options.floor.1')}</option>
-                    <option value="2">{t('hero.form.options.floor.2')}</option>
-                    <option value="3">{t('hero.form.options.floor.3')}</option>
-                    <option value="4">{t('hero.form.options.floor.4')}</option>
-                    <option value="5">{t('hero.form.options.floor.5')}</option>
-                    <option value="6+">{t('hero.form.options.floor.6plus')}</option>
-                  </select>
-                  {errors.toFloor && (
-                    <p className="mt-1 text-sm text-red-600">{errors.toFloor}</p>
-                  )}
-                </div>
+                {/* Lägenhet-specific questions */}
+                {((formData.customerType as string) !== 'foretag' && formData.toTypeOfHome === 'Lägenhet') ? (
+                  <div className="space-y-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <strong>{t('hero.form.floor')}</strong>
+                      </label>
+                      <select
+                        name="toFloor"
+                        value={formData.toFloor}
+                        onChange={(e) => {
+                          handleInputChange(e);
+                          setErrors(prev => ({ ...prev, toFloor: "" }));
+                        }}
+                        required
+                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none ${
+                          errors.toFloor ? "border-red-500" : ""
+                        }`}
+                      >
+                        <option value="">-- Välj --</option>
+                        <option value="-2">Våning -2</option>
+                        <option value="-1">Våning -1</option>
+                        <option value="entreplan">Entréplan</option>
+                        <option value="1">Våning 1</option>
+                        <option value="2">Våning 2</option>
+                        <option value="3">Våning 3</option>
+                        <option value="4">Våning 4</option>
+                        <option value="5">Våning 5</option>
+                        <option value="6+">Våning 6 eller högre</option>
+                      </select>
+                      {errors.toFloor && (
+                        <p className="mt-1 text-sm text-red-600">{errors.toFloor}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <strong>{t('hero.form.elevatorInBuilding')}</strong>
+                      </label>
+                      <div className="flex gap-6">
+                        <label className="flex items-center">
+                          <input
+                            type="radio"
+                            name="toHasElevator"
+                            value="yes"
+                            checked={formData.toHasElevator === "yes"}
+                            onChange={(e) => {
+                              handleInputChange(e);
+                              setErrors(prev => ({ ...prev, toHasElevator: "" }));
+                            }}
+                            className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                          />
+                          <span className="ml-2 text-sm text-gray-700">{t('hero.form.yes')}</span>
+                        </label>
+                        <label className="flex items-center">
+                          <input
+                            type="radio"
+                            name="toHasElevator"
+                            value="no"
+                            checked={formData.toHasElevator === "no"}
+                            onChange={(e) => {
+                              handleInputChange(e);
+                              setErrors(prev => ({ ...prev, toHasElevator: "" }));
+                            }}
+                            className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                          />
+                          <span className="ml-2 text-sm text-gray-700">{t('hero.form.no')}</span>
+                        </label>
+                      </div>
+                      {errors.toHasElevator && (
+                        <p className="mt-1 text-sm text-red-600">{errors.toHasElevator}</p>
+                      )}
+                    </div>
+                    {formData.toHasElevator === "yes" && (
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <strong>{t('hero.form.elevatorSize')}</strong>
+                        </label>
+                        <select
+                          name="toElevatorSize"
+                          value={formData.toElevatorSize}
+                          onChange={(e) => {
+                            handleInputChange(e);
+                            setErrors(prev => ({ ...prev, toElevatorSize: "" }));
+                          }}
+                          required
+                          className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none ${
+                            errors.toElevatorSize ? "border-red-500" : ""
+                          }`}
+                        >
+                          <option value="">-- Välj --</option>
+                          <option value="small">{t('hero.form.options.elevator.small')}</option>
+                          <option value="large">{t('hero.form.options.elevator.largeResidential')}</option>
+                        </select>
+                        {errors.toElevatorSize && (
+                          <p className="mt-1 text-sm text-red-600">{errors.toElevatorSize}</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 ) : (
+                  /* Antal våningar for other property types */
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <strong>{formData.toTypeOfHome === 'magasin' ? t('hero.form.floorStorage') : t('hero.form.floors')}</strong>
+                      <strong>{formData.customerType === 'foretag' ? t('hero.form.floorBusiness') : (formData.toTypeOfHome === 'magasin' ? t('hero.form.floorStorage') : t('hero.form.floors'))}</strong>
                     </label>
                     <select
                       name="toFloor"
@@ -2500,7 +2589,19 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }`}
                     >
                       <option value="">{t('hero.form.select')}</option>
-                      {formData.toTypeOfHome === 'magasin' ? (
+                      {formData.customerType === 'foretag' ? (
+                        <>
+                          <option value="-2">{t('hero.form.options.floor.minus2')}</option>
+                          <option value="-1">{t('hero.form.options.floor.minus1')}</option>
+                          <option value="entreplan">{t('hero.form.options.floor.ground')}</option>
+                          <option value="1">{t('hero.form.options.floor.1')}</option>
+                          <option value="2">{t('hero.form.options.floor.2')}</option>
+                          <option value="3">{t('hero.form.options.floor.3')}</option>
+                          <option value="4">{t('hero.form.options.floor.4')}</option>
+                          <option value="5">{t('hero.form.options.floor.5')}</option>
+                          <option value="6+">{t('hero.form.options.floor.6plus')}</option>
+                        </>
+                      ) : formData.toTypeOfHome === 'magasin' ? (
                         <>
                           <option value="-2">Våning -2</option>
                           <option value="-1">Våning -1</option>
@@ -2526,7 +2627,8 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     )}
                   </div>
                 )}
-                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && (formData.toTypeOfHome === 'lagenhet' || formData.toTypeOfHome === 'magasin'))) && (
+                {/* Elevator questions for företag and magasin (not lägenhet) */}
+                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'magasin')) && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.elevatorInBuilding')}</strong></label>
                     <div className="flex gap-6">
@@ -2564,7 +2666,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     )}
                   </div>
                 )}
-                {formData.toHasElevator === "yes" && (
+                {formData.toHasElevator === "yes" && ((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.toTypeOfHome === 'magasin')) && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.elevatorSize')}</strong></label>
                     <select
@@ -2580,18 +2682,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       }`}
                     >
                       <option value="">{t('hero.form.select')}</option>
-                      {(formData.customerType === 'foretag' || (formData.customerType === 'privat' && formData.typeOfHome === 'magasin')) ? (
-                        <>
-                          <option value="small">{t('hero.form.options.elevator.small')}</option>
-                          <option value="medium">{t('hero.form.options.elevator.medium')}</option>
-                          <option value="large">{t('hero.form.options.elevator.large')}</option>
-                        </>
-                      ) : (
-                        <>
                       <option value="small">{t('hero.form.options.elevator.small')}</option>
-                      <option value="large">{t('hero.form.options.elevator.largeResidential')}</option>
-                        </>
-                      )}
+                      <option value="medium">{t('hero.form.options.elevator.medium')}</option>
+                      <option value="large">{t('hero.form.options.elevator.large')}</option>
                     </select>
                     {errors.toElevatorSize && (
                       <p className="mt-1 text-sm text-red-600">{errors.toElevatorSize}</p>
