@@ -226,6 +226,36 @@ export async function POST(req: Request) {
     </tr>
     ` : ''}
     ${data.cleaningType === 'Hemstädning' || data.cleaningType === 'Home cleaning' ? `
+    ${data.customerType === 'foretag' ? `
+    <tr>
+      <th>Balkong, max 5 kvm</th>
+      <td>${data.hasBalconyCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Källare/Vindsförråd, max 5 kvm</th>
+      <td>${data.hasStorageCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Garage, max 15 kvm</th>
+      <td>${data.hasGarageCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Inglasad balkong, max 10 kvm</th>
+      <td>${data.hasGlazedBalconyCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Inglasad altan, max 10 kvm</th>
+      <td>${data.hasGlazedPatioCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Avfrostning av frys</th>
+      <td>${data.hasFreezerDefrosting ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Demontering/rengöring av vattenlås</th>
+      <td>${data.waterTrapCleaningCount > 0 ? data.waterTrapCleaningCount : "Nej"}</td>
+    </tr>
+    ` : `
     <tr>
       <th>Önskar fönsterputsning</th>
       <td>${data.windowCleaning ? "Ja" : "Nej"}</td>
@@ -242,6 +272,7 @@ export async function POST(req: Request) {
       <th>Önskar strykning</th>
       <td>${data.ironing ? "Ja" : "Nej"}</td>
     </tr>
+    `}
     ` : ''}
     ${data.cleaningType === 'Byggstädning' || data.cleaningType === 'Construction cleaning' ? `
     <tr>
@@ -282,6 +313,36 @@ export async function POST(req: Request) {
     </tr>
     ` : ''}
     ${data.cleaningType !== 'Flyttstädning' && data.cleaningType !== 'Moving cleaning' && data.cleaningType !== 'Visningsstädning' && data.cleaningType !== 'Viewing cleaning' && data.cleaningType !== 'Hemstädning' && data.cleaningType !== 'Home cleaning' && data.cleaningType !== 'Byggstädning' && data.cleaningType !== 'Construction cleaning' && data.cleaningType !== 'Dödsbostädning' && data.cleaningType !== 'Estate cleaning' && data.cleaningType !== 'Fönsterputs' && data.cleaningType !== 'Window cleaning' ? `
+    ${data.customerType === 'foretag' ? `
+    <tr>
+      <th>Balkong, max 5 kvm</th>
+      <td>${data.hasBalconyCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Källare/Vindsförråd, max 5 kvm</th>
+      <td>${data.hasStorageCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Garage, max 15 kvm</th>
+      <td>${data.hasGarageCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Inglasad balkong, max 10 kvm</th>
+      <td>${data.hasGlazedBalconyCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Inglasad altan, max 10 kvm</th>
+      <td>${data.hasGlazedPatioCleaning ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Avfrostning av frys</th>
+      <td>${data.hasFreezerDefrosting ? "Ja" : "Nej"}</td>
+    </tr>
+    <tr>
+      <th>Demontering/rengöring av vattenlås</th>
+      <td>${data.waterTrapCleaningCount > 0 ? data.waterTrapCleaningCount : "Nej"}</td>
+    </tr>
+    ` : `
     <tr>
       <th>Önskar bäddning</th>
       <td>${data.bedMaking ? "Ja" : "Nej"}</td>
@@ -294,6 +355,7 @@ export async function POST(req: Request) {
       <th>Önskar strykning</th>
       <td>${data.ironing ? "Ja" : "Nej"}</td>
     </tr>
+    `}
     ` : ''}
   </table>
 
@@ -308,9 +370,15 @@ export async function POST(req: Request) {
   <div class="section-header">Kontaktinformation</div>
   <table>
     <tr>
-      <th>Namn</th>
+      <th>${data.customerType === 'foretag' ? 'Företagsnamn' : 'Namn'}</th>
       <td>${data.name || ''}</td>
     </tr>
+    ${data.customerType === 'foretag' ? `
+    <tr>
+      <th>Kontaktperson för och efternamn</th>
+      <td>${data.contactPersonName || ''}</td>
+    </tr>
+    ` : ''}
     <tr>
       <th>E-post</th>
       <td>${data.email || ''}</td>

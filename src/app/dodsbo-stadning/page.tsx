@@ -1045,17 +1045,24 @@ export default function DodsboStadningPage() {
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/cleaning_lady.png" alt={locale === 'sv' ? 'Dödsbostädningstips' : 'Estate cleaning tips'} className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
+                    <img src="/omflyttella_flyttstad.png" alt={locale === 'sv' ? 'Hemstädning tips' : 'Home cleaning tips'} className="w-full h-64 md:h-full object-cover object-[center_40%] md:object-center" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">
-                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">{locale === 'sv' ? 'Dödsbostädning' : 'Estate Cleaning'}</span>
-                      <span className="text-gray-500 text-sm ml-4">{locale === 'sv' ? '4 min läsning' : '4 min read'}</span>
+                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">{locale === 'sv' ? 'Hemstädning' : 'Home Cleaning'}</span>
+                      <span className="text-gray-500 text-sm ml-4">{locale === 'sv' ? '12 min läsning' : '12 min read'}</span>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Så planerar du en smidig dödsbostädning' : 'How to plan a smooth estate cleaning'}</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">{locale === 'sv' ? 'En enkel plan kan göra stor skillnad. Vi går igenom hur du förbereder, vad som brukar ingå och hur du skapar ordning steg för steg.' : 'A simple plan can make a big difference. We go through how you prepare, what usually includes and how you create order step by step.'}</p>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Hemstädning - Tips för en Ren och Fräsch Bostad' : 'Home Cleaning - Tips for a Clean and Fresh Home'}</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      {locale === 'sv' ? 'Lär dig allt om hemstädning med våra professionella tips. Från grundläggande tekniker till avancerade metoder för en ren och fräsch bostad.' : 'Learn everything about home cleaning with our professional tips. From basic techniques to advanced methods for a clean and fresh home.'}
+                    </p>
                     <div className="flex items-center justify-end mb-4">
-                      <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                      <Link href="/blogg/hemstadning-vad-du-behover-veta" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">
+                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
                 </div>

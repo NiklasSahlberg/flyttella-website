@@ -90,6 +90,25 @@ function createEmail(to: string, from: string, subject: string, messageText: str
   return base64Email;
 }
 
+// Function to map flexible date option values to display text
+function getFlexibleDateText(value: string): string {
+  const flexibleDateMap: { [key: string]: string } = {
+    '1': '+ 1 dag',
+    '2': '+ 2 dagar', 
+    '3': '+ 3 dagar',
+    '4': '+ 4 dagar',
+    '5': '+ 5 dagar',
+    '6': '+ 6 dagar',
+    '7': '+ 1 vecka',
+    '14': '+ 2 veckor',
+    '21': '+ 3 veckor',
+    '30': '+ 1 månad',
+    '31+': '+ 1 månad eller mer'
+  };
+  
+  return flexibleDateMap[value] || value;
+}
+
 export async function POST(req: Request) {
   try {
     const data = await req.json();
@@ -141,7 +160,7 @@ export async function POST(req: Request) {
     </tr>
     <tr>
       <th>Flexibelt flyttdatum</th>
-      <td>${data.flexibeltDatum === 'Yes' ? 'Ja' : data.flexibeltDatum === 'No' ? 'Nej' : data.flexibeltDatum || ''}</td>
+      <td>${data.flexibeltDatum === 'Nej' ? 'Nej' : getFlexibleDateText(data.flexibeltDatum) || ''}</td>
     </tr>
   </table>
 
@@ -179,10 +198,12 @@ export async function POST(req: Request) {
       <th>Nuvarande postnummer</th>
       <td>${data.flyttaFran?.postnummer || ''}</td>
     </tr>
+    ${data.kontaktTyp !== 'Företag' ? `
     <tr>
       <th>Nuvarande bostadstyp</th>
       <td>${data.flyttaFran?.bostadstyp || ''}</td>
     </tr>
+    ` : ''}
     <tr>
       <th>Nuvarande antal kvadratmeter</th>
       <td>${data.flyttaFran?.kvadrat || ''}</td>
@@ -211,34 +232,79 @@ export async function POST(req: Request) {
       <td>${data.flyttaFran.workplaceCount}</td>
     </tr>
     ` : ''}
-    ${data.flyttaFran?.hasAttic === 'Ja' || data.flyttaFran?.hasAttic === 'Yes' ? `
+    ${data.kontaktTyp === 'Företag' ? `
     <tr>
       <th>Har vind</th>
-      <td>${data.flyttaFran.hasAttic === 'Yes' ? 'Ja' : data.flyttaFran.hasAttic}</td>
+      <td>${data.flyttaFran?.hasAttic || ''}</td>
     </tr>
+    ${data.flyttaFran?.hasAttic === 'Ja' || data.flyttaFran?.hasAttic === 'Yes' ? `
     <tr>
       <th>Vindens yta (kvm)</th>
       <td>${data.flyttaFran.atticArea || ''}</td>
     </tr>
     ` : ''}
-    ${data.flyttaFran?.hasBasementStorage === 'Ja' || data.flyttaFran?.hasBasementStorage === 'Yes' ? `
+    ` : `
+    <tr>
+      <th>Har vind</th>
+      <td>${data.flyttaFran?.hasAttic || ''}</td>
+    </tr>
+    ${data.flyttaFran?.hasAttic === 'Ja' || data.flyttaFran?.hasAttic === 'Yes' ? `
+    <tr>
+      <th>Vindens yta (kvm)</th>
+      <td>${data.flyttaFran.atticArea || ''}</td>
+    </tr>
+    ` : ''}
+    `}
+    ${data.kontaktTyp === 'Företag' ? `
     <tr>
       <th>Har källarförråd</th>
-      <td>${data.flyttaFran.hasBasementStorage === 'Yes' ? 'Ja' : data.flyttaFran.hasBasementStorage}</td>
+      <td>${data.flyttaFran?.hasBasementStorage || ''}</td>
     </tr>
+    ${data.flyttaFran?.hasBasementStorage === 'Ja' || data.flyttaFran?.hasBasementStorage === 'Yes' ? `
     <tr>
       <th>Källarförrådets yta (kvm)</th>
       <td>${data.flyttaFran.basementStorageArea || ''}</td>
     </tr>
     ` : ''}
-    ${data.flyttaFran?.hasGarage === 'Ja' || data.flyttaFran?.hasGarage === 'Yes' ? `
+    ` : `
+    <tr>
+      <th>Har källarförråd</th>
+      <td>${data.flyttaFran?.hasBasementStorage || ''}</td>
+    </tr>
+    ${data.flyttaFran?.hasBasementStorage === 'Ja' || data.flyttaFran?.hasBasementStorage === 'Yes' ? `
+    <tr>
+      <th>Källarförrådets yta (kvm)</th>
+      <td>${data.flyttaFran.basementStorageArea || ''}</td>
+    </tr>
+    ` : ''}
+    `}
+    ${data.kontaktTyp === 'Företag' ? `
     <tr>
       <th>Har garage</th>
-      <td>${data.flyttaFran.hasGarage === 'Yes' ? 'Ja' : data.flyttaFran.hasGarage}</td>
+      <td>${data.flyttaFran?.hasGarage || ''}</td>
     </tr>
+    ${data.flyttaFran?.hasGarage === 'Ja' || data.flyttaFran?.hasGarage === 'Yes' ? `
     <tr>
       <th>Garagets yta (kvm)</th>
       <td>${data.flyttaFran.garageArea || ''}</td>
+    </tr>
+    ` : ''}
+    ` : `
+    <tr>
+      <th>Har garage</th>
+      <td>${data.flyttaFran?.hasGarage || ''}</td>
+    </tr>
+    ${data.flyttaFran?.hasGarage === 'Ja' || data.flyttaFran?.hasGarage === 'Yes' ? `
+    <tr>
+      <th>Garagets yta (kvm)</th>
+      <td>${data.flyttaFran.garageArea || ''}</td>
+    </tr>
+    ` : ''}
+    `}
+    ${data.kontaktTyp === 'Företag' ? `
+    <tr>
+      <th>Finns lastkaj i byggnaden</th>
+      <td>${data.flyttaFran?.hasLoadingDock || ''}</td>
     </tr>
     ` : ''}
   </table>
@@ -257,10 +323,12 @@ export async function POST(req: Request) {
       <th>Nytt postnummer</th>
       <td>${data.flyttaTill?.postnummer || ''}</td>
     </tr>
+    ${data.kontaktTyp !== 'Företag' ? `
     <tr>
       <th>Ny bostadstyp</th>
       <td>${data.flyttaTill?.bostadstyp || ''}</td>
     </tr>
+    ` : ''}
     <tr>
       <th>Nytt antal kvadratmeter</th>
       <td>${data.flyttaTill?.kvadrat || ''}</td>
@@ -283,6 +351,12 @@ export async function POST(req: Request) {
       <th>Nytt parkeringsavstånd</th>
       <td>${data.flyttaTill?.parkeringsAvstand || ''}</td>
     </tr>
+    ${data.kontaktTyp === 'Företag' ? `
+    <tr>
+      <th>Finns lastkaj i byggnaden (ny)</th>
+      <td>${data.flyttaTill?.hasLoadingDock || ''}</td>
+    </tr>
+    ` : ''}
   </table>
 
   <div class="section-header">Föremål</div>
@@ -300,9 +374,15 @@ export async function POST(req: Request) {
   <div class="section-header">Kontaktinformation</div>
   <table>
     <tr>
-      <th>Namn</th>
+      <th>${data.kontaktTyp === 'Företag' ? 'Företagsnamn' : 'Namn'}</th>
       <td>${data.kontaktInfo?.namn || ''}</td>
     </tr>
+    ${data.kontaktTyp === 'Företag' ? `
+    <tr>
+      <th>Kontaktperson för och efternamn</th>
+      <td>${data.kontaktInfo?.contactPersonName || ''}</td>
+    </tr>
+    ` : ''}
     <tr>
       <th>E-post</th>
       <td>${data.kontaktInfo?.email || ''}</td>

@@ -868,7 +868,7 @@ export default function FonsterputsningPage() {
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/window_worker.png" alt={t('fonsterputsning.blog.imageAlt')} className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
+                    <img src="/window_cleaner.png" alt={t('fonsterputsning.blog.imageAlt')} className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">
@@ -878,7 +878,7 @@ export default function FonsterputsningPage() {
                     <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{t('fonsterputsning.blog.articleTitle')}</h3>
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">{t('fonsterputsning.blog.articleDescription')}</p>
                     <div className="flex items-center justify-end mb-4">
-                      <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">{t('fonsterputsning.blog.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+                      <Link href="/blogg/fonsterputs-vad-du-behover-veta" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">{t('fonsterputsning.blog.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
                     </div>
                   </div>
                 </div>

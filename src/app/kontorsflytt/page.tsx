@@ -1073,19 +1073,19 @@ export default function KontorsflyttPage() {
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/office-moving.png" alt={locale === 'sv' ? 'Kontorsflyttstips' : 'Office moving tips'} className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
+                    <img src="/innanflyttfirmankommer.jpg" alt={locale === 'sv' ? 'Seriös flyttfirma' : 'Serious moving company'} className="w-full h-64 md:h-full object-cover object-[center_40%] md:object-center" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">
-                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">{locale === 'sv' ? 'Kontorsflytt' : 'Office Moving'}</span>
-                      <span className="text-gray-500 text-sm ml-4">{locale === 'sv' ? '5 min läsning' : '5 min read'}</span>
+                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">{locale === 'sv' ? 'Flytttips' : 'Moving Tips'}</span>
+                      <span className="text-gray-500 text-sm ml-4">{locale === 'sv' ? '10 min läsning' : '10 min read'}</span>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Guide: Planera er kontorsflytt för minimal störning' : 'Guide: Plan your office move for minimal disruption'}</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Vad bör du tänka på när du väljer en seriös flyttfirma' : 'What to consider when choosing a serious moving company'}</h3>
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                      {locale === 'sv' ? 'Så planerar ni en smidig kontorsflytt – från förberedelser till installation. Checklista och tips för företag.' : 'How to plan a smooth office move – from preparations to installation. Checklist and tips for companies.'}
+                      {locale === 'sv' ? 'Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips för att identifiera en seriös och pålitlig flyttfirma som tar hand om dina ägodelar med omsorg.' : 'Choosing the right moving company is crucial for a smooth move. Here we share our most important tips for identifying a serious and reliable moving company that takes care of your belongings with care.'}
                     </p>
                     <div className="flex items-center justify-end mb-4">
-                      <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">
+                      <Link href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">
                         {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

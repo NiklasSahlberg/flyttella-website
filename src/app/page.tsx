@@ -650,6 +650,15 @@ export default function Home() {
   const featureTouchCurrentXRef = useRef<number | null>(null);
   const [expandedTipSection, setExpandedTipSection] = useState<string | null>(null);
 
+  // Handle URL parameters for service type selection
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get('service');
+    if (serviceParam === 'flytt') {
+      setSelectedServiceType('flytt');
+    }
+  }, []);
+
   // Auto-sliding for feature cards
   const restartFeatureAutoSlide = () => {
     if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);
@@ -771,7 +780,11 @@ export default function Home() {
             {selectedServiceType === 'flyttstad' ? (
               <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
             ) : (
-              <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
+              <FlyttoffertForm 
+                mode="widget" 
+                onServiceTypeSelect={setSelectedServiceType}
+                autoStartService={selectedServiceType === 'flytt' ? 'flytt' : undefined}
+              />
             )}
           </div>
           
@@ -828,7 +841,11 @@ export default function Home() {
                   {selectedServiceType === 'flyttstad' ? (
                     <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
                   ) : (
-                    <FlyttoffertForm mode="widget" onServiceTypeSelect={setSelectedServiceType} />
+                    <FlyttoffertForm 
+                      mode="widget" 
+                      onServiceTypeSelect={setSelectedServiceType}
+                      autoStartService={selectedServiceType === 'flytt' ? 'flytt' : undefined}
+                    />
                   )}
                 </div>
               </div>

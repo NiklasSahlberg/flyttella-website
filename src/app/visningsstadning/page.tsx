@@ -1031,17 +1031,17 @@ export default function VisningsstadningPage() {
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/cleaning_lady.png" alt={locale === 'sv' ? 'Visningsstädningstips' : 'Viewing cleaning tips'} className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" />
+                    <img src="/omflyttella_flyttstad.png" alt={locale === 'sv' ? 'Hemstädning tips' : 'Home cleaning tips'} className="w-full h-64 md:h-full object-cover object-[center_40%] md:object-center" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">
-                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">{locale === 'sv' ? 'Visningsstädning' : 'Viewing Cleaning'}</span>
-                      <span className="text-gray-500 text-sm ml-4">{locale === 'sv' ? '4 min läsning' : '4 min read'}</span>
+                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">{locale === 'sv' ? 'Hemstädning' : 'Home Cleaning'}</span>
+                      <span className="text-gray-500 text-sm ml-4">{locale === 'sv' ? '12 min läsning' : '12 min read'}</span>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Så förbereder du bostaden för visning' : 'How to prepare the property for viewing'}</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">{locale === 'sv' ? 'Vad ska du tänka på inför fotografering och visning? Vi går igenom städningens viktigaste moment och smarta tips för ett starkt första intryck.' : 'What should you think about before photography and viewing? We go through the most important moments of cleaning and smart tips for a strong first impression.'}</p>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{locale === 'sv' ? 'Hemstädning - Tips för en Ren och Fräsch Bostad' : 'Home Cleaning - Tips for a Clean and Fresh Home'}</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">{locale === 'sv' ? 'Lär dig allt om hemstädning med våra professionella tips. Från grundläggande tekniker till avancerade metoder för en ren och fräsch bostad.' : 'Learn everything about home cleaning with our professional tips. From basic techniques to advanced methods for a clean and fresh home.'}</p>
                     <div className="flex items-center justify-end mb-4">
-                      <Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">
+                      <Link href="/blogg/hemstadning-vad-du-behover-veta" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">
                         {locale === 'sv' ? 'Läs mer' : 'Read more'}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </Link>

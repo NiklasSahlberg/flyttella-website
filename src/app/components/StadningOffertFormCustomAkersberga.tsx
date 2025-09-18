@@ -850,15 +850,18 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         // For "Flyttstädning": step 0 -> 1 -> 2 -> 3 -> 4
         if (step < 4) {
           console.log('Proceeding to next step for Flyttstädning');
-          // If we're on step 3 and user selected "Ja" for moving help, start moving form
+          // If we're on step 3 and user selected "Ja" for moving help, redirect to FlyttOffertForm
           if (step === 3 && formData.wantsMovingHelp === 'Ja') {
-            console.log('Starting moving form');
-            setIsMovingForm(true);
-            setMovingStep(1);
-            // push past step 3 so the Flytthjälp block won't re-render on next render
-            setStep(4);
-            setErrors({});
-            setTouchedFields({});
+            console.log('Redirecting to FlyttOffertForm');
+            // Store address data in sessionStorage to prefill in the moving form
+            sessionStorage.setItem('cleaningFormAddress', JSON.stringify({
+              address: formData.address,
+              streetNumber: formData.streetNumber,
+              postalCode: formData.postalCode
+            }));
+            // Redirect to the main page with flytt service type selected
+            window.location.href = '/?service=flytt';
+            return;
           } else {
             setStep((prev) => prev + 1);
             setErrors({});

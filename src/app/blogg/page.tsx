@@ -95,6 +95,36 @@ const blogPosts = [
     readTime: "6 min",
     image: "/personalpicture.jpg",
     slug: "magasinering-vad-du-behover-veta"
+  },
+  {
+    id: 6,
+    title: "Fönsterputs - Tips för Kristallklara Rutor",
+    excerpt: "Lär dig allt om fönsterputs med våra praktiska tips. Från rätt teknik och produkter till när du ska boka och hur du får bästa resultatet.",
+    category: "Fönsterputs",
+    date: "2024-02-25",
+    readTime: "5 min",
+    image: "/window_cleaner.png",
+    slug: "fonsterputs-vad-du-behover-veta"
+  },
+  {
+    id: 7,
+    title: "Hemstädning - Tips för en Ren och Fräsch Bostad",
+    excerpt: "Lär dig allt om hemstädning med våra professionella tips. Från grundläggande tekniker till avancerade metoder för en ren och fräsch bostad.",
+    category: "Hemstädning",
+    date: "2024-01-25",
+    readTime: "12 min",
+    image: "/omflyttella_flyttstad.png",
+    slug: "hemstadning-vad-du-behover-veta"
+  },
+  {
+    id: 8,
+    title: "Kontorsstädning - Professionell Miljö för Din Verksamhet",
+    excerpt: "Lär dig allt om kontorsstädning med våra praktiska tips. Från daglig städning till djuprengöring för en produktiv och ren arbetsmiljö.",
+    category: "Kontorsstädning",
+    date: "2024-03-01",
+    readTime: "8 min",
+    image: "/kontor.png",
+    slug: "kontorsstadning-vad-du-behover-veta"
   }
 ];
 
@@ -103,9 +133,12 @@ const categories = [
   "Flytttips",
   "Packning", 
   "Flyttstädning",
+  "Hemstädning",
+  "Kontorsstädning",
   "Utlandsflytt",
   "Tunglyft",
   "Magasinering",
+  "Fönsterputs",
   "Ekonomi",
   "Företag",
   "Säsong"
@@ -270,6 +303,8 @@ export default function BlogPage() {
                         objectPosition: post.slug === 'flyttstadning-vad-du-behover-veta' 
                           ? 'center 20%' 
                           : post.slug === 'vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma'
+                          ? 'center 40%'
+                          : post.slug === 'hemstadning-vad-du-behover-veta'
                           ? 'center 40%'
                           : 'center' 
                       }}

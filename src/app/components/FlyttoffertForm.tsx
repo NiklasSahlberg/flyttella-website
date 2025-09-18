@@ -138,9 +138,10 @@ interface FlyttoffertFormProps {
   onServiceTypeSelect?: (serviceType: string) => void;
   cleaningCardSubtitle?: string; // optional override for cleaning card subtitle
   defaultCustomerType?: 'privat' | 'foretag'; // optional default customer type
+  autoStartService?: string; // automatically start with this service type
 }
 
-export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle, defaultCustomerType = 'privat' }: FlyttoffertFormProps) {
+export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle, defaultCustomerType = 'privat', autoStartService }: FlyttoffertFormProps) {
   const { t, locale } = useLanguage();
   const [step, setStep] = useState(0);
   const [showSteps, setShowSteps] = useState(false);
@@ -330,6 +331,47 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     }
   }, [formData.currentAddress]);
 
+  // Handle autoStartService prop
+  useEffect(() => {
+    if (autoStartService === 'flytt') {
+      // Check if there's address data from the cleaning form
+      const cleaningFormAddress = sessionStorage.getItem('cleaningFormAddress');
+      let addressData: { currentAddress?: string; apartmentNumber?: string; postalCode?: string } = {};
+      
+      if (cleaningFormAddress) {
+        try {
+          const parsedAddress = JSON.parse(cleaningFormAddress);
+          addressData = {
+            currentAddress: parsedAddress.address,
+            apartmentNumber: parsedAddress.streetNumber,
+            postalCode: parsedAddress.postalCode
+          };
+          // Clear the stored data after using it
+          sessionStorage.removeItem('cleaningFormAddress');
+        } catch (error) {
+          console.error('Error parsing cleaning form address:', error);
+        }
+      }
+      
+      setFormData(prev => ({ 
+        ...prev, 
+        serviceType: 'flytt',
+        needsCleaning: true, // Set flyttstädning to "Ja" since they came from the cleaning form
+        ...addressData // Prefill address data from cleaning form
+      }));
+      
+      // If we have address data, mark it as valid since it came from the cleaning form
+      if (addressData.currentAddress) {
+        setIsCurrentAddressValid(true);
+        setLastValidCurrentAddress(addressData.currentAddress);
+      }
+      
+      setShowSteps(true);
+      setStep(1);
+      if (onServiceTypeSelect) onServiceTypeSelect('flytt');
+    }
+  }, [autoStartService, onServiceTypeSelect]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -337,7 +379,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     
     // Clear elevator-related fields when property type changes
     if (name === 'typeOfHome') {
-      const shouldShowElevator = value === 'lagenhet' || value === 'magasin';
+      const shouldShowElevator = value === 'Lägenhet' || value === 'magasin';
       if (!shouldShowElevator) {
         setFormData(prev => ({ 
           ...prev, 
@@ -536,7 +578,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
       newErrors.floor = t('hero.form.validation.selectFloor');
       isValid = false;
     }
-    if (formData.typeOfHome === "lagenhet" && !formData.hasElevator) {
+    if (formData.typeOfHome === "Lägenhet" && !formData.hasElevator) {
       newErrors.hasElevator = t('hero.form.validation.selectElevator');
       isValid = false;
     }
@@ -805,6 +847,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
               const emailData = {
                 title: "Ny lead flyttella",
                 behov: "move_out",
+                kontaktTyp: formData.customerType === 'foretag' ? 'Företag' : 'Privat',
                 datum: formData.movingDate,
                 flyttaFran: {
                   address: formData.currentAddress,
@@ -823,7 +866,8 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   hasBasementStorage: formData.hasBasementStorage === "yes" ? t('hero.form.yes') : t('hero.form.no'),
                   basementStorageArea: formData.hasBasementStorage === "yes" ? formData.basementStorageArea : undefined,
                   hasGarage: formData.hasGarage === "yes" ? t('hero.form.yes') : t('hero.form.no'),
-                  garageArea: formData.hasGarage === "yes" ? formData.garageArea : undefined
+                  garageArea: formData.hasGarage === "yes" ? formData.garageArea : undefined,
+                  hasLoadingDock: formData.customerType === 'foretag' ? (formData.hasLoadingDock === "yes" ? t('hero.form.yes') : t('hero.form.no')) : undefined
                 },
                 flyttaTill: {
                   address: formData.newAddress,
@@ -835,7 +879,8 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                   vaningNr: formData.toFloor,
                   hasElevator: formData.toHasElevator === "yes" ? t('hero.form.yes') : t('hero.form.no'),
                   elevatorSize: formData.toHasElevator === "yes" ? formData.toElevatorSize : undefined,
-                  parkeringsAvstand: formData.toParkingDistance
+                  parkeringsAvstand: formData.toParkingDistance,
+                  hasLoadingDock: formData.customerType === 'foretag' ? (formData.toHasLoadingDock === "yes" ? t('hero.form.yes') : t('hero.form.no')) : undefined
                 },
                 flexibeltDatum: formData.wantsFlexibleDate ? formData.flexibleMovingDate : t('hero.form.no'),
                 villDuHaPackhjalp: formData.needsPacking ? t('hero.form.yes') : t('hero.form.no'),
@@ -849,7 +894,8 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 kontaktInfo: {
                   namn: formData.name,
                   email: formData.email,
-                  telefon: formData.phone
+                  telefon: formData.phone,
+                  contactPersonName: formData.customerType === 'foretag' ? formData.contactPersonName : undefined
                 },
                 additionalInfo: formData.additionalInfo || "Inga övriga önskemål",
                 language: locale
@@ -1623,7 +1669,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none${errors.typeOfHome ? " border-red-500" : ""}`}
                   >
                     <option value="">-- Välj --</option>
-                    <option value="lagenhet">{t('hero.form.options.apartment')}</option>
+                    <option value="Lägenhet">{t('hero.form.options.apartment')}</option>
                     <option value="villa">{t('hero.form.options.house')}</option>
                     <option value="parhus">{t('hero.form.options.rowHouse')}</option>
                     <option value="radhus">{t('hero.form.options.townhouse')}</option>
@@ -1660,7 +1706,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 {formData.customerType === 'foretag' ? t('hero.form.currentBusinessAddress') : t('hero.form.currentAddressStep3')}
               </h2>
               <div className="space-y-6">
-                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.typeOfHome === 'lagenhet')) ? (
+                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && formData.typeOfHome === 'Lägenhet')) ? (
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       <strong>{formData.customerType === 'foretag' ? t('hero.form.floorBusiness') : t('hero.form.floor')}</strong>
@@ -1736,7 +1782,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     )}
                   </div>
                 )}
-                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && (formData.typeOfHome === 'lagenhet' || formData.typeOfHome === 'magasin'))) && (
+                {((formData.customerType as string) === 'foretag' || ((formData.customerType as string) === 'privat' && (formData.typeOfHome === 'Lägenhet' || formData.typeOfHome === 'magasin'))) && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.elevatorInBuilding')}</strong></label>
                     <div className="flex gap-6">
@@ -2367,7 +2413,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     className={`w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] bg-white appearance-none${errors.toTypeOfHome ? " border-red-500" : ""}`}
                   >
                     <option value="">{t('hero.form.select')}</option>
-                    <option value="lagenhet">{t('hero.form.options.apartment')}</option>
+                    <option value="Lägenhet">{t('hero.form.options.apartment')}</option>
                     <option value="villa">{t('hero.form.options.house')}</option>
                     <option value="parhus">{t('hero.form.options.rowHouse')}</option>
                     <option value="radhus">{t('hero.form.options.townhouse')}</option>
@@ -2876,6 +2922,19 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 {errors.phone && (
                   <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
                 )}
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <strong>{locale === 'en' ? 'Other requests' : 'Övriga önskemål'}</strong>
+                </label>
+                <textarea
+                  name="additionalInfo"
+                  value={formData.additionalInfo}
+                  onChange={handleInputChange}
+                  rows={4}
+                  placeholder={locale === 'en' ? 'Any additional information or special requests...' : 'Eventuell ytterligare information eller särskilda önskemål...'}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] resize-none"
+                />
               </div>
               <div className="flex justify-between mt-8">
                 <button
