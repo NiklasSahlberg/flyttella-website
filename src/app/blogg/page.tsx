@@ -286,87 +286,85 @@ export default function BlogPage() {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
             >
               {filteredPosts.map((post, _index) => (
-                <motion.article
-                  key={post.id}
-                  variants={variants}
-                  custom={_index}
-                  whileHover="hover"
-                  className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
-                >
-                  {/* Image */}
-                  <div className="relative h-40 md:h-48 overflow-hidden">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      className="w-full h-full object-cover"
-                      style={{ 
-                        objectPosition: post.slug === 'flyttstadning-vad-du-behover-veta' 
-                          ? 'center 20%' 
-                          : post.slug === 'vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma'
-                          ? 'center 40%'
-                          : post.slug === 'hemstadning-vad-du-behover-veta'
-                          ? 'center 40%'
-                          : 'center' 
-                      }}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const fallback = target.nextElementSibling as HTMLElement;
-                        if (fallback) fallback.style.display = 'flex';
-                      }}
-                    />
-                    <div className="w-full h-full bg-gradient-to-br from-[#0F172A] to-[#10B981] flex items-center justify-center absolute inset-0" style={{display: 'none'}}>
-                      <span className="text-white text-4xl">📦</span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-4 md:p-6">
-                    {/* Category and Date */}
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="inline-block bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white text-xs font-medium px-2 md:px-3 py-1 rounded-full">
-                        {post.category}
-                      </span>
-                      <div className="flex items-center text-gray-500 text-xs md:text-sm">
-                        <svg className="h-3 w-3 md:h-4 md:w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {post.readTime}
+                <Link key={post.id} href={`/blogg/${post.slug}`} className="block">
+                  <motion.article
+                    variants={variants}
+                    custom={_index}
+                    whileHover="hover"
+                    className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                  >
+                    {/* Image */}
+                    <div className="relative h-40 md:h-48 overflow-hidden">
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                        style={{ 
+                          objectPosition: post.slug === 'flyttstadning-vad-du-behover-veta' 
+                            ? 'center 20%' 
+                            : post.slug === 'vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma'
+                            ? 'center 40%'
+                            : post.slug === 'hemstadning-vad-du-behover-veta'
+                            ? 'center 40%'
+                            : 'center' 
+                        }}
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div className="w-full h-full bg-gradient-to-br from-[#0F172A] to-[#10B981] flex items-center justify-center absolute inset-0" style={{display: 'none'}}>
+                        <span className="text-white text-4xl">📦</span>
                       </div>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-lg md:text-xl font-bold text-[#0F172A] mb-3 line-clamp-2">
-                      {post.title}
-                    </h3>
+                    {/* Content */}
+                    <div className="p-4 md:p-6">
+                      {/* Category and Date */}
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="inline-block bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white text-xs font-medium px-2 md:px-3 py-1 rounded-full">
+                          {post.category}
+                        </span>
+                        <div className="flex items-center text-gray-500 text-xs md:text-sm">
+                          <svg className="h-3 w-3 md:h-4 md:w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {post.readTime}
+                        </div>
+                      </div>
 
-                    {/* Excerpt */}
-                    <p className="text-gray-600 mb-4 line-clamp-3 text-sm md:text-base">
-                      {post.excerpt}
-                    </p>
+                      {/* Title */}
+                      <h3 className="text-lg md:text-xl font-bold text-[#0F172A] mb-3 line-clamp-2">
+                        {post.title}
+                      </h3>
 
-                    {/* Date */}
-                    <p className="text-xs md:text-sm text-gray-500 mb-4">
-                      {formatDate(post.date)}
-                    </p>
+                      {/* Excerpt */}
+                      <p className="text-gray-600 mb-4 line-clamp-3 text-sm md:text-base">
+                        {post.excerpt}
+                      </p>
 
-                    {/* Read More Button */}
-                    <Link
-                      href={`/blogg/${post.slug}`}
-                      className="inline-flex items-center text-[#10B981] font-medium hover:text-[#0F172A] transition-colors group text-sm md:text-base"
-                    >
-                      Läs mer
-                      <svg
-                        className="w-3 h-3 md:w-4 md:h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  </div>
-                </motion.article>
+                      {/* Date */}
+                      <p className="text-xs md:text-sm text-gray-500 mb-4">
+                        {formatDate(post.date)}
+                      </p>
+
+                      {/* Read More Button */}
+                      <div className="inline-flex items-center text-[#10B981] font-medium hover:text-[#0F172A] transition-colors group text-sm md:text-base">
+                        Läs mer
+                        <svg
+                          className="w-3 h-3 md:w-4 md:h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </motion.article>
+                </Link>
               ))}
             </motion.div>
           )}

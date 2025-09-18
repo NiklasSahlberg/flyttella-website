@@ -152,10 +152,18 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                     </svg>
                     {locale === 'sv' ? 'Flyttfirma internationellt' : 'International Moving Company'}
                   </h4>
-                  <div className="mt-3 md:mt-4 flex justify-center">
-                    <span className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
-                      Spanien
-                    </span>
+                  <div className="mt-3 md:mt-4 flex flex-wrap justify-center gap-2">
+                    {[
+                      'Spanien', 'Finland', 'Norge', 'Danmark', 'Frankrike', 'Tyskland', 
+                      'Italien', 'Schweiz', 'Polen', 'Nederländerna', 'Österrike', 'Belgien', 'Grekland'
+                    ].map((country, index) => (
+                      <span 
+                        key={index}
+                        className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap"
+                      >
+                        {country}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </motion.div>
