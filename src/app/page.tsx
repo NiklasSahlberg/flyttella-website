@@ -644,6 +644,7 @@ export default function Home() {
   const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const [showFullAboutText, setShowFullAboutText] = useState(false);
   const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
+  const [cameFromCleaningForm, setCameFromCleaningForm] = useState(false);
   const totalFeatureCards = 9;
   const featureIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const featureTouchStartXRef = useRef<number | null>(null);
@@ -656,6 +657,11 @@ export default function Home() {
     const serviceParam = urlParams.get('service');
     if (serviceParam === 'flytt') {
       setSelectedServiceType('flytt');
+      // Check if there's address data from the cleaning form to determine if user came from flyttstädning
+      const cleaningFormAddress = sessionStorage.getItem('cleaningFormAddress');
+      if (cleaningFormAddress) {
+        setCameFromCleaningForm(true);
+      }
     }
   }, []);
 
@@ -783,7 +789,7 @@ export default function Home() {
               <FlyttoffertForm 
                 mode="widget" 
                 onServiceTypeSelect={setSelectedServiceType}
-                autoStartService={selectedServiceType === 'flytt' ? 'flytt' : undefined}
+                autoStartService={cameFromCleaningForm ? 'flytt' : undefined}
               />
             )}
           </div>
@@ -844,7 +850,7 @@ export default function Home() {
                     <FlyttoffertForm 
                       mode="widget" 
                       onServiceTypeSelect={setSelectedServiceType}
-                      autoStartService={selectedServiceType === 'flytt' ? 'flytt' : undefined}
+                      autoStartService={cameFromCleaningForm ? 'flytt' : undefined}
                     />
                   )}
                 </div>
