@@ -6,9 +6,11 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import TermsModal from './TermsModal';
 import ReportModal from './ReportModal';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
   const pathname = usePathname();
+  const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [termsHtml, setTermsHtml] = useState('');
   const [loading, setLoading] = useState(false);
@@ -180,22 +182,22 @@ export default function Footer() {
             <ul className="space-y-1 md:space-y-2">
               <li>
                 <Link href="/" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Hem
+                  {t('footer.home')}
                 </Link>
               </li>
               <li>
                 <Link href="/tjanster" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Tjänster
+                  {t('footer.services')}
                 </Link>
               </li>
               <li>
                 <Link href="/om-oss" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Om oss
+                  {t('footer.about')}
                 </Link>
               </li>
               <li>
                 <Link href="/kontakt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Kontakt
+                  {t('footer.contact')}
                 </Link>
               </li>
             </ul>
@@ -203,21 +205,21 @@ export default function Footer() {
 
           {/* Flyttjänster */}
           <div>
-            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Våra Flyttjänster</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">{t('footer.ourMovingServices')}</h3>
             <ul className="space-y-1">
               <li>
                 <Link href="/bohagsflytt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Bohagsflytt
+                  {t('header.services.bohagsflytt')}
                 </Link>
               </li>
               <li>
                 <Link href="/barhjalp" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Bärhjälp
+                  {t('header.services.barhjalp')}
                 </Link>
               </li>
               <li>
                 <Link href="/piano-tunglyft" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Piano/Tunglyft
+                  {t('header.services.pianoTunglyft')}
                 </Link>
               </li>
               
@@ -230,7 +232,7 @@ export default function Footer() {
                     onClick={() => setShowMoreFlytt(true)}
                     suppressHydrationWarning={true}
                   >
-                    Se mer
+                    {t('footer.seeMore')}
                   </button>
                 </li>
               )}
@@ -240,17 +242,17 @@ export default function Footer() {
                 <>
                   <li>
                     <Link href="/bortforsling" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                      Bortforsling
+                      {t('header.services.bortforsling')}
                     </Link>
                   </li>
                   <li>
                     <Link href="/magasinering" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                      Magasinering
+                      {t('header.services.magasinering')}
                     </Link>
                   </li>
                   <li>
                     <Link href="/utlandsflytt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                      Utlandsflytt
+                      {t('header.services.utlandsflytt')}
                     </Link>
                   </li>
                 </>
@@ -260,21 +262,21 @@ export default function Footer() {
 
           {/* Städtjänster */}
           <div>
-            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Städtjänster</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">{t('footer.cleaningServices')}</h3>
             <ul className="space-y-1">
               <li>
                 <Link href="/flyttstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Flyttstädning
+                  {t('header.services.flyttstadning')}
                 </Link>
               </li>
               <li>
                 <Link href="/hemstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Hemstädning
+                  {t('header.services.hemstadning')}
                 </Link>
               </li>
               <li>
                 <Link href="/storstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Storstädning
+                  {t('header.services.storstadning')}
                 </Link>
               </li>
               
@@ -287,7 +289,7 @@ export default function Footer() {
                     onClick={() => setShowMoreStad(true)}
                     suppressHydrationWarning={true}
                   >
-                    Se mer
+                    {t('footer.seeMore')}
                   </button>
                 </li>
               )}
@@ -297,17 +299,17 @@ export default function Footer() {
                 <>
                   <li>
                     <Link href="/byggstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                      Byggstädning
+                      {t('header.services.byggstadning')}
                     </Link>
                   </li>
                   <li>
                     <Link href="/visningsstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                      Visningsstädning
+                      {t('header.services.visningsstadning')}
                     </Link>
                   </li>
                   <li>
                     <Link href="/dodsbostadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                      Dödsbostädning
+                      {t('header.services.dodsboStadning')}
                     </Link>
                   </li>
                 </>
@@ -317,21 +319,21 @@ export default function Footer() {
 
           {/* Business Services */}
           <div>
-            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Företagstjänster</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">{t('footer.businessServices')}</h3>
             <ul className="space-y-1">
               <li>
                 <Link href="/kontorsflytt" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Kontorsflytt
+                  {t('header.services.kontorsflytt')}
                 </Link>
               </li>
               <li>
                 <Link href="/kontorsstadning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Kontorsstädning
+                  {t('header.services.kontorsstadning')}
                 </Link>
               </li>
               <li>
                 <Link href="/bemanning" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                  Bemanning och underentreprenad
+                  {t('header.services.bemanning')}
                 </Link>
               </li>
             </ul>
@@ -339,7 +341,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Juridisk information</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">{t('footer.legalInformation')}</h3>
             <ul className="space-y-1">
               <li>
                 <button
@@ -348,7 +350,7 @@ export default function Footer() {
                   onClick={() => setIsModalOpen(true)}
                   suppressHydrationWarning={true}
                 >
-                  Allmänna villkor - Flytt
+                  {t('footer.generalTermsMoving')}
                 </button>
               </li>
               <li>
@@ -358,7 +360,7 @@ export default function Footer() {
                   onClick={() => setIsStadModalOpen(true)}
                   suppressHydrationWarning={true}
                 >
-                  Allmänna villkor - Flyttstäd
+                  {t('footer.generalTermsCleaning')}
                 </button>
               </li>
               
@@ -371,7 +373,7 @@ export default function Footer() {
                     onClick={() => setShowMoreLegal(true)}
                     suppressHydrationWarning={true}
                   >
-                    Se mer
+                    {t('footer.seeMore')}
                   </button>
                 </li>
               )}
@@ -385,7 +387,7 @@ export default function Footer() {
                       className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                       onClick={() => setIsStadPartnerModalOpen(true)}
                     >
-                      Villkor Samarbetspartner - Flyttstäd
+                      {t('footer.partnerTermsCleaning')}
                     </button>
                   </li>
                   <li>
@@ -394,7 +396,7 @@ export default function Footer() {
                       className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors underline bg-transparent border-0 p-0 cursor-pointer text-left w-full"
                       onClick={() => setIsFlyttPartnerModalOpen(true)}
                     >
-                      Villkor Samarbetspartner - Flytt
+                      {t('footer.partnerTermsMoving')}
                     </button>
                   </li>
                   <li>
@@ -404,12 +406,12 @@ export default function Footer() {
                       onClick={() => setIsUtlandsflyttModalOpen(true)}
                       suppressHydrationWarning={true}
                     >
-                      Allmänna villkor - Utlandsflytt
+                      {t('footer.generalTermsInternational')}
                     </button>
                   </li>
                   <li>
                     <Link href="/integritetspolicy" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
-                      Integritetspolicy
+                      {t('footer.privacyPolicy')}
                     </Link>
                   </li>
                   <li>
@@ -424,7 +426,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">Kontakta oss</h3>
+            <h3 className="font-semibold mb-3 text-white text-sm md:text-base">{t('footer.contactUs')}</h3>
             <ul className="space-y-1">
               <li className="flex items-center text-xs md:text-sm text-gray-200">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 md:h-4 md:w-4 mr-2 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -453,24 +455,24 @@ export default function Footer() {
         <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#10B981]">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-xs md:text-sm text-gray-300 text-center">
-              © {new Date().getFullYear()} Flyttella. Alla rättigheter förbehållna.
+              © {new Date().getFullYear()} Flyttella. {t('footer.allRightsReserved')}.
             </p>
           </div>
         </div>
       </div>
-      <TermsModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} htmlContent={loading ? '<p>Laddar villkor...</p>' : termsHtml} />
-      <TermsModal isOpen={isStadModalOpen} onClose={() => setIsStadModalOpen(false)} htmlContent={loadingStad ? '<p>Laddar villkor...</p>' : stadHtml} />
-      <TermsModal isOpen={isStadPartnerModalOpen} onClose={() => setIsStadPartnerModalOpen(false)} htmlContent={loadingStadPartner ? '<p>Laddar villkor...</p>' : stadPartnerHtml} />
-      <TermsModal isOpen={isFlyttPartnerModalOpen} onClose={() => setIsFlyttPartnerModalOpen(false)} htmlContent={loadingFlyttPartner ? '<p>Laddar villkor...</p>' : flyttPartnerHtml} />
-      <TermsModal isOpen={isUtlandsflyttModalOpen} onClose={() => setIsUtlandsflyttModalOpen(false)} htmlContent={loadingUtlandsflytt ? '<p>Laddar villkor...</p>' : utlandsflyttHtml} />
+      <TermsModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} htmlContent={loading ? `<p>${t('footer.loadingTerms')}</p>` : termsHtml} />
+      <TermsModal isOpen={isStadModalOpen} onClose={() => setIsStadModalOpen(false)} htmlContent={loadingStad ? `<p>${t('footer.loadingTerms')}</p>` : stadHtml} />
+      <TermsModal isOpen={isStadPartnerModalOpen} onClose={() => setIsStadPartnerModalOpen(false)} htmlContent={loadingStadPartner ? `<p>${t('footer.loadingTerms')}</p>` : stadPartnerHtml} />
+      <TermsModal isOpen={isFlyttPartnerModalOpen} onClose={() => setIsFlyttPartnerModalOpen(false)} htmlContent={loadingFlyttPartner ? `<p>${t('footer.loadingTerms')}</p>` : flyttPartnerHtml} />
+      <TermsModal isOpen={isUtlandsflyttModalOpen} onClose={() => setIsUtlandsflyttModalOpen(false)} htmlContent={loadingUtlandsflytt ? `<p>${t('footer.loadingTerms')}</p>` : utlandsflyttHtml} />
       {showReportButton && (
         <button
           type="button"
           className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 bg-white text-[#0F172A] border border-gray-200 shadow-lg px-3 py-2 md:px-4 md:py-2 rounded-full text-xs opacity-90 hover:opacity-100 transition-all"
           onClick={() => setIsReportModalOpen(true)}
-          aria-label="Anmälan"
+          aria-label={t('footer.report')}
         >
-          Anmälan
+          {t('footer.report')}
         </button>
       )}
       <ReportModal isOpen={isReportModalOpen} onClose={() => setIsReportModalOpen(false)} />

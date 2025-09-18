@@ -313,31 +313,31 @@ export default function Header() {
                       <div className="py-2">
                         <Link href="/bohagsflytt" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🏠</span>
-                          <span>Bohagsflytt</span>
+                          <span>{t('header.services.bohagsflytt')}</span>
                         </Link>
                         <Link href="/barhjalp" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">💪</span>
-                          <span>Bärhjälp</span>
+                          <span>{t('header.services.barhjalp')}</span>
                         </Link>
                         <Link href="/piano-tunglyft" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🎹</span>
-                          <span>Piano/Tunglyft</span>
+                          <span>{t('header.services.pianoTunglyft')}</span>
                         </Link>
                         <Link href="/bortforsling" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">♻️</span>
-                          <span>Bortforsling</span>
+                          <span>{t('header.services.bortforsling')}</span>
                         </Link>
                         <Link href="/magasinering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">📦</span>
-                          <span>Magasinering</span>
+                          <span>{t('header.services.magasinering')}</span>
                         </Link>
                         <Link href="/utlandsflytt" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🌍</span>
-                          <span>Utlandsflytt</span>
+                          <span>{t('header.services.utlandsflytt')}</span>
                         </Link>
                         <Link href="/montering" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🔧</span>
-                          <span>Montering</span>
+                          <span>{t('header.services.montering')}</span>
                         </Link>
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
@@ -358,7 +358,7 @@ export default function Header() {
                   onMouseLeave={handleCleaningMouseLeave}
                 >
                   <Link
-                    href="/flyttstadning"
+                    href="/stadtjanster"
                     className="text-[#0F172A]  transition-colors text-base font-medium tracking-wide flex items-center"
                   >
                     {t('header.cleaningServices')}
@@ -378,35 +378,35 @@ export default function Header() {
                       <div className="py-2">
                         <Link href="/flyttstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">✨</span>
-                          <span>Flyttstädning</span>
+                          <span>{t('header.services.flyttstadning')}</span>
                         </Link>
                         <Link href="/kontorsstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🧹</span>
-                          <span>Kontorsstädning</span>
+                          <span>{t('header.services.kontorsstadning')}</span>
                         </Link>
                         <Link href="/hemstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🏡</span>
-                          <span>Hemstädning</span>
+                          <span>{t('header.services.hemstadning')}</span>
                         </Link>
                         <Link href="/fonsterputsning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🪟</span>
-                          <span>Fönsterputs</span>
+                          <span>{t('header.services.fonsterputsning')}</span>
                         </Link>
                         <Link href="/byggstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🚧</span>
-                          <span>Byggstädning</span>
+                          <span>{t('header.services.byggstadning')}</span>
                         </Link>
                         <Link href="/storstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🧽</span>
-                          <span>Storstädning</span>
+                          <span>{t('header.services.storstadning')}</span>
                         </Link>
                         <Link href="/visningsstadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🏠</span>
-                          <span>Visningsstädning</span>
+                          <span>{t('header.services.visningsstadning')}</span>
                         </Link>
                         <Link href="/dodsbo-stadning" onClick={() => setIsCleaningOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🕊️</span>
-                          <span>Dödsbostädning</span>
+                          <span>{t('header.services.dodsboStadning')}</span>
                         </Link>
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
@@ -448,15 +448,15 @@ export default function Header() {
                       <div className="py-2">
                         <Link href="/kontorsflytt" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🏢</span>
-                          <span>Kontorsflytt</span>
+                          <span>{t('header.services.kontorsflytt')}</span>
                         </Link>
                         <Link href="/kontorsstadning" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🧹</span>
-                          <span>Kontorsstädning</span>
+                          <span>{t('header.services.kontorsstadning')}</span>
                         </Link>
                         <Link href="/bemanning" onClick={() => setIsBusinessOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">👷‍♂️</span>
-                          <span>Bemanning och underentreprenad</span>
+                          <span>{t('header.services.bemanning')}</span>
                         </Link>
                       </div>
                       <div className="px-4 py-2 border-t border-gray-100">
@@ -588,7 +588,7 @@ export default function Header() {
                     }`}
                     suppressHydrationWarning={true}
                   >
-                    <span>Våra tjänster</span>
+                    <span>{t('navigation.services')}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                        className={`h-5 w-5 transition-transform absolute right-0`}
@@ -673,19 +673,19 @@ export default function Header() {
                    <div aria-hidden={servicesView !== 'list'} className={`absolute inset-0 flex flex-col items-stretch justify-start gap-3 pt-2 transition-transform duration-300 ${servicesView === 'list' ? 'translate-x-0' : '-translate-x-full invisible pointer-events-none'}`}>
                      <div className="w-full max-w-sm">
                        <button onClick={() => setServicesView('flytt')} className="w-full py-3 text-3xl font-medium text-[#0F172A] flex items-center justify-between" suppressHydrationWarning={true}>
-                         <span>Flyttjänster</span>
+                         <span>{t('header.movingServices')}</span>
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
                        </button>
                      </div>
                      <div className="w-full max-w-sm">
                        <button onClick={() => setServicesView('cleaning')} className="w-full py-3 text-3xl font-medium text-[#0F172A] flex items-center justify-between" suppressHydrationWarning={true}>
-                         <span>Städtjänster</span>
+                         <span>{t('header.cleaningServices')}</span>
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
                        </button>
                      </div>
                      <div className="w-full max-w-sm">
                        <button onClick={() => setServicesView('business')} className="w-full py-3 text-3xl font-medium text-[#0F172A] flex items-center justify-between" suppressHydrationWarning={true}>
-                         <span>Företagstjänster</span>
+                         <span>{t('header.business')}</span>
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
                        </button>
                      </div>
@@ -699,13 +699,13 @@ export default function Header() {
                        </button>
                      </div>
                      <div className="space-y-1">
-                       <Link href="/bohagsflytt" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Bohagsflytt</Link>
-                       <Link href="/barhjalp" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Bärhjälp</Link>
-                       <Link href="/piano-tunglyft" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Piano/Tunglyft</Link>
-                       <Link href="/bortforsling" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Bortforsling</Link>
-                       <Link href="/magasinering" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Magasinering</Link>
-                       <Link href="/utlandsflytt" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Utlandsflytt</Link>
-                       <Link href="/montering" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Montering</Link>
+                       <Link href="/bohagsflytt" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.bohagsflytt')}</Link>
+                       <Link href="/barhjalp" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.barhjalp')}</Link>
+                       <Link href="/piano-tunglyft" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.pianoTunglyft')}</Link>
+                       <Link href="/bortforsling" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.bortforsling')}</Link>
+                       <Link href="/magasinering" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.magasinering')}</Link>
+                       <Link href="/utlandsflytt" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.utlandsflytt')}</Link>
+                       <Link href="/montering" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.montering')}</Link>
                      </div>
                    </div>
                    {/* Cleaning view */}
@@ -717,14 +717,14 @@ export default function Header() {
                            Tillbaka
                          </button>
                        </div>
-                       <Link href="/flyttstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Flyttstädning</Link>
-                       <Link href="/hemstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Hemstädning</Link>
-                       <Link href="/storstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Storstädning</Link>
-                       <Link href="/byggstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Byggstädning</Link>
-                       <Link href="/fonsterputsning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Fönsterputs</Link>
-                       <Link href="/visningsstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Visningsstädning</Link>
-                       <Link href="/kontorsstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Kontorsstädning</Link>
-                       <Link href="/dodsbo-stadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Dödsbostädning</Link>
+                       <Link href="/flyttstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.flyttstadning')}</Link>
+                       <Link href="/hemstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.hemstadning')}</Link>
+                       <Link href="/storstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.storstadning')}</Link>
+                       <Link href="/byggstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.byggstadning')}</Link>
+                       <Link href="/fonsterputsning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.fonsterputsning')}</Link>
+                       <Link href="/visningsstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.visningsstadning')}</Link>
+                       <Link href="/kontorsstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.kontorsstadning')}</Link>
+                       <Link href="/dodsbo-stadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.dodsboStadning')}</Link>
                      </div>
                    </div>
                    {/* Business view */}
@@ -736,9 +736,9 @@ export default function Header() {
                        </button>
                      </div>
                      <div className="space-y-1">
-                       <Link href="/kontorsflytt" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Kontorsflytt</Link>
-                       <Link href="/kontorsstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Kontorsstädning</Link>
-                       <Link href="/bemanning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">Bemanning och underentreprenad</Link>
+                       <Link href="/kontorsflytt" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.kontorsflytt')}</Link>
+                       <Link href="/kontorsstadning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.kontorsstadning')}</Link>
+                       <Link href="/bemanning" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.bemanning')}</Link>
                      </div>
                    </div>
                  </div>

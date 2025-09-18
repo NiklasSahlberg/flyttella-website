@@ -8,9 +8,9 @@
   },
   "hero": {
     "title": "Peace of mind without surprises",
-    "subtitle": "We understand that your move is important. That's why we offer a safe, fixed-price removal service - no hidden costs. With us, you can rest easy, both for your belongings and your wallet.",
+    "subtitle": "We understand that your move is important. That's why we offer a safe, fixed-price household moving service - no hidden costs. With us, you can rest easy, both for your belongings and your wallet.",
     "cta": "Get a free quote",
-    "description": "We help you with everything from packing to cleaning. Fast, safe and reliable removal service throughout Stockholm."
+    "description": "We help you with everything from packing to cleaning. Fast, safe and reliable household moving service throughout Stockholm."
   },
   "about": {
     "title": "About Flyttella",
@@ -20,8 +20,8 @@
   },
   "services": {
     "title": "Our services",
-    "moving": "Removal service",
-    "cleaning": "Removal cleaning",
+    "moving": "Household moving",
+    "cleaning": "Move out cleaning",
     "packing": "Packing",
     "storage": "Warehousing",
     "office": "Office relocation",
@@ -38,7 +38,7 @@
     "reschedule": "Rebook or cancel free of charge",
     "rescheduleDesc": "Reschedule or cancel free of charge up to 24 hours before the move",
     "guarantee": "Customer satisfaction guarantee",
-    "guaranteeDesc": "14-day guarantee on removal cleaning",
+    "guaranteeDesc": "14-day guarantee on move out cleaning",
     "insurance": "Insurance",
     "insuranceDesc": "All necessary licences and insurance in place",
     "trainedStaff": "Trained staff",
@@ -92,12 +92,31 @@
     "seeAllBusiness": "See all business services",
     "phone": "08-898-301",
     "openHours": "Mån-Fre: 08:00-18:00",
-    "closedWeekend": "Lör-Sön: Stängt"
+    "closedWeekend": "Lör-Sön: Stängt",
+    "services": {
+      "bohagsflytt": "Household removal",
+      "barhjalp": "Carrying assistance",
+      "pianoTunglyft": "Piano/Heavy lifting",
+      "bortforsling": "Disposal",
+      "magasinering": "Storage",
+      "utlandsflytt": "International removal",
+      "montering": "Assembly",
+      "flyttstadning": "Move out cleaning",
+      "kontorsstadning": "Office cleaning",
+      "hemstadning": "Home cleaning",
+      "fonsterputsning": "Window cleaning",
+      "byggstadning": "Construction cleaning",
+      "storstadning": "Deep cleaning",
+      "visningsstadning": "Viewing cleaning",
+      "dodsboStadning": "Estate cleaning",
+      "kontorsflytt": "Office cleaning",
+      "bemanning": "Staffing and subcontracting"
+    }
   },
   "form": {
     "title": "Få gratis offert",
-    "movingService": "Complete removal service with professional packing, transport and cleaning",
-    "cleaningService": "Professional removal cleaning with guarantee",
+    "movingService": "Complete move out service with professional packing, transport and cleaning",
+    "cleaningService": "Professional move out cleaning with guarantee",
     "cta": "Send request"
   },
   "process": {
@@ -162,7 +181,7 @@
   },
   "bohagsflytt": {
     "hero": {
-      "title": "Removal of beans",
+      "title": "Household moving",
       "subtitle": "Let us take care of your entire move. With our professional household removals, you'll have a worry-free moving experience from start to finish.",
       "description": "We carry out large and small household removals every day! It is our proud profession to safely and efficiently move things from one place to another at a competitive fixed price."
     },
@@ -249,9 +268,9 @@
   },
   "flyttstadning": {
     "hero": {
-      "title": "Professional removal cleaning",
+      "title": "Professional move out cleaning",
       "subtitle": "Let our experienced team take care of the cleaning",
-      "description": "We guarantee a thorough removal cleaning that meets all requirements. Our professional cleaning service ensures that your old home is left in perfect condition."
+      "description": "We guarantee a thorough move out cleaning that meets all requirements. Our professional cleaning service ensures that your old home is left in perfect condition."
     }
   },
   "hemstadning": {

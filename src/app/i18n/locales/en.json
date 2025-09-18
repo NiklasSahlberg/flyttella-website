@@ -439,7 +439,23 @@
     "services": "Services",
     "about": "About",
     "terms": "Terms & Conditions",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "home": "Home",
+    "contactUs": "Contact us",
+    "ourMovingServices": "Our Moving Services",
+    "cleaningServices": "Cleaning Services",
+    "businessServices": "Business Services",
+    "legalInformation": "Legal Information",
+    "seeMore": "See more",
+    "generalTermsMoving": "General Terms - Moving",
+    "generalTermsCleaning": "General Terms - Cleaning",
+    "partnerTermsCleaning": "Partner Terms - Cleaning",
+    "partnerTermsMoving": "Partner Terms - Moving",
+    "generalTermsInternational": "General Terms - International Moving",
+    "privacyPolicy": "Privacy Policy",
+    "allRightsReserved": "All rights reserved",
+    "loadingTerms": "Loading terms...",
+    "report": "Report"
   },
   "common": {
     "getQuote": "Get Quote",
@@ -462,7 +478,26 @@
     "seeAllBusiness": "See all business services",
     "phone": "08-898-301",
     "openHours": "Mon-Fri: 08:00-18:00",
-    "closedWeekend": "Sat-Sun: Closed"
+    "closedWeekend": "Sat-Sun: Closed",
+    "services": {
+      "bohagsflytt": "Household moving",
+      "barhjalp": "Carrying assistance",
+      "pianoTunglyft": "Piano/Heavy lifting",
+      "bortforsling": "Disposal",
+      "magasinering": "Storage",
+      "utlandsflytt": "International removal",
+      "montering": "Assembly",
+      "flyttstadning": "Move out cleaning",
+      "kontorsstadning": "Office cleaning",
+      "hemstadning": "Home cleaning",
+      "fonsterputsning": "Window cleaning",
+      "byggstadning": "Construction cleaning",
+      "storstadning": "Deep cleaning",
+      "visningsstadning": "Viewing cleaning",
+      "dodsboStadning": "Estate cleaning",
+      "kontorsflytt": "Office cleaning",
+      "bemanning": "Staffing and subcontracting"
+    }
   },
   "form": {
     "title": "Get a free quote",

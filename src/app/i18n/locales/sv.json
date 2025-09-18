@@ -438,7 +438,23 @@
     "services": "Tjänster",
     "about": "Om oss",
     "terms": "Allmänna villkor",
-    "privacy": "Integritetspolicy"
+    "privacy": "Integritetspolicy",
+    "home": "Hem",
+    "contactUs": "Kontakta oss",
+    "ourMovingServices": "Våra Flyttjänster",
+    "cleaningServices": "Städtjänster",
+    "businessServices": "Företagstjänster",
+    "legalInformation": "Juridisk information",
+    "seeMore": "Se mer",
+    "generalTermsMoving": "Allmänna villkor - Flytt",
+    "generalTermsCleaning": "Allmänna villkor - Flyttstäd",
+    "partnerTermsCleaning": "Villkor Samarbetspartner - Flyttstäd",
+    "partnerTermsMoving": "Villkor Samarbetspartner - Flytt",
+    "generalTermsInternational": "Allmänna villkor - Utlandsflytt",
+    "privacyPolicy": "Integritetspolicy",
+    "allRightsReserved": "Alla rättigheter förbehållna",
+    "loadingTerms": "Laddar villkor...",
+    "report": "Anmälan"
   },
   "common": {
     "getQuote": "Få offert",
@@ -461,7 +477,26 @@
     "seeAllBusiness": "Se alla företagstjänster",
     "phone": "08-898-301",
     "openHours": "Mån-Fre: 08:00-18:00",
-    "closedWeekend": "Lör-Sön: Stängt"
+    "closedWeekend": "Lör-Sön: Stängt",
+    "services": {
+      "bohagsflytt": "Bohagsflytt",
+      "barhjalp": "Bärhjälp",
+      "pianoTunglyft": "Piano/Tunglyft",
+      "bortforsling": "Bortforsling",
+      "magasinering": "Magasinering",
+      "utlandsflytt": "Utlandsflytt",
+      "montering": "Montering",
+      "flyttstadning": "Flyttstädning",
+      "kontorsstadning": "Kontorsstädning",
+      "hemstadning": "Hemstädning",
+      "fonsterputsning": "Fönsterputs",
+      "byggstadning": "Byggstädning",
+      "storstadning": "Storstädning",
+      "visningsstadning": "Visningsstädning",
+      "dodsboStadning": "Dödsbostädning",
+      "kontorsflytt": "Kontorsflytt",
+      "bemanning": "Bemanning och underentreprenad"
+    }
   },
   "form": {
     "title": "Få gratis offert",

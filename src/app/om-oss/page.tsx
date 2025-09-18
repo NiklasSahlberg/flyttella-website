@@ -827,10 +827,10 @@ export default function OmOssPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-              Se vårt team i arbete
+              {locale === 'sv' ? 'Se vårt team i arbete' : 'See our team at work'}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ta en titt på våra professionella medarbetare och se hur vi arbetar för att göra din flytt så smidig som möjligt.
+              {locale === 'sv' ? 'Ta en titt på våra professionella medarbetare och se hur vi arbetar för att göra din flytt så smidig som möjligt.' : 'Take a look at our professional employees and see how we work to make your move as smooth as possible.'}
             </p>
           </div>
           
@@ -941,18 +941,18 @@ export default function OmOssPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h2 className="text-2xl font-bold text-white mb-6">
-              Professionalism
+              {locale === 'sv' ? 'Professionalism' : 'Professionalism'}
             </h2>
             <ul className="space-y-3">
               {[
-                "Erfaren personal",
-                "Kvalificerad utbildning",
-                "Modern utrustning",
-                "Effektiva processer",
-                "Punktlighet",
-                "Transparens",
-                "Kvalitetskontroll",
-                "Kontinuerlig utveckling"
+                locale === 'sv' ? "Erfaren personal" : "Experienced staff",
+                locale === 'sv' ? "Kvalificerad utbildning" : "Qualified training",
+                locale === 'sv' ? "Modern utrustning" : "Modern equipment",
+                locale === 'sv' ? "Effektiva processer" : "Efficient processes",
+                locale === 'sv' ? "Punktlighet" : "Punctuality",
+                locale === 'sv' ? "Transparens" : "Transparency",
+                locale === 'sv' ? "Kvalitetskontroll" : "Quality control",
+                locale === 'sv' ? "Kontinuerlig utveckling" : "Continuous development"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <svg className="w-5 h-5 text-white mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -973,18 +973,18 @@ export default function OmOssPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-2xl font-bold text-white mb-6">
-              Kvalitet
+              {locale === 'sv' ? 'Kvalitet' : 'Quality'}
             </h2>
             <ul className="space-y-3">
               {[
-                "Höga standarder",
-                "Grundliga processer",
-                "Kvalitetskontroll",
-                "Kundnöjdhet",
-                "Miljöhänsyn",
-                "Säkerhet",
-                "Ansvarsförsäkring",
-                "Garantier"
+                locale === 'sv' ? "Höga standarder" : "High standards",
+                locale === 'sv' ? "Grundliga processer" : "Thorough processes",
+                locale === 'sv' ? "Kvalitetskontroll" : "Quality control",
+                locale === 'sv' ? "Kundnöjdhet" : "Customer satisfaction",
+                locale === 'sv' ? "Miljöhänsyn" : "Environmental consideration",
+                locale === 'sv' ? "Säkerhet" : "Safety",
+                locale === 'sv' ? "Ansvarsförsäkring" : "Liability insurance",
+                locale === 'sv' ? "Garantier" : "Guarantees"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <svg className="w-5 h-5 text-white mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1005,18 +1005,18 @@ export default function OmOssPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h2 className="text-2xl font-bold text-white mb-6">
-              Kundfokus
+              {locale === 'sv' ? 'Kundfokus' : 'Customer Focus'}
             </h2>
             <ul className="space-y-3">
               {[
-                "Personlig service",
-                "Flexibla lösningar",
-                "Transparent kommunikation",
-                "Snabb respons",
-                "Anpassade erbjudanden",
-                "Lyhörd kundservice",
-                "Uppföljning",
-                "Nöjd-kund-garanti på flyttstädning"
+                locale === 'sv' ? "Personlig service" : "Personal service",
+                locale === 'sv' ? "Flexibla lösningar" : "Flexible solutions",
+                locale === 'sv' ? "Transparent kommunikation" : "Transparent communication",
+                locale === 'sv' ? "Snabb respons" : "Quick response",
+                locale === 'sv' ? "Anpassade erbjudanden" : "Customized offers",
+                locale === 'sv' ? "Lyhörd kundservice" : "Responsive customer service",
+                locale === 'sv' ? "Uppföljning" : "Follow-up",
+                locale === 'sv' ? "Nöjd-kund-garanti på flyttstädning" : "Satisfied customer guarantee on moving cleaning"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <svg className="w-5 h-5 text-white mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
