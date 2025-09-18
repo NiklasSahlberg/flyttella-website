@@ -11,7 +11,7 @@ export default function CookieConsentBanner() {
     // Accept all cookies
     document.cookie = "flyttella-cookie-consent=true; expires=" + new Date(Date.now() + 150 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
     // Hide the banner
-    const banner = document.querySelector('[data-cookie-consent]');
+    const banner = document.querySelector('[data-cookie-consent]') as HTMLElement;
     if (banner) {
       banner.style.display = 'none';
     }
@@ -21,7 +21,7 @@ export default function CookieConsentBanner() {
     // Decline non-essential cookies
     document.cookie = "flyttella-cookie-consent=false; expires=" + new Date(Date.now() + 150 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
     // Hide the banner
-    const banner = document.querySelector('[data-cookie-consent]');
+    const banner = document.querySelector('[data-cookie-consent]') as HTMLElement;
     if (banner) {
       banner.style.display = 'none';
     }
