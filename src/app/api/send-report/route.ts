@@ -207,10 +207,12 @@ export async function POST(req: Request) {
     // Determine the type of report and create appropriate email content
     let emailContent = '';
     let subject = '';
+    let recipientEmail = 'niklassahlbergdeveloper@gmail.com'; // Default fallback
 
     if (data.type === 'skada' && data.damageType === 'skada') {
       // Damage report
       subject = 'Skadeanmälan - Flyttella';
+      recipientEmail = 'skada@flyttella.se';
       
       // Calculate estimated value
       const purchasePrice = parseFloat(data.purchasePrice) || 0;
@@ -405,6 +407,7 @@ export async function POST(req: Request) {
     } else if (data.type === 'skada' && data.damageType === 'forlust') {
       // Loss report
       subject = 'Förlustanmälan - Flyttella';
+      recipientEmail = 'skada@flyttella.se';
       
       // Calculate estimated value
       const purchasePrice = parseFloat(data.purchasePrice) || 0;
@@ -565,6 +568,7 @@ export async function POST(req: Request) {
     } else if (data.type === 'reklamation') {
       // Cleaning complaint report
       subject = 'Reklamationsstäd - Flyttella';
+      recipientEmail = 'trafikledning@flyttella.se';
       emailContent = `
 <!DOCTYPE html>
 <html>
@@ -650,12 +654,13 @@ export async function POST(req: Request) {
     console.log('Gmail client created successfully');
 
     console.log('Creating email with subject:', subject);
+    console.log('Sending email to:', recipientEmail);
     // Create the email with attachments if files exist
     let raw: string;
     if (Object.keys(files).length > 0) {
       console.log('Creating email with attachments:', Object.keys(files));
       raw = await createEmailWithAttachments(
-        'niklassahlbergdeveloper@gmail.com',
+        recipientEmail,
         'niklassahlbergdeveloper@gmail.com',
         subject,
         emailContent,
@@ -664,7 +669,7 @@ export async function POST(req: Request) {
     } else {
       console.log('Creating email without attachments');
       raw = createEmail(
-        'niklassahlbergdeveloper@gmail.com',
+        recipientEmail,
         'niklassahlbergdeveloper@gmail.com',
         subject,
         emailContent

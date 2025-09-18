@@ -1,38 +1,48 @@
 'use client';
 
-import { useState } from 'react';
-import CookieConsent from 'react-cookie-consent';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function CookieConsentBanner() {
   const [showDetails, setShowDetails] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Check if user has already made a choice
+    const hasConsent = document.cookie.split(';').some(cookie => 
+      cookie.trim().startsWith('flyttella-cookie-consent=')
+    );
+    
+    if (!hasConsent) {
+      setIsVisible(true);
+    }
+  }, []);
 
   const handleAccept = () => {
     // Accept all cookies
     document.cookie = "flyttella-cookie-consent=true; expires=" + new Date(Date.now() + 150 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
     // Hide the banner
-    const banner = document.querySelector('[data-cookie-consent]') as HTMLElement;
-    if (banner) {
-      banner.style.display = 'none';
-    }
+    setIsVisible(false);
   };
 
   const handleDecline = () => {
     // Decline non-essential cookies
     document.cookie = "flyttella-cookie-consent=false; expires=" + new Date(Date.now() + 150 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
     // Hide the banner
-    const banner = document.querySelector('[data-cookie-consent]') as HTMLElement;
-    if (banner) {
-      banner.style.display = 'none';
-    }
+    setIsVisible(false);
   };
 
+  if (!isVisible) {
+    return null;
+  }
+
   return (
-    <CookieConsent
-      location="bottom"
-      buttonText=""
-      cookieName="flyttella-cookie-consent"
+    <div
       style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
         background: 'white',
         color: '#0F172A',
         padding: '0.25rem 0.75rem',
@@ -46,10 +56,6 @@ export default function CookieConsentBanner() {
         minHeight: 'auto',
         height: 'auto',
       }}
-      buttonStyle={{
-        display: 'none',
-      }}
-      expires={150}
     >
       <div className="max-w-4xl mx-auto w-full">
         {showDetails && (
@@ -107,6 +113,6 @@ export default function CookieConsentBanner() {
         </div>
         </div>
       </div>
-    </CookieConsent>
+    </div>
   );
 }

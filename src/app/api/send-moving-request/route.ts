@@ -214,7 +214,7 @@ export async function POST(req: Request) {
   <div class="container">
     <div class="header">
       ${logoBase64 ? `<img src="${logoBase64}" alt="Flyttella Logo" class="logo" style="max-width: 120px; height: auto;">` : ''}
-      <h2 style="margin: 0; font-size: 24px;">Ny Lead - Flyttella</h2>
+      <h2 style="margin: 0; font-size: 24px;">Ny Flyttlead - Flyttella</h2>
     </div>
     <div class="content">
 
@@ -443,8 +443,8 @@ export async function POST(req: Request) {
 
     // Create the email
     const raw = createEmail(
-      'faktura@flyttella.se',
-      'niklassahlbergdeveloper@gmail.com',
+      'leads@flyttella.se',
+      'leads@flyttella.se',
       'Ny lead flyttella',
       emailContent
     );

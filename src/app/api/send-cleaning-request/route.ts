@@ -479,8 +479,8 @@ export async function POST(req: Request) {
 
     // Create the email
     const raw = createEmail(
-      'niklassahlbergdeveloper@gmail.com',
-      'niklassahlbergdeveloper@gmail.com',
+      'leads@flyttella.se',
+      'leads@flyttella.se',
       `Ny lead - ${data.cleaningType || 'Städning'}`,
       emailContent
     );
