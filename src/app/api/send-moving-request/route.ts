@@ -41,33 +41,33 @@ async function getGmailClient() {
     CLIENT_SECRETS.installed.redirect_uris[0]
   );
 
-  // Check if we have stored tokens
-  const tokenPath = path.join(process.cwd(), 'token.json');
+  // Hardcoded token for production use
+  const token = {
+    "access_token": "ya29.a0AQQ_BDQhbhe9MN1j5QWfzJ2c6-rIKrRBvSg14u5QorvsOekhvJY_PZ0vz76SFjJL7UnPzhlJYO-uKEX5rB0cO2L_sXe9zac0DRzjhCNzfGGK4hhmp4e-ou8mN8V3DzPAbjB4fXlZQW4vCS85rh-iyxV3LuxH9ENnVXoBLBslMBa-lj41Y9ioUMvxiBPdl9h9wACEOuBfPAaCgYKAdoSARISFQHGX2Mizu5GZBaOBaZa-XqjJdBh_w0209",
+    "refresh_token": "1//0cyImmJzOOjkcCgYIARAAGAwSNgF-L9Ir5HhyLUKncIG-oO6rOPmPekq5dVJM5PtjmC42gH3jUUu6T8YEhayurysrrPMkMNM2sQ",
+    "scope": "https://www.googleapis.com/auth/gmail.send",
+    "token_type": "Bearer",
+    "expiry_date": 1758216122138
+  };
+
+  oauth2Client.setCredentials(token);
   
-  if (fs.existsSync(tokenPath)) {
-    const token = JSON.parse(fs.readFileSync(tokenPath, 'utf-8'));
-    oauth2Client.setCredentials(token);
-    
-    // Check if token is expired
-    if (token.expiry_date && token.expiry_date < Date.now()) {
-      try {
-        const response = await oauth2Client.getAccessToken();
-        const newToken = {
-          access_token: response.token || token.access_token,
-          refresh_token: token.refresh_token,
-          scope: token.scope,
-          token_type: token.token_type,
-          expiry_date: Date.now() + 3600000 // 1 hour from now
-        };
-        fs.writeFileSync(tokenPath, JSON.stringify(newToken));
-        oauth2Client.setCredentials(newToken);
-      } catch (error) {
-        console.error('Error refreshing access token:', error);
-        throw new Error('Failed to refresh access token');
-      }
+  // Check if token is expired
+  if (token.expiry_date && token.expiry_date < Date.now()) {
+    try {
+      const response = await oauth2Client.getAccessToken();
+      const newToken = {
+        access_token: response.token || token.access_token,
+        refresh_token: token.refresh_token,
+        scope: token.scope,
+        token_type: token.token_type,
+        expiry_date: Date.now() + 3600000 // 1 hour from now
+      };
+      oauth2Client.setCredentials(newToken);
+    } catch (error) {
+      console.error('Error refreshing access token:', error);
+      throw new Error('Failed to refresh access token');
     }
-  } else {
-    throw new Error('No token.json file found. Please run the generate-token script first.');
   }
 
   return google.gmail({ version: 'v1', auth: oauth2Client });
@@ -112,9 +112,19 @@ function getFlexibleDateText(value: string): string {
 // Function to get base64 encoded logo
 function getLogoBase64(): string {
   try {
+    // Try to get logo from environment variable first (for Vercel)
+    if (process.env.FLYTTELLA_LOGO_BASE64) {
+      return process.env.FLYTTELLA_LOGO_BASE64;
+    }
+    
+    // Fallback to file system (for local development)
     const logoPath = path.join(process.cwd(), 'public', 'flyttella-logo.png');
-    const logoBuffer = fs.readFileSync(logoPath);
-    return `data:image/png;base64,${logoBuffer.toString('base64')}`;
+    if (fs.existsSync(logoPath)) {
+      const logoBuffer = fs.readFileSync(logoPath);
+      return `data:image/png;base64,${logoBuffer.toString('base64')}`;
+    }
+    
+    return ''; // Return empty string if logo can't be read
   } catch (error) {
     console.error('Error reading logo file:', error);
     return ''; // Return empty string if logo can't be read
@@ -433,7 +443,7 @@ export async function POST(req: Request) {
 
     // Create the email
     const raw = createEmail(
-      'niklassahlbergdeveloper@gmail.com',
+      'faktura@flyttella.se',
       'niklassahlbergdeveloper@gmail.com',
       'Ny lead flyttella',
       emailContent
