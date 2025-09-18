@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface ReportModalProps {
   isOpen: boolean;
@@ -6,6 +7,7 @@ interface ReportModalProps {
 }
 
 const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
+  const { t } = useLanguage();
   const [type, setType] = useState<'skada' | 'reklamation' | null>(null);
   const [damageType, setDamageType] = useState<'skada' | 'forlust' | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -239,50 +241,50 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
       }
     } catch (error) {
       console.error('Error sending report:', error);
-      alert("Ett fel uppstod när anmälan skulle skickas. Vänligen försök igen.");
+      alert(t('reportModal.errorMessage'));
     }
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative text-black" onClick={e => e.stopPropagation()}>
-        <button className="sticky top-4 right-4 text-gray-500 hover:text-[#10B981] text-2xl font-bold focus:outline-none z-20 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm ml-auto" onClick={handleClose} aria-label="Stäng anmälan">&times;</button>
+        <button className="sticky top-4 right-4 text-gray-500 hover:text-[#10B981] text-2xl font-bold focus:outline-none z-20 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm ml-auto" onClick={handleClose} aria-label={t('reportModal.closeLabel')}>&times;</button>
         {showValidationPopup && (
           <div className="fixed left-1/2 top-8 z-50 -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-4 animate-fade-in">
-            <span className="font-semibold">Vänligen svara på alla frågor</span>
+            <span className="font-semibold">{t('reportModal.validationMessage')}</span>
             <button onClick={() => setShowValidationPopup(false)} className="ml-2 text-white text-lg font-bold focus:outline-none">&times;</button>
           </div>
         )}
-        <h2 className="text-xl font-bold mb-4 text-[#0F172A] text-center">Anmälan</h2>
+        <h2 className="text-xl font-bold mb-4 text-[#0F172A] text-center">{t('reportModal.title')}</h2>
         
         {!type && !submitted && (
           <div className="space-y-4">
-            <button className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" onClick={() => handleTypeSelection('skada')}>Skadeanmälan</button>
-            <button className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" onClick={() => handleTypeSelection('reklamation')}>Reklamationsstäd</button>
+            <button className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" onClick={() => handleTypeSelection('skada')}>{t('reportModal.damageReport')}</button>
+            <button className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" onClick={() => handleTypeSelection('reklamation')}>{t('reportModal.cleaningComplaint')}</button>
           </div>
         )}
 
         {type === 'skada' && !damageType && !submitted && (
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#0F172A] mb-4">Vad har du råkat ut för?</h3>
+            <h3 className="text-lg font-semibold text-[#0F172A] mb-4">{t('reportModal.whatHappened')}</h3>
             <button 
               className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" 
               onClick={() => setDamageType('skada')}
             >
-              Skada på föremål
+              {t('reportModal.damageToItem')}
             </button>
             <button 
               className="w-full py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-[#0F172A] font-medium" 
               onClick={() => setDamageType('forlust')}
             >
-              Förlust
+              {t('reportModal.loss')}
             </button>
             <button 
               type="button" 
               className="w-full py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50" 
               onClick={handleBack}
             >
-              Tillbaka
+              {t('reportModal.back')}
             </button>
           </div>
         )}
@@ -292,7 +294,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
             {damageType === 'skada' && (
               <>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Offertnummer *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.quoteNumber')} *</label>
                   <input 
                     type="text" 
                     name="order" 
@@ -301,13 +303,13 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                     value={form.order} 
                     onChange={handleChange} 
                   />
-                  {hasError('order') && <p className="text-red-500 text-xs mt-1">Offertnummer krävs</p>}
+                  {hasError('order') && <p className="text-red-500 text-xs mt-1">{t('reportModal.quoteNumberRequired')}</p>}
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Bilder på skadat föremål *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.damagedItemImages')} *</label>
                   <label htmlFor="damaged-item-upload" className={`inline-block px-4 py-2 rounded-lg cursor-pointer text-xs font-medium bg-[#10B981] text-white hover:bg-[#059669] ${hasError('damagedItemImage') ? 'border border-red-500 bg-red-50 text-red-700' : ''}`}>
-                    Välj bild
+                    {t('reportModal.selectImage')}
                   </label>
                   <input
                     id="damaged-item-upload"
@@ -321,13 +323,13 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   {form.damagedItemImage && (
                     <p className="mt-2 text-xs text-gray-600">{form.damagedItemImage.name}</p>
                   )}
-                  {hasError('damagedItemImage') && <p className="text-red-500 text-xs mt-1">Bild krävs</p>}
+                  {hasError('damagedItemImage') && <p className="text-red-500 text-xs mt-1">{t('reportModal.imageRequired')}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Bild på framsidan *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.frontImage')} *</label>
                   <label htmlFor="front-image-upload" className={`inline-block px-4 py-2 rounded-lg cursor-pointer text-xs font-medium bg-[#10B981] text-white hover:bg-[#059669] ${hasError('frontImage') ? 'border border-red-500 bg-red-50 text-red-700' : ''}`}>
-                    Välj bild
+                    {t('reportModal.selectImage')}
                   </label>
                   <input
                     id="front-image-upload"
@@ -341,13 +343,13 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   {form.frontImage && (
                     <p className="mt-2 text-xs text-gray-600">{form.frontImage.name}</p>
                   )}
-                  {hasError('frontImage') && <p className="text-red-500 text-xs mt-1">Bild krävs</p>}
+                  {hasError('frontImage') && <p className="text-red-500 text-xs mt-1">{t('reportModal.imageRequired')}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Bild från vänster sida *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.leftSideImage')} *</label>
                   <label htmlFor="left-image-upload" className={`inline-block px-4 py-2 rounded-lg cursor-pointer text-xs font-medium bg-[#10B981] text-white hover:bg-[#059669] ${hasError('leftImage') ? 'border border-red-500 bg-red-50 text-red-700' : ''}`}>
-                    Välj bild
+                    {t('reportModal.selectImage')}
                   </label>
                   <input
                     id="left-image-upload"
@@ -361,13 +363,13 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   {form.leftImage && (
                     <p className="mt-2 text-xs text-gray-600">{form.leftImage.name}</p>
                   )}
-                  {hasError('leftImage') && <p className="text-red-500 text-xs mt-1">Bild krävs</p>}
+                  {hasError('leftImage') && <p className="text-red-500 text-xs mt-1">{t('reportModal.imageRequired')}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Bild från höger sida *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.rightSideImage')} *</label>
                   <label htmlFor="right-image-upload" className={`inline-block px-4 py-2 rounded-lg cursor-pointer text-xs font-medium bg-[#10B981] text-white hover:bg-[#059669] ${hasError('rightImage') ? 'border border-red-500 bg-red-50 text-red-700' : ''}`}>
-                    Välj bild
+                    {t('reportModal.selectImage')}
                   </label>
                   <input
                     id="right-image-upload"
@@ -381,16 +383,16 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                   {form.rightImage && (
                     <p className="mt-2 text-xs text-gray-600">{form.rightImage.name}</p>
                   )}
-                  {hasError('rightImage') && <p className="text-red-500 text-xs mt-1">Bild krävs</p>}
+                  {hasError('rightImage') && <p className="text-red-500 text-xs mt-1">{t('reportModal.imageRequired')}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Beskriv skador på föremålet och hur skadan har gått till *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.describeDamage')} *</label>
                   <textarea name="description" required className="w-full border rounded-lg px-3 py-2 min-h-[80px]" value={form.description} onChange={handleChange} />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Hur skadat är föremålet? *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.howDamaged')} *</label>
                   <div className="space-y-2">
                     <label className="flex items-center">
                       <input 
@@ -402,7 +404,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.damageLevel === 'lindrigt_skadad'} 
                         onChange={handleChange} 
                       />
-                      Lindrigt skadad
+                      {t('reportModal.slightlyDamaged')}
                     </label>
                     <label className="flex items-center">
                       <input 
@@ -414,7 +416,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.damageLevel === 'delvis_skadad'} 
                         onChange={handleChange} 
                       />
-                      Delvis skadad
+                      {t('reportModal.partiallyDamaged')}
                     </label>
                     <label className="flex items-center">
                       <input 
@@ -426,37 +428,37 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.damageLevel === 'helt_forstord'} 
                         onChange={handleChange} 
                       />
-                      Helt förstörd
+                      {t('reportModal.completelyDestroyed')}
                     </label>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Vilken typ av föremål var det som skadades? *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.itemType')} *</label>
                   <select name="itemType" required className="w-full border rounded-lg px-3 py-2" value={form.itemType} onChange={handleChange}>
-                    <option value="">Välj typ</option>
-                    <option value="mobler">Möbler</option>
-                    <option value="elektronik">Elektronik</option>
-                    <option value="konstverk">Konstverk och antikviteter</option>
-                    <option value="vaxter">Växter</option>
-                    <option value="kontorsutrustning">Kontorsutrustning</option>
-                    <option value="koksartiklar">Köksartiklar</option>
-                    <option value="annat">Annat</option>
+                    <option value="">{t('reportModal.selectType')}</option>
+                    <option value="mobler">{t('reportModal.furniture')}</option>
+                    <option value="elektronik">{t('reportModal.electronics')}</option>
+                    <option value="konstverk">{t('reportModal.artwork')}</option>
+                    <option value="vaxter">{t('reportModal.plants')}</option>
+                    <option value="kontorsutrustning">{t('reportModal.officeEquipment')}</option>
+                    <option value="koksartiklar">{t('reportModal.kitchenItems')}</option>
+                    <option value="annat">{t('reportModal.other')}</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Vad är märket och modellen på föremålet? *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.brandModel')} *</label>
                   <input type="text" name="brandModel" required className="w-full border rounded-lg px-3 py-2" value={form.brandModel} onChange={handleChange} />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Vem packade föremålet? *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.whoPacked')} *</label>
                   <input type="text" name="packedBy" required className="w-full border rounded-lg px-3 py-2" value={form.packedBy} onChange={handleChange} />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Var föremålet nytt när du köpte den? *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.wasNew')} *</label>
                   <div className="flex gap-4">
                     <label className="flex items-center">
                       <input 
@@ -468,7 +470,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.wasNew === 'ja'} 
                         onChange={handleChange} 
                       />
-                      Ja
+                      {t('reportModal.yes')}
                     </label>
                     <label className="flex items-center">
                       <input 
@@ -480,13 +482,13 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.wasNew === 'nej'} 
                         onChange={handleChange} 
                       />
-                      Nej
+                      {t('reportModal.no')}
                     </label>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Har du kvitto från butiken? *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.hasReceipt')} *</label>
                   <div className="flex gap-4">
                     <label className="flex items-center">
                       <input 
@@ -498,7 +500,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.hasReceipt === 'ja'} 
                         onChange={handleChange} 
                       />
-                      Ja
+                      {t('reportModal.yes')}
                     </label>
                     <label className="flex items-center">
                       <input 
@@ -510,16 +512,16 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.hasReceipt === 'nej'} 
                         onChange={handleChange} 
                       />
-                      Nej
+                      {t('reportModal.no')}
                     </label>
                   </div>
                   <p className="text-sm text-gray-600 mt-2">
-                    Tänk på att om du inte kan uppvisa kvitto för föremålet kommer det att värderas med en högre grad av värdeminskning.
+                    {t('reportModal.receiptNote')}
                   </p>
                   {form.hasReceipt === 'ja' && (
                     <div className="mt-3">
                       <label htmlFor="receipt-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
-                        Ladda upp kvittot *
+                        {t('reportModal.uploadReceipt')} *
                       </label>
                       <input
                         id="receipt-upload"
@@ -538,17 +540,17 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Inköpspris *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.purchasePrice')} *</label>
                   <input type="number" name="purchasePrice" required className="w-full border rounded-lg px-3 py-2" value={form.purchasePrice} onChange={handleChange} placeholder="SEK" />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Inköpsår *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.purchaseYear')} *</label>
                   <input type="number" name="purchaseYear" required className="w-full border rounded-lg px-3 py-2" value={form.purchaseYear} onChange={handleChange} placeholder="ÅÅÅÅ" min="1900" max={new Date().getFullYear()} />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Har du varit i kontakt med reparatör? *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.contactedRepair')} *</label>
                   <div className="flex gap-4">
                     <label className="flex items-center">
                       <input 
@@ -560,7 +562,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.contactedRepair === 'ja'} 
                         onChange={handleChange} 
                       />
-                      Ja
+                      {t('reportModal.yes')}
                     </label>
                     <label className="flex items-center">
                       <input 
@@ -572,23 +574,23 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.contactedRepair === 'nej'} 
                         onChange={handleChange} 
                       />
-                      Nej
+                      {t('reportModal.no')}
                     </label>
                   </div>
                 </div>
 
                 {form.contactedRepair === 'ja' && (
                   <div>
-                    <label className="block text-sm font-medium mb-1">Reparationspris *</label>
+                    <label className="block text-sm font-medium mb-1">{t('reportModal.repairPrice')} *</label>
                     <input type="number" name="repairPrice" required className="w-full border rounded-lg px-3 py-2" value={form.repairPrice} onChange={handleChange} placeholder="SEK" />
                   </div>
                 )}
 
                 <div className="border-t pt-6 mt-6">
-                  <h4 className="text-lg font-semibold text-[#0F172A] mb-4">Kontaktinformation</h4>
+                  <h4 className="text-lg font-semibold text-[#0F172A] mb-4">{t('reportModal.contactInfo')}</h4>
                   
                   <div>
-                    <label className="block text-sm font-medium mb-1">Händelsedatum *</label>
+                    <label className="block text-sm font-medium mb-1">{t('reportModal.eventDate')} *</label>
                     <input 
                       type="date" 
                       name="eventDate" 
@@ -597,21 +599,21 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                       value={form.eventDate} 
                       onChange={handleChange} 
                     />
-                    {hasError('eventDate') && <p className="text-red-500 text-xs mt-1">Händelsedatum krävs</p>}
+                    {hasError('eventDate') && <p className="text-red-500 text-xs mt-1">{t('reportModal.eventDateRequired')}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">Fullständigt Namn och Efternamn *</label>
+                    <label className="block text-sm font-medium mb-1">{t('reportModal.fullName')} *</label>
                     <input type="text" name="name" required className="w-full border rounded-lg px-3 py-2" value={form.name} onChange={handleChange} />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">Telefonnummer *</label>
+                    <label className="block text-sm font-medium mb-1">{t('reportModal.phoneNumber')} *</label>
                     <input type="tel" name="phone" required className="w-full border rounded-lg px-3 py-2" value={form.phone} onChange={handleChange} placeholder="070-123 45 67" />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">E-post *</label>
+                    <label className="block text-sm font-medium mb-1">{t('reportModal.email')} *</label>
                     <input type="email" name="email" required className="w-full border rounded-lg px-3 py-2" value={form.email} onChange={handleChange} />
                   </div>
                 </div>
@@ -631,12 +633,12 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Beskriv hur föremålet har försvunnit *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.describeLoss')} *</label>
                   <textarea name="description" required className="w-full border rounded-lg px-3 py-2 min-h-[80px]" value={form.description} onChange={handleChange} />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Var föremålet nytt när du köpte den? *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.wasNew')} *</label>
                   <div className="flex gap-4">
                     <label className="flex items-center">
                       <input 
@@ -648,7 +650,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.wasNew === 'ja'} 
                         onChange={handleChange} 
                       />
-                      Ja
+                      {t('reportModal.yes')}
                     </label>
                     <label className="flex items-center">
                       <input 
@@ -660,13 +662,13 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.wasNew === 'nej'} 
                         onChange={handleChange} 
                       />
-                      Nej
+                      {t('reportModal.no')}
                     </label>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Har du kvitto från butiken? *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.hasReceipt')} *</label>
                   <div className="flex gap-4">
                     <label className="flex items-center">
                       <input 
@@ -678,7 +680,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.hasReceipt === 'ja'} 
                         onChange={handleChange} 
                       />
-                      Ja
+                      {t('reportModal.yes')}
                     </label>
                     <label className="flex items-center">
                       <input 
@@ -690,16 +692,16 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                         checked={form.hasReceipt === 'nej'} 
                         onChange={handleChange} 
                       />
-                      Nej
+                      {t('reportModal.no')}
                     </label>
                   </div>
                   <p className="text-sm text-gray-600 mt-2">
-                    Tänk på att om du inte kan uppvisa kvitto för föremålet kommer det att värderas med en högre grad av värdeminskning.
+                    {t('reportModal.receiptNote')}
                   </p>
                   {form.hasReceipt === 'ja' && (
                     <div className="mt-3">
                       <label htmlFor="receipt-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
-                        Ladda upp kvittot *
+                        {t('reportModal.uploadReceipt')} *
                       </label>
                       <input
                         id="receipt-upload"
@@ -718,20 +720,20 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Inköpspris *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.purchasePrice')} *</label>
                   <input type="number" name="purchasePrice" required className="w-full border rounded-lg px-3 py-2" value={form.purchasePrice} onChange={handleChange} placeholder="SEK" />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Inköpsår *</label>
+                  <label className="block text-sm font-medium mb-1">{t('reportModal.purchaseYear')} *</label>
                   <input type="number" name="purchaseYear" required className="w-full border rounded-lg px-3 py-2" value={form.purchaseYear} onChange={handleChange} placeholder="ÅÅÅÅ" min="1900" max={new Date().getFullYear()} />
                 </div>
 
                 <div className="border-t pt-6 mt-6">
-                  <h4 className="text-lg font-semibold text-[#0F172A] mb-4">Kontaktinformation</h4>
+                  <h4 className="text-lg font-semibold text-[#0F172A] mb-4">{t('reportModal.contactInfo')}</h4>
                   
                   <div>
-                    <label className="block text-sm font-medium mb-1">Händelsedatum *</label>
+                    <label className="block text-sm font-medium mb-1">{t('reportModal.eventDate')} *</label>
                     <input 
                       type="date" 
                       name="eventDate" 
@@ -740,21 +742,21 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                       value={form.eventDate} 
                       onChange={handleChange} 
                     />
-                    {hasError('eventDate') && <p className="text-red-500 text-xs mt-1">Händelsedatum krävs</p>}
+                    {hasError('eventDate') && <p className="text-red-500 text-xs mt-1">{t('reportModal.eventDateRequired')}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">Fullständigt Namn och Efternamn *</label>
+                    <label className="block text-sm font-medium mb-1">{t('reportModal.fullName')} *</label>
                     <input type="text" name="name" required className="w-full border rounded-lg px-3 py-2" value={form.name} onChange={handleChange} />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">Telefonnummer *</label>
+                    <label className="block text-sm font-medium mb-1">{t('reportModal.phoneNumber')} *</label>
                     <input type="tel" name="phone" required className="w-full border rounded-lg px-3 py-2" value={form.phone} onChange={handleChange} placeholder="070-123 45 67" />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">E-post *</label>
+                    <label className="block text-sm font-medium mb-1">{t('reportModal.email')} *</label>
                     <input type="email" name="email" required className="w-full border rounded-lg px-3 py-2" value={form.email} onChange={handleChange} />
                   </div>
                 </div>
@@ -767,9 +769,9 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
                 className="flex-1 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50" 
                 onClick={handleBack}
               >
-                Tillbaka
+                {t('reportModal.back')}
               </button>
-              <button type="submit" className="flex-1 py-2 rounded-lg bg-[#10B981] text-white font-semibold hover:bg-[#059669]">Skicka</button>
+              <button type="submit" className="flex-1 py-2 rounded-lg bg-[#10B981] text-white font-semibold hover:bg-[#059669]">{t('reportModal.send')}</button>
             </div>
           </form>
         )}
@@ -789,7 +791,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               <input type="text" name="order" required className="w-full border rounded-lg px-3 py-2" value={form.order} onChange={handleChange} />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Ange datum för flyttstädningen *</label>
+              <label className="block text-sm font-medium mb-1">{t('reportModal.cleaningDate')} *</label>
               <input 
                 type="date" 
                 name="cleaningDate" 
@@ -800,13 +802,13 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Beskriv tydligt vad som har varit bristande i städningen *</label>
+              <label className="block text-sm font-medium mb-1">{t('reportModal.describeCleaning')} *</label>
               <textarea name="description" required className="w-full border rounded-lg px-3 py-2 min-h-[80px]" value={form.description} onChange={handleChange} />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Bifoga bilder på alla bristmoment i städningen *</label>
+              <label className="block text-sm font-medium mb-1">{t('reportModal.attachImages')} *</label>
               <label htmlFor="file-upload" className="inline-block px-4 py-2 bg-[#10B981] text-white rounded-lg cursor-pointer hover:bg-[#059669] text-xs font-medium">
-                Välj filer
+                {t('reportModal.selectFiles')}
               </label>
               <input
                 id="file-upload"
@@ -827,8 +829,8 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               )}
             </div>
             <div className="flex gap-2 mt-4">
-              <button type="button" className="flex-1 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50" onClick={handleBack}>Tillbaka</button>
-              <button type="submit" className="flex-1 py-2 rounded-lg bg-[#10B981] text-white font-semibold hover:bg-[#059669]">Skicka</button>
+              <button type="button" className="flex-1 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50" onClick={handleBack}>{t('reportModal.back')}</button>
+              <button type="submit" className="flex-1 py-2 rounded-lg bg-[#10B981] text-white font-semibold hover:bg-[#059669]">{t('reportModal.send')}</button>
             </div>
           </form>
         )}
@@ -837,39 +839,39 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
           <div className="text-center py-8">
             {formType === 'reklamation' ? (
               <>
-                <h3 className="text-lg font-semibold text-[#10B981] mb-4">Tack för din reklamation!</h3>
+                <h3 className="text-lg font-semibold text-[#10B981] mb-4">{t('reportModal.thankYouComplaint')}</h3>
                 <div className="text-left bg-gray-50 rounded-lg p-4 mb-6">
                   <p className="text-gray-700 text-sm leading-relaxed">
-                    Vi försöker alltid att prioritera reklamationsärenden och kommer att hjälpa dig så fort vi kan. Vi återkommer så fort vi har tittat på ditt ärende.
+                    {t('reportModal.complaintMessage')}
                   </p>
                 </div>
               </>
             ) : (
               <>
-                <h3 className="text-lg font-semibold text-[#10B981] mb-4">Tack för din skaderapport!</h3>
+                <h3 className="text-lg font-semibold text-[#10B981] mb-4">{t('reportModal.thankYouReport')}</h3>
                 
                 <div className="text-left bg-gray-50 rounded-lg p-4 mb-6">
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    Enligt våra villkor hanterar vi skador under två månader efter att fakturan har blivit slutbetald (se punkt 14 nedan). Enligt Skatteverkets regler är det inte tillåtet att göra avdrag på RUT-fakturan. Mer information om RUT-reglerna finns på Skatteverkets webbplats.
+                    {t('reportModal.damageReportMessage')}
                   </p>
                   
                   <div className="border-t pt-4">
-                    <h4 className="font-semibold text-[#0F172A] mb-3">Se villkor kring ersättning och betalning nedan:</h4>
+                    <h4 className="font-semibold text-[#0F172A] mb-3">{t('reportModal.compensationTerms')}</h4>
                     
                     <div className="text-xs text-gray-600 space-y-3">
                       <div>
-                        <h5 className="font-medium text-[#0F172A]">14. Ersättnings- och betalningsvillkor</h5>
+                        <h5 className="font-medium text-[#0F172A]">{t('reportModal.compensationTitle')}</h5>
                         
                         <p className="mt-2">
-                          <strong>14.1</strong> Hos Flyttella AB kan betalning ske genom följande betalsätt: Swish överföring på nummer: 123-44-62-248. Betalning kan ske mot faktura med en betalningsfrist om 10 dagar, förutsatt att fakturabetalning har godkänts av Flyttella AB:s kundtjänst vid bokningstillfället. Kunden är skyldig att erlägga full betalning senast vid ankomst till lossningsadressen, om inte annat skriftligen avtalats mellan parterna. Flyttella AB åtar sig att hantera skadeanmälningar som separata ärenden och behandla dessa inom en tidsram om högst två månader från det att en fullständig anmälan mottagits. Fakturan ska vara fullständigt betald innan Flyttella AB påbörjar utredning av förlust- eller skadeärenden.
+                          <strong>14.1</strong> {t('reportModal.compensationText1')}
                         </p>
                         
                         <p className="mt-2">
-                          <strong>14.2</strong> Vid dröjsmål med betalning har Flyttella AB rätt till dröjsmålsräntan som framgår på fakturan fram till dess att full betalning sker, och har rätt att debitera lagstadgade påminnelse- och inkassoavgifter samt rätt att överlämna ärendet till Kronofogdemyndigheten.
+                          <strong>14.2</strong> {t('reportModal.compensationText2')}
                         </p>
                         
                         <p className="mt-2">
-                          <strong>14.3</strong> Betalning för de tjänster som Företaget tillhandahåller ska ske i enlighet med de betalningsvillkor som specificeras i offerten eller på fakturan. Företaget förbehåller sig rätten att kräva betalning under pågående arbete eller innan arbetet påbörjas, om det finns anledning att ifrågasätta Kundens betalningsförmåga. Detta kan innefatta situationer där Företaget bedömer att kunden inte kan uppvisa tillräcklig säkerhet för betalning, eller om kunden har tidigare betalningsanmärkningar eller övriga ekonomiska förhållanden som ger anledning till tvekan.
+                          <strong>14.3</strong> {t('reportModal.compensationText3')}
                         </p>
                       </div>
                     </div>
@@ -882,7 +884,7 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose }) => {
               className="mt-4 px-6 py-2 rounded-lg bg-[#10B981] text-white font-semibold hover:bg-[#059669]" 
               onClick={handleClose}
             >
-              Stäng
+              {t('reportModal.close')}
             </button>
           </div>
         )}
