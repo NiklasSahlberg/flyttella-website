@@ -454,7 +454,8 @@
     "privacyPolicy": "Integritetspolicy",
     "allRightsReserved": "Alla rättigheter förbehållna",
     "loadingTerms": "Laddar villkor...",
-    "report": "Anmälan"
+    "report": "Anmälan",
+    "description": "Din pålitliga flyttpartner i Stockholm. Vi erbjuder professionella flyttjänster med fokus på kvalitet och kundnöjdhet."
   },
   "common": {
     "getQuote": "Få offert",
@@ -2686,12 +2687,225 @@
     "hero": {
       "title": "Våra flyttjänster",
       "subtitle": "Professionella flyttjänster i Stockholm med fast pris, försäkring och professionell service. Vi erbjuder ett komplett utbud av flyttjänster för privatpersoner och företag."
+    },
+    "section": {
+      "title": "Flyttjänster",
+      "subtitle": "Från bohagsflytt till specialtransporter – vi hjälper dig med alla typer av flyttar i Stockholm och omnejd."
+    },
+    "services": {
+      "bohagsflytt": {
+        "title": "Bohagsflytt",
+        "description": "Professionell flytthjälp för privatpersoner. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg."
+      },
+      "barhjalp": {
+        "title": "Bärhjälp",
+        "description": "Flexibel bärhjälp för mindre uppdrag. Perfekt när du behöver extra händer för tunga lyft eller transport."
+      },
+      "pianoTunglyft": {
+        "title": "Piano/Tunglyft",
+        "description": "Specialiserad transport av piano, kassaskåp och andra tunga föremål. Säker hantering med rätt utrustning."
+      },
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Miljövänlig bortforsling av möbler och skräp. Vi sorterar och återvinner enligt gällande regler."
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Säker förvaring av dina tillhörigheter i våra klimatkontrollerade magasin. Kort- och långtidsförvaring."
+      },
+      "utlandsflytt": {
+        "title": "Utlandsflytt",
+        "description": "Internationella flyttar till hela Europa. Vi hanterar all logistik och dokumentation för din utlandsflytt."
+      },
+      "kontorsflytt": {
+        "title": "Kontorsflytt",
+        "description": "Professionella kontorsflyttar med minimal störning av verksamheten. Planerad och effektiv genomförande."
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Montering och demontering av möbler. Vi tar hand om IKEA-möbler och andra möbelsystem."
+      }
+    },
+    "cta": {
+      "title": "Behöver du hjälp med flytt?",
+      "subtitle": "Få en kostnadsfri offert på 1 minut",
+      "button": "Få gratis offert",
+      "readMore": "Läs mer"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Pålitliga flyttjänster i Stockholm",
+      "description": "Professionella flyttjänster i Stockholm – från bohagsflytt till kontorsflytt. Fast pris och försäkring. Punktliga medarbetare och höga betyg från tusentals nöjda kunder.",
+      "badgeAlt": "Erfarenhet av flyttjänster i Stockholm",
+      "arrowText": "Läs vad våra kunder säger om våra flyttjänster"
     }
   },
   "foretag": {
     "hero": {
       "title": "Våra företagstjänster",
       "subtitle": "Professionella lösningar för företag inom flytt, städning och bemanning. Effektiva lösningar med minimal störning av verksamheten."
+    },
+    "section": {
+      "title": "Företagstjänster",
+      "subtitle": "Skräddarsydda lösningar för företag. Vi hjälper er med allt från kontorsflytt till bemanning och städning."
+    },
+    "services": {
+      "kontorsflytt": {
+        "title": "Kontorsflytt",
+        "description": "Effektiv kontorsflytt med minimal störning av verksamheten. Vi planerar och genomför hela processen professionellt."
+      },
+      "kontorsstadning": {
+        "title": "Kontorsstädning",
+        "description": "Professionell kontorsstädning för en ren och trivsam arbetsmiljö. Anpassad efter ert schema och behov."
+      },
+      "bemanning": {
+        "title": "Bemanning och underentreprenad",
+        "description": "Flexibel bemanning och pålitlig underentreprenad för flytt- och logistikprojekt. Erfaren personal när ni behöver det."
+      }
+    },
+    "cta": {
+      "title": "Redo att ta nästa steg för ditt företag?",
+      "subtitle": "Få en kostnadsfri offert på 1 minut",
+      "button": "Få gratis offert",
+      "readMore": "Läs mer"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Pålitliga företagstjänster i Stockholm",
+      "description": "Professionella företagstjänster i Stockholm – från kontorsflytt till bemanning. Fast pris och minimal störning av verksamheten. Höga betyg från nöjda företagskunder.",
+      "badgeAlt": "Erfarenhet av företagstjänster i Stockholm",
+      "arrowText": "Läs vad våra företagskunder säger om våra tjänster"
+    }
+  },
+  "stadtjanster": {
+    "hero": {
+      "title": "Städtjänster",
+      "subtitle": "Professionell städning för hem och företag"
+    },
+    "section": {
+      "title": "Städtjänster",
+      "subtitle": "Professionell städning för hem och företag. Alla våra städtjänster inkluderar RUT-avdrag och fast pris."
+    },
+    "services": {
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Grundlig flyttstädning enligt branschstandard. Fast pris, 14 dagars garanti och full RUT-hantering."
+      },
+      "hemstadning": {
+        "title": "Hemstädning",
+        "description": "Regelbunden hemstädning anpassad efter dina behov. Veckovis, varannan vecka eller månadsvis."
+      },
+      "byggstadning": {
+        "title": "Byggstädning",
+        "description": "Professionell städning efter renovering. Grov- och finstädning för ett dammfritt resultat."
+      },
+      "fonsterputsning": {
+        "title": "Fönsterputs",
+        "description": "Kristallklara fönster året runt. Invändigt och utvändigt där det är säkert och åtkomligt."
+      },
+      "storstadning": {
+        "title": "Storstädning",
+        "description": "Grundlig storstädning med fokus på svåråtkomliga ytor. Perfekt som uppföljning efter bygge."
+      },
+      "visningsstadning": {
+        "title": "Visningsstädning",
+        "description": "Professionell städning inför bostadsvisning. För bästa möjliga försäljningspris och snabb affär."
+      },
+      "kontorsstadning": {
+        "title": "Kontorsstädning",
+        "description": "Regelbunden kontorsstädning för en ren och professionell arbetsmiljö."
+      },
+      "dodsboStadning": {
+        "title": "Dödsbostädning",
+        "description": "Varsam och respektfull städning i samband med dödsbo. Hanteras med omtanke och diskretion."
+      }
+    },
+    "cta": {
+      "title": "Behöver du hjälp med städning?",
+      "subtitle": "Få en kostnadsfri offert på 1 minut",
+      "button": "Få gratis offert",
+      "readMore": "Läs mer"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Pålitlig städning i Stockholm",
+      "description": "Professionell städning i Stockholm – från hemstädning till flyttstädning. Fast pris och RUT-avdrag. Punktliga medarbetare och höga betyg från tusentals nöjda kunder.",
+      "badgeAlt": "Erfarenhet av städtjänster i Stockholm",
+      "arrowText": "Läs vad våra kunder säger om vår städning"
+    }
+  },
+  "blogg": {
+    "hero": {
+      "title": "Flyttellas Blogg",
+      "subtitle": "Vi delar med oss av vår kunskap och erfarenhet från över 8000 flyttar och 7000 städningar"
+    },
+    "search": {
+      "placeholder": "Sök i blogginlägg..."
+    },
+    "categories": {
+      "all": "Alla",
+      "movingTips": "Flytttips",
+      "packing": "Packning",
+      "movingCleaning": "Flyttstädning",
+      "homeCleaning": "Hemstädning",
+      "officeCleaning": "Kontorsstädning",
+      "internationalMoving": "Utlandsflytt",
+      "heavyLifting": "Tunglyft",
+      "storage": "Magasinering",
+      "windowCleaning": "Fönsterputs",
+      "economy": "Ekonomi",
+      "business": "Företag",
+      "season": "Säsong"
+    },
+    "posts": {
+      "noResults": {
+        "title": "Inga resultat hittades",
+        "subtitle": "Prova att ändra din sökning eller välj en annan kategori",
+        "clearFilters": "Rensa filter"
+      },
+      "readMore": "Läs mer"
+    },
+    "blogPosts": {
+      "post1": {
+        "title": "Vad bör du tänka på när du väljer en seriös flyttfirma",
+        "excerpt": "Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips för att identifiera en seriös och pålitlig flyttfirma som tar hand om dina ägodelar med omsorg.",
+        "category": "Flytttips"
+      },
+      "post2": {
+        "title": "Flyttstädning - Vad du behöver veta",
+        "excerpt": "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick.",
+        "category": "Flyttstädning"
+      },
+      "post3": {
+        "title": "Utlandsflytt – Vad du behöver veta",
+        "excerpt": "Planering, dokument och genomförande av utlandsflytt. En komplett guide för en trygg flytt över gränser.",
+        "category": "Utlandsflytt"
+      },
+      "post4": {
+        "title": "Piano & Tunglyft - Professionell Hantering av Tunga Föremål",
+        "excerpt": "Specialiserad hantering av piano, tunglyft och känsliga föremål. Vi guidar dig genom vad som krävs för en säker och professionell flytt av tunga objekt.",
+        "category": "Tunglyft"
+      },
+      "post5": {
+        "title": "Magasinering - Säkra Lösningar för Din Lagring",
+        "excerpt": "Lär dig allt om magasinering med våra praktiska tips. Från förberedelse och packning till kostnadsbesparingar och vanliga misstag att undvika.",
+        "category": "Magasinering"
+      },
+      "post6": {
+        "title": "Fönsterputs - Tips för Kristallklara Rutor",
+        "excerpt": "Lär dig allt om fönsterputs med våra praktiska tips. Från rätt teknik och produkter till när du ska boka och hur du får bästa resultatet.",
+        "category": "Fönsterputs"
+      },
+      "post7": {
+        "title": "Hemstädning - Tips för en Ren och Fräsch Bostad",
+        "excerpt": "Lär dig allt om hemstädning med våra professionella tips. Från grundläggande tekniker till avancerade metoder för en ren och fräsch bostad.",
+        "category": "Hemstädning"
+      },
+      "post8": {
+        "title": "Kontorsstädning - Professionell Miljö för Din Verksamhet",
+        "excerpt": "Lär dig allt om kontorsstädning med våra praktiska tips. Från daglig städning till djuprengöring för en produktiv och ren arbetsmiljö.",
+        "category": "Kontorsstädning"
+      }
     }
   }
 } 

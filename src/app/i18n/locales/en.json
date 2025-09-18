@@ -455,7 +455,8 @@
     "privacyPolicy": "Privacy Policy",
     "allRightsReserved": "All rights reserved",
     "loadingTerms": "Loading terms...",
-    "report": "Report"
+    "report": "Report",
+    "description": "Your reliable moving partner in Stockholm. We offer professional moving services with focus on quality and customer satisfaction."
   },
   "common": {
     "getQuote": "Get Quote",
@@ -2687,12 +2688,225 @@
     "hero": {
       "title": "Our moving services",
       "subtitle": "Professional moving services in Stockholm with fixed prices, insurance and professional service. We offer a complete range of moving services for individuals and businesses."
+    },
+    "section": {
+      "title": "Moving Services",
+      "subtitle": "From household moves to special transports – we help you with all types of moves in Stockholm and surrounding areas."
+    },
+    "services": {
+      "bohagsflytt": {
+        "title": "Household moving",
+        "description": "Professional moving help for individuals. With our expertise and care, we ensure your move is smooth and safe."
+      },
+      "barhjalp": {
+        "title": "Carrying help",
+        "description": "Flexible carrying help for smaller tasks. Perfect when you need extra hands for heavy lifting or transport."
+      },
+      "pianoTunglyft": {
+        "title": "Piano/Heavy lifting",
+        "description": "Specialized transport of pianos, safes and other heavy objects. Safe handling with the right equipment."
+      },
+      "bortforsling": {
+        "title": "Disposal",
+        "description": "Environmentally friendly disposal of furniture and waste. We sort and recycle according to current regulations."
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Safe storage of your belongings in our climate-controlled warehouses. Short- and long-term storage."
+      },
+      "utlandsflytt": {
+        "title": "International moving",
+        "description": "International moves to all of Europe. We handle all logistics and documentation for your international move."
+      },
+      "kontorsflytt": {
+        "title": "Office moving",
+        "description": "Professional office moves with minimal disruption to operations. Planned and efficient execution."
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Assembly and disassembly of furniture. We take care of IKEA furniture and other furniture systems."
+      }
+    },
+    "cta": {
+      "title": "Need help with moving?",
+      "subtitle": "Get a free quote in 1 minute",
+      "button": "Get free quote",
+      "readMore": "Read more"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "Reliable moving services in Stockholm",
+      "description": "Professional moving services in Stockholm – from household moves to office moves. Fixed price and insurance. Punctual employees and high ratings from thousands of satisfied customers.",
+      "badgeAlt": "Experience with moving services in Stockholm",
+      "arrowText": "Read what our customers say about our moving services"
     }
   },
   "foretag": {
     "hero": {
       "title": "Our business services",
       "subtitle": "Professional solutions for businesses in moving, cleaning and staffing. Efficient solutions with minimal disruption to operations."
+    },
+    "section": {
+      "title": "Business Services",
+      "subtitle": "Tailored solutions for businesses. We help you with everything from office moves to staffing and cleaning."
+    },
+    "services": {
+      "kontorsflytt": {
+        "title": "Office moving",
+        "description": "Efficient office move with minimal disruption to operations. We plan and execute the entire process professionally."
+      },
+      "kontorsstadning": {
+        "title": "Office cleaning",
+        "description": "Professional office cleaning for a clean and pleasant work environment. Adapted to your schedule and needs."
+      },
+      "bemanning": {
+        "title": "Staffing and subcontracting",
+        "description": "Flexible staffing and reliable subcontracting for moving and logistics projects. Experienced staff when you need it."
+      }
+    },
+    "cta": {
+      "title": "Ready to take the next step for your business?",
+      "subtitle": "Get a free quote in 1 minute",
+      "button": "Get free quote",
+      "readMore": "Read more"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "Reliable business services in Stockholm",
+      "description": "Professional business services in Stockholm – from office moves to staffing. Fixed price and minimal disruption to operations. High ratings from satisfied business customers.",
+      "badgeAlt": "Experience with business services in Stockholm",
+      "arrowText": "Read what our business customers say about our services"
+    }
+  },
+  "stadtjanster": {
+    "hero": {
+      "title": "Cleaning Services",
+      "subtitle": "Professional cleaning for home and business"
+    },
+    "section": {
+      "title": "Cleaning Services",
+      "subtitle": "Professional cleaning for home and business. All our cleaning services include RUT deduction and fixed price."
+    },
+    "services": {
+      "flyttstadning": {
+        "title": "Removal cleaning",
+        "description": "Thorough removal cleaning according to industry standards. Fixed price, 14-day guarantee and full RUT handling."
+      },
+      "hemstadning": {
+        "title": "Home cleaning",
+        "description": "Regular home cleaning adapted to your needs. Weekly, bi-weekly or monthly."
+      },
+      "byggstadning": {
+        "title": "Construction cleaning",
+        "description": "Professional cleaning after renovation. Rough and fine cleaning for a dust-free result."
+      },
+      "fonsterputsning": {
+        "title": "Window cleaning",
+        "description": "Crystal clear windows year round. Inside and outside where it's safe and accessible."
+      },
+      "storstadning": {
+        "title": "Deep cleaning",
+        "description": "Thorough deep cleaning with focus on hard-to-reach surfaces. Perfect as follow-up after construction."
+      },
+      "visningsstadning": {
+        "title": "Viewing cleaning",
+        "description": "Professional cleaning before property viewing. For the best possible selling price and quick deal."
+      },
+      "kontorsstadning": {
+        "title": "Office cleaning",
+        "description": "Regular office cleaning for a clean and professional work environment."
+      },
+      "dodsboStadning": {
+        "title": "Estate cleaning",
+        "description": "Careful and respectful cleaning in connection with estate. Handled with care and discretion."
+      }
+    },
+    "cta": {
+      "title": "Need help with cleaning?",
+      "subtitle": "Get a free quote in 1 minute",
+      "button": "Get free quote",
+      "readMore": "Read more"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "Reliable cleaning in Stockholm",
+      "description": "Professional cleaning in Stockholm – from home cleaning to removal cleaning. Fixed price and RUT deduction. Punctual employees and high ratings from thousands of satisfied customers.",
+      "badgeAlt": "Experience with cleaning services in Stockholm",
+      "arrowText": "Read what our customers say about our cleaning"
+    }
+  },
+  "blogg": {
+    "hero": {
+      "title": "Flyttella's Blog",
+      "subtitle": "We share our knowledge and experience from over 8000 moves and 7000 cleanings"
+    },
+    "search": {
+      "placeholder": "Search blog posts..."
+    },
+    "categories": {
+      "all": "All",
+      "movingTips": "Moving Tips",
+      "packing": "Packing",
+      "movingCleaning": "Moving Cleaning",
+      "homeCleaning": "Home Cleaning",
+      "officeCleaning": "Office Cleaning",
+      "internationalMoving": "International Moving",
+      "heavyLifting": "Heavy Lifting",
+      "storage": "Storage",
+      "windowCleaning": "Window Cleaning",
+      "economy": "Economy",
+      "business": "Business",
+      "season": "Season"
+    },
+    "posts": {
+      "noResults": {
+        "title": "No results found",
+        "subtitle": "Try changing your search or select another category",
+        "clearFilters": "Clear filters"
+      },
+      "readMore": "Read more"
+    },
+    "blogPosts": {
+      "post1": {
+        "title": "What should you consider when choosing a serious moving company",
+        "excerpt": "Choosing the right moving company is crucial for a smooth move. Here we share our most important tips for identifying a serious and reliable moving company that takes care of your belongings with care.",
+        "category": "Moving Tips"
+      },
+      "post2": {
+        "title": "Moving cleaning - What you need to know",
+        "excerpt": "Everything about moving cleaning and what is required to leave your old home in perfect condition.",
+        "category": "Moving Cleaning"
+      },
+      "post3": {
+        "title": "International moving – What you need to know",
+        "excerpt": "Planning, documents and execution of international moving. A complete guide for a safe move across borders.",
+        "category": "International Moving"
+      },
+      "post4": {
+        "title": "Piano & Heavy lifting - Professional Handling of Heavy Objects",
+        "excerpt": "Specialized handling of pianos, heavy lifting and sensitive objects. We guide you through what is required for a safe and professional move of heavy objects.",
+        "category": "Heavy Lifting"
+      },
+      "post5": {
+        "title": "Storage - Secure Solutions for Your Storage",
+        "excerpt": "Learn everything about storage with our practical tips. From preparation and packing to cost savings and common mistakes to avoid.",
+        "category": "Storage"
+      },
+      "post6": {
+        "title": "Window cleaning - Tips for Crystal Clear Windows",
+        "excerpt": "Learn everything about window cleaning with our practical tips. From the right technique and products to when you should book and how to get the best result.",
+        "category": "Window Cleaning"
+      },
+      "post7": {
+        "title": "Home cleaning - Tips for a Clean and Fresh Home",
+        "excerpt": "Learn everything about home cleaning with our professional tips. From basic techniques to advanced methods for a clean and fresh home.",
+        "category": "Home Cleaning"
+      },
+      "post8": {
+        "title": "Office cleaning - Professional Environment for Your Business",
+        "excerpt": "Learn everything about office cleaning with our practical tips. From daily cleaning to deep cleaning for a productive and clean work environment.",
+        "category": "Office Cleaning"
+      }
     }
   }
 } 

@@ -172,7 +172,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-xs md:text-sm text-gray-200 leading-relaxed">
-              Din pålitliga flyttpartner i Stockholm. Vi erbjuder professionella flyttjänster med fokus på kvalitet och kundnöjdhet.
+              {t('footer.description')}
             </p>
           </div>
 

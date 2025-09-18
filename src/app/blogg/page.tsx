@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { useLanguage } from '../contexts/LanguageContext';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -43,24 +44,22 @@ const variants = {
 };
 
 // Sample blog posts - you can replace these with real content
-const blogPosts = [
+const getBlogPosts = (t: any) => [
   {
     id: 1,
-    title: "Vad bör du tänka på när du väljer en seriös flyttfirma",
-    excerpt: "Att välja rätt flyttfirma är avgörande för en smidig flytt. Här delar vi med oss av våra viktigaste tips för att identifiera en seriös och pålitlig flyttfirma som tar hand om dina ägodelar med omsorg.",
-    category: "Flytttips",
+    title: t('blogg.blogPosts.post1.title'),
+    excerpt: t('blogg.blogPosts.post1.excerpt'),
+    category: t('blogg.blogPosts.post1.category'),
     date: "2024-01-20",
     readTime: "10 min",
     image: "/innanflyttfirmankommer.jpg",
     slug: "vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma"
   },
-
-  
   {
     id: 2,
-    title: "Flyttstädning - Vad du behöver veta",
-    excerpt: "Allt om flyttstädning och vad som krävs för att lämna din gamla bostad i perfekt skick.",
-    category: "Flyttstädning",
+    title: t('blogg.blogPosts.post2.title'),
+    excerpt: t('blogg.blogPosts.post2.excerpt'),
+    category: t('blogg.blogPosts.post2.category'),
     date: "2024-01-05",
     readTime: "6 min",
     image: "/cleaning_lady.png",
@@ -68,9 +67,9 @@ const blogPosts = [
   },
   {
     id: 3,
-    title: "Utlandsflytt – Vad du behöver veta",
-    excerpt: "Planering, dokument och genomförande av utlandsflytt. En komplett guide för en trygg flytt över gränser.",
-    category: "Utlandsflytt",
+    title: t('blogg.blogPosts.post3.title'),
+    excerpt: t('blogg.blogPosts.post3.excerpt'),
+    category: t('blogg.blogPosts.post3.category'),
     date: "2024-02-01",
     readTime: "9 min",
     image: "/malaga.jpg",
@@ -78,9 +77,9 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "Piano & Tunglyft - Professionell Hantering av Tunga Föremål",
-    excerpt: "Specialiserad hantering av piano, tunglyft och känsliga föremål. Vi guidar dig genom vad som krävs för en säker och professionell flytt av tunga objekt.",
-    category: "Tunglyft",
+    title: t('blogg.blogPosts.post4.title'),
+    excerpt: t('blogg.blogPosts.post4.excerpt'),
+    category: t('blogg.blogPosts.post4.category'),
     date: "2024-02-15",
     readTime: "5 min",
     image: "/piano_tunglyft.png",
@@ -88,9 +87,9 @@ const blogPosts = [
   },
   {
     id: 5,
-    title: "Magasinering - Säkra Lösningar för Din Lagring",
-    excerpt: "Lär dig allt om magasinering med våra praktiska tips. Från förberedelse och packning till kostnadsbesparingar och vanliga misstag att undvika.",
-    category: "Magasinering",
+    title: t('blogg.blogPosts.post5.title'),
+    excerpt: t('blogg.blogPosts.post5.excerpt'),
+    category: t('blogg.blogPosts.post5.category'),
     date: "2024-02-20",
     readTime: "6 min",
     image: "/personalpicture.jpg",
@@ -98,9 +97,9 @@ const blogPosts = [
   },
   {
     id: 6,
-    title: "Fönsterputs - Tips för Kristallklara Rutor",
-    excerpt: "Lär dig allt om fönsterputs med våra praktiska tips. Från rätt teknik och produkter till när du ska boka och hur du får bästa resultatet.",
-    category: "Fönsterputs",
+    title: t('blogg.blogPosts.post6.title'),
+    excerpt: t('blogg.blogPosts.post6.excerpt'),
+    category: t('blogg.blogPosts.post6.category'),
     date: "2024-02-25",
     readTime: "5 min",
     image: "/window_cleaner.png",
@@ -108,9 +107,9 @@ const blogPosts = [
   },
   {
     id: 7,
-    title: "Hemstädning - Tips för en Ren och Fräsch Bostad",
-    excerpt: "Lär dig allt om hemstädning med våra professionella tips. Från grundläggande tekniker till avancerade metoder för en ren och fräsch bostad.",
-    category: "Hemstädning",
+    title: t('blogg.blogPosts.post7.title'),
+    excerpt: t('blogg.blogPosts.post7.excerpt'),
+    category: t('blogg.blogPosts.post7.category'),
     date: "2024-01-25",
     readTime: "12 min",
     image: "/omflyttella_flyttstad.png",
@@ -118,9 +117,9 @@ const blogPosts = [
   },
   {
     id: 8,
-    title: "Kontorsstädning - Professionell Miljö för Din Verksamhet",
-    excerpt: "Lär dig allt om kontorsstädning med våra praktiska tips. Från daglig städning till djuprengöring för en produktiv och ren arbetsmiljö.",
-    category: "Kontorsstädning",
+    title: t('blogg.blogPosts.post8.title'),
+    excerpt: t('blogg.blogPosts.post8.excerpt'),
+    category: t('blogg.blogPosts.post8.category'),
     date: "2024-03-01",
     readTime: "8 min",
     image: "/kontor.png",
@@ -128,28 +127,31 @@ const blogPosts = [
   }
 ];
 
-const categories = [
-  "Alla",
-  "Flytttips",
-  "Packning", 
-  "Flyttstädning",
-  "Hemstädning",
-  "Kontorsstädning",
-  "Utlandsflytt",
-  "Tunglyft",
-  "Magasinering",
-  "Fönsterputs",
-  "Ekonomi",
-  "Företag",
-  "Säsong"
+const getCategories = (t: any) => [
+  t('blogg.categories.all'),
+  t('blogg.categories.movingTips'),
+  t('blogg.categories.packing'),
+  t('blogg.categories.movingCleaning'),
+  t('blogg.categories.homeCleaning'),
+  t('blogg.categories.officeCleaning'),
+  t('blogg.categories.internationalMoving'),
+  t('blogg.categories.heavyLifting'),
+  t('blogg.categories.storage'),
+  t('blogg.categories.windowCleaning'),
+  t('blogg.categories.economy'),
+  t('blogg.categories.business'),
+  t('blogg.categories.season')
 ];
 
 export default function BlogPage() {
-  const [selectedCategory, setSelectedCategory] = useState("Alla");
+  const { t } = useLanguage();
+  const categories = getCategories(t);
+  const blogPosts = getBlogPosts(t);
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredPosts = blogPosts.filter(post => {
-    const matchesCategory = selectedCategory === "Alla" || post.category === selectedCategory;
+    const matchesCategory = selectedCategory === categories[0] || post.category === selectedCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
@@ -182,11 +184,11 @@ export default function BlogPage() {
             <div className="flex flex-col items-center justify-center gap-6 md:gap-8 relative z-10">
               <div className="w-full max-w-3xl mx-auto text-center px-4 md:px-0">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6">
-                  Flyttellas Blogg
+                  {t('blogg.hero.title')}
                 </h1>
  
                 <p className="text-lg md:text-2xl text-white/80">
-                  Vi delar med oss av vår kunskap och erfarenhet från över 8000 flyttar och 7000 städningar
+                  {t('blogg.hero.subtitle')}
                 </p>
               </div>
             </div>
@@ -208,7 +210,7 @@ export default function BlogPage() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Sök i blogginlägg..."
+                  placeholder={t('blogg.search.placeholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full px-4 md:px-6 py-3 md:py-4 text-base md:text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#10B981] focus:border-transparent outline-none transition-all"
@@ -262,20 +264,20 @@ export default function BlogPage() {
               className="text-center py-12 md:py-20"
             >
               <h3 className="text-xl md:text-2xl font-bold text-[#0F172A] mb-4">
-                Inga resultat hittades
+                {t('blogg.posts.noResults.title')}
               </h3>
               <p className="text-gray-600 mb-6 md:mb-8 text-sm md:text-base">
-                Prova att ändra din sökning eller välj en annan kategori
+                {t('blogg.posts.noResults.subtitle')}
               </p>
               <button
                 onClick={() => {
                   setSearchTerm("");
-                  setSelectedCategory("Alla");
+                  setSelectedCategory(categories[0]);
                 }}
                 className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-5 md:px-6 py-2 md:py-3 rounded-full hover:opacity-90 transition-opacity text-sm md:text-base"
                 suppressHydrationWarning={true}
               >
-                Rensa filter
+                {t('blogg.posts.noResults.clearFilters')}
               </button>
             </motion.div>
           ) : (
@@ -352,7 +354,7 @@ export default function BlogPage() {
 
                       {/* Read More Button */}
                       <div className="inline-flex items-center text-[#10B981] font-medium hover:text-[#0F172A] transition-colors group text-sm md:text-base">
-                        Läs mer
+                        {t('blogg.posts.readMore')}
                         <svg
                           className="w-3 h-3 md:w-4 md:h-4 ml-1 group-hover:translate-x-1 transition-transform"
                           fill="none"

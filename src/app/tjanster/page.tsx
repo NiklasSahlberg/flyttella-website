@@ -49,50 +49,50 @@ export default function TjansterPage() {
   const flyttServices = [
     {
       icon: '🏠',
-      title: 'Bohagsflytt',
-      description: 'Professionell flytthjälp för privatpersoner. Med vår expertis och noggrannhet ser vi till att din flytt blir smidig och trygg.',
+      title: t('tjanster.services.bohagsflytt.title'),
+      description: t('tjanster.services.bohagsflytt.description'),
       href: '/bohagsflytt'
     },
     {
       icon: '💪',
-      title: 'Bärhjälp',
-      description: 'Flexibel bärhjälp för mindre uppdrag. Perfekt när du behöver extra händer för tunga lyft eller transport.',
+      title: t('tjanster.services.barhjalp.title'),
+      description: t('tjanster.services.barhjalp.description'),
       href: '/barhjalp'
     },
     {
       icon: '🎹',
-      title: 'Piano/Tunglyft',
-      description: 'Specialiserad transport av piano, kassaskåp och andra tunga föremål. Säker hantering med rätt utrustning.',
+      title: t('tjanster.services.pianoTunglyft.title'),
+      description: t('tjanster.services.pianoTunglyft.description'),
       href: '/piano-tunglyft'
     },
     {
       icon: '♻️',
-      title: 'Bortforsling',
-      description: 'Miljövänlig bortforsling av möbler och skräp. Vi sorterar och återvinner enligt gällande regler.',
+      title: t('tjanster.services.bortforsling.title'),
+      description: t('tjanster.services.bortforsling.description'),
       href: '/bortforsling'
     },
     {
       icon: '📦',
-      title: 'Magasinering',
-      description: 'Säker förvaring av dina tillhörigheter i våra klimatkontrollerade magasin. Kort- och långtidsförvaring.',
+      title: t('tjanster.services.magasinering.title'),
+      description: t('tjanster.services.magasinering.description'),
       href: '/magasinering'
     },
     {
       icon: '🌍',
-      title: 'Utlandsflytt',
-      description: 'Internationella flyttar till hela Europa. Vi hanterar all logistik och dokumentation för din utlandsflytt.',
+      title: t('tjanster.services.utlandsflytt.title'),
+      description: t('tjanster.services.utlandsflytt.description'),
       href: '/utlandsflytt'
     },
     {
       icon: '🏢',
-      title: 'Kontorsflytt',
-      description: 'Professionella kontorsflyttar med minimal störning av verksamheten. Planerad och effektiv genomförande.',
+      title: t('tjanster.services.kontorsflytt.title'),
+      description: t('tjanster.services.kontorsflytt.description'),
       href: '/kontorsflytt'
     },
     {
       icon: '🔧',
-      title: 'Montering',
-      description: 'Montering och demontering av möbler. Vi tar hand om IKEA-möbler och andra möbelsystem.',
+      title: t('tjanster.services.montering.title'),
+      description: t('tjanster.services.montering.description'),
       href: '/montering'
     }
   ];
@@ -151,7 +151,7 @@ export default function TjansterPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                Flyttjänster
+                {t('tjanster.section.title')}
               </motion.h2>
               <motion.p 
                 className="text-lg md:text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto"
@@ -160,7 +160,7 @@ export default function TjansterPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Från bohagsflytt till specialtransporter – vi hjälper dig med alla typer av flyttar i Stockholm och omnejd.
+                {t('tjanster.section.subtitle')}
               </motion.p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -206,7 +206,7 @@ export default function TjansterPage() {
                           href={service.href} 
                           className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
                         >
-                          Läs mer
+                          {t('tjanster.cta.readMore')}
                           <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -249,10 +249,10 @@ export default function TjansterPage() {
                 <span className="text-4xl md:text-5xl">🏠✨</span>
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl md:text-4xl font-bold text-white mb-2 leading-tight">
-                    Behöver du hjälp med flytt?
+                    {t('tjanster.cta.title')}
                   </h3>
                   <p className="text-lg md:text-xl text-gray-100 leading-snug">
-                    Få en kostnadsfri offert på 1 minut
+                    {t('tjanster.cta.subtitle')}
                   </p>
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function TjansterPage() {
                     href="#tjanster-offert" 
                     className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
                   >
-                    Få gratis offert
+                    {t('tjanster.cta.button')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -276,11 +276,11 @@ export default function TjansterPage() {
         {/* Reviews Widget */}
         <ReviewsWidget 
           location="Stockholm" 
-          title="Vad tycker våra kunder om oss?" 
-          subtitle="Pålitliga flyttjänster i Stockholm" 
-          description="Professionella flyttjänster i Stockholm – från bohagsflytt till kontorsflytt. Fast pris och försäkring. Punktliga medarbetare och höga betyg från tusentals nöjda kunder." 
-          badgeAlt="Erfarenhet av flyttjänster i Stockholm" 
-          arrowText="Läs vad våra kunder säger om våra flyttjänster" 
+          title={t('tjanster.reviews.title')} 
+          subtitle={t('tjanster.reviews.subtitle')} 
+          description={t('tjanster.reviews.description')} 
+          badgeAlt={t('tjanster.reviews.badgeAlt')} 
+          arrowText={t('tjanster.reviews.arrowText')} 
         />
 
         {/* Locations */}

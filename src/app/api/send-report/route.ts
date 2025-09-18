@@ -598,7 +598,7 @@ export async function POST(req: Request) {
 <body>
   <h2>Reklamationsstäd - Flyttella</h2>
 
-  <div class="section-header">Anmälningsinformation</div>
+
   <table>
     <tr>
       <th>Offertnummer</th>

@@ -49,20 +49,20 @@ export default function ForetagPage() {
   const businessServices = [
     {
       icon: '🏢',
-      title: 'Kontorsflytt',
-      description: 'Effektiv kontorsflytt med minimal störning av verksamheten. Vi planerar och genomför hela processen professionellt.',
+      title: t('foretag.services.kontorsflytt.title'),
+      description: t('foretag.services.kontorsflytt.description'),
       href: '/kontorsflytt'
     },
     {
       icon: '🧹',
-      title: 'Kontorsstädning',
-      description: 'Professionell kontorsstädning för en ren och trivsam arbetsmiljö. Anpassad efter ert schema och behov.',
+      title: t('foretag.services.kontorsstadning.title'),
+      description: t('foretag.services.kontorsstadning.description'),
       href: '/kontorsstadning'
     },
     {
       icon: '👷‍♂️',
-      title: 'Bemanning och underentreprenad',
-      description: 'Flexibel bemanning och pålitlig underentreprenad för flytt- och logistikprojekt. Erfaren personal när ni behöver det.',
+      title: t('foretag.services.bemanning.title'),
+      description: t('foretag.services.bemanning.description'),
       href: '/bemanning'
     }
   ];
@@ -110,7 +110,7 @@ export default function ForetagPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                Företagstjänster
+                {t('foretag.section.title')}
               </motion.h2>
               <motion.p 
                 className="text-lg md:text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto"
@@ -119,7 +119,7 @@ export default function ForetagPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Skräddarsydda lösningar för företag. Vi hjälper er med allt från kontorsflytt till bemanning och städning.
+                {t('foretag.section.subtitle')}
               </motion.p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -165,7 +165,7 @@ export default function ForetagPage() {
                           href={service.href} 
                           className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
                         >
-                          Läs mer
+                          {t('foretag.cta.readMore')}
                           <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -206,10 +206,10 @@ export default function ForetagPage() {
                 <span className="text-4xl md:text-5xl">🏢✨</span>
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl md:text-4xl font-bold text-white mb-2 leading-tight">
-                    Redo att ta nästa steg för ditt företag?
+                    {t('foretag.cta.title')}
                   </h3>
                   <p className="text-lg md:text-xl text-gray-100 leading-snug">
-                    Få en kostnadsfri offert på 1 minut
+                    {t('foretag.cta.subtitle')}
                   </p>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function ForetagPage() {
                     href="#foretag-offert" 
                     className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
                   >
-                    Få gratis offert
+                    {t('foretag.cta.button')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -233,11 +233,11 @@ export default function ForetagPage() {
         {/* Reviews Widget */}
         <ReviewsWidget 
           location="Stockholm" 
-          title="Vad tycker våra kunder om oss?" 
-          subtitle="Pålitliga företagstjänster i Stockholm" 
-          description="Professionella företagstjänster i Stockholm – från kontorsflytt till bemanning. Fast pris och minimal störning av verksamheten. Höga betyg från nöjda företagskunder." 
-          badgeAlt="Erfarenhet av företagstjänster i Stockholm" 
-          arrowText="Läs vad våra företagskunder säger om våra tjänster" 
+          title={t('foretag.reviews.title')} 
+          subtitle={t('foretag.reviews.subtitle')} 
+          description={t('foretag.reviews.description')} 
+          badgeAlt={t('foretag.reviews.badgeAlt')} 
+          arrowText={t('foretag.reviews.arrowText')} 
         />
 
         {/* Locations */}

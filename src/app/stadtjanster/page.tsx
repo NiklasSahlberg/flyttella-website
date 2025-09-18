@@ -49,50 +49,50 @@ export default function StadtjansterPage() {
   const stadServices = [
     {
       icon: '🧽',
-      title: 'Flyttstädning',
-      description: 'Grundlig flyttstädning enligt branschstandard. Fast pris, 14 dagars garanti och full RUT-hantering.',
+      title: t('stadtjanster.services.flyttstadning.title'),
+      description: t('stadtjanster.services.flyttstadning.description'),
       href: '/flyttstadning'
     },
     {
       icon: '🏡',
-      title: 'Hemstädning',
-      description: 'Regelbunden hemstädning anpassad efter dina behov. Veckovis, varannan vecka eller månadsvis.',
+      title: t('stadtjanster.services.hemstadning.title'),
+      description: t('stadtjanster.services.hemstadning.description'),
       href: '/hemstadning'
     },
     {
       icon: '🧱',
-      title: 'Byggstädning',
-      description: 'Professionell städning efter renovering. Grov- och finstädning för ett dammfritt resultat.',
+      title: t('stadtjanster.services.byggstadning.title'),
+      description: t('stadtjanster.services.byggstadning.description'),
       href: '/byggstadning'
     },
     {
       icon: '🪟',
-      title: 'Fönsterputs',
-      description: 'Kristallklara fönster året runt. Invändigt och utvändigt där det är säkert och åtkomligt.',
+      title: t('stadtjanster.services.fonsterputsning.title'),
+      description: t('stadtjanster.services.fonsterputsning.description'),
       href: '/fonsterputsning'
     },
     {
       icon: '🧹',
-      title: 'Storstädning',
-      description: 'Grundlig storstädning med fokus på svåråtkomliga ytor. Perfekt som uppföljning efter bygge.',
+      title: t('stadtjanster.services.storstadning.title'),
+      description: t('stadtjanster.services.storstadning.description'),
       href: '/storstadning'
     },
     {
       icon: '🏠',
-      title: 'Visningsstädning',
-      description: 'Professionell städning inför bostadsvisning. För bästa möjliga försäljningspris och snabb affär.',
+      title: t('stadtjanster.services.visningsstadning.title'),
+      description: t('stadtjanster.services.visningsstadning.description'),
       href: '/visningsstadning'
     },
     {
       icon: '🧹',
-      title: 'Kontorsstädning',
-      description: 'Regelbunden kontorsstädning för en ren och professionell arbetsmiljö.',
+      title: t('stadtjanster.services.kontorsstadning.title'),
+      description: t('stadtjanster.services.kontorsstadning.description'),
       href: '/kontorsstadning'
     },
     {
       icon: '🕊️',
-      title: 'Dödsbostädning',
-      description: 'Varsam och respektfull städning i samband med dödsbo. Hanteras med omtanke och diskretion.',
+      title: t('stadtjanster.services.dodsboStadning.title'),
+      description: t('stadtjanster.services.dodsboStadning.description'),
       href: '/dodsbo-stadning'
     }
   ];
@@ -149,7 +149,7 @@ export default function StadtjansterPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                Städtjänster
+                {t('stadtjanster.section.title')}
               </motion.h2>
               <motion.p 
                 className="text-lg md:text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto"
@@ -158,7 +158,7 @@ export default function StadtjansterPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Professionell städning för hem och företag. Alla våra städtjänster inkluderar RUT-avdrag och fast pris.
+                {t('stadtjanster.section.subtitle')}
               </motion.p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -204,7 +204,7 @@ export default function StadtjansterPage() {
                           href={service.href} 
                           className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 rounded-full hover:bg-opacity-90 transition-opacity font-medium group"
                         >
-                          Läs mer
+                          {t('stadtjanster.cta.readMore')}
                           <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -245,10 +245,10 @@ export default function StadtjansterPage() {
                 <span className="text-4xl md:text-5xl">🧽✨</span>
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl md:text-4xl font-bold text-white mb-2 leading-tight">
-                    Behöver du hjälp med städning?
+                    {t('stadtjanster.cta.title')}
                   </h3>
                   <p className="text-lg md:text-xl text-gray-100 leading-snug">
-                    Få en kostnadsfri offert på 1 minut
+                    {t('stadtjanster.cta.subtitle')}
                   </p>
                 </div>
               </div>
@@ -258,7 +258,7 @@ export default function StadtjansterPage() {
                     href="#stad-offert" 
                     className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
                   >
-                    Få gratis offert
+                    {t('stadtjanster.cta.button')}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -272,11 +272,11 @@ export default function StadtjansterPage() {
         {/* Reviews Widget */}
         <ReviewsWidget 
           location="Stockholm" 
-          title="Vad tycker våra kunder om oss?" 
-          subtitle="Pålitlig städning i Stockholm" 
-          description="Professionell städning i Stockholm – från hemstädning till flyttstädning. Fast pris och RUT-avdrag. Punktliga medarbetare och höga betyg från tusentals nöjda kunder." 
-          badgeAlt="Erfarenhet av städtjänster i Stockholm" 
-          arrowText="Läs vad våra kunder säger om vår städning" 
+          title={t('stadtjanster.reviews.title')} 
+          subtitle={t('stadtjanster.reviews.subtitle')} 
+          description={t('stadtjanster.reviews.description')} 
+          badgeAlt={t('stadtjanster.reviews.badgeAlt')} 
+          arrowText={t('stadtjanster.reviews.arrowText')} 
         />
 
         {/* Locations */}
