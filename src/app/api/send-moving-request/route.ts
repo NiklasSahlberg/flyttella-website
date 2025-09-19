@@ -41,14 +41,16 @@ async function getGmailClient() {
     CLIENT_SECRETS.installed.redirect_uris[0]
   );
 
-  // Hardcoded token for production use
-  const token = {
-    "access_token": "ya29.a0AQQ_BDQhbhe9MN1j5QWfzJ2c6-rIKrRBvSg14u5QorvsOekhvJY_PZ0vz76SFjJL7UnPzhlJYO-uKEX5rB0cO2L_sXe9zac0DRzjhCNzfGGK4hhmp4e-ou8mN8V3DzPAbjB4fXlZQW4vCS85rh-iyxV3LuxH9ENnVXoBLBslMBa-lj41Y9ioUMvxiBPdl9h9wACEOuBfPAaCgYKAdoSARISFQHGX2Mizu5GZBaOBaZa-XqjJdBh_w0209",
-    "refresh_token": "1//0cyImmJzOOjkcCgYIARAAGAwSNgF-L9Ir5HhyLUKncIG-oO6rOPmPekq5dVJM5PtjmC42gH3jUUu6T8YEhayurysrrPMkMNM2sQ",
-    "scope": "https://www.googleapis.com/auth/gmail.send",
-    "token_type": "Bearer",
-    "expiry_date": 1758216122138
-  };
+  // Load token from file
+  let token;
+  try {
+    const tokenPath = path.join(process.cwd(), 'token.json');
+    const tokenData = fs.readFileSync(tokenPath, 'utf8');
+    token = JSON.parse(tokenData);
+  } catch (error) {
+    console.error('Error loading token:', error);
+    throw new Error('Failed to load Gmail token');
+  }
 
   oauth2Client.setCredentials(token);
   

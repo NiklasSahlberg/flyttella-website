@@ -6,16 +6,17 @@ import path from 'path';
 import open from 'open';
 
 const SCOPES = ['https://www.googleapis.com/auth/gmail.send'];
-const TOKEN_PATH = path.join(process.cwd(), 'token.json');
+const TOKEN_PATH = path.join(process.cwd(), 'token-leads.json');
 
+// TODO: Replace these with the actual OAuth credentials for leads@flyttella.se
 const CLIENT_SECRETS = {
   "installed": {
-    "client_id": "670734392263-v52llecuh1rtakdsm3meo265a81r32rp.apps.googleusercontent.com",
+    "client_id": "YOUR_LEADS_CLIENT_ID_HERE",
     "project_id": "gothic-concept-433715-s3",
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
     "token_uri": "https://oauth2.googleapis.com/token",
     "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_secret": "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",
+    "client_secret": "YOUR_LEADS_CLIENT_SECRET_HERE",
     "redirect_uris": ["http://localhost:3001/oauth2callback"]
   }
 };
@@ -62,11 +63,11 @@ async function generateToken() {
 
     // Open the authorization URL in the default browser
     console.log('Opening browser for authentication...');
-    console.log('IMPORTANT: Please log in with the leads@flyttella.se account (not niklassahlbergdeveloper@gmail.com)');
+    console.log('Please log in with the leads@flyttella.se account');
     open(authUrl);
   });
 
   console.log('Waiting for authentication...');
 }
 
-generateToken(); 
+generateToken();
