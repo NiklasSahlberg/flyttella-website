@@ -316,7 +316,7 @@ const AutoSlidingCards = () => {
                     width={200}
                     height={200}
                     className="object-contain h-36 w-36"
-                    priority={false}
+                    priority={true}
                   />
                 </motion.div>
                 {/* Bottom row - two badges */}
@@ -328,7 +328,7 @@ const AutoSlidingCards = () => {
                       width={160}
                       height={160}
                       className="object-contain h-32 w-32"
-                      priority={false}
+                      priority={true}
                     />
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
@@ -338,7 +338,7 @@ const AutoSlidingCards = () => {
                       width={180}
                       height={180}
                       className="object-contain h-28 w-28"
-                      priority={false}
+                      priority={true}
                     />
                   </motion.div>
                 </div>
@@ -353,7 +353,7 @@ const AutoSlidingCards = () => {
                   width={240}
                   height={240}
                   className="object-contain h-60 w-60"
-                  priority={false}
+                  priority={true}
                 />
               </motion.div>
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
@@ -363,7 +363,7 @@ const AutoSlidingCards = () => {
                   width={260}
                   height={260}
                   className="object-contain h-64 w-64 mt-3"
-                  priority={false}
+                  priority={true}
                 />
               </motion.div>
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
@@ -373,7 +373,7 @@ const AutoSlidingCards = () => {
                   width={300}
                   height={300}
                   className="object-contain h-48 w-48"
-                  priority={false}
+                  priority={true}
                 />
               </motion.div>
               </div>
@@ -1398,7 +1398,8 @@ export default function Home() {
               height={500}
               className="w-full h-96 object-cover shadow-lg"
               style={{ objectPosition: '80% 80%' }}
-              priority={false}
+              priority={true}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
             />
             
             {/* Subtle overlay for better text contrast if needed */}
@@ -2201,11 +2202,13 @@ export default function Home() {
                       viewport={{ once: true }}
                     >
                       <div className="flex flex-col md:flex-row h-full items-stretch">
-                        <div className="w-full md:w-1/3 h-48 md:h-full">
-                          <img 
+                        <div className="w-full md:w-1/3 h-48 md:h-full relative">
+                          <Image 
                             src="/tipsforflytt.jpg" 
                             alt={locale === 'sv' ? 'Flytttips Stockholm' : 'Moving tips Stockholm'} 
-                            className="w-full h-full object-cover object-[60%_center]"
+                            fill
+                            className="object-cover object-[60%_center]"
+                            sizes="(max-width: 768px) 100vw, 33vw"
                           />
                         </div>
                         <div className="w-full md:w-2/3 p-4 md:p-6">
