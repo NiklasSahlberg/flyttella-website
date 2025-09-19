@@ -27,90 +27,228 @@ const staggerContainer = {
 // Lottie animation functions
 function FillFormLottie() {
   const [animationData, setAnimationData] = React.useState(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef(null);
+
   React.useEffect(() => {
-    fetch("/fillform.json")
-      .then((res) => res.json())
-      .then(setAnimationData);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
-  if (!animationData) return null;
+
+  React.useEffect(() => {
+    if (isVisible) {
+      fetch("/fillform.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="w-14 h-14 mx-auto mb-2">
-      <Lottie animationData={animationData} loop autoplay />
+    <div ref={ref} className="w-14 h-14 mx-auto mb-2">
+      {animationData && <Lottie animationData={animationData} loop autoplay />}
     </div>
   );
 }
 
 function FastLottie() {
   const [animationData, setAnimationData] = React.useState(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef(null);
+
   React.useEffect(() => {
-    fetch("/fast.json")
-      .then((res) => res.json())
-      .then(setAnimationData);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
-  if (!animationData) return null;
+
+  React.useEffect(() => {
+    if (isVisible) {
+      fetch("/fast.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="w-14 h-14 mx-auto mb-2">
-      <Lottie animationData={animationData} loop autoplay />
+    <div ref={ref} className="w-14 h-14 mx-auto mb-2">
+      {animationData && <Lottie animationData={animationData} loop autoplay />}
     </div>
   );
 }
 
 function PhoneCallLottie() {
   const [animationData, setAnimationData] = React.useState(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef(null);
+
   React.useEffect(() => {
-    fetch("/phonecall.json")
-      .then((res) => res.json())
-      .then(setAnimationData);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
-  if (!animationData) return null;
+
+  React.useEffect(() => {
+    if (isVisible) {
+      fetch("/phonecall.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="w-20 h-20 mx-auto mb-2">
-      <Lottie animationData={animationData} loop autoplay />
+    <div ref={ref} className="w-20 h-20 mx-auto mb-2">
+      {animationData && <Lottie animationData={animationData} loop autoplay />}
     </div>
   );
 }
 
 function SignFormLottie() {
   const [animationData, setAnimationData] = React.useState(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef(null);
+
   React.useEffect(() => {
-    fetch("/signform.json")
-      .then((res) => res.json())
-      .then(setAnimationData);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
-  if (!animationData) return null;
+
+  React.useEffect(() => {
+    if (isVisible) {
+      fetch("/signform.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="w-20 h-20 mx-auto mb-2">
-      <Lottie animationData={animationData} loop autoplay />
+    <div ref={ref} className="w-20 h-20 mx-auto mb-2">
+      {animationData && <Lottie animationData={animationData} loop autoplay />}
     </div>
   );
 }
 
 function MovingTruckLottie() {
   const [animationData, setAnimationData] = React.useState(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef(null);
+
   React.useEffect(() => {
-    fetch("/movingtruck.json")
-      .then((res) => res.json())
-      .then(setAnimationData);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
-  if (!animationData) return null;
+
+  React.useEffect(() => {
+    if (isVisible) {
+      fetch("/movingtruck.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="w-36 h-36 mx-auto mb-2">
-      <Lottie animationData={animationData} loop autoplay />
+    <div ref={ref} className="w-36 h-36 mx-auto mb-2">
+      {animationData && <Lottie animationData={animationData} loop autoplay />}
     </div>
   );
 }
 
 function HappyCustomerLottie() {
   const [animationData, setAnimationData] = React.useState(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef(null);
+
   React.useEffect(() => {
-    fetch("/happycustomer.json")
-      .then((res) => res.json())
-      .then(setAnimationData);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
-  if (!animationData) return null;
+
+  React.useEffect(() => {
+    if (isVisible) {
+      fetch("/happycustomer.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="w-20 h-20 mx-auto mb-2">
-      <Lottie animationData={animationData} loop autoplay />
+    <div ref={ref} className="w-20 h-20 mx-auto mb-2">
+      {animationData && <Lottie animationData={animationData} loop autoplay />}
     </div>
   );
 }
@@ -508,7 +646,14 @@ export default function Bohagsflytt() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12">
-                        <img src="/magkansla.jpg" alt={t('bohagsflytt.content.imageAlt')} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" />
+                        <Image 
+                          src="/magkansla.jpg" 
+                          alt={t('bohagsflytt.content.imageAlt')} 
+                          width={1200}
+                          height={400}
+                          className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+                        />
                   </div>
                     ),
                     icon: '',
@@ -544,7 +689,14 @@ export default function Bohagsflytt() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12">
-                        <img src="/packing_tips.jpg" alt={t('bohagsflytt.content.packingTipsAlt')} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" />
+                        <Image 
+                          src="/packing_tips.jpg" 
+                          alt={t('bohagsflytt.content.packingTipsAlt')} 
+                          width={1200}
+                          height={400}
+                          className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+                        />
                   </div>
                     ),
                     icon: '',
@@ -683,11 +835,13 @@ export default function Bohagsflytt() {
               {/* Mobile image above title to match main page */}
               <div className="lg:hidden px-4 mb-6 -mx-8">
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
-                  <img
+                  <Image
                     src="/personalpicture.jpg"
                     alt={t('bohagsflytt.about.imageAlt')}
-                    className="object-cover w-full h-full"
+                    fill
+                    className="object-cover"
                     style={{ objectPosition: 'center 70%' }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>
@@ -708,11 +862,13 @@ export default function Bohagsflytt() {
                   }}
                 >
                   <div className="relative h-96 lg:h-full w-full lg:w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
-                    <img
+                    <Image
                       src="/omoss.jpg"
                       alt={t('bohagsflytt.about.imageAlt')}
-                      className="object-cover rounded-2xl w-full h-full"
+                      fill
+                      className="object-cover rounded-2xl"
                       style={{ objectPosition: 'center center', transform: 'scale(1.0)' }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 </motion.div>
@@ -1796,7 +1952,7 @@ export default function Bohagsflytt() {
                       width={200}
                       height={200}
                       className="object-contain h-36 w-36"
-                      priority={false}
+                      priority={true}
                     />
                   </motion.div>
                   <div className="flex items-center justify-center gap-4">
@@ -1998,11 +2154,13 @@ export default function Bohagsflytt() {
                     viewport={{ once: true }}
                   >
                     <div className="flex flex-col md:flex-row h-full items-stretch">
-                      <div className="w-full md:w-1/3 h-48 md:h-full">
-                        <img 
+                      <div className="w-full md:w-1/3 h-48 md:h-full relative">
+                        <Image 
                           src="/tipsforflytt.jpg" 
                           alt={locale === 'sv' ? 'Flytttips Stockholm' : 'Moving tips Stockholm'} 
-                          className="w-full h-full object-cover object-[60%_center]"
+                          fill
+                          className="object-cover object-[60%_center]"
+                          sizes="(max-width: 768px) 100vw, 33vw"
                         />
                       </div>
                       <div className="w-full md:w-2/3 p-4 md:p-6">
@@ -2268,10 +2426,13 @@ interface TipCardProps {
 const TipCard: React.FC<TipCardProps> = ({ title, content, imageSrc, imageAlt, objectPosition = 'object-center' }) => (
   <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
     {imageSrc && (
-      <img
+      <Image
         src={imageSrc}
         alt={imageAlt || ''}
+        width={400}
+        height={192}
         className={`w-full h-48 object-cover ${objectPosition}`}
+        sizes="(max-width: 768px) 100vw, 25vw"
       />
     )}
     <div className="p-6">

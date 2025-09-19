@@ -28,7 +28,7 @@ export default function RootLayout({
           <Header />
           <Script
             src={`https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places`}
-            strategy="beforeInteractive"
+            strategy="lazyOnload"
           />
           {children}
           <Footer />

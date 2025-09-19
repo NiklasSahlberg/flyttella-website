@@ -490,15 +490,38 @@ const buttonVariants = {
 // Move Lottie animation functions to top-level scope
 function FillFormLottie() {
   const [animationData, setAnimationData] = React.useState(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef(null);
+
   React.useEffect(() => {
-    fetch("/fillform.json")
-      .then((res) => res.json())
-      .then(setAnimationData);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
-  if (!animationData) return null;
+
+  React.useEffect(() => {
+    if (isVisible) {
+      fetch("/fillform.json")
+        .then((res) => res.json())
+        .then(setAnimationData);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="w-14 h-14 mx-auto mb-2">
-      <Lottie animationData={animationData} loop autoplay />
+    <div ref={ref} className="w-14 h-14 mx-auto mb-2">
+      {animationData && <Lottie animationData={animationData} loop autoplay />}
     </div>
   );
 }
