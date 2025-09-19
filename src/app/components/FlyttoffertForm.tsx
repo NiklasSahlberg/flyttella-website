@@ -933,8 +933,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 });
 
                 if (response.ok) {
-                  alert("Tack för din förfrågan! Vi återkommer inom kort.");
-                  // Reset form or redirect
+                  // Redirect to thank you page
                   window.location.href = '/tack';
                 } else {
                   throw new Error('Failed to send request');
