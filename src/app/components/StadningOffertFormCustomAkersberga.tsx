@@ -127,6 +127,8 @@ interface StadningFormData {
   atticArea?: string;
   hasBasementStorage?: string;
   basementStorageArea?: string;
+  /* NEW: whether the whole home should be cleaned */
+  entireHome?: 'yes' | 'no';
 }
 
 interface FormErrors {
@@ -315,7 +317,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     atticArea: '',
     hasBasementStorage: '',
     basementStorageArea: '',
-  });
+    entireHome: 'yes',
+  } as StadningFormData);
   const [errors, setErrors] = useState<FormErrors>({});
 
   // Debug log for current step
@@ -906,6 +909,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         ...formData,
         flexibleMovingDate: formData.wantsFlexibleDate ? formData.flexibleMovingDate : 'Nej',
         customerType: localCustomerType,
+        areaSize: formData.areaSize,
+        entireHome: formData.entireHome,
       };
 
       // Send the email data to the API endpoint
@@ -1431,7 +1436,42 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
                   {selectedCleaningType !== 'Fönsterputs' && selectedCleaningType !== 'Window cleaning' && (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      {/* Move Entire home radio group ABOVE area size */}
+                      <div className="mt-0">
+                        <label className="block text-sm font-medium text-gray-700 mb-1"><strong>Ska hela bostaden städas?</strong></label>
+                        <div className="mt-2 flex space-x-6">
+                          <div className="flex items-center">
+                            <input
+                              type="radio"
+                              id="entireHome-yes"
+                              name="entireHome"
+                              value="yes"
+                              checked={formData.entireHome === 'yes'}
+                              onChange={(e) => setFormData({ ...formData, entireHome: e.target.value as 'yes' | 'no' })}
+                              className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                            />
+                            <label htmlFor="entireHome-yes" className="ml-2 text-sm text-gray-700">
+                              Ja
+                            </label>
+                          </div>
+                          <div className="flex items-center">
+                            <input
+                              type="radio"
+                              id="entireHome-no"
+                              name="entireHome"
+                              value="no"
+                              checked={formData.entireHome === 'no'}
+                              onChange={(e) => setFormData({ ...formData, entireHome: e.target.value as 'yes' | 'no' })}
+                              className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
+                            />
+                            <label htmlFor="entireHome-no" className="ml-2 text-sm text-gray-700">
+                              Nej
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <label className="block text-sm font-medium text-gray-700 mb-1 mt-6">
                         <strong>{t('hero.form.validation.approximatelyHowBigArea')}</strong>
                       </label>
                       <input

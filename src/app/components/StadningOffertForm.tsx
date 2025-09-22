@@ -51,6 +51,8 @@ interface StadningFormData {
   blindsCleaningCount: number;
   hasFreezerDefrosting: boolean;
   squareMeters: string;
+  /* NEW: whether the whole home should be cleaned */
+  entireHome: 'yes' | 'no';
   comments: string;
   movingDate: string;
   flexibleMovingDate: string;
@@ -130,6 +132,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     blindsCleaningCount: 0,
     hasFreezerDefrosting: false,
     squareMeters: '',
+    /* default to yes for whole home */
+    entireHome: 'yes',
     comments: '',
     movingDate: (() => {
       const tomorrow = new Date();
@@ -400,6 +404,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         typeOfHome: formData.typeOfHome,
         numberOfFloors: formData.numberOfFloors,
         squareMeters: formData.squareMeters,
+        /* include entireHome mapping for email */
+        entireHome: formData.entireHome,
         bedrooms: formData.bedrooms,
         bathrooms: formData.bathrooms,
         kitchen: formData.kitchen,
@@ -847,6 +853,19 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                   {errors.squareMeters && (
                     <p className="mt-1 text-sm text-red-600">{errors.squareMeters}</p>
                   )}
+                </div>
+
+                {/* NEW: Entire home yes/no selector placed directly under area size */}
+                <div className="mt-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1"><strong>Ska hela bostaden städas?</strong></label>
+                  <select
+                    value={formData.entireHome}
+                    onChange={(e) => setFormData({ ...formData, entireHome: e.target.value as 'yes' | 'no' })}
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black border-gray-300"
+                  >
+                    <option value="yes">Ja</option>
+                    <option value="no">Nej</option>
+                  </select>
                 </div>
 
                 <div className="mt-6">

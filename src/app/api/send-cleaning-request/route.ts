@@ -95,6 +95,21 @@ function formatFlexibleDate(value: string | undefined): string {
   return value;
 }
 
+// Map specific housing types to display-friendly labels
+function formatTypeOfHome(value?: string): string {
+  if (!value) return '';
+  const lower = value.toLowerCase();
+  if (lower === 'lagenhet') return 'Lägenhet';
+  if (lower === 'radhus') return 'Radhus';
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+// Map 'Sweden' to 'Sverige' in addresses
+function formatAddress(value?: string): string {
+  if (!value) return '';
+  return value.replace(/\bSweden\b/gi, 'Sverige');
+}
+
 // Function to get base64 encoded logo
 function getLogoBase64(): string {
   try {
@@ -227,10 +242,10 @@ export async function POST(req: Request) {
   <table>
     <tr>
       <th>${data.customerType === 'foretag' ? 'Bostadstyp' : 'Vilken typ av bostad ska städas?'}</th>
-      <td>${data.typeOfHome || ''}</td>
+      <td>${formatTypeOfHome(data.typeOfHome)}</td>
     </tr>
 
-    ${(data.customerType === 'foretag' || (data.customerType === 'privat' && data.typeOfHome?.toLowerCase() === 'lagenhet')) ? `
+    ${(data.cleaningType !== 'Flyttstädning' && data.cleaningType !== 'Moving cleaning') && (data.customerType === 'foretag' || (data.customerType === 'privat' && data.typeOfHome?.toLowerCase() === 'lagenhet')) ? `
     <tr>
       <th>Finns hiss i byggnaden?</th>
       <td>${data.hasElevator === "yes" ? "Ja" : "Nej"}</td>
@@ -446,7 +461,7 @@ export async function POST(req: Request) {
         </tr>
         <tr>
           <th>Adress</th>
-          <td>${data.address || ''} ${data.streetNumber || ''}</td>
+          <td>${formatAddress(data.address) || ''} ${data.streetNumber || ''}</td>
         </tr>
         <tr>
           <th>Postnummer</th>
