@@ -316,7 +316,7 @@ const AutoSlidingCards = () => {
                     width={200}
                     height={200}
                     className="object-contain h-36 w-36"
-                    priority={true}
+                    priority={false}
                   />
                 </motion.div>
                 {/* Bottom row - two badges */}
@@ -328,7 +328,7 @@ const AutoSlidingCards = () => {
                       width={160}
                       height={160}
                       className="object-contain h-32 w-32"
-                      priority={true}
+                      priority={false}
                     />
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
@@ -338,7 +338,7 @@ const AutoSlidingCards = () => {
                       width={180}
                       height={180}
                       className="object-contain h-28 w-28"
-                      priority={true}
+                      priority={false}
                     />
                   </motion.div>
                 </div>
@@ -353,7 +353,7 @@ const AutoSlidingCards = () => {
                   width={240}
                   height={240}
                   className="object-contain h-60 w-60"
-                  priority={true}
+                  priority={false}
                 />
               </motion.div>
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
@@ -363,7 +363,7 @@ const AutoSlidingCards = () => {
                   width={260}
                   height={260}
                   className="object-contain h-64 w-64 mt-3"
-                  priority={true}
+                  priority={false}
                 />
               </motion.div>
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
@@ -373,7 +373,7 @@ const AutoSlidingCards = () => {
                   width={300}
                   height={300}
                   className="object-contain h-48 w-48"
-                  priority={true}
+                  priority={false}
                 />
               </motion.div>
               </div>
@@ -490,38 +490,15 @@ const buttonVariants = {
 // Move Lottie animation functions to top-level scope
 function FillFormLottie() {
   const [animationData, setAnimationData] = React.useState(null);
-  const [isVisible, setIsVisible] = React.useState(false);
-  const ref = React.useRef(null);
-
   React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
+    fetch("/fillform.json")
+      .then((res) => res.json())
+      .then(setAnimationData);
   }, []);
-
-  React.useEffect(() => {
-    if (isVisible) {
-      fetch("/fillform.json")
-        .then((res) => res.json())
-        .then(setAnimationData);
-    }
-  }, [isVisible]);
-
+  if (!animationData) return null;
   return (
-    <div ref={ref} className="w-14 h-14 mx-auto mb-2">
-      {animationData && <Lottie animationData={animationData} loop autoplay />}
+    <div className="w-14 h-14 mx-auto mb-2">
+      <Lottie animationData={animationData} loop autoplay />
     </div>
   );
 }
@@ -1421,8 +1398,7 @@ export default function Home() {
               height={500}
               className="w-full h-96 object-cover shadow-lg"
               style={{ objectPosition: '80% 80%' }}
-              priority={true}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+              priority={false}
             />
             
             {/* Subtle overlay for better text contrast if needed */}
@@ -2225,13 +2201,11 @@ export default function Home() {
                       viewport={{ once: true }}
                     >
                       <div className="flex flex-col md:flex-row h-full items-stretch">
-                        <div className="w-full md:w-1/3 h-48 md:h-full relative">
-                          <Image 
+                        <div className="w-full md:w-1/3 h-48 md:h-full">
+                          <img 
                             src="/tipsforflytt.jpg" 
                             alt={locale === 'sv' ? 'Flytttips Stockholm' : 'Moving tips Stockholm'} 
-                            fill
-                            className="object-cover object-[60%_center]"
-                            sizes="(max-width: 768px) 100vw, 33vw"
+                            className="w-full h-full object-cover object-[60%_center]"
                           />
                         </div>
                         <div className="w-full md:w-2/3 p-4 md:p-6">
