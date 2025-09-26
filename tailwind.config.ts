@@ -7,6 +7,14 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      // Push tablet/desktop breakpoints above iPad widths so iPad uses mobile layout
+      md: "1180px",
+      lg: "1280px",
+      xl: "1536px",
+      "2xl": "1920px",
+    },
     extend: {
       colors: {
         background: "var(--background)",

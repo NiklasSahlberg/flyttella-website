@@ -26,6 +26,20 @@ export default function RootLayout({
       <body className="antialiased">
         <LanguageProvider>
           <Header />
+          {/* Google tag (gtag.js) */}
+          <Script
+            id="gtag-src"
+            src="https://www.googletagmanager.com/gtag/js?id=AW-427570372"
+            strategy="afterInteractive"
+          />
+          <Script id="gtag-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-427570372');
+            `}
+          </Script>
           <Script
             src={`https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places`}
             strategy="lazyOnload"
