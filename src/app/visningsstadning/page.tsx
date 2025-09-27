@@ -506,7 +506,7 @@ export default function VisningsstadningPage() {
                   variants={fadeInUp}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  <div className="hidden lg:block space-y-8">
+                  <div className="hidden lg:block space-y-6 lg:space-y-8">
                     <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
                       {locale === 'sv' ? 'Flyttella är en av Stockholms ledande aktörer inom visningsstädning med över 8 års erfarenhet av visningsstädning, hemstädning och flyttstädning. Vi erbjuder fasta priser och personlig service i hela Stockholm.' : 'Flyttella is one of Stockholm\'s leading players in viewing cleaning with over 8 years of experience in viewing cleaning, home cleaning and move-out cleaning. We offer fixed prices and personal service throughout Stockholm.'}
                     </p>
@@ -785,8 +785,8 @@ export default function VisningsstadningPage() {
         </div>
 
         {/* Desktop features grid with image */}
-        <div className="responsive-zoom hidden md:block">
-          <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
+        <div className="hidden md:block">
+          <div className="pt-28">
             <div className="mx-auto px-24">
               <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
                 <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">

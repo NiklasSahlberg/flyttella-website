@@ -327,15 +327,9 @@ export default function MonteringPage() {
 					</div>
 				</section>
 
-				{/* Om Flyttella Section */}
+				{/* Om Flyttella Section - Matching bohagsflytt layout */}
 				<motion.section
-					className="relative overflow-hidden"
-					style={{
-						paddingTop: '8rem',
-						paddingBottom: '8rem',
-						borderTop: 'none',
-						boxShadow: 'none',
-					}}
+					className="relative overflow-hidden py-16 md:py-24 lg:py-32"
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.8 }}
@@ -343,21 +337,11 @@ export default function MonteringPage() {
 				>
 					{/* Background image absolutely positioned */}
 					<div
-						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
+						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
 						style={{
 							backgroundImage: 'url(/efter_flytt.jpg)',
 							backgroundSize: 'cover',
-							backgroundPosition: 'center 85%',
-							zIndex: 0,
-						}}
-					/>
-					{/* Mobile-specific background positioning */}
-					<div
-						className="absolute inset-0 w-full h-full bg-cover bg-no-repeat md:hidden"
-						style={{
-							backgroundImage: 'url(/efter_flytt.jpg)',
-							backgroundSize: 'cover',
-							backgroundPosition: 'right center',
+							backgroundPosition: 'center center',
 							zIndex: 0,
 						}}
 					/>
@@ -365,44 +349,44 @@ export default function MonteringPage() {
 					<div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
 					
 					{/* Top gradient fade */}
-					<div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none"
+					<div className="absolute top-0 left-0 w-full h-16 md:h-20 lg:h-24 z-30 pointer-events-none"
 						 style={{
-							background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+							background: 'linear-gradient(to bottom, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)'
 						 }}
 					/>
 					
 					{/* Bottom gradient fade */}
-					<div className="absolute bottom-0 left-0 w-full h-32 z-10 pointer-events-none"
+					<div className="absolute bottom-0 left-0 w-full h-16 md:h-20 lg:h-24 z-10 pointer-events-none"
 						 style={{
-							background: 'linear-gradient(to top, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+							background: 'linear-gradient(to top, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)'
 						 }}
 					/>
 					
 					{/* Centered content */}
-					<div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60 om-oss-container">
+					<div className="relative z-10 max-w-[90rem] mx-auto px-4 md:px-8 lg:px-16 om-oss-container">
 						<motion.div
 							initial="initial"
 							whileInView="animate"
 							viewport={{ once: true }}
 						>
-							{/* Mobile image above title to match main page */}
-							<div className="lg:hidden px-4 mb-6 -mx-8">
-								<div className="relative w-full h-96 rounded-3xl overflow-hidden">
+							{/* Mobile image above title */}
+							<div className="lg:hidden mb-6">
+								<div className="relative w-full h-80 rounded-3xl overflow-hidden">
 									<img
 										src="/personalpicture.jpg"
 										alt="Om Flyttella"
 										className="object-cover w-full h-full"
-										style={{ objectPosition: 'center 70%' }}
+										style={{ objectPosition: 'center center' }}
 									/>
 								</div>
 							</div>
 
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">{t('montering.about.title')}</h3>
+							<h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-8 md:mb-12 lg:mb-16 text-center om-oss-title">{t('montering.about.title')}</h3>
 
-							<div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
+							<div className="relative flex flex-col lg:flex-row items-stretch gap-8 md:gap-12 lg:gap-16">
 								{/* Left: Image - desktop only */}
 								<motion.div
-									className="hidden lg:block w-full lg:w-1/5 relative lg:-ml-16 lg:pr-16"
+									className="hidden lg:block w-full lg:w-1/4 relative"
 									initial="initial"
 									whileInView="animate"
 									viewport={{ once: true, amount: 0.2 }}
@@ -412,19 +396,19 @@ export default function MonteringPage() {
 										delay: 0.2
 									}}
 								>
-									<div className="relative h-96 lg:h-full w-full lg:w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
+									<div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
 										<img
 											src="/omoss.jpg"
 											alt="Om Flyttella"
 											className="object-cover rounded-2xl w-full h-full"
-											style={{ objectPosition: 'center center', transform: 'scale(1.0)' }}
+											style={{ objectPosition: 'center center' }}
 										/>
 									</div>
 								</motion.div>
 								
 								{/* Right: Text content */}
 								<motion.div
-									className="w-full lg:w-4/5 space-y-4 lg:space-y-8 flex flex-col justify-center"
+									className="w-full lg:w-3/4 space-y-4 md:space-y-6 lg:space-y-8 flex flex-col justify-center"
 									initial="initial"
 									whileInView="animate"
 									viewport={{ once: true, amount: 0.2 }}
@@ -448,27 +432,29 @@ export default function MonteringPage() {
 									</div>
 									
 									{/* Mobile: Show shortened text with expand option */}
-									<div className="lg:hidden space-y-4">
-										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+									<div className="lg:hidden space-y-4 text-center">
+										<p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
 											{t('montering.about.mobileDescription')}
 										</p>
 										
 										{!showFullAboutText && (
-											<button
-												onClick={() => setShowFullAboutText(true)}
-												className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
-											>
-												{t('montering.about.readMore')}
-												<svg 
-													xmlns="http://www.w3.org/2000/svg" 
-													className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-													fill="none" 
-													viewBox="0 0 24 24" 
-													stroke="currentColor"
+											<div className="text-center">
+												<button
+													onClick={() => setShowFullAboutText(true)}
+													className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-base underline decoration-2 underline-offset-4"
 												>
-													<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-												</svg>
-											</button>
+													{t('montering.about.readMore')}
+													<svg 
+														xmlns="http://www.w3.org/2000/svg" 
+														className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+														fill="none" 
+														viewBox="0 0 24 24" 
+														stroke="currentColor"
+													>
+														<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+													</svg>
+												</button>
+											</div>
 										)}
 										
 										{showFullAboutText && (
@@ -478,36 +464,39 @@ export default function MonteringPage() {
 												transition={{ duration: 0.5 }}
 												className="space-y-4 mt-4"
 											>
-												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+												<p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
 													{t('montering.about.mobileDescription2')}
 												</p>
-												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+												<p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
 													{t('montering.about.mobileDescription3')}
 												</p>
 												
 												{/* Läs mer om oss link - Mobile only when expanded */}
 												<motion.div
-													className="pt-6"
+													className="pt-6 text-left"
 													initial={{ opacity: 0 }}
 													animate={{ opacity: 1 }}
 													transition={{ duration: 0.5, delay: 0.3 }}
 												>
 													<Link 
 														href="/om-oss" 
-														className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+														className="inline-flex items-center text-base text-[#0F172A] hover:text-[#10B981] transition-colors font-bold underline decoration-2 underline-offset-4"
 													>
 														{t('montering.about.readMoreAbout')}
 														<svg 
-															xmlns="http://www.w3.org/0 24" 
+															xmlns="http://www.w3.org/2000/svg" 
+															className="h-4 w-4 ml-2" 
+															fill="none" 
+															viewBox="0 0 24 24" 
 															stroke="currentColor"
 														>
 															<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
 														</svg>
-              </Link>
+													</Link>
 												</motion.div>
 											</motion.div>
 										)}
-            </div>
+									</div>
 									
 									{/* Läs mer om oss link - Desktop only */}
 									<motion.div
