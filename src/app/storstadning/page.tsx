@@ -323,8 +323,8 @@ export default function StorstadningPage() {
           <div className="absolute bottom-0 left-0 w-full h-16 z-30 pointer-events-none" style={{ background: 'linear-gradient(to top, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)' }} />
           <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
             <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-              {/* Mobile image above title to match Bohagsflytt */}
-              <div className="lg:hidden px-4 mb-6 -mx-8">
+              {/* Mobile image above title */}
+              <div className="lg:hidden mb-6">
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
                   <img src="/omflyttella_flyttstad.png" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
                 </div>

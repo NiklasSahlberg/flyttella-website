@@ -505,7 +505,7 @@ export default function BarhjalpPage() {
 					/>
 					
 					{/* Centered content */}
-					<div className="relative z-10 max-w-[90rem] mx-auto px-4 md:px-8 lg:px-16 om-oss-container">
+					<div className="relative z-10 max-w-[90rem] mx-auto px-8 md:px-8 lg:px-16 om-oss-container">
 						<motion.div
 							initial="initial"
 							whileInView="animate"
@@ -513,13 +513,13 @@ export default function BarhjalpPage() {
 						>
 							{/* Mobile image above title */}
 							<div className="lg:hidden mb-6">
-								<div className="relative w-full h-80 rounded-3xl overflow-hidden">
+								<div className="relative w-full h-96 rounded-3xl overflow-hidden">
 									<Image
 										src="/personalpicture.jpg"
 										alt="Om Flyttella"
 										fill
 										className="object-cover"
-										style={{ objectPosition: 'center center' }}
+										style={{ objectPosition: 'center 70%' }}
 										sizes="(max-width: 768px) 100vw, 50vw"
 										priority={true}
 									/>
@@ -579,29 +579,27 @@ export default function BarhjalpPage() {
 									</div>
 									
 									{/* Mobile: Show shortened text with expand option - SEO optimized for bärhjälp */}
-									<div className="lg:hidden space-y-4 text-center">
-										<p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
+									<div className="lg:hidden space-y-4">
+										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
 											{t('barhjalp.about.description1')}
 										</p>
 										
 										{!showFullAboutText && (
-											<div className="text-center">
-												<button
-													onClick={() => setShowFullAboutText(true)}
-													className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-base underline decoration-2 underline-offset-4"
+											<button
+												onClick={() => setShowFullAboutText(true)}
+												className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+											>
+												{t('barhjalp.about.readMore')}
+												<svg 
+													xmlns="http://www.w3.org/2000/svg" 
+													className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+													fill="none" 
+													viewBox="0 0 24 24" 
+													stroke="currentColor"
 												>
-													{t('barhjalp.about.readMore')}
-													<svg 
-														xmlns="http://www.w3.org/2000/svg" 
-														className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
-														fill="none" 
-														viewBox="0 0 24 24" 
-														stroke="currentColor"
-													>
-														<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-													</svg>
-												</button>
-											</div>
+													<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+												</svg>
+											</button>
 										)}
 										
 										{showFullAboutText && (
@@ -611,28 +609,28 @@ export default function BarhjalpPage() {
 												transition={{ duration: 0.5 }}
 												className="space-y-4 mt-4"
 											>
-												<p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
+												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
 													{t('barhjalp.about.description2')}
 												</p>
-												<p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
+												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
 													{t('barhjalp.about.description3')}
 												</p>
 												
 												{/* Läs mer om oss link - Mobile only when expanded */}
 												<motion.div
-													className="pt-6 text-left"
+													className="pt-6"
 													initial={{ opacity: 0 }}
 													animate={{ opacity: 1 }}
 													transition={{ duration: 0.5, delay: 0.3 }}
 												>
 													<Link 
 														href="/om-oss" 
-														className="inline-flex items-center text-base text-[#0F172A] hover:text-[#10B981] transition-colors font-bold underline decoration-2 underline-offset-4"
+														className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
 													>
 														{t('barhjalp.about.readMoreAbout')}
 														<svg 
 															xmlns="http://www.w3.org/2000/svg" 
-															className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+															className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
 															fill="none" 
 															viewBox="0 0 24 24" 
 															stroke="currentColor"

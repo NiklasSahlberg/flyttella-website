@@ -17,25 +17,78 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Uniform scaling for all screens - consistent behavior */
-.main-zoom {
-  /* Use transform scale instead of zoom to avoid affecting positioning */
-  transform: scale(0.9);
-  transform-origin: top left;
-  /* Compensate for the scaling by increasing width and height */
-  width: 111.11%; /* 100 / 0.9 = 111.11% */
-  height: 111.11%;
-  /* Ensure sidebar widgets can escape the scaled container */
-  position: relative;
-  z-index: 1;
+/* MacBook 14.2 inch optimization - 80% zoom for better readability */
+/* Targets MacBook 14.2 inch with 2x pixel ratio (3024x1964 logical pixels) */
+@media screen and (min-width: 1512px) and (max-width: 1512px) and (min-height: 982px) and (max-height: 982px) and (-webkit-device-pixel-ratio: 2),
+       screen and (min-width: 1512px) and (max-width: 1512px) and (min-height: 982px) and (max-height: 982px) and (device-pixel-ratio: 2),
+       screen and (min-width: 1512px) and (max-width: 1512px) and (min-height: 982px) and (max-height: 982px) {
+  .main-zoom {
+    transform: scale(0.8);
+    transform-origin: top left;
+    width: 125%;
+    height: 125%;
+    overflow-x: hidden;
+  }
 }
 
+/* Fallback for other high-resolution MacBook screens */
+@media screen and (min-width: 1440px) and (max-width: 1600px) and (min-height: 900px) and (max-height: 1000px) and (-webkit-device-pixel-ratio: 2) {
+  .main-zoom {
+    transform: scale(0.85);
+    transform-origin: top left;
+    width: 117.6%;
+    height: 117.6%;
+    overflow-x: hidden;
+  }
+}
+
+/* Header optimization for MacBook 14.2 inch - prevent text wrapping */
+@media screen and (min-width: 1512px) and (max-width: 1512px) and (min-height: 982px) and (max-height: 982px) and (-webkit-device-pixel-ratio: 2),
+       screen and (min-width: 1512px) and (max-width: 1512px) and (min-height: 982px) and (max-height: 982px) and (device-pixel-ratio: 2),
+       screen and (min-width: 1512px) and (max-width: 1512px) and (min-height: 982px) and (max-height: 982px) {
+
+  /* Header navigation optimization - only for MacBook 14.2 inch */
+  .header-nav-link {
+    white-space: nowrap;
+    font-size: 0.9875rem !important; /* 15.8px - almost normal size */
+    letter-spacing: 0.025em; /* Slightly tighter tracking */
+  }
+
+  /* Reduce navigation spacing */
+  nav.flex.items-center.space-x-8 > * + * {
+    margin-left: 1.5rem; /* 24px instead of 32px */
+  }
+
+  /* Ensure header container has enough space */
+  .container.mx-auto.px-4 {
+    padding-left: 1rem; /* 16px */
+    padding-right: 1rem; /* 16px */
+  }
+
+  /* Optimize logo size for MacBook */
+ 
+  .relative.h-12.w-24.md\:h-20.md\:w-80 {
+    width: 18rem; /* 288px instead of 320px */
+  }
+}
+
+/* Additional fallback for other MacBook screens */
+@media screen and (min-width: 1440px) and (max-width: 1600px) and (min-height: 900px) and (max-height: 1000px) and (-webkit-device-pixel-ratio: 2) {
+  .header-nav-link {
+    white-space: nowrap;
+    font-size: 0.9875rem !important; /* 15.8px - almost normal size */
+  }
+
+  nav.flex.items-center.space-x-8 > * + * {
+    margin-left: 1.75rem; /* 28px */
+  }
+}
 
 @layer components {
   .btn-primary {
     @apply bg-[#1e3a8a] text-white px-6 py-3 rounded-lg hover:bg-[#1e40af] transition-colors;
   }
-  
+
   .btn-secondary {
     @apply bg-[#059669] text-white px-6 py-3 rounded-lg hover:bg-[#047857] transition-colors;
   }
@@ -144,19 +197,80 @@ body {
   @apply transform scale-105;
 }
 
-
-
-/* Simple sidebar scaling protection */
-.sidebar-widget {
-  /* Prevent scaling inheritance from parent containers */
-  transform: none !important;
-  zoom: 1 !important;
-  /* Ensure proper z-index */
-  z-index: 40 !important;
+.main-zoom {
+  zoom: 0.75;
+}
+@media (min-width: 1440px) {
+  .main-zoom {
+    zoom: 1;
+  }
 }
 
+/* Responsive margin adjustments for Om oss section on medium-large screens */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .om-oss-container {
+    margin-right: 5rem !important;
+  }
 
+  .om-oss-title {
+    margin-right: 5rem !important;
+  }
+}
 
+/* MacBook 16-inch (1728×1117 @2x) specific margin for Om oss section */
+@media screen and (min-width: 1728px) and (max-width: 1728px) and (min-height: 1117px) and (max-height: 1117px) and (-webkit-device-pixel-ratio: 2),
+       screen and (min-width: 1728px) and (max-width: 1728px) and (min-height: 1117px) and (max-height: 1117px) and (device-pixel-ratio: 2),
+       screen and (min-width: 1728px) and (max-width: 1728px) and (min-height: 1117px) and (max-height: 1117px) {
+  .om-oss-container,
+  .om-oss-title {
+    margin-right: 8rem !important;
+  }
+  /* Services sidebar: nudge slightly left on 16" MacBook */
+  .sidebar-widget {
+    right: -17rem !important;
+  }
+}
+
+/* Responsive sidebar positioning for MacBook 13-inch and similar screens */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  /* Prevent horizontal scrolling on MacBook */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .sidebar-widget {
+    right: -16rem !important; /* Move from -18rem to -12rem */
+  }
+
+  .sidebar-widget.w-72 {
+    width: 10rem !important; /* Make review widget narrower but still wide enough */
+    right: calc(-16rem + 97px) !important; /* Move 10px to the right */
+  }
+
+  .sidebar-widget.w-64 {
+    width: 16rem !important; /* Keep original w-64 width */
+    right: calc(-16rem - 10px) !important; /* Move to the right to fit */
+  }
+
+  /* Adjust iframe height and width for review widget only */
+  .sidebar-widget.w-72 iframe {
+    height: 1000px !important; /* More reasonable height */
+    width: 18rem !important; /* Match the widget width */
+  }
+
+  /* Ensure header navigation items stay in one row on MacBook - only for high DPI screens */
+  .header-nav-link {
+    white-space: nowrap !important;
+    /* Remove font-size override - let it use default size on regular screens */
+  }
+}
+
+/* Specific font size reduction only for high-DPI MacBook screens */
+@media (min-width: 1024px) and (max-width: 1440px) and (-webkit-device-pixel-ratio: 2) {
+  .header-nav-link {
+    font-size: 0.9875rem !important; /* 15.8px - almost normal size */
+  }
+}
 
 /* Hide scrollbar for horizontal scrolling */
 .scrollbar-hide {
@@ -273,13 +387,13 @@ body {
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
   }
-  
+
   /* Override any positioning when JavaScript sets fixed positioning */
   .pac-container[style*="position: fixed"] {
     position: fixed !important;
     z-index: 10000 !important;
   }
-  
+
   /* Ensure dropdown doesn't go off screen */
   .pac-container {
     max-width: calc(100vw - 16px) !important;
