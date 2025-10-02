@@ -345,7 +345,7 @@ export default function KontorsflyttPage() {
             </div>
           </div>
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto relative content-with-sidebar content-narrow">
+            <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto relative">
               <motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
                 {/* Main content sections */}
                 {(locale === 'sv' ? [
