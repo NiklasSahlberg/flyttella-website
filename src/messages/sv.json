@@ -250,8 +250,7 @@
         }
       ]
     }
-  }
-  ,
+  },
   "flyttstadning": {
     "hero": {
       "title": "Professionell flyttstädning",
@@ -264,6 +263,72 @@
       "title": "Professionell hemstädning i Stockholm",
       "subtitle": "Regelbunden städning anpassad efter dina behov",
       "description": "Vi levererar trygg och noggrann hemstädning med RUT-avdrag. Begär en offert snabbt och enkelt."
+    }
+  },
+  "magasinering": {
+    "sidebar": {
+      "tunglyft": {
+        "title": "Piano & tunglyft",
+        "description": "Experter på att flytta pianon och tunga föremål säkert.",
+        "readMore": "Läs mer"
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Säker montering och demontering av möbler och vitvaror.",
+        "readMore": "Läs mer"
+      },
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Miljövänlig bortforsling och återvinning av oönskade saker.",
+        "readMore": "Läs mer"
+      }
+    }
+  },
+  "utlandsflytt": {
+    "services": {
+      "title": "Våra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Professionell städning med nöjd kund-garanti för en smidig överlämning.",
+        "descriptionExtended": "Vi säkerställer att din gamla bostad uppfyller alla krav. Noggrann städning av kök, badrum, golv och ytor.",
+        "readMore": "Läs mer"
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Säker och försäkrad förvaring av dina tillhörigheter.",
+        "descriptionExtended": "Torra, larmade utrymmen med flexibla villkor för korta eller långa perioder.",
+        "readMore": "Läs mer"
+      },
+      "packhjälp": {
+        "title": "Packhjälp",
+        "description": "Omsorgsfull packning med rätt material för att skydda dina saker.",
+        "descriptionMobile": "Vi erbjuder komplett packning och uppackning för att spara tid.",
+        "descriptionExtended": "Vår utbildade personal packar ömtåliga och värdefulla föremål med professionella metoder för säker transport.",
+        "readMore": "Läs mer"
+      },
+      "allServices": {
+        "title": "Upptäck alla våra tjänster",
+        "description": "Vi hjälper dig med allt från flytt till städning och förvaring.",
+        "movingServices": "Se flyttjänster",
+        "cleaningServices": "Se städtjänster"
+      }
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Montering",
+        "description": "Säker montering och demontering av möbler och vitvaror.",
+        "readMore": "Läs mer"
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Säker förvaring av dina ägodelar i torra, larmade utrymmen.",
+        "readMore": "Läs mer"
+      },
+      "barhjalp": {
+        "title": "Bärhjälp",
+        "description": "Professionell bärhjälp för tunga och otympliga föremål.",
+        "readMore": "Läs mer"
+      }
     }
   }
 } 

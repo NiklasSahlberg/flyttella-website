@@ -249,42 +249,35 @@ export default function BemanningPage() {
 					</div>
 				</div>
 
-				{/* What is Bemanning Section - matching kontorsflytt structure */}
-				<section id="content" className="py-0 md:py-16 bg-white">
-					<div className="container mx-auto px-4">
-						<div className="max-w-6xl mx-auto relative">
-							{/* Sidebar service cards removed as requested */}
-
-										{/* Reco Widget - Positioned absolutely to the right (desktop) */}
-										<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[14.25rem] w-72 z-40 sidebar-widget">
-								<div className="sticky top-8">
-									<iframe src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5" className="w-full h-[1000px] border-0" title="Flyttella recensioner" />
-								</div>
-							</div>
-
-							{/* Sidebar Service Cards */}
-							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1250px] w-64 sidebar-widget">
-								<div className="sticky top-8">
-									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏢</span><h3 className="text-xl font-bold text-white">Kontorsflytt</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Professionell flytt av kontor och företag. Vi säkerställer minimal driftstopp och säker hantering av all utrustning.</p>
-										<div className="mt-auto relative"><Link href="/kontorsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-									</div>
-								</div>
-							</div>
-							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1525px] w-64 sidebar-widget">
-								<div className="sticky top-8">
-									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">Kontorsstädning</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Regelbunden städning av kontor och arbetsplatser. Vi håller ditt kontor rent och professionellt för dina anställda och kunder.</p>
-										<div className="mt-auto relative"><Link href="/kontorsstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-									</div>
-								</div>
-							</div>
-
-							<motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
+                {/* What is Bemanning Section - standardized with sidebar */}
+                <section id="content" className="relative py-0 md:py-16 bg-white">
+                    {/* Page-anchored right sidebar */}
+                    <div className="hidden lg:block absolute right-0 top-[20rem] w-72">
+                        <div className="flex flex-col gap-4">
+                            <iframe src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5" className="w-full h-[1100px] border-0" title="Flyttella recensioner" />
+                            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col mt-0">
+                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏢</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Kontorsflytt' : 'Office moving'}</h3></div>
+                                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Professionell flytt av kontor med minimal driftstopp.' : 'Professional office moving with minimal downtime.'}</p>
+                                <div className="mt-auto relative"><Link href="/kontorsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                            </div>
+                            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
+                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧹</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Kontorsstädning' : 'Office cleaning'}</h3></div>
+                                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Regelbunden städning för en ren arbetsmiljö.' : 'Regular cleaning for a clean work environment.'}</p>
+                                <div className="mt-auto relative"><Link href="/kontorsstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                            </div>
+                            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
+                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">📦</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Magasinering' : 'Storage'}</h3></div>
+                                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Trygga lagringslösningar vid behov.' : 'Secure storage solutions when needed.'}</p>
+                                <div className="mt-auto relative"><Link href="/tjanster" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Se tjänster' : 'See services'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-6xl mx-auto relative content-with-sidebar content-narrow">
+                            <motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
 								{/* Main content sections */}
 								{([
 									{

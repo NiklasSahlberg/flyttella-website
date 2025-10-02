@@ -447,186 +447,43 @@ export default function Bohagsflytt() {
         </div>
 
         {/* What is Bohagsflytt Section */}
-        <section id="content" className="py-0 md:py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto relative">
-              {/* Reco Widget - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[10rem] w-72 sidebar-widget">
-                <div className="sticky top-8">
-                  <iframe 
-                    src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
-                    className="w-full h-[1000px] border-0"
-                    title="Flyttella recensioner"
-                                />
-                              </div>
-                            </div>
-              
-              {/* Mobile Reco Widget removed per request */}
-              
-              {/* Montering Card - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1635px] w-64 sidebar-widget">
-                <div className="sticky top-8">
-                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-                  {/* Background pattern */}
-                    <div className="absolute inset-0 opacity-10 pointer-events-none"
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
-                  />
-                    <div className="flex items-center gap-3 mb-4 relative">
-                      <span className="text-4xl">🔧</span>
-                      <h3 className="text-xl font-bold text-white">
-                      Montering
-                    </h3>
-                  </div>
-                    <p className="text-sm text-gray-100 mb-4 relative">
-                    Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.
-                  </p>
-                  <div className="mt-auto relative">
-                      <Link 
-                        href="/montering" 
-                        className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
-                      >
-                        Läs mer
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                  </div>
-                  </div>
-                </div>
+        <section id="content" className="relative py-0 md:py-16 bg_white">
+          {/* Page-anchored right sidebar */}
+          <div className="hidden lg:block absolute right-0 top-[13.5rem] w-72">
+            <div className="flex flex-col gap-4">
+              <iframe 
+                src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
+                className="w-full h-[1100px] border-0"
+                title="Flyttella recensioner"
+              />
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col mt-[33rem]">
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text_white">{locale === 'sv' ? 'Montering' : 'Assembly'}</h3></div>
+                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.' : 'Safe assembly and disassembly of furniture and appliances. We ensure everything is mounted correctly and safely.'}</p>
+                <div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
               </div>
-              
-              {/* Tunglyft Card - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1915px] w-64 sidebar-widget">
-                <div className="sticky top-8">
-                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-                  {/* Background pattern */}
-                    <div className="absolute inset-0 opacity-10 pointer-events-none"
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
-                  />
-                    <div className="flex items-center gap-3 mb-4 relative">
-                      <span className="text-4xl">🎹</span>
-                      <h3 className="text-xl font-bold text-white">
-                      Tunglyft
-                    </h3>
-                  </div>
-                    <p className="text-sm text-gray-100 mb-4 relative">
-                    Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.
-                  </p>
-                  <div className="mt-auto relative">
-                      <Link 
-                        href="/piano-tunglyft" 
-                        className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
-                      >
-                        Läs mer
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                  </div>
-                  </div>
-                </div>
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Tunglyft' : 'Heavy lifting'}</h3></div>
+                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.' : 'Specialised moving and lifting of heavy, bulky items like pianos, safes and machinery.'}</p>
+                <div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
               </div>
-              
-              {/* Bärhjälp Card - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[2180px] w-64 sidebar-widget">
-                <div className="sticky top-8">
-                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-                  {/* Background pattern */}
-                    <div className="absolute inset-0 opacity-10 pointer-events-none"
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
-                  />
-                    <div className="flex items-center gap-3 mb-4 relative">
-                      <span className="text-4xl">💪</span>
-                      <h3 className="text-xl font-bold text-white">
-                      Bärhjälp
-                    </h3>
-                  </div>
-                    <p className="text-sm text-gray-100 mb-4 relative">
-                    Extra hjälp vid flytt för tunga och stora föremål. Vi hjälper dig med det tunga lyftet.
-                  </p>
-                  <div className="mt-auto relative">
-                      <Link 
-                        href="/barhjalp" 
-                        className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
-                      >
-                        Läs mer
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                  </div>
-                  </div>
-                </div>
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">💪</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Bärhjälp' : 'Carrying assistance'}</h3></div>
+                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Extra hjälp vid flytt för tunga och stora föremål. Vi hjälper dig med det tunga lyftet.' : 'Extra help for heavy and large items during moves. We handle the heavy lifting.'}</p>
+                <div className="mt-auto relative"><Link href="/barhjalp" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
               </div>
-              
-              {/* Bortforsling Card - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[2440px] w-64 sidebar-widget">
-                <div className="sticky top-8">
-                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-                  {/* Background pattern */}
-                    <div className="absolute inset-0 opacity-10 pointer-events-none"
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
-                  />
-                    <div className="flex items-center gap-3 mb-4 relative">
-                      <span className="text-4xl">🗑️</span>
-                      <h3 className="text-xl font-bold text-white">
-                      Bortforsling
-                    </h3>
-                  </div>
-                    <p className="text-sm text-gray-100 mb-4 relative">
-                    Professionell bortforsling av möbler och bohag som inte längre behövs. Miljövänlig hantering.
-                  </p>
-                  <div className="mt-auto relative">
-                      <Link 
-                        href="/bortforsling" 
-                        className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm"
-                      >
-                        Läs mer
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                  </div>
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items_center gap-3 mb-4 relative"><span className="text-4xl">🗑️</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Bortforsling' : 'Disposal'}</h3></div>
+                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Professionell bortforsling av möbler och bohag som inte längre behövs. Miljövänlig hantering.' : 'Professional disposal of furniture and belongings you no longer need. Eco-friendly handling.'}</p>
+                <div className="mt-auto relative"><Link href="/bortforsling" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+              </div>
             </div>
-                  </div>
-                  </div>
-
+          </div>
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto relative content-with-sidebar content-narrow">
               {/* Main content - Centered */}
                 <motion.div
                 className="space-y-12 md:space-y-16"
@@ -1382,8 +1239,8 @@ export default function Bohagsflytt() {
                               <li key="3">Boka flyttfirma och städning.</li>,
                               <li key="4">Beställ flyttkartonger.</li>
                             ] : [
-                              <li key="1">Make a checklist.</li>,
-                              <li key="2">Clear out unnecessary things.</li>,
+                              <li key="1"><strong>Book moving company in good time:</strong> Make sure you get the date that suits you best.</li>,
+                              <li key="2"><strong>Clean and sort:</strong> Go through your things and throw away, sell or donate what you don't need.</li>,
                               <li key="3">Book moving company and cleaning.</li>,
                               <li key="4">Order moving boxes.</li>
                             ]}

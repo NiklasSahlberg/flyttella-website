@@ -133,112 +133,100 @@ export default function Utlandsflytt() {
         </div>
 
         {/* What is Utlandsflytt Section */}
-        <section id="content" className="py-0 md:py-16 bg-white">
+        <section id="content" className="relative py-0 md:py-16 bg-white">
+          {/* Page-anchored right sidebar */}
+          <div className="hidden lg:block absolute right-0 top-[27rem] w-72">
+            <div className="flex flex-col gap-4">
+              <iframe src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5" className="w-full h-[1100px] border-0" title="Flyttella recensioner" />
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col mt-60">
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Montering' : 'Assembly'}</h3></div>
+                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.' : 'Safe assembly and disassembly of furniture and appliances. We ensure everything is mounted correctly and safely.'}</p>
+                <div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+              </div>
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏢</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Magasinering' : 'Storage'}</h3></div>
+                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Säker förvaring av dina ägodelar i torra, larmade utrymmen med försäkring.' : 'Secure storage of your belongings in dry, alarmed, insured facilities.'}</p>
+                <div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+              </div>
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">📦</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Bärhjälp' : 'Carrying assistance'}</h3></div>
+                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Professionell bärhjälp för tunga och otympliga föremål. Vi hjälper dig med det tunga lyftet.' : 'Professional carrying help for heavy and bulky items. We handle the heavy lifting.'}</p>
+                <div className="mt-auto relative"><Link href="/barhjalp" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+              </div>
+            </div>
+          </div>
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto relative">
-              {/* Reco Widget - Positioned absolutely to the right */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[19rem] w-72 sidebar-widget">
-                <div className="sticky top-8">
-                  <iframe src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5" className="w-full h-[1000px] border-0" title="Flyttella recensioner" />
-                </div>
-              </div>
-
-              {/* Sidebar Service Cards */}
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1560px] w-64 sidebar-widget">
-                <div className="sticky top-8">
-                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-                    <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                    <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">{t('utlandsflytt.sidebar.montering.title')}</h3></div>
-                    <p className="text-sm text-gray-100 mb-4 relative">{t('utlandsflytt.sidebar.montering.description')}</p>
-                    <div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('utlandsflytt.sidebar.montering.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-                  </div>
-                </div>
-              </div>
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1845px] w-64 sidebar-widget">
-                <div className="sticky top-8">
-                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-                    <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                    <div className="flex items-center gap-3 mb-4 relative"><span className="text-4l">📦</span><h3 className="text-xl font-bold text-white">{t('utlandsflytt.sidebar.packning.title')}</h3></div>
-                    <p className="text-sm text-gray-100 mb-4 relative">{t('utlandsflytt.sidebar.packning.description')}</p>
-                    <div className="mt-auto relative"><Link href="/packning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('utlandsflytt.sidebar.packning.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-                  </div>
-                </div>
-              </div>
-              <div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[2105px] w-64 sidebar-widget">
-                <div className="sticky top-8">
-                  <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-                    <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                    <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🧽</span><h3 className="text-xl font-bold text-white">{t('utlandsflytt.sidebar.flyttstadning.title')}</h3></div>
-                    <p className="text-sm text-gray-100 mb-4 relative">{t('utlandsflytt.sidebar.flyttstadning.description')}</p>
-                    <div className="mt-auto relative"><Link href="/flyttstadning" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('utlandsflytt.sidebar.flyttstadning.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Content blocks */}
-              {([
-                { title: t('utlandsflytt.content.whatIsTitle'), content: (
-                  <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8">
-                    {t('utlandsflytt.content.whatIsDescription')}
-                  </p>
-                ), icon: '🌍' },
-                { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/under_flytt.jpg" alt="Utlandsflytt" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
-                { title: t('utlandsflytt.content.pricingTitle'), content: (<>
-                  <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">{t('utlandsflytt.content.pricingDescription')}</p>
-                  <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;{t('utlandsflytt.content.pricingTestimonial')}&quot;</p><p className="italic text-gray-700 mt-2">- {t('utlandsflytt.content.testimonialAuthor')}</p></div>
-                </>), icon: '💸' },
-                { title: t('utlandsflytt.content.includesTitle'), content: (
-                  <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">{t('utlandsflytt.content.includesDescription')}</p>
-                ), icon: '📦' },
-                { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/coupleMoving.png" alt={t('utlandsflytt.services.title')} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 30%' }} /></div>), icon: '' },
-                { title: t('utlandsflytt.content.bookingTitle'), content: (<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8 md:mb-12">{t('utlandsflytt.content.bookingDescription')}</p>), icon: '📅' },
-                { title: t('utlandsflytt.content.checklistTitle'), content: (<div className="px-4 md:px-0"><ul className="list-disc pl-5 space-y-3 md:space-y-2">
-                  {locale === 'sv' ? (
-                    <>
-                      <li>Boka flyttfirma i god tid: Säkerställ att du får det datum som passar dig bäst.</li>
-                      <li>Rensa och sortera: Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li>
-                      <li>Beställ flyttkartonger: Låna eller köp tillräckligt med kartonger och packmaterial.</li>
-                      <li>Packa smart: Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.</li>
-                      <li>Adressändra och meddela viktiga kontakter: Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.</li>
-                      <li>Boka flyttstädning: Se till att bostaden är ordentligt städad inför överlämning.</li>
-                      <li>Plocka ner gardiner, lampor och hyllor: Förbered så mycket som möjligt innan flyttdagen.</li>
-                      <li>Packa en "första natten-låda": Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.</li>
-                      <li>Dubbelkolla allt på flyttdagen: Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.</li>
-                      <li>Pass, visum och uppehållstillstånd: Säkerställ giltighet och rätt intyg för alla i hushållet.</li>
-                      <li>Inventarielista och tullvärden: Lista bohaget och förbered tullvärden enligt destinationslandets krav.</li>
-                      <li>Införselregler: Kontrollera vad som får tas in (t.ex. livsmedel, växter, batterier) och om tillstånd krävs.</li>
-                      <li>Internationell försäkring: Se att försäkringen täcker långdistans vägtransport och hela flyttkedjan.</li>
-                    </>
-                  ) : (
-                    <>
-                      <li>Book moving company in good time: Ensure you get the date that suits you best.</li>
-                      <li>Clean and sort: Go through your things and throw away, sell or donate what you don't need.</li>
-                      <li>Order moving boxes: Borrow or buy enough boxes and packing materials.</li>
-                      <li>Pack smart: Mark boxes with content and room. Pack heavy things in small boxes and light things in large ones. We also offer packing help as an option - contact us for more information.</li>
-                      <li>Change address and notify important contacts: Report move to Tax Agency, insurance company, bank, electricity company and other suppliers.</li>
-                      <li>Book moving cleaning: Make sure the home is properly cleaned before handover.</li>
-                      <li>Take down curtains, lamps and shelves: Prepare as much as possible before moving day.</li>
-                      <li>Pack a "first night box": Put in the most important: clothes, toiletries, chargers and important papers.</li>
-                      <li>Double check everything on moving day: Check that nothing is left, that all windows and doors are locked and that keys are left according to agreement.</li>
-                      <li>Passport, visa and residence permit: Ensure validity and right certificates for everyone in the household.</li>
-                      <li>Inventory list and customs values: List household goods and prepare customs values according to destination country's requirements.</li>
-                      <li>Import rules: Check what can be brought in (e.g. food, plants, batteries) and if permits are required.</li>
-                      <li>International insurance: Make sure the insurance covers long-distance road transport and the entire moving chain.</li>
-                    </>
-                  )}
-                </ul></div>), icon: '' },
-              ] as { title: string; content: any; icon: string }[]).map((section, idx) => (
-                <motion.div key={idx} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                  <div className="max-w-6xl mx-auto">
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0F172A] mb-4 md:mb-6 group-hover:text-[#10B981] transition-colors duration-300 text-left md:text-center px-4">{section.title}</h3>
-                    {typeof section.content === 'string' ? (
-                      <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">{section.content}</p>
+            <div className="max-w-6xl mx-auto relative content-with-sidebar content-narrow">
+              {/* Service Cards Grid */}
+              <div className="max-w-6xl mx-auto relative">
+                {/* Content blocks */}
+                {([
+                  { title: t('utlandsflytt.content.whatIsTitle'), content: (
+                    <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8">
+                      {t('utlandsflytt.content.whatIsDescription')}
+                    </p>
+                  ), icon: '🌍' },
+                  { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/under_flytt.jpg" alt="Utlandsflytt" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
+                  { title: t('utlandsflytt.content.pricingTitle'), content: (<>
+                    <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">{t('utlandsflytt.content.pricingDescription')}</p>
+                    <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;{t('utlandsflytt.content.pricingTestimonial')}&quot;</p><p className="italic text-gray-700 mt-2">- {t('utlandsflytt.content.testimonialAuthor')}</p></div>
+                  </>), icon: '💸' },
+                  { title: t('utlandsflytt.content.includesTitle'), content: (
+                    <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">{t('utlandsflytt.content.includesDescription')}</p>
+                  ), icon: '📦' },
+                  { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/coupleMoving.png" alt={t('utlandsflytt.services.title')} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 30%' }} /></div>), icon: '' },
+                  { title: t('utlandsflytt.content.bookingTitle'), content: (<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8 md:mb-12">{t('utlandsflytt.content.bookingDescription')}</p>), icon: '📅' },
+                  { title: t('utlandsflytt.content.checklistTitle'), content: (<div className="px-4 md:px-0"><ul className="list-disc pl-5 space-y-3 md:space-y-2">
+                    {locale === 'sv' ? (
+                      <>
+                        <li>Boka flyttfirma i god tid: Säkerställ att du får det datum som passar dig bäst.</li>
+                        <li>Rensa och sortera: Gå igenom dina saker och släng, sälj eller skänk det du inte behöver.</li>
+                        <li>Beställ flyttkartonger: Låna eller köp tillräckligt med kartonger och packmaterial.</li>
+                        <li>Packa smart: Märk kartonger med innehåll och rum. Packa tunga saker i små kartonger och lätta saker i stora. Vi erbjuder också packhjälp som ett tillval - kontakta oss för mer information.</li>
+                        <li>Adressändra och meddela viktiga kontakter: Anmäl flytt till Skatteverket, försäkringsbolag, bank, elbolag och andra leverantörer.</li>
+                        <li>Boka flyttstädning: Se till att bostaden är ordentligt städad inför överlämning.</li>
+                        <li>Plocka ner gardiner, lampor och hyllor: Förbered så mycket som möjligt innan flyttdagen.</li>
+                        <li>Packa en "första natten-låda": Lägg i det viktigaste: kläder, hygienartiklar, laddare och viktiga papper.</li>
+                        <li>Dubbelkolla allt på flyttdagen: Kontrollera att inget är kvar, att alla fönster och dörrar är låsta och att nycklar lämnas enligt överenskommelse.</li>
+                        <li>Pass, visum och uppehållstillstånd: Säkerställ giltighet och rätt intyg för alla i hushållet.</li>
+                        <li>Inventarielista och tullvärden: Lista bohaget och förbered tullvärden enligt destinationslandets krav.</li>
+                        <li>Införselregler: Kontrollera vad som får tas in (t.ex. livsmedel, växter, batterier) och om tillstånd krävs.</li>
+                        <li>Internationell försäkring: Se att försäkringen täcker långdistans vägtransport och hela flyttkedjan.</li>
+                      </>
                     ) : (
-                      <div className="text-gray-700 leading-relaxed text-base md:text-lg lg:text-xl">{section.content}</div>
+                      <>
+                        <li>Book moving company in good time: Ensure you get the date that suits you best.</li>
+                        <li>Clean and sort: Go through your things and throw away, sell or donate what you don't need.</li>
+                        <li>Order moving boxes: Borrow or buy enough boxes and packing materials.</li>
+                        <li>Pack smart: Mark boxes with content and room. Pack heavy things in small boxes and light things in large ones. We also offer packing help as an option - contact us for more information.</li>
+                        <li>Change address and notify important contacts: Report move to Tax Agency, insurance company, bank, electricity company and other suppliers.</li>
+                        <li>Book moving cleaning: Make sure the home is properly cleaned before handover.</li>
+                        <li>Take down curtains, lamps and shelves: Prepare as much as possible before moving day.</li>
+                        <li>Pack a "first night box": Put in the most important: clothes, toiletries, chargers and important papers.</li>
+                        <li>Double check everything on moving day: Check that nothing is left, that all windows and doors are locked and that keys are left according to agreement.</li>
+                        <li>Passport, visa and residence permit: Ensure validity and right certificates for everyone in the household.</li>
+                        <li>Inventory list and customs values: List household goods and prepare customs values according to destination country's requirements.</li>
+                        <li>Import rules: Check what can be brought in (e.g. food, plants, batteries) and if permits are required.</li>
+                        <li>International insurance: Make sure the insurance covers long-distance road transport and the entire moving chain.</li>
+                      </>
                     )}
-                  </div>
-                </motion.div>
-              ))}
+                  </ul></div>), icon: '' },
+                ] as { title: string; content: any; icon: string }[]).map((section, idx) => (
+                  <motion.div key={idx} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
+                    <div className="max-w-6xl mx-auto">
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0F172A] mb-4 md:mb-6 group-hover:text-[#10B981] transition-colors duration-300 text-left md:text-center px-4">{section.title}</h3>
+                      {typeof section.content === 'string' ? (
+                        <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">{section.content}</p>
+                      ) : (
+                        <div className="text-gray-700 leading-relaxed text-base md:text-lg lg:text-xl">{section.content}</div>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

@@ -279,5 +279,71 @@
       "subtitle": "Regular cleaning tailored to your needs",
       "description": "We deliver safe and thorough home cleaning with RUT deductions and cleaning guarantee. Quote in 1 minute."
     }
+  },
+  "magasinering": {
+    "sidebar": {
+      "tunglyft": {
+        "title": "Piano & heavy lifting",
+        "description": "Experts in moving pianos and heavy items safely.",
+        "readMore": "Read more"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Safe assembly and disassembly of furniture and appliances.",
+        "readMore": "Read more"
+      },
+      "bortforsling": {
+        "title": "Disposal",
+        "description": "Environmentally responsible removal and recycling of unwanted items.",
+        "readMore": "Read more"
+      }
+    }
+  },
+  "utlandsflytt": {
+    "services": {
+      "title": "Our main services",
+      "flyttstadning": {
+        "title": "Move out cleaning",
+        "description": "Professional cleaning with satisfaction guarantee for a smooth handover.",
+        "descriptionExtended": "We ensure your old home meets all requirements. Detailed cleaning of kitchen, bathroom, floors and surfaces.",
+        "readMore": "Read more"
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure, insured storage for your belongings.",
+        "descriptionExtended": "Dry, alarmed facilities with flexible terms for short or long periods.",
+        "readMore": "Read more"
+      },
+      "packhjälp": {
+        "title": "Packing help",
+        "description": "Careful packing with the right materials to protect your belongings.",
+        "descriptionMobile": "We offer complete packing and unpacking to save you time.",
+        "descriptionExtended": "Our trained staff pack fragile and valuable items with professional methods for safe transport.",
+        "readMore": "Read more"
+      },
+      "allServices": {
+        "title": "Discover all our services",
+        "description": "We help with everything from moving to cleaning and storage.",
+        "movingServices": "See moving services",
+        "cleaningServices": "See cleaning services"
+      }
+    },
+    "sidebar": {
+      "montering": {
+        "title": "Assembly",
+        "description": "Safe assembly and disassembly of furniture and appliances.",
+        "readMore": "Read more"
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your belongings in dry, alarmed facilities.",
+        "readMore": "Read more"
+      },
+      "barhjalp": {
+        "title": "Carrying assistance",
+        "description": "Professional carrying help for heavy and bulky items.",
+        "readMore": "Read more"
+      }
+    }
   }
 }

@@ -240,7 +240,7 @@ function HappyCustomerLottie() {
 }
 
 export default function PianoTunglyftPage() {
-	const { t } = useLanguage();
+	const { t, locale } = useLanguage();
 	const [showFullAboutText, setShowFullAboutText] = useState(false);
 	const [showFullExperienceText, setShowFullExperienceText] = useState(false);
 	const [currentCard, setCurrentCard] = useState(0);
@@ -390,52 +390,38 @@ export default function PianoTunglyftPage() {
         </div>
           </div>
 
-				{/* What is Piano & Tunglyft Section with Sidebar (SEO-optimized) */}
-				<section id="content" className="py-0 md:py-16 bg-white">
+                {/* What is Piano & Tunglyft Section with Sidebar (SEO-optimized) */}
+                <section id="content" className="relative py-0 md:py-16 bg-white">
+                    {/* Sidebar anchored to page right, scrolls with section (not fixed) */}
+                    <div className="hidden lg:block absolute right-0 top-[20rem] w-72">
+                        <div className="flex flex-col gap-4">
+                            <iframe 
+                                src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
+                                className="w-full h-[1100px] border-0"
+                                title="Flyttella recensioner"
+                            />
+                            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col mt-40">
+                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Magasinering' : 'Storage'}</h3></div>
+                                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Säker förvaring av dina ägodelar i våra moderna lagerlokaler med övervakning och försäkring.' : 'Secure storage for your belongings in modern, monitored and insured facilities.'}</p>
+                                <div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                            </div>
+                            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
+                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Montering' : 'Assembly'}</h3></div>
+                                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.' : 'Safe assembly and disassembly of furniture and appliances. We ensure everything is mounted correctly and safely.'}</p>
+                                <div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                            </div>
+                            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
+                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">💪</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Bärhjälp' : 'Carrying assistance'}</h3></div>
+                                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Professionell bärhjälp för tunga och otympliga föremål. Vi hjälper dig att flytta det som kräver extra kraft och kunskap.' : 'Professional carrying help for heavy and bulky items. We help move items requiring extra strength and expertise.'}</p>
+                                <div className="mt-auto relative"><Link href="/barhjalp" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                            </div>
+                        </div>
+                    </div>
 					<div className="container mx-auto px-4">
-						<div className="max-w-6xl mx-auto relative">
-							{/* Sidebar: Reviews widget (sticky) */}
-							<div className="hidden lg:block absolute -right-72 top-[14rem] w-72">
-								<div className="sticky top-8">
-									<iframe 
-										src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
-										className="w-full h-[1000px] border-0"
-										title="Flyttella recensioner"
-									/>
-            </div>
-          </div>
-
-							{/* Sidebar Service Cards */}
-							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1310px] w-64 sidebar-widget">
-								<div className="sticky top-8">
-									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">Magasinering</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Säker förvaring av dina ägodelar i våra moderna lagerlokaler med övervakning och försäkring.</p>
-										<div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-									</div>
-								</div>
-							</div>
-							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1560px] w-64 sidebar-widget">
-								<div className="sticky top-8">
-									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">Montering</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.</p>
-										<div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-									</div>
-								</div>
-							</div>
-							<div className="hidden lg:block absolute -right-72 xl:-right-72 lg:-right-48 top-[1835px] w-64 sidebar-widget">
-								<div className="sticky top-8">
-									<div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col min-h-[180px] h-full">
-										<div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-										<div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">💪</span><h3 className="text-xl font-bold text-white">Bärhjälp</h3></div>
-										<p className="text-sm text-gray-100 mb-4 relative">Professionell bärhjälp för tunga och otympliga föremål. Vi hjälper dig att flytta det som kräver extra kraft och kunskap.</p>
-										<div className="mt-auto relative"><Link href="/barhjalp" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">Läs mer<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-									</div>
-								</div>
-							</div>
+                        <div className="max-w-6xl mx-auto relative content-with-sidebar content-narrow">
 
 							{/* Main content - Centered (matching bortforsling) */}
 							<motion.div
