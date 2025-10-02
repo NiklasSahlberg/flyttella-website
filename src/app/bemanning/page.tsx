@@ -699,7 +699,7 @@ export default function BemanningPage() {
 				</section>
 
 				{/* Additional Service Cards - desktop only */}
-                <section className="py-4 bg-white hidden lg:block">
+                <section className="py-4 bg-white hidden lg:block mb-6 md:mb-10">
                     <div className="container mx-auto px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className="grid grid-cols-3 gap-6">
