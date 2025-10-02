@@ -252,7 +252,7 @@ const staggerContainer = {
 };
 
 export default function BarhjalpPage() {
-	const { t } = useLanguage();
+	const { t, locale } = useLanguage();
 	const [showFullAboutText, setShowFullAboutText] = React.useState(false);
 	const [currentCard, setCurrentCard] = React.useState(0);
 	const [showFullExperienceText, setShowFullExperienceText] = React.useState(false);
@@ -384,38 +384,11 @@ export default function BarhjalpPage() {
 					</div>
 				</div>
 
-				{/* What is Barhjalp Section with Sidebar (SEO-optimized) */}
+				{/* What is Barhjalp Section */}
                 <section id="content" className="relative py-0 md:py-16 bg-white">
-                    {/* Sidebar anchored to page right, scrolls with section (not fixed) */}
-                    <div className="hidden lg:block absolute right-0 top-[18rem] w-72">
-                        <div className="flex flex-col gap-4">
-                            <iframe 
-                                src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5"
-                                className="w-full h-[1100px] border-0"
-                                title="Flyttella recensioner"
-                            />
-                            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col mt-32">
-                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏬</span><h3 className="text-xl font-bold text-white">{t('barhjalp.sidebar.magasinering.title')}</h3></div>
-                                <p className="text-sm text-gray-100 mb-4 relative">{t('barhjalp.sidebar.magasinering.description')}</p>
-                                <div className="mt-auto relative"><Link href="/magasinering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('barhjalp.sidebar.magasinering.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-                            </div>
-                            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
-                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🔧</span><h3 className="text-xl font-bold text-white">{t('barhjalp.sidebar.montering.title')}</h3></div>
-                                <p className="text-sm text-gray-100 mb-4 relative">{t('barhjalp.sidebar.montering.description')}</p>
-                                <div className="mt-auto relative"><Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('barhjalp.sidebar.montering.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-                            </div>
-                            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
-                                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">{t('barhjalp.sidebar.tunglyft.title')}</h3></div>
-                                <p className="text-sm text-gray-100 mb-4 relative">{t('barhjalp.sidebar.tunglyft.description')}</p>
-                                <div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{t('barhjalp.sidebar.tunglyft.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-                            </div>
-                        </div>
-                    </div>
+                    {/* Sidebar removed - service cards moved to horizontal layout below */}
                     <div className="container mx-auto px-4">
-                        <div className="max-w-6xl mx-auto relative content-with-sidebar content-narrow">
+                        <div className="max-w-7xl mx-auto relative">
 
 							{/* Main content - Centered (matching bohagsflytt) */}
 							<motion.div
@@ -491,7 +464,7 @@ export default function BarhjalpPage() {
 					/>
 					
 					{/* Centered content */}
-					<div className="relative z-10 max-w-[90rem] mx-auto px-8 md:px-8 lg:px-16 om-oss-container">
+					<div className="relative z-10 max-w-[90rem] mx-auto px-4 md:px-8 lg:px-16 om-oss-container">
 						<motion.div
 							initial="initial"
 							whileInView="animate"
@@ -499,13 +472,13 @@ export default function BarhjalpPage() {
 						>
 							{/* Mobile image above title */}
 							<div className="lg:hidden mb-6">
-								<div className="relative w-full h-96 rounded-3xl overflow-hidden">
+								<div className="relative w-full h-80 rounded-3xl overflow-hidden">
 									<Image
 										src="/personalpicture.jpg"
 										alt="Om Flyttella"
 										fill
 										className="object-cover"
-										style={{ objectPosition: 'center 70%' }}
+										style={{ objectPosition: 'center center' }}
 										sizes="(max-width: 768px) 100vw, 50vw"
 										priority={true}
 									/>
@@ -565,27 +538,29 @@ export default function BarhjalpPage() {
 									</div>
 									
 									{/* Mobile: Show shortened text with expand option - SEO optimized for bärhjälp */}
-									<div className="lg:hidden space-y-4">
-										<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+									<div className="lg:hidden space-y-4 text-center">
+										<p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
 											{t('barhjalp.about.description1')}
 										</p>
 										
 										{!showFullAboutText && (
-											<button
-												onClick={() => setShowFullAboutText(true)}
-												className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
-											>
-												{t('barhjalp.about.readMore')}
-												<svg 
-													xmlns="http://www.w3.org/2000/svg" 
-													className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-													fill="none" 
-													viewBox="0 0 24 24" 
-													stroke="currentColor"
+											<div className="text-center">
+												<button
+													onClick={() => setShowFullAboutText(true)}
+													className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-base underline decoration-2 underline-offset-4"
 												>
-													<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-												</svg>
-											</button>
+													{t('barhjalp.about.readMore')}
+													<svg 
+														xmlns="http://www.w3.org/2000/svg" 
+														className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+														fill="none" 
+														viewBox="0 0 24 24" 
+														stroke="currentColor"
+													>
+														<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+													</svg>
+												</button>
+											</div>
 										)}
 										
 										{showFullAboutText && (
@@ -595,28 +570,28 @@ export default function BarhjalpPage() {
 												transition={{ duration: 0.5 }}
 												className="space-y-4 mt-4"
 											>
-												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+												<p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
 													{t('barhjalp.about.description2')}
 												</p>
-												<p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+												<p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
 													{t('barhjalp.about.description3')}
 												</p>
 												
 												{/* Läs mer om oss link - Mobile only when expanded */}
 												<motion.div
-													className="pt-6"
+													className="pt-6 text-left"
 													initial={{ opacity: 0 }}
 													animate={{ opacity: 1 }}
 													transition={{ duration: 0.5, delay: 0.3 }}
 												>
 													<Link 
 														href="/om-oss" 
-														className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+														className="inline-flex items-center text-base text-[#0F172A] hover:text-[#10B981] transition-colors font-bold underline decoration-2 underline-offset-4"
 													>
 														{t('barhjalp.about.readMoreAbout')}
 														<svg 
 															xmlns="http://www.w3.org/2000/svg" 
-															className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+															className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
 															fill="none" 
 															viewBox="0 0 24 24" 
 															stroke="currentColor"
@@ -902,8 +877,8 @@ export default function BarhjalpPage() {
 												stroke="currentColor"
 											>
 												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-											</svg>
-              </Link>
+              </svg>
+									</Link>
 									</motion.div>
 								</div>
 							</motion.div>
@@ -912,9 +887,90 @@ export default function BarhjalpPage() {
         </div>
       </section>
 
+      {/* Additional Service Cards - Previously in Sidebar */}
+      <section className="py-0 bg-white hidden lg:block">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* Bortforsling Card */}
+              <motion.div
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full min-h-[200px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items-center gap-2 mb-3 relative">
+                  <span className="text-2xl">🗑️</span>
+                  <h3 className="text-lg font-bold text-white">{locale === 'sv' ? 'Bortforsling' : 'Disposal'}</h3>
+                </div>
+                <p className="text-xs text-gray-100 mb-4 relative">{locale === 'sv' ? 'Professionell bortforsling av möbler och bohag som inte längre behövs. Miljövänlig hantering.' : 'Professional disposal of furniture and belongings you no longer need. Eco-friendly handling.'}</p>
+                <div className="mt-auto relative">
+                  <Link href="/bortforsling" className="inline-flex items-center bg-white text-[#0F172A] px-3 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-xs">
+                    {locale === 'sv' ? 'Läs mer' : 'Read more'}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </motion.div>
+
+              {/* Montering Card */}
+              <motion.div
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full min-h-[200px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items-center gap-2 mb-3 relative">
+                  <span className="text-2xl">🔧</span>
+                  <h3 className="text-lg font-bold text-white">{t('barhjalp.sidebar.montering.title')}</h3>
+                </div>
+                <p className="text-xs text-gray-100 mb-4 relative">{t('barhjalp.sidebar.montering.description')}</p>
+                <div className="mt-auto relative">
+                  <Link href="/montering" className="inline-flex items-center bg-white text-[#0F172A] px-3 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-xs">
+                    {t('barhjalp.sidebar.montering.readMore')}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </motion.div>
+
+              {/* Tunglyft Card */}
+              <motion.div
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full min-h-[200px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                <div className="flex items-center gap-2 mb-3 relative">
+                  <span className="text-2xl">🎹</span>
+                  <h3 className="text-lg font-bold text-white">{t('barhjalp.sidebar.tunglyft.title')}</h3>
+                </div>
+                <p className="text-xs text-gray-100 mb-4 relative">{t('barhjalp.sidebar.tunglyft.description')}</p>
+                <div className="mt-auto relative">
+                  <Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-3 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-xs">
+                    {t('barhjalp.sidebar.tunglyft.readMore')}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 				{/* Se alla våra tjänster Section */}
 				<motion.section 
-					className="py-12 md:py-24 bg-white text-[#0F172A] relative overflow-hidden"
+					className="py-12 md:py-12 bg-white text-[#0F172A] relative overflow-hidden"
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.8 }}

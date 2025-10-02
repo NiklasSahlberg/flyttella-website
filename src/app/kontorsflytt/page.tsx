@@ -320,32 +320,8 @@ export default function KontorsflyttPage() {
 
         {/* What is Kontorsflytt Section */}
         <section id="content" className="relative py-0 md:py-16 bg-white">
-          {/* Page-anchored right sidebar */}
-          <div className="hidden lg:block absolute right-0 top-[26rem] w-72">
-            <div className="flex flex-col gap-4">
-              <iframe src="https://widget.reco.se/v2/venues/4038580/vertical/large?inverted=false&border=false&reviews=5" className="w-full h-[1100px] border-0" title="Flyttella recensioner" />
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col mt-4">
-                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🏠</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Bohagsflytt' : 'Household moving'}</h3></div>
-                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Trygg bohagsflytt för privatpersoner.' : 'Safe household moving for individuals.'}</p>
-                <div className="mt-auto relative"><Link href="/bohagsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-              </div>
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
-                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🎹</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Piano & Tunglyft' : 'Piano & heavy lifting'}</h3></div>
-                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Säker hantering av tunga föremål.' : 'Safe handling of heavy items.'}</p>
-                <div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-              </div>
-              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col">
-                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                <div className="flex items-center gap-3 mb-4 relative"><span className="text-4xl">🌍</span><h3 className="text-xl font-bold text-white">{locale === 'sv' ? 'Utlandsflytt' : 'International moving'}</h3></div>
-                <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Experter på logistik och tull.' : 'Experts in logistics and customs.'}</p>
-                <div className="mt-auto relative"><Link href="/utlandsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
-              </div>
-            </div>
-          </div>
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto relative">
+            <div className="max-w-7xl mx-auto relative">
               <motion.div className="space-y-12 md:space-y-16" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
                 {/* Main content sections */}
                 {(locale === 'sv' ? [
@@ -481,6 +457,7 @@ export default function KontorsflyttPage() {
           </div>
         </section>
 
+       
         {/* Om Flyttella Section */}
         <motion.section 
           className="relative overflow-hidden" 
@@ -628,9 +605,40 @@ export default function KontorsflyttPage() {
           </div>
         </section>
 
+         {/* Additional Service Cards - desktop only */}
+         <section className="py-4 bg-white hidden lg:block">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-3 gap-6">
+                {/* Bohagsflytt */}
+                <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-5 shadow-lg text-white flex flex-col h-full" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
+                  <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                  <div className="flex items-center gap-3 mb-4 relative"><span className="text-3xl">🏠</span><h3 className="text-lg font-bold text-white">{locale === 'sv' ? 'Bohagsflytt' : 'Household moving'}</h3></div>
+                  <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Trygg bohagsflytt för privatpersoner.' : 'Safe household moving for individuals.'}</p>
+                  <div className="mt-auto relative"><Link href="/bohagsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                </motion.div>
+                {/* Piano & Tunglyft */}
+                <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-5 shadow-lg text-white flex flex-col h-full" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
+                  <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                  <div className="flex items-center gap-3 mb-4 relative"><span className="text-3xl">🎹</span><h3 className="text-lg font-bold text-white">{locale === 'sv' ? 'Piano & Tunglyft' : 'Piano & heavy lifting'}</h3></div>
+                  <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Säker hantering av tunga föremål.' : 'Safe handling of heavy items.'}</p>
+                  <div className="mt-auto relative"><Link href="/piano-tunglyft" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                </motion.div>
+                {/* Utlandsflytt */}
+                <motion.div className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-5 shadow-lg text-white flex flex-col h-full" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }}>
+                  <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                  <div className="flex items-center gap-3 mb-4 relative"><span className="text-3xl">🌍</span><h3 className="text-lg font-bold text-white">{locale === 'sv' ? 'Utlandsflytt' : 'International moving'}</h3></div>
+                  <p className="text-sm text-gray-100 mb-4 relative">{locale === 'sv' ? 'Experter på logistik och tull.' : 'Experts in logistics and customs.'}</p>
+                  <div className="mt-auto relative"><Link href="/utlandsflytt" className="inline-flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-sm">{locale === 'sv' ? 'Läs mer' : 'Read more'}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Features Section */}
         <motion.section 
-          className="py-12 md:py-24 bg-white text-[#0F172A] relative overflow-hidden"
+          className="py-12 md:py-12 bg-white text-[#0F172A] relative overflow-hidden"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}

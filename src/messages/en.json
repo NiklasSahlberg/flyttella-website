@@ -208,7 +208,21 @@
       "expertise": "We know that moving house can be difficult and stressful, but helping you move is our area of expertise.",
       "quality": "If you are looking for a quality removal service at reasonable prices then you have come to the right place! After many years in the business, we can promise you reliable service at a low price. After all, moving should be easy, and we make sure it is.",
       "comprehensive": "It doesn't matter if it's an apartment, a holiday home or a whole villa! We help you with the whole process! From disassembly, packing, packaging, transport, unpacking to furniture placement.",
-      "customized": "Tell us what you need help with and we'll find a smart solution tailored to your needs."
+      "customized": "Tell us what you need help with and we'll find a smart solution tailored to your needs.",
+      "whatIsTitle": "What is household removal?",
+      "whatIsDescription": "A household removal is a complete move of all your belongings from one home to another. It includes everything from small items and personal belongings to large furniture, electronics and special items. We take care of the entire process from start to finish with professional care and safety. Our experienced staff ensures that all your valuable belongings are transported safely and arrive undamaged at your new home.",
+      "imageAlt": "Professional moving staff working on household removal",
+      "pricingTitle": "How much does a household removal cost?",
+      "pricingDescription": "The price of a household removal varies depending on several factors such as living space, floor, lift, parking distance and specific needs. We always offer fixed prices with no hidden fees and give you a quick quote based on your exact requirements.",
+      "testimonial": "Flyttella made our move so easy! Professional, punctual and good value. Can highly recommend them.",
+      "bohag2010Title": "What is household removal 2010?",
+      "bohag2010Description": "Household removal 2010 refers to Swedish legislation that regulates tenants' rights when moving. The law ensures that tenants have the right to compensation for moving costs and that the landlord should help with the move. We at Flyttella help you navigate these rules and ensure that your move follows all relevant regulations.",
+      "boxesTitle": "Moving boxes",
+      "boxesDescription": "We offer free loan of moving boxes and all necessary packing materials for your move. Our boxes are of high quality and we have different sizes to suit all types of belongings. We also help you with packing if you wish, so that everything is packed safely and efficiently.",
+      "packingTipsAlt": "Packing tips for a smooth move",
+      "bookingTitle": "Book removal help in good time",
+      "bookingDescription": "To ensure you get the date that suits you best, we recommend booking your move as early as possible. We offer flexible booking options and can often adapt to your needs. Contact us to discuss your requirements and get a personal quote.",
+      "checklistTitle": "Moving checklist"
     },
     "process": {
       "title": "Our process",
@@ -342,6 +356,30 @@
       "barhjalp": {
         "title": "Carrying assistance",
         "description": "Professional carrying help for heavy and bulky items.",
+        "readMore": "Read more"
+      }
+    }
+  },
+  "barhjalp": {
+    "sidebar": {
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your belongings in dry, alarmed facilities.",
+        "readMore": "Read more"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Safe assembly and disassembly of furniture and appliances.",
+        "readMore": "Read more"
+      },
+      "tunglyft": {
+        "title": "Heavy lifting",
+        "description": "Specialised moving and lifting of heavy, bulky items like pianos, safes and machinery.",
+        "readMore": "Read more"
+      },
+      "bortforsling": {
+        "title": "Disposal",
+        "description": "Professional disposal of furniture and belongings you no longer need. Eco-friendly handling.",
         "readMore": "Read more"
       }
     }

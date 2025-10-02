@@ -1291,6 +1291,13 @@
     }
   },
   "barhjalp": {
+    "sidebar": {
+      "bortforsling": {
+        "title": "Disposal",
+        "description": "Professional disposal of furniture and belongings you no longer need. Eco-friendly handling.",
+        "readMore": "Read more"
+      }
+    },
     "hero": {
       "title": "Moving Help",
       "titleDesktop": "Moving Help in Stockholm",

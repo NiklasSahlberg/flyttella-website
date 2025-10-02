@@ -1290,6 +1290,13 @@
     }
   },
   "barhjalp": {
+    "sidebar": {
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Professionell bortforsling av möbler och bohag som inte längre behövs. Miljövänlig hantering.",
+        "readMore": "Läs mer"
+      }
+    },
     "hero": {
       "title": "Bärhjälp",
       "titleDesktop": "Bärhjälp i Stockholm",

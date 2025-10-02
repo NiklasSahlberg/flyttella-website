@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +16,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
 }
 
 /* MacBook 14.2 inch optimization - 80% zoom for better readability */
@@ -263,47 +263,6 @@ body {
   .header-nav-link {
     white-space: nowrap !important;
     /* Remove font-size override - let it use default size on regular screens */
-  }
-}
-
-/* Responsive right sidebar column for large screens */
-@media (min-width: 1024px) {
-  /* Reserve space on the right for the sidebar so centered content never overlaps */
-  .content-with-sidebar {
-    max-width: calc(100% - 20rem) !important; /* shrink available width by sidebar width */
-  }
-  /* Slightly narrower main content on large screens */
-  .content-narrow {
-    max-width: 60rem !important; /* ~960px */
-  }
-  /* Nudge content slightly to the right on large screens */
-  .content-nudge-right { }
-
-  /* Fixed sidebar column anchored to the viewport's right edge */
-  .sidebar-fixed {
-    position: fixed !important;
-    right: 0 !important;
-    top: 8rem; /* below header */
-    width: 18rem; /* 288px */
-    height: calc(100vh - 10rem); /* leave some room at bottom */
-    z-index: 40;
-    pointer-events: auto;
-  }
-
-  /* Scrollable inner stack of widgets/cards */
-  .sidebar-scroll {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    height: 100%;
-    overflow-y: auto;
-    padding-right: 0.5rem; /* space for scrollbar */
-  }
-
-  /* Ensure iframes or large elements inside the sidebar don't exceed width */
-  .sidebar-fixed iframe,
-  .sidebar-fixed .sidebar-card {
-    max-width: 100%;
   }
 }
 
