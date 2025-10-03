@@ -41,6 +41,25 @@ export default function Footer() {
   const [showMoreFlytt, setShowMoreFlytt] = useState(false);
   const [showMoreStad, setShowMoreStad] = useState(false);
 
+  // Google Ads conversion on thank-you page
+  useEffect(() => {
+    const handleLoad = () => {
+      try {
+        if (window.location.href.includes('/tack')) {
+          (window as any).gtag?.('event', 'conversion', { send_to: 'AW-427570372/GRCNCPT-_KoDEMTp8MsB' });
+        }
+      } catch {}
+    };
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
   useEffect(() => {
     if (isModalOpen) {
       setLoading(true);
