@@ -342,13 +342,7 @@ export default function BemanningPage() {
                 
 				{/* Om Flyttella Section */}
 				<motion.section
-					className="relative overflow-hidden"
-					style={{
-						paddingTop: '8rem',
-						paddingBottom: '8rem',
-						borderTop: 'none',
-						boxShadow: 'none',
-					}}
+					className="relative overflow-hidden py-16 md:py-24 lg:py-32"
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.8 }}
@@ -360,7 +354,7 @@ export default function BemanningPage() {
 						style={{
 							backgroundImage: 'url(/efter_flytt.jpg)',
 							backgroundSize: 'cover',
-							backgroundPosition: 'right center',
+							backgroundPosition: 'center center',
 							zIndex: 0,
 						}}
 					/>
@@ -368,66 +362,70 @@ export default function BemanningPage() {
 					<div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
 					
 					{/* Top gradient fade */}
-					<div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none"
+					<div className="absolute top-0 left-0 w-full h-16 md:h-20 lg:h-24 z-30 pointer-events-none"
 						 style={{
-							background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+							background: 'linear-gradient(to bottom, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)'
 						 }}
 					/>
 					
 					{/* Bottom gradient fade */}
-					<div className="absolute bottom-0 left-0 w-full h-32 z-10 pointer-events-none"
+					<div className="absolute bottom-0 left-0 w-full h-16 md:h-20 lg:h-24 z-10 pointer-events-none"
 						 style={{
-							background: 'linear-gradient(to top, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+							background: 'linear-gradient(to top, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)'
 						 }}
 					/>
 					
 					{/* Centered content */}
-					<div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:mr-60 om-oss-container">
+					<div className="relative z-10 max-w-[90rem] mx-auto px-4 md:px-8 lg:px-16 om-oss-container">
 						<motion.div
 							initial="initial"
 							whileInView="animate"
 							viewport={{ once: true }}
 						>
-							{/* Mobile image above title to match main page */}
-							<div className="lg:hidden px-4 mb-6 -mx-8">
-								<div className="relative w-full h-96 rounded-3xl overflow-hidden">
-									<img
-										src="/personalpicture.jpg"
-										alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}
-										className="object-cover w-full h-full"
-										style={{ objectPosition: 'center 70%' }}
-									/>
-								</div>
+						{/* Mobile image above title to match main page */}
+						<div className="lg:hidden mb-6">
+							<div className="relative w-full h-80 rounded-3xl overflow-hidden">
+								<Image
+									src="/personalpicture.jpg"
+									alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}
+									fill
+									className="object-cover"
+									style={{ objectPosition: 'center 70%' }}
+									sizes="(max-width: 768px) 100vw, 50vw"
+								/>
 							</div>
+						</div>
 
-							<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center lg:mr-60 om-oss-title">{locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}</h3>
+						<h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center om-oss-title">{locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}</h3>
 
-							<div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
-								{/* Left: Image - desktop only */}
-								<motion.div
-									className="hidden lg:block w-full lg:w-1/5 relative lg:-ml-16 lg:pr-16"
-									initial="initial"
-									whileInView="animate"
-									viewport={{ once: true, amount: 0.2 }}
-									variants={fadeInUp}
-									transition={{ 
-										duration: 0.8,
-										delay: 0.2
-									}}
-								>
-									<div className="relative h-96 lg:h-full w-full lg:w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
-										<img
-											src="/omoss.jpg"
-											alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}
-											className="object-cover rounded-2xl w-full h-full"
-											style={{ objectPosition: 'center center', transform: 'scale(1.0)' }}
-										/>
-									</div>
-								</motion.div>
+						<div className="relative flex flex-col lg:flex-row items-stretch gap-8 md:gap-12 lg:gap-16">
+						{/* Left: Image - desktop only */}
+						<motion.div
+							className="hidden lg:block w-full lg:w-1/4 relative"
+							initial="initial"
+							whileInView="animate"
+							viewport={{ once: true, amount: 0.2 }}
+							variants={fadeInUp}
+							transition={{ 
+								duration: 0.8,
+								delay: 0.2
+							}}
+						>
+							<div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
+								<Image
+									src="/omoss.jpg"
+									alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}
+									fill
+									className="object-cover rounded-2xl"
+									style={{ objectPosition: 'center center' }}
+									sizes="(max-width: 768px) 100vw, 50vw"
+								/>
+							</div>
+						</motion.div>
 								
 								{/* Right: Text content */}
-								<motion.div
-									className="w-full lg:w-4/5 space-y-4 lg:space-y-8 flex flex-col justify-center"
+						<motion.div
+							className="w-full lg:w-3/4 space-y-4 md:space-y-6 lg:space-y-8 flex flex-col justify-center"
 									initial="initial"
 									whileInView="animate"
 									viewport={{ once: true, amount: 0.2 }}
@@ -527,10 +525,10 @@ export default function BemanningPage() {
 											delay: 0.6
 										}}
 									>
-										<Link 
-											href="/om-oss" 
-											className="inline-flex items-center text-[#0F172A] leading-relaxed text-xl underline decoration-2 underline-offset-4"
-										>
+							<Link 
+								href="/om-oss" 
+								className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-xl underline decoration-2 underline-offset-4"
+							>
 											{locale === 'sv' ? 'Läs mer om oss' : 'Read more about us'}
 											<svg 
 												xmlns="http://www.w3.org/2000/svg" 
