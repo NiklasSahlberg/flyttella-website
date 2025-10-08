@@ -65,6 +65,8 @@
       "heavyItems": "Heavy items",
       "delicateItems": "Delicate items",
       "additionalInfo": "Additional requests",
+      "additionalInfoOptional": "Additional requests (optional)",
+      "additionalInfoPlaceholder": "Here you can mention special requests or information",
       "contactInfo": "Contact Information",
       "name": "Name",
       "nameBusiness": "Company name",
@@ -463,7 +465,10 @@
     "contactUs": "Contact Us",
     "learnMore": "Learn More",
     "readMore": "Read More",
-    "language": "Language"
+    "language": "Language",
+    "yes": "Yes",
+    "no": "No",
+    "shouldEntireHomeBeCleaned": "Should the entire home be cleaned?"
   },
   "header": {
     "home": "Home",

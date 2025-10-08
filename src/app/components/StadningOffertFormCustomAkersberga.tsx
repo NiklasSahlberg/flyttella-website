@@ -578,8 +578,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
       if (!formData.phone.trim()) {
         newErrors.phone = t('hero.form.validation.enterPhone');
       }
-    } else if ((selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') && formData.wantsMovingHelp === 'Nej') {
-      // For "Flyttstädning" with "Nej", only validate contact fields
+    } else if ((selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') && (formData.wantsMovingHelp === 'Nej' || formData.wantsMovingHelp === 'No')) {
+      // For "Flyttstädning" with "Nej"/"No", only validate contact fields
       if (!formData.name.trim()) {
         newErrors.name = t('hero.form.validation.enterName');
       }
@@ -853,8 +853,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
         // For "Flyttstädning": step 0 -> 1 -> 2 -> 3 -> 4
         if (step < 4) {
           console.log('Proceeding to next step for Flyttstädning');
-          // If we're on step 3 and user selected "Ja" for moving help, redirect to FlyttOffertForm
-          if (step === 3 && formData.wantsMovingHelp === 'Ja') {
+          // If we're on step 3 and user selected "Ja"/"Yes" for moving help, redirect to FlyttOffertForm
+          if (step === 3 && (formData.wantsMovingHelp === 'Ja' || formData.wantsMovingHelp === 'Yes')) {
             console.log('Redirecting to FlyttOffertForm');
             // Store address data in sessionStorage to prefill in the moving form
             sessionStorage.setItem('cleaningFormAddress', JSON.stringify({
@@ -1438,7 +1438,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                     <div>
                       {/* Move Entire home radio group ABOVE area size */}
                       <div className="mt-0">
-                        <label className="block text-sm font-medium text-gray-700 mb-1"><strong>Ska hela bostaden städas?</strong></label>
+                        <label className="block text-sm font-medium text-gray-700 mb-1"><strong>{t('common.shouldEntireHomeBeCleaned')}</strong></label>
                         <div className="mt-2 flex space-x-6">
                           <div className="flex items-center">
                             <input
@@ -1451,7 +1451,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <label htmlFor="entireHome-yes" className="ml-2 text-sm text-gray-700">
-                              Ja
+                              {t('common.yes')}
                             </label>
                           </div>
                           <div className="flex items-center">
@@ -1465,7 +1465,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                               className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                             />
                             <label htmlFor="entireHome-no" className="ml-2 text-sm text-gray-700">
-                              Nej
+                              {t('common.no')}
                             </label>
                           </div>
                         </div>
@@ -1984,8 +1984,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                                 type="radio"
                                 id="moving-help-yes"
                                 name="wantsMovingHelp"
-                                value="Ja"
-                                checked={formData.wantsMovingHelp === 'Ja'}
+                                value={t('hero.form.options.yes')}
+                                checked={formData.wantsMovingHelp === t('hero.form.options.yes')}
                                 onChange={handleInputChange}
                                 className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                               />
@@ -1998,8 +1998,8 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                                 type="radio"
                                 id="moving-help-no"
                                 name="wantsMovingHelp"
-                                value="Nej"
-                                checked={formData.wantsMovingHelp === 'Nej'}
+                                value={t('hero.form.options.no')}
+                                checked={formData.wantsMovingHelp === t('hero.form.options.no')}
                                 onChange={handleInputChange}
                                 className="h-4 w-4 text-[#10B981] focus:ring-[#10B981] border-gray-300"
                               />
@@ -3076,13 +3076,13 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
                        <div>
                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                           <strong>Övriga önskemål (frivilligt)</strong>
+                           <strong>{t('hero.form.additionalInfoOptional')}</strong>
                          </label>
                          <textarea
                            name="additionalInfo"
                            value={formData.additionalInfo}
                            onChange={handleInputChange}
-                           placeholder="Här kan du nämna särskilda önskemål eller information"
+                           placeholder={t('hero.form.additionalInfoPlaceholder')}
                            rows={4}
                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black"
                            style={{ backgroundColor: 'white', color: 'black' }}
@@ -3092,7 +3092,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                    )}
                  </div>
                )}
-              {step === 4 && selectedCleaningType === 'Flyttstädning' && formData.wantsMovingHelp === 'Nej' && (
+              {step === 4 && (selectedCleaningType === 'Flyttstädning' || selectedCleaningType === 'Moving cleaning') && (formData.wantsMovingHelp === 'Nej' || formData.wantsMovingHelp === 'No') && (
                 <div className="space-y-6">
                   <h2 className="text-2xl font-bold text-[#0F172A] mb-6">{t('hero.form.contactInformation')}</h2>
                   
@@ -3164,12 +3164,12 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                       )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>Övriga önskemål (frivilligt)</strong></label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2"><strong>{t('hero.form.additionalInfoOptional')}</strong></label>
                       <textarea
                         name="additionalInfo"
                         value={formData.additionalInfo}
                         onChange={handleInputChange}
-                        placeholder="Här kan du nämna särskilda önskemål eller information"
+                        placeholder={t('hero.form.additionalInfoPlaceholder')}
                         rows={4}
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black"
                         style={{ backgroundColor: 'white', color: 'black' }}

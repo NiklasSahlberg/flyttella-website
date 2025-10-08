@@ -79,7 +79,10 @@
     "contactUs": "Kontakta oss",
     "learnMore": "Läs mer",
     "readMore": "Läs mer",
-    "language": "Språk"
+    "language": "Språk",
+    "yes": "Ja",
+    "no": "Nej",
+    "shouldEntireHomeBeCleaned": "Ska hela bostaden städas?"
   },
   "header": {
     "home": "Hem",

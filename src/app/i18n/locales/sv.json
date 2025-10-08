@@ -65,6 +65,8 @@
       "heavyItems": "Tunga föremål",
       "delicateItems": "Ömtåliga föremål",
       "additionalInfo": "Övriga önskemål",
+      "additionalInfoOptional": "Övriga önskemål (frivilligt)",
+      "additionalInfoPlaceholder": "Här kan du nämna särskilda önskemål eller information",
       "contactInfo": "Kontaktinformation",
       "name": "Namn",
       "nameBusiness": "Företagsnamn",
@@ -462,7 +464,10 @@
     "contactUs": "Kontakta oss",
     "learnMore": "Läs mer",
     "readMore": "Läs mer",
-    "language": "Språk"
+    "language": "Språk",
+    "yes": "Ja",
+    "no": "Nej",
+    "shouldEntireHomeBeCleaned": "Ska hela bostaden städas?"
   },
   "header": {
     "home": "Hem",

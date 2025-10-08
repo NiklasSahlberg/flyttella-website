@@ -76,7 +76,10 @@
     "contactUs": "Contact us at",
     "learnMore": "Read more",
     "readMore": "Read more",
-    "language": "Language"
+    "language": "Language",
+    "yes": "Yes",
+    "no": "No",
+    "shouldEntireHomeBeCleaned": "Should the entire home be cleaned?"
   },
   "header": {
     "home": "Home",
