@@ -7,9 +7,10 @@ import FlyttoffertForm from '../components/FlyttoffertForm';
 import ReviewsWidget from '../components/ReviewsWidget';
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Lottie from 'lottie-react';
 import { Variants } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface TipCardProps {
   title: string;
@@ -37,173 +38,762 @@ const TipCard: React.FC<TipCardProps> = ({ title, content, imageSrc, imageAlt, o
   </div>
 );
 
-export default function FlyttfirmaAkersbergaPage() {
-  const [openFAQ, setOpenFAQ] = useState<string | null>(null);
-
-  const toggleFAQ = (id: string) => {
-    setOpenFAQ(openFAQ === id ? null : id);
+// AutoSlidingCards component
+const AutoSlidingCards = () => {
+  const [currentCard, setCurrentCard] = useState(0);
+  const [showFullExperienceText, setShowFullExperienceText] = useState(false);
+  const autoIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchStartXRef = useRef<number | null>(null);
+  const touchCurrentXRef = useRef<number | null>(null);
+  
+  const restartAutoSlide = () => {
+    if (autoIntervalRef.current) clearInterval(autoIntervalRef.current);
+    autoIntervalRef.current = setInterval(() => {
+      setCurrentCard((prev) => (prev + 1) % 3);
+    }, 3000);
   };
 
-  // Animation variants
-  const variants = {
-    initial: { opacity: 0, y: 20 },
-    animate: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-      },
-    }),
+  useEffect(() => {
+    restartAutoSlide();
+    return () => {
+      if (autoIntervalRef.current) clearInterval(autoIntervalRef.current);
+    };
+  }, []);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+    touchCurrentXRef.current = null;
+  };
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchCurrentXRef.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = () => {
+    if (touchStartXRef.current == null || touchCurrentXRef.current == null) return;
+    const deltaX = touchCurrentXRef.current - touchStartXRef.current;
+    const threshold = 50; // px
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX < 0) {
+        setCurrentCard((prev) => (prev + 1) % 3);
+      } else {
+        setCurrentCard((prev) => (prev - 1 + 3) % 3);
+      }
+      restartAutoSlide();
+    }
+    touchStartXRef.current = null;
+    touchCurrentXRef.current = null;
   };
 
-  // Lottie component functions
-  function FillFormLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+  const cards = [
+    {
+      title: "Flyttar",
+      count: "8000+",
+      description: "uppdrag utförda",
+      delay: 0
+    },
+    {
+      title: "Städningar",
+      count: "7000+",
+      description: "uppdrag utförda",
+      delay: 1
+    },
+    {
+      title: "Månadsvis",
+      count: "500+",
+      description: "uppdrag per månad",
+      delay: 2
+    }
+  ];
+
+  return (
+    <>
+      {/* Background image absolutely positioned */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
+        style={{
+          backgroundImage: 'url(/backgroundpicture.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          zIndex: 0,
+        }}
+      />
+      {/* Mobile-specific background image */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
+        style={{
+          backgroundImage: 'url(/omoss.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center calc(40% - 40px)',
+          zIndex: 0,
+        }}
+      />
+      {/* Overlay absolutely positioned, full width */}
+      <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
+      
+      {/* Top gradient fade */}
+      <div className="absolute top-0 left-0 w-full h-32 z-15 pointer-events-none"
+           style={{
+             background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+           }}
+      />
+      
+      {/* Bottom gradient fade - Desktop only */}
+      <div className="absolute bottom-0 left-0 w-full h-32 z-30 pointer-events-none hidden md:block"
+           style={{
+             background: 'linear-gradient(to top, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
+           }}
+      />
+      
+      {/* Bottom gradient fade - mobile only, shorter */}
+      <div
+        className="absolute bottom-0 left-0 w-full h-24 md:h-48 z-30 pointer-events-none md:hidden"
+        style={{
+          background:
+            'linear-gradient(to top, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0) 100%)',
+        }}
+      />
+      
+      {/* Centered content only */}
+      <div className="relative z-20 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
+          
+          {/* Mobile: Auto-sliding cards */}
+          <div className="md:hidden mt-8">
+            <div className="relative overflow-hidden rounded-xl" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentCard * 100}%)` }}
+              >
+                {cards.map((card, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <motion.div 
+                      className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2"
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true, amount: 0.2 }}
+                      variants={fadeInUp}
+                      transition={{ duration: 0.8, delay: card.delay * 0.25 }}
+                    >
+                      {/* Background pattern */}
+                      <motion.div 
+                        className="absolute inset-0 opacity-10 pointer-events-none"
+                        initial={{ backgroundPosition: '0% 0%' }}
+                        animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                        transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                        style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                      />
+                      <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                        <motion.h2 className="text-lg font-bold mb-2 text-white text-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                          {card.title}
+                        </motion.h2>
+                        <motion.div className="text-3xl font-bold mb-2 text-white text-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                          {card.count}
+                        </motion.div>
+                        <motion.p className="text-white/90 text-sm text-center leading-relaxed" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                          {card.description}
+                        </motion.p>
+                      </div>
+                    </motion.div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Arrow controls */}
+              <button
+                type="button"
+                aria-label="Föregående"
+                onClick={() => { setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length); restartAutoSlide(); }}
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                  <path fillRule="evenodd" d="M15.78 19.28a.75.75 0 01-1.06 0l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 111.06 1.06L10.56 12l5.22 5.22a.75.75 0 010 1.06z" clipRule="evenodd" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                aria-label="Nästa"
+                onClick={() => { setCurrentCard((prev) => (prev + 1) % cards.length); restartAutoSlide(); }}
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-25 text-white/80 hover:text-white transition-colors p-2 -m-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                  <path fillRule="evenodd" d="M8.22 4.72a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06L13.44 12 8.22 6.78a.75.75 0 010-1.06z" clipRule="evenodd" />
+                </svg>
+              </button>
+              
+              {/* Dots indicator */}
+              <div className="flex justify-center mt-3 space-x-2">
+                {cards.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentCard(index)}
+                    className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                      index === currentCard ? 'bg-[#10B981]' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Desktop: Original grid layout */}
+          <div className="hidden md:grid mt-12 grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {cards.map((card, index) => (
+              <motion.div 
+                key={index}
+                className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                transition={{ duration: 0.8, delay: card.delay * 0.25 }}
+              >
+                {/* Background pattern */}
+                <motion.div 
+                  className="absolute inset-0 opacity-10 pointer-events-none"
+                  initial={{ backgroundPosition: '0% 0%' }}
+                  animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+                  transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+                  style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                />
+                <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                  <motion.h2 className="text-xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                    {card.title}
+                  </motion.h2>
+                  <motion.div className="text-4xl md:text-5xl font-bold mb-2 text-white" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                    {card.count}
+                  </motion.div>
+                  <motion.p className="text-white/90" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: card.delay * 0.25 }}>
+                    {card.description}
+                  </motion.p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Experience description text and badges side by side */}
+          <div className="mt-8 flex flex-col items-center justify-center gap-4">
+            {/* Experience description text - left side */}
+            <motion.div 
+              className="flex-1 max-w-4xl text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h4 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
+                Lokal erfarenhet som ger resultat i Åkersberga
+              </h4>
+              <p className="text-lg md:text-2xl text-[#0F172A] leading-relaxed mb-3 md:mb-4">
+                Med över 8000 flyttar och 7000 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. Vår erfarenhet i Åkersberga sträcker sig över alla områden och vi har hjälpt hundratals familjer och företag med deras flyttar.
+              </p>
+              {/* Mobile: Läs mer button */}
+              {!showFullExperienceText && (
+                <div className="md:hidden mb-3">
+                  <motion.button
+                    onClick={() => setShowFullExperienceText(true)}
+                    className="inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-lg underline decoration-2 underline-offset-4"
+                  >
+                    Läs mer
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </motion.button>
+                </div>
+              )}
+              {/* Mobile: Expanded text when Läs mer is clicked */}
+              {showFullExperienceText && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  transition={{ duration: 0.5 }}
+                  className="space-y-4 mt-4 md:hidden px-4 md:px-8"
+                >
+                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                    Som flyttfirma i Åkersberga har våra prestationer gett oss erkännande som en av områdets mest pålitliga flyttfirmor, med över 1000 positiva recensioner och återkommande kunder som fortsätter att lita på oss för sina flyttbehov.
+                  </p>
+                </motion.div>
+              )}
+              <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
+                Som flyttfirma i Åkersberga har våra prestationer gett oss erkännande som en av områdets mest pålitliga flyttfirmor, med över 1000 positiva recensioner och återkommande kunder som fortsätter att lita på oss för sina flyttbehov.
+              </p>
+            </motion.div>
+
+            {/* Recommended Company and 1000 Reviews badges under text */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
+              {/* Mobile: Pyramid layout */}
+              <div className="md:hidden flex flex-col items-center">
+                {/* Top badge - centered */}
+                <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
+                  <Image
+                    src="/1000reviewspicture.png"
+                    alt="1000+ positiva recensioner från kunder"
+                    width={200}
+                    height={200}
+                    className="object-contain h-36 w-36"
+                    priority={false}
+                  />
+                </motion.div>
+                {/* Bottom row - two badges */}
+                <div className="flex items-center justify-center gap-4">
+                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                    <Image
+                      src="/recommendedcompany2.png"
+                      alt="Rekommenderad flyttfirma - Flyttella"
+                      width={160}
+                      height={160}
+                      className="object-contain h-32 w-32"
+                      priority={false}
+                    />
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                    <Image
+                      src="/bestinswedenbadge-modified.png"
+                      alt="Top 10 flyttfirma - Flyttella"
+                      width={180}
+                      height={180}
+                      className="object-contain h-28 w-28"
+                      priority={false}
+                    />
+                  </motion.div>
+                </div>
+              </div>
+              
+              {/* Desktop: Original horizontal layout */}
+              <div className="hidden md:flex items-center justify-center gap-6">
+              <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                <Image
+                  src="/recommendedcompany2.png"
+                  alt="Rekommenderad flyttfirma - Flyttella"
+                  width={240}
+                  height={240}
+                  className="object-contain h-60 w-60"
+                  priority={false}
+                />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                <Image
+                  src="/1000reviewspicture.png"
+                  alt="1000+ positiva recensioner från kunder"
+                  width={260}
+                  height={260}
+                  className="object-contain h-64 w-64 mt-3"
+                  priority={false}
+                />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
+                <Image
+                  src="/bestinswedenbadge-modified.png"
+                  alt="Top 10 flyttfirma - Flyttella"
+                  width={300}
+                  height={300}
+                  className="object-contain h-48 w-48"
+                  priority={false}
+                />
+              </motion.div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+      
+      
+    </>
+  );
+};
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 }
+};
+
+// Lottie component functions
+function FillFormLottie() {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/fillform.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-14 h-14 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-14 h-14 mx-auto mb-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
 
   function FastLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/fast.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-14 h-14 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-14 h-14 mx-auto mb-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
 
   function PhoneCallLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/phonecall.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-20 h-20 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-20 h-20 mx-auto mb-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
 
   function SignFormLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/signform.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-20 h-20 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-20 h-20 mx-auto mb-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
 
   function MovingTruckLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/movingtruck.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-36 h-36 mx-auto mb-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-36 h-36 mx-auto mb-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
   
   function HappyCustomerLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/happycustomer.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-24 h-24 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-24 h-24 flex items-center justify-center -m-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
 
   function CashLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/cash.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-32 h-32 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-32 h-32 flex items-center justify-center -m-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
 
   function BoxesLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/boxes.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-24 h-24 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-24 h-24 flex items-center justify-center -m-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
 
   function InsuranceLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/insurance.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-24 h-24 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-24 h-24 flex items-center justify-center -m-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
 
   function ScheduleLottie() {
-    const [animationData, setAnimationData] = useState(null);
-    useEffect(() => {
+    const [animationData, setAnimationData] = React.useState(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+      if (isVisible) {
       fetch("/schedule2.json")
         .then((res) => res.json())
         .then(setAnimationData);
-    }, []);
-    if (!animationData) return null;
+      }
+    }, [isVisible]);
+
     return (
-      <div className="w-24 h-24 flex items-center justify-center -m-2">
-        <Lottie animationData={animationData} loop autoplay />
+      <div ref={ref} className="w-24 h-24 flex items-center justify-center -m-2">
+        {animationData && <Lottie animationData={animationData} loop autoplay />}
       </div>
     );
   }
@@ -217,6 +807,18 @@ export default function FlyttfirmaAkersbergaPage() {
       }, 1800);
       return () => clearInterval(interval);
     }, []);
+  
+    const variants = {
+      initial: { opacity: 0, y: 20 },
+      animate: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: i * 0.1,
+          duration: 0.5,
+        },
+      }),
+    };
   
     const insuranceLogos = (
       <div className="flex items-center justify-between w-full">
@@ -328,7 +930,7 @@ export default function FlyttfirmaAkersbergaPage() {
       <div className="w-full my-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
-            Vilka förmåner får du med Flyttella i Åkersberga?
+            Vilka fördelar får du med Flyttella i Åkersberga?
           </h2>
         </div>
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch justify-center w-full gap-0 md:gap-8">
@@ -368,49 +970,136 @@ export default function FlyttfirmaAkersbergaPage() {
     );
   }
 
+export default function FlyttfirmaAkersbergaPage() {
+  const { t, locale } = useLanguage();
+  const [openFAQ, setOpenFAQ] = useState<string | null>(null);
+  const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
+  const [expandedTipSection, setExpandedTipSection] = useState<string | null>(null);
+  const totalFeatureCards = 9;
+  const featureIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const featureTouchStartXRef = useRef<number | null>(null);
+  const featureTouchCurrentXRef = useRef<number | null>(null);
+
+  const toggleFAQ = (id: string) => {
+    setOpenFAQ(openFAQ === id ? null : id);
+  };
+
+  // Auto-sliding for feature cards
+  const restartFeatureAutoSlide = () => {
+    if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);
+    featureIntervalRef.current = setInterval(() => {
+      setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    restartFeatureAutoSlide();
+    return () => {
+      if (featureIntervalRef.current) clearInterval(featureIntervalRef.current);
+    };
+  }, []);
+
+  const handleFeatureTouchStart = (e: React.TouchEvent) => {
+    featureTouchStartXRef.current = e.touches[0].clientX;
+    featureTouchCurrentXRef.current = null;
+  };
+  const handleFeatureTouchMove = (e: React.TouchEvent) => {
+    featureTouchCurrentXRef.current = e.touches[0].clientX;
+  };
+  const handleFeatureTouchEnd = () => {
+    if (featureTouchStartXRef.current == null || featureTouchCurrentXRef.current == null) return;
+    const deltaX = featureTouchCurrentXRef.current - featureTouchStartXRef.current;
+    const threshold = 50; // px
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX < 0) {
+        setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards);
+      } else {
+        setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards);
+      }
+      restartFeatureAutoSlide();
+    }
+    featureTouchStartXRef.current = null;
+    featureTouchCurrentXRef.current = null;
+  };
+
+  // Animation variants
+  const variants = {
+    initial: { opacity: 0, y: 20 },
+    animate: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+      },
+    }),
+  };
+
   return (
     <main className="overflow-hidden">
       <div className="main-zoom">
         {/* Hero Section */}
-        <section className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          <div className="mx-auto px-24">
+        <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
+          {/* Mobile: Form only */}
+          <div className="md:hidden mx-auto px-4 pb-8">
+            <FlyttoffertForm mode="widget" backgroundImage="/akersberga.jpg" />
+          </div>
+          
+          {/* Mobile: Hero content after form */}
+          <div className="md:hidden mx-auto px-4 py-6">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 relative overflow-hidden">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{
+                  backgroundImage: 'url(/akersberga.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              />
+              <div className="relative z-10 text-center space-y-4">
+                <h1 className="text-4xl font-bold">
+                  Din pålitliga flyttfirma i Åkersberga
+                </h1>
+                <p className="text-xl">
+                  Vi erbjuder professionell flyttservice anpassad för Åkersbergas unika behov - från moderna lägenheter i centrum till villor i lugna villaområden.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Desktop: Full hero section */}
+          <div className="hidden md:block mx-auto px-16">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                  backgroundImage: 'url(/ostermalm.avif)',
+                  backgroundImage: 'url(/akersberga.jpg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
               />
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
-                  <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                  <h1 className="text-5xl md:text-6xl font-bold mb-8">
                     Din pålitliga flyttfirma i Åkersberga
                   </h1>
-                  <p className="text-xl md:text-2xl text-white/90 mb-8">
+                  <p className="text-2xl md:text-3xl mb-12">
                     Vi erbjuder professionell flyttservice anpassad för Åkersbergas unika behov - från moderna lägenheter i centrum till villor i lugna villaområden.
                   </p>
-
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
-                  <FlyttoffertForm mode="widget" />
+                  <FlyttoffertForm mode="widget" backgroundImage="/akersberga.jpg" />
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* Om Flyttella Section (copied from main page) */}
+        {/* Om Flyttella Section */}
         <motion.section
-          className="relative overflow-hidden"
-          style={{
-            paddingTop: '8rem',
-            paddingBottom: '8rem',
-            borderTop: 'none',
-            boxShadow: 'none',
-          }}
+          className="relative overflow-hidden py-16 md:py-24 lg:py-32"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -422,73 +1111,141 @@ export default function FlyttfirmaAkersbergaPage() {
             style={{
               backgroundImage: 'url(/efter_flytt.jpg)',
               backgroundSize: 'cover',
-              backgroundPosition: 'center 100%',
+              backgroundPosition: 'center center',
               zIndex: 0,
             }}
           />
           {/* Overlay absolutely positioned, full width */}
           <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
+          
           {/* Top gradient fade */}
-          <div className="absolute top-0 left-0 w-full h-16 z-30 pointer-events-none"
+          <div className="absolute top-0 left-0 w-full h-16 md:h-20 lg:h-24 z-30 pointer-events-none"
                style={{
                  background: 'linear-gradient(to bottom, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)'
                }}
           />
+          
           {/* Bottom gradient fade */}
-          <div className="absolute bottom-0 left-0 w-full h-16 z-30 pointer-events-none"
+          <div className="absolute bottom-0 left-0 w-full h-16 md:h-20 lg:h-24 z-10 pointer-events-none"
                style={{
                  background: 'linear-gradient(to top, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)'
                }}
           />
+          
+          {/* Mobile: Personal picture card above the section */}
+          <div className="lg:hidden mb-6 relative z-40">
+            <div className="relative w-full h-80 rounded-3xl overflow-hidden">
+              <Image
+                src="/personalpicture.jpg"
+                alt="Flyttella personal"
+                fill
+                className="object-cover rounded-3xl"
+                style={{ 
+                  objectPosition: 'center center'
+                }}
+                priority
+              />
+            </div>
+          </div>
+
           {/* Centered content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16">
+          <div className="relative z-40 max-w-[90rem] mx-auto px-4 md:px-8 lg:px-16">
             <motion.div
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Om Flyttella</h3>
-              <div className="space-y-8 max-w-6xl mx-auto">
-                {/* Full text content */}
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-8 md:mb-12 lg:mb-16 text-center">Om Flyttella</h3>
+              
+              {/* Text content with image on desktop */}
+              <div className="relative flex flex-col lg:flex-row items-stretch gap-8 md:gap-12 lg:gap-16">
+                {/* Left: Image - desktop only */}
                 <motion.div
+                  className="hidden lg:block w-full lg:w-1/4 relative"
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.2 }}
                   variants={variants}
                   transition={{ 
                     duration: 0.8,
-                    delay: 0 * 0.25
+                    delay: 0.2
                   }}
                 >
-                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
-                    Flyttella är din lokala flyttfirma i Åkersberga med lång erfarenhet av att hjälpa både privatpersoner och företag med flytt och städning i området. Vi har specialiserat oss på att erbjuda trygga, smidiga och prisvärda flyttjänster i Åkersberga – från lägenheter i centrum till villor i de naturnära omgivningarna.
-                  </p>
-                  <br />
-                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
-                    Det som gör oss unika som flyttfirma i Åkersberga är vårt fokus på tydliga villkor, fasta priser och personlig service. Vi erbjuder alltid gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flytten samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.
-                  </p>
-                  <br />
-                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
-                    Vi känner till Åkersbergas olika områden och kan anpassa våra flyttjänster efter just dina behov. Oavsett om du ska flytta inom Åkersberga, till eller från området, kan du lita på att vi hanterar din flytt med omsorg och effektivitet. Vår lokala expertis gör att vi kan erbjuda snabba och flexibla lösningar, oavsett om det gäller bohagsflytt, kontorsflytt eller flyttstädning.
-                  </p>
-                  <br />
-                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
-                    Vårt mål är att göra din flytt i Åkersberga så enkel och stressfri som möjligt. Vi erbjuder fri rådgivning, snabb offert och personlig kontakt genom hela processen. Flyttella har hjälpt över 8000 nöjda kunder och vi är stolta över vårt rykte som en pålitlig och professionell flyttfirma i Åkersberga.
-                  </p>
-                  <br />
-                  <p className="text-lg md:text-xl text-[#0F172A] leading-relaxed text-center font-bold">
-                    Kontakta oss idag för en kostnadsfri offert på flytt eller städning i Åkersberga – vi ser fram emot att hjälpa dig med din nästa flytt!
-                  </p>
-                  {/* Läs mer om oss link */}
+                  <div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
+                    <Image
+                      src="/omoss.jpg"
+                      alt="Om Flyttella"
+                      fill
+                      className="object-cover rounded-2xl"
+                      style={{ 
+                        objectPosition: 'center center'
+                      }}
+                      priority
+                    />
+                  </div>
+                </motion.div>
+                
+                {/* Right: Text content */}
+                <motion.div
+                  className="w-full lg:w-3/4 space-y-4 md:space-y-6 lg:space-y-8 flex flex-col justify-center"
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.2 }}
+                  variants={variants}
+                  transition={{ 
+                    duration: 0.8,
+                    delay: 0.4
+                  }}
+                >
+                  {/* Desktop: Always show full text */}
+                  <div className="hidden lg:block space-y-8">
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Flyttella är din lokala flyttfirma i Åkersberga med lång erfarenhet av att hjälpa både privatpersoner och företag med flytt och städning i området. Vi har specialiserat oss på att erbjuda trygga, smidiga och prisvärda flyttjänster i Åkersberga – från lägenheter i centrum till villor i de naturnära omgivningarna.
+                    </p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Det som gör oss unika som flyttfirma i Åkersberga är vårt fokus på tydliga villkor, fasta priser och personlig service. Vi erbjuder alltid gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flytten samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.
+                    </p>
+                    <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
+                      Vi känner till Åkersbergas olika områden och kan anpassa våra flyttjänster efter just dina behov. Oavsett om du ska flytta inom Åkersberga, till eller från området, kan du lita på att vi hanterar din flytt med omsorg och effektivitet. Vår lokala expertis gör att vi kan erbjuda snabba och flexibla lösningar.
+                    </p>
+                  </div>
+                  
+                  {/* Mobile: Show shortened text with expand option */}
+                  <div className="lg:hidden space-y-4 text-center">
+                    <p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
+                      Flyttella är din lokala flyttfirma i Åkersberga med lång erfarenhet av att hjälpa både privatpersoner och företag med flytt och städning i området. Vi har specialiserat oss på att erbjuda trygga, smidiga och prisvärda flyttjänster i Åkersberga.
+                    </p>
+                    
+                    {/* Läs mer button - Mobile */}
+                    <div className="text-center">
+                      <Link
+                        href="/om-oss"
+                        className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-base underline decoration-2 underline-offset-4"
+                      >
+                        Läs mer om oss
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                  
+                  {/* Läs mer om oss link - Desktop only */}
                   <motion.div
-                    className="mt-12 text-center"
+                    className="pt-6 hidden lg:block"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true, amount: 0.2 }}
                     variants={variants}
                     transition={{ 
                       duration: 0.8,
-                      delay: 0.5
+                      delay: 0.6
                     }}
                   >
                     <Link 
@@ -529,7 +1286,7 @@ export default function FlyttfirmaAkersbergaPage() {
         />
 
         {/* Redo att börja din flytt? */}
-        <section className="py-16 bg-white -mt-20 -mb-16">
+        <section className="py-16 bg-white mt-8 md:-mt-20 -mb-16">
           <div className="mx-auto px-4">
             <motion.div
               className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
@@ -588,39 +1345,32 @@ export default function FlyttfirmaAkersbergaPage() {
         </section>
 
         {/* Process and Features Section */}
-        <section className="section-padding bg-white relative overflow-hidden">
-          <div className="mx-auto px-24 relative z-10">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-8 md:p-10 mb-24 w-full">
+        <section className="section-padding bg-white relative overflow-hidden"
+          style={{ borderBottom: 'none', boxShadow: 'none' }}>
+          <div className="mx-auto px-0 md:px-24 relative z-10">
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4 md:p-8 lg:p-10 mb-6 md:mb-8 w-full relative">
               <div className="w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-8 text-center">
                   Vår Process
                 </h2>
 
                 {/* Pricing Info */}
-                <div className="text-center mb-8">
-                  <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-4">
-                    Vi arbetar med fasta priser för att ge dig trygghet och transparens i Åkersberga. 
-                    Det går även att komma överens om löpande priser för regelbundna flyttar i området.
-                  </p>
-                  <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-4">
+                <div className="text-center mb-4 md:mb-8">
+                  <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
                     Våra offerter är alltid baserade på dina specifika behov och omständigheter i Åkersberga. 
-                    Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation i Åkersberga. 
+                    Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation i Åkersberga, vi kan även besikta bostaden vid behov. 
                     Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och information vi får från dig som kund i Åkersberga. 
                     Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov i Åkersberga.
-                  </p>
-                  <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-8">
-                    Som en seriös flyttfirma i Åkersberga har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats. 
-                    Du kan vara trygg med att vi följer alla gällande regler och bestämmelser i Åkersberga. Vi erbjuder även professionell besiktning av din bostad i Åkersberga vid behov.
                   </p>
                 </div>
 
                 {/* Process Flow Section */}
-                <div className="mb-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Så fungerar det</h3>
+                <div className="mb-4 md:mb-8">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-8 text-center">Så fungerar det</h3>
                   <div className="relative w-full">
                     {/* Timeline connector line */}
                     <div className="absolute top-1/2 left-12 right-12 h-0.5 bg-white/20 -translate-y-1/2 hidden md:block"></div>
-                    <div className="grid grid-cols-1 md:grid-cols-6 gap-3 w-full">
+                    <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:gap-3 w-full items-stretch">
                       {[
                         {
                           icon: <FillFormLottie />,
@@ -635,49 +1385,50 @@ export default function FlyttfirmaAkersbergaPage() {
                           textClass: ""
                         },
                         {
-                          icon: <div className="ml-3 mt-8"><PhoneCallLottie /></div>,
-                          title: "Personlig kontakt",
-                          description: "Vi ringer samma dag eller dagen efter",
-                          containerClass: "-mt-7",
-                          textClass: ""
-                        },
-                        {
-                          icon: <div className="ml-6 mt-0"><SignFormLottie /></div>,
+                          icon: <div className="ml-4 md:ml-6"><SignFormLottie /></div>,
                           title: "Signera & bekräfta",
                           description: "Få bokningsbekräftelse direkt",
-                          containerClass: "-mt-6",
+                          containerClass: "md:-mt-6",
                           textClass: ""
                         },
                         {
-                          icon: <div className="mr-3"><MovingTruckLottie /></div>,
-                          title: "Flytt genomförd",
-                          description: "Vi tar hand om allt",
-                          containerClass: "-mt-14",
-                          textClass: "-mt-8",
+                          icon: <div className="md:ml-3 md:mt-8"><PhoneCallLottie /></div>,
+                          title: "Personlig kontakt",
+                          description: "Vi ringer samma dag eller dagen efter",
+                          containerClass: "md:-mt-7",
+                          textClass: ""
                         },
                         {
-                          icon: <div className="mt-0"><HappyCustomerLottie /></div>,
+                          icon: <div className="md:mr-3"><MovingTruckLottie /></div>,
+                          title: "Flytt genomförd",
+                          description: "Vi tar hand om allt",
+                          containerClass: "md:-mt-14",
+                          textClass: "md:-mt-8",
+                        },
+                        {
+                          icon: <div className="md:mt-0"><HappyCustomerLottie /></div>,
                           title: "Nöjd kund",
-                          description: "14 dagars nöjd kund garanti",
-                          containerClass: "-mt-6",
+                          description: "Återkommande kund",
+                          containerClass: "md:-mt-6",
                           textClass: ""
                         }
                       ].map((step, index) => (
                         <motion.div
                           key={index}
-                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 h-full"
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
+                          className="relative flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-2 md:p-4 h-full min-h-[160px] md:min-h-0"
+                          initial="initial"
+                          whileInView="animate"
                           viewport={{ once: true, amount: 0.2 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          variants={variants}
+                          custom={index}
                         >
                           {/* Timeline dot */}
                           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#10B981] rounded-full hidden md:block"></div>
                           <div className={`${step.containerClass || ''} w-full flex flex-col items-center justify-center`}>
-                            <div className="mb-2">{step.icon}</div>
+                            <div className="mb-1 md:mb-2 h-16 md:h-auto flex items-center justify-center">{step.icon}</div>
                             <div className={`flex flex-col items-center justify-center w-full ${step.textClass || ''}`}>
-                              <h4 className="text-white font-semibold text-base md:text-lg mb-1 text-center w-full">{step.title}</h4>
-                              <p className="text-white/80 text-sm md:text-base text-center w-full">{step.description}</p>
+                              <h4 className="text-white font-semibold text-sm md:text-base lg:text-lg mb-1 text-center w-full">{step.title}</h4>
+                              <p className="text-white/80 text-xs md:text-sm lg:text-base text-center w-full">{step.description}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -690,444 +1441,422 @@ export default function FlyttfirmaAkersbergaPage() {
           </div>
         </section>
 
+        
+
         {/* 5. Vår erfarenhet */}
         <motion.section
-          className="relative overflow-hidden"
+          className="relative overflow-hidden experience-section"
           style={{
-            paddingTop: '14rem',
-            paddingBottom: '6rem',
-            marginTop: '-8rem',
+            paddingTop: '15rem',
+            paddingBottom: '4rem',
+            marginTop: '-2rem',
             borderTop: 'none',
             boxShadow: 'none',
+            zIndex: 10,
           }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Background image absolutely positioned */}
-          <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: 'url(/backgroundpicture.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center 100%',
-              zIndex: 0,
-            }}
-          />
-          {/* Overlay absolutely positioned, full width */}
-          <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
-          
-          {/* Top gradient fade */}
-          <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none"
-               style={{
-                 background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)'
-               }}
-          />
-          
-          {/* Centered content only */}
-          <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">Vår erfarenhet</h3>
-              <div className="mt-12 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {/* Flyttar */}
-                <motion.div 
-                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={variants}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: 0 * 0.25
-                  }}
-                >
-                  {/* Background pattern */}
-                  <motion.div 
-                    className="absolute inset-0 opacity-10 pointer-events-none"
-                    initial={{ backgroundPosition: '0% 0%' }}
-                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
-                  />
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 
-                      className="text-xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={variants}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 0 * 0.25
-                      }}
-                    >
-                      Flyttar
-                    </motion.h2>
-                    <motion.div 
-                      className="text-4xl md:text-5xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={variants}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 0 * 0.25
-                      }}
-                    >
-                      <CountUp 
-                        end={8000} 
-                        duration={2.5}
-                        suffix="+"
-                        useEasing={true}
-                        enableScrollSpy={true}
-                        scrollSpyOnce={true}
-                      />
-                    </motion.div>
-                    <motion.p 
-                      className="text-white/90"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={variants}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 0 * 0.25
-                      }}
-                    >
-                      uppdrag utförda
-                    </motion.p>
-                  </div>
-                </motion.div>
-
-                {/* Städningar */}
-                <motion.div 
-                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={variants}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: 1 * 0.25
-                  }}
-                >
-                  {/* Background pattern */}
-                  <motion.div 
-                    className="absolute inset-0 opacity-10 pointer-events-none"
-                    initial={{ backgroundPosition: '0% 0%' }}
-                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
-                  />
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 
-                      className="text-xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={variants}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 1 * 0.25
-                      }}
-                    >
-                      Städningar
-                    </motion.h2>
-                    <motion.div 
-                      className="text-4xl md:text-5xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={variants}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 1 * 0.25
-                      }}
-                    >
-                      <CountUp 
-                        end={7000} 
-                        duration={2.5}
-                        suffix="+"
-                        useEasing={true}
-                        enableScrollSpy={true}
-                        scrollSpyOnce={true}
-                      />
-                    </motion.div>
-                    <motion.p 
-                      className="text-white/90"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={variants}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 1 * 0.25
-                      }}
-                    >
-                      uppdrag utförda
-                    </motion.p>
-                  </div>
-                </motion.div>
-
-                {/* Månadsvis */}
-                <motion.div 
-                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-6 shadow-lg text-white flex flex-col h-full"
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={variants}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: 2 * 0.25
-                  }}
-                >
-                  {/* Background pattern */}
-                  <motion.div 
-                    className="absolute inset-0 opacity-10 pointer-events-none"
-                    initial={{ backgroundPosition: '0% 0%' }}
-                    animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
-                  />
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                    <motion.h2 
-                      className="text-xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={variants}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 2 * 0.25
-                      }}
-                    >
-                      Månadsvis
-                    </motion.h2>
-                    <motion.div 
-                      className="text-4xl md:text-5xl font-bold mb-2 text-white"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={variants}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 2 * 0.25
-                      }}
-                    >
-                      <CountUp 
-                        end={500} 
-                        duration={2.5}
-                        suffix="+"
-                        useEasing={true}
-                        enableScrollSpy={true}
-                        scrollSpyOnce={true}
-                      />
-                    </motion.div>
-                    <motion.p 
-                      className="text-white/90"
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={variants}
-                      transition={{ 
-                        duration: 0.8,
-                        delay: 2 * 0.25
-                      }}
-                    >
-                      uppdrag per månad
-                    </motion.p>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Experience description text and badges side by side */}
-              <div className="mt-8 flex flex-col items-center justify-center gap-4">
-                {/* Experience description text - left side */}
-                <motion.div 
-                  className="flex-1 max-w-4xl text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <h4 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-                    Lokal erfarenhet som ger resultat i Åkersberga
-                  </h4>
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-4">
-                    Med över 8000 flyttar och 7000 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. 
-                    Vår erfarenhet i Åkersberga sträcker sig över alla områden från Margretelund till Österskär, och vi har hjälpt hundratals familjer och företag med deras flyttar i Åkersberga.
-                  </p>
-                  <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6">
-                    Som flyttfirma i Åkersberga har våra prestationer gett oss erkännande som en av områdets mest pålitliga flyttfirmor, med över 1000 positiva recensioner och 
-                    rekommendationer från nöjda kunder. Vi är stolta över att kunna erbjuda professionell flyttservice baserad på år av praktisk erfarenhet i Åkersberga.
-                  </p>
-                </motion.div>
-
-                {/* Recommended Company and 1000 Reviews badges under text */}
-                <div className="flex items-center justify-center gap-6">
-                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                    <Image
-                      src="/recommendedcompany2.png"
-                      alt="Rekommenderad flyttfirma - Flyttella"
-                      width={240}
-                      height={240}
-                      className="object-contain h-60 w-60"
-                      priority={false}
-                    />
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                    <Image
-                      src="/1000reviewspicture.png"
-                      alt="1000+ positiva recensioner från kunder"
-                      width={260}
-                      height={260}
-                      className="object-contain h-64 w-64 mt-3"
-                      priority={false}
-                    />
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                    <Image
-                      src="/bestinswedenbadge-modified.png"
-                      alt="Top 10 flyttfirma - Flyttella"
-                      width={300}
-                      height={300}
-                      className="object-contain h-48 w-48"
-                      priority={false}
-                    />
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-          
-          {/* Bottom gradient fade - enhanced to completely hide container lines */}
-          <div className="absolute bottom-0 left-0 w-full h-48 z-30 pointer-events-none"
-               style={{
-                 background: 'linear-gradient(to top, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0) 100%)'
-               }}
-          />
+          <AutoSlidingCards />
         </motion.section>
 
-        {/* Features Section */}
-        <div className="pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
-          <div className="mx-auto px-24">
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8">
-              <div className="flex flex-col lg:flex-row items-stretch gap-8 h-full">
-                {/* Left side - Features content */}
-                <div className="flex-[2] w-full">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center lg:text-left">Våra fördelar</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
-                    {[
-                      {
-                        icon: "💰",
-                        title: "Fast pris",
-                        description: "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
-                        link: "/priser"
-                      },
-                      {
-                        icon: "📋",
-                        title: "RUT-avdrag",
-                        description: "Vi hanterar allt pappersarbete för RUT-avdrag",
-                        link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
-                      },
-                      {
-                        icon: "📦",
-                        title: "Magasinering",
-                        description: "Säker magasinering av dina tillhörigheter i Åkersberga. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
-                        link: "/magasinering"
-                      },
-                      {
-                        icon: "⏰",
-                        title: "Omboka eller avboka kostnadsfritt",
-                        description: "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
-                        link: "/avbokning"
-                      },
-                      {
-                        icon: "✅",
-                        title: "Nöjd kund garanti",
-                        description: "14 dagars garanti på flyttstädning",
-                        link: "/garanti"
-                      },
-                      {
-                        icon: "🔒",
-                        title: "Trafiktillstånd och försäkring",
-                        description: "Alla nödvändiga tillstånd och försäkringar på plats",
-                        link: "/tillstand"
-                      },
-                      {
-                        icon: "🎓",
-                        title: "Utbildad personal",
-                        description: "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
+         {/* 6. Våra fördelar - Desktop only */}
+        {/* Responsive zoom wrapper for wide screens */}
+        <div className="responsive-zoom hidden md:block">
+          <div className="pt-8 md:pt-28" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
+            <div className="mx-auto px-0 md:px-24">
+              <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-none md:rounded-2xl p-4 md:p-8">
+                <div className="flex flex-col lg:flex-row items-stretch gap-4 md:gap-8 h-full">
+                  {/* Left side - Features content */}
+                  <div className="flex-[2] w-full md:flex-[2]">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 text-center lg:text-left">{locale === 'sv' ? 'Våra förmåner' : 'Our benefits'}</h2>
+                    
+                    {/* Mobile: Sliding carousel */}
+                    <div className="md:hidden">
+                    <div className="relative overflow-hidden rounded-xl" onTouchStart={handleFeatureTouchStart} onTouchMove={handleFeatureTouchMove} onTouchEnd={handleFeatureTouchEnd}>
+                        <div 
+                          className="flex transition-transform duration-500 ease-in-out"
+                          style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}
+                        >
+                          {[
+                            {
+                              icon: "💰",
+                              title: locale === 'sv' ? "Fast pris" : "Fixed price",
+                              description: locale === 'sv' ? "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser" : "No surprises - we offer both fixed prices and the possibility of ongoing prices",
+                              link: "/priser"
+                            },
+                            {
+                              icon: "📋",
+                              title: locale === 'sv' ? "RUT-avdrag" : "RUT deduction",
+                              description: locale === 'sv' ? "Vi hanterar allt pappersarbete för RUT-avdrag" : "We handle all paperwork for RUT deduction",
+                              link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                            },
+                            {
+                              icon: "📦",
+                              title: locale === 'sv' ? "Fritt lån av kartonger i 4 veckor" : "Free loan of boxes for 4 weeks",
+                              description: locale === 'sv' ? "Specialgjorda flyttkartonger med vår logga" : "Custom-made moving boxes with our logo",
+                              link: "/kartonger"
+                            },
+                            {
+                              icon: "⏰",
+                              title: locale === 'sv' ? "Omboka eller avboka kostnadsfritt" : "Reschedule or cancel free of charge",
+                              description: locale === 'sv' ? "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten" : "Reschedule or cancel free of charge up to 24 hours before the move",
+                              link: "/avbokning"
+                            },
+                            {
+                              icon: "✅",
+                              title: locale === 'sv' ? "Nöjd kund garanti" : "Satisfied customer guarantee",
+                              description: locale === 'sv' ? "14 dagars garanti på flyttstädning" : "14-day guarantee on moving cleaning",
+                              link: "/garanti"
+                            },
+                            {
+                              icon: "🔒",
+                              title: locale === 'sv' ? "Trafiktillstånd och försäkring" : "Traffic permit and insurance",
+                              description: locale === 'sv' ? "Alla nödvändiga tillstånd och försäkringar på plats" : "All necessary permits and insurance in place",
+                              link: "/tillstand"
+                            },
+                            {
+                              icon: "🎓",
+                              title: locale === 'sv' ? "Utbildad personal" : "Trained staff",
+                              description: locale === 'sv' ? "Vår personal är utbildad för att säkerställa högsta kvalitet och service." : "Our staff is trained to ensure the highest quality and service.",
                         link: "/om-oss"
                       },
                       {
                         icon: "📈",
-                        title: "Ledningssystem",
-                        description: "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet.",
+                              title: locale === 'sv' ? "Ledningssystem" : "Management system",
+                              description: locale === 'sv' ? "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." : "We work with effective management systems to guarantee structure and quality.",
                         link: "/om-oss"
                       },
                       {
                         icon: "🦺",
-                        title: "Arbetsmiljö",
-                        description: "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
+                              title: locale === 'sv' ? "Arbetsmiljö" : "Work environment",
+                              description: locale === 'sv' ? "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." : "We prioritize a safe and secure work environment for both customers and staff.",
+                              link: "/om-oss"
+                            }
+                          ].map((feature, index) => (
+                            <div key={feature.icon} className="w-full flex-shrink-0">
+                              <motion.div 
+                                className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-lg text-white flex flex-col h-full mx-2 md:mx-4"
+                                initial="initial"
+                                whileInView="animate"
+                                viewport={{ once: true, amount: 0.2 }}
+                                variants={fadeInUp}
+                                transition={{ duration: 0.8, delay: index * 0.1 }}
+                              >
+                                <div className="flex items-start gap-3 h-full">
+                                  <motion.span
+                                    className="text-2xl md:text-3xl"
+                                    initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                                    animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                                    transition={{ duration: 1, delay: index * 0.1 + 0.2, type: 'tween', ease: 'easeInOut' }}
+                                  >
+                                    {feature.icon}
+                                  </motion.span>
+                                  <div className="flex-1">
+                                    <h4 className="text-white font-semibold text-base md:text-lg mb-1 md:mb-2">{feature.title}</h4>
+                                    <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">{feature.description}</p>
+                                    {feature.title === "RUT-avdrag" && (
+                                      <a 
+                                        href={feature.link}
+                                        target={feature.link.startsWith('http') ? '_blank' : undefined}
+                                        rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
+                                      >
+                                        {locale === 'sv' ? 'Läs mer' : 'Read more'}
+                                        <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                      </a>
+                                    )}
+                                  </div>
+                                </div>
+                              </motion.div>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Arrow controls */}
+                        <button
+                          type="button"
+                          aria-label="Föregående"
+                          onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                            <path fillRule="evenodd" d="M15.78 19.28a.75.75 0 01-1.06 0l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 111.06 1.06L10.56 12l5.22 5.22a.75.75 0 010 1.06z" clipRule="evenodd" />
+                          </svg>
+                        </button>
+                        <button
+                          type="button"
+                          aria-label={locale === 'sv' ? 'Nästa' : 'Next'}
+                          onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                            <path fillRule="evenodd" d="M8.22 4.72a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06L13.44 12 8.22 6.78a.75.75 0 010-1.06z" clipRule="evenodd" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    
+                    {/* Desktop: Original grid layout */}
+                    <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-3 min-h-[420px] items-stretch">
+                      {[
+                        {
+                          icon: "💰",
+                          title: locale === 'sv' ? "Fast pris" : "Fixed price",
+                          description: locale === 'sv' ? "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser" : "No surprises - we offer both fixed prices and the possibility of ongoing prices",
+                          link: "/priser"
+                        },
+                        {
+                          icon: "📋",
+                          title: locale === 'sv' ? "RUT-avdrag" : "RUT deduction",
+                          description: locale === 'sv' ? "Vi hanterar allt pappersarbete för RUT-avdrag" : "We handle all paperwork for RUT deduction",
+                          link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                        },
+                        {
+                          icon: "📦",
+                          title: locale === 'sv' ? "Fritt lån av kartonger i 4 veckor" : "Free loan of boxes for 4 weeks",
+                          description: locale === 'sv' ? "Specialgjorda flyttkartonger med vår logga" : "Custom-made moving boxes with our logo",
+                          link: "/kartonger"
+                        },
+                        {
+                          icon: "⏰",
+                          title: locale === 'sv' ? "Omboka eller avboka kostnadsfritt" : "Reschedule or cancel free of charge",
+                          description: locale === 'sv' ? "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten" : "Reschedule or cancel free of charge up to 24 hours before the move",
+                          link: "/avbokning"
+                        },
+                        {
+                          icon: "✅",
+                          title: locale === 'sv' ? "Nöjd kund garanti" : "Satisfied customer guarantee",
+                          description: locale === 'sv' ? "14 dagars garanti på flyttstädning" : "14-day guarantee on moving cleaning",
+                          link: "/garanti"
+                        },
+                        {
+                          icon: "🔒",
+                          title: locale === 'sv' ? "Trafiktillstånd och försäkring" : "Traffic permit and insurance",
+                          description: locale === 'sv' ? "Alla nödvändiga tillstånd och försäkringar på plats" : "All necessary permits and insurance in place",
+                          link: "/tillstand"
+                        },
+                        {
+                          icon: "🎓",
+                          title: locale === 'sv' ? "Utbildad personal" : "Trained staff",
+                          description: locale === 'sv' ? "Vår personal är utbildad för att säkerställa högsta kvalitet och service." : "Our staff is trained to ensure the highest quality and service.",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "📈",
+                          title: locale === 'sv' ? "Ledningssystem" : "Management system",
+                          description: locale === 'sv' ? "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." : "We work with effective management systems to guarantee structure and quality.",
+                          link: "/om-oss"
+                        },
+                        {
+                          icon: "🦺",
+                          title: locale === 'sv' ? "Arbetsmiljö" : "Work environment",
+                          description: locale === 'sv' ? "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." : "We prioritize a safe and secure work environment for both customers and staff.",
                         link: "/om-oss"
                       }
                     ].map((feature, i) => (
                       <motion.div
                         key={feature.icon}
                         className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-8 min-h-[180px] h-full w-full"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                          initial="initial"
+                          whileInView="animate"
                         viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.5, delay: i * 0.1 }}
-                      >
-                        <span className="text-2xl md:text-3xl">{feature.icon}</span>
+                          variants={variants}
+                          custom={i}
+                        >
+                          <motion.span
+                            className="text-2xl md:text-3xl"
+                            initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                            animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                            transition={{ duration: 1, delay: i * 0.18 + 0.2, type: 'tween', ease: 'easeInOut' }}
+                          >
+                            {feature.icon}
+                          </motion.span>
                         <div className="flex-1">
                           <h4 className="text-white font-semibold text-base md:text-lg mb-1">{feature.title}</h4>
                           <p className="text-white/80 text-sm md:text-base mb-2">{feature.description}</p>
+                            {feature.title === "RUT-avdrag" && (
                           <a 
                             href={feature.link}
                             target={feature.link.startsWith('http') ? '_blank' : undefined}
                             rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                             className="text-white/90 hover:text-white transition-colors text-sm md:text-base inline-flex items-center"
                           >
-                            Läs mer
+                                {locale === 'sv' ? 'Läs mer' : 'Read more'}
                             <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                           </a>
+                            )}
                         </div>
                       </motion.div>
                     ))}
                   </div>
                 </div>
 
-                {/* Right side - Image */}
-                <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
-                  <div className="w-full h-full flex items-stretch">
+                  {/* Right side - Image (Desktop only) */}
+                  <div className="hidden md:flex flex-1 justify-center lg:justify-end lg:self-stretch">
+                    <div className="w-full h-full flex items-stretch justify-center md:justify-start">
+                      {/* Desktop: smiling_worker_new.png */}
                     <Image
                       src="/smiling_worker_new.png"
-                      alt="Professionell flyttarbetare i Åkersberga - Flyttella"
+                        alt="Glad flyttarbetare"
                       width={600}
                       height={200}
-                      className="rounded-xl shadow-lg object-cover w-full h-full"
+                        className="rounded-xl shadow-lg object-cover w-full h-full max-w-56 md:max-w-none"
                       style={{ objectPosition: '30% 80%' }}
                       priority={false}
                     />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         {/* Mobile only: Våra förmåner moved here */}
+        <div className="md:hidden mb-3">
+          {/* Responsive zoom wrapper for wide screens */}
+          <div className="responsive-zoom">
+            <div className="pt-8" style={{ transform: 'scale(1.1)', transformOrigin: 'center', width: '90.91%', height: '90.91%', margin: '0 auto' }}>
+              <div className="mx-auto px-4">
+                <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-4">
+                  <div className="flex flex-col items-stretch gap-4 h-full">
+                    {/* Features content */}
+                    <div className="flex-[2] w-full">
+                      <h2 className="text-2xl font-bold text-white mb-4 text-center">{locale === 'sv' ? 'Våra förmåner' : 'Our benefits'}</h2>
+                      
+                      {/* Mobile: Sliding carousel */}
+                      <div className="relative overflow-hidden rounded-xl" onTouchStart={handleFeatureTouchStart} onTouchMove={handleFeatureTouchMove} onTouchEnd={handleFeatureTouchEnd}>
+                          <div 
+                            className="flex transition-transform duration-500 ease-in-out"
+                            style={{ transform: `translateX(-${currentFeatureCard * 100}%)` }}
+                          >
+                            {[
+                              {
+                                icon: "💰",
+                                title: locale === 'sv' ? "Fast pris" : "Fixed price",
+                                description: locale === 'sv' ? "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser" : "No surprises - we offer both fixed prices and the possibility of ongoing prices",
+                                link: "/priser"
+                              },
+                              {
+                                icon: "📋",
+                                title: locale === 'sv' ? "RUT-avdrag" : "RUT deduction",
+                                description: locale === 'sv' ? "Vi hanterar allt pappersarbete för RUT-avdrag" : "We handle all paperwork for RUT deduction",
+                                link: "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+                              },
+                              {
+                                icon: "📦",
+                                title: locale === 'sv' ? "Fritt lån av kartonger i 4 veckor" : "Free loan of boxes for 4 weeks",
+                                description: locale === 'sv' ? "Specialgjorda flyttkartonger med vår logga" : "Custom-made moving boxes with our logo",
+                                link: "/kartonger"
+                              },
+                              {
+                                icon: "⏰",
+                                title: locale === 'sv' ? "Omboka eller avboka kostnadsfritt" : "Reschedule or cancel free of charge",
+                                description: locale === 'sv' ? "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten" : "Reschedule or cancel free of charge up to 24 hours before the move",
+                                link: "/avbokning"
+                              },
+                              {
+                                icon: "✅",
+                                title: locale === 'sv' ? "Nöjd kund garanti" : "Satisfied customer guarantee",
+                                description: locale === 'sv' ? "14 dagars garanti på flyttstädning" : "14-day guarantee on moving cleaning",
+                                link: "/garanti"
+                              },
+                              {
+                                icon: "🔒",
+                                title: locale === 'sv' ? "Trafiktillstånd och försäkring" : "Traffic permit and insurance",
+                                description: locale === 'sv' ? "Alla nödvändiga tillstånd och försäkringar på plats" : "All necessary permits and insurance in place",
+                                link: "/tillstand"
+                              },
+                              {
+                                icon: "🎓",
+                                title: locale === 'sv' ? "Utbildad personal" : "Trained staff",
+                                description: locale === 'sv' ? "Vår personal är utbildad för att säkerställa högsta kvalitet och service." : "Our staff is trained to ensure the highest quality and service.",
+                                link: "/om-oss"
+                              },
+                              {
+                                icon: "📈",
+                                title: locale === 'sv' ? "Ledningssystem" : "Management system",
+                                description: locale === 'sv' ? "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." : "We work with effective management systems to guarantee structure and quality.",
+                                link: "/om-oss"
+                              },
+                              {
+                                icon: "🦺",
+                                title: locale === 'sv' ? "Arbetsmiljö" : "Work environment",
+                                description: locale === 'sv' ? "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." : "We prioritize a safe and secure work environment for both customers and staff.",
+                                link: "/om-oss"
+                              }
+                            ].map((feature, index) => (
+                              <div key={feature.icon} className="w-full flex-shrink-0">
+                                <motion.div 
+                                  className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg text-white flex flex-col h-full mx-2"
+                                  initial="initial"
+                                  whileInView="animate"
+                                  viewport={{ once: true, amount: 0.2 }}
+                                  variants={fadeInUp}
+                                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                                >
+                                  <div className="flex items-start gap-3 h-full">
+                                    <motion.span
+                                      className="text-2xl"
+                                      initial={{ scale: 0.6, opacity: 0, rotate: -180, color: '#10B981' }}
+                                      animate={{ scale: [0.6, 1.3, 1], opacity: 1, rotate: [ -180, 20, 0 ], color: ['#10B981', '#34D399', '#10B981'] }}
+                                      transition={{ duration: 1, delay: index * 0.1 + 0.2, type: 'tween', ease: 'easeInOut' }}
+                                    >
+                                      {feature.icon}
+                                    </motion.span>
+                                    <div className="flex-1">
+                                      <h4 className="text-white font-semibold text-base mb-1">{feature.title}</h4>
+                                      <p className="text-white/80 text-sm mb-2">{feature.description}</p>
+                                      {feature.title === "RUT-avdrag" && (
+                                        <a 
+                                          href={feature.link}
+                                          target={feature.link.startsWith('http') ? '_blank' : undefined}
+                                          rel={feature.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                          className="text-white/90 hover:text-white transition-colors text-sm inline-flex items-center"
+                                        >
+                                          {locale === 'sv' ? 'Läs mer' : 'Read more'}
+                                          <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                          </svg>
+                                        </a>
+                                      )}
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              </div>
+                            ))}
+                          </div>
+                          
+                          {/* Arrow controls */}
+                          <button
+                            type="button"
+                            aria-label={locale === 'sv' ? 'Föregående' : 'Previous'}
+                            onClick={() => { setCurrentFeatureCard((prev) => (prev - 1 + totalFeatureCards) % totalFeatureCards); restartFeatureAutoSlide(); }}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                              <path fillRule="evenodd" d="M15.78 19.28a.75.75 0 01-1.06 0l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 111.06 1.06L10.56 12l5.22 5.22a.75.75 0 010 1.06z" clipRule="evenodd" />
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            aria-label={locale === 'sv' ? 'Nästa' : 'Next'}
+                            onClick={() => { setCurrentFeatureCard((prev) => (prev + 1) % totalFeatureCards); restartFeatureAutoSlide(); }}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white/80 hover:text-white transition-colors p-2 -m-2"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                              <path fillRule="evenodd" d="M8.22 4.72a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06L13.44 12 8.22 6.78a.75.75 0 010-1.06z" clipRule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1136,20 +1865,33 @@ export default function FlyttfirmaAkersbergaPage() {
         </div>
 
         {/* Awards Section */}
-        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-12 md:py-24 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="w-full md:w-3/5 flex justify-center">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+              {/* Mobile: Text first, then image */}
+              <div className="w-full md:hidden text-center mb-4">
+                <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A] mb-3 md:mb-6">Utmärkelser för vårt arbete i Åkersberga</h2>
+                <p className="text-lg md:text-2xl text-gray-700 leading-relaxed">
+                  Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet i Åkersberga.<br />
+                  Genom åren har vi blivit erkända av både branschorganisationer och våra kunder i Åkersberga för vårt pålitliga arbete och höga standard.<br />
+                  Dessa utmärkelser inspirerar oss att fortsätta leverera flyttjänster i toppklass i Åkersberga – varje dag, till varje kund.
+                </p>
+              </div>
+              
+              {/* Mobile: Image below text */}
+              <div className="w-full md:w-3/5 flex justify-center order-2 md:order-2">
                 <Image
                   src="/awards_no_bg.png"
                   alt="Flyttellas utmärkelser - Flyttfirma i Åkersberga"
                   width={1200}
                   height={600}
-                  className="object-contain w-full h-auto max-w-3xl"
+                  className="object-contain w-full h-auto max-w-2xl md:max-w-3xl"
                   priority
                 />
               </div>
-              <div className="w-full md:w-2/5 text-left flex flex-col items-start justify-center">
+              
+              {/* Desktop: Text on the right */}
+              <div className="hidden md:flex w-full md:w-2/5 md:order-1 text-left flex-col items-start justify-center">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">Utmärkelser för vårt arbete i Åkersberga</h2>
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
                   Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet i Åkersberga.<br />
@@ -1162,7 +1904,7 @@ export default function FlyttfirmaAkersbergaPage() {
         </section>
 
         {/* Redo att börja din flytt? - Second Card */}
-        <section className="pt-0 pb-8 bg-white">
+        <section className="pt-0 pb-8 mt-8 md:mt-0 bg-white">
           <div className="mx-auto px-4">
             <motion.div
               className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 md:p-10 shadow-lg text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-3xl mx-auto text-center"
@@ -1221,7 +1963,7 @@ export default function FlyttfirmaAkersbergaPage() {
         </section>
 
         {/* Våra andra huvudtjänster Section */}
-        <section className="pt-8 pb-16 bg-white">
+        <section className="pt-8 pb-16 mt-8 md:mt-0 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
@@ -1230,7 +1972,7 @@ export default function FlyttfirmaAkersbergaPage() {
               <div className="grid grid-cols-1 gap-12">
                 {/* Flyttstädning Card */}
                 <motion.div
-                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-12 shadow-lg text-white flex flex-col min-h-[340px] h-full"
+                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -1247,16 +1989,16 @@ export default function FlyttfirmaAkersbergaPage() {
                       backgroundSize: '20px 20px'
                     }}
                   />
-                  <div className="flex items-center gap-4 mb-8 relative">
-                    <span className="text-6xl">✨</span>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white">
+                  <div className="flex items-center gap-4 mb-6 relative">
+                    <span className="text-4xl">✨</span>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white">
                       Flyttstädning
                     </h3>
                   </div>
-                  <p className="text-xl text-gray-100 mb-8 relative">
+                  <p className="text-lg text-gray-100 mb-6 relative">
                     Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.
                   </p>
-                  <p className="text-lg text-gray-100 mb-8 relative">
+                  <p className="hidden md:block text-lg text-gray-100 mb-6 relative">
                     Flyttella erbjuder professionell flyttstädning med 14 dagars nöjd kund-garanti. Vi rengör alla boytor, putsar fönster på alla sidor och använder kvalitativa rengöringsmedel. Städutrustning ingår, inklusive leverans och upphämtning. Vi dammtorkar väggar och tak, rengör golvbrunnar och bakom vitvaror (om du drar fram dem). Frysen rengörs om den är avfrostad dagen innan. Med oss får du en komplett flyttstädning för en trygg och smidig överlämning.
                   </p>
                   <div className="mt-auto relative">
@@ -1286,7 +2028,7 @@ export default function FlyttfirmaAkersbergaPage() {
 
                 {/* Magasinering Card */}
                 <motion.div
-                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-12 shadow-lg text-white flex flex-col min-h-[340px] h-full"
+                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -1303,16 +2045,16 @@ export default function FlyttfirmaAkersbergaPage() {
                       backgroundSize: '20px 20px'
                     }}
                   />
-                  <div className="flex items-center gap-4 mb-8 relative">
-                    <span className="text-6xl">🏢</span>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white">
+                  <div className="flex items-center gap-4 mb-6 relative">
+                    <span className="text-4xl">🏢</span>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white">
                       Magasinering
                     </h3>
                   </div>
-                  <p className="text-xl text-gray-100 mb-8 relative">
+                  <p className="text-lg text-gray-100 mb-6 relative">
                     Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.
                   </p>
-                  <p className="text-lg text-gray-100 mb-8 relative">
+                  <p className="hidden md:block text-lg text-gray-100 mb-6 relative">
                     Behöver du magasinera bohag under flyttprocessen? Flyttella tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan. Som extra service erbjuder vi den första månaden gratis för att göra din flyttprocess ännu smidigare.
                   </p>
                   <div className="mt-auto relative">
@@ -1342,7 +2084,7 @@ export default function FlyttfirmaAkersbergaPage() {
 
                 {/* Packhjälp Card */}
                 <motion.div
-                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-12 shadow-lg text-white flex flex-col min-h-[340px] h-full"
+                  className="relative bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-xl p-8 shadow-lg text-white flex flex-col h-full"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -1359,16 +2101,16 @@ export default function FlyttfirmaAkersbergaPage() {
                       backgroundSize: '20px 20px'
                     }}
                   />
-                  <div className="flex items-center gap-4 mb-8 relative">
-                    <span className="text-6xl">📦</span>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white">
+                  <div className="flex items-center gap-4 mb-6 relative">
+                    <span className="text-4xl">📦</span>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white">
                       Packhjälp
                     </h3>
                   </div>
-                  <p className="text-xl text-gray-100 mb-8 relative">
+                  <p className="text-lg text-gray-100 mb-6 relative">
                     Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.
                   </p>
-                  <p className="text-lg text-gray-100 mb-8 relative">
+                  <p className="hidden md:block text-lg text-gray-100 mb-6 relative">
                     Packning är ofta den mest tidskrävande delen av en flytt. Flyttella erbjuder professionell packhjälp där våra erfarna flyttare hjälper dig packa dina tillhörigheter på ett säkert och organiserat sätt. Vi använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vår packhjälp inkluderar även märkning av kartonger och skapande av en inventarielista för enkel uppackning på den nya adressen.
                   </p>
                   <div className="mt-auto relative">
@@ -1511,15 +2253,37 @@ export default function FlyttfirmaAkersbergaPage() {
         {/* Tips för din flytt Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">Tips för din flytt</h2>
               
-              <div className="space-y-16">
+              <div className="space-y-4 md:space-y-16">
                 
                 {/* Innan flytten */}
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Innan flytten</h3>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* Mobile: Expandable section header */}
+                  <div className="md:hidden mb-4">
+                    <button
+                      onClick={() => setExpandedTipSection(expandedTipSection === 'innan' ? null : 'innan')}
+                      className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
+                    >
+                      <h3 className="text-xl font-bold text-white">Innan flytten</h3>
+                      <svg 
+                        className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'innan' ? 'rotate-180' : ''}`}
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  {/* Desktop: Always visible title */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Innan flytten</h3>
+                  
+                  {/* Mobile: Expandable content */}
+                  <div className={`md:block ${expandedTipSection === 'innan' ? 'block' : 'hidden'}`}>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <TipCard
                       title="Planera och förbered"
                       imageSrc="/tipsforflytt.jpg"
@@ -1547,29 +2311,9 @@ export default function FlyttfirmaAkersbergaPage() {
                       }
                     />
                     <TipCard
-                      title="Packtips"
-                      imageSrc="/packing_tips.jpg"
-                      imageAlt="Packningstips för flytt i Åkersberga"
-                      content={
-                        <ul className="list-disc pl-5 space-y-2">
-                          <li>Märk alla kartonger tydligt.</li>
-                          <li>Håll nycklar tillgängliga.</li>
-                          <li>Överbelasta inte flyttlådorna.</li>
-                          <li>Använd silkespapper för ömtåliga föremål och porslin.</li>
-                        </ul>
-                      }
-                    />
-                  </div>
-                </div>
-
-                {/* Under flytten */}
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Under flytten</h3>
-                  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-                    <TipCard
                         title="Innan flyttfirman kommer"
                         imageSrc="/innanflyttfirmankommer.jpg"
-                        imageAlt="Förberedelse för flyttfirma i Åkersberga"
+                        imageAlt="Förberedelse för flytt i Åkersberga"
                         objectPosition="object-[center_45%]"
                         content={
                           <ul className="list-disc pl-5 space-y-2">
@@ -1581,25 +2325,110 @@ export default function FlyttfirmaAkersbergaPage() {
                         }
                       />
                     <TipCard
+                      title="Packtips"
+                      imageSrc="/packing_tips.jpg"
+                      imageAlt="Packningstips för flytt i Åkersberga"
+                      content={
+                        <ul className="list-disc pl-5 space-y-2">
+                          <li>Märk alla kartonger tydligt.</li>
+
+                          <li>Håll nycklar tillgängliga.</li>
+                          <li>Överbelasta inte flyttlådorna.</li>
+                          <li>Använd silkespapper för ömtåliga föremål och porslin.</li>
+                        </ul>
+                      }
+                    />
+                  </div>
+                  </div>
+                </div>
+
+                {/* Under flytten */}
+                <div>
+                  {/* Mobile: Expandable section header */}
+                  <div className="md:hidden mb-4">
+                    <button
+                      onClick={() => setExpandedTipSection(expandedTipSection === 'under' ? null : 'under')}
+                      className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
+                    >
+                      <h3 className="text-xl font-bold text-white">Under flytten</h3>
+                      <svg 
+                        className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'under' ? 'rotate-180' : ''}`}
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  {/* Desktop: Always visible title */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Under flytten</h3>
+                  
+                  {/* Mobile: Expandable content */}
+                  <div className={`md:block ${expandedTipSection === 'under' ? 'block' : 'hidden'}`}>
+                  <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <TipCard
                         title="En smidig flyttdag"
                         imageSrc="/smidigflyttdag.jpg"
                         imageAlt="Smidig flyttdag med flyttfirma i Åkersberga"
                         objectPosition="object-[center_35%]"
                         content={
                           <ul className="list-disc pl-5 space-y-2">
+        
                             <li>Håll värdesaker tillgängliga.</li>
                             <li>Säkerställ fri väg för flytthjälp.</li>
-                            <li>Var tillgänglig för frågor.</li>
-                            <li> Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.</li>
+                            
+                            <li>Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.</li>
+                            <li>Se till att montera ner eller packa ner bortglömda föremål.</li>
                           </ul>
                         }
                       />
+                    <TipCard
+                        title="Kommunikation och koordinering"
+                        imageSrc="/under_flytt.jpg"
+                        imageAlt="Flytt under pågående i Åkersberga"
+                        objectPosition="object-center"
+                        content={
+                          <ul className="list-disc pl-5 space-y-2">
+                            <li>Håll kontakt med flyttledaren.</li>
+                            <li>Fotografera eventuella skador.</li>
+                            <li>Kontrollera att allt laddas korrekt.</li>
+                            <li>Följ med till den nya adressen.</li>
+                            <li>Var tydlig med särskilda önskemål.</li>
+                            <li>Var tillgänglig för frågor.</li>
+                          </ul>
+                        }
+                      />
+                  </div>
                   </div>
                 </div>
 
                 {/* Efter flytten */}
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Efter flytten</h3>
+                  {/* Mobile: Expandable section header */}
+                  <div className="md:hidden mb-4">
+                    <button
+                      onClick={() => setExpandedTipSection(expandedTipSection === 'efter' ? null : 'efter')}
+                      className="w-full flex items-center justify-between bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
+                    >
+                      <h3 className="text-xl font-bold text-white">Efter flytten</h3>
+                      <svg 
+                        className={`w-6 h-6 transition-transform duration-300 ${expandedTipSection === 'efter' ? 'rotate-180' : ''}`}
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  {/* Desktop: Always visible title */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center hidden md:block">Efter flytten</h3>
+                  
+                  {/* Mobile: Expandable content */}
+                  <div className={`md:block ${expandedTipSection === 'efter' ? 'block' : 'hidden'}`}>
                   <div className="max-w-2xl mx-auto">
                     <TipCard
                         title="Start i nya hemmet"
@@ -1618,6 +2447,7 @@ export default function FlyttfirmaAkersbergaPage() {
                           </ul>
                         }
                       />
+                  </div>
                   </div>
                 </div>
 
@@ -1678,7 +2508,7 @@ export default function FlyttfirmaAkersbergaPage() {
                         </div>
                       </div>
                       <Link 
-                        href="/blogg/10-tips-for-en-smidig-flytt-i-stockholm" 
+                        href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
                         className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
                       >
                         Läs hela artikeln

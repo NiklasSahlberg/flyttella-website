@@ -901,6 +901,34 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
 
   const handleFinalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate the last step before submitting
+    let isValid = false;
+    if ((step === 3 && selectedCleaningType !== 'Flyttstädning' && selectedCleaningType !== 'Moving cleaning' && selectedCleaningType !== 'Annan städning' && selectedCleaningType !== 'Other cleaning')) {
+      // Step 3 is final for most cleaning types
+      setTouchedFields({ 
+        name: true, 
+        email: true, 
+        phone: true, 
+        contactPersonName: localCustomerType === 'foretag' ? true : false
+      });
+      isValid = validateStep3();
+    } else if (step === 4) {
+      // Step 4 is final for Flyttstädning and Annan städning
+      setTouchedFields({ 
+        name: true, 
+        email: true, 
+        phone: true, 
+        contactPersonName: localCustomerType === 'foretag' ? true : false
+      });
+      isValid = validateStep4();
+    }
+    
+    // If validation fails, don't submit
+    if (!isValid) {
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitError(null);
     try {
