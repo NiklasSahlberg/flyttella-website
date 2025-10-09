@@ -139,9 +139,10 @@ interface FlyttoffertFormProps {
   cleaningCardSubtitle?: string; // optional override for cleaning card subtitle
   defaultCustomerType?: 'privat' | 'foretag'; // optional default customer type
   autoStartService?: string; // automatically start with this service type
+  backgroundImage?: string; // optional custom background image
 }
 
-export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle, defaultCustomerType = 'privat', autoStartService }: FlyttoffertFormProps) {
+export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle, defaultCustomerType = 'privat', autoStartService, backgroundImage = '/ostermalm.avif' }: FlyttoffertFormProps) {
   const { t, locale } = useLanguage();
   const [step, setStep] = useState(0);
   const [showSteps, setShowSteps] = useState(false);
@@ -814,7 +815,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 md:hidden"
             style={{
-              backgroundImage: 'url(/ostermalm.avif)',
+              backgroundImage: `url(${backgroundImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
