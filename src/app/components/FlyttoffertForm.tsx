@@ -827,7 +827,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
             <>
           <h1 className="text-2xl md:text-4xl font-extrabold text-center text-[#0F172A] mb-8 md:mb-2 leading-tight">
             <span className="md:hidden">
-              {t('hero.formSubtitleMobile').split(' ').map((word, index, array) => (
+              {t('hero.formSubtitleMobile').split(' ').map((word: string, index: number, array: string[]) => (
                 <React.Fragment key={index}>
                   {word}
                   {index < array.length - 1 && (

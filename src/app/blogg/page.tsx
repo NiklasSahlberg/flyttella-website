@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from '../contexts/LanguageContext';
@@ -19,7 +19,7 @@ const staggerContainer = {
   }
 };
 
-const variants = {
+const variants: Variants = {
   initial: { scale: 0.98, opacity: 0, y: 5 },
   animate: (i: number) => ({
     scale: 1,
@@ -28,19 +28,18 @@ const variants = {
     transition: {
       delay: i * 0.12,
       duration: 1,
-      ease: [0.16, 1, 0.3, 1],
       type: "spring",
       stiffness: 30,
       damping: 15
-    },
+    }
   }),
   hover: {
     scale: 1.03,
     transition: {
       duration: 0.4,
       ease: "easeOut"
-    },
-  },
+    }
+  }
 };
 
 // Sample blog posts - you can replace these with real content
