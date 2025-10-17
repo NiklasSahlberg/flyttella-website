@@ -6,7 +6,7 @@ import { Locale, defaultLocale, getLocaleData } from '../i18n';
 interface LanguageContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: (key: string) => string;
+  t: (key: string, options?: { returnObjects?: boolean }) => string | any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -27,7 +27,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('language', newLocale);
   };
 
-  const t = (key: string): string => {
+  const t = (key: string, options?: { returnObjects?: boolean }): string | any => {
     const localeData = getLocaleData(locale);
     const keys = key.split('.');
     let value: any = localeData;
@@ -50,6 +50,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       }
     }
     
+    // If returnObjects is true, return the value as-is (could be array, object, etc.)
+    if (options?.returnObjects) {
+      return value;
+    }
+    
+    // Otherwise, only return strings, fallback to key if not a string
     return typeof value === 'string' ? value : key;
   };
 

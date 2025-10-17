@@ -840,7 +840,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
               {t('hero.formSubtitle')}
             </span>
           </h1>
-          <h2 className="text-lg md:text-xl font-extrabold text-center text-gray-700 mb-8 hidden md:block">
+          <h2 className="text-lg md:text-xl font-black text-center text-[#0F172A] mb-8 hidden md:block drop-shadow-sm">
             {t('hero.responseTime')}
           </h2>
             </>

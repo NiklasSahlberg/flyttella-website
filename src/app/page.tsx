@@ -894,21 +894,7 @@ export default function Home() {
                }}
           />
           
-          {/* Mobile: Personal picture card above the section */}
-          <div className="lg:hidden mb-6 relative z-40">
-            <div className="relative w-full h-80 rounded-3xl overflow-hidden">
-              <Image
-                src="/personalpicture.jpg"
-                alt="Flyttella personal"
-                fill
-                className="object-cover rounded-3xl"
-                style={{ 
-                  objectPosition: 'center center'
-                }}
-                priority
-              />
-            </div>
-          </div>
+          
 
           {/* Centered content */}
           <div className="relative z-40 max-w-[90rem] mx-auto px-4 md:px-8 lg:px-16 om-oss-container">
@@ -918,6 +904,20 @@ export default function Home() {
               whileInView="animate"
               viewport={{ once: true }}
             >
+              {/* Mobile image above title (moved inside container to match bohagsflytt) */}
+              <div className="lg:hidden mb-6">
+                <div className="relative w-full h-80 rounded-3xl overflow-hidden">
+                  <Image
+                    src="/personalpicture.jpg"
+                    alt="Flyttella personal"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: 'center 70%' }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+              </div>
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-8 md:mb-12 lg:mb-16 text-center om-oss-title">{t('about.title')}</h3>
               
               {/* Text content only - image moved outside section on mobile */}

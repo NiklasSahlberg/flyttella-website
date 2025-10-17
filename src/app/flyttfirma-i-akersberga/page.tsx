@@ -975,6 +975,7 @@ export default function FlyttfirmaAkersbergaPage() {
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
   const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
   const [expandedTipSection, setExpandedTipSection] = useState<string | null>(null);
+  const [showFullAboutText, setShowFullAboutText] = useState(false);
   const totalFeatureCards = 9;
   const featureIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const featureTouchStartXRef = useRef<number | null>(null);
@@ -1073,7 +1074,7 @@ export default function FlyttfirmaAkersbergaPage() {
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-35"
                 style={{
                   backgroundImage: 'url(/akersberga.jpg)',
                   backgroundSize: 'cover',
@@ -1132,21 +1133,7 @@ export default function FlyttfirmaAkersbergaPage() {
                }}
           />
           
-          {/* Mobile: Personal picture card above the section */}
-          <div className="lg:hidden mb-6 relative z-40">
-            <div className="relative w-full h-80 rounded-3xl overflow-hidden">
-              <Image
-                src="/personalpicture.jpg"
-                alt="Flyttella personal"
-                fill
-                className="object-cover rounded-3xl"
-                style={{ 
-                  objectPosition: 'center center'
-                }}
-                priority
-              />
-            </div>
-          </div>
+          
 
           {/* Centered content */}
           <div className="relative z-40 max-w-[90rem] mx-auto px-4 md:px-8 lg:px-16">
@@ -1155,6 +1142,20 @@ export default function FlyttfirmaAkersbergaPage() {
               whileInView="animate"
               viewport={{ once: true }}
             >
+              {/* Mobile image above title (inside container to match bohagsflytt) */}
+              <div className="lg:hidden mb-6">
+                <div className="relative w-full h-80 rounded-3xl overflow-hidden">
+                  <Image
+                    src="/personalpicture.jpg"
+                    alt="Flyttella personal"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: 'center 70%' }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+              </div>
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-8 md:mb-12 lg:mb-16 text-center">Om Flyttella</h3>
               
               {/* Text content with image on desktop */}
@@ -1212,27 +1213,48 @@ export default function FlyttfirmaAkersbergaPage() {
                   
                   {/* Mobile: Show shortened text with expand option */}
                   <div className="lg:hidden space-y-4 text-center">
-                    <p className="text-base md:text-lg text-[#0F172A] leading-relaxed text-left inline-block max-w-2xl">
-                      Flyttella är din lokala flyttfirma i Åkersberga med lång erfarenhet av att hjälpa både privatpersoner och företag med flytt och städning i området. Vi har specialiserat oss på att erbjuda trygga, smidiga och prisvärda flyttjänster i Åkersberga.
-                    </p>
+                    <div className="text-left inline-block max-w-2xl">
+                      <p className="text-base md:text-lg text-[#0F172A] leading-relaxed">
+                        Flyttella är din lokala flyttfirma i Åkersberga med lång erfarenhet av att hjälpa både privatpersoner och företag med flytt och städning i området. Vi har specialiserat oss på att erbjuda trygga, smidiga och prisvärda flyttjänster i Åkersberga.
+                        {showFullAboutText && (
+                          <>
+                            {' '}Vi erbjuder alltid gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flytten samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.
+                          </>
+                        )}
+                      </p>
+                      {showFullAboutText && (
+                        <p className="text-base md:text-lg text-[#0F172A] leading-relaxed mt-4">
+                          Vi känner till Åkersbergas olika områden och kan anpassa våra flyttjänster efter just dina behov. Oavsett om du ska flytta inom Åkersberga, till eller från området, kan du lita på att vi hanterar din flytt med omsorg och effektivitet. Vår lokala expertis gör att vi kan erbjuda snabba och flexibla lösningar.
+                        </p>
+                      )}
+                    </div>
                     
                     {/* Läs mer button - Mobile */}
                     <div className="text-center">
-                      <Link
-                        href="/om-oss"
-                        className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-base underline decoration-2 underline-offset-4"
-                      >
-                        Läs mer om oss
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
+                      {!showFullAboutText ? (
+                        <button
+                          onClick={() => setShowFullAboutText(true)}
+                          className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-base underline decoration-2 underline-offset-4"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
+                          Läs mer
+                        </button>
+                      ) : (
+                        <Link
+                          href="/om-oss"
+                          className="mt-4 inline-flex items-center text-[#0F172A] hover:text-[#10B981] transition-colors font-bold text-base underline decoration-2 underline-offset-4"
+                        >
+                          Läs mer om oss
+                          <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      )}
                     </div>
                   </div>
                   
@@ -2321,9 +2343,9 @@ export default function FlyttfirmaAkersbergaPage() {
                             <li>Montera ner alla gardiner</li>
                             <li>Montera ner alla lampor</li>
                             <li>Dubbelkolla packning och märkning.</li>
-                          </ul>
-                        }
-                      />
+                        </ul>
+                      }
+                    />
                     <TipCard
                       title="Packtips"
                       imageSrc="/packing_tips.jpg"
@@ -2457,18 +2479,20 @@ export default function FlyttfirmaAkersbergaPage() {
         </section>
 
         {/* Blog Post Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+        <section className="py-8 md:py-16 bg-gray-50">
+          <div className="w-full px-4 md:px-6">
+            <div className="w-full">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
                   Läs mer om flytt i Åkersberga
                 </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
                   Få värdefulla tips och råd för en smidig flytt i Åkersberga
                 </p>
               </div>
-              
+              <div className="max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-1 gap-4 md:gap-2">
+                  {/* Single Blog Article Card */}
               <motion.div 
                 className="bg-white rounded-2xl shadow-lg overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
@@ -2476,62 +2500,37 @@ export default function FlyttfirmaAkersbergaPage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="md:flex">
-                  <div className="md:w-1/3">
+                    <div className="flex flex-col md:flex-row h-full items-stretch">
+                      <div className="w-full md:w-1/3 h-48 md:h-full">
                     <img 
-                      src="/innanflyttfirmankommer.jpg" 
+                      src="/tipsforflytt.jpg" 
                       alt="Flyttfirma i Åkersberga" 
-                      className="w-full h-64 md:h-full object-cover"
+                          className="w-full h-full object-cover object-[60%_center]"
                     />
                   </div>
-                  <div className="md:w-2/3 p-8">
-                    <div className="flex items-center mb-4">
-                      <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <div className="w-full md:w-2/3 p-4 md:p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-3 md:mb-4 space-y-2 sm:space-y-0">
+                          <span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-sm md:text-base font-medium w-fit">
                         Flytttips
                       </span>
-                      <span className="text-gray-500 text-sm ml-4">5 min läsning</span>
+                          <span className="text-gray-500 text-sm md:text-base sm:ml-4">5 min läsning</span>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">
-                      Komplett guide: Så planerar du en smidig flytt i Åkersberga
+                        <h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
+                      Välja flyttfirma i Åkersberga - En komplett guide
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                      En flytt i Åkersberga kräver noggrann planering. I denna guide går vi igenom allt du behöver veta - från första kontakten med flyttfirman till den sista kartongen i ditt nya hem. Lär dig hur du väljer rätt flyttfirma, förbereder din bostad och säkerställer en stressfri flyttupplevelse.
+                        <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
+                      Planerar du flytt i Åkersberga? Upptäck viktiga faktorer som trafiktillstånd, försäkringar, lokalkännedom och kundrecensioner. Lär dig välja en pålitlig flyttfirma som känner till området från Margretelund till Österskär.
                     </p>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gradient-to-r from-[#0F172A] to-[#10B981] rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-sm">FE</span>
-                        </div>
-                        <div className="ml-3">
-                          <p className="text-sm font-medium text-[#0F172A]">Flyttella Expert</p>
-                          <p className="text-sm text-gray-500">Flyttspecialist i Åkersberga</p>
-                        </div>
-                      </div>
+                        <div className="flex justify-start sm:justify-between items-center">
+                          <div></div>
                       <Link 
-                        href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
-                        className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group"
+                            href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
+                            className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
                       >
-                        Läs hela artikeln
+                            Läs mer
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
-                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                    <div className="text-center">
-                      <Link 
-                        href="/blogg" 
-                        className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-6 py-3 rounded-full font-medium group shadow-lg hover:shadow-xl"
-                      >
-                        Se alla artiklar om flytt i Åkersberga
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                              className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
                           fill="none" 
                           viewBox="0 0 24 24" 
                           stroke="currentColor"
@@ -2543,6 +2542,8 @@ export default function FlyttfirmaAkersbergaPage() {
                   </div>
                 </div>
               </motion.div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

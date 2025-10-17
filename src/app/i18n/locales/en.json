@@ -67,7 +67,7 @@
       "additionalInfo": "Additional requests",
       "additionalInfoOptional": "Additional requests (optional)",
       "additionalInfoPlaceholder": "Here you can mention special requests or information",
-      "contactInfo": "Contact Information",
+      "contactInfo": "Contact information",
       "name": "Name",
       "nameBusiness": "Company name",
       "email": "Email",
@@ -106,13 +106,9 @@
       "delicateItemsDescription": "The moving company needs to know about particularly delicate or valuable items, such as antiques, in advance to plan the move.",
       "delicateItemsDescriptionBusiness": "The moving company needs to know about particularly delicate or valuable items, such as antiques, in advance to plan the business move.",
       "whichDelicateItems": "Which particularly delicate items should be moved?",
-      "contactInfo": "Contact information",
       "contactInfoBusiness": "Contact information for the company",
       "contactPersonName": "Contact person first and last name",
       "companyName": "Company name",
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
       "enterCount": "Enter count",
       "cleaningType": "What type of cleaning service do you want?",
       "cleaningFrequency": "How often do you want cleaning help?",
@@ -124,8 +120,6 @@
       "flexibleWithCleaningDate": "I am flexible with the cleaning date",
       "flexibleWithWindowCleaningDate": "I am flexible with the window cleaning date",
       "address": "Address",
-      "streetNumber": "Street no.",
-      "postalCode": "Postal code",
       "contactInformation": "Contact information",
       "describeCleaningService": "Describe your cleaning service",
       "describeTask": "Describe what the task involves",
@@ -155,15 +149,11 @@
       "freezerDefrosting": "Freezer defrosting",
       "waterTrapCleaning": "Dismantling/cleaning of water trap",
       "blindsCleaning": "Blinds cleaning",
-      "companyName": "Company name",
-      "yourName": "Your name",
-      "email": "Email",
-      "phone": "Phone",
       "commentsOptional": "Comments (optional)",
       "commentsPlaceholder": "Here you can mention special details, e.g. if you have stucco that needs to be cleaned carefully.",
       "groundFloor": "Ground floor",
       "floor1": "1 floor",
-      "floor2": "2 floors", 
+      "floor2": "2 floors",
       "floor3": "3 floors",
       "floor4Plus": "4 floors or more",
       "apartment": "Apartment",
@@ -186,7 +176,6 @@
       "plusMinus1Day": "+- 1 day",
       "plusMinus2Days": "+- 2 days",
       "plusMinus3Days": "+- 3 days",
-      "select": "-- Select --",
       "whatTypeOfWork": "What type of work have you done?",
       "renovationRebuilding": "Renovation/Rebuilding",
       "extensionExpansion": "Extension/Expansion",
@@ -287,8 +276,7 @@
         "selectWindowType": "Please select at least one type of window",
         "enterWindowCount": "Please enter number of windows for at least one type",
         "describeCleaningService": "Please describe your cleaning service",
-        "approximatelyHowBigArea": "Approximately how big area should be cleaned?",
-        "enterAreaSize": "Please enter area size"
+        "approximatelyHowBigArea": "Approximately how big area should be cleaned?"
       },
       "placeholders": {
         "startTypingAddress": "Start typing your address",
@@ -307,14 +295,14 @@
         "yes": "Yes",
         "no": "No",
         "floor": {
-          "minus2": "Floor -2",
-          "minus1": "Floor -1",
-          "ground": "Ground floor",
           "1": "Floor 1",
           "2": "Floor 2",
           "3": "Floor 3",
           "4": "Floor 4",
           "5": "Floor 5",
+          "minus2": "Floor -2",
+          "minus1": "Floor -1",
+          "ground": "Ground floor",
           "6plus": "Floor 6 or higher"
         },
         "flexibleDate": {
@@ -424,6 +412,201 @@
     "customerGuarantee": "14-day satisfaction guarantee",
     "freeCancellation": "24h free cancellation"
   },
+  "arsta": {
+    "hero": {
+      "title": "Moving company in Årsta – local, reliable and affordable",
+      "subtitle": "We help you move in Årsta and all of Söderort. Our local knowledge of Årsta Torg, Årstafältet, Valla Torg and the areas around Årstaviken makes planning smooth and the move efficient – whether you move from an apartment or a house."
+    },
+    "about": {
+      "title": "About Flyttella – your local moving company in Årsta",
+      "desktop": "Flyttella is a Stockholm-based moving company with a strong presence in Årsta. We combine local knowledge with efficient planning for residential and office moves – clear quotes, secure logistics and on-time delivery.",
+      "desktop2": "Our benefits in Årsta: fixed price and 50% RUT deduction, free loan of moving boxes for four weeks, valid traffic permits and comprehensive insurance. Our trained staff work with proven management systems and a focus on a safe work environment – for a quality-assured move.",
+      "desktop3": "Thanks to many assignments around Årsta Torg, Årstafältet, Årstabron, Valla Torg and along Årstaviken, we handle parking, carrying routes and elevator logistics smoothly. The result is a fast, careful and well-coordinated move with minimal disruption – from first contact to the last box.",
+      "mobile": "Your local moving company in Årsta with experience in both apartments and houses. We know Årsta Torg, Årstafältet, Valla Torg and the areas around Årstaviken and plan to minimize disruption.",
+      "mobileExpanded": "Benefits: fixed price and 50% RUT, free loan of boxes for 4 weeks, traffic permits and insurance, trained staff, established methods and a safe work environment.",
+      "mobileExpanded2": "We help with smart packing, tailored staffing and route planning for a fast, safe and cost-effective move in Årsta – from the first quote to the last box."
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Årsta?"
+    },
+    "experienceSection": {
+      "title": "Our experience in Årsta"
+    },
+    "experience": {
+      "title": "Årsta’s preferred movers with local expertise",
+      "description": "With many assignments in Årsta, we help households and businesses – from apartments by Årstaviken to houses near Årstafältet. Our local knowledge of parking, carrying routes and elevators shortens lead times and ensures safe handling.",
+      "expanded": "We understand Årsta’s challenges – from tight courtyards and loading zones at Årsta Torg to efficient route planning via Gullmarsplan and Årstabron. With over 1000 positive reviews and returning customers, we deliver punctual moves with focus on safety, quality and minimal disruption."
+    },
+    "customerReviews": {
+      "title": "What do our customers think of us?"
+    },
+    "reviews": {
+      "subtitle": "Reliable moving service in Årsta and Söderort",
+      "description": "As Årsta's local moving company, we help residents around Årsta Torg, Årstafältet, Valla Torg and along Årstaviken. Fixed prices, 50% RUT deduction and insured handling. Trained staff use protective materials, efficient routes and smart planning to minimize disruption. Read the reviews to see why Årsta chooses Flyttella.",
+      "badgeAlt": "Specialists in moving in Årsta",
+      "arrowText": "See why customers in Årsta choose us"
+    },
+    "awards": {
+      "title": "Awards for our work in Årsta",
+      "description": "Our awards reflect our specialization in moves in Årsta – from the green areas by Årstaviken to family-friendly neighborhoods around Årsta Torg. Over the years, we have been recognized for safe handling between houses and modern apartments in the area. These awards confirm our position as Årsta’s reliable moving company with deep local knowledge."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Årsta",
+      "description": "We offer a complete range of moving services in Årsta for a smooth move – from household moves and move-out cleaning to heavy lifting and storage.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Read more about moving in Årsta",
+      "description": "Practical guides for moving in Årsta – loading zones and time windows, elevator bookings and smart route planning for a smooth move in the area.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Moving in Årsta – local tips for an easy move",
+      "description": "Discover what to consider when moving in Årsta. We share insights about parking, elevators and carrying routes in the area, and how to plan an efficient and safe move."
+    },
+    "faq": {
+      "title": "Common questions about moving in Årsta",
+      "items": [
+        {
+          "question": "Do you offer fixed prices and RUT deduction in Årsta?",
+          "answer": "Yes. We provide fixed prices for moves in Årsta and handle the RUT deduction for you, which gives a 50% tax reduction on the labor cost."
+        },
+        {
+          "question": "How do you handle parking and carrying routes in Årsta?",
+          "answer": "We plan loading zones, elevator bookings and carrying routes in advance to minimize disruption and keep the move fast and safe."
+        },
+        {
+          "question": "Can I borrow moving boxes?",
+          "answer": "Yes. You can borrow moving boxes free of charge for up to four weeks. We deliver and collect by agreement."
+        },
+        {
+          "question": "Are you insured and do you have traffic permits?",
+          "answer": "Yes. All moves are insured and we have valid traffic permits. We use protective materials and safe routines."
+        },
+        {
+          "question": "How far in advance should I book?",
+          "answer": "Please book as early as possible. We can also assist on short notice depending on availability."
+        }
+      ],
+      "footer": {
+        "title": "Do you have more questions about moving in Årsta?",
+        "linkText": "See all FAQs"
+      }
+    },
+    "faqFooter": {
+      "title": "Do you have more questions about moving in Årsta?",
+      "linkText": "See all FAQs"
+    }
+  },
+  "botkyrka": {
+    "hero": {
+      "title": "Moving company in Botkyrka – local, reliable and affordable",
+      "subtitle": "We help you move in Botkyrka and Södertörn. Fixed prices, 50% RUT deduction and insured handling – for a smooth move whether apartment or house."
+    },
+    "about": {
+      "title": "About Flyttella – your local moving company in Botkyrka",
+      "desktop": "Flyttella has extensive experience with moves in Botkyrka, helping both households and businesses. We plan clearly, handle logistics securely and deliver on time – with local knowledge and tailored solutions.",
+      "desktop2": "Benefits in Botkyrka: fixed price with 50% RUT, free loan of boxes for four weeks, valid traffic permits and comprehensive insurance. Our trained staff use protective materials and structured routines for packing, carrying and transport. We keep close contact before moving day and ensure staffing, vehicles and schedule match your needs.",
+      "desktop3": "We adapt parking, carrying routes, elevators and route planning to the property and can, if needed, do a free pre‑inspection. We coordinate with the building manager/association on elevator bookings, loading zones and protecting stairwells. The result is a quick, careful and well‑coordinated move with minimal disruption – from the first quote to the last box in place.",
+      "processSection": {
+        "title": "Our process for a smooth move in Botkyrka",
+        "description": "Our quotes are always based on your specific needs in Botkyrka – floor area, floor, elevator access, carrying routes and parking options. If needed, we can do a free inspection to ensure proper scope and staffing. All prices are fixed with no hidden fees and are based on your preferences and the information you provide. Do you have specific time windows or building access rules? Contact us and we’ll tailor the quote and planning to minimize disruption and ensure an efficient move in Botkyrka.",
+        "subtitle": "How it works"
+      },
+      "process": {
+        "fillForm": "Fill out the form",
+        "fillFormDesc": "Briefly describe your move in Botkyrka – address, date and scope.",
+        "quickQuote": "Quick quote",
+        "quickQuoteDesc": "You receive a fixed price with 50% RUT deduction and clear terms.",
+        "signConfirm": "Sign and confirm",
+        "signConfirmDesc": "Sign digitally and we secure the booking.",
+        "personalContact": "Personal contact",
+        "personalContactDesc": "We review carrying routes, elevator and parking in Botkyrka.",
+        "moveCompleted": "Move completed",
+        "moveCompletedDesc": "Protective materials, careful handling and efficient route planning.",
+        "satisfiedCustomer": "Satisfied customer",
+        "satisfiedCustomerDesc": "Follow‑up after the move for high customer satisfaction."
+      },
+      "mobile": "Flyttella has extensive experience with moves in Botkyrka, helping both households and businesses. We plan clearly, handle logistics securely and deliver on time – with local knowledge and tailored solutions.",
+      "mobileExpanded": "Benefits in Botkyrka: fixed price with 50% RUT, free loan of boxes for four weeks, valid traffic permits and comprehensive insurance. Our trained staff use protective materials and structured routines for packing, carrying and transport. We keep close contact before moving day and ensure staffing, vehicles and schedule match your needs.",
+      "mobileExpanded2": "We adapt parking, carrying routes, elevators and route planning to the property and can, if needed, do a free pre‑inspection. We coordinate with the building manager/association on elevator bookings, loading zones and protecting stairwells. The result is a quick, careful and well‑coordinated move with minimal disruption – from the first quote to the last box in place."
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Botkyrka?"
+    },
+    "experienceSection": {
+      "title": "Our experience in Botkyrka"
+    },
+    "experience": {
+      "title": "Botkyrka’s preferred movers with local expertise",
+      "description": "We help households and businesses in Botkyrka – from apartments to houses. Our local knowledge of parking, carrying routes, elevator logistics and access rules lets us plan efficiently, reduce carrying distances and ensure safe handling from first lift to last box.",
+      "expanded": "We routinely coordinate time windows, elevator bookings and loading zones, and protect stairwells and delicate surfaces. With clear communication before moving day, proper staffing and suitable vehicles, we keep schedules and minimize disturbance for neighbors and the building.\n\nWith over 1000 positive reviews and returning customers, we deliver punctual moves with focus on safety, quality and service – whether you move within Botkyrka or to/from the area."
+    },
+    "customerReviews": {
+      "title": "What do our customers think of us?"
+    },
+    "reviews": {
+      "subtitle": "Reliable moving service in Botkyrka",
+      "description": "Fixed prices, 50% RUT deduction and insured handling – our customers in Botkyrka especially value clear communication and punctuality. Our trained staff work methodically with protective materials, efficient carrying routes and smart planning to minimize disruption. We keep you updated from quote to move‑in and follow up afterwards to ensure everything went as planned.",
+      "badgeAlt": "Specialists in moving in Botkyrka",
+      "arrowText": "See why customers in Botkyrka choose us"
+    },
+    "awards": {
+      "title": "Awards for our work in Botkyrka",
+      "description": "Our awards reflect our specialization in moves in Botkyrka. We have been recognized for safe handling, clear communication and on-time delivery – from houses to modern apartments. These acknowledgments confirm our quality level: trained staff, insured handling, traffic permits and established procedures.\n\nWe continuously improve our service and methods to meet Botkyrka’s requirements, focusing on safety, efficiency and high customer satisfaction."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Botkyrka",
+      "description": "A complete range of moving services in Botkyrka – household moves, move-out cleaning, heavy lifting and storage.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Read more about moving in Botkyrka",
+      "description": "Practical guides for moving in Botkyrka – loading zones, time windows, elevator bookings and smart route planning.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Moving in Botkyrka – local tips for an easy move",
+      "description": "What should you consider when moving in Botkyrka? We share insights on parking, elevators and carrying routes, and how to plan an efficient and safe move."
+    },
+    "faq": {
+      "title": "Common questions about moving in Botkyrka",
+      "items": [
+        {
+          "question": "Do you offer fixed prices and 50% RUT for moves in Botkyrka?",
+          "answer": "Yes. You’ll receive a fixed price tailored to your move in Botkyrka and we handle the RUT deduction (50% of the labor cost). The quote is transparent with no hidden fees."
+        },
+        {
+          "question": "How do you handle parking, loading zones and carrying routes in Botkyrka?",
+          "answer": "We pre‑book elevators when needed, plan loading zones and set efficient carrying routes to reduce distances. This minimizes disruption and speeds up the move safely."
+        },
+        {
+          "question": "Can I borrow moving boxes and get packing tips?",
+          "answer": "Yes. You can borrow moving boxes free of charge for up to four weeks and we share packing tips for labeling, room sorting and protecting fragile items."
+        },
+        {
+          "question": "Do you have insurance and valid traffic permits?",
+          "answer": "Yes. We have comprehensive insurance and valid traffic permits. Our trained staff use protective materials and follow safe routines in the building."
+        },
+        {
+          "question": "Do you handle pianos, safes and other heavy items?",
+          "answer": "Yes. We offer heavy‑lifting with the right equipment and staffing. Specify the item type and weight in your quote request so we can size the team and vehicle correctly."
+        },
+        {
+          "question": "How far in advance should I book a move in Botkyrka?",
+          "answer": "Ideally 2–4 weeks in advance. We can often assist on short notice depending on availability – especially on weekdays and outside peak season."
+        },
+        {
+          "question": "Can I combine household moving and move‑out cleaning?",
+          "answer": "Yes. We coordinate moving and cleaning for a smooth handover and can offer a package price. Share your dates and we’ll plan time windows and key handling."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions about moving in Botkyrka?",
+      "linkText": "See all FAQs"
+    }
+  },
   "reviews": {
     "title": "What do our customers think of us?",
     "subtitle": "A safe and professional moving experience",
@@ -518,12 +701,30 @@
     "customQuote": "Our quotes are always based on your specific needs and circumstances.",
     "permits": "As a serious moving company, we have all necessary permits, tax certificates, and insurance in place.",
     "steps": [
-      { "title": "Fill in the form", "desc": "Tell us about your move" },
-      { "title": "Quick quote", "desc": "Get a price in 1 minute" },
-      { "title": "Personal contact", "desc": "We call the same day or the next" },
-      { "title": "Sign & confirm", "desc": "Get booking confirmation immediately" },
-      { "title": "Move completed", "desc": "We take care of everything" },
-      { "title": "Satisfied customer", "desc": "14-day satisfaction guarantee" }
+      {
+        "title": "Fill in the form",
+        "desc": "Tell us about your move"
+      },
+      {
+        "title": "Quick quote",
+        "desc": "Get a price in 1 minute"
+      },
+      {
+        "title": "Personal contact",
+        "desc": "We call the same day or the next"
+      },
+      {
+        "title": "Sign & confirm",
+        "desc": "Get booking confirmation immediately"
+      },
+      {
+        "title": "Move completed",
+        "desc": "We take care of everything"
+      },
+      {
+        "title": "Satisfied customer",
+        "desc": "14-day satisfaction guarantee"
+      }
     ]
   },
   "advantages": {
@@ -556,91 +757,459 @@
   "bohagsflytt": {
     "hero": {
       "title": "Household Moving",
-      "subtitle": "Let us take care of your entire move. With our professional household moving service, you get a worry-free moving experience from start to finish.",
-      "description": "We perform large and small household moves every day! It's our proud profession to safely and efficiently move things from one place to another at a competitive fixed price."
-    },
-    "features": {
-      "packing": {
-        "title": "Packing & Unpacking",
-        "description": "We pack your belongings safely and professionally with the right materials and techniques."
-      },
-      "transport": {
-        "title": "Safe Transport",
-        "description": "Modern moving trucks and experienced movers ensure safe transport of your belongings."
-      },
-      "materials": {
-        "title": "Moving Materials",
-        "description": "We provide all the moving materials needed for a safe move."
-      },
-      "assembly": {
-        "title": "Disassembly & Assembly",
-        "description": "We help you disassemble and assemble furniture when needed."
-      }
+      "subtitle": "Complete moving service for the entire household. We help you with everything from planning and packing to transport and unpacking.",
+      "description": "Professional household moving that makes your move as smooth as possible. With us, you can be confident about your belongings and your wallet."
     },
     "content": {
-      "intro": "Are you moving from one home to another? Let us at Flyttella take care of your move, we perform large and small household moves every day! It's our proud profession to safely and efficiently move things from one place to another at a competitive fixed price.",
-      "expertise": "We know that a household move can feel complicated and difficult, but helping you move is our area of expertise.",
-      "quality": "If you're looking for quality moving help at reasonable prices, then you've come to the right place! After many years in the industry, we can promise you reliable service at a low price. Moving should be simple, and we make sure it is.",
-      "comprehensive": "It doesn't matter if it's an apartment, summer house, or an entire villa! We help you with the entire process! From disassembly, packing, packaging, transportation, unpacking to furniture placement.",
-      "customized": "Tell us what you need help with, and we'll find a smart solution tailored to your specific wishes."
+      "whatIsTitle": "What is household moving?",
+      "whatIsDescription": "Household moving involves moving all or parts of a household's belongings from one residence to another. It includes everything from planning, packing and transport to unpacking and possible storage.",
+      "whyChooseTitle": "Why choose us for your household move?",
+      "whyChooseDescription": "We have over 15 years of experience with household moves in Stockholm and have helped thousands of customers with their moves. Our team of professional movers ensures that your move becomes as smooth and secure as possible.",
+      "imageAlt": "Moving feeling",
+      "pricingTitle": "What does a household move cost?",
+      "pricingDescription": "The price of a household move varies depending on factors such as the amount of belongings, the distance between addresses, floor level, access to elevator and any additional services such as packing or storage. A normal move within the same city can cost from about 1,700 SEK and up. To get an exact price, we recommend that you request a free quote tailored to your needs.",
+      "testimonial": "Everything went smoothly and safely from first contact until everything was in place. Highly recommend Flyttella to everyone who wants a worry-free move!",
+      "bohag2010Title": "What is household moving 2010?",
+      "bohag2010Description": "Household moving 2010 refers to the rules and guidelines established in \"Bohag 2010\" – an agreement developed by Sweden's Haulage Companies and Swedish Furniture Transporters' Association. The agreement regulates the responsibility between moving companies and customers in household moving, and ensures that the move takes place in a safe and professional manner. It includes among other things insurance, handling of belongings, complaints and payment terms. When you hire a moving company that follows Bohag 2010, you can feel extra secure throughout the entire moving process.",
+      "boxesTitle": "Moving Boxes",
+      "boxesDescription": "Moving boxes are an important part of a smooth and safe household move. With the right boxes, packing becomes easier and your things are better protected during transport. We offer stable and spacious moving boxes that are adapted for different types of items – from books and porcelain to clothes and electronics. With us, you can borrow moving boxes free of charge for up to 4 weeks when you book your move, which makes the entire process both easier and more cost-effective.",
+      "packingTipsAlt": "Packing tips",
+      "bookingTitle": "Book moving help in good time",
+      "bookingDescription": "For a smooth and stress-free move, it's important to book moving help in good time. We recommend that you book at least 2-3 weeks in advance to ensure availability and get the moving day that suits you best. We offer flexible booking options and can adapt to your needs. Book today to ensure a professional and reliable moving service.",
+      "checklistTitle": "Moving checklist",
+      "services": {
+        "planning": {
+          "title": "Move Planning",
+          "description": "We help you plan your move from start to finish."
+        },
+        "packing": {
+          "title": "Packing",
+          "description": "Professional packing with the right materials to protect your belongings."
+        },
+        "transport": {
+          "title": "Transport",
+          "description": "Safe transport with modern vehicles and experienced drivers."
+        },
+        "unpacking": {
+          "title": "Unpacking",
+          "description": "We help you unpack and set up your furniture at the new address."
+        }
+      }
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description": "Flyttella is a moving and cleaning company based in Stockholm that was founded with the goal of making moves and cleaning services easier, safer and more transparent. We have been in business for 5 years as a company, but have over 8 years of experience in the industry – something that is reflected in our working methods, our quality and our satisfied customers.",
+      "experience": "So far we have had the pleasure of helping over 8000 customers, both individuals and companies, with everything from small moves to complete solutions with cleaning, packing and advice. What makes us unique is our focus on clear terms and fixed prices – with us you always know what's included and what it costs.",
+      "quality": "We offer free loan of moving boxes, free rebooking and cancellation up to 24 hours before, as well as a generous 14-day guarantee on all moving cleaning. Behind all this stands our competent and personal customer service, which is always available to answer questions, give tips and help you make the right decision.",
+      "customerFocus": "The customer is always at the center. We listen to your wishes and needs, and adapt our service accordingly. Whether you're moving within the same city or to a new location, we're here to help you.",
+      "readMore": "Read more about us",
+      "imageAlt": "About Flyttella"
+    },
+    "tipsSection": {
+      "title": "Tips for your move",
+      "beforeMoving": {
+        "title": "Before the move"
+      },
+      "duringMoving": {
+        "title": "During the move"
+      },
+      "afterMoving": {
+        "title": "After the move"
+      },
+      "packingTips": {
+        "title": "Packing tips",
+        "imageAlt": "Packing"
+      },
+      "smoothMovingDay": {
+        "title": "A smooth moving day",
+        "imageAlt": "Happy mover"
+      },
+      "startInNewHome": {
+        "title": "Start in new home",
+        "imageAlt": "New home"
+      }
+    },
+    "tips": {
+      "planning": {
+        "title": "Plan and prepare",
+        "imageAlt": "Planning"
+      },
+      "contracts": {
+        "title": "Contracts and notifications",
+        "imageAlt": "Contracts"
+      },
+      "beforeMoving": {
+        "title": "Before the moving company arrives",
+        "imageAlt": "Moving preparation"
+      },
+      "duringMoving": {
+        "title": "Communication and coordination",
+        "imageAlt": "Move in progress"
+      },
+      "afterMoving": {
+        "title": "Documentation and follow-up",
+        "imageAlt": "Post-move documentation"
+      }
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "description": "Our customers are satisfied with our service. Here are some examples of what they say about us:",
+      "imageAlt": "1000+ positive reviews from customers",
+      "arrowText": "We have helped thousands of customers with moves, cleaning and household moving over the years. Our customers appreciate our professional service, punctuality and care.",
+      "cta": "Read more reviews"
+    },
+    "cta": {
+      "title": "Ready to start your move?",
+      "subtitle": "Get a free quote on your household move today",
+      "button": "Get free quote"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures that your old home is left in perfect condition.",
+        "extendedDescription": "Our moving cleaning follows established industry standards and includes everything from kitchen and bathroom to window cleaning and details. We use environmentally friendly products and offer a 14-day cleaning guarantee so you can feel completely secure.",
+        "readMore": "Read more"
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Safe storage of your belongings. We offer flexible solutions for shorter and longer storage with secure handling.",
+        "extendedDescription": "Do you need to store belongings during the moving process? We provide safe and reliable storage solutions for your belongings. We offer flexible options that suit your needs and timeline – and can also help with pickup and redelivery.",
+        "readMore": "Read more"
+      },
+      "packhjalp": {
+        "title": "Packing Help",
+        "description": "Professional packing help for a stress-free move. We help you pack your belongings safely and organized.",
+        "extendedDescription": "Packing is often the most time-consuming part of a move. Our experienced movers use quality packing materials and ensure everything is packed correctly for transport. We also help with smooth redelivery.",
+        "mobileDescription": "We help with labeling and organizing for easier unpacking.",
+        "readMore": "Read more"
+      }
+    },
+    "experience": {
+      "title": "Our Experience",
+      "description": "With over 15 years of experience with household moves in Stockholm, we have helped thousands of customers with their moving needs.",
+      "stats": {
+        "flyttar": {
+          "count": "8000+",
+          "description": "Completed moves"
+        },
+        "stadningar": {
+          "count": "7000+",
+          "description": "Completed cleanings"
+        },
+        "manadsvis": {
+          "count": "500+",
+          "description": "Satisfied customers"
+        }
+      }
     },
     "process": {
-      "title": "Our Process",
-      "description": "Our moving process is designed to be simple, transparent, and secure. It starts with you filling out our form on the homepage where you provide your details and moving needs. Within one minute, you'll receive a quote sent to your specified email address. The same day or the next day, we'll personally contact you to discuss the details and answer any questions. When you're satisfied with the quote, you can easily sign it digitally. Then we carry out the move according to your wishes and agreement. The result? A satisfied customer who can focus on coming home to their new home.",
-      "pricing": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as living area, floor, elevator, and parking distance to give you a quote that fits your specific situation. We can also inspect the property if needed. All prices are fixed without hidden fees - we always base our work on your wishes and information we receive from you as a customer. Do you have special wishes or questions? Contact us and we'll adapt the quote to your needs.",
-      "subtitle": "How it works",
-      "steps": [
-        {
-          "title": "Fill in the form",
-          "description": "Tell us about your move"
+      "title": "How it works",
+      "description": "Our moving process is designed to be simple, transparent and safe. It starts with you filling out our form on the homepage where you enter your details and moving needs. Within a minute you get a quote sent to your specified email address. The same day or the day after we take personal contact with you to discuss the details and answer any questions. When you are satisfied with the quote you can easily sign it digitally. Then we carry out the move according to your wishes and agreement. The result? A satisfied customer who can focus on coming home to their new home.",
+      "pricing": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as living area, floor, elevator and parking distance to give you a quote that fits your situation, we can also inspect the home if needed. All prices are fixed without hidden fees - we always start from your wishes and information we get from you as a customer. Do you have special wishes or questions? Contact us and we will adapt the quote to your needs.",
+      "subtitle": "Our moving process in 6 simple steps",
+      "steps": {
+        "0": {
+          "title": "Fill out the form",
+          "description": "Tell us what you need help with and when you want us to come."
         },
-        {
-          "title": "Quick quote",
-          "description": "Get a price in 1 minute"
+        "1": {
+          "title": "Quick response",
+          "description": "We respond within a minute with a free quote."
         },
-        {
+        "2": {
           "title": "Personal contact",
-          "description": "We call the same day or the next"
+          "description": "We call the same day or the day after to discuss the details."
+        },
+        "3": {
+          "title": "Confirm booking",
+          "description": "Approve the quote and we book your move immediately."
+        },
+        "4": {
+          "title": "Professional move",
+          "description": "Our experienced movers come and help you with the entire move."
+        },
+        "5": {
+          "title": "Ready and satisfied",
+          "description": "We clean up after ourselves and you can enjoy your new home."
+        }
+      }
+    },
+    "blog": {
+      "title": "Latest from our blog",
+      "readMore": "Read more"
+    },
+    "faq": {
+      "title": "Frequently asked questions about household moving",
+      "questions": [
+        {
+          "id": "bohagsflytt-1",
+          "question": "What is included in a household move?",
+          "answer": "A household move includes everything from planning and packing to transport and unpacking. We help you inventory your belongings, pack safely with the right materials, transport everything to your new address and help you unpack and set up the furniture."
         },
         {
-          "title": "Sign & confirm",
-          "description": "Get booking confirmation immediately"
+          "id": "bohagsflytt-2",
+          "question": "How far in advance should I book?",
+          "answer": "We recommend that you book at least 2-3 weeks in advance, especially during peak season (May-September). For smaller moves, we can often help you even with shorter notice, but it depends on our availability."
         },
         {
-          "title": "Move completed",
-          "description": "We take care of everything"
+          "id": "bohagsflytt-3",
+          "question": "What does a household move cost?",
+          "answer": "The cost of a household move depends on several factors such as distance, volume, number of movers and any additional services. We always give you a fixed price without hidden costs when we make the quote."
         },
         {
-          "title": "Satisfied customer",
-          "description": "Returning customer"
+          "id": "bohagsflytt-4",
+          "question": "Do you have insurance?",
+          "answer": "Yes, we have full insurance that covers damage that may occur during the move. If something breaks due to our handling, we replace it. It's also important to note that we follow industry standards to minimize the risk of damage."
+        },
+        {
+          "id": "bohagsflytt-5",
+          "question": "Can you help with packing?",
+          "answer": "Yes, we offer complete packing help that includes packing, transport and unpacking. We have all the necessary materials and can help you with the entire process from start to finish."
         }
       ]
     },
-    "whatIs": {
-      "title": "What is household moving?",
-      "subtitle": "A complete guide to household moving",
-      "description": "Household moving is the relocation of all your belongings from one home to another. It includes everything from small items to large furniture and electronics. We take care of the entire process from start to finish.",
-      "sections": [
+    "sidebar": {
+      "reco": {
+        "title": "Recommended",
+        "description": "Other customers have also chosen these services"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Professional assembly of furniture and items"
+      },
+      "tunglyft": {
+        "title": "Heavy Lifting",
+        "description": "Safe handling of heavy items"
+      },
+      "barhjalp": {
+        "title": "Carrying Help",
+        "description": "Help with carrying and moving items"
+      },
+      "bortforsling": {
+        "title": "Removal",
+        "description": "Environmentally friendly handling of things you don't need"
+      }
+    }
+  },
+  "bro": {
+    "hero": {
+      "title": "Moving company in Bro – secure moving at a fixed price",
+      "subtitle": "Specialised in household moves, packing help and move‑out cleaning in Bro. Fixed price with 50% RUT, insured handling and fast quote."
+    },
+    "about": {
+      "title": "About Flyttella – your local moving company in Bro",
+      "desktop": "Flyttella has strong experience with moves in Bro – from residential streets and townhouses to new developments. We plan clearly, keep schedules and adapt logistics to local conditions.",
+      "desktop2": "Benefits in Bro: fixed price with 50% RUT, free loan of boxes for 4 weeks, traffic permits and comprehensive insurance. Trained staff use protective materials and structured routines for packing, carrying and transport – with proactive communication before moving day.",
+      "desktop3": "We adapt parking, carrying routes, elevators and route planning to the property and can do a free pre‑inspection if needed. We coordinate with associations/property managers on elevator bookings, loading zones and protecting stairwells. The result is a quick, careful and well‑coordinated move with minimal disruption – from first quote to last box.",
+      "mobile": "Flyttella has extensive experience with moves in Bro for both households and businesses. We plan clearly, handle logistics securely and deliver on time – with local knowledge and tailored solutions.",
+      "mobileExpanded": "Benefits in Bro: fixed price with 50% RUT, free loan of boxes for four weeks, traffic permits and insurance. Trained staff with protective materials and structured routines for packing, carrying and transport.",
+      "mobileExpanded2": "We adapt parking, carrying routes, elevators and route planning – with a free pre‑inspection if needed. We coordinate elevator bookings/loading zones and protect delicate surfaces for a quick and careful move from quote to last box."
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Bro?"
+    },
+    "experienceSection": {
+      "title": "Our experience in Bro"
+    },
+    "experience": {
+      "title": "Bro’s preferred movers with local expertise",
+      "description": "We help households and businesses in Bro – from apartments to houses. Our local knowledge of parking, carrying routes, elevator logistics and access rules reduces carrying distances and ensures safe handling.",
+      "expanded": "We coordinate time windows, elevator bookings and loading zones, and protect stairwells and delicate surfaces. With clear communication, proper staffing and suitable vehicles, we keep schedules and minimize disturbance. With over 1000 positive reviews, we deliver punctually – within Bro or to/from the area."
+    },
+    "customerReviews": {
+      "title": "What do our customers think of us?"
+    },
+    "reviews": {
+      "subtitle": "Reliable moving service in Bro",
+      "description": "Fixed prices, 50% RUT deduction and insured handling – customers in Bro especially value our punctuality, careful handling and proactive updates. We work methodically with protective materials, efficient routes and smart planning that minimizes disruption – from quote to move‑in with follow‑up afterwards.",
+      "badgeAlt": "Specialists in moving in Bro",
+      "arrowText": "See why customers in Bro choose us"
+    },
+    "awards": {
+      "title": "Awards for our work in Bro",
+      "description": "Our awards reflect our specialization in moves in Bro – safe handling, clear communication and on‑time delivery. Acknowledgments confirm our level: trained staff, insured handling, traffic permits and established procedures."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Bro",
+      "description": "A complete range of moving services in Bro – household moves, packing help, guaranteed move‑out cleaning, heavy lifting and storage.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Read more about moving in Bro",
+      "description": "Practical guides for moving in Bro – packing and labeling, time windows and elevator bookings, securing loading zones and smart route planning to shorten carrying distances.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Moving in Bro – local tips for an easy move",
+      "description": "Packing, labeling and room prioritization, booking elevators in time, securing loading zones and smart route planning to shorten carrying distances. Tips for communicating with the association/building manager, day‑before prep and avoiding common pitfalls."
+    },
+    "processSection": {
+      "title": "Our process for a smooth move in Bro",
+      "description": "Our quotes are always based on your needs in Bro – floor area, floor, elevator access, carrying routes and parking. If needed, we do a free inspection and size staffing and vehicles accordingly. All prices are fixed with no hidden fees and based on your preferences. Specific time windows or access rules? We tailor the plan for an efficient move in Bro.",
+      "subtitle": "How it works"
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Briefly describe your move in Bro – address, date and scope.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You receive a fixed price with 50% RUT deduction and clear terms.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "Sign digitally and we secure the booking.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "We review carrying routes, elevator and parking in Bro.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "Protective materials, careful handling and efficient route planning.",
+      "satisfiedCustomer": "Satisfied customer",
+      "satisfiedCustomerDesc": "Follow‑up after the move for high customer satisfaction."
+    },
+    "faq": {
+      "title": "Common questions about moving in Bro",
+      "items": [
         {
-          "title": "What's included in household moving?",
-          "content": "A complete household move includes packing all your belongings, safe transport with modern moving trucks, and unpacking at the new location. We handle everything from small details to large furniture with professional care."
+          "question": "Do you offer fixed prices and 50% RUT in Bro?",
+          "answer": "Yes. You’ll receive a fixed price tailored to your move in Bro and we handle the RUT deduction. The quote is transparent with no hidden fees."
         },
         {
-          "title": "For which types of properties?",
-          "content": "We perform household moves for all types of properties - apartments, houses, summer houses, and offices. Regardless of size or type of property, we can adapt our service to your specific needs."
+          "question": "How do you plan parking, loading zones and carrying routes?",
+          "answer": "We pre‑book elevators when needed, secure loading zones and set efficient carrying routes to shorten distances – minimizing disturbance and saving time."
         },
         {
-          "title": "Our professional approach",
-          "content": "With over 8 years of experience in the industry, we know exactly what's required for a smooth household move. We use the right materials, techniques, and personnel to ensure your belongings arrive safely and undamaged."
+          "question": "Can I borrow moving boxes and get packing help?",
+          "answer": "Yes. You can borrow boxes free for up to four weeks. We can also help with packing and share labeling and fragile‑item protection tips."
         },
         {
-          "title": "Benefits of our household moving service",
-          "content": "We offer fixed prices, insurance of all belongings, and professional service from start to finish. You also get free loan of moving boxes and free rescheduling up to 24 hours before the move."
+          "question": "Are you insured and do you have traffic permits?",
+          "answer": "Yes. We have comprehensive insurance and valid traffic permits. We use protective materials and follow safe routines in the building."
+        },
+        {
+          "question": "Do you handle pianos, safes and other heavy lifts?",
+          "answer": "Yes. We offer heavy‑lifting with the right equipment and staffing. Please provide type and weight in your quote request so we size the team and vehicle correctly."
+        },
+        {
+          "question": "How far in advance should I book a move in Bro?",
+          "answer": "Ideally 2–4 weeks in advance. We can often assist on short notice depending on availability – especially on weekdays and outside peak season."
+        },
+        {
+          "question": "Can I combine household moving and move‑out cleaning?",
+          "answer": "Yes. We coordinate moving and cleaning for a smooth handover and can offer a package price. Share your dates and we’ll plan time windows and key handling."
         }
       ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions about moving in Bro?",
+      "linkText": "See all FAQs"
     }
-  }
-  ,
+  },
+  "bromma": {
+    "hero": {
+      "title": "Moving company in Bromma – secure moving at a fixed price",
+      "subtitle": "Specialised in household moves, packing help and move‑out cleaning in Bromma. Fixed price with 50% RUT, insured handling and fast quote."
+    },
+    "about": {
+      "title": "About Flyttella – your local moving company in Bromma",
+      "desktop": "We have extensive experience with moves in Bromma – from villa neighborhoods and townhouse areas to new developments. We plan clearly, keep schedules and adapt logistics to local conditions.",
+      "desktop2": "Benefits in Bromma: fixed price with 50% RUT, free loan of boxes for 4 weeks, traffic permits and comprehensive insurance. Trained staff use protective materials and structured routines for packing, carrying and transport – with proactive communication before moving day.",
+      "desktop3": "We adapt parking, carrying routes, elevators and route planning to the property and can do a free pre‑inspection if needed. We coordinate with associations/property managers on elevator bookings, loading zones and protecting stairwells. The result is a quick, careful and well‑coordinated move with minimal disruption – from first quote to last box.",
+      "mobile": "Flyttella has long experience with moves in Bromma for both households and businesses. We plan clearly, handle logistics securely and deliver on time – with local knowledge and tailored solutions.",
+      "mobileExpanded": "Benefits in Bromma: fixed price with 50% RUT, free loan of boxes for four weeks, traffic permits and insurance. Trained staff with protective materials and structured routines for packing, carrying and transport.",
+      "mobileExpanded2": "We adapt parking, carrying routes, elevators and route planning – with a free pre‑inspection if needed. We coordinate elevator bookings/loading zones and protect delicate surfaces for a quick and careful move from quote to last box."
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Bromma?"
+    },
+    "experienceSection": {
+      "title": "Our experience in Bromma"
+    },
+    "experience": {
+      "title": "Bromma’s preferred movers with local expertise",
+      "description": "We help households and businesses in Bromma – from apartments to townhouses and villas. Local knowledge of parking, carrying routes, elevator logistics and access rules reduces carrying distances and ensures safe handling.",
+      "expanded": "We coordinate time windows, elevator bookings and loading zones, and protect stairwells and delicate surfaces. With clear communication, proper staffing and suitable vehicles, we keep schedules and minimize disturbance. Over 1000 positive reviews confirm our focus on safety, quality and service – whether moving within Bromma or to/from the area."
+    },
+    "customerReviews": {
+      "title": "What do our customers think of us?"
+    },
+    "reviews": {
+      "subtitle": "Reliable moving service in Bromma",
+      "description": "Fixed prices, 50% RUT deduction and insured handling – customers in Bromma appreciate our punctuality, careful handling and proactive updates. We work methodically with protective materials, efficient routes and smart planning that minimizes disruption – from quote to move‑in with follow‑up afterwards.",
+      "badgeAlt": "Specialists in moving in Bromma",
+      "arrowText": "See why customers in Bromma choose us"
+    },
+    "awards": {
+      "title": "Awards for our work in Bromma",
+      "description": "Our awards reflect our specialization in Bromma: safe handling, clear communication and on‑time delivery. Recognitions confirm our methods – trained staff, insured handling, traffic permits and established processes – and our focus on continuous improvement."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Bromma",
+      "description": "A complete range of moving services in Bromma – household moves, packing help, guaranteed move‑out cleaning, heavy lifting and storage.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Read more about moving in Bromma",
+      "description": "Practical guides for moving in Bromma – packing and labeling, time windows and elevator bookings, securing loading zones and smart route planning to shorten carrying distances.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Moving in Bromma – local tips for an easy move",
+      "description": "Pack smartly (room by room, clear labeling), book elevators in time, secure loading zones and plan carrying routes to reduce distances. Coordinate with the association/property manager, prepare disassembly/keys the day before and avoid common pitfalls for a safe move in Bromma."
+    },
+    "processSection": {
+      "title": "Our process for a smooth move in Bromma",
+      "description": "Our quotes are always based on your needs in Bromma – floor area, floor, elevator access, carrying routes and parking. If needed, we do a free inspection and size staffing and vehicles accordingly. All prices are fixed with no hidden fees and based on your preferences. Specific time windows or access rules? We tailor the plan for an efficient move in Bromma.",
+      "subtitle": "How it works"
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Briefly describe your move in Bromma – address, date and scope.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You receive a fixed price with 50% RUT deduction and clear terms.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "Sign digitally and we secure the booking.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "We review carrying routes, elevator and parking in Bromma.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "Protective materials, careful handling and efficient route planning.",
+      "satisfiedCustomer": "Satisfied customer",
+      "satisfiedCustomerDesc": "Follow‑up after the move for high customer satisfaction."
+    },
+    "faq": {
+      "title": "Common questions about moving in Bromma",
+      "items": [
+        {
+          "question": "How do you handle key handover if I can’t be on site?",
+          "answer": "We can manage keys via scheduled pickup with ID check, a locked key box or a designated representative. We document receipt/return and confirm time and place in advance."
+        },
+        {
+          "question": "Can you coordinate move‑in when an elevator must be booked in advance?",
+          "answer": "Yes. We book elevator/loading time with the association or property manager and adjust staffing so the time window is used efficiently."
+        },
+        {
+          "question": "Do you offer packing help and unpacking?",
+          "answer": "Yes. We can pack the entire home or parts (kitchen/glass/porcelain) and, if needed, help with unpacking and removal of empty boxes."
+        },
+        {
+          "question": "How do you handle heavy or bulky furniture?",
+          "answer": "We perform risk assessment, use proper protection/lifting gear and plan the team/vehicle according to weight and dimensions. Please include this in your quote request."
+        },
+        {
+          "question": "Can I store belongings in connection with the move?",
+          "answer": "Yes. We offer storage and can pick up/drop off at the storage unit. The first month can often be offered at a campaign price depending on volume and period."
+        },
+        {
+          "question": "What’s included in move‑out cleaning when you coordinate everything?",
+          "answer": "Complete move‑out cleaning with guarantee according to estate agent standards: kitchen, bathroom, window cleaning, all surfaces plus materials/equipment. We coordinate keys/times."
+        },
+        {
+          "question": "Do you have fixed prices and 50% RUT in Bromma?",
+          "answer": "Yes. Fixed price based on floor area, floor, elevator and carrying routes. We handle the RUT deduction (50% of labor cost) and provide a clear quote with no hidden fees."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions about moving in Bromma?",
+      "linkText": "See all FAQs"
+    }
+  },
   "flyttstadning": {
     "hero": {
       "title": "Professional move-out cleaning",
@@ -680,6 +1249,21 @@
       "montering": {
         "title": "Assembly",
         "description": "Safe assembly and disassembly of furniture and appliances. We ensure that everything is assembled correctly and safely.",
+        "readMore": "Read more"
+      },
+      "tunglyft": {
+        "title": "Heavy lifting",
+        "description": "Specialized move and lifting of heavy and unwieldy items such as piano, safes and machines.",
+        "readMore": "Read more"
+      },
+      "barhjalp": {
+        "title": "Carrying help",
+        "description": "Extra help during move for heavy and large items. We help you with the heavy lifting.",
+        "readMore": "Read more"
+      },
+      "bortforsling": {
+        "title": "Disposal",
+        "description": "Professional disposal of old furniture, appliances and other items you no longer need.",
         "readMore": "Read more"
       }
     },
@@ -758,15 +1342,51 @@
       "title": "Our benefits",
       "imageAlt": "Our benefits",
       "features": [
-        { "icon": "💰", "title": "Fixed price", "description": "No surprises - we offer both fixed prices and the possibility of ongoing prices" },
-        { "icon": "📋", "title": "RUT deduction", "description": "We handle all paperwork for RUT deduction" },
-        { "icon": "✅", "title": "14-day cleaning guarantee", "description": "We are so confident in our quality that we offer a 14-day satisfied customer guarantee" },
-        { "icon": "⏰", "title": "Reschedule or cancel free of charge", "description": "Reschedule or cancel free of charge up to 24 hours before cleaning" },
-        { "icon": "🔒", "title": "Permits and insurance", "description": "All necessary permits and insurance in place" },
-        { "icon": "🎓", "title": "Trained staff", "description": "Our staff is trained to ensure the highest quality and service." },
-        { "icon": "🧴", "title": "Eco-friendly products", "description": "We use eco-friendly and safe cleaning products" },
-        { "icon": "📈", "title": "Management system", "description": "We work with effective management systems to guarantee structure and quality." },
-        { "icon": "🦺", "title": "Work environment", "description": "We prioritize a safe and secure work environment for both customers and staff." }
+        {
+          "icon": "💰",
+          "title": "Fixed price",
+          "description": "No surprises - we offer both fixed prices and the possibility of ongoing prices"
+        },
+        {
+          "icon": "📋",
+          "title": "RUT deduction",
+          "description": "We handle all paperwork for RUT deduction"
+        },
+        {
+          "icon": "✅",
+          "title": "14-day cleaning guarantee",
+          "description": "We are so confident in our quality that we offer a 14-day satisfied customer guarantee"
+        },
+        {
+          "icon": "⏰",
+          "title": "Reschedule or cancel free of charge",
+          "description": "Reschedule or cancel free of charge up to 24 hours before cleaning"
+        },
+        {
+          "icon": "🔒",
+          "title": "Permits and insurance",
+          "description": "All necessary permits and insurance in place"
+        },
+        {
+          "icon": "🎓",
+          "title": "Trained staff",
+          "description": "Our staff is trained to ensure the highest quality and service."
+        },
+        {
+          "icon": "🧴",
+          "title": "Eco-friendly products",
+          "description": "We use eco-friendly and safe cleaning products"
+        },
+        {
+          "icon": "📈",
+          "title": "Management system",
+          "description": "We work with effective management systems to guarantee structure and quality."
+        },
+        {
+          "icon": "🦺",
+          "title": "Work environment",
+          "description": "We prioritize a safe and secure work environment for both customers and staff."
+        }
       ]
     },
     "experience": {
@@ -780,7 +1400,7 @@
           "description": "assignments completed"
         },
         "hemstadningar": {
-          "title": "Home cleanings", 
+          "title": "Home cleanings",
           "count": 5000,
           "description": "assignments completed"
         },
@@ -805,28 +1425,6 @@
       "articleDescription": "Choosing the right cleaning company is crucial for thorough move-out cleaning. In this guide we go through the most important factors you should think about - from cleaning guarantee and eco-friendly products to customer reviews and price transparency. Learn how to identify a serious cleaning company that delivers quality and security.",
       "readMore": "Read more",
       "seeAllArticles": "See all articles about cleaning"
-    },
-    "sidebar": {
-      "montering": {
-        "title": "Assembly",
-        "description": "Safe assembly and disassembly of furniture and appliances. We ensure that everything is assembled correctly and safely.",
-        "readMore": "Read more"
-      },
-      "tunglyft": {
-        "title": "Heavy lifting",
-        "description": "Specialized move and lifting of heavy and unwieldy items such as piano, safes and machines.",
-        "readMore": "Read more"
-      },
-      "barhjalp": {
-        "title": "Carrying help",
-        "description": "Extra help during move for heavy and large items. We help you with the heavy lifting.",
-        "readMore": "Read more"
-      },
-      "bortforsling": {
-        "title": "Disposal",
-        "description": "Professional disposal of old furniture, appliances and other items you no longer need.",
-        "readMore": "Read more"
-      }
     }
   },
   "hemstadning": {
@@ -898,15 +1496,60 @@
       "title": "Our benefits",
       "imageAlt": "Cleaning staff in Stockholm - Flyttella",
       "items": [
-        { "icon": "💰", "title": "Fixed Price", "description": "No surprises – fixed prices and options available", "link": "/priser" },
-        { "icon": "📋", "title": "RUT Deduction", "description": "We handle all paperwork for RUT deduction", "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
-        { "icon": "⚡", "title": "Quick Quote", "description": "Get price suggestions quickly and easily – Simply fill out the form at the top of the page", "link": "#hemstad-offert" },
-        { "icon": "⏰", "title": "Reschedule or Cancel", "description": "Reschedule/cancel free of charge up to 24 hours before", "link": "/avbokning" },
-        { "icon": "🔒", "title": "Permits and Insurance", "description": "All necessary permits and insurance in place", "link": "/tillstand" },
-        { "icon": "🎓", "title": "Trained Staff", "description": "Trained employees and quality-assured routines", "link": "/om-oss" },
-        { "icon": "🧴", "title": "Eco-friendly Products", "description": "Gentle and eco-friendly cleaning products", "link": "/miljovanlig-stadning" },
-        { "icon": "📈", "title": "Management System", "description": "Effective routines for quality and structure", "link": "/kvalitet" },
-        { "icon": "🦺", "title": "Work Environment", "description": "Safe work environment for both customers and staff", "link": "/arbetsmiljo" }
+        {
+          "icon": "💰",
+          "title": "Fixed Price",
+          "description": "No surprises – fixed prices and options available",
+          "link": "/priser"
+        },
+        {
+          "icon": "📋",
+          "title": "RUT Deduction",
+          "description": "We handle all paperwork for RUT deduction",
+          "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+        },
+        {
+          "icon": "⚡",
+          "title": "Quick Quote",
+          "description": "Get price suggestions quickly and easily – Simply fill out the form at the top of the page",
+          "link": "#hemstad-offert"
+        },
+        {
+          "icon": "⏰",
+          "title": "Reschedule or Cancel",
+          "description": "Reschedule/cancel free of charge up to 24 hours before",
+          "link": "/avbokning"
+        },
+        {
+          "icon": "🔒",
+          "title": "Permits and Insurance",
+          "description": "All necessary permits and insurance in place",
+          "link": "/tillstand"
+        },
+        {
+          "icon": "🎓",
+          "title": "Trained Staff",
+          "description": "Trained employees and quality-assured routines",
+          "link": "/om-oss"
+        },
+        {
+          "icon": "🧴",
+          "title": "Eco-friendly Products",
+          "description": "Gentle and eco-friendly cleaning products",
+          "link": "/miljovanlig-stadning"
+        },
+        {
+          "icon": "📈",
+          "title": "Management System",
+          "description": "Effective routines for quality and structure",
+          "link": "/kvalitet"
+        },
+        {
+          "icon": "🦺",
+          "title": "Work Environment",
+          "description": "Safe work environment for both customers and staff",
+          "link": "/arbetsmiljo"
+        }
       ]
     },
     "experience": {
@@ -1050,14 +1693,46 @@
       "title": "Our benefits",
       "imageAlt": "Our benefits",
       "features": [
-        { "icon": "💰", "title": "Ongoing prices", "description": "Transparent ongoing prices – you know what you pay for" },
-        { "icon": "✅", "title": "Quality guarantee", "description": "We are so confident in our quality that we offer a satisfied customer guarantee" },
-        { "icon": "⏰", "title": "Flexible times", "description": "We adapt the cleaning to your schedule - evenings and weekends" },
-        { "icon": "🔒", "title": "Insurance", "description": "Full liability insurance and all necessary permits in place" },
-        { "icon": "🎓", "title": "Trained staff", "description": "Our staff is trained to ensure the highest quality and service." },
-        { "icon": "🧴", "title": "Eco-friendly products", "description": "We use eco-friendly and safe cleaning products" },
-        { "icon": "📈", "title": "Management system", "description": "We work with effective management systems to guarantee structure and quality." },
-        { "icon": "🦺", "title": "Work environment", "description": "We prioritize a safe and secure work environment for both customers and staff." }
+        {
+          "icon": "💰",
+          "title": "Ongoing prices",
+          "description": "Transparent ongoing prices – you know what you pay for"
+        },
+        {
+          "icon": "✅",
+          "title": "Quality guarantee",
+          "description": "We are so confident in our quality that we offer a satisfied customer guarantee"
+        },
+        {
+          "icon": "⏰",
+          "title": "Flexible times",
+          "description": "We adapt the cleaning to your schedule - evenings and weekends"
+        },
+        {
+          "icon": "🔒",
+          "title": "Insurance",
+          "description": "Full liability insurance and all necessary permits in place"
+        },
+        {
+          "icon": "🎓",
+          "title": "Trained staff",
+          "description": "Our staff is trained to ensure the highest quality and service."
+        },
+        {
+          "icon": "🧴",
+          "title": "Eco-friendly products",
+          "description": "We use eco-friendly and safe cleaning products"
+        },
+        {
+          "icon": "📈",
+          "title": "Management system",
+          "description": "We work with effective management systems to guarantee structure and quality."
+        },
+        {
+          "icon": "🦺",
+          "title": "Work environment",
+          "description": "We prioritize a safe and secure work environment for both customers and staff."
+        }
       ]
     },
     "experience": {
@@ -1071,7 +1746,7 @@
           "description": "assignments completed"
         },
         "hemstadningar": {
-          "title": "Home cleanings", 
+          "title": "Home cleanings",
           "count": 5000,
           "description": "assignments completed"
         },
@@ -1108,7 +1783,7 @@
           "answer": "Office cleaning includes vacuuming, wet mopping of floors, emptying waste bins, wiping desks, cleaning kitchen/pantry and toilets. We adapt the cleaning to your specific needs and can include additional services such as window cleaning and deep cleaning."
         },
         {
-          "id": "kontorsstadning-2", 
+          "id": "kontorsstadning-2",
           "question": "What does office cleaning cost?",
           "answer": "The price depends on the size of the premises, cleaning frequency and scope. We work with ongoing prices without hidden fees and always give you a transparent cost breakdown before we start."
         },
@@ -1226,15 +1901,60 @@
       "title": "Our Benefits",
       "imageAlt": "Cleaning staff in Stockholm - Flyttella",
       "items": [
-        { "icon": "💰", "title": "Fixed Price", "description": "No surprises – fixed prices and options available", "link": "/priser" },
-        { "icon": "📋", "title": "RUT Deduction", "description": "We handle all paperwork for RUT deduction", "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
-        { "icon": "⚡", "title": "Quick Quote", "description": "Get price quickly and easily – Simply fill out the form at the top of the page", "link": "#fonsterputs-offert" },
-        { "icon": "⏰", "title": "Reschedule or Cancel", "description": "Reschedule/cancel free of charge up to 24 hours before", "link": "/avbokning" },
-        { "icon": "🔒", "title": "Permits and Insurance", "description": "All necessary permits and insurance in place", "link": "/tillstand" },
-        { "icon": "🎓", "title": "Trained Staff", "description": "Trained employees and quality-assured routines", "link": "/om-oss" },
-        { "icon": "🧴", "title": "Eco-friendly Products", "description": "Gentle and eco-friendly cleaning products", "link": "/om-oss" },
-        { "icon": "📈", "title": "Management System", "description": "Effective routines for quality and structure", "link": "/om-oss" },
-        { "icon": "🦺", "title": "Work Environment", "description": "Safe work environment for both customers and staff", "link": "/om-oss" }
+        {
+          "icon": "💰",
+          "title": "Fixed Price",
+          "description": "No surprises – fixed prices and options available",
+          "link": "/priser"
+        },
+        {
+          "icon": "📋",
+          "title": "RUT Deduction",
+          "description": "We handle all paperwork for RUT deduction",
+          "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+        },
+        {
+          "icon": "⚡",
+          "title": "Quick Quote",
+          "description": "Get price quickly and easily – Simply fill out the form at the top of the page",
+          "link": "#fonsterputs-offert"
+        },
+        {
+          "icon": "⏰",
+          "title": "Reschedule or Cancel",
+          "description": "Reschedule/cancel free of charge up to 24 hours before",
+          "link": "/avbokning"
+        },
+        {
+          "icon": "🔒",
+          "title": "Permits and Insurance",
+          "description": "All necessary permits and insurance in place",
+          "link": "/tillstand"
+        },
+        {
+          "icon": "🎓",
+          "title": "Trained Staff",
+          "description": "Trained employees and quality-assured routines",
+          "link": "/om-oss"
+        },
+        {
+          "icon": "🧴",
+          "title": "Eco-friendly Products",
+          "description": "Gentle and eco-friendly cleaning products",
+          "link": "/om-oss"
+        },
+        {
+          "icon": "📈",
+          "title": "Management System",
+          "description": "Effective routines for quality and structure",
+          "link": "/om-oss"
+        },
+        {
+          "icon": "🦺",
+          "title": "Work Environment",
+          "description": "Safe work environment for both customers and staff",
+          "link": "/om-oss"
+        }
       ]
     },
     "experience": {
@@ -1266,12 +1986,30 @@
       "pricing": "The price is based on number of windows, accessibility and options. Fixed price without hidden fees. RUT deduction is handled automatically.",
       "howItWorksTitle": "How it works",
       "steps": [
-        { "title": "Fill in the form", "description": "Tell us about your window cleaning" },
-        { "title": "Quick quote", "description": "Get price quickly and easily" },
-        { "title": "Personal contact", "description": "We call the same day or the day after" },
-        { "title": "Sign & confirm", "description": "Book digitally" },
-        { "title": "Cleaning completed", "description": "We take care of everything" },
-        { "title": "Happy customer", "description": "Crystal clear windows" }
+        {
+          "title": "Fill in the form",
+          "description": "Tell us about your window cleaning"
+        },
+        {
+          "title": "Quick quote",
+          "description": "Get price quickly and easily"
+        },
+        {
+          "title": "Personal contact",
+          "description": "We call the same day or the day after"
+        },
+        {
+          "title": "Sign & confirm",
+          "description": "Book digitally"
+        },
+        {
+          "title": "Cleaning completed",
+          "description": "We take care of everything"
+        },
+        {
+          "title": "Happy customer",
+          "description": "Crystal clear windows"
+        }
       ]
     },
     "blog": {
@@ -1288,18 +2026,44 @@
     "faq": {
       "title": "Frequently asked questions about window cleaning",
       "questions": [
-        { "id": "fp-1", "question": "How often should I clean windows?", "answer": "2–4 times per year gives a consistent result year-round." },
-        { "id": "fp-2", "question": "Can you clean externally at high altitude?", "answer": "Yes, where it's safe and accessible. Otherwise we can recommend alternatives." },
-        { "id": "fp-3", "question": "Are window frames included?", "answer": "Yes, cleaning of frames and window sills is included." },
-        { "id": "fp-4", "question": "Can I cancel?", "answer": "Yes, free rescheduling/cancellation up to 24 hours before." }
+        {
+          "id": "fp-1",
+          "question": "How often should I clean windows?",
+          "answer": "2–4 times per year gives a consistent result year-round."
+        },
+        {
+          "id": "fp-2",
+          "question": "Can you clean externally at high altitude?",
+          "answer": "Yes, where it's safe and accessible. Otherwise we can recommend alternatives."
+        },
+        {
+          "id": "fp-3",
+          "question": "Are window frames included?",
+          "answer": "Yes, cleaning of frames and window sills is included."
+        },
+        {
+          "id": "fp-4",
+          "question": "Can I cancel?",
+          "answer": "Yes, free rescheduling/cancellation up to 24 hours before."
+        }
       ]
     }
   },
   "barhjalp": {
     "sidebar": {
-      "bortforsling": {
-        "title": "Disposal",
-        "description": "Professional disposal of furniture and belongings you no longer need. Eco-friendly handling.",
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "readMore": "Read more"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Assembly and disassembly of furniture and interior - right tools and careful handling.",
+        "readMore": "Read more"
+      },
+      "tunglyft": {
+        "title": "Heavy Lifting",
+        "description": "Safe handling of heavy and large-scale items like pianos, safes and large furniture.",
         "readMore": "Read more"
       }
     },
@@ -1453,23 +2217,6 @@
       ],
       "moreQuestions": "Do you have more questions?",
       "allFaq": "See all common questions"
-    },
-    "sidebar": {
-      "magasinering": {
-        "title": "Storage",
-        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
-        "readMore": "Read more"
-      },
-      "montering": {
-        "title": "Assembly",
-        "description": "Assembly and disassembly of furniture and interior - right tools and careful handling.",
-        "readMore": "Read more"
-      },
-      "tunglyft": {
-        "title": "Heavy Lifting",
-        "description": "Safe handling of heavy and large-scale items like pianos, safes and large furniture.",
-        "readMore": "Read more"
-      }
     }
   },
   "pianoTunglyft": {
@@ -1861,18 +2608,18 @@
         "descriptionExtended": "We offer packing and unpacking as well as assembly and disassembly of furniture - everything to make your move as simple and comfortable as possible. We use quality materials and have experience with all types of moves. With our service you get a stress-free move where everything is handled professionally.",
         "readMore": "Read more"
       },
-        "bortforsling": {
-          "title": "Waste Disposal",
-          "description": "Professional handling and transport of waste, furniture and household goods. We take care of everything from old furniture to construction waste with focus on eco-friendly handling.",
-          "descriptionMobile": "We help with sorting and eco-friendly handling of waste.",
-          "descriptionExtended": "Waste disposal is perfect for moving, renovation or when you need to free up space. Our experienced staff use the right equipment and ensure all waste is handled correctly and recycled. We can also help with sorting and documentation for a smooth process."
-        },
-        "utlandsflytt": {
-          "title": "International Moving",
-          "description": "Moving across borders – planning, packing and road transport.",
-          "readMore": "Read more",
-          "descriptionExtended": "We take care of export packing, documents and safe road transport. Clear communication from start to finish. We help with route planning and delivery windows for a smooth journey."
-        },
+      "bortforsling": {
+        "title": "Waste Disposal",
+        "description": "Professional handling and transport of waste, furniture and household goods. We take care of everything from old furniture to construction waste with focus on eco-friendly handling.",
+        "descriptionMobile": "We help with sorting and eco-friendly handling of waste.",
+        "descriptionExtended": "Waste disposal is perfect for moving, renovation or when you need to free up space. Our experienced staff use the right equipment and ensure all waste is handled correctly and recycled. We can also help with sorting and documentation for a smooth process."
+      },
+      "utlandsflytt": {
+        "title": "International Moving",
+        "description": "Moving across borders – planning, packing and road transport.",
+        "readMore": "Read more",
+        "descriptionExtended": "We take care of export packing, documents and safe road transport. Clear communication from start to finish. We help with route planning and delivery windows for a smooth journey."
+      },
       "allServices": {
         "title": "Our services",
         "description": "We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. From household moving and moving cleaning to special services like storage and waste disposal.",
@@ -2341,9 +3088,21 @@
       "experienceDescription": "With over 8 years of experience, we have built a reputation for quality, reliability and customer satisfaction. We understand the local conditions and can offer tailored solutions for all needs.",
       "readMore": "Read more",
       "cards": [
-        { "title": "Assemblies", "count": "3000+", "description": "Completed assemblies" },
-        { "title": "Moves", "count": "8000+", "description": "Completed moves" },
-        { "title": "Cleanings", "count": "7000+", "description": "Completed cleanings" }
+        {
+          "title": "Assemblies",
+          "count": "3000+",
+          "description": "Completed assemblies"
+        },
+        {
+          "title": "Moves",
+          "count": "8000+",
+          "description": "Completed moves"
+        },
+        {
+          "title": "Cleanings",
+          "count": "7000+",
+          "description": "Completed cleanings"
+        }
       ]
     },
     "process": {
@@ -2444,244 +3203,6 @@
       }
     }
   },
-  "bohagsflytt": {
-    "hero": {
-      "title": "Household Moving",
-      "subtitle": "Complete moving service for the entire household. We help you with everything from planning and packing to transport and unpacking.",
-      "description": "Professional household moving that makes your move as smooth as possible. With us, you can be confident about your belongings and your wallet."
-    },
-    "content": {
-      "whatIsTitle": "What is household moving?",
-      "whatIsDescription": "Household moving involves moving all or parts of a household's belongings from one residence to another. It includes everything from planning, packing and transport to unpacking and possible storage.",
-      "whyChooseTitle": "Why choose us for your household move?",
-      "whyChooseDescription": "We have over 15 years of experience with household moves in Stockholm and have helped thousands of customers with their moves. Our team of professional movers ensures that your move becomes as smooth and secure as possible.",
-      "imageAlt": "Moving feeling",
-      "pricingTitle": "What does a household move cost?",
-      "pricingDescription": "The price of a household move varies depending on factors such as the amount of belongings, the distance between addresses, floor level, access to elevator and any additional services such as packing or storage. A normal move within the same city can cost from about 1,700 SEK and up. To get an exact price, we recommend that you request a free quote tailored to your needs.",
-      "testimonial": "Everything went smoothly and safely from first contact until everything was in place. Highly recommend Flyttella to everyone who wants a worry-free move!",
-      "bohag2010Title": "What is household moving 2010?",
-      "bohag2010Description": "Household moving 2010 refers to the rules and guidelines established in \"Bohag 2010\" – an agreement developed by Sweden's Haulage Companies and Swedish Furniture Transporters' Association. The agreement regulates the responsibility between moving companies and customers in household moving, and ensures that the move takes place in a safe and professional manner. It includes among other things insurance, handling of belongings, complaints and payment terms. When you hire a moving company that follows Bohag 2010, you can feel extra secure throughout the entire moving process.",
-      "boxesTitle": "Moving Boxes",
-      "boxesDescription": "Moving boxes are an important part of a smooth and safe household move. With the right boxes, packing becomes easier and your things are better protected during transport. We offer stable and spacious moving boxes that are adapted for different types of items – from books and porcelain to clothes and electronics. With us, you can borrow moving boxes free of charge for up to 4 weeks when you book your move, which makes the entire process both easier and more cost-effective.",
-      "packingTipsAlt": "Packing tips",
-      "bookingTitle": "Book moving help in good time",
-      "bookingDescription": "For a smooth and stress-free move, it's important to book moving help in good time. We recommend that you book at least 2-3 weeks in advance to ensure availability and get the moving day that suits you best. We offer flexible booking options and can adapt to your needs. Book today to ensure a professional and reliable moving service.",
-      "checklistTitle": "Moving checklist",
-      "services": {
-        "planning": {
-          "title": "Move Planning",
-          "description": "We help you plan your move from start to finish."
-        },
-        "packing": {
-          "title": "Packing",
-          "description": "Professional packing with the right materials to protect your belongings."
-        },
-        "transport": {
-          "title": "Transport",
-          "description": "Safe transport with modern vehicles and experienced drivers."
-        },
-        "unpacking": {
-          "title": "Unpacking",
-          "description": "We help you unpack and set up your furniture at the new address."
-        }
-      }
-    },
-    "about": {
-      "title": "About Flyttella",
-      "description": "Flyttella is a moving and cleaning company based in Stockholm that was founded with the goal of making moves and cleaning services easier, safer and more transparent. We have been in business for 5 years as a company, but have over 8 years of experience in the industry – something that is reflected in our working methods, our quality and our satisfied customers.",
-      "experience": "So far we have had the pleasure of helping over 8000 customers, both individuals and companies, with everything from small moves to complete solutions with cleaning, packing and advice. What makes us unique is our focus on clear terms and fixed prices – with us you always know what's included and what it costs.",
-      "quality": "We offer free loan of moving boxes, free rebooking and cancellation up to 24 hours before, as well as a generous 14-day guarantee on all moving cleaning. Behind all this stands our competent and personal customer service, which is always available to answer questions, give tips and help you make the right decision.",
-      "customerFocus": "The customer is always at the center. We listen to your wishes and needs, and adapt our service accordingly. Whether you're moving within the same city or to a new location, we're here to help you.",
-      "readMore": "Read more about us",
-      "imageAlt": "About Flyttella"
-    },
-    "tipsSection": {
-      "title": "Tips for your move",
-      "beforeMoving": {
-        "title": "Before the move"
-      },
-      "duringMoving": {
-        "title": "During the move"
-      },
-      "afterMoving": {
-        "title": "After the move"
-      },
-      "packingTips": {
-        "title": "Packing tips",
-        "imageAlt": "Packing"
-      },
-      "smoothMovingDay": {
-        "title": "A smooth moving day",
-        "imageAlt": "Happy mover"
-      },
-      "startInNewHome": {
-        "title": "Start in new home",
-        "imageAlt": "New home"
-      }
-    },
-    "tips": {
-      "planning": {
-        "title": "Plan and prepare",
-        "imageAlt": "Planning"
-      },
-      "contracts": {
-        "title": "Contracts and notifications",
-        "imageAlt": "Contracts"
-      },
-      "beforeMoving": {
-        "title": "Before the moving company arrives",
-        "imageAlt": "Moving preparation"
-      },
-      "duringMoving": {
-        "title": "Communication and coordination",
-        "imageAlt": "Move in progress"
-      },
-      "afterMoving": {
-        "title": "Documentation and follow-up",
-        "imageAlt": "Post-move documentation"
-      }
-    },
-    "reviews": {
-      "title": "What do our customers think of us?",
-      "description": "Our customers are satisfied with our service. Here are some examples of what they say about us:",
-      "imageAlt": "1000+ positive reviews from customers",
-      "arrowText": "We have helped thousands of customers with moves, cleaning and household moving over the years. Our customers appreciate our professional service, punctuality and care.",
-      "cta": "Read more reviews"
-    },
-    "cta": {
-      "title": "Ready to start your move?",
-      "subtitle": "Get a free quote on your household move today",
-      "button": "Get free quote"
-    },
-    "services": {
-      "title": "Our other main services",
-      "flyttstadning": {
-        "title": "Moving Cleaning",
-        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures that your old home is left in perfect condition.",
-        "extendedDescription": "Our moving cleaning follows established industry standards and includes everything from kitchen and bathroom to window cleaning and details. We use environmentally friendly products and offer a 14-day cleaning guarantee so you can feel completely secure.",
-        "readMore": "Read more"
-      },
-      "magasinering": {
-        "title": "Storage",
-        "description": "Safe storage of your belongings. We offer flexible solutions for shorter and longer storage with secure handling.",
-        "extendedDescription": "Do you need to store belongings during the moving process? We provide safe and reliable storage solutions for your belongings. We offer flexible options that suit your needs and timeline – and can also help with pickup and redelivery.",
-        "readMore": "Read more"
-      },
-      "packhjalp": {
-        "title": "Packing Help",
-        "description": "Professional packing help for a stress-free move. We help you pack your belongings safely and organized.",
-        "extendedDescription": "Packing is often the most time-consuming part of a move. Our experienced movers use quality packing materials and ensure everything is packed correctly for transport. We also help with smooth redelivery.",
-        "mobileDescription": "We help with labeling and organizing for easier unpacking.",
-        "readMore": "Read more"
-      }
-    },
-    "experience": {
-      "title": "Our Experience",
-      "description": "With over 15 years of experience with household moves in Stockholm, we have helped thousands of customers with their moving needs.",
-      "stats": {
-        "flyttar": {
-          "count": "8000+",
-          "description": "Completed moves"
-        },
-        "stadningar": {
-          "count": "7000+",
-          "description": "Completed cleanings"
-        },
-        "manadsvis": {
-          "count": "500+",
-          "description": "Satisfied customers"
-        }
-      }
-    },
-    "process": {
-      "title": "How it works",
-      "description": "Our moving process is designed to be simple, transparent and safe. It starts with you filling out our form on the homepage where you enter your details and moving needs. Within a minute you get a quote sent to your specified email address. The same day or the day after we take personal contact with you to discuss the details and answer any questions. When you are satisfied with the quote you can easily sign it digitally. Then we carry out the move according to your wishes and agreement. The result? A satisfied customer who can focus on coming home to their new home.",
-      "pricing": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as living area, floor, elevator and parking distance to give you a quote that fits your situation, we can also inspect the home if needed. All prices are fixed without hidden fees - we always start from your wishes and information we get from you as a customer. Do you have special wishes or questions? Contact us and we will adapt the quote to your needs.",
-      "subtitle": "Our moving process in 6 simple steps",
-      "steps": {
-        "0": {
-          "title": "Fill out the form",
-          "description": "Tell us what you need help with and when you want us to come."
-        },
-        "1": {
-          "title": "Quick response",
-          "description": "We respond within a minute with a free quote."
-        },
-        "2": {
-          "title": "Personal contact",
-          "description": "We call the same day or the day after to discuss the details."
-        },
-        "3": {
-          "title": "Confirm booking",
-          "description": "Approve the quote and we book your move immediately."
-        },
-        "4": {
-          "title": "Professional move",
-          "description": "Our experienced movers come and help you with the entire move."
-        },
-        "5": {
-          "title": "Ready and satisfied",
-          "description": "We clean up after ourselves and you can enjoy your new home."
-        }
-      }
-    },
-    "blog": {
-      "title": "Latest from our blog",
-      "readMore": "Read more"
-    },
-    "faq": {
-      "title": "Frequently asked questions about household moving",
-      "questions": [
-        {
-          "id": "bohagsflytt-1",
-          "question": "What is included in a household move?",
-          "answer": "A household move includes everything from planning and packing to transport and unpacking. We help you inventory your belongings, pack safely with the right materials, transport everything to your new address and help you unpack and set up the furniture."
-        },
-        {
-          "id": "bohagsflytt-2",
-          "question": "How far in advance should I book?",
-          "answer": "We recommend that you book at least 2-3 weeks in advance, especially during peak season (May-September). For smaller moves, we can often help you even with shorter notice, but it depends on our availability."
-        },
-        {
-          "id": "bohagsflytt-3",
-          "question": "What does a household move cost?",
-          "answer": "The cost of a household move depends on several factors such as distance, volume, number of movers and any additional services. We always give you a fixed price without hidden costs when we make the quote."
-        },
-        {
-          "id": "bohagsflytt-4",
-          "question": "Do you have insurance?",
-          "answer": "Yes, we have full insurance that covers damage that may occur during the move. If something breaks due to our handling, we replace it. It's also important to note that we follow industry standards to minimize the risk of damage."
-        },
-        {
-          "id": "bohagsflytt-5",
-          "question": "Can you help with packing?",
-          "answer": "Yes, we offer complete packing help that includes packing, transport and unpacking. We have all the necessary materials and can help you with the entire process from start to finish."
-        }
-      ]
-    },
-    "sidebar": {
-      "reco": {
-        "title": "Recommended",
-        "description": "Other customers have also chosen these services"
-      },
-      "montering": {
-        "title": "Assembly",
-        "description": "Professional assembly of furniture and items"
-      },
-      "tunglyft": {
-        "title": "Heavy Lifting",
-        "description": "Safe handling of heavy items"
-      },
-      "barhjalp": {
-        "title": "Carrying Help",
-        "description": "Help with carrying and moving items"
-      },
-      "bortforsling": {
-        "title": "Removal",
-        "description": "Environmentally friendly handling of things you don't need"
-      }
-    }
-  },
   "contact": {
     "callbackTime": {
       "selectTime": "Select time",
@@ -2692,8 +3213,59 @@
   },
   "stadtjanster": {
     "hero": {
-      "title": "Our cleaning services",
-      "subtitle": "Professional cleaning in Stockholm with fixed prices, RUT deductions and eco-friendly products. We offer a complete range of cleaning services for homes and businesses."
+      "title": "Cleaning Services",
+      "subtitle": "Professional cleaning for home and business"
+    },
+    "section": {
+      "title": "Cleaning Services",
+      "subtitle": "Professional cleaning for home and business. All our cleaning services include RUT deduction and fixed price."
+    },
+    "services": {
+      "flyttstadning": {
+        "title": "Removal cleaning",
+        "description": "Thorough removal cleaning according to industry standards. Fixed price, 14-day guarantee and full RUT handling."
+      },
+      "hemstadning": {
+        "title": "Home cleaning",
+        "description": "Regular home cleaning adapted to your needs. Weekly, bi-weekly or monthly."
+      },
+      "byggstadning": {
+        "title": "Construction cleaning",
+        "description": "Professional cleaning after renovation. Rough and fine cleaning for a dust-free result."
+      },
+      "fonsterputsning": {
+        "title": "Window cleaning",
+        "description": "Crystal clear windows year round. Inside and outside where it's safe and accessible."
+      },
+      "storstadning": {
+        "title": "Deep cleaning",
+        "description": "Thorough deep cleaning with focus on hard-to-reach surfaces. Perfect as follow-up after construction."
+      },
+      "visningsstadning": {
+        "title": "Viewing cleaning",
+        "description": "Professional cleaning before property viewing. For the best possible selling price and quick deal."
+      },
+      "kontorsstadning": {
+        "title": "Office cleaning",
+        "description": "Regular office cleaning for a clean and professional work environment."
+      },
+      "dodsboStadning": {
+        "title": "Estate cleaning",
+        "description": "Careful and respectful cleaning in connection with estate. Handled with care and discretion."
+      }
+    },
+    "cta": {
+      "title": "Need help with cleaning?",
+      "subtitle": "Get a free quote in 1 minute",
+      "button": "Get free quote",
+      "readMore": "Read more"
+    },
+    "reviews": {
+      "title": "What do our customers think of us?",
+      "subtitle": "Reliable cleaning in Stockholm",
+      "description": "Professional cleaning in Stockholm – from home cleaning to removal cleaning. Fixed price and RUT deduction. Punctual employees and high ratings from thousands of satisfied customers.",
+      "badgeAlt": "Experience with cleaning services in Stockholm",
+      "arrowText": "Read what our customers say about our cleaning"
     }
   },
   "tjanster": {
@@ -2788,63 +3360,6 @@
       "description": "Professional business services in Stockholm – from office moves to staffing. Fixed price and minimal disruption to operations. High ratings from satisfied business customers.",
       "badgeAlt": "Experience with business services in Stockholm",
       "arrowText": "Read what our business customers say about our services"
-    }
-  },
-  "stadtjanster": {
-    "hero": {
-      "title": "Cleaning Services",
-      "subtitle": "Professional cleaning for home and business"
-    },
-    "section": {
-      "title": "Cleaning Services",
-      "subtitle": "Professional cleaning for home and business. All our cleaning services include RUT deduction and fixed price."
-    },
-    "services": {
-      "flyttstadning": {
-        "title": "Removal cleaning",
-        "description": "Thorough removal cleaning according to industry standards. Fixed price, 14-day guarantee and full RUT handling."
-      },
-      "hemstadning": {
-        "title": "Home cleaning",
-        "description": "Regular home cleaning adapted to your needs. Weekly, bi-weekly or monthly."
-      },
-      "byggstadning": {
-        "title": "Construction cleaning",
-        "description": "Professional cleaning after renovation. Rough and fine cleaning for a dust-free result."
-      },
-      "fonsterputsning": {
-        "title": "Window cleaning",
-        "description": "Crystal clear windows year round. Inside and outside where it's safe and accessible."
-      },
-      "storstadning": {
-        "title": "Deep cleaning",
-        "description": "Thorough deep cleaning with focus on hard-to-reach surfaces. Perfect as follow-up after construction."
-      },
-      "visningsstadning": {
-        "title": "Viewing cleaning",
-        "description": "Professional cleaning before property viewing. For the best possible selling price and quick deal."
-      },
-      "kontorsstadning": {
-        "title": "Office cleaning",
-        "description": "Regular office cleaning for a clean and professional work environment."
-      },
-      "dodsboStadning": {
-        "title": "Estate cleaning",
-        "description": "Careful and respectful cleaning in connection with estate. Handled with care and discretion."
-      }
-    },
-    "cta": {
-      "title": "Need help with cleaning?",
-      "subtitle": "Get a free quote in 1 minute",
-      "button": "Get free quote",
-      "readMore": "Read more"
-    },
-    "reviews": {
-      "title": "What do our customers think of us?",
-      "subtitle": "Reliable cleaning in Stockholm",
-      "description": "Professional cleaning in Stockholm – from home cleaning to removal cleaning. Fixed price and RUT deduction. Punctual employees and high ratings from thousands of satisfied customers.",
-      "badgeAlt": "Experience with cleaning services in Stockholm",
-      "arrowText": "Read what our customers say about our cleaning"
     }
   },
   "blogg": {
@@ -2988,5 +3503,785 @@
     "compensationText3": "14.3 Payment for the services that the Company provides shall be made in accordance with the payment terms specified in the quote or on the invoice. The Company reserves the right to demand payment during ongoing work or before the work begins, if there is reason to question the Customer's payment ability. This may include situations where the Company assesses that the customer cannot demonstrate sufficient security for payment, or if the customer has previous payment remarks or other economic conditions that give reason for doubt.",
     "close": "Close",
     "errorMessage": "An error occurred when the report was to be sent. Please try again."
+  },
+  "alvsjo": {
+    "hero": {
+      "title": "Moving Company in Älvsjö - Green Moving in the Heart of Stockholm",
+      "subtitle": "Specialists in moving within Älvsjö's family-friendly environments. We know the area's green spaces, modern housing, and convenient transport connections for an efficient moving experience."
+    },
+    "experience": {
+      "title": "Älvsjö's Preferred Moving Company with Deep Local Knowledge",
+      "description": "With over a decade of experience in Älvsjö, we have helped hundreds of families and businesses with moves from villa districts to modern apartment complexes. Our deep knowledge of the area's green spaces, transport connections, and unique character makes us Älvsjö's most reliable moving company.",
+      "expanded": "We understand Älvsjö's unique challenges - from narrow streets in villa areas to specific parking regulations near Älvsjö station. Our expertise allows us to navigate these challenges smoothly, ensuring an efficient and hassle-free move for you. With over 1000 positive reviews and returning customers, we are Älvsjö's most trusted moving company."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "desktop": "Flyttella is your local moving company in Älvsjö with deep local knowledge of the area's unique character. We have specialized in moves within Älvsjö's green spaces and family-friendly environments - from modern apartments near Älvsjö station to villas in quiet residential areas with proximity to nature reserves.",
+      "desktop2": "As Älvsjö's preferred moving company, we understand the area's transport connections and can plan efficient moving routes. We always offer free loan of moving boxes, free rebooking and cancellation up to 24 hours before the move, and a generous 14-day guarantee on all moving cleaning. For those who also book packing help, we offer packing guarantee, which means we take full responsibility for what we pack.",
+      "desktop3": "We know Älvsjö's different areas from Älvsjö center to the surrounding residential areas and can adapt our moving services to your specific needs. Whether you're moving within Älvsjö, to or from the area, you can trust that we handle your move with care and efficiency. Our local expertise allows us to offer fast and flexible solutions.",
+      "mobile": "Flyttella is your local moving company in Älvsjö with deep local knowledge of the area's unique character. We have specialized in moves within Älvsjö's green spaces and family-friendly environments.",
+      "mobileExpanded": "As Älvsjö's preferred moving company, we understand the area's transport connections and can plan efficient moving routes. We always offer free loan of moving boxes, free rebooking and cancellation up to 24 hours before the move, and a generous 14-day guarantee on all moving cleaning.",
+      "mobileExpanded2": "We know Älvsjö's different areas from Älvsjö center to the surrounding residential areas and can adapt our moving services to your specific needs. Whether you're moving within Älvsjö, to or from the area, you can trust that we handle your move with care and efficiency.",
+      "readMore": "Read more",
+      "readMoreAbout": "Read more about us"
+    },
+    "awards": {
+      "title": "Awards for Our Work in Älvsjö",
+      "description": "Our awards reflect our specialization in moving within Älvsjö's green spaces and family-friendly environments. Over the years, we have been recognized for our expertise in moving from villa districts to modern apartment complexes in Älvsjö. These awards confirm our position as Älvsjö's most reliable moving company with deep local knowledge."
+    },
+    "reviews": {
+      "subtitle": "Green Moving Service in Älvsjö's Family-Friendly Environments",
+      "description": "As Älvsjö's specialists in moving within green areas, we understand the unique challenges that can arise when moving in family-friendly environments. We know that moves in Älvsjö require extra care around green spaces and narrow streets, which is why we adapt our service to the area's character. With our deep local knowledge of Älvsjö's villa areas and apartment complexes, we ensure that every move becomes a stress-free experience.",
+      "badgeAlt": "Specialists in Moving within Älvsjö's Green Areas",
+      "arrowText": "Discover why families in Älvsjö choose us"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Älvsjö?",
+      "items": {
+        "packGuarantee": "Packing guarantee",
+        "customerGuarantee": "14-day customer satisfaction guarantee",
+        "freeBoxes": "Free loan of boxes for 4 weeks",
+        "rutDeduction": "50% RUT deduction",
+        "freeReschedule": "24h free rescheduling and cancellation",
+        "permitsInsurance": "Traffic permit and insurance"
+      }
+    },
+    "cta": {
+      "title": "Ready to start your move?",
+      "subtitle": "Get a fast and free quote for your household move",
+      "button": "Get free quote"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Move out cleaning",
+        "description": "Professional move out cleaning with guarantee. We leave your old home in perfect condition so you can focus on the new one.",
+        "extra": "Flyttella offers professional move-out cleaning with a 14-day satisfaction guarantee. We clean all living areas, polish windows on all sides, and use high-quality cleaning products. Cleaning equipment is included, including delivery and pickup. We dust walls and ceilings, clean floor drains and behind appliances (if you pull them out). The freezer is cleaned if it is defrosted the day before. With us, you get complete move-out cleaning for a safe and smooth handover."
+      },
+      "storage": {
+        "title": "Storage",
+        "description": "Secure storage for your belongings. We offer flexible solutions for both short- and long-term storage with safe handling.",
+        "extended": "Do you need to store belongings during the moving process? Flyttella provides safe and reliable storage solutions for your belongings. We offer flexible options that suit your needs and schedule. As an extra service, we offer the first month free to make your moving process even smoother."
+      },
+      "packing": {
+        "title": "Packing help",
+        "description": "Professional packing help for a stress-free move. We help you pack your belongings safely and in an organized way.",
+        "extended": "Packing is often the most time-consuming part of a move. Flyttella offers professional packing help where our experienced movers help you pack your belongings safely and in an organized way. We use high-quality packing materials and ensure that everything is packed correctly for transport. Our packing help also includes labeling boxes and creating an inventory list for easy unpacking at the new address."
+      }
+    },
+    "tips": {
+      "title": "Tips for your move",
+      "before": {
+        "title": "Before the move",
+        "planning": {
+          "title": "Plan and prepare",
+          "content": [
+            "Make a checklist.",
+            "Clear out unnecessary items.",
+            "Book moving company and cleaning.",
+            "Order moving boxes."
+          ]
+        },
+        "decluttering": {
+          "title": "Contracts and notifications",
+          "content": [
+            "Change address with the Tax Agency.",
+            "Transfer electricity, broadband, etc.",
+            "Sign new contracts.",
+            "Notify important contacts."
+          ]
+        },
+        "packing": {
+          "title": "Before the moving company arrives",
+          "content": [
+            "Pack all loose items in boxes",
+            "Take down all curtains",
+            "Take down all lamps",
+            "Double-check packing and labeling."
+          ]
+        },
+        "documents": {
+          "title": "Packing tips",
+          "content": [
+            "Label all boxes clearly.",
+            "Keep keys accessible.",
+            "Don't overload the moving boxes.",
+            "Use tissue paper for fragile items and porcelain."
+          ]
+        }
+      },
+      "during": {
+        "title": "During the move",
+        "smooth": {
+          "title": "A smooth moving day",
+          "content": [
+            "Keep valuables accessible.",
+            "Ensure clear path for moving help.",
+            "Do a final check of the home after loading and after unloading in both homes to ensure nothing is left behind.",
+            "Make sure to disassemble or pack forgotten items."
+          ]
+        },
+        "supervision": {
+          "title": "Communication and coordination",
+          "content": [
+            "Stay in contact with the moving supervisor.",
+            "Photograph any damage.",
+            "Check that everything is loaded correctly.",
+            "Follow to the new address.",
+            "Be clear with special requests.",
+            "Be available for questions."
+          ]
+        }
+      },
+      "after": {
+        "title": "After the move",
+        "settling": {
+          "title": "Starting in the new home",
+          "content": [
+            "Check the move-out cleaning.",
+            "Unpack the most important things first.",
+            "Check that all items have arrived.",
+            "Install curtains and lamps.",
+            "Update address with authorities.",
+            "Test all appliances and electrical outlets.",
+            "Remove empty boxes and packaging."
+          ]
+        }
+      },
+      "blog": {
+        "badge": "Moving tips",
+        "readTime": "5 min read"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving in Älvsjö",
+      "items": [
+        {
+          "question": "How much does a move in Älvsjö cost?",
+          "answer": "Our prices are based on factors such as living space, floor, elevator and parking distance. We offer both fixed prices and variable prices. Fill out our form for a quick quote in 1 minute."
+        },
+        {
+          "question": "What is included in a complete moving service?",
+          "answer": "Our complete moving service includes packing, transport, unloading and furniture assembly. We also help with disassembly and assembly of furniture."
+        },
+        {
+          "question": "How far in advance should I book a move?",
+          "answer": "We recommend booking at least 2-4 weeks in advance, especially during the summer period. However, we can often help even with shorter notice."
+        },
+        {
+          "question": "Do you offer insurance for the move?",
+          "answer": "Yes, all our moves are insured. We have comprehensive liability insurance that covers damage to your belongings during transport."
+        },
+        {
+          "question": "Can you help with packing?",
+          "answer": "Absolutely! We offer complete packing service where we pack everything safely with the right materials. We also have packing guarantee for what we pack."
+        }
+      ]
+    },
+    "stats": {
+      "moves": "Moves",
+      "cleanings": "Cleanings",
+      "monthly": "Monthly"
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "process": {
+      "fillForm": "Fill in the form",
+      "fillFormDesc": "Tell us about your move",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "Get price in 1 minute",
+      "signConfirm": "Sign & confirm",
+      "signConfirmDesc": "Get booking confirmation immediately",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "We call the same day or the day after",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "We take care of everything",
+      "satisfiedCustomer": "Satisfied customer",
+      "satisfiedCustomerDesc": "Returning customer"
+    },
+    "customerReviews": {
+      "title": "What do our customers think of us?"
+    },
+    "processSection": {
+      "title": "Our Process",
+      "description": "Our quotes are always based on your specific needs and circumstances in Årsta. We consider factors such as living space, floor, elevator and parking distance to provide a quote tailored to your situation in Årsta – we can also inspect the property if needed. All prices are fixed with no hidden fees – we always start from your preferences and the information we receive from you as a customer in Årsta. Have specific requests or questions? Contact us and we will adapt the quote to your needs in Årsta.",
+      "subtitle": "How it works"
+    },
+    "experienceSection": {
+      "title": "Our experience"
+    },
+    "servicesSection": {
+      "title": "Discover All Our Services in Älvsjö",
+      "description": "We offer a complete range of moving services in Älvsjö to make your move as smooth as possible. From household moves and move-out cleaning to special services such as heavy lifting and storage.",
+      "privateServices": "See all our private services",
+      "businessServices": "See all our business services",
+      "readMore": "Read more"
+    },
+    "blogSection": {
+      "title": "Read more about moving in Älvsjö",
+      "description": "Get valuable tips and advice for a smooth move in Älvsjö",
+      "readMore": "Read more"
+    },
+    "faqFooter": {
+      "title": "Do you have more questions about moving in Älvsjö?",
+      "linkText": "See all frequently asked questions"
+    },
+    "blog": {
+      "title": "Moving Company in Älvsjö - Local Knowledge for Green Moving",
+      "description": "Planning a move in Älvsjö's family-friendly environments? Discover important factors such as proximity to green spaces, transport connections via Älvsjö station, and local knowledge of the area's unique character. Learn how to choose a reliable moving company that understands Älvsjö's green spaces and family-friendly environments."
+    }
+  },
+  "danderyd": {
+    "hero": {
+      "title": "Moving company in Danderyd – safe, efficient and on time",
+      "subtitle": "Specialised in moves in Djursholm, Stocksund and Enebyberg. We plan access routes, time windows and parking – from villas to apartments – with fixed pricing and a clear schedule.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "about": {
+      "title": "About Flyttella in Danderyd",
+      "desktop": "We deliver well-planned moves in Danderyd with structure, safety and respect for your home and neighbours. We handle loading zones, elevator booking and access routes – and offer a free pre-move inspection when needed.",
+      "desktop2": "Our team is experienced with villa moves, stairs, longer carries and delicate interiors. We pack smart, protect walls/floors and coordinate clear time windows for loading and unloading.",
+      "desktop3": "Pricing is fixed with no hidden fees. A dedicated contact follows your move from start to finish and ensures crew and vehicle match your conditions in Danderyd.",
+      "mobile": "We deliver well-planned moves in Danderyd with structure, safety and respect for your home and neighbours. We handle loading zones, elevator booking and access routes – and offer a free pre-move inspection when needed.",
+      "mobileExpanded": "Our team is experienced with villa moves, stairs, longer carries and delicate interiors. We pack smart, protect walls/floors and coordinate clear time windows for loading and unloading.",
+      "mobileExpanded2": "Pricing is fixed with no hidden fees. A dedicated contact follows your move from start to finish and ensures crew and vehicle match your conditions in Danderyd."
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Danderyd?"
+    },
+    "experienceSection": {
+      "title": "Our experience in Danderyd"
+    },
+    "experience": {
+      "title": "Experienced with villas and apartments",
+      "description": "We have extensive experience in Djursholm, Stocksund and Enebyberg. We plan for narrow staircases, level changes and longer carries, and reserve loading zones where possible. The focus is safe handling, clear communication and calm logistics – even in tight areas.",
+      "expanded": "For Danderyd moves we create a detailed plan: packing order, protection for elevators/entrances, optimal loading and punctual unloading. We work with consideration for neighbours and can handle heavy lifts and delicate items."
+    },
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "reviews": {
+      "subtitle": "Recommended moving company in Danderyd",
+      "description": "Clients appreciate our planning, punctuality and careful handling. Read experiences from villa moves in Djursholm, apartments in Stocksund and townhouses in Enebyberg.",
+      "badgeAlt": "Recommended mover Danderyd",
+      "arrowText": "See more reviews"
+    },
+    "awards": {
+      "title": "Awards for our work in Danderyd",
+      "description": "Customer feedback and returning clients in Danderyd reflect our quality. We are recognised for reliable planning, professional service and careful handling in both villas and apartment buildings."
+    },
+    "servicesSection": {
+      "title": "Discover our services in Danderyd",
+      "description": "Household moves, packing help, move-out cleaning, storage and heavy lifts. We tailor the setup to your home and timeline – with fixed pricing and clear communication.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Danderyd",
+      "description": "Plan time windows, book elevators early, prepare access routes and parking. We share practical checklists for villas and apartments so move day runs smoothly.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: prepare a smooth move in Danderyd",
+      "description": "Prepare materials and labels, secure a loading spot, confirm keys and access – and pack room by room to save time and reduce risks."
+    },
+    "processSection": {
+      "title": "Our process",
+      "description": "Quotes are based on your needs in Danderyd – size, stairs/elevator, access routes and parking. When needed we perform a free inspection and plan time windows plus the right crew and vehicle. All prices are fixed with no hidden fees. Key handover via agent or entry code? We coordinate and execute efficiently and safely.",
+      "subtitle": "How it works"
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Briefly describe your move in Danderyd – address, date and scope.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You receive a fixed price with 50% RUT deduction and clear terms.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "Sign digitally and we secure the booking.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "We review carrying routes, elevator and parking in Danderyd.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "Protective materials, careful handling and efficient route planning.",
+      "satisfiedCustomer": "Satisfied customer",
+      "satisfiedCustomerDesc": "Follow‑up after the move for high customer satisfaction."
+    },
+    "faq": {
+      "title": "Common questions about moving in Danderyd",
+      "items": [
+        {
+          "question": "Do I need to arrange a loading zone or parking?",
+          "answer": "We help assess access routes and loading areas. Some streets may require permits or time windows. We advise and plan accordingly."
+        },
+        {
+          "question": "Can you handle key handover if I cannot be there?",
+          "answer": "Yes. We coordinate with an agent, landlord or contact person. ID is verified and we always confirm the key flow in writing."
+        },
+        {
+          "question": "Is furniture assembly/disassembly included?",
+          "answer": "Simple disassembly/assembly (e.g. beds and tables) is included. Advanced/custom assembly is an add-on and must be pre-booked."
+        },
+        {
+          "question": "How do you manage multi-storey villas?",
+          "answer": "We size the crew appropriately, plan access routes and protect stairs and floors. Heavy lifts are handled with the right equipment and methods."
+        },
+        {
+          "question": "Can you help with packing and materials?",
+          "answer": "Yes. We offer packing help and can deliver boxes and protective materials in advance. We advise on labelling for faster unpacking."
+        },
+        {
+          "question": "Do you offer storage?",
+          "answer": "Yes. We arrange short- or long-term storage and plan collection/return according to your schedule."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
+  },
+  "ekero": {
+    "hero": {
+      "title": "Moving company on Ekerö – smooth moves across bridges",
+      "subtitle": "Specialised in moves on Ekerö, Munsö and Adelsö. We plan time windows, access routes and parking – and account for bridges or ferries when needed. Fixed pricing and clear planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "about": {
+      "title": "About Flyttella on Ekerö",
+      "desktop": "We deliver well-planned moves on Ekerö with safe logistics and smooth driving across bridges. We handle loading zones, stairs and longer carries – with a free pre-move inspection when needed. Ahead of move day we create a clear driving and handling plan that minimises disturbance for neighbours and the association.",
+      "desktop2": "Our team is experienced with villas, townhouses and waterfront homes. We protect door frames, walls and floors, pack efficiently and keep a punctual schedule for loading and unloading. When required we book elevators in good time, coordinate key handover and make sure access and entry codes work smoothly.",
+      "desktop3": "Pricing is fixed with no hidden fees. A dedicated contact follows the move and ensures the right crew and vehicle for your Ekerö home. We can help with recycling of packaging, temporary storage and any certificates/documents requested by housing associations or property owners.",
+      "mobile": "We deliver well-planned moves on Ekerö with safe logistics and smooth driving across bridges. We handle loading zones, stairs and longer carries – with a free pre-move inspection when needed. Ahead of move day we create a clear driving and handling plan that minimises disturbance for neighbours and the association.",
+      "mobileExpanded": "Our team is experienced with villas, townhouses and waterfront homes. We protect door frames, walls and floors, pack efficiently and keep a punctual schedule for loading and unloading. When required we book elevators in good time, coordinate key handover and make sure access and entry codes work smoothly.",
+      "mobileExpanded2": "Pricing is fixed with no hidden fees. A dedicated contact follows the move and ensures the right crew and vehicle for your Ekerö home. We can help with recycling of packaging, temporary storage and any certificates/documents requested by housing associations or property owners."
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella on Ekerö?"
+    },
+    "experienceSection": {
+      "title": "Our experience on Ekerö"
+    },
+    "experience": {
+      "title": "Experience with villas, townhouses and waterfront homes",
+      "description": "We have extensive experience across Ekerö municipality. We plan access routes, protect stairs and floors and reserve loading zones where possible. The driving plan is adapted to bridges and traffic flows.",
+      "expanded": "We create a clear plan for packing, protection of entrances and punctual loading/unloading. We work calmly and respectfully with consideration for neighbours – even on narrow roads or limited loading spots."
+    },
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "reviews": {
+      "subtitle": "Recommended moving company on Ekerö",
+      "description": "Clients appreciate our punctuality, planning and careful handling. Read about villa moves on Ekerö and townhouse moves on Munsö and Adelsö.",
+      "badgeAlt": "Recommended mover Ekerö",
+      "arrowText": "See more reviews"
+    },
+    "awards": {
+      "title": "Awards for our work on Ekerö",
+      "description": "Returning clients and strong reviews on Ekerö reflect our quality. We are recognised for planning, service and careful handling for both short and longer-distance moves."
+    },
+    "servicesSection": {
+      "title": "Discover our services on Ekerö",
+      "description": "Household moves, packing, move-out cleaning, storage and heavy lifts. We tailor the setup to your home and timeline – with fixed pricing and clear communication.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving on Ekerö",
+      "description": "Plan access routes and loading spots, book elevators early, secure keys and access. Our checklists help you achieve a smooth moving day.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: prepare a smooth move on Ekerö",
+      "description": "Prepare materials and labels, secure a loading spot and plan packing room by room to save time and avoid risks."
+    },
+    "processSection": {
+      "title": "Our process",
+      "description": "Quotes are based on your needs on Ekerö – size, floor level, stairs/elevator, access routes and parking. When needed we perform a free inspection and plan time windows, crew and vehicle. All prices are fixed with no hidden fees. We factor in bridge crossings and potential ferries so the move is efficient and safe.",
+      "subtitle": "How it works"
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Briefly describe your move in Ekerö – address, date and scope.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You receive a fixed price with 50% RUT deduction and clear terms.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "Sign digitally and we secure the booking.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "We review carrying routes, elevator and parking in Ekerö.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "Protective materials, careful handling and efficient route planning.",
+      "satisfiedCustomer": "Satisfied customer",
+      "satisfiedCustomerDesc": "Follow‑up after the move for high customer satisfaction."
+    },
+    "faq": {
+      "title": "Common questions about moving on Ekerö",
+      "items": [
+        {
+          "question": "How do bridges or possible ferries affect timing?",
+          "answer": "We plan time windows with margins for Ekerö Bridge traffic and any ferry considerations. The driving plan ensures punctual loading and unloading even with disruptions."
+        },
+        {
+          "question": "Can you manage loading zones and parking on narrow roads?",
+          "answer": "Yes. We assess access routes and suggest loading spots based on road width and local rules. Some associations require permits – we advise and plan accordingly."
+        },
+        {
+          "question": "We live by the water with a long carry – how do you handle it?",
+          "answer": "We size the crew and use the right equipment (dollies, carrying straps, protection). The plan adapts to longer carries and level changes for safe handling."
+        },
+        {
+          "question": "Can you handle key handover via an agent or neighbour?",
+          "answer": "Yes. We coordinate keys with an agent, landlord or neighbour. IDs are verified and we confirm the key flow in writing before move day."
+        },
+        {
+          "question": "Is assembly/disassembly included?",
+          "answer": "Basic assembly/disassembly (e.g. beds, tables) is included. Advanced/custom work or fixed installations are add-ons and must be pre-booked."
+        },
+        {
+          "question": "Can you deliver packing materials to Ekerö in advance?",
+          "answer": "Yes. We can deliver boxes, paper and protection in good time. We also advise on labelling and packing order for faster unpacking."
+        },
+        {
+          "question": "We need storage between Ekerö and the city – is that possible?",
+          "answer": "Yes. We offer short- and long-term storage. Collection and return are planned to fit your schedule, whether moving within Ekerö or to/from Stockholm."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
+  },
+  "enskede": {
+    "hero": {
+      "title": "Moving company in Enskede – safe and efficient near the city",
+      "subtitle": "Specialised in moves in Gamla Enskede, Enskede Gård and Svedmyra. We plan access routes, time windows and parking with regard to traffic and residential rules.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "about": {
+      "title": "About Flyttella in Enskede",
+      "desktop": "Flyttella is a Stockholm-based moving and cleaning company making moves in Enskede simpler, safer and more transparent. We have operated for 5 years with 8+ years of industry experience – reflected in our methods, quality and happy clients across Gamla Enskede, Enskede Gård and Svedmyra.",
+      "desktop2": "We have helped over 8,000 clients – from small moves to full-service solutions with packing, cleaning and advisory. We work with clear terms and fixed pricing so you always know what is included and what it costs. Ahead of move day we plan access routes, parking and time windows tailored to Enskede.",
+      "desktop3": "We offer free loan of moving boxes, free rebooking/cancellation up to 24 hours before and a 14-day guarantee on all move-out cleanings. Our personal support is on hand for questions, tips and decisions – and a dedicated contact follows your move end to end.",
+      "mobile": "Reliable moves in Enskede with fixed pricing, clear terms and a dedicated contact – over 8,000 happy clients.",
+      "mobileExpanded": "We plan access routes, parking and time windows for Enskede. Free boxes, 24h free rebooking/cancellation and 14-day cleaning guarantee.",
+      "mobileExpanded2": "Full-service options with packing/cleaning/advisory. A dedicated contact ensures everything runs smoothly."
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Enskede?"
+    },
+    "experienceSection": {
+      "title": "Our experience in Enskede"
+    },
+    "experience": {
+      "title": "Experienced with apartments and townhouses",
+      "description": "We have extensive experience in Gamla Enskede, Enskede Gård, Svedmyra and Enskede-Årsta-Vantör. We plan access routes, protect entrances and elevators and reserve loading zones where possible.",
+      "expanded": "We create a clear plan for packing and loading that reduces disturbances and saves time. We work methodically and with respect for the living environment, handling heavy lifts and delicate items with the right methods."
+    },
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "reviews": {
+      "subtitle": "Recommended moving company in Enskede",
+      "description": "As one of Sweden’s most recommended movers – especially appreciated in Gamla Enskede, Enskede Gård and Svedmyra – we put the customer first. We reduce stress with clear planning, fixed pricing and punctual delivery. Our team is used to bookable elevators, narrow stairwells and near-city parking, ensuring your Enskede move is calm and positive from start to finish.",
+      "badgeAlt": "Recommended mover Enskede",
+      "arrowText": "See more reviews"
+    },
+    "awards": {
+      "title": "Flyttella awards in Enskede",
+      "description": "Our awards demonstrate our commitment to quality, service and customer satisfaction in Enskede. Over the years we have been recognised by customers and industry peers for reliable planning and careful handling in areas like Gamla Enskede, Enskede Gård and Svedmyra. These acknowledgements inspire us to deliver top-class moving services – every day, for every customer in Enskede."
+    },
+    "servicesSection": {
+      "title": "Discover our services in Enskede",
+      "description": "Household moves, packing, move-out cleaning, storage and heavy lifts. We tailor the setup to your home and timeline – with fixed pricing and clear communication.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Enskede",
+      "description": "Plan access routes and loading spots, book elevators early and secure keys and access. Our checklists help you achieve a calm and efficient move day.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: prepare a smooth move in Enskede",
+      "description": "Prepare materials and labels, secure a loading spot and plan packing room by room – saving time and reducing risks."
+    },
+    "processSection": {
+      "title": "Our process",
+      "description": "Quotes are based on your needs in Enskede – size, stairs/elevator, access routes and parking. When needed we perform a free inspection and plan the right crew and vehicle. All prices are fixed with no hidden fees. We account for traffic and association rules to make the move smooth and safe.",
+      "subtitle": "How it works"
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Briefly describe your move in Enskede – address, date and scope.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You receive a fixed price with 50% RUT deduction and clear terms.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "Sign digitally and we secure the booking.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "We review carrying routes, elevator and parking in Enskede.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "Protective materials, careful handling and efficient route planning.",
+      "satisfiedCustomer": "Satisfied customer",
+      "satisfiedCustomerDesc": "Follow‑up after the move for high customer satisfaction."
+    },
+    "faq": {
+      "title": "Common questions about moving in Enskede",
+      "items": [
+        {
+          "question": "How do you handle parking/loading in Gamla Enskede and Svedmyra?",
+          "answer": "We assess access routes and suggest loading spots based on street width and association rules. Some areas require permits or time windows – we advise and plan this in the quote and order confirmation."
+        },
+        {
+          "question": "The building has a bookable elevator – what should I consider?",
+          "answer": "Book the elevator in advance and share the time window. We protect the elevator/entrance if needed and sync loading so the move stays within the slot without delays."
+        },
+        {
+          "question": "The stairwell is narrow – can you manage it?",
+          "answer": "Yes. We size the crew appropriately, use the right gear (carrying straps, dollies, protection) and plan access routes to avoid damage and unnecessary lifts."
+        },
+        {
+          "question": "Can you use a key box or digital lock if I cannot attend?",
+          "answer": "Yes. We can handle key boxes (with code) and temporary digital access. We confirm receipt and return in writing and verify IDs, keeping a log of the key flow."
+        },
+        {
+          "question": "Is assembly/disassembly included?",
+          "answer": "Basic disassembly/assembly (e.g. bed, table) is included. Advanced/custom work or fixed installations are add-ons and must be pre-booked."
+        },
+        {
+          "question": "Can you deliver packing materials to Enskede in advance?",
+          "answer": "Yes. We can deliver boxes, paper and protective materials and advise on labelling/packing order for faster unpacking."
+        },
+        {
+          "question": "We need storage between Enskede and the city – possible?",
+          "answer": "Yes. We offer short- and long-term storage. Collection and return are scheduled to fit your timeline whether moving within Enskede or to/from other parts of Stockholm."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
+  },
+  "farsta": {
+    "hero": {
+      "title": "Moving company in Farsta – smooth moves in south Stockholm",
+      "subtitle": "Localised moves in Farsta, Farsta Centre, Farsta Strand and Hökarängen. We plan access routes, time windows and parking aligned with parking zones and housing association rules.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "about": {
+      "title": "About Flyttella in Farsta",
+      "desktop": "Flyttella is a Stockholm-based moving and cleaning company making moves in Farsta simpler, safer and more transparent. We have operated for 5 years with 8+ years’ experience – reflected in our methods, quality and happy clients in Farsta, Farsta Strand and Hökarängen.",
+      "desktop2": "We have helped over 8,000 clients, from small moves to full-service solutions. We work with clear terms and fixed pricing, planning access, parking and time windows tailored to Farsta. Elevator booking, keys and entry codes are coordinated in advance.",
+      "desktop3": "We offer free loan of moving boxes, free rebooking/cancellation up to 24 hours before and a 14-day cleaning guarantee. Your dedicated contact follows the move end to end and ensures the right crew and vehicle.",
+      "mobile": "Reliable moves in Farsta with fixed pricing, clear terms and a dedicated contact – over 8,000 happy clients.",
+      "mobileExpanded": "Planning for access/parking/time windows tailored to Farsta. Free boxes, 24h free rebooking/cancellation and 14-day cleaning guarantee.",
+      "mobileExpanded2": "Full-service options with packing/cleaning/advisory. A dedicated contact keeps everything on track."
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Farsta?"
+    },
+    "experienceSection": {
+      "title": "Our experience in Farsta"
+    },
+    "experience": {
+      "title": "Our experience with moves in Farsta",
+      "description": "With over 8000 moves and 7000 cleanings behind us, we have built unique expertise in the moving and cleaning industry. Our experience spans all of Stockholm and we have helped thousands of families and businesses with their moves in Farsta, Farsta Strand and Hökarängen.",
+      "expanded": "Our achievements have earned us recognition as one of Stockholm's most reliable moving companies, with over 1000 positive reviews and recommendations from satisfied clients in south Stockholm. We are proud to offer professional moving services in Farsta based on years of practical experience."
+    },
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "reviews": {
+      "subtitle": "Recommended moving company in Farsta",
+      "description": "Clients in Farsta, Farsta Strand and Hökarängen value our clear planning, fixed pricing and punctual delivery. We are used to bookable elevators, tight stairwells and parking near the subway – making move day calm and efficient.",
+      "badgeAlt": "Recommended mover Farsta",
+      "arrowText": "See more reviews"
+    },
+    "awards": {
+      "title": "Flyttella awards in Farsta",
+      "description": "Our awards reflect commitment to quality, service and customer satisfaction in Farsta. We are recognised for reliable planning and careful handling – inspiring us to deliver top-class moving services every day."
+    },
+    "servicesSection": {
+      "title": "Discover our services in Farsta",
+      "description": "Household moves, packing, move-out cleaning, storage and heavy lifts. We tailor the setup to your home and timeline – with fixed pricing and clear communication.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Farsta",
+      "description": "Checklist for a smooth move in Farsta: plan access and loading, book elevators early, secure keys/codes and align time windows with subway and parking.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: prepare a smooth move in Farsta",
+      "description": "Prepare materials and labels, secure a loading spot and plan packing room by room – save time and reduce risks."
+    },
+    "processSection": {
+      "title": "Our process",
+      "description": "Quotes are based on your needs in Farsta – size, floor level, stairs/elevator, access routes and parking. When needed we perform a free inspection and set the right crew/vehicle. All prices are fixed with no hidden fees. We adapt planning around Farsta Centre and Farsta Strand subway access, parking zones and association rules for a safe, efficient move.",
+      "subtitle": "How it works"
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Briefly describe your move in Farsta – address, date and scope.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You receive a fixed price with 50% RUT deduction and clear terms.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "Sign digitally and we secure the booking.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "We review carrying routes, elevator and parking in Farsta.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "Protective materials, careful handling and efficient route planning.",
+      "satisfiedCustomer": "Satisfied customer",
+      "satisfiedCustomerDesc": "Follow‑up after the move for high customer satisfaction."
+    },
+    "faq": {
+      "title": "Common questions about moving in Farsta",
+      "items": [
+        {
+          "question": "How do you handle parking/loading near Farsta Centre and the subway?",
+          "answer": "We assess access routes and suggest loading spots based on street width and parking zones. Some associations require permits or booked time windows – we advise and plan this in the quote and order."
+        },
+        {
+          "question": "The building has a bookable elevator – what should I consider?",
+          "answer": "Book the elevator in advance and share the time window. We protect the elevator/entrance if needed and sync loading so the move stays within the slot."
+        },
+        {
+          "question": "The stairwell is narrow – can you manage it?",
+          "answer": "Yes. We size the crew appropriately, use carrying straps/dollies and plan access routes to avoid damage and unnecessary lifts."
+        },
+        {
+          "question": "Can you use a key box or digital lock?",
+          "answer": "Yes. We can handle key boxes (with code) and temporary digital access. We confirm receipt/return in writing and verify IDs."
+        },
+        {
+          "question": "Is assembly/disassembly included?",
+          "answer": "Basic assembly/disassembly is included. Advanced/custom work or fixed installations are add-ons and must be pre-booked."
+        },
+        {
+          "question": "Can you deliver packing materials in advance?",
+          "answer": "Yes. We can deliver boxes, paper and protective materials and advise on labelling/packing order for faster unpacking."
+        },
+        {
+          "question": "Do you offer storage between Farsta and the city?",
+          "answer": "Yes. We offer short- and long-term storage. Collection and return are scheduled to fit your timeline – within Farsta or to/from other districts."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
+  },
+  "hagersten": {
+    "hero": {
+      "title": "Moving company in Hägersten – smooth moves in west south Stockholm",
+      "subtitle": "Localised moves in Hägersten, Telefonplan, Midsommarkransen and Aspudden. We plan access routes, time windows and parking aligned with parking zones and association rules – focusing on calm logistics and punctuality.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "about": {
+      "title": "About Flyttella in Hägersten",
+      "desktop": "We make moves in Hägersten simpler, safer and clearer – from apartments around Telefonplan/Midsommarkransen to buildings in Aspudden. 5 years as a company and 8+ years’ experience give solid routines, high quality and many happy clients.",
+      "desktop2": "Over 8,000 clients have chosen us for everything from small moves to full-service solutions. We work with fixed pricing and clear terms. Ahead of move day we plan access, loading spots and time windows for Hägersten – booking elevators, coordinating keys/codes and ensuring smooth access.",
+      "desktop3": "Free loan of boxes, free rebooking/cancellation up to 24 hours before and a 14-day cleaning guarantee are included. A dedicated contact follows your move, sizes crew/vehicle and keeps everything on plan.",
+      "mobile": "We make moves in Hägersten simpler, safer and clearer – from apartments around Telefonplan/Midsommarkransen to buildings in Aspudden. 5 years as a company and 8+ years’ experience give solid routines, high quality and many happy clients.",
+      "mobileExpanded": "Over 8,000 clients have chosen us for everything from small moves to full-service solutions. We work with fixed pricing and clear terms. Ahead of move day we plan access, loading spots and time windows for Hägersten – booking elevators, coordinating keys/codes and ensuring smooth access.",
+      "mobileExpanded2": "Free loan of boxes, free rebooking/cancellation up to 24 hours before and a 14-day cleaning guarantee are included. A dedicated contact follows your move, sizes crew/vehicle and keeps everything on plan."
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Hägersten?"
+    },
+    "experienceSection": {
+      "title": "Our experience in Hägersten"
+    },
+    "experience": {
+      "title": "Our experience with moves in Hägersten",
+      "description": "With over 8000 moves and 7000 cleanings we have built unique expertise. We have helped thousands of families and businesses move in Telefonplan, Midsommarkransen and Aspudden – with calm logistics and respect for residents.",
+      "expanded": "We are recognised for reliable planning and good communication, with 1000+ positive reviews in Stockholm. Our Hägersten service is built on years of practical experience – with careful handling and efficient execution."
+    },
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "reviews": {
+      "subtitle": "Recommended moving company in Hägersten",
+      "description": "Clients in Hägersten, Telefonplan and Aspudden value our clear planning, fixed pricing and punctual delivery. We are used to bookable elevators, narrow stairwells and regulated loading – making move day calm and efficient.",
+      "badgeAlt": "Recommended mover Hägersten",
+      "arrowText": "See more reviews"
+    },
+    "awards": {
+      "title": "Flyttella awards in Hägersten",
+      "description": "Our awards reflect commitment to quality, service and customer satisfaction in Hägersten. Returning clients and strong reviews show our planning and handling are consistently high – every day."
+    },
+    "servicesSection": {
+      "title": "Discover our services in Hägersten",
+      "description": "Household moves, packing, move-out cleaning, storage and heavy lifts. We tailor the setup to your home and timeline – with fixed pricing and clear communication.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Hägersten",
+      "description": "Checklist for a smooth move in Hägersten: plan access and loading, book elevators early, secure keys/codes and align time windows with parking.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: prepare a smooth move in Hägersten",
+      "description": "Prepare materials and labels, secure a loading spot and plan packing room by room – save time and reduce risks."
+    },
+    "processSection": {
+      "title": "Our process",
+      "description": "Quotes are based on your needs in Hägersten – size, floor level, stairs/elevator, access routes and parking. When needed we perform a free inspection and set the right crew/vehicle. All prices are fixed with no hidden fees. Planning is adapted to parking zones and association rules for a safe, efficient move.",
+      "subtitle": "How it works"
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Briefly describe your move in Hägersten – address, date and scope.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You receive a fixed price with 50% RUT deduction and clear terms.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "Sign digitally and we secure the booking.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "We review carrying routes, elevator and parking in Hägersten.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "Protective materials, careful handling and efficient route planning.",
+      "satisfiedCustomer": "Satisfied customer",
+      "satisfiedCustomerDesc": "Follow‑up after the move for high customer satisfaction."
+    },
+    "faq": {
+      "title": "Common questions about moving in Hägersten",
+      "items": [
+        {
+          "question": "How do you handle parking/loading in Hägersten?",
+          "answer": "We assess access routes and suggest loading spots based on street width and parking zones. Some associations require permits or booked time windows – we advise and plan this in the quote and order."
+        },
+        {
+          "question": "The building has a bookable elevator – what should I consider?",
+          "answer": "Book the elevator in advance and share the time window. We protect door frames/walls/floors if needed and sync loading so the move stays within the slot."
+        },
+        {
+          "question": "The stairwell is narrow – can you manage it?",
+          "answer": "Yes. We size the crew appropriately, use carrying straps/dollies and plan access routes to avoid damage and unnecessary lifts."
+        },
+        {
+          "question": "Can you use a key box or digital lock?",
+          "answer": "Yes. We can handle key boxes (with code) and temporary digital access. We confirm receipt/return in writing and verify IDs."
+        },
+        {
+          "question": "Is assembly/disassembly included?",
+          "answer": "Basic assembly/disassembly is included. Advanced/custom work or fixed installations are add-ons and must be pre-booked."
+        },
+        {
+          "question": "Can you deliver packing materials in advance?",
+          "answer": "Yes. We can deliver boxes, paper and protective materials and advise on labelling/packing order for faster unpacking."
+        },
+        {
+          "question": "Do you offer storage between Hägersten and the city?",
+          "answer": "Yes. We offer short- and long-term storage. Collection and return are scheduled to fit your timeline – within Hägersten or to/from other districts."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
   }
-} 
+}

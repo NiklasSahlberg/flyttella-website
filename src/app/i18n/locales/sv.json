@@ -120,8 +120,6 @@
       "flexibleWithCleaningDate": "Jag är flexibel med städdatum",
       "flexibleWithWindowCleaningDate": "Jag är flexibel med datum för fönsterputsning",
       "address": "Adress",
-      "streetNumber": "Gatunr.",
-      "postalCode": "Postnummer",
       "contactInformation": "Kontaktinformation",
       "describeCleaningService": "Beskriv din städtjänst",
       "describeTask": "Beskriv vad uppdraget går ut på",
@@ -151,15 +149,11 @@
       "freezerDefrosting": "Avfrostning av frys",
       "waterTrapCleaning": "Demontering/rengöring av vattenlås",
       "blindsCleaning": "Rengöring av persienner",
-      "companyName": "Företagsnamn",
-      "yourName": "Ditt namn",
-      "email": "E-post",
-      "phone": "Telefon",
       "commentsOptional": "Kommentarer (frivilligt)",
       "commentsPlaceholder": "Här kan du nämna särskilda detaljer, t.ex. om du har stuckaturer som behöver rengöras varsamt.",
       "groundFloor": "Entréplan",
       "floor1": "1 våning",
-      "floor2": "2 våningar", 
+      "floor2": "2 våningar",
       "floor3": "3 våningar",
       "floor4Plus": "4 våningar eller fler",
       "apartment": "Lägenhet",
@@ -182,7 +176,6 @@
       "plusMinus1Day": "+- 1 dag",
       "plusMinus2Days": "+- 2 dagar",
       "plusMinus3Days": "+- 3 dagar",
-      "select": "-- Välj --",
       "whatTypeOfWork": "Vilken sorts arbete har du gjort?",
       "renovationRebuilding": "Renovering/Ombyggnad",
       "extensionExpansion": "Tillbyggnad/Utbyggnad",
@@ -283,8 +276,7 @@
         "selectWindowType": "Vänligen välj minst en typ av fönster",
         "enterWindowCount": "Vänligen ange antal fönster för minst en typ",
         "describeCleaningService": "Vänligen beskriv din städtjänst",
-        "approximatelyHowBigArea": "Ungefär hur stor yta ska städas?",
-        "enterAreaSize": "Vänligen ange ytstorlek"
+        "approximatelyHowBigArea": "Ungefär hur stor yta ska städas?"
       },
       "placeholders": {
         "startTypingAddress": "Börja skriva din adress",
@@ -303,14 +295,14 @@
         "yes": "Ja",
         "no": "Nej",
         "floor": {
-          "minus2": "Våning -2",
-          "minus1": "Våning -1",
-          "ground": "Entréplan",
           "1": "Våning 1",
           "2": "Våning 2",
           "3": "Våning 3",
           "4": "Våning 4",
           "5": "Våning 5",
+          "minus2": "Våning -2",
+          "minus1": "Våning -1",
+          "ground": "Entréplan",
           "6plus": "Våning 6 eller högre"
         },
         "flexibleDate": {
@@ -399,15 +391,15 @@
     "title": "Våra fördelar",
     "fixedPrice": "Fast pris",
     "fixedPriceDesc": "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser",
-    "rutDeduction": "RUT-avdrag",
+    "rutDeduction": "50% RUT-avdrag",
     "rutDeductionDesc": "Vi hanterar allt pappersarbete för RUT-avdrag",
-    "freeBoxes": "Fritt lån av kartonger i 4 veckor",
+    "freeBoxes": "Fri lån av kartonger i 4 veckor",
     "freeBoxesDesc": "Specialgjorda flyttkartonger med vår logga",
     "reschedule": "Omboka eller avboka kostnadsfritt",
     "rescheduleDesc": "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
     "guarantee": "Nöjd kund garanti",
     "guaranteeDesc": "14 dagars garanti på flyttstädning",
-    "insurance": "Trafiktillstånd och försäkring",
+    "insurance": "Försäkring",
     "insuranceDesc": "Alla nödvändiga tillstånd och försäkringar på plats",
     "trainedStaff": "Utbildad personal",
     "trainedStaffDesc": "Vår personal är utbildad för att säkerställa högsta kvalitet och service.",
@@ -416,12 +408,9 @@
     "workplace": "Arbetsmiljö",
     "workplaceDesc": "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal.",
     "readMore": "Läs mer",
-    "insurance": "Försäkring",
     "packGuarantee": "Pack-garanti",
     "customerGuarantee": "14 dagars nöjd kund garanti",
-    "rutDeduction": "50% RUT-avdrag",
-    "freeCancellation": "24h fri kostnadsfri avbokning",
-    "freeBoxes": "Fri lån av kartonger i 4 veckor"
+    "freeCancellation": "24h fri kostnadsfri avbokning"
   },
   "reviews": {
     "title": "Vad tycker våra kunder om oss?",
@@ -517,12 +506,30 @@
     "customQuote": "Våra offerter är alltid baserade på dina specifika behov och omständigheter.",
     "permits": "Som en seriös flyttfirma har vi alla nödvändiga tillstånd, skattesedel och försäkringar på plats.",
     "steps": [
-      { "title": "Fyll i formuläret", "desc": "Berätta om din flytt" },
-      { "title": "Snabb offert", "desc": "Få pris på 1 minut" },
-      { "title": "Personlig kontakt", "desc": "Vi ringer samma dag eller dagen efter" },
-      { "title": "Signera & bekräfta", "desc": "Få bokningsbekräftelse direkt" },
-      { "title": "Flytt genomförd", "desc": "Vi tar hand om allt" },
-      { "title": "Nöjd kund", "desc": "Återkommande kund" }
+      {
+        "title": "Fyll i formuläret",
+        "desc": "Berätta om din flytt"
+      },
+      {
+        "title": "Snabb offert",
+        "desc": "Få pris på 1 minut"
+      },
+      {
+        "title": "Personlig kontakt",
+        "desc": "Vi ringer samma dag eller dagen efter"
+      },
+      {
+        "title": "Signera & bekräfta",
+        "desc": "Få bokningsbekräftelse direkt"
+      },
+      {
+        "title": "Flytt genomförd",
+        "desc": "Vi tar hand om allt"
+      },
+      {
+        "title": "Nöjd kund",
+        "desc": "Återkommande kund"
+      }
     ]
   },
   "advantages": {
@@ -555,91 +562,241 @@
   "bohagsflytt": {
     "hero": {
       "title": "Bohagsflytt",
-      "subtitle": "Låt oss ta hand om hela din flytt. Med vår professionella bohagsflytt får du en bekymmersfri flyttupplevelse från start till mål.",
-      "description": "Vi utför stora och små bohagsflyttar varje dag! Det är vårt stolta yrke att säkert och effektivt flytta saker från ett ställe till ett annat till ett konkurrenskraftigt fast pris."
-    },
-    "features": {
-      "packing": {
-        "title": "Packning & Uppackning",
-        "description": "Vi packar dina ägodelar säkert och professionellt med rätt material och teknik."
-      },
-      "transport": {
-        "title": "Säker Transport",
-        "description": "Moderna flyttbilar och erfarna flyttare säkerställer en trygg transport av dina tillhörigheter."
-      },
-      "materials": {
-        "title": "Flyttmaterial",
-        "description": "Vi tillhandahåller allt flyttmaterial som behövs för en säker flytt."
-      },
-      "assembly": {
-        "title": "Demontering & Montering",
-        "description": "Vi hjälper dig att demontera och montera möbler vid behov."
-      }
+      "subtitle": "Komplett flyttservice för hela hushållet. Vi hjälper dig med allt från planering och packning till transport och upppackning.",
+      "description": "Professionell bohagsflytt som gör din flytt så smidig som möjligt. Med oss kan du vara lugn för dina ägodelar och din plånbok."
     },
     "content": {
-      "intro": "Ska ni flytta från ett boende till ett annat? Låt oss på Flyttella ta hand om din flytt, vi utför stora och små bohagsflyttar varje dag! Det är vårt stolta yrke att säkert och effektivt flytta saker från ett ställe till ett annat till ett konkurrenskraftigt fast pris.",
-      "expertise": "Vi vet att en bohagsflytt kan kännas krångligt och jobbigt men att hjälpa dig att flytta är vår kompetens område.",
-      "quality": "Om du är ute efter en kvalitets flytthjälp till rimliga priser då har du kommit rätt! Efter många år i branschen kan vi lova dig pålitlig service till ett lågt pris. Att flytta ska nämligen vara enkelt, och vi ser till att det blir det.",
-      "comprehensive": "Spelar ingen roll om det handlar om en lägenhet, sommarstuga eller en hel villa! Vi hjälper dig med hela processen! Från ner montering, ner packning, emballering, transportering, upp packning till möbel placering.",
-      "customized": "Berätta för oss vad du behöver hjälp med, så hittar vi en smart lösning anpassad efter just dina önskemål."
+      "whatIsTitle": "Vad är bohagsflytt?",
+      "whatIsDescription": "Bohagsflytt innebär att flytta hela eller delar av ett hushålls tillhörigheter från en bostad till en annan. Det omfattar allt från planering, packning och transport till upppackning och eventuell magasinering.",
+      "whyChooseTitle": "Varför välja oss för din bohagsflytt?",
+      "whyChooseDescription": "Vi har över 15 års erfarenhet av bohagsflyttar i Stockholm och har hjälpt tusentals kunder med sina flyttar. Vårt team av professionella flyttare ser till att din flytt blir så smidig och trygg som möjligt.",
+      "imageAlt": "Magkänsla vid flytt",
+      "pricingTitle": "Vad kostar en bohagsflytt?",
+      "pricingDescription": "Priset på en bohagsflytt varierar beroende på faktorer som mängden bohag, avståndet mellan adresserna, våningsplan, tillgång till hiss och eventuella tilläggstjänster som packning eller magasinering. En normal flytt inom samma stad kan kosta från cirka 1 700 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina behov.",
+      "testimonial": "Allt gick smidigt och tryggt från första kontakt tills allt var på plats. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri flytt!",
+      "bohag2010Title": "Vad är bohagsflytt 2010?",
+      "bohag2010Description": "Bohagsflytt 2010 syftar på de regler och riktlinjer som fastställts i \"Bohag 2010\" – ett avtal framtaget av Sveriges Åkeriföretag och Svenska Möbeltransportörers Förbund. Avtalet reglerar ansvaret mellan flyttföretag och kund vid bohagsflytt, och säkerställer att flytten sker på ett tryggt och professionellt sätt. Det omfattar bland annat försäkringar, hantering av bohag, reklamationer och betalningsvillkor. När du anlitar en flyttfirma som följer Bohag 2010 kan du känna dig extra trygg under hela flyttprocessen.",
+      "boxesTitle": "Flyttkartonger",
+      "boxesDescription": "Flyttkartonger är en viktig del av en smidig och säker bohagsflytt. Med rätt kartonger blir packningen enklare och dina saker skyddas bättre under transporten. Vi erbjuder stabila och rymliga flyttkartonger som är anpassade för olika typer av föremål – från böcker och porslin till kläder och elektronik. Hos oss kan du låna flyttkartonger kostnadsfritt i upp till 4 veckor när du bokar din flytt, vilket gör hela processen både enklare och mer kostnadseffektiv.",
+      "packingTipsAlt": "Packningstips",
+      "bookingTitle": "Boka flytthjälp i god tid",
+      "bookingDescription": "För en smidig och stressfri flytt är det viktigt att boka flytthjälp i god tid. Vi rekommenderar att du bokar minst 2-3 veckor i förväg för att säkerställa tillgänglighet och få den flyttdag som passar dig bäst. Vi erbjuder flexibla bokningsmöjligheter och kan anpassa oss efter dina behov. Boka redan idag för att säkerställa en professionell och pålitlig flyttservice.",
+      "checklistTitle": "Checklista vid flytt",
+      "services": {
+        "planning": {
+          "title": "Flyttplanering",
+          "description": "Vi hjälper dig att planera din flytt från början till slut."
+        },
+        "packing": {
+          "title": "Packning",
+          "description": "Professionell packning med rätt material för att skydda dina ägodelar."
+        },
+        "transport": {
+          "title": "Transport",
+          "description": "Säker transport med moderna fordon och erfarna förare."
+        },
+        "unpacking": {
+          "title": "Upppackning",
+          "description": "Vi hjälper dig att packa upp och ställa in dina möbler på den nya adressen."
+        }
+      }
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description": "Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder.",
+      "experience": "Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.",
+      "quality": "Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.",
+      "customerFocus": "Kunden står alltid i centrum. Vi lyssnar på dina önskemål och behov, och anpassar vår service därefter. Oavsett om du flyttar inom samma stad eller till en ny ort, så finns vi här för att hjälpa dig.",
+      "readMore": "Läs mer om oss",
+      "imageAlt": "Om Flyttella"
+    },
+    "tipsSection": {
+      "title": "Tips för din flytt",
+      "beforeMoving": {
+        "title": "Innan flytten"
+      },
+      "duringMoving": {
+        "title": "Under flytten"
+      },
+      "afterMoving": {
+        "title": "Efter flytten"
+      },
+      "packingTips": {
+        "title": "Packtips",
+        "imageAlt": "Packning"
+      },
+      "smoothMovingDay": {
+        "title": "En smidig flyttdag",
+        "imageAlt": "Glad flyttarbetare"
+      },
+      "startInNewHome": {
+        "title": "Start i nya hemmet",
+        "imageAlt": "Nytt hem"
+      }
+    },
+    "tips": {
+      "planning": {
+        "title": "Planera och förbered",
+        "imageAlt": "Planering"
+      },
+      "contracts": {
+        "title": "Avtal och anmälningar",
+        "imageAlt": "Avtal"
+      },
+      "beforeMoving": {
+        "title": "Innan flyttfirman kommer",
+        "imageAlt": "Förberedelse för flytt"
+      },
+      "duringMoving": {
+        "title": "Kommunikation och koordinering",
+        "imageAlt": "Flytt under pågående"
+      },
+      "afterMoving": {
+        "title": "Dokumentation och uppföljning",
+        "imageAlt": "Dokumentation efter flytt"
+      }
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "description": "Våra kunder är nöjda med vår service. Här är några exempel på vad de säger om oss:",
+      "imageAlt": "1000+ positiva recensioner från kunder",
+      "arrowText": "Vi har hjälpt tusentals kunder med flyttar, städning och bohagsflytt över åren. Våra kunder uppskattar vår professionella service, punktlighet och omtanke.",
+      "cta": "Läs fler recensioner"
+    },
+    "cta": {
+      "title": "Redo att börja din flytt?",
+      "subtitle": "Få en kostnadsfri offert på din bohagsflytt idag",
+      "button": "Få gratis offert"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "extendedDescription": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.",
+        "readMore": "Läs mer"
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
+        "extendedDescription": "Behöver du magasinera bohag under flyttprocessen? Vi tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan – och kan även hjälpa till med hämtning och återleverans.",
+        "readMore": "Läs mer"
+      },
+      "packhjalp": {
+        "title": "Packhjälp",
+        "description": "Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.",
+        "extendedDescription": "Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med smidig återleverans.",
+        "mobileDescription": "Vi hjälper med märkning och organisering för enklare uppackning.",
+        "readMore": "Läs mer"
+      }
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "description": "Med över 15 års erfarenhet av bohagsflyttar i Stockholm har vi hjälpt tusentals kunder med deras flyttbehov.",
+      "stats": {
+        "flyttar": {
+          "count": "8000+",
+          "description": "Genomförda flyttar"
+        },
+        "stadningar": {
+          "count": "7000+",
+          "description": "Genomförda städningar"
+        },
+        "manadsvis": {
+          "count": "500+",
+          "description": "Nöjda kunder"
+        }
+      }
     },
     "process": {
-      "title": "Vår process",
+      "title": "Så fungerar det",
       "description": "Vår flyttprocess är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär på startsidan där du anger dina uppgifter och flyttbehov. Inom en minut får du en offert skickad till din angivna e-postadress. Samma dag eller dagen efter tar vi personlig kontakt med dig för att diskutera detaljerna och svara på eventuella frågor. När du är nöjd med offerten kan du enkelt signera den digitalt. Sedan genomför vi flytten enligt dina önskemål och avtal. Resultatet? En nöjd kund som kan fokusera på att komma hem till sitt nya hem.",
       "pricing": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation, vi kan även besikta bostaden vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
-      "subtitle": "Så fungerar det",
-      "steps": [
-        {
+      "subtitle": "Vår flyttprocess i 6 enkla steg",
+      "steps": {
+        "0": {
           "title": "Fyll i formuläret",
-          "description": "Berätta om din flytt"
+          "description": "Berätta för oss vad du behöver hjälp med och när du vill att vi ska komma."
         },
-        {
-          "title": "Snabb offert",
-          "description": "Få pris på 1 minut"
+        "1": {
+          "title": "Snabb återkoppling",
+          "description": "Vi återkommer inom en minut med en kostnadsfri offert."
         },
-        {
+        "2": {
           "title": "Personlig kontakt",
-          "description": "Vi ringer samma dag eller dagen efter"
+          "description": "Vi ringer samma dag eller dagen efter för att diskutera detaljerna."
+        },
+        "3": {
+          "title": "Bekräfta bokningen",
+          "description": "Godkänn offerten och vi bokar in din flytt direkt."
+        },
+        "4": {
+          "title": "Professionell flytt",
+          "description": "Våra erfarna flyttare kommer och hjälper dig med hela flytten."
+        },
+        "5": {
+          "title": "Klar och nöjd",
+          "description": "Vi städar upp efter oss och du kan njuta av din nya bostad."
+        }
+      }
+    },
+    "blog": {
+      "title": "Senaste från vår blogg",
+      "readMore": "Läs mer"
+    },
+    "faq": {
+      "title": "Vanliga frågor om bohagsflytt",
+      "questions": [
+        {
+          "id": "bohagsflytt-1",
+          "question": "Vad ingår i en bohagsflytt?",
+          "answer": "En bohagsflytt inkluderar allt från planering och packning till transport och upppackning. Vi hjälper dig med att inventera dina ägodelar, packa säkert med rätt material, transporterar allt till din nya adress och hjälper dig att packa upp och ställa in möblerna."
         },
         {
-          "title": "Signera & bekräfta",
-          "description": "Få bokningsbekräftelse direkt"
+          "id": "bohagsflytt-2",
+          "question": "Hur lång tid i förväg ska jag boka?",
+          "answer": "Vi rekommenderar att du bokar minst 2-3 veckor i förväg, särskilt under högsäsong (maj-september). För mindre flyttar kan vi ofta hjälpa dig även med kortare varsel, men det beror på vår tillgänglighet."
         },
         {
-          "title": "Flytt genomförd",
-          "description": "Vi tar hand om allt"
+          "id": "bohagsflytt-3",
+          "question": "Vad kostar en bohagsflytt?",
+          "answer": "Kostnaden för en bohagsflytt beror på flera faktorer som avstånd, volym, antal flyttare och eventuella tilläggstjänster. Vi ger dig alltid ett fast pris utan dolda kostnader när vi gör offerten."
         },
         {
-          "title": "Nöjd kund",
-          "description": "Återkommande kund"
+          "id": "bohagsflytt-4",
+          "question": "Har ni försäkring?",
+          "answer": "Ja, vi har full försäkring som täcker skador som kan uppstå under flytten. Om något går sönder på grund av vår hantering ersätter vi det. Det är också viktigt att notera att vi följer branschstandarder för att minimera risken för skador."
+        },
+        {
+          "id": "bohagsflytt-5",
+          "question": "Kan ni hjälpa med packning?",
+          "answer": "Ja, vi erbjuder komplett packhjälp som inkluderar packning, transport och upppackning. Vi har allt nödvändigt material och kan hjälpa dig med hela processen från början till slut."
         }
       ]
     },
-    "whatIs": {
-      "title": "Vad är en bohagsflytt?",
-      "subtitle": "En komplett guide till bohagsflytt",
-      "description": "En bohagsflytt är en flytt av hela ditt bohag från en bostad till en annan. Det inkluderar allt från små ägodelar till stora möbler och elektronik. Vi tar hand om hela processen från början till slut.",
-      "sections": [
-        {
-          "title": "Vad ingår i en bohagsflytt?",
-          "content": "En komplett bohagsflytt inkluderar packning av alla dina ägodelar, säker transport med moderna flyttbilar, och uppackning på den nya platsen. Vi hanterar allt från små detaljer till stora möbler med professionell omsorg."
-        },
-        {
-          "title": "För vilka typer av bostäder?",
-          "content": "Vi utför bohagsflytt för alla typer av bostäder - lägenheter, villor, sommarstugor och kontor. Oavsett storlek eller typ av bostad kan vi anpassa vår service efter dina specifika behov."
-        },
-        {
-          "title": "Vår professionella approach",
-          "content": "Med över 8 års erfarenhet i branschen vet vi exakt vad som krävs för en smidig bohagsflytt. Vi använder rätt material, teknik och personal för att säkerställa att dina ägodelar kommer fram säkert och oskadda."
-        },
-        {
-          "title": "Fördelar med vår bohagsflytt",
-          "content": "Vi erbjuder fasta priser, försäkring av alla ägodelar, och professionell service från start till mål. Du får också gratis lån av flyttkartonger och kostnadsfri ombokning upp till 24 timmar innan flytten."
-        }
-      ]
+    "sidebar": {
+      "reco": {
+        "title": "Rekommenderat",
+        "description": "Andra kunder har också valt dessa tjänster"
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Professionell montering av möbler och prylar"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Säker hantering av tunga föremål"
+      },
+      "barhjalp": {
+        "title": "Bärhjälp",
+        "description": "Hjälp med att bära och flytta föremål"
+      },
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Miljövänlig hantering av saker du inte behöver"
+      }
     }
-  }
-  ,
+  },
   "flyttstadning": {
     "hero": {
       "title": "Professionell flyttstädning",
@@ -679,6 +836,21 @@
       "montering": {
         "title": "Montering",
         "description": "Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.",
+        "readMore": "Läs mer"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.",
+        "readMore": "Läs mer"
+      },
+      "barhjalp": {
+        "title": "Bärhjälp",
+        "description": "Extra hjälp vid flytt för tunga och stora föremål. Vi hjälper dig med det tunga lyftet.",
+        "readMore": "Läs mer"
+      },
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Professionell bortforsling av gamla möbler, vitvaror och andra föremål du inte längre behöver.",
         "readMore": "Läs mer"
       }
     },
@@ -757,15 +929,51 @@
       "title": "Våra förmåner",
       "imageAlt": "Våra förmåner",
       "features": [
-        { "icon": "💰", "title": "Fast pris", "description": "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser" },
-        { "icon": "📋", "title": "RUT-avdrag", "description": "Vi hanterar allt pappersarbete för RUT-avdrag" },
-        { "icon": "✅", "title": "14 dagars städgaranti", "description": "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti" },
-        { "icon": "⏰", "title": "Omboka eller avboka kostnadsfritt", "description": "Omboka eller avboka kostnadsfritt upp till 24 timmar innan städningen" },
-        { "icon": "🔒", "title": "Tillstånd och försäkring", "description": "Alla nödvändiga tillstånd och försäkringar på plats" },
-        { "icon": "🎓", "title": "Utbildad personal", "description": "Vår personal är utbildad för att säkerställa högsta kvalitet och service." },
-        { "icon": "🧴", "title": "Miljövänliga produkter", "description": "Vi använder miljövänliga och säkra rengöringsmedel" },
-        { "icon": "📈", "title": "Ledningssystem", "description": "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." },
-        { "icon": "🦺", "title": "Arbetsmiljö", "description": "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." }
+        {
+          "icon": "💰",
+          "title": "Fast pris",
+          "description": "Inga överraskningar - vi erbjuder både fasta priser och möjlighet till löpande priser"
+        },
+        {
+          "icon": "📋",
+          "title": "RUT-avdrag",
+          "description": "Vi hanterar allt pappersarbete för RUT-avdrag"
+        },
+        {
+          "icon": "✅",
+          "title": "14 dagars städgaranti",
+          "description": "Vi är så säkra på vår kvalitet att vi erbjuder 14 dagars nöjd kund-garanti"
+        },
+        {
+          "icon": "⏰",
+          "title": "Omboka eller avboka kostnadsfritt",
+          "description": "Omboka eller avboka kostnadsfritt upp till 24 timmar innan städningen"
+        },
+        {
+          "icon": "🔒",
+          "title": "Tillstånd och försäkring",
+          "description": "Alla nödvändiga tillstånd och försäkringar på plats"
+        },
+        {
+          "icon": "🎓",
+          "title": "Utbildad personal",
+          "description": "Vår personal är utbildad för att säkerställa högsta kvalitet och service."
+        },
+        {
+          "icon": "🧴",
+          "title": "Miljövänliga produkter",
+          "description": "Vi använder miljövänliga och säkra rengöringsmedel"
+        },
+        {
+          "icon": "📈",
+          "title": "Ledningssystem",
+          "description": "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet."
+        },
+        {
+          "icon": "🦺",
+          "title": "Arbetsmiljö",
+          "description": "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal."
+        }
       ]
     },
     "experience": {
@@ -779,7 +987,7 @@
           "description": "uppdrag utförda"
         },
         "hemstadningar": {
-          "title": "Hemstädningar", 
+          "title": "Hemstädningar",
           "count": 5000,
           "description": "uppdrag utförda"
         },
@@ -804,28 +1012,6 @@
       "articleDescription": "Att välja rätt städfirma är avgörande för en grundlig flyttstädning. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på - från städgaranti och miljövänliga produkter till kundrecensioner och pristransparens. Lär dig hur du identifierar en seriös städfirma som levererar kvalitet och trygghet.",
       "readMore": "Läs mer",
       "seeAllArticles": "Se alla artiklar om städning"
-    },
-    "sidebar": {
-      "montering": {
-        "title": "Montering",
-        "description": "Säker montering och demontering av möbler och vitvaror. Vi säkerställer att allt monteras korrekt och säkert.",
-        "readMore": "Läs mer"
-      },
-      "tunglyft": {
-        "title": "Tunglyft",
-        "description": "Specialiserad flytt och lyft av tunga och otympliga föremål som piano, kassaskåp och maskiner.",
-        "readMore": "Läs mer"
-      },
-      "barhjalp": {
-        "title": "Bärhjälp",
-        "description": "Extra hjälp vid flytt för tunga och stora föremål. Vi hjälper dig med det tunga lyftet.",
-        "readMore": "Läs mer"
-      },
-      "bortforsling": {
-        "title": "Bortforsling",
-        "description": "Professionell bortforsling av gamla möbler, vitvaror och andra föremål du inte längre behöver.",
-        "readMore": "Läs mer"
-      }
     }
   },
   "hemstadning": {
@@ -897,15 +1083,60 @@
       "title": "Våra förmåner",
       "imageAlt": "Städpersonal i Stockholm - Flyttella",
       "items": [
-        { "icon": "💰", "title": "Fast pris", "description": "Inga överraskningar – fasta priser och möjlighet till tillval", "link": "/priser" },
-        { "icon": "📋", "title": "RUT-avdrag", "description": "Vi hanterar allt pappersarbete för RUT-avdrag", "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
-        { "icon": "⚡", "title": "Snabb offert", "description": "Få prisförslag snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan", "link": "#hemstad-offert" },
-        { "icon": "⏰", "title": "Omboka eller avboka", "description": "Omboka/avboka kostnadsfritt upp till 24 timmar innan", "link": "/avbokning" },
-        { "icon": "🔒", "title": "Tillstånd och försäkring", "description": "Alla nödvändiga tillstånd och försäkringar på plats", "link": "/tillstand" },
-        { "icon": "🎓", "title": "Utbildad personal", "description": "Utbildade medarbetare och kvalitetssäkrade rutiner", "link": "/om-oss" },
-        { "icon": "🧴", "title": "Miljövänliga produkter", "description": "Skonsamma och miljövänliga rengöringsmedel", "link": "/miljovanlig-stadning" },
-        { "icon": "📈", "title": "Ledningssystem", "description": "Effektiva rutiner för kvalitet och struktur", "link": "/kvalitet" },
-        { "icon": "🦺", "title": "Arbetsmiljö", "description": "Trygg arbetsmiljö för både kunder och personal", "link": "/arbetsmiljo" }
+        {
+          "icon": "💰",
+          "title": "Fast pris",
+          "description": "Inga överraskningar – fasta priser och möjlighet till tillval",
+          "link": "/priser"
+        },
+        {
+          "icon": "📋",
+          "title": "RUT-avdrag",
+          "description": "Vi hanterar allt pappersarbete för RUT-avdrag",
+          "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+        },
+        {
+          "icon": "⚡",
+          "title": "Snabb offert",
+          "description": "Få prisförslag snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan",
+          "link": "#hemstad-offert"
+        },
+        {
+          "icon": "⏰",
+          "title": "Omboka eller avboka",
+          "description": "Omboka/avboka kostnadsfritt upp till 24 timmar innan",
+          "link": "/avbokning"
+        },
+        {
+          "icon": "🔒",
+          "title": "Tillstånd och försäkring",
+          "description": "Alla nödvändiga tillstånd och försäkringar på plats",
+          "link": "/tillstand"
+        },
+        {
+          "icon": "🎓",
+          "title": "Utbildad personal",
+          "description": "Utbildade medarbetare och kvalitetssäkrade rutiner",
+          "link": "/om-oss"
+        },
+        {
+          "icon": "🧴",
+          "title": "Miljövänliga produkter",
+          "description": "Skonsamma och miljövänliga rengöringsmedel",
+          "link": "/miljovanlig-stadning"
+        },
+        {
+          "icon": "📈",
+          "title": "Ledningssystem",
+          "description": "Effektiva rutiner för kvalitet och struktur",
+          "link": "/kvalitet"
+        },
+        {
+          "icon": "🦺",
+          "title": "Arbetsmiljö",
+          "description": "Trygg arbetsmiljö för både kunder och personal",
+          "link": "/arbetsmiljo"
+        }
       ]
     },
     "experience": {
@@ -1049,14 +1280,46 @@
       "title": "Våra förmåner",
       "imageAlt": "Våra förmåner",
       "features": [
-        { "icon": "💰", "title": "Löpande priser", "description": "Transparenta löpande priser – du vet vad du betalar för" },
-        { "icon": "✅", "title": "Kvalitetsgaranti", "description": "Vi är så säkra på vår kvalitet att vi erbjuder nöjd kund-garanti" },
-        { "icon": "⏰", "title": "Flexibla tider", "description": "Vi anpassar städningen efter ert schema - kvällar och helger" },
-        { "icon": "🔒", "title": "Försäkring", "description": "Full ansvarsförsäkring och alla nödvändiga tillstånd på plats" },
-        { "icon": "🎓", "title": "Utbildad personal", "description": "Vår personal är utbildad för att säkerställa högsta kvalitet och service." },
-        { "icon": "🧴", "title": "Miljövänliga produkter", "description": "Vi använder miljövänliga och säkra rengöringsmedel" },
-        { "icon": "📈", "title": "Ledningssystem", "description": "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet." },
-        { "icon": "🦺", "title": "Arbetsmiljö", "description": "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal." }
+        {
+          "icon": "💰",
+          "title": "Löpande priser",
+          "description": "Transparenta löpande priser – du vet vad du betalar för"
+        },
+        {
+          "icon": "✅",
+          "title": "Kvalitetsgaranti",
+          "description": "Vi är så säkra på vår kvalitet att vi erbjuder nöjd kund-garanti"
+        },
+        {
+          "icon": "⏰",
+          "title": "Flexibla tider",
+          "description": "Vi anpassar städningen efter ert schema - kvällar och helger"
+        },
+        {
+          "icon": "🔒",
+          "title": "Försäkring",
+          "description": "Full ansvarsförsäkring och alla nödvändiga tillstånd på plats"
+        },
+        {
+          "icon": "🎓",
+          "title": "Utbildad personal",
+          "description": "Vår personal är utbildad för att säkerställa högsta kvalitet och service."
+        },
+        {
+          "icon": "🧴",
+          "title": "Miljövänliga produkter",
+          "description": "Vi använder miljövänliga och säkra rengöringsmedel"
+        },
+        {
+          "icon": "📈",
+          "title": "Ledningssystem",
+          "description": "Vi arbetar med effektiva ledningssystem för att garantera struktur och kvalitet."
+        },
+        {
+          "icon": "🦺",
+          "title": "Arbetsmiljö",
+          "description": "Vi prioriterar en trygg och säker arbetsmiljö för både kunder och personal."
+        }
       ]
     },
     "experience": {
@@ -1070,7 +1333,7 @@
           "description": "uppdrag utförda"
         },
         "hemstadningar": {
-          "title": "Hemstädningar", 
+          "title": "Hemstädningar",
           "count": 5000,
           "description": "uppdrag utförda"
         },
@@ -1107,7 +1370,7 @@
           "answer": "Kontorsstädning inkluderar dammsugning, våttorkning av golv, tömning av papperskorgar, torkning av skrivbord, rengöring av kök/pentry och toaletter. Vi anpassar städningen efter dina specifika behov och kan inkludera ytterligare tjänster som fönsterputsning och djuprengöring."
         },
         {
-          "id": "kontorsstadning-2", 
+          "id": "kontorsstadning-2",
           "question": "Vad kostar kontorsstädning?",
           "answer": "Priset beror på lokalernas storlek, städfrekvens och omfattning. Vi arbetar med löpande priser utan dolda avgifter och ger dig alltid en transparent kostnadsuppdelning innan vi börjar."
         },
@@ -1225,15 +1488,60 @@
       "title": "Våra förmåner",
       "imageAlt": "Städpersonal i Stockholm - Flyttella",
       "items": [
-        { "icon": "💰", "title": "Fast pris", "description": "Inga överraskningar – fasta priser och möjlighet till tillval", "link": "/priser" },
-        { "icon": "📋", "title": "RUT-avdrag", "description": "Vi hanterar allt pappersarbete för RUT-avdrag", "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html" },
-        { "icon": "⚡", "title": "Snabb offert", "description": "Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan", "link": "#fonsterputs-offert" },
-        { "icon": "⏰", "title": "Omboka eller avboka", "description": "Omboka/avboka kostnadsfritt upp till 24 timmar innan", "link": "/avbokning" },
-        { "icon": "🔒", "title": "Tillstånd och försäkring", "description": "Alla nödvändiga tillstånd och försäkringar på plats", "link": "/tillstand" },
-        { "icon": "🎓", "title": "Utbildad personal", "description": "Utbildade medarbetare och kvalitetssäkrade rutiner", "link": "/om-oss" },
-        { "icon": "🧴", "title": "Miljövänliga produkter", "description": "Skonsamma och miljövänliga rengöringsmedel", "link": "/om-oss" },
-        { "icon": "📈", "title": "Ledningssystem", "description": "Effektiva rutiner för kvalitet och struktur", "link": "/om-oss" },
-        { "icon": "🦺", "title": "Arbetsmiljö", "description": "Trygg arbetsmiljö för både kunder och personal", "link": "/om-oss" }
+        {
+          "icon": "💰",
+          "title": "Fast pris",
+          "description": "Inga överraskningar – fasta priser och möjlighet till tillval",
+          "link": "/priser"
+        },
+        {
+          "icon": "📋",
+          "title": "RUT-avdrag",
+          "description": "Vi hanterar allt pappersarbete för RUT-avdrag",
+          "link": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html"
+        },
+        {
+          "icon": "⚡",
+          "title": "Snabb offert",
+          "description": "Få pris snabbt och enkelt – Fyll enkelt formuläret högst upp på sidan",
+          "link": "#fonsterputs-offert"
+        },
+        {
+          "icon": "⏰",
+          "title": "Omboka eller avboka",
+          "description": "Omboka/avboka kostnadsfritt upp till 24 timmar innan",
+          "link": "/avbokning"
+        },
+        {
+          "icon": "🔒",
+          "title": "Tillstånd och försäkring",
+          "description": "Alla nödvändiga tillstånd och försäkringar på plats",
+          "link": "/tillstand"
+        },
+        {
+          "icon": "🎓",
+          "title": "Utbildad personal",
+          "description": "Utbildade medarbetare och kvalitetssäkrade rutiner",
+          "link": "/om-oss"
+        },
+        {
+          "icon": "🧴",
+          "title": "Miljövänliga produkter",
+          "description": "Skonsamma och miljövänliga rengöringsmedel",
+          "link": "/om-oss"
+        },
+        {
+          "icon": "📈",
+          "title": "Ledningssystem",
+          "description": "Effektiva rutiner för kvalitet och struktur",
+          "link": "/om-oss"
+        },
+        {
+          "icon": "🦺",
+          "title": "Arbetsmiljö",
+          "description": "Trygg arbetsmiljö för både kunder och personal",
+          "link": "/om-oss"
+        }
       ]
     },
     "experience": {
@@ -1265,12 +1573,30 @@
       "pricing": "Priset baseras på antal fönster, åtkomlighet och tillval. Fast pris utan dolda avgifter. RUT‑avdrag hanteras automatiskt.",
       "howItWorksTitle": "Så fungerar det",
       "steps": [
-        { "title": "Fyll i formuläret", "description": "Berätta om din fönsterputsning" },
-        { "title": "Snabb offert", "description": "Få pris snabbt och enkelt" },
-        { "title": "Personlig kontakt", "description": "Vi ringer samma dag eller dagen efter" },
-        { "title": "Signera & bekräfta", "description": "Boka digitalt" },
-        { "title": "Putsning utförd", "description": "Vi tar hand om allt" },
-        { "title": "Nöjd kund", "description": "Kristallklara fönster" }
+        {
+          "title": "Fyll i formuläret",
+          "description": "Berätta om din fönsterputsning"
+        },
+        {
+          "title": "Snabb offert",
+          "description": "Få pris snabbt och enkelt"
+        },
+        {
+          "title": "Personlig kontakt",
+          "description": "Vi ringer samma dag eller dagen efter"
+        },
+        {
+          "title": "Signera & bekräfta",
+          "description": "Boka digitalt"
+        },
+        {
+          "title": "Putsning utförd",
+          "description": "Vi tar hand om allt"
+        },
+        {
+          "title": "Nöjd kund",
+          "description": "Kristallklara fönster"
+        }
       ]
     },
     "blog": {
@@ -1287,18 +1613,44 @@
     "faq": {
       "title": "Vanliga frågor om fönsterputsning",
       "questions": [
-        { "id": "fp-1", "question": "Hur ofta bör jag putsa fönster?", "answer": "2–4 gånger per år ger ett jämnt resultat året runt." },
-        { "id": "fp-2", "question": "Kan ni putsa utvändigt på hög höjd?", "answer": "Ja, där det är säkert och åtkomligt. Annars kan vi rekommendera alternativ." },
-        { "id": "fp-3", "question": "Ingår fönsterkarmar?", "answer": "Ja, rengöring av karmar och fönsterbrädor ingår." },
-        { "id": "fp-4", "question": "Kan jag avboka?", "answer": "Ja, kostnadsfri ombokning/avbokning upp till 24 timmar innan." }
+        {
+          "id": "fp-1",
+          "question": "Hur ofta bör jag putsa fönster?",
+          "answer": "2–4 gånger per år ger ett jämnt resultat året runt."
+        },
+        {
+          "id": "fp-2",
+          "question": "Kan ni putsa utvändigt på hög höjd?",
+          "answer": "Ja, där det är säkert och åtkomligt. Annars kan vi rekommendera alternativ."
+        },
+        {
+          "id": "fp-3",
+          "question": "Ingår fönsterkarmar?",
+          "answer": "Ja, rengöring av karmar och fönsterbrädor ingår."
+        },
+        {
+          "id": "fp-4",
+          "question": "Kan jag avboka?",
+          "answer": "Ja, kostnadsfri ombokning/avbokning upp till 24 timmar innan."
+        }
       ]
     }
   },
   "barhjalp": {
     "sidebar": {
-      "bortforsling": {
-        "title": "Bortforsling",
-        "description": "Professionell bortforsling av möbler och bohag som inte längre behövs. Miljövänlig hantering.",
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "readMore": "Läs mer"
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.",
+        "readMore": "Läs mer"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.",
         "readMore": "Läs mer"
       }
     },
@@ -1452,23 +1804,6 @@
       ],
       "moreQuestions": "Har du fler frågor?",
       "allFaq": "Se alla vanliga frågor"
-    },
-    "sidebar": {
-      "magasinering": {
-        "title": "Magasinering",
-        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
-        "readMore": "Läs mer"
-      },
-      "montering": {
-        "title": "Montering",
-        "description": "Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.",
-        "readMore": "Läs mer"
-      },
-      "tunglyft": {
-        "title": "Tunglyft",
-        "description": "Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.",
-        "readMore": "Läs mer"
-      }
     }
   },
   "pianoTunglyft": {
@@ -1860,18 +2195,18 @@
         "descriptionExtended": "Vi erbjuder packning och upppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt.",
         "readMore": "Läs mer"
       },
-        "bortforsling": {
-          "title": "Bortforsling",
-          "description": "Professionell hantering och transport av avfall, möbler och bohag. Vi tar hand om allt från gamla möbler till byggavfall med fokus på miljövänlig hantering.",
-          "descriptionMobile": "Vi hjälper med sortering och miljövänlig hantering av avfall.",
-          "descriptionExtended": "Bortforsling är perfekt vid flytt, renovering eller när du behöver frigöra utrymme. Våra erfarna medarbetare använder rätt utrustning och säkerställer att allt avfall hanteras korrekt och återvinns. Vi kan även hjälpa med sortering och dokumentation för en smidig process."
-        },
-        "utlandsflytt": {
-          "title": "Utlandsflytt",
-          "description": "Flytt över gränser – planering, packning och vägtransport.",
-          "readMore": "Läs mer",
-          "descriptionExtended": "Vi tar hand om exportpackning, dokument och säker vägtransport. Tydlig kommunikation från start till mål. Vi hjälper till med planering av rutt och leveransfönster för en smidig resa."
-        },
+      "bortforsling": {
+        "title": "Bortforsling",
+        "description": "Professionell hantering och transport av avfall, möbler och bohag. Vi tar hand om allt från gamla möbler till byggavfall med fokus på miljövänlig hantering.",
+        "descriptionMobile": "Vi hjälper med sortering och miljövänlig hantering av avfall.",
+        "descriptionExtended": "Bortforsling är perfekt vid flytt, renovering eller när du behöver frigöra utrymme. Våra erfarna medarbetare använder rätt utrustning och säkerställer att allt avfall hanteras korrekt och återvinns. Vi kan även hjälpa med sortering och dokumentation för en smidig process."
+      },
+      "utlandsflytt": {
+        "title": "Utlandsflytt",
+        "description": "Flytt över gränser – planering, packning och vägtransport.",
+        "readMore": "Läs mer",
+        "descriptionExtended": "Vi tar hand om exportpackning, dokument och säker vägtransport. Tydlig kommunikation från start till mål. Vi hjälper till med planering av rutt och leveransfönster för en smidig resa."
+      },
       "allServices": {
         "title": "Våra tjänster",
         "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som magasinering och bortforsling.",
@@ -2340,9 +2675,21 @@
       "experienceDescription": "Med över 8 års erfarenhet har vi byggt upp rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.",
       "readMore": "Läs mer",
       "cards": [
-        { "title": "Monteringar", "count": "3000+", "description": "Genomförda monteringar" },
-        { "title": "Flyttar", "count": "8000+", "description": "Genomförda flyttar" },
-        { "title": "Städningar", "count": "7000+", "description": "Genomförda städningar" }
+        {
+          "title": "Monteringar",
+          "count": "3000+",
+          "description": "Genomförda monteringar"
+        },
+        {
+          "title": "Flyttar",
+          "count": "8000+",
+          "description": "Genomförda flyttar"
+        },
+        {
+          "title": "Städningar",
+          "count": "7000+",
+          "description": "Genomförda städningar"
+        }
       ]
     },
     "process": {
@@ -2443,244 +2790,6 @@
       }
     }
   },
-  "bohagsflytt": {
-    "hero": {
-      "title": "Bohagsflytt",
-      "subtitle": "Komplett flyttservice för hela hushållet. Vi hjälper dig med allt från planering och packning till transport och upppackning.",
-      "description": "Professionell bohagsflytt som gör din flytt så smidig som möjligt. Med oss kan du vara lugn för dina ägodelar och din plånbok."
-    },
-    "content": {
-      "whatIsTitle": "Vad är bohagsflytt?",
-      "whatIsDescription": "Bohagsflytt innebär att flytta hela eller delar av ett hushålls tillhörigheter från en bostad till en annan. Det omfattar allt från planering, packning och transport till upppackning och eventuell magasinering.",
-      "whyChooseTitle": "Varför välja oss för din bohagsflytt?",
-      "whyChooseDescription": "Vi har över 15 års erfarenhet av bohagsflyttar i Stockholm och har hjälpt tusentals kunder med sina flyttar. Vårt team av professionella flyttare ser till att din flytt blir så smidig och trygg som möjligt.",
-      "imageAlt": "Magkänsla vid flytt",
-      "pricingTitle": "Vad kostar en bohagsflytt?",
-      "pricingDescription": "Priset på en bohagsflytt varierar beroende på faktorer som mängden bohag, avståndet mellan adresserna, våningsplan, tillgång till hiss och eventuella tilläggstjänster som packning eller magasinering. En normal flytt inom samma stad kan kosta från cirka 1 700 kr och uppåt. För att få ett exakt pris rekommenderar vi att du begär en kostnadsfri offert anpassad efter dina behov.",
-      "testimonial": "Allt gick smidigt och tryggt från första kontakt tills allt var på plats. Rekommenderar Flyttella varmt till alla som vill ha en bekymmersfri flytt!",
-      "bohag2010Title": "Vad är bohagsflytt 2010?",
-      "bohag2010Description": "Bohagsflytt 2010 syftar på de regler och riktlinjer som fastställts i \"Bohag 2010\" – ett avtal framtaget av Sveriges Åkeriföretag och Svenska Möbeltransportörers Förbund. Avtalet reglerar ansvaret mellan flyttföretag och kund vid bohagsflytt, och säkerställer att flytten sker på ett tryggt och professionellt sätt. Det omfattar bland annat försäkringar, hantering av bohag, reklamationer och betalningsvillkor. När du anlitar en flyttfirma som följer Bohag 2010 kan du känna dig extra trygg under hela flyttprocessen.",
-      "boxesTitle": "Flyttkartonger",
-      "boxesDescription": "Flyttkartonger är en viktig del av en smidig och säker bohagsflytt. Med rätt kartonger blir packningen enklare och dina saker skyddas bättre under transporten. Vi erbjuder stabila och rymliga flyttkartonger som är anpassade för olika typer av föremål – från böcker och porslin till kläder och elektronik. Hos oss kan du låna flyttkartonger kostnadsfritt i upp till 4 veckor när du bokar din flytt, vilket gör hela processen både enklare och mer kostnadseffektiv.",
-      "packingTipsAlt": "Packningstips",
-      "bookingTitle": "Boka flytthjälp i god tid",
-      "bookingDescription": "För en smidig och stressfri flytt är det viktigt att boka flytthjälp i god tid. Vi rekommenderar att du bokar minst 2-3 veckor i förväg för att säkerställa tillgänglighet och få den flyttdag som passar dig bäst. Vi erbjuder flexibla bokningsmöjligheter och kan anpassa oss efter dina behov. Boka redan idag för att säkerställa en professionell och pålitlig flyttservice.",
-      "checklistTitle": "Checklista vid flytt",
-      "services": {
-        "planning": {
-          "title": "Flyttplanering",
-          "description": "Vi hjälper dig att planera din flytt från början till slut."
-        },
-        "packing": {
-          "title": "Packning",
-          "description": "Professionell packning med rätt material för att skydda dina ägodelar."
-        },
-        "transport": {
-          "title": "Transport",
-          "description": "Säker transport med moderna fordon och erfarna förare."
-        },
-        "unpacking": {
-          "title": "Upppackning",
-          "description": "Vi hjälper dig att packa upp och ställa in dina möbler på den nya adressen."
-        }
-      }
-    },
-    "about": {
-      "title": "Om Flyttella",
-      "description": "Flyttella är en flytt- och städfirma med bas i Stockholm som grundades med målet att göra flyttar och städtjänster enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag, men har över 8 års erfarenhet i branschen – något som återspeglas i vårt arbetssätt, vår kvalitet och våra nöjda kunder.",
-      "experience": "Hittills har vi haft nöjet att hjälpa över 8000 kunder, både privatpersoner och företag, med allt från små flyttar till helhetslösningar med städning, packning och rådgivning. Det som gör oss unika är vårt fokus på tydliga villkor och fasta priser – hos oss vet du alltid vad som ingår och vad det kostar.",
-      "quality": "Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan, samt en generös 14 dagars garanti på alla flyttstädningar. Bakom allt detta står vår kompetenta och personliga kundtjänst, som alltid finns tillgänglig för att svara på frågor, ge tips och hjälpa dig fatta rätt beslut.",
-      "customerFocus": "Kunden står alltid i centrum. Vi lyssnar på dina önskemål och behov, och anpassar vår service därefter. Oavsett om du flyttar inom samma stad eller till en ny ort, så finns vi här för att hjälpa dig.",
-      "readMore": "Läs mer om oss",
-      "imageAlt": "Om Flyttella"
-    },
-    "tipsSection": {
-      "title": "Tips för din flytt",
-      "beforeMoving": {
-        "title": "Innan flytten"
-      },
-      "duringMoving": {
-        "title": "Under flytten"
-      },
-      "afterMoving": {
-        "title": "Efter flytten"
-      },
-      "packingTips": {
-        "title": "Packtips",
-        "imageAlt": "Packning"
-      },
-      "smoothMovingDay": {
-        "title": "En smidig flyttdag",
-        "imageAlt": "Glad flyttarbetare"
-      },
-      "startInNewHome": {
-        "title": "Start i nya hemmet",
-        "imageAlt": "Nytt hem"
-      }
-    },
-    "tips": {
-      "planning": {
-        "title": "Planera och förbered",
-        "imageAlt": "Planering"
-      },
-      "contracts": {
-        "title": "Avtal och anmälningar",
-        "imageAlt": "Avtal"
-      },
-      "beforeMoving": {
-        "title": "Innan flyttfirman kommer",
-        "imageAlt": "Förberedelse för flytt"
-      },
-      "duringMoving": {
-        "title": "Kommunikation och koordinering",
-        "imageAlt": "Flytt under pågående"
-      },
-      "afterMoving": {
-        "title": "Dokumentation och uppföljning",
-        "imageAlt": "Dokumentation efter flytt"
-      }
-    },
-    "reviews": {
-      "title": "Vad tycker våra kunder om oss?",
-      "description": "Våra kunder är nöjda med vår service. Här är några exempel på vad de säger om oss:",
-      "imageAlt": "1000+ positiva recensioner från kunder",
-      "arrowText": "Vi har hjälpt tusentals kunder med flyttar, städning och bohagsflytt över åren. Våra kunder uppskattar vår professionella service, punktlighet och omtanke.",
-      "cta": "Läs fler recensioner"
-    },
-    "cta": {
-      "title": "Redo att börja din flytt?",
-      "subtitle": "Få en kostnadsfri offert på din bohagsflytt idag",
-      "button": "Få gratis offert"
-    },
-    "services": {
-      "title": "Våra andra huvudtjänster",
-      "flyttstadning": {
-        "title": "Flyttstädning",
-        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
-        "extendedDescription": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg.",
-        "readMore": "Läs mer"
-      },
-      "magasinering": {
-        "title": "Magasinering",
-        "description": "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
-        "extendedDescription": "Behöver du magasinera bohag under flyttprocessen? Vi tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan – och kan även hjälpa till med hämtning och återleverans.",
-        "readMore": "Läs mer"
-      },
-      "packhjalp": {
-        "title": "Packhjälp",
-        "description": "Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.",
-        "extendedDescription": "Packning är ofta den mest tidskrävande delen av en flytt. Våra erfarna flyttare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vi hjälper även till med smidig återleverans.",
-        "mobileDescription": "Vi hjälper med märkning och organisering för enklare uppackning.",
-        "readMore": "Läs mer"
-      }
-    },
-    "experience": {
-      "title": "Vår erfarenhet",
-      "description": "Med över 15 års erfarenhet av bohagsflyttar i Stockholm har vi hjälpt tusentals kunder med deras flyttbehov.",
-      "stats": {
-        "flyttar": {
-          "count": "8000+",
-          "description": "Genomförda flyttar"
-        },
-        "stadningar": {
-          "count": "7000+",
-          "description": "Genomförda städningar"
-        },
-        "manadsvis": {
-          "count": "500+",
-          "description": "Nöjda kunder"
-        }
-      }
-    },
-    "process": {
-      "title": "Så fungerar det",
-      "description": "Vår flyttprocess är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär på startsidan där du anger dina uppgifter och flyttbehov. Inom en minut får du en offert skickad till din angivna e-postadress. Samma dag eller dagen efter tar vi personlig kontakt med dig för att diskutera detaljerna och svara på eventuella frågor. När du är nöjd med offerten kan du enkelt signera den digitalt. Sedan genomför vi flytten enligt dina önskemål och avtal. Resultatet? En nöjd kund som kan fokusera på att komma hem till sitt nya hem.",
-      "pricing": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation, vi kan även besikta bostaden vid behov. Alla priser är fasta utan dolda avgifter - vi utgår alltid från dina önskemål och en information vi får från dig som kund. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov.",
-      "subtitle": "Vår flyttprocess i 6 enkla steg",
-      "steps": {
-        "0": {
-          "title": "Fyll i formuläret",
-          "description": "Berätta för oss vad du behöver hjälp med och när du vill att vi ska komma."
-        },
-        "1": {
-          "title": "Snabb återkoppling",
-          "description": "Vi återkommer inom en minut med en kostnadsfri offert."
-        },
-        "2": {
-          "title": "Personlig kontakt",
-          "description": "Vi ringer samma dag eller dagen efter för att diskutera detaljerna."
-        },
-        "3": {
-          "title": "Bekräfta bokningen",
-          "description": "Godkänn offerten och vi bokar in din flytt direkt."
-        },
-        "4": {
-          "title": "Professionell flytt",
-          "description": "Våra erfarna flyttare kommer och hjälper dig med hela flytten."
-        },
-        "5": {
-          "title": "Klar och nöjd",
-          "description": "Vi städar upp efter oss och du kan njuta av din nya bostad."
-        }
-      }
-    },
-    "blog": {
-      "title": "Senaste från vår blogg",
-      "readMore": "Läs mer"
-    },
-    "faq": {
-      "title": "Vanliga frågor om bohagsflytt",
-      "questions": [
-        {
-          "id": "bohagsflytt-1",
-          "question": "Vad ingår i en bohagsflytt?",
-          "answer": "En bohagsflytt inkluderar allt från planering och packning till transport och upppackning. Vi hjälper dig med att inventera dina ägodelar, packa säkert med rätt material, transporterar allt till din nya adress och hjälper dig att packa upp och ställa in möblerna."
-        },
-        {
-          "id": "bohagsflytt-2",
-          "question": "Hur lång tid i förväg ska jag boka?",
-          "answer": "Vi rekommenderar att du bokar minst 2-3 veckor i förväg, särskilt under högsäsong (maj-september). För mindre flyttar kan vi ofta hjälpa dig även med kortare varsel, men det beror på vår tillgänglighet."
-        },
-        {
-          "id": "bohagsflytt-3",
-          "question": "Vad kostar en bohagsflytt?",
-          "answer": "Kostnaden för en bohagsflytt beror på flera faktorer som avstånd, volym, antal flyttare och eventuella tilläggstjänster. Vi ger dig alltid ett fast pris utan dolda kostnader när vi gör offerten."
-        },
-        {
-          "id": "bohagsflytt-4",
-          "question": "Har ni försäkring?",
-          "answer": "Ja, vi har full försäkring som täcker skador som kan uppstå under flytten. Om något går sönder på grund av vår hantering ersätter vi det. Det är också viktigt att notera att vi följer branschstandarder för att minimera risken för skador."
-        },
-        {
-          "id": "bohagsflytt-5",
-          "question": "Kan ni hjälpa med packning?",
-          "answer": "Ja, vi erbjuder komplett packhjälp som inkluderar packning, transport och upppackning. Vi har allt nödvändigt material och kan hjälpa dig med hela processen från början till slut."
-        }
-      ]
-    },
-    "sidebar": {
-      "reco": {
-        "title": "Rekommenderat",
-        "description": "Andra kunder har också valt dessa tjänster"
-      },
-      "montering": {
-        "title": "Montering",
-        "description": "Professionell montering av möbler och prylar"
-      },
-      "tunglyft": {
-        "title": "Tunglyft",
-        "description": "Säker hantering av tunga föremål"
-      },
-      "barhjalp": {
-        "title": "Bärhjälp",
-        "description": "Hjälp med att bära och flytta föremål"
-      },
-      "bortforsling": {
-        "title": "Bortforsling",
-        "description": "Miljövänlig hantering av saker du inte behöver"
-      }
-    }
-  },
   "contact": {
     "callbackTime": {
       "selectTime": "Välj tid",
@@ -2691,8 +2800,59 @@
   },
   "stadtjanster": {
     "hero": {
-      "title": "Våra städtjänster",
-      "subtitle": "Professionell städning i Stockholm med fast pris, RUT-avdrag och miljövänliga produkter. Vi erbjuder ett komplett utbud av städtjänster för hem och företag."
+      "title": "Städtjänster",
+      "subtitle": "Professionell städning för hem och företag"
+    },
+    "section": {
+      "title": "Städtjänster",
+      "subtitle": "Professionell städning för hem och företag. Alla våra städtjänster inkluderar RUT-avdrag och fast pris."
+    },
+    "services": {
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Grundlig flyttstädning enligt branschstandard. Fast pris, 14 dagars garanti och full RUT-hantering."
+      },
+      "hemstadning": {
+        "title": "Hemstädning",
+        "description": "Regelbunden hemstädning anpassad efter dina behov. Veckovis, varannan vecka eller månadsvis."
+      },
+      "byggstadning": {
+        "title": "Byggstädning",
+        "description": "Professionell städning efter renovering. Grov- och finstädning för ett dammfritt resultat."
+      },
+      "fonsterputsning": {
+        "title": "Fönsterputs",
+        "description": "Kristallklara fönster året runt. Invändigt och utvändigt där det är säkert och åtkomligt."
+      },
+      "storstadning": {
+        "title": "Storstädning",
+        "description": "Grundlig storstädning med fokus på svåråtkomliga ytor. Perfekt som uppföljning efter bygge."
+      },
+      "visningsstadning": {
+        "title": "Visningsstädning",
+        "description": "Professionell städning inför bostadsvisning. För bästa möjliga försäljningspris och snabb affär."
+      },
+      "kontorsstadning": {
+        "title": "Kontorsstädning",
+        "description": "Regelbunden kontorsstädning för en ren och professionell arbetsmiljö."
+      },
+      "dodsboStadning": {
+        "title": "Dödsbostädning",
+        "description": "Varsam och respektfull städning i samband med dödsbo. Hanteras med omtanke och diskretion."
+      }
+    },
+    "cta": {
+      "title": "Behöver du hjälp med städning?",
+      "subtitle": "Få en kostnadsfri offert på 1 minut",
+      "button": "Få gratis offert",
+      "readMore": "Läs mer"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Pålitlig städning i Stockholm",
+      "description": "Professionell städning i Stockholm – från hemstädning till flyttstädning. Fast pris och RUT-avdrag. Punktliga medarbetare och höga betyg från tusentals nöjda kunder.",
+      "badgeAlt": "Erfarenhet av städtjänster i Stockholm",
+      "arrowText": "Läs vad våra kunder säger om vår städning"
     }
   },
   "tjanster": {
@@ -2787,63 +2947,6 @@
       "description": "Professionella företagstjänster i Stockholm – från kontorsflytt till bemanning. Fast pris och minimal störning av verksamheten. Höga betyg från nöjda företagskunder.",
       "badgeAlt": "Erfarenhet av företagstjänster i Stockholm",
       "arrowText": "Läs vad våra företagskunder säger om våra tjänster"
-    }
-  },
-  "stadtjanster": {
-    "hero": {
-      "title": "Städtjänster",
-      "subtitle": "Professionell städning för hem och företag"
-    },
-    "section": {
-      "title": "Städtjänster",
-      "subtitle": "Professionell städning för hem och företag. Alla våra städtjänster inkluderar RUT-avdrag och fast pris."
-    },
-    "services": {
-      "flyttstadning": {
-        "title": "Flyttstädning",
-        "description": "Grundlig flyttstädning enligt branschstandard. Fast pris, 14 dagars garanti och full RUT-hantering."
-      },
-      "hemstadning": {
-        "title": "Hemstädning",
-        "description": "Regelbunden hemstädning anpassad efter dina behov. Veckovis, varannan vecka eller månadsvis."
-      },
-      "byggstadning": {
-        "title": "Byggstädning",
-        "description": "Professionell städning efter renovering. Grov- och finstädning för ett dammfritt resultat."
-      },
-      "fonsterputsning": {
-        "title": "Fönsterputs",
-        "description": "Kristallklara fönster året runt. Invändigt och utvändigt där det är säkert och åtkomligt."
-      },
-      "storstadning": {
-        "title": "Storstädning",
-        "description": "Grundlig storstädning med fokus på svåråtkomliga ytor. Perfekt som uppföljning efter bygge."
-      },
-      "visningsstadning": {
-        "title": "Visningsstädning",
-        "description": "Professionell städning inför bostadsvisning. För bästa möjliga försäljningspris och snabb affär."
-      },
-      "kontorsstadning": {
-        "title": "Kontorsstädning",
-        "description": "Regelbunden kontorsstädning för en ren och professionell arbetsmiljö."
-      },
-      "dodsboStadning": {
-        "title": "Dödsbostädning",
-        "description": "Varsam och respektfull städning i samband med dödsbo. Hanteras med omtanke och diskretion."
-      }
-    },
-    "cta": {
-      "title": "Behöver du hjälp med städning?",
-      "subtitle": "Få en kostnadsfri offert på 1 minut",
-      "button": "Få gratis offert",
-      "readMore": "Läs mer"
-    },
-    "reviews": {
-      "title": "Vad tycker våra kunder om oss?",
-      "subtitle": "Pålitlig städning i Stockholm",
-      "description": "Professionell städning i Stockholm – från hemstädning till flyttstädning. Fast pris och RUT-avdrag. Punktliga medarbetare och höga betyg från tusentals nöjda kunder.",
-      "badgeAlt": "Erfarenhet av städtjänster i Stockholm",
-      "arrowText": "Läs vad våra kunder säger om vår städning"
     }
   },
   "blogg": {
@@ -2987,5 +3090,1198 @@
     "compensationText3": "14.3 Betalning för de tjänster som Företaget tillhandahåller ska ske i enlighet med de betalningsvillkor som specificeras i offerten eller på fakturan. Företaget förbehåller sig rätten att kräva betalning under pågående arbete eller innan arbetet påbörjas, om det finns anledning att ifrågasätta Kundens betalningsförmåga. Detta kan innefatta situationer där Företaget bedömer att kunden inte kan uppvisa tillräcklig säkerhet för betalning, eller om kunden har tidigare betalningsanmärkningar eller övriga ekonomiska förhållanden som ger anledning till tvekan.",
     "close": "Stäng",
     "errorMessage": "Ett fel uppstod när anmälan skulle skickas. Vänligen försök igen."
+  },
+  "alvsjo": {
+    "hero": {
+      "title": "Flyttfirma i Älvsjö - Grön flytt i hjärtat av Stockholm",
+      "subtitle": "Specialister på flytt i Älvsjös familjevänliga miljöer. Vi känner till områdets grönområden, moderna bostäder och smidiga transportförbindelser för en effektiv flyttupplevelse."
+    },
+    "experience": {
+      "title": "Älvsjös föredragna flyttfirma med djup lokalkännedom",
+      "description": "Med över ett decennium av erfarenhet i Älvsjö har vi hjälpt hundratals familjer och företag med flyttar från villakvarteren till moderna lägenhetskomplex. Vår djupa kännedom om områdets grönområden, transportförbindelser och unika karaktär gör oss till Älvsjös mest pålitliga flyttfirma.",
+      "expanded": "Vi förstår Älvsjös unika utmaningar - från trånga gator i villaområdena till specifika parkeringsbestämmelser nära Älvsjö station. Vår expertis gör att vi kan navigera dessa utmaningar smidigt, vilket säkerställer en effektiv och problemfri flytt för dig. Med över 1000 positiva recensioner och återkommande kunder är vi Älvsjös mest pålitliga flyttfirma."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "desktop": "Flyttella är din lokala flyttfirma i Älvsjö med djup lokalkännedom om områdets unika karaktär. Vi har specialiserat oss på flyttar i Älvsjös grönområden och familjevänliga miljöer – från moderna lägenheter nära Älvsjö station till villor i lugna villaområden med närhet till naturreservat.",
+      "desktop2": "Som Älvsjös föredragna flyttfirma förstår vi områdets transportförbindelser och kan planera effektiva flyttrutter. Vi erbjuder alltid gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flytten samt en generös 14 dagars garanti på alla flyttstädningar. För dig som även bokar packhjälp erbjuder vi packgaranti, vilket innebär att vi tar fullt ansvar för det vi packar.",
+      "desktop3": "Vi känner till Älvsjös olika områden från Älvsjö centrum till de omkringliggande bostadsområdena och kan anpassa våra flyttjänster efter just dina behov. Oavsett om du ska flytta inom Älvsjö, till eller från området, kan du lita på att vi hanterar din flytt med omsorg och effektivitet. Vår lokala expertis gör att vi kan erbjuda snabba och flexibla lösningar.",
+      "mobile": "Flyttella är din lokala flyttfirma i Älvsjö med djup lokalkännedom om områdets unika karaktär. Vi har specialiserat oss på flyttar i Älvsjös grönområden och familjevänliga miljöer.",
+      "mobileExpanded": "Som Älvsjös föredragna flyttfirma förstår vi områdets transportförbindelser och kan planera effektiva flyttrutter. Vi erbjuder alltid gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flytten samt en generös 14 dagars garanti på alla flyttstädningar.",
+      "mobileExpanded2": "Vi känner till Älvsjös olika områden från Älvsjö centrum till de omkringliggande bostadsområdena och kan anpassa våra flyttjänster efter just dina behov. Oavsett om du ska flytta inom Älvsjö, till eller från området, kan du lita på att vi hanterar din flytt med omsorg och effektivitet.",
+      "readMore": "Läs mer",
+      "readMoreAbout": "Läs mer om oss"
+    },
+    "awards": {
+      "title": "Utmärkelser för vårt arbete i Älvsjö",
+      "description": "Våra utmärkelser reflekterar vår specialisering på flytt i Älvsjös grönområden och familjevänliga miljöer. Genom åren har vi blivit erkända för vår expertis inom flytt från villakvarteren till moderna lägenhetskomplex i Älvsjö. Dessa utmärkelser bekräftar vår position som Älvsjös mest pålitliga flyttfirma med djup lokalkännedom."
+    },
+    "reviews": {
+      "subtitle": "Grön flyttservice i Älvsjös familjevänliga miljöer",
+      "description": "Som Älvsjös specialister på flytt i grönområden förstår vi de unika utmaningar som kan uppstå vid flytt i familjevänliga miljöer. Vi vet att flyttar i Älvsjö kräver extra omsorg runt grönområden och trånga gator, vilket är varför vi anpassar vår service efter områdets karaktär. Med vår djupa lokalkännedom om Älvsjös villaområden och lägenhetskomplex säkerställer vi att varje flytt blir en stressfri upplevelse.",
+      "badgeAlt": "Specialister på flytt i Älvsjös grönområden",
+      "arrowText": "Upptäck varför familjer i Älvsjö väljer oss"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Älvsjö?",
+      "items": {
+        "packGuarantee": "Pack-garanti",
+        "customerGuarantee": "14 dagars nöjd kund garanti",
+        "freeBoxes": "Fritt lån av kartonger i 4 veckor",
+        "rutDeduction": "50% RUT-avdrag",
+        "freeReschedule": "24h kostnadsfri ombokning och avbokning",
+        "permitsInsurance": "Trafiktillstånd och försäkring"
+      }
+    },
+    "blog": {
+      "title": "Flyttfirma i Älvsjö - Lokalkännedom för grön flytt",
+      "description": "Planerar du flytt i Älvsjös familjevänliga miljöer? Upptäck viktiga faktorer som närhet till grönområden, transportförbindelser via Älvsjö station och lokalkännedom om områdets unika karaktär. Lär dig välja en pålitlig flyttfirma som förstår Älvsjös grönområden och familjevänliga miljöer."
+    },
+    "cta": {
+      "title": "Redo att börja din flytt?",
+      "subtitle": "Få en snabb och gratis offert på din bohagsflytt",
+      "button": "Få gratis offert"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Professionell flyttstädning med garanti. Vi lämnar ditt gamla hem i perfekt skick så att du kan fokusera på det nya.",
+        "extra": "Flyttella erbjuder professionell flyttstädning med 14 dagars nöjd kund-garanti. Vi rengör alla boytor, putsar fönster på alla sidor och använder kvalitativa rengöringsmedel. Städutrustning ingår, inklusive leverans och upphämtning. Vi dammtorkar väggar och tak, rengör golvbrunnar och bakom vitvaror (om du drar fram dem). Frysen rengörs om den är avfrostad dagen innan. Med oss får du en komplett flyttstädning för en trygg och smidig överlämning."
+      },
+      "storage": {
+        "title": "Magasinering",
+        "description": "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
+        "extended": "Behöver du magasinera bohag under flyttprocessen? Flyttella tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan. Som extra service erbjuder vi den första månaden gratis för att göra din flyttprocess ännu smidigare."
+      },
+      "packing": {
+        "title": "Packhjälp",
+        "description": "Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.",
+        "extended": "Packning är ofta den mest tidskrävande delen av en flytt. Flyttella erbjuder professionell packhjälp där våra erfarna flyttare hjälper dig packa dina tillhörigheter på ett säkert och organiserat sätt. Vi använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vår packhjälp inkluderar även märkning av kartonger och skapande av en inventarielista för enkel uppackning på den nya adressen."
+      }
+    },
+    "tips": {
+      "title": "Tips för din flytt",
+      "before": {
+        "title": "Innan flytten",
+        "planning": {
+          "title": "Planera och förbered",
+          "content": [
+            "Gör en checklista.",
+            "Rensa ut onödiga saker.",
+            "Boka flyttfirma och städning.",
+            "Beställ flyttkartonger."
+          ]
+        },
+        "decluttering": {
+          "title": "Avtal och anmälningar",
+          "content": [
+            "Adressändra hos Skatteverket.",
+            "Flytta el, bredband, etc.",
+            "Teckna nya avtal.",
+            "Meddela viktiga kontakter."
+          ]
+        },
+        "packing": {
+          "title": "Innan flyttfirman kommer",
+          "content": [
+            "Packa ner allt lösöre i kartonger",
+            "Montera ner alla gardiner",
+            "Montera ner alla lampor",
+            "Dubbelkolla packning och märkning."
+          ]
+        },
+        "documents": {
+          "title": "Packtips",
+          "content": [
+            "Märk alla kartonger tydligt.",
+            "Håll nycklar tillgängliga.",
+            "Överbelasta inte flyttlådorna.",
+            "Använd silkespapper för ömtåliga föremål och porslin."
+          ]
+        }
+      },
+      "during": {
+        "title": "Under flytten",
+        "smooth": {
+          "title": "En smidig flyttdag",
+          "content": [
+            "Håll värdesaker tillgängliga.",
+            "Säkerställ fri väg för flytthjälp.",
+            "Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.",
+            "Se till att montera ner eller packa ner bortglömda föremål."
+          ]
+        },
+        "supervision": {
+          "title": "Kommunikation och koordinering",
+          "content": [
+            "Håll kontakt med flyttledaren.",
+            "Fotografera eventuella skador.",
+            "Kontrollera att allt laddas korrekt.",
+            "Följ med till den nya adressen.",
+            "Var tydlig med särskilda önskemål.",
+            "Var tillgänglig för frågor."
+          ]
+        }
+      },
+      "after": {
+        "title": "Efter flytten",
+        "settling": {
+          "title": "Start i nya hemmet",
+          "content": [
+            "Kontrollera flyttstädningen.",
+            "Packa upp det viktigaste först.",
+            "Kontrollera att alla föremål anlänt.",
+            "Montera upp gardiner och lampor.",
+            "Uppdatera adress hos myndigheter.",
+            "Testa alla vitvaror och eluttag.",
+            "Ta bort tomma kartonger och emballage."
+          ]
+        }
+      },
+      "blog": {
+        "badge": "Flytttips",
+        "readTime": "5 min läsning"
+      }
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Älvsjö",
+      "items": [
+        {
+          "question": "Hur mycket kostar en flytt i Älvsjö?",
+          "answer": "Våra priser baseras på faktorer som boyta, våning, hiss och parkeringsavstånd. Vi erbjuder både fasta priser och löpande priser. Fyll i vårt formulär för en snabb offert på 1 minut."
+        },
+        {
+          "question": "Vad ingår i en komplett flytttjänst?",
+          "answer": "Vår kompletta flytttjänst inkluderar packning, transport, lossning och möbler. Vi hjälper även med demontering och montering av möbler."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt?",
+          "answer": "Vi rekommenderar att boka minst 2-4 veckor i förväg, särskilt under sommarperioden. Vi kan dock ofta hjälpa till även med kortare varsel."
+        },
+        {
+          "question": "Erbjuder ni försäkring för flytten?",
+          "answer": "Ja, alla våra flyttar är försäkrade. Vi har fullständig ansvarsförsäkring som täcker skador på dina ägodelar under transporten."
+        },
+        {
+          "question": "Kan ni hjälpa med packning?",
+          "answer": "Absolut! Vi erbjuder komplett packtjänst där vi packar allt säkert med rätt material. Vi har även packgaranti för det vi packar."
+        }
+      ]
+    },
+    "stats": {
+      "moves": "Flyttar",
+      "cleanings": "Städningar",
+      "monthly": "Månadsvis"
+    },
+    "navigation": {
+      "previous": "Föregående",
+      "next": "Nästa"
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta om din flytt",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Få pris på 1 minut",
+      "signConfirm": "Signera & bekräfta",
+      "signConfirmDesc": "Få bokningsbekräftelse direkt",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi ringer samma dag eller dagen efter",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Vi tar hand om allt",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Återkommande kund"
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "processSection": {
+      "title": "Vår Process",
+      "description": "Våra offerter är alltid baserade på dina specifika behov och omständigheter i Årsta. Vi tar hänsyn till faktorer som boyta, våning, hiss och parkeringsavstånd för att ge dig en offert som passar just din situation i Årsta – vi kan även besikta bostaden vid behov. Alla priser är fasta utan dolda avgifter – vi utgår alltid från dina önskemål och information vi får från dig som kund i Årsta. Har du särskilda önskemål eller frågor? Kontakta oss så anpassar vi offerten efter dina behov i Årsta.",
+      "subtitle": "Så fungerar det"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet"
+    },
+    "servicesSection": {
+      "title": "Upptäck Alla Våra Tjänster i Älvsjö",
+      "description": "Vi erbjuder ett komplett utbud av flyttjänster i Älvsjö för att göra din flytt så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.",
+      "privateServices": "Se alla våra privattjänster",
+      "businessServices": "Se alla våra företagstjänster",
+      "readMore": "Läs mer"
+    },
+    "blogSection": {
+      "title": "Läs mer om flytt i Älvsjö",
+      "description": "Få värdefulla tips och råd för en smidig flytt i Älvsjö",
+      "readMore": "Läs mer"
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor om flytt i Älvsjö?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "arsta": {
+    "hero": {
+      "title": "Flyttfirma i Årsta – lokal, trygg och prisvärd flytt",
+      "subtitle": "Vi hjälper dig med flytt i Årsta och hela Söderort. Vår lokalkännedom om Årsta Torg, Årstafältet, Valla Torg och områdena kring Årstaviken gör planeringen smidig och flytten effektiv – oavsett om du flyttar från lägenhet eller villa."
+    },
+    "about": {
+      "title": "Om Flyttella – din lokala flyttfirma i Årsta",
+      "desktop": "Flyttella är en Stockholmsbaserad flyttfirma med stark närvaro i Årsta. Vi kombinerar lokal kännedom med effektiv planering för privat- och företagsflyttar – tydliga offerter, trygg logistik och punktliga leveranser.",
+      "desktop2": "Våra förmåner i Årsta: fast pris och 50% RUT-avdrag, fritt lån av flyttkartonger i fyra veckor, giltiga trafiktillstånd och heltäckande försäkringar. Vår utbildade personal arbetar enligt fungerande ledningssystem och med fokus på en säker arbetsmiljö – allt för en kvalitetsäkrad flytt.",
+      "desktop3": "Tack vare många uppdrag kring Årsta Torg, Årstafältet, Årstabron, Valla Torg och stråken vid Årstaviken hanterar vi parkering, bärvägar och hisslogistik smidigt. Resultatet är en snabb, varsam och välkoordinerad flytt med minimal störning – från första kontakt till sista lådan.",
+      "mobile": "Din lokala flyttfirma i Årsta med erfarenhet av både lägenheter och villor. Vi kan Årsta Torg, Årstafältet, Valla Torg och områdena kring Årstaviken och planerar för minsta möjliga störning.",
+      "mobileExpanded": "Förmåner: fast pris och 50% RUT, fritt lån av kartonger i 4 veckor, trafiktillstånd och försäkringar, utbildad personal, etablerade arbetssätt och trygg arbetsmiljö.",
+      "mobileExpanded2": "Vi hjälper till med smart packning, anpassad bemanning och ruttplanering för en snabb, säker och kostnadseffektiv flytt i Årsta – från första offert till sista lådan."
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Årsta?"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Årsta"
+    },
+    "experience": {
+      "title": "Årstas föredragna flyttfirma med lokal expertis",
+      "description": "Med många uppdrag i Årsta hjälper vi både hushåll och företag från lägenheter vid Årstaviken till villor nära Årstafältet. Vår lokalkännedom om parkering, bärvägar och hissar ger kortare ledtider och trygg hantering.",
+      "expanded": "Vi kan Årstas utmaningar – från trånga gårdar och lastzoner vid Årsta Torg till effektiv ruttplanering längs Gullmarsplan och Årstabron. Med över 1000 positiva omdömen och återkommande kunder levererar vi punktliga flyttar med fokus på säkerhet, kvalitet och minimal störning."
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "reviews": {
+      "subtitle": "Trygg flyttservice i Årsta och Söderort",
+      "description": "Som Årstas lokala flyttfirma hjälper vi boende kring Årsta Torg, Årstafältet, Valla Torg och längs Årstaviken. Fast pris, 50% RUT-avdrag och försäkrad hantering. Utbildad personal med skyddsmaterial, smarta bärvägar och ruttplanering för minimal störning. Läs omdömena och se varför Årsta väljer Flyttella.",
+      "badgeAlt": "Specialister på flytt i Årsta",
+      "arrowText": "Se varför kunder i Årsta väljer oss"
+    },
+    "awards": {
+      "title": "Utmärkelser för vårt arbete i Årsta",
+      "description": "Våra utmärkelser speglar vår specialisering på flyttar i Årsta – från grönområdena vid Årstaviken till familjevänliga kvarter kring Årsta Torg. Genom åren har vi blivit uppmärksammade för trygg hantering mellan villor och moderna lägenheter i området. Dessa utmärkelser bekräftar vår position som Årstas pålitliga flyttfirma med djup lokalkännedom."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Årsta",
+      "description": "Vi erbjuder ett komplett utbud av flyttjänster i Årsta för en smidig flytt – från bohagsflytt och flyttstädning till tunglyft och magasinering.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Läs mer om flytt i Årsta",
+      "description": "Praktiska guider för flytt i Årsta – lastzoner och tidsfönster, hissbokning och smart ruttplanering för en smidig flytt i området.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Flytt i Årsta – lokala tips för en enkel flytt",
+      "description": "Upptäck vad som är bra att tänka på när du flyttar i Årsta. Vi delar erfarenheter om parkering, hiss och bärvägar i området samt hur du planerar en effektiv och trygg flytt."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Årsta",
+      "items": [
+        {
+          "question": "Erbjuder ni fast pris och RUT-avdrag i Årsta?",
+          "answer": "Ja. Vi lämnar fasta priser på flyttar i Årsta och hanterar RUT-avdraget åt dig, vilket ger 50% skattereduktion på arbetskostnaden."
+        },
+        {
+          "question": "Hur löser ni parkering och bärvägar i Årsta?",
+          "answer": "Vi planerar lastzoner, hissbokning och bärvägar i förväg för att minimera störningar och leda flytten snabbt och säkert."
+        },
+        {
+          "question": "Kan jag låna flyttkartonger?",
+          "answer": "Ja. Du lånar flyttkartonger kostnadsfritt i upp till fyra veckor. Vi levererar och hämtar efter överenskommelse."
+        },
+        {
+          "question": "Är ni försäkrade och har trafiktillstånd?",
+          "answer": "Ja. Alla flyttar är försäkrade och vi har giltigt trafiktillstånd. Vi använder skyddsmaterial och säkra rutiner."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka?",
+          "answer": "Boka gärna så tidigt som möjligt. Vi har även möjlighet att hjälpa med kort varsel beroende på tillgänglighet."
+        }
+      ],
+      "footer": {
+        "title": "Har du fler frågor om flytt i Årsta?",
+        "linkText": "Se alla vanliga frågor"
+      }
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor om flytt i Årsta?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "botkyrka": {
+    "processSection": {
+      "title": "Vår process för en smidig flytt i Botkyrka",
+      "description": "Våra offerter baseras alltid på dina specifika behov i Botkyrka – boyta, våning, hiss, bärvägar och parkeringsmöjligheter. Vid behov kan vi göra en kostnadsfri besiktning för att säkra rätt omfattning och bemanning. Alla priser är fasta utan dolda avgifter och utgår från dina önskemål samt den information du lämnar. Har du särskilda önskemål, tidsfönster eller tillträdesregler i fastigheten? Kontakta oss så skräddarsyr vi offerten och planeringen för att minimera störning och säkerställa en effektiv flytt i Botkyrka.",
+      "subtitle": "Så fungerar det"
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta kort om din flytt i Botkyrka – adress, datum och omfattning.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får fast pris med 50% RUT-avdrag och tydliga villkor.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Du signerar digitalt och vi säkrar bokningen.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi går igenom bärvägar, hiss och parkering i Botkyrka.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Skyddsmaterial, varsam hantering och effektiv ruttplanering.",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Uppföljning efter flytten för hög kundnöjdhet."
+    },
+    "hero": {
+      "title": "Flyttfirma i Botkyrka – lokal, trygg och prisvärd flytt",
+      "subtitle": "Vi hjälper dig med flytt i Botkyrka och Södertörn. Fast pris, 50% RUT-avdrag och försäkrad hantering – för en smidig flytt i området, oavsett lägenhet eller villa."
+    },
+    "about": {
+      "title": "Om Flyttella – din lokala flyttfirma i Botkyrka",
+      "desktop": "Flyttella har lång erfarenhet av flyttar i Botkyrka och hjälper både privatpersoner och företag. Vi planerar tydligt, hanterar logistiken tryggt och levererar punktligt – med lokalkännedom och anpassade lösningar.",
+      "desktop2": "Förmåner i Botkyrka: fast pris med 50% RUT, fritt lån av kartonger i fyra veckor, giltiga trafiktillstånd och heltäckande försäkringar. Vår utbildade personal arbetar med skyddsmaterial och strukturerade rutiner för packning, bärning och transport. Vi håller löpande kontakt inför flyttdagen och säkerställer att bemanning, fordon och tidplan matchar dina förutsättningar.",
+      "desktop3": "Vi anpassar parkering, bärvägar, hiss och ruttplanering efter fastigheten och kan vid behov göra en kostnadsfri besiktning i förväg. Vi koordinerar med fastighetsskötare/förening kring hissbokning, lastzoner och skydd av trapphus. Resultatet är en snabb, varsam och välkoordinerad flytt med minimal störning för grannar och boendemiljö – från första offert till sista lådan på plats.",
+      "mobile": "Flyttella har lång erfarenhet av flyttar i Botkyrka och hjälper både privatpersoner och företag. Vi planerar tydligt, hanterar logistiken tryggt och levererar punktligt – med lokalkännedom och anpassade lösningar.",
+      "mobileExpanded": "Förmåner i Botkyrka: fast pris med 50% RUT, fritt lån av kartonger i fyra veckor, giltiga trafiktillstånd och heltäckande försäkringar. Vår utbildade personal arbetar med skyddsmaterial och strukturerade rutiner för packning, bärning och transport. Vi håller löpande kontakt inför flyttdagen och säkerställer att bemanning, fordon och tidplan matchar dina förutsättningar.",
+      "mobileExpanded2": "Vi anpassar parkering, bärvägar, hiss och ruttplanering efter fastigheten och kan vid behov göra en kostnadsfri besiktning i förväg. Vi koordinerar med fastighetsskötare/förening kring hissbokning, lastzoner och skydd av trapphus. Resultatet är en snabb, varsam och välkoordinerad flytt med minimal störning för grannar och boendemiljö – från första offert till sista lådan på plats."
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Botkyrka?"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Botkyrka"
+    },
+    "experience": {
+      "title": "Botkyrkas föredragna flyttfirma med lokal expertis",
+      "description": "Vi hjälper hushåll och företag i Botkyrka – från lägenheter till villor. Vår lokalkännedom om parkering, bärvägar, hisslogistik och tillträdesregler gör att vi kan planera effektivt, minska bärsträckor och säkra trygg hantering från första lyft till sista låda.",
+      "expanded": "Vi är vana vid att samordna tidsfönster, hissbokning och lastzoner, samt att skydda trapphus och känsliga ytor. Med tydlig kommunikation inför flyttdagen, rätt bemanning och anpassade fordon håller vi tidsplanen och minimerar störning för grannar och boendemiljö.\n\nMed över 1000 positiva omdömen och återkommande kunder levererar vi punktliga flyttar med fokus på säkerhet, kvalitet och service – oavsett om du flyttar inom Botkyrka eller till/från området."
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "reviews": {
+      "subtitle": "Trygg flyttservice i Botkyrka",
+      "description": "Fast pris, 50% RUT-avdrag och försäkrad hantering – våra kunder i Botkyrka lyfter särskilt fram tydlig kommunikation och punktlighet. Vår utbildade personal arbetar metodiskt med skyddsmaterial, smarta bärvägar och ruttplanering för att minimera störning. Vi håller dig uppdaterad från offert till inflytt och följer upp efteråt för att säkerställa att allt blev som planerat.",
+      "badgeAlt": "Specialister på flytt i Botkyrka",
+      "arrowText": "Se varför kunder i Botkyrka väljer oss"
+    },
+    "awards": {
+      "title": "Utmärkelser för vårt arbete i Botkyrka",
+      "description": "Våra utmärkelser speglar vår specialisering på flyttar i Botkyrka. Vi har uppmärksammats för trygg hantering, tydlig kommunikation och punktliga leveranser – från villor till moderna lägenheter. Erkännandena bekräftar vår kvalitetsnivå: utbildad personal, försäkrad hantering, trafiktillstånd och väl inarbetade rutiner.\n\nVi fortsätter utveckla service och arbetsmetoder för att möta Botkyrkas kravbild, med fokus på säkerhet, effektivitet och hög kundnöjdhet."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Botkyrka",
+      "description": "Komplett utbud av flyttjänster i Botkyrka – bohagsflytt, flyttstädning, tunglyft och magasinering.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Läs mer om flytt i Botkyrka",
+      "description": "Praktiska guider för flytt i Botkyrka – lastzoner, tidsfönster, hissbokning och smart ruttplanering.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Flytt i Botkyrka – lokala tips för en enkel flytt",
+      "description": "Vad ska du tänka på vid flytt i Botkyrka? Vi delar erfarenheter om parkering, hiss och bärvägar samt hur du planerar en effektiv och trygg flytt."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Botkyrka",
+      "items": [
+        {
+          "question": "Erbjuder ni fast pris och 50% RUT för flytt i Botkyrka?",
+          "answer": "Ja. Du får ett fast pris anpassat efter din flytt i Botkyrka och vi hanterar RUT‑avdraget åt dig (50% på arbetskostnaden). Offerten är tydlig utan dolda avgifter."
+        },
+        {
+          "question": "Hur löser ni parkering, lastzoner och bärvägar i Botkyrka?",
+          "answer": "Vi förbokar hiss vid behov, planerar lastzoner och sätter smarta bärvägar för kortare bärsträckor. Det minskar störning och gör flytten snabbare och säkrare."
+        },
+        {
+          "question": "Kan jag låna flyttkartonger och få packtips?",
+          "answer": "Ja. Du lånar flyttkartonger kostnadsfritt i upp till fyra veckor och vi delar packtips för märkning, rumssortering och skydd av känsliga föremål."
+        },
+        {
+          "question": "Har ni försäkring och giltigt trafiktillstånd?",
+          "answer": "Ja. Vi har heltäckande försäkringar och giltigt trafiktillstånd. Vår utbildade personal använder skyddsmaterial och följer säkra rutiner i fastigheten."
+        },
+        {
+          "question": "Tar ni pianon, kassaskåp och andra tunglyft?",
+          "answer": "Ja. Vi erbjuder tunglyft med rätt utrustning och bemanning. Ange typ och vikt i offertförfrågan så dimensionerar vi team och fordon korrekt."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Botkyrka?",
+          "answer": "Boka gärna 2–4 veckor i förväg. Vi kan ofta hjälpa med kort varsel beroende på tillgänglighet – särskilt vardagar och utanför högsäsong."
+        },
+        {
+          "question": "Kan jag kombinera bohagsflytt och flyttstädning?",
+          "answer": "Ja. Vi koordinerar bohagsflytt och flyttstädning för en smidig överlämning och kan erbjuda paketpris. Berätta dina datum så planerar vi tidsfönster och nyckelhantering."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor om flytt i Botkyrka?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "bro": {
+    "hero": {
+      "title": "Flyttfirma i Bro – trygg flytt med fast pris",
+      "subtitle": "Specialiserad på bohagsflytt, packhjälp och flyttstädning i Bro. Fast pris med 50% RUT, försäkrad hantering och snabb offert."
+    },
+    "about": {
+      "title": "Om Flyttella – din lokala flyttfirma i Bro",
+      "desktop": "Flyttella har gedigen erfarenhet av flyttar i Bro – från villagator och radhuslängor till nyproduktion. Vi planerar tydligt, håller tidslinjen och anpassar logistiken efter områdets förutsättningar.",
+      "desktop2": "Förmåner i Bro: fast pris med 50% RUT, fritt lån av kartonger i 4 veckor, trafiktillstånd och heltäckande försäkringar. Utbildad personal arbetar med skyddsmaterial och strukturerade rutiner för packning, bärning och transport – och proaktiv kommunikation inför flyttdagen.",
+      "desktop3": "Vi anpassar parkering, bärvägar, hiss och ruttplanering efter fastigheten och kan vid behov göra kostnadsfri besiktning. Vi samordnar med föreningar/samfälligheter om hissbokning, lastzoner och skydd av trapphus. Resultatet blir en snabb, varsam och välkoordinerad flytt med minimal störning – från första offert till sista lådan.",
+      "mobile": "Flyttella har lång erfarenhet av flyttar i Bro och hjälper både privatpersoner och företag. Vi planerar tydligt, hanterar logistiken tryggt och levererar punktligt – med lokalkännedom och anpassade lösningar.",
+      "mobileExpanded": "Förmåner i Bro: fast pris med 50% RUT, fritt lån av kartonger i fyra veckor, trafiktillstånd och försäkringar. Utbildad personal med skyddsmaterial och strukturerade rutiner för packning, bärning och transport.",
+      "mobileExpanded2": "Vi anpassar parkering, bärvägar, hiss och ruttplanering – vid behov med kostnadsfri besiktning i förväg. Vi koordinerar hissbokning/lastzoner och skyddar känsliga ytor för en snabb och varsam flytt från offert till sista lådan."
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Bro?"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Bro"
+    },
+    "experience": {
+      "title": "Bros föredragna flyttfirma med lokal expertis",
+      "description": "Vi hjälper hushåll och företag i Bro – från lägenheter till radhus och villor. Lokalkännedom om parkering, bärvägar, hisslogistik och tillträdesregler gör att vi minskar bärsträckor, undviker flaskhalsar och säkrar trygg hantering.",
+      "expanded": "Vi samordnar tidsfönster, hissbokningar och lastzoner och skyddar trapphus och känsliga ytor. Med tydlig förhandsinformation, rätt bemanning och anpassade fordon håller vi tidsplanen och minimerar störning för grannar. Över 1000 positiva omdömen bekräftar vårt fokus på säkerhet, kvalitet och service – oavsett om du flyttar inom Bro eller till/från området."
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "reviews": {
+      "subtitle": "Trygg flyttservice i Bro",
+      "description": "Fast pris, 50% RUT‑avdrag och försäkrad hantering – våra kunder i Bro uppskattar särskilt vår punktlighet, noggranna hantering och proaktiva uppdateringar. Vi arbetar metodiskt med skyddsmaterial, effektiva bärvägar och ruttplanering som minimerar störning – från offert till inflytt med uppföljning efteråt.",
+      "badgeAlt": "Specialister på flytt i Bro",
+      "arrowText": "Se varför kunder i Bro väljer oss"
+    },
+    "awards": {
+      "title": "Utmärkelser för vårt arbete i Bro",
+      "description": "Våra utmärkelser speglar vår specialisering i Bro: trygg hantering, tydlig kommunikation och punktliga leveranser. Erkännandena bekräftar våra arbetssätt – utbildad personal, försäkrad hantering, trafiktillstånd och etablerade processer – och vårt fokus på ständig förbättring."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Bro",
+      "description": "Komplett utbud av flyttjänster i Bro – bohagsflytt, packhjälp, flyttstädning med garanti, tunglyft och magasinering.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Läs mer om flytt i Bro",
+      "description": "Praktiska guider för flytt i Bro – packning och märkning, tidsfönster och hissbokning, säkra lastzoner och smart ruttplanering för kortare bärsträckor.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Flytt i Bro – lokala tips för en enkel flytt",
+      "description": "Packa smart (rum för rum, tydlig märkning), boka hiss i god tid, säkra lastzoner och planera bärvägar för att minska bärsträckor. Samordna med förening/fastighetsskötare, förbered demontering/nycklar dagen innan och undvik vanliga fallgropar för en trygg flytt i Bro."
+    },
+    "processSection": {
+      "title": "Vår process för en smidig flytt i Bro",
+      "description": "Våra offerter baseras alltid på dina behov i Bro – boyta, våning, hiss, bärvägar och parkering. Vid behov gör vi kostnadsfri besiktning och dimensionerar bemanning och fordon. Alla priser är fasta utan dolda avgifter och bygger på dina önskemål. Särskilda tidsfönster eller tillträdesregler? Vi skräddarsyr planeringen för en effektiv flytt i Bro. Vi tar fram en tydlig tidsplan, säkrar hissbokningar och lastzoner samt ger råd om emballage och märkning för snabb inflytt. Du får en personlig kontakt som uppdaterar dig före, under och efter flytten.",
+      "subtitle": "Så fungerar det"
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta kort om din flytt i Bro – adress, datum och omfattning.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får fast pris med 50% RUT‑avdrag och tydliga villkor.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Du signerar digitalt och vi säkrar bokningen.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi går igenom bärvägar, hiss och parkering i Bro.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Skyddsmaterial, varsam hantering och effektiv ruttplanering.",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Uppföljning efter flytten för hög kundnöjdhet."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Bro",
+      "items": [
+        {
+          "question": "Kan ni flytta kvällstid eller på helg i Bro?",
+          "answer": "Ja. Vi erbjuder kvälls- och helgtider i mån av tillgänglighet. Offerten anpassas efter tidsfönster, tillträde och eventuella regler i fastigheten. Tips: välj vardag utanför högsäsong för lägre belastning och snabbare genomförande."
+        },
+        {
+          "question": "Kan ni tidsätta inflytt efter tillträde samma dag?",
+          "answer": "Ja. Vi synkar tidplan med tillträde/nyckelöverlämning och reserverar lastzoner/hiss så att inflytten startar direkt efter tillträdet."
+        },
+        {
+          "question": "Erbjuder ni packhjälp och uppackning?",
+          "answer": "Ja. Vi kan packa hela hemmet eller delar (kök/glas/porslin) och vid behov hjälpa med uppackning och bortforsling av tomkartonger."
+        },
+        {
+          "question": "Hur hanterar ni tunga eller skrymmande möbler?",
+          "answer": "Vi gör riskbedömning, använder rätt skydd/lyfthjälpmedel och planerar bärteam/fordon efter vikt och mått. Ange detta i offertförfrågan."
+        },
+        {
+          "question": "Kan jag magasinera bohag i samband med flytten?",
+          "answer": "Ja. Vi erbjuder magasinering och kan hämta/lämna till förråd. Första månaden kan ofta erbjudas till kampanjpris, beroende på volym och period."
+        },
+        {
+          "question": "Vad ingår i flyttstädning när ni koordinerar allt?",
+          "answer": "Fullständig flyttstäd med garanti enligt mäklarstandard: kök, badrum, fönsterputs, alla ytor samt material/utrustning. Vi samordnar nycklar/tider."
+        },
+        {
+          "question": "Har ni fast pris och 50% RUT i Bro?",
+          "answer": "Ja. Fast pris baserat på boyta, våning, hiss och bärvägar. Vi hanterar RUT‑avdraget (50% arbetskostnad) och lämnar en tydlig offert utan dolda avgifter."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor om flytt i Bro?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "bromma": {
+    "hero": {
+      "title": "Flyttfirma i Bromma – lokal expertis från offert till inflytt",
+      "subtitle": "Bohagsflytt, packhjälp och flyttstädning i Bromma med fast pris och 50% RUT. Vi planerar bärvägar och parkering för villagator, radhuslängor och innergårdar – trygg hantering hela vägen."
+    },
+    "about": {
+      "title": "Om Flyttella – din lokala flyttfirma i Bromma",
+      "desktop": "Vi flyttar dagligen i Bromma och har rutiner för allt från trånga villagator till större innergårdar. Vårt fokus är tydlig planering, punktlighet och varsam hantering – anpassad efter bostadens läge och tillträdesregler.",
+      "desktop2": "Du får fast pris med 50% RUT och fria kartonger i 4 veckor. Vi har trafiktillstånd och försäkringar, och vårt utbildade team arbetar med skyddsmaterial, möbelomslag och strukturerade rutiner för packning, bärning och transport.",
+      "desktop3": "Inför flyttdagen går vi igenom parkering, bärvägar, hiss och tidsfönster. Vid behov gör vi kostnadsfri besiktning och samordnar lastzoner och trapphusskydd med förening eller fastighetsskötare. Allt för en smidig flytt med minimal störning.",
+      "mobile": "Vi flyttar dagligen i Bromma och hanterar villor, radhus och lägenheter. Tydlig planering, punktlighet och varsam hantering är grunden.",
+      "mobileExpanded": "Fast pris med 50% RUT och fria kartonger i 4 veckor. Trafiktillstånd, försäkringar och utbildat team med skyddsmaterial och beprövade rutiner.",
+      "mobileExpanded2": "Vi förbereder parkering, bärvägar, hiss och tidsfönster – och kan besikta i förväg. Vi samordnar lastzoner och skydd av ytor för en snabb och trygg flytt."
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Bromma?"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Bromma"
+    },
+    "experience": {
+      "title": "Brommas trygga val – lokal erfarenhet som spar tid",
+      "description": "Vi hanterar allt från vindsvåningar och suterränghus till radhus i rad och villor med begränsad lastplats. Vår lokalkännedom om bärsträckor, hisslogistik och tillträdesregler kortar tiden och ökar säkerheten.",
+      "expanded": "Vi planerar smarta bärvägar, säkrar lastzoner och tidsätter arbetet så att hissar, innergårdar och trapphus används effektivt. Med rätt bemanning, fordon och skyddsmaterial minimerar vi störning för grannar. Över 1000 positiva omdömen bekräftar vårt fokus på säkerhet, kvalitet och service – oavsett om du flyttar inom Bromma eller till/från området."
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "reviews": {
+      "subtitle": "Trygg flyttservice i Bromma",
+      "description": "Kunder i Bromma lyfter vår punktlighet, tydliga kommunikation och varsamma hantering. Med fast pris och 50% RUT planerar vi rutter och bärvägar som passar villagator och innergårdar, och håller dig uppdaterad från offert till uppföljning efter inflytt.",
+      "badgeAlt": "Specialister på flytt i Bromma",
+      "arrowText": "Se varför kunder i Bromma väljer oss"
+    },
+    "awards": {
+      "title": "Utmärkelser för vårt arbete i Bromma",
+      "description": "Våra utmärkelser speglar vår arbetsmodell: säker hantering, tydlig kommunikation och leverans i tid. De bekräftar vår satsning på utbildning, försäkringar, trafiktillstånd och förbättringsarbete – egenskaper som uppskattas i Brommas bostadsområden."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Bromma",
+      "description": "Bohagsflytt, packhjälp, flyttstädning med garanti, tunglyft och magasinering. Vi skräddarsyr bemanning och fordon efter villagator, bärvägar och hissförutsättningar.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Läs mer om flytt i Bromma",
+      "description": "Packa rum för rum med tydlig märkning, boka hiss/lastplats i god tid och planera bärvägar för kortare bärsträckor. Råd för samordning med förening och vad du förbereder dagen innan flytt.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Flytt i Bromma – praktiska tips för en smidig flytt",
+      "description": "Märk kartonger tydligt, separera ömtåligt, planera lastplats och bärväg, och boka hiss i tid. Samordna nycklar och tillträde med förening/fastighetsägare, förbered demontering kvällen före och undvik vanliga fallgropar."
+    },
+    "processSection": {
+      "title": "Vår process för en smidig flytt i Bromma",
+      "description": "Offerten bygger på dina förutsättningar i Bromma – boyta, våning, hiss, bärvägar och parkering. Vi kan besikta bostaden, dimensionera bemanning/fordon och bokar hiss/lastplats i förväg. Priset är fast utan dolda avgifter och planen anpassas efter eventuella tidsfönster eller tillträdesregler.",
+      "subtitle": "Så fungerar det"
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta kort om din flytt i Bromma – adress, datum och omfattning.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får fast pris med 50% RUT‑avdrag och tydliga villkor.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Du signerar digitalt och vi säkrar bokningen.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi går igenom bärvägar, hiss och parkering i Bromma.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Skyddsmaterial, varsam hantering och effektiv ruttplanering.",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Uppföljning efter flytten för hög kundnöjdhet."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Bromma",
+      "items": [
+        {
+          "question": "Hur fungerar flytt från villa med begränsad lastplats?",
+          "answer": "Vi tidsätter lastning, reserverar lastzon om möjligt och planerar bärvägar för att minska störning på smala villagator. Vid behov använder vi mindre fordon för närtransport till lastbil."
+        },
+        {
+          "question": "Kan ni samordna inflytt när hiss ska bokas i förväg?",
+          "answer": "Ja. Vi bokar hiss/lasttid i dialog med förening eller fastighetsskötare och anpassar bemanning så att tidsfönstret utnyttjas effektivt."
+        },
+        {
+          "question": "Tar ni hand om demontering och återmontering av möbler?",
+          "answer": "Ja – enklare montering/demontering (t.ex. ben till bord, sängramar) ingår. Mer avancerade uppdrag (t.ex. garderober med skensystem eller specialmöbler) erbjuds som tillval. Ange vad som behövs i offerten så planerar vi tid och utrustning."
+        },
+        {
+          "question": "Kan ni hantera nyckelöverlämning om jag inte kan vara på plats?",
+          "answer": "Ja. Vi kan lösa nyckelhantering via tidsbokad upphämtning med ID‑kontroll, låst nyckelbox eller utlämning via ombud. Vi dokumenterar mottagande/återlämning och stämmer av tid och plats i förväg."
+        },
+        {
+          "question": "Kan ni kombinera flytt och tillfällig magasinering?",
+          "answer": "Ja. Vi hämtar till förråd/magasin och levererar vid inflytt. Flexibla perioder och volymer – pris beror på kubik och tid."
+        },
+        {
+          "question": "Erbjuder ni packhjälp med material inkluderat?",
+          "answer": "Ja. Vi kan packa delar eller hela hemmet och tillhandahåller kartonger, silkespapper, bubbelplast och tejp. Återhämtning av tomkartonger ingår vid uppdrag."
+        },
+        {
+          "question": "Hur fungerar fast pris och RUT‑avdrag?",
+          "answer": "Du får fast pris utifrån boyta, våning, hiss och bärsträcka. Vi sköter RUT (50% på arbetskostnaden) direkt på fakturan – inga dolda avgifter."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor om flytt i Bromma?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "danderyd": {
+    "hero": {
+      "title": "Flyttfirma i Danderyd – trygg, effektiv och punktlig",
+      "subtitle": "Specialiserade på flytt i Djursholm, Stocksund, Enebyberg och Täbygränsen. Vi planerar bärvägar, tidsfönster och parkering så att allt flyter – från villa till lägenhet, med fasta priser och tydlig tidsplan.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Läs hur vi arbetar"
+    },
+    "about": {
+      "title": "Om Flyttella i Danderyd",
+      "desktop": "Vi levererar välplanerade flyttar i Danderyd med fokus på struktur, säkerhet och respekt för bostad och grannar. Vi tar ansvar för logistik som lastzoner, hissbokning och bärvägar – och erbjuder kostnadsfri besiktning vid behov.",
+      "desktop2": "Vårt team är vana vid villaflyttar med trappor, längre bärsträckor och känslig inredning. Vi packar smart, skyddar väggar och golv, och koordinerar tydliga tidsfönster för smidig lastning och lossning.",
+      "desktop3": "Priserna är fasta utan dolda avgifter. En personlig kontakt följer din flytt från start till mål och ser till att plan, bemanning och fordon matchar dina förutsättningar i Danderyd.",
+      "mobile": "Vi levererar välplanerade flyttar i Danderyd med fokus på struktur, säkerhet och respekt för bostad och grannar. Vi tar ansvar för logistik som lastzoner, hissbokning och bärvägar – och erbjuder kostnadsfri besiktning vid behov.",
+      "mobileExpanded": "Vårt team är vana vid villaflyttar med trappor, längre bärsträckor och känslig inredning. Vi packar smart, skyddar väggar och golv, och koordinerar tydliga tidsfönster för smidig lastning och lossning.",
+      "mobileExpanded2": "Priserna är fasta utan dolda avgifter. En personlig kontakt följer din flytt från start till mål och ser till att plan, bemanning och fordon matchar dina förutsättningar i Danderyd."
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Danderyd?"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Danderyd"
+    },
+    "experience": {
+      "title": "Erfaren flytt i villakvarter och lägenheter",
+      "description": "Vi har lång erfarenhet av flyttar i Djursholm, Stocksund och Enebyberg. Vi planerar för smala trappor, nivåskillnader och längre bärsträckor samt reserverar lastzoner där det är möjligt. Vårt fokus är säker hantering, tydlig kommunikation och lugn logistik – även i trånga områden.",
+      "expanded": "När du flyttar i Danderyd skapar vi en detaljerad plan: packordning, skydd av hissar/entréer, optimal lastning och punktlig lossning. Vi arbetar störningsfritt med hänsyn till grannar och boendemiljö och löser specialmoment som tunga lyft eller känsliga objekt."
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Danderyd",
+      "description": "Kunder lyfter vår planering, punktlighet och varsam hantering av möbler och boendemiljö. Läs om erfarenheter från villaflyttar i Djursholm, lägenheter i Stocksund och radhus i Enebyberg.",
+      "badgeAlt": "Rekommenderad flyttfirma Danderyd",
+      "arrowText": "Se fler kundomdömen"
+    },
+    "awards": {
+      "title": "Utmärkelser för vårt arbete i Danderyd",
+      "description": "Våra omdömen och återkommande kunder i Danderyd speglar vår kvalitet. Vi uppmärksammas för trygg planering, professionellt bemötande och varsam hantering i villaflyttar och bostadsrättsföreningar."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Danderyd",
+      "description": "Bohagsflytt, packhjälp, flyttstädning, magasinering och tunga lyft. Vi skräddarsyr upplägget efter din bostadstyp och tidplan – med fasta priser och tydlig kommunikation.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Danderyd",
+      "description": "Planera tidsfönster, boka hiss i tid, ordna bärvägar och parkering. Vi delar praktiska checklistor för villor och lägenheter så att flyttdagen blir lugn och effektiv.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: så förbereder du en smidig flytt i Danderyd",
+      "description": "Förbered material och märkning, säkra lastplats, stäm av nycklar och tillträde – och planera packningen rum för rum för att spara tid och minimera risker."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "description": "Våra offerter baseras på dina behov i Danderyd – boyta, trappor/hiss, bärvägar och parkering. Vid behov gör vi kostnadsfri besiktning och planerar tidsfönster samt rätt bemanning och fordon. Alla priser är fasta utan dolda avgifter. Har du nyckelöverlämning via mäklare eller portkod? Vi samordnar och genomför flytten effektivt och tryggt.",
+      "subtitle": "Så fungerar det"
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta kort om din flytt i Danderyd – adress, datum och omfattning.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får fast pris med 50% RUT‑avdrag och tydliga villkor.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Du signerar digitalt och vi säkrar bokningen.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi går igenom bärvägar, hiss och parkering i Danderyd.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Skyddsmaterial, varsam hantering och effektiv ruttplanering.",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Uppföljning efter flytten för hög kundnöjdhet."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Danderyd",
+      "items": [
+        {
+          "question": "Behöver jag ordna lastzon eller parkering i Danderyd?",
+          "answer": "Vi hjälper dig att bedöma bärvägar och lastplats. I vissa områden kan det krävas tillstånd eller tidsfönster. Vi rådgiver och planerar efter dina förutsättningar."
+        },
+        {
+          "question": "Kan ni hantera nyckelöverlämning om jag inte kan vara på plats?",
+          "answer": "Ja. Vi kan samordna med mäklare, hyresvärd eller kontaktperson. Legitimation kontrolleras och vi bekräftar alltid nyckelflödet skriftligt."
+        },
+        {
+          "question": "Ingår montering och demontering av möbler?",
+          "answer": "Enklare demontering/montering (t.ex. säng och bord) ingår. Mer avancerad montering eller specialsnickerier är tillval som behöver bokas i förväg."
+        },
+        {
+          "question": "Hur planerar ni flytt i villor med flera våningsplan?",
+          "answer": "Vi dimensionerar bemanning, planerar bärvägar och skyddar trappor och golv. Tunga lyft hanteras med rätt utrustning och metodik för att undvika skador."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning och material?",
+          "answer": "Ja. Vi erbjuder packhjälp och kan leverera flyttkartonger och skyddsmaterial i god tid. Vi ger råd om märkning för snabbare uppackning."
+        },
+        {
+          "question": "Erbjuder ni magasinering?",
+          "answer": "Ja. Vi ordnar kort- eller långtidmagasinering och planerar hämtning/återleverans enligt din tidplan."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "ekero": {
+    "hero": {
+      "title": "Flyttfirma på Ekerö – trygg flytt över broar och vatten",
+      "subtitle": "Specialiserade på flyttar i Ekerö, Munsö och Adelsö. Vi planerar tidsfönster, bärvägar och parkering – och tar höjd för bropassager och färjor vid behov. Fasta priser och tydlig planering.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Läs hur vi arbetar"
+    },
+    "about": {
+      "title": "Om Flyttella på Ekerö",
+      "desktop": "Vi genomför välplanerade flyttar på Ekerö med fokus på säker logistik och smidig körning över broar. Vi hanterar lastzoner, trappor och längre bärsträckor – och erbjuder kostnadsfri besiktning när det behövs. Inför flyttdagen tar vi fram en tydlig kör- och bärplan som minimerar störningar för grannar och förening.",
+      "desktop2": "Vårt team är vana vid villor, radhus och sjönära bostäder. Vi skyddar dörrposter, väggar och golv, packar effektivt och håller en punktlig tidsplan för lastning och lossning. Vid behov bokar vi hiss i god tid, synkar nyckelhantering och säkerställer att tillträde och portkoder fungerar smidigt.",
+      "desktop3": "Priserna är fasta utan dolda avgifter. En personlig kontakt följer flytten och säkerställer rätt bemanning och fordon efter dina förutsättningar på Ekerö. Vi kan hjälpa till med återvinning av emballage, mellanlagring, samt intyg/underlag som efterfrågas av bostadsrättsföreningar eller fastighetsägare.",
+      "mobile": "Vi genomför välplanerade flyttar på Ekerö med fokus på säker logistik och smidig körning över broar. Vi hanterar lastzoner, trappor och längre bärsträckor – och erbjuder kostnadsfri besiktning när det behövs. Inför flyttdagen tar vi fram en tydlig kör- och bärplan som minimerar störningar för grannar och förening.",
+      "mobileExpanded": "Vårt team är vana vid villor, radhus och sjönära bostäder. Vi skyddar dörrposter, väggar och golv, packar effektivt och håller en punktlig tidsplan för lastning och lossning. Vid behov bokar vi hiss i god tid, synkar nyckelhantering och säkerställer att tillträde och portkoder fungerar smidigt.",
+      "mobileExpanded2": "Priserna är fasta utan dolda avgifter. En personlig kontakt följer flytten och säkerställer rätt bemanning och fordon efter dina förutsättningar på Ekerö. Vi kan hjälpa till med återvinning av emballage, mellanlagring, samt intyg/underlag som efterfrågas av bostadsrättsföreningar eller fastighetsägare."
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella på Ekerö?"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet på Ekerö"
+    },
+    "experience": {
+      "title": "Erfarenhet av flytt i villor, radhus och sjönära områden",
+      "description": "Vi har stor erfarenhet av flyttar inom Ekerö kommun. Vi planerar bärvägar, skyddar trappor och golv och reserverar lastzoner där det är möjligt. Körplanen anpassas för broar och trafikflöden.",
+      "expanded": "Vi tar fram en tydlig plan för packning, skydd av entréer och punktlig lastning/lossning. Vi arbetar lugnt och respektfullt med hänsyn till boendemiljö och grannar – även vid trånga vägar eller begränsad lastplats."
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma på Ekerö",
+      "description": "Kunder uppskattar vår punktlighet, planering och varsamma hantering. Läs om villaflyttar på Ekerö och radhusflyttar i Munsö och Adelsö.",
+      "badgeAlt": "Rekommenderad flyttfirma Ekerö",
+      "arrowText": "Se fler kundomdömen"
+    },
+    "awards": {
+      "title": "Utmärkelser för vårt arbete på Ekerö",
+      "description": "Återkommande kunder och goda omdömen på Ekerö speglar vår kvalitet. Vi uppmärksammas för planering, bemötande och trygg hantering vid både korta och längre flyttar."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster på Ekerö",
+      "description": "Bohagsflytt, packning, flyttstädning, magasinering och tunga lyft. Vi skräddarsyr upplägget efter bostadstyp och tidplan – med fasta priser och tydlig kommunikation.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt på Ekerö",
+      "description": "Planera bärvägar och lastplats, boka hiss i tid, säkra nycklar och tillträde. Våra checklistor hjälper dig till en smidig flyttdag.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: så förbereder du en smidig flytt på Ekerö",
+      "description": "Förbered material och märkning, säkra lastplats och planera packning rum för rum för att spara tid och undvika risker."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "description": "Våra offerter baseras på dina behov på Ekerö – boyta, våningsplan, trappor/hiss, bärvägar och parkering. Vid behov gör vi kostnadsfri besiktning och planerar tidsfönster, bemanning och fordon. Alla priser är fasta utan dolda avgifter. Vi tar höjd för bropassager och eventuella färjor så att flytten blir effektiv och trygg.",
+      "subtitle": "Så fungerar det"
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta kort om din flytt i Ekerö – adress, datum och omfattning.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får fast pris med 50% RUT‑avdrag och tydliga villkor.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Du signerar digitalt och vi säkrar bokningen.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi går igenom bärvägar, hiss och parkering i Ekerö.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Skyddsmaterial, varsam hantering och effektiv ruttplanering.",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Uppföljning efter flytten för hög kundnöjdhet."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt på Ekerö",
+      "items": [
+        {
+          "question": "Hur påverkar broar och eventuella färjor tidplanen?",
+          "answer": "Vi planerar tidsfönster med marginaler för trafik över Ekeröbron och eventuella färjelägen. Körplanen anpassas så att lastning och lossning sker punktligt även vid störningar."
+        },
+        {
+          "question": "Kan ni hantera lastzoner och parkering på smalare vägar?",
+          "answer": "Ja. Vi bedömer bärvägar och föreslår lastplats utifrån vägbredd och lokala regler. I vissa samfälligheter krävs tillstånd – vi rådgiver och hjälper till med planering."
+        },
+        {
+          "question": "Vi bor sjönära med längre bärsträcka – hur löser ni det?",
+          "answer": "Vi dimensionerar bemanning och använder rätt utrustning (säckkärror, bärselar, skydd). Planen anpassas för längre bär och nivåskillnader för säker och effektiv hantering."
+        },
+        {
+          "question": "Kan ni sköta nyckelöverlämning via mäklare eller granne?",
+          "answer": "Ja. Vi samordnar nycklar med mäklare, hyresvärd eller granne. Legitimation kontrolleras och vi bekräftar nyckelflödet skriftligt inför flyttdagen."
+        },
+        {
+          "question": "Ingår montering/demontering?",
+          "answer": "Enklare montering/demontering (t.ex. säng och bord) ingår. Avancerad montering, specialsnickerier eller fasta installationer är tillval och behöver bokas i förväg."
+        },
+        {
+          "question": "Kan ni leverera packmaterial till Ekerö i förväg?",
+          "answer": "Ja. Vi kan leverera kartonger, packpapper och skydd i god tid. Vi ger även råd om märkning och packordning för snabbare uppackning."
+        },
+        {
+          "question": "Behöver vi magasinering mellan Ekerö och innerstan – går det?",
+          "answer": "Ja. Vi erbjuder kort- och långtidsmagasinering. Hämtning och återleverans planeras efter din tidplan, oavsett om du flyttar inom Ekerö eller till/från Stockholm."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "enskede": {
+    "hero": {
+      "title": "Flyttfirma i Enskede – trygg och effektiv flytt nära city",
+      "subtitle": "Specialiserade på flyttar i Gamla Enskede, Enskede Gård och Svedmyra. Vi planerar bärvägar, tidsfönster och parkering – med hänsyn till innerstadsnära trafik och boendemiljöer.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Läs hur vi arbetar"
+    },
+    "about": {
+      "title": "Om Flyttella i Enskede",
+      "desktop": "Flyttella är en flytt- och städfirma i Stockholm som gör flyttar i Enskede enklare, tryggare och mer transparenta. Vi har funnits i 5 år som företag och har över 8 års erfarenhet i branschen – något som märks i vårt arbetssätt, vår kvalitet och våra nöjda kunder i Gamla Enskede, Enskede Gård och Svedmyra.",
+      "desktop2": "Hittills har vi hjälpt över 8 000 kunder – allt från små flyttar till helhetslösningar med packning, städning och rådgivning. Vi arbetar med tydliga villkor och fasta priser så att du alltid vet vad som ingår och vad det kostar. Inför flyttdagen planerar vi bärvägar, parkering och tidsfönster utifrån Enskedes förutsättningar.",
+      "desktop3": "Vi erbjuder gratis lån av flyttkartonger, kostnadsfri om-/avbokning upp till 24 timmar innan och 14 dagars garanti på alla flyttstädningar. Vår personliga kundtjänst finns nära till hands för frågor, tips och rätt beslut – och en kontaktperson följer din flytt från start till mål.",
+      "mobile": "Trygg flytthjälp i Enskede med fasta priser, tydliga villkor och personlig kontakt – över 8 000 nöjda kunder.",
+      "mobileExpanded": "Vi planerar bärvägar, parkering och tidsfönster för Enskede. Gratis kartonger, 24 h fri om-/avbokning och 14 dagars städgaranti.",
+      "mobileExpanded2": "Helhetslösningar med packning/städning/rådgivning. En kontaktperson följer din flytt och ser till att allt flyter."
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Enskede?"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Enskede"
+    },
+    "experience": {
+      "title": "Erfarenhet av lägenheter och radhus i Enskede",
+      "description": "Vi har lång erfarenhet av flyttar i Gamla Enskede, Enskede Gård, Svedmyra och Enskede-Årsta-Vantör. Vi planerar bärvägar, skyddar entréer och hissar samt reserverar lastzoner där det är möjligt.",
+      "expanded": "Vi tar fram en tydlig plan för packning och lastning som minskar störningar och sparar tid. Vi arbetar strukturerat och med respekt för boendemiljö, och löser tunga lyft eller känsliga objekt med rätt metodik."
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Enskede",
+      "description": "Som en av Sveriges mest rekommenderade flyttfirmor – särskilt uppskattade i Gamla Enskede, Enskede Gård och Svedmyra – sätter vi alltid kunden först. Vi minskar stressen genom tydlig planering, fasta priser och punktlig leverans. Vårt team är vana vid bokningsbara hissar, trånga trapphus och innerstadsnära parkering och ser till att din flytt i Enskede blir en lugn och positiv upplevelse från start till mål.",
+      "badgeAlt": "Rekommenderad flyttfirma Enskede",
+      "arrowText": "Se fler kundomdömen"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Enskede",
+      "description": "Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet i Enskede. Genom åren har vi uppmärksammats av kunder och branschaktörer för pålitligt arbete, tydlig planering och varsam hantering i områden som Gamla Enskede, Enskede Gård och Svedmyra. Dessa erkännanden inspirerar oss att leverera flyttjänster i toppklass – varje dag, till varje kund i Enskede."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Enskede",
+      "description": "Bohagsflytt, packning, flyttstädning, magasinering och tunga lyft. Vi skräddarsyr upplägget efter bostadstyp och tidplan – med fasta priser och tydlig kommunikation.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Enskede",
+      "description": "Planera bärvägar och lastplats, boka hiss i tid och säkra nycklar och tillträde. Våra checklistor hjälper dig till en lugn och effektiv flyttdag.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: så förbereder du en smidig flytt i Enskede",
+      "description": "Förbered packmaterial och märkning, säkra lastplats och planera packning rum för rum – så sparar du tid och minskar risker."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "description": "Våra offerter baseras på dina behov i Enskede – boyta, trappor/hiss, bärvägar och parkering. Vid behov gör vi kostnadsfri besiktning och planerar rätt bemanning och fordon. Alla priser är fasta utan dolda avgifter. Vi tar hänsyn till innerstadsnära trafik och föreningsregler för en smidig och trygg flytt.",
+      "subtitle": "Så fungerar det"
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta kort om din flytt i Enskede – adress, datum och omfattning.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får fast pris med 50% RUT‑avdrag och tydliga villkor.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Du signerar digitalt och vi säkrar bokningen.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi går igenom bärvägar, hiss och parkering i Enskede.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Skyddsmaterial, varsam hantering och effektiv ruttplanering.",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Uppföljning efter flytten för hög kundnöjdhet."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Enskede",
+      "items": [
+        {
+          "question": "Hur löser ni parkering och lastzon i Gamla Enskede och Svedmyra?",
+          "answer": "Vi gör en bedömning av bärvägar och föreslår lastplats utifrån gatornas bredd och föreningens regler. I vissa fall krävs tillstånd eller tidsfönster – vi rådgiver och planerar detta i offert och orderbekräftelse."
+        },
+        {
+          "question": "Fastigheten har bokningsbar hiss – vad behöver jag tänka på?",
+          "answer": "Boka hiss i god tid och meddela oss tiderna. Vi skyddar hiss och entré vid behov och synkar lastningen så att flytten följer bokningsfönstret utan förseningar."
+        },
+        {
+          "question": "Trapphuset är smalt – kan ni hantera det?",
+          "answer": "Ja. Vi dimensionerar bemanning, använder rätt utrustning (bärselar, säckkärra, skydd) och planerar bärvägar för att undvika skador och onödiga lyft."
+        },
+        {
+          "question": "Kan ni använda nyckelbox eller digitalt lås om jag inte är på plats?",
+          "answer": "Ja. Vi kan hantera nyckelboxar (med kod) och tillfälliga digitala behörigheter. Vi bekräftar mottagning och återlämning skriftligt och säkerställer legitimation och logg av nyckelflödet."
+        },
+        {
+          "question": "Ingår montering/demontering?",
+          "answer": "Enklare demontering/montering (t.ex. säng, bord) ingår. Avancerad montering, specialsnickerier eller fasta installationer är tillval som behöver bokas i förväg."
+        },
+        {
+          "question": "Kan ni leverera packmaterial till Enskede i förväg?",
+          "answer": "Ja. Vi kan leverera kartonger, packpapper och skydd i god tid och ge råd om märkning/packordning för snabbare uppackning."
+        },
+        {
+          "question": "Behöver vi magasinering mellan Enskede och innerstan?",
+          "answer": "Ja. Vi erbjuder kort- och långtidsmagasinering. Hämtning och återleverans planeras efter din tidplan – oavsett om du flyttar inom Enskede eller till/från andra delar av Stockholm."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "farsta": {
+    "hero": {
+      "title": "Flyttfirma i Farsta – smidig flytt i söderort",
+      "subtitle": "Lokalt anpassade flyttar i Farsta, Farsta centrum, Farsta Strand och Hökarängen. Vi planerar bärvägar, tidsfönster och parkering enligt parkeringszoner och bostadsrättsföreningars regler.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Läs hur vi arbetar"
+    },
+    "about": {
+      "title": "Om Flyttella i Farsta",
+      "desktop": "Vi gör flyttar i Farsta enklare, tryggare och tydligare – från lägenheter vid Farsta centrum till radhus kring Magelungen. 5 år som företag och 8+ års erfarenhet ger väl inarbetade rutiner, hög kvalitet och många nöjda kunder i söderort.",
+      "desktop2": "Över 8 000 kunder har valt oss för allt från mindre flyttar till helhetslösningar. Vi arbetar med fasta priser och klara villkor. Inför flyttdagen planerar vi bärvägar, lastplats och tidsfönster utifrån Farstas förutsättningar – vi bokar hiss, samordnar nycklar/portkoder och säkerställer smidigt tillträde.",
+      "desktop3": "Gratis lån av flyttkartonger, kostnadsfri om-/avbokning upp till 24 timmar innan och 14 dagars städgaranti ingår. En personlig kontakt följer din flytt, dimensionerar bemanning/fordon och ser till att allt går enligt plan.",
+      "mobile": "Smidig flytt i Farsta med fasta priser, tydliga villkor och personlig kontakt – över 8 000 nöjda kunder.",
+      "mobileExpanded": "Vi planerar bärvägar, lastplats och tidsfönster för Farsta. Gratis kartonger, fri om-/avbokning (24 h) och 14 dagars städgaranti.",
+      "mobileExpanded2": "Helhetslösningar (packning/städning/rådgivning). Kontaktperson som håller ihop allt från start till mål."
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Farsta?"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Farsta"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Farsta",
+      "description": "Med över 8000 flyttar och 7000 städningar bakom oss har vi byggt upp en unik expertis inom flytt- och städningsbranschen. Vår erfarenhet sträcker sig över hela Stockholm och vi har hjälpt tusentals familjer och företag med deras flyttar i Farsta, Farsta Strand och Hökarängen.",
+      "expanded": "Våra prestationer har gett oss erkännande som en av Stockholms mest pålitliga flyttfirmor, med över 1000 positiva recensioner och rekommendationer från nöjda kunder i söderort. Vi är stolta över att kunna erbjuda professionell flyttservice i Farsta baserad på år av praktisk erfarenhet."
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Farsta",
+      "description": "Kunder i Farsta, Farsta Strand och Hökarängen lyfter vår tydliga planering, fasta priser och punktlighet. Vi är vana vid bokningsbara hissar, smala trapphus och parkering nära tunnelbanan – och ser till att flyttdagen blir lugn och effektiv.",
+      "badgeAlt": "Rekommenderad flyttfirma Farsta",
+      "arrowText": "Se fler kundomdömen"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Farsta",
+      "description": "Våra utmärkelser speglar vårt engagemang för kvalitet, service och kundnöjdhet i Farsta. Kunders omdömen och återkommande uppdrag visar att vår planering, kommunikation och varsamma hantering håller hög nivå – varje dag."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Farsta",
+      "description": "Bohagsflytt, packning, flyttstädning, magasinering och tunga lyft. Vi skräddarsyr upplägget efter bostadstyp och tidplan – med fasta priser och tydlig kommunikation.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Farsta",
+      "description": "Checklista för smidig flytt i Farsta: planera bärvägar och lastplats, boka hiss i tid, säkra nycklar/portkoder och anpassa tidsfönster efter tunnelbana och parkering.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: så förbereder du en smidig flytt i Farsta",
+      "description": "Förbered material och märkning, säkra lastplats och planera packning rum för rum – spara tid och minska risker."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "description": "Våra offerter utgår från dina behov i Farsta – boyta, våningsplan, trappor/hiss, bärvägar och parkering. Vid behov gör vi kostnadsfri besiktning och sätter rätt bemanning/fordon. Alla priser är fasta utan dolda avgifter. Vi anpassar planeringen i anslutning till Farsta centrum och Farsta strand, med hänsyn till parkeringszoner och föreningsregler, för en trygg och effektiv flytt.",
+      "subtitle": "Så fungerar det"
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta kort om din flytt i Farsta – adress, datum och omfattning.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får fast pris med 50% RUT‑avdrag och tydliga villkor.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Du signerar digitalt och vi säkrar bokningen.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi går igenom bärvägar, hiss och parkering i Farsta.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Skyddsmaterial, varsam hantering och effektiv ruttplanering.",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Uppföljning efter flytten för hög kundnöjdhet."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Farsta",
+      "items": [
+        {
+          "question": "Hur löser ni parkering och lastzon nära Farsta centrum och tunnelbana?",
+          "answer": "Vi bedömer bärvägar och föreslår lastplats utifrån gatornas bredd och parkeringszoner. I vissa föreningar krävs tillstånd eller bokade tidsfönster – vi rådgiver och planerar detta i offert och order."
+        },
+        {
+          "question": "Fastigheten har bokningsbar hiss – vad behöver jag tänka på?",
+          "answer": "Boka hiss i god tid och meddela oss tiderna. Vi skyddar hiss/entré vid behov och synkar lastningen så att flytten följer bokningsfönstret."
+        },
+        {
+          "question": "Trapphuset är smalt – kan ni hantera det?",
+          "answer": "Ja. Vi dimensionerar bemanning, använder bärselar/säckkärror och planerar bärvägar för att undvika skador och onödiga lyft."
+        },
+        {
+          "question": "Kan ni använda nyckelbox eller digitalt lås?",
+          "answer": "Ja. Vi kan hantera nyckelboxar (kod) och tillfälliga digitala behörigheter. Vi bekräftar mottagning/återlämning skriftligt och verifierar legitimation."
+        },
+        {
+          "question": "Ingår montering/demontering?",
+          "answer": "Enklare montering/demontering ingår. Avancerad montering, specialsnickerier eller fasta installationer är tillval och bokas i förväg."
+        },
+        {
+          "question": "Kan ni leverera packmaterial i förväg?",
+          "answer": "Ja. Vi levererar kartonger, packpapper och skydd i god tid och ger råd om märkning/packordning för snabb uppackning."
+        },
+        {
+          "question": "Erbjuder ni magasinering mellan Farsta och city?",
+          "answer": "Ja. Vi erbjuder kort- och långtidsmagasinering. Hämtning och återleverans planeras efter din tidplan – inom Farsta eller till/från andra stadsdelar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "hagersten": {
+    "hero": {
+      "title": "Flyttfirma i Hägersten – smidig flytt i västra söderort",
+      "subtitle": "Lokalt anpassade flyttar i Hägersten, Telefonplan, Midsommarkransen och Aspudden. Vi planerar bärvägar, tidsfönster och parkering enligt parkeringszoner och föreningsregler – med fokus på lugn logistik och punktlighet.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Läs hur vi arbetar"
+    },
+    "about": {
+      "title": "Om Flyttella i Hägersten",
+      "desktop": "Vi gör flyttar i Hägersten enklare, tryggare och tydligare – från lägenheter kring Telefonplan/Midsommarkransen till fastigheter i Aspudden. 5 år som företag och 8+ års erfarenhet ger inarbetade rutiner, hög kvalitet och många nöjda kunder.",
+      "desktop2": "Över 8 000 kunder har valt oss för allt från mindre flyttar till helhetslösningar. Vi arbetar med fasta priser och klara villkor. Inför flyttdagen planerar vi bärvägar, lastplats och tidsfönster utifrån Hägerstens förutsättningar – vi bokar hiss, samordnar nycklar/portkoder och säkerställer smidigt tillträde.",
+      "desktop3": "Gratis lån av flyttkartonger, kostnadsfri om-/avbokning upp till 24 timmar innan och 14 dagars städgaranti ingår. En personlig kontakt följer din flytt, dimensionerar bemanning/fordon och ser till att allt går enligt plan.",
+      "mobile": "Vi gör flyttar i Hägersten enklare, tryggare och tydligare – från lägenheter kring Telefonplan/Midsommarkransen till fastigheter i Aspudden. 5 år som företag och 8+ års erfarenhet ger inarbetade rutiner, hög kvalitet och många nöjda kunder.",
+      "mobileExpanded": "Över 8 000 kunder har valt oss för allt från mindre flyttar till helhetslösningar. Vi arbetar med fasta priser och klara villkor. Inför flyttdagen planerar vi bärvägar, lastplats och tidsfönster utifrån Hägerstens förutsättningar – vi bokar hiss, samordnar nycklar/portkoder och säkerställer smidigt tillträde.",
+      "mobileExpanded2": "Gratis lån av flyttkartonger, kostnadsfri om-/avbokning upp till 24 timmar innan och 14 dagars städgaranti ingår. En personlig kontakt följer din flytt, dimensionerar bemanning/fordon och ser till att allt går enligt plan."
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Hägersten?"
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Hägersten"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Hägersten",
+      "description": "Med över 8000 flyttar och 7000 städningar bakom oss har vi byggt upp en unik expertis. Vi har hjälpt tusentals familjer och företag med flyttar i Telefonplan, Midsommarkransen och Aspudden – med lugn logistik och hänsyn till boendemiljö.",
+      "expanded": "Vi är erkända för pålitlig planering och god kommunikation, med över 1000 positiva omdömen i Stockholm. Vår flyttservice i Hägersten bygger på år av praktisk erfarenhet – med varsam hantering och effektiv utförande."
+    },
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Hägersten",
+      "description": "Kunder i Hägersten, Telefonplan och Aspudden uppskattar vår tydliga planering, fasta priser och punktliga leverans. Vi är vana vid bokningsbara hissar, smala trapphus och reglerade lastplatser – och ser till att flyttdagen blir lugn och effektiv.",
+      "badgeAlt": "Rekommenderad flyttfirma Hägersten",
+      "arrowText": "Se fler kundomdömen"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Hägersten",
+      "description": "Våra utmärkelser speglar engagemang för kvalitet, service och kundnöjdhet i Hägersten. Återkommande kunder och goda omdömen visar att vår planering och hantering håller hög nivå – varje dag."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Hägersten",
+      "description": "Bohagsflytt, packning, flyttstädning, magasinering och tunga lyft. Vi skräddarsyr upplägget efter bostadstyp och tidplan – med fasta priser och tydlig kommunikation.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Hägersten",
+      "description": "Checklista för smidig flytt i Hägersten: planera bärvägar och lastplats, boka hiss i tid, säkra nycklar/portkoder och anpassa tidsfönster efter parkering.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: så förbereder du en smidig flytt i Hägersten",
+      "description": "Förbered material och märkning, säkra lastplats och planera packning rum för rum – spara tid och minska risker."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "description": "Våra offerter utgår från dina behov i Hägersten – boyta, våningsplan, trappor/hiss, bärvägar och parkering. Vid behov gör vi kostnadsfri besiktning och sätter rätt bemanning/fordon. Alla priser är fasta utan dolda avgifter. Planeringen anpassas efter parkeringszoner och föreningsregler för en trygg, effektiv flytt.",
+      "subtitle": "Så fungerar det"
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta kort om din flytt i Hägersten – adress, datum och omfattning.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får fast pris med 50% RUT‑avdrag och tydliga villkor.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Du signerar digitalt och vi säkrar bokningen.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi går igenom bärvägar, hiss och parkering i Hägersten.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Skyddsmaterial, varsam hantering och effektiv ruttplanering.",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Uppföljning efter flytten för hög kundnöjdhet."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Hägersten",
+      "items": [
+        {
+          "question": "Hur löser ni parkering och lastzon i Hägersten?",
+          "answer": "Vi bedömer bärvägar och föreslår lastplats utifrån gatornas bredd och parkeringszoner. I vissa föreningar krävs tillstånd eller bokade tidsfönster – vi rådgiver och planerar detta i offert och order."
+        },
+        {
+          "question": "Fastigheten har bokningsbar hiss – vad behöver jag tänka på?",
+          "answer": "Boka hiss i god tid och meddela oss tiderna. Vi skyddar dörrposter/väggar/golv vid behov och synkar lastningen så att flytten följer bokningsfönstret."
+        },
+        {
+          "question": "Trapphuset är smalt – kan ni hantera det?",
+          "answer": "Ja. Vi dimensionerar bemanning, använder bärselar/säckkärror och planerar bärvägar för att undvika skador och onödiga lyft."
+        },
+        {
+          "question": "Kan ni använda nyckelbox eller digitalt lås?",
+          "answer": "Ja. Vi kan hantera nyckelboxar (kod) och tillfälliga digitala behörigheter. Vi bekräftar mottagning/återlämning skriftligt och verifierar legitimation."
+        },
+        {
+          "question": "Ingår montering/demontering?",
+          "answer": "Enklare montering/demontering ingår. Avancerad montering, specialsnickerier eller fasta installationer är tillval och bokas i förväg."
+        },
+        {
+          "question": "Kan ni leverera packmaterial i förväg?",
+          "answer": "Ja. Vi levererar kartonger, packpapper och skydd i god tid och ger råd om märkning/packordning för snabb uppackning."
+        },
+        {
+          "question": "Erbjuder ni magasinering mellan Hägersten och city?",
+          "answer": "Ja. Vi erbjuder kort- och långtidsmagasinering. Hämtning och återleverans planeras efter din tidplan – inom Hägersten eller till/från andra stadsdelar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
   }
-} 
+}

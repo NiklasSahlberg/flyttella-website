@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import FlyttoffertForm from '../components/FlyttoffertForm';
-import StadningOffertFormCustomAkersberga from "../components/StadningOffertFormCustomAkersberga";
 import ReviewsWidget from '../components/ReviewsWidget';
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
@@ -160,7 +159,7 @@ const AutoSlidingCards = ({ t }: { t: (key: string) => string }) => {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('arsta.experienceSection.title')}</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('bro.experienceSection.title')}</h3>
           
           {/* Mobile: Auto-sliding cards */}
           <div className="md:hidden mt-8">
@@ -286,10 +285,10 @@ const AutoSlidingCards = ({ t }: { t: (key: string) => string }) => {
               transition={{ duration: 0.8 }}
             >
               <h4 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
-                {t('arsta.experience.title')}
+                {t('bro.experience.title')}
               </h4>
               <p className="text-lg md:text-2xl text-[#0F172A] leading-relaxed mb-3 md:mb-4">
-                {t('arsta.experience.description')}
+                {t('bro.experience.description')}
               </p>
               {/* Mobile: Läs mer button */}
               {!showFullExperienceText && (
@@ -320,12 +319,12 @@ const AutoSlidingCards = ({ t }: { t: (key: string) => string }) => {
                   className="space-y-4 mt-4 md:hidden px-4 md:px-8"
                 >
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('arsta.experience.expanded')}
+                    {t('bro.experience.expanded')}
                   </p>
                 </motion.div>
               )}
               <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
-                {t('arsta.experience.expanded')}
+                {t('bro.experience.expanded')}
               </p>
             </motion.div>
 
@@ -931,7 +930,7 @@ function FillFormLottie() {
       <div className="w-full my-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
-            {t('arsta.features.title')}
+            {t('bro.features.title')}
           </h2>
         </div>
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch justify-center w-full gap-0 md:gap-8">
@@ -977,7 +976,6 @@ export default function FlyttfirmaAkersbergaPage() {
   const [currentFeatureCard, setCurrentFeatureCard] = useState(0);
   const [expandedTipSection, setExpandedTipSection] = useState<string | null>(null);
   const [showFullAboutText, setShowFullAboutText] = useState(false);
-  const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
   const totalFeatureCards = 9;
   const featureIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const featureTouchStartXRef = useRef<number | null>(null);
@@ -1045,15 +1043,7 @@ export default function FlyttfirmaAkersbergaPage() {
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
           {/* Mobile: Form only */}
           <div className="md:hidden mx-auto px-4 pb-8">
-            {selectedServiceType === 'flyttstad' ? (
-              <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
-            ) : (
-              <FlyttoffertForm 
-                mode="widget" 
-                backgroundImage="/arsta-flyttfirma.jpg" 
-                onServiceTypeSelect={setSelectedServiceType}
-              />
-            )}
+            <FlyttoffertForm mode="widget" backgroundImage="/stockholm.jpg" />
           </div>
           
           {/* Mobile: Hero content after form */}
@@ -1063,17 +1053,17 @@ export default function FlyttfirmaAkersbergaPage() {
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                  backgroundImage: 'url(/arsta-flyttfirma.jpg)',
+                  backgroundImage: 'url(/stockholm.jpg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
               />
               <div className="relative z-10 text-center space-y-4">
         <h1 className="text-4xl font-bold">
-          {t('arsta.hero.title')}
+          {t('bro.hero.title')}
               </h1>
         <p className="text-xl">
-          {t('arsta.hero.subtitle')}
+          {t('bro.hero.subtitle')}
               </p>
             </div>
             </div>
@@ -1084,9 +1074,9 @@ export default function FlyttfirmaAkersbergaPage() {
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                  backgroundImage: 'url(/arsta-flyttfirma.jpg)',
+                  backgroundImage: 'url(/stockholm.jpg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -1094,22 +1084,14 @@ export default function FlyttfirmaAkersbergaPage() {
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
           <h1 className="text-5xl md:text-6xl font-bold mb-8">
-            {t('arsta.hero.title')}
+            {t('bro.hero.title')}
           </h1>
           <p className="text-2xl md:text-3xl mb-12">
-            {t('arsta.hero.subtitle')}
+            {t('bro.hero.subtitle')}
           </p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
-                  {selectedServiceType === 'flyttstad' ? (
-                    <StadningOffertFormCustomAkersberga onSubmit={() => {}} onCancel={() => setSelectedServiceType(null)} />
-                  ) : (
-                    <FlyttoffertForm 
-                      mode="widget" 
-                      backgroundImage="/arsta-flyttfirma.jpg" 
-                      onServiceTypeSelect={setSelectedServiceType}
-                    />
-                  )}
+                  <FlyttoffertForm mode="widget" backgroundImage="/stockholm.jpg" />
                 </div>
               </div>
             </div>
@@ -1174,7 +1156,7 @@ export default function FlyttfirmaAkersbergaPage() {
                   />
                 </div>
               </div>
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-8 md:mb-12 lg:mb-16 text-center">{t('arsta.about.title')}</h3>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-8 md:mb-12 lg:mb-16 text-center">{t('bro.about.title')}</h3>
               
               {/* Text content with image on desktop */}
               <div className="relative flex flex-col lg:flex-row items-stretch gap-8 md:gap-12 lg:gap-16">
@@ -1219,13 +1201,13 @@ export default function FlyttfirmaAkersbergaPage() {
                   {/* Desktop: Always show full text */}
                 <div className="hidden lg:block space-y-8">
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('arsta.about.desktop')}
+                    {t('bro.about.desktop')}
                   </p>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('arsta.about.desktop2')}
+                    {t('bro.about.desktop2')}
                   </p>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('arsta.about.desktop3')}
+                    {t('bro.about.desktop3')}
                   </p>
                 </div>
                   
@@ -1233,16 +1215,16 @@ export default function FlyttfirmaAkersbergaPage() {
                   <div className="lg:hidden space-y-4 text-center">
                     <div className="text-left inline-block max-w-2xl">
                       <p className="text-base md:text-lg text-[#0F172A] leading-relaxed">
-                        {t('arsta.about.mobile')}
+                        {t('bro.about.desktop')}
                         {showFullAboutText && (
                           <>
-                            {' '}{t('arsta.about.mobileExpanded')}
+                            {' '}{t('bro.about.desktop2')}
                           </>
                         )}
                       </p>
                       {showFullAboutText && (
                         <p className="text-base md:text-lg text-[#0F172A] leading-relaxed mt-4">
-                          {t('arsta.about.mobileExpanded2')}
+                          {t('bro.about.desktop3')}
                         </p>
                       )}
                     </div>
@@ -1317,12 +1299,12 @@ export default function FlyttfirmaAkersbergaPage() {
 
         {/* Reviews Section */}
         <ReviewsWidget 
-          location="Årsta"
-          title={t('arsta.customerReviews.title')}
-          subtitle={t('arsta.reviews.subtitle')}
-          description={t('arsta.reviews.description')}
-          badgeAlt={t('arsta.reviews.badgeAlt')}
-          arrowText={t('arsta.reviews.arrowText')}
+          location="Bro"
+          title={t('bro.customerReviews.title')}
+          subtitle={t('bro.reviews.subtitle')}
+          description={t('bro.reviews.description')}
+          badgeAlt={t('bro.reviews.badgeAlt')}
+          arrowText={t('bro.reviews.arrowText')}
         />
 
         {/* Redo att börja din flytt? */}
@@ -1397,8 +1379,8 @@ export default function FlyttfirmaAkersbergaPage() {
                 {/* Pricing Info */}
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-                    {t('alvsjo.processSection.description')}
-              </p>
+                    {t('bro.processSection.description')}
+                  </p>
             </div>
 
                 {/* Process Flow Section */}
@@ -1907,9 +1889,9 @@ export default function FlyttfirmaAkersbergaPage() {
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
               {/* Mobile: Text first, then image */}
               <div className="w-full md:hidden text-center mb-4">
-                <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A] mb-3 md:mb-6">{t('arsta.awards.title')}</h2>
+                <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A] mb-3 md:mb-6">{t('bro.awards.title')}</h2>
                 <p className="text-lg md:text-2xl text-gray-700 leading-relaxed">
-                  {t('arsta.awards.description')}
+                  {t('bro.awards.description')}
                 </p>
               </div>
               
@@ -1927,9 +1909,9 @@ export default function FlyttfirmaAkersbergaPage() {
               
               {/* Desktop: Text on the right */}
               <div className="hidden md:flex w-full md:w-2/5 md:order-1 text-left flex-col items-start justify-center">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('arsta.awards.title')}</h2>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('bro.awards.title')}</h2>
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-                  {t('arsta.awards.description')}
+                  {t('bro.awards.description')}
                 </p>
               </div>
             </div>
@@ -2200,7 +2182,7 @@ export default function FlyttfirmaAkersbergaPage() {
                 }}
                 id="upptack-tjanster"
               >
-                  {t('arsta.servicesSection.title')}
+                  {t('bro.servicesSection.title')}
               </motion.h2>
               <motion.p 
                 className="text-lg md:text-xl mb-8 text-[#0F172A]/90"
@@ -2216,7 +2198,7 @@ export default function FlyttfirmaAkersbergaPage() {
                   delay: 0 * 0.25
                 }}
               >
-                  {t('arsta.servicesSection.description')}
+                  {t('bro.servicesSection.description')}
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -2240,7 +2222,7 @@ export default function FlyttfirmaAkersbergaPage() {
                     href="/tjanster" 
                     className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                   >
-                    {t('arsta.servicesSection.privateServices')}
+                    {t('bro.servicesSection.privateServices')}
                     <motion.svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -2479,10 +2461,10 @@ export default function FlyttfirmaAkersbergaPage() {
             <div className="w-full">
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
-                  {t('arsta.blogSection.title')}
+                  {t('bro.blogSection.title')}
           </h2>
                 <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
-                  {t('arsta.blogSection.description')}
+                  {t('bro.blogSection.description')}
                 </p>
               </div>
               <div className="max-w-6xl mx-auto">
@@ -2511,10 +2493,10 @@ export default function FlyttfirmaAkersbergaPage() {
                           <span className="text-gray-500 text-sm md:text-base sm:ml-4">{t('alvsjo.tips.blog.readTime')}</span>
                     </div>
                         <h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
-                      {t('arsta.blog.title')}
+                      {t('bro.blog.title')}
                     </h3>
                         <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
-                      {t('arsta.blog.description')}
+                      {t('bro.blog.description')}
                     </p>
                         <div className="flex justify-start sm:justify-between items-center">
                           <div></div>
@@ -2522,7 +2504,7 @@ export default function FlyttfirmaAkersbergaPage() {
                             href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
                             className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
                       >
-                            {t('arsta.blogSection.readMore')}
+                            {t('bro.blogSection.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                               className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -2548,35 +2530,35 @@ export default function FlyttfirmaAkersbergaPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-                {t('arsta.faq.title')}
+                {t('bro.faq.title')}
               </h2>
               
               <div className="space-y-4">
                 {[
                   {
-                    id: "arsta-1",
-                    question: t('arsta.faq.items.0.question'),
-                    answer: t('arsta.faq.items.0.answer')
+                    id: "bro-1",
+                    question: t('bro.faq.items.0.question'),
+                    answer: t('bro.faq.items.0.answer')
                   },
                   {
-                    id: "arsta-2",
-                    question: t('arsta.faq.items.1.question'),
-                    answer: t('arsta.faq.items.1.answer')
+                    id: "bro-2",
+                    question: t('bro.faq.items.1.question'),
+                    answer: t('bro.faq.items.1.answer')
                   },
                   {
-                    id: "arsta-3",
-                    question: t('arsta.faq.items.2.question'),
-                    answer: t('arsta.faq.items.2.answer')
+                    id: "bro-3",
+                    question: t('bro.faq.items.2.question'),
+                    answer: t('bro.faq.items.2.answer')
                   },
                   {
-                    id: "arsta-4",
-                    question: t('arsta.faq.items.3.question'),
-                    answer: t('arsta.faq.items.3.answer')
+                    id: "bro-4",
+                    question: t('bro.faq.items.3.question'),
+                    answer: t('bro.faq.items.3.answer')
                   },
                   {
-                    id: "arsta-5",
-                    question: t('arsta.faq.items.4.question'),
-                    answer: t('arsta.faq.items.4.answer')
+                    id: "bro-5",
+                    question: t('bro.faq.items.4.question'),
+                    answer: t('bro.faq.items.4.answer')
                   },
                 ].map((faq, index) => (
                   <motion.div
@@ -2639,13 +2621,13 @@ export default function FlyttfirmaAkersbergaPage() {
 
               <div className="text-center mt-12">
                 <p className="text-lg text-gray-600 mb-6">
-                  {t('arsta.faqFooter.title')}
+                  {t('bro.faqFooter.title')}
                 </p>
                 <Link 
                   href="/faq" 
                   className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                 >
-                  {t('arsta.faqFooter.linkText')}
+                  {t('bro.faqFooter.linkText')}
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 

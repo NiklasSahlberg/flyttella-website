@@ -28,6 +28,22 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
   const flyttfirmaLocations = [
     ...locations
   ];
+
+  // Cities that should be clickable and their target route pattern
+  const linkableSlugs = new Set([
+    'akersberga',
+    'alvsjo',
+    'arsta',
+    'botkyrka',
+    'bromma',
+    'bro',
+    'danderyd',
+    'ekero',
+    'enskede',
+    'farsta'
+  ]);
+
+  const getLocationHref = (slug: string) => `/flyttfirma-i-${slug}`;
   
   // Calculate how many cities to show initially on mobile (up to Kungsholmen)
   const initialShowCount = 16; // Show first 16 cities (ending with Kungsholmen)
@@ -110,9 +126,17 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                         whileHover={{ scale: 1.05, x: 2 }}
                         transition={{ duration: 0.3, delay: idx * 0.02 }}
                       >
-                        <span className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
-                          {location.name}
-                        </span>
+                        {linkableSlugs.has(location.slug) ? (
+                          <Link href={getLocationHref(location.slug)}>
+                            <span className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
+                              {location.name}
+                            </span>
+                          </Link>
+                        ) : (
+                          <span className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
+                            {location.name}
+                          </span>
+                        )}
                       </motion.div>
                     ))}
                   </div>
@@ -124,9 +148,17 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                         key={`flyttfirma-mobile-${location.slug}`}
                         className="group transition-all block"
                       >
-                        <span className="text-white text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
-                          {location.name}
-                        </span>
+                        {linkableSlugs.has(location.slug) ? (
+                          <Link href={getLocationHref(location.slug)}>
+                            <span className="text-white text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
+                              {location.name}
+                            </span>
+                          </Link>
+                        ) : (
+                          <span className="text-white text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
+                            {location.name}
+                          </span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -193,9 +225,17 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                         whileHover={{ scale: 1.05, x: 2 }}
                         transition={{ duration: 0.3, delay: idx * 0.02 }}
                       >
-                        <span className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
-                          {location.name}
-                        </span>
+                        {linkableSlugs.has(location.slug) ? (
+                          <Link href={getLocationHref(location.slug)}>
+                            <span className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
+                              {location.name}
+                            </span>
+                          </Link>
+                        ) : (
+                          <span className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
+                            {location.name}
+                          </span>
+                        )}
                       </motion.div>
                     ))}
                   </div>
@@ -207,9 +247,17 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                         key={`flyttstad-mobile-${location.slug}`}
                         className="group transition-all block"
                       >
-                        <span className="text-white text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
-                          {location.name}
-                        </span>
+                        {linkableSlugs.has(location.slug) ? (
+                          <Link href={getLocationHref(location.slug)}>
+                            <span className="text-white text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
+                              {location.name}
+                            </span>
+                          </Link>
+                        ) : (
+                          <span className="text-white text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap">
+                            {location.name}
+                          </span>
+                        )}
                       </div>
                     ))}
                   </div>
