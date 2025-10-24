@@ -40,7 +40,12 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     'danderyd',
     'ekero',
     'enskede',
-    'farsta'
+    'farsta',
+    'hagersten',
+    'haninge',
+    'huddinge',
+    'jarfalla',
+    'kista'
   ]);
 
   const getLocationHref = (slug: string) => `/flyttfirma-i-${slug}`;

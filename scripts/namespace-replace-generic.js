@@ -36,3 +36,4 @@ fs.writeFileSync(pagePath, content, 'utf8');
 console.log('Updated namespace, location, and IDs in', pagePath);
 
 
+
