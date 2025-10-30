@@ -1,8 +1,6 @@
-/// <reference path="../../../types/vercel-kv.d.ts" />
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import { Storage } from '@google-cloud/storage';
-import { kv } from '@vercel/kv';
 import fs from 'fs';
 import path from 'path';
 
@@ -27,7 +25,6 @@ const storage = new Storage();
 const BUCKET_NAME = "flyttella-logs";
 const bucket = storage.bucket(BUCKET_NAME);
 const FAILED_EMAILS_FILE = "failed_emails.txt";
-// Using Vercel KV for aggregate counters
 
 async function getGmailClient() {
   const oauth2Client = new google.auth.OAuth2(
@@ -514,8 +511,6 @@ export async function POST(req: Request) {
     });
 
     console.log('Email sent successfully:', res.data.id);
-    // Best-effort aggregate counter (no user tracking)
-    await kv.incr('submission:cleaning');
     return NextResponse.json({ success: true, messageId: res.data.id });
   } catch (error: unknown) {
     console.error('Error sending email:', error);
