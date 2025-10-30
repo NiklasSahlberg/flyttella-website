@@ -20,3 +20,5 @@ fs.writeFileSync(svPath, JSON.stringify(svData, null, 2), 'utf8');
 fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 
 console.log('Updated jarfalla content to change "sedan 2019" to "med över 5 års erfarenhet" in sv and en.');
+
+

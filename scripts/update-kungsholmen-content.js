@@ -152,3 +152,5 @@ const enPath = path.join(process.cwd(), 'flyttella-website', 'src', 'app', 'i18n
 updateLocale(svPath, svContent);
 updateLocale(enPath, enContent);
 console.log('Updated unique SEO content for kungsholmen in sv and en.');
+
+

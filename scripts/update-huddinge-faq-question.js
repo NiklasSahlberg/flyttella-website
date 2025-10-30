@@ -24,3 +24,5 @@ fs.writeFileSync(svPath, JSON.stringify(svData, null, 2), 'utf8');
 fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 
 console.log('Updated specific FAQ question for huddinge in sv and en.');
+
+

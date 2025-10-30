@@ -74,3 +74,5 @@ fs.writeFileSync(svPath, JSON.stringify(svData, null, 2), 'utf8');
 fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 
 console.log('Updated huddinge content to be less family-focused and more balanced in sv and en.');
+
+

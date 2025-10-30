@@ -152,3 +152,5 @@ const enPath = path.join(process.cwd(), 'flyttella-website', 'src', 'app', 'i18n
 updateLocale(svPath, svContent);
 updateLocale(enPath, enContent);
 console.log('Updated Kista content to be more unique and distinctive.');
+
+
