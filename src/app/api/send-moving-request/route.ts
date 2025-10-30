@@ -3,6 +3,7 @@ import { google } from 'googleapis';
 import { Storage } from '@google-cloud/storage';
 import fs from 'fs';
 import path from 'path';
+import { incrementMovingSubmission } from '../../../lib/kvCounters';
 
 // If modifying these scopes, delete the token.json file
 const _SCOPES = ['https://www.googleapis.com/auth/gmail.send'];
@@ -460,6 +461,7 @@ export async function POST(req: Request) {
     });
 
     console.log('Email sent successfully:', res.data.id);
+    await incrementMovingSubmission();
     return NextResponse.json({ success: true, messageId: res.data.id });
   } catch (error: any) {
     console.error('Error sending email:', error);
