@@ -6,7 +6,7 @@ const BUCKET_NAME = "flyttella-logs";
 const bucket = storage.bucket(BUCKET_NAME);
 const SUBMISSION_COUNTS_FILE = "submission_counts.json";
 
-export async function GET() {
+export async function GET() { 
   try {
     const file = bucket.file(SUBMISSION_COUNTS_FILE);
     const [exists] = await file.exists();
