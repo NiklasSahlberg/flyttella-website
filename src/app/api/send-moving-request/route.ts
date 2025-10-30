@@ -1,6 +1,8 @@
+/// <reference path="../../../types/vercel-kv.d.ts" />
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import { Storage } from '@google-cloud/storage';
+import { kv } from '@vercel/kv';
 import fs from 'fs';
 import path from 'path';
 
@@ -25,27 +27,7 @@ const storage = new Storage();
 const BUCKET_NAME = "flyttella-logs";
 const bucket = storage.bucket(BUCKET_NAME);
 const FAILED_EMAILS_FILE = "failed_emails.txt";
-const SUBMISSION_COUNTS_FILE = "submission_counts.json";
-
-async function incrementSubmissionCount(key: string) {
-  try {
-    const file = bucket.file(SUBMISSION_COUNTS_FILE);
-    let counts: Record<string, number> = {};
-    const [exists] = await file.exists();
-    if (exists) {
-      const [contents] = await file.download();
-      try {
-        counts = JSON.parse(contents.toString() || '{}');
-      } catch {
-        counts = {};
-      }
-    }
-    counts[key] = (counts[key] || 0) + 1;
-    await file.save(JSON.stringify(counts), { resumable: false, contentType: 'application/json' });
-  } catch (err) {
-    console.error('Error incrementing submission count:', err);
-  }
-}
+// Using Vercel KV for aggregate counters
 
 // Replace any with proper type
 interface _EmailData {
@@ -482,7 +464,7 @@ export async function POST(req: Request) {
 
     console.log('Email sent successfully:', res.data.id);
     // Best-effort aggregate counter (no user tracking)
-    await incrementSubmissionCount('moving');
+    await kv.incr('submission:moving');
     return NextResponse.json({ success: true, messageId: res.data.id });
   } catch (error: any) {
     console.error('Error sending email:', error);

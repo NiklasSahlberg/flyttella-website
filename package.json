@@ -17,6 +17,7 @@
     "framer-motion": "^12.6.5",
     "geist": "^1.1.0",
     "googleapis": "^148.0.0",
+    "@vercel/kv": "^2.0.0",
     "lottie-react": "^2.4.1",
     "next": "^15.5.3",
     "open": "^9.1.0",

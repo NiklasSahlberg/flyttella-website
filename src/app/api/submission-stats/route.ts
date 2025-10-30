@@ -1,27 +1,15 @@
+/// <reference path="../../../types/vercel-kv.d.ts" />
 import { NextResponse } from 'next/server';
-import { Storage } from '@google-cloud/storage';
-
-const storage = new Storage();
-const BUCKET_NAME = "flyttella-logs";
-const bucket = storage.bucket(BUCKET_NAME);
-const SUBMISSION_COUNTS_FILE = "submission_counts.json";
+import { kv } from '@vercel/kv';
 
 export async function GET() { 
   try {
-    const file = bucket.file(SUBMISSION_COUNTS_FILE);
-    const [exists] = await file.exists();
-    if (!exists) {
-      return NextResponse.json({ moving: 0, cleaning: 0, total: 0 });
-    }
-    const [contents] = await file.download();
-    let counts: Record<string, number> = {};
-    try {
-      counts = JSON.parse(contents.toString() || '{}');
-    } catch {
-      counts = {};
-    }
-    const moving = counts['moving'] || 0;
-    const cleaning = counts['cleaning'] || 0;
+    const [movingVal, cleaningVal] = await kv.mget<number>(
+      'submission:moving',
+      'submission:cleaning'
+    );
+    const moving = Number(movingVal || 0);
+    const cleaning = Number(cleaningVal || 0);
     const total = moving + cleaning;
     return NextResponse.json(
       { moving, cleaning, total },
