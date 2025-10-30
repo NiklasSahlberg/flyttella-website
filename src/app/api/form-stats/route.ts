@@ -13,6 +13,7 @@ export async function GET() {
       moving: moving ?? 0
     });
   } catch (error) {
+    console.error('form-stats read error', error);
     return NextResponse.json(
       { error: 'Failed to read counters' },
       { status: 500 }
