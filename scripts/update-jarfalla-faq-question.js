@@ -26,3 +26,4 @@ fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 console.log('Updated specific FAQ question for jarfalla in sv and en.');
 
 
+

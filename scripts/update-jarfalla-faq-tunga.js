@@ -26,3 +26,4 @@ fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 console.log('Updated jarfalla FAQ question to change "stora" to just "tunga möbler" in sv and en.');
 
 
+

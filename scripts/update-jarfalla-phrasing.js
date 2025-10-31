@@ -20,3 +20,4 @@ fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 console.log('Updated jarfalla content to change overused phrasing in sv and en.');
 
 
+

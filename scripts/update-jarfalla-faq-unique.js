@@ -36,3 +36,4 @@ fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 console.log('Updated FAQ questions for jarfalla with completely unique questions in sv and en.');
 
 
+

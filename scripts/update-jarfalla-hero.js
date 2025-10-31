@@ -20,3 +20,4 @@ fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 console.log('Updated jarfalla hero section to change "lägenhetskomplex" to "lägenheter" in sv and en.');
 
 
+

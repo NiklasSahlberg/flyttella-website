@@ -36,3 +36,4 @@ fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 console.log('Updated FAQ questions for huddinge with completely new questions in sv and en.');
 
 
+
