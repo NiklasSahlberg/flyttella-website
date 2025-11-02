@@ -267,7 +267,7 @@ export default function BemanningPage() {
 										title: '',
 										content: (
 											<div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-												<img src="/godtid.jpg" alt={locale === 'sv' ? 'Bemanning och underentreprenad i Stockholm' : 'Staffing and subcontracting in Stockholm'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+												<img src="/godtid.webp" alt={locale === 'sv' ? 'Bemanning och underentreprenad i Stockholm' : 'Staffing and subcontracting in Stockholm'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
 											</div>
 										),
 										icon: ''
@@ -298,7 +298,7 @@ export default function BemanningPage() {
 										title: '',
 										content: (
 											<div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-												<img src="/kontor.png" alt={locale === 'sv' ? 'Underentreprenad och bemanning – tjänster' : 'Subcontracting and staffing – services'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+												<img src="/kontor.webp" alt={locale === 'sv' ? 'Underentreprenad och bemanning – tjänster' : 'Subcontracting and staffing – services'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
 											</div>
 										),
 										icon: ''
@@ -1257,8 +1257,7 @@ export default function BemanningPage() {
 									>
 										<div className="flex flex-col md:flex-row h-full items-stretch">
 											<div className="w-full md:w-1/3 h-48 md:h-full">
-												<img 
-													src="/intro_picture.jpg" 
+												<img src="/intro_picture.webp" 
 													alt={locale === 'sv' ? 'Vad bör du tänka på när du väljer en seriös flyttfirma' : 'What should you think about when choosing a serious moving company'} 
 													className="w-full h-full object-cover object-center"
 												/>

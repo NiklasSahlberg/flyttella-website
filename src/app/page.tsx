@@ -86,7 +86,7 @@ const AutoSlidingCards = () => {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
         style={{
-          backgroundImage: 'url(/backgroundpicture.jpg)',
+          backgroundImage: 'url(/backgroundpicture.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           zIndex: 0,
@@ -96,7 +96,7 @@ const AutoSlidingCards = () => {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
         style={{
-          backgroundImage: 'url(/omoss.jpg)',
+          backgroundImage: 'url(/omoss.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center calc(40% - 40px)',
           zIndex: 0,
@@ -311,7 +311,7 @@ const AutoSlidingCards = () => {
                 {/* Top badge - centered */}
                 <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
                   <Image
-                    src="/1000reviewspicture.png"
+                    src="/1000reviewspicture.webp"
                     alt="1000+ positiva recensioner från kunder"
                     width={200}
                     height={200}
@@ -323,7 +323,7 @@ const AutoSlidingCards = () => {
                 <div className="flex items-center justify-center gap-4">
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
-                      src="/recommendedcompany2.png"
+                      src="/recommendedcompany2.webp"
                       alt={locale === 'sv' ? 'Rekommenderad flyttfirma - Flyttella' : 'Recommended moving company - Flyttella'}
                       width={160}
                       height={160}
@@ -348,7 +348,7 @@ const AutoSlidingCards = () => {
               <div className="hidden md:flex items-center justify-center gap-6">
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                 <Image
-                  src="/recommendedcompany2.png"
+                  src="/recommendedcompany2.webp"
                   alt={locale === 'sv' ? 'Rekommenderad flyttfirma - Flyttella' : 'Recommended moving company - Flyttella'}
                   width={240}
                   height={240}
@@ -358,7 +358,7 @@ const AutoSlidingCards = () => {
               </motion.div>
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                 <Image
-                  src="/1000reviewspicture.png"
+                  src="/1000reviewspicture.webp"
                   alt="1000+ positiva recensioner från kunder"
                   width={260}
                   height={260}
@@ -806,7 +806,7 @@ export default function Home() {
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                  backgroundImage: 'url(/intro_picture.jpg)',
+                  backgroundImage: 'url(/intro_picture.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -829,7 +829,7 @@ export default function Home() {
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                  backgroundImage: 'url(/intro_picture.jpg)',
+                  backgroundImage: 'url(/intro_picture.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -908,7 +908,7 @@ export default function Home() {
               <div className="lg:hidden mb-6">
                 <div className="relative w-full h-80 rounded-3xl overflow-hidden">
                   <Image
-                    src="/personalpicture.jpg"
+                    src="/personalpicture.webp"
                     alt="Flyttella personal"
                     fill
                     className="object-cover"
@@ -936,7 +936,7 @@ export default function Home() {
                 >
                   <div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
                     <Image
-                      src="/omoss.jpg"
+                      src="/omoss.webp"
                       alt="Om Flyttella"
                       fill
                       className="object-cover rounded-2xl"
@@ -1355,7 +1355,7 @@ export default function Home() {
           <AutoSlidingCards />
         </motion.section>
 
-        {/* Mobile Image Transition - intro_picture.jpg */}
+        {/* Mobile Image Transition - intro_picture.webp */}
         <div className="md:hidden relative -mt-4" style={{ marginTop: '-1.3rem', zIndex: 20 }}>
           {/* Gradient fade overlay to blend with section above */}
           <div 
@@ -1374,7 +1374,7 @@ export default function Home() {
             className="relative"
           >
             <Image
-              src="/intro_picture.jpg"
+              src="/intro_picture.webp"
               alt="Flyttella - Professionell flyttservice i Stockholm"
               width={800}
               height={500}
@@ -1629,7 +1629,7 @@ export default function Home() {
                     <div className="w-full h-full flex items-stretch justify-center md:justify-start">
                       {/* Desktop: smiling_worker_new.png */}
                       <Image
-                        src="/smiling_worker_new.png"
+                        src="/smiling_worker_new.webp"
                         alt="Glad flyttarbetare"
                         width={600}
                         height={200}
@@ -1674,7 +1674,7 @@ export default function Home() {
               {/* Mobile: Image below text */}
               <div className="w-full md:w-3/5 flex justify-center order-2 md:order-2">
                 <Image
-                  src="/awards_no_bg.png"
+                  src="/awards_no_bg.webp"
                   alt="Flyttella's utmärkelser och priser"
                   width={1200}
                   height={600}
@@ -1987,7 +1987,7 @@ export default function Home() {
                       />
                       <TipCard
                         title={locale === 'sv' ? "Avtal och anmälningar" : "Contracts and notifications"}
-                        imageSrc="/viktigaavtalcustomer.png"
+                        imageSrc="/viktigaavtalcustomer.webp"
                         imageAlt={locale === 'sv' ? "Avtal" : "Contracts"}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
@@ -2000,7 +2000,7 @@ export default function Home() {
                       />
                       <TipCard
                           title={locale === 'sv' ? "Innan flyttfirman kommer" : "Before the moving company arrives"}
-                          imageSrc="/innanflyttfirmankommer.jpg"
+                          imageSrc="/innanflyttfirmankommer.webp"
                           imageAlt={locale === 'sv' ? "Förberedelse för flytt" : "Preparation for move"}
                           objectPosition="object-[center_45%]"
                           content={
@@ -2014,7 +2014,7 @@ export default function Home() {
                         />
                       <TipCard
                         title={locale === 'sv' ? "Packtips" : "Packing tips"}
-                        imageSrc="/packing_tips.jpg"
+                        imageSrc="/packing_tips.webp"
                         imageAlt={locale === 'sv' ? "Packning" : "Packing"}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
@@ -2058,7 +2058,7 @@ export default function Home() {
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title={locale === 'sv' ? "En smidig flyttdag" : "A smooth moving day"}
-                          imageSrc="/smidigflyttdag.jpg"
+                          imageSrc="/smidigflyttdag.webp"
                           imageAlt={locale === 'sv' ? "Glad flyttarbetare" : "Happy moving worker"}
                           objectPosition="object-[center_35%]"
                           content={
@@ -2074,7 +2074,7 @@ export default function Home() {
                         />
                       <TipCard
                           title={locale === 'sv' ? "Kommunikation och koordinering" : "Communication and coordination"}
-                          imageSrc="/under_flytt.jpg"
+                          imageSrc="/under_flytt.webp"
                           imageAlt={locale === 'sv' ? "Flytt under pågående" : "Move in progress"}
                           objectPosition="object-center"
                           content={
@@ -2120,7 +2120,7 @@ export default function Home() {
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title={locale === 'sv' ? "Start i nya hemmet" : "Start in new home"}
-                          imageSrc="/efter_flytt.jpg"
+                          imageSrc="/efter_flytt.webp"
                           imageAlt={locale === 'sv' ? "Nytt hem" : "New home"}
                           objectPosition="object-[10%_center]"
                           content={
@@ -2137,7 +2137,7 @@ export default function Home() {
                         />
                       <TipCard
                           title={locale === 'sv' ? "Dokumentation och uppföljning" : "Documentation and follow-up"}
-                          imageSrc="/godtid.jpg"
+                          imageSrc="/godtid.webp"
                           imageAlt={locale === 'sv' ? "Dokumentation efter flytt" : "Documentation after move"}
                           objectPosition="object-center"
                           content={

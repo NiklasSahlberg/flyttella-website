@@ -178,7 +178,7 @@ export default function StorstadningPage() {
                   {
                     title: '',
                     content: (
-                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/fonsterputs_info.png" alt="Storstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/fonsterputs_info.webp" alt="Storstädning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>
                     ),
                     icon: ''
                   },
@@ -201,7 +201,7 @@ export default function StorstadningPage() {
                   {
                     title: '',
                     content: (
-                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/cleaning_background.png" alt="Storstädning badrum" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/cleaning_background.webp" alt="Storstädning badrum" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>
                     ),
                     icon: ''
                   },
@@ -221,7 +221,7 @@ export default function StorstadningPage() {
                   {
                     title: '',
                     content: (
-                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/fonsterputs_info.png" alt="Deep Cleaning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/fonsterputs_info.webp" alt="Deep Cleaning" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>
                     ),
                     icon: ''
                   },
@@ -244,7 +244,7 @@ export default function StorstadningPage() {
                   {
                     title: '',
                     content: (
-                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/cleaning_background.png" alt="Deep Cleaning Bathroom" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>
+                      <div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/cleaning_background.webp" alt="Deep Cleaning Bathroom" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>
                     ),
                     icon: ''
                   },
@@ -284,7 +284,7 @@ export default function StorstadningPage() {
               {/* Mobile image above title to match Bohagsflytt */}
               <div className="lg:hidden px-4 mb-6 -mx-8">
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
-                  <img src="/omflyttella_flyttstad.png" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                  <img src="/omflyttella_flyttstad.webp" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
                 </div>
               </div>
 
@@ -292,7 +292,7 @@ export default function StorstadningPage() {
               <div className="relative flex flex-col lg:flex-row items-stretch gap-16">
                 <motion.div className="hidden lg:block w-full lg:w-1/3 relative lg:-ml-8 lg:pr-8" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.2 }}>
                   <div className="relative h-80 lg:h-full w-full overflow-hidden rounded-2xl">
-                    <img src="/omflyttella_flyttstad.png" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover rounded-2xl w-full h-full" style={{ objectPosition: '80% 25%', transform: 'scale(1.10)' }} />
+                    <img src="/omflyttella_flyttstad.webp" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover rounded-2xl w-full h-full" style={{ objectPosition: '80% 25%', transform: 'scale(1.10)' }} />
                   </div>
                 </motion.div>
                 <motion.div className="w-full lg:w-4/5 space-y-4 lg:space-y-8 flex flex-col justify-center" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.4 }}>
@@ -459,7 +459,7 @@ export default function StorstadningPage() {
           </div>
         </section>
         {/* Image below mobile "Våra förmåner" slider */}
-        <div className="md:hidden px-4 mt-4"><img src="/varafarmaner_flyttstad.png" alt={locale === 'sv' ? 'Våra förmåner' : 'Our Benefits'} className="w-full h-auto rounded-2xl shadow-lg" /></div>
+        <div className="md:hidden px-4 mt-4"><img src="/varafarmaner_flyttstad.webp" alt={locale === 'sv' ? 'Våra förmåner' : 'Our Benefits'} className="w-full h-auto rounded-2xl shadow-lg" /></div>
 
         {/* Desktop features grid with image */}
         <div className="responsive-zoom hidden md:block">
@@ -507,7 +507,7 @@ export default function StorstadningPage() {
                     </div>
                   </div>
                   <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
-                    <div className="w-full h-full flex items-stretch"><img src="/cleaning_lady.png" alt={locale === 'sv' ? 'Städpersonal i Stockholm - Flyttella' : 'Cleaning Staff in Stockholm - Flyttella'} className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} /></div>
+                    <div className="w-full h-full flex items-stretch"><img src="/cleaning_lady.webp" alt={locale === 'sv' ? 'Städpersonal i Stockholm - Flyttella' : 'Cleaning Staff in Stockholm - Flyttella'} className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} /></div>
                   </div>
                 </div>
               </div>
@@ -653,7 +653,7 @@ export default function StorstadningPage() {
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/omflyttella_flyttstad.png" alt={locale === 'sv' ? 'Hemstädning tips' : 'Home cleaning tips'} className="w-full h-64 md:h-full object-cover object-[center_40%] md:object-center" />
+                    <img src="/omflyttella_flyttstad.webp" alt={locale === 'sv' ? 'Hemstädning tips' : 'Home cleaning tips'} className="w-full h-64 md:h-full object-cover object-[center_40%] md:object-center" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">

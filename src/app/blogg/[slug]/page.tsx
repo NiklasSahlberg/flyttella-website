@@ -282,7 +282,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/innanflyttfirmankommer.jpg" alt="Förberedelser innan flyttfirman kommer" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
+          <img src="/innanflyttfirmankommer.webp" alt="Förberedelser innan flyttfirman kommer" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Förberedelser innan flyttfirman kommer - en viktig del av att välja rätt flyttfirma</p>
         </div>
       </div>
@@ -303,7 +303,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/recommendedcompany2.png" alt="Rekommenderad flyttfirma" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+          <img src="/recommendedcompany2.webp" alt="Rekommenderad flyttfirma" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
       
@@ -325,7 +325,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/viktigaavtalcustomer.png" alt="Skriftlig offert och kontrakt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/viktigaavtalcustomer.webp" alt="Skriftlig offert och kontrakt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">En seriös flyttfirma ger alltid en skriftlig och detaljerad offert</p>
         </div>
       </div>
@@ -367,7 +367,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/personalpicture.webp" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Erfaren och professionell personal är avgörande för en smidig flytt</p>
         </div>
       </div>
@@ -387,7 +387,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
+          <img src="/intro_picture.webp" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
         </div>
       </div>
       
@@ -407,7 +407,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/kundservice.jpg" alt="Kundservice och kommunikation" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
+          <img src="/kundservice.webp" alt="Kundservice och kommunikation" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
         </div>
       </div>
       
@@ -429,7 +429,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/specialicering.jpg" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/specialicering.webp" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Vissa flyttar kräver specialkompetens, som pianoflytt eller flytt av konst</p>
         </div>
       </div>
@@ -469,7 +469,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/magkansla.jpg" alt="Lita på din magkänsla" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/magkansla.webp" alt="Lita på din magkänsla" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
         </div>
       </div>
       
@@ -489,7 +489,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/happycustomeraftermoving.png" alt="Nöjd kund efter flytt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/happycustomeraftermoving.webp" alt="Nöjd kund efter flytt" class="w-full rounded-lg shadow-lg -mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">En seriös flyttfirma säkerställer en smidig flytt och nöjda kunder</p>
         </div>
       </div>
@@ -512,7 +512,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/innanflyttfirmankommer.jpg" alt="Preparations before the moving company arrives" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
+          <img src="/innanflyttfirmankommer.webp" alt="Preparations before the moving company arrives" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Preparations before the moving company arrives - an important part of choosing the right moving company</p>
         </div>
       </div>
@@ -533,7 +533,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/recommendedcompany2.png" alt="Recommended moving company" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+          <img src="/recommendedcompany2.webp" alt="Recommended moving company" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
       
@@ -555,7 +555,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/viktigaavtalcustomer.png" alt="Written quote and contract" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/viktigaavtalcustomer.webp" alt="Written quote and contract" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">A serious moving company always provides a written and detailed quote</p>
         </div>
       </div>
@@ -596,7 +596,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/personalpicture.jpg" alt="Professional moving staff" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/personalpicture.webp" alt="Professional moving staff" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Experienced and professional staff is crucial for a smooth move</p>
         </div>
       </div>
@@ -616,7 +616,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Local moving company in Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
+          <img src="/intro_picture.webp" alt="Local moving company in Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
         </div>
       </div>
       
@@ -635,7 +635,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/kundservice.jpg" alt="Customer service and communication" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
+          <img src="/kundservice.webp" alt="Customer service and communication" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
         </div>
       </div>
       
@@ -657,7 +657,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/specialicering.jpg" alt="Specialized moves like piano moves" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/specialicering.webp" alt="Specialized moves like piano moves" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Some moves require special expertise, like piano moves or moving art</p>
         </div>
       </div>
@@ -697,7 +697,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/magkansla.jpg" alt="Trust your gut feeling" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/magkansla.webp" alt="Trust your gut feeling" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
         </div>
       </div>
       
@@ -940,7 +940,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/cleaning_lady.png" alt="Professionell flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 30%;" />
+          <img src="/cleaning_lady.webp" alt="Professionell flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 30%;" />
           <p class="text-sm text-gray-600 mt-2 text-center">Professionell flyttstädning säkerställer att din bostad lämnas i perfekt skick</p>
         </div>
       </div>
@@ -961,7 +961,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/recommendedcompany2.png" alt="Rekommenderad flyttfirma" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+          <img src="/recommendedcompany2.webp" alt="Rekommenderad flyttfirma" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
       
@@ -981,7 +981,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/cleaning_background.png" alt="Flyttstädning kostnad" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/cleaning_background.webp" alt="Flyttstädning kostnad" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Kostnaden för flyttstädning varierar beroende på bostadens storlek och skick</p>
         </div>
       </div>
@@ -1061,7 +1061,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/cleaning_lady.png" alt="Professionell flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 30%;" />
+          <img src="/cleaning_lady.webp" alt="Professionell flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 30%;" />
           <p class="text-sm text-gray-600 mt-2 text-center">Professionell flyttstädning säkerställer att din bostad lämnas i perfekt skick</p>
         </div>
       </div>
@@ -1080,7 +1080,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/fonsterputs_intro.png" alt="När ska flyttstädning utföras" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/fonsterputs_intro.webp" alt="När ska flyttstädning utföras" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
       
@@ -1100,7 +1100,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/varafarmaner_flyttstad.png" alt="Professionell städfirma" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/varafarmaner_flyttstad.webp" alt="Professionell städfirma" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Välj en seriös och RUT-registrerad städfirma för bästa resultat</p>
         </div>
       </div>
@@ -1138,7 +1138,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/byggstadning_2.png" alt="Nöjd kund efter flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/byggstadning_2.webp" alt="Nöjd kund efter flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
       
@@ -1158,7 +1158,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/omflyttella_flyttstad.png" alt="Om Flyttella flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/omflyttella_flyttstad.webp" alt="Om Flyttella flyttstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Flyttella - Din pålitliga partner för professionell flyttstädning</p>
         </div>
       </div>
@@ -1182,7 +1182,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/cleaning_lady.png" alt="Professional move-out cleaning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 30%;" />
+          <img src="/cleaning_lady.webp" alt="Professional move-out cleaning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 30%;" />
           <p class="text-sm text-gray-600 mt-2 text-center">Professional move-out cleaning ensures your home is left in perfect condition</p>
         </div>
       </div>
@@ -1203,7 +1203,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/recommendedcompany2.png" alt="Recommended cleaning company" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+          <img src="/recommendedcompany2.webp" alt="Recommended cleaning company" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
       
@@ -1225,7 +1225,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/viktigaavtalcustomer.png" alt="Written quote and contract" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/viktigaavtalcustomer.webp" alt="Written quote and contract" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">A serious cleaning company always provides a written and detailed quote</p>
         </div>
       </div>
@@ -1266,7 +1266,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/personalpicture.jpg" alt="Professional cleaning staff" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/personalpicture.webp" alt="Professional cleaning staff" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Experienced and professional staff is crucial for a thorough cleaning</p>
         </div>
       </div>
@@ -1286,7 +1286,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Local cleaning company in Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
+          <img src="/intro_picture.webp" alt="Local cleaning company in Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
         </div>
       </div>
       
@@ -1306,7 +1306,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/kundservice.jpg" alt="Customer service and communication" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
+          <img src="/kundservice.webp" alt="Customer service and communication" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
         </div>
       </div>
       
@@ -1328,7 +1328,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/specialicering.jpg" alt="Specialized cleaning services" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/specialicering.webp" alt="Specialized cleaning services" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Some cleaning requires special expertise, like post-construction cleaning</p>
         </div>
       </div>
@@ -1368,7 +1368,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/magkansla.jpg" alt="Trust your gut feeling" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/magkansla.webp" alt="Trust your gut feeling" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
         </div>
       </div>
       
@@ -1494,7 +1494,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/innanflyttfirmankommer.jpg" alt="Förberedelser innan flyttfirman kommer" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
+          <img src="/innanflyttfirmankommer.webp" alt="Förberedelser innan flyttfirman kommer" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Förberedelser innan flyttfirman kommer - en viktig del av att välja rätt flyttfirma</p>
         </div>
       </div>
@@ -1512,7 +1512,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/personalpicture.jpg" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/personalpicture.webp" alt="Professionell flyttpersonal" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -1528,7 +1528,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/viktigaavtalcustomer.png" alt="Skriftlig offert och kontrakt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/viktigaavtalcustomer.webp" alt="Skriftlig offert och kontrakt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">En seriös flyttfirma ger alltid en skriftlig och detaljerad offert</p>
         </div>
       </div>
@@ -1549,7 +1549,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/recommendedcompany2.png" alt="Rekommenderad flyttfirma" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+          <img src="/recommendedcompany2.webp" alt="Rekommenderad flyttfirma" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
 
@@ -1581,7 +1581,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
+          <img src="/intro_picture.webp" alt="Lokal flyttfirma i Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
         </div>
       </div>
 
@@ -1597,7 +1597,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/kundservice.jpg" alt="Kundservice och kommunikation" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
+          <img src="/kundservice.webp" alt="Kundservice och kommunikation" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
         </div>
       </div>
 
@@ -1613,7 +1613,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/specialicering.jpg" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/specialicering.webp" alt="Specialiserade flyttar som pianoflytt" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Vissa flyttar kräver specialkompetens, som pianoflytt eller flytt av konst</p>
         </div>
       </div>
@@ -1630,7 +1630,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/malaga.jpg" alt="Destinationer" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/malaga.webp" alt="Destinationer" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -1647,7 +1647,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/happycustomeraftermoving.png" alt="Nöjd kund efter flytt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/happycustomeraftermoving.webp" alt="Nöjd kund efter flytt" class="w-full rounded-lg shadow-lg -mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">En seriös flyttfirma säkerställer en smidig flytt och nöjda kunder</p>
         </div>
       </div>
@@ -1667,7 +1667,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/innanflyttfirmankommer.jpg" alt="Preparations before the moving company arrives" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
+          <img src="/innanflyttfirmankommer.webp" alt="Preparations before the moving company arrives" class="w-full h-64 rounded-lg shadow-lg object-cover -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Preparations before the moving company arrives - an important part of choosing the right moving company</p>
         </div>
       </div>
@@ -1685,7 +1685,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/personalpicture.jpg" alt="Professional moving staff" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/personalpicture.webp" alt="Professional moving staff" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -1701,7 +1701,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/viktigaavtalcustomer.png" alt="Written quote and contract" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/viktigaavtalcustomer.webp" alt="Written quote and contract" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">A serious moving company always provides a written and detailed quote</p>
         </div>
       </div>
@@ -1722,7 +1722,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/recommendedcompany2.png" alt="Recommended moving company" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
+          <img src="/recommendedcompany2.webp" alt="Recommended moving company" class="w-full h-64 -mt-2 md:-mt-8 object-contain" />
         </div>
       </div>
 
@@ -1754,7 +1754,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Local moving company in Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
+          <img src="/intro_picture.webp" alt="Local moving company in Stockholm" class="w-full rounded-lg shadow-lg mt-0 md:-mt-12" />
         </div>
       </div>
 
@@ -1770,7 +1770,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/kundservice.jpg" alt="Customer service and communication" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
+          <img src="/kundservice.webp" alt="Customer service and communication" class="w-full h-60 rounded-lg shadow-lg mt-0 md:-mt-12 object-cover" />
         </div>
       </div>
 
@@ -1786,7 +1786,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/specialicering.jpg" alt="Specialized moves like piano moving" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
+          <img src="/specialicering.webp" alt="Specialized moves like piano moving" class="w-full rounded-lg shadow-lg -mt-2 md:-mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Some moves require special expertise, like piano moving or art moving</p>
         </div>
       </div>
@@ -1803,7 +1803,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/malaga.jpg" alt="Destinations" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/malaga.webp" alt="Destinations" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -1820,7 +1820,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/happycustomeraftermoving.png" alt="Satisfied customer after move" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/happycustomeraftermoving.webp" alt="Satisfied customer after move" class="w-full rounded-lg shadow-lg -mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">A serious moving company ensures smooth delivery and satisfied customers</p>
         </div>
       </div>
@@ -1887,7 +1887,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/smiling_worker_new.png" alt="Piano flytt" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 10%;" />
+          <img src="/smiling_worker_new.webp" alt="Piano flytt" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 10%;" />
         </div>
       </div>
 
@@ -1905,7 +1905,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/piano_tunglyft.png" alt="Professionell piano hantering" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/piano_tunglyft.webp" alt="Professionell piano hantering" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -1938,7 +1938,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/personalpicture.jpg" alt="Professionell flyttarbetare" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/personalpicture.webp" alt="Professionell flyttarbetare" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -1957,7 +1957,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/happycustomeraftermoving.png" alt="Nöjd kund efter flytt" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/happycustomeraftermoving.webp" alt="Nöjd kund efter flytt" class="w-full rounded-lg shadow-lg -mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Professionell hantering säkerställer skydd av dina värdefulla föremål</p>
         </div>
       </div>
@@ -1980,7 +1980,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/smiling_worker_new.png" alt="Piano moving" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 10%;" />
+          <img src="/smiling_worker_new.webp" alt="Piano moving" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 10%;" />
         </div>
       </div>
 
@@ -1998,7 +1998,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/piano_tunglyft.png" alt="Professional piano handling" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/piano_tunglyft.webp" alt="Professional piano handling" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2031,7 +2031,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/personalpicture.jpg" alt="Professional moving worker" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/personalpicture.webp" alt="Professional moving worker" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2050,7 +2050,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/happycustomeraftermoving.png" alt="Satisfied customer after move" class="w-full rounded-lg shadow-lg -mt-8" />
+          <img src="/happycustomeraftermoving.webp" alt="Satisfied customer after move" class="w-full rounded-lg shadow-lg -mt-8" />
           <p class="text-sm text-gray-600 mt-2 text-center">Professional handling ensures protection of your valuable objects</p>
         </div>
       </div>
@@ -2118,7 +2118,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/personalpicture.jpg" alt="Organisering av ägodelar" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/personalpicture.webp" alt="Organisering av ägodelar" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2137,7 +2137,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/smiling_worker_new.png" alt="Förberedelse för förvaring" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 5%;" />
+          <img src="/smiling_worker_new.webp" alt="Förberedelse för förvaring" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 5%;" />
         </div>
       </div>
 
@@ -2172,7 +2172,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/happycustomeraftermoving.png" alt="Kostnadsbesparande tips" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/happycustomeraftermoving.webp" alt="Kostnadsbesparande tips" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2192,7 +2192,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Undvik vanliga misstag" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/intro_picture.webp" alt="Undvik vanliga misstag" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Rätt förberedelse undviker problem senare</p>
         </div>
       </div>
@@ -2216,7 +2216,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/personalpicture.jpg" alt="Organizing belongings" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/personalpicture.webp" alt="Organizing belongings" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2235,7 +2235,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/smiling_worker_new.png" alt="Preparation for storage" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 5%;" />
+          <img src="/smiling_worker_new.webp" alt="Preparation for storage" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 5%;" />
         </div>
       </div>
 
@@ -2270,7 +2270,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/happycustomeraftermoving.png" alt="Cost-saving tips" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/happycustomeraftermoving.webp" alt="Cost-saving tips" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2290,7 +2290,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Avoid common mistakes" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/intro_picture.webp" alt="Avoid common mistakes" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Proper preparation avoids problems later</p>
         </div>
       </div>
@@ -2358,7 +2358,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/window_cleaner.png" alt="Professionell fönsterputs" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/window_cleaner.webp" alt="Professionell fönsterputs" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2377,7 +2377,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/window_worker.png" alt="Fönsterputsteknik" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/window_worker.webp" alt="Fönsterputsteknik" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2412,7 +2412,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/cleaning_lady.png" alt="Underhåll av fönster" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
+          <img src="/cleaning_lady.webp" alt="Underhåll av fönster" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
         </div>
       </div>
 
@@ -2432,7 +2432,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/fonsterputs_info.png" alt="Undvik vanliga misstag" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/fonsterputs_info.webp" alt="Undvik vanliga misstag" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Professionell utrustning ger bästa resultatet</p>
         </div>
       </div>
@@ -2473,7 +2473,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/window_cleaner.png" alt="Professional window cleaning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/window_cleaner.webp" alt="Professional window cleaning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2492,7 +2492,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/window_worker.png" alt="Window cleaning technique" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/window_worker.webp" alt="Window cleaning technique" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2527,7 +2527,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/cleaning_lady.png" alt="Window maintenance" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
+          <img src="/cleaning_lady.webp" alt="Window maintenance" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
         </div>
       </div>
 
@@ -2547,7 +2547,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/fonsterputs_info.png" alt="Avoid common mistakes" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/fonsterputs_info.webp" alt="Avoid common mistakes" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
           <p class="text-sm text-gray-600 mt-2 text-center">Professional equipment gives the best results</p>
         </div>
       </div>
@@ -2631,7 +2631,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/cleaning_lady.png" alt="Professionell hemstädning" class="w-full h-64 md:h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
+          <img src="/cleaning_lady.webp" alt="Professionell hemstädning" class="w-full h-64 md:h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
         </div>
       </div>
 
@@ -2670,7 +2670,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/flyttstad_intro.png" alt="Steg-för-steg hemstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
+          <img src="/flyttstad_intro.webp" alt="Steg-för-steg hemstädning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
         </div>
       </div>
 
@@ -2708,7 +2708,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/omflyttella_flyttstad.png" alt="Tips för ren bostad" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/omflyttella_flyttstad.webp" alt="Tips för ren bostad" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2727,7 +2727,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/byggstadning.png" alt="Undvik vanliga misstag" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/byggstadning.webp" alt="Undvik vanliga misstag" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2751,7 +2751,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/cleaning_lady.png" alt="Professional home cleaning" class="w-full h-64 md:h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
+          <img src="/cleaning_lady.webp" alt="Professional home cleaning" class="w-full h-64 md:h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
         </div>
       </div>
 
@@ -2790,7 +2790,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/flyttstad_intro.png" alt="Step-by-step home cleaning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
+          <img src="/flyttstad_intro.webp" alt="Step-by-step home cleaning" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" style="object-position: center 20%;" />
         </div>
       </div>
 
@@ -2828,7 +2828,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="w-full md:flex-1">
-          <img src="/omflyttella_flyttstad.png" alt="Tips for clean home" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/omflyttella_flyttstad.webp" alt="Tips for clean home" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2847,7 +2847,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/byggstadning.png" alt="Avoid common mistakes" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
+          <img src="/byggstadning.webp" alt="Avoid common mistakes" class="w-full h-64 rounded-lg shadow-lg -mt-2 md:-mt-8 object-cover" />
         </div>
       </div>
 
@@ -2908,7 +2908,7 @@ const blogPosts = [
           <p class="text-gray-700 leading-relaxed text-lg">En ren kontorsmiljö påverkar direkt medarbetarnas välbefinnande, produktivitet och hälsa. Professionell kontorsstädning säkerställer att alla ytor, från skrivbord till köksutrymmen, hålls i optimalt skick.</p>
         </div>
         <div class="flex-1">
-          <img src="/kontor.png" alt="Professionell kontorsstädning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/kontor.webp" alt="Professionell kontorsstädning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
 
@@ -2927,7 +2927,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/office-moving.png" alt="Kontorsmiljö som behöver städning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/office-moving.webp" alt="Kontorsmiljö som behöver städning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
 
@@ -2948,7 +2948,7 @@ const blogPosts = [
           </ol>
         </div>
         <div class="flex-1">
-          <img src="/smiling_worker_new.png" alt="Strukturerad kontorsstädning" class="w-full h-64 rounded-lg shadow-lg object-cover" style="object-position: center 10%;" />
+          <img src="/smiling_worker_new.webp" alt="Strukturerad kontorsstädning" class="w-full h-64 rounded-lg shadow-lg object-cover" style="object-position: center 10%;" />
         </div>
       </div>
 
@@ -2966,7 +2966,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/cleaning_background.png" alt="Professionell städutrustning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/cleaning_background.webp" alt="Professionell städutrustning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
 
@@ -2984,7 +2984,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/byggstadning.png" alt="Rent och organiserat kontor" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/byggstadning.webp" alt="Rent och organiserat kontor" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
 
@@ -3002,7 +3002,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Professionell kontorsstädning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/intro_picture.webp" alt="Professionell kontorsstädning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
     `,
@@ -3015,7 +3015,7 @@ const blogPosts = [
           <p class="text-gray-700 leading-relaxed text-lg">A clean office environment directly affects employees' well-being, productivity and health. Professional office cleaning ensures that all surfaces, from desks to kitchen areas, are kept in optimal condition.</p>
         </div>
         <div class="flex-1">
-          <img src="/kontor.png" alt="Professional office cleaning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/kontor.webp" alt="Professional office cleaning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
 
@@ -3034,7 +3034,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/office-moving.png" alt="Office environment that needs cleaning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/office-moving.webp" alt="Office environment that needs cleaning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
 
@@ -3055,7 +3055,7 @@ const blogPosts = [
           </ol>
         </div>
         <div class="flex-1">
-          <img src="/smiling_worker_new.png" alt="Structured office cleaning" class="w-full h-64 rounded-lg shadow-lg object-cover" style="object-position: center 10%;" />
+          <img src="/smiling_worker_new.webp" alt="Structured office cleaning" class="w-full h-64 rounded-lg shadow-lg object-cover" style="object-position: center 10%;" />
         </div>
       </div>
 
@@ -3073,7 +3073,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/cleaning_background.png" alt="Professional cleaning equipment" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/cleaning_background.webp" alt="Professional cleaning equipment" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
 
@@ -3091,7 +3091,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/byggstadning.png" alt="Clean and organized office" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/byggstadning.webp" alt="Clean and organized office" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
 
@@ -3109,7 +3109,7 @@ const blogPosts = [
           </ul>
         </div>
         <div class="flex-1">
-          <img src="/intro_picture.jpg" alt="Professional office cleaning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
+          <img src="/intro_picture.webp" alt="Professional office cleaning" class="w-full h-64 rounded-lg shadow-lg object-cover" />
         </div>
       </div>
     `
@@ -3951,21 +3951,18 @@ export default function BlogPostPage() {
            {post.slug === "flyttstadning-vad-du-behover-veta" ? (
              <>
                {/* Mobile image */}
-               <img 
-                 src="/omflyttella_flyttstad.png" 
+               <img src="/omflyttella_flyttstad.webp" 
                  alt="Flyttella team" 
                  className="block lg:hidden w-full h-auto max-h-[600px] object-contain rounded-2xl"
                />
                {/* Desktop image */}
-               <img 
-                 src="/stad_vertical_happy_cleaner.png" 
+               <img src="/stad_vertical_happy_cleaner.webp" 
                  alt="Flyttella team" 
                  className="hidden lg:block w-full h-auto lg:max-h-[540px] object-contain rounded-2xl"
                />
              </>
            ) : (
-             <img 
-               src="/smiling_worker_new.png" 
+             <img src="/smiling_worker_new.webp" 
                alt="Flyttella team" 
                className="w-full h-auto max-h-[300px] lg:max-h-[540px] object-contain rounded-2xl"
              />

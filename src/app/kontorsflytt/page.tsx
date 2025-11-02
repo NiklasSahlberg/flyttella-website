@@ -335,7 +335,7 @@ export default function KontorsflyttPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/godtid.jpg" alt="Kontorsflytt Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/godtid.webp" alt="Kontorsflytt Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -365,7 +365,7 @@ export default function KontorsflyttPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/kontor.png" alt="Kontorsflytt service Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/kontor.webp" alt="Kontorsflytt service Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -387,7 +387,7 @@ export default function KontorsflyttPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/godtid.jpg" alt="Office Moving Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/godtid.webp" alt="Office Moving Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -417,7 +417,7 @@ export default function KontorsflyttPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/kontor.png" alt="Office Moving Service Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/kontor.webp" alt="Office Moving Service Stockholm" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -491,7 +491,7 @@ export default function KontorsflyttPage() {
               {/* Mobile image above title to match Bohagsflytt */}
               <div className="lg:hidden px-4 mb-6 -mx-8">
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
-                  <img src="/personalpicture.jpg" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                  <img src="/personalpicture.webp" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
                 </div>
               </div>
 
@@ -507,8 +507,7 @@ export default function KontorsflyttPage() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <div className="relative h-80 lg:h-full w-full overflow-hidden rounded-2xl">
-                    <img 
-                      src="/omoss.jpg" 
+                    <img src="/omoss.webp" 
                       alt={locale === 'sv' ? 'Om Flyttella kontorsflytt' : 'About Flyttella office moving'} 
                       className="object-cover rounded-2xl w-full h-full" 
                       style={{ objectPosition: '30% 25%', transform: 'scale(1.10)' }}
@@ -775,7 +774,7 @@ export default function KontorsflyttPage() {
         </section>
         {/* Image below mobile "Våra förmåner" slider */}
         <div className="md:hidden px-4 mt-4">
-          <img src="/office-moving.png" alt={locale === 'sv' ? 'Våra förmåner kontorsflytt' : 'Our benefits office moving'} className="w-full h-auto rounded-2xl shadow-lg" />
+          <img src="/office-moving.webp" alt={locale === 'sv' ? 'Våra förmåner kontorsflytt' : 'Our benefits office moving'} className="w-full h-auto rounded-2xl shadow-lg" />
           </div>
 
         {/* Desktop features grid with image */}
@@ -821,7 +820,7 @@ export default function KontorsflyttPage() {
                   </div>
                   <div className="flex-1 flex justify-center lg:justify-end lg:self-stretch">
                     <div className="w-full h-full flex items-stretch">
-                      <img src="/office-moving.png" alt="Kontorsflytt Stockholm - Flyttella" className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
+                      <img src="/office-moving.webp" alt="Kontorsflytt Stockholm - Flyttella" className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} />
                     </div>
                   </div>
                 </div>
@@ -1060,7 +1059,7 @@ export default function KontorsflyttPage() {
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/innanflyttfirmankommer.jpg" alt={locale === 'sv' ? 'Seriös flyttfirma' : 'Serious moving company'} className="w-full h-64 md:h-full object-cover object-[center_40%] md:object-center" />
+                    <img src="/innanflyttfirmankommer.webp" alt={locale === 'sv' ? 'Seriös flyttfirma' : 'Serious moving company'} className="w-full h-64 md:h-full object-cover object-[center_40%] md:object-center" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">

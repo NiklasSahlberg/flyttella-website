@@ -146,7 +146,7 @@ export default function Utlandsflytt() {
                       {t('utlandsflytt.content.whatIsDescription')}
                     </p>
                   ), icon: '🌍' },
-                  { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/under_flytt.jpg" alt="Utlandsflytt" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
+                  { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/under_flytt.webp" alt="Utlandsflytt" className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
                   { title: t('utlandsflytt.content.pricingTitle'), content: (<>
                     <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl mb-8 text-left md:text-center">{t('utlandsflytt.content.pricingDescription')}</p>
                     <div className="my-16 text-center"><p className="text-2xl md:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>&quot;{t('utlandsflytt.content.pricingTestimonial')}&quot;</p><p className="italic text-gray-700 mt-2">- {t('utlandsflytt.content.testimonialAuthor')}</p></div>
@@ -154,7 +154,7 @@ export default function Utlandsflytt() {
                   { title: t('utlandsflytt.content.includesTitle'), content: (
                     <p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center">{t('utlandsflytt.content.includesDescription')}</p>
                   ), icon: '📦' },
-                  { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/coupleMoving.png" alt={t('utlandsflytt.services.title')} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 30%' }} /></div>), icon: '' },
+                  { title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-12"><img src="/coupleMoving.webp" alt={t('utlandsflytt.services.title')} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 30%' }} /></div>), icon: '' },
                   { title: t('utlandsflytt.content.bookingTitle'), content: (<p className="text-gray-700 leading-relaxed px-4 text-lg md:text-xl lg:text-2xl text-left md:text-center mb-8 md:mb-12">{t('utlandsflytt.content.bookingDescription')}</p>), icon: '📅' },
                   { title: t('utlandsflytt.content.checklistTitle'), content: (<div className="px-4 md:px-0"><ul className="list-disc pl-5 space-y-3 md:space-y-2">
                     {locale === 'sv' ? (
@@ -220,7 +220,7 @@ export default function Utlandsflytt() {
               {/* Mobile image above title */}
               <div className="lg:hidden mb-6">
                 <div className="relative w-full h-80 rounded-3xl overflow-hidden">
-                  <img src="/personalpicture.jpg" alt="Om Flyttella" className="object-cover w-full h-full" style={{ objectPosition: 'center center' }} />
+                  <img src="/personalpicture.webp" alt="Om Flyttella" className="object-cover w-full h-full" style={{ objectPosition: 'center center' }} />
                 </div>
               </div>
 
@@ -229,7 +229,7 @@ export default function Utlandsflytt() {
                 {/* Left image desktop */}
                 <motion.div className="hidden lg:block w-full lg:w-1/4 relative" initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.2 }}>
                   <div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
-                    <img src="/personalpicture.jpg" alt="Om Flyttella" className="object-cover rounded-2xl w-full h-full" style={{ objectPosition: 'center center' }} />
+                    <img src="/personalpicture.webp" alt="Om Flyttella" className="object-cover rounded-2xl w-full h-full" style={{ objectPosition: 'center center' }} />
                   </div>
                 </motion.div>
                 {/* Right text */}
@@ -803,7 +803,7 @@ export default function Utlandsflytt() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12"><h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">{t('utlandsflytt.blog.title')}</h2><p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('utlandsflytt.blog.subtitle')}</p></div>
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-                <div className="md:flex"><div className="md:w-1/3"><img src="/malaga.jpg" alt="Utlandsflytt tips" className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" /></div><div className="md:w-2/3 p-8"><div className="flex items-center mb-4"><span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] textWhite px-3 py-1 rounded-full text-sm font-medium">{t('utlandsflytt.blog.category')}</span><span className="text-gray-500 text-sm ml-4">{t('utlandsflytt.blog.readTime')}</span></div><h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{t('utlandsflytt.blog.postTitle')}</h3><p className="text-gray-600 text-lg leading-relaxed mb-6">{t('utlandsflytt.blog.postDescription')}</p><div className="flex items-center justify-end mb-4"><Link href="/blogg/utlandsflytt-vad-du-behover-veta" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">{t('utlandsflytt.blog.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div></div></div>
+                <div className="md:flex"><div className="md:w-1/3"><img src="/malaga.webp" alt="Utlandsflytt tips" className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center" /></div><div className="md:w-2/3 p-8"><div className="flex items-center mb-4"><span className="bg-gradient-to-r from-[#0F172A] to-[#10B981] textWhite px-3 py-1 rounded-full text-sm font-medium">{t('utlandsflytt.blog.category')}</span><span className="text-gray-500 text-sm ml-4">{t('utlandsflytt.blog.readTime')}</span></div><h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{t('utlandsflytt.blog.postTitle')}</h3><p className="text-gray-600 text-lg leading-relaxed mb-6">{t('utlandsflytt.blog.postDescription')}</p><div className="flex items-center justify-end mb-4"><Link href="/blogg/utlandsflytt-vad-du-behover-veta" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium group">{t('utlandsflytt.blog.readMore')}<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div></div></div>
               </motion.div>
               <div className="text-center mt-8 md:mt-12"><Link href="/blogg" className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white hover:opacity-90 transition-opacity px-4 py-2 md:px-6 md:py-3 rounded-full font-medium group shadow-lg hover:shadow-xl text-sm md:text-base">{t('utlandsflytt.blog.allArticles')}<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link></div>
             </div>

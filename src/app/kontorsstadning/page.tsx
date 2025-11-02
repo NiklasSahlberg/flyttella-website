@@ -301,7 +301,7 @@ export default function KontorsstadningPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/nystadat_kontor2.png" alt={locale === 'sv' ? 'Kontorsstädning' : 'Office cleaning'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/nystadat_kontor2.webp" alt={locale === 'sv' ? 'Kontorsstädning' : 'Office cleaning'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -325,7 +325,7 @@ export default function KontorsstadningPage() {
                     title: '',
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-12">
-                        <img src="/nystadat_kontor.png" alt={locale === 'sv' ? 'Kontorsstädning service' : 'Office cleaning service'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
+                        <img src="/nystadat_kontor.webp" alt={locale === 'sv' ? 'Kontorsstädning service' : 'Office cleaning service'} className="w-full h-80 md:h-96 rounded-lg shadow-lg object-cover" />
                       </div>
                     ),
                     icon: ''
@@ -387,7 +387,7 @@ export default function KontorsstadningPage() {
               {/* Mobile image above title to match Bohagsflytt */}
               <div className="lg:hidden px-4 mb-6 -mx-8">
                 <div className="relative w-full h-96 rounded-3xl overflow-hidden">
-                  <img src="/omflyttella_flyttstad.png" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
+                  <img src="/omflyttella_flyttstad.webp" alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'} className="object-cover w-full h-full" style={{ objectPosition: 'center 70%' }} />
                 </div>
               </div>
 
@@ -403,8 +403,7 @@ export default function KontorsstadningPage() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <div className="relative h-80 lg:h-full w-full overflow-hidden rounded-2xl">
-                    <img 
-                      src="/omflyttella_flyttstad.png" 
+                    <img src="/omflyttella_flyttstad.webp" 
                       alt={locale === 'sv' ? 'Om Flyttella Städ' : 'About Flyttella Cleaning'} 
                       className="object-cover rounded-2xl w-full h-full" 
                       style={{ objectPosition: '80% 25%', transform: 'scale(1.10)' }}
@@ -714,7 +713,7 @@ export default function KontorsstadningPage() {
                   {/* Right side - Image */}
                   <div className="flex-1 w-full lg:w-auto flex items-center justify-center min-h-[420px]">
                     <div className="relative w-full max-w-md h-full flex items-center">
-                      <img src="/varafarmaner_flyttstad.png" alt={t('kontorsstadning.benefits.imageAlt')} className="w-full h-full object-cover rounded-xl shadow-lg" />
+                      <img src="/varafarmaner_flyttstad.webp" alt={t('kontorsstadning.benefits.imageAlt')} className="w-full h-full object-cover rounded-xl shadow-lg" />
                     </div>
                   </div>
                 </div>
@@ -724,8 +723,7 @@ export default function KontorsstadningPage() {
         </div>
         {/* Image below mobile "Våra förmåner" slider */}
         <div className="md:hidden px-4 mt-4">
-          <img
-            src="/varafarmaner_flyttstad.png"
+          <img src="/varafarmaner_flyttstad.webp"
             alt={t('kontorsstadning.benefits.imageAlt')}
             className="w-full h-auto rounded-2xl shadow-lg"
           />
@@ -1064,8 +1062,7 @@ export default function KontorsstadningPage() {
               >
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img 
-                      src="/cleaning_lady.png" 
+                    <img src="/cleaning_lady.webp" 
                       alt={t('kontorsstadning.blog.imageAlt')} 
                       className="w-full h-64 md:h-full object-cover object-[center_20%] md:object-center"
                     />

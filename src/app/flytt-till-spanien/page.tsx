@@ -1496,7 +1496,7 @@ export default function FlyttTillSpanienPage() {
               <motion.div className="bg-white rounded-2xl shadow-lg overflow-hidden" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img src="/innanflyttfirmankommer.jpg" alt="Flytt till Spanien" className="w-full h-64 md:h-full object-cover" />
+                    <img src="/innanflyttfirmankommer.webp" alt="Flytt till Spanien" className="w-full h-64 md:h-full object-cover" />
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="flex items-center mb-4">

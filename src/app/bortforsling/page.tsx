@@ -261,7 +261,7 @@ export default function BortforslingPage() {
 							>
 								{([
 									{ title: t('bortforsling.content.whatIsTitle'), content: t('bortforsling.content.whatIsDescription'), icon: '🗑️' },
-									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/smidigflyttdag.jpg" alt="Bortforsling av möbler och grovsopor i Stockholm" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 40%' }} /></div>), icon: '' },
+									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/smidigflyttdag.webp" alt="Bortforsling av möbler och grovsopor i Stockholm" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 40%' }} /></div>), icon: '' },
 									{ title: t('bortforsling.content.pricingTitle'), content: (<div className="px-4 md:px-0">
 											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">{t('bortforsling.content.pricingDescription1')}</p>
 											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('bortforsling.content.pricingDescription2')} <Link href="/kontakt?scroll=message&service=bortforsling" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">{t('common.contactUs')}</Link>.</p>
@@ -274,7 +274,7 @@ export default function BortforslingPage() {
 											</div>
 										</div>), icon: '💸' },
 									{ title: t('bortforsling.content.includesTitle'), content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('bortforsling.content.includesDescription')}</p>), icon: '✅' },
-									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.jpg" alt="Tips för bortforsling" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
+									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.webp" alt="Tips för bortforsling" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
 									{ title: t('bortforsling.content.bookingTitle'), content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('bortforsling.content.bookingDescription')}</p></div>), icon: '📞' },
 								] as { title: string; content: any; icon: string }[]).map((section, index) => (
 									<motion.div key={index} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
@@ -336,8 +336,7 @@ export default function BortforslingPage() {
 							{/* Mobile image above title */}
 							<div className="lg:hidden mb-6">
 								<div className="relative w-full h-80 rounded-3xl overflow-hidden">
-									<img
-										src="/personalpicture.jpg"
+									<img src="/personalpicture.webp"
 										alt="Om Flyttella"
 										className="object-cover w-full h-full"
 										style={{ objectPosition: 'center center' }}
@@ -361,8 +360,7 @@ export default function BortforslingPage() {
 									}}
 								>
 									<div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
-										<img
-											src="/omoss.jpg"
+										<img src="/omoss.webp"
 											alt="Om Flyttella"
 											className="object-cover rounded-2xl w-full h-full"
 											style={{ objectPosition: 'center center' }}

@@ -585,8 +585,7 @@ export default function OmOssPage() {
             {/* Image after first paragraph */}
             <div className="mb-8 flex justify-center">
               <div className="relative w-full h-64 md:h-80 rounded-3xl overflow-hidden">
-                <img 
-                  src="/intro_picture.jpg" 
+                <img src="/intro_picture.webp" 
                   alt={locale === 'sv' ? 'Flyttella team' : 'Flyttella team'} 
                   className="object-cover w-full h-full"
                 />
@@ -599,8 +598,7 @@ export default function OmOssPage() {
             
             {/* Image after second paragraph */}
             <div className="my-0 flex justify-center">
-              <img 
-                src="/recommendedcompany2.png" 
+              <img src="/recommendedcompany2.webp" 
                 alt={locale === 'sv' ? 'Rekommenderad företagsmärkning' : 'Recommended company badge'} 
                 className="w-64 md:w-80 h-auto rounded-lg"
               />
@@ -614,8 +612,7 @@ export default function OmOssPage() {
             {/* Image after third paragraph */}
             <div className="my-6 flex justify-center">
               <div className="relative w-full h-64 md:h-80 rounded-3xl overflow-hidden">
-                <img 
-                  src="/specialicering.jpg" 
+                <img src="/specialicering.webp" 
                   alt={locale === 'sv' ? 'Specialisering' : 'Specialization'} 
                   className="object-cover w-full h-full"
                 />
@@ -628,8 +625,7 @@ export default function OmOssPage() {
             
             {/* Image after "anpassade efter verkliga behov" */}
             <div className="my-6 flex justify-center">
-              <img 
-                src="/under_flytt.jpg" 
+              <img src="/under_flytt.webp" 
                 alt={locale === 'sv' ? 'Under flytt - Flyttella team i arbete' : 'During move - Flyttella team at work'} 
                 className="w-full h-64 md:h-80 rounded-3xl overflow-hidden object-cover"
                 style={{ objectPosition: 'center 80%' }}

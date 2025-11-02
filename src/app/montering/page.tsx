@@ -250,7 +250,7 @@ export default function MonteringPage() {
 							<div className="space-y-12 md:space-y-16">
 								{([
 									{ title: t('montering.content.whatIsTitle'), content: t('montering.content.whatIsDescription'), icon: '🔧' },
-									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/montering_ny2.png" alt={t('montering.hero.subtitle')} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 40%' }} /></div>), icon: '' },
+									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/montering_ny2.webp" alt={t('montering.hero.subtitle')} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 40%' }} /></div>), icon: '' },
 									{ title: t('montering.content.pricingTitle'), content: (<div className="px-4 md:px-0">
 											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">{t('montering.content.pricingDescription')}</p>
 											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett pris utan dolda avgifter. <Link href="/kontakt?scroll=message&service=montering" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">Kontakta oss</Link>.</p>
@@ -264,7 +264,7 @@ export default function MonteringPage() {
 											</div>
 										</div>), icon: '💸' },
 									{ title: t('montering.content.includesTitle'), content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('montering.content.includesDescription')}</p>), icon: '✅' },
-									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.jpg" alt="Assembly tips" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
+									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><img src="/intro_picture.webp" alt="Assembly tips" className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" /></div>), icon: '' },
 									{ title: t('montering.content.bookingTitle'), content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('montering.content.bookingDescription')}</p></div>), icon: '📞' },
 								] as { title: string; content: any; icon: string }[]).map((section, index) => (
 									<div key={index} className="group">
@@ -362,8 +362,7 @@ export default function MonteringPage() {
 							{/* Mobile image above title */}
 							<div className="lg:hidden mb-6">
 								<div className="relative w-full h-80 rounded-3xl overflow-hidden">
-									<img
-										src="/personalpicture.jpg"
+									<img src="/personalpicture.webp"
 										alt="Om Flyttella"
 										className="object-cover w-full h-full"
 										style={{ objectPosition: 'center center' }}
@@ -387,8 +386,7 @@ export default function MonteringPage() {
 									}}
 								>
 									<div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
-										<img
-											src="/omoss.jpg"
+										<img src="/omoss.webp"
 											alt="Om Flyttella"
 											className="object-cover rounded-2xl w-full h-full"
 											style={{ objectPosition: 'center center' }}
@@ -1351,8 +1349,7 @@ export default function MonteringPage() {
 									>
 										<div className="flex flex-col md:flex-row h-full items-stretch">
 											<div className="w-full md:w-1/3 h-48 md:h-full">
-												<img 
-													src="/montering_ny2.png" 
+												<img src="/montering_ny2.webp" 
 													alt="Assembly tips Stockholm" 
 													className="w-full h-full object-cover object-center"
 												/>
