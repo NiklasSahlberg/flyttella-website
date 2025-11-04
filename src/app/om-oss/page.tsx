@@ -82,7 +82,7 @@ const AutoSlidingCards = () => {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
         style={{
-          backgroundImage: 'url(/backgroundpicture.jpg)',
+          backgroundImage: 'url(/backgroundpicture.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           zIndex: 0,
@@ -92,7 +92,7 @@ const AutoSlidingCards = () => {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
         style={{
-          backgroundImage: 'url(/omoss.jpg)',
+          backgroundImage: 'url(/omoss.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center calc(40% - 40px)',
           zIndex: 0,
@@ -442,25 +442,25 @@ export default function OmOssPage() {
   // All company images for horizontal sliding
   const allCompanyImages = [
     {
-      src: "/omoss.jpg",
+      src: "/omoss.webp",
       alt: locale === 'sv' ? "Flyttella team at work" : "Flyttella team at work",
       title: locale === 'sv' ? "Vårt team i arbete" : "Our team at work",
       description: locale === 'sv' ? "Vårt dedikerade team arbetar tillsammans för att säkerställa en smidig flyttprocess." : "Our dedicated team works together to ensure a smooth moving process."
     },
     {
-      src: "/personalpicture.jpg",
+      src: "/personalpicture.webp",
       alt: locale === 'sv' ? "Professional moving team" : "Professional moving team",
       title: locale === 'sv' ? "Professionellt flyttteam" : "Professional moving team",
       description: locale === 'sv' ? "Professionella medarbetare med fokus på kvalitet och kundnöjdhet." : "Professional employees with focus on quality and customer satisfaction."
     },
     {
-      src: "/smiling_worker_new.png",
+      src: "/smiling_worker_new.webp",
       alt: locale === 'sv' ? "Happy worker providing service" : "Happy worker providing service",
       title: locale === 'sv' ? "Glad medarbetare i tjänst" : "Happy employee in service",
       description: locale === 'sv' ? "Glada och engagerade medarbetare som gör skillnaden för våra kunder." : "Happy and engaged employees who make the difference for our customers."
     },
     {
-      src: "/under_flytt.jpg",
+      src: "/under_flytt.webp",
       alt: locale === 'sv' ? "Team working during move" : "Team working during move",
       title: locale === 'sv' ? "Team i arbete under flytt" : "Team working during move",
       description: locale === 'sv' ? "Vårt team arbetar effektivt under flytten för att minimera stress." : "Our team works efficiently during the move to minimize stress."
@@ -472,25 +472,25 @@ export default function OmOssPage() {
       description: locale === 'sv' ? "Vi ser till att varje flyttdag blir så smidig som möjligt." : "We make sure every moving day is as smooth as possible."
     },
     {
-      src: "/godtid.jpg",
+      src: "/godtid.webp",
       alt: locale === 'sv' ? "Good time with customers" : "Good time with customers",
       title: locale === 'sv' ? "God tid med kunder" : "Good time with customers",
       description: locale === 'sv' ? "Vi tar oss tid att skapa en positiv upplevelse för våra kunder." : "We take time to create a positive experience for our customers."
     },
     {
-      src: "/innanflyttfirmankommer.jpg",
+      src: "/innanflyttfirmankommer.webp",
       alt: locale === 'sv' ? "Before moving company arrives" : "Before moving company arrives",
       title: locale === 'sv' ? "Innan flyttfirman kommer" : "Before the moving company arrives",
       description: locale === 'sv' ? "Vi förbereder allt noggrant innan flyttfirman kommer." : "We prepare everything carefully before the moving company arrives."
     },
     {
-      src: "/kundservice.jpg",
+      src: "/kundservice.webp",
       alt: locale === 'sv' ? "Customer service" : "Customer service",
       title: locale === 'sv' ? "Kundservice" : "Customer service",
       description: locale === 'sv' ? "Vår kundservice är alltid tillgänglig för att hjälpa dig." : "Our customer service is always available to help you."
     },
     {
-      src: "/magkansla.jpg",
+      src: "/magkansla.webp",
       alt: locale === 'sv' ? "Good feeling" : "Good feeling",
       title: locale === 'sv' ? "Magkänsla" : "Good feeling",
       description: locale === 'sv' ? "Vi skapar en trygg och positiv magkänsla kring din flytt." : "We create a safe and positive feeling around your move."
@@ -547,7 +547,7 @@ export default function OmOssPage() {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/efter_flytt.jpg)',
+            backgroundImage: 'url(/efter_flytt.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center 100%',
             zIndex: 0,
@@ -853,9 +853,9 @@ export default function OmOssPage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 80vw"
                         style={{
-                          objectPosition: image.src === "/smiling_worker_new.png" ? "center top" : 
+                          objectPosition: image.src === "/smiling_worker_new.webp" ? "center top" : 
                                          image.src === "/smidigflyttdag.jpg" ? "center 40%" : 
-                                         image.src === "/kundservice.jpg" ? "center 40%" : "center center"
+                                         image.src === "/kundservice.webp" ? "center 40%" : "center center"
                                         
                         }}
                       />

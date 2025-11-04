@@ -754,21 +754,21 @@ export default function FlyttstadAkersbergaPage() {
                   <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Innan städningen</h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <TipCard title="Rensa ut" imageSrc="/tipsforflytt.jpg" imageAlt="Rensa ut inför städning i Åkersberga" content={<ul className="list-disc pl-5 space-y-2"><li>Ta bort alla personliga tillhörigheter.</li><li>Töm kyl, frys och skåp.</li><li>Plocka undan gardiner och persienner.</li><li>Se till att alla ytor är fria inför städningen.</li></ul>} />
-                    <TipCard title="Planera städdagen" imageSrc="/viktigaavtalcustomer.png" imageAlt="Planera städdag i Åkersberga" content={<ul className="list-disc pl-5 space-y-2"><li>Boka städfirma i god tid.</li><li>Informera hyresvärd eller köpare om städdatum.</li><li>Se till att el och vatten finns tillgängligt.</li></ul>} />
-                    <TipCard title="Extra tjänster" imageSrc="/packing_tips.jpg" imageAlt="Extra städtjänster i Åkersberga" content={<ul className="list-disc pl-5 space-y-2"><li>Beställ fönsterputs om det behövs.</li><li>Be om offert på sanering eller storstädning vid behov.</li></ul>} />
+                    <TipCard title="Planera städdagen" imageSrc="/viktigaavtalcustomer.webp" imageAlt="Planera städdag i Åkersberga" content={<ul className="list-disc pl-5 space-y-2"><li>Boka städfirma i god tid.</li><li>Informera hyresvärd eller köpare om städdatum.</li><li>Se till att el och vatten finns tillgängligt.</li></ul>} />
+                    <TipCard title="Extra tjänster" imageSrc="/packing_tips.webp" imageAlt="Extra städtjänster i Åkersberga" content={<ul className="list-disc pl-5 space-y-2"><li>Beställ fönsterputs om det behövs.</li><li>Be om offert på sanering eller storstädning vid behov.</li></ul>} />
                   </div>
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Under städningen</h3>
                   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-                    <TipCard title="Kontrollera resultatet" imageSrc="/innanflyttfirmankommer.jpg" imageAlt="Kontrollera städning i Åkersberga" objectPosition="object-[center_45%]" content={<ul className="list-disc pl-5 space-y-2"><li>Gå igenom checklistan med städfirman.</li><li>Kontrollera att alla ytor är rena.</li><li>Testa vitvaror och avlopp.</li></ul>} />
+                    <TipCard title="Kontrollera resultatet" imageSrc="/innanflyttfirmankommer.webp" imageAlt="Kontrollera städning i Åkersberga" objectPosition="object-[center_45%]" content={<ul className="list-disc pl-5 space-y-2"><li>Gå igenom checklistan med städfirman.</li><li>Kontrollera att alla ytor är rena.</li><li>Testa vitvaror och avlopp.</li></ul>} />
                     <TipCard title="Kommunicera med städteamet" imageSrc="/smidigflyttdag.jpg" imageAlt="Kommunikation med städteam i Åkersberga" objectPosition="object-[center_35%]" content={<ul className="list-disc pl-5 space-y-2"><li>Var tillgänglig för frågor.</li><li>Ge tillgång till alla utrymmen.</li></ul>} />
                   </div>
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Efter städningen</h3>
                   <div className="max-w-2xl mx-auto">
-                    <TipCard title="Slutbesiktning" imageSrc="/efter_flytt.jpg" imageAlt="Slutbesiktning efter städning i Åkersberga" objectPosition="object-[10%_center]" content={<ul className="list-disc pl-5 space-y-2"><li>Gör en gemensam besiktning med städfirman.</li><li>Kontrollera att städgarantin gäller.</li><li>Återkoppla om du är nöjd eller har synpunkter.</li></ul>} />
+                    <TipCard title="Slutbesiktning" imageSrc="/efter_flytt.webp" imageAlt="Slutbesiktning efter städning i Åkersberga" objectPosition="object-[10%_center]" content={<ul className="list-disc pl-5 space-y-2"><li>Gör en gemensam besiktning med städfirman.</li><li>Kontrollera att städgarantin gäller.</li><li>Återkoppla om du är nöjd eller har synpunkter.</li></ul>} />
                   </div>
                 </div>
               </div>
@@ -818,7 +818,7 @@ export default function FlyttstadAkersbergaPage() {
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 pointer-events-none"
                 style={{
-                  backgroundImage: 'url(/intro_picture.jpg)',
+                  backgroundImage: 'url(/intro_picture.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   zIndex: 0,

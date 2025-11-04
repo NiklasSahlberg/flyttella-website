@@ -110,7 +110,7 @@ const AutoSlidingCards = () => {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
         style={{
-          backgroundImage: 'url(/backgroundpicture.jpg)',
+          backgroundImage: 'url(/backgroundpicture.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           zIndex: 0,
@@ -120,7 +120,7 @@ const AutoSlidingCards = () => {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
         style={{
-          backgroundImage: 'url(/omoss.jpg)',
+          backgroundImage: 'url(/omoss.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center calc(40% - 40px)',
           zIndex: 0,
@@ -958,7 +958,7 @@ function FillFormLottie() {
               {/* Right: Image */}
               <div className="w-full md:w-2/5 relative">
                 <Image
-                  src="/personalpicture.jpg"
+                  src="/personalpicture.webp"
               alt="Flyttfirma i arbete"
                   fill
                   className="rounded-2xl shadow object-cover object-right"
@@ -1110,7 +1110,7 @@ export default function FlyttfirmaAkersbergaPage() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: 'url(/efter_flytt.jpg)',
+              backgroundImage: 'url(/efter_flytt.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               zIndex: 0,
@@ -1146,7 +1146,7 @@ export default function FlyttfirmaAkersbergaPage() {
               <div className="lg:hidden mb-6">
                 <div className="relative w-full h-80 rounded-3xl overflow-hidden">
                   <Image
-                    src="/personalpicture.jpg"
+                    src="/personalpicture.webp"
                     alt="Flyttella personal"
                     fill
                     className="object-cover"
@@ -1174,7 +1174,7 @@ export default function FlyttfirmaAkersbergaPage() {
                 >
                   <div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
                     <Image
-                      src="/omoss.jpg"
+                      src="/omoss.webp"
                       alt="Om Flyttella"
                       fill
                       className="object-cover rounded-2xl"
@@ -1723,9 +1723,9 @@ export default function FlyttfirmaAkersbergaPage() {
                   {/* Right side - Image (Desktop only) */}
                   <div className="hidden md:flex flex-1 justify-center lg:justify-end lg:self-stretch">
                     <div className="w-full h-full flex items-stretch justify-center md:justify-start">
-                      {/* Desktop: smiling_worker_new.png */}
+                      {/* Desktop: smiling_worker_new.webp */}
                     <Image
-                      src="/smiling_worker_new.png"
+                      src="/smiling_worker_new.webp"
                         alt="Glad flyttarbetare"
                       width={600}
                       height={200}
@@ -2321,7 +2321,7 @@ export default function FlyttfirmaAkersbergaPage() {
                     />
                     <TipCard
                       title="Avtal och anmälningar"
-                      imageSrc="/viktigaavtalcustomer.png"
+                      imageSrc="/viktigaavtalcustomer.webp"
                       imageAlt="Viktiga avtal för flytt i Åkersberga"
                       content={
                         <ul className="list-disc pl-5 space-y-2">
@@ -2334,7 +2334,7 @@ export default function FlyttfirmaAkersbergaPage() {
                     />
                     <TipCard
                         title="Innan flyttfirman kommer"
-                        imageSrc="/innanflyttfirmankommer.jpg"
+                        imageSrc="/innanflyttfirmankommer.webp"
                         imageAlt="Förberedelse för flytt i Åkersberga"
                         objectPosition="object-[center_45%]"
                         content={
@@ -2348,7 +2348,7 @@ export default function FlyttfirmaAkersbergaPage() {
                     />
                     <TipCard
                       title="Packtips"
-                      imageSrc="/packing_tips.jpg"
+                      imageSrc="/packing_tips.webp"
                       imageAlt="Packningstips för flytt i Åkersberga"
                       content={
                         <ul className="list-disc pl-5 space-y-2">
@@ -2408,7 +2408,7 @@ export default function FlyttfirmaAkersbergaPage() {
                       />
                     <TipCard
                         title="Kommunikation och koordinering"
-                        imageSrc="/under_flytt.jpg"
+                        imageSrc="/under_flytt.webp"
                         imageAlt="Flytt under pågående i Åkersberga"
                         objectPosition="object-center"
                         content={
@@ -2454,7 +2454,7 @@ export default function FlyttfirmaAkersbergaPage() {
                   <div className="max-w-2xl mx-auto">
                     <TipCard
                         title="Start i nya hemmet"
-                        imageSrc="/efter_flytt.jpg"
+                        imageSrc="/efter_flytt.webp"
                         imageAlt="Start i nytt hem efter flytt i Åkersberga"
                         objectPosition="object-[10%_center]"
                         content={

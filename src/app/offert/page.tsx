@@ -28,7 +28,7 @@ export default function OffertPage() {
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                  backgroundImage: 'url(/intro_picture.jpg)',
+                  backgroundImage: 'url(/intro_picture.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}

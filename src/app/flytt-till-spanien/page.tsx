@@ -394,7 +394,7 @@ export default function FlyttTillSpanienPage() {
           </div>
           <div className="w-full md:w-2/5 relative">
             <Image
-              src="/personalpicture.jpg"
+              src="/personalpicture.webp"
               alt="Flyttella personal - Flytt till Spanien"
               fill
               className="rounded-2xl shadow object-cover object-right"
@@ -494,7 +494,7 @@ export default function FlyttTillSpanienPage() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
             style={{
-              backgroundImage: 'url(/efter_flytt.jpg)',
+              backgroundImage: 'url(/efter_flytt.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center 85%',
               zIndex: 0,
@@ -504,7 +504,7 @@ export default function FlyttTillSpanienPage() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-no-repeat md:hidden"
             style={{
-              backgroundImage: 'url(/efter_flytt.jpg)',
+              backgroundImage: 'url(/efter_flytt.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'right center',
               zIndex: 0,
@@ -549,7 +549,7 @@ export default function FlyttTillSpanienPage() {
                 >
                   <div className="relative h-96 lg:h-full w-full lg:w-[200%] lg:-ml-[100%] overflow-hidden rounded-2xl">
                     <Image
-                      src="/omoss.jpg"
+                      src="/omoss.webp"
                       alt="Om Flyttella"
                       fill
                       className="object-cover rounded-2xl"
@@ -823,12 +823,12 @@ export default function FlyttTillSpanienPage() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/backgroundpicture.jpg)', backgroundSize: 'cover', backgroundPosition: 'center 100%', zIndex: 0 }} />
+          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/backgroundpicture.webp)', backgroundSize: 'cover', backgroundPosition: 'center 100%', zIndex: 0 }} />
           {/* Mobile-specific background image */}
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
             style={{
-              backgroundImage: 'url(/omoss.jpg)',
+              backgroundImage: 'url(/omoss.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               zIndex: 0,
@@ -1155,7 +1155,7 @@ export default function FlyttTillSpanienPage() {
                 </div>
                 <div className="flex-1 hidden lg:flex justify-center lg:justify-end lg:self-stretch">
                   <div className="w-full h-full flex items-stretch">
-                    <Image src="/smiling_worker_new.png" alt="Flytt till Spanien - Flyttella" width={600} height={200} className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} priority={false} />
+                    <Image src="/smiling_worker_new.webp" alt="Flytt till Spanien - Flyttella" width={600} height={200} className="rounded-xl shadow-lg object-cover w-full h-full" style={{ objectPosition: '30% 80%' }} priority={false} />
                   </div>
                 </div>
               </div>
@@ -1166,7 +1166,7 @@ export default function FlyttTillSpanienPage() {
         {/* Mobile Image below container */}
         <div className="md:hidden">
           <Image
-            src="/intro_picture.jpg"
+            src="/intro_picture.webp"
             alt="Flyttella introduktion"
             width={600}
             height={400}
@@ -1459,9 +1459,9 @@ export default function FlyttTillSpanienPage() {
                   <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Innan flytten</h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <TipCard title="Planera och förbered" imageSrc="/tipsforflytt.jpg" imageAlt="Flyttplanering till Spanien - Tips för flytt" content={<ul className="list-disc pl-5 space-y-2"><li>Gör en checklista för utlandsflytt.</li><li>Rensa ut onödiga saker – ta bara med det viktigaste.</li><li>Boka flyttfirma i god tid.</li><li>Beställ flyttkartonger och packmaterial.</li></ul>} />
-                    <TipCard title="Avtal och anmälningar" imageSrc="/viktigaavtalcustomer.png" imageAlt="Viktiga avtal för flytt till Spanien" content={<ul className="list-disc pl-5 space-y-2"><li>Adressändra hos Skatteverket och meddela myndigheter.</li><li>Ordna med försäkringar och eventuella visum.</li><li>Teckna nya avtal för el, internet, etc. i Spanien.</li><li>Meddela viktiga kontakter om din flytt.</li></ul>} />
-                    <TipCard title="Innan flyttfirman kommer" imageSrc="/innanflyttfirmankommer.jpg" imageAlt="Förberedelse för flytt till Spanien" objectPosition="object-[center_45%]" content={<ul className="list-disc pl-5 space-y-2"><li>Packa ner allt lösöre i kartonger.</li><li>Montera ner gardiner och lampor.</li><li>Dubbelkolla packning och märkning.</li><li>Ha alla dokument redo för transport och tull.</li></ul>} />
-                    <TipCard title="Packtips för utlandsflytt" imageSrc="/packing_tips.jpg" imageAlt="Packningstips för flytt till Spanien" content={<ul className="list-disc pl-5 space-y-2"><li>Märk alla kartonger tydligt med innehåll och rum.</li><li>Packa ömtåligt extra noggrant.</li><li>Gör en inventarielista för tullen.</li><li>Packa det viktigaste separat för enkel åtkomst vid ankomst.</li></ul>} />
+                    <TipCard title="Avtal och anmälningar" imageSrc="/viktigaavtalcustomer.webp" imageAlt="Viktiga avtal för flytt till Spanien" content={<ul className="list-disc pl-5 space-y-2"><li>Adressändra hos Skatteverket och meddela myndigheter.</li><li>Ordna med försäkringar och eventuella visum.</li><li>Teckna nya avtal för el, internet, etc. i Spanien.</li><li>Meddela viktiga kontakter om din flytt.</li></ul>} />
+                    <TipCard title="Innan flyttfirman kommer" imageSrc="/innanflyttfirmankommer.webp" imageAlt="Förberedelse för flytt till Spanien" objectPosition="object-[center_45%]" content={<ul className="list-disc pl-5 space-y-2"><li>Packa ner allt lösöre i kartonger.</li><li>Montera ner gardiner och lampor.</li><li>Dubbelkolla packning och märkning.</li><li>Ha alla dokument redo för transport och tull.</li></ul>} />
+                    <TipCard title="Packtips för utlandsflytt" imageSrc="/packing_tips.webp" imageAlt="Packningstips för flytt till Spanien" content={<ul className="list-disc pl-5 space-y-2"><li>Märk alla kartonger tydligt med innehåll och rum.</li><li>Packa ömtåligt extra noggrant.</li><li>Gör en inventarielista för tullen.</li><li>Packa det viktigaste separat för enkel åtkomst vid ankomst.</li></ul>} />
                   </div>
                 </div>
                 {/* Under flytten */}
@@ -1469,15 +1469,15 @@ export default function FlyttTillSpanienPage() {
                   <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Under flytten</h3>
                   <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <TipCard title="En smidig flyttdag" imageSrc="/smidigflyttdag.jpg" imageAlt="Smidig flyttdag till Spanien" objectPosition="object-[center_35%]" content={<ul className="list-disc pl-5 space-y-2"><li>Håll värdesaker och viktiga papper tillgängliga.</li><li>Säkerställ fri väg för flytthjälp.</li><li>Gör en slutkontroll av bostaden efter inlastning och efter avlastning i båda bostäderna för att säkerställa att inget glömts kvar.</li><li>Se till att montera ner eller packa ner bortglömda föremål.</li></ul>} />
-                    <TipCard title="Kommunikation och koordinering" imageSrc="/under_flytt.jpg" imageAlt="Flytt under pågående" objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2"><li>Håll kontakt med flyttledaren.</li><li>Fotografera eventuella skador.</li><li>Kontrollera att allt laddas korrekt.</li><li>Följ med till den nya adressen.</li><li>Var tydlig med särskilda önskemål.</li><li>Var tillgänglig för frågor.</li></ul>} />
+                    <TipCard title="Kommunikation och koordinering" imageSrc="/under_flytt.webp" imageAlt="Flytt under pågående" objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2"><li>Håll kontakt med flyttledaren.</li><li>Fotografera eventuella skador.</li><li>Kontrollera att allt laddas korrekt.</li><li>Följ med till den nya adressen.</li><li>Var tydlig med särskilda önskemål.</li><li>Var tillgänglig för frågor.</li></ul>} />
                   </div>
                 </div>
                 {/* Efter flytten */}
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">Efter flytten</h3>
                   <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <TipCard title="Start i nya hemmet" imageSrc="/efter_flytt.jpg" imageAlt="Start i nytt hem efter flytt till Spanien" objectPosition="object-[10%_center]" content={<ul className="list-disc pl-5 space-y-2"><li>Kontrollera att allt anlänt och är helt.</li><li>Packa upp det viktigaste först.</li><li>Registrera dig hos spanska myndigheter om det behövs.</li><li>Teckna nödvändiga avtal och försäkringar i Spanien.</li></ul>} />
-                    <TipCard title="Dokumentation och uppföljning" imageSrc="/godtid.jpg" imageAlt="Dokumentation efter flytt" objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2"><li>Fotografera ditt nya hem.</li><li>Kontakta flyttfirman för feedback.</li><li>Skriv en recension av tjänsten.</li><li>Organisera flyttkvitton och dokument.</li><li>Fira din nya bostad med familj och vänner.</li><li>Uppdatera försäkringar för nya bostaden.</li></ul>} />
+                    <TipCard title="Start i nya hemmet" imageSrc="/efter_flytt.webp" imageAlt="Start i nytt hem efter flytt till Spanien" objectPosition="object-[10%_center]" content={<ul className="list-disc pl-5 space-y-2"><li>Kontrollera att allt anlänt och är helt.</li><li>Packa upp det viktigaste först.</li><li>Registrera dig hos spanska myndigheter om det behövs.</li><li>Teckna nödvändiga avtal och försäkringar i Spanien.</li></ul>} />
+                    <TipCard title="Dokumentation och uppföljning" imageSrc="/godtid.webp" imageAlt="Dokumentation efter flytt" objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2"><li>Fotografera ditt nya hem.</li><li>Kontakta flyttfirman för feedback.</li><li>Skriv en recension av tjänsten.</li><li>Organisera flyttkvitton och dokument.</li><li>Fira din nya bostad med familj och vänner.</li><li>Uppdatera försäkringar för nya bostaden.</li></ul>} />
                   </div>
                 </div>
               </div>

@@ -503,7 +503,7 @@ export default function Bohagsflytt() {
                         content: (
                           <div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12">
                             <Image 
-                              src="/intro_picture.jpg" 
+                              src="/intro_picture.webp" 
                               alt="Bohagsflytt Stockholm" 
                               width={1200} 
                               height={400} 
@@ -721,7 +721,7 @@ export default function Bohagsflytt() {
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12">
                         <Image 
-                          src="/magkansla.jpg" 
+                          src="/magkansla.webp" 
                           alt={t('bohagsflytt.content.imageAlt')} 
                           width={1200}
                           height={400}
@@ -764,7 +764,7 @@ export default function Bohagsflytt() {
                     content: (
                       <div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12">
                         <Image 
-                          src="/packing_tips.jpg" 
+                          src="/packing_tips.webp" 
                           alt={t('bohagsflytt.content.packingTipsAlt')} 
                           width={1200}
                           height={400}
@@ -860,7 +860,7 @@ export default function Bohagsflytt() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: 'url(/efter_flytt.jpg)',
+              backgroundImage: 'url(/efter_flytt.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               zIndex: 0,
@@ -894,7 +894,7 @@ export default function Bohagsflytt() {
               <div className="lg:hidden mb-6">
                 <div className="relative w-full h-80 rounded-3xl overflow-hidden">
                   <Image
-                    src="/personalpicture.jpg"
+                    src="/personalpicture.webp"
                     alt={t('bohagsflytt.about.imageAlt')}
                     fill
                     className="object-cover"
@@ -921,7 +921,7 @@ export default function Bohagsflytt() {
                 >
                   <div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
                     <Image
-                      src="/omoss.jpg"
+                      src="/omoss.webp"
                       alt={t('bohagsflytt.about.imageAlt')}
                       fill
                       className="object-cover rounded-2xl"
@@ -1468,7 +1468,7 @@ export default function Bohagsflytt() {
                       />
                       <TipCard
                         title={t('bohagsflytt.tips.contracts.title')}
-                        imageSrc="/viktigaavtalcustomer.png"
+                        imageSrc="/viktigaavtalcustomer.webp"
                         imageAlt={t('bohagsflytt.tips.contracts.imageAlt')}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
@@ -1488,7 +1488,7 @@ export default function Bohagsflytt() {
                       />
                       <TipCard
                           title={t('bohagsflytt.tips.beforeMoving.title')}
-                          imageSrc="/innanflyttfirmankommer.jpg"
+                          imageSrc="/innanflyttfirmankommer.webp"
                           imageAlt={t('bohagsflytt.tips.beforeMoving.imageAlt')}
                           objectPosition="object-[center_45%]"
                           content={
@@ -1509,7 +1509,7 @@ export default function Bohagsflytt() {
                         />
                       <TipCard
                         title={t('bohagsflytt.tipsSection.packingTips.title')}
-                        imageSrc="/packing_tips.jpg"
+                        imageSrc="/packing_tips.webp"
                         imageAlt={t('bohagsflytt.tipsSection.packingTips.imageAlt')}
                         content={
                           <ul className="list-disc pl-5 space-y-2">
@@ -1580,7 +1580,7 @@ export default function Bohagsflytt() {
                         />
                       <TipCard
                           title={t('bohagsflytt.tips.duringMoving.title')}
-                          imageSrc="/under_flytt.jpg"
+                          imageSrc="/under_flytt.webp"
                           imageAlt={t('bohagsflytt.tips.duringMoving.imageAlt')}
                           objectPosition="object-center"
                           content={
@@ -1635,7 +1635,7 @@ export default function Bohagsflytt() {
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                       <TipCard
                           title={t('bohagsflytt.tipsSection.startInNewHome.title')}
-                          imageSrc="/efter_flytt.jpg"
+                          imageSrc="/efter_flytt.webp"
                           imageAlt={t('bohagsflytt.tipsSection.startInNewHome.imageAlt')}
                           objectPosition="object-[10%_center]"
                           content={
@@ -1662,7 +1662,7 @@ export default function Bohagsflytt() {
                         />
                       <TipCard
                           title={t('bohagsflytt.tips.afterMoving.title')}
-                          imageSrc="/godtid.jpg"
+                          imageSrc="/godtid.webp"
                           imageAlt={t('bohagsflytt.tips.afterMoving.imageAlt')}
                           objectPosition="object-center"
                           content={
@@ -1772,7 +1772,7 @@ export default function Bohagsflytt() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
             style={{
-              backgroundImage: 'url(/backgroundpicture.jpg)',
+              backgroundImage: 'url(/backgroundpicture.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               zIndex: 0,
@@ -1782,7 +1782,7 @@ export default function Bohagsflytt() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
             style={{
-              backgroundImage: 'url(/omoss.jpg)',
+              backgroundImage: 'url(/omoss.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               zIndex: 0,

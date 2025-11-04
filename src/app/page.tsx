@@ -871,7 +871,7 @@ export default function Home() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: 'url(/efter_flytt.jpg)',
+              backgroundImage: 'url(/efter_flytt.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               zIndex: 0,
@@ -1627,7 +1627,7 @@ export default function Home() {
                   {/* Right side - Image (Desktop only) */}
                   <div className="hidden md:flex flex-1 justify-center lg:justify-end lg:self-stretch">
                     <div className="w-full h-full flex items-stretch justify-center md:justify-start">
-                      {/* Desktop: smiling_worker_new.png */}
+                      {/* Desktop: smiling_worker_new.webp */}
                       <Image
                         src="/smiling_worker_new.webp"
                         alt="Glad flyttarbetare"
@@ -2551,7 +2551,7 @@ function FeatureBoxesSection() {
         {/* Right: Image */}
         <div className="w-full md:w-2/5 relative">
           <Image
-            src="/personalpicture.jpg"
+            src="/personalpicture.webp"
             alt="Flyttfirma i arbete"
             fill
             className="rounded-2xl shadow object-cover object-right"

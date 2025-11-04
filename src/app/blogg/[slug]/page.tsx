@@ -3212,11 +3212,11 @@ export default function BlogPostPage() {
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
               style={{
                 backgroundImage: post.slug === 'vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma' 
-                  ? `url(/intro_picture.jpg)`
+                  ? `url(/intro_picture.webp)`
                   : post.slug === 'utlandsflytt-vad-du-behover-veta'
                   ? `url(/malaga.jpg)`
                   : post.slug === 'magasinering-vad-du-behover-veta'
-                  ? `url(/personalpicture.jpg)`
+                  ? `url(/personalpicture.webp)`
                   : post.slug === 'piano-tunglyft-vad-du-behover-veta'
                   ? `url(/piano_tunglyft.png)`
                   : post.slug === 'fonsterputs-vad-du-behover-veta'
@@ -3327,11 +3327,11 @@ export default function BlogPostPage() {
                   className="absolute inset-0 bg-cover bg-center opacity-20 md:hidden"
                   style={{
                     backgroundImage: post.slug === 'vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma' 
-                      ? 'url(/innanflyttfirmankommer.jpg)'
+                      ? 'url(/innanflyttfirmankommer.webp)'
                       : post.slug === 'utlandsflytt-vad-du-behover-veta'
-                      ? 'url(/intro_picture.jpg)'
+                      ? 'url(/intro_picture.webp)'
                       : post.slug === 'magasinering-vad-du-behover-veta'
-                      ? 'url(/happycustomeraftermoving.png)'
+                      ? 'url(/happycustomeraftermoving.webp)'
                       : post.slug === 'piano-tunglyft-vad-du-behover-veta'
                       ? 'url(/piano.png)'
                       : post.slug === 'fonsterputs-vad-du-behover-veta'

@@ -420,7 +420,7 @@ export default function PianoTunglyftPage() {
 											</div>
 										</div>), icon: '💸' },
 									{ title: t('pianoTunglyft.content.includesTitle'), content: (<p className="px-4 md:px-0 text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('pianoTunglyft.content.includesDescription')}</p>), icon: '✅' },
-									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><Image src="/intro_picture.jpg" alt="Tips för piano och tunglyft" width={1200} height={400} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw" /></div>), icon: '' },
+									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><Image src="/intro_picture.webp" alt="Tips för piano och tunglyft" width={1200} height={400} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw" /></div>), icon: '' },
 									{ title: t('pianoTunglyft.content.bookingTitle'), content: (<div className="px-4 md:px-0"><p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('pianoTunglyft.content.bookingDescription')}</p></div>), icon: '📞' },
 								] as { title: string; content: any; icon: string }[]).map((section, index) => (
 									<motion.div key={index} className="group" variants={fadeInUp} whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
@@ -449,7 +449,7 @@ export default function PianoTunglyftPage() {
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
 						style={{
-							backgroundImage: 'url(/efter_flytt.jpg)',
+							backgroundImage: 'url(/efter_flytt.webp)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center center',
 							zIndex: 0,
@@ -483,7 +483,7 @@ export default function PianoTunglyftPage() {
 							<div className="lg:hidden mb-6">
 								<div className="relative w-full h-80 rounded-3xl overflow-hidden">
 									<Image
-										src="/personalpicture.jpg"
+										src="/personalpicture.webp"
 										alt="Om Flyttella"
 										fill
 										className="object-cover"
@@ -511,7 +511,7 @@ export default function PianoTunglyftPage() {
 								>
 									<div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
 										<Image
-											src="/omoss.jpg"
+											src="/omoss.webp"
 											alt="Om Flyttella"
 											fill
 											className="object-cover rounded-2xl"
@@ -1096,7 +1096,7 @@ export default function PianoTunglyftPage() {
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
 						style={{
-							backgroundImage: 'url(/backgroundpicture.jpg)',
+							backgroundImage: 'url(/backgroundpicture.webp)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center center',
 							zIndex: 0,
@@ -1106,7 +1106,7 @@ export default function PianoTunglyftPage() {
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
 						style={{
-							backgroundImage: 'url(/omoss.jpg)',
+							backgroundImage: 'url(/omoss.webp)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center center',
 							zIndex: 0,

@@ -475,7 +475,7 @@ export default function KontorsflyttPage() {
           <div 
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" 
             style={{ 
-              backgroundImage: 'url(/efter_flytt.jpg)', 
+              backgroundImage: 'url(/efter_flytt.webp)', 
               backgroundSize: 'cover', 
               backgroundPosition: 'center 85%', 
               zIndex: 0 
@@ -842,7 +842,7 @@ export default function KontorsflyttPage() {
 
         {/* Vår erfarenhet */}
         <motion.section className="relative overflow-hidden" style={{ paddingTop: '14rem', paddingBottom: '6rem', marginTop: '2rem', borderTop: 'none', boxShadow: 'none' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/backgroundpicture.jpg)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }} />
+          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/backgroundpicture.webp)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }} />
           <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{zIndex: 1}}></div>
           <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)' }} />
           <div className="relative z-10 max-w-7xl mx-auto" style={{ marginTop: '-8rem' }}>

@@ -226,7 +226,7 @@ export default function MagasineringPage() {
       
         {/* Om Flyttella - Matching bohagsflytt layout */}
         <motion.section className="relative overflow-hidden py-16 md:py-24 lg:py-32" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/efter_flytt.jpg)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }} />
+          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/efter_flytt.webp)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }} />
           <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{ zIndex: 1 }} />
           <div className="absolute top-0 left-0 w-full h-16 md:h-20 lg:h-24 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)' }} />
           <div className="absolute bottom-0 left-0 w-full h-16 md:h-20 lg:h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)' }} />
@@ -423,7 +423,7 @@ export default function MagasineringPage() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
             style={{
-              backgroundImage: 'url(/backgroundpicture.jpg)',
+              backgroundImage: 'url(/backgroundpicture.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               zIndex: 0,
@@ -433,7 +433,7 @@ export default function MagasineringPage() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
             style={{
-              backgroundImage: 'url(/omoss.jpg)',
+              backgroundImage: 'url(/omoss.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               zIndex: 0,

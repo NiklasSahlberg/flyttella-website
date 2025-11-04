@@ -51,7 +51,7 @@ const getBlogPosts = (t: any) => [
     category: t('blogg.blogPosts.post1.category'),
     date: "2024-01-20",
     readTime: "10 min",
-    image: "/innanflyttfirmankommer.jpg",
+    image: "/innanflyttfirmankommer.webp",
     slug: "vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma"
   },
   {
@@ -91,7 +91,7 @@ const getBlogPosts = (t: any) => [
     category: t('blogg.blogPosts.post5.category'),
     date: "2024-02-20",
     readTime: "6 min",
-    image: "/personalpicture.jpg",
+    image: "/personalpicture.webp",
     slug: "magasinering-vad-du-behover-veta"
   },
   {
@@ -175,7 +175,7 @@ export default function BlogPage() {
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
               style={{
-                backgroundImage: 'url(/intro_picture.jpg)',
+                backgroundImage: 'url(/intro_picture.webp)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}

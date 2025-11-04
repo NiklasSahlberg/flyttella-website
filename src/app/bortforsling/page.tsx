@@ -150,7 +150,7 @@ export default function BortforslingPage() {
 							<div
 								className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
 								style={{
-									backgroundImage: 'url(/magkansla.jpg)',
+									backgroundImage: 'url(/magkansla.webp)',
 									backgroundSize: 'cover',
 									backgroundPosition: 'center 40%'
 								}}
@@ -169,7 +169,7 @@ export default function BortforslingPage() {
 							<div
 								className="absolute inset-0 bg-cover bg-no-repeat opacity-20"
 								style={{
-									backgroundImage: 'url(/magkansla.jpg)',
+									backgroundImage: 'url(/magkansla.webp)',
 									backgroundSize: 'cover',
 									backgroundPosition: '0% 40%'
 								}}
@@ -303,7 +303,7 @@ export default function BortforslingPage() {
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
 						style={{
-							backgroundImage: 'url(/efter_flytt.jpg)',
+							backgroundImage: 'url(/efter_flytt.webp)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center center',
 							zIndex: 0,
@@ -941,7 +941,7 @@ export default function BortforslingPage() {
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
 						style={{
-							backgroundImage: 'url(/backgroundpicture.jpg)',
+							backgroundImage: 'url(/backgroundpicture.webp)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center center',
 							zIndex: 0,
@@ -951,7 +951,7 @@ export default function BortforslingPage() {
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
 						style={{
-							backgroundImage: 'url(/omoss.jpg)',
+							backgroundImage: 'url(/omoss.webp)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center center',
 							zIndex: 0,

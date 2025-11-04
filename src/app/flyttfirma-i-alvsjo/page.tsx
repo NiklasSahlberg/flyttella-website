@@ -111,7 +111,7 @@ const AutoSlidingCards = ({ t }: { t: (key: string) => string }) => {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
         style={{
-          backgroundImage: 'url(/backgroundpicture.jpg)',
+          backgroundImage: 'url(/backgroundpicture.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           zIndex: 0,
@@ -121,7 +121,7 @@ const AutoSlidingCards = ({ t }: { t: (key: string) => string }) => {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
         style={{
-          backgroundImage: 'url(/omoss.jpg)',
+          backgroundImage: 'url(/omoss.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center calc(40% - 40px)',
           zIndex: 0,
@@ -959,7 +959,7 @@ function FillFormLottie() {
               {/* Right: Image */}
               <div className="w-full md:w-2/5 relative">
                 <Image
-                  src="/personalpicture.jpg"
+                  src="/personalpicture.webp"
               alt="Professionell flyttfirma i Älvsjö - Expertis inom grönområden och familjevänliga miljöer"
                   fill
                   className="rounded-2xl shadow object-cover object-right"
@@ -1128,7 +1128,7 @@ export default function FlyttfirmaAkersbergaPage() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: 'url(/efter_flytt.jpg)',
+              backgroundImage: 'url(/efter_flytt.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               zIndex: 0,
@@ -1164,7 +1164,7 @@ export default function FlyttfirmaAkersbergaPage() {
               <div className="lg:hidden mb-6">
                 <div className="relative w-full h-80 rounded-3xl overflow-hidden">
                   <Image
-                    src="/personalpicture.jpg"
+                    src="/personalpicture.webp"
                     alt="Flyttella personal - Lokala experter på flytt i Älvsjös villaområden och lägenhetskomplex"
                     fill
                     className="object-cover"
@@ -1192,7 +1192,7 @@ export default function FlyttfirmaAkersbergaPage() {
                 >
                   <div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
                     <Image
-                      src="/omoss.jpg"
+                      src="/omoss.webp"
                       alt="Om Flyttella - Älvsjös pålitliga flyttfirma med djup lokalkännedom"
                       fill
                       className="object-cover rounded-2xl"
@@ -1738,9 +1738,9 @@ export default function FlyttfirmaAkersbergaPage() {
                   {/* Right side - Image (Desktop only) */}
                   <div className="hidden md:flex flex-1 justify-center lg:justify-end lg:self-stretch">
                     <div className="w-full h-full flex items-stretch justify-center md:justify-start">
-                      {/* Desktop: smiling_worker_new.png */}
+                      {/* Desktop: smiling_worker_new.webp */}
                     <Image
-                      src="/smiling_worker_new.png"
+                      src="/smiling_worker_new.webp"
                         alt="Glad flyttarbetare i Älvsjö - Professionell service i familjevänliga miljöer"
                       width={600}
                       height={200}
@@ -2330,7 +2330,7 @@ export default function FlyttfirmaAkersbergaPage() {
                     />
                     <TipCard
                       title={t('alvsjo.tips.before.documents.title')}
-                      imageSrc="/viktigaavtalcustomer.png"
+                      imageSrc="/viktigaavtalcustomer.webp"
                       imageAlt="Viktiga avtal för flytt i Älvsjö"
                       content={
                         <ul className="list-disc pl-5 space-y-2">
@@ -2342,7 +2342,7 @@ export default function FlyttfirmaAkersbergaPage() {
                     />
                     <TipCard
                         title={t('alvsjo.tips.before.decluttering.title')}
-                        imageSrc="/innanflyttfirmankommer.jpg"
+                        imageSrc="/innanflyttfirmankommer.webp"
                         imageAlt="Förberedelse för flytt i Älvsjö"
                         objectPosition="object-[center_45%]"
                         content={
@@ -2355,7 +2355,7 @@ export default function FlyttfirmaAkersbergaPage() {
                     />
                     <TipCard
                       title={t('alvsjo.tips.before.packing.title')}
-                      imageSrc="/packing_tips.jpg"
+                      imageSrc="/packing_tips.webp"
                       imageAlt="Packningstips för flytt i Älvsjö"
                       content={
                         <ul className="list-disc pl-5 space-y-2">
@@ -2410,7 +2410,7 @@ export default function FlyttfirmaAkersbergaPage() {
                       />
                     <TipCard
                         title={t('alvsjo.tips.during.supervision.title')}
-                        imageSrc="/under_flytt.jpg"
+                        imageSrc="/under_flytt.webp"
                         imageAlt="Flytt under pågående i Älvsjö"
                         objectPosition="object-center"
                         content={
@@ -2453,7 +2453,7 @@ export default function FlyttfirmaAkersbergaPage() {
                   <div className="max-w-2xl mx-auto">
                     <TipCard
                         title={t('alvsjo.tips.after.settling.title')}
-                        imageSrc="/efter_flytt.jpg"
+                        imageSrc="/efter_flytt.webp"
                         imageAlt="Start i nytt hem efter flytt i Älvsjö"
                         objectPosition="object-[10%_center]"
                         content={

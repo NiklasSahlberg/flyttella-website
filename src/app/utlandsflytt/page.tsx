@@ -211,7 +211,7 @@ export default function Utlandsflytt() {
       
         {/* Om Flyttella - Matching bohagsflytt layout */}
         <motion.section className="relative overflow-hidden py-16 md:py-24 lg:py-32" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/efter_flytt.jpg)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }} />
+          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/efter_flytt.webp)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }} />
           <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{ zIndex: 1 }} />
           <div className="absolute top-0 left-0 w-full h-16 md:h-20 lg:h-24 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)' }} />
           <div className="absolute bottom-0 left-0 w-full h-16 md:h-20 lg:h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, white 0%, white 40%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%)' }} />
@@ -487,7 +487,7 @@ export default function Utlandsflytt() {
                           </>
                         )}
                       </ul>} />
-                      <TipCard title={t('utlandsflytt.tips.tipCards.avtal.title')} imageSrc="/viktigaavtalcustomer.png" imageAlt={t('utlandsflytt.tips.tipCards.avtal.title')} content={<ul className="list-disc pl-5 space-y-2">
+                      <TipCard title={t('utlandsflytt.tips.tipCards.avtal.title')} imageSrc="/viktigaavtalcustomer.webp" imageAlt={t('utlandsflytt.tips.tipCards.avtal.title')} content={<ul className="list-disc pl-5 space-y-2">
                         {locale === 'sv' ? (
                           <>
                             <li>Adressändra hos Skatteverket.</li>
@@ -504,7 +504,7 @@ export default function Utlandsflytt() {
                           </>
                         )}
                       </ul>} />
-                      <TipCard title={t('utlandsflytt.tips.tipCards.innanFlyttfirma.title')} imageSrc="/innanflyttfirmankommer.jpg" imageAlt={t('utlandsflytt.tips.tipCards.innanFlyttfirma.title')} objectPosition="object-[center_45%]" content={<ul className="list-disc pl-5 space-y-2">
+                      <TipCard title={t('utlandsflytt.tips.tipCards.innanFlyttfirma.title')} imageSrc="/innanflyttfirmankommer.webp" imageAlt={t('utlandsflytt.tips.tipCards.innanFlyttfirma.title')} objectPosition="object-[center_45%]" content={<ul className="list-disc pl-5 space-y-2">
                         {locale === 'sv' ? (
                           <>
                             <li>Packa ner allt lösöre i kartonger</li>
@@ -521,7 +521,7 @@ export default function Utlandsflytt() {
                           </>
                         )}
                       </ul>} />
-                      <TipCard title={t('utlandsflytt.tips.tipCards.packtips.title')} imageSrc="/packing_tips.jpg" imageAlt={t('utlandsflytt.tips.tipCards.packtips.title')} content={<ul className="list-disc pl-5 space-y-2">
+                      <TipCard title={t('utlandsflytt.tips.tipCards.packtips.title')} imageSrc="/packing_tips.webp" imageAlt={t('utlandsflytt.tips.tipCards.packtips.title')} content={<ul className="list-disc pl-5 space-y-2">
                         {locale === 'sv' ? (
                           <>
                             <li>Märk alla kartonger tydligt.</li>
@@ -574,7 +574,7 @@ export default function Utlandsflytt() {
                           </>
                         )}
                       </ul>} />
-                      <TipCard title={t('utlandsflytt.tips.tipCards.kommunikation.title')} imageSrc="/under_flytt.jpg" imageAlt={t('utlandsflytt.tips.tipCards.kommunikation.title')} objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2">
+                      <TipCard title={t('utlandsflytt.tips.tipCards.kommunikation.title')} imageSrc="/under_flytt.webp" imageAlt={t('utlandsflytt.tips.tipCards.kommunikation.title')} objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2">
                         {locale === 'sv' ? (
                           <>
                             <li>Håll kontakt med flyttledaren.</li>
@@ -614,7 +614,7 @@ export default function Utlandsflytt() {
                   {/* Mobile: Expandable content */}
                   <div className={`md:block ${expandedTipSection === 'efter' ? 'block' : 'hidden'}`}>
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                      <TipCard title={t('utlandsflytt.tips.tipCards.startNyaHemmet.title')} imageSrc="/efter_flytt.jpg" imageAlt={t('utlandsflytt.tips.tipCards.startNyaHemmet.title')} objectPosition="object-[10%_center]" content={<ul className="list-disc pl-5 space-y-2">
+                      <TipCard title={t('utlandsflytt.tips.tipCards.startNyaHemmet.title')} imageSrc="/efter_flytt.webp" imageAlt={t('utlandsflytt.tips.tipCards.startNyaHemmet.title')} objectPosition="object-[10%_center]" content={<ul className="list-disc pl-5 space-y-2">
                         {locale === 'sv' ? (
                           <>
                             <li>Kontrollera flyttstädningen.</li>
@@ -637,7 +637,7 @@ export default function Utlandsflytt() {
                           </>
                         )}
                       </ul>} />
-                      <TipCard title={t('utlandsflytt.tips.tipCards.dokumentation.title')} imageSrc="/godtid.jpg" imageAlt={t('utlandsflytt.tips.tipCards.dokumentation.title')} objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2">
+                      <TipCard title={t('utlandsflytt.tips.tipCards.dokumentation.title')} imageSrc="/godtid.webp" imageAlt={t('utlandsflytt.tips.tipCards.dokumentation.title')} objectPosition="object-center" content={<ul className="list-disc pl-5 space-y-2">
                         {locale === 'sv' ? (
                           <>
                             <li>Kontakta flyttfirman för feedback.</li>
@@ -670,12 +670,12 @@ export default function Utlandsflytt() {
           {/* Background image absolutely positioned (desktop) */}
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
-            style={{ backgroundImage: 'url(/backgroundpicture.jpg)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }}
+            style={{ backgroundImage: 'url(/backgroundpicture.webp)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }}
           />
           {/* Mobile-specific background image */}
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
-            style={{ backgroundImage: 'url(/omoss.jpg)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }}
+            style={{ backgroundImage: 'url(/omoss.webp)', backgroundSize: 'cover', backgroundPosition: 'center center', zIndex: 0 }}
           />
           <div className="absolute inset-0 w-full h-full bg-white/75 backdrop-blur-sm" style={{ zIndex: 1 }} />
           <div className="absolute top-0 left-0 w-full h-32 z-30 pointer-events-none" style={{ background: 'linear-gradient(to bottom, white 0%, white 20%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)' }} />

@@ -352,7 +352,7 @@ export default function BemanningPage() {
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
 						style={{
-							backgroundImage: 'url(/efter_flytt.jpg)',
+							backgroundImage: 'url(/efter_flytt.webp)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center center',
 							zIndex: 0,
@@ -386,7 +386,7 @@ export default function BemanningPage() {
 						<div className="lg:hidden mb-6">
 							<div className="relative w-full h-80 rounded-3xl overflow-hidden">
 								<Image
-									src="/personalpicture.jpg"
+									src="/personalpicture.webp"
 									alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}
 									fill
 									className="object-cover"
@@ -413,7 +413,7 @@ export default function BemanningPage() {
 						>
 							<div className="relative w-full h-full min-h-[32rem] overflow-hidden rounded-2xl">
 								<Image
-									src="/omoss.jpg"
+									src="/omoss.webp"
 									alt={locale === 'sv' ? 'Om Flyttella' : 'About Flyttella'}
 									fill
 									className="object-cover rounded-2xl"
@@ -828,7 +828,7 @@ export default function BemanningPage() {
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat mobile-bg-position"
 						style={{
-							backgroundImage: 'url(/backgroundpicture.jpg)',
+							backgroundImage: 'url(/backgroundpicture.webp)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center center',
 							zIndex: 0,
@@ -838,7 +838,7 @@ export default function BemanningPage() {
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
 						style={{
-							backgroundImage: 'url(/omoss.jpg)',
+							backgroundImage: 'url(/omoss.webp)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center center',
 							zIndex: 0,
