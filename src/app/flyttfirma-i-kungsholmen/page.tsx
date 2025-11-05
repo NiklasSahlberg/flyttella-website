@@ -1050,7 +1050,7 @@ export default function FlyttfirmaAkersbergaPage() {
             ) : (
               <FlyttoffertForm 
                 mode="widget" 
-                backgroundImage="/farsta-flyttfirma.png" 
+                backgroundImage="/kungsholmen-flyttfirma.webp" 
                 onServiceTypeSelect={setSelectedServiceType}
               />
             )}
@@ -1063,7 +1063,7 @@ export default function FlyttfirmaAkersbergaPage() {
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                  backgroundImage: 'url(/farsta-flyttfirma.png)',
+                  backgroundImage: 'url(/kungsholmen-flyttfirma.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -1086,7 +1086,7 @@ export default function FlyttfirmaAkersbergaPage() {
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
                 style={{
-                  backgroundImage: 'url(/farsta-flyttfirma.png)',
+                  backgroundImage: 'url(/kungsholmen-flyttfirma.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -1106,7 +1106,7 @@ export default function FlyttfirmaAkersbergaPage() {
                   ) : (
                     <FlyttoffertForm 
                       mode="widget" 
-                      backgroundImage="/farsta-flyttfirma.png" 
+                      backgroundImage="/kungsholmen-flyttfirma.webp" 
                       onServiceTypeSelect={setSelectedServiceType}
                     />
                   )}

@@ -45,7 +45,12 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     'haninge',
     'huddinge',
     'jarfalla',
-    'kista'
+    'kista',
+    'kungsholmen',
+    'kungsangen',
+    'lidingo',
+    'marsta',
+    'nacka'
   ]);
 
   const getLocationHref = (slug: string) => `/flyttfirma-i-${slug}`;
