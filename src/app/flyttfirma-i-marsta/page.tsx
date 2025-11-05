@@ -1084,7 +1084,7 @@ export default function FlyttfirmaAkersbergaPage() {
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40" 
                 style={{
                   backgroundImage: 'url(/marsta-flyttfirma.webp)',
                   backgroundSize: 'cover',
