@@ -4,14 +4,14 @@ const path = require('path');
 
 const svContent = {
   hero: {
-    title: 'Flyttfirma i Huddinge – experter på familjeflyttar sedan 2019',
+    title: 'Flyttfirma i Huddinge – experter på familjeflyttar sedan 2021',
     subtitle: 'Professionella flyttar i Huddinge, Flemingsberg, Segeltorp och Skogås. Vi är specialister på familjebostäder, villor och lägenhetskomplex med djup förståelse för Huddinges grönområden och barnvänliga miljöer.',
     ctaPrimary: 'Få offert',
     ctaSecondary: 'Läs hur vi arbetar'
   },
   about: {
     title: 'Om Flyttella i Huddinge',
-    desktop: 'Sedan 2019 har vi byggt upp en stark position som Huddinges mest betrodda flyttfirma för familjer – från exklusiva villor i Flemingsberg till moderna familjelägenheter i Segeltorp. Vår specialisering på familjeflyttar och barnvänliga miljöer gör oss till det naturliga valet för Huddinges invånare.',
+    desktop: 'Sedan 2021 har vi byggt upp en stark position som Huddinges mest betrodda flyttfirma för familjer – från exklusiva villor i Flemingsberg till moderna familjelägenheter i Segeltorp. Vår specialisering på familjeflyttar och barnvänliga miljöer gör oss till det naturliga valet för Huddinges invånare.',
     desktop2: 'Över 8 000 framgångsrika familjeflyttar har etablerat oss som en pålitlig partner för både familjer och företag i Huddinge. Vi arbetar med transparenta priser och inga överraskningar. Varje flytt planeras noggrant med hänsyn till Huddinges specifika utmaningar – grönområden med lekplatser, skolor, barnfamiljer och trygga boendemiljöer.',
     desktop3: 'Våra familjevänliga fördelar inkluderar gratis flyttkartonger, flexibel ombokning fram till 24 timmar innan flyttdagen och en generös 14-dagars garanti på flyttstädning. Din personliga flyttkoordinator säkerställer att allt från initial planering till slutlig genomförande fungerar smidigt för hela familjen.',
     mobile: 'Huddinges mest betrodda flyttfirma för familjer med transparenta priser och personlig service – över 8 000 nöjda kunder.',
@@ -72,14 +72,14 @@ const svContent = {
 
 const enContent = {
   hero: {
-    title: 'Moving company in Huddinge – specialists in family moves since 2019',
+    title: 'Moving company in Huddinge – specialists in family moves since 2021',
     subtitle: 'Experienced moves in Huddinge, Flemingsberg, Segeltorp and Skogås. We specialise in family homes, houses and apartment complexes with focus on Huddinge\'s green areas and child-friendly environments.',
     ctaPrimary: 'Get a quote',
     ctaSecondary: 'See how we work'
   },
   about: {
     title: 'About Flyttella in Huddinge',
-    desktop: 'Since 2019 we have established ourselves as Huddinge\'s most trusted moving company for families – from houses in Flemingsberg to modern apartment complexes in Segeltorp. Our specialisation in family moves and child-friendly environments makes us the natural choice for Huddinge residents.',
+    desktop: 'Since 2021 we have established ourselves as Huddinge\'s most trusted moving company for families – from houses in Flemingsberg to modern apartment complexes in Segeltorp. Our specialisation in family moves and child-friendly environments makes us the natural choice for Huddinge residents.',
     desktop2: 'Over 8,000 successful family moves have made us a reliable partner for both families and businesses in Huddinge. We work with transparent pricing and no surprises. Every move is carefully planned considering Huddinge\'s specific challenges – green areas, schools, families with children and safe residential environments.',
     desktop3: 'Our family-friendly benefits include free moving boxes, flexible rebooking up to 24 hours before move day and a generous 14-day cleaning guarantee. Your personal move coordinator ensures everything from planning to execution works smoothly for the whole family.',
     mobile: 'Huddinge\'s most trusted moving company for families with transparent pricing and personal service – over 8,000 satisfied clients.',

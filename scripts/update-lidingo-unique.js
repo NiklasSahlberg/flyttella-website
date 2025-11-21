@@ -101,3 +101,4 @@ update(enPath, (d) => {
 });
 
 console.log('Updated Lidingö with unique hero, about, awards and FAQ (sv/en).');
+

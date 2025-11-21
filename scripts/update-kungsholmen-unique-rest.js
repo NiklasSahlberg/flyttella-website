@@ -89,3 +89,4 @@ update(enPath, (data) => {
 });
 
 console.log('Updated additional Kungsholmen sections with more unique inner‑city content (sv/en).');
+

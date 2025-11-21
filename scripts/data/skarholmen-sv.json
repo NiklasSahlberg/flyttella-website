@@ -1,0 +1,100 @@
+{
+  "customerReviews": {
+    "title": "Vad tycker våra kunder om oss?"
+  },
+  "hero": {
+    "title": "Flyttfirma i Skärholmen – Bredäng, Sätra, Vårberg och Kungens Kurva",
+    "subtitle": "Vi hjälper villor, radhus och höghus runt Mälaren med lokala team, fasta priser och strukturerade körplaner. Backiga gårdar, garageinfarter och centrumlogistik löser vi dagligen.",
+    "ctaPrimary": "Få offert",
+    "ctaSecondary": "Se hur vi arbetar"
+  },
+  "features": {
+    "title": "Vilka fördelar får du med Flyttella i Skärholmen?"
+  },
+  "about": {
+    "title": "Om Flyttella i Skärholmen",
+    "desktop": "Flyttella grundades i Stockholm för att göra flyttar mer transparenta och förutsägbara. På över åtta år har vi hjälpt 8 000 kunder – många i Skärholmen, Sätra, Bredäng och Vårberg – med allt från mindre lägenhetsflyttar till kompletta helhetslösningar.",
+    "desktop2": "Vi erbjuder packteam, magasinering, flyttstädning och montering under samma tak. Du får fast pris, tydlig omfattning och en kontaktperson som håller ihop tidsplan, bemanning och uppföljning.",
+    "desktop3": "Gratis kartonger, kostnadsfri om-/avbokning upp till 24 timmar innan och 14 dagars städgaranti ingår alltid. Kundtjänsten guidar kring P-tillstånd, nyckelhantering och hissregler i centrumfastigheter.",
+    "mobile": "Lokala team i Skärholmen med fasta priser och helhetslösningar.",
+    "mobileExpanded": "Vi planerar bärvägar via gårdar, skyddar trappor och bokar hissar i höghus runt Skärholmens centrum.",
+    "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+  },
+  "experience": {
+    "title": "Vår erfarenhet av flyttar i Skärholmen",
+    "description": "Vi flyttar dagligen mellan terrasshus i Sätra, radhus i Bredäng och höghus vid Skärholmens centrum. Vår rutin från E4/E20-logistik, garageinfarter och bokade lastzoner gör att allt flyter.",
+    "expanded": "Inför större uppdrag gör vi platsbesök, mäter bärvägar och planerar bemanning per våningsplan. Erfarenheten från Vårbergstoppen till Kungens Kurva innebär att vi vet exakt hur mycket tid som krävs för slänter, hissar eller längre promenader."
+  },
+  "reviews": {
+    "subtitle": "Rekommenderad flyttfirma i Skärholmen",
+    "description": "Omdömen från Skärholmen, Sätra och Bredäng lyfter våra tydliga tidsplaner, lugna team och hur vi snabbt löser P-tillstånd eller gårdsportar. Kunder uppskattar att flytten känns kontrollerad trots tät trafik.",
+    "badgeAlt": "Flyttfirma Skärholmen omdömen",
+    "arrowText": "Läs fler kunders upplevelser"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser i Skärholmen",
+    "description": "Våra utmärkelser visar att vi levererar trygg service i söderort. Skärholmsbor uppskattar vår punktlighet, hur vi skyddar nyrenoverade hem och att vi tar ansvar hela vägen till sista kartongen."
+  },
+  "servicesSection": {
+    "title": "Upptäck alla våra tjänster i Skärholmen",
+    "description": "Flytthjälp för villor, lägenheter och radhus, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, gårdsnycklar och parkering vid Skärholmens centrum.",
+    "privateServices": "Se alla tjänster"
+  },
+  "blogSection": {
+    "title": "Guider och tips för flytt i Skärholmen",
+    "description": "Frigör gårdsinfart, märk lådor per rum, boka hiss i centrumhus och planera extra tid om du flyttar via garage eller gångbroar.",
+    "readMore": "Läs mer"
+  },
+  "blog": {
+    "title": "Checklista: flytt mellan Skärholmen och söderort",
+    "description": "Stäm av portkoder, källar- och vindförråd, reservera P-plats och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+  },
+  "processSection": {
+    "title": "Vår process",
+    "subtitle": "Så fungerar det",
+    "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, P-avstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+  },
+  "process": {
+    "fillForm": "Fyll i formuläret",
+    "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, garage och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+    "quickQuote": "Snabb offert",
+    "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+    "signConfirm": "Signera och bekräfta",
+    "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar P-tillstånd och skickar körplan med kontaktvägar.",
+    "personalContact": "Personlig kontakt",
+    "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+    "moveCompleted": "Flytt genomförd",
+    "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via gård eller garage och lastar sekventiellt för snabb avlastning.",
+    "satisfiedCustomer": "Uppföljning",
+    "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+  },
+  "faq": {
+    "title": "Vanliga frågor om flytt i Skärholmen",
+    "items": [
+      {
+        "question": "Hur planerar ni flyttar via garage eller gårdsinfart?",
+        "answer": "Vi reserverar portar, ordnar P-tillstånd och bygger bärkedjor mellan garageplan och lägenhet så att hissar och gångbroar används effektivt."
+      },
+      {
+        "question": "Kan ni hjälpa till med packning av hela hem?",
+        "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+      },
+      {
+        "question": "Hur hanterar ni tunga eller skrymmande möbler?",
+        "answer": "Vi använder bärselar, pianodockor och extra bemanning. Vi skyddar väggar och trappor och planerar lyftvägar i förväg."
+      },
+      {
+        "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+        "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+      },
+      {
+        "question": "Hur långt i förväg bör jag boka flytt i Skärholmen?",
+        "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Har du fler frågor?",
+    "linkText": "Kontakta oss"
+  }
+}

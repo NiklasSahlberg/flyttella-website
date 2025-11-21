@@ -22,3 +22,4 @@ content = content.replace(/id:\s*\"kungsholmen-/g, 'id: "marsta-');
 
 fs.writeFileSync(filePath, content, 'utf8');
 console.log('Updated Märsta page to use marsta namespace, location, and FAQ ids.');
+

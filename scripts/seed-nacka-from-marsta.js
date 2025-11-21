@@ -22,3 +22,4 @@ function seed(file){
 seed(svPath);
 seed(enPath);
 console.log('Seeded nacka translations from marsta with basic replacements.');
+

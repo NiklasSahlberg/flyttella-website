@@ -50,7 +50,12 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     'kungsangen',
     'lidingo',
     'marsta',
-    'nacka'
+    'nacka',
+    'norrmalm',
+    'nynashamn',
+    'ostermalm',
+    'salem',
+    'skarholmen'
   ]);
 
   const getLocationHref = (slug: string) => `/flyttfirma-i-${slug}`;

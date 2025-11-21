@@ -4,14 +4,14 @@ const path = require('path');
 
 const svContent = {
   hero: {
-    title: 'Professionell flyttfirma i Hägersten – erfarenhet sedan 2019',
+    title: 'Professionell flyttfirma i Hägersten – erfarenhet sedan 2021',
     subtitle: 'Specialiserade flyttar i Hägersten, Telefonplan, Midsommarkransen och Aspudden. Vi hanterar komplexa bärvägar, bokningsbara hissar och reglerade parkeringszoner med precision och hänsyn till boendemiljön.',
     ctaPrimary: 'Få offert',
     ctaSecondary: 'Läs hur vi arbetar'
   },
   about: {
     title: 'Om Flyttella i Hägersten',
-    desktop: 'Sedan 2019 har vi specialiserat oss på flyttar i Hägerstens olika områden – från moderna lägenhetskomplex vid Telefonplan till charmiga radhus i Aspudden. Vår lokalkännedom kombineras med över 8 års branscherfarenhet för optimala flyttlösningar.',
+    desktop: 'Sedan 2021 har vi specialiserat oss på flyttar i Hägerstens olika områden – från moderna lägenhetskomplex vid Telefonplan till charmiga radhus i Aspudden. Vår lokalkännedom kombineras med över 8 års branscherfarenhet för optimala flyttlösningar.',
     desktop2: 'Mer än 8 000 framgångsrika flyttar har gjort oss till en pålitlig partner för både privatpersoner och företag. Vi arbetar med transparenta priser och inga överraskningar. Varje flytt planeras noggrant med hänsyn till Hägerstens specifika utmaningar – smala gator, bokningsbara hissar och föreningsregler.',
     desktop3: 'Våra fördelar inkluderar gratis flyttkartonger, flexibel ombokning fram till 24 timmar innan flyttdagen och en generös 14-dagars garanti på flyttstädning. Din personliga flyttkoordinator säkerställer att allt från hissbokning till nyckelhantering fungerar smidigt.',
     mobile: 'Erfaren flyttfirma i Hägersten med transparenta priser och personlig service – över 8 000 nöjda kunder.',
@@ -72,14 +72,14 @@ const svContent = {
 
 const enContent = {
   hero: {
-    title: 'Professional moving company in Hägersten – experience since 2019',
+    title: 'Professional moving company in Hägersten – experience since 2021',
     subtitle: 'Specialised moves in Hägersten, Telefonplan, Midsommarkransen and Aspudden. We handle complex access routes, bookable elevators and regulated parking zones with precision and respect for residents.',
     ctaPrimary: 'Get a quote',
     ctaSecondary: 'See how we work'
   },
   about: {
     title: 'About Flyttella in Hägersten',
-    desktop: 'Since 2019 we have specialised in moves across Hägersten\'s different areas – from modern apartment complexes at Telefonplan to charming townhouses in Aspudden. Our local knowledge combines with over 8 years\' industry experience for optimal moving solutions.',
+    desktop: 'Since 2021 we have specialised in moves across Hägersten\'s different areas – from modern apartment complexes at Telefonplan to charming townhouses in Aspudden. Our local knowledge combines with over 8 years\' industry experience for optimal moving solutions.',
     desktop2: 'More than 8,000 successful moves have made us a reliable partner for both individuals and businesses. We work with transparent pricing and no surprises. Every move is carefully planned considering Hägersten\'s specific challenges – narrow streets, bookable elevators and association rules.',
     desktop3: 'Our benefits include free moving boxes, flexible rebooking up to 24 hours before move day and a generous 14-day cleaning guarantee. Your personal move coordinator ensures everything from elevator booking to key handling works smoothly.',
     mobile: 'Experienced moving company in Hägersten with transparent pricing and personal service – over 8,000 satisfied clients.',

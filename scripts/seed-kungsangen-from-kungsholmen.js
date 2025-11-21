@@ -32,3 +32,4 @@ seed(svPath, 'kungsholmen', 'kungsangen', 'Kungsholmen', 'Kungsängen');
 seed(enPath, 'kungsholmen', 'kungsangen', 'Kungsholmen', 'Kungsängen');
 
 console.log('Seeded kungsangen namespace from kungsholmen with basic replacements.');
+

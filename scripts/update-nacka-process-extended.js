@@ -45,3 +45,4 @@ update(enPath, (d) => {
 });
 
 console.log('Extended Nacka process steps with detailed, location‑specific descriptions (sv/en).');
+

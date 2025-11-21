@@ -33,3 +33,4 @@ update(enPath, (d) => {
 });
 
 console.log('Updated Lidingö blogSection and blog content to Lidingö‑specific phrasing (sv/en).');
+

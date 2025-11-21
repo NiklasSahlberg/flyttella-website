@@ -4,14 +4,14 @@ const path = require('path');
 
 const svContent = {
   hero: {
-    title: 'Flyttfirma i Haninge – expertis inom villaflyttar sedan 2019',
+    title: 'Flyttfirma i Haninge – expertis inom villaflyttar sedan 2021',
     subtitle: 'Specialiserade flyttar i Haninge, Handen, Jordbro och Västerhaninge. Vi är experter på villakvarter, radhusområden och moderna lägenhetskomplex med djup lokalkännedom om Haninges unika boendemiljöer.',
     ctaPrimary: 'Få offert',
     ctaSecondary: 'Läs hur vi arbetar'
   },
   about: {
     title: 'Om Flyttella i Haninge',
-    desktop: 'Sedan 2019 har vi byggt upp en stark position som Haninges ledande flyttfirma – från exklusiva villor i Handen till moderna lägenhetskomplex i Jordbro. Vår specialisering på villaflyttar och radhusområden gör oss till den naturliga valet för Haninges invånare.',
+    desktop: 'Sedan 2021 har vi byggt upp en stark position som Haninges ledande flyttfirma – från exklusiva villor i Handen till moderna lägenhetskomplex i Jordbro. Vår specialisering på villaflyttar och radhusområden gör oss till den naturliga valet för Haninges invånare.',
     desktop2: 'Över 8 000 framgångsrika flyttar har etablerat oss som en betrodd partner för både familjer och företag i Haninge. Vi arbetar med transparenta priser och inga överraskningar. Varje flytt planeras noggrant med hänsyn till Haninges specifika utmaningar – villakvarter med smala gator, radhusområden med begränsad parkering och moderna bostadsområden.',
     desktop3: 'Våra konkurrensfördelar inkluderar gratis flyttkartonger, flexibel ombokning fram till 24 timmar innan flyttdagen och en generös 14-dagars garanti på flyttstädning. Din personliga flyttkoordinator säkerställer att allt från initial planering till slutlig genomförande fungerar smidigt.',
     mobile: 'Haninges ledande flyttfirma med transparenta priser och personlig service – över 8 000 nöjda kunder.',
@@ -72,14 +72,14 @@ const svContent = {
 
 const enContent = {
   hero: {
-    title: 'Moving company in Haninge – expertise in house moves since 2019',
+    title: 'Moving company in Haninge – expertise in house moves since 2021',
     subtitle: 'Specialised moves in Haninge, Handen, Jordbro and Västerhaninge. We are experts in villa districts, townhouse areas and modern apartment complexes with deep local knowledge of Haninge\'s unique residential environments.',
     ctaPrimary: 'Get a quote',
     ctaSecondary: 'See how we work'
   },
   about: {
     title: 'About Flyttella in Haninge',
-    desktop: 'Since 2019 we have built a strong position as Haninge\'s leading moving company – from exclusive villas in Handen to modern apartment complexes in Jordbro. Our specialisation in house moves and townhouse areas makes us the natural choice for Haninge residents.',
+    desktop: 'Since 2021 we have built a strong position as Haninge\'s leading moving company – from exclusive villas in Handen to modern apartment complexes in Jordbro. Our specialisation in house moves and townhouse areas makes us the natural choice for Haninge residents.',
     desktop2: 'Over 8,000 successful moves have established us as a trusted partner for both families and businesses in Haninge. We work with transparent pricing and no surprises. Every move is carefully planned considering Haninge\'s specific challenges – villa districts with narrow streets, townhouse areas with limited parking and modern residential areas.',
     desktop3: 'Our competitive advantages include free moving boxes, flexible rebooking up to 24 hours before move day and a generous 14-day cleaning guarantee. Your personal move coordinator ensures everything from initial planning to final execution works smoothly.',
     mobile: 'Reliable moving company in Haninge with transparent pricing and personal service – over 8,000 satisfied clients.',

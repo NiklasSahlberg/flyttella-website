@@ -26,3 +26,4 @@ update(enPath, (d) => {
 });
 
 console.log('Updated Kungsängen blog tips text to be location-specific (sv/en).');
+

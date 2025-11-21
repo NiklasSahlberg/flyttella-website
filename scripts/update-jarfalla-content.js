@@ -4,14 +4,14 @@ const path = require('path');
 
 const svContent = {
   hero: {
-    title: 'Flyttfirma i Järfälla – experter på villaflyttar sedan 2019',
+    title: 'Flyttfirma i Järfälla – experter på villaflyttar sedan 2021',
     subtitle: 'Professionella flyttar i Järfälla, Jakobsberg, Kallhäll och Viksjö. Vi specialiserar oss på villor, radhus och lägenhetskomplex med djup lokalkännedom om Järfällas villakvarter och moderna bostadsområden.',
     ctaPrimary: 'Få offert',
     ctaSecondary: 'Läs hur vi arbetar'
   },
   about: {
     title: 'Om Flyttella i Järfälla',
-    desktop: 'Sedan 2019 har vi byggt upp en stark position som Järfällas mest betrodda flyttfirma – från exklusiva villor i Jakobsberg till moderna lägenhetskomplex i Kallhäll. Vår specialisering på villaflyttar och lokalkännedom gör oss till det naturliga valet för Järfällas invånare.',
+    desktop: 'Sedan 2021 har vi byggt upp en stark position som Järfällas mest betrodda flyttfirma – från exklusiva villor i Jakobsberg till moderna lägenhetskomplex i Kallhäll. Vår specialisering på villaflyttar och lokalkännedom gör oss till det naturliga valet för Järfällas invånare.',
     desktop2: 'Över 8 000 framgångsrika flyttar har etablerat oss som en pålitlig partner för både privatpersoner och företag i Järfälla. Vi arbetar med transparenta priser och inga överraskningar. Varje flytt planeras noggrant med hänsyn till Järfällas specifika utmaningar – villakvarter, moderna bostadsområden och lokala förutsättningar.',
     desktop3: 'Våra fördelar inkluderar gratis flyttkartonger, flexibel ombokning fram till 24 timmar innan flyttdagen och en generös 14-dagars garanti på flyttstädning. Din personliga flyttkoordinator säkerställer att allt från initial planering till slutlig genomförande fungerar smidigt.',
     mobile: 'Järfällas mest betrodda flyttfirma med transparenta priser och personlig service – över 8 000 nöjda kunder.',
@@ -72,14 +72,14 @@ const svContent = {
 
 const enContent = {
   hero: {
-    title: 'Moving company in Järfälla – experts in house moves since 2019',
+    title: 'Moving company in Järfälla – experts in house moves since 2021',
     subtitle: 'Professional moves in Järfälla, Jakobsberg, Kallhäll and Viksjö. We specialise in houses, townhouses and apartment complexes with deep local knowledge of Järfälla\'s villa districts and modern residential areas.',
     ctaPrimary: 'Get a quote',
     ctaSecondary: 'See how we work'
   },
   about: {
     title: 'About Flyttella in Järfälla',
-    desktop: 'Since 2019 we have built a strong position as Järfälla\'s most trusted moving company – from exclusive houses in Jakobsberg to modern apartment complexes in Kallhäll. Our specialisation in house moves and local knowledge makes us the natural choice for Järfälla residents.',
+    desktop: 'Since 2021 we have built a strong position as Järfälla\'s most trusted moving company – from exclusive houses in Jakobsberg to modern apartment complexes in Kallhäll. Our specialisation in house moves and local knowledge makes us the natural choice for Järfälla residents.',
     desktop2: 'Over 8,000 successful moves have established us as a reliable partner for both individuals and businesses in Järfälla. We work with transparent pricing and no surprises. Every move is carefully planned considering Järfälla\'s specific challenges – villa districts, modern residential areas and local conditions.',
     desktop3: 'Our benefits include free moving boxes, flexible rebooking up to 24 hours before move day and a generous 14-day cleaning guarantee. Your personal move coordinator ensures everything from initial planning to final execution works smoothly.',
     mobile: 'Järfälla\'s most trusted moving company with transparent pricing and personal service – over 8,000 satisfied clients.',
@@ -152,6 +152,7 @@ const enPath = path.join(process.cwd(), 'flyttella-website', 'src', 'app', 'i18n
 updateLocale(svPath, svContent);
 updateLocale(enPath, enContent);
 console.log('Updated unique SEO content for jarfalla in sv and en.');
+
 
 
 

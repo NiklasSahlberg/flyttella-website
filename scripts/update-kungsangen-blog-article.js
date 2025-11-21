@@ -25,3 +25,4 @@ update(enPath, (d) => {
 });
 
 console.log('Updated Kungsängen blog article title and description (sv/en).');
+

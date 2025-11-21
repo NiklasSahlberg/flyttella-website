@@ -36,3 +36,4 @@ seed(svPath);
 seed(enPath);
 
 console.log('Seeded lidingo from kungsangen with basic name replacement.');
+

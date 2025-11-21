@@ -23,3 +23,4 @@ update(enPath, (d) => {
 });
 
 console.log('Fixed Tibble phrasing for Kungsängen about text in sv/en.');
+

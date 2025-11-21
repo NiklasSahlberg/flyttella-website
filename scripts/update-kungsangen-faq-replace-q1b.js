@@ -29,3 +29,4 @@ update(enPath, (d) => {
 });
 
 console.log('Replaced first Kungsängen FAQ with a new nyproduktion‑focused question/answer (sv/en).');
+

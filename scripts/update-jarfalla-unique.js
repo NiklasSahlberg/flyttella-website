@@ -9,10 +9,10 @@ const svData = JSON.parse(fs.readFileSync(svPath, 'utf8'));
 const enData = JSON.parse(fs.readFileSync(enPath, 'utf8'));
 
 // Update Swedish content with completely unique phrasing
-svData.jarfalla.hero.title = 'Flyttfirma i Järfälla – din pålitliga partner sedan 2019';
+svData.jarfalla.hero.title = 'Flyttfirma i Järfälla – din pålitliga partner sedan 2021';
 svData.jarfalla.hero.subtitle = 'Professionella flyttlösningar i Järfälla, Jakobsberg, Kallhäll och Viksjö. Vi levererar skräddarsydda flyttar för villor, radhus och lägenhetskomplex med fokus på kvalitet och kundnöjdhet.';
 
-svData.jarfalla.about.desktop = 'Sedan 2019 har vi etablerat oss som Järfällas mest betrodda flyttpartner – från eleganta villor i Jakobsberg till moderna lägenhetskomplex i Kallhäll. Vår dedikation till excellens och lokalkännedom gör oss till det självklara valet för Järfällas invånare.';
+svData.jarfalla.about.desktop = 'Sedan 2021 har vi etablerat oss som Järfällas mest betrodda flyttpartner – från eleganta villor i Jakobsberg till moderna lägenhetskomplex i Kallhäll. Vår dedikation till excellens och lokalkännedom gör oss till det självklara valet för Järfällas invånare.';
 svData.jarfalla.about.desktop2 = 'Mer än 8 000 framgångsrika flyttar har gjort oss till en betrodd partner för både privatpersoner och företag i Järfälla. Vi arbetar med transparenta priser och inga överraskningar. Varje flytt planeras noggrant med hänsyn till Järfällas specifika utmaningar – villakvarter, moderna bostadsområden och lokala förutsättningar.';
 svData.jarfalla.about.desktop3 = 'Våra konkurrensfördelar inkluderar gratis flyttkartonger, flexibel ombokning fram till 24 timmar innan flyttdagen och en generös 14-dagars garanti på flyttstädning. Din personliga flyttkoordinator säkerställer att allt från initial planering till slutlig genomförande fungerar smidigt.';
 
@@ -38,10 +38,10 @@ svData.jarfalla.blog.title = 'Checklista: så förbereder du en smidig flytt i J
 svData.jarfalla.blog.description = 'Förbered material och märkning, säkra lastplats och planera packning rum för rum – spara tid och minska risker.';
 
 // Update English content with completely unique phrasing
-enData.jarfalla.hero.title = 'Moving company in Järfälla – your reliable partner since 2019';
+enData.jarfalla.hero.title = 'Moving company in Järfälla – your reliable partner since 2021';
 enData.jarfalla.hero.subtitle = 'Professional moving solutions in Järfälla, Jakobsberg, Kallhäll and Viksjö. We deliver tailored moves for houses, townhouses and apartment complexes with focus on quality and customer satisfaction.';
 
-enData.jarfalla.about.desktop = 'Since 2019 we have established ourselves as Järfälla\'s most trusted moving partner – from elegant houses in Jakobsberg to modern apartment complexes in Kallhäll. Our dedication to excellence and local knowledge makes us the obvious choice for Järfälla residents.';
+enData.jarfalla.about.desktop = 'Since 2021 we have established ourselves as Järfälla\'s most trusted moving partner – from elegant houses in Jakobsberg to modern apartment complexes in Kallhäll. Our dedication to excellence and local knowledge makes us the obvious choice for Järfälla residents.';
 enData.jarfalla.about.desktop2 = 'More than 8,000 successful moves have made us a trusted partner for both individuals and businesses in Järfälla. We work with transparent pricing and no surprises. Every move is carefully planned considering Järfälla\'s specific challenges – villa districts, modern residential areas and local conditions.';
 enData.jarfalla.about.desktop3 = 'Our competitive advantages include free moving boxes, flexible rebooking up to 24 hours before move day and a generous 14-day cleaning guarantee. Your personal move coordinator ensures everything from initial planning to final execution works smoothly.';
 
@@ -70,6 +70,7 @@ fs.writeFileSync(svPath, JSON.stringify(svData, null, 2), 'utf8');
 fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 
 console.log('Updated jarfalla content to be much more unique and distinctive in sv and en.');
+
 
 
 

@@ -23,3 +23,4 @@ updateJson(enPath, (data) => {
 });
 
 console.log('Updated Kungsholmen hero title and subtitle to unique inner-city content.');
+

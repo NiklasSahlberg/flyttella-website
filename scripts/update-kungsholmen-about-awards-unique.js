@@ -51,3 +51,4 @@ updateJson(enPath, (data) => {
 });
 
 console.log('Updated Kungsholmen about and awards sections with unique inner‑city content (sv/en).');
+

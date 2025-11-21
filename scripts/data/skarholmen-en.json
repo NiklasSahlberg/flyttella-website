@@ -1,0 +1,101 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Skärholmen — Bredäng, Sätra, Vårberg and Kungens Kurva",
+    "subtitle": "We handle villas, row houses and high-rises around Lake Mälaren with local crews, fixed pricing and structured run sheets. Sloped courtyards, garages and busy center logistics are part of our daily routine.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Skärholmen?"
+  },
+  "about": {
+    "title": "About Flyttella in Skärholmen",
+    "desktop": "Flyttella was founded in Stockholm to make moving more transparent and predictable. With 8+ years of experience and 8,000 assignments — many in Skärholmen, Sätra, Bredäng and Vårberg — we handle everything from compact apartments to full-service relocations.",
+    "desktop2": "We provide packing crews, storage, cleaning and assembly under one roof. You receive a fixed price, defined scope and one coordinator who manages the timeline, staffing and follow-up.",
+    "desktop3": "Complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee are included. Support helps with parking permits, keys and elevator bookings in central buildings.",
+    "mobile": "Local Skärholmen crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes through courtyards, protect staircases and reserve elevators in the towers around Skärholmen Centrum.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+  },
+  "experience": {
+    "title": "Our experience with moves in Skärholmen",
+    "description": "Daily moves between terrace houses in Sätra, row houses in Bredäng and high-rises by the shopping district. Experience with E4/E20 access, garages and booked loading zones keeps everything on schedule.",
+    "expanded": "For larger projects we conduct site checks, measure carry routes and assign crews per floor. From Vårberg hill to Kungens Kurva we know how long slopes, elevators and longer walks actually take."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Skärholmen",
+    "description": "Feedback from Skärholmen, Sätra and Bredäng highlights our punctual timelines, calm teams and ability to fix parking or courtyard permits quickly. Clients appreciate that the move feels controlled even with busy traffic nearby.",
+    "badgeAlt": "Moving company Skärholmen reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Skärholmen",
+    "description": "Our awards show that we deliver dependable service across southern Stockholm. Locals value our punctual crews, careful handling of newly renovated homes and accountability through the final box."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Skärholmen",
+    "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, courtyard keys and parking around Skärholmen Centrum.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Skärholmen",
+    "description": "Clear the driveway, label boxes by room, reserve elevators in the center towers and schedule extra time if you move via garages or walkways.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving between Skärholmen and south Stockholm",
+    "description": "Confirm door codes, storage cages and attic spaces, pre-book parking and make sure the new address has the right key fobs before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Submit the form",
+    "fillFormDesc": "Share addresses, dates, floors, elevator rules, garages and whether storage/attic areas need to be emptied. Add any extra services.",
+    "quickQuote": "Detailed quote",
+    "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange permits and send the run sheet with contacts.",
+    "personalContact": "Dedicated contact",
+    "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+    "moveCompleted": "Move executed",
+    "moveCompletedDesc": "The crew protects entrances, builds carry chains through courtyards or garages and loads sequentially for faster unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+  },
+  "faq": {
+    "title": "Common questions about moving in Skärholmen",
+    "items": [
+      {
+        "question": "How do you plan moves through garages or courtyards?",
+        "answer": "We reserve doors, arrange permits and set up carry chains between garage levels and the apartment so elevators and walkways stay efficient."
+      },
+      {
+        "question": "Can you help with packing the entire home?",
+        "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+      },
+      {
+        "question": "How do you handle heavy or bulky furniture?",
+        "answer": "We bring lifting straps, piano dollies and extra crew. Walls and stairs are protected and lift routes are planned in advance."
+      },
+      {
+        "question": "Do you provide storage if move-in is delayed?",
+        "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+      },
+      {
+        "question": "How far ahead should I book in Skärholmen?",
+        "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Have more questions?",
+    "linkText": "Contact us"
+  }
+}
+

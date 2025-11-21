@@ -11,3 +11,4 @@ if (data.lidingo && data.lidingo.servicesSection && typeof data.lidingo.services
 } else {
   console.log('Lidingö servicesSection.description not found; no changes made.');
 }
+

@@ -29,3 +29,4 @@ update(enPath, (d) => {
 });
 
 console.log('Replaced first Kungsängen FAQ with a unique multi‑stop move question/answer (sv/en).');
+

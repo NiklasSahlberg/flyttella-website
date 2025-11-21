@@ -27,3 +27,4 @@ function seed(filePath){
 }
 seed(svPath); seed(enPath);
 console.log('Seeded marsta translations from kungsangen with basic name replacement.');
+

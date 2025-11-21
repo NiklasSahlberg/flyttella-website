@@ -101,3 +101,4 @@ update(enPath, (d) => {
 });
 
 console.log('Updated Kungsängen with unique hero, about, awards and FAQ (sv/en).');
+

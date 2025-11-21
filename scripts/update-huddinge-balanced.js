@@ -9,10 +9,10 @@ const svData = JSON.parse(fs.readFileSync(svPath, 'utf8'));
 const enData = JSON.parse(fs.readFileSync(enPath, 'utf8'));
 
 // Update Swedish content to be less family-focused
-svData.huddinge.hero.title = 'Flyttfirma i Huddinge – professionell flyttservice sedan 2019';
+svData.huddinge.hero.title = 'Flyttfirma i Huddinge – professionell flyttservice sedan 2021';
 svData.huddinge.hero.subtitle = 'Erfarna flyttar i Huddinge, Flemingsberg, Segeltorp och Skogås. Vi specialiserar oss på villor, lägenhetskomplex och radhus med djup lokalkännedom om Huddinges grönområden och boendemiljöer.';
 
-svData.huddinge.about.desktop = 'Sedan 2019 har vi byggt upp en stark position som Huddinges mest betrodda flyttfirma – från exklusiva villor i Flemingsberg till moderna lägenhetskomplex i Segeltorp. Vår specialisering på olika bostadstyper och lokalkännedom gör oss till det naturliga valet för Huddinges invånare.';
+svData.huddinge.about.desktop = 'Sedan 2021 har vi byggt upp en stark position som Huddinges mest betrodda flyttfirma – från exklusiva villor i Flemingsberg till moderna lägenhetskomplex i Segeltorp. Vår specialisering på olika bostadstyper och lokalkännedom gör oss till det naturliga valet för Huddinges invånare.';
 svData.huddinge.about.desktop2 = 'Över 8 000 framgångsrika flyttar har etablerat oss som en pålitlig partner för både privatpersoner och företag i Huddinge. Vi arbetar med transparenta priser och inga överraskningar. Varje flytt planeras noggrant med hänsyn till Huddinges specifika utmaningar – grönområden, skolor, boendemiljöer och lokala förutsättningar.';
 svData.huddinge.about.desktop3 = 'Våra fördelar inkluderar gratis flyttkartonger, flexibel ombokning fram till 24 timmar innan flyttdagen och en generös 14-dagars garanti på flyttstädning. Din personliga flyttkoordinator säkerställer att allt från initial planering till slutlig genomförande fungerar smidigt.';
 
@@ -40,10 +40,10 @@ svData.huddinge.blog.description = 'Förbered material och märkning, säkra las
 svData.huddinge.faq.title = 'Vanliga frågor om flytt i Huddinge';
 
 // Update English content to be less family-focused
-enData.huddinge.hero.title = 'Moving company in Huddinge – professional moving service since 2019';
+enData.huddinge.hero.title = 'Moving company in Huddinge – professional moving service since 2021';
 enData.huddinge.hero.subtitle = 'Experienced moves in Huddinge, Flemingsberg, Segeltorp and Skogås. We specialise in houses, apartment complexes and townhouses with deep local knowledge of Huddinge\'s green areas and residential environments.';
 
-enData.huddinge.about.desktop = 'Since 2019 we have built a strong position as Huddinge\'s most trusted moving company – from exclusive houses in Flemingsberg to modern apartment complexes in Segeltorp. Our specialisation in different housing types and local knowledge makes us the natural choice for Huddinge residents.';
+enData.huddinge.about.desktop = 'Since 2021 we have built a strong position as Huddinge\'s most trusted moving company – from exclusive houses in Flemingsberg to modern apartment complexes in Segeltorp. Our specialisation in different housing types and local knowledge makes us the natural choice for Huddinge residents.';
 enData.huddinge.about.desktop2 = 'Over 8,000 successful moves have established us as a reliable partner for both individuals and businesses in Huddinge. We work with transparent pricing and no surprises. Every move is carefully planned considering Huddinge\'s specific challenges – green areas, schools, residential environments and local conditions.';
 enData.huddinge.about.desktop3 = 'Our benefits include free moving boxes, flexible rebooking up to 24 hours before move day and a generous 14-day cleaning guarantee. Your personal move coordinator ensures everything from initial planning to final execution works smoothly.';
 
@@ -74,6 +74,7 @@ fs.writeFileSync(svPath, JSON.stringify(svData, null, 2), 'utf8');
 fs.writeFileSync(enPath, JSON.stringify(enData, null, 2), 'utf8');
 
 console.log('Updated huddinge content to be less family-focused and more balanced in sv and en.');
+
 
 
 

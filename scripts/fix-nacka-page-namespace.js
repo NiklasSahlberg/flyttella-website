@@ -24,3 +24,4 @@ content = content.replace(/id:\s*\"kungsholmen-/g, 'id: "nacka-');
 
 fs.writeFileSync(filePath, content, 'utf8');
 console.log('Updated Nacka page to use nacka namespace, location, and FAQ ids.');
+

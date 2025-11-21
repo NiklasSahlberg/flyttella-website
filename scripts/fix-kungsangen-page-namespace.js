@@ -15,3 +15,4 @@ content = content.replace(/id:\s*\"kungsholmen-/g, 'id: "kungsangen-');
 
 fs.writeFileSync(filePath, content, 'utf8');
 console.log('Updated page.tsx for Kungsängen namespace, location, and FAQ ids.');
+

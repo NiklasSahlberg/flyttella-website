@@ -10,3 +10,4 @@ content = content.replace(/location=\"Kungsängen\"/g, 'location="Lidingö"');
 
 fs.writeFileSync(filePath, content, 'utf8');
 console.log('Updated Lidingö page namespace and location.');
+
