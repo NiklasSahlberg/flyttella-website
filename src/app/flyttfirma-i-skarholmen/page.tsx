@@ -1086,7 +1086,7 @@ export default function FlyttfirmaAkersbergaPage() {
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
                 style={{
-                  backgroundImage: 'url(/skarholmen-flyttfirma.jpg)',
+                  backgroundImage: 'url(/skarholmen-flyttfirma.jpg)', 
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
