@@ -1,0 +1,105 @@
+{
+  "customerReviews": {
+    "title": "Vad tycker våra kunder om oss?"
+  },
+  "hero": {
+    "title": "Flyttfirma i Spånga – Rinkeby, Tensta, Kista och Hjulsta",
+    "subtitle": "Vi flyttar dagligen i Spångas olika områden – från höghus i Rinkeby och Hjulsta till lägenheter i Tensta och Kista. Våra team känner till Spångas varierande bostadstyper och anpassar varje flytt efter områdets specifika förutsättningar med fasta priser och tydlig planering.",
+    "ctaPrimary": "Få offert",
+    "ctaSecondary": "Se hur vi arbetar"
+  },
+  "features": {
+    "title": "Vilka fördelar får du med Flyttella i Spånga?"
+  },
+  "about": {
+    "title": "Om Flyttella i Spånga",
+    "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Spånga har vi specialiserat oss på flyttar mellan områden som Rinkeby, Tensta, Kista och Hjulsta – från höghus med många våningsplan till kompakta lägenheter i olika delar av Spånga. Vår lokalkännedom om Spångas varierande bostadsstruktur och logistik gör att vi kan erbjuda helhetslösningar som är anpassade efter varje kunds specifika behov.",
+    "desktop2": "Våra team i Spånga är vana vid att hantera flyttar i höghus, lägenhetshus och olika typer av bostäder. Vi erbjuder packning, magasinering, flyttstädning och montering i ett samlat paket. Varje flytt följs av en dedikerad koordinator som säkerställer att allt från hissbokningar till parkering är planerat i förväg, så att flyttdagen flyter smidigt från första kontakt till inflytt.",
+    "desktop3": "Alla flyttar i Spånga inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Vår kundtjänst känner till Spångas olika områden – från Rinkeby till Kista – och kan ge konkreta råd om parkeringsregler, hissbokningar i höghus och hur man navigerar Spångas varierande bostadsstruktur.",
+    "mobile": "Lokala team i Spånga med fasta priser och helhetslösningar.",
+    "mobileExpanded": "Vi planerar bärvägar i lägenhetshus och villor, skyddar trappor och bokar hissar i höghus runt Spånga centrum.",
+    "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+  },
+  "experienceSection": {
+    "title": "Vår erfarenhet i Spånga"
+  },
+  "experience": {
+    "title": "Vår erfarenhet av flyttar i Spånga",
+    "description": "Vi flyttar dagligen mellan Spångas olika områden – från höghus i Rinkeby och Tensta till lägenheter i Kista och Hjulsta. Vår rutin med Spångas varierande bostadstyper och parkeringsförhållanden gör att vi kan anpassa varje flytt efter områdets specifika förutsättningar.",
+    "expanded": "Inför större uppdrag gör vi platsbesök för att kartlägga bärvägar, bedöma hissstatus och säkra parkering. Erfarenheten från Spångas olika områden – från Hjulstas lägenhetshus till Tenstas höghus – innebär att vi vet exakt hur mycket tid som behövs för olika typer av bostäder och bärvägar."
+  },
+  "reviews": {
+    "subtitle": "Rekommenderad flyttfirma i Spånga",
+    "description": "Omdömen från Spångas olika områden – från Kista till Rinkeby – lyfter fram våra punktliga team, tydlig kommunikation och noggranna hantering av både stora och små flyttar. Kunder uppskattar särskilt vår förmåga att anpassa flytten efter varje familjs specifika behov och situation.",
+    "badgeAlt": "Flyttfirma Spånga omdömen",
+    "arrowText": "Läs fler kunders upplevelser"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser i Spånga",
+    "description": "Våra utmärkelser i Spånga visar att vi levererar pålitlig service i hela området. Genom åren har vi blivit erkända för vårt professionella arbetssätt med flyttar mellan Spångas olika områden – från Rinkebys höghus till Tenstas lägenhetshus. Dessa utmärkelser är ett resultat av vårt fokus på kundnöjdhet och kvalitet, oavsett om du flyttar inom Spånga eller till/från området."
+  },
+  "servicesSection": {
+    "title": "Upptäck alla våra tjänster i Spånga",
+    "description": "Flytthjälp för lägenheter, villor och radhus, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Spångas olika områden.",
+    "privateServices": "Se alla tjänster"
+  },
+  "blogSection": {
+    "title": "Guider och tips för flytt i Spånga",
+    "description": "Boka parkering i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar mellan olika områden i Spånga.",
+    "readMore": "Läs mer"
+  },
+  "blog": {
+    "title": "Checklista: flytt i Spånga",
+    "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+  },
+  "processSection": {
+    "title": "Vår process",
+    "subtitle": "Så fungerar det",
+    "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+  },
+  "process": {
+    "fillForm": "Fyll i formuläret",
+    "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+    "quickQuote": "Snabb offert",
+    "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+    "signConfirm": "Signera och bekräfta",
+    "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+    "personalContact": "Personlig kontakt",
+    "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+    "moveCompleted": "Flytt genomförd",
+    "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+    "satisfiedCustomer": "Uppföljning",
+    "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+  },
+  "faq": {
+    "title": "Vanliga frågor om flytt i Spånga",
+    "items": [
+      {
+        "question": "Hur planerar ni flyttar i lägenhetshus eller villor?",
+        "answer": "Vi reserverar parkering i förväg, ordnar lastzoner och bygger bärkedjor mellan gata och bostad så att trappor och hissar används effektivt."
+      },
+      {
+        "question": "Kan ni hjälpa till med packning av hela hem?",
+        "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+      },
+      {
+        "question": "Vad ingår i er flyttjänst?",
+        "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+      },
+      {
+        "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+        "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+      },
+      {
+        "question": "Hur långt i förväg bör jag boka flytt i Spånga?",
+        "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Har du fler frågor?",
+    "linkText": "Kontakta oss"
+  }
+}
+
+

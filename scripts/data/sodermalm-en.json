@@ -1,0 +1,101 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Södermalm — Götgatan, Mariatorget, Hornstull and Medborgarplatsen",
+    "subtitle": "We handle moves in Södermalm's narrow streets, historic buildings and popular neighborhoods. Experienced crews, fixed pricing and careful planning for stairwells, elevators and limited parking.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Södermalm?"
+  },
+  "about": {
+    "title": "About Flyttella in Södermalm",
+    "desktop": "Flyttella was founded in Stockholm to make moving more transparent and predictable. With 8+ years of experience and 8,000 assignments — many in Södermalm's various neighborhoods — we handle everything from compact apartments to full-service relocations.",
+    "desktop2": "We provide packing crews, storage, cleaning and assembly under one roof. You receive a fixed price, defined scope and one coordinator who manages the timeline, staffing and follow-up.",
+    "desktop3": "Complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee are included. Support helps with loading zones, elevator bookings and parking rules in central buildings.",
+    "mobile": "Local Södermalm crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes through narrow stairwells, protect historic entrances and reserve elevators in the towers along Södermalm's streets.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+  },
+  "experience": {
+    "title": "Our experience with moves in Södermalm",
+    "description": "Daily moves between historic buildings, newly renovated apartments and high-rises in Södermalm's various neighborhoods. Experience with narrow streets, limited parking and elevator bookings keeps everything on schedule.",
+    "expanded": "For larger projects we conduct site checks, measure carry routes in stairwells and assign crews per floor. From Götgatan to Hornstull we know how long narrow stairs, elevators and longer carry routes actually take."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Södermalm",
+    "description": "Feedback from Södermalm's various neighborhoods highlights our punctual timelines, calm teams and ability to fix loading zones or elevator bookings quickly. Clients appreciate that the move feels controlled even with narrow streets nearby.",
+    "badgeAlt": "Moving company Södermalm reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Södermalm",
+    "description": "Our awards show that we deliver dependable service in central Stockholm. Locals value our punctual crews, careful handling of historic buildings and accountability through the final box."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Södermalm",
+    "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, loading zones and parking in Södermalm's neighborhoods.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Södermalm",
+    "description": "Pre-book loading zones, label boxes by room, reserve elevators in the building and schedule extra time if you move via narrow stairwells or limited parking.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Södermalm neighborhoods",
+    "description": "Confirm door codes, storage cages and attic spaces, pre-book loading zones and make sure the new address has the right key fobs before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Submit the form",
+    "fillFormDesc": "Share addresses, dates, floors, elevator rules, loading zones and whether storage/attic areas need to be emptied. Add any extra services.",
+    "quickQuote": "Detailed quote",
+    "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+    "personalContact": "Dedicated contact",
+    "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+    "moveCompleted": "Move executed",
+    "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairwells or elevators and loads sequentially for faster unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+  },
+  "faq": {
+    "title": "Common questions about moving in Södermalm",
+    "items": [
+      {
+        "question": "How do you plan moves in narrow stairwells or limited parking?",
+        "answer": "We reserve loading zones in advance, arrange parking permits and set up carry chains between street and apartment so elevators and stairs stay efficient."
+      },
+      {
+        "question": "Can you help with packing the entire home?",
+        "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+      },
+      {
+        "question": "How do you handle heavy or bulky furniture in narrow stairwells?",
+        "answer": "We bring lifting straps, piano dollies and extra crew. Walls and stairs are protected and lift routes are planned in advance."
+      },
+      {
+        "question": "Do you provide storage if move-in is delayed?",
+        "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+      },
+      {
+        "question": "How far ahead should I book in Södermalm?",
+        "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Have more questions?",
+    "linkText": "Contact us"
+  }
+}
+

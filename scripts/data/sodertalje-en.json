@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Södertälje — Centrum, Geneta, Hovsjö and Pershagen",
+    "subtitle": "We handle moves in Södertälje and surrounding areas with local crews, fixed pricing and structured run sheets. Villas, row houses and apartments in both center and outskirts are part of our daily routine.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Södertälje?"
+  },
+  "about": {
+    "title": "About Flyttella in Södertälje",
+    "desktop": "Flyttella was founded in Stockholm to make moving more transparent and predictable. With 8+ years of experience and 8,000 assignments — many in Södertälje and surrounding areas — we handle everything from compact apartments to full-service relocations.",
+    "desktop2": "We provide packing crews, storage, cleaning and assembly under one roof. You receive a fixed price, defined scope and one coordinator who manages the timeline, staffing and follow-up.",
+    "desktop3": "Complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee are included. Support helps with parking, elevator bookings and logistics in Södertälje's various areas.",
+    "mobile": "Local Södertälje crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in villas and row houses, protect staircases and reserve elevators in apartment buildings around Södertälje center.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+  },
+  "experienceSection": {
+    "title": "Our experience in Södertälje"
+  },
+  "experience": {
+    "title": "Our experience with moves in Södertälje",
+    "description": "Daily moves between villas, row houses and apartments in Södertälje and surrounding areas. Experience with center logistics, parking and elevator bookings keeps everything on schedule.",
+    "expanded": "For larger projects we conduct site checks, measure carry routes and assign crews per floor. From Geneta to Hovsjö we know how long stairs, elevators and longer carry routes actually take."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Södertälje",
+    "description": "Clients in Södertälje, Geneta and Hovsjö emphasize our punctuality, professional crews and smooth handling of moves between villas and apartments. Reviews show we deliver reliable service whether it's center or outskirts.",
+    "badgeAlt": "Moving company Södertälje reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Södertälje",
+    "description": "Our awards are proof of our commitment to quality and service in Södertälje. Over the years we've been recognized for our reliable work with moves between villas, row houses and apartments in both center and surrounding areas. These awards inspire us to continue delivering top-class moving services – every day, to every customer in Södertälje."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Södertälje",
+    "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Södertälje's various areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Södertälje",
+    "description": "Pre-book parking, label boxes by room, reserve elevators in the building and schedule extra time if you move between different areas in Södertälje.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Södertälje",
+    "description": "Confirm door codes, storage cages and attic spaces, pre-book parking and make sure the new address has the right key fobs before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Submit the form",
+    "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+    "quickQuote": "Detailed quote",
+    "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+    "personalContact": "Dedicated contact",
+    "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+    "moveCompleted": "Move executed",
+    "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+  },
+  "faq": {
+    "title": "Common questions about moving in Södertälje",
+    "items": [
+      {
+        "question": "How do you plan moves in villas or row houses?",
+        "answer": "We reserve parking in advance, arrange loading zones and set up carry chains between street and home so stairs and elevators stay efficient."
+      },
+      {
+        "question": "Can you help with packing the entire home?",
+        "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you provide storage if move-in is delayed?",
+        "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+      },
+      {
+        "question": "How far ahead should I book in Södertälje?",
+        "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Have more questions?",
+    "linkText": "Contact us"
+  }
+}
+

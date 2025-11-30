@@ -5756,5 +5756,517 @@
       "title": "Have more questions?",
       "linkText": "Contact us"
     }
+  },
+  "sodermalm": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company in Södermalm — Götgatan, Mariatorget, Hornstull and Medborgarplatsen",
+      "subtitle": "We handle moves in Södermalm's narrow streets, historic buildings and popular neighborhoods. Experienced crews, fixed pricing and careful planning for stairwells, elevators and limited parking.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Södermalm?"
+    },
+    "about": {
+      "title": "About Flyttella in Södermalm",
+      "desktop": "Flyttella was founded in Stockholm to make moving more transparent and predictable. With 8+ years of experience and 8,000 assignments — many in Södermalm's various neighborhoods — we handle everything from compact apartments to full-service relocations.",
+      "desktop2": "We provide packing crews, storage, cleaning and assembly under one roof. You receive a fixed price, defined scope and one coordinator who manages the timeline, staffing and follow-up.",
+      "desktop3": "Complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee are included. Support helps with loading zones, elevator bookings and parking rules in central buildings.",
+      "mobile": "Local Södermalm crews with fixed pricing and full-service options.",
+      "mobileExpanded": "We plan carry routes through narrow stairwells, protect historic entrances and reserve elevators in the towers along Södermalm's streets.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+    },
+    "experience": {
+      "title": "Our experience with moves in Södermalm",
+      "description": "Daily moves between historic buildings, newly renovated apartments and high-rises in Södermalm's various neighborhoods. Experience with narrow streets, limited parking and elevator bookings keeps everything on schedule.",
+      "expanded": "For larger projects we conduct site checks, measure carry routes in stairwells and assign crews per floor. From Götgatan to Hornstull we know how long narrow stairs, elevators and longer carry routes actually take."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover in Södermalm",
+      "description": "Feedback from Södermalm's various neighborhoods highlights our punctual timelines, calm teams and ability to fix loading zones or elevator bookings quickly. Clients appreciate that the move feels controlled even with narrow streets nearby.",
+      "badgeAlt": "Moving company Södermalm reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards in Södermalm",
+      "description": "Our awards show that we deliver dependable service in central Stockholm. Locals value our punctual crews, careful handling of historic buildings and accountability through the final box."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Södermalm",
+      "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, loading zones and parking in Södermalm's neighborhoods.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Södermalm",
+      "description": "Pre-book loading zones, label boxes by room, reserve elevators in the building and schedule extra time if you move via narrow stairwells or limited parking.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving in Södermalm neighborhoods",
+      "description": "Confirm door codes, storage cages and attic spaces, pre-book loading zones and make sure the new address has the right key fobs before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Submit the form",
+      "fillFormDesc": "Share addresses, dates, floors, elevator rules, loading zones and whether storage/attic areas need to be emptied. Add any extra services.",
+      "quickQuote": "Detailed quote",
+      "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+      "personalContact": "Dedicated contact",
+      "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+      "moveCompleted": "Move executed",
+      "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairwells or elevators and loads sequentially for faster unloading.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+    },
+    "faq": {
+      "title": "Common questions about moving in Södermalm",
+      "items": [
+        {
+          "question": "How do you plan moves in narrow stairwells or limited parking?",
+          "answer": "We reserve loading zones in advance, arrange parking permits and set up carry chains between street and apartment so elevators and stairs stay efficient."
+        },
+        {
+          "question": "Can you help with packing the entire home?",
+          "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+        },
+        {
+          "question": "How do you handle heavy or bulky furniture in narrow stairwells?",
+          "answer": "We bring lifting straps, piano dollies and extra crew. Walls and stairs are protected and lift routes are planned in advance."
+        },
+        {
+          "question": "Do you provide storage if move-in is delayed?",
+          "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+        },
+        {
+          "question": "How far ahead should I book in Södermalm?",
+          "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
+  },
+  "sodertalje": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company in Södertälje — Centrum, Geneta, Hovsjö and Pershagen",
+      "subtitle": "We handle moves in Södertälje and surrounding areas with local crews, fixed pricing and structured run sheets. Villas, row houses and apartments in both center and outskirts are part of our daily routine.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Södertälje?"
+    },
+    "about": {
+      "title": "About Flyttella in Södertälje",
+      "desktop": "Flyttella was founded in Stockholm to make moving more transparent and predictable. With 8+ years of experience and 8,000 assignments — many in Södertälje and surrounding areas — we handle everything from compact apartments to full-service relocations.",
+      "desktop2": "We provide packing crews, storage, cleaning and assembly under one roof. You receive a fixed price, defined scope and one coordinator who manages the timeline, staffing and follow-up.",
+      "desktop3": "Complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee are included. Support helps with parking, elevator bookings and logistics in Södertälje's various areas.",
+      "mobile": "Local Södertälje crews with fixed pricing and full-service options.",
+      "mobileExpanded": "We plan carry routes in villas and row houses, protect staircases and reserve elevators in apartment buildings around Södertälje center.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+    },
+    "experienceSection": {
+      "title": "Our experience in Södertälje"
+    },
+    "experience": {
+      "title": "Our experience with moves in Södertälje",
+      "description": "Daily moves between villas, row houses and apartments in Södertälje and surrounding areas. Experience with center logistics, parking and elevator bookings keeps everything on schedule.",
+      "expanded": "For larger projects we conduct site checks, measure carry routes and assign crews per floor. From Geneta to Hovsjö we know how long stairs, elevators and longer carry routes actually take."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover in Södertälje",
+      "description": "Clients in Södertälje, Geneta and Hovsjö emphasize our punctuality, professional crews and smooth handling of moves between villas and apartments. Reviews show we deliver reliable service whether it's center or outskirts.",
+      "badgeAlt": "Moving company Södertälje reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards in Södertälje",
+      "description": "Our awards are proof of our commitment to quality and service in Södertälje. Over the years we've been recognized for our reliable work with moves between villas, row houses and apartments in both center and surrounding areas. These awards inspire us to continue delivering top-class moving services – every day, to every customer in Södertälje."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Södertälje",
+      "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Södertälje's various areas.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Södertälje",
+      "description": "Pre-book parking, label boxes by room, reserve elevators in the building and schedule extra time if you move between different areas in Södertälje.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving in Södertälje",
+      "description": "Confirm door codes, storage cages and attic spaces, pre-book parking and make sure the new address has the right key fobs before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Submit the form",
+      "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+      "quickQuote": "Detailed quote",
+      "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+      "personalContact": "Dedicated contact",
+      "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+      "moveCompleted": "Move executed",
+      "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+    },
+    "faq": {
+      "title": "Common questions about moving in Södertälje",
+      "items": [
+        {
+          "question": "How do you plan moves in villas or row houses?",
+          "answer": "We reserve parking in advance, arrange loading zones and set up carry chains between street and home so stairs and elevators stay efficient."
+        },
+        {
+          "question": "Can you help with packing the entire home?",
+          "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+        },
+        {
+          "question": "What's included in your moving service?",
+          "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+        },
+        {
+          "question": "Do you provide storage if move-in is delayed?",
+          "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+        },
+        {
+          "question": "How far ahead should I book in Södertälje?",
+          "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
+  },
+  "solna": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company in Solna — Råsunda, Huvudsta, Hagalund and Bergshamra",
+      "subtitle": "Experienced crews in Solna with fixed pricing and structured run sheets. We move between high-rises in Råsunda, villas in Hagalund and apartments in Huvudsta – our local knowledge of Solna's areas ensures smooth moves.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Solna?"
+    },
+    "about": {
+      "title": "About Flyttella in Solna",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Solna we've moved many families and businesses between areas like Råsunda, Huvudsta, Hagalund and Bergshamra – everything from compact apartments to large villas with full-service relocations.",
+      "desktop2": "Our crews in Solna offer packing, storage, cleaning and assembly in one package. You always receive a fixed price with no hidden fees, clear scope and a dedicated coordinator who follows the entire move from planning to move-in.",
+      "desktop3": "All our moves in Solna include complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Our support team knows Solna's different areas and can advise on parking, elevator bookings and local regulations.",
+      "mobile": "Local Solna crews with fixed pricing and full-service options.",
+      "mobileExpanded": "We plan carry routes in apartment buildings and villas, protect staircases and reserve elevators in the towers around Solna center.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+    },
+    "experienceSection": {
+      "title": "Our experience in Solna"
+    },
+    "experience": {
+      "title": "Our experience with moves in Solna",
+      "description": "We regularly move in Solna's various areas – from high-rises in Råsunda to villas in Hagalund and apartments in Huvudsta. Our local knowledge of Solna's buildings, parking options and elevator rules means we can plan moves efficiently regardless of area.",
+      "expanded": "For larger projects we conduct site visits to assess carry routes, elevator status and parking situation. Experience from Solna's different neighborhoods – from older buildings to newly constructed apartment blocks – means we know how to handle both narrow stairwells and modern elevators."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover in Solna",
+      "description": "Clients in Solna, Råsunda and Huvudsta emphasize our punctuality, professional crews and smooth handling of moves between apartments and villas. Reviews show we deliver reliable service whether it's center or outskirts.",
+      "badgeAlt": "Moving company Solna reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards in Solna",
+      "description": "Our awards in Solna reflect our long experience with moves in areas like Råsunda, Huvudsta and Hagalund. Solna residents value our ability to handle everything from compact apartments to large villas with the same professional standard. These awards confirm that we deliver consistent quality regardless of housing type or area in Solna."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Solna",
+      "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Solna's various areas.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Solna",
+      "description": "Pre-book parking, label boxes by room, reserve elevators in the building and schedule extra time if you move between different areas in Solna.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving in Solna",
+      "description": "Confirm door codes, storage cages and attic spaces, pre-book parking and make sure the new address has the right key fobs before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Submit the form",
+      "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+      "quickQuote": "Detailed quote",
+      "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+      "personalContact": "Dedicated contact",
+      "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+      "moveCompleted": "Move executed",
+      "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+    },
+    "faq": {
+      "title": "Common questions about moving in Solna",
+      "items": [
+        {
+          "question": "How do you plan moves in apartment buildings or villas?",
+          "answer": "We reserve parking in advance, arrange loading zones and set up carry chains between street and home so stairs and elevators stay efficient."
+        },
+        {
+          "question": "Can you help with packing the entire home?",
+          "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+        },
+        {
+          "question": "What's included in your moving service?",
+          "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+        },
+        {
+          "question": "Do you provide storage if move-in is delayed?",
+          "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+        },
+        {
+          "question": "How far ahead should I book in Solna?",
+          "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
+  },
+  "sollentuna": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company in Sollentuna — Edsberg, Viby, Häggvik and Tureberg",
+      "subtitle": "Experienced crews in Sollentuna with fixed pricing and structured run sheets. We move between villas in Edsberg, row houses in Viby and apartments in Häggvik – our local knowledge of Sollentuna's areas ensures smooth moves.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Sollentuna?"
+    },
+    "about": {
+      "title": "About Flyttella in Sollentuna",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Sollentuna we've built extensive experience with moves between areas like Edsberg, Viby, Häggvik and Tureberg. We handle everything from compact apartments to large family villas with complete full-service solutions tailored to your specific situation.",
+      "desktop2": "Our experienced crews in Sollentuna combine packing, storage, cleaning and assembly in one seamless full-service solution. With fixed pricing and no hidden fees, clear scope and a personal coordinator who follows the entire move from first contact to move-in, you get peace of mind throughout the process.",
+      "desktop3": "Every move in Sollentuna includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Our support team has good knowledge of Sollentuna's different areas and can provide practical advice on parking, elevator bookings and local conditions.",
+      "mobile": "Local Sollentuna crews with fixed pricing and full-service options.",
+      "mobileExpanded": "We plan carry routes in villas and row houses, protect staircases and reserve elevators in apartment buildings around Sollentuna center.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+    },
+    "experienceSection": {
+      "title": "Our experience in Sollentuna"
+    },
+    "experience": {
+      "title": "Our experience with moves in Sollentuna",
+      "description": "We move daily between Sollentuna's various areas – from large villas in Edsberg to family homes in Viby and apartments in Häggvik. Our routine with Sollentuna's varying housing types and parking conditions means we can adapt each move to the area's specific requirements.",
+      "expanded": "For larger projects we conduct site visits to map carry routes, assess elevator status and secure parking. Experience from Sollentuna's different areas – from Tureberg's villas to Häggvik's apartment buildings – means we know exactly how much time is needed for different types of homes and carry routes."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover in Sollentuna",
+      "description": "Feedback from Sollentuna's various areas – from Häggvik to Tureberg – highlights our punctual crews, clear communication and careful handling of both large and small moves. Clients particularly appreciate our ability to adapt the move to each family's specific needs and situation.",
+      "badgeAlt": "Moving company Sollentuna reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards in Sollentuna",
+      "description": "Our awards in Sollentuna show that we deliver reliable service throughout the municipality. Over the years we've been recognized for our professional approach to moves between Sollentuna's different areas – from Edsberg's villas to Häggvik's apartments. These awards are a result of our focus on customer satisfaction and quality, whether you're moving within Sollentuna or to/from the municipality."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Sollentuna",
+      "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Sollentuna's various areas.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Sollentuna",
+      "description": "Pre-book parking, label boxes by room, reserve elevators in the building and schedule extra time if you move between different areas in Sollentuna.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving in Sollentuna",
+      "description": "Confirm door codes, storage cages and attic spaces, pre-book parking and make sure the new address has the right key fobs before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Submit the form",
+      "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+      "quickQuote": "Detailed quote",
+      "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+      "personalContact": "Dedicated contact",
+      "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+      "moveCompleted": "Move executed",
+      "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+    },
+    "faq": {
+      "title": "Common questions about moving in Sollentuna",
+      "items": [
+        {
+          "question": "How do you plan moves in villas or row houses?",
+          "answer": "We reserve parking in advance, arrange loading zones and set up carry chains between street and home so stairs and elevators stay efficient."
+        },
+        {
+          "question": "Can you help with packing the entire home?",
+          "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+        },
+        {
+          "question": "What's included in your moving service?",
+          "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+        },
+        {
+          "question": "Do you provide storage if move-in is delayed?",
+          "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+        },
+        {
+          "question": "How far ahead should I book in Sollentuna?",
+          "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
+  },
+  "spanga": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company in Spånga — Rinkeby, Tensta, Kista and Hjulsta",
+      "subtitle": "We move daily in Spånga's various areas – from high-rises in Rinkeby and Hjulsta to apartments in Tensta and Kista. Our crews know Spånga's varying housing types and adapt each move to the area's specific conditions with fixed pricing and clear planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella in Spånga?"
+    },
+    "about": {
+      "title": "About Flyttella in Spånga",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Spånga we've specialized in moves between areas like Rinkeby, Tensta, Kista and Hjulsta – from high-rises with multiple floors to compact apartments in different parts of Spånga. Our local knowledge of Spånga's varying housing structure and logistics means we can offer full-service solutions tailored to each customer's specific needs.",
+      "desktop2": "Our crews in Spånga are used to handling moves in high-rises, apartment buildings and different types of homes. We offer packing, storage, cleaning and assembly in one complete package. Every move is followed by a dedicated coordinator who ensures everything from elevator bookings to parking is planned in advance, so move day runs smoothly from first contact to move-in.",
+      "desktop3": "All moves in Spånga include complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Our support team knows Spånga's different areas – from Rinkeby to Kista – and can provide concrete advice on parking rules, elevator bookings in high-rises and how to navigate Spånga's varying housing structure.",
+      "mobile": "Local Spånga crews with fixed pricing and full-service options.",
+      "mobileExpanded": "We plan carry routes in apartment buildings and villas, protect staircases and reserve elevators in the towers around Spånga center.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+    },
+    "experienceSection": {
+      "title": "Our experience in Spånga"
+    },
+    "experience": {
+      "title": "Our experience with moves in Spånga",
+      "description": "We move daily between Spånga's various areas – from high-rises in Rinkeby and Tensta to apartments in Kista and Hjulsta. Our routine with Spånga's varying housing types and parking conditions means we can adapt each move to the area's specific requirements.",
+      "expanded": "For larger projects we conduct site visits to map carry routes, assess elevator status and secure parking. Experience from Spånga's different areas – from Hjulsta's apartment buildings to Tensta's high-rises – means we know exactly how much time is needed for different types of homes and carry routes."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover in Spånga",
+      "description": "Feedback from Spånga's various areas – from Kista to Rinkeby – highlights our punctual crews, clear communication and careful handling of both large and small moves. Clients particularly appreciate our ability to adapt the move to each family's specific needs and situation.",
+      "badgeAlt": "Moving company Spånga reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards in Spånga",
+      "description": "Our awards in Spånga show that we deliver reliable service throughout the area. Over the years we've been recognized for our professional approach to moves between Spånga's different areas – from Rinkeby's high-rises to Tensta's apartment buildings. These awards are a result of our focus on customer satisfaction and quality, whether you're moving within Spånga or to/from the area."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Spånga",
+      "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Spånga's various areas.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Spånga",
+      "description": "Pre-book parking, label boxes by room, reserve elevators in the building and schedule extra time if you move between different areas in Spånga.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving in Spånga",
+      "description": "Confirm door codes, storage cages and attic spaces, pre-book parking and make sure the new address has the right key fobs before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Submit the form",
+      "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+      "quickQuote": "Detailed quote",
+      "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+      "personalContact": "Dedicated contact",
+      "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+      "moveCompleted": "Move executed",
+      "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+    },
+    "faq": {
+      "title": "Common questions about moving in Spånga",
+      "items": [
+        {
+          "question": "How do you plan moves in apartment buildings or villas?",
+          "answer": "We reserve parking in advance, arrange loading zones and set up carry chains between street and home so stairs and elevators stay efficient."
+        },
+        {
+          "question": "Can you help with packing the entire home?",
+          "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+        },
+        {
+          "question": "What's included in your moving service?",
+          "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+        },
+        {
+          "question": "Do you provide storage if move-in is delayed?",
+          "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+        },
+        {
+          "question": "How far ahead should I book in Spånga?",
+          "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
   }
 }

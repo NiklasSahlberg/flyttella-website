@@ -5756,5 +5756,517 @@
       "title": "Har du fler frågor?",
       "linkText": "Kontakta oss"
     }
+  },
+  "sodermalm": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Södermalm – Götgatan, Mariatorget, Hornstull och Medborgarplatsen",
+      "subtitle": "Vi hjälper med flyttar i Södermalms trånga gator, historiska fastigheter och populära kvarter. Erfarna team, fasta priser och noggrann planering för trapphus, hissar och begränsad parkering.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Södermalm?"
+    },
+    "about": {
+      "title": "Om Flyttella i Södermalm",
+      "desktop": "Flyttella grundades i Stockholm för att göra flyttar mer transparenta och förutsägbara. På över åtta år har vi hjälpt 8 000 kunder – många i Södermalms olika kvarter – med allt från mindre lägenhetsflyttar till kompletta helhetslösningar.",
+      "desktop2": "Vi erbjuder packteam, magasinering, flyttstädning och montering under samma tak. Du får fast pris, tydlig omfattning och en kontaktperson som håller ihop tidsplan, bemanning och uppföljning.",
+      "desktop3": "Gratis kartonger, kostnadsfri om-/avbokning upp till 24 timmar innan och 14 dagars städgaranti ingår alltid. Kundtjänsten guidar kring lastzoner, hissbokningar och parkeringsregler i centrala fastigheter.",
+      "mobile": "Lokala team i Södermalm med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i trånga trapphus, skyddar historiska entréer och bokar hissar i höghus runt Södermalms gator.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Södermalm",
+      "description": "Vi flyttar dagligen mellan historiska fastigheter, nyrenoverade lägenheter och höghus i Södermalms olika kvarter. Vår rutin från trånga gator, begränsad parkering och hissbokningar gör att allt flyter.",
+      "expanded": "Inför större uppdrag gör vi platsbesök, mäter bärvägar i trapphus och planerar bemanning per våningsplan. Erfarenheten från Götgatan till Hornstull innebär att vi vet exakt hur mycket tid som krävs för trånga trappor, hissar eller längre bärvägar."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Södermalm",
+      "description": "Omdömen från Södermalms olika kvarter lyfter våra tydliga tidsplaner, lugna team och hur vi snabbt löser lastzoner eller hissbokningar. Kunder uppskattar att flytten känns kontrollerad trots trånga gator.",
+      "badgeAlt": "Flyttfirma Södermalm omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Södermalm",
+      "description": "Våra utmärkelser visar att vi levererar trygg service i centrala Stockholm. Södermalmsbor uppskattar vår punktlighet, hur vi skyddar historiska fastigheter och att vi tar ansvar hela vägen till sista kartongen."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Södermalm",
+      "description": "Flytthjälp för lägenheter i historiska fastigheter, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, lastzoner och parkering i Södermalms kvarter.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Södermalm",
+      "description": "Boka lastzon i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar via trånga trapphus eller begränsad parkering.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Södermalms kvarter",
+      "description": "Stäm av portkoder, källar- och vindförråd, reservera lastzon och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, lastzoner och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trapphus eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Södermalm",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i trånga trapphus eller begränsad parkering?",
+          "answer": "Vi reserverar lastzoner i förväg, ordnar parkeringstillstånd och bygger bärkedjor mellan gata och lägenhet så att hissar och trappor används effektivt."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Hur hanterar ni tunga eller skrymmande möbler i trånga trapphus?",
+          "answer": "Vi använder bärselar, pianodockor och extra bemanning. Vi skyddar väggar och trappor och planerar lyftvägar i förväg."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Södermalm?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "sodertalje": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Södertälje – Centrum, Geneta, Hovsjö och Pershagen",
+      "subtitle": "Vi hjälper med flyttar i Södertälje och omnejd med lokala team, fasta priser och strukturerade körplaner. Villor, radhus och lägenheter i både centrum och utkant löser vi dagligen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Södertälje?"
+    },
+    "about": {
+      "title": "Om Flyttella i Södertälje",
+      "desktop": "Flyttella grundades i Stockholm för att göra flyttar mer transparenta och förutsägbara. På över åtta år har vi hjälpt 8 000 kunder – många i Södertälje och omnejd – med allt från mindre lägenhetsflyttar till kompletta helhetslösningar.",
+      "desktop2": "Vi erbjuder packteam, magasinering, flyttstädning och montering under samma tak. Du får fast pris, tydlig omfattning och en kontaktperson som håller ihop tidsplan, bemanning och uppföljning.",
+      "desktop3": "Gratis kartonger, kostnadsfri om-/avbokning upp till 24 timmar innan och 14 dagars städgaranti ingår alltid. Kundtjänsten guidar kring parkering, hissbokningar och logistik i Södertäljes olika områden.",
+      "mobile": "Lokala team i Södertälje med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i villor och radhus, skyddar trappor och bokar hissar i lägenhetshus runt Södertälje centrum.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Södertälje"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Södertälje",
+      "description": "Vi flyttar dagligen mellan villor, radhus och lägenheter i Södertälje och omnejd. Vår rutin från centrumlogistik, parkering och hissbokningar gör att allt flyter.",
+      "expanded": "Inför större uppdrag gör vi platsbesök, mäter bärvägar och planerar bemanning per våningsplan. Erfarenheten från Geneta till Hovsjö innebär att vi vet exakt hur mycket tid som krävs för trappor, hissar eller längre bärvägar."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Södertälje",
+      "description": "Kunder i Södertälje, Geneta och Hovsjö betonar vår punktlighet, professionella team och smidiga hantering av flyttar mellan villor och lägenheter. Omdömena visar att vi levererar trygg service oavsett om det gäller centrum eller utkant.",
+      "badgeAlt": "Flyttfirma Södertälje omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Södertälje",
+      "description": "Våra utmärkelser är ett bevis på vårt engagemang för kvalitet och service i Södertälje. Genom åren har vi blivit erkända för vårt pålitliga arbete med flyttar mellan villor, radhus och lägenheter i både centrum och omnejd. Dessa utmärkelser inspirerar oss att fortsätta leverera flyttjänster i toppklass – varje dag, till varje kund i Södertälje."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Södertälje",
+      "description": "Flytthjälp för villor, lägenheter och radhus, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Södertäljes olika områden.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Södertälje",
+      "description": "Boka parkering i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar mellan olika områden i Södertälje.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Södertälje",
+      "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Södertälje",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i villor eller radhus?",
+          "answer": "Vi reserverar parkering i förväg, ordnar lastzoner och bygger bärkedjor mellan gata och bostad så att trappor och hissar används effektivt."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst?",
+          "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Södertälje?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "solna": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Solna – Råsunda, Huvudsta, Hagalund och Bergshamra",
+      "subtitle": "Erfarna team i Solna med fasta priser och strukturerade körplaner. Vi flyttar mellan höghus i Råsunda, villor i Hagalund och lägenheter i Huvudsta – vår lokalkännedom om Solnas områden säkerställer smidiga flyttar.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Solna?"
+    },
+    "about": {
+      "title": "Om Flyttella i Solna",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Solna har vi flyttat många familjer och företag mellan områden som Råsunda, Huvudsta, Hagalund och Bergshamra – allt från små lägenheter till stora villor med kompletta helhetslösningar.",
+      "desktop2": "Våra team i Solna erbjuder packning, magasinering, flyttstädning och montering i ett paket. Du får alltid fast pris utan dolda avgifter, tydlig omfattning och en dedikerad koordinator som följer hela flytten från planering till inflytt.",
+      "desktop3": "Alla våra flyttar i Solna inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Vår kundtjänst känner till Solnas olika områden och kan ge råd om parkering, hissbokningar och lokala regler.",
+      "mobile": "Lokala team i Solna med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i lägenhetshus och villor, skyddar trappor och bokar hissar i höghus runt Solna centrum.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Solna"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Solna",
+      "description": "Vi flyttar regelbundet i Solnas olika områden – från höghus i Råsunda till villor i Hagalund och lägenheter i Huvudsta. Vår lokalkännedom om Solnas fastigheter, parkeringsmöjligheter och hissregler gör att vi kan planera flyttar effektivt oavsett område.",
+      "expanded": "Inför större uppdrag gör vi platsbesök för att bedöma bärvägar, hissstatus och parkeringssituation. Erfarenheten från Solnas olika kvarter – från äldre fastigheter till nybyggda lägenhetshus – innebär att vi vet hur vi ska hantera både trånga trapphus och moderna hissar."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Solna",
+      "description": "Kunder i Solna, Råsunda och Huvudsta betonar vår punktlighet, professionella team och smidiga hantering av flyttar mellan lägenheter och villor. Omdömena visar att vi levererar trygg service oavsett om det gäller centrum eller utkant.",
+      "badgeAlt": "Flyttfirma Solna omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Solna",
+      "description": "Våra utmärkelser i Solna speglar vår långa erfarenhet av flyttar i områden som Råsunda, Huvudsta och Hagalund. Solnabor värdesätter vår förmåga att hantera allt från kompakta lägenheter till stora villor med samma professionella standard. Dessa utmärkelser bekräftar att vi levererar konsekvent kvalitet oavsett bostadstyp eller område i Solna."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Solna",
+      "description": "Flytthjälp för lägenheter, villor och radhus, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Solnas olika områden.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Solna",
+      "description": "Boka parkering i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar mellan olika områden i Solna.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Solna",
+      "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Solna",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i lägenhetshus eller villor?",
+          "answer": "Vi reserverar parkering i förväg, ordnar lastzoner och bygger bärkedjor mellan gata och bostad så att trappor och hissar används effektivt."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst?",
+          "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Solna?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "sollentuna": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Sollentuna – Edsberg, Viby, Häggvik och Tureberg",
+      "subtitle": "Erfarna team i Sollentuna med fasta priser och strukturerade körplaner. Vi flyttar mellan villor i Edsberg, radhus i Viby och lägenheter i Häggvik – vår lokalkännedom om Sollentunas områden säkerställer smidiga flyttar.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Sollentuna?"
+    },
+    "about": {
+      "title": "Om Flyttella i Sollentuna",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Sollentuna har vi byggt upp gedigen erfarenhet av flyttar mellan områden som Edsberg, Viby, Häggvik och Tureberg. Vi hanterar allt från kompakta lägenheter till stora familjevillor med kompletta helhetslösningar som passar just din situation.",
+      "desktop2": "Våra erfarna team i Sollentuna kombinerar packning, magasinering, flyttstädning och montering i en smidig helhetslösning. Med fast pris utan dolda avgifter, tydlig omfattning och en personlig koordinator som följer hela flytten från första kontakt till inflytt, får du trygghet genom hela processen.",
+      "desktop3": "Varje flytt i Sollentuna inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Vår kundtjänst har god kännedom om Sollentunas olika områden och kan ge praktiska råd om parkering, hissbokningar och lokala förhållanden.",
+      "mobile": "Lokala team i Sollentuna med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i villor och radhus, skyddar trappor och bokar hissar i lägenhetshus runt Sollentuna centrum.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Sollentuna"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Sollentuna",
+      "description": "Vi flyttar dagligen mellan Sollentunas olika områden – från stora villor i Edsberg till familjevillor i Viby och lägenheter i Häggvik. Vår rutin med Sollentunas varierande bostadstyper och parkeringsförhållanden gör att vi kan anpassa varje flytt efter områdets specifika förutsättningar.",
+      "expanded": "Inför större uppdrag gör vi platsbesök för att kartlägga bärvägar, bedöma hissstatus och säkra parkering. Erfarenheten från Sollentunas olika områden – från Turebergs villor till Häggviks lägenhetshus – innebär att vi vet exakt hur mycket tid som behövs för olika typer av bostäder och bärvägar."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Sollentuna",
+      "description": "Omdömen från Sollentunas olika områden – från Häggvik till Tureberg – lyfter fram våra punktliga team, tydlig kommunikation och noggranna hantering av både stora och små flyttar. Kunder uppskattar särskilt vår förmåga att anpassa flytten efter varje familjs specifika behov och situation.",
+      "badgeAlt": "Flyttfirma Sollentuna omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Sollentuna",
+      "description": "Våra utmärkelser i Sollentuna visar att vi levererar pålitlig service i hela kommunen. Genom åren har vi blivit erkända för vårt professionella arbetssätt med flyttar mellan Sollentunas olika områden – från Edsbergs villor till Häggviks lägenheter. Dessa utmärkelser är ett resultat av vårt fokus på kundnöjdhet och kvalitet, oavsett om du flyttar inom Sollentuna eller till/från kommunen."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Sollentuna",
+      "description": "Flytthjälp för lägenheter, villor och radhus, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Sollentunas olika områden.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Sollentuna",
+      "description": "Boka parkering i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar mellan olika områden i Sollentuna.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Sollentuna",
+      "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Sollentuna",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i villor eller radhus?",
+          "answer": "Vi reserverar parkering i förväg, ordnar lastzoner och bygger bärkedjor mellan gata och bostad så att trappor och hissar används effektivt."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst?",
+          "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Sollentuna?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "spanga": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Spånga – Rinkeby, Tensta, Kista och Hjulsta",
+      "subtitle": "Vi flyttar dagligen i Spångas olika områden – från höghus i Rinkeby och Hjulsta till lägenheter i Tensta och Kista. Våra team känner till Spångas varierande bostadstyper och anpassar varje flytt efter områdets specifika förutsättningar med fasta priser och tydlig planering.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Spånga?"
+    },
+    "about": {
+      "title": "Om Flyttella i Spånga",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Spånga har vi specialiserat oss på flyttar mellan områden som Rinkeby, Tensta, Kista och Hjulsta – från höghus med många våningsplan till kompakta lägenheter i olika delar av Spånga. Vår lokalkännedom om Spångas varierande bostadsstruktur och logistik gör att vi kan erbjuda helhetslösningar som är anpassade efter varje kunds specifika behov.",
+      "desktop2": "Våra team i Spånga är vana vid att hantera flyttar i höghus, lägenhetshus och olika typer av bostäder. Vi erbjuder packning, magasinering, flyttstädning och montering i ett samlat paket. Varje flytt följs av en dedikerad koordinator som säkerställer att allt från hissbokningar till parkering är planerat i förväg, så att flyttdagen flyter smidigt från första kontakt till inflytt.",
+      "desktop3": "Alla flyttar i Spånga inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Vår kundtjänst känner till Spångas olika områden – från Rinkeby till Kista – och kan ge konkreta råd om parkeringsregler, hissbokningar i höghus och hur man navigerar Spångas varierande bostadsstruktur.",
+      "mobile": "Lokala team i Spånga med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i lägenhetshus och villor, skyddar trappor och bokar hissar i höghus runt Spånga centrum.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Spånga"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Spånga",
+      "description": "Vi flyttar dagligen mellan Spångas olika områden – från höghus i Rinkeby och Tensta till lägenheter i Kista och Hjulsta. Vår rutin med Spångas varierande bostadstyper och parkeringsförhållanden gör att vi kan anpassa varje flytt efter områdets specifika förutsättningar.",
+      "expanded": "Inför större uppdrag gör vi platsbesök för att kartlägga bärvägar, bedöma hissstatus och säkra parkering. Erfarenheten från Spångas olika områden – från Hjulstas lägenhetshus till Tenstas höghus – innebär att vi vet exakt hur mycket tid som behövs för olika typer av bostäder och bärvägar."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Spånga",
+      "description": "Omdömen från Spångas olika områden – från Kista till Rinkeby – lyfter fram våra punktliga team, tydlig kommunikation och noggranna hantering av både stora och små flyttar. Kunder uppskattar särskilt vår förmåga att anpassa flytten efter varje familjs specifika behov och situation.",
+      "badgeAlt": "Flyttfirma Spånga omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Spånga",
+      "description": "Våra utmärkelser i Spånga visar att vi levererar pålitlig service i hela området. Genom åren har vi blivit erkända för vårt professionella arbetssätt med flyttar mellan Spångas olika områden – från Rinkebys höghus till Tenstas lägenhetshus. Dessa utmärkelser är ett resultat av vårt fokus på kundnöjdhet och kvalitet, oavsett om du flyttar inom Spånga eller till/från området."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Spånga",
+      "description": "Flytthjälp för lägenheter, villor och radhus, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Spångas olika områden.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Spånga",
+      "description": "Boka parkering i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar mellan olika områden i Spånga.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Spånga",
+      "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Spånga",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i lägenhetshus eller villor?",
+          "answer": "Vi reserverar parkering i förväg, ordnar lastzoner och bygger bärkedjor mellan gata och bostad så att trappor och hissar används effektivt."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst?",
+          "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Spånga?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
   }
 }

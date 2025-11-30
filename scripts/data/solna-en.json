@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Solna — Råsunda, Huvudsta, Hagalund and Bergshamra",
+    "subtitle": "Experienced crews in Solna with fixed pricing and structured run sheets. We move between high-rises in Råsunda, villas in Hagalund and apartments in Huvudsta – our local knowledge of Solna's areas ensures smooth moves.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Solna?"
+  },
+  "about": {
+    "title": "About Flyttella in Solna",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Solna we've moved many families and businesses between areas like Råsunda, Huvudsta, Hagalund and Bergshamra – everything from compact apartments to large villas with full-service relocations.",
+    "desktop2": "Our crews in Solna offer packing, storage, cleaning and assembly in one package. You always receive a fixed price with no hidden fees, clear scope and a dedicated coordinator who follows the entire move from planning to move-in.",
+    "desktop3": "All our moves in Solna include complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Our support team knows Solna's different areas and can advise on parking, elevator bookings and local regulations.",
+    "mobile": "Local Solna crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in apartment buildings and villas, protect staircases and reserve elevators in the towers around Solna center.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+  },
+  "experienceSection": {
+    "title": "Our experience in Solna"
+  },
+  "experience": {
+    "title": "Our experience with moves in Solna",
+    "description": "We regularly move in Solna's various areas – from high-rises in Råsunda to villas in Hagalund and apartments in Huvudsta. Our local knowledge of Solna's buildings, parking options and elevator rules means we can plan moves efficiently regardless of area.",
+    "expanded": "For larger projects we conduct site visits to assess carry routes, elevator status and parking situation. Experience from Solna's different neighborhoods – from older buildings to newly constructed apartment blocks – means we know how to handle both narrow stairwells and modern elevators."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Solna",
+    "description": "Clients in Solna, Råsunda and Huvudsta emphasize our punctuality, professional crews and smooth handling of moves between apartments and villas. Reviews show we deliver reliable service whether it's center or outskirts.",
+    "badgeAlt": "Moving company Solna reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Solna",
+    "description": "Our awards in Solna reflect our long experience with moves in areas like Råsunda, Huvudsta and Hagalund. Solna residents value our ability to handle everything from compact apartments to large villas with the same professional standard. These awards confirm that we deliver consistent quality regardless of housing type or area in Solna."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Solna",
+    "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Solna's various areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Solna",
+    "description": "Pre-book parking, label boxes by room, reserve elevators in the building and schedule extra time if you move between different areas in Solna.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Solna",
+    "description": "Confirm door codes, storage cages and attic spaces, pre-book parking and make sure the new address has the right key fobs before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Submit the form",
+    "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+    "quickQuote": "Detailed quote",
+    "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+    "personalContact": "Dedicated contact",
+    "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+    "moveCompleted": "Move executed",
+    "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+  },
+  "faq": {
+    "title": "Common questions about moving in Solna",
+    "items": [
+      {
+        "question": "How do you plan moves in apartment buildings or villas?",
+        "answer": "We reserve parking in advance, arrange loading zones and set up carry chains between street and home so stairs and elevators stay efficient."
+      },
+      {
+        "question": "Can you help with packing the entire home?",
+        "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you provide storage if move-in is delayed?",
+        "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+      },
+      {
+        "question": "How far ahead should I book in Solna?",
+        "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Have more questions?",
+    "linkText": "Contact us"
+  }
+}
+

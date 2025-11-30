@@ -55,7 +55,12 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     'nynashamn',
     'ostermalm',
     'salem',
-    'skarholmen'
+    'skarholmen',
+    'sodermalm',
+    'sodertalje',
+    'solna',
+    'sollentuna',
+    'spanga'
   ]);
 
   const getLocationHref = (slug: string) => `/flyttfirma-i-${slug}`;

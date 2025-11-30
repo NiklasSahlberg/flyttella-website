@@ -160,7 +160,7 @@ const AutoSlidingCards = ({ t }: { t: (key: string) => string }) => {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('sodertalje.experienceSection.title')}</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6 text-center">{t('sodermalm.experienceSection.title')}</h3>
           
           {/* Mobile: Auto-sliding cards */}
           <div className="md:hidden mt-8">
@@ -286,10 +286,10 @@ const AutoSlidingCards = ({ t }: { t: (key: string) => string }) => {
               transition={{ duration: 0.8 }}
             >
               <h4 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
-                {t('sodertalje.experience.title')}
+                {t('sodermalm.experience.title')}
               </h4>
               <p className="text-lg md:text-2xl text-[#0F172A] leading-relaxed mb-3 md:mb-4">
-                {t('sodertalje.experience.description')}
+                {t('sodermalm.experience.description')}
               </p>
               {/* Mobile: Läs mer button */}
               {!showFullExperienceText && (
@@ -320,12 +320,12 @@ const AutoSlidingCards = ({ t }: { t: (key: string) => string }) => {
                   className="space-y-4 mt-4 md:hidden px-4 md:px-8"
                 >
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('sodertalje.experience.expanded')}
+                    {t('sodermalm.experience.expanded')}
                   </p>
                 </motion.div>
               )}
               <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed mb-6 hidden md:block">
-                {t('sodertalje.experience.expanded')}
+                {t('sodermalm.experience.expanded')}
               </p>
             </motion.div>
 
@@ -931,7 +931,7 @@ function FillFormLottie() {
       <div className="w-full my-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-12 mt-2">
-            {t('sodertalje.features.title')}
+            {t('sodermalm.features.title')}
           </h2>
         </div>
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch justify-center w-full gap-0 md:gap-8">
@@ -1050,7 +1050,7 @@ export default function FlyttfirmaAkersbergaPage() {
             ) : (
               <FlyttoffertForm 
                 mode="widget" 
-                backgroundImage="/sodertalje-flyttfirma.jpg" 
+                backgroundImage="/sodermalm-flyttfirma.jpg" 
                 onServiceTypeSelect={setSelectedServiceType}
               />
             )}
@@ -1063,17 +1063,17 @@ export default function FlyttfirmaAkersbergaPage() {
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                  backgroundImage: 'url(/sodertalje-flyttfirma.jpg)',
+                  backgroundImage: 'url(/sodermalm-flyttfirma.jpg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
               />
               <div className="relative z-10 text-center space-y-4">
         <h1 className="text-4xl font-bold">
-          {t('sodertalje.hero.title')}
+          {t('sodermalm.hero.title')}
               </h1>
         <p className="text-xl">
-          {t('sodertalje.hero.subtitle')}
+          {t('sodermalm.hero.subtitle')}
               </p>
             </div>
             </div>
@@ -1084,9 +1084,9 @@ export default function FlyttfirmaAkersbergaPage() {
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 md:p-8 relative overflow-hidden">
               {/* Background image */}
               <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
                 style={{
-                  backgroundImage: 'url(/sodertalje-flyttfirma.jpg)', 
+                  backgroundImage: 'url(/sodermalm-flyttfirma.jpg)', 
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -1094,10 +1094,10 @@ export default function FlyttfirmaAkersbergaPage() {
               <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 relative z-10">
                 <div className="max-w-xl w-full">
           <h1 className="text-5xl md:text-6xl font-bold mb-8">
-            {t('sodertalje.hero.title')}
+            {t('sodermalm.hero.title')}
           </h1>
           <p className="text-2xl md:text-3xl mb-12">
-            {t('sodertalje.hero.subtitle')}
+            {t('sodermalm.hero.subtitle')}
           </p>
                 </div>
                 <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
@@ -1106,7 +1106,7 @@ export default function FlyttfirmaAkersbergaPage() {
                   ) : (
                     <FlyttoffertForm 
                       mode="widget" 
-                      backgroundImage="/sodertalje-flyttfirma.jpg" 
+                      backgroundImage="/sodermalm-flyttfirma.jpg" 
                       onServiceTypeSelect={setSelectedServiceType}
                     />
                   )}
@@ -1174,7 +1174,7 @@ export default function FlyttfirmaAkersbergaPage() {
                   />
                 </div>
               </div>
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-8 md:mb-12 lg:mb-16 text-center">{t('sodertalje.about.title')}</h3>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-8 md:mb-12 lg:mb-16 text-center">{t('sodermalm.about.title')}</h3>
               
               {/* Text content with image on desktop */}
               <div className="relative flex flex-col lg:flex-row items-stretch gap-8 md:gap-12 lg:gap-16">
@@ -1219,13 +1219,13 @@ export default function FlyttfirmaAkersbergaPage() {
                   {/* Desktop: Always show full text */}
                 <div className="hidden lg:block space-y-8">
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('sodertalje.about.desktop')}
+                    {t('sodermalm.about.desktop')}
                   </p>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('sodertalje.about.desktop2')}
+                    {t('sodermalm.about.desktop2')}
                   </p>
                   <p className="text-xl md:text-2xl text-[#0F172A] leading-relaxed">
-                    {t('sodertalje.about.desktop3')}
+                    {t('sodermalm.about.desktop3')}
                   </p>
                 </div>
                   
@@ -1233,16 +1233,16 @@ export default function FlyttfirmaAkersbergaPage() {
                   <div className="lg:hidden space-y-4 text-center">
                     <div className="text-left inline-block max-w-2xl">
                       <p className="text-base md:text-lg text-[#0F172A] leading-relaxed">
-                        {t('sodertalje.about.desktop')}
+                        {t('sodermalm.about.desktop')}
                         {showFullAboutText && (
                           <>
-                            {' '}{t('sodertalje.about.desktop2')}
+                            {' '}{t('sodermalm.about.desktop2')}
                           </>
                         )}
                       </p>
                       {showFullAboutText && (
                         <p className="text-base md:text-lg text-[#0F172A] leading-relaxed mt-4">
-                          {t('sodertalje.about.desktop3')}
+                          {t('sodermalm.about.desktop3')}
                         </p>
                       )}
                     </div>
@@ -1317,12 +1317,12 @@ export default function FlyttfirmaAkersbergaPage() {
 
         {/* Reviews Section */}
         <ReviewsWidget 
-          location="Södertälje"
-          title={t('sodertalje.customerReviews.title')}
-          subtitle={t('sodertalje.reviews.subtitle')}
-          description={t('sodertalje.reviews.description')}
-          badgeAlt={t('sodertalje.reviews.badgeAlt')}
-          arrowText={t('sodertalje.reviews.arrowText')}
+          location="Södermalm"
+          title={t('sodermalm.customerReviews.title')}
+          subtitle={t('sodermalm.reviews.subtitle')}
+          description={t('sodermalm.reviews.description')}
+          badgeAlt={t('sodermalm.reviews.badgeAlt')}
+          arrowText={t('sodermalm.reviews.arrowText')}
         />
 
         {/* Redo att börja din flytt? */}
@@ -1397,7 +1397,7 @@ export default function FlyttfirmaAkersbergaPage() {
                 {/* Pricing Info */}
                 <div className="text-center mb-4 md:mb-8">
                   <p className="text-white text-base md:text-lg lg:text-xl max-w-4xl mx-auto mb-3 md:mb-4">
-                    {t('sodertalje.processSection.description')}
+                    {t('sodermalm.processSection.description')}
                   </p>
             </div>
 
@@ -1907,9 +1907,9 @@ export default function FlyttfirmaAkersbergaPage() {
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
               {/* Mobile: Text first, then image */}
               <div className="w-full md:hidden text-center mb-4">
-                <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A] mb-3 md:mb-6">{t('sodertalje.awards.title')}</h2>
+                <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A] mb-3 md:mb-6">{t('sodermalm.awards.title')}</h2>
                 <p className="text-lg md:text-2xl text-gray-700 leading-relaxed">
-                  {t('sodertalje.awards.description')}
+                  {t('sodermalm.awards.description')}
                 </p>
               </div>
               
@@ -1927,9 +1927,9 @@ export default function FlyttfirmaAkersbergaPage() {
               
               {/* Desktop: Text on the right */}
               <div className="hidden md:flex w-full md:w-2/5 md:order-1 text-left flex-col items-start justify-center">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('sodertalje.awards.title')}</h2>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">{t('sodermalm.awards.title')}</h2>
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-                  {t('sodertalje.awards.description')}
+                  {t('sodermalm.awards.description')}
                 </p>
               </div>
             </div>
@@ -2200,7 +2200,7 @@ export default function FlyttfirmaAkersbergaPage() {
                 }}
                 id="upptack-tjanster"
               >
-                  {t('sodertalje.servicesSection.title')}
+                  {t('sodermalm.servicesSection.title')}
               </motion.h2>
               <motion.p 
                 className="text-lg md:text-xl mb-8 text-[#0F172A]/90"
@@ -2216,7 +2216,7 @@ export default function FlyttfirmaAkersbergaPage() {
                   delay: 0 * 0.25
                 }}
               >
-                  {t('sodertalje.servicesSection.description')}
+                  {t('sodermalm.servicesSection.description')}
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -2240,7 +2240,7 @@ export default function FlyttfirmaAkersbergaPage() {
                     href="/tjanster" 
                     className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                   >
-                    {t('sodertalje.servicesSection.privateServices')}
+                    {t('sodermalm.servicesSection.privateServices')}
                     <motion.svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -2479,10 +2479,10 @@ export default function FlyttfirmaAkersbergaPage() {
             <div className="w-full">
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-4xl font-bold text-[#0F172A] mb-3 md:mb-4">
-                  {t('sodertalje.blogSection.title')}
+                  {t('sodermalm.blogSection.title')}
           </h2>
                 <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
-                  {t('sodertalje.blogSection.description')}
+                  {t('sodermalm.blogSection.description')}
                 </p>
               </div>
               <div className="max-w-6xl mx-auto">
@@ -2511,10 +2511,10 @@ export default function FlyttfirmaAkersbergaPage() {
                           <span className="text-gray-500 text-sm md:text-base sm:ml-4">{t('alvsjo.tips.blog.readTime')}</span>
                     </div>
                         <h3 className="text-xl md:text-3xl font-bold text-[#0F172A] mb-4 md:mb-6 leading-tight">
-                      {t('sodertalje.blog.title')}
+                      {t('sodermalm.blog.title')}
                     </h3>
                         <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
-                      {t('sodertalje.blog.description')}
+                      {t('sodermalm.blog.description')}
                     </p>
                         <div className="flex justify-start sm:justify-between items-center">
                           <div></div>
@@ -2522,7 +2522,7 @@ export default function FlyttfirmaAkersbergaPage() {
                             href="/blogg/vad-bor-du-tanka-pa-nar-du-valjer-en-serios-flyttfirma" 
                             className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:opacity-90 transition-opacity font-medium text-sm md:text-base group w-fit"
                       >
-                            {t('sodertalje.blogSection.readMore')}
+                            {t('sodermalm.blogSection.readMore')}
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                               className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -2548,35 +2548,35 @@ export default function FlyttfirmaAkersbergaPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-12 text-center">
-                {t('sodertalje.faq.title')}
+                {t('sodermalm.faq.title')}
               </h2>
               
               <div className="space-y-4">
                 {[
                   {
-                    id: "sodertalje-1",
-                    question: t('sodertalje.faq.items.0.question'),
-                    answer: t('sodertalje.faq.items.0.answer')
+                    id: "sodermalm-1",
+                    question: t('sodermalm.faq.items.0.question'),
+                    answer: t('sodermalm.faq.items.0.answer')
                   },
                   {
-                    id: "sodertalje-2",
-                    question: t('sodertalje.faq.items.1.question'),
-                    answer: t('sodertalje.faq.items.1.answer')
+                    id: "sodermalm-2",
+                    question: t('sodermalm.faq.items.1.question'),
+                    answer: t('sodermalm.faq.items.1.answer')
                   },
                   {
-                    id: "sodertalje-3",
-                    question: t('sodertalje.faq.items.2.question'),
-                    answer: t('sodertalje.faq.items.2.answer')
+                    id: "sodermalm-3",
+                    question: t('sodermalm.faq.items.2.question'),
+                    answer: t('sodermalm.faq.items.2.answer')
                   },
                   {
-                    id: "sodertalje-4",
-                    question: t('sodertalje.faq.items.3.question'),
-                    answer: t('sodertalje.faq.items.3.answer')
+                    id: "sodermalm-4",
+                    question: t('sodermalm.faq.items.3.question'),
+                    answer: t('sodermalm.faq.items.3.answer')
                   },
                   {
-                    id: "sodertalje-5",
-                    question: t('sodertalje.faq.items.4.question'),
-                    answer: t('sodertalje.faq.items.4.answer')
+                    id: "sodermalm-5",
+                    question: t('sodermalm.faq.items.4.question'),
+                    answer: t('sodermalm.faq.items.4.answer')
                   },
                 ].map((faq, index) => (
                   <motion.div
@@ -2639,13 +2639,13 @@ export default function FlyttfirmaAkersbergaPage() {
 
               <div className="text-center mt-12">
                 <p className="text-lg text-gray-600 mb-6">
-                  {t('sodertalje.faqFooter.title')}
+                  {t('sodermalm.faqFooter.title')}
                 </p>
                 <Link 
                   href="/faq" 
                   className="inline-flex items-center bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white px-8 py-4 rounded-full hover:opacity-90 transition-opacity font-medium group"
                 >
-                  {t('sodertalje.faqFooter.linkText')}
+                  {t('sodermalm.faqFooter.linkText')}
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 

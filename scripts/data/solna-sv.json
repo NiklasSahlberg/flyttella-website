@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "Vad tycker våra kunder om oss?"
+  },
+  "hero": {
+    "title": "Flyttfirma i Solna – Råsunda, Huvudsta, Hagalund och Bergshamra",
+    "subtitle": "Erfarna team i Solna med fasta priser och strukturerade körplaner. Vi flyttar mellan höghus i Råsunda, villor i Hagalund och lägenheter i Huvudsta – vår lokalkännedom om Solnas områden säkerställer smidiga flyttar.",
+    "ctaPrimary": "Få offert",
+    "ctaSecondary": "Se hur vi arbetar"
+  },
+  "features": {
+    "title": "Vilka fördelar får du med Flyttella i Solna?"
+  },
+  "about": {
+    "title": "Om Flyttella i Solna",
+    "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Solna har vi flyttat många familjer och företag mellan områden som Råsunda, Huvudsta, Hagalund och Bergshamra – allt från små lägenheter till stora villor med kompletta helhetslösningar.",
+    "desktop2": "Våra team i Solna erbjuder packning, magasinering, flyttstädning och montering i ett paket. Du får alltid fast pris utan dolda avgifter, tydlig omfattning och en dedikerad koordinator som följer hela flytten från planering till inflytt.",
+    "desktop3": "Alla våra flyttar i Solna inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Vår kundtjänst känner till Solnas olika områden och kan ge råd om parkering, hissbokningar och lokala regler.",
+    "mobile": "Lokala team i Solna med fasta priser och helhetslösningar.",
+    "mobileExpanded": "Vi planerar bärvägar i lägenhetshus och villor, skyddar trappor och bokar hissar i höghus runt Solna centrum.",
+    "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+  },
+  "experienceSection": {
+    "title": "Vår erfarenhet i Solna"
+  },
+  "experience": {
+    "title": "Vår erfarenhet av flyttar i Solna",
+    "description": "Vi flyttar regelbundet i Solnas olika områden – från höghus i Råsunda till villor i Hagalund och lägenheter i Huvudsta. Vår lokalkännedom om Solnas fastigheter, parkeringsmöjligheter och hissregler gör att vi kan planera flyttar effektivt oavsett område.",
+    "expanded": "Inför större uppdrag gör vi platsbesök för att bedöma bärvägar, hissstatus och parkeringssituation. Erfarenheten från Solnas olika kvarter – från äldre fastigheter till nybyggda lägenhetshus – innebär att vi vet hur vi ska hantera både trånga trapphus och moderna hissar."
+  },
+  "reviews": {
+    "subtitle": "Rekommenderad flyttfirma i Solna",
+    "description": "Kunder i Solna, Råsunda och Huvudsta betonar vår punktlighet, professionella team och smidiga hantering av flyttar mellan lägenheter och villor. Omdömena visar att vi levererar trygg service oavsett om det gäller centrum eller utkant.",
+    "badgeAlt": "Flyttfirma Solna omdömen",
+    "arrowText": "Läs fler kunders upplevelser"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser i Solna",
+    "description": "Våra utmärkelser i Solna speglar vår långa erfarenhet av flyttar i områden som Råsunda, Huvudsta och Hagalund. Solnabor värdesätter vår förmåga att hantera allt från kompakta lägenheter till stora villor med samma professionella standard. Dessa utmärkelser bekräftar att vi levererar konsekvent kvalitet oavsett bostadstyp eller område i Solna."
+  },
+  "servicesSection": {
+    "title": "Upptäck alla våra tjänster i Solna",
+    "description": "Flytthjälp för lägenheter, villor och radhus, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Solnas olika områden.",
+    "privateServices": "Se alla tjänster"
+  },
+  "blogSection": {
+    "title": "Guider och tips för flytt i Solna",
+    "description": "Boka parkering i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar mellan olika områden i Solna.",
+    "readMore": "Läs mer"
+  },
+  "blog": {
+    "title": "Checklista: flytt i Solna",
+    "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+  },
+  "processSection": {
+    "title": "Vår process",
+    "subtitle": "Så fungerar det",
+    "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+  },
+  "process": {
+    "fillForm": "Fyll i formuläret",
+    "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+    "quickQuote": "Snabb offert",
+    "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+    "signConfirm": "Signera och bekräfta",
+    "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+    "personalContact": "Personlig kontakt",
+    "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+    "moveCompleted": "Flytt genomförd",
+    "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+    "satisfiedCustomer": "Uppföljning",
+    "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+  },
+  "faq": {
+    "title": "Vanliga frågor om flytt i Solna",
+    "items": [
+      {
+        "question": "Hur planerar ni flyttar i lägenhetshus eller villor?",
+        "answer": "Vi reserverar parkering i förväg, ordnar lastzoner och bygger bärkedjor mellan gata och bostad så att trappor och hissar används effektivt."
+      },
+      {
+        "question": "Kan ni hjälpa till med packning av hela hem?",
+        "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+      },
+      {
+        "question": "Vad ingår i er flyttjänst?",
+        "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+      },
+      {
+        "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+        "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+      },
+      {
+        "question": "Hur långt i förväg bör jag boka flytt i Solna?",
+        "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Har du fler frågor?",
+    "linkText": "Kontakta oss"
+  }
+}
+

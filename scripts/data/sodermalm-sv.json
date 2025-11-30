@@ -1,0 +1,101 @@
+{
+  "customerReviews": {
+    "title": "Vad tycker våra kunder om oss?"
+  },
+  "hero": {
+    "title": "Flyttfirma i Södermalm – Götgatan, Mariatorget, Hornstull och Medborgarplatsen",
+    "subtitle": "Vi hjälper med flyttar i Södermalms trånga gator, historiska fastigheter och populära kvarter. Erfarna team, fasta priser och noggrann planering för trapphus, hissar och begränsad parkering.",
+    "ctaPrimary": "Få offert",
+    "ctaSecondary": "Se hur vi arbetar"
+  },
+  "features": {
+    "title": "Vilka fördelar får du med Flyttella i Södermalm?"
+  },
+  "about": {
+    "title": "Om Flyttella i Södermalm",
+    "desktop": "Flyttella grundades i Stockholm för att göra flyttar mer transparenta och förutsägbara. På över åtta år har vi hjälpt 8 000 kunder – många i Södermalms olika kvarter – med allt från mindre lägenhetsflyttar till kompletta helhetslösningar.",
+    "desktop2": "Vi erbjuder packteam, magasinering, flyttstädning och montering under samma tak. Du får fast pris, tydlig omfattning och en kontaktperson som håller ihop tidsplan, bemanning och uppföljning.",
+    "desktop3": "Gratis kartonger, kostnadsfri om-/avbokning upp till 24 timmar innan och 14 dagars städgaranti ingår alltid. Kundtjänsten guidar kring lastzoner, hissbokningar och parkeringsregler i centrala fastigheter.",
+    "mobile": "Lokala team i Södermalm med fasta priser och helhetslösningar.",
+    "mobileExpanded": "Vi planerar bärvägar i trånga trapphus, skyddar historiska entréer och bokar hissar i höghus runt Södermalms gator.",
+    "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+  },
+  "experience": {
+    "title": "Vår erfarenhet av flyttar i Södermalm",
+    "description": "Vi flyttar dagligen mellan historiska fastigheter, nyrenoverade lägenheter och höghus i Södermalms olika kvarter. Vår rutin från trånga gator, begränsad parkering och hissbokningar gör att allt flyter.",
+    "expanded": "Inför större uppdrag gör vi platsbesök, mäter bärvägar i trapphus och planerar bemanning per våningsplan. Erfarenheten från Götgatan till Hornstull innebär att vi vet exakt hur mycket tid som krävs för trånga trappor, hissar eller längre bärvägar."
+  },
+  "reviews": {
+    "subtitle": "Rekommenderad flyttfirma i Södermalm",
+    "description": "Omdömen från Södermalms olika kvarter lyfter våra tydliga tidsplaner, lugna team och hur vi snabbt löser lastzoner eller hissbokningar. Kunder uppskattar att flytten känns kontrollerad trots trånga gator.",
+    "badgeAlt": "Flyttfirma Södermalm omdömen",
+    "arrowText": "Läs fler kunders upplevelser"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser i Södermalm",
+    "description": "Våra utmärkelser visar att vi levererar trygg service i centrala Stockholm. Södermalmsbor uppskattar vår punktlighet, hur vi skyddar historiska fastigheter och att vi tar ansvar hela vägen till sista kartongen."
+  },
+  "servicesSection": {
+    "title": "Upptäck alla våra tjänster i Södermalm",
+    "description": "Flytthjälp för lägenheter i historiska fastigheter, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, lastzoner och parkering i Södermalms kvarter.",
+    "privateServices": "Se alla tjänster"
+  },
+  "blogSection": {
+    "title": "Guider och tips för flytt i Södermalm",
+    "description": "Boka lastzon i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar via trånga trapphus eller begränsad parkering.",
+    "readMore": "Läs mer"
+  },
+  "blog": {
+    "title": "Checklista: flytt i Södermalms kvarter",
+    "description": "Stäm av portkoder, källar- och vindförråd, reservera lastzon och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+  },
+  "processSection": {
+    "title": "Vår process",
+    "subtitle": "Så fungerar det",
+    "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+  },
+  "process": {
+    "fillForm": "Fyll i formuläret",
+    "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, lastzoner och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+    "quickQuote": "Snabb offert",
+    "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+    "signConfirm": "Signera och bekräfta",
+    "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+    "personalContact": "Personlig kontakt",
+    "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+    "moveCompleted": "Flytt genomförd",
+    "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trapphus eller hiss och lastar sekventiellt för snabb avlastning.",
+    "satisfiedCustomer": "Uppföljning",
+    "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+  },
+  "faq": {
+    "title": "Vanliga frågor om flytt i Södermalm",
+    "items": [
+      {
+        "question": "Hur planerar ni flyttar i trånga trapphus eller begränsad parkering?",
+        "answer": "Vi reserverar lastzoner i förväg, ordnar parkeringstillstånd och bygger bärkedjor mellan gata och lägenhet så att hissar och trappor används effektivt."
+      },
+      {
+        "question": "Kan ni hjälpa till med packning av hela hem?",
+        "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+      },
+      {
+        "question": "Hur hanterar ni tunga eller skrymmande möbler i trånga trapphus?",
+        "answer": "Vi använder bärselar, pianodockor och extra bemanning. Vi skyddar väggar och trappor och planerar lyftvägar i förväg."
+      },
+      {
+        "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+        "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+      },
+      {
+        "question": "Hur långt i förväg bör jag boka flytt i Södermalm?",
+        "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Har du fler frågor?",
+    "linkText": "Kontakta oss"
+  }
+}
+

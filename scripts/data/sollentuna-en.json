@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Sollentuna — Edsberg, Viby, Häggvik and Tureberg",
+    "subtitle": "Experienced crews in Sollentuna with fixed pricing and structured run sheets. We move between villas in Edsberg, row houses in Viby and apartments in Häggvik – our local knowledge of Sollentuna's areas ensures smooth moves.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Sollentuna?"
+  },
+  "about": {
+    "title": "About Flyttella in Sollentuna",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Sollentuna we've built extensive experience with moves between areas like Edsberg, Viby, Häggvik and Tureberg. We handle everything from compact apartments to large family villas with complete full-service solutions tailored to your specific situation.",
+    "desktop2": "Our experienced crews in Sollentuna combine packing, storage, cleaning and assembly in one seamless full-service solution. With fixed pricing and no hidden fees, clear scope and a personal coordinator who follows the entire move from first contact to move-in, you get peace of mind throughout the process.",
+    "desktop3": "Every move in Sollentuna includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Our support team has good knowledge of Sollentuna's different areas and can provide practical advice on parking, elevator bookings and local conditions.",
+    "mobile": "Local Sollentuna crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in villas and row houses, protect staircases and reserve elevators in apartment buildings around Sollentuna center.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+  },
+  "experienceSection": {
+    "title": "Our experience in Sollentuna"
+  },
+  "experience": {
+    "title": "Our experience with moves in Sollentuna",
+    "description": "We move daily between Sollentuna's various areas – from large villas in Edsberg to family homes in Viby and apartments in Häggvik. Our routine with Sollentuna's varying housing types and parking conditions means we can adapt each move to the area's specific requirements.",
+    "expanded": "For larger projects we conduct site visits to map carry routes, assess elevator status and secure parking. Experience from Sollentuna's different areas – from Tureberg's villas to Häggvik's apartment buildings – means we know exactly how much time is needed for different types of homes and carry routes."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Sollentuna",
+    "description": "Feedback from Sollentuna's various areas – from Häggvik to Tureberg – highlights our punctual crews, clear communication and careful handling of both large and small moves. Clients particularly appreciate our ability to adapt the move to each family's specific needs and situation.",
+    "badgeAlt": "Moving company Sollentuna reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Sollentuna",
+    "description": "Our awards in Sollentuna show that we deliver reliable service throughout the municipality. Over the years we've been recognized for our professional approach to moves between Sollentuna's different areas – from Edsberg's villas to Häggvik's apartments. These awards are a result of our focus on customer satisfaction and quality, whether you're moving within Sollentuna or to/from the municipality."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Sollentuna",
+    "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Sollentuna's various areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Sollentuna",
+    "description": "Pre-book parking, label boxes by room, reserve elevators in the building and schedule extra time if you move between different areas in Sollentuna.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Sollentuna",
+    "description": "Confirm door codes, storage cages and attic spaces, pre-book parking and make sure the new address has the right key fobs before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Submit the form",
+    "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+    "quickQuote": "Detailed quote",
+    "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+    "personalContact": "Dedicated contact",
+    "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+    "moveCompleted": "Move executed",
+    "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+  },
+  "faq": {
+    "title": "Common questions about moving in Sollentuna",
+    "items": [
+      {
+        "question": "How do you plan moves in villas or row houses?",
+        "answer": "We reserve parking in advance, arrange loading zones and set up carry chains between street and home so stairs and elevators stay efficient."
+      },
+      {
+        "question": "Can you help with packing the entire home?",
+        "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you provide storage if move-in is delayed?",
+        "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+      },
+      {
+        "question": "How far ahead should I book in Sollentuna?",
+        "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Have more questions?",
+    "linkText": "Contact us"
+  }
+}
+
