@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
-    },
+    }, 
     {
       url: `${baseUrl}/visningsstadning`,
       lastModified: new Date(),
