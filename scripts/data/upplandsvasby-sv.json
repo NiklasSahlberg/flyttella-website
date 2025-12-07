@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "Vad tycker våra kunder om oss?"
+  },
+  "hero": {
+    "title": "Flyttfirma i Upplands Väsby – villor, radhus och lägenheter",
+    "subtitle": "Vi flyttar mellan villor i Smedby, lägenheter i Väsby Centrum och radhus i olika delar av kommunen. Vår rutin med pendeltågsnära logistik, välplanerade bostadsområden och samfällighetsregler gör att vi kan leverera effektiva flyttar som passar in i områdets strukturerade miljö.",
+    "ctaPrimary": "Få offert",
+    "ctaSecondary": "Se hur vi arbetar"
+  },
+  "features": {
+    "title": "Vilka fördelar får du med Flyttella i Upplands Väsby?"
+  },
+  "about": {
+    "title": "Om Flyttella i Upplands Väsby",
+    "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Upplands Väsby fokuserar vi på villor i Smedby, lägenheter i Väsby Centrum och radhus i välplanerade områden. Vi är vana vid att navigera strukturerade bostadsområden, planera bärvägar i moderna kvarter och hantera flyttar där punktlighet och effektivitet är viktiga faktorer.",
+    "desktop2": "Våra team i Upplands Väsby arbetar systematiskt i villaområden och lägenhetshus där grannar värdesätter ordning och punktlighet. Vi samordnar parkeringstillstånd med samfälligheter, planerar bärvägar i välstrukturerade kvarter och bokar hissar i tid i centrumlägenheterna. Packning, magasinering, flyttstädning och montering ingår i en samlad lösning med en dedikerad koordinator som håller ihop tidsplanen.",
+    "desktop3": "Alla flyttar i Upplands Väsby inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten kan ge konkreta råd om parkeringstillstånd i villaområden, hissbokningar i BRF:er och hur man navigerar Upplands Väsbys välplanerade bostadsstruktur.",
+    "mobile": "Lokala team i Upplands Väsby med fasta priser och helhetslösningar.",
+    "mobileExpanded": "Vi planerar bärvägar i villaområden och centrumlägenheter, säkrar parkeringstillstånd och skyddar trappor och golv.",
+    "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med råd om parkering, hissar och tidsplan."
+  },
+  "experienceSection": {
+    "title": "Vår erfarenhet i Upplands Väsby"
+  },
+  "experience": {
+    "title": "Vår erfarenhet av flyttar i Upplands Väsby",
+    "description": "Vi hanterar flyttar mellan Upplands Väsbys olika områden – villor i Smedby med välplanerade kvarter, lägenheter i Väsby Centrum och radhus i moderna bostadsområden. Vi planerar efter strukturerade gator, pendeltågsnära logistik och föreningsregler så att varje flytt passar områdets välordnade karaktär.",
+    "expanded": "Inför större uppdrag gör vi platsbesök för att mäta bärvägar i villaområden, kontrollera hissar och boka parkeringsdispens. Erfarenheten från Smedbys villor och Väsby Centrums lägenhetshus gör att vi vet hur lång tid strukturerade bärvägar, trappor och hissar tar – även när vi behöver koordinera med pendeltågstrafik och centrumlogistik."
+  },
+  "reviews": {
+    "subtitle": "Rekommenderad flyttfirma i Upplands Väsby",
+    "description": "Omdömen från Upplands Väsby lyfter våra punktliga flyttar i villaområden, hur vi koordinerar parkeringstillstånd effektivt och skyddar trappor och golv i radhus. Kunder uppskattar att vi anpassar bemanning och tider efter familjens schema och respekterar områdets strukturerade miljö.",
+    "badgeAlt": "Flyttfirma Upplands Väsby omdömen",
+    "arrowText": "Läs fler kunders upplevelser"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser i Upplands Väsby",
+    "description": "Våra utmärkelser i Upplands Väsby speglar vår förmåga att hantera flyttar i strukturerade villaområden och centrumlägenheter. Boende värdesätter att vi sköter parkeringstillstånd systematiskt, koordinerar effektivt med pendeltågstrafik och levererar punktliga, välplanerade flyttar som passar områdets ordnade karaktär."
+  },
+  "servicesSection": {
+    "title": "Upptäck alla våra tjänster i Upplands Väsby",
+    "description": "Flytthjälp för villor, radhus och lägenheter, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Upplands Väsbys olika områden.",
+    "privateServices": "Se alla tjänster"
+  },
+  "blogSection": {
+    "title": "Guider och tips för flytt i Upplands Väsby",
+    "description": "Boka parkeringstillstånd i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid i centrumområden eller nära pendeltåget.",
+    "readMore": "Läs mer"
+  },
+  "blog": {
+    "title": "Checklista: flytt i Upplands Väsby",
+    "description": "Stäm av portkoder, hissbokningar och parkeringstillstånd, säkra skydd för trappor och golv och kontrollera samfällighetsregler innan flyttdagen."
+  },
+  "processSection": {
+    "title": "Vår process",
+    "subtitle": "Så fungerar det",
+    "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+  },
+  "process": {
+    "fillForm": "Fyll i formuläret",
+    "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+    "quickQuote": "Snabb offert",
+    "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+    "signConfirm": "Signera och bekräfta",
+    "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+    "personalContact": "Personlig kontakt",
+    "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+    "moveCompleted": "Flytt genomförd",
+    "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+    "satisfiedCustomer": "Uppföljning",
+    "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+  },
+  "faq": {
+    "title": "Vanliga frågor om flytt i Upplands Väsby",
+    "items": [
+      {
+        "question": "Hur planerar ni flyttar i villaområden med strukturerade kvarter?",
+        "answer": "Vi gör platsbesök, säkrar parkeringstillstånd, planerar bärvägar i välordnade områden och koordinerar med samfälligheter."
+      },
+      {
+        "question": "Kan ni hjälpa till med packning av hela hem?",
+        "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+      },
+      {
+        "question": "Vad ingår i er flyttjänst?",
+        "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+      },
+      {
+        "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+        "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+      },
+      {
+        "question": "Hur långt i förväg bör jag boka flytt i Upplands Väsby?",
+        "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Har du fler frågor?",
+    "linkText": "Kontakta oss"
+  }
+}
+

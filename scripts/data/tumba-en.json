@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Tumba — discreet moves for villa areas and apartments",
+    "subtitle": "We move between villas by Uttran, row houses in Storvreten and apartments around Tumba center. Our routine with steep driveways, limited loading zones by the train and association rules means we can deliver quiet, punctual moves that respect the area's calm character.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Tumba?"
+  },
+  "about": {
+    "title": "About Flyttella in Tumba",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Tumba we focus on villas near Uttran, row houses in Storvreten and apartments by the commuter station. We're used to handling steep driveways, arranging loading zones in Tumba center and following HOA rules near the train.",
+    "desktop2": "Our crews in Tumba work discreetly in the mornings and weekends to keep noise low for neighbors. We coordinate parking permits with associations, plan carry routes on slopes and pre-book elevators in central buildings. Packing, storage, cleaning and assembly are bundled with one dedicated coordinator who keeps the timeline together.",
+    "desktop3": "Every move in Tumba includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on temporary parking permits by the station, elevator bookings in HOAs and how to secure carry routes in hilly blocks.",
+    "mobile": "Local Tumba crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes on hilly streets and central apartments, secure parking permits and protect stairs and floors.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice on parking, elevators and timing."
+  },
+  "experienceSection": {
+    "title": "Our experience in Tumba"
+  },
+  "experience": {
+    "title": "Our experience with moves in Tumba",
+    "description": "We handle daily moves across Tumba — villas by Uttran, row houses in Storvreten and apartments near the train. We plan for hilly streets, tight loading zones and association rules so each move fits the area.",
+    "expanded": "For larger projects we do site visits to measure carry routes on slopes, check elevators and book parking dispensations near Tumba center. Experience from lakeside villas around Uttran and Storvreten row houses means we know how long stairs, slopes and elevators take — even in winter when anti-slip gear is needed."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Tumba",
+    "description": "Reviews from Tumba highlight our quiet early-morning moves before train rush hour, how we arrange temporary parking permits in the center and protect oak floors and stairs in row houses. Clients value that we adjust crew size and timing around school drop-offs and association rules.",
+    "badgeAlt": "Moving company Tumba reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Tumba",
+    "description": "Our awards in Tumba reflect our ability to manage moves in hilly villa areas and train-adjacent apartments. Residents value that we handle parking permits, carry safely on steep stairs and deliver quietly and on time, even with early starts."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Tumba",
+    "description": "Household moves for villas, row houses and apartments, packing, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Tumba's different areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Tumba",
+    "description": "Pre-book parking permits, label boxes by room, reserve elevators in the building and plan extra time on hilly blocks or near the train.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Tumba",
+    "description": "Confirm door codes, elevator bookings and parking permits, secure anti-slip gear for winter moves and check association rules before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Submit the form",
+    "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+    "quickQuote": "Detailed quote",
+    "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+    "personalContact": "Dedicated contact",
+    "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+    "moveCompleted": "Move executed",
+    "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+  },
+  "faq": {
+    "title": "Common questions about moving in Tumba",
+    "items": [
+      {
+        "question": "How do you plan moves in hilly villa areas?",
+        "answer": "We do site checks, secure parking permits, plan carry routes on slopes and use anti-slip gear when needed."
+      },
+      {
+        "question": "Can you help with packing the entire home?",
+        "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you provide storage if move-in is delayed?",
+        "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+      },
+      {
+        "question": "How far ahead should I book in Tumba?",
+        "answer": "Peak season needs about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Have more questions?",
+    "linkText": "Contact us"
+  }
+}
+

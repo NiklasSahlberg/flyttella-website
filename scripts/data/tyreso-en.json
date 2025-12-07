@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Tyresö — villas in nature settings and apartments",
+    "subtitle": "We move between villas in Bollmora, apartments in Tyresö Centrum and row houses in Brevik. Our routine with long driveways, nature paths and archipelago-adjacent logistics means we can deliver smooth moves that adapt to the area's calm character and proximity to nature.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Tyresö?"
+  },
+  "about": {
+    "title": "About Flyttella in Tyresö",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Tyresö we focus on villas in natural settings, apartments in Tyresö Centrum and row houses in Brevik. We're used to navigating long driveways, planning carry routes in forest environments and handling moves where nature and quiet are important factors.",
+    "desktop2": "Our crews in Tyresö work respectfully in villa neighborhoods where neighbors value quiet and discretion. We coordinate parking permits with associations, plan carry routes that respect gardens and nature and pre-book elevators in central buildings. Packing, storage, cleaning and assembly are bundled with one dedicated coordinator who keeps the timeline together.",
+    "desktop3": "Every move in Tyresö includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on parking permits in villa areas, elevator bookings in HOAs and how to secure carry routes that protect gardens and nature.",
+    "mobile": "Local Tyresö crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in villa areas and central apartments, protect gardens and nature and reserve elevators in time.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice on parking, elevators and timing."
+  },
+  "experienceSection": {
+    "title": "Our experience in Tyresö"
+  },
+  "experience": {
+    "title": "Our experience with moves in Tyresö",
+    "description": "We handle moves across Tyresö — villas in Bollmora with extensive gardens, apartments in Tyresö Centrum and row houses in Brevik. We plan for long driveways, nature paths and association rules so each move respects the area's calm character.",
+    "expanded": "For larger projects we do site visits to measure carry routes in villa areas, check elevators and book parking dispensations. Experience from nature-adjacent villas around Bollmora and Brevik row houses means we know how long driveways, stairs and elevators take — even when we need to protect gardens and nature during the move."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Tyresö",
+    "description": "Reviews from Tyresö highlight our discreet moves in villa areas, how we protect gardens and nature during moves and arrange parking permits in quiet neighborhoods. Clients value that we adjust crew size and timing around family schedules and respect the area's natural environment.",
+    "badgeAlt": "Moving company Tyresö reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Tyresö",
+    "description": "Our awards in Tyresö reflect our ability to manage moves in nature-adjacent villa areas and central apartments. Residents value that we handle parking permits discreetly, protect gardens and nature during moves and deliver quiet, punctual moves that respect the area's calm character."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Tyresö",
+    "description": "Household moves for villas, row houses and apartments, packing, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Tyresö's different areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Tyresö",
+    "description": "Pre-book parking permits, label boxes by room, reserve elevators in the building and plan extra time in villa areas with long driveways or near nature.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Tyresö",
+    "description": "Confirm door codes, elevator bookings and parking permits, secure protection for gardens and nature and check association rules before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Submit the form",
+    "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+    "quickQuote": "Detailed quote",
+    "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+    "personalContact": "Dedicated contact",
+    "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+    "moveCompleted": "Move executed",
+    "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+  },
+  "faq": {
+    "title": "Common questions about moving in Tyresö",
+    "items": [
+      {
+        "question": "How do you plan moves in villa areas with long driveways?",
+        "answer": "We do site checks, secure parking permits, plan carry routes that protect gardens and use protection for nature when needed."
+      },
+      {
+        "question": "Can you help with packing the entire home?",
+        "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you provide storage if move-in is delayed?",
+        "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+      },
+      {
+        "question": "How far ahead should I book in Tyresö?",
+        "answer": "Peak season needs about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Have more questions?",
+    "linkText": "Contact us"
+  }
+}
+

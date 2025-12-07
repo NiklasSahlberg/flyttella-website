@@ -6268,5 +6268,520 @@
       "title": "Har du fler frågor?",
       "linkText": "Kontakta oss"
     }
+  },
+  "sundbyberg": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Sundbyberg – Råsunda, Hallonbergen, Duvbo och Lilla Alby",
+      "subtitle": "Vi flyttar regelbundet i Sundbybergs olika områden – från lägenheter i Råsunda och Hallonbergen till radhus i Duvbo och Lilla Alby. Våra team känner till Sundbybergs bostadsstruktur och anpassar varje flytt efter områdets specifika förutsättningar med fasta priser och tydlig planering.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Sundbyberg?"
+    },
+    "about": {
+      "title": "Om Flyttella i Sundbyberg",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Sundbyberg har vi byggt upp gedigen erfarenhet av flyttar mellan områden som Råsunda, Hallonbergen, Duvbo och Lilla Alby – från moderna lägenhetshus till radhus och villor i Sundbybergs varierande bostadsstruktur. Vår lokalkännedom om Sundbybergs olika områden och logistik gör att vi kan erbjuda helhetslösningar som är anpassade efter varje kunds specifika behov.",
+      "desktop2": "Våra team i Sundbyberg är vana vid att hantera flyttar i både nybyggda lägenhetshus och äldre radhusområden. Vi erbjuder packning, magasinering, flyttstädning och montering i ett samlat paket. Varje flytt följs av en dedikerad koordinator som säkerställer att allt från hissbokningar till parkering är planerat i förväg, så att flyttdagen flyter smidigt från första kontakt till inflytt.",
+      "desktop3": "Alla flyttar i Sundbyberg inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Vår kundtjänst känner till Sundbybergs olika områden – från Råsunda till Duvbo – och kan ge konkreta råd om parkeringsregler, hissbokningar och hur man navigerar Sundbybergs bostadsstruktur.",
+      "mobile": "Lokala team i Sundbyberg med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i lägenhetshus och radhus, skyddar trappor och bokar hissar i Sundbybergs olika områden.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Sundbyberg"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Sundbyberg",
+      "description": "Vi flyttar regelbundet mellan Sundbybergs olika områden – från lägenheter i Råsunda och Hallonbergen till radhus i Duvbo och Lilla Alby. Vår rutin med Sundbybergs varierande bostadstyper och parkeringsförhållanden gör att vi kan anpassa varje flytt efter områdets specifika förutsättningar.",
+      "expanded": "Inför större uppdrag gör vi platsbesök för att kartlägga bärvägar, bedöma hissstatus och säkra parkering. Erfarenheten från Sundbybergs olika områden – från Råsundas lägenhetshus till Duvbos radhus – innebär att vi vet exakt hur mycket tid som behövs för olika typer av bostäder och bärvägar."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Sundbyberg",
+      "description": "Omdömen från Sundbybergs olika områden – från Råsunda till Duvbo – lyfter fram våra punktliga team, tydlig kommunikation och noggranna hantering av både stora och små flyttar. Kunder uppskattar särskilt vår förmåga att anpassa flytten efter varje familjs specifika behov och situation i Sundbybergs varierande bostadsstruktur.",
+      "badgeAlt": "Flyttfirma Sundbyberg omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Sundbyberg",
+      "description": "Våra utmärkelser i Sundbyberg speglar vår förmåga att hantera flyttar i en kompakt kommun med varierande bostadsstruktur. Sundbybergsbor värdesätter att vi navigerar smidigt mellan nybyggda lägenhetskomplex och etablerade radhusområden med samma professionella standard. Dessa utmärkelser bekräftar att vi levererar konsekvent kvalitet oavsett om du flyttar i Råsunda, Hallonbergen, Duvbo eller Lilla Alby."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Sundbyberg",
+      "description": "Flytthjälp för lägenheter, radhus och villor, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Sundbybergs olika områden.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Sundbyberg",
+      "description": "Boka parkering i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar mellan olika områden i Sundbyberg.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Sundbyberg",
+      "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Sundbyberg",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i lägenhetshus eller radhus?",
+          "answer": "Vi reserverar parkering i förväg, ordnar lastzoner och bygger bärkedjor mellan gata och bostad så att trappor och hissar används effektivt."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst?",
+          "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Sundbyberg?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "taby": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Täby – Diskret flyttservice i villaområden och lägenhetshus",
+      "subtitle": "Erfarna team i Täby med fasta priser och strukturerade körplaner. Vi flyttar mellan stora villor i Viggbyholm, moderna lägenheter i Täby Centrum och radhus i Enebyberg – vår lokalkännedom om Täbys välskötta fastigheter och lugna gator säkerställer smidiga flyttar som respekterar områdets karaktär.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Täby?"
+    },
+    "about": {
+      "title": "Om Flyttella i Täby",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Täby har vi specialiserat oss på flyttar i välskötta villaområden och moderna lägenhetshus – från stora familjevillor i Viggbyholm med omfattande trädgårdar till kompakta lägenheter i Täby Centrum. Vår erfarenhet av Täbys välbevarade fastigheter och lugna gator gör att vi vet hur vi ska hantera värdefulla möbler och känsliga golv med extra omsorg.",
+      "desktop2": "Våra team i Täby är vana vid att arbeta diskret i villaområden där grannar värdesätter tystnad och punktlighet. Vi erbjuder packning, magasinering, flyttstädning och montering i ett samlat paket. Varje flytt följs av en dedikerad koordinator som säkerställer att allt från hissbokningar i BRF:er till parkeringstillstånd via samfälligheter är ordnat i förväg, så att flyttdagen flyter smidigt utan att störa omgivningen.",
+      "desktop3": "Alla flyttar i Täby inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Vår kundtjänst känner till Täbys olika områden – från Viggbyholms villaområden till Täby Centrums BRF:er – och kan ge konkreta råd om samfällighetsregler, hissbokningar i lägenhetshus och hur man navigerar Täbys välordnade bostadsstruktur.",
+      "mobile": "Lokala team i Täby med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i villor och lägenhetshus, skyddar trappor och bokar hissar i Täbys olika områden.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Täby"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Täby",
+      "description": "Vi flyttar regelbundet i Täbys villaområden och lägenhetshus – från stora familjevillor i Viggbyholm och Enebyberg till moderna lägenheter i Täby Centrum. Vår lokalkännedom om Täbys välskötta fastigheter och lugna gator gör att vi kan planera flyttar som respekterar områdets karaktär och familjernas behov.",
+      "expanded": "Inför större uppdrag gör vi platsbesök för att bedöma bärvägar i villor, kartlägga hissstatus i lägenhetshus och säkra parkering i Täbys lugna kvarter. Erfarenheten från Täbys olika områden – från Viggbyholms stora villor med långa uppfarter till Täby Centrums moderna lägenhetshus – innebär att vi vet hur vi ska hantera både omfattande villaflyttar och kompakta lägenhetsflyttar med samma omsorg."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Täby",
+      "description": "Omdömen från familjer i Täby – från Viggbyholms villagator och Enebybergs skolnära kvarter till BRF:er i Täby Centrum – lyfter hur vi smyger in tidiga morgonflyttar utan att störa grannar, fixar tillfälliga parkeringstillstånd med samfälligheter och skyddar ekgolv och trappor i radhus. Kunder uppskattar att vi anpassar bemanning och tider efter barnens lämningar och föreningarnas regler.",
+      "badgeAlt": "Flyttfirma Täby omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Täby",
+      "description": "Våra utmärkelser i Täby visar att vi förstår vad familjer i villor och lägenheter värdesätter – diskret service, skydd av värdefulla möbler och punktlighet som passar in i familjens schema. Täbybor uppskattar att vi hanterar allt från stora villor till kompakta lägenheter med samma omsorg och professionella standard."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Täby",
+      "description": "Flytthjälp för villor, lägenheter och radhus, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Täbys olika områden.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Täby",
+      "description": "Boka parkering i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar mellan olika områden i Täby.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Täby",
+      "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Täby",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i villor eller lägenhetshus?",
+          "answer": "Vi reserverar parkering i förväg, ordnar lastzoner och bygger bärkedjor mellan gata och bostad så att trappor och hissar används effektivt."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst?",
+          "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Täby?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "tumba": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Tumba – pendeltågsnära villor och lägenheter",
+      "subtitle": "Vi flyttar mellan villor vid Uttran, radhus i Storvreten och lägenheter runt Tumba centrum. Vår rutin med branta uppfarter, begränsade lastzoner vid pendeltåget och samfällighetsregler gör att vi kan leverera tysta, punktliga flyttar som respekterar områdets lugna karaktär.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Tumba?"
+    },
+    "about": {
+      "title": "Om Flyttella i Tumba",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Tumba fokuserar vi på villor nära Uttran, radhus i Storvreten och lägenheter kring pendeltågsstationen. Vi är vana vid att manövrera branta uppfarter, ordna lastzoner vid Tumba centrum och hantera BRF-regler nära pendeltåget.",
+      "desktop2": "Våra team i Tumba arbetar diskret på morgnar och helger för att störa grannar så lite som möjligt. Vi samordnar parkeringstillstånd med samfälligheter, planerar bärvägar i kuperad terräng och bokar hissar i tid i centrumlägenheterna. Packning, magasinering, flyttstädning och montering ingår i en samlad lösning med en dedikerad koordinator som håller ihop tidsplanen.",
+      "desktop3": "Alla flyttar i Tumba inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten kan ge konkreta råd om tillfälliga parkeringstillstånd vid stationen, hissbokningar i BRF:er och hur man säkrar bärvägar i backiga kvarter.",
+      "mobile": "Lokala team i Tumba med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i backiga villaområden och centrumlägenheter, säkrar parkeringstillstånd och skyddar trappor och golv.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med råd om parkering, hissar och tidsplan."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Tumba"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Tumba",
+      "description": "Vi hanterar dagligen flyttar mellan Tumbas olika områden – villor vid Uttran, radhus i Storvreten och lägenheter runt pendeltåget. Vi planerar efter kuperade gator, begränsade lastzoner och föreningsregler så att varje flytt passar området.",
+      "expanded": "Inför större uppdrag gör vi platsbesök för att mäta bärvägar i backar, kontrollera hissar och boka parkeringsdispens nära Tumba centrum. Erfarenheten från Uttrans sjönära villor och Storvretens radhus gör att vi vet hur lång tid backar, trappor och hissar tar – även vintertid när halkskydd behövs."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Tumba",
+      "description": "Omdömen från Tumba lyfter våra tysta morgonflyttar före pendeltågsrusningen, hur vi ordnar tillfälliga parkeringstillstånd i centrum och skyddar ekgolv och trappor i radhus. Kunder uppskattar att vi anpassar bemanning och tider efter barnens lämningar och samfälligheternas regler.",
+      "badgeAlt": "Flyttfirma Tumba omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Tumba",
+      "description": "Våra utmärkelser i Tumba speglar vår förmåga att hantera flyttar i kuperade villaområden och pendeltågsnära lägenheter. Boende värdesätter att vi sköter parkeringstillstånd, bär säkert i branta trappor och levererar tyst och punktligt även vid tidiga starttider."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Tumba",
+      "description": "Flytthjälp för villor, radhus och lägenheter, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Tumbas olika områden.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Tumba",
+      "description": "Boka parkeringstillstånd i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid i kuperade kvarter eller nära pendeltåget.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Tumba",
+      "description": "Stäm av portkoder, hissbokningar och parkeringstillstånd, säkra halkskydd vid vinterflytt och kontrollera samfällighetsregler innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Tumba",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i kuperade villaområden?",
+          "answer": "Vi gör platsbesök, säkrar parkeringstillstånd, planerar bärvägar i backar och använder halkskydd vid behov."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst?",
+          "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Tumba?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "tyreso": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Tyresö – villor i naturmiljö och lägenheter",
+      "subtitle": "Vi flyttar mellan villor i Bollmora, lägenheter i Tyresö Centrum och radhus i Brevik. Vår rutin med långa uppfarter, naturvägar och skärgårdsnära logistik gör att vi kan leverera smidiga flyttar som anpassar sig efter områdets lugna karaktär och närhet till naturen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Tyresö?"
+    },
+    "about": {
+      "title": "Om Flyttella i Tyresö",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Tyresö fokuserar vi på villor i naturmiljö, lägenheter i Tyresö Centrum och radhus i Brevik. Vi är vana vid att navigera långa uppfarter, planera bärvägar i skogsmiljö och hantera flyttar där naturen och lugnet är viktiga faktorer.",
+      "desktop2": "Våra team i Tyresö arbetar respektfullt i villaområden där grannar värdesätter tystnad och diskretion. Vi samordnar parkeringstillstånd med samfälligheter, planerar bärvägar som respekterar trädgårdar och natur och bokar hissar i tid i centrumlägenheterna. Packning, magasinering, flyttstädning och montering ingår i en samlad lösning med en dedikerad koordinator som håller ihop tidsplanen.",
+      "desktop3": "Alla flyttar i Tyresö inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten kan ge konkreta råd om parkeringstillstånd i villaområden, hissbokningar i BRF:er och hur man säkrar bärvägar som skyddar trädgårdar och natur.",
+      "mobile": "Lokala team i Tyresö med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i villaområden och centrumlägenheter, skyddar trädgårdar och natur och bokar hissar i tid.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med råd om parkering, hissar och tidsplan."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Tyresö"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Tyresö",
+      "description": "Vi hanterar flyttar mellan Tyresös olika områden – villor i Bollmora med omfattande trädgårdar, lägenheter i Tyresö Centrum och radhus i Brevik. Vi planerar efter långa uppfarter, naturvägar och föreningsregler så att varje flytt respekterar områdets lugna karaktär.",
+      "expanded": "Inför större uppdrag gör vi platsbesök för att mäta bärvägar i villaområden, kontrollera hissar och boka parkeringsdispens. Erfarenheten från Bollmoras naturnära villor och Breviks radhus gör att vi vet hur lång tid långa uppfarter, trappor och hissar tar – även när vi behöver skydda trädgårdar och natur under flytten."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Tyresö",
+      "description": "Omdömen från Tyresö lyfter våra diskreta flyttar i villaområden, hur vi skyddar trädgårdar och natur under flytten och ordnar parkeringstillstånd i lugna kvarter. Kunder uppskattar att vi anpassar bemanning och tider efter familjens schema och respekterar områdets naturmiljö.",
+      "badgeAlt": "Flyttfirma Tyresö omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Tyresö",
+      "description": "Våra utmärkelser i Tyresö speglar vår förmåga att hantera flyttar i naturnära villaområden och centrumlägenheter. Boende värdesätter att vi sköter parkeringstillstånd diskret, skyddar trädgårdar och natur under flytten och levererar tysta, punktliga flyttar som respekterar områdets lugna karaktär."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Tyresö",
+      "description": "Flytthjälp för villor, radhus och lägenheter, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Tyresös olika områden.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Tyresö",
+      "description": "Boka parkeringstillstånd i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid i villaområden med långa uppfarter eller nära naturen.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Tyresö",
+      "description": "Stäm av portkoder, hissbokningar och parkeringstillstånd, säkra skydd för trädgårdar och natur och kontrollera samfällighetsregler innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Tyresö",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i villaområden med långa uppfarter?",
+          "answer": "Vi gör platsbesök, säkrar parkeringstillstånd, planerar bärvägar som skyddar trädgårdar och använder skydd för natur vid behov."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst?",
+          "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Tyresö?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
+  },
+  "upplandsvasby": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma i Upplands Väsby – villor, radhus och lägenheter",
+      "subtitle": "Vi flyttar mellan villor i Smedby, lägenheter i Väsby Centrum och radhus i olika delar av kommunen. Vår rutin med pendeltågsnära logistik, välplanerade bostadsområden och samfällighetsregler gör att vi kan leverera effektiva flyttar som passar in i områdets strukturerade miljö.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella i Upplands Väsby?"
+    },
+    "about": {
+      "title": "Om Flyttella i Upplands Väsby",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Upplands Väsby fokuserar vi på villor i Smedby, lägenheter i Väsby Centrum och radhus i välplanerade områden. Vi är vana vid att navigera strukturerade bostadsområden, planera bärvägar i moderna kvarter och hantera flyttar där punktlighet och effektivitet är viktiga faktorer.",
+      "desktop2": "Våra team i Upplands Väsby arbetar systematiskt i villaområden och lägenhetshus där grannar värdesätter ordning och punktlighet. Vi samordnar parkeringstillstånd med samfälligheter, planerar bärvägar i välstrukturerade kvarter och bokar hissar i tid i centrumlägenheterna. Packning, magasinering, flyttstädning och montering ingår i en samlad lösning med en dedikerad koordinator som håller ihop tidsplanen.",
+      "desktop3": "Alla flyttar i Upplands Väsby inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten kan ge konkreta råd om parkeringstillstånd i villaområden, hissbokningar i BRF:er och hur man navigerar Upplands Väsbys välplanerade bostadsstruktur.",
+      "mobile": "Lokala team i Upplands Väsby med fasta priser och helhetslösningar.",
+      "mobileExpanded": "Vi planerar bärvägar i villaområden och centrumlägenheter, säkrar parkeringstillstånd och skyddar trappor och golv.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med råd om parkering, hissar och tidsplan."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet i Upplands Väsby"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar i Upplands Väsby",
+      "description": "Vi hanterar flyttar mellan Upplands Väsbys olika områden – villor i Smedby med välplanerade kvarter, lägenheter i Väsby Centrum och radhus i moderna bostadsområden. Vi planerar efter strukturerade gator, pendeltågsnära logistik och föreningsregler så att varje flytt passar områdets välordnade karaktär.",
+      "expanded": "Inför större uppdrag gör vi platsbesök för att mäta bärvägar i villaområden, kontrollera hissar och boka parkeringsdispens. Erfarenheten från Smedbys villor och Väsby Centrums lägenhetshus gör att vi vet hur lång tid strukturerade bärvägar, trappor och hissar tar – även när vi behöver koordinera med pendeltågstrafik och centrumlogistik."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma i Upplands Väsby",
+      "description": "Omdömen från Upplands Väsby lyfter våra punktliga flyttar i villaområden, hur vi koordinerar parkeringstillstånd effektivt och skyddar trappor och golv i radhus. Kunder uppskattar att vi anpassar bemanning och tider efter familjens schema och respekterar områdets strukturerade miljö.",
+      "badgeAlt": "Flyttfirma Upplands Väsby omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser i Upplands Väsby",
+      "description": "Våra utmärkelser i Upplands Väsby speglar vår förmåga att hantera flyttar i strukturerade villaområden och centrumlägenheter. Boende värdesätter att vi sköter parkeringstillstånd systematiskt, koordinerar effektivt med pendeltågstrafik och levererar punktliga, välplanerade flyttar som passar områdets ordnade karaktär."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster i Upplands Väsby",
+      "description": "Flytthjälp för villor, radhus och lägenheter, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Upplands Väsbys olika områden.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt i Upplands Väsby",
+      "description": "Boka parkeringstillstånd i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid i centrumområden eller nära pendeltåget.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt i Upplands Väsby",
+      "description": "Stäm av portkoder, hissbokningar och parkeringstillstånd, säkra skydd för trappor och golv och kontrollera samfällighetsregler innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt i Upplands Väsby",
+      "items": [
+        {
+          "question": "Hur planerar ni flyttar i villaområden med strukturerade kvarter?",
+          "answer": "Vi gör platsbesök, säkrar parkeringstillstånd, planerar bärvägar i välordnade områden och koordinerar med samfälligheter."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst?",
+          "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt i Upplands Väsby?",
+          "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Kontakta oss"
+    }
   }
 }

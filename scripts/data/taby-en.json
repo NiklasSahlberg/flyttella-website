@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Täby — Discreet moving service in villa areas and apartment buildings",
+    "subtitle": "Experienced crews in Täby with fixed pricing and structured run sheets. We move between large villas in Viggbyholm, modern apartments in Täby Centrum and row houses in Enebyberg – our local knowledge of Täby's well-maintained properties and quiet streets ensures smooth moves that respect the area's character.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Täby?"
+  },
+  "about": {
+    "title": "About Flyttella in Täby",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Täby we've specialized in moves in well-maintained villa areas and modern apartment buildings – from large family villas in Viggbyholm with extensive gardens to compact apartments in Täby Centrum. Our experience with Täby's well-preserved properties and quiet streets means we know how to handle valuable furniture and sensitive floors with extra care.",
+    "desktop2": "Our crews in Täby are used to working discreetly in villa neighborhoods where neighbors value quiet and punctuality. We offer packing, storage, cleaning and assembly in one complete package. Every move is followed by a dedicated coordinator who ensures everything from elevator bookings in HOAs to parking permits via homeowners' associations is arranged in advance, so move day runs smoothly without disturbing the surroundings.",
+    "desktop3": "All moves in Täby include complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Our support team knows Täby's different areas – from Viggbyholm's villa neighborhoods to Täby Centrum's HOAs – and can provide concrete advice on homeowners' association rules, elevator bookings in apartment buildings and how to navigate Täby's well-organized housing structure.",
+    "mobile": "Local Täby crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in villas and apartment buildings, protect staircases and reserve elevators in Täby's different areas.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice and updates."
+  },
+  "experienceSection": {
+    "title": "Our experience in Täby"
+  },
+  "experience": {
+    "title": "Our experience with moves in Täby",
+    "description": "We move regularly in Täby's villa areas and apartment buildings – from large family villas in Viggbyholm and Enebyberg to modern apartments in Täby Centrum. Our local knowledge of Täby's well-maintained properties and quiet streets means we can plan moves that respect the area's character and families' needs.",
+    "expanded": "For larger projects we conduct site visits to assess carry routes in villas, map elevator status in apartment buildings and secure parking in Täby's quiet neighborhoods. Experience from Täby's different areas – from Viggbyholm's large villas with long driveways to Täby Centrum's modern apartment buildings – means we know how to handle both extensive villa moves and compact apartment moves with the same care."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Täby",
+    "description": "Reviews from families in Täby – from Viggbyholm's villa streets and Enebyberg's school-side blocks to condos in Täby Centrum – note how we fit early-morning moves without disturbing neighbors, arrange temporary parking permits with HOAs and protect oak floors and staircases in row houses. Clients value that we tailor crew size and timing around school drop-offs and association rules.",
+    "badgeAlt": "Moving company Täby reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Täby",
+    "description": "Our awards in Täby show that we understand what families in villas and apartments value – discreet service, protection of valuable furniture and punctuality that fits into the family's schedule. Täby residents appreciate that we handle everything from large villas to compact apartments with the same care and professional standard."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Täby",
+    "description": "Household moves, packing teams, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Täby's various areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Täby",
+    "description": "Pre-book parking, label boxes by room, reserve elevators in the building and schedule extra time if you move between different areas in Täby.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Täby",
+    "description": "Confirm door codes, storage cages and attic spaces, pre-book parking and make sure the new address has the right key fobs before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Submit the form",
+    "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+    "quickQuote": "Detailed quote",
+    "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+    "personalContact": "Dedicated contact",
+    "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+    "moveCompleted": "Move executed",
+    "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+  },
+  "faq": {
+    "title": "Common questions about moving in Täby",
+    "items": [
+      {
+        "question": "How do you plan moves in villas or apartment buildings?",
+        "answer": "We reserve parking in advance, arrange loading zones and set up carry chains between street and home so stairs and elevators stay efficient."
+      },
+      {
+        "question": "Can you help with packing the entire home?",
+        "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you provide storage if move-in is delayed?",
+        "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+      },
+      {
+        "question": "How far ahead should I book in Täby?",
+        "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Have more questions?",
+    "linkText": "Contact us"
+  }
+}
+

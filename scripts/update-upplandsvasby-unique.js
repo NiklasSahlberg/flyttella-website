@@ -3,11 +3,16 @@ const path = require('path');
 
 const svPath = path.join(__dirname, '..', 'src', 'app', 'i18n', 'locales', 'sv.json');
 const enPath = path.join(__dirname, '..', 'src', 'app', 'i18n', 'locales', 'en.json');
-const svDataPath = path.join(__dirname, 'data', 'spanga-sv.json');
-const enDataPath = path.join(__dirname, 'data', 'spanga-en.json');
+const svDataPath = path.join(__dirname, 'data', 'upplandsvasby-sv.json');
+const enDataPath = path.join(__dirname, 'data', 'upplandsvasby-en.json');
 
 function loadJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  const content = fs.readFileSync(filePath, 'utf8');
+  // Remove BOM if present
+  if (content.charCodeAt(0) === 0xFEFF) {
+    return JSON.parse(content.slice(1));
+  }
+  return JSON.parse(content);
 }
 
 function saveLocale(filePath, key, content) {
@@ -19,11 +24,8 @@ function saveLocale(filePath, key, content) {
 const svContent = loadJson(svDataPath);
 const enContent = loadJson(enDataPath);
 
-saveLocale(svPath, 'spanga', svContent);
-saveLocale(enPath, 'spanga', enContent);
+saveLocale(svPath, 'upplandsvasby', svContent);
+saveLocale(enPath, 'upplandsvasby', enContent);
 
-console.log('Spånga-texter uppdaterade i sv/en.');
-
-
-
+console.log('Upplands Väsby-texter uppdaterade i sv/en.');
 

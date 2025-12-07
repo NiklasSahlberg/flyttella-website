@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Upplands Väsby — villas, row houses and apartments",
+    "subtitle": "We move between villas in Smedby, apartments in Väsby Centrum and row houses in different parts of the municipality. Our routine with train-adjacent logistics, well-planned residential areas and association rules means we can deliver efficient moves that fit into the area's structured environment.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Upplands Väsby?"
+  },
+  "about": {
+    "title": "About Flyttella in Upplands Väsby",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Upplands Väsby we focus on villas in Smedby, apartments in Väsby Centrum and row houses in well-planned areas. We're used to navigating structured residential areas, planning carry routes in modern neighborhoods and handling moves where punctuality and efficiency are important factors.",
+    "desktop2": "Our crews in Upplands Väsby work systematically in villa areas and apartment buildings where neighbors value order and punctuality. We coordinate parking permits with associations, plan carry routes in well-structured neighborhoods and pre-book elevators in central buildings. Packing, storage, cleaning and assembly are bundled with one dedicated coordinator who keeps the timeline together.",
+    "desktop3": "Every move in Upplands Väsby includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on parking permits in villa areas, elevator bookings in HOAs and how to navigate Upplands Väsby's well-planned housing structure.",
+    "mobile": "Local Upplands Väsby crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in villa areas and central apartments, secure parking permits and protect stairs and floors.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice on parking, elevators and timing."
+  },
+  "experienceSection": {
+    "title": "Our experience in Upplands Väsby"
+  },
+  "experience": {
+    "title": "Our experience with moves in Upplands Väsby",
+    "description": "We handle moves across Upplands Väsby — villas in Smedby with well-planned neighborhoods, apartments in Väsby Centrum and row houses in modern residential areas. We plan for structured streets, train-adjacent logistics and association rules so each move fits the area's well-organized character.",
+    "expanded": "For larger projects we do site visits to measure carry routes in villa areas, check elevators and book parking dispensations. Experience from Smedby's villas and Väsby Centrum's apartment buildings means we know how long structured carry routes, stairs and elevators take — even when we need to coordinate with train traffic and center logistics."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Upplands Väsby",
+    "description": "Reviews from Upplands Väsby highlight our punctual moves in villa areas, how we coordinate parking permits efficiently and protect stairs and floors in row houses. Clients value that we adjust crew size and timing around family schedules and respect the area's structured environment.",
+    "badgeAlt": "Moving company Upplands Väsby reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Upplands Väsby",
+    "description": "Our awards in Upplands Väsby reflect our ability to manage moves in structured villa areas and central apartments. Residents value that we handle parking permits systematically, coordinate efficiently with train traffic and deliver punctual, well-planned moves that fit the area's organized character."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Upplands Väsby",
+    "description": "Household moves for villas, row houses and apartments, packing, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Upplands Väsby's different areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Upplands Väsby",
+    "description": "Pre-book parking permits, label boxes by room, reserve elevators in the building and plan extra time in center areas or near the train.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Upplands Väsby",
+    "description": "Confirm door codes, elevator bookings and parking permits, secure protection for stairs and floors and check association rules before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our process stays simple, transparent and safe: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance — and we can add packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Submit the form",
+    "fillFormDesc": "Share addresses, dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+    "quickQuote": "Detailed quote",
+    "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits and send the run sheet with contacts.",
+    "personalContact": "Dedicated contact",
+    "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+    "moveCompleted": "Move executed",
+    "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+  },
+  "faq": {
+    "title": "Common questions about moving in Upplands Väsby",
+    "items": [
+      {
+        "question": "How do you plan moves in villa areas with structured neighborhoods?",
+        "answer": "We do site checks, secure parking permits, plan carry routes in well-organized areas and coordinate with associations."
+      },
+      {
+        "question": "Can you help with packing the entire home?",
+        "answer": "Yes. Packing crews label boxes by room, protect kitchenware and wardrobes and can even pack storage rooms or hobby spaces."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you provide storage if move-in is delayed?",
+        "answer": "Absolutely. We store belongings in secure, monitored facilities and deliver them once the new home is ready."
+      },
+      {
+        "question": "How far ahead should I book in Upplands Väsby?",
+        "answer": "Peak season needs about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Have more questions?",
+    "linkText": "Contact us"
+  }
+}
+

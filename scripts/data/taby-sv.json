@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "Vad tycker våra kunder om oss?"
+  },
+  "hero": {
+    "title": "Flyttfirma i Täby – Diskret flyttservice i villaområden och lägenhetshus",
+    "subtitle": "Erfarna team i Täby med fasta priser och strukturerade körplaner. Vi flyttar mellan stora villor i Viggbyholm, moderna lägenheter i Täby Centrum och radhus i Enebyberg – vår lokalkännedom om Täbys välskötta fastigheter och lugna gator säkerställer smidiga flyttar som respekterar områdets karaktär.",
+    "ctaPrimary": "Få offert",
+    "ctaSecondary": "Se hur vi arbetar"
+  },
+  "features": {
+    "title": "Vilka fördelar får du med Flyttella i Täby?"
+  },
+  "about": {
+    "title": "Om Flyttella i Täby",
+    "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet. I Täby har vi specialiserat oss på flyttar i välskötta villaområden och moderna lägenhetshus – från stora familjevillor i Viggbyholm med omfattande trädgårdar till kompakta lägenheter i Täby Centrum. Vår erfarenhet av Täbys välbevarade fastigheter och lugna gator gör att vi vet hur vi ska hantera värdefulla möbler och känsliga golv med extra omsorg.",
+    "desktop2": "Våra team i Täby är vana vid att arbeta diskret i villaområden där grannar värdesätter tystnad och punktlighet. Vi erbjuder packning, magasinering, flyttstädning och montering i ett samlat paket. Varje flytt följs av en dedikerad koordinator som säkerställer att allt från hissbokningar i BRF:er till parkeringstillstånd via samfälligheter är ordnat i förväg, så att flyttdagen flyter smidigt utan att störa omgivningen.",
+    "desktop3": "Alla flyttar i Täby inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Vår kundtjänst känner till Täbys olika områden – från Viggbyholms villaområden till Täby Centrums BRF:er – och kan ge konkreta råd om samfällighetsregler, hissbokningar i lägenhetshus och hur man navigerar Täbys välordnade bostadsstruktur.",
+    "mobile": "Lokala team i Täby med fasta priser och helhetslösningar.",
+    "mobileExpanded": "Vi planerar bärvägar i villor och lägenhetshus, skyddar trappor och bokar hissar i Täbys olika områden.",
+    "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med rådgivning och uppföljning."
+  },
+  "experienceSection": {
+    "title": "Vår erfarenhet i Täby"
+  },
+  "experience": {
+    "title": "Vår erfarenhet av flyttar i Täby",
+    "description": "Vi flyttar regelbundet i Täbys villaområden och lägenhetshus – från stora familjevillor i Viggbyholm och Enebyberg till moderna lägenheter i Täby Centrum. Vår lokalkännedom om Täbys välskötta fastigheter och lugna gator gör att vi kan planera flyttar som respekterar områdets karaktär och familjernas behov.",
+    "expanded": "Inför större uppdrag gör vi platsbesök för att bedöma bärvägar i villor, kartlägga hissstatus i lägenhetshus och säkra parkering i Täbys lugna kvarter. Erfarenheten från Täbys olika områden – från Viggbyholms stora villor med långa uppfarter till Täby Centrums moderna lägenhetshus – innebär att vi vet hur vi ska hantera både omfattande villaflyttar och kompakta lägenhetsflyttar med samma omsorg."
+  },
+  "reviews": {
+    "subtitle": "Rekommenderad flyttfirma i Täby",
+    "description": "Omdömen från familjer i Täby – från Viggbyholms villagator och Enebybergs skolnära kvarter till BRF:er i Täby Centrum – lyfter hur vi smyger in tidiga morgonflyttar utan att störa grannar, fixar tillfälliga parkeringstillstånd med samfälligheter och skyddar ekgolv och trappor i radhus. Kunder uppskattar att vi anpassar bemanning och tider efter barnens lämningar och föreningarnas regler.",
+    "badgeAlt": "Flyttfirma Täby omdömen",
+    "arrowText": "Läs fler kunders upplevelser"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser i Täby",
+    "description": "Våra utmärkelser i Täby visar att vi förstår vad familjer i villor och lägenheter värdesätter – diskret service, skydd av värdefulla möbler och punktlighet som passar in i familjens schema. Täbybor uppskattar att vi hanterar allt från stora villor till kompakta lägenheter med samma omsorg och professionella standard."
+  },
+  "servicesSection": {
+    "title": "Upptäck alla våra tjänster i Täby",
+    "description": "Flytthjälp för villor, lägenheter och radhus, packning, magasinering, flyttstädning, montering och rådgivning inför tillträde. Vi tar hand om hissbokningar, parkering och logistik i Täbys olika områden.",
+    "privateServices": "Se alla tjänster"
+  },
+  "blogSection": {
+    "title": "Guider och tips för flytt i Täby",
+    "description": "Boka parkering i förväg, märk lådor per rum, reservera hiss i fastigheten och planera extra tid om du flyttar mellan olika områden i Täby.",
+    "readMore": "Läs mer"
+  },
+  "blog": {
+    "title": "Checklista: flytt i Täby",
+    "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering och säkra att ny adress har godkända nyckelbrickor innan flyttdagen."
+  },
+  "processSection": {
+    "title": "Vår process",
+    "subtitle": "Så fungerar det",
+    "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+  },
+  "process": {
+    "fillForm": "Fyll i formuläret",
+    "fillFormDesc": "Beskriv adresser, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster.",
+    "quickQuote": "Snabb offert",
+    "quickQuoteDesc": "Du får en fast offert med tydlig omfattning och RUT-avdrag där det går. Behövs besiktning bokar vi det innan vi spikar priset.",
+    "signConfirm": "Signera och bekräfta",
+    "signConfirmDesc": "Efter signatur bokar vi hiss/lastzon, ordnar parkeringstillstånd och skickar körplan med kontaktvägar.",
+    "personalContact": "Personlig kontakt",
+    "personalContactDesc": "Din koordinator håller dig uppdaterad, tipsar om packning och ser till att skydd och kartonger levereras i tid.",
+    "moveCompleted": "Flytt genomförd",
+    "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för snabb avlastning.",
+    "satisfiedCustomer": "Uppföljning",
+    "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen."
+  },
+  "faq": {
+    "title": "Vanliga frågor om flytt i Täby",
+    "items": [
+      {
+        "question": "Hur planerar ni flyttar i villor eller lägenhetshus?",
+        "answer": "Vi reserverar parkering i förväg, ordnar lastzoner och bygger bärkedjor mellan gata och bostad så att trappor och hissar används effektivt."
+      },
+      {
+        "question": "Kan ni hjälpa till med packning av hela hem?",
+        "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum."
+      },
+      {
+        "question": "Vad ingår i er flyttjänst?",
+        "answer": "Vi tar hand om allt från packning och transport till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+      },
+      {
+        "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+        "answer": "Absolut, vi magasinerar i larmade, torra lager och levererar tillbaka när nya bostaden är redo."
+      },
+      {
+        "question": "Hur långt i förväg bör jag boka flytt i Täby?",
+        "answer": "Under högsäsong rekommenderar vi 3–4 veckor, annars räcker ofta 1–2 veckor. Vi försöker alltid lösa snabba förfrågningar."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Har du fler frågor?",
+    "linkText": "Kontakta oss"
+  }
+}
+

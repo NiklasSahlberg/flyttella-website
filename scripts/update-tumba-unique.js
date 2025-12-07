@@ -3,8 +3,8 @@ const path = require('path');
 
 const svPath = path.join(__dirname, '..', 'src', 'app', 'i18n', 'locales', 'sv.json');
 const enPath = path.join(__dirname, '..', 'src', 'app', 'i18n', 'locales', 'en.json');
-const svDataPath = path.join(__dirname, 'data', 'spanga-sv.json');
-const enDataPath = path.join(__dirname, 'data', 'spanga-en.json');
+const svDataPath = path.join(__dirname, 'data', 'tumba-sv.json');
+const enDataPath = path.join(__dirname, 'data', 'tumba-en.json');
 
 function loadJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -19,11 +19,8 @@ function saveLocale(filePath, key, content) {
 const svContent = loadJson(svDataPath);
 const enContent = loadJson(enDataPath);
 
-saveLocale(svPath, 'spanga', svContent);
-saveLocale(enPath, 'spanga', enContent);
+saveLocale(svPath, 'tumba', svContent);
+saveLocale(enPath, 'tumba', enContent);
 
-console.log('Spånga-texter uppdaterade i sv/en.');
-
-
-
+console.log('Tumba-texter uppdaterade i sv/en.');
 

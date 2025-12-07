@@ -60,7 +60,12 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     'sodertalje',
     'solna',
     'sollentuna',
-    'spanga'
+    'spanga',
+    'sundbyberg',
+    'taby',
+    'tumba',
+    'tyreso',
+    'upplands-vasby'
   ]);
 
   const getLocationHref = (slug: string) => `/flyttfirma-i-${slug}`;
