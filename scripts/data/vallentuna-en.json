@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Vallentuna — villas, row houses and nature-adjacent homes",
+    "subtitle": "We move between villas in Vallentuna center, row houses in Karby and apartments in Lindholmen. Our routine with nature-adjacent areas, quiet residential streets and well-planned neighborhoods means we can deliver moves that respect the area's calm character and proximity to nature.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Vallentuna?"
+  },
+  "about": {
+    "title": "About Flyttella in Vallentuna",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Vallentuna we focus on villas in the center, row houses in Karby and apartments in Lindholmen. We're used to navigating nature-adjacent residential areas, planning carry routes in quiet neighborhoods and handling moves where respect for neighbors and surroundings are important factors.",
+    "desktop2": "Our crews in Vallentuna work carefully in villa areas and apartment buildings where residents value peace and order. We coordinate parking permits, plan carry routes in nature-adjacent neighborhoods and pre-book elevators in central buildings. Packing, storage, cleaning and assembly are bundled with one dedicated coordinator who keeps the timeline together.",
+    "desktop3": "Every move in Vallentuna includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on parking in villa areas, elevator bookings in HOAs and how to navigate Vallentuna's nature-adjacent housing structure.",
+    "mobile": "Local Vallentuna crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in villa areas and central apartments, secure parking permits and protect stairs and floors.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice on parking, elevators and timing."
+  },
+  "experienceSection": {
+    "title": "Our experience in Vallentuna"
+  },
+  "experience": {
+    "title": "Our experience with moves in Vallentuna",
+    "description": "We handle moves across Vallentuna — villas in the center with nature-adjacent neighborhoods, row houses in Karby and apartments in Lindholmen. We plan for quiet streets, nature-adjacent residential areas and association rules so each move fits the area's calm, well-organized character.",
+    "expanded": "For larger projects we do site visits to measure carry routes in villa areas, check elevators and book parking dispensations. Experience from Vallentuna center's villas and Lindholmen's apartment buildings means we know how long nature-adjacent carry routes, stairs and elevators take — even when we need to coordinate with quiet residential streets and center logistics."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Vallentuna",
+    "description": "Reviews from Vallentuna highlight our careful moves in villa areas, how we respect neighbors and protect gardens and entrances in row houses. Clients value that we adjust crew size and timing around family schedules and respect the area's calm, nature-adjacent environment.",
+    "badgeAlt": "Moving company Vallentuna reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Vallentuna",
+    "description": "Our awards in Vallentuna reflect our ability to manage moves in nature-adjacent villa areas and central apartments. Residents value that we handle parking permits carefully, coordinate efficiently with quiet residential streets and deliver punctual, well-planned moves that respect the area's calm character and proximity to nature."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Vallentuna",
+    "description": "Household moves for villas, row houses and apartments, packing, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Vallentuna's different areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Vallentuna",
+    "description": "Pre-book parking permits, label boxes by room, reserve elevators in the building and plan extra time in center areas or near nature reserves.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Vallentuna",
+    "description": "Verify door codes, elevator bookings and parking permits, secure protection for stairs and floors and check association rules before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions — living area, floors, elevator, parking distance — and can be supplemented with packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Fill out the form",
+    "fillFormDesc": "Describe addresses, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services.",
+    "quickQuote": "Quick quote",
+    "quickQuoteDesc": "You get a fixed quote with clear scope and RUT deduction where applicable. If inspection is needed we book it before finalizing the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signing we book elevator/loading zone, arrange parking permits and send route plan with contact details.",
+    "personalContact": "Personal contact",
+    "personalContactDesc": "Your coordinator keeps you updated, tips on packing and ensures protection and boxes are delivered on time.",
+    "moveCompleted": "Move completed",
+    "moveCompletedDesc": "The team protects entrances, builds carry chains via stairs or elevator and loads sequentially for quick unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure cleaning or storage matches the plan."
+  },
+  "faq": {
+    "title": "Frequently asked questions about moving in Vallentuna",
+    "items": [
+      {
+        "question": "How do you plan moves in nature-adjacent villa areas?",
+        "answer": "We do site visits, secure parking permits, plan carry routes in quiet neighborhoods and coordinate with associations to respect neighbors and surroundings."
+      },
+      {
+        "question": "Can you help with packing an entire home?",
+        "answer": "Yes, our packing teams label boxes by room, protect kitchenware and closets and can also pack storage or hobby rooms."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed without hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you offer storage if move-in is delayed?",
+        "answer": "Absolutely, we store in alarmed, dry warehouses and deliver back when the new home is ready."
+      },
+      {
+        "question": "How far in advance should I book a move in Vallentuna?",
+        "answer": "During peak season we recommend 3–4 weeks, otherwise often 1–2 weeks is enough. We always try to solve quick requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Do you have more questions?",
+    "linkText": "See all frequently asked questions"
+  }
+}
+

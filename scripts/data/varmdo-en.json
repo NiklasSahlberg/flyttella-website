@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Varmdö — summer houses, villas and coastal homes",
+    "subtitle": "We move between summer houses in the archipelago, villas in Gustavsberg and apartments in Hemmesta. Our routine with coastal logistics, narrow roads and boat connections means we can deliver moves that adapt to the area's archipelago environment and seasonal traffic.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Varmdö?"
+  },
+  "about": {
+    "title": "About Flyttella in Varmdö",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Varmdö we focus on summer houses in the archipelago, villas in Gustavsberg and apartments in Hemmesta. We're used to navigating coastal areas, planning carry routes in narrow streets and handling moves where boat connections and seasonal traffic are important factors.",
+    "desktop2": "Our crews in Varmdö work flexibly in summer house areas and properties where residents value discretion and adaptability. We coordinate parking permits in coastal areas, plan carry routes in narrow streets and pre-book elevators in central buildings. Packing, storage, cleaning and assembly are bundled with one dedicated coordinator who keeps the timeline together.",
+    "desktop3": "Every move in Varmdö includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on parking in coastal areas, boat connections and how to navigate Varmdö's archipelago environment and seasonal traffic.",
+    "mobile": "Local Varmdö crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in summer house areas and central apartments, secure parking permits and protect stairs and floors.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice on parking, boat connections and timing."
+  },
+  "experienceSection": {
+    "title": "Our experience in Varmdö"
+  },
+  "experience": {
+    "title": "Our experience with moves in Varmdö",
+    "description": "We handle moves across Varmdö — summer houses in the archipelago with boat connections, villas in Gustavsberg and apartments in Hemmesta. We plan for coastal streets, narrow roads and seasonal traffic so each move fits the area's archipelago environment and unique conditions.",
+    "expanded": "For larger projects we do site visits to measure carry routes in summer house areas, check boat connections and book parking dispensations. Experience from Gustavsberg's villas and Hemmesta's apartment buildings means we know how long coastal carry routes, narrow streets and boat connections take — even when we need to coordinate with seasonal traffic and archipelago logistics."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Varmdö",
+    "description": "Reviews from Varmdö highlight our flexible moves in summer house areas, how we handle boat connections and narrow roads efficiently and protect properties in coastal environments. Clients value that we adjust crew size and timing around season and respect the area's archipelago environment and calm character.",
+    "badgeAlt": "Moving company Varmdö reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Varmdö",
+    "description": "Our awards in Varmdö reflect our ability to manage moves in archipelago environments and coastal properties. Residents value that we handle boat connections systematically, coordinate efficiently with seasonal traffic and deliver punctual, well-planned moves that adapt to the area's unique archipelago environment and coastal conditions."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Varmdö",
+    "description": "Household moves for summer houses, villas and apartments, packing, storage, cleaning, assembly and advisory services. We handle boat connections, parking and logistics in Varmdö's different areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Varmdö",
+    "description": "Pre-book parking permits, label boxes by room, reserve boat connections and plan extra time in archipelago areas or during peak season.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Varmdö",
+    "description": "Verify boat connections, elevator bookings and parking permits, secure protection for stairs and floors and check seasonal traffic rules before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions — living area, floors, elevator, parking distance — and can be supplemented with packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Fill out the form",
+    "fillFormDesc": "Describe addresses, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services.",
+    "quickQuote": "Quick quote",
+    "quickQuoteDesc": "You get a fixed quote with clear scope and RUT deduction where applicable. If inspection is needed we book it before finalizing the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signing we book elevator/loading zone, arrange parking permits and send route plan with contact details.",
+    "personalContact": "Personal contact",
+    "personalContactDesc": "Your coordinator keeps you updated, tips on packing and ensures protection and boxes are delivered on time.",
+    "moveCompleted": "Move completed",
+    "moveCompletedDesc": "The team protects entrances, builds carry chains via stairs or elevator and loads sequentially for quick unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure cleaning or storage matches the plan."
+  },
+  "faq": {
+    "title": "Frequently asked questions about moving in Varmdö",
+    "items": [
+      {
+        "question": "How do you plan moves in archipelago environments with boat connections?",
+        "answer": "We do site visits, secure boat connections, plan carry routes in coastal areas and coordinate with seasonal traffic to adapt to the area's unique conditions."
+      },
+      {
+        "question": "Can you help with packing an entire home?",
+        "answer": "Yes, our packing teams label boxes by room, protect kitchenware and closets and can also pack storage or hobby rooms."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed without hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you offer storage if move-in is delayed?",
+        "answer": "Absolutely, we store in alarmed, dry warehouses and deliver back when the new home is ready."
+      },
+      {
+        "question": "How far in advance should I book a move in Varmdö?",
+        "answer": "During peak season we recommend 3–4 weeks, otherwise often 1–2 weeks is enough. We always try to solve quick requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Do you have more questions?",
+    "linkText": "See all frequently asked questions"
+  }
+}
+

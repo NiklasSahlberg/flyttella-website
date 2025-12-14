@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Vasastan — apartments in central Stockholm",
+    "subtitle": "We move between apartments in Vasastan's neighborhoods, from historic buildings at Odenplan to modern buildings at Sankt Eriksplan. Our routine with central logistics, elevator bookings in older buildings and limited parking means we can deliver efficient moves that adapt to the city's dense urban environment.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Vasastan?"
+  },
+  "about": {
+    "title": "About Flyttella in Vasastan",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Vasastan we focus on apartments in central neighborhoods, from historic buildings at Odenplan to modern buildings at Sankt Eriksplan. We're used to navigating dense urban areas, planning carry routes in older stairwells and handling moves where elevator bookings and limited parking are important factors.",
+    "desktop2": "Our crews in Vasastan work efficiently in apartment buildings where residents value punctuality and discretion. We coordinate elevator bookings in older buildings, plan carry routes in historic stairwells and secure parking permits in central areas. Packing, storage, cleaning and assembly are bundled with one dedicated coordinator who keeps the timeline together.",
+    "desktop3": "Every move in Vasastan includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on elevator bookings in older buildings, parking permits in central areas and how to navigate Vasastan's dense housing structure.",
+    "mobile": "Local Vasastan crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in apartment buildings, secure elevator bookings and parking permits and protect stairs and floors.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice on elevators, parking and timing."
+  },
+  "experienceSection": {
+    "title": "Our experience in Vasastan"
+  },
+  "experience": {
+    "title": "Our experience with moves in Vasastan",
+    "description": "We handle moves across Vasastan — apartments in historic buildings at Odenplan, modern buildings at Sankt Eriksplan and older buildings in central areas. We plan for dense streets, elevator bookings in older buildings and limited parking so each move fits the city's central environment and unique conditions.",
+    "expanded": "For larger projects we do site visits to measure carry routes in apartment buildings, check elevators in older buildings and book parking dispensations. Experience from Odenplan's historic buildings and Sankt Eriksplan's modern buildings means we know how long central carry routes, older stairwells and elevator bookings take — even when we need to coordinate with heavy traffic and limited parking."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Vasastan",
+    "description": "Reviews from Vasastan highlight our punctual moves in central apartment buildings, how we handle elevator bookings in older buildings efficiently and protect stairs and floors in historic buildings. Clients value that we adjust crew size and timing around central logistics and respect the area's dense urban environment and limited parking options.",
+    "badgeAlt": "Moving company Vasastan reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Vasastan",
+    "description": "Our awards in Vasastan reflect our ability to manage moves in central apartment buildings and historic buildings. Residents value that we handle elevator bookings systematically, coordinate efficiently with limited parking and deliver punctual, well-planned moves that adapt to the city's dense urban environment and central logistics."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Vasastan",
+    "description": "Household moves for apartments, packing, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Vasastan's different neighborhoods.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Vasastan",
+    "description": "Pre-book elevators, label boxes by room, reserve parking permits and plan extra time in central areas or near public transport.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Vasastan",
+    "description": "Verify elevator bookings, door codes and parking permits, secure protection for stairs and floors and check building rules before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions — living area, floors, elevator, parking distance — and can be supplemented with packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Fill out the form",
+    "fillFormDesc": "Describe addresses, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services.",
+    "quickQuote": "Quick quote",
+    "quickQuoteDesc": "You get a fixed quote with clear scope and RUT deduction where applicable. If inspection is needed we book it before finalizing the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signing we book elevator/loading zone, arrange parking permits and send route plan with contact details.",
+    "personalContact": "Personal contact",
+    "personalContactDesc": "Your coordinator keeps you updated, tips on packing and ensures protection and boxes are delivered on time.",
+    "moveCompleted": "Move completed",
+    "moveCompletedDesc": "The team protects entrances, builds carry chains via stairs or elevator and loads sequentially for quick unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure cleaning or storage matches the plan."
+  },
+  "faq": {
+    "title": "Frequently asked questions about moving in Vasastan",
+    "items": [
+      {
+        "question": "How do you plan moves in central apartment buildings with limited parking?",
+        "answer": "We do site visits, secure elevator bookings in older buildings, plan carry routes in historic stairwells and coordinate parking permits in central areas to adapt to the city's dense urban environment."
+      },
+      {
+        "question": "Can you help with packing an entire home?",
+        "answer": "Yes, our packing teams label boxes by room, protect kitchenware and closets and can also pack storage or hobby rooms."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed without hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you offer storage if move-in is delayed?",
+        "answer": "Absolutely, we store in alarmed, dry warehouses and deliver back when the new home is ready."
+      },
+      {
+        "question": "How far in advance should I book a move in Vasastan?",
+        "answer": "During peak season we recommend 3–4 weeks, otherwise often 1–2 weeks is enough. We always try to solve quick requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Do you have more questions?",
+    "linkText": "See all frequently asked questions"
+  }
+}
+

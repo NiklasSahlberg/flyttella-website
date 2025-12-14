@@ -65,7 +65,11 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     'taby',
     'tumba',
     'tyreso',
-    'upplands-vasby'
+    'upplands-vasby',
+    'vallentuna',
+    'varmdo',
+    'vasastan',
+    'vasterhaninge'
   ]);
 
   const getLocationHref = (slug: string) => `/flyttfirma-i-${slug}`;

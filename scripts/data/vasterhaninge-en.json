@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company in Västerhaninge — row houses, villas and family-friendly homes",
+    "subtitle": "We move between row houses in Västerhaninge's neighborhoods, villas in nearby areas and apartments in modern residential areas. Our routine with family-friendly areas, narrow stairs in row houses and association rules means we can deliver moves that respect the area's calm character and proximity to nature.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella in Västerhaninge?"
+  },
+  "about": {
+    "title": "About Flyttella in Västerhaninge",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area. In Västerhaninge we focus on row houses in family-friendly neighborhoods, villas in nearby areas and apartments in modern residential areas. We're used to navigating family-friendly areas, planning carry routes in narrow stairs and handling moves where respect for neighbors and association rules are important factors.",
+    "desktop2": "Our crews in Västerhaninge work carefully in row house areas and properties where residents value peace and order. We coordinate parking permits, plan carry routes in narrow stairs and pre-book elevators in apartment buildings. Packing, storage, cleaning and assembly are bundled with one dedicated coordinator who keeps the timeline together.",
+    "desktop3": "Every move in Västerhaninge includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on parking in row house areas, association rules and how to navigate Västerhaninge's family-friendly housing structure.",
+    "mobile": "Local Västerhaninge crews with fixed pricing and full-service options.",
+    "mobileExpanded": "We plan carry routes in row house areas and apartment buildings, secure parking permits and protect stairs and floors.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in with advice on parking, elevators and timing."
+  },
+  "experienceSection": {
+    "title": "Our experience in Västerhaninge"
+  },
+  "experience": {
+    "title": "Our experience with moves in Västerhaninge",
+    "description": "We handle moves across Västerhaninge — row houses in family-friendly neighborhoods, villas in nearby areas and apartments in modern residential areas. We plan for narrow stairs, limited loading spots and association rules so each move fits the area's calm, family-friendly character.",
+    "expanded": "For larger projects we do site visits to measure carry routes in row house areas, check stairs and book parking dispensations. Experience from Västerhaninge's row houses and apartment buildings means we know how long narrow stairs, limited loading spots and association rules take — even when we need to coordinate with family-friendly areas and respect for neighbors."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover in Västerhaninge",
+    "description": "Reviews from Västerhaninge highlight our careful moves in row house areas, how we handle narrow stairs and limited loading spots efficiently and protect properties in family-friendly environments. Clients value that we adjust crew size and timing around family schedules and respect the area's calm character and association rules.",
+    "badgeAlt": "Moving company Västerhaninge reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards in Västerhaninge",
+    "description": "Our awards in Västerhaninge reflect our ability to manage moves in row house areas and family-friendly properties. Residents value that we handle parking permits carefully, coordinate efficiently with association rules and deliver punctual, well-planned moves that respect the area's calm character and proximity to nature."
+  },
+  "servicesSection": {
+    "title": "Discover all our services in Västerhaninge",
+    "description": "Household moves for row houses, villas and apartments, packing, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics in Västerhaninge's different areas.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving in Västerhaninge",
+    "description": "Pre-book parking permits, label boxes by room, reserve elevators in the building and plan extra time in row house areas or near nature reserves.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving in Västerhaninge",
+    "description": "Verify door codes, elevator bookings and parking permits, secure protection for stairs and floors and check association rules before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions — living area, floors, elevator, parking distance — and can be supplemented with packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Fill out the form",
+    "fillFormDesc": "Describe addresses, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services.",
+    "quickQuote": "Quick quote",
+    "quickQuoteDesc": "You get a fixed quote with clear scope and RUT deduction where applicable. If inspection is needed we book it before finalizing the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signing we book elevator/loading zone, arrange parking permits and send route plan with contact details.",
+    "personalContact": "Personal contact",
+    "personalContactDesc": "Your coordinator keeps you updated, tips on packing and ensures protection and boxes are delivered on time.",
+    "moveCompleted": "Move completed",
+    "moveCompletedDesc": "The team protects entrances, builds carry chains via stairs or elevator and loads sequentially for quick unloading.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure cleaning or storage matches the plan."
+  },
+  "faq": {
+    "title": "Frequently asked questions about moving in Västerhaninge",
+    "items": [
+      {
+        "question": "How do you plan moves in row house areas with narrow stairs?",
+        "answer": "We do site visits, secure parking permits, plan carry routes in narrow stairs and coordinate with associations to respect neighbors and residential environment."
+      },
+      {
+        "question": "Can you help with packing an entire home?",
+        "answer": "Yes, our packing teams label boxes by room, protect kitchenware and closets and can also pack storage or hobby rooms."
+      },
+      {
+        "question": "What's included in your moving service?",
+        "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed without hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+      },
+      {
+        "question": "Do you offer storage if move-in is delayed?",
+        "answer": "Absolutely, we store in alarmed, dry warehouses and deliver back when the new home is ready."
+      },
+      {
+        "question": "How far in advance should I book a move in Västerhaninge?",
+        "answer": "During peak season we recommend 3–4 weeks, otherwise often 1–2 weeks is enough. We always try to solve quick requests."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Do you have more questions?",
+    "linkText": "See all frequently asked questions"
+  }
+}
+
