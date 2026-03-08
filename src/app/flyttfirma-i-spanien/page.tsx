@@ -198,7 +198,7 @@ const AutoSlidingCards = ({ t }: { t: (key: string) => string }) => {
                           {card.description}
                         </motion.p>
                       </div>
-                    </motion.div> 
+                    </motion.div>
                   </div>
                 ))}
               </div>
