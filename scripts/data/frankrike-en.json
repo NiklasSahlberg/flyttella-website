@@ -1,0 +1,103 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company to and from France – Paris, Lyon, Marseille and beyond",
+    "subtitle": "We help Swedish families and businesses move to France and French customers move to Sweden. Our routine with long transport distances, French property regulations and coordination between Swedish and French homes means the move works even when distance, language barriers and differences in housing structure put higher demands on planning.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella for moves to/from France?"
+  },
+  "about": {
+    "title": "About Flyttella for moves to and from France",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For moves to and from France we have specialized in handling challenges unique to French properties: old buildings where elevators are often missing or too small for moving boxes, stairwells where two people can barely walk side by side, and property regulations where concierges must be informed in advance. We have moved Swedish families to everything from 20 square meter apartments in Paris's 6th arrondissement to large villas in Lyon where terrain makes trucks park far from the entrance.",
+    "desktop2": "Our teams have learned to navigate French property structures where carry routes often go through shared courtyards, where elevators can be 100 years old and require special handling, and where concierges have specific times when moves are allowed. We coordinate everything from booking loading zones in narrow Parisian streets where parking is almost impossible, to coordinating with French property managers who require documentation in French. Our dedicated coordinator keeps the timeline together and ensures everything from language barriers to differences in building codes is handled smoothly.",
+    "desktop3": "Every move to/from France includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on how to navigate French property regulations, what you need to know about concierges and shared spaces, how to book loading zones in Paris where rules are strict, and how to handle differences in housing structure where French apartments often have different space distribution compared to Swedish ones.",
+    "mobile": "Specialized teams for moves to/from France who know French property structures and regulations.",
+    "mobileExpanded": "We handle old buildings without elevators, narrow stairwells, concierges and French property regulations so the move works despite challenges.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on French property regulations, concierges and how to navigate differences in housing structure."
+  },
+  "experienceSection": {
+    "title": "Our experience with moves to and from France"
+  },
+  "experience": {
+    "title": "Our experience with moves to and from France",
+    "description": "We regularly move between Sweden and France – from apartments in Stockholm to homes in Paris, Lyon and Marseille. Our experience with long transport distances, French property structures with old buildings and narrow stairwells, and differences in housing market and building regulations means we can plan each move around distance, transport times and local conditions in both Swedish and French cities.",
+    "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and French addresses. We assess carry routes in older Parisian buildings with narrow stairs and old elevators, driveways in Lyon with its hills and loading zones near city centres in Marseille with port areas. Experience from moves to everything from small apartments in central Paris to large villas in Lyon and Marseille means we know how much time is needed when long transport distances, French property regulations and differences in housing structure affect the driving plan."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover for moves to/from France",
+    "description": "Reviews from our clients who have moved to or from France often tell the same story: that we turn a complex move into a controlled process despite long distances, old buildings and language barriers. Families who moved into small apartments in Paris describe how we planned carry routes through narrow stairwells, booked loading zones on tight streets and coordinated directly with the concierge, while clients who moved to villas outside Lyon and Marseille value how we synchronized multi-day driving through Europe with key handovers, elevator bookings and move-in so that everything happened without stress.",
+    "badgeAlt": "Moving company France reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards for moves to and from France",
+    "description": "Our awards linked to moves to and from France have mostly come after assignments where several French challenges meet at once: long transports through Europe, move-ins to protected buildings in Paris where stairwells must not be damaged, and coordination with both Swedish estate agents and French concierges. Partners especially highlight our ability to plan moves where we first carry out via a Swedish garage ramp, then drive for several days through Europe and finally unload via inner courtyards in Paris where tight time windows, noise rules and neighbours require millimetre precision. The fact that we complete these moves without damage to either belongings or sensitive French building details is the main reason behind many of the awards we have received on the France route."
+  },
+  "servicesSection": {
+    "title": "Discover all our services for moves to/from France",
+    "description": "Household moves between Sweden and France, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle long transport distances, parking in narrow French cities and logistics in both Swedish and French cities.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving to/from France",
+    "description": "Plan your move around long transport distances, check parking and loading zones in advance in narrow cities, factor in transport times through Europe and clarify how loading and move-in work in your specific French area with its specific regulations.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving to/from France",
+    "description": "Review transport route through Europe, ensure loading zones are booked in Paris or other cities, check rules for French properties with old buildings and shared spaces before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, long transport distances, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Fill out the form",
+    "fillFormDesc": "Describe addresses in Sweden and France, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and whether the move is via long transport distances.",
+    "quickQuote": "Quick quote",
+    "quickQuoteDesc": "You get a fixed quote with clear scope where long transport distances, distance and any loading zones in narrow cities are included. If inspection of the French address is needed we book it before finalizing the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signing we prepare a detailed driving plan through Europe, book loading zones where possible in narrow cities and ensure loading and unloading times fit both Swedish and French conditions.",
+    "personalContact": "Personal contact",
+    "personalContactDesc": "Your coordinator keeps you updated on timings, long transport distances and gives tips on how to prepare belongings for move-in at French properties with their specific regulations.",
+    "moveCompleted": "Move completed",
+    "moveCompletedDesc": "The team protects entrances, stairs and elevators in old buildings, adjusts carry routes to French property structures and makes sure your belongings end up in the right place in your new home in France or Sweden.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+  },
+  "faq": {
+    "title": "Frequently asked questions about moving to/from France",
+    "items": [
+      {
+        "question": "How do long transport distances affect my move to France?",
+        "answer": "We plan route and timings with consideration for long distances through Europe, ensure vehicles and documentation are correct and add margin for transport times. You get clear information on how this affects the schedule and price."
+      },
+      {
+        "question": "Do I need to think about differences in French property regulations?",
+        "answer": "We include French property structures with old buildings, narrow stairwells and specific regulations in the quote and explain how move-in works. You get a clear overview of what is included and how we handle differences between Swedish and French properties before you approve the move."
+      },
+      {
+        "question": "Can you help with packing an entire home before moving to France?",
+        "answer": "Yes, our packing teams label boxes by room, protect fragile items extra carefully and pack for long transport distances and move-in at French properties with old buildings."
+      },
+      {
+        "question": "How does move-in work at French properties?",
+        "answer": "We review gates, courtyards, stairwells and elevators in advance where possible and adapt crew size and equipment to the property's conditions – whether it's inner-city Paris with narrow streets, Lyon with hills or Marseille with port areas."
+      },
+      {
+        "question": "How far in advance should I book a move to/from France?",
+        "answer": "For moves to and from France we recommend 4–6 weeks in advance, especially for larger projects or when long transport distances and French property structures require extra planning. We always try to solve urgent requests where planning and transport make it possible."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Do you have more questions?",
+    "linkText": "See all frequently asked questions"
+  }
+}

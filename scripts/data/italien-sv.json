@@ -1,0 +1,102 @@
+{
+  "customerReviews": {
+    "title": "Vad tycker våra kunder om oss?"
+  },
+  "hero": {
+    "title": "Flyttfirma till och från Italien – Rom, Milano, Florens, Neapel och hela landet",
+    "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Italien och italienska kunder med flyttar till Sverige. Vår rutin med ZTL-zoner i historiska städer, gamla byggnader med trånga trappor och koordinering med italienska portvakter (portieri) gör att flytten fungerar även när italienska fastighetsregler och begränsningar i stadskärnor ställer högre krav på planeringen.",
+    "ctaPrimary": "Få offert",
+    "ctaSecondary": "Se hur vi arbetar"
+  },
+  "features": {
+    "title": "Vilka fördelar får du med Flyttella för flytt till/från Italien?"
+  },
+  "about": {
+    "title": "Om Flyttella för flytt till och från Italien",
+    "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För Italien har vi specialiserat oss på ZTL-zoner där lastbilar behöver tillstånd, portvakter (portieri) som styr när flyttar får ske – ofta bara vardagar, aldrig under siesta – och hissar från 1800-talet i Roms och Florens historiska centrum där bärvägar går genom flera portar och innergårdar.",
+    "desktop2": "Vi ansöker om ZTL-tillstånd i förväg, koordinerar med italienska fastighetsförvaltare som kräver dokumentation på italienska, och planerar Alpsträckor så att ankomsttiden stämmer med portvakternas tidsfönster. Alla flyttar inkluderar gratis flyttkartonger, kostnadsfri ombokning upp till 24 timmar innan samt 14 dagars städgaranti. Kundtjänsten ger råd om ZTL-zoner, portvakter och skillnader i bostadsstruktur mellan Sverige och Italien.",
+    "mobile": "Specialiserade team för Italien som känner till ZTL-zoner, portvakter och italienska fastighetsstrukturer.",
+    "mobileExpanded": "Vi hanterar ZTL-zoner, gamla byggnader utan hissar, trånga gator i historiska centrum och portvakter så att flytten fungerar trots utmaningar.",
+    "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om italienska fastighetsregler, portvakter och hur man navigerar ZTL-zoner."
+  },
+  "experienceSection": {
+    "title": "Vår erfarenhet av flyttar till och från Italien"
+  },
+  "experience": {
+    "title": "Vår erfarenhet av flyttar till och från Italien",
+    "description": "Vi flyttar regelbundet mellan Sverige och Italien – från lägenheter i Stockholm till bostäder i Rom, Milano, Florens och Neapel. Vår erfarenhet av Alpsträckor, ZTL-zoner i historiska städer, italienska fastighetsstrukturer med gamla byggnader och trånga trappor, samt skillnader i bostadsmarknad och byggnadsregler gör att vi kan planera varje flytt efter avstånd, transporttider och lokala förutsättningar i både svenska och italienska städer.",
+    "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och italienska adresser. Vi ser över bärvägar i äldre byggnader i Rom med smala trappor och gamla hissar, ZTL-zoner i Florens där lastbilar måste ha tillstånd, och lastzoner nära centrum i Milano och Neapel där gatorna är trånga och parkering är begränsad. Vår erfarenhet från flyttar till allt från små lägenheter i Roms historiska centrum till stora villor i Toscana gör att vi vet hur lång tid som krävs när Alpsträckor, ZTL-zoner, italienska fastighetsregler och skillnader i bostadsstruktur påverkar körplanen."
+  },
+  "reviews": {
+    "subtitle": "Rekommenderad flyttfirma för flytt till/från Italien",
+    "description": "Kunder som flyttat till eller från Italien lyfter ofta hur vi hanterat kombinationen av lång körning genom Alperna, ZTL-zoner i historiska städer och italienska fastighetsregler utan att tappa kontrollen. Familjer som flyttat till Rom berättar hur vi i god tid koordinerade med portvakter, ansökte om tillstånd för ZTL-zoner och stämde av tider med både grannar och fastighetsägare. Kunder som flyttat till Florens och Milano uppskattar särskilt att vi varit tydliga med körplan genom Alperna, hur ZTL-zoner påverkar ankomst, och att vi hållit våra lovade tidfönster trots långa avstånd och begränsningar i stadskärnor.",
+    "badgeAlt": "Flyttfirma Italien omdömen",
+    "arrowText": "Läs fler kunders upplevelser"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser för flyttar till och från Italien",
+    "description": "Våra utmärkelser kopplade till Italien handlar ofta om uppdrag där många rörliga delar ska fungera samtidigt: avgång från Sverige, körning genom Alperna, ankomst i en italiensk stad med ZTL-zoner, och inflytt i en fastighet där både tidspassning och hänsyn till portvakter och grannar är avgörande. Samarbetspartners lyfter vår förmåga att leverera på minuten till adresser i exempelvis Roms historiska centrum eller Florens gamla stad, trots att vi passerat bergspass, ZTL-kontroller och portvakter längs vägen. Att vi klarar detta utan skador på varken bohag eller gamla trapphus är en viktig anledning till de utmärkelser vi fått på Italienssträckan."
+  },
+  "servicesSection": {
+    "title": "Upptäck alla våra tjänster för flytt till/från Italien",
+    "description": "Flytthjälp mellan Sverige och Italien, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan genom Alperna, tar höjd för ZTL-zoner, planerar runt portvakter och sköter logistik vid både svenska och italienska adresser.",
+    "privateServices": "Se alla tjänster"
+  },
+  "blogSection": {
+    "title": "Guider och tips för flytt till/från Italien",
+    "description": "Planera flytten efter körsträckor genom Alperna, se över om din adress ligger i en ZTL-zon, kontrollera i förväg hur hissar, innergårdar och portvakterrutiner fungerar i just din italienska fastighet.",
+    "readMore": "Läs mer"
+  },
+  "blog": {
+    "title": "Checklista: flytt till/från Italien",
+    "description": "Gå igenom transportväg genom Alperna, säkerställ att ZTL-tillstånd är ansökta i Rom eller andra städer, stäm av regler för italienska fastigheter med gamla byggnader och gemensamma utrymmen innan flyttdagen."
+  },
+  "processSection": {
+    "title": "Vår process",
+    "subtitle": "Så fungerar det",
+    "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, Alpsträckor, ZTL-zoner, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+  },
+  "process": {
+    "fillForm": "Fyll i formuläret",
+    "fillFormDesc": "Beskriv adresser i Sverige och Italien, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och om flytten sker via Alpsträckor eller genom ZTL-zoner.",
+    "quickQuote": "Snabb offert",
+    "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där Alpsträckor, avstånd och eventuella ZTL-zoner ingår. Behövs besiktning av italienska adressen eller ansökan om ZTL-tillstånd bokar vi det innan vi spikar priset.",
+    "signConfirm": "Signera och bekräfta",
+    "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan genom Alperna, ansöker om ZTL-tillstånd där det behövs och säkerställer att tid för lastning och lossning passar både svenska och italienska förhållanden.",
+    "personalContact": "Personlig kontakt",
+    "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, Alpsträckor och tipsar om hur du förbereder bohaget för inflytt i italienska fastigheter med deras specifika regler och portvakter.",
+    "moveCompleted": "Flytt genomförd",
+    "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar i gamla byggnader, anpassar bärvägar efter italienska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Italien eller Sverige.",
+    "satisfiedCustomer": "Uppföljning",
+    "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+  },
+  "faq": {
+    "title": "Vanliga frågor om flytt till/från Italien",
+    "items": [
+      {
+        "question": "Hur påverkar ZTL-zoner min flytt till Italien?",
+        "answer": "ZTL-zoner (Zona Traffico Limitato) är begränsade områden i italienska städer där lastbilar behöver tillstånd eller får köra på specifika tider. Vi ansöker om tillstånd i förväg och planerar flytten så att lastbilen kan komma fram till din adress inom tillåtna tider. Du får tydlig information om hur detta påverkar tidsplan och pris."
+      },
+      {
+        "question": "Behöver jag tänka på skillnader i italienska fastighetsregler?",
+        "answer": "Vi tar höjd för italienska fastighetsstrukturer med gamla byggnader, trånga trapphus och specifika regler i offerten och förklarar hur inflytt fungerar. Du får en tydlig genomgång av vad som ingår och hur vi hanterar skillnader mellan svenska och italienska fastigheter innan du godkänner flytten."
+      },
+      {
+        "question": "Kan ni hjälpa till med packning av hela hem inför flytt till Italien?",
+        "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål extra noga och packar för att klara Alpsträckor och inflytt i italienska fastigheter med gamla byggnader."
+      },
+      {
+        "question": "Hur fungerar inflytt i italienska fastigheter?",
+        "answer": "Vi går igenom portar, gårdar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning samt utrustning efter fastighetens förutsättningar – oavsett om det gäller historiska centrum i Rom med ZTL-zoner, Florens med trånga gator eller Milano med moderna områden."
+      },
+      {
+        "question": "Hur långt i förväg bör jag boka flytt till/från Italien?",
+        "answer": "För flyttar till och från Italien rekommenderar vi 4–6 veckor i förväg, särskilt vid större uppdrag eller när Alpsträckor och ZTL-zoner kräver extra planering. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Har du fler frågor?",
+    "linkText": "Se alla vanliga frågor"
+  }
+}

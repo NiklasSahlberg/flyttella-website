@@ -1,0 +1,102 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company to and from Italy – Rome, Milan, Florence, Naples and beyond",
+    "subtitle": "We help Swedish families and businesses move to Italy and Italian customers move to Sweden. Our routine with ZTL zones in historic cities, old buildings with narrow stairs and coordination with Italian porters (portieri) means the move works even when Italian property regulations and restrictions in city centres put higher demands on planning.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella for moves to/from Italy?"
+  },
+  "about": {
+    "title": "About Flyttella for moves to and from Italy",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For Italy we have specialized in ZTL zones where trucks need permits, porters (portieri) who control when moves are allowed – often only weekdays, never during siesta – and elevators from the 1800s in Rome's and Florence's historic centres where carry routes go through multiple gates and courtyards.",
+    "desktop2": "We apply for ZTL permits in advance, coordinate with Italian property managers who require documentation in Italian, and plan Alpine routes so arrival times match porters' time windows. Every move includes complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee. Support gives advice on ZTL zones, porters and differences in housing structure between Sweden and Italy.",
+    "mobile": "Specialized teams for Italy who know ZTL zones, porters and Italian property structures.",
+    "mobileExpanded": "We handle ZTL zones, old buildings without elevators, narrow streets in historic centres and porters so the move works despite challenges.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on Italian property regulations, porters and how to navigate ZTL zones."
+  },
+  "experienceSection": {
+    "title": "Our experience with moves to and from Italy"
+  },
+  "experience": {
+    "title": "Our experience with moves to and from Italy",
+    "description": "We regularly move between Sweden and Italy – from apartments in Stockholm to homes in Rome, Milan, Florence and Naples. Our experience with Alpine routes, ZTL zones in historic cities, Italian property structures with old buildings and narrow stairs, and differences in housing market and building regulations means we can plan each move around distance, transport times and local conditions in both Swedish and Italian cities.",
+    "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Italian addresses. We assess carry routes in older buildings in Rome with narrow stairs and old elevators, ZTL zones in Florence where trucks need permits, and loading zones near city centres in Milan and Naples where streets are narrow and parking is limited. Experience from moves to everything from small apartments in Rome's historic centre to large villas in Tuscany means we know how much time is needed when Alpine routes, ZTL zones, Italian property regulations and differences in housing structure affect the driving plan."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover for moves to/from Italy",
+    "description": "Customers who have moved to or from Italy often highlight how we handled the combination of long driving through the Alps, ZTL zones in historic cities and Italian property regulations without losing control. Families who moved to Rome tell how we coordinated with porters in good time, applied for ZTL zone permits and aligned times with both neighbors and property owners. Customers who moved to Florence and Milan particularly value that we were clear about the driving plan through the Alps, how ZTL zones affect arrival, and that we kept our promised time windows despite long distances and restrictions in city centres.",
+    "badgeAlt": "Moving company Italy reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards for moves to and from Italy",
+    "description": "Our awards related to Italy often involve assignments where many moving parts must work simultaneously: departure from Sweden, driving through the Alps, arrival in an Italian city with ZTL zones, and move-in at a property where both timing and consideration for porters and neighbors are crucial. Partners especially highlight our ability to deliver on the minute to addresses in, for example, Rome's historic centre or Florence's old town, despite passing mountain passes, ZTL checks and porters along the way. That we manage this without damage to either belongings or old stairwells is an important reason for the awards we have received on the Italy route."
+  },
+  "servicesSection": {
+    "title": "Discover all our services for moves to/from Italy",
+    "description": "Household moves between Sweden and Italy, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans through the Alps, account for ZTL zones, plan around porters and manage logistics at both Swedish and Italian addresses.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving to/from Italy",
+    "description": "Plan your move around driving routes through the Alps, check if your address is in a ZTL zone, clarify in advance how elevators, courtyards and porter routines work in your specific Italian property.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving to/from Italy",
+    "description": "Review transport route through the Alps, ensure ZTL permits are applied for in Rome or other cities, check rules for Italian properties with old buildings and shared spaces before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, Alpine routes, ZTL zones, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Fill out the form",
+    "fillFormDesc": "Describe addresses in Sweden and Italy, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and whether the move is via Alpine routes or through ZTL zones.",
+    "quickQuote": "Quick quote",
+    "quickQuoteDesc": "You get a fixed quote with clear scope where Alpine routes, distance and any ZTL zones are included. If inspection of the Italian address or application for ZTL permits is needed we book it before finalizing the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signing we prepare a detailed driving plan through the Alps, apply for ZTL permits where needed and ensure loading and unloading times fit both Swedish and Italian conditions.",
+    "personalContact": "Personal contact",
+    "personalContactDesc": "Your coordinator keeps you updated on timings, Alpine routes and gives tips on how to prepare belongings for move-in at Italian properties with their specific regulations and porters.",
+    "moveCompleted": "Move completed",
+    "moveCompletedDesc": "The team protects entrances, stairs and elevators in old buildings, adjusts carry routes to Italian property structures and makes sure your belongings end up in the right place in your new home in Italy or Sweden.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+  },
+  "faq": {
+    "title": "Frequently asked questions about moving to/from Italy",
+    "items": [
+      {
+        "question": "How do ZTL zones affect my move to Italy?",
+        "answer": "ZTL zones (Zona Traffico Limitato) are restricted areas in Italian cities where trucks need permits or can only drive at specific times. We apply for permits in advance and plan the move so the truck can reach your address within allowed times. You get clear information on how this affects the schedule and price."
+      },
+      {
+        "question": "Do I need to think about differences in Italian property regulations?",
+        "answer": "We include Italian property structures with old buildings, narrow stairwells and specific regulations in the quote and explain how move-in works. You get a clear overview of what is included and how we handle differences between Swedish and Italian properties before you approve the move."
+      },
+      {
+        "question": "Can you help with packing an entire home before moving to Italy?",
+        "answer": "Yes, our packing teams label boxes by room, protect fragile items extra carefully and pack for Alpine routes and move-in at Italian properties with old buildings."
+      },
+      {
+        "question": "How does move-in work at Italian properties?",
+        "answer": "We review gates, courtyards, stairwells and elevators in advance where possible and adapt crew size and equipment to the property's conditions – whether it's historic centres in Rome with ZTL zones, Florence with narrow streets or Milan with modern areas."
+      },
+      {
+        "question": "How far in advance should I book a move to/from Italy?",
+        "answer": "For moves to and from Italy we recommend 4–6 weeks in advance, especially for larger projects or when Alpine routes and ZTL zones require extra planning. We always try to solve urgent requests where planning and transport make it possible."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Do you have more questions?",
+    "linkText": "See all frequently asked questions"
+  }
+}

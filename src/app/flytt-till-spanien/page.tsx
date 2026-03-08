@@ -414,9 +414,9 @@ export default function FlyttTillSpanienPage() {
       <div className="main-zoom">
         {/* Hero Section */}
         <div className="relative py-2 bg-white text-[#0F172A] overflow-hidden">
-          {/* Mobile: Form only */}
+          {/* Mobile: Form only (samma struktur som flytt-till-nederlanderna) */}
           <div className="md:hidden mx-auto px-4 pb-8">
-            <FlyttoffertForm mode="widget" />
+            <FlyttoffertForm mode="widget" backgroundImage="/malaga.jpg" />
           </div>
           
           {/* Mobile: Förmåner after form */}
@@ -424,10 +424,9 @@ export default function FlyttTillSpanienPage() {
             <FeatureBoxesSection />
           </div>
           
-          {/* Mobile: Hero content after form */}
+          {/* Mobile: Hero-ruta med titel och text (utan formulär) */}
           <div className="md:hidden mx-auto px-4 py-6">
             <div className="bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-2xl p-6 relative overflow-hidden">
-              {/* Background image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{

@@ -1,0 +1,104 @@
+{
+  "customerReviews": {
+    "title": "Vad tycker våra kunder om oss?"
+  },
+  "hero": {
+    "title": "Flyttfirma till och från Norge – Oslo, Bergen, Trondheim och hela landet",
+    "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Norge och norska kunder med flyttar till Sverige. Vår rutin med gränspassager, E6-logistik, fjällvägar och norska väderförhållanden gör att flytten fungerar även när avstånd, vinterväglag och bompeng ställer högre krav på planeringen.",
+    "ctaPrimary": "Få offert",
+    "ctaSecondary": "Se hur vi arbetar"
+  },
+  "features": {
+    "title": "Vilka fördelar får du med Flyttella för flytt till/från Norge?"
+  },
+  "about": {
+    "title": "Om Flyttella för flytt till och från Norge",
+    "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För flyttar till och från Norge har vi byggt upp en tydlig specialisering på gränslogistik, inflytt i norska fastigheter och koordinering längs E6:an från Stockholm mot Oslo. Vi är vana vid allt från lägenheter på Grünerløkka till radhus i Bergen och hus i mindre orter med brant terräng.",
+    "desktop2": "Våra team planerar flyttar mellan Sverige och Norge med fokus på vinterväglag, trånga gator i norska stadskärnor och bompengzoner. Vi samordnar lastning i Sverige, körplan via gränsövergångar som Svinesund, tidsfönster för ankomst i Oslo-området och avlastning i norska fastigheter där hissar, portar och gårdar ofta delas med grannar.",
+    "desktop3": "Alla flyttar till/från Norge inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten ger konkreta råd om körsträckor, vinterdäckskrav, bompeng, parkering i Oslo, Bergen och Trondheim samt hur man hanterar norska fastighetsregler och gemensamma utrymmen.",
+    "mobile": "Erfarna team för flyttar till/från Norge med fasta priser och genomtänkt logistik.",
+    "mobileExpanded": "Vi planerar efter gränspassager, bompeng, vinterväglag och trånga gator i norska städer så att lastbil och tider matchar dina förutsättningar.",
+    "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om körväg, tidsplan och inflytt i norska fastigheter."
+  },
+  "experienceSection": {
+    "title": "Vår erfarenhet av flyttar till och från Norge"
+  },
+  "experience": {
+    "title": "Vår erfarenhet av flyttar till och från Norge",
+    "description": "Vi flyttar regelbundet mellan Sverige och Norge – från lägenheter i Stockholm till bostäder i Oslo, Bergen och Trondheim. Vår erfarenhet av E6-sträckan, Svinesundsbron, vinterväglag och norska bompengsystem gör att vi kan planera varje flytt efter avstånd, årstid och lokala förutsättningar i både svenska och norska städer.",
+    "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och norska adresser. Vi ser över bärvägar i äldre Oslo-gårdar, garageinfarter i branta bergssluttningar och lastzoner nära fjordnära områden. Vår erfarenhet från flyttar till allt från centrumlägenheter i Oslo till hus i mindre orter i Østlandet och Vestlandet gör att vi vet hur lång tid som krävs när väder, terräng och bompeng påverkar körplanen."
+  },
+  "reviews": {
+    "subtitle": "Rekommenderad flyttfirma för flytt till/från Norge",
+    "description": "Omdömen från kunder som flyttat till eller från Norge lyfter vår tydliga kommunikation om körvägar, tider och kostnader, samt hur vi hanterar vinterväglag, bompeng och trånga norska gator utan att tumma på säkerheten. Kunder uppskattar särskilt att vi kan förklara stegen kring gränspassager, inflytt i norska fastigheter och hur man planerar en flytt där väder och terräng spelar stor roll.",
+    "badgeAlt": "Flyttfirma Norge omdömen",
+    "arrowText": "Läs fler kunders upplevelser"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser för flyttar till och från Norge",
+    "description": "Våra utmärkelser inom flyttar till och från Norge speglar vår förmåga att kombinera noggrann planering med praktisk erfarenhet av körning i norska förhållanden. Kunder och samarbetspartners lyfter särskilt hur vi hanterar flyttar där E6, Svinesundsbron, fjällvägar och trånga innerstadsgator i Oslo och Bergen ingår i samma uppdrag, utan att tumma på punktlighet eller trygg hantering av bohag."
+  },
+  "servicesSection": {
+    "title": "Upptäck alla våra tjänster för flytt till/från Norge",
+    "description": "Flytthjälp mellan Sverige och Norge, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan längs E6, eventuella färjor, bompeng, parkering samt logistik i både svenska och norska städer.",
+    "privateServices": "Se alla tjänster"
+  },
+  "blogSection": {
+    "title": "Guider och tips för flytt till/från Norge",
+    "description": "Planera flytten efter årstid, se över vinterdäck och körsträcka, räkna med bompeng och kontrollera i förväg hur lastning och inflytt fungerar i just ditt norska område.",
+    "readMore": "Läs mer"
+  },
+  "blog": {
+    "title": "Checklista: flytt till/från Norge",
+    "description": "Gå igenom körväg och gränspassage, säkerställ att däck och fordon är anpassade för väglaget, boka lastzoner i Oslo eller andra städer och stäm av regler för gemensamma gårdar och trapphus innan flyttdagen."
+  },
+  "processSection": {
+    "title": "Vår process",
+    "subtitle": "Så fungerar det",
+    "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, körväg via gränsen, årstid, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+  },
+  "process": {
+    "fillForm": "Fyll i formuläret",
+    "fillFormDesc": "Beskriv adresser i Sverige och Norge, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och om flytten sker vintertid eller sommartid.",
+    "quickQuote": "Snabb offert",
+    "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där körväg, avstånd, eventuella färjor och bompeng ingår. Behövs besiktning av norska adressen bokar vi det innan vi spikar priset.",
+    "signConfirm": "Signera och bekräfta",
+    "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan, bokar lastzoner där det går och säkerställer att tid för lastning och lossning passar både svenska och norska förhållanden.",
+    "personalContact": "Personlig kontakt",
+    "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, väderförutsättningar, körvägar och tipsar om hur du förbereder bohaget för transport i norska förhållanden.",
+    "moveCompleted": "Flytt genomförd",
+    "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar, anpassar bärvägar efter terräng och ser till att bohaget ställs på rätt plats i din nya bostad i Norge eller Sverige.",
+    "satisfiedCustomer": "Uppföljning",
+    "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+  },
+  "faq": {
+    "title": "Vanliga frågor om flytt till/från Norge",
+    "items": [
+      {
+        "question": "Hur påverkar vinterväglag och fjällvägar min flytt till Norge?",
+        "answer": "Vi planerar körväg och tider efter årstid, ser till att fordon och däck är anpassade för väglaget och lägger in marginal för väder. Du får tydlig information om hur detta påverkar tidsplan och pris."
+      },
+      {
+        "question": "Behöver jag tänka på bompeng och gränspassage?",
+        "answer": "Vi tar höjd för bompeng och gränspassager i offerten och förklarar hur kostnaderna är uppbyggda. Du får en tydlig genomgång av körväg och vad som ingår innan du godkänner flytten."
+      },
+      {
+        "question": "Kan ni hjälpa till med packning av hela hem inför flytt till Norge?",
+        "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål extra noga och packar för att klara längre körsträckor och varierande väderförhållanden mellan Sverige och Norge."
+      },
+      {
+        "question": "Hur fungerar inflytt i norska fastigheter?",
+        "answer": "Vi går igenom portar, gårdar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning samt utrustning efter fastighetens förutsättningar – oavsett om det gäller innerstad i Oslo eller mindre orter med brant terräng."
+      },
+      {
+        "question": "Hur långt i förväg bör jag boka flytt till/från Norge?",
+        "answer": "För flyttar till och från Norge rekommenderar vi 4–6 veckor i förväg, särskilt under vinterhalvåret eller vid större uppdrag. Vi försöker alltid lösa akuta förfrågningar där planering och körväg gör det möjligt."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Har du fler frågor?",
+    "linkText": "Se alla vanliga frågor"
+  }
+}
+

@@ -7195,5 +7195,1304 @@
       "title": "Har du fler frågor?",
       "linkText": "Se alla vanliga frågor"
     }
+  },
+  "finland": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Finland – Stockholm, Helsingfors och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Finland och finländska kunder med flyttar till Sverige. Vår rutin med gränsöverskridande logistik, tullhantering och koordinering mellan svenska och finska fastigheter gör att flytten går smidigt trots avstånd.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Finland?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Finland",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För flyttar till och från Finland har vi byggt upp gedigen erfarenhet av att hantera gränsöverskridande logistik, tullformulär och koordinering mellan svenska och finska fastigheter. Vi är vana vid att navigera olika bostadstyper – från lägenheter i Helsingfors centrum till hus i Tampere och Turku – och vi förstår skillnaderna i fastighetsstruktur och flyttlogistik mellan länderna.",
+      "desktop2": "Våra team hanterar flyttar mellan Sverige och Finland med fokus på punktlighet, tydlig kommunikation och noggrann hantering av tull- och transportdokumentation. Vi samordnar lastning i Sverige, transport över gränsen och avlastning i Finland – allt med en dedikerad koordinator som håller ihop tidsplanen och säkerställer att all dokumentation är korrekt. Packning, magasinering, flyttstädning och montering ingår i en samlad lösning anpassad för internationella flyttar.",
+      "desktop3": "Alla flyttar till/från Finland inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten kan ge konkreta råd om tullformulär, transporttider över gränsen, parkering i finska städer och hur man navigerar skillnader i fastighetsregler mellan Sverige och Finland.",
+      "mobile": "Erfarna team för flyttar till/från Finland med fasta priser och strukturerad logistik.",
+      "mobileExpanded": "Vi hanterar tullformulär, koordinerar transport över gränsen och planerar lastning och avlastning i båda länderna.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt med råd om tull, transporttider och logistik i både Sverige och Finland."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Finland"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Finland",
+      "description": "Vi flyttar regelbundet mellan Sverige och Finland – från lägenheter i Stockholm till hus i Helsingfors, från svenska villor till finska radhus i Tampere och Turku. Vår rutin med gränsöverskridande logistik, tullhantering och koordinering mellan olika fastighetsstrukturer gör att vi kan anpassa varje flytt efter avstånd, transporttider och lokala förutsättningar i båda länderna.",
+      "expanded": "Inför större uppdrag gör vi platsbesök i både Sverige och Finland för att bedöma bärvägar, hissstatus och parkeringssituation. Erfarenheten från flyttar mellan svenska och finska fastigheter – från moderna lägenhetshus i Helsingfors centrum till äldre villor i Tampere – innebär att vi vet exakt hur mycket tid som krävs för transport över gränsen, tullhantering och skillnader i fastighetsstruktur mellan länderna."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Finland",
+      "description": "Omdömen från kunder som flyttat till/från Finland lyfter vår punktliga hantering av gränsöverskridande logistik, tydlig kommunikation om tullformulär och transporttider samt noggrann koordinering mellan svenska och finska fastigheter. Kunder uppskattar särskilt att vi förstår skillnaderna i fastighetsstruktur och flyttlogistik mellan länderna och kan ge praktiska råd om parkering, hissbokningar och lokala regler i både Sverige och Finland.",
+      "badgeAlt": "Flyttfirma Finland omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Finland",
+      "description": "Våra utmärkelser speglar vår långa erfarenhet av gränsöverskridande flyttar mellan Sverige och Finland. Kunder värdesätter vår förmåga att hantera tullformulär effektivt, koordinera transport över gränsen punktligt och navigera skillnader i fastighetsstruktur och flyttlogistik mellan länderna. Dessa utmärkelser bekräftar att vi levererar konsekvent kvalitet oavsett om flytten går till Helsingfors, Tampere, Turku eller andra finska städer."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Finland",
+      "description": "Flytthjälp mellan Sverige och Finland, packning, magasinering, flyttstädning, montering och rådgivning inför internationell flytt. Vi tar hand om tullformulär, transport över gränsen, parkering och logistik i både svenska och finska städer.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Finland",
+      "description": "Förbered tullformulär i förväg, märk lådor per rum, koordinera transporttider över gränsen och planera extra tid för tullhantering och skillnader i fastighetsstruktur mellan länderna.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Finland",
+      "description": "Stäm av tullformulär, transporttider över gränsen, parkeringstillstånd i båda länderna och kontrollera skillnader i fastighetsregler och hissbokningar innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, transport över gränsen, tullhantering, boyta, våningsplan, hiss, parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Finland, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och tullhantering.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning inklusive transport över gränsen och tullhantering. Behövs besiktning i båda länderna bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur bokar vi transport över gränsen, ordnar tullformulär, säkerställer parkeringstillstånd i båda länderna och skickar körplan med kontaktvägar.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om transporttider, tullhantering och tipsar om packning. Vi ser till att skydd och kartonger levereras i tid.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, bygger bärkedjor via trappor eller hiss och lastar sekventiellt för transport över gränsen och snabb avlastning i Finland.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att städ eller magasinering matchar planen i både Sverige och Finland."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Finland",
+      "items": [
+        {
+          "question": "Hur hanterar ni tullformulär och transport över gränsen?",
+          "answer": "Vi hjälper till med alla tullformulär, koordinerar transport över gränsen och säkerställer att all dokumentation är korrekt. Vi har erfarenhet av att hantera skillnader i fastighetsstruktur och flyttlogistik mellan Sverige och Finland."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar köksporslin och garderober och kan även packa förråd eller hobbyrum. Vi anpassar packningen efter transport över gränsen och tullhantering."
+        },
+        {
+          "question": "Vad ingår i er flyttjänst till/från Finland?",
+          "answer": "Vi tar hand om allt från packning och transport över gränsen till uppackning och städning. Alla priser är fasta utan dolda avgifter, och vi erbjuder gratis lån av flyttkartonger samt kostnadsfri om- och avbokning upp till 24 timmar innan."
+        },
+        {
+          "question": "Erbjuder ni magasinering om inflytten blir försenad?",
+          "answer": "Absolut, vi magasinerar i larmade, torra lager i både Sverige och Finland och levererar tillbaka när nya bostaden är redo."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Finland?",
+          "answer": "För internationella flyttar rekommenderar vi 4–6 veckor i förväg för att säkerställa transport över gränsen och tullhantering. Vi försöker alltid lösa snabba förfrågningar när det är möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "norge": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Norge – Oslo, Bergen, Trondheim och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Norge och norska kunder med flyttar till Sverige. Vår rutin med gränspassager, E6-logistik, fjällvägar och norska väderförhållanden gör att flytten fungerar även när avstånd, vinterväglag och bompeng ställer högre krav på planeringen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Norge?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Norge",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För flyttar till och från Norge har vi byggt upp en tydlig specialisering på gränslogistik, inflytt i norska fastigheter och koordinering längs E6:an från Stockholm mot Oslo. Vi är vana vid allt från lägenheter på Grünerløkka till radhus i Bergen och hus i mindre orter med brant terräng.",
+      "desktop2": "Våra team planerar flyttar mellan Sverige och Norge med fokus på vinterväglag, trånga gator i norska stadskärnor och bompengzoner. Vi samordnar lastning i Sverige, körplan via gränsövergångar som Svinesund, tidsfönster för ankomst i Oslo-området och avlastning i norska fastigheter där hissar, portar och gårdar ofta delas med grannar.",
+      "desktop3": "Alla flyttar till/från Norge inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten ger konkreta råd om körsträckor, vinterdäckskrav, bompeng, parkering i Oslo, Bergen och Trondheim samt hur man hanterar norska fastighetsregler och gemensamma utrymmen.",
+      "mobile": "Erfarna team för flyttar till/från Norge med fasta priser och genomtänkt logistik.",
+      "mobileExpanded": "Vi planerar efter gränspassager, bompeng, vinterväglag och trånga gator i norska städer så att lastbil och tider matchar dina förutsättningar.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om körväg, tidsplan och inflytt i norska fastigheter."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Norge"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Norge",
+      "description": "Vi flyttar regelbundet mellan Sverige och Norge – från lägenheter i Stockholm till bostäder i Oslo, Bergen och Trondheim. Vår erfarenhet av E6-sträckan, Svinesundsbron, vinterväglag och norska bompengsystem gör att vi kan planera varje flytt efter avstånd, årstid och lokala förutsättningar i både svenska och norska städer.",
+      "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och norska adresser. Vi ser över bärvägar i äldre Oslo-gårdar, garageinfarter i branta bergssluttningar och lastzoner nära fjordnära områden. Vår erfarenhet från flyttar till allt från centrumlägenheter i Oslo till hus i mindre orter i Østlandet och Vestlandet gör att vi vet hur lång tid som krävs när väder, terräng och bompeng påverkar körplanen."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Norge",
+      "description": "Omdömen från kunder som flyttat till eller från Norge lyfter vår tydliga kommunikation om körvägar, tider och kostnader, samt hur vi hanterar vinterväglag, bompeng och trånga norska gator utan att tumma på säkerheten. Kunder uppskattar särskilt att vi kan förklara stegen kring gränspassager, inflytt i norska fastigheter och hur man planerar en flytt där väder och terräng spelar stor roll.",
+      "badgeAlt": "Flyttfirma Norge omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Norge",
+      "description": "Våra utmärkelser inom flyttar till och från Norge speglar vår förmåga att kombinera noggrann planering med praktisk erfarenhet av körning i norska förhållanden. Kunder och samarbetspartners lyfter särskilt hur vi hanterar flyttar där E6, Svinesundsbron, fjällvägar och trånga innerstadsgator i Oslo och Bergen ingår i samma uppdrag, utan att tumma på punktlighet eller trygg hantering av bohag."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Norge",
+      "description": "Flytthjälp mellan Sverige och Norge, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan längs E6, eventuella färjor, bompeng, parkering samt logistik i både svenska och norska städer.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Norge",
+      "description": "Planera flytten efter årstid, se över vinterdäck och körsträcka, räkna med bompeng och kontrollera i förväg hur lastning och inflytt fungerar i just ditt norska område.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Norge",
+      "description": "Gå igenom körväg och gränspassage, säkerställ att däck och fordon är anpassade för väglaget, boka lastzoner i Oslo eller andra städer och stäm av regler för gemensamma gårdar och trapphus innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, körväg via gränsen, årstid, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Norge, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och om flytten sker vintertid eller sommartid.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där körväg, avstånd, eventuella färjor och bompeng ingår. Behövs besiktning av norska adressen bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan, bokar lastzoner där det går och säkerställer att tid för lastning och lossning passar både svenska och norska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, väderförutsättningar, körvägar och tipsar om hur du förbereder bohaget för transport i norska förhållanden.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar, anpassar bärvägar efter terräng och ser till att bohaget ställs på rätt plats i din nya bostad i Norge eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Norge",
+      "items": [
+        {
+          "question": "Hur påverkar vinterväglag och fjällvägar min flytt till Norge?",
+          "answer": "Vi planerar körväg och tider efter årstid, ser till att fordon och däck är anpassade för väglaget och lägger in marginal för väder. Du får tydlig information om hur detta påverkar tidsplan och pris."
+        },
+        {
+          "question": "Behöver jag tänka på bompeng och gränspassage?",
+          "answer": "Vi tar höjd för bompeng och gränspassager i offerten och förklarar hur kostnaderna är uppbyggda. Du får en tydlig genomgång av körväg och vad som ingår innan du godkänner flytten."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem inför flytt till Norge?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål extra noga och packar för att klara längre körsträckor och varierande väderförhållanden mellan Sverige och Norge."
+        },
+        {
+          "question": "Hur fungerar inflytt i norska fastigheter?",
+          "answer": "Vi går igenom portar, gårdar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning samt utrustning efter fastighetens förutsättningar – oavsett om det gäller innerstad i Oslo eller mindre orter med brant terräng."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Norge?",
+          "answer": "För flyttar till och från Norge rekommenderar vi 4–6 veckor i förväg, särskilt under vinterhalvåret eller vid större uppdrag. Vi försöker alltid lösa akuta förfrågningar där planering och körväg gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "danmark": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Danmark – Köpenhamn, Århus, Odense och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Danmark och danska kunder med flyttar till Sverige. Vår rutin med Öresundsbron, danska fastighetsstrukturer och koordinering mellan svenska och danska bostäder gör att flytten går smidigt trots avstånd och skillnader i bostadsmarknad och regler.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Danmark?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Danmark",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För flyttar till och från Danmark har vi byggt upp gedigen erfarenhet av att hantera gränsöverskridande logistik via Öresundsbron, danska fastighetsstrukturer och koordinering mellan svenska och danska bostäder. Vi är vana vid allt från lägenheter i Köpenhamns centrum till radhus i Århus och villor i mindre danska städer.",
+      "desktop2": "Våra team hanterar flyttar mellan Sverige och Danmark med fokus på punktlighet, tydlig kommunikation och noggrann hantering av transport över Öresundsbron och danska fastighetsregler. Vi samordnar lastning i Sverige, transport via Öresundsbron och avlastning i Danmark – allt med en dedikerad koordinator som håller ihop tidsplanen och säkerställer att allt från parkering till inflytt i danska fastigheter fungerar smidigt.",
+      "desktop3": "Alla flyttar till/från Danmark inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten kan ge konkreta råd om transport över Öresundsbron, parkering i danska städer som Köpenhamn, Århus och Odense samt hur man navigerar skillnader i fastighetsregler och bostadsstruktur mellan Sverige och Danmark.",
+      "mobile": "Erfarna team för flyttar till/från Danmark med fasta priser och strukturerad logistik.",
+      "mobileExpanded": "Vi planerar efter Öresundsbron, danska fastighetsstrukturer och parkeringsförhållanden så att lastbil och tider matchar dina förutsättningar.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om transport, tidsplan och inflytt i danska fastigheter."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Danmark"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Danmark",
+      "description": "Vi flyttar regelbundet mellan Sverige och Danmark – från lägenheter i Stockholm till bostäder i Köpenhamn, Århus och Odense. Vår erfarenhet av Öresundsbron, danska fastighetsstrukturer och skillnader i bostadsmarknad gör att vi kan planera varje flytt efter avstånd, transporttider och lokala förutsättningar i både svenska och danska städer.",
+      "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och danska adresser. Vi ser över bärvägar i äldre Köpenhamnsgårdar, garageinfarter i moderna danska områden och lastzoner nära centrum i Århus och Odense. Vår erfarenhet från flyttar till allt från centrumlägenheter i Köpenhamn till radhus i Århus och villor i mindre danska orter gör att vi vet hur lång tid som krävs när transport över Öresundsbron och danska fastighetsregler påverkar körplanen."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Danmark",
+      "description": "Omdömen från kunder som flyttat till eller från Danmark lyfter vår tydliga kommunikation om transport över Öresundsbron, tider och kostnader, samt hur vi hanterar danska fastighetsstrukturer och parkeringsförhållanden utan att tumma på punktligheten. Kunder uppskattar särskilt att vi kan förklara stegen kring transport över bron, inflytt i danska fastigheter och hur man planerar en flytt där skillnader i bostadsmarknad och regler mellan Sverige och Danmark spelar roll.",
+      "badgeAlt": "Flyttfirma Danmark omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Danmark",
+      "description": "Våra utmärkelser inom flyttar till och från Danmark speglar vår förmåga att kombinera noggrann planering med praktisk erfarenhet av transport över Öresundsbron och danska fastighetsstrukturer. Kunder och samarbetspartners lyfter särskilt hur vi hanterar flyttar där Öresundsbron, danska stadskärnor som Köpenhamn, Århus och Odense, samt skillnader i bostadsmarknad ingår i samma uppdrag, utan att tumma på punktlighet eller trygg hantering av bohag."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Danmark",
+      "description": "Flytthjälp mellan Sverige och Danmark, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om transport över Öresundsbron, parkering samt logistik i både svenska och danska städer.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Danmark",
+      "description": "Planera flytten efter transport över Öresundsbron, se över parkering och lastzoner i förväg, räkna med transporttider och kontrollera hur lastning och inflytt fungerar i just ditt danska område.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Danmark",
+      "description": "Gå igenom transportväg över Öresundsbron, säkerställ att lastzoner är bokade i Köpenhamn eller andra städer och stäm av regler för danska fastigheter och gemensamma utrymmen innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, transport över Öresundsbron, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Danmark, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och om flytten sker via Öresundsbron.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där transport över Öresundsbron, avstånd och eventuella lastzoner ingår. Behövs besiktning av danska adressen bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan över Öresundsbron, bokar lastzoner där det går och säkerställer att tid för lastning och lossning passar både svenska och danska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, transport över Öresundsbron och tipsar om hur du förbereder bohaget för inflytt i danska fastigheter.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar, anpassar bärvägar efter danska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Danmark eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Danmark",
+      "items": [
+        {
+          "question": "Hur påverkar transport över Öresundsbron min flytt till Danmark?",
+          "answer": "Vi planerar körväg och tider med hänsyn till Öresundsbron, ser till att fordon och dokumentation är korrekt och lägger in marginal för transporttider. Du får tydlig information om hur detta påverkar tidsplan och pris."
+        },
+        {
+          "question": "Behöver jag tänka på skillnader i danska fastighetsregler?",
+          "answer": "Vi tar höjd för danska fastighetsstrukturer och regler i offerten och förklarar hur inflytt fungerar. Du får en tydlig genomgång av vad som ingår och hur vi hanterar skillnader mellan svenska och danska fastigheter innan du godkänner flytten."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem inför flytt till Danmark?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål extra noga och packar för att klara transport över Öresundsbron och inflytt i danska fastigheter."
+        },
+        {
+          "question": "Hur fungerar inflytt i danska fastigheter?",
+          "answer": "Vi går igenom portar, gårdar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning samt utrustning efter fastighetens förutsättningar – oavsett om det gäller innerstad i Köpenhamn eller mindre orter som Århus och Odense."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Danmark?",
+          "answer": "För flyttar till och från Danmark rekommenderar vi 4–6 veckor i förväg, särskilt vid större uppdrag eller när transport över Öresundsbron och danska fastighetsstrukturer kräver extra planering. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "frankrike": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Frankrike – Paris, Lyon, Marseille och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Frankrike och franska kunder med flyttar till Sverige. Vår rutin med långa transportsträckor, franska fastighetsregler och koordinering mellan svenska och franska bostäder gör att flytten fungerar även när avstånd, språkbarriärer och skillnader i bostadsstruktur ställer högre krav på planeringen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Frankrike?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Frankrike",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För flyttar till och från Frankrike har vi specialiserat oss på att hantera utmaningar som är unika för franska fastigheter: gamla byggnader där hissar ofta saknas eller är för små för flyttlådor, trapphus där två personer knappt kan gå bredvid varandra, och fastighetsregler där portvakter (concierges) måste informeras i förväg. Vi har flyttat svenska familjer till allt från 20 kvadratmeters lägenheter i Paris 6:e arrondissement till stora villor i Lyon där terrängen gör att lastbilar måste parkera långt från entrén.",
+      "desktop2": "Våra team har lärt sig att navigera franska fastighetsstrukturer där bärvägar ofta går genom gemensamma gårdar, där hissar kan vara 100 år gamla och kräva särskild hantering, och där portvakter har specifika tider när flyttar får genomföras. Vi samordnar allt från att boka lastzoner i trånga parisiska gator där parkering är nästan omöjlig, till att koordinera med franska fastighetsförvaltare som kräver dokumentation på franska. Vår dedikerade koordinator håller ihop tidsplanen och säkerställer att allt från språkbarriärer till skillnader i byggnadsregler hanteras smidigt.",
+      "desktop3": "Alla flyttar till/från Frankrike inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten kan ge konkreta råd om hur man navigerar franska fastighetsregler, vad man behöver veta om portvakter och gemensamma utrymmen, hur man bokar lastzoner i Paris där reglerna är strikta, och hur man hanterar skillnader i bostadsstruktur där franska lägenheter ofta har annorlunda fördelning av utrymmen jämfört med svenska.",
+      "mobile": "Specialiserade team för flyttar till/från Frankrike som känner till franska fastighetsstrukturer och regler.",
+      "mobileExpanded": "Vi hanterar gamla byggnader utan hissar, trånga trapphus, portvakter och franska fastighetsregler så att flytten fungerar trots utmaningar.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om franska fastighetsregler, portvakter och hur man navigerar skillnader i bostadsstruktur."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Frankrike"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Frankrike",
+      "description": "Vi flyttar regelbundet mellan Sverige och Frankrike – från lägenheter i Stockholm till bostäder i Paris, Lyon och Marseille. Vår erfarenhet av långa transportsträckor, franska fastighetsstrukturer med gamla byggnader och trånga trapphus, samt skillnader i bostadsmarknad och byggnadsregler gör att vi kan planera varje flytt efter avstånd, transporttider och lokala förutsättningar i både svenska och franska städer.",
+      "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och franska adresser. Vi ser över bärvägar i äldre parisiska byggnader med smala trappor och gamla hissar, garageinfarter i Lyon med sina kullar och lastzoner nära centrum i Marseille med hamnområden. Vår erfarenhet från flyttar till allt från små lägenheter i Paris innerstad till stora villor i Lyon och Marseille gör att vi vet hur lång tid som krävs när långa transportsträckor, franska fastighetsregler och skillnader i bostadsstruktur påverkar körplanen."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Frankrike",
+      "description": "Omdömen från våra kunder som flyttat till eller från Frankrike beskriver ofta samma sak: att vi lyckas få en komplex flytt att kännas kontrollerad trots långa avstånd, gamla byggnader och språkbarriärer. Familjer som flyttat in i små lägenheter i Paris lyfter hur vi planerat bärvägar via smala trapphus, bokat lastzoner på trånga gator och haft dialog med portvakt på plats, medan kunder som flyttat till villor utanför Lyon och Marseille uppskattar hur vi samordnat långkörning genom Europa med exakt ankomsttid, så att nyckelöverlämning, hissbokningar och inflytt sker utan stress.",
+      "badgeAlt": "Flyttfirma Frankrike omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Frankrike",
+      "description": "Våra utmärkelser kopplade till flyttar till och från Frankrike har oftast kommit efter uppdrag där flera franska utmaningar möts samtidigt: långa transporter genom Europa, inflytt i skyddsklassade hus i Paris där trapphusen inte får skadas, och samordning med både svenska mäklare och franska portvakter. Samarbetspartners lyfter särskilt vår förmåga att planera flyttar där vi först bär ut via svensk garageinfart, kör flera dygn genom Europa och sedan lastar av via innergårdar i Paris där tidfönster, bullerregler och grannar kräver millimeterprecision. Att vi klarar sådana uppdrag utan skador på vare sig bohag eller känsliga franska byggnadsdetaljer är orsaken till många av de utmärkelser vi fått på just Frankrike-sträckan."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Frankrike",
+      "description": "Flytthjälp mellan Sverige och Frankrike, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om långa transportsträckor, parkering i trånga franska städer samt logistik i både svenska och franska städer.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Frankrike",
+      "description": "Planera flytten efter långa transportsträckor, se över parkering och lastzoner i förväg i trånga städer, räkna med transporttider genom Europa och kontrollera hur lastning och inflytt fungerar i just ditt franska område med dess specifika regler.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Frankrike",
+      "description": "Gå igenom transportväg genom Europa, säkerställ att lastzoner är bokade i Paris eller andra städer, stäm av regler för franska fastigheter med gamla byggnader och gemensamma utrymmen innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, långa transportsträckor, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Frankrike, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och om flytten sker via långa transportsträckor.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där långa transportsträckor, avstånd och eventuella lastzoner i trånga städer ingår. Behövs besiktning av franska adressen bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan genom Europa, bokar lastzoner där det går i trånga städer och säkerställer att tid för lastning och lossning passar både svenska och franska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, långa transportsträckor och tipsar om hur du förbereder bohaget för inflytt i franska fastigheter med deras specifika regler.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar i gamla byggnader, anpassar bärvägar efter franska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Frankrike eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Frankrike",
+      "items": [
+        {
+          "question": "Hur påverkar långa transportsträckor min flytt till Frankrike?",
+          "answer": "Vi planerar körväg och tider med hänsyn till långa avstånd genom Europa, ser till att fordon och dokumentation är korrekt och lägger in marginal för transporttider. Du får tydlig information om hur detta påverkar tidsplan och pris."
+        },
+        {
+          "question": "Behöver jag tänka på skillnader i franska fastighetsregler?",
+          "answer": "Vi tar höjd för franska fastighetsstrukturer med gamla byggnader, trånga trapphus och specifika regler i offerten och förklarar hur inflytt fungerar. Du får en tydlig genomgång av vad som ingår och hur vi hanterar skillnader mellan svenska och franska fastigheter innan du godkänner flytten."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem inför flytt till Frankrike?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål extra noga och packar för att klara långa transportsträckor och inflytt i franska fastigheter med gamla byggnader."
+        },
+        {
+          "question": "Hur fungerar inflytt i franska fastigheter?",
+          "answer": "Vi går igenom portar, gårdar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning samt utrustning efter fastighetens förutsättningar – oavsett om det gäller innerstad i Paris med trånga gator, Lyon med kullar eller Marseille med hamnområden."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Frankrike?",
+          "answer": "För flyttar till och från Frankrike rekommenderar vi 4–6 veckor i förväg, särskilt vid större uppdrag eller när långa transportsträckor och franska fastighetsstrukturer kräver extra planering. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "tyskland": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Tyskland – Berlin, Hamburg, München och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Tyskland och tyska kunder med flyttar till Sverige. Vår erfarenhet av Autobahn-logistik, miljözoner i tyska storstäder och skillnader i fastighetsstruktur gör att vi kan planera flyttar som fungerar i praktiken – från Berlin-Altbau till nyproduktion i München.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Tyskland?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Tyskland",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För flyttar till och från Tyskland har vi byggt upp en tydlig specialisering kring tyska villkor: miljözoner (Umweltzonen) där fordon måste uppfylla specifika krav, innergårdar i Berlin-Altbau där bärvägarna går genom flera portar, och hyreshus i Hamburg där hissar delas av många hushåll och endast får användas för flytt vissa tider på dagen.",
+      "desktop2": "Våra team är vana vid att kombinera svensk planeringskultur med tysk precision. Vi koordinerar avgång från Sverige så att ankomsttiden stämmer med Hausmeister i Berlin, lastzoner i Hamburgs kvarter nära kanalerna eller porttider i München där gårdar låses kvällstid. Vår koordinator hanterar både svensk och tysk kommunikation och ser till att körplan, pauser längs Autobahn och lossningstider följer både lokala regler och dina önskemål.",
+      "desktop3": "Alla flyttar till/från Tyskland inkluderar gratis lån av flyttkartonger, kostnadsfri om- och avbokning upp till 24 timmar innan flyttdagen samt 14 dagars garanti på flyttstädning. Kundtjänsten ger konkreta råd om miljözoner i städer som Berlin, Hamburg och München, hur man planerar runt tyska vilotidsregler för chaufförer, samt vad som är bra att känna till kring gemensamma trapphus, soprum och cykelrum i tyska fastigheter.",
+      "mobile": "Specialiserade team för flyttar till/från Tyskland med koll på Autobahn, miljözoner och tyska fastigheter.",
+      "mobileExpanded": "Vi planerar körsträckor via Autobahn, tar höjd för miljözoner och ser till att lastning och lossning passar tyska regler och fastighetsrutiner.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om tyska fastighetsregler, Hausmeister och hur man navigerar skillnader i bostadsstruktur."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Tyskland"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Tyskland",
+      "description": "Vi genomför regelbundet flyttar mellan Sverige och Tyskland – från lägenheter i Stockholm till Altbau-hus i Berlin, radhus i Hamburgs förorter och nybyggda lägenheter i München. Vi är vana vid att planera runt långa körsträckor, tyska vilotidsregler för chaufförer, miljözoner där bara vissa fordon får köra in, och trapphus där både grannar och Hausmeister har tydliga förväntningar på hur en flytt ska genomföras.",
+      "expanded": "Inför större uppdrag går vi igenom både de svenska och tyska adresserna i detalj. I Berlin ser vi över om fastigheten har innergård med begränsad höjd för lastbil, om hissen rymmer möblerna eller om vi behöver bygga bärkedjor via trapphus. I Hamburg tar vi höjd för smala gator nära kanaler, begränsade lastzoner och boende som vill ha tydliga tidfönster. I München tittar vi på parkeringsmöjligheter utanför nyproduktion där många flyttar sker samtidigt. Vår erfarenhet gör att vi kan ange rimliga tidsramar när både Autobahn, miljözoner och tyska fastighetsrutiner påverkar flytten."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Tyskland",
+      "description": "Kunder som flyttat till eller från Tyskland lyfter ofta hur vi hanterat kombinationen av lång körning, tysk punktlighet och lokala regler utan att tappa kontrollen. Familjer som flyttat till Berlin berättar hur vi i god tid koordinerade med Hausmeister, bokade hiss och stämde av tider med både grannar och fastighetsägare. Kunder som flyttat till Hamburg och München uppskattar särskilt att vi varit tydliga med körplan via Autobahn, hur vilotider påverkar ankomst, och att vi hållit våra lovade tidfönster trots långa avstånd.",
+      "badgeAlt": "Flyttfirma Tyskland omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Tyskland",
+      "description": "Våra utmärkelser kopplade till Tyskland handlar ofta om uppdrag där många rörliga delar ska fungera samtidigt: avgång från Sverige, körning genom flera länder, ankomst i en tysk storstad med miljözon, och inflytt i en fastighet där både tidspassning och hänsyn till grannar är avgörande. Samarbetspartners lyfter vår förmåga att leverera på minuten till adresser i exempelvis Berlin Mitte eller Hamburgs äldre kvarter, trots att vi passerat vägbyggen, kontroller och vilotidsregler längs vägen. Att vi klarar detta utan skador på varken bohag eller trapphus är en viktig anledning till de utmärkelser vi fått på Tysklandssträckan."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Tyskland",
+      "description": "Flytthjälp mellan Sverige och Tyskland, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan via Autobahn, tar höjd för vilotider, planerar runt miljözoner och sköter logistik vid både svenska och tyska adresser.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Tyskland",
+      "description": "Planera flytten efter körsträckor och årstid, se över om din adress ligger i en miljözon, kontrollera i förväg hur hissar, innergårdar och Hausmeisterrutiner fungerar i just din tyska fastighet.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Tyskland",
+      "description": "Gå igenom körväg och vilotider, säkerställ att fordon uppfyller miljözonkrav, boka eventuella lastzoner och stäm av med Hausmeister vilka tider som är godkända för flytt."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, körsträcka via Autobahn, eventuella miljözoner, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Tyskland, datum, våningar, hissregler, parkering, om källare/vind ska tömmas och om adressen ligger i en miljözon. Ange önskade tilläggstjänster och om särskild koordinering med Hausmeister behövs.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där körväg, vilotider, eventuella miljözoner och lastzoner ingår. Behövs besiktning av den tyska adressen bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan, bokar lastzoner där det går och säkerställer att lastning och lossning passar både svenska och tyska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, vägval, vilotider och tipsar om hur du förbereder bohaget för transport och inflytt i tyska fastigheter.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar, anpassar bärvägar efter tyska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Tyskland eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Tyskland",
+      "items": [
+        {
+          "question": "Hur påverkar Autobahn och vilotider min flytt till Tyskland?",
+          "answer": "Vi planerar körningen efter både avstånd och tyska vilotidsregler för chaufförer. Du får en tydlig tidsplan där vi förklarar hur raster och eventuella omvägar påverkar ankomsttiden, så att nyckelöverlämning och inflytt kan planeras utan stress."
+        },
+        {
+          "question": "Måste jag tänka på miljözoner i tyska städer?",
+          "answer": "Ja, många tyska städer har miljözoner där bara fordon med rätt märkning får köra in. Vi tar höjd för detta i planeringen, ser till att våra fordon uppfyller kraven och förklarar om adressen kräver särskilda tillstånd eller upplägg."
+        },
+        {
+          "question": "Hur fungerar inflytt i tyska hyreshus?",
+          "answer": "Vi är vana vid tyska fastigheter där Hausmeister och grannar har tydliga rutiner. Vi stämmer av tider för hissanvändning, bärvägar genom gårdar och informerar i god tid så att flytten upplevs strukturerad och respektfull av alla inblandade."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning inför långkörning till Tyskland?",
+          "answer": "Ja, våra packteam packar för längre körsträckor, märker lådor per rum på ett sätt som gör det lätt att komma rätt även när adressen i Tyskland har annan planlösning, och skyddar känsliga föremål extra noga för att klara vägar, väder och flera lastmoment."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Tyskland?",
+          "answer": "För flyttar till och från Tyskland rekommenderar vi 4–6 veckor i förväg, särskilt om du flyttar till en storstad med miljözon eller under perioder när många flyttar samtidigt. Vi försöker alltid lösa akuta förfrågningar när körplan och regler gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "italien": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Italien – Rom, Milano, Florens, Neapel och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Italien och italienska kunder med flyttar till Sverige. Vår rutin med ZTL-zoner i historiska städer, gamla byggnader med trånga trappor och koordinering med italienska portvakter (portieri) gör att flytten fungerar även när italienska fastighetsregler och begränsningar i stadskärnor ställer högre krav på planeringen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Italien?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Italien",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För Italien har vi specialiserat oss på ZTL-zoner där lastbilar behöver tillstånd, portvakter (portieri) som styr när flyttar får ske – ofta bara vardagar, aldrig under siesta – och hissar från 1800-talet i Roms och Florens historiska centrum där bärvägar går genom flera portar och innergårdar.",
+      "desktop2": "Vi ansöker om ZTL-tillstånd i förväg, koordinerar med italienska fastighetsförvaltare som kräver dokumentation på italienska, och planerar Alpsträckor så att ankomsttiden stämmer med portvakternas tidsfönster. Alla flyttar inkluderar gratis flyttkartonger, kostnadsfri ombokning upp till 24 timmar innan samt 14 dagars städgaranti. Kundtjänsten ger råd om ZTL-zoner, portvakter och skillnader i bostadsstruktur mellan Sverige och Italien.",
+      "mobile": "Specialiserade team för Italien som känner till ZTL-zoner, portvakter och italienska fastighetsstrukturer.",
+      "mobileExpanded": "Vi hanterar ZTL-zoner, gamla byggnader utan hissar, trånga gator i historiska centrum och portvakter så att flytten fungerar trots utmaningar.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om italienska fastighetsregler, portvakter och hur man navigerar ZTL-zoner."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Italien"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Italien",
+      "description": "Vi flyttar regelbundet mellan Sverige och Italien – från lägenheter i Stockholm till bostäder i Rom, Milano, Florens och Neapel. Vår erfarenhet av Alpsträckor, ZTL-zoner i historiska städer, italienska fastighetsstrukturer med gamla byggnader och trånga trappor, samt skillnader i bostadsmarknad och byggnadsregler gör att vi kan planera varje flytt efter avstånd, transporttider och lokala förutsättningar i både svenska och italienska städer.",
+      "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och italienska adresser. Vi ser över bärvägar i äldre byggnader i Rom med smala trappor och gamla hissar, ZTL-zoner i Florens där lastbilar måste ha tillstånd, och lastzoner nära centrum i Milano och Neapel där gatorna är trånga och parkering är begränsad. Vår erfarenhet från flyttar till allt från små lägenheter i Roms historiska centrum till stora villor i Toscana gör att vi vet hur lång tid som krävs när Alpsträckor, ZTL-zoner, italienska fastighetsregler och skillnader i bostadsstruktur påverkar körplanen."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Italien",
+      "description": "Kunder som flyttat till eller från Italien lyfter ofta hur vi hanterat kombinationen av lång körning genom Alperna, ZTL-zoner i historiska städer och italienska fastighetsregler utan att tappa kontrollen. Familjer som flyttat till Rom berättar hur vi i god tid koordinerade med portvakter, ansökte om tillstånd för ZTL-zoner och stämde av tider med både grannar och fastighetsägare. Kunder som flyttat till Florens och Milano uppskattar särskilt att vi varit tydliga med körplan genom Alperna, hur ZTL-zoner påverkar ankomst, och att vi hållit våra lovade tidfönster trots långa avstånd och begränsningar i stadskärnor.",
+      "badgeAlt": "Flyttfirma Italien omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Italien",
+      "description": "Våra utmärkelser kopplade till Italien handlar ofta om uppdrag där många rörliga delar ska fungera samtidigt: avgång från Sverige, körning genom Alperna, ankomst i en italiensk stad med ZTL-zoner, och inflytt i en fastighet där både tidspassning och hänsyn till portvakter och grannar är avgörande. Samarbetspartners lyfter vår förmåga att leverera på minuten till adresser i exempelvis Roms historiska centrum eller Florens gamla stad, trots att vi passerat bergspass, ZTL-kontroller och portvakter längs vägen. Att vi klarar detta utan skador på varken bohag eller gamla trapphus är en viktig anledning till de utmärkelser vi fått på Italienssträckan."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Italien",
+      "description": "Flytthjälp mellan Sverige och Italien, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan genom Alperna, tar höjd för ZTL-zoner, planerar runt portvakter och sköter logistik vid både svenska och italienska adresser.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Italien",
+      "description": "Planera flytten efter körsträckor genom Alperna, se över om din adress ligger i en ZTL-zon, kontrollera i förväg hur hissar, innergårdar och portvakterrutiner fungerar i just din italienska fastighet.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Italien",
+      "description": "Gå igenom transportväg genom Alperna, säkerställ att ZTL-tillstånd är ansökta i Rom eller andra städer, stäm av regler för italienska fastigheter med gamla byggnader och gemensamma utrymmen innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, Alpsträckor, ZTL-zoner, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Italien, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och om flytten sker via Alpsträckor eller genom ZTL-zoner.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där Alpsträckor, avstånd och eventuella ZTL-zoner ingår. Behövs besiktning av italienska adressen eller ansökan om ZTL-tillstånd bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan genom Alperna, ansöker om ZTL-tillstånd där det behövs och säkerställer att tid för lastning och lossning passar både svenska och italienska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, Alpsträckor och tipsar om hur du förbereder bohaget för inflytt i italienska fastigheter med deras specifika regler och portvakter.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar i gamla byggnader, anpassar bärvägar efter italienska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Italien eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Italien",
+      "items": [
+        {
+          "question": "Hur påverkar ZTL-zoner min flytt till Italien?",
+          "answer": "ZTL-zoner (Zona Traffico Limitato) är begränsade områden i italienska städer där lastbilar behöver tillstånd eller får köra på specifika tider. Vi ansöker om tillstånd i förväg och planerar flytten så att lastbilen kan komma fram till din adress inom tillåtna tider. Du får tydlig information om hur detta påverkar tidsplan och pris."
+        },
+        {
+          "question": "Behöver jag tänka på skillnader i italienska fastighetsregler?",
+          "answer": "Vi tar höjd för italienska fastighetsstrukturer med gamla byggnader, trånga trapphus och specifika regler i offerten och förklarar hur inflytt fungerar. Du får en tydlig genomgång av vad som ingår och hur vi hanterar skillnader mellan svenska och italienska fastigheter innan du godkänner flytten."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem inför flytt till Italien?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål extra noga och packar för att klara Alpsträckor och inflytt i italienska fastigheter med gamla byggnader."
+        },
+        {
+          "question": "Hur fungerar inflytt i italienska fastigheter?",
+          "answer": "Vi går igenom portar, gårdar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning samt utrustning efter fastighetens förutsättningar – oavsett om det gäller historiska centrum i Rom med ZTL-zoner, Florens med trånga gator eller Milano med moderna områden."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Italien?",
+          "answer": "För flyttar till och från Italien rekommenderar vi 4–6 veckor i förväg, särskilt vid större uppdrag eller när Alpsträckor och ZTL-zoner kräver extra planering. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "schweiz": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Schweiz – Zürich, Genève, Basel, Bern och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Schweiz och schweiziska kunder med flyttar till Sverige. Vår rutin med bergstunnelar, miljözoner i schweiziska städer och koordinering med fastighetsförvaltare på fyra olika språk gör att flytten fungerar även när schweiziska regler och höga standarder ställer högre krav på planeringen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Schweiz?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Schweiz",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För Schweiz har vi specialiserat oss på bergstunnelar som Gotthard och Lötschberg där transporttider och kostnader påverkas, miljözoner i Zürich och Genève där fordon måste uppfylla strikta krav, och fastighetsförvaltare som kräver dokumentation på rätt språk – tyska i Zürich, franska i Genève, italienska i södra Schweiz.",
+      "desktop2": "Vi planerar körsträckor genom bergstunnelar med hänsyn till trafik, väder och begränsningar, koordinerar med schweiziska fastighetsförvaltare som har höga standarder och strikta regler för när flyttar får ske, och säkerställer att all kommunikation sker på rätt språk för regionen. Alla flyttar inkluderar gratis flyttkartonger, kostnadsfri ombokning upp till 24 timmar innan samt 14 dagars städgaranti. Kundtjänsten ger råd om bergstunnelar, miljözoner och schweiziska fastighetsregler som ofta är mer strikta än svenska.",
+      "mobile": "Specialiserade team för Schweiz som känner till bergstunnelar, miljözoner och schweiziska fastighetsstrukturer.",
+      "mobileExpanded": "Vi hanterar bergstunnelar, miljözoner, strikta regler och fyra olika språk så att flytten fungerar trots utmaningar.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om schweiziska fastighetsregler, miljözoner och hur man navigerar bergstunnelar."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Schweiz"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Schweiz",
+      "description": "Vi flyttar regelbundet mellan Sverige och Schweiz – från lägenheter i Stockholm till bostäder i Zürich, Genève, Basel och Bern. Vår erfarenhet av bergstunnelar som Gotthard och Lötschberg, miljözoner i schweiziska städer, strikta fastighetsregler och höga standarder gör att vi kan planera varje flytt efter avstånd, transporttider genom bergen och lokala förutsättningar i både svenska och schweiziska städer.",
+      "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och schweiziska adresser. Vi ser över bärvägar i moderna schweiziska byggnader med höga standarder, miljözoner i Zürich och Genève där fordon måste uppfylla specifika krav, och lastzoner nära centrum där regler är strikta. Vår erfarenhet från flyttar till allt från lägenheter i Zürichs centrum till hus i bergsområden gör att vi vet hur lång tid som krävs när bergstunnelar, miljözoner, schweiziska fastighetsregler och höga standarder påverkar körplanen."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Schweiz",
+      "description": "Kunder som flyttat till eller från Schweiz lyfter ofta hur vi hanterat kombinationen av bergstunnelar, miljözoner och schweiziska fastighetsregler utan att tappa kontrollen. Familjer som flyttat till Zürich berättar hur vi i god tid koordinerade med fastighetsförvaltare på tyska, planerade körsträckor genom Gotthard-tunneln och stämde av tider med både grannar och fastighetsägare. Kunder som flyttat till Genève uppskattar särskilt att vi varit tydliga med körplan genom bergstunnelar, hur miljözoner påverkar ankomst, och att vi hållit våra lovade tidfönster trots långa avstånd och strikta regler.",
+      "badgeAlt": "Flyttfirma Schweiz omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Schweiz",
+      "description": "Våra utmärkelser kopplade till Schweiz handlar ofta om uppdrag där många rörliga delar ska fungera samtidigt: avgång från Sverige, körning genom bergstunnelar som Gotthard eller Lötschberg, ankomst i en schweizisk stad med miljözoner, och inflytt i en fastighet där både tidspassning och hänsyn till strikta regler är avgörande. Samarbetspartners lyfter vår förmåga att leverera på minuten till adresser i exempelvis Zürichs centrum eller Genèves moderna områden, trots att vi passerat bergstunnelar, miljözoner och strikta kontroller längs vägen. Att vi klarar detta med schweizisk precision och utan skador på varken bohag eller fastigheter är en viktig anledning till de utmärkelser vi fått på Schweizsträckan."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Schweiz",
+      "description": "Flytthjälp mellan Sverige och Schweiz, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan genom bergstunnelar, tar höjd för miljözoner, planerar runt strikta regler och sköter logistik vid både svenska och schweiziska adresser.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Schweiz",
+      "description": "Planera flytten efter körsträckor genom bergstunnelar, se över om din adress ligger i en miljözon, kontrollera i förväg hur hissar, innergårdar och schweiziska fastighetsrutiner fungerar i just din fastighet.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Schweiz",
+      "description": "Gå igenom transportväg genom bergstunnelar, säkerställ att fordon uppfyller miljözonkrav i Zürich eller Genève, stäm av regler för schweiziska fastigheter med höga standarder och gemensamma utrymmen innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, bergstunnelar, miljözoner, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Schweiz, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och om flytten sker via bergstunnelar eller genom miljözoner.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där bergstunnelar, avstånd och eventuella miljözoner ingår. Behövs besiktning av schweiziska adressen eller kontroll av fordon för miljözoner bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan genom bergstunnelar, säkerställer att fordon uppfyller miljözonkrav och ser till att tid för lastning och lossning passar både svenska och schweiziska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, bergstunnelar och tipsar om hur du förbereder bohaget för inflytt i schweiziska fastigheter med deras specifika regler och höga standarder.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar i moderna byggnader, anpassar bärvägar efter schweiziska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Schweiz eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Schweiz",
+      "items": [
+        {
+          "question": "Hur påverkar bergstunnelar min flytt till Schweiz?",
+          "answer": "Bergstunnelar som Gotthard och Lötschberg kan påverka transporttider och kostnader. Vi planerar körsträckor med hänsyn till trafik, väder och begränsningar i tunnelarna. Du får tydlig information om hur detta påverkar tidsplan och pris."
+        },
+        {
+          "question": "Behöver jag tänka på miljözoner i schweiziska städer?",
+          "answer": "Ja, städer som Zürich och Genève har miljözoner där fordon måste uppfylla strikta krav. Vi säkerställer att våra fordon uppfyller dessa krav och planerar flytten därefter. Du får en tydlig genomgång av vad som ingår och hur vi hanterar miljözoner innan du godkänner flytten."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem inför flytt till Schweiz?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål extra noga och packar för att klara bergstunnelar och inflytt i schweiziska fastigheter med höga standarder."
+        },
+        {
+          "question": "Hur fungerar inflytt i schweiziska fastigheter?",
+          "answer": "Vi går igenom portar, gårdar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning samt utrustning efter fastighetens förutsättningar – oavsett om det gäller moderna områden i Zürich med miljözoner, Genève med strikta regler eller Basel med höga standarder."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Schweiz?",
+          "answer": "För flyttar till och från Schweiz rekommenderar vi 4–6 veckor i förväg, särskilt vid större uppdrag eller när bergstunnelar och miljözoner kräver extra planering. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "osterrike": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Österrike – Wien, Innsbruck, Salzburg och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Österrike och österrikiska kunder med flyttar till Sverige. Vår rutin med transport genom Alperna, österrikiska fastighetsregler och koordinering med fastighetsförvaltare gör att flytten fungerar även när österrikiska regler och höga standarder ställer krav på planeringen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Österrike?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Österrike",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För Österrike har vi specialiserat oss på transport till Wien, Innsbruck, Salzburg och andra österrikiska städer, med kännedom om lokala fastighetsregler, hissar och parkeringsförhållanden.",
+      "desktop2": "Vi planerar körsträckor med hänsyn till avstånd och alpvägar, koordinerar med österrikiska fastighetsförvaltare och säkerställer att all kommunikation sker på rätt språk. Alla flyttar inkluderar gratis flyttkartonger, kostnadsfri ombokning upp till 24 timmar innan samt 14 dagars städgaranti. Kundtjänsten ger råd om österrikiska fastighetsregler och vad som gäller för inflytt.",
+      "mobile": "Specialiserade team för Österrike som känner till lokala förhållanden i Wien, Innsbruck och Salzburg.",
+      "mobileExpanded": "Vi hanterar transport till Österrike, österrikiska fastighetsregler och höga standarder så att flytten fungerar trots utmaningar.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om österrikiska regler och hur inflytt fungerar."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Österrike"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Österrike",
+      "description": "Vi flyttar regelbundet mellan Sverige och Österrike – från lägenheter i Stockholm till bostäder i Wien, Innsbruck, Salzburg och Graz. Vår erfarenhet av österrikiska fastigheter, hissregler och lokala förhållanden gör att vi kan planera varje flytt efter avstånd, transporttider och förutsättningar i både svenska och österrikiska städer.",
+      "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och österrikiska adresser. Vi ser över bärvägar, hissar och lastzoner i moderna byggnader. Vår erfarenhet från flyttar till allt från lägenheter i Wiens centrum till hus i alpområden gör att vi vet hur lång tid som krävs när österrikiska regler och lokala förhållanden påverkar körplanen."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Österrike",
+      "description": "Kunder som flyttat till eller från Österrike lyfter ofta hur vi hanterat österrikiska fastighetsregler och inflytt utan att tappa kontrollen. Familjer som flyttat till Wien berättar hur vi koordinerade med fastighetsförvaltare, planerade körsträckor och stämde av tider med grannar och fastighetsägare.",
+      "badgeAlt": "Flyttfirma Österrike omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Österrike",
+      "description": "Våra utmärkelser kopplade till Österrike handlar om uppdrag där avgång från Sverige, transport till österrikiska städer och inflytt i fastigheter med lokala regler ska fungera tillsammans. Samarbetspartners lyfter vår förmåga att leverera till adresser i Wien, Innsbruck och Salzburg med österrikisk precision och utan skador på varken bohag eller fastigheter."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Österrike",
+      "description": "Flytthjälp mellan Sverige och Österrike, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan, tar höjd för österrikiska regler och sköter logistik vid både svenska och österrikiska adresser.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Österrike",
+      "description": "Planera flytten efter körsträckor, se över hur hissar och österrikiska fastighetsrutiner fungerar i just din fastighet.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Österrike",
+      "description": "Gå igenom transportväg, säkerställ att österrikiska fastighetsregler är kända, stäm av regler för hissar och gemensamma utrymmen innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Österrike, datum, våningar, hissregler och parkering. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning. Behövs besiktning av österrikiska adressen bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan och ser till att tid för lastning och lossning passar både svenska och österrikiska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider och tipsar om hur du förbereder bohaget för inflytt i österrikiska fastigheter.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar, anpassar bärvägar efter österrikiska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Österrike eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Österrike",
+      "items": [
+        {
+          "question": "Hur lång tid tar en flytt till Österrike?",
+          "answer": "Transporttiden beror på destination – Wien är några dagar bort, Innsbruck och Salzburg likaså. Vi planerar körsträckor och ger dig tydlig information om tidsplan och pris."
+        },
+        {
+          "question": "Behöver jag tänka på särskilda regler i österrikiska fastigheter?",
+          "answer": "Ja, österrikiska fastigheter kan ha regler kring hissbruk, lastning och tidspassning. Vi säkerställer att vi känner till dessa och planerar flytten därefter. Du får en tydlig genomgång innan du godkänner flytten."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning inför flytt till Österrike?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål och packar för säker transport till Österrike."
+        },
+        {
+          "question": "Hur fungerar inflytt i österrikiska fastigheter?",
+          "answer": "Vi går igenom portar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning efter fastighetens förutsättningar – oavsett om det gäller Wien, Innsbruck, Salzburg eller Graz."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Österrike?",
+          "answer": "För flyttar till och från Österrike rekommenderar vi 4–6 veckor i förväg, särskilt vid större uppdrag. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "belgien": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Belgien – Bryssel, Antwerpen, Gent och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Belgien och belgiska kunder med flyttar till Sverige. Vår rutin med transport genom Europa, belgiska fastighetsregler och koordinering med fastighetsförvaltare gör att flytten fungerar även när belgiska regler och lokala förhållanden ställer krav på planeringen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Belgien?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Belgien",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För Belgien har vi specialiserat oss på transport till Bryssel, Antwerpen, Gent och andra belgiska städer, med kännedom om lokala fastighetsregler, hissar och parkeringsförhållanden.",
+      "desktop2": "Vi planerar körsträckor med hänsyn till avstånd, koordinerar med belgiska fastighetsförvaltare och säkerställer att all kommunikation sker på rätt språk – nederländska, franska eller tyska beroende på region. Alla flyttar inkluderar gratis flyttkartonger, kostnadsfri ombokning upp till 24 timmar innan samt 14 dagars städgaranti. Kundtjänsten ger råd om belgiska fastighetsregler och vad som gäller för inflytt.",
+      "mobile": "Specialiserade team för Belgien som känner till lokala förhållanden i Bryssel, Antwerpen och Gent.",
+      "mobileExpanded": "Vi hanterar transport till Belgien, belgiska fastighetsregler och flerspråkig koordinering så att flytten fungerar trots utmaningar.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om belgiska regler och hur inflytt fungerar."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Belgien"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Belgien",
+      "description": "Vi flyttar regelbundet mellan Sverige och Belgien – från lägenheter i Stockholm till bostäder i Bryssel, Antwerpen, Gent och Liège. Vår erfarenhet av belgiska fastigheter, hissregler och lokala förhållanden i ett flerspråkigt land gör att vi kan planera varje flytt efter avstånd, transporttider och förutsättningar i både svenska och belgiska städer.",
+      "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och belgiska adresser. Vi ser över bärvägar, hissar och lastzoner i moderna byggnader. Vår erfarenhet från flyttar till allt från lägenheter i Bryssels centrum till hus i Flandern eller Vallonien gör att vi vet hur lång tid som krävs när belgiska regler och lokala förhållanden påverkar körplanen."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Belgien",
+      "description": "Kunder som flyttat till eller från Belgien lyfter ofta hur vi hanterat belgiska fastighetsregler och inflytt utan att tappa kontrollen. Familjer som flyttat till Bryssel eller Antwerpen berättar hur vi koordinerade med fastighetsförvaltare, planerade körsträckor och stämde av tider med grannar och fastighetsägare.",
+      "badgeAlt": "Flyttfirma Belgien omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Belgien",
+      "description": "Våra utmärkelser kopplade till Belgien handlar om uppdrag där avgång från Sverige, transport till belgiska städer och inflytt i fastigheter med lokala regler ska fungera tillsammans. Samarbetspartners lyfter vår förmåga att leverera till adresser i Bryssel, Antwerpen och Gent utan skador på varken bohag eller fastigheter."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Belgien",
+      "description": "Flytthjälp mellan Sverige och Belgien, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan, tar höjd för belgiska regler och sköter logistik vid både svenska och belgiska adresser.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Belgien",
+      "description": "Planera flytten efter körsträckor, se över hur hissar och belgiska fastighetsrutiner fungerar i just din fastighet.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Belgien",
+      "description": "Gå igenom transportväg, säkerställ att belgiska fastighetsregler är kända, stäm av regler för hissar och gemensamma utrymmen innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Belgien, datum, våningar, hissregler och parkering. Ange önskade tilläggstjänster.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning. Behövs besiktning av belgiska adressen bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan och ser till att tid för lastning och lossning passar både svenska och belgiska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider och tipsar om hur du förbereder bohaget för inflytt i belgiska fastigheter.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar, anpassar bärvägar efter belgiska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Belgien eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Belgien",
+      "items": [
+        {
+          "question": "Hur lång tid tar en flytt till Belgien?",
+          "answer": "Transporttiden beror på destination – Bryssel är några dagar bort, Antwerpen och Gent likaså. Vi planerar körsträckor och ger dig tydlig information om tidsplan och pris."
+        },
+        {
+          "question": "Behöver jag tänka på särskilda regler i belgiska fastigheter?",
+          "answer": "Ja, belgiska fastigheter kan ha regler kring hissbruk, lastning och tidspassning. Vi säkerställer att vi känner till dessa och planerar flytten därefter. Du får en tydlig genomgång innan du godkänner flytten."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning inför flytt till Belgien?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål och packar för säker transport till Belgien."
+        },
+        {
+          "question": "Hur fungerar inflytt i belgiska fastigheter?",
+          "answer": "Vi går igenom portar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning efter fastighetens förutsättningar – oavsett om det gäller Bryssel, Antwerpen, Gent eller Liège."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Belgien?",
+          "answer": "För flyttar till och från Belgien rekommenderar vi 4–6 veckor i förväg, särskilt vid större uppdrag. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "grekland": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Grekland – Aten, Thessaloniki, Kreta och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Grekland och grekiska kunder med flyttar till Sverige. Vår rutin med transport till Grekland, grekiska fastighetsregler och koordinering med fastighetsförvaltare gör att flytten fungerar även när grekiska regler och lokala förhållanden ställer krav på planeringen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Grekland?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Grekland",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För Grekland har vi specialiserat oss på transport till Aten, Thessaloniki, Kreta och andra grekiska destinationer, med kännedom om lokala fastighetsregler, trapphus och parkeringsförhållanden i grekiska bostadsområden.",
+      "desktop2": "Vi planerar körsträckor med hänsyn till avstånd och färjeled till öar där det behövs, koordinerar med grekiska fastighetsförvaltare och säkerställer att all kommunikation sker på rätt språk. Alla flyttar inkluderar gratis flyttkartonger, kostnadsfri ombokning upp till 24 timmar innan samt 14 dagars städgaranti. Kundtjänsten ger råd om grekiska fastighetsregler och vad som gäller för inflytt.",
+      "mobile": "Specialiserade team för Grekland som känner till lokala förhållanden i Aten, Thessaloniki och på Kreta.",
+      "mobileExpanded": "Vi hanterar transport till Grekland, grekiska fastighetsregler och lokala förhållanden så att flytten fungerar trots utmaningar.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om grekiska regler och hur inflytt fungerar."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Grekland"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Grekland",
+      "description": "Vi flyttar regelbundet mellan Sverige och Grekland – från lägenheter i Stockholm till bostäder i Aten, Thessaloniki, Kreta och andra grekiska destinationer. Vår erfarenhet av grekiska fastigheter, ofta med trånga trappor och begränsad parkering, och lokala förhållanden gör att vi kan planera varje flytt efter avstånd, transporttider och förutsättningar i både svenska och grekiska städer.",
+      "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och grekiska adresser. Vi ser över bärvägar, trapphus och lastzoner. Vår erfarenhet från flyttar till allt från lägenheter i Aten till hus på Kreta eller andra öar gör att vi vet hur lång tid som krävs när grekiska regler och lokala förhållanden påverkar körplanen."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Grekland",
+      "description": "Kunder som flyttat till eller från Grekland lyfter ofta hur vi hanterat grekiska fastighetsregler och inflytt utan att tappa kontrollen. Familjer som flyttat till Aten eller Kreta berättar hur vi koordinerade med fastighetsförvaltare, planerade körsträckor och stämde av tider med grannar och fastighetsägare.",
+      "badgeAlt": "Flyttfirma Grekland omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Grekland",
+      "description": "Våra utmärkelser kopplade till Grekland handlar om uppdrag där avgång från Sverige, transport till grekiska städer och öar samt inflytt i fastigheter med lokala regler ska fungera tillsammans. Samarbetspartners lyfter vår förmåga att leverera till adresser i Aten, Thessaloniki och på Kreta utan skador på varken bohag eller fastigheter."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Grekland",
+      "description": "Flytthjälp mellan Sverige och Grekland, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan, tar höjd för grekiska regler och sköter logistik vid både svenska och grekiska adresser.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Grekland",
+      "description": "Planera flytten efter körsträckor och eventuell färja till öar, se över hur grekiska fastighetsrutiner fungerar i just din fastighet.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Grekland",
+      "description": "Gå igenom transportväg och eventuell färjeresa, säkerställ att grekiska fastighetsregler är kända, stäm av regler för trapphus och gemensamma utrymmen innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Grekland, datum, våningar, hissregler och parkering. Ange önskade tilläggstjänster och om destinationen är på fastlandet eller en ö.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning. Behövs besiktning av grekiska adressen eller planering av färjeresa bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan och ser till att tid för lastning och lossning passar både svenska och grekiska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider och tipsar om hur du förbereder bohaget för inflytt i grekiska fastigheter.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar, anpassar bärvägar efter grekiska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Grekland eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Grekland",
+      "items": [
+        {
+          "question": "Hur lång tid tar en flytt till Grekland?",
+          "answer": "Transporttiden beror på destination – Aten är några dagar bort, Kreta och andra öar kan kräva färja. Vi planerar körsträckor och eventuell färjeresa och ger dig tydlig information om tidsplan och pris."
+        },
+        {
+          "question": "Behöver jag tänka på särskilda regler i grekiska fastigheter?",
+          "answer": "Ja, grekiska fastigheter kan ha regler kring trapphus, lastning och tidspassning. Vi säkerställer att vi känner till dessa och planerar flytten därefter. Du får en tydlig genomgång innan du godkänner flytten."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning inför flytt till Grekland?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål och packar för säker transport till Grekland, inklusive vid färjeresor till öar."
+        },
+        {
+          "question": "Hur fungerar inflytt i grekiska fastigheter?",
+          "answer": "Vi går igenom portar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning efter fastighetens förutsättningar – oavsett om det gäller Aten, Thessaloniki, Kreta eller andra öar."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Grekland?",
+          "answer": "För flyttar till och från Grekland rekommenderar vi 4–6 veckor i förväg, särskilt vid ödestinationer där färjetider kan påverka. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "polen": {
+    "customerReviews": {
+      "title": "Vad tycker våra kunder om oss?"
+    },
+    "hero": {
+      "title": "Flyttfirma till och från Polen – Warszawa, Kraków, Wrocław, Gdańsk och hela landet",
+      "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Polen och polska kunder med flyttar till Sverige. Vår rutin med längre transportsträckor, polska fastighetsstrukturer med äldre blokki och moderna områden, och koordinering med polska fastighetsförvaltare gör att flytten fungerar även när polska regler och skillnader i bostadsmarknad ställer högre krav på planeringen.",
+      "ctaPrimary": "Få offert",
+      "ctaSecondary": "Se hur vi arbetar"
+    },
+    "features": {
+      "title": "Vilka fördelar får du med Flyttella för flytt till/från Polen?"
+    },
+    "about": {
+      "title": "Om Flyttella för flytt till och från Polen",
+      "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För Polen har vi specialiserat oss på längre transportsträckor där körningstider och kostnader påverkas, polska fastighetsstrukturer med äldre blokki från 1950-70-talet där hissar ofta är små eller saknas, och moderna områden i Warszawa och Kraków där regler och rutiner kan skilja sig från äldre fastigheter.",
+      "desktop2": "Vi planerar körsträckor med hänsyn till längre avstånd, koordinerar med polska fastighetsförvaltare som kan ha annorlunda rutiner än svenska, och säkerställer att all kommunikation sker på polska där det behövs. Alla flyttar inkluderar gratis flyttkartonger, kostnadsfri ombokning upp till 24 timmar innan samt 14 dagars städgaranti. Kundtjänsten ger råd om längre transportsträckor, polska fastighetsregler och skillnader i bostadsstruktur mellan Sverige och Polen.",
+      "mobile": "Specialiserade team för Polen som känner till längre avstånd, polska fastighetsstrukturer och bostadsmarknad.",
+      "mobileExpanded": "Vi hanterar längre transportsträckor, äldre blokki med smala trappor, moderna områden och polska fastighetsregler så att flytten fungerar trots utmaningar.",
+      "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om polska fastighetsregler, fastighetsförvaltare och hur man navigerar skillnader i bostadsstruktur."
+    },
+    "experienceSection": {
+      "title": "Vår erfarenhet av flyttar till och från Polen"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av flyttar till och från Polen",
+      "description": "Vi flyttar regelbundet mellan Sverige och Polen – från lägenheter i Stockholm till bostäder i Warszawa, Kraków, Wrocław och Gdańsk. Vår erfarenhet av längre transportsträckor, polska fastighetsstrukturer med äldre blokki och moderna områden, samt skillnader i bostadsmarknad och regler gör att vi kan planera varje flytt efter avstånd, transporttider och lokala förutsättningar i både svenska och polska städer.",
+      "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och polska adresser. Vi ser över bärvägar i äldre blokki med smala trappor och begränsade hissar, moderna områden i Warszawa och Kraków där regler kan skilja sig, och lastzoner nära centrum där parkering kan vara utmanande. Vår erfarenhet från flyttar till allt från lägenheter i äldre blokki till moderna lägenheter i nya områden gör att vi vet hur lång tid som krävs när längre avstånd, polska fastighetsregler och skillnader i bostadsstruktur påverkar körplanen."
+    },
+    "reviews": {
+      "subtitle": "Rekommenderad flyttfirma för flytt till/från Polen",
+      "description": "Kunder som flyttat till eller från Polen lyfter ofta hur vi hanterat kombinationen av längre transportsträckor, polska fastighetsstrukturer och skillnader i bostadsmarknad utan att tappa kontrollen. Familjer som flyttat till Warszawa berättar hur vi i god tid koordinerade med polska fastighetsförvaltare, planerade körsträckor med hänsyn till längre avstånd och stämde av tider med både grannar och fastighetsägare. Kunder som flyttat till Kraków och Wrocław uppskattar särskilt att vi varit tydliga med körplan trots längre avstånd, hur polska fastighetsregler påverkar inflytt, och att vi hållit våra lovade tidfönster trots längre transportsträckor.",
+      "badgeAlt": "Flyttfirma Polen omdömen",
+      "arrowText": "Läs fler kunders upplevelser"
+    },
+    "awards": {
+      "title": "Flyttellas utmärkelser för flyttar till och från Polen",
+      "description": "Våra utmärkelser kopplade till Polen handlar ofta om uppdrag där många rörliga delar ska fungera samtidigt: avgång från Sverige, körning över längre avstånd, ankomst i en polsk stad med annorlunda fastighetsstrukturer, och inflytt i en fastighet där både tidspassning och hänsyn till polska regler är avgörande. Samarbetspartners lyfter vår förmåga att leverera på minuten till adresser i exempelvis Warszas centrum eller Krakóws äldre områden, trots att vi passerat längre avstånd och hanterat skillnader i fastighetsstruktur längs vägen. Att vi klarar detta utan skador på varken bohag eller fastigheter trots längre transportsträckor är en viktig anledning till de utmärkelser vi fått på Polensträckan."
+    },
+    "servicesSection": {
+      "title": "Upptäck alla våra tjänster för flytt till/från Polen",
+      "description": "Flytthjälp mellan Sverige och Polen, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan över längre avstånd, tar höjd för polska fastighetsstrukturer, planerar runt polska regler och sköter logistik vid både svenska och polska adresser.",
+      "privateServices": "Se alla tjänster"
+    },
+    "blogSection": {
+      "title": "Guider och tips för flytt till/från Polen",
+      "description": "Planera flytten efter körsträckor över längre avstånd, se över polska fastighetsstrukturer, kontrollera i förväg hur hissar, trapphus och polska fastighetsrutiner fungerar i just din fastighet.",
+      "readMore": "Läs mer"
+    },
+    "blog": {
+      "title": "Checklista: flytt till/från Polen",
+      "description": "Gå igenom transportväg över längre avstånd, säkerställ att polska fastighetsregler är kända, stäm av regler för polska fastigheter med äldre blokki eller moderna områden innan flyttdagen."
+    },
+    "processSection": {
+      "title": "Vår process",
+      "subtitle": "Så fungerar det",
+      "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, längre transportsträckor, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+    },
+    "process": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Beskriv adresser i Sverige och Polen, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och om flytten sker över längre avstånd.",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där längre transportsträckor, avstånd och eventuella polska fastighetsstrukturer ingår. Behövs besiktning av polska adressen eller kontroll av fastighetsregler bokar vi det innan vi spikar priset.",
+      "signConfirm": "Signera och bekräfta",
+      "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan över längre avstånd, säkerställer att polska fastighetsregler är kända och ser till att tid för lastning och lossning passar både svenska och polska förhållanden.",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, längre transportsträckor och tipsar om hur du förbereder bohaget för inflytt i polska fastigheter med deras specifika regler och strukturer.",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar i både äldre blokki och moderna byggnader, anpassar bärvägar efter polska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Polen eller Sverige.",
+      "satisfiedCustomer": "Uppföljning",
+      "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till/från Polen",
+      "items": [
+        {
+          "question": "Hur påverkar längre avstånd min flytt till Polen?",
+          "answer": "Polen är längre bort än Danmark och Norge, vilket påverkar transporttider och kostnader. Vi planerar körsträckor med hänsyn till längre avstånd och säkerställer att tidsplanen är realistisk. Du får tydlig information om hur detta påverkar tidsplan och pris."
+        },
+        {
+          "question": "Behöver jag tänka på skillnader i polska fastighetsregler?",
+          "answer": "Ja, polska fastighetsstrukturer kan skilja sig från svenska, särskilt i äldre blokki. Vi tar höjd för polska fastighetsregler i offerten och förklarar hur inflytt fungerar. Du får en tydlig genomgång av vad som ingår och hur vi hanterar skillnader mellan svenska och polska fastigheter innan du godkänner flytten."
+        },
+        {
+          "question": "Kan ni hjälpa till med packning av hela hem inför flytt till Polen?",
+          "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål extra noga och packar för att klara längre transportsträckor och inflytt i polska fastigheter med äldre blokki eller moderna områden."
+        },
+        {
+          "question": "Hur fungerar inflytt i polska fastigheter?",
+          "answer": "Vi går igenom portar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning samt utrustning efter fastighetens förutsättningar – oavsett om det gäller äldre blokki i Warszawa med smala trappor, moderna områden i Kraków eller äldre fastigheter i Wrocław."
+        },
+        {
+          "question": "Hur långt i förväg bör jag boka flytt till/från Polen?",
+          "answer": "För flyttar till och från Polen rekommenderar vi 4–6 veckor i förväg, särskilt vid större uppdrag eller när längre avstånd och polska fastighetsstrukturer kräver extra planering. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Har du fler frågor?",
+      "linkText": "Se alla vanliga frågor"
+    }
+  },
+  "nederlanderna": {
+    "hero": {
+      "title": "Flytt till Nederländerna – Trygg utlandsflytt till Amsterdam och hela Holland",
+      "subtitle": "Vi hjälper dig med hela processen när du ska flytta till Nederländerna – från planering och packning till transport och inflyttning. Oavsett om du flyttar till Amsterdam, Rotterdam eller Utrecht – vi tar hand om allt så du kan fokusera på ditt nya liv vid kanalerna."
+    },
+    "benefits": {
+      "title": "Vilka förmåner får du med Flyttella till Nederländerna?",
+      "packGaranti": "Pack-garanti",
+      "kundgaranti": "14 dagars nöjd kund garanti",
+      "kartonger": "Fritt lån av kartonger i 4 veckor",
+      "rutAvdrag": "50% RUT-avdrag",
+      "ombokning": "24h kostnadsfri ombokning och avbokning",
+      "tillstand": "Trafiktillstånd och försäkring"
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella har lång erfarenhet av internationella flyttar och hjälper varje år många svenskar att flytta tryggt och smidigt till Nederländerna. Landet är en populär destination för svenskar – antingen för jobbmöjligheter i Amsterdam, Rotterdam eller Haag, eller för att njuta av det cykelvänliga och internationella livet. Vi tar hand om hela processen – från planering och packning till transport och inflyttning i ditt nya hem.",
+      "description2": "Vi erbjuder personlig service, tydliga villkor och fasta priser på utlandsflytt. Vårt team har god kännedom om både Sverige och Nederländerna och kan hjälpa dig med allt från dokumentation till praktiska tips för en lyckad flytt – inklusive cykeltransport och hantering av trånga grachtgator i Amsterdam.",
+      "description3": "Oavsett om du flyttar till Amsterdam, Rotterdam, Utrecht, Haag eller Eindhoven – eller någon annan del av Nederländerna – kan du lita på att vi hanterar din flytt med omsorg och professionalism. Vi har erfarenhet av landets unika utmaningar som smala trappor vid grachthus. Vi erbjuder även magasinering och försäkring för din trygghet.",
+      "description4": "Kontakta oss idag för en kostnadsfri offert på din flytt till Nederländerna – vi ser fram emot att hjälpa dig till ett nytt liv vid kanalerna!",
+      "readMore": "Läs mer",
+      "readMoreAbout": "Läs mer om oss"
+    },
+    "reviews": {
+      "location": "Nederländerna",
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "Trygg utlandsflytt till Nederländerna med Flyttella",
+      "description": "Vi har hjälpt många svenskar att flytta till Nederländerna och vet vad som krävs för en lyckad utlandsflytt – från Amsterdam till Rotterdam. Läs vad våra kunder tycker om vår service och professionalism.",
+      "badgeAlt": "Erfarenhet av utlandsflytt till Nederländerna",
+      "arrowText": "Läs vad våra kunder säger om oss"
+    },
+    "process": {
+      "title": "Vår process",
+      "description1": "Vi gör din utlandsflytt till Nederländerna enkel och trygg – från första kontakt till inflyttning. Vi tar hand om allt det praktiska och guidar dig genom hela processen, så att du kan fokusera på ditt nya liv i Amsterdam, Rotterdam eller var du än ska bo.",
+      "description2": "Vår flyttprocess till Nederländerna är designad för att vara enkel, transparent och trygg. Det börjar med att du fyller i vårt formulär där du anger dina uppgifter och behov för din Nederländernaflytt. Inom en minut får du en offert skickad till din e-post. Samma dag eller dagen efter tar vi personlig kontakt för att gå igenom detaljer, svara på frågor och ge råd kring utlandsflytt – inklusive praktiska tips om cyklar, grachthus och nederländsk byråkrati. När du är nöjd signerar du offerten digitalt. Sedan genomför vi flytten enligt dina önskemål och avtal – hela vägen till din nya adress i Nederländerna. Resultatet? En nöjd kund som kan fokusera på sitt nya liv vid kanalerna.",
+      "pricing": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som mängd bohag, avstånd, tillval och eventuella särskilda önskemål för att ge dig en offert som passar just din utlandsflytt. Alla priser är fasta utan dolda avgifter – har du frågor eller särskilda önskemål? Kontakta oss så anpassar vi offerten efter dina behov.",
+      "howItWorks": "Så fungerar det"
+    },
+    "processSteps": {
+      "fillForm": "Fyll i formuläret",
+      "fillFormDesc": "Berätta om din utlandsflytt",
+      "quickQuote": "Snabb offert",
+      "quickQuoteDesc": "Få pris på 1 minut",
+      "personalContact": "Personlig kontakt",
+      "personalContactDesc": "Vi ringer dig för att gå igenom detaljerna",
+      "signConfirm": "Signera & bekräfta",
+      "signConfirmDesc": "Få bokningsbekräftelse och all dokumentation",
+      "moveCompleted": "Flytt genomförd",
+      "moveCompletedDesc": "Vi hämtar, transporterar och levererar till Nederländerna",
+      "satisfiedCustomer": "Nöjd kund",
+      "satisfiedCustomerDesc": "Återkommande kund"
+    },
+    "cta": {
+      "title": "Redo att börja din flytt?",
+      "subtitle": "Få en snabb och gratis offert på din flytt till Nederländerna",
+      "button": "Få gratis offert"
+    },
+    "experience": {
+      "title": "Vår erfarenhet av utlandsflytt",
+      "subtitle": "Erfarenhet av utlandsflytt",
+      "paragraph1": "Vi har hjälpt över 1800 familjer och företag att flytta till Nederländerna och andra länder i Europa. Nederlanderna är särskilt populärt bland svenskar som söker jobbmöjligheter inom tech, finans eller EU-institutioner i Haag. Vår erfarenhet gör att vi kan erbjuda trygga och effektiva lösningar för din utlandsflytt.",
+      "paragraph2": "Vi är stolta över våra många nöjda kunder och vårt rykte som en pålitlig partner för internationella flyttar.",
+      "paragraph3": "Vi kör regelbundna avgångar mellan Sverige och Nederländerna med täckning i Amsterdam, Rotterdam, Utrecht, Haag (Den Haag), Eindhoven och övriga större städer. Landets platta terräng och vägutbyggnad underlättar transporten – du kan välja kostnadseffektiv samlastning eller dedikerad expressleverans. Vi anpassar lösningen efter tidsplan och budget.",
+      "paragraph4": "Vårt team hjälper dig med all planering och dokumentation som krävs, inklusive hissbokning, bärvägar, parkeringstillstånd och hantering av ömtåligt eller värdefullt gods som piano, konst och glas. Vi erbjuder professionell packning och skräddarsydda emballagelösningar för extra trygghet.",
+      "paragraph5": "Under hela flytten har du en personlig kontakt och tydlig spårbarhet. Full försäkring ingår och vi arbetar med en transparent skadehanteringsprocess om något oväntat skulle inträffa.",
+      "card1Title": "Internationella flyttar",
+      "card2Title": "Flyttstädningar",
+      "card3Title": "Månadsvis",
+      "cardDescription": "uppdrag utförda",
+      "cardDescriptionMonthly": "uppdrag per månad"
+    },
+    "features": {
+      "title": "Våra fördelar",
+      "fastPris": "Fast pris",
+      "fastPrisDesc": "Inga överraskningar – vi erbjuder fasta priser på utlandsflytt till Nederländerna",
+      "dokumentation": "All dokumentation",
+      "dokumentationDesc": "Vi hjälper dig med alla papper och tillstånd för flytt inom EU",
+      "magasinering": "Magasinering",
+      "magasineringDesc": "Säker magasinering av dina tillhörigheter innan eller efter flytten",
+      "ombokning": "Omboka eller avboka kostnadsfritt",
+      "ombokningDesc": "Omboka eller avboka kostnadsfritt upp till 24 timmar innan flytten",
+      "garanti": "Nöjd kund garanti",
+      "garantiDesc": "14 dagars garanti på flyttstädning även för utlandsflytt",
+      "forsakring": "Internationell försäkring",
+      "forsakringDesc": "Alla nödvändiga försäkringar för din trygghet",
+      "personal": "Utbildad personal",
+      "personalDesc": "Vår personal är utbildad för internationella flyttar",
+      "logistik": "Effektiv logistik",
+      "logistikDesc": "Vi arbetar med effektiva logistiklösningar för utlandsflytt",
+      "sakerhet": "Säkerhet",
+      "sakerhetDesc": "Vi prioriterar säkerhet för både kunder och personal"
+    },
+    "awards": {
+      "title": "Utmärkelser för vårt arbete med utlandsflytt",
+      "description": "Våra utmärkelser är ett bevis på vårt engagemang för kvalitet, service och kundnöjdhet vid internationella flyttar. Vi har blivit erkända av både branschorganisationer och våra kunder för vårt pålitliga arbete och höga standard.",
+      "imageAlt": "Flyttellas utmärkelser - Flytt till Nederländerna"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": "Flyttstädning",
+      "flyttstadningDesc": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+      "flyttstadningExtended": "Flyttella erbjuder professionell flyttstädning med 14 dagars nöjd kund-garanti. Vi rengör alla boytor, putsar fönster på alla sidor och använder kvalitativa rengöringsmedel. Städutrustning ingår, inklusive leverans och upphämtning. Vi dammtorkar väggar och tak, rengör golvbrunnar och bakom vitvaror (om du drar fram dem). Frysen rengörs om den är avfrostad dagen innan. Med oss får du en komplett flyttstädning för en trygg och smidig överlämning.",
+      "magasinering": "Magasinering",
+      "magasineringDesc": "Säker magasinering av dina tillhörigheter. Vi erbjuder flexibla lösningar för kortare och längre lagring med säker hantering.",
+      "magasineringExtended": "Behöver du magasinera bohag under flyttprocessen? Flyttella tillhandahåller säkra och pålitliga magasineringslösningar för dina tillhörigheter. Vi erbjuder flexibla alternativ som passar dina behov och tidsplan. Som extra service erbjuder vi den första månaden gratis för att göra din flyttprocess ännu smidigare.",
+      "packhjalp": "Packhjälp",
+      "packhjalpDesc": "Professionell packhjälp för en stressfri flytt. Vi hjälper dig packa dina tillhörigheter säkert och organiserat.",
+      "packhjalpExtended": "Packning är ofta den mest tidskrävande delen av en flytt. Flyttella erbjuder professionell packhjälp där våra erfarna flyttare hjälper dig packa dina tillhörigheter på ett säkert och organiserat sätt. Vi använder kvalitativa packmaterial och säkerställer att allt packas korrekt för transport. Vår packhjälp inkluderar även märkning av kartonger och skapande av en inventarielista för enkel uppackning på den nya adressen.",
+      "readMore": "Läs mer"
+    },
+    "discoverServices": {
+      "title": "Upptäck Alla Våra Tjänster för Nederländerna",
+      "description": "Vi erbjuder ett komplett utbud av tjänster för att göra din flytt till Nederländerna så smidig som möjligt. Från bohagsflytt och flyttstädning till magasinering – inklusive hjälp med cyklar och möbler till trånga grachthus i Amsterdam.",
+      "privateButton": "Se alla våra privattjänster",
+      "businessButton": "Se alla våra företagstjänster"
+    },
+    "tips": {
+      "title": "Tips för din flytt till Nederländerna",
+      "beforeTitle": "Innan flytten",
+      "duringTitle": "Under flytten",
+      "afterTitle": "Efter flytten"
+    },
+    "blog": {
+      "title": "Läs mer om flytt till Nederländerna",
+      "subtitle": "Få värdefulla tips och råd för en smidig utlandsflytt till Nederländerna – inklusive praktiska tips för Amsterdam, Rotterdam och cykellivet.",
+      "category": "Flytttips",
+      "readingTime": "5 min läsning",
+      "articleTitle": "Komplett guide: Så planerar du en smidig flytt till Nederländerna",
+      "articleDescription": "En flytt till Nederländerna kräver noggrann planering – särskilt med tanke på grachthus, cyklar och nederländsk byråkrati. I denna guide går vi igenom allt du behöver veta: från första kontakten med flyttfirman till den sista kartongen i ditt nya hem i Amsterdam eller Rotterdam.",
+      "readArticle": "Läs hela artikeln",
+      "seeAllArticles": "Se alla artiklar om utlandsflytt",
+      "expert": "Flyttella Expert",
+      "expertTitle": "Flyttspecialist på utlandsflytt"
+    },
+    "faq": {
+      "title": "Vanliga frågor om flytt till Nederländerna",
+      "footer": "Har du fler frågor om flytt till Nederländerna?",
+      "seeAll": "Se alla vanliga frågor",
+      "items": [
+        {
+          "id": "nederlanderna-1",
+          "question": "Hur mycket kostar en flytt till Nederländerna?",
+          "answer": "Priset beror på mängden gods, avstånd (t.ex. Amsterdam, Rotterdam eller Utrecht), och eventuella tillval som packning och magasinering. Avståndet är kortare än till Spanien, vilket ofta ger konkurrenskraftiga priser. Fyll i vårt formulär för en snabb offert!"
+        },
+        {
+          "id": "nederlanderna-2",
+          "question": "Kan ni hantera flytt till grachthus i Amsterdam?",
+          "answer": "Ja! Vi har erfarenhet av Nederländernas trånga trappor och smala gator vid kanaler. Vi anpassar våra metoder – inklusive fönsterlyft vid behov – för att få in möbler i grachthus."
+        },
+        {
+          "id": "nederlanderna-3",
+          "question": "Kan ni transportera cyklar till Nederländerna?",
+          "answer": "Absolut. Cyklar är en viktig del av vardagen i Nederländerna. Vi erbjuder säker transport av cyklar som del av din flytt eller som tillval."
+        },
+        {
+          "id": "nederlanderna-4",
+          "question": "Hur lång tid tar en flytt till Nederländerna?",
+          "answer": "Transporten till Amsterdam eller Rotterdam tar normalt 2–5 dagar. Nederländerna är närmare Sverige än Spanien, vilket gör flytten effektiv. Vi planerar alltid tillsammans med dig för bästa lösning."
+        },
+        {
+          "id": "nederlanderna-5",
+          "question": "Behöver jag visa eller särskilda tillstånd för flytt till Nederländerna?",
+          "answer": "Som svensk medborgare behöver du inget visum för att flytta inom EU. Vi hjälper dig med all dokumentation för flytten – inklusive BSN-registrering och kommunikation med nederländska myndigheter om det behövs."
+        }
+      ]
+    },
+    "common": {
+      "readMore": "Läs mer",
+      "personalImageAlt": "Flyttella personal - Flytt till Nederländerna",
+      "aboutImageAlt": "Om Flyttella"
+    }
   }
 }

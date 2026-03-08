@@ -1,0 +1,102 @@
+{
+  "customerReviews": {
+    "title": "What do our customers say?"
+  },
+  "hero": {
+    "title": "Moving company to and from Switzerland – Zurich, Geneva, Basel, Bern and beyond",
+    "subtitle": "We help Swedish families and businesses move to Switzerland and Swiss customers move to Sweden. Our routine with mountain tunnels, environmental zones in Swiss cities and coordination with property managers in four different languages means the move works even when Swiss regulations and high standards put higher demands on planning.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "See how we work"
+  },
+  "features": {
+    "title": "What benefits do you get with Flyttella for moves to/from Switzerland?"
+  },
+  "about": {
+    "title": "About Flyttella for moves to and from Switzerland",
+    "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For Switzerland we have specialized in mountain tunnels such as Gotthard and Lötschberg where transport times and costs are affected, environmental zones in Zurich and Geneva where vehicles must meet strict requirements, and property managers who require documentation in the right language – German in Zurich, French in Geneva, Italian in southern Switzerland.",
+    "desktop2": "We plan driving routes through mountain tunnels with consideration for traffic, weather and restrictions, coordinate with Swiss property managers who have high standards and strict rules for when moves are allowed, and ensure all communication happens in the right language for the region. Every move includes complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee. Support gives advice on mountain tunnels, environmental zones and Swiss property regulations that are often stricter than Swedish ones.",
+    "mobile": "Specialized teams for Switzerland who know mountain tunnels, environmental zones and Swiss property structures.",
+    "mobileExpanded": "We handle mountain tunnels, environmental zones, strict regulations and four different languages so the move works despite challenges.",
+    "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on Swiss property regulations, environmental zones and how to navigate mountain tunnels."
+  },
+  "experienceSection": {
+    "title": "Our experience with moves to and from Switzerland"
+  },
+  "experience": {
+    "title": "Our experience with moves to and from Switzerland",
+    "description": "We regularly move between Sweden and Switzerland – from apartments in Stockholm to homes in Zurich, Geneva, Basel and Bern. Our experience with mountain tunnels such as Gotthard and Lötschberg, environmental zones in Swiss cities, strict property regulations and high standards means we can plan each move around distance, transport times through the mountains and local conditions in both Swedish and Swiss cities.",
+    "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Swiss addresses. We assess carry routes in modern Swiss buildings with high standards, environmental zones in Zurich and Geneva where vehicles must meet specific requirements, and loading zones near city centres where regulations are strict. Experience from moves to everything from apartments in Zurich's city centre to houses in mountain areas means we know how much time is needed when mountain tunnels, environmental zones, Swiss property regulations and high standards affect the driving plan."
+  },
+  "reviews": {
+    "subtitle": "Most recommended mover for moves to/from Switzerland",
+    "description": "Customers who have moved to or from Switzerland often highlight how we handled the combination of mountain tunnels, environmental zones and Swiss property regulations without losing control. Families who moved to Zurich tell how we coordinated with property managers in German in good time, planned driving routes through the Gotthard tunnel and aligned times with both neighbors and property owners. Customers who moved to Geneva particularly value that we were clear about the driving plan through mountain tunnels, how environmental zones affect arrival, and that we kept our promised time windows despite long distances and strict regulations.",
+    "badgeAlt": "Moving company Switzerland reviews",
+    "arrowText": "Read more customer stories"
+  },
+  "awards": {
+    "title": "Flyttella awards for moves to and from Switzerland",
+    "description": "Our awards related to Switzerland often involve assignments where many moving parts must work simultaneously: departure from Sweden, driving through mountain tunnels such as Gotthard or Lötschberg, arrival in a Swiss city with environmental zones, and move-in at a property where both timing and consideration for strict regulations are crucial. Partners especially highlight our ability to deliver on the minute to addresses in, for example, Zurich's city centre or Geneva's modern areas, despite passing mountain tunnels, environmental zones and strict checks along the way. That we manage this with Swiss precision and without damage to either belongings or properties is an important reason for the awards we have received on the Switzerland route."
+  },
+  "servicesSection": {
+    "title": "Discover all our services for moves to/from Switzerland",
+    "description": "Household moves between Sweden and Switzerland, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans through mountain tunnels, account for environmental zones, plan around strict regulations and manage logistics at both Swedish and Swiss addresses.",
+    "privateServices": "See all services"
+  },
+  "blogSection": {
+    "title": "Guides and tips for moving to/from Switzerland",
+    "description": "Plan your move around driving routes through mountain tunnels, check if your address is in an environmental zone, clarify in advance how elevators, courtyards and Swiss property routines work in your specific property.",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Checklist: moving to/from Switzerland",
+    "description": "Review transport route through mountain tunnels, ensure vehicles meet environmental zone requirements in Zurich or Geneva, check rules for Swiss properties with high standards and shared spaces before move day."
+  },
+  "processSection": {
+    "title": "Our process",
+    "subtitle": "How it works",
+    "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, mountain tunnels, environmental zones, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+  },
+  "process": {
+    "fillForm": "Fill out the form",
+    "fillFormDesc": "Describe addresses in Sweden and Switzerland, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and whether the move is via mountain tunnels or through environmental zones.",
+    "quickQuote": "Quick quote",
+    "quickQuoteDesc": "You get a fixed quote with clear scope where mountain tunnels, distance and any environmental zones are included. If inspection of the Swiss address or vehicle check for environmental zones is needed we book it before finalizing the price.",
+    "signConfirm": "Sign and confirm",
+    "signConfirmDesc": "After signing we prepare a detailed driving plan through mountain tunnels, ensure vehicles meet environmental zone requirements and ensure loading and unloading times fit both Swedish and Swiss conditions.",
+    "personalContact": "Personal contact",
+    "personalContactDesc": "Your coordinator keeps you updated on timings, mountain tunnels and gives tips on how to prepare belongings for move-in at Swiss properties with their specific regulations and high standards.",
+    "moveCompleted": "Move completed",
+    "moveCompletedDesc": "The team protects entrances, stairs and elevators in modern buildings, adjusts carry routes to Swiss property structures and makes sure your belongings end up in the right place in your new home in Switzerland or Sweden.",
+    "satisfiedCustomer": "Follow-up",
+    "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+  },
+  "faq": {
+    "title": "Frequently asked questions about moving to/from Switzerland",
+    "items": [
+      {
+        "question": "How do mountain tunnels affect my move to Switzerland?",
+        "answer": "Mountain tunnels such as Gotthard and Lötschberg can affect transport times and costs. We plan driving routes with consideration for traffic, weather and restrictions in the tunnels. You get clear information on how this affects the schedule and price."
+      },
+      {
+        "question": "Do I need to think about environmental zones in Swiss cities?",
+        "answer": "Yes, cities such as Zurich and Geneva have environmental zones where vehicles must meet strict requirements. We ensure our vehicles meet these requirements and plan the move accordingly. You get a clear overview of what is included and how we handle environmental zones before you approve the move."
+      },
+      {
+        "question": "Can you help with packing an entire home before moving to Switzerland?",
+        "answer": "Yes, our packing teams label boxes by room, protect fragile items extra carefully and pack for mountain tunnels and move-in at Swiss properties with high standards."
+      },
+      {
+        "question": "How does move-in work at Swiss properties?",
+        "answer": "We review gates, courtyards, stairwells and elevators in advance where possible and adapt crew size and equipment to the property's conditions – whether it's modern areas in Zurich with environmental zones, Geneva with strict regulations or Basel with high standards."
+      },
+      {
+        "question": "How far in advance should I book a move to/from Switzerland?",
+        "answer": "For moves to and from Switzerland we recommend 4–6 weeks in advance, especially for larger projects or when mountain tunnels and environmental zones require extra planning. We always try to solve urgent requests where planning and transport make it possible."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Do you have more questions?",
+    "linkText": "See all frequently asked questions"
+  }
+}

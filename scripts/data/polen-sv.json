@@ -1,0 +1,102 @@
+{
+  "customerReviews": {
+    "title": "Vad tycker våra kunder om oss?"
+  },
+  "hero": {
+    "title": "Flyttfirma till och från Polen – Warszawa, Kraków, Wrocław, Gdańsk och hela landet",
+    "subtitle": "Vi hjälper svenska familjer och företag med flyttar till Polen och polska kunder med flyttar till Sverige. Vår rutin med längre transportsträckor, polska fastighetsstrukturer med äldre blokki och moderna områden, och koordinering med polska fastighetsförvaltare gör att flytten fungerar även när polska regler och skillnader i bostadsmarknad ställer högre krav på planeringen.",
+    "ctaPrimary": "Få offert",
+    "ctaSecondary": "Se hur vi arbetar"
+  },
+  "features": {
+    "title": "Vilka fördelar får du med Flyttella för flytt till/från Polen?"
+  },
+  "about": {
+    "title": "Om Flyttella för flytt till och från Polen",
+    "desktop": "Flyttella har funnits i över åtta år och hjälpt 8 000 kunder med flyttar i Stockholmsområdet och internationellt. För Polen har vi specialiserat oss på längre transportsträckor där körningstider och kostnader påverkas, polska fastighetsstrukturer med äldre blokki från 1950-70-talet där hissar ofta är små eller saknas, och moderna områden i Warszawa och Kraków där regler och rutiner kan skilja sig från äldre fastigheter.",
+    "desktop2": "Vi planerar körsträckor med hänsyn till längre avstånd, koordinerar med polska fastighetsförvaltare som kan ha annorlunda rutiner än svenska, och säkerställer att all kommunikation sker på polska där det behövs. Alla flyttar inkluderar gratis flyttkartonger, kostnadsfri ombokning upp till 24 timmar innan samt 14 dagars städgaranti. Kundtjänsten ger råd om längre transportsträckor, polska fastighetsregler och skillnader i bostadsstruktur mellan Sverige och Polen.",
+    "mobile": "Specialiserade team för Polen som känner till längre avstånd, polska fastighetsstrukturer och bostadsmarknad.",
+    "mobileExpanded": "Vi hanterar längre transportsträckor, äldre blokki med smala trappor, moderna områden och polska fastighetsregler så att flytten fungerar trots utmaningar.",
+    "mobileExpanded2": "Samma kontaktperson följer dig från offert till inflytt och hjälper till med frågor om polska fastighetsregler, fastighetsförvaltare och hur man navigerar skillnader i bostadsstruktur."
+  },
+  "experienceSection": {
+    "title": "Vår erfarenhet av flyttar till och från Polen"
+  },
+  "experience": {
+    "title": "Vår erfarenhet av flyttar till och från Polen",
+    "description": "Vi flyttar regelbundet mellan Sverige och Polen – från lägenheter i Stockholm till bostäder i Warszawa, Kraków, Wrocław och Gdańsk. Vår erfarenhet av längre transportsträckor, polska fastighetsstrukturer med äldre blokki och moderna områden, samt skillnader i bostadsmarknad och regler gör att vi kan planera varje flytt efter avstånd, transporttider och lokala förutsättningar i både svenska och polska städer.",
+    "expanded": "Inför större uppdrag gör vi ofta digitala eller fysiska genomgångar av både svenska och polska adresser. Vi ser över bärvägar i äldre blokki med smala trappor och begränsade hissar, moderna områden i Warszawa och Kraków där regler kan skilja sig, och lastzoner nära centrum där parkering kan vara utmanande. Vår erfarenhet från flyttar till allt från lägenheter i äldre blokki till moderna lägenheter i nya områden gör att vi vet hur lång tid som krävs när längre avstånd, polska fastighetsregler och skillnader i bostadsstruktur påverkar körplanen."
+  },
+  "reviews": {
+    "subtitle": "Rekommenderad flyttfirma för flytt till/från Polen",
+    "description": "Kunder som flyttat till eller från Polen lyfter ofta hur vi hanterat kombinationen av längre transportsträckor, polska fastighetsstrukturer och skillnader i bostadsmarknad utan att tappa kontrollen. Familjer som flyttat till Warszawa berättar hur vi i god tid koordinerade med polska fastighetsförvaltare, planerade körsträckor med hänsyn till längre avstånd och stämde av tider med både grannar och fastighetsägare. Kunder som flyttat till Kraków och Wrocław uppskattar särskilt att vi varit tydliga med körplan trots längre avstånd, hur polska fastighetsregler påverkar inflytt, och att vi hållit våra lovade tidfönster trots längre transportsträckor.",
+    "badgeAlt": "Flyttfirma Polen omdömen",
+    "arrowText": "Läs fler kunders upplevelser"
+  },
+  "awards": {
+    "title": "Flyttellas utmärkelser för flyttar till och från Polen",
+    "description": "Våra utmärkelser kopplade till Polen handlar ofta om uppdrag där många rörliga delar ska fungera samtidigt: avgång från Sverige, körning över längre avstånd, ankomst i en polsk stad med annorlunda fastighetsstrukturer, och inflytt i en fastighet där både tidspassning och hänsyn till polska regler är avgörande. Samarbetspartners lyfter vår förmåga att leverera på minuten till adresser i exempelvis Warszas centrum eller Krakóws äldre områden, trots att vi passerat längre avstånd och hanterat skillnader i fastighetsstruktur längs vägen. Att vi klarar detta utan skador på varken bohag eller fastigheter trots längre transportsträckor är en viktig anledning till de utmärkelser vi fått på Polensträckan."
+  },
+  "servicesSection": {
+    "title": "Upptäck alla våra tjänster för flytt till/från Polen",
+    "description": "Flytthjälp mellan Sverige och Polen, packning, magasinering, flyttstädning, montering och rådgivning inför gränsöverskridande flytt. Vi tar hand om körplan över längre avstånd, tar höjd för polska fastighetsstrukturer, planerar runt polska regler och sköter logistik vid både svenska och polska adresser.",
+    "privateServices": "Se alla tjänster"
+  },
+  "blogSection": {
+    "title": "Guider och tips för flytt till/från Polen",
+    "description": "Planera flytten efter körsträckor över längre avstånd, se över polska fastighetsstrukturer, kontrollera i förväg hur hissar, trapphus och polska fastighetsrutiner fungerar i just din fastighet.",
+    "readMore": "Läs mer"
+  },
+  "blog": {
+    "title": "Checklista: flytt till/från Polen",
+    "description": "Gå igenom transportväg över längre avstånd, säkerställ att polska fastighetsregler är kända, stäm av regler för polska fastigheter med äldre blokki eller moderna områden innan flyttdagen."
+  },
+  "processSection": {
+    "title": "Vår process",
+    "subtitle": "Så fungerar det",
+    "description": "Vår flyttprocess är enkel, transparent och trygg: fyll i formuläret, få offert inom en minut, få personlig uppföljning samma dag och signera digitalt när allt känns rätt. Offerten baseras på dina faktiska förutsättningar – avstånd, längre transportsträckor, boyta, våningsplan, hiss och parkeringsavstånd – och kan kompletteras med packning, städning eller magasinering utan dolda avgifter."
+  },
+  "process": {
+    "fillForm": "Fyll i formuläret",
+    "fillFormDesc": "Beskriv adresser i Sverige och Polen, datum, våningar, hissregler, parkering och om källare/vind ska tömmas. Ange önskade tilläggstjänster och om flytten sker över längre avstånd.",
+    "quickQuote": "Snabb offert",
+    "quickQuoteDesc": "Du får en fast offert med tydlig omfattning där längre transportsträckor, avstånd och eventuella polska fastighetsstrukturer ingår. Behövs besiktning av polska adressen eller kontroll av fastighetsregler bokar vi det innan vi spikar priset.",
+    "signConfirm": "Signera och bekräfta",
+    "signConfirmDesc": "Efter signatur tar vi fram detaljerad körplan över längre avstånd, säkerställer att polska fastighetsregler är kända och ser till att tid för lastning och lossning passar både svenska och polska förhållanden.",
+    "personalContact": "Personlig kontakt",
+    "personalContactDesc": "Din koordinator håller dig uppdaterad om tider, längre transportsträckor och tipsar om hur du förbereder bohaget för inflytt i polska fastigheter med deras specifika regler och strukturer.",
+    "moveCompleted": "Flytt genomförd",
+    "moveCompletedDesc": "Teamet skyddar entréer, trappor och hissar i både äldre blokki och moderna byggnader, anpassar bärvägar efter polska fastighetsstrukturer och ser till att bohaget ställs på rätt plats i din nya bostad i Polen eller Sverige.",
+    "satisfiedCustomer": "Uppföljning",
+    "satisfiedCustomerDesc": "Vi gör en gemensam genomgång, justerar möblering och säkerställer att eventuella uppföljande tjänster som städ eller magasinering följer planen."
+  },
+  "faq": {
+    "title": "Vanliga frågor om flytt till/från Polen",
+    "items": [
+      {
+        "question": "Hur påverkar längre avstånd min flytt till Polen?",
+        "answer": "Polen är längre bort än Danmark och Norge, vilket påverkar transporttider och kostnader. Vi planerar körsträckor med hänsyn till längre avstånd och säkerställer att tidsplanen är realistisk. Du får tydlig information om hur detta påverkar tidsplan och pris."
+      },
+      {
+        "question": "Behöver jag tänka på skillnader i polska fastighetsregler?",
+        "answer": "Ja, polska fastighetsstrukturer kan skilja sig från svenska, särskilt i äldre blokki. Vi tar höjd för polska fastighetsregler i offerten och förklarar hur inflytt fungerar. Du får en tydlig genomgång av vad som ingår och hur vi hanterar skillnader mellan svenska och polska fastigheter innan du godkänner flytten."
+      },
+      {
+        "question": "Kan ni hjälpa till med packning av hela hem inför flytt till Polen?",
+        "answer": "Ja, våra packteam märker lådor per rum, skyddar känsliga föremål extra noga och packar för att klara längre transportsträckor och inflytt i polska fastigheter med äldre blokki eller moderna områden."
+      },
+      {
+        "question": "Hur fungerar inflytt i polska fastigheter?",
+        "answer": "Vi går igenom portar, trapphus och hissar i förväg där det är möjligt och anpassar bemanning samt utrustning efter fastighetens förutsättningar – oavsett om det gäller äldre blokki i Warszawa med smala trappor, moderna områden i Kraków eller äldre fastigheter i Wrocław."
+      },
+      {
+        "question": "Hur långt i förväg bör jag boka flytt till/från Polen?",
+        "answer": "För flyttar till och från Polen rekommenderar vi 4–6 veckor i förväg, särskilt vid större uppdrag eller när längre avstånd och polska fastighetsstrukturer kräver extra planering. Vi försöker alltid lösa akuta förfrågningar där planering och transport gör det möjligt."
+      }
+    ]
+  },
+  "faqFooter": {
+    "title": "Har du fler frågor?",
+    "linkText": "Se alla vanliga frågor"
+  }
+}

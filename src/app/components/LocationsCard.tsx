@@ -69,7 +69,18 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     'vallentuna',
     'varmdo',
     'vasastan',
-    'vasterhaninge'
+    'vasterhaninge',
+    'finland',
+    'norge',
+    'danmark',
+    'frankrike',
+    'tyskland',
+    'italien',
+    'schweiz',
+    'osterrike',
+    'belgien',
+    'grekland',
+    'polen'
   ]);
 
   const getLocationHref = (slug: string) => `/flyttfirma-i-${slug}`;
@@ -215,15 +226,34 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
                   </h4>
                   <div className="mt-3 md:mt-4 flex flex-wrap justify-center gap-2">
                     {[
-                      'Spanien', 'Finland', 'Norge', 'Danmark', 'Frankrike', 'Tyskland', 
-                      'Italien', 'Schweiz', 'Polen', 'Nederländerna', 'Österrike', 'Belgien', 'Grekland'
+                      { name: 'Spanien', href: '/flytt-till-spanien' },
+                      { name: 'Finland', slug: 'finland' },
+                      { name: 'Norge', slug: 'norge' },
+                      { name: 'Danmark', slug: 'danmark' },
+                      { name: 'Frankrike', slug: 'frankrike' },
+                      { name: 'Tyskland', slug: 'tyskland' },
+                      { name: 'Italien', slug: 'italien' },
+                      { name: 'Schweiz', slug: 'schweiz' },
+                      { name: 'Österrike', slug: 'osterrike' },
+                      { name: 'Belgien', slug: 'belgien' },
+                      { name: 'Grekland', slug: 'grekland' },
+                      { name: 'Polen', slug: 'polen' },
+                      { name: 'Nederländerna', href: '/flytt-till-nederlanderna' }
                     ].map((country, index) => (
-                      <span 
-                        key={index}
-                        className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap"
-                      >
-                        {country}
-                      </span>
+                      (country.href ?? country.slug) ? (
+                        <Link key={index} href={country.href ?? `/flyttfirma-i-${country.slug}`}>
+                          <span className="text-white/90 hover:text-white text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap transition-colors">
+                            {country.name}
+                          </span>
+                        </Link>
+                      ) : (
+                        <span 
+                          key={index}
+                          className="text-white/90 text-xs md:text-sm font-medium block text-center py-1.5 md:py-2 px-2 md:px-3 rounded-lg whitespace-nowrap"
+                        >
+                          {country.name}
+                        </span>
+                      )
                     ))}
                   </div>
                 </div>

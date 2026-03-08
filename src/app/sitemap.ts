@@ -126,6 +126,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/flytt-till-nederlanderna`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/foretag`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -213,7 +219,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'norrmalm', 'nynashamn', 'ostermalm', 'salem', 'skarholmen', 'sodertalje', 
     'sollentuna', 'solna', 'spanga', 'stockholm-och-goteborg', 'stockholm-och-kopenhamn', 
     'stockholm-och-malmo', 'stockholm-och-oslo', 'sundbyberg', 'taby', 'tumba', 
-    'tyreso', 'upplands-vasby', 'vallentuna', 'varmdo', 'vasastan', 'vasterhaninge'
+    'tyreso', 'upplands-vasby', 'vallentuna', 'varmdo', 'vasastan', 'vasterhaninge',
+    'osterrike',
+    'belgien',
+    'grekland'
   ]
 
   const flyttfirmaPages = flyttfirmaLocations.map(location => ({

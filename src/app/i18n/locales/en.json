@@ -7195,5 +7195,1304 @@
       "title": "Do you have more questions?",
       "linkText": "See all frequently asked questions"
     }
+  },
+  "finland": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Finland – Stockholm, Helsinki and the whole country",
+      "subtitle": "We help Swedish families and businesses with moves to Finland and Finnish customers with moves to Sweden. Our routine with cross-border logistics, customs handling and coordination between Swedish and Finnish properties means the move goes smoothly despite distance and language barriers.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Finland?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Finland",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For moves to and from Finland we have built solid experience handling cross-border logistics, customs forms and coordination between Swedish and Finnish properties. We're used to navigating different housing types – from apartments in central Helsinki to houses in Tampere and Turku – and we understand the differences in property structure and moving logistics between the countries.",
+      "desktop2": "Our teams handle moves between Sweden and Finland with focus on punctuality, clear communication and careful handling of customs and transport documentation. We coordinate loading in Sweden, transport across the border and unloading in Finland – all with one dedicated coordinator who keeps the timeline together and ensures all documentation is correct. Packing, storage, cleaning and assembly are bundled in one solution tailored for international moves.",
+      "desktop3": "Every move to/from Finland includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on customs forms, transport times across the border, parking in Finnish cities and how to navigate differences in property rules between Sweden and Finland.",
+      "mobile": "Experienced teams for moves to/from Finland with fixed pricing and structured logistics.",
+      "mobileExpanded": "We handle customs forms, coordinate transport across the border and plan loading and unloading in both countries.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in with advice on customs, transport times and logistics in both Sweden and Finland."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Finland"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Finland",
+      "description": "We regularly move between Sweden and Finland – from apartments in Stockholm to houses in Helsinki, from Swedish villas to Finnish row houses in Tampere and Turku. Our routine with cross-border logistics, customs handling and coordination between different property structures means we can adapt each move to distance, transport times and local conditions in both countries.",
+      "expanded": "For larger projects we do site visits in both Sweden and Finland to assess carry routes, elevator status and parking situation. Experience from moves between Swedish and Finnish properties – from modern apartment buildings in central Helsinki to older villas in Tampere – means we know exactly how much time is needed for transport across the border, customs handling and differences in property structure between the countries."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Finland",
+      "description": "Reviews from customers who moved to/from Finland highlight our punctual handling of cross-border logistics, clear communication about customs forms and transport times, and careful coordination between Swedish and Finnish properties. Clients particularly value that we understand the differences in property structure and moving logistics between the countries and can give practical advice on parking, elevator bookings and local rules in both Sweden and Finland.",
+      "badgeAlt": "Moving company Finland reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Finland",
+      "description": "Our awards reflect our long experience with cross-border moves between Sweden and Finland. Clients value our ability to handle customs forms efficiently, coordinate transport across the border punctually and navigate differences in property structure and moving logistics between the countries. These awards confirm that we deliver consistent quality whether the move goes to Helsinki, Tampere, Turku or other Finnish cities."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Finland",
+      "description": "Household moves between Sweden and Finland, packing, storage, cleaning, assembly and advisory services for international moves. We handle customs forms, transport across the border, parking and logistics in both Swedish and Finnish cities.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Finland",
+      "description": "Prepare customs forms in advance, label boxes by room, coordinate transport times across the border and plan extra time for customs handling and differences in property structure between the countries.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Finland",
+      "description": "Verify customs forms, transport times across the border, parking permits in both countries and check differences in property rules and elevator bookings before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, transport across the border, customs handling, living area, floors, elevator, parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Finland, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and customs handling.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope including transport across the border and customs handling. If inspection is needed in both countries we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we book transport across the border, arrange customs forms, secure parking permits in both countries and send route plan with contact details.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on transport times, customs handling and tips on packing. We ensure protection and boxes are delivered on time.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, builds carry chains via stairs or elevator and loads sequentially for transport across the border and quick unloading in Finland.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure cleaning or storage matches the plan in both Sweden and Finland."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Finland",
+      "items": [
+        {
+          "question": "How do you handle customs forms and transport across the border?",
+          "answer": "We help with all customs forms, coordinate transport across the border and ensure all documentation is correct. We have experience handling differences in property structure and moving logistics between Sweden and Finland."
+        },
+        {
+          "question": "Can you help with packing an entire home?",
+          "answer": "Yes, our packing teams label boxes by room, protect kitchenware and closets and can also pack storage or hobby rooms. We adapt packing to transport across the border and customs handling."
+        },
+        {
+          "question": "What's included in your moving service to/from Finland?",
+          "answer": "We handle everything from packing and transport across the border to unpacking and cleaning. All prices are fixed without hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+        },
+        {
+          "question": "Do you offer storage if move-in is delayed?",
+          "answer": "Absolutely, we store in alarmed, dry warehouses in both Sweden and Finland and deliver back when the new home is ready."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Finland?",
+          "answer": "For international moves we recommend 4–6 weeks in advance to ensure transport across the border and customs handling. We always try to solve quick requests when possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "norge": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Norway – Oslo, Bergen, Trondheim and beyond",
+      "subtitle": "We help Swedish families and businesses move to Norway and Norwegian customers move to Sweden. Our routine with border crossings, E6 logistics, mountain roads and Norwegian weather conditions means the move works even when distance, winter driving and toll systems put higher demands on planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Norway?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Norway",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For moves to and from Norway we have built a clear specialization in border logistics, moving into Norwegian properties and coordination along the E6 corridor from Stockholm towards Oslo. We're used to everything from apartments in Grünerløkka to row houses in Bergen and houses in smaller towns with steep terrain.",
+      "desktop2": "Our teams plan moves between Sweden and Norway with focus on winter conditions, narrow streets in Norwegian city centres and toll zones. We coordinate loading in Sweden, driving plans via border crossings such as Svinesund, time windows for arrival in the Oslo area and unloading in Norwegian properties where elevators, gates and courtyards are often shared with neighbours.",
+      "desktop3": "Every move to/from Norway includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support gives concrete advice on driving distance, winter tyre requirements, toll roads, parking in Oslo, Bergen and Trondheim and how to handle Norwegian property rules and shared spaces.",
+      "mobile": "Experienced teams for moves to/from Norway with fixed pricing and carefully planned logistics.",
+      "mobileExpanded": "We plan around border crossings, tolls, winter conditions and narrow streets in Norwegian cities so that trucks, timings and access match your situation.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on route, schedule and moving into Norwegian properties."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Norway"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Norway",
+      "description": "We regularly move between Sweden and Norway – from apartments in Stockholm to homes in Oslo, Bergen and Trondheim. Our experience with the E6 route, the Svinesund bridge, winter driving and Norwegian toll systems means we can plan each move around distance, season and local conditions in both Swedish and Norwegian cities.",
+      "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Norwegian addresses. We assess carry routes in older Oslo courtyards, driveways in steep hillside neighbourhoods and loading zones near fjordside areas. Experience from moves to everything from central Oslo apartments to houses in smaller Østlandet and Vestlandet towns means we know how much time is needed when weather, terrain and tolls affect the driving plan."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Norway",
+      "description": "Reviews from customers who have moved to or from Norway highlight our clear communication on routes, timings and costs, and how we handle winter conditions, tolls and narrow Norwegian streets without compromising safety. Clients particularly value that we can explain the steps around border crossings, moving into Norwegian properties and how to plan a move where weather and terrain play a big role.",
+      "badgeAlt": "Moving company Norway reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Norway",
+      "description": "Our awards for moves to and from Norway reflect our ability to combine careful planning with practical experience of driving in Norwegian conditions. Clients and partners especially highlight how we manage moves where the E6, the Svinesund bridge, mountain roads and narrow inner-city streets in Oslo and Bergen are part of the same assignment, without compromising punctuality or safe handling of belongings."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Norway",
+      "description": "Household moves between Sweden and Norway, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans along the E6, any ferries, tolls, parking and logistics in both Swedish and Norwegian cities.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Norway",
+      "description": "Plan your move around the season, check winter tyres and driving distance, factor in tolls and clarify in advance how loading and move-in work in your specific Norwegian area.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Norway",
+      "description": "Review route and border crossing, ensure vehicles and tyres are suitable for the conditions, book loading zones in Oslo or other cities and check rules for shared courtyards and stairwells before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, route via the border, season, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Norway, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and whether the move is in winter or summer.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope where route, distance, any ferries and tolls are included. If inspection of the Norwegian address is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan, book loading zones where possible and ensure loading and unloading times fit both Swedish and Norwegian conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings, weather, routes and gives tips on how to prepare belongings for transport in Norwegian conditions.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators, adjusts carry routes to terrain and makes sure your belongings end up in the right place in your new home in Norway or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Norway",
+      "items": [
+        {
+          "question": "How do winter conditions and mountain roads affect my move to Norway?",
+          "answer": "We plan routes and timings around the season, ensure vehicles and tyres are suitable for the conditions and add margin for weather. You get clear information on how this affects the schedule and price."
+        },
+        {
+          "question": "Do I need to think about tolls and border crossings?",
+          "answer": "We include tolls and border crossings in the quote and explain how the costs are structured. You get a clear overview of the route and what is included before you approve the move."
+        },
+        {
+          "question": "Can you help with packing an entire home before moving to Norway?",
+          "answer": "Yes, our packing teams label boxes by room, protect fragile items extra carefully and pack for longer distances and varying weather conditions between Sweden and Norway."
+        },
+        {
+          "question": "How does move-in work in Norwegian properties?",
+          "answer": "We review gates, courtyards, stairwells and elevators in advance where possible and adapt crew size and equipment to the property's conditions – whether it's inner-city Oslo or smaller towns with steep terrain."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Norway?",
+          "answer": "For moves to and from Norway we recommend 4–6 weeks in advance, especially during winter or for larger projects. We always try to solve urgent requests where planning and route make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "danmark": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Denmark – Copenhagen, Aarhus, Odense and beyond",
+      "subtitle": "We help Swedish families and businesses move to Denmark and Danish customers move to Sweden. Our routine with the Öresund Bridge, Danish property structures and coordination between Swedish and Danish homes means the move works smoothly despite distance and differences in housing market and regulations.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Denmark?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Denmark",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For moves to and from Denmark we have built solid experience handling cross-border logistics via the Öresund Bridge, Danish property structures and coordination between Swedish and Danish homes. We're used to everything from apartments in central Copenhagen to row houses in Aarhus and villas in smaller Danish towns.",
+      "desktop2": "Our teams handle moves between Sweden and Denmark with focus on punctuality, clear communication and careful handling of transport across the Öresund Bridge and Danish property rules. We coordinate loading in Sweden, transport via the Öresund Bridge and unloading in Denmark – all with one dedicated coordinator who keeps the timeline together and ensures everything from parking to move-in at Danish properties works smoothly.",
+      "desktop3": "Every move to/from Denmark includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on transport across the Öresund Bridge, parking in Danish cities such as Copenhagen, Aarhus and Odense and how to navigate differences in property rules and housing structure between Sweden and Denmark.",
+      "mobile": "Experienced teams for moves to/from Denmark with fixed pricing and structured logistics.",
+      "mobileExpanded": "We plan around the Öresund Bridge, Danish property structures and parking conditions so that trucks, timings and access match your situation.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on transport, schedule and moving into Danish properties."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Denmark"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Denmark",
+      "description": "We regularly move between Sweden and Denmark – from apartments in Stockholm to homes in Copenhagen, Aarhus and Odense. Our experience with the Öresund Bridge, Danish property structures and differences in housing market means we can plan each move around distance, transport times and local conditions in both Swedish and Danish cities.",
+      "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Danish addresses. We assess carry routes in older Copenhagen courtyards, driveways in modern Danish areas and loading zones near city centres in Aarhus and Odense. Experience from moves to everything from central Copenhagen apartments to row houses in Aarhus and villas in smaller Danish towns means we know how much time is needed when transport across the Öresund Bridge and Danish property rules affect the driving plan."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Denmark",
+      "description": "Reviews from customers who have moved to or from Denmark highlight our clear communication on transport across the Öresund Bridge, timings and costs, and how we handle Danish property structures and parking conditions without compromising punctuality. Clients particularly value that we can explain the steps around transport across the bridge, moving into Danish properties and how to plan a move where differences in housing market and regulations between Sweden and Denmark play a role.",
+      "badgeAlt": "Moving company Denmark reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Denmark",
+      "description": "Our awards for moves to and from Denmark reflect our ability to combine careful planning with practical experience of transport across the Öresund Bridge and Danish property structures. Clients and partners especially highlight how we manage moves where the Öresund Bridge, Danish city centres such as Copenhagen, Aarhus and Odense, and differences in housing market are part of the same assignment, without compromising punctuality or safe handling of belongings."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Denmark",
+      "description": "Household moves between Sweden and Denmark, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle transport across the Öresund Bridge, parking and logistics in both Swedish and Danish cities.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Denmark",
+      "description": "Plan your move around transport across the Öresund Bridge, check parking and loading zones in advance, factor in transport times and clarify how loading and move-in work in your specific Danish area.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Denmark",
+      "description": "Review transport route across the Öresund Bridge, ensure loading zones are booked in Copenhagen or other cities and check rules for Danish properties and shared spaces before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, transport across the Öresund Bridge, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Denmark, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and whether the move is via the Öresund Bridge.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope where transport across the Öresund Bridge, distance and any loading zones are included. If inspection of the Danish address is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan across the Öresund Bridge, book loading zones where possible and ensure loading and unloading times fit both Swedish and Danish conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings, transport across the Öresund Bridge and gives tips on how to prepare belongings for move-in at Danish properties.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators, adjusts carry routes to Danish property structures and makes sure your belongings end up in the right place in your new home in Denmark or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Denmark",
+      "items": [
+        {
+          "question": "How does transport across the Öresund Bridge affect my move to Denmark?",
+          "answer": "We plan route and timings with consideration for the Öresund Bridge, ensure vehicles and documentation are correct and add margin for transport times. You get clear information on how this affects the schedule and price."
+        },
+        {
+          "question": "Do I need to think about differences in Danish property rules?",
+          "answer": "We include Danish property structures and rules in the quote and explain how move-in works. You get a clear overview of what is included and how we handle differences between Swedish and Danish properties before you approve the move."
+        },
+        {
+          "question": "Can you help with packing an entire home before moving to Denmark?",
+          "answer": "Yes, our packing teams label boxes by room, protect fragile items extra carefully and pack for transport across the Öresund Bridge and move-in at Danish properties."
+        },
+        {
+          "question": "How does move-in work at Danish properties?",
+          "answer": "We review gates, courtyards, stairwells and elevators in advance where possible and adapt crew size and equipment to the property's conditions – whether it's inner-city Copenhagen or smaller towns such as Aarhus and Odense."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Denmark?",
+          "answer": "For moves to and from Denmark we recommend 4–6 weeks in advance, especially for larger projects or when transport across the Öresund Bridge and Danish property structures require extra planning. We always try to solve urgent requests where planning and transport make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "frankrike": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from France – Paris, Lyon, Marseille and beyond",
+      "subtitle": "We help Swedish families and businesses move to France and French customers move to Sweden. Our routine with long transport distances, French property regulations and coordination between Swedish and French homes means the move works even when distance, language barriers and differences in housing structure put higher demands on planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from France?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from France",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For moves to and from France we have specialized in handling challenges unique to French properties: old buildings where elevators are often missing or too small for moving boxes, stairwells where two people can barely walk side by side, and property regulations where concierges must be informed in advance. We have moved Swedish families to everything from 20 square meter apartments in Paris's 6th arrondissement to large villas in Lyon where terrain makes trucks park far from the entrance.",
+      "desktop2": "Our teams have learned to navigate French property structures where carry routes often go through shared courtyards, where elevators can be 100 years old and require special handling, and where concierges have specific times when moves are allowed. We coordinate everything from booking loading zones in narrow Parisian streets where parking is almost impossible, to coordinating with French property managers who require documentation in French. Our dedicated coordinator keeps the timeline together and ensures everything from language barriers to differences in building codes is handled smoothly.",
+      "desktop3": "Every move to/from France includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support can give concrete advice on how to navigate French property regulations, what you need to know about concierges and shared spaces, how to book loading zones in Paris where rules are strict, and how to handle differences in housing structure where French apartments often have different space distribution compared to Swedish ones.",
+      "mobile": "Specialized teams for moves to/from France who know French property structures and regulations.",
+      "mobileExpanded": "We handle old buildings without elevators, narrow stairwells, concierges and French property regulations so the move works despite challenges.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on French property regulations, concierges and how to navigate differences in housing structure."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from France"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from France",
+      "description": "We regularly move between Sweden and France – from apartments in Stockholm to homes in Paris, Lyon and Marseille. Our experience with long transport distances, French property structures with old buildings and narrow stairwells, and differences in housing market and building regulations means we can plan each move around distance, transport times and local conditions in both Swedish and French cities.",
+      "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and French addresses. We assess carry routes in older Parisian buildings with narrow stairs and old elevators, driveways in Lyon with its hills and loading zones near city centres in Marseille with port areas. Experience from moves to everything from small apartments in central Paris to large villas in Lyon and Marseille means we know how much time is needed when long transport distances, French property regulations and differences in housing structure affect the driving plan."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from France",
+      "description": "Reviews from our clients who have moved to or from France often tell the same story: that we turn a complex move into a controlled process despite long distances, old buildings and language barriers. Families who moved into small apartments in Paris describe how we planned carry routes through narrow stairwells, booked loading zones on tight streets and coordinated directly with the concierge, while clients who moved to villas outside Lyon and Marseille value how we synchronized multi-day driving through Europe with key handovers, elevator bookings and move-in so that everything happened without stress.",
+      "badgeAlt": "Moving company France reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from France",
+      "description": "Our awards linked to moves to and from France have mostly come after assignments where several French challenges meet at once: long transports through Europe, move-ins to protected buildings in Paris where stairwells must not be damaged, and coordination with both Swedish estate agents and French concierges. Partners especially highlight our ability to plan moves where we first carry out via a Swedish garage ramp, then drive for several days through Europe and finally unload via inner courtyards in Paris where tight time windows, noise rules and neighbours require millimetre precision. The fact that we complete these moves without damage to either belongings or sensitive French building details is the main reason behind many of the awards we have received on the France route."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from France",
+      "description": "Household moves between Sweden and France, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle long transport distances, parking in narrow French cities and logistics in both Swedish and French cities.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from France",
+      "description": "Plan your move around long transport distances, check parking and loading zones in advance in narrow cities, factor in transport times through Europe and clarify how loading and move-in work in your specific French area with its specific regulations.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from France",
+      "description": "Review transport route through Europe, ensure loading zones are booked in Paris or other cities, check rules for French properties with old buildings and shared spaces before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, long transport distances, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and France, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and whether the move is via long transport distances.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope where long transport distances, distance and any loading zones in narrow cities are included. If inspection of the French address is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan through Europe, book loading zones where possible in narrow cities and ensure loading and unloading times fit both Swedish and French conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings, long transport distances and gives tips on how to prepare belongings for move-in at French properties with their specific regulations.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators in old buildings, adjusts carry routes to French property structures and makes sure your belongings end up in the right place in your new home in France or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from France",
+      "items": [
+        {
+          "question": "How do long transport distances affect my move to France?",
+          "answer": "We plan route and timings with consideration for long distances through Europe, ensure vehicles and documentation are correct and add margin for transport times. You get clear information on how this affects the schedule and price."
+        },
+        {
+          "question": "Do I need to think about differences in French property regulations?",
+          "answer": "We include French property structures with old buildings, narrow stairwells and specific regulations in the quote and explain how move-in works. You get a clear overview of what is included and how we handle differences between Swedish and French properties before you approve the move."
+        },
+        {
+          "question": "Can you help with packing an entire home before moving to France?",
+          "answer": "Yes, our packing teams label boxes by room, protect fragile items extra carefully and pack for long transport distances and move-in at French properties with old buildings."
+        },
+        {
+          "question": "How does move-in work at French properties?",
+          "answer": "We review gates, courtyards, stairwells and elevators in advance where possible and adapt crew size and equipment to the property's conditions – whether it's inner-city Paris with narrow streets, Lyon with hills or Marseille with port areas."
+        },
+        {
+          "question": "How far in advance should I book a move to/from France?",
+          "answer": "For moves to and from France we recommend 4–6 weeks in advance, especially for larger projects or when long transport distances and French property structures require extra planning. We always try to solve urgent requests where planning and transport make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "tyskland": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Germany – Berlin, Hamburg, Munich and beyond",
+      "subtitle": "We help Swedish families and businesses move to Germany and German customers move to Sweden. Our experience with Autobahn logistics, environmental zones in German cities and differences in property structures means we can plan moves that actually work on the ground – from Berlin Altbau to new-build apartments in Munich.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Germany?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Germany",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For moves to and from Germany we have developed a clear specialization around German conditions: environmental zones (Umweltzonen) where vehicles must meet specific requirements, inner courtyards in Berlin Altbau where carry routes go through several gates, and apartment blocks in Hamburg where elevators are shared by many households and may only be used for moving at certain times of day.",
+      "desktop2": "Our teams are used to combining Swedish planning culture with German precision. We coordinate departure from Sweden so arrival time matches the Hausmeister in Berlin, loading zones in Hamburg's canal-side districts or courtyard access hours in Munich where gates are locked in the evening. Our coordinator handles both Swedish and German communication and makes sure the driving plan, rests along the Autobahn and unloading times follow both local rules and your preferences.",
+      "desktop3": "Every move to/from Germany includes complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning services. Support gives concrete advice on environmental zones in cities such as Berlin, Hamburg and Munich, how to plan around German driving/rest regulations for drivers, and what is good to know about shared stairwells, waste rooms and bicycle storage in German properties.",
+      "mobile": "Specialized teams for moves to/from Germany who understand Autobahn, environmental zones and German properties.",
+      "mobileExpanded": "We plan routes via the Autobahn, factor in environmental zones and ensure loading and unloading times match German regulations and building routines.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on German property rules, Hausmeister routines and how to navigate differences in housing structure."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Germany"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Germany",
+      "description": "We regularly move between Sweden and Germany – from apartments in Stockholm to Altbau buildings in Berlin, row houses in Hamburg suburbs and newly built apartments in Munich. We're used to planning around long driving distances, German driving/rest regulations, environmental zones where only certain vehicles may enter, and stairwells where both neighbours and Hausmeister have clear expectations on how a move should be carried out.",
+      "expanded": "For larger projects we review both the Swedish and German addresses in detail. In Berlin we check whether the property has an inner courtyard with height restrictions for trucks, whether the elevator can handle the furniture or if we need to build carry chains via the stairwell. In Hamburg we take into account narrow streets near canals, limited loading zones and residents who want clear time windows. In Munich we look at parking options outside new developments where many moves may happen simultaneously. Our experience means we can give realistic time estimates when Autobahn, environmental zones and German building routines all affect the move."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Germany",
+      "description": "Clients who have moved to or from Germany often highlight how we managed the combination of long driving distances, German punctuality and local rules without losing control. Families moving to Berlin describe how we coordinated in good time with the Hausmeister, booked the elevator and aligned timings with both neighbours and the property owner. Customers moving to Hamburg and Munich particularly appreciate that we were clear about the driving plan via the Autobahn, how rest regulations affect arrival time, and that we still kept our promised time windows despite the distance.",
+      "badgeAlt": "Moving company Germany reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Germany",
+      "description": "Our awards connected to Germany are often tied to moves where multiple moving parts must work together: departure from Sweden, driving through several countries, arrival in a German city with environmental zones, and move-in to a property where both timing and consideration for neighbours are critical. Partners highlight our ability to deliver to-the-minute at addresses in, for example, Berlin Mitte or older districts of Hamburg, even when we've passed roadworks, checks and rest regulations along the way. Completing these moves without damage to either belongings or stairwells is a key reason behind the recognition we've received on the Germany route."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Germany",
+      "description": "Household moves between Sweden and Germany, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans via the Autobahn, factor in rest requirements, plan around environmental zones and coordinate logistics at both Swedish and German addresses.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Germany",
+      "description": "Plan your move around distance and season, check whether your address is in an environmental zone, and clarify in advance how elevators, courtyards and Hausmeister routines work at your specific German property.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Germany",
+      "description": "Review route and rest times, ensure vehicles meet environmental zone requirements, book any loading zones and check with the Hausmeister which times are approved for moves."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, route via the Autobahn, any environmental zones, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Germany, date, floors, elevator rules, parking, whether basement/attic should be emptied and if the address is in an environmental zone. Specify desired additional services and whether special coordination with the Hausmeister is needed.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope where route, rest times, any environmental zones and loading zones are included. If inspection of the German address is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan, book loading zones where possible and ensure loading and unloading times fit both Swedish and German conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings, route choices, rest times and gives tips on how to prepare belongings for transport and move-in at German properties.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators, adjusts carry routes to German property structures and makes sure your belongings end up in the right place in your new home in Germany or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Germany",
+      "items": [
+        {
+          "question": "How do the Autobahn and rest regulations affect my move to Germany?",
+          "answer": "We plan driving around both distance and German rest regulations for drivers. You get a clear schedule where we explain how breaks and any detours affect arrival time, so key handover and move-in can be planned without stress."
+        },
+        {
+          "question": "Do I need to think about environmental zones in German cities?",
+          "answer": "Yes, many German cities have environmental zones where only vehicles with the right sticker may enter. We factor this into planning, ensure our vehicles meet the requirements and explain if your address requires special permits or arrangements."
+        },
+        {
+          "question": "How does move-in work in German apartment buildings?",
+          "answer": "We're used to German properties where Hausmeister and neighbours have clear routines. We align times for elevator use, carry routes through courtyards and inform in good time so the move feels structured and respectful for everyone involved."
+        },
+        {
+          "question": "Can you help with packing for a long drive to Germany?",
+          "answer": "Yes, our packing teams pack for longer distances, label boxes by room in a way that makes it easy to get everything in place even when the German address has a different layout, and protect fragile items extra carefully for roads, weather and multiple loadings."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Germany?",
+          "answer": "For moves to and from Germany we recommend 4–6 weeks in advance, especially if you're moving to a major city with environmental zones or during busy periods. We always try to solve urgent requests where the driving plan and regulations make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "italien": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Italy – Rome, Milan, Florence, Naples and beyond",
+      "subtitle": "We help Swedish families and businesses move to Italy and Italian customers move to Sweden. Our routine with ZTL zones in historic cities, old buildings with narrow stairs and coordination with Italian porters (portieri) means the move works even when Italian property regulations and restrictions in city centres put higher demands on planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Italy?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Italy",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For Italy we have specialized in ZTL zones where trucks need permits, porters (portieri) who control when moves are allowed – often only weekdays, never during siesta – and elevators from the 1800s in Rome's and Florence's historic centres where carry routes go through multiple gates and courtyards.",
+      "desktop2": "We apply for ZTL permits in advance, coordinate with Italian property managers who require documentation in Italian, and plan Alpine routes so arrival times match porters' time windows. Every move includes complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee. Support gives advice on ZTL zones, porters and differences in housing structure between Sweden and Italy.",
+      "mobile": "Specialized teams for Italy who know ZTL zones, porters and Italian property structures.",
+      "mobileExpanded": "We handle ZTL zones, old buildings without elevators, narrow streets in historic centres and porters so the move works despite challenges.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on Italian property regulations, porters and how to navigate ZTL zones."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Italy"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Italy",
+      "description": "We regularly move between Sweden and Italy – from apartments in Stockholm to homes in Rome, Milan, Florence and Naples. Our experience with Alpine routes, ZTL zones in historic cities, Italian property structures with old buildings and narrow stairs, and differences in housing market and building regulations means we can plan each move around distance, transport times and local conditions in both Swedish and Italian cities.",
+      "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Italian addresses. We assess carry routes in older buildings in Rome with narrow stairs and old elevators, ZTL zones in Florence where trucks need permits, and loading zones near city centres in Milan and Naples where streets are narrow and parking is limited. Experience from moves to everything from small apartments in Rome's historic centre to large villas in Tuscany means we know how much time is needed when Alpine routes, ZTL zones, Italian property regulations and differences in housing structure affect the driving plan."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Italy",
+      "description": "Customers who have moved to or from Italy often highlight how we handled the combination of long driving through the Alps, ZTL zones in historic cities and Italian property regulations without losing control. Families who moved to Rome tell how we coordinated with porters in good time, applied for ZTL zone permits and aligned times with both neighbors and property owners. Customers who moved to Florence and Milan particularly value that we were clear about the driving plan through the Alps, how ZTL zones affect arrival, and that we kept our promised time windows despite long distances and restrictions in city centres.",
+      "badgeAlt": "Moving company Italy reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Italy",
+      "description": "Our awards related to Italy often involve assignments where many moving parts must work simultaneously: departure from Sweden, driving through the Alps, arrival in an Italian city with ZTL zones, and move-in at a property where both timing and consideration for porters and neighbors are crucial. Partners especially highlight our ability to deliver on the minute to addresses in, for example, Rome's historic centre or Florence's old town, despite passing mountain passes, ZTL checks and porters along the way. That we manage this without damage to either belongings or old stairwells is an important reason for the awards we have received on the Italy route."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Italy",
+      "description": "Household moves between Sweden and Italy, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans through the Alps, account for ZTL zones, plan around porters and manage logistics at both Swedish and Italian addresses.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Italy",
+      "description": "Plan your move around driving routes through the Alps, check if your address is in a ZTL zone, clarify in advance how elevators, courtyards and porter routines work in your specific Italian property.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Italy",
+      "description": "Review transport route through the Alps, ensure ZTL permits are applied for in Rome or other cities, check rules for Italian properties with old buildings and shared spaces before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, Alpine routes, ZTL zones, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Italy, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and whether the move is via Alpine routes or through ZTL zones.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope where Alpine routes, distance and any ZTL zones are included. If inspection of the Italian address or application for ZTL permits is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan through the Alps, apply for ZTL permits where needed and ensure loading and unloading times fit both Swedish and Italian conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings, Alpine routes and gives tips on how to prepare belongings for move-in at Italian properties with their specific regulations and porters.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators in old buildings, adjusts carry routes to Italian property structures and makes sure your belongings end up in the right place in your new home in Italy or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Italy",
+      "items": [
+        {
+          "question": "How do ZTL zones affect my move to Italy?",
+          "answer": "ZTL zones (Zona Traffico Limitato) are restricted areas in Italian cities where trucks need permits or can only drive at specific times. We apply for permits in advance and plan the move so the truck can reach your address within allowed times. You get clear information on how this affects the schedule and price."
+        },
+        {
+          "question": "Do I need to think about differences in Italian property regulations?",
+          "answer": "We include Italian property structures with old buildings, narrow stairwells and specific regulations in the quote and explain how move-in works. You get a clear overview of what is included and how we handle differences between Swedish and Italian properties before you approve the move."
+        },
+        {
+          "question": "Can you help with packing an entire home before moving to Italy?",
+          "answer": "Yes, our packing teams label boxes by room, protect fragile items extra carefully and pack for Alpine routes and move-in at Italian properties with old buildings."
+        },
+        {
+          "question": "How does move-in work at Italian properties?",
+          "answer": "We review gates, courtyards, stairwells and elevators in advance where possible and adapt crew size and equipment to the property's conditions – whether it's historic centres in Rome with ZTL zones, Florence with narrow streets or Milan with modern areas."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Italy?",
+          "answer": "For moves to and from Italy we recommend 4–6 weeks in advance, especially for larger projects or when Alpine routes and ZTL zones require extra planning. We always try to solve urgent requests where planning and transport make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "schweiz": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Switzerland – Zurich, Geneva, Basel, Bern and beyond",
+      "subtitle": "We help Swedish families and businesses move to Switzerland and Swiss customers move to Sweden. Our routine with mountain tunnels, environmental zones in Swiss cities and coordination with property managers in four different languages means the move works even when Swiss regulations and high standards put higher demands on planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Switzerland?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Switzerland",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For Switzerland we have specialized in mountain tunnels such as Gotthard and Lötschberg where transport times and costs are affected, environmental zones in Zurich and Geneva where vehicles must meet strict requirements, and property managers who require documentation in the right language – German in Zurich, French in Geneva, Italian in southern Switzerland.",
+      "desktop2": "We plan driving routes through mountain tunnels with consideration for traffic, weather and restrictions, coordinate with Swiss property managers who have high standards and strict rules for when moves are allowed, and ensure all communication happens in the right language for the region. Every move includes complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee. Support gives advice on mountain tunnels, environmental zones and Swiss property regulations that are often stricter than Swedish ones.",
+      "mobile": "Specialized teams for Switzerland who know mountain tunnels, environmental zones and Swiss property structures.",
+      "mobileExpanded": "We handle mountain tunnels, environmental zones, strict regulations and four different languages so the move works despite challenges.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on Swiss property regulations, environmental zones and how to navigate mountain tunnels."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Switzerland"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Switzerland",
+      "description": "We regularly move between Sweden and Switzerland – from apartments in Stockholm to homes in Zurich, Geneva, Basel and Bern. Our experience with mountain tunnels such as Gotthard and Lötschberg, environmental zones in Swiss cities, strict property regulations and high standards means we can plan each move around distance, transport times through the mountains and local conditions in both Swedish and Swiss cities.",
+      "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Swiss addresses. We assess carry routes in modern Swiss buildings with high standards, environmental zones in Zurich and Geneva where vehicles must meet specific requirements, and loading zones near city centres where regulations are strict. Experience from moves to everything from apartments in Zurich's city centre to houses in mountain areas means we know how much time is needed when mountain tunnels, environmental zones, Swiss property regulations and high standards affect the driving plan."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Switzerland",
+      "description": "Customers who have moved to or from Switzerland often highlight how we handled the combination of mountain tunnels, environmental zones and Swiss property regulations without losing control. Families who moved to Zurich tell how we coordinated with property managers in German in good time, planned driving routes through the Gotthard tunnel and aligned times with both neighbors and property owners. Customers who moved to Geneva particularly value that we were clear about the driving plan through mountain tunnels, how environmental zones affect arrival, and that we kept our promised time windows despite long distances and strict regulations.",
+      "badgeAlt": "Moving company Switzerland reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Switzerland",
+      "description": "Our awards related to Switzerland often involve assignments where many moving parts must work simultaneously: departure from Sweden, driving through mountain tunnels such as Gotthard or Lötschberg, arrival in a Swiss city with environmental zones, and move-in at a property where both timing and consideration for strict regulations are crucial. Partners especially highlight our ability to deliver on the minute to addresses in, for example, Zurich's city centre or Geneva's modern areas, despite passing mountain tunnels, environmental zones and strict checks along the way. That we manage this with Swiss precision and without damage to either belongings or properties is an important reason for the awards we have received on the Switzerland route."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Switzerland",
+      "description": "Household moves between Sweden and Switzerland, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans through mountain tunnels, account for environmental zones, plan around strict regulations and manage logistics at both Swedish and Swiss addresses.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Switzerland",
+      "description": "Plan your move around driving routes through mountain tunnels, check if your address is in an environmental zone, clarify in advance how elevators, courtyards and Swiss property routines work in your specific property.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Switzerland",
+      "description": "Review transport route through mountain tunnels, ensure vehicles meet environmental zone requirements in Zurich or Geneva, check rules for Swiss properties with high standards and shared spaces before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, mountain tunnels, environmental zones, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Switzerland, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and whether the move is via mountain tunnels or through environmental zones.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope where mountain tunnels, distance and any environmental zones are included. If inspection of the Swiss address or vehicle check for environmental zones is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan through mountain tunnels, ensure vehicles meet environmental zone requirements and ensure loading and unloading times fit both Swedish and Swiss conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings, mountain tunnels and gives tips on how to prepare belongings for move-in at Swiss properties with their specific regulations and high standards.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators in modern buildings, adjusts carry routes to Swiss property structures and makes sure your belongings end up in the right place in your new home in Switzerland or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Switzerland",
+      "items": [
+        {
+          "question": "How do mountain tunnels affect my move to Switzerland?",
+          "answer": "Mountain tunnels such as Gotthard and Lötschberg can affect transport times and costs. We plan driving routes with consideration for traffic, weather and restrictions in the tunnels. You get clear information on how this affects the schedule and price."
+        },
+        {
+          "question": "Do I need to think about environmental zones in Swiss cities?",
+          "answer": "Yes, cities such as Zurich and Geneva have environmental zones where vehicles must meet strict requirements. We ensure our vehicles meet these requirements and plan the move accordingly. You get a clear overview of what is included and how we handle environmental zones before you approve the move."
+        },
+        {
+          "question": "Can you help with packing an entire home before moving to Switzerland?",
+          "answer": "Yes, our packing teams label boxes by room, protect fragile items extra carefully and pack for mountain tunnels and move-in at Swiss properties with high standards."
+        },
+        {
+          "question": "How does move-in work at Swiss properties?",
+          "answer": "We review gates, courtyards, stairwells and elevators in advance where possible and adapt crew size and equipment to the property's conditions – whether it's modern areas in Zurich with environmental zones, Geneva with strict regulations or Basel with high standards."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Switzerland?",
+          "answer": "For moves to and from Switzerland we recommend 4–6 weeks in advance, especially for larger projects or when mountain tunnels and environmental zones require extra planning. We always try to solve urgent requests where planning and transport make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "osterrike": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Austria – Vienna, Innsbruck, Salzburg and beyond",
+      "subtitle": "We help Swedish families and businesses move to Austria and Austrian customers move to Sweden. Our routine with transport through the Alps, Austrian property regulations and coordination with property managers means the move works even when Austrian regulations and high standards put demands on planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Austria?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Austria",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For Austria we have specialized in transport to Vienna, Innsbruck, Salzburg and other Austrian cities, with knowledge of local property regulations, elevators and parking conditions.",
+      "desktop2": "We plan driving routes with consideration for distance and Alpine roads, coordinate with Austrian property managers and ensure all communication happens in the right language. Every move includes complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee. Support gives advice on Austrian property regulations and what applies for move-in.",
+      "mobile": "Specialized teams for Austria who know local conditions in Vienna, Innsbruck and Salzburg.",
+      "mobileExpanded": "We handle transport to Austria, Austrian property regulations and high standards so the move works despite challenges.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on Austrian regulations and how move-in works."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Austria"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Austria",
+      "description": "We regularly move between Sweden and Austria – from apartments in Stockholm to homes in Vienna, Innsbruck, Salzburg and Graz. Our experience with Austrian properties, elevator rules and local conditions means we can plan each move around distance, transport times and conditions in both Swedish and Austrian cities.",
+      "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Austrian addresses. We assess carry routes, elevators and loading zones in modern buildings. Our experience from moves to everything from apartments in Vienna's city centre to houses in the Alps means we know how much time is needed when Austrian regulations and local conditions affect the driving plan."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Austria",
+      "description": "Customers who have moved to or from Austria often highlight how we handled Austrian property regulations and move-in without losing control. Families who moved to Vienna tell how we coordinated with property managers, planned driving routes and aligned times with neighbors and property owners.",
+      "badgeAlt": "Moving company Austria reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Austria",
+      "description": "Our awards related to Austria involve assignments where departure from Sweden, transport to Austrian cities and move-in at properties with local regulations work together. Partners highlight our ability to deliver to addresses in Vienna, Innsbruck and Salzburg with Austrian precision and without damage to either belongings or properties."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Austria",
+      "description": "Household moves between Sweden and Austria, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans, account for Austrian regulations and manage logistics at both Swedish and Austrian addresses.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Austria",
+      "description": "Plan your move around driving routes, check how elevators and Austrian property routines work in your specific property.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Austria",
+      "description": "Review transport route, ensure Austrian property regulations are known, check rules for elevators and shared spaces before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Austria, date, floors, elevator rules and parking. Specify desired additional services.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope. If inspection of the Austrian address is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan and ensure loading and unloading times fit both Swedish and Austrian conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings and gives tips on how to prepare belongings for move-in at Austrian properties.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators, adjusts carry routes to Austrian property structures and makes sure your belongings end up in the right place in your new home in Austria or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Austria",
+      "items": [
+        {
+          "question": "How long does a move to Austria take?",
+          "answer": "Transport time depends on destination – Vienna is a few days away, Innsbruck and Salzburg similarly. We plan driving routes and give you clear information on schedule and price."
+        },
+        {
+          "question": "Do I need to think about special rules in Austrian properties?",
+          "answer": "Yes, Austrian properties can have rules regarding elevator use, loading and timing. We ensure we know these and plan the move accordingly. You get a clear overview before you approve the move."
+        },
+        {
+          "question": "Can you help with packing before moving to Austria?",
+          "answer": "Yes, our packing teams label boxes by room, protect fragile items and pack for safe transport to Austria."
+        },
+        {
+          "question": "How does move-in work at Austrian properties?",
+          "answer": "We review gates, stairwells and elevators in advance where possible and adapt crew size to the property's conditions – whether it's Vienna, Innsbruck, Salzburg or Graz."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Austria?",
+          "answer": "For moves to and from Austria we recommend 4–6 weeks in advance, especially for larger projects. We always try to solve urgent requests where planning and transport make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "belgien": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Belgium – Brussels, Antwerp, Ghent and beyond",
+      "subtitle": "We help Swedish families and businesses move to Belgium and Belgian customers move to Sweden. Our routine with transport across Europe, Belgian property regulations and coordination with property managers means the move works even when Belgian rules and local conditions put demands on planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Belgium?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Belgium",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For Belgium we have specialized in transport to Brussels, Antwerp, Ghent and other Belgian cities, with knowledge of local property regulations, elevators and parking conditions.",
+      "desktop2": "We plan driving routes with consideration for distance, coordinate with Belgian property managers and ensure all communication happens in the right language – Dutch, French or German depending on the region. Every move includes complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee. Support gives advice on Belgian property regulations and what applies for move-in.",
+      "mobile": "Specialized teams for Belgium who know local conditions in Brussels, Antwerp and Ghent.",
+      "mobileExpanded": "We handle transport to Belgium, Belgian property regulations and multilingual coordination so the move works despite challenges.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on Belgian regulations and how move-in works."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Belgium"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Belgium",
+      "description": "We regularly move between Sweden and Belgium – from apartments in Stockholm to homes in Brussels, Antwerp, Ghent and Liège. Our experience with Belgian properties, elevator rules and local conditions in a multilingual country means we can plan each move around distance, transport times and conditions in both Swedish and Belgian cities.",
+      "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Belgian addresses. We assess carry routes, elevators and loading zones in modern buildings. Our experience from moves to everything from apartments in Brussels city centre to houses in Flanders or Wallonia means we know how much time is needed when Belgian regulations and local conditions affect the driving plan."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Belgium",
+      "description": "Customers who have moved to or from Belgium often highlight how we handled Belgian property regulations and move-in without losing control. Families who moved to Brussels or Antwerp tell how we coordinated with property managers, planned driving routes and aligned times with neighbors and property owners.",
+      "badgeAlt": "Moving company Belgium reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Belgium",
+      "description": "Our awards related to Belgium involve assignments where departure from Sweden, transport to Belgian cities and move-in at properties with local regulations work together. Partners highlight our ability to deliver to addresses in Brussels, Antwerp and Ghent without damage to either belongings or properties."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Belgium",
+      "description": "Household moves between Sweden and Belgium, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans, account for Belgian regulations and manage logistics at both Swedish and Belgian addresses.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Belgium",
+      "description": "Plan your move around driving routes, check how elevators and Belgian property routines work in your specific property.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Belgium",
+      "description": "Review transport route, ensure Belgian property regulations are known, check rules for elevators and shared spaces before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Belgium, date, floors, elevator rules and parking. Specify desired additional services.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope. If inspection of the Belgian address is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan and ensure loading and unloading times fit both Swedish and Belgian conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings and gives tips on how to prepare belongings for move-in at Belgian properties.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators, adjusts carry routes to Belgian property structures and makes sure your belongings end up in the right place in your new home in Belgium or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Belgium",
+      "items": [
+        {
+          "question": "How long does a move to Belgium take?",
+          "answer": "Transport time depends on destination – Brussels is a few days away, Antwerp and Ghent similarly. We plan driving routes and give you clear information on schedule and price."
+        },
+        {
+          "question": "Do I need to think about special rules in Belgian properties?",
+          "answer": "Yes, Belgian properties can have rules regarding elevator use, loading and timing. We ensure we know these and plan the move accordingly. You get a clear overview before you approve the move."
+        },
+        {
+          "question": "Can you help with packing before moving to Belgium?",
+          "answer": "Yes, our packing teams label boxes by room, protect fragile items and pack for safe transport to Belgium."
+        },
+        {
+          "question": "How does move-in work at Belgian properties?",
+          "answer": "We review gates, stairwells and elevators in advance where possible and adapt crew size to the property's conditions – whether it's Brussels, Antwerp, Ghent or Liège."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Belgium?",
+          "answer": "For moves to and from Belgium we recommend 4–6 weeks in advance, especially for larger projects. We always try to solve urgent requests where planning and transport make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "grekland": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Greece – Athens, Thessaloniki, Crete and beyond",
+      "subtitle": "We help Swedish families and businesses move to Greece and Greek customers move to Sweden. Our routine with transport to Greece, Greek property regulations and coordination with property managers means the move works even when Greek rules and local conditions put demands on planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Greece?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Greece",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For Greece we have specialized in transport to Athens, Thessaloniki, Crete and other Greek destinations, with knowledge of local property regulations, stairwells and parking conditions in Greek residential areas.",
+      "desktop2": "We plan driving routes with consideration for distance and ferry connections to islands where needed, coordinate with Greek property managers and ensure all communication happens in the right language. Every move includes complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee. Support gives advice on Greek property regulations and what applies for move-in.",
+      "mobile": "Specialized teams for Greece who know local conditions in Athens, Thessaloniki and Crete.",
+      "mobileExpanded": "We handle transport to Greece, Greek property regulations and local conditions so the move works despite challenges.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on Greek regulations and how move-in works."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Greece"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Greece",
+      "description": "We regularly move between Sweden and Greece – from apartments in Stockholm to homes in Athens, Thessaloniki, Crete and other Greek destinations. Our experience with Greek properties, often with narrow stairwells and limited parking, and local conditions means we can plan each move around distance, transport times and conditions in both Swedish and Greek cities.",
+      "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Greek addresses. We assess carry routes, stairwells and loading zones. Our experience from moves to everything from apartments in Athens to houses on Crete or other islands means we know how much time is needed when Greek regulations and local conditions affect the driving plan."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Greece",
+      "description": "Customers who have moved to or from Greece often highlight how we handled Greek property regulations and move-in without losing control. Families who moved to Athens or Crete tell how we coordinated with property managers, planned driving routes and aligned times with neighbors and property owners.",
+      "badgeAlt": "Moving company Greece reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Greece",
+      "description": "Our awards related to Greece involve assignments where departure from Sweden, transport to Greek cities and islands and move-in at properties with local regulations work together. Partners highlight our ability to deliver to addresses in Athens, Thessaloniki and Crete without damage to either belongings or properties."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Greece",
+      "description": "Household moves between Sweden and Greece, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans, account for Greek regulations and manage logistics at both Swedish and Greek addresses.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Greece",
+      "description": "Plan your move around driving routes and any ferry to islands, check how Greek property routines work in your specific property.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Greece",
+      "description": "Review transport route and any ferry crossing, ensure Greek property regulations are known, check rules for stairwells and shared spaces before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Greece, date, floors, elevator rules and parking. Specify desired additional services and whether the destination is on the mainland or an island.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope. If inspection of the Greek address or ferry planning is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan and ensure loading and unloading times fit both Swedish and Greek conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings and gives tips on how to prepare belongings for move-in at Greek properties.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators, adjusts carry routes to Greek property structures and makes sure your belongings end up in the right place in your new home in Greece or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Greece",
+      "items": [
+        {
+          "question": "How long does a move to Greece take?",
+          "answer": "Transport time depends on destination – Athens is a few days away, Crete and other islands may require a ferry. We plan driving routes and any ferry crossing and give you clear information on schedule and price."
+        },
+        {
+          "question": "Do I need to think about special rules in Greek properties?",
+          "answer": "Yes, Greek properties can have rules regarding stairwells, loading and timing. We ensure we know these and plan the move accordingly. You get a clear overview before you approve the move."
+        },
+        {
+          "question": "Can you help with packing before moving to Greece?",
+          "answer": "Yes, our packing teams label boxes by room, protect fragile items and pack for safe transport to Greece, including when ferry travel to islands is involved."
+        },
+        {
+          "question": "How does move-in work at Greek properties?",
+          "answer": "We review gates, stairwells and elevators in advance where possible and adapt crew size to the property's conditions – whether it's Athens, Thessaloniki, Crete or other islands."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Greece?",
+          "answer": "For moves to and from Greece we recommend 4–6 weeks in advance, especially for island destinations where ferry schedules can have an impact. We always try to solve urgent requests where planning and transport make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "polen": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company to and from Poland – Warsaw, Kraków, Wrocław, Gdańsk and beyond",
+      "subtitle": "We help Swedish families and businesses move to Poland and Polish customers move to Sweden. Our routine with longer transport distances, Polish property structures with older blokki and modern areas, and coordination with Polish property managers means the move works even when Polish regulations and differences in housing market put higher demands on planning.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella for moves to/from Poland?"
+    },
+    "about": {
+      "title": "About Flyttella for moves to and from Poland",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves in the Stockholm area and internationally. For Poland we have specialized in longer transport distances where driving times and costs are affected, Polish property structures with older blokki from the 1950s-70s where elevators are often small or missing, and modern areas in Warsaw and Kraków where rules and routines may differ from older properties.",
+      "desktop2": "We plan driving routes with consideration for longer distances, coordinate with Polish property managers who may have different routines than Swedish ones, and ensure all communication happens in Polish where needed. Every move includes complimentary box loans, free rescheduling up to 24 hours before and a 14-day cleaning guarantee. Support gives advice on longer transport distances, Polish property regulations and differences in housing structure between Sweden and Poland.",
+      "mobile": "Specialized teams for Poland who know longer distances, Polish property structures and housing market.",
+      "mobileExpanded": "We handle longer transport distances, older blokki with narrow stairs, modern areas and Polish property regulations so the move works despite challenges.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in and helps with questions on Polish property regulations, property managers and how to navigate differences in housing structure."
+    },
+    "experienceSection": {
+      "title": "Our experience with moves to and from Poland"
+    },
+    "experience": {
+      "title": "Our experience with moves to and from Poland",
+      "description": "We regularly move between Sweden and Poland – from apartments in Stockholm to homes in Warsaw, Kraków, Wrocław and Gdańsk. Our experience with longer transport distances, Polish property structures with older blokki and modern areas, and differences in housing market and regulations means we can plan each move around distance, transport times and local conditions in both Swedish and Polish cities.",
+      "expanded": "For larger projects we often do digital or on-site reviews of both the Swedish and Polish addresses. We assess carry routes in older blokki with narrow stairs and limited elevators, modern areas in Warsaw and Kraków where rules may differ, and loading zones near city centres where parking can be challenging. Experience from moves to everything from apartments in older blokki to modern apartments in new areas means we know how much time is needed when longer distances, Polish property regulations and differences in housing structure affect the driving plan."
+    },
+    "reviews": {
+      "subtitle": "Most recommended mover for moves to/from Poland",
+      "description": "Customers who have moved to or from Poland often highlight how we handled the combination of longer transport distances, Polish property structures and differences in housing market without losing control. Families who moved to Warsaw tell how we coordinated with Polish property managers in good time, planned driving routes with consideration for longer distances and aligned times with both neighbors and property owners. Customers who moved to Kraków and Wrocław particularly value that we were clear about the driving plan despite longer distances, how Polish property regulations affect move-in, and that we kept our promised time windows despite longer transport distances.",
+      "badgeAlt": "Moving company Poland reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards for moves to and from Poland",
+      "description": "Our awards related to Poland often involve assignments where many moving parts must work simultaneously: departure from Sweden, driving over longer distances, arrival in a Polish city with different property structures, and move-in at a property where both timing and consideration for Polish regulations are crucial. Partners especially highlight our ability to deliver on the minute to addresses in, for example, Warsaw's city centre or Kraków's older areas, despite passing longer distances and handling differences in property structure along the way. That we manage this without damage to either belongings or properties despite longer transport distances is an important reason for the awards we have received on the Poland route."
+    },
+    "servicesSection": {
+      "title": "Discover all our services for moves to/from Poland",
+      "description": "Household moves between Sweden and Poland, packing, storage, cleaning, assembly and advisory services for cross-border moves. We handle driving plans over longer distances, account for Polish property structures, plan around Polish regulations and manage logistics at both Swedish and Polish addresses.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving to/from Poland",
+      "description": "Plan your move around driving routes over longer distances, review Polish property structures, clarify in advance how elevators, stairwells and Polish property routines work in your specific property.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving to/from Poland",
+      "description": "Review transport route over longer distances, ensure Polish property regulations are known, check rules for Polish properties with older blokki or modern areas before move day."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our moving process is simple, transparent and safe: fill out the form, get a quote within a minute, get personal follow-up the same day and sign digitally when everything feels right. The quote is based on your actual conditions – distance, longer transport distances, living area, floors, elevator and parking distance – and can be supplemented with packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Fill out the form",
+      "fillFormDesc": "Describe addresses in Sweden and Poland, date, floors, elevator rules, parking and if basement/attic should be emptied. Specify desired additional services and whether the move is over longer distances.",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "You get a fixed quote with clear scope where longer transport distances, distance and any Polish property structures are included. If inspection of the Polish address or check of property regulations is needed we book it before finalizing the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signing we prepare a detailed driving plan over longer distances, ensure Polish property regulations are known and ensure loading and unloading times fit both Swedish and Polish conditions.",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "Your coordinator keeps you updated on timings, longer transport distances and gives tips on how to prepare belongings for move-in at Polish properties with their specific regulations and structures.",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "The team protects entrances, stairs and elevators in both older blokki and modern buildings, adjusts carry routes to Polish property structures and makes sure your belongings end up in the right place in your new home in Poland or Sweden.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We do a joint walkthrough, adjust furniture placement and ensure any follow-up services such as cleaning or storage follow the plan."
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to/from Poland",
+      "items": [
+        {
+          "question": "How do longer distances affect my move to Poland?",
+          "answer": "Poland is further away than Denmark and Norway, which affects transport times and costs. We plan driving routes with consideration for longer distances and ensure the schedule is realistic. You get clear information on how this affects the schedule and price."
+        },
+        {
+          "question": "Do I need to think about differences in Polish property regulations?",
+          "answer": "Yes, Polish property structures can differ from Swedish ones, especially in older blokki. We include Polish property regulations in the quote and explain how move-in works. You get a clear overview of what is included and how we handle differences between Swedish and Polish properties before you approve the move."
+        },
+        {
+          "question": "Can you help with packing an entire home before moving to Poland?",
+          "answer": "Yes, our packing teams label boxes by room, protect fragile items extra carefully and pack for longer transport distances and move-in at Polish properties with older blokki or modern areas."
+        },
+        {
+          "question": "How does move-in work at Polish properties?",
+          "answer": "We review gates, stairwells and elevators in advance where possible and adapt crew size and equipment to the property's conditions – whether it's older blokki in Warsaw with narrow stairs, modern areas in Kraków or older properties in Wrocław."
+        },
+        {
+          "question": "How far in advance should I book a move to/from Poland?",
+          "answer": "For moves to and from Poland we recommend 4–6 weeks in advance, especially for larger projects or when longer distances and Polish property structures require extra planning. We always try to solve urgent requests where planning and transport make it possible."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Do you have more questions?",
+      "linkText": "See all frequently asked questions"
+    }
+  },
+  "nederlanderna": {
+    "hero": {
+      "title": "Moving to the Netherlands – Safe international moving to Amsterdam and all of Holland",
+      "subtitle": "We help you with the entire process when moving to the Netherlands – from planning and packing to transport and move-in. Whether you're moving to Amsterdam, Rotterdam or Utrecht – we take care of everything so you can focus on your new life by the canals."
+    },
+    "benefits": {
+      "title": "What benefits do you get with Flyttella for the Netherlands?",
+      "packGaranti": "Packing guarantee",
+      "kundgaranti": "14-day satisfaction guarantee",
+      "kartonger": "Free box rental for 4 weeks",
+      "rutAvdrag": "50% RUT tax deduction",
+      "ombokning": "24h free rebooking and cancellation",
+      "tillstand": "Traffic permits and insurance"
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella has extensive experience with international moves and helps many Swedes move safely and smoothly to the Netherlands every year. The country is a popular destination for Swedes – whether for job opportunities in Amsterdam, Rotterdam or The Hague, or to enjoy the bike-friendly and international lifestyle. We take care of the entire process – from planning and packing to transport and move-in at your new home.",
+      "description2": "We offer personal service, clear terms and fixed prices for international moves. Our team has good knowledge of both Sweden and the Netherlands and can help you with everything from documentation to practical tips for a successful move – including bicycle transport and handling narrow canal-house streets in Amsterdam.",
+      "description3": "Whether you're moving to Amsterdam, Rotterdam, Utrecht, The Hague or Eindhoven – or any other part of the Netherlands – you can trust that we handle your move with care and professionalism. We have experience with the country's unique challenges such as narrow stairs in canal houses. We also offer storage and insurance for your peace of mind.",
+      "description4": "Contact us today for a free quote on your move to the Netherlands – we look forward to helping you to a new life by the canals!",
+      "readMore": "Read more",
+      "readMoreAbout": "Read more about us"
+    },
+    "reviews": {
+      "location": "Netherlands",
+      "title": "What do our customers think of us?",
+      "subtitle": "Safe international moving to the Netherlands with Flyttella",
+      "description": "We have helped many Swedes move to the Netherlands and know what it takes for a successful international move – from Amsterdam to Rotterdam. Read what our customers think about our service and professionalism.",
+      "badgeAlt": "Experience with international moving to the Netherlands",
+      "arrowText": "Read what our customers say about us"
+    },
+    "process": {
+      "title": "Our process",
+      "description1": "We make your international move to the Netherlands easy and safe – from first contact to move-in. We handle all the practicalities and guide you through the entire process, so you can focus on your new life in Amsterdam, Rotterdam or wherever you're moving.",
+      "description2": "Our moving process to the Netherlands is designed to be simple, transparent and safe. It starts with you filling in our form with your details and needs for your Netherlands move. Within a minute you'll receive a quote sent to your email. The same day or the next we make personal contact to go through details, answer questions and give advice on international moving – including practical tips about bikes, canal houses and Dutch bureaucracy. When you're satisfied you sign the quote digitally. Then we carry out the move according to your wishes and agreement – all the way to your new address in the Netherlands. The result? A satisfied customer who can focus on their new life by the canals.",
+      "pricing": "Our quotes are always based on your specific needs and circumstances. We take into account factors such as volume of goods, distance, add-ons and any special requests to give you a quote that fits your international move. All prices are fixed with no hidden fees – have questions or special requests? Contact us and we'll adjust the quote to your needs.",
+      "howItWorks": "How it works"
+    },
+    "processSteps": {
+      "fillForm": "Fill in the form",
+      "fillFormDesc": "Tell us about your international move",
+      "quickQuote": "Quick quote",
+      "quickQuoteDesc": "Get a price in 1 minute",
+      "personalContact": "Personal contact",
+      "personalContactDesc": "We'll call you to go through the details",
+      "signConfirm": "Sign & confirm",
+      "signConfirmDesc": "Get booking confirmation and all documentation",
+      "moveCompleted": "Move completed",
+      "moveCompletedDesc": "We collect, transport and deliver to the Netherlands",
+      "satisfiedCustomer": "Satisfied customer",
+      "satisfiedCustomerDesc": "Returning customer"
+    },
+    "cta": {
+      "title": "Ready to start your move?",
+      "subtitle": "Get a quick and free quote for your move to the Netherlands",
+      "button": "Get free quote"
+    },
+    "features": {
+      "title": "Our advantages",
+      "fastPris": "Fixed price",
+      "fastPrisDesc": "No surprises – we offer fixed prices for international moves to the Netherlands",
+      "dokumentation": "All documentation",
+      "dokumentationDesc": "We help you with all paperwork and permits for moves within the EU",
+      "magasinering": "Storage",
+      "magasineringDesc": "Secure storage of your belongings before or after the move",
+      "ombokning": "Rebook or cancel free of charge",
+      "ombokningDesc": "Rebook or cancel free of charge up to 24 hours before the move",
+      "garanti": "Satisfaction guarantee",
+      "garantiDesc": "14-day guarantee on move-out cleaning also for international moves",
+      "forsakring": "International insurance",
+      "forsakringDesc": "All necessary insurance for your peace of mind",
+      "personal": "Trained staff",
+      "personalDesc": "Our staff are trained for international moves",
+      "logistik": "Efficient logistics",
+      "logistikDesc": "We work with efficient logistics solutions for international moves",
+      "sakerhet": "Safety",
+      "sakerhetDesc": "We prioritise safety for both customers and staff"
+    },
+    "experience": {
+      "title": "Our experience with international moving",
+      "subtitle": "Experience with international moving",
+      "paragraph1": "We have helped over 1800 families and businesses move to the Netherlands and other countries in Europe. The Netherlands is particularly popular among Swedes seeking job opportunities in tech, finance or EU institutions in The Hague. Our experience allows us to offer safe and efficient solutions for your international move.",
+      "paragraph2": "We are proud of our many satisfied customers and our reputation as a reliable partner for international moves.",
+      "paragraph3": "We run regular departures between Sweden and the Netherlands with coverage in Amsterdam, Rotterdam, Utrecht, The Hague (Den Haag), Eindhoven and other major cities. The country's flat terrain and road infrastructure facilitate transport – you can choose cost-effective shared loads or dedicated express delivery. We tailor the solution to your schedule and budget.",
+      "paragraph4": "Our team helps you with all the planning and documentation required, including elevator booking, carrying routes, parking permits and handling of fragile or valuable items such as pianos, art and glass. We offer professional packing and customized packaging solutions for extra peace of mind.",
+      "paragraph5": "Throughout the move you have a personal contact and clear traceability. Full insurance is included and we work with a transparent damage handling process should anything unexpected occur.",
+      "card1Title": "International moves",
+      "card2Title": "Moving cleaning",
+      "card3Title": "Monthly",
+      "cardDescription": "assignments completed",
+      "cardDescriptionMonthly": "assignments per month"
+    },
+    "awards": {
+      "title": "Awards for our international moving work",
+      "description": "Our awards are proof of our commitment to quality, service and customer satisfaction with international moves. We have been recognised by both industry organisations and our customers for our reliable work and high standards.",
+      "imageAlt": "Flyttella awards - Moving to the Netherlands"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": "Moving cleaning",
+      "flyttstadningDesc": "We guarantee a thorough move-out cleaning that meets all requirements. Our professional cleaning service ensures your old home is left in perfect condition.",
+      "flyttstadningExtended": "Flyttella offers professional move-out cleaning with a 14-day satisfaction guarantee. We clean all living areas, clean windows on all sides and use quality cleaning products. Cleaning equipment is included, including delivery and pickup. We dust walls and ceilings, clean floor drains and behind white goods (if you pull them out). The freezer is cleaned if defrosted the day before. With us you get a complete move-out cleaning for a safe and smooth handover.",
+      "magasinering": "Storage",
+      "magasineringDesc": "Secure storage of your belongings. We offer flexible solutions for shorter and longer storage with secure handling.",
+      "magasineringExtended": "Need to store goods during the moving process? Flyttella provides secure and reliable storage solutions for your belongings. We offer flexible options to suit your needs and schedule. As an extra service we offer the first month free to make your moving process even smoother.",
+      "packhjalp": "Packing help",
+      "packhjalpDesc": "Professional packing help for a stress-free move. We help you pack your belongings safely and in an organised way.",
+      "packhjalpExtended": "Packing is often the most time-consuming part of a move. Flyttella offers professional packing help where our experienced movers help you pack your belongings safely and in an organised way. We use quality packing materials and ensure everything is packed correctly for transport. Our packing help also includes labelling boxes and creating an inventory list for easy unpacking at your new address.",
+      "readMore": "Read more"
+    },
+    "discoverServices": {
+      "title": "Discover All Our Services for the Netherlands",
+      "description": "We offer a complete range of services to make your move to the Netherlands as smooth as possible. From household moves and move-out cleaning to storage – including help with bikes and furniture to narrow canal houses in Amsterdam.",
+      "privateButton": "See all our private services",
+      "businessButton": "See all our business services"
+    },
+    "tips": {
+      "title": "Tips for your move to the Netherlands",
+      "beforeTitle": "Before the move",
+      "duringTitle": "During the move",
+      "afterTitle": "After the move"
+    },
+    "blog": {
+      "title": "Read more about moving to the Netherlands",
+      "subtitle": "Get valuable tips and advice for a smooth international move to the Netherlands – including practical tips for Amsterdam, Rotterdam and cycling life.",
+      "category": "Moving tips",
+      "readingTime": "5 min read",
+      "articleTitle": "Complete guide: How to plan a smooth move to the Netherlands",
+      "articleDescription": "A move to the Netherlands requires careful planning – especially considering canal houses, bikes and Dutch bureaucracy. In this guide we go through everything you need to know: from first contact with the moving company to the last box in your new home in Amsterdam or Rotterdam.",
+      "readArticle": "Read the full article",
+      "seeAllArticles": "See all articles about international moving",
+      "expert": "Flyttella Expert",
+      "expertTitle": "Moving specialist for international moves"
+    },
+    "faq": {
+      "title": "Frequently asked questions about moving to the Netherlands",
+      "footer": "Do you have more questions about moving to the Netherlands?",
+      "seeAll": "See all frequently asked questions",
+      "items": [
+        {
+          "id": "nederlanderna-1",
+          "question": "How much does a move to the Netherlands cost?",
+          "answer": "The price depends on the volume of goods, distance (e.g. Amsterdam, Rotterdam or Utrecht), and any add-ons such as packing and storage. The distance is shorter than to Spain, which often results in competitive prices. Fill in our form for a quick quote!"
+        },
+        {
+          "id": "nederlanderna-2",
+          "question": "Can you handle moves to canal houses in Amsterdam?",
+          "answer": "Yes! We have experience with the Netherlands' narrow stairs and narrow streets by the canals. We adapt our methods – including window lifts when needed – to get furniture into canal houses."
+        },
+        {
+          "id": "nederlanderna-3",
+          "question": "Can you transport bikes to the Netherlands?",
+          "answer": "Absolutely. Bikes are an important part of everyday life in the Netherlands. We offer secure transport of bikes as part of your move or as an add-on."
+        },
+        {
+          "id": "nederlanderna-4",
+          "question": "How long does a move to the Netherlands take?",
+          "answer": "Transport to Amsterdam or Rotterdam normally takes 2–5 days. The Netherlands is closer to Sweden than Spain, which makes the move efficient. We always plan together with you for the best solution."
+        },
+        {
+          "id": "nederlanderna-5",
+          "question": "Do I need a visa or special permits to move to the Netherlands?",
+          "answer": "As a Swedish citizen you don't need a visa to move within the EU. We help you with all documentation for the move – including BSN registration and communication with Dutch authorities if needed."
+        }
+      ]
+    },
+    "common": {
+      "readMore": "Read more",
+      "personalImageAlt": "Flyttella staff - Moving to the Netherlands",
+      "aboutImageAlt": "About Flyttella"
+    }
   }
 }
