@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense, useRef } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 // Selected files state for attachments
 // (keeps track of chosen images to show Swedish status text)

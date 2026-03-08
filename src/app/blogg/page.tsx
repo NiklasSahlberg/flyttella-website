@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },

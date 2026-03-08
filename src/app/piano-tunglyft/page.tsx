@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import ReviewsWidget from '../components/ReviewsWidget';
-import LocationsCard from '../components/LocationsCard';
+import ReviewsWidget from '@/app/components/ReviewsWidget';
+import LocationsCard from '@/app/components/LocationsCard';
 import Lottie from "lottie-react";
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 // Lottie animation functions with lazy loading
 function FillFormLottie() {

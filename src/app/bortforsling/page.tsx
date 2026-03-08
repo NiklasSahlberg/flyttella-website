@@ -4,8 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import ReviewsWidget from '../components/ReviewsWidget';
-import { useLanguage } from '../contexts/LanguageContext';
+import ReviewsWidget from '@/app/components/ReviewsWidget';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 import Lottie from "lottie-react";
 import React from 'react';
 

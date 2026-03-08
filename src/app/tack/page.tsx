@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function ThankYouPage() {
   const { locale } = useLanguage();

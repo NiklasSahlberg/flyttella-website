@@ -3,12 +3,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { CheckIcon } from '@heroicons/react/24/outline';
-import FlyttoffertForm from '../components/FlyttoffertForm';
-import ReviewsWidget from '../components/ReviewsWidget';
+import FlyttoffertForm from '@/app/components/FlyttoffertForm';
+import ReviewsWidget from '@/app/components/ReviewsWidget';
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
 import React, { useEffect, useState, useRef } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 import Lottie from 'lottie-react';
 import { Variants } from 'framer-motion';
 

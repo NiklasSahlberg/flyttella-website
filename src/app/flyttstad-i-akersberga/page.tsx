@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import StadningOffertFormCustomAkersberga from "../components/StadningOffertFormCustomAkersberga";
-import FlyttoffertForm from "../components/FlyttoffertForm";
-import ReviewsWidget from "../components/ReviewsWidget";
+import StadningOffertFormCustomAkersberga from '@/app/components/StadningOffertFormCustomAkersberga';
+import FlyttoffertForm from '@/app/components/FlyttoffertForm';
+import ReviewsWidget from '@/app/components/ReviewsWidget';
 
 interface TipCardProps {
   title: string;

@@ -4,10 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import FlyttoffertForm from '../components/FlyttoffertForm';
-import ReviewsWidget from '../components/ReviewsWidget';
+import FlyttoffertForm from '@/app/components/FlyttoffertForm';
+import ReviewsWidget from '@/app/components/ReviewsWidget';
 import Lottie from "lottie-react";
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 // Lottie animation functions
 function FillFormLottie() {

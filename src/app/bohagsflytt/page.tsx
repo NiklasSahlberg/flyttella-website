@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useLanguage } from '../contexts/LanguageContext'
-import FlyttoffertForm from '../components/FlyttoffertForm'
-import ReviewsWidget from '../components/ReviewsWidget'
+import { useLanguage } from '@/app/contexts/LanguageContext'
+import FlyttoffertForm from '@/app/components/FlyttoffertForm'
+import ReviewsWidget from '@/app/components/ReviewsWidget'
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import LocationsCard from '../components/LocationsCard';
+import LocationsCard from '@/app/components/LocationsCard';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },

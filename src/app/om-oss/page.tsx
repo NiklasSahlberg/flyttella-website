@@ -1,11 +1,11 @@
 'use client';
 
 import Link from "next/link";
-import PictureSlider from "../components/PictureSlider";
-import ReviewsWidget from "../components/ReviewsWidget";
+import PictureSlider from '@/app/components/PictureSlider';
+import ReviewsWidget from '@/app/components/ReviewsWidget';
 import { motion } from "framer-motion";
 import React, { useEffect, useState, useRef } from "react";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/app/contexts/LanguageContext';
 import Image from "next/image";
 
 // AutoSlidingCards component

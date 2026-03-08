@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useLanguage } from '../contexts/LanguageContext'
-import FlyttoffertForm from '../components/FlyttoffertForm'
-import StadningOffertFormCustomAkersberga from '../components/StadningOffertFormCustomAkersberga'
-import ReviewsWidget from '../components/ReviewsWidget'
-import LocationsCard from '../components/LocationsCard'
+import { useLanguage } from '@/app/contexts/LanguageContext'
+import FlyttoffertForm from '@/app/components/FlyttoffertForm'
+import StadningOffertFormCustomAkersberga from '@/app/components/StadningOffertFormCustomAkersberga'
+import ReviewsWidget from '@/app/components/ReviewsWidget'
+import LocationsCard from '@/app/components/LocationsCard'
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import CountUp from "react-countup";

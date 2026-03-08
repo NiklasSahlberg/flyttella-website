@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../contexts/LanguageContext';
-import ReviewsWidget from '../components/ReviewsWidget';
-import LocationsCard from '../components/LocationsCard';
+import { useLanguage } from '@/app/contexts/LanguageContext';
+import ReviewsWidget from '@/app/components/ReviewsWidget';
+import LocationsCard from '@/app/components/LocationsCard';
 import React from 'react';
 import Image from 'next/image';
 

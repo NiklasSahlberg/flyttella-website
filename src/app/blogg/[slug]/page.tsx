@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import CountUp from "react-countup";
 import { useState, useEffect, useRef } from "react";
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },

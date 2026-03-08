@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from "react";
-import FlyttoffertForm from '../components/FlyttoffertForm';
-import StadningOffertFormCustomAkersberga from '../components/StadningOffertFormCustomAkersberga';
+import FlyttoffertForm from '@/app/components/FlyttoffertForm';
+import StadningOffertFormCustomAkersberga from '@/app/components/StadningOffertFormCustomAkersberga';
 
 export default function OffertPage() {
   const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
