@@ -1071,7 +1071,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 <div className="md:hidden mt-12 pt-4">
                   <div className="flex justify-center">
                     <Image 
-                      src="/BadgeSixYearsNew.png" 
+                      src="/badgeSixYearsNew.png" 
                       alt="Five Years Badge" 
                       width={220} 
                       height={110} 
