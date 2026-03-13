@@ -109,7 +109,7 @@ export default function ReviewsWidget({
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
               <div className="relative w-60 h-60 md:w-80 md:h-80 drop-shadow-xl">
                 <Image
-                  src="/badgeSixYears.png"
+                  src="/badgeSixYearsNew.png"
                   alt={badgeAlt || t('reviews.badgeAlt')}
                   fill
                   className="object-contain"
