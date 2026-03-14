@@ -320,7 +320,7 @@ const AutoSlidingCards = () => {
                   />
                 </motion.div>
                 {/* Bottom row - two badges */}
-                <div className="flex items-center justify-center gap-4 mr-6">
+                <div className="flex items-center justify-center gap-4 mr-4">
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
                       src="/rekommenderad2026.png"
