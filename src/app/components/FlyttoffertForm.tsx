@@ -1121,9 +1121,9 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                     <Image 
                       src="/rekommenderad2026.png" 
                       alt="Rekommenderat företag 2026" 
-                      width={100} 
+                      width={120} 
                       height={120} 
-                      className="w-[84px] h-[84px] object-contain relative z-[60] mt-3 translate-x-8"
+                      className="w-[84px] h-[84px] object-contain relative z-[60] mt-4 translate-x-8"
                     />
                   </div>
                 </div>
