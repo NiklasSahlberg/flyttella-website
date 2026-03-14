@@ -993,14 +993,14 @@ export default function FlyttTillSpanienPage() {
                     />
                   </motion.div>
                   {/* Bottom row - two badges */}
-                  <div className="flex items-center justify-center gap-4">
+                  <div className="flex items-center justify-center gap-4 mr-4">
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                       <Image
-                        src="/recommendedcompany2.png"
+                        src="/rekommenderad2026.png"
                         alt="Rekommenderad flyttfirma till Spanien - Flyttella"
                         width={160}
                         height={160}
-                        className="object-contain h-32 w-32"
+                        className="object-contain h-28 w-28"
                         priority={false}
                       />
                     </motion.div>
@@ -1020,7 +1020,7 @@ export default function FlyttTillSpanienPage() {
                 {/* Desktop: Original horizontal layout */}
                 <div className="hidden md:flex items-center justify-center gap-6">
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                    <Image src="/recommendedcompany2.png" alt="Rekommenderad flyttfirma till Spanien - Flyttella" width={240} height={240} className="object-contain h-56 w-56" priority={false} />
+                    <Image src="/rekommenderad2026.png" alt="Rekommenderad flyttfirma till Spanien - Flyttella" width={240} height={240} className="object-contain h-52 w-52" priority={false} />
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image src="/1000reviewspicture.png" alt="1000+ positiva recensioner från kunder" width={260} height={260} className="object-contain h-64 w-64" priority={false} />

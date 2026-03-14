@@ -479,9 +479,9 @@ export default function MagasineringPage() {
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300 -mb-8">
                       <Image src="/1000reviewspicture.png" alt="1000+ positiva recensioner" width={200} height={200} className="object-contain h-36 w-36" />
                     </motion.div>
-                    <div className="flex items-center justify-center gap-4">
+                    <div className="flex items-center justify-center gap-4 mr-4">
                       <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                        <Image src="/recommendedcompany2.png" alt="Rekommenderad städfirma" width={160} height={160} className="object-contain h-32 w-32" />
+                        <Image src="/rekommenderad2026.png" alt="Rekommenderad städfirma" width={160} height={160} className="object-contain h-28 w-28" />
                       </motion.div>
                       <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                         <Image src="/bestinswedenbadge-modified.png" alt="Top 10 städfirma" width={180} height={180} className="object-contain h-28 w-28" />
@@ -490,7 +490,7 @@ export default function MagasineringPage() {
                   </div>
                   <div className="hidden md:flex items-center justify-center gap-6">
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
-                      <Image src="/recommendedcompany2.png" alt="Rekommenderad städfirma" width={240} height={240} className="object-contain h-60 w-60" />
+                      <Image src="/rekommenderad2026.png" alt="Rekommenderad städfirma" width={240} height={240} className="object-contain h-52 w-52" />
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                       <Image src="/1000reviewspicture.png" alt="1000+ positiva recensioner" width={260} height={260} className="object-contain h-64 w-64 mt-3" />

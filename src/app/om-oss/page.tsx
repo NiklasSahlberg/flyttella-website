@@ -316,14 +316,14 @@ const AutoSlidingCards = () => {
                   />
                 </motion.div>
                 {/* Bottom badges - side by side */}
-                <div className="flex items-center justify-center gap-4">
+                <div className="flex items-center justify-center gap-4 mr-4">
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
-                      src="/recommendedcompany2.png"
+                      src="/rekommenderad2026.png"
                       alt="Rekommenderad flyttfirma - Flyttella"
                       width={160}
                       height={160}
-                      className="object-contain h-32 w-32"
+                      className="object-contain h-28 w-28"
                       priority={false}
                     />
                   </motion.div>
@@ -344,11 +344,11 @@ const AutoSlidingCards = () => {
               <div className="hidden md:flex items-center justify-center gap-6">
                 <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                   <Image
-                    src="/recommendedcompany2.png"
+                    src="/rekommenderad2026.png"
                     alt="Rekommenderad flyttfirma - Flyttella"
                     width={240}
                     height={240}
-                    className="object-contain h-60 w-60"
+                    className="object-contain h-52 w-52"
                     priority={false}
                   />
                 </motion.div>

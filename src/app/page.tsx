@@ -320,14 +320,14 @@ const AutoSlidingCards = () => {
                   />
                 </motion.div>
                 {/* Bottom row - two badges */}
-                <div className="flex items-center justify-center gap-4">
+                <div className="flex items-center justify-center gap-4 mr-6">
                   <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                     <Image
-                      src="/recommendedcompany2.webp"
+                      src="/rekommenderad2026.png"
                       alt={locale === 'sv' ? 'Rekommenderad flyttfirma - Flyttella' : 'Recommended moving company - Flyttella'}
                       width={160}
                       height={160}
-                      className="object-contain h-32 w-32"
+                      className="object-contain h-28 w-28"
                       priority={false}
                     />
                   </motion.div>
@@ -348,11 +348,11 @@ const AutoSlidingCards = () => {
               <div className="hidden md:flex items-center justify-center gap-6">
               <motion.div whileHover={{ scale: 1.08 }} className="transition-transform duration-300">
                 <Image
-                  src="/recommendedcompany2.webp"
+                  src="/rekommenderad2026.png"
                   alt={locale === 'sv' ? 'Rekommenderad flyttfirma - Flyttella' : 'Recommended moving company - Flyttella'}
                   width={240}
                   height={240}
-                  className="object-contain h-60 w-60"
+                  className="object-contain h-52 w-52"
                   priority={false}
                 />
               </motion.div>
