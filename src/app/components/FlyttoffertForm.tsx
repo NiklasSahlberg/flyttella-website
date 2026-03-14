@@ -1088,42 +1088,42 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       alt="Rekommenderat företag 2021" 
                       width={140} 
                       height={140} 
-                      className="w-28 h-28 object-contain relative z-10"
+                      className="w-24 h-24 object-contain relative z-10"
                     />
                     <Image 
                       src="/recommendedcompany2022-no-bg.png" 
                       alt="Rekommenderat företag 2022" 
                       width={140} 
                       height={140} 
-                      className="w-28 h-28 object-contain relative z-20"
+                      className="w-24 h-24 object-contain relative z-20"
                     />
                     <Image 
                       src="/recommendedcompany2023-no-bg.png" 
                       alt="Rekommenderat företag 2023" 
                       width={140} 
                       height={140} 
-                      className="w-28 h-28 object-contain relative z-30"
+                      className="w-24 h-24 object-contain relative z-30"
                     />
                     <Image 
                       src="/recommendedcompany2024-no-bg.png" 
                       alt="Rekommenderat företag 2024" 
                       width={140} 
                       height={140} 
-                      className="w-28 h-28 object-contain relative z-40"
+                      className="w-24 h-24 object-contain relative z-40"
                     />
                     <Image 
                       src="/recommendedcompany2.png" 
                       alt="Rekommenderat företag 2025" 
                       width={120} 
                       height={120} 
-                      className="w-24 h-24 object-contain relative z-50 mt-2 translate-x-2"
+                      className="w-20 h-20 object-contain relative z-50 mt-2 translate-x-2"
                     />
                     <Image 
                       src="/rekommenderad2026.png" 
                       alt="Rekommenderat företag 2026" 
-                      width={120} 
-                      height={120} 
-                      className="w-24 h-24 object-contain relative z-[60] mt-2 translate-x-7"
+                      width={140} 
+                      height={140} 
+                      className="w-20 h-20 object-contain relative z-[60] mt-2 translate-x-7"
                     />
                   </div>
                 </div>
