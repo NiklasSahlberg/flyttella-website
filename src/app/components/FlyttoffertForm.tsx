@@ -1123,7 +1123,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       alt="Rekommenderat företag 2026" 
                       width={120} 
                       height={120} 
-                      className="w-[84px] h-[84px] object-contain relative z-[60] mt-4 translate-x-8"
+                      className="w-24 h-24 object-contain relative z-[60] mt-2 translate-x-8"
                     />
                   </div>
                 </div>
