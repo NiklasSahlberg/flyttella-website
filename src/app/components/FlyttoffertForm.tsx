@@ -1081,7 +1081,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 
                 {/* Recommended company badges for mobile */}
-                <div className="md:hidden -mt-8 mr-12 ">
+                <div className="md:hidden -mt-8">
                   <div className="flex flex-row justify-center -space-x-14">
                     <Image 
                       src="/recommendedcompany2021-no-bg.png" 
@@ -1123,7 +1123,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                       alt="Rekommenderat företag 2026" 
                       width={120} 
                       height={120} 
-                      className="w-30 h-30 object-contain relative z-[60] translate-x-4"
+                      className="w-[120px] h-[120px] object-contain relative z-[60] translate-x-2"
                     />
                   </div>
                 </div>
