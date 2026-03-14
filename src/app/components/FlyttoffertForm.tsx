@@ -1131,7 +1131,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 {errors.serviceType && (
                   <p className="text-base text-red-600 text-center mt-2 md:mt-4">{errors.serviceType}</p>
                 )}
-              </div>
+              </div> 
             )}
 
             {showSteps && step === 1 && (
