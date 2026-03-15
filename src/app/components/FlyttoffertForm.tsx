@@ -1081,7 +1081,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </div>
                 
                 {/* Recommended company badges for mobile */}
-                <div className="md:hidden -mt-8 mr-6 ">
+                <div className="md:hidden -mt-8 mr-2 ">
                   <div className="flex flex-row justify-center -space-x-14">
                     <Image 
                       src="/recommendedcompany2021-no-bg.png" 
