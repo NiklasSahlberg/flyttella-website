@@ -1916,7 +1916,7 @@ export default function FlyttfirmaAkersbergaPage() {
               {/* Mobile: Image below text */}
               <div className="w-full md:w-3/5 flex justify-center order-2 md:order-2">
                 <Image
-                  src="/awards_no_bg.png"
+                  src="/awards_no_bg_2026.png"
                   alt="Flyttellas utmärkelser - Flyttfirma i Älvsjö"
                   width={1200}
                   height={600}

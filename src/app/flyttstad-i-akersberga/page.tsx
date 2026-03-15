@@ -655,7 +655,7 @@ export default function FlyttstadAkersbergaPage() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="w-full md:w-3/5 flex justify-center">
-                <Image src="/awards_no_bg.png" alt="Flyttellas utmärkelser - Städ i Åkersberga" width={1200} height={600} className="object-contain w-full h-auto max-w-3xl" priority />
+                <Image src="/awards_no_bg_2026.png" alt="Flyttellas utmärkelser - Städ i Åkersberga" width={1200} height={600} className="object-contain w-full h-auto max-w-3xl" priority />
               </div>
               <div className="w-full md:w-2/5 text-left flex flex-col items-start justify-center">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-6">Utmärkelser för vårt städarbete i Åkersberga</h2>

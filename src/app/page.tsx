@@ -1674,7 +1674,7 @@ export default function Home() {
               {/* Mobile: Image below text */}
               <div className="w-full md:w-3/5 flex justify-center order-2 md:order-2">
                 <Image
-                  src="/awards_no_bg.webp"
+                  src="/awards_no_bg_2026.png"
                   alt="Flyttella's utmärkelser och priser"
                   width={1200}
                   height={600}
