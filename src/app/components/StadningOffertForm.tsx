@@ -172,7 +172,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
       if (data.success && data.data) {
         const suggestions = data.data.map((item: any) => ({
           display_name: item.text,
-          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}, Sweden`,
+          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}`,
           address_components: {
             street_name: item.street,
             street_number: item.streetNumber || '',
@@ -644,7 +644,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                                 // Create clean address without street number
                                 const streetName = suggestion.address_components.street_name || '';
                                 const city = suggestion.address_components.city || '';
-                                const cleanAddress = `${streetName}, ${city}, Sweden`;
+                                const cleanAddress = `${streetName}, ${city}`;
                                 
                                 setFormData({ 
                                   ...formData, 

@@ -145,6 +145,7 @@ interface FlyttoffertFormProps {
 export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder = false, onServiceTypeSelect, cleaningCardSubtitle, defaultCustomerType = 'privat', autoStartService, backgroundImage = '/ostermalm.avif' }: FlyttoffertFormProps) {
   const { t, locale } = useLanguage();
   const [step, setStep] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSteps, setShowSteps] = useState(false);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
   const [customItem, setCustomItem] = useState({ type: "", weight: "" });
@@ -259,7 +260,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
       if (data.success && data.data) {
         const suggestions = data.data.map((item: any) => ({
           display_name: item.text,
-          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}, Sweden`,
+          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}`,
           address_components: {
             street_name: item.street,
             street_number: item.streetNumber || '',
@@ -862,9 +863,11 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
           e.preventDefault();
 
           if (step === 7) {
+            if (isSubmitting) return;
             const isValid = validateStep7();
             
             if (isValid) {
+              setIsSubmitting(true);
               // Format the data to match the email template
               const emailData = {
                 title: "Ny lead flyttella",
@@ -942,6 +945,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
               } catch (error) {
                 console.error('Error sending form:', error);
                 alert("Ett fel uppstod när förfrågan skulle skickas. Vänligen försök igen.");
+                setIsSubmitting(false);
               }
             } else {
               // If validation fails, scroll to the first error
@@ -1525,7 +1529,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                                 // Create clean address without street number
                                 const streetName = suggestion.address_components.street_name || '';
                                 const city = suggestion.address_components.city || '';
-                                const cleanAddress = `${streetName}, ${city}, Sweden`;
+                                const cleanAddress = `${streetName}, ${city}`;
                                 
                                 setFormData({ 
                                   ...formData, 
@@ -2293,7 +2297,7 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                                 // Create clean address without street number
                                 const streetName = suggestion.address_components.street_name || '';
                                 const city = suggestion.address_components.city || '';
-                                const cleanAddress = `${streetName}, ${city}, Sweden`;
+                                const cleanAddress = `${streetName}, ${city}`;
                                 
                                 setFormData({ 
                                   ...formData, 
@@ -3046,9 +3050,16 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-lg hover:opacity-90 transition-opacity"
+                  disabled={isSubmitting}
+                  className="px-6 py-3 bg-gradient-to-r from-[#0F172A] to-[#10B981] text-white rounded-lg hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2"
                 >
-                  {t('hero.buttons.skicka')}
+                  {isSubmitting && (
+                    <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                  )}
+                  {isSubmitting ? (locale === 'sv' ? 'Skickar...' : 'Sending...') : t('hero.buttons.skicka')}
                 </button>
               </div>
             </div>
