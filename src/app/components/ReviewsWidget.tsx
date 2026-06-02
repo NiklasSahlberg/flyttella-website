@@ -169,22 +169,17 @@ export default function ReviewsWidget({
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div
-              ref={wrapperRef}
-              style={{ overflow: 'hidden', height: `${RECO_HEIGHT * scale}px` }}
-              className="md:!h-[260px]"
-            >
-              <iframe 
-                src="https://widget.reco.se/v2/widget/4038580?mode=HORIZONTAL_QUOTE&inverted=false&border=true"
-                style={{ 
-                  width: `${RECO_NATURAL_WIDTH}px`,
-                  height: `${RECO_HEIGHT}px`,
-                  border: 'none',
-                  transform: `scale(${scale})`,
-                  transformOrigin: 'top left',
-                }}
-                className="md:!w-full md:!h-[260px] md:![transform:none]"
-              />
+            <div ref={wrapperRef} style={{ overflow: 'hidden' }}>
+              <div style={{ zoom: scale, width: `${RECO_NATURAL_WIDTH}px` }}>
+                <iframe 
+                  src="https://widget.reco.se/v2/widget/4038580?mode=HORIZONTAL_QUOTE&inverted=false&border=true"
+                  style={{ 
+                    width: `${RECO_NATURAL_WIDTH}px`,
+                    height: scale < 1 ? `${RECO_HEIGHT}px` : '260px',
+                    border: 'none',
+                  }}
+                />
+              </div>
             </div>
           </motion.div>
         </div>
