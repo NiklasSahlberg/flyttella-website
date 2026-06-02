@@ -4,9 +4,6 @@ import { motion, useInView, useAnimation } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const RECO_NATURAL_WIDTH = 620;
-const RECO_HEIGHT = 220;
-
 interface CounterProps {
   end: number;
   duration?: number;
@@ -80,21 +77,6 @@ export default function ReviewsWidget({
   hideTitle = false
 }: ReviewsWidgetProps) {
   const { t } = useLanguage();
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    const updateScale = () => {
-      if (wrapperRef.current) {
-        const containerWidth = wrapperRef.current.offsetWidth;
-        setScale(containerWidth < RECO_NATURAL_WIDTH ? containerWidth / RECO_NATURAL_WIDTH : 1);
-      }
-    };
-    updateScale();
-    window.addEventListener('resize', updateScale);
-    return () => window.removeEventListener('resize', updateScale);
-  }, []);
-
   return (
     <section className="relative py-6 md:py-24 overflow-hidden">
       {/* Background Pattern */}
@@ -108,7 +90,7 @@ export default function ReviewsWidget({
         }} />
       </div>
 
-      <div className="container mx-auto px-0 md:px-4 relative">
+      <div className="container mx-auto px-4 relative">
         <div className="max-w-[1400px] mx-auto">
           {/* Centered Title */}
           {!hideTitle && (
@@ -163,24 +145,22 @@ export default function ReviewsWidget({
 
           {/* Reviews Widget */}
           <motion.div 
-            className="bg-white/80 backdrop-blur-sm rounded-none md:rounded-2xl shadow-lg overflow-hidden"
+            className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div ref={wrapperRef} style={{ overflow: 'hidden' }}>
-              <div style={{ zoom: scale, width: `${RECO_NATURAL_WIDTH}px` }}>
-                <iframe 
-                  src="https://widget.reco.se/v2/widget/4038580?mode=HORIZONTAL_QUOTE&inverted=false&border=true"
-                  style={{ 
-                    width: `${RECO_NATURAL_WIDTH}px`,
-                    height: scale < 1 ? `${RECO_HEIGHT}px` : '260px',
-                    border: 'none',
-                  }}
-                />
-              </div>
-            </div>
+            <iframe 
+              src="https://widget.reco.se/v2/widget/4038580?mode=HORIZONTAL_QUOTE&inverted=false&border=true"
+              style={{ 
+                width: '100%', 
+                height: '220px', 
+                border: 'none',
+                borderRadius: '16px',
+              }}
+              className="md:h-[260px]"
+            />
           </motion.div>
         </div>
       </div>
