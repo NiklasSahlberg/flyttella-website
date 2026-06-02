@@ -90,7 +90,7 @@ export default function ReviewsWidget({
         }} />
       </div>
 
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-0 md:px-4 relative">
         <div className="max-w-[1400px] mx-auto">
           {/* Centered Title */}
           {!hideTitle && (
@@ -145,7 +145,7 @@ export default function ReviewsWidget({
 
           {/* Reviews Widget */}
           <motion.div 
-            className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden"
+            className="bg-white/80 backdrop-blur-sm rounded-none md:rounded-2xl shadow-lg overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -157,9 +157,8 @@ export default function ReviewsWidget({
                 width: '100%', 
                 height: '220px', 
                 border: 'none',
-                borderRadius: '16px',
               }}
-              className="md:h-[260px]"
+              className="md:h-[260px] md:rounded-2xl"
             />
           </motion.div>
         </div>
