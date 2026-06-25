@@ -9,9 +9,17 @@ console.log('🔧 Preparing environment variables for Vercel deployment...\n');
 
 // Read and display Gmail token
 if (fs.existsSync(tokenPath)) {
-  const token = JSON.parse(fs.readFileSync(tokenPath, 'utf-8'));
-  console.log('📧 GMAIL_TOKEN environment variable:');
+  const tokenRaw = fs.readFileSync(tokenPath, 'utf-8');
+  const token = JSON.parse(tokenRaw);
+  const tokenBase64 = Buffer.from(tokenRaw.trim()).toString('base64');
+
+  console.log('📧 GMAIL_TOKEN_BASE64 (recommended for Vercel):');
   console.log('Copy this value to your Vercel environment variables:');
+  console.log('─'.repeat(80));
+  console.log(tokenBase64);
+  console.log('─'.repeat(80));
+
+  console.log('\n📧 GMAIL_TOKEN (alternative, full JSON on one line):');
   console.log('─'.repeat(80));
   console.log(JSON.stringify(token));
   console.log('─'.repeat(80));
@@ -38,9 +46,11 @@ console.log('\n📋 Instructions:');
 console.log('1. Go to your Vercel project dashboard');
 console.log('2. Navigate to Settings > Environment Variables');
 console.log('3. Add the following environment variables:');
-console.log('   - GMAIL_TOKEN: (paste the JSON token above)');
+console.log('   - GMAIL_TOKEN_BASE64: (recommended, paste the base64 token above)');
+console.log('   - GMAIL_TOKEN: (alternative, paste the JSON token above)');
 console.log('   - FLYTTELLA_LOGO_BASE64: (paste the base64 logo above)');
-console.log('4. Redeploy your project');
+console.log('4. Enable for Production AND Preview');
+console.log('5. Redeploy your project (required after changing env vars)');
 console.log('\n💡 Local development:');
 console.log('   - Either keep token.json in the project root, or');
 console.log('   - Add GMAIL_TOKEN to .env.local with the same JSON value');

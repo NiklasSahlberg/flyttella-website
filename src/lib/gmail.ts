@@ -46,8 +46,20 @@ function parseTokenJson(raw: string, source: string): GmailToken {
 }
 
 function loadGmailToken(): GmailToken {
+  const envTokenB64 = process.env.GMAIL_TOKEN_BASE64;
+  if (envTokenB64?.trim()) {
+    const decoded = Buffer.from(envTokenB64.trim(), 'base64').toString('utf8');
+    const token = parseTokenJson(decoded, 'GMAIL_TOKEN_BASE64');
+    if (!token.refresh_token) {
+      throw new Error(
+        'GMAIL_TOKEN_BASE64 is missing refresh_token. Regenerate token with generate-token.ts.'
+      );
+    }
+    return token;
+  }
+
   const envToken = process.env.GMAIL_TOKEN;
-  if (envToken) {
+  if (envToken?.trim()) {
     const token = parseTokenJson(envToken, 'GMAIL_TOKEN');
     if (!token.refresh_token) {
       throw new Error(
@@ -64,28 +76,58 @@ function loadGmailToken(): GmailToken {
   } catch (error) {
     console.error('Error loading token:', error);
     throw new Error(
-      'Failed to load Gmail token. Set GMAIL_TOKEN or create token.json locally.'
+      'Failed to load Gmail token. Set GMAIL_TOKEN_BASE64, GMAIL_TOKEN, or create token.json locally.'
     );
   }
 }
 
 export function getGmailTokenStatus() {
-  const envToken = process.env.GMAIL_TOKEN;
-  if (!envToken) {
-    return { configured: false, parseOk: false, hasRefreshToken: false };
+  const rawToken = process.env.GMAIL_TOKEN;
+  const rawTokenB64 = process.env.GMAIL_TOKEN_BASE64;
+  const source = rawTokenB64?.trim()
+    ? 'GMAIL_TOKEN_BASE64'
+    : rawToken?.trim()
+      ? 'GMAIL_TOKEN'
+      : null;
+
+  if (!source) {
+    return {
+      configured: false,
+      source: null,
+      parseOk: false,
+      hasRefreshToken: false,
+      tokenLength: 0,
+    };
   }
 
   try {
-    const token = parseTokenJson(envToken, 'GMAIL_TOKEN');
+    const raw = source === 'GMAIL_TOKEN_BASE64' ? rawTokenB64! : rawToken!;
+    const parsed =
+      source === 'GMAIL_TOKEN_BASE64'
+        ? parseTokenJson(
+            Buffer.from(raw.trim(), 'base64').toString('utf8'),
+            source
+          )
+        : parseTokenJson(raw, source);
+
     return {
       configured: true,
+      source,
       parseOk: true,
-      hasRefreshToken: Boolean(token.refresh_token),
-      hasAccessToken: Boolean(token.access_token),
-      expired: token.expiry_date ? token.expiry_date < Date.now() : null,
+      hasRefreshToken: Boolean(parsed.refresh_token),
+      hasAccessToken: Boolean(parsed.access_token),
+      expired: parsed.expiry_date ? parsed.expiry_date < Date.now() : null,
+      tokenLength: raw.trim().length,
     };
   } catch {
-    return { configured: true, parseOk: false, hasRefreshToken: false };
+    const raw = source === 'GMAIL_TOKEN_BASE64' ? rawTokenB64! : rawToken!;
+    return {
+      configured: true,
+      source,
+      parseOk: false,
+      hasRefreshToken: false,
+      tokenLength: raw.trim().length,
+    };
   }
 }
 
