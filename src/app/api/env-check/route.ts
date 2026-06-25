@@ -1,5 +1,6 @@
 export const runtime = 'nodejs';
 import { NextResponse } from 'next/server';
+import { getGmailTokenStatus } from '@/lib/gmail';
 
 export async function GET() {
   const hasUrl = Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_URL.length > 0);
@@ -7,7 +8,8 @@ export async function GET() {
 
   return NextResponse.json({
     hasUrl,
-    hasToken
+    hasToken,
+    gmail: getGmailTokenStatus(),
   });
 }
 

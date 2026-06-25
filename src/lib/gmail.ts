@@ -11,7 +11,7 @@ const CLIENT_SECRETS = {
     token_uri: 'https://oauth2.googleapis.com/token',
     auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
     client_secret: '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',
-    redirect_uris: ['http://localhost'],
+    redirect_uris: ['http://localhost:3001/oauth2callback'],
   },
 };
 
@@ -23,26 +23,69 @@ interface GmailToken {
   expiry_date?: number;
 }
 
+function parseTokenJson(raw: string, source: string): GmailToken {
+  const trimmed = raw.trim();
+
+  try {
+    return JSON.parse(trimmed) as GmailToken;
+  } catch {
+    // Common Vercel paste mistake: extra wrapping quotes around the JSON object
+    if (
+      (trimmed.startsWith("'") && trimmed.endsWith("'")) ||
+      (trimmed.startsWith('"') && trimmed.endsWith('"') && !trimmed.startsWith('{"'))
+    ) {
+      try {
+        return JSON.parse(trimmed.slice(1, -1)) as GmailToken;
+      } catch (innerError) {
+        console.error(`Error parsing ${source}:`, innerError);
+      }
+    }
+
+    throw new Error(`Failed to parse ${source}. Paste the full JSON on one line.`);
+  }
+}
+
 function loadGmailToken(): GmailToken {
   const envToken = process.env.GMAIL_TOKEN;
   if (envToken) {
-    try {
-      return JSON.parse(envToken) as GmailToken;
-    } catch (error) {
-      console.error('Error parsing GMAIL_TOKEN:', error);
-      throw new Error('Failed to parse GMAIL_TOKEN');
+    const token = parseTokenJson(envToken, 'GMAIL_TOKEN');
+    if (!token.refresh_token) {
+      throw new Error(
+        'GMAIL_TOKEN is missing refresh_token. Regenerate token with generate-token.ts and paste the full JSON.'
+      );
     }
+    return token;
   }
 
   try {
     const tokenPath = path.join(process.cwd(), 'token.json');
     const tokenData = fs.readFileSync(tokenPath, 'utf8');
-    return JSON.parse(tokenData) as GmailToken;
+    return parseTokenJson(tokenData, 'token.json');
   } catch (error) {
     console.error('Error loading token:', error);
     throw new Error(
       'Failed to load Gmail token. Set GMAIL_TOKEN or create token.json locally.'
     );
+  }
+}
+
+export function getGmailTokenStatus() {
+  const envToken = process.env.GMAIL_TOKEN;
+  if (!envToken) {
+    return { configured: false, parseOk: false, hasRefreshToken: false };
+  }
+
+  try {
+    const token = parseTokenJson(envToken, 'GMAIL_TOKEN');
+    return {
+      configured: true,
+      parseOk: true,
+      hasRefreshToken: Boolean(token.refresh_token),
+      hasAccessToken: Boolean(token.access_token),
+      expired: token.expiry_date ? token.expiry_date < Date.now() : null,
+    };
+  } catch {
+    return { configured: true, parseOk: false, hasRefreshToken: false };
   }
 }
 
@@ -56,21 +99,11 @@ export async function getGmailClient() {
   const token = loadGmailToken();
   oauth2Client.setCredentials(token);
 
-  if (token.expiry_date && token.expiry_date < Date.now()) {
-    try {
-      const response = await oauth2Client.getAccessToken();
-      const newToken = {
-        access_token: response.token || token.access_token,
-        refresh_token: token.refresh_token,
-        scope: token.scope,
-        token_type: token.token_type,
-        expiry_date: Date.now() + 3600000,
-      };
-      oauth2Client.setCredentials(newToken);
-    } catch (error) {
-      console.error('Error refreshing access token:', error);
-      throw new Error('Failed to refresh access token');
-    }
+  try {
+    await oauth2Client.getAccessToken();
+  } catch (error) {
+    console.error('Error refreshing access token:', error);
+    throw new Error('Failed to refresh access token');
   }
 
   return google.gmail({ version: 'v1', auth: oauth2Client });
