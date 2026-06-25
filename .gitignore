@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Gmail OAuth token (use GMAIL_TOKEN env var in production)
+token.json
+
 # vercel
 .vercel
 

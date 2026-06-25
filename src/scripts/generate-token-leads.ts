@@ -3,8 +3,6 @@ import http from 'http';
 import url from 'url';
 import fs from 'fs';
 import path from 'path';
-import open from 'open';
-
 const SCOPES = ['https://www.googleapis.com/auth/gmail.send'];
 const TOKEN_PATH = path.join(process.cwd(), 'token-leads.json');
 
@@ -61,10 +59,9 @@ async function generateToken() {
       scope: SCOPES,
     });
 
-    // Open the authorization URL in the default browser
-    console.log('Opening browser for authentication...');
-    console.log('Please log in with the leads@flyttella.se account');
-    open(authUrl);
+    console.log('\nÖppna länken nedan i den webbläsare du vill använda:\n');
+    console.log(authUrl);
+    console.log('\nVIKTIGT: Logga in med leads@flyttella.se\n');
   });
 
   console.log('Waiting for authentication...');
