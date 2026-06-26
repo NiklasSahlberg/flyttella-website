@@ -26,8 +26,21 @@ function ensurePlaceholder() {
   }
 }
 
+function logBuildDiagnostics() {
+  const gmailKeys = Object.keys(process.env).filter((key) => key.includes('GMAIL'));
+  console.log('[gmail] Build diagnostics:', {
+    vercel: process.env.VERCEL === '1',
+    vercelEnv: process.env.VERCEL_ENV ?? null,
+    gitBranch: process.env.VERCEL_GIT_COMMIT_REF ?? null,
+    gmailKeys,
+    gmailTokenB64Len: process.env.GMAIL_TOKEN_BASE64?.length ?? 0,
+    gmailTokenLen: process.env.GMAIL_TOKEN?.length ?? 0,
+  });
+}
+
 function main() {
   ensurePlaceholder();
+  logBuildDiagnostics();
 
   const b64 = process.env.GMAIL_TOKEN_BASE64?.trim();
   const raw = process.env.GMAIL_TOKEN?.trim();

@@ -16,6 +16,7 @@ export async function GET() {
 
   return NextResponse.json({
     vercelEnv: process.env.VERCEL_ENV ?? null,
+    gitCommit: process.env.VERCEL_GIT_COMMIT_SHA ?? null,
     deploymentId: process.env.VERCEL_DEPLOYMENT_ID ?? null,
     hasUrl,
     hasToken,
