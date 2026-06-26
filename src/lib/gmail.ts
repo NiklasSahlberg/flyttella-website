@@ -89,51 +89,76 @@ function loadGmailToken(): GmailToken {
 export function getGmailTokenStatus() {
   const rawToken = readEnv('GMAIL_TOKEN');
   const rawTokenB64 = readEnv('GMAIL_TOKEN_BASE64');
-  const source = rawTokenB64?.trim()
+  const envSource = rawTokenB64?.trim()
     ? 'GMAIL_TOKEN_BASE64'
     : rawToken?.trim()
       ? 'GMAIL_TOKEN'
       : null;
 
-  if (!source) {
-    return {
-      configured: false,
-      source: null,
-      parseOk: false,
-      hasRefreshToken: false,
-      tokenLength: 0,
-    };
+  if (envSource) {
+    try {
+      const raw = envSource === 'GMAIL_TOKEN_BASE64' ? rawTokenB64! : rawToken!;
+      const parsed =
+        envSource === 'GMAIL_TOKEN_BASE64'
+          ? parseTokenJson(
+              Buffer.from(raw.trim(), 'base64').toString('utf8'),
+              envSource
+            )
+          : parseTokenJson(raw, envSource);
+
+      return {
+        configured: true,
+        source: envSource,
+        parseOk: true,
+        hasRefreshToken: Boolean(parsed.refresh_token),
+        hasAccessToken: Boolean(parsed.access_token),
+        expired: parsed.expiry_date ? parsed.expiry_date < Date.now() : null,
+        tokenLength: raw.trim().length,
+      };
+    } catch {
+      const raw = envSource === 'GMAIL_TOKEN_BASE64' ? rawTokenB64! : rawToken!;
+      return {
+        configured: true,
+        source: envSource,
+        parseOk: false,
+        hasRefreshToken: false,
+        tokenLength: raw.trim().length,
+      };
+    }
   }
 
-  try {
-    const raw = source === 'GMAIL_TOKEN_BASE64' ? rawTokenB64! : rawToken!;
-    const parsed =
-      source === 'GMAIL_TOKEN_BASE64'
-        ? parseTokenJson(
-            Buffer.from(raw.trim(), 'base64').toString('utf8'),
-            source
-          )
-        : parseTokenJson(raw, source);
-
-    return {
-      configured: true,
-      source,
-      parseOk: true,
-      hasRefreshToken: Boolean(parsed.refresh_token),
-      hasAccessToken: Boolean(parsed.access_token),
-      expired: parsed.expiry_date ? parsed.expiry_date < Date.now() : null,
-      tokenLength: raw.trim().length,
-    };
-  } catch {
-    const raw = source === 'GMAIL_TOKEN_BASE64' ? rawTokenB64! : rawToken!;
-    return {
-      configured: true,
-      source,
-      parseOk: false,
-      hasRefreshToken: false,
-      tokenLength: raw.trim().length,
-    };
+  const tokenPath = path.join(process.cwd(), 'token.json');
+  if (fs.existsSync(tokenPath)) {
+    try {
+      const raw = fs.readFileSync(tokenPath, 'utf8');
+      const parsed = parseTokenJson(raw, 'token.json');
+      return {
+        configured: true,
+        source: 'token.json',
+        parseOk: true,
+        hasRefreshToken: Boolean(parsed.refresh_token),
+        hasAccessToken: Boolean(parsed.access_token),
+        expired: parsed.expiry_date ? parsed.expiry_date < Date.now() : null,
+        tokenLength: raw.trim().length,
+      };
+    } catch {
+      return {
+        configured: true,
+        source: 'token.json',
+        parseOk: false,
+        hasRefreshToken: false,
+        tokenLength: 0,
+      };
+    }
   }
+
+  return {
+    configured: false,
+    source: null,
+    parseOk: false,
+    hasRefreshToken: false,
+    tokenLength: 0,
+  };
 }
 
 export async function getGmailClient() {
