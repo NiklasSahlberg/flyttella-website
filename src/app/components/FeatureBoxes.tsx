@@ -1,6 +1,6 @@
 // FeatureBoxes: Compact, modern row of benefit boxes for under the form
 // Includes animation for insurance (Trygg Hansa & FORA)
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; 
 import { useLanguage } from "../contexts/LanguageContext";
 
 const insuranceLogos = [
