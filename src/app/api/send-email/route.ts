@@ -25,7 +25,7 @@ async function createEmail(to: string, from: string, subject: string, messageTex
     // Email with attachments - use multipart
     const boundary = `boundary_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     
-    let emailContent = [
+    const emailContent = [
       `From: ${from}`,
       `To: ${to}`,
       `Subject: ${encodedSubject}`,
