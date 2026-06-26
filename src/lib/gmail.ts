@@ -23,6 +23,11 @@ interface GmailToken {
   expiry_date?: number;
 }
 
+// Dynamic lookup prevents Next.js from inlining undefined at build time.
+function readEnv(key: string): string | undefined {
+  return process.env[key];
+}
+
 function parseTokenJson(raw: string, source: string): GmailToken {
   const trimmed = raw.trim();
 
@@ -46,7 +51,7 @@ function parseTokenJson(raw: string, source: string): GmailToken {
 }
 
 function loadGmailToken(): GmailToken {
-  const envTokenB64 = process.env.GMAIL_TOKEN_BASE64;
+  const envTokenB64 = readEnv('GMAIL_TOKEN_BASE64');
   if (envTokenB64?.trim()) {
     const decoded = Buffer.from(envTokenB64.trim(), 'base64').toString('utf8');
     const token = parseTokenJson(decoded, 'GMAIL_TOKEN_BASE64');
@@ -58,7 +63,7 @@ function loadGmailToken(): GmailToken {
     return token;
   }
 
-  const envToken = process.env.GMAIL_TOKEN;
+  const envToken = readEnv('GMAIL_TOKEN');
   if (envToken?.trim()) {
     const token = parseTokenJson(envToken, 'GMAIL_TOKEN');
     if (!token.refresh_token) {
@@ -82,8 +87,8 @@ function loadGmailToken(): GmailToken {
 }
 
 export function getGmailTokenStatus() {
-  const rawToken = process.env.GMAIL_TOKEN;
-  const rawTokenB64 = process.env.GMAIL_TOKEN_BASE64;
+  const rawToken = readEnv('GMAIL_TOKEN');
+  const rawTokenB64 = readEnv('GMAIL_TOKEN_BASE64');
   const source = rawTokenB64?.trim()
     ? 'GMAIL_TOKEN_BASE64'
     : rawToken?.trim()
