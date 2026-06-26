@@ -1,6 +1,7 @@
 import { google } from 'googleapis';
 import fs from 'fs';
 import path from 'path';
+import bundledGmailToken from './gmail-token.generated.json';
 
 const CLIENT_SECRETS = {
   installed: {
@@ -50,7 +51,26 @@ function parseTokenJson(raw: string, source: string): GmailToken {
   }
 }
 
+function getBundledToken(): GmailToken | null {
+  if (
+    bundledGmailToken &&
+    typeof bundledGmailToken === 'object' &&
+    'refresh_token' in bundledGmailToken &&
+    typeof bundledGmailToken.refresh_token === 'string' &&
+    bundledGmailToken.refresh_token.length > 0
+  ) {
+    return bundledGmailToken as GmailToken;
+  }
+
+  return null;
+}
+
 function loadGmailToken(): GmailToken {
+  const bundled = getBundledToken();
+  if (bundled) {
+    return bundled;
+  }
+
   const envTokenB64 = readEnv('GMAIL_TOKEN_BASE64');
   if (envTokenB64?.trim()) {
     const decoded = Buffer.from(envTokenB64.trim(), 'base64').toString('utf8');
@@ -87,6 +107,19 @@ function loadGmailToken(): GmailToken {
 }
 
 export function getGmailTokenStatus() {
+  const bundled = getBundledToken();
+  if (bundled) {
+    return {
+      configured: true,
+      source: 'bundled',
+      parseOk: true,
+      hasRefreshToken: Boolean(bundled.refresh_token),
+      hasAccessToken: Boolean(bundled.access_token),
+      expired: bundled.expiry_date ? bundled.expiry_date < Date.now() : null,
+      tokenLength: JSON.stringify(bundled).length,
+    };
+  }
+
   const rawToken = readEnv('GMAIL_TOKEN');
   const rawTokenB64 = readEnv('GMAIL_TOKEN_BASE64');
   const envSource = rawTokenB64?.trim()

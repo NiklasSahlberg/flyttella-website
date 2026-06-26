@@ -2,8 +2,33 @@ const fs = require('fs');
 const path = require('path');
 
 const tokenPath = path.join(__dirname, '..', 'token.json');
+const bundledTokenPath = path.join(
+  __dirname,
+  '..',
+  'src',
+  'lib',
+  'gmail-token.generated.json'
+);
+
+function writeBundledToken(tokenJson) {
+  const parsed = JSON.parse(tokenJson);
+  if (!parsed.refresh_token) {
+    throw new Error('missing refresh_token');
+  }
+
+  fs.writeFileSync(bundledTokenPath, `${JSON.stringify(parsed)}\n`);
+  console.log('[gmail] gmail-token.generated.json written for deployment');
+}
+
+function ensurePlaceholder() {
+  if (!fs.existsSync(bundledTokenPath)) {
+    fs.writeFileSync(bundledTokenPath, '{}\n');
+  }
+}
 
 function main() {
+  ensurePlaceholder();
+
   const b64 = process.env.GMAIL_TOKEN_BASE64?.trim();
   const raw = process.env.GMAIL_TOKEN?.trim();
 
@@ -13,22 +38,25 @@ function main() {
   } else if (raw) {
     tokenJson = raw;
   } else if (fs.existsSync(tokenPath)) {
-    console.log('[gmail] token.json already exists, skipping inject');
-    return;
+    tokenJson = fs.readFileSync(tokenPath, 'utf8');
+    console.log('[gmail] using local token.json for build bundle');
   } else {
-    console.log('[gmail] No Gmail token env var found at build time, skipping inject');
+    if (process.env.VERCEL === '1') {
+      console.error(
+        '[gmail] ERROR: Set GMAIL_TOKEN_BASE64 or GMAIL_TOKEN for Production in Vercel.'
+      );
+      process.exit(1);
+    }
+
+    console.log('[gmail] No Gmail token found at build time, keeping placeholder bundle');
+    fs.writeFileSync(bundledTokenPath, '{}\n');
     return;
   }
 
   try {
-    const parsed = JSON.parse(tokenJson);
-    if (!parsed.refresh_token) {
-      throw new Error('missing refresh_token');
-    }
-    fs.writeFileSync(tokenPath, tokenJson);
-    console.log('[gmail] token.json written for deployment');
+    writeBundledToken(tokenJson);
   } catch (error) {
-    console.error('[gmail] Failed to prepare token.json:', error.message);
+    console.error('[gmail] Failed to prepare bundled Gmail token:', error.message);
     process.exit(1);
   }
 }

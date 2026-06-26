@@ -35,6 +35,7 @@ yarn-error.log*
 
 # Gmail OAuth token (use GMAIL_TOKEN env var in production)
 token.json
+src/lib/gmail-token.generated.json
 
 # vercel
 .vercel
