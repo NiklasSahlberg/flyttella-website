@@ -60,6 +60,7 @@ export default function LocationsCard({ locations }: LocationsCardProps) {
     'solna',
     'sollentuna',
     'spanga',
+    'stockholm',
     'sundbyberg',
     'taby',
     'tumba',

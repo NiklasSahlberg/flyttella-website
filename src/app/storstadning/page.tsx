@@ -63,6 +63,7 @@ export default function StorstadningPage() {
     { name: 'Östermalm', slug: 'ostermalm' },
     { name: 'Sollentuna', slug: 'sollentuna' },
     { name: 'Solna', slug: 'solna' },
+    { name: 'Stockholm', slug: 'stockholm' },
     { name: 'Täby', slug: 'taby' },
     { name: 'Vasastan', slug: 'vasastan' }
   ];

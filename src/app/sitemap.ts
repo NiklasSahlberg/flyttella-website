@@ -217,7 +217,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'ekero', 'enskede', 'farsta', 'hagersten', 'haninge', 'huddinge', 'jarfalla', 
     'kista', 'kungsangen', 'kungsholmen', 'lidingo', 'marsta', 'nacka', 
     'norrmalm', 'nynashamn', 'ostermalm', 'salem', 'skarholmen', 'sodertalje', 
-    'sollentuna', 'solna', 'spanga', 'stockholm-och-goteborg', 'stockholm-och-kopenhamn', 
+    'sollentuna', 'solna', 'spanga', 'stockholm', 'stockholm-och-goteborg', 'stockholm-och-kopenhamn', 
     'stockholm-och-malmo', 'stockholm-och-oslo', 'sundbyberg', 'taby', 'tumba', 
     'tyreso', 'upplands-vasby', 'vallentuna', 'varmdo', 'vasastan', 'vasterhaninge',
     'osterrike',

@@ -39,7 +39,7 @@ export default function Utlandsflytt() {
   ];
 
   const locations = [
-    { name: 'Åkersberga', slug: 'akersberga' }, { name: 'Älvsjö', slug: 'alvsjo' }, { name: 'Årsta', slug: 'arsta' }, { name: 'Bromma', slug: 'bromma' }, { name: 'Danderyd', slug: 'danderyd' }, { name: 'Ekerö', slug: 'ekero' }, { name: 'Hägersten', slug: 'hagersten' }, { name: 'Haninge', slug: 'haninge' }, { name: 'Huddinge', slug: 'huddinge' }, { name: 'Järfälla', slug: 'jarfalla' }, { name: 'Kista', slug: 'kista' }, { name: 'Kungsholmen', slug: 'kungsholmen' }, { name: 'Lidingö', slug: 'lidingo' }, { name: 'Nacka', slug: 'nacka' }, { name: 'Norrmalm', slug: 'norrmalm' }, { name: 'Östermalm', slug: 'ostermalm' }, { name: 'Sollentuna', slug: 'sollentuna' }, { name: 'Solna', slug: 'solna' }, { name: 'Täby', slug: 'taby' }, { name: 'Vasastan', slug: 'vasastan' }
+    { name: 'Åkersberga', slug: 'akersberga' }, { name: 'Älvsjö', slug: 'alvsjo' }, { name: 'Årsta', slug: 'arsta' }, { name: 'Bromma', slug: 'bromma' }, { name: 'Danderyd', slug: 'danderyd' }, { name: 'Ekerö', slug: 'ekero' }, { name: 'Hägersten', slug: 'hagersten' }, { name: 'Haninge', slug: 'haninge' }, { name: 'Huddinge', slug: 'huddinge' }, { name: 'Järfälla', slug: 'jarfalla' }, { name: 'Kista', slug: 'kista' }, { name: 'Kungsholmen', slug: 'kungsholmen' }, { name: 'Lidingö', slug: 'lidingo' }, { name: 'Nacka', slug: 'nacka' }, { name: 'Norrmalm', slug: 'norrmalm' }, { name: 'Östermalm', slug: 'ostermalm' }, { name: 'Sollentuna', slug: 'sollentuna' }, { name: 'Solna', slug: 'solna' }, { name: 'Stockholm', slug: 'stockholm' }, { name: 'Täby', slug: 'taby' }, { name: 'Vasastan', slug: 'vasastan' }
   ];
 
   return (

@@ -737,6 +737,7 @@ export default function Home() {
     { name: "Solna", slug: "solna" },
     { name: "Sollentuna", slug: "sollentuna" },
     { name: "Spånga", slug: "spanga" },
+    { name: "Stockholm", slug: "stockholm" },
     { name: "Sundbyberg", slug: "sundbyberg" },
     { name: "Täby", slug: "taby" },
     { name: "Tumba", slug: "tumba" },

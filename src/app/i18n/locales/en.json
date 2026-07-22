@@ -6063,6 +6063,109 @@
       "linkText": "Contact us"
     }
   },
+  "stockholm": {
+    "customerReviews": {
+      "title": "What do our customers say?"
+    },
+    "hero": {
+      "title": "Moving company in Stockholm — the whole city and Stockholm County",
+      "subtitle": "Professional movers for all of Stockholm: inner city, northern, southern, eastern and western suburbs. Fixed prices, local crews and moves between every district and municipality in the county.",
+      "ctaPrimary": "Get a quote",
+      "ctaSecondary": "See how we work"
+    },
+    "features": {
+      "title": "What benefits do you get with Flyttella across Stockholm?"
+    },
+    "about": {
+      "title": "About Flyttella — movers for all of Stockholm",
+      "desktop": "Flyttella has been operating for over 8 years and helped 8,000 customers with moves across Stockholm and Stockholm County. We cover the inner city, northern, southern, eastern and western suburbs — plus other municipalities in the county.",
+      "desktop2": "As a moving company for all of Stockholm we offer packing, storage, cleaning and assembly in one package — whether you move within the same district or across the county. You always receive a fixed price with no hidden fees, clear scope and a dedicated coordinator from planning to move-in.",
+      "desktop3": "All moves in Stockholm include complimentary box loans, free rescheduling up to 24 hours before move day and a 14-day guarantee on cleaning. We know parking, elevator bookings and local rules on both tight inner-city streets and suburban villa roads.",
+      "mobile": "Movers for all of Stockholm — fixed prices and full-service options.",
+      "mobileExpanded": "We plan carry routes in apartment buildings and villas across the county, protect staircases and reserve elevators regardless of district.",
+      "mobileExpanded2": "One point of contact follows you from quote to move-in — within Stockholm or between municipalities."
+    },
+    "experienceSection": {
+      "title": "Our experience across Stockholm"
+    },
+    "experience": {
+      "title": "Our experience with moves across Stockholm",
+      "description": "We move daily across Stockholm — from narrow stairwells downtown to villas in the northern and southern suburbs, offices in City and Kista, and apartments in the eastern and western suburbs. Local knowledge of the whole county means we plan parking, loading zones and routes efficiently wherever you live.",
+      "expanded": "For larger projects we conduct site visits to assess carry routes, elevator status and parking. Experience with every housing type in Stockholm — older inner-city buildings, postwar blocks, new builds and villas — means we handle both narrow stairwells and modern elevators across the region."
+    },
+    "reviews": {
+      "subtitle": "Recommended moving company across Stockholm",
+      "description": "Clients from the inner city, northern, southern, eastern and western suburbs emphasize our punctuality, professional crews and smooth handling — whether the move stays in one area or crosses Stockholm County.",
+      "badgeAlt": "Moving company Stockholm reviews",
+      "arrowText": "Read more customer stories"
+    },
+    "awards": {
+      "title": "Flyttella awards in Stockholm",
+      "description": "Our awards reflect long experience as a moving company for all of Stockholm. Residents in every district value that we handle everything from compact inner-city apartments to large suburban villas with the same professional standard — consistent quality across the county."
+    },
+    "servicesSection": {
+      "title": "Discover all our services in Stockholm",
+      "description": "Household moves for apartments, villas and townhouses across Stockholm, packing, storage, cleaning, assembly and advisory services. We handle elevator bookings, parking and logistics downtown and in every suburb.",
+      "privateServices": "See all services"
+    },
+    "blogSection": {
+      "title": "Guides and tips for moving in Stockholm",
+      "description": "Pre-book parking, label boxes by room, reserve elevators and allow extra time when moving between the inner city and suburbs — or between municipalities in Stockholm County.",
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "Checklist: moving in Stockholm",
+      "description": "Confirm door codes, storage cages and attic spaces, pre-book parking at both addresses and secure key fobs — especially important when moving between different districts."
+    },
+    "processSection": {
+      "title": "Our process",
+      "subtitle": "How it works",
+      "description": "Our process stays simple, transparent and safe across Stockholm: submit the form, get a quote within a minute, receive a same-day follow-up and sign digitally once everything feels right. Quotes reflect your real conditions — floor area, levels, elevators, parking distance and distance between addresses — and we can add packing, cleaning or storage without hidden fees."
+    },
+    "process": {
+      "fillForm": "Submit the form",
+      "fillFormDesc": "Share addresses in Stockholm (or between municipalities), dates, floors, elevator rules, parking and whether storage/attic areas need to be emptied. Add any extra services.",
+      "quickQuote": "Detailed quote",
+      "quickQuoteDesc": "You get a fixed-price quote with clear scope and RUT when applicable. If a walkthrough is needed we book it before locking the price.",
+      "signConfirm": "Sign and confirm",
+      "signConfirmDesc": "After signature we reserve elevators/loading zones, arrange parking permits at both addresses and send the run sheet with contacts.",
+      "personalContact": "Dedicated contact",
+      "personalContactDesc": "Your coordinator keeps you updated, shares packing tips and ensures protection materials and boxes arrive in time.",
+      "moveCompleted": "Move executed",
+      "moveCompletedDesc": "The crew protects entrances, builds carry chains through stairs or elevators and loads sequentially for faster unloading — regardless of district.",
+      "satisfiedCustomer": "Follow-up",
+      "satisfiedCustomerDesc": "We walk through the rooms together, adjust furniture placement and confirm that cleaning/storage match the plan."
+    },
+    "faq": {
+      "title": "Common questions about moving across Stockholm",
+      "items": [
+        {
+          "question": "Do you cover all of Stockholm and Stockholm County?",
+          "answer": "Yes. We move across Stockholm — inner city, northern, southern, eastern and western suburbs — and between municipalities in the county, for example Solna, Nacka, Huddinge, Täby, Järfälla and Lidingö."
+        },
+        {
+          "question": "How do you plan moves between different districts?",
+          "answer": "We reserve parking and loading zones at both addresses, account for rush-hour traffic and set up carry chains so stairs and elevators stay efficient — whether it's downtown or a villa neighborhood."
+        },
+        {
+          "question": "What's included in your Stockholm moving service?",
+          "answer": "We handle everything from packing and transport to unpacking and cleaning. All prices are fixed with no hidden fees, and we offer complimentary box loans and free rescheduling up to 24 hours before."
+        },
+        {
+          "question": "Do you provide storage if move-in is delayed?",
+          "answer": "Absolutely. We store belongings in secure, monitored facilities in the Stockholm area and deliver them to any address in the county once the new home is ready."
+        },
+        {
+          "question": "How far ahead should I book a moving company in Stockholm?",
+          "answer": "Peak season requires about 3–4 weeks; otherwise 1–2 weeks usually works. We still try to help with urgent requests across Stockholm."
+        }
+      ]
+    },
+    "faqFooter": {
+      "title": "Have more questions?",
+      "linkText": "Contact us"
+    }
+  },
   "sollentuna": {
     "customerReviews": {
       "title": "What do our customers say?"

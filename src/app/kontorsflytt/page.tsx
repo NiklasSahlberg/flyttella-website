@@ -205,6 +205,7 @@ export default function KontorsflyttPage() {
     { name: "Sollentuna", slug: "sollentuna" },
     { name: "Solna", slug: "solna" },
     { name: "Spånga", slug: "spanga" },
+    { name: "Stockholm", slug: "stockholm" },
     { name: "Sundbyberg", slug: "sundbyberg" },
     { name: "Täby", slug: "taby" },
     { name: "Tumba", slug: "tumba" },
