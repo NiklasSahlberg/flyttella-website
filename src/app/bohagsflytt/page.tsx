@@ -1040,7 +1040,7 @@ export default function Bohagsflytt() {
                     className="inline-block"
                   >
                     <Link 
-                      href="/barhjalp" 
+                      href="/packhjalp" 
                       className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg"
                     >
                       {t('bohagsflytt.services.packhjalp.readMore')}

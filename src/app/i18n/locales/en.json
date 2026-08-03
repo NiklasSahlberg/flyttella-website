@@ -685,7 +685,8 @@
       "visningsstadning": "Viewing cleaning",
       "dodsboStadning": "Estate cleaning",
       "kontorsflytt": "Office moving",
-      "bemanning": "Staffing and subcontracting"
+      "bemanning": "Staffing and subcontracting",
+      "packhjalp": "Packing help"
     }
   },
   "form": {
@@ -3309,6 +3310,10 @@
       "montering": {
         "title": "Assembly",
         "description": "Assembly and disassembly of furniture. We take care of IKEA furniture and other furniture systems."
+      },
+      "packhjalp": {
+        "title": "Packing help",
+        "description": "Professional packing of your belongings. We pack safely, label clearly and save you time before the move."
       }
     },
     "cta": {
@@ -6115,7 +6120,7 @@
     },
     "blog": {
       "title": "What to consider when choosing a serious moving company in Stockholm",
-      "description": "Confirm door codes, storage cages and attic spaces, pre-book parking at both addresses and secure key fobs — especially important when moving between different districts."
+      "description": "Choosing the right moving company is crucial for a smooth move. In this guide, we go through the most important factors you should consider – from insurance and permits to customer reviews and price transparency."
     },
     "processSection": {
       "title": "Our process",
@@ -8596,6 +8601,172 @@
       "readMore": "Read more",
       "personalImageAlt": "Flyttella staff - Moving to the Netherlands",
       "aboutImageAlt": "About Flyttella"
+    }
+  },
+  "packhjalp": {
+    "sidebar": {
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "readMore": "Read more"
+      },
+      "montering": {
+        "title": "Assembly",
+        "description": "Assembly and disassembly of furniture and interior - right tools and careful handling.",
+        "readMore": "Read more"
+      },
+      "tunglyft": {
+        "title": "Heavy Lifting",
+        "description": "Safe handling of heavy and large-scale items like pianos, safes and large furniture.",
+        "readMore": "Read more"
+      }
+    },
+    "hero": {
+      "title": "Packing help",
+      "titleDesktop": "Packing help in Stockholm",
+      "subtitle": "Professional packing help for a stress-free move in Stockholm.",
+      "description": "We offer reliable packing help for private customers and businesses. Our experienced team packs your belongings safely, labels boxes clearly and uses quality packing materials.",
+      "ctaTitle": "Contact us for a quote",
+      "ctaDescription": "Tell us briefly what you need packed and we will get back quickly with price and timing. We can also do an on-site assessment if needed.",
+      "ctaButton": "Contact us",
+      "readMore": "Read more"
+    },
+    "content": {
+      "whatIsTitle": "What is packing help?",
+      "whatIsDescription": "Packing help means we pack your household safely and efficiently before a move. We pack kitchens, clothes, books, electronics and fragile items, label boxes by room and make sure everything is ready for transport. The service suits both full moves and when you only need help with parts of the home.",
+      "pricingTitle": "What does packing help cost?",
+      "pricingDescription1": "The price for packing help mainly depends on living area, amount of belongings, how much needs packing and whether you also want unpacking at the new address. We always provide a clear fixed price with no hidden fees before we start. If needed we can do a quick on-site visit or assess from photos.",
+      "pricingDescription2": "Send a request with a short description and preferably photos and we will get back quickly with a fixed price.",
+      "pricingTestimonial": "Fantastic packing help! They packed the whole home carefully, labeled everything clearly and saved us so much time. Highly recommend Flyttella!",
+      "testimonialAuthor": "Maria",
+      "includesTitle": "What is included?",
+      "includesDescription": "With our packing help you get professional packing with quality materials, clear labeling by room, protection for fragile items and optional unpacking. We can also combine packing help with household moving, storage or move-out cleaning. Everything at clear fixed prices with no hidden fees.",
+      "bookingTitle": "How do I book packing help?",
+      "bookingDescription": "Book packing help easily by contacting us. For a faster quote, please share address, approximate living area, which rooms to pack and preferred date. You can also attach photos so we can assess the scope directly. We get back quickly with price and confirmation."
+    },
+    "about": {
+      "title": "About Flyttella",
+      "description1": "Flyttella is Stockholm's leading company for professional packing help and moving services. With over 8 years of experience we help both private customers and businesses pack safely and efficiently before moves across Stockholm.",
+      "description2": "Our team of experienced movers specializes in safe packing — from kitchens and wardrobes to electronics and fragile items. We use quality packing materials and clear routines so everything arrives undamaged.",
+      "description3": "As part of our full range of moving services we also offer household moving, carrying help, storage, assembly and move-out cleaning. Our goal is to make packing and moving simple, safe and efficient with transparent pricing and professional service.",
+      "readMore": "Read more",
+      "readMoreAbout": "Read more about us"
+    },
+    "reviews": {
+      "title": "What do our customers say?",
+      "subtitle": "Reliable and professional packing help",
+      "description": "We have helped thousands of customers with safe and professional packing before moves. Our customers appreciate our thoroughness, clear labeling and that we save them time and stress. At Flyttella you get professional packing help focused on satisfaction and peace of mind."
+    },
+    "cta": {
+      "title": "Ready to book a move?",
+      "subtitle": "Get a fast and free quote for your move",
+      "button": "Get a free quote"
+    },
+    "services": {
+      "title": "Our other main services",
+      "flyttstadning": {
+        "title": "Moving Cleaning",
+        "description": "We guarantee a thorough moving cleaning that meets all requirements. Our professional cleaning service ensures your old home is left in perfect condition.",
+        "descriptionExtended": "Our moving cleaning follows established industry standards and includes everything from kitchen and bathroom to window cleaning and details. We use eco-friendly products and provide a 14-day cleaning guarantee so you can feel completely secure."
+      },
+      "bohagsflytt": {
+        "title": "Household Moving",
+        "description": "Professional move of your entire household. We take care of everything from small furniture to large pianos with care and precision.",
+        "descriptionExtended": "We offer packing and unpacking as well as assembly and disassembly of furniture - everything to make your move as simple and comfortable as possible. We use quality materials and have experience with all types of moves. With our service you get a stress-free move where everything is handled professionally."
+      },
+      "magasinering": {
+        "title": "Storage",
+        "description": "Secure storage of your household goods in dry, alarmed spaces. We can also help you with packing before we store your things, always with focus on safe and careful handling.",
+        "descriptionMobile": "We help with labeling and organization for easier return delivery.",
+        "descriptionExtended": "Storage is perfect for moving, renovation or longer stays abroad. Our experienced staff use quality packing materials and ensure everything is packed correctly for long-term storage. We can also help with labeling of boxes and inventory list for smooth return delivery."
+      },
+      "allServices": {
+        "title": "Our services",
+        "description": "We offer a complete range of moving and cleaning services to make your move and cleaning as smooth as possible. From household moving and moving cleaning to special services like heavy lifting and storage.",
+        "movingServices": "See all our moving services",
+        "cleaningServices": "See all our cleaning services"
+      }
+    },
+    "experience": {
+      "title": "Our experience",
+      "packhjalp": "Packing help",
+      "packhjalpCount": "4000+",
+      "packhjalpDesc": "Completed packing jobs",
+      "moves": "Moves",
+      "movesCount": "8000+",
+      "movesDesc": "Completed moves",
+      "cleanings": "Cleanings",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Completed cleanings",
+      "localExperienceTitle": "Local experience in Stockholm",
+      "localExperienceDesc1": "We have helped thousands of customers with packing help in Stockholm and the surrounding area. Our local knowledge ensures we can handle all types of packing jobs, from small apartments to large villas and offices.",
+      "localExperienceDesc2": "With over 8 years of experience we have built a reputation for quality, reliability and customer satisfaction. We understand local conditions and can offer tailored solutions for every need.",
+      "readMore": "Read more"
+    },
+    "process": {
+      "title": "Our packing help process",
+      "description": "Our packing process is designed to be simple, safe and efficient. We follow clear routines for labeling, protection and handling so everything is ready for transport.",
+      "pricingDescription": "Our quotes are always based on your specific needs. We consider living area, amount of belongings, which rooms to pack and whether unpacking is needed. We can also inspect the site if required. All prices are fixed with no hidden fees.",
+      "howItWorks": "How our packing help works",
+      "steps": [
+        {
+          "title": "Contact us",
+          "description": "Contact us for a free packing help quote"
+        },
+        {
+          "title": "Get a quote",
+          "description": "Receive a fast free quote for your packing help"
+        },
+        {
+          "title": "Confirmation",
+          "description": "Confirm the booking and get all the details"
+        },
+        {
+          "title": "Personal contact",
+          "description": "We contact you to confirm details and plan the packing"
+        },
+        {
+          "title": "Packing",
+          "description": "We pack, protect and label your belongings"
+        },
+        {
+          "title": "Happy customer",
+          "description": "Everything is packed and ready — you are happy!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Read more about packing help in Stockholm",
+      "subtitle": "Get useful tips and advice for smooth packing",
+      "category": "Packing help",
+      "readTime": "5 min read",
+      "postTitle": "What to consider when booking packing help before a move",
+      "postDescription": "Good planning makes packing simple and safe. We cover key steps — from what to pack first to labeling, materials and how to save time before moving day.",
+      "readMore": "Read more",
+      "allArticles": "See all articles"
+    },
+    "faq": {
+      "title": "Common questions about packing help",
+      "questions": [
+        {
+          "question": "How should I prepare for packing help?",
+          "answer": "Sort what you will not take with you, clear personal items from cabinets and make sure we have free access to the rooms. If you have especially fragile or valuable items, mark them clearly and tell us."
+        },
+        {
+          "question": "What is usually included in packing help?",
+          "answer": "Packing help means we pack your belongings with the right materials, protect fragile items and label boxes by room. We can also offer unpacking at the new address as an add-on."
+        },
+        {
+          "question": "How long does packing help take?",
+          "answer": "Time depends on living area, amount of belongings and how many rooms need packing. An apartment can often be packed in a day, while larger homes may take longer. We always adapt to your needs."
+        },
+        {
+          "question": "Can you pack the whole home or only certain rooms?",
+          "answer": "Both. We can pack the entire home or focus on selected rooms, for example kitchen and living room, while you pack personal items yourself."
+        }
+      ],
+      "moreQuestions": "Have more questions?",
+      "allFaq": "See all FAQs"
     }
   }
 }

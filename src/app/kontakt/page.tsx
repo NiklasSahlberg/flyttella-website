@@ -391,6 +391,7 @@ export default function KontaktPage() {
                     <option value="montering">{locale === 'sv' ? 'Montering' : 'Assembly'}</option>
                     <option value="piano">{locale === 'sv' ? 'Piano / Tunglyft' : 'Piano / Heavy lifting'}</option>
                     <option value="barhjalp">{locale === 'sv' ? 'Bärhjälp' : 'Carrying help'}</option>
+                    <option value="packhjalp">{locale === 'sv' ? 'Packhjälp' : 'Packing help'}</option>
                     <option value="bortforsling">{locale === 'sv' ? 'Bortforsling' : 'Removal'}</option>
                     <option value="magasinering">{locale === 'sv' ? 'Magasinering' : 'Storage'}</option>
                     <option value="annat">{locale === 'sv' ? 'Annat' : 'Other'}</option>
@@ -530,6 +531,7 @@ export default function KontaktPage() {
                     <option value="montering">{locale === 'sv' ? 'Montering' : 'Assembly'}</option>
                     <option value="piano">{locale === 'sv' ? 'Piano / Tunglyft' : 'Piano / Heavy lifting'}</option>
                     <option value="barhjalp">{locale === 'sv' ? 'Bärhjälp' : 'Carrying help'}</option>
+                    <option value="packhjalp">{locale === 'sv' ? 'Packhjälp' : 'Packing help'}</option>
                     <option value="bortforsling">{locale === 'sv' ? 'Bortforsling' : 'Removal'}</option>
                     <option value="magasinering">{locale === 'sv' ? 'Magasinering' : 'Storage'}</option>
                     <option value="annat">{locale === 'sv' ? 'Annat' : 'Other'}</option>

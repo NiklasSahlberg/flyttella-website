@@ -61,6 +61,12 @@ export default function TjansterPage() {
       href: '/barhjalp'
     },
     {
+      icon: '📦',
+      title: t('tjanster.services.packhjalp.title'),
+      description: t('tjanster.services.packhjalp.description'),
+      href: '/packhjalp'
+    },
+    {
       icon: '🎹',
       title: t('tjanster.services.pianoTunglyft.title'),
       description: t('tjanster.services.pianoTunglyft.description'),

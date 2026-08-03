@@ -237,6 +237,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/packhjalp" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
+                  {t('header.services.packhjalp')}
+                </Link>
+              </li>
+              <li>
                 <Link href="/piano-tunglyft" className="text-xs md:text-sm text-gray-200 hover:text-[#10B981] transition-colors">
                   {t('header.services.pianoTunglyft')}
                 </Link>

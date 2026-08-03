@@ -387,7 +387,7 @@ export default function Utlandsflytt() {
                   <p className="hidden md:block text-lg text-gray-100 mb-8 relative">{t('utlandsflytt.services.packhjälp.descriptionExtended')}</p>
                   <div className="mt-auto relative">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-                      <Link href="/barhjalp" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">
+                      <Link href="/packhjalp" className="inline-flex items-center bg-white text-[#0F172A] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group md:text-lg">
 {t('utlandsflytt.services.packhjälp.readMore')}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

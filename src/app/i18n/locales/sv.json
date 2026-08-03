@@ -490,7 +490,8 @@
       "visningsstadning": "Visningsstädning",
       "dodsboStadning": "Dödsbostädning",
       "kontorsflytt": "Kontorsflytt",
-      "bemanning": "Bemanning och underentreprenad"
+      "bemanning": "Bemanning och underentreprenad",
+      "packhjalp": "Packhjälp"
     }
   },
   "form": {
@@ -2896,6 +2897,10 @@
       "montering": {
         "title": "Montering",
         "description": "Montering och demontering av möbler. Vi tar hand om IKEA-möbler och andra möbelsystem."
+      },
+      "packhjalp": {
+        "title": "Packhjälp",
+        "description": "Professionell packning av ditt bohag. Vi packar säkert, märker tydligt och sparar dig tid inför flytten."
       }
     },
     "cta": {
@@ -6115,7 +6120,7 @@
     },
     "blog": {
       "title": "Vad bör du tänka på när du väljer en seriös flyttfirma i Stockholm",
-      "description": "Stäm av portkoder, källar- och vindförråd, reservera parkering på båda adresserna och säkra nyckelbrickor – särskilt viktigt vid flytt mellan olika stadsdelar."
+      "description": "Att välja rätt flyttfirma är avgörande för en smidig flytt. I denna guide går vi igenom de viktigaste faktorerna du bör tänka på – från försäkringar och tillstånd till kundrecensioner och pristransparens."
     },
     "processSection": {
       "title": "Vår process",
@@ -8596,6 +8601,172 @@
       "readMore": "Läs mer",
       "personalImageAlt": "Flyttella personal - Flytt till Nederländerna",
       "aboutImageAlt": "Om Flyttella"
+    }
+  },
+  "packhjalp": {
+    "sidebar": {
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "readMore": "Läs mer"
+      },
+      "montering": {
+        "title": "Montering",
+        "description": "Montering och demontering av möbler och inredning – rätt verktyg och varsam hantering.",
+        "readMore": "Läs mer"
+      },
+      "tunglyft": {
+        "title": "Tunglyft",
+        "description": "Säker hantering av tunga och storskaliga föremål som piano, kassaskåp och stora möbler.",
+        "readMore": "Läs mer"
+      }
+    },
+    "hero": {
+      "title": "Packhjälp",
+      "titleDesktop": "Packhjälp i Stockholm",
+      "subtitle": "Professionell packhjälp för en stressfri flytt i Stockholm.",
+      "description": "Vi erbjuder pålitlig packhjälp för privatpersoner och företag. Våra erfarna medarbetare packar dina tillhörigheter säkert, märker kartonger tydligt och använder kvalitativa packmaterial.",
+      "ctaTitle": "Kontakta oss för offert",
+      "ctaDescription": "Berätta kort vad du behöver hjälp att packa så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.",
+      "ctaButton": "Kontakta oss",
+      "readMore": "Läs mer"
+    },
+    "content": {
+      "whatIsTitle": "Vad är packhjälp?",
+      "whatIsDescription": "Packhjälp innebär att vi hjälper dig att packa ditt bohag säkert och effektivt inför flytt. Vi packar kök, kläder, böcker, elektronik och ömtåliga föremål, märker lådor per rum och ser till att allt är redo för transport. Tjänsten passar både vid kompletta flyttar och när du bara behöver hjälp med delar av hemmet.",
+      "pricingTitle": "Vad kostar packhjälp?",
+      "pricingDescription1": "Priset för packhjälp beror främst på boyta, mängd bohag, hur mycket som ska packas och om du även vill ha uppackning på nya adressen. Vi lämnar alltid ett tydligt fast pris utan dolda avgifter innan vi startar arbetet. Vid behov kan vi göra en snabb besiktning på plats eller bedöma utifrån bilder.",
+      "pricingDescription2": "Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett fast pris.",
+      "pricingTestimonial": "Fantastisk packhjälp! De packade hela hemmet noggrant, märkte allt tydligt och sparade oss massor av tid. Rekommenderar Flyttella varmt!",
+      "testimonialAuthor": "Maria",
+      "includesTitle": "Vad ingår i tjänsten?",
+      "includesDescription": "Med vår packhjälp får du professionell packning med kvalitativa material, tydlig märkning per rum, skydd av ömtåliga föremål och möjlighet till uppackning. Vi kan även kombinera packhjälp med bohagsflytt, magasinering eller flyttstädning. Allt till tydliga, fasta priser utan dolda avgifter.",
+      "bookingTitle": "Hur bokar jag packhjälp?",
+      "bookingDescription": "Boka packhjälp enkelt genom att kontakta oss. För snabbare offert, ange gärna adress, ungefärlig boyta, vilka rum som ska packas och önskat datum. Du kan även bifoga bilder så kan vi bedöma omfattningen direkt. Vi återkommer snabbt med pris och bekräftelse."
+    },
+    "about": {
+      "title": "Om Flyttella",
+      "description1": "Flyttella är Stockholms ledande företag för professionell packhjälp och flyttjänster. Med över 8 års erfarenhet hjälper vi både privatpersoner och företag att packa tryggt och effektivt inför flytt i hela Stockholm.",
+      "description2": "Vårt team av erfarna flyttare är specialiserade på säker packning – från kök och garderober till elektronik och ömtåliga föremål. Vi använder kvalitativa packmaterial och följer tydliga rutiner så att allt kommer fram oskadat.",
+      "description3": "Som en del av våra omfattande flyttjänster erbjuder vi också bohagsflytt, bärhjälp, magasinering, montering och flyttstädning. Vårt mål är att göra packning och flytt enkel, säker och effektiv med transparenta priser och professionell service.",
+      "readMore": "Läs mer",
+      "readMoreAbout": "Läs mer om oss"
+    },
+    "reviews": {
+      "title": "Vad tycker våra kunder om oss?",
+      "subtitle": "En trygg och professionell packhjälp",
+      "description": "Vi har hjälpt tusentals kunder med säker och professionell packning inför flytt. Våra kunder uppskattar vår noggrannhet, tydliga märkning och att vi sparar dem tid och stress. Hos Flyttella får du professionell packhjälp med fokus på kundnöjdhet och trygghet."
+    },
+    "cta": {
+      "title": "Redo att boka flytt?",
+      "subtitle": "Få en snabb och gratis offert på din flytt",
+      "button": "Få gratis offert"
+    },
+    "services": {
+      "title": "Våra andra huvudtjänster",
+      "flyttstadning": {
+        "title": "Flyttstädning",
+        "description": "Vi garanterar en grundlig flyttstädning som uppfyller alla krav. Vår professionella städservice säkerställer att din gamla bostad lämnas i perfekt skick.",
+        "descriptionExtended": "Vår flyttstädning följer etablerade branschstandarder och omfattar allt från kök och badrum till fönsterputs och detaljer. Vi använder miljövänliga produkter och lämnar 14 dagars städgaranti så att du kan känna dig helt trygg."
+      },
+      "bohagsflytt": {
+        "title": "Bohagsflytt",
+        "description": "Professionell flytt av hela ditt bohag. Vi tar hand om allt från små möbler till stora pianon med omsorg och precision.",
+        "descriptionExtended": "Vi erbjuder packning och upppackning samt montering och nedmontering av möbler – allt för att din flytt ska bli så enkel och bekväm som möjligt. Vi använder kvalitativa material och har erfarenhet av alla typer av flyttar. Med vår service får du en stressfri flytt där allt hanteras professionellt."
+      },
+      "magasinering": {
+        "title": "Magasinering",
+        "description": "Trygg förvaring av ditt bohag i torra, larmade utrymmen. Vi kan även hjälpa dig med packning innan vi lagrar dina saker, alltid med fokus på säker och omsorgsfull hantering.",
+        "descriptionMobile": "Vi hjälper med märkning och organisering för enklare återleverans.",
+        "descriptionExtended": "Magasinering är perfekt vid flytt, renovering eller längre vistelser utomlands. Våra erfarna medarbetare använder kvalitativa packmaterial och säkerställer att allt packas korrekt för långsiktig förvaring. Vi kan även hjälpa till med märkning av kartonger och inventarielista för smidig återleverans."
+      },
+      "allServices": {
+        "title": "Våra tjänster",
+        "description": "Vi erbjuder ett komplett utbud av flytt- och städtjänster för att göra din flytt och städning så smidig som möjligt. Från bohagsflytt och flyttstädning till specialtjänster som tunglyft och magasinering.",
+        "movingServices": "Se alla våra flyttjänster",
+        "cleaningServices": "Se alla våra städtjänster"
+      }
+    },
+    "experience": {
+      "title": "Vår erfarenhet",
+      "packhjalp": "Packhjälp",
+      "packhjalpCount": "4000+",
+      "packhjalpDesc": "Genomförda packuppdrag",
+      "moves": "Flyttar",
+      "movesCount": "8000+",
+      "movesDesc": "Genomförda flyttar",
+      "cleanings": "Städningar",
+      "cleaningsCount": "7000+",
+      "cleaningsDesc": "Genomförda städningar",
+      "localExperienceTitle": "Lokal erfarenhet i Stockholm",
+      "localExperienceDesc1": "Vi har hjälpt tusentals kunder med packhjälp i Stockholm och omnejd. Vår lokala kunskap och erfarenhet säkerställer att vi kan hantera alla typer av packuppdrag, från små lägenheter till stora villor och kontor.",
+      "localExperienceDesc2": "Med över 8 års erfarenhet har vi byggt upp ett rykte för kvalitet, pålitlighet och kundnöjdhet. Vi förstår de lokala förutsättningarna och kan erbjuda skräddarsydda lösningar för alla behov.",
+      "readMore": "Läs mer"
+    },
+    "process": {
+      "title": "Vår process för packhjälp",
+      "description": "Vår packprocess är utformad för att vara enkel, säker och effektiv. Vi följer tydliga rutiner för märkning, skydd och hantering så att allt är redo för transport.",
+      "pricingDescription": "Våra offerter är alltid baserade på dina specifika behov och omständigheter. Vi tar hänsyn till faktorer som boyta, mängd bohag, vilka rum som ska packas och om uppackning önskas. Vi kan även besikta platsen vid behov. Alla priser är fasta utan dolda avgifter.",
+      "howItWorks": "Så fungerar vår packhjälp",
+      "steps": [
+        {
+          "title": "Kontakta oss",
+          "description": "Kontakta oss för en kostnadsfri offert på packhjälp"
+        },
+        {
+          "title": "Få offert",
+          "description": "Få en snabb och kostnadsfri offert på din packhjälp"
+        },
+        {
+          "title": "Bekräftelse",
+          "description": "Bekräfta bokning och få all information"
+        },
+        {
+          "title": "Personlig kontakt",
+          "description": "Vi kontaktar dig för att bekräfta detaljer och planera packningen"
+        },
+        {
+          "title": "Packning",
+          "description": "Vi packar, skyddar och märker dina tillhörigheter"
+        },
+        {
+          "title": "Nöjd kund",
+          "description": "Allt är packat och redo – du är nöjd!"
+        }
+      ]
+    },
+    "blog": {
+      "title": "Läs mer om packhjälp i Stockholm",
+      "subtitle": "Få värdefulla tips och råd för en smidig packning",
+      "category": "Packhjälp",
+      "readTime": "5 min läsning",
+      "postTitle": "Vad bör du tänka på när du bokar packhjälp inför flytt",
+      "postDescription": "Rätt planering gör packningen enkel och trygg. Vi går igenom viktiga steg – från vad som bör packas först till märkning, material och hur du sparar tid inför flyttdagen.",
+      "readMore": "Läs mer",
+      "allArticles": "Se alla artiklar"
+    },
+    "faq": {
+      "title": "Vanliga frågor om packhjälp",
+      "questions": [
+        {
+          "question": "Hur förbereder jag mig bäst inför packhjälp?",
+          "answer": "Sortera gärna det du inte ska ta med, töm skåp på det mest personliga och se till att vi har fri tillgång till rummen. Om du har särskilt ömtåliga eller värdefulla föremål, markera dessa tydligt och berätta för oss."
+        },
+        {
+          "question": "Vad ingår vanligtvis i packhjälp?",
+          "answer": "Packhjälp innebär att vi packar dina tillhörigheter med rätt material, skyddar ömtåligt och märker kartonger per rum. Vi kan även erbjuda uppackning på nya adressen som tillval."
+        },
+        {
+          "question": "Hur lång tid tar packhjälp?",
+          "answer": "Tidsåtgången beror på boyta, mängd bohag och hur många rum som ska packas. En lägenhet kan ofta packas på en dag, medan större hem kan kräva mer tid. Vi anpassar alltid arbetet efter dina behov."
+        },
+        {
+          "question": "Kan ni packa hela hemmet eller bara vissa rum?",
+          "answer": "Både och. Vi kan packa hela bostaden eller fokusera på utvalda rum, till exempel kök och vardagsrum, medan du packar det personliga själv."
+        }
+      ],
+      "moreQuestions": "Har du fler frågor?",
+      "allFaq": "Se alla vanliga frågor"
     }
   }
 }

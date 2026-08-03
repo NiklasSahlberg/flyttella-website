@@ -139,6 +139,9 @@ export default function Header() {
     if (pathname === '/bemanning') {
       return '/kontakt?scroll=message&service=bemanning';
     }
+    if (pathname === '/packhjalp') {
+      return '/kontakt?scroll=message&service=packhjalp';
+    }
     return '/offert';
   };
 
@@ -318,6 +321,10 @@ export default function Header() {
                         <Link href="/barhjalp" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">💪</span>
                           <span>{t('header.services.barhjalp')}</span>
+                        </Link>
+                        <Link href="/packhjalp" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
+                          <span className="text-lg mr-3">📦</span>
+                          <span>{t('header.services.packhjalp')}</span>
                         </Link>
                         <Link href="/piano-tunglyft" onClick={() => setIsServicesOpen(false)} className="flex items-center px-4 py-2.5 text-base text-[#0F172A] hover:bg-gray-50  transition-colors">
                           <span className="text-lg mr-3">🎹</span>
@@ -724,6 +731,7 @@ export default function Header() {
                      <div className="space-y-1">
                        <Link href="/bohagsflytt" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.bohagsflytt')}</Link>
                        <Link href="/barhjalp" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.barhjalp')}</Link>
+                       <Link href="/packhjalp" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.packhjalp')}</Link>
                        <Link href="/piano-tunglyft" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.pianoTunglyft')}</Link>
                        <Link href="/bortforsling" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.bortforsling')}</Link>
                        <Link href="/magasinering" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-2xl text-[#0F172A]">{t('header.services.magasinering')}</Link>

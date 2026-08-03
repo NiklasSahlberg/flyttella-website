@@ -2153,7 +2153,7 @@ export default function FlyttfirmaAkersbergaPage() {
                       className="inline-block"
                     >
                       <Link 
-                        href="/barhjalp" 
+                        href="/packhjalp" 
                         className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity font-medium group text-lg"
                       >
                         {t('alvsjo.servicesSection.readMore')}
