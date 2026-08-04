@@ -288,9 +288,9 @@ export default function PackhjalpPage() {
 							<div
 								className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
 								style={{
-									backgroundImage: 'url(/packing_tips.webp)',
+									backgroundImage: 'url(/coupleMoving.png)',
 									backgroundSize: 'cover',
-									backgroundPosition: 'center 30%'
+									backgroundPosition: 'center 40%'
 								}}
 							/>
 							<div className="relative z-10 text-center px-4">
@@ -403,7 +403,7 @@ export default function PackhjalpPage() {
 									{ title: '', content: (<div className="w-full max-w-6xl mx-auto flex justify-center my-8 md:my-12"><Image src="/smidigflyttdag.jpg" alt="Packhjälp för flytt i Stockholm" width={1200} height={400} className="w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-cover" style={{ objectPosition: 'center 35%' }} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw" /></div>), icon: '' },
 									{ title: t('packhjalp.content.pricingTitle'), content: (<div className="px-4 md:px-0">
 											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mb-4">{t('packhjalp.content.pricingDescription1')}</p>
-											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('packhjalp.content.pricingDescription2')} <Link href="/kontakt?scroll=message&service=packhjalp" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">{t('common.contactUs')}</Link>.</p>
+											<p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">{t('packhjalp.content.pricingDescription2')} <Link href="/offert" className="text-[#10B981] hover:text-[#059669] underline font-medium transition-colors duration-300">{t('packhjalp.content.getQuoteLink')}</Link>.</p>
 											
 											<div className="my-12 md:my-16 text-left md:text-center px-4">
 												<p className="text-xl md:text-2xl lg:text-3xl italic font-bold" style={{ color: '#3b82f6' }}>

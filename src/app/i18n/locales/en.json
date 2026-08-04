@@ -8626,9 +8626,9 @@
       "titleDesktop": "Packing help in Stockholm",
       "subtitle": "Professional packing help for a stress-free move in Stockholm.",
       "description": "We offer reliable packing help for private customers and businesses. Our experienced team packs your belongings safely, labels boxes clearly and uses quality packing materials.",
-      "ctaTitle": "Contact us for a quote",
-      "ctaDescription": "Tell us briefly what you need packed and we will get back quickly with price and timing. We can also do an on-site assessment if needed.",
-      "ctaButton": "Contact us",
+      "ctaTitle": "Get a quote",
+      "ctaDescription": "Send a request with a short description and preferably photos and we will get back quickly with a fixed price.",
+      "ctaButton": "Get a quote",
       "readMore": "Read more"
     },
     "content": {
@@ -8642,7 +8642,8 @@
       "includesTitle": "What is included?",
       "includesDescription": "With our packing help you get professional packing with quality materials, clear labeling by room, protection for fragile items and optional unpacking. We can also combine packing help with household moving, storage or move-out cleaning. Everything at clear fixed prices with no hidden fees.",
       "bookingTitle": "How do I book packing help?",
-      "bookingDescription": "Book packing help easily by contacting us. For a faster quote, please share address, approximate living area, which rooms to pack and preferred date. You can also attach photos so we can assess the scope directly. We get back quickly with price and confirmation."
+      "bookingDescription": "Book packing help easily by contacting us. For a faster quote, please share address, approximate living area, which rooms to pack and preferred date. You can also attach photos so we can assess the scope directly. We get back quickly with price and confirmation.",
+      "getQuoteLink": "Get a quote"
     },
     "about": {
       "title": "About Flyttella",

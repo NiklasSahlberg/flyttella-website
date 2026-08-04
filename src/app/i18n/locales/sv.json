@@ -8626,9 +8626,9 @@
       "titleDesktop": "Packhjälp i Stockholm",
       "subtitle": "Professionell packhjälp för en stressfri flytt i Stockholm.",
       "description": "Vi erbjuder pålitlig packhjälp för privatpersoner och företag. Våra erfarna medarbetare packar dina tillhörigheter säkert, märker kartonger tydligt och använder kvalitativa packmaterial.",
-      "ctaTitle": "Kontakta oss för offert",
-      "ctaDescription": "Berätta kort vad du behöver hjälp att packa så återkommer vi snabbt med pris och tid. Vi kan även besikta på plats vid behov.",
-      "ctaButton": "Kontakta oss",
+      "ctaTitle": "Få offert",
+      "ctaDescription": "Skicka en förfrågan med kort beskrivning och gärna bilder så återkommer vi snabbt med ett fast pris.",
+      "ctaButton": "Få offert",
       "readMore": "Läs mer"
     },
     "content": {
@@ -8642,7 +8642,8 @@
       "includesTitle": "Vad ingår i tjänsten?",
       "includesDescription": "Med vår packhjälp får du professionell packning med kvalitativa material, tydlig märkning per rum, skydd av ömtåliga föremål och möjlighet till uppackning. Vi kan även kombinera packhjälp med bohagsflytt, magasinering eller flyttstädning. Allt till tydliga, fasta priser utan dolda avgifter.",
       "bookingTitle": "Hur bokar jag packhjälp?",
-      "bookingDescription": "Boka packhjälp enkelt genom att kontakta oss. För snabbare offert, ange gärna adress, ungefärlig boyta, vilka rum som ska packas och önskat datum. Du kan även bifoga bilder så kan vi bedöma omfattningen direkt. Vi återkommer snabbt med pris och bekräftelse."
+      "bookingDescription": "Boka packhjälp enkelt genom att kontakta oss. För snabbare offert, ange gärna adress, ungefärlig boyta, vilka rum som ska packas och önskat datum. Du kan även bifoga bilder så kan vi bedöma omfattningen direkt. Vi återkommer snabbt med pris och bekräftelse.",
+      "getQuoteLink": "Få offert"
     },
     "about": {
       "title": "Om Flyttella",
