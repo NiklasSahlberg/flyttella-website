@@ -150,21 +150,6 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
   const [customItem, setCustomItem] = useState({ type: "", weight: "" });
   const [customItemError, setCustomItemError] = useState("");
-  const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
-  const [lastValidCurrentAddress, setLastValidCurrentAddress] = useState("");
-  const [lastValidNewAddress, setLastValidNewAddress] = useState("");
-  
-  // Custom address autocomplete states
-  const [currentAddressSuggestions, setCurrentAddressSuggestions] = useState<any[]>([]);
-  const [newAddressSuggestions, setNewAddressSuggestions] = useState<any[]>([]);
-  const [showCurrentSuggestions, setShowCurrentSuggestions] = useState(false);
-  const [showNewSuggestions, setShowNewSuggestions] = useState(false);
-  const [isLoadingCurrentSuggestions, setIsLoadingCurrentSuggestions] = useState(false);
-  const [isLoadingNewSuggestions, setIsLoadingNewSuggestions] = useState(false);
-  
-  // Track if addresses were selected from dropdown (not manually typed)
-  const [isCurrentAddressValid, setIsCurrentAddressValid] = useState(false);
-  const [isNewAddressValid, setIsNewAddressValid] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     serviceType: '',
     name: "",
@@ -231,100 +216,6 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
-  
-  // Custom address search function using Swedish address API
-  const searchAddresses = async (query: string, isCurrentAddress: boolean = true) => {
-    if (query.length < 2) {
-      if (isCurrentAddress) {
-        setCurrentAddressSuggestions([]);
-        setShowCurrentSuggestions(false);
-      } else {
-        setNewAddressSuggestions([]);
-        setShowNewSuggestions(false);
-      }
-      return;
-    }
-
-    if (isCurrentAddress) {
-      setIsLoadingCurrentSuggestions(true);
-    } else {
-      setIsLoadingNewSuggestions(true);
-    }
-
-    try {
-      const response = await fetch(
-        `https://ovuvdmhqcg.execute-api.eu-central-1.amazonaws.com/production/search/addresses?country=SE&query=${encodeURIComponent(query)}&limit=8`
-      );
-      const data = await response.json();
-      
-      if (data.success && data.data) {
-        const suggestions = data.data.map((item: any) => ({
-          display_name: item.text,
-          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}`,
-          address_components: {
-            street_name: item.street,
-            street_number: item.streetNumber || '',
-            city: item.postarea,
-            postcode: item.postcode || '',
-            municipality: item.municipality || '',
-            county: item.county || ''
-          },
-          full_text: item.text
-        }));
-
-        if (isCurrentAddress) {
-          setCurrentAddressSuggestions(suggestions);
-          setShowCurrentSuggestions(suggestions.length > 0);
-        } else {
-          setNewAddressSuggestions(suggestions);
-          setShowNewSuggestions(suggestions.length > 0);
-        }
-      } else {
-        if (isCurrentAddress) {
-          setCurrentAddressSuggestions([]);
-          setShowCurrentSuggestions(false);
-        } else {
-          setNewAddressSuggestions([]);
-          setShowNewSuggestions(false);
-        }
-      }
-    } catch (error) {
-      console.error('Error fetching address suggestions:', error);
-      if (isCurrentAddress) {
-        setCurrentAddressSuggestions([]);
-        setShowCurrentSuggestions(false);
-      } else {
-        setNewAddressSuggestions([]);
-        setShowNewSuggestions(false);
-      }
-    } finally {
-      if (isCurrentAddress) {
-        setIsLoadingCurrentSuggestions(false);
-      } else {
-        setIsLoadingNewSuggestions(false);
-      }
-    }
-  };
-
-  // Debounced search
-  const debounceSearch = useRef<NodeJS.Timeout>();
-  const handleAddressSearch = (query: string, isCurrentAddress: boolean = true) => {
-    if (debounceSearch.current) {
-      clearTimeout(debounceSearch.current);
-    }
-    debounceSearch.current = setTimeout(() => {
-      searchAddresses(query, isCurrentAddress);
-    }, 300);
-  };
-
-  // Cleanup debounce on unmount
-  useEffect(() => {
-    return () => {
-      if (debounceSearch.current) {
-        clearTimeout(debounceSearch.current);
-      }
-    };
-  }, []);
 
   useEffect(() => {
     if (currentAddressRef.current) {
@@ -361,12 +252,6 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
         needsCleaning: true, // Set flyttstädning to "Ja" since they came from the cleaning form
         ...addressData // Prefill address data from cleaning form
       }));
-      
-      // If we have address data, mark it as valid since it came from the cleaning form
-      if (addressData.currentAddress) {
-        setIsCurrentAddressValid(true);
-        setLastValidCurrentAddress(addressData.currentAddress);
-      }
       
       setShowSteps(true);
       setStep(1);
@@ -530,9 +415,6 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     if (!formData.currentAddress || !formData.currentAddress.trim()) {
       newErrors.currentAddress = t('hero.form.validation.enterValidAddress');
       isValid = false;
-    } else if (!isCurrentAddressValid) {
-      newErrors.currentAddress = t('hero.form.validation.selectAddressFromList');
-      isValid = false;
     }
     if (!formData.apartmentNumber || !formData.apartmentNumber.trim()) {
       newErrors.apartmentNumber = t('hero.form.validation.enterStreetNumber');
@@ -638,9 +520,6 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
     let isValid = true;
     if (!formData.newAddress || !formData.newAddress.trim()) {
       newErrors.newAddress = t('hero.form.validation.enterNewAddress');
-      isValid = false;
-    } else if (!isNewAddressValid) {
-      newErrors.newAddress = t('hero.form.validation.selectNewAddressFromList');
       isValid = false;
     }
     if (!formData.toApartmentNumber || !formData.toApartmentNumber.trim()) {
@@ -1480,86 +1359,16 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         onChange={(e) => {
                           setFormData({ ...formData, currentAddress: e.target.value });
                           setErrors({ ...errors, currentAddress: "" });
-                          setIsCurrentAddressValid(false); // Invalidate when manually edited
-                          handleAddressSearch(e.target.value, true);
-                        }}
-                        onFocus={() => {
-                          if (formData.currentAddress.length >= 2) {
-                            setShowCurrentSuggestions(true);
-                          }
-                        }}
-                        onBlur={() => {
-                          // Delay hiding suggestions to allow for selection
-                          setTimeout(() => setShowCurrentSuggestions(false), 200);
                         }}
                         placeholder={t('hero.form.placeholders.startTypingAddress')}
                         required
                         className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] text-lg ${
                           errors.currentAddress 
                             ? "border-red-500" 
-                            : isCurrentAddressValid 
-                              ? "border-green-500" 
-                              : "border-gray-300"
+                            : "border-gray-300"
                         }`}
                         style={{ WebkitOverflowScrolling: 'touch' }}
                       />
-                      
-
-                      
-                      {/* Custom dropdown */}
-                      {showCurrentSuggestions && (
-                        <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
-                          {isLoadingCurrentSuggestions && (
-                            <div className="p-4 text-center text-gray-500">
-                              {t('hero.form.searchingAddresses')}
-                            </div>
-                          )}
-                          {!isLoadingCurrentSuggestions && currentAddressSuggestions.length === 0 && formData.currentAddress.length >= 2 && (
-                            <div className="p-4 text-center text-gray-500">
-                              {t('hero.form.noAddressesFound')}
-                            </div>
-                          )}
-                          {!isLoadingCurrentSuggestions && currentAddressSuggestions.map((suggestion, index) => (
-                            <div
-                              key={index}
-                              className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
-                              onMouseDown={(e) => {
-                                e.preventDefault(); // Prevent blur from firing
-                                
-                                // Create clean address without street number
-                                const streetName = suggestion.address_components.street_name || '';
-                                const city = suggestion.address_components.city || '';
-                                const cleanAddress = `${streetName}, ${city}`;
-                                
-                                setFormData({ 
-                                  ...formData, 
-                                  currentAddress: cleanAddress,
-                                  apartmentNumber: suggestion.address_components.street_number || formData.apartmentNumber,
-                                  postalCode: suggestion.address_components.postcode || formData.postalCode
-                                });
-                                setLastValidCurrentAddress(cleanAddress);
-                                setIsCurrentAddressValid(true); // Mark as valid when selected from dropdown
-                                setShowCurrentSuggestions(false);
-                                setErrors({ 
-                                  ...errors, 
-                                  currentAddress: "",
-                                  apartmentNumber: "",
-                                  postalCode: ""
-                                });
-                              }}
-                            >
-                              <div className="font-medium text-sm text-gray-900">
-                                {suggestion.full_text}
-                              </div>
-                              {suggestion.address_components.postcode && (
-                                <div className="text-xs text-gray-500 mt-1">
-                                  {suggestion.address_components.postcode} {suggestion.address_components.city}
-                                </div>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      )}
                     </div>
                     {errors.currentAddress && (
                       <p className="mt-1 text-base text-red-600">{errors.currentAddress}</p>
@@ -2248,86 +2057,16 @@ export default function FlyttoffertForm({ mode: _mode = 'full', swapServiceOrder
                         onChange={(e) => {
                           setFormData({ ...formData, newAddress: e.target.value });
                           setErrors({ ...errors, newAddress: "" });
-                          setIsNewAddressValid(false); // Invalidate when manually edited
-                          handleAddressSearch(e.target.value, false);
-                        }}
-                        onFocus={() => {
-                          if (formData.newAddress.length >= 2) {
-                            setShowNewSuggestions(true);
-                          }
-                        }}
-                        onBlur={() => {
-                          // Delay hiding suggestions to allow for selection
-                          setTimeout(() => setShowNewSuggestions(false), 200);
                         }}
                         placeholder={t('hero.form.placeholders.startTypingAddress')}
                         required
                         className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent text-[#0F172A] ${
                           errors.newAddress 
                             ? "border-red-500" 
-                            : isNewAddressValid 
-                              ? "border-green-500" 
-                              : "border-gray-300"
+                            : "border-gray-300"
                         }`}
                         style={{ WebkitOverflowScrolling: 'touch' }}
                       />
-                      
-
-                      
-                      {/* Custom dropdown */}
-                      {showNewSuggestions && (
-                        <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
-                          {isLoadingNewSuggestions && (
-                            <div className="p-4 text-center text-gray-500">
-                              {t('hero.form.searchingAddresses')}
-                            </div>
-                          )}
-                          {!isLoadingNewSuggestions && newAddressSuggestions.length === 0 && formData.newAddress.length >= 2 && (
-                            <div className="p-4 text-center text-gray-500">
-                              {t('hero.form.noAddressesFound')}
-                            </div>
-                          )}
-                          {!isLoadingNewSuggestions && newAddressSuggestions.map((suggestion, index) => (
-                            <div
-                              key={index}
-                              className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
-                              onMouseDown={(e) => {
-                                e.preventDefault(); // Prevent blur from firing
-                                
-                                // Create clean address without street number
-                                const streetName = suggestion.address_components.street_name || '';
-                                const city = suggestion.address_components.city || '';
-                                const cleanAddress = `${streetName}, ${city}`;
-                                
-                                setFormData({ 
-                                  ...formData, 
-                                  newAddress: cleanAddress,
-                                  toApartmentNumber: suggestion.address_components.street_number || formData.toApartmentNumber,
-                                  toPostalCode: suggestion.address_components.postcode || formData.toPostalCode
-                                });
-                                setLastValidNewAddress(cleanAddress);
-                                setIsNewAddressValid(true); // Mark as valid when selected from dropdown
-                                setShowNewSuggestions(false);
-                                setErrors({ 
-                                  ...errors, 
-                                  newAddress: "",
-                                  toApartmentNumber: "",
-                                  toPostalCode: ""
-                                });
-                              }}
-                            >
-                              <div className="font-medium text-sm text-gray-900">
-                                {suggestion.full_text}
-                              </div>
-                              {suggestion.address_components.postcode && (
-                                <div className="text-xs text-gray-500 mt-1">
-                                  {suggestion.address_components.postcode} {suggestion.address_components.city}
-                                </div>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      )}
                     </div>
                     {errors.newAddress && (
                       <p className="mt-1 text-sm text-red-600">{errors.newAddress}</p>

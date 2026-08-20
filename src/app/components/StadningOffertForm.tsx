@@ -3,24 +3,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-declare global {
-  interface Window {
-    google: {
-      maps: {
-        places: {
-          Autocomplete: any;
-        };
-      };
-    };
-  }
-}
-
-interface AddressComponent {
-  long_name: string;
-  short_name: string;
-  types: string[];
-}
-
 interface StadningFormData {
   name: string;
   email: string;
@@ -93,15 +75,7 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
-  const [lastValidAddress, setLastValidAddress] = useState("");
   const addressRef = useRef<HTMLInputElement>(null);
-  
-  // Custom address autocomplete states
-  const [addressSuggestions, setAddressSuggestions] = useState<any[]>([]);
-  const [showAddressSuggestions, setShowAddressSuggestions] = useState(false);
-  const [isLoadingAddressSuggestions, setIsLoadingAddressSuggestions] = useState(false);
-  const [isAddressValid, setIsAddressValid] = useState(false);
   const [formData, setFormData] = useState<StadningFormData>({
     name: '',
     email: '',
@@ -153,74 +127,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
   // Debug log for current step
   console.log('Current step:', step);
 
-  // Custom address search function using Swedish address API
-  const searchAddresses = async (query: string) => {
-    if (query.length < 2) {
-      setAddressSuggestions([]);
-      setShowAddressSuggestions(false);
-      return;
-    }
-
-    setIsLoadingAddressSuggestions(true);
-
-    try {
-      const response = await fetch(
-        `https://ovuvdmhqcg.execute-api.eu-central-1.amazonaws.com/production/search/addresses?country=SE&query=${encodeURIComponent(query)}&limit=8`
-      );
-      const data = await response.json();
-      
-      if (data.success && data.data) {
-        const suggestions = data.data.map((item: any) => ({
-          display_name: item.text,
-          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}`,
-          address_components: {
-            street_name: item.street,
-            street_number: item.streetNumber || '',
-            city: item.postarea,
-            postcode: item.postcode || '',
-            municipality: item.municipality || '',
-            county: item.county || ''
-          },
-          full_text: item.text
-        }));
-
-        setAddressSuggestions(suggestions);
-        setShowAddressSuggestions(suggestions.length > 0);
-      } else {
-        setAddressSuggestions([]);
-        setShowAddressSuggestions(false);
-      }
-    } catch (error) {
-      console.error('Error fetching address suggestions:', error);
-      setAddressSuggestions([]);
-      setShowAddressSuggestions(false);
-    } finally {
-      setIsLoadingAddressSuggestions(false);
-    }
-  };
-
-  // Debounced search
-  const debounceSearch = useRef<NodeJS.Timeout>();
-  const handleAddressSearch = (query: string) => {
-    if (debounceSearch.current) {
-      clearTimeout(debounceSearch.current);
-    }
-    debounceSearch.current = setTimeout(() => {
-      searchAddresses(query);
-    }, 300);
-  };
-
-  // Cleanup debounce on unmount
-  useEffect(() => {
-    return () => {
-      if (debounceSearch.current) {
-        clearTimeout(debounceSearch.current);
-      }
-    };
-  }, []);
-
-
-
   useEffect(() => {
     if (addressRef.current) {
       const input = addressRef.current;
@@ -265,8 +171,6 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
     }
     if (!formData.address.trim()) {
       newErrors.address = 'Vänligen ange din adress';
-    } else if (!isAddressValid) {
-      newErrors.address = 'Vänligen välj en adress från listan';
     }
     if (!formData.streetNumber.trim()) {
       newErrors.streetNumber = 'Vänligen ange gatunummer';
@@ -596,85 +500,17 @@ const StadningOffertForm: React.FC<StadningOffertFormProps> = ({ onSubmit, onCan
                         onChange={(e) => {
                           setFormData({ ...formData, address: e.target.value });
                           setErrors({ ...errors, address: "" });
-                          setIsAddressValid(false); // Invalidate when manually edited
-                          handleAddressSearch(e.target.value);
-                        }}
-                        onFocus={() => {
-                          if (formData.address.length >= 2) {
-                            setShowAddressSuggestions(true);
-                          }
-                        }}
-                        onBlur={() => {
-                          // Delay hiding suggestions to allow for selection
-                          setTimeout(() => setShowAddressSuggestions(false), 200);
                         }}
                         placeholder="Börja skriva din adress"
                         required
                         className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent bg-white text-black ${
                           errors.address 
                             ? "border-red-500" 
-                            : isAddressValid 
-                              ? "border-green-500" 
-                              : "border-gray-300"
+                            : "border-gray-300"
                         }`}
                         style={{ backgroundColor: 'white', color: 'black' }}
                         ref={addressRef}
                       />
-                      
-                      {/* Custom dropdown */}
-                      {showAddressSuggestions && (
-                        <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
-                          {isLoadingAddressSuggestions && (
-                            <div className="p-4 text-center text-gray-500">
-                              Söker adresser...
-                            </div>
-                          )}
-                          {!isLoadingAddressSuggestions && addressSuggestions.length === 0 && formData.address.length >= 2 && (
-                            <div className="p-4 text-center text-gray-500">
-                              Inga adresser hittades
-                            </div>
-                          )}
-                          {!isLoadingAddressSuggestions && addressSuggestions.map((suggestion, index) => (
-                            <div
-                              key={index}
-                              className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
-                              onMouseDown={(e) => {
-                                e.preventDefault(); // Prevent blur from firing
-                                
-                                // Create clean address without street number
-                                const streetName = suggestion.address_components.street_name || '';
-                                const city = suggestion.address_components.city || '';
-                                const cleanAddress = `${streetName}, ${city}`;
-                                
-                                setFormData({ 
-                                  ...formData, 
-                                  address: cleanAddress,
-                                  streetNumber: suggestion.address_components.street_number || formData.streetNumber,
-                                  postalCode: suggestion.address_components.postcode || formData.postalCode
-                                });
-                                setLastValidAddress(cleanAddress);
-                                setIsAddressValid(true); // Mark as valid when selected from dropdown
-                                setShowAddressSuggestions(false);
-                                setErrors({ 
-                                  ...errors, 
-                                  address: "",
-                                  streetNumber: "",
-                                  postalCode: ""
-                                });
-                              }}
-                            >
-                              <div className="font-medium text-sm text-gray-900">
-                                {suggestion.full_text}
-                              </div>
-                              {suggestion.address_components.postcode && (
-                                <div className="text-xs text-gray-500 mt-1">
-                                  {suggestion.address_components.postcode} {suggestion.address_components.city}
-                                </div>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      )}
                     </div>
                     {errors.address && (
                       <p className="mt-1 text-sm text-red-600">{errors.address}</p>

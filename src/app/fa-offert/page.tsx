@@ -3,21 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import Script from "next/script";
 import { useRouter } from "next/navigation";
-
-declare global {
-  interface Window {
-    google: {
-      maps: {
-        places: {
-          Autocomplete: any;
-        };
-      };
-    };
-    initAutocomplete: () => void;
-  }
-}
 
 interface HeavyItem {
   type: string;
@@ -103,30 +89,11 @@ interface FormErrors {
   toElevatorSize?: string;
 }
 
-interface AddressComponent {
-  types: string[];
-  long_name: string;
-  short_name: string;
-}
-
 export default function FaOffert() {
   const [step, setStep] = useState(1);
   const [showCustomItemModal, setShowCustomItemModal] = useState(false);
   const [customItem, setCustomItem] = useState({ type: "", weight: "" });
   const [customItemError, setCustomItemError] = useState("");
-  const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
-  const [lastValidCurrentAddress, setLastValidCurrentAddress] = useState("");
-  const [lastValidNewAddress, setLastValidNewAddress] = useState("");
-  
-  // Custom address autocomplete states
-  const [currentAddressSuggestions, setCurrentAddressSuggestions] = useState<any[]>([]);
-  const [newAddressSuggestions, setNewAddressSuggestions] = useState<any[]>([]);
-  const [showCurrentSuggestions, setShowCurrentSuggestions] = useState(false);
-  const [showNewSuggestions, setShowNewSuggestions] = useState(false);
-  const [isLoadingCurrentSuggestions, setIsLoadingCurrentSuggestions] = useState(false);
-  const [isLoadingNewSuggestions, setIsLoadingNewSuggestions] = useState(false);
-  const [isCurrentAddressValid, setIsCurrentAddressValid] = useState(false);
-  const [isNewAddressValid, setIsNewAddressValid] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -167,201 +134,6 @@ export default function FaOffert() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const currentAddressRef = useRef<HTMLInputElement>(null);
-
-  // Custom address search function using Swedish address API
-  const searchAddresses = async (query: string, isCurrentAddress: boolean = true) => {
-    if (query.length < 2) {
-      if (isCurrentAddress) {
-        setCurrentAddressSuggestions([]);
-        setShowCurrentSuggestions(false);
-      } else {
-        setNewAddressSuggestions([]);
-        setShowNewSuggestions(false);
-      }
-      return;
-    }
-
-    if (isCurrentAddress) {
-      setIsLoadingCurrentSuggestions(true);
-    } else {
-      setIsLoadingNewSuggestions(true);
-    }
-
-    try {
-      const response = await fetch(
-        `https://ovuvdmhqcg.execute-api.eu-central-1.amazonaws.com/production/search/addresses?country=SE&query=${encodeURIComponent(query)}&limit=8`
-      );
-      const data = await response.json();
-      
-      if (data.success && data.data) {
-        const suggestions = data.data.map((item: any) => ({
-          display_name: item.text,
-          formatted_address: `${item.street} ${item.streetNumber || ''}`.trim() + `, ${item.postarea}, Sweden`,
-          address_components: {
-            street_name: item.street,
-            street_number: item.streetNumber || '',
-            city: item.postarea,
-            postcode: item.postcode || '',
-            municipality: item.municipality || '',
-            county: item.county || ''
-          },
-          full_text: item.text
-        }));
-
-        if (isCurrentAddress) {
-          setCurrentAddressSuggestions(suggestions);
-          setShowCurrentSuggestions(suggestions.length > 0);
-        } else {
-          setNewAddressSuggestions(suggestions);
-          setShowNewSuggestions(suggestions.length > 0);
-        }
-      } else {
-        if (isCurrentAddress) {
-          setCurrentAddressSuggestions([]);
-          setShowCurrentSuggestions(false);
-        } else {
-          setNewAddressSuggestions([]);
-          setShowNewSuggestions(false);
-        }
-      }
-    } catch (error) {
-      console.error('Error fetching address suggestions:', error);
-      if (isCurrentAddress) {
-        setCurrentAddressSuggestions([]);
-        setShowCurrentSuggestions(false);
-      } else {
-        setNewAddressSuggestions([]);
-        setShowNewSuggestions(false);
-      }
-    } finally {
-      if (isCurrentAddress) {
-        setIsLoadingCurrentSuggestions(false);
-      } else {
-        setIsLoadingNewSuggestions(false);
-      }
-    }
-  };
-
-  // Debounced search
-  const debounceSearch = useRef<NodeJS.Timeout>();
-  const handleAddressSearch = (query: string, isCurrentAddress: boolean = true) => {
-    if (debounceSearch.current) {
-      clearTimeout(debounceSearch.current);
-    }
-    debounceSearch.current = setTimeout(() => {
-      searchAddresses(query, isCurrentAddress);
-    }, 300);
-  };
-
-  useEffect(() => {
-    if (!isGoogleMapsLoaded) return;
-
-    // Initialize Google Places Autocomplete
-    if (!window.google?.maps?.places) return;
-
-    try {
-      const currentAddressInput = document.getElementById('currentAddress') as HTMLInputElement;
-      const newAddressInput = document.getElementById('newAddress') as HTMLInputElement;
-
-      if (currentAddressInput) {
-        const autocomplete1 = new window.google.maps.places.Autocomplete(currentAddressInput, {
-          componentRestrictions: { country: 'se' },
-          fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
-          types: ['address']
-        });
-
-        autocomplete1.addListener('place_changed', () => {
-          const place = autocomplete1.getPlace();
-          if (place.formatted_address) {
-            // Extract street name, number, and city from address components
-            let streetName = '';
-            let streetNumber = '';
-            let city = '';
-            
-            place.address_components.forEach((component: AddressComponent) => {
-              if (component.types.includes('route')) {
-                streetName = component.long_name;
-              }
-              if (component.types.includes('street_number')) {
-                streetNumber = component.long_name;
-              }
-              if (component.types.includes('locality') || component.types.includes('postal_town')) {
-                city = component.long_name;
-              }
-            });
-
-            // Format address as "Street, City, Sweden"
-            const formattedAddress = `${streetName}, ${city}, Sweden`;
-            setFormData(prev => ({
-              ...prev,
-              currentAddress: formattedAddress
-            }));
-            setLastValidCurrentAddress(formattedAddress);
-          }
-        });
-
-        // Add blur event listener to restore last valid address
-        currentAddressInput.addEventListener('blur', () => {
-          if (lastValidCurrentAddress && formData.currentAddress !== lastValidCurrentAddress) {
-            setFormData(prev => ({
-              ...prev,
-              currentAddress: lastValidCurrentAddress
-            }));
-          }
-        });
-      }
-
-      if (newAddressInput) {
-        const autocomplete2 = new window.google.maps.places.Autocomplete(newAddressInput, {
-          componentRestrictions: { country: 'se' },
-          fields: ['place_id', 'name', 'types', 'formatted_address', 'address_components'],
-          types: ['address']
-        });
-
-        autocomplete2.addListener('place_changed', () => {
-          const place = autocomplete2.getPlace();
-          if (place.formatted_address) {
-            // Extract street name, number, and city from address components
-            let streetName = '';
-            let streetNumber = '';
-            let city = '';
-            
-            place.address_components.forEach((component: AddressComponent) => {
-              if (component.types.includes('route')) {
-                streetName = component.long_name;
-              }
-              if (component.types.includes('street_number')) {
-                streetNumber = component.long_name;
-              }
-              if (component.types.includes('locality') || component.types.includes('postal_town')) {
-                city = component.long_name;
-              }
-            });
-
-            // Format address as "Street, City, Sweden"
-            const formattedAddress = `${streetName}, ${city}, Sweden`;
-            setFormData(prev => ({
-              ...prev,
-              newAddress: formattedAddress
-            }));
-            setLastValidNewAddress(formattedAddress);
-          }
-        });
-
-        // Add blur event listener to restore last valid address
-        newAddressInput.addEventListener('blur', () => {
-          if (lastValidNewAddress && formData.newAddress !== lastValidNewAddress) {
-            setFormData(prev => ({
-              ...prev,
-              newAddress: lastValidNewAddress
-            }));
-          }
-        });
-      }
-    } catch (error) {
-      console.error('Error initializing Google Places:', error);
-    }
-  }, [step, isGoogleMapsLoaded, formData.currentAddress, formData.newAddress, lastValidCurrentAddress, lastValidNewAddress]);
 
   useEffect(() => {
     if (currentAddressRef.current) {
@@ -698,9 +470,6 @@ export default function FaOffert() {
     if (!formData.currentAddress || !formData.currentAddress.trim()) {
       newErrors.currentAddress = "Vänligen ange en giltig adress";
       isValid = false;
-    } else if (!formData.currentAddress.includes(',')) {
-      newErrors.currentAddress = "Vänligen välj en adress från listan";
-      isValid = false;
     }
 
     // Validate apartment number
@@ -753,9 +522,6 @@ export default function FaOffert() {
     // Validate new address
     if (!formData.newAddress || !formData.newAddress.trim()) {
       newErrors.newAddress = "Vänligen ange en giltig adress";
-      isValid = false;
-    } else if (!formData.newAddress.includes(',')) {
-      newErrors.newAddress = "Vänligen välj en adress från listan";
       isValid = false;
     }
 
@@ -843,12 +609,6 @@ export default function FaOffert() {
 
   return (
     <>
-      <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBZSNfM36ny9L-S04VbU0xzhkGdaPAm_gU&libraries=places`}
-        strategy="lazyOnload"
-        async
-        onLoad={() => setIsGoogleMapsLoaded(true)}
-      />
       <main className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-6">
           <div className="max-w-3xl mx-auto">
