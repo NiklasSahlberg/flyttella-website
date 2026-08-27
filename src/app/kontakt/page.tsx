@@ -254,7 +254,7 @@ export default function KontaktPage() {
                 Lännavägen 64F, Huddinge
               </p>
               <p className="text-[#10B981] font-semibold text-base">
-                Krukovs Åkeri AB
+                Flyttella Sweden AB
               </p>
               <p className="text-gray-600 text-sm mt-1">
                 Org.nr: 559055-2492

@@ -12,7 +12,7 @@ const geistSans = GeistSans;
 const geistMono = GeistMono;
 
 export const metadata: Metadata = {
-  title: "Flyttella - Din pålitliga flyttpartner",
+  title: "Flyttella Sweden AB - Din pålitliga flyttpartner",
   description: "Professionell flyttfirma i Stockholm. Vi erbjuder bohagsflytt, flyttstädning, bärhjälp och packning med kvalitetsgaranti.",
 };
 
